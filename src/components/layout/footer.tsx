@@ -4,11 +4,18 @@ import { Separator } from "@/components/ui/separator";
 const footerLinks = {
   product: [
     { href: "#how-it-works", label: "How It Works" },
+    { href: "/results", label: "Results" },
     { href: "#pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
   ],
+  compare: [
+    { href: "/compare/prestyj-vs-ylopo", label: "Prestyj vs Ylopo" },
+    { href: "/compare/prestyj-vs-isa", label: "Prestyj vs Human ISA" },
+  ],
   resources: [
     { href: "/blog", label: "Blog" },
+    { href: "/blog/why-leads-go-cold", label: "Why Leads Go Cold" },
+    { href: "/blog/speed-to-lead", label: "Speed-to-Lead Guide" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
@@ -20,7 +27,7 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
@@ -36,6 +43,23 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Compare */}
+          <div>
+            <h3 className="font-heading font-semibold text-foreground mb-4">Compare</h3>
+            <ul className="space-y-3">
+              {footerLinks.compare.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

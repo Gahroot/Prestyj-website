@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { HeroSection } from "@/components/sections/hero";
+import { HeroDemoSection } from "@/components/sections/hero-demo";
+import { SpeedToLeadSection } from "@/components/sections/speed-to-lead";
 import { PainPointsSection } from "@/components/sections/pain-points";
 import { SolutionSection } from "@/components/sections/solution";
 import { HowItWorksSection } from "@/components/sections/how-it-works";
@@ -27,7 +28,8 @@ export default function Home() {
       <FAQJsonLd faqs={faqs} />
       <Navbar />
       <main>
-        <HeroSection />
+        <HeroDemoSection />
+        <SpeedToLeadSection />
         <PainPointsSection />
         <SolutionSection />
         <HowItWorksSection />

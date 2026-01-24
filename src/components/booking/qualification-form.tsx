@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { submitLead, formatPhoneNumber } from "@/lib/api";
 import {
   ArrowRight,
   ArrowLeft,
@@ -17,6 +18,7 @@ import {
   Rocket,
   Users,
   Zap,
+  Loader2,
 } from "lucide-react";
 
 export interface QualificationData {
@@ -177,6 +179,8 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
   });
   const [errors, setErrors] = useState<Partial<Record<keyof QualificationData, string>>>({});
   const [showError, setShowError] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateCurrentStep = (): boolean => {
     const step = STEPS[currentStep];
@@ -203,7 +207,14 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
         if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
         if (!formData.email.trim()) newErrors.email = "Email is required";
         else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Invalid email";
-        if (!formData.phone.trim()) newErrors.phone = "Phone is required";
+        if (!formData.phone.trim()) {
+          newErrors.phone = "Phone is required";
+        } else {
+          const phoneDigits = formatPhoneNumber(formData.phone);
+          if (phoneDigits.length !== 10) {
+            newErrors.phone = "Please enter a valid 10-digit US phone number";
+          }
+        }
         break;
     }
 
@@ -211,18 +222,53 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (!validateCurrentStep()) {
       setShowError(true);
       return;
     }
 
     setShowError(false);
+    setSubmitError(null);
+
     if (currentStep < STEPS.length - 1) {
       setDirection(1);
       setCurrentStep((prev) => prev + 1);
     } else {
-      onComplete(formData);
+      // Final step - submit to CRM
+      setIsSubmitting(true);
+
+      // Build notes from qualification data
+      const noteParts = [
+        `Business Type: ${BUSINESS_TYPES.find((b) => b.value === formData.businessType)?.label || formData.businessType}`,
+        `Revenue: ${REVENUE_OPTIONS.find((r) => r.value === formData.revenue)?.label || formData.revenue}`,
+        `Project Type: ${PROJECT_TYPES.find((p) => p.value === formData.projectType)?.label || formData.projectType}`,
+        `Timeline: ${TIMELINE_OPTIONS.find((t) => t.value === formData.timeline)?.label || formData.timeline}`,
+        `Budget: ${BUDGET_OPTIONS.find((b) => b.value === formData.budget)?.label || formData.budget}`,
+      ];
+      if (formData.projectDetails.trim()) {
+        noteParts.push(`Project Details: ${formData.projectDetails.trim()}`);
+      }
+
+      try {
+        await submitLead({
+          first_name: formData.firstName.trim(),
+          last_name: formData.lastName.trim() || undefined,
+          phone_number: formatPhoneNumber(formData.phone),
+          email: formData.email.trim() || undefined,
+          company_name: formData.companyName.trim() || undefined,
+          notes: noteParts.join("\n"),
+          source: "qualification_form",
+          trigger_call: false,
+          trigger_text: false,
+        });
+
+        onComplete(formData);
+      } catch (error) {
+        setSubmitError(error instanceof Error ? error.message : "Something went wrong. Please try again.");
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -576,6 +622,17 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
         </motion.p>
       )}
 
+      {/* Submission Error */}
+      {submitError && (
+        <motion.p
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center text-destructive text-sm mt-4"
+        >
+          {submitError}
+        </motion.p>
+      )}
+
       {/* Navigation */}
       <div className="flex justify-between items-center mt-8 pt-6 border-t border-border">
         <Button
@@ -589,8 +646,19 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
           Back
         </Button>
 
-        <Button type="button" onClick={handleNext} size="lg" className="min-w-[140px]">
-          {currentStep === STEPS.length - 1 ? (
+        <Button
+          type="button"
+          onClick={handleNext}
+          size="lg"
+          className="min-w-[140px]"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? (
+            <>
+              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              Submitting...
+            </>
+          ) : currentStep === STEPS.length - 1 ? (
             <>
               Book My Call
               <CheckCircle className="w-4 h-4 ml-2" />

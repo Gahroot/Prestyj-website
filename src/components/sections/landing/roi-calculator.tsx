@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useId, useCallback } from "react";
+import { useState, useId, useCallback, useEffect, useRef } from "react";
 import { motion, useSpring, useTransform } from "framer-motion";
 import { Calculator, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,13 +12,20 @@ interface ROICalculatorProps {
 }
 
 function AnimatedNumber({ value }: { value: number }) {
-  const spring = useSpring(0, { stiffness: 100, damping: 30 });
+  const isFirstRender = useRef(true);
+  const spring = useSpring(value, { stiffness: 100, damping: 30 });
   const display = useTransform(spring, (current) =>
     Math.round(current).toLocaleString("en-US")
   );
 
-  // Update spring target when value changes
-  spring.set(value);
+  useEffect(() => {
+    // Skip animation on first render to avoid hydration mismatch
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    spring.set(value);
+  }, [spring, value]);
 
   return <motion.span>{display}</motion.span>;
 }
