@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
+import { Badge } from "@/components/ui/badge";
 import { Spotlight } from "@/components/effects/spotlight";
 
 const DEMO_API_BASE = "https://backend-api-production-b536.up.railway.app/api/v1/p/demo";
@@ -101,9 +102,11 @@ export function HeroDemoSection() {
       >
         {/* Left side - Headline */}
         <motion.div className="space-y-6 text-center lg:text-left" variants={itemVariants}>
-          <p className="text-sm font-medium text-primary tracking-widest uppercase">
-            AI Voice Agent
-          </p>
+          <div className="flex justify-center lg:justify-start">
+            <Badge variant="outline" className="border-primary/50 text-primary">
+              AI Voice Agents by PRESTYJ
+            </Badge>
+          </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.1]">
             Voice AI built for every customer conversation
           </h1>

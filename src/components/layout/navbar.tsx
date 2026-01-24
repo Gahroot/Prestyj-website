@@ -38,7 +38,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-xl font-bold font-heading text-primary">PRESTYJ</span>
+            <span className="text-xl font-extrabold font-heading text-white">PRESTYJ</span>
           </Link>
 
           {/* Desktop Navigation */}
