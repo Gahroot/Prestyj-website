@@ -5,10 +5,13 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { blogSource } from "@/lib/source";
 import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
+
+const siteUrl = "https://prestyj.com";
 
 export async function generateStaticParams() {
   return blogSource.getPages().map((page) => ({
@@ -16,7 +19,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps) {
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const page = blogSource.getPage([slug]);
 
@@ -26,9 +31,54 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
     };
   }
 
+  const { title, description, keywords, author, image, date } = page.data;
+  const postUrl = `${siteUrl}/blog/${slug}`;
+  const ogImage = image || "/images/og-default.jpg";
+
   return {
-    title: `${page.data.title} - PRESTYJ Blog`,
-    description: page.data.description,
+    title: `${title} | PRESTYJ Blog`,
+    description,
+    keywords: keywords?.length ? keywords : undefined,
+    authors: author ? [{ name: author }] : undefined,
+    openGraph: {
+      type: "article",
+      locale: "en_US",
+      url: postUrl,
+      title,
+      description,
+      siteName: "PRESTYJ",
+      publishedTime: date,
+      authors: author ? [author] : undefined,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+      creator: "@prestyj",
+    },
+    alternates: {
+      canonical: postUrl,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
   };
 }
 
@@ -41,9 +91,46 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const MDXContent = page.data.body;
+  const { title, description, author, date, image, keywords } = page.data;
+  const postUrl = `${siteUrl}/blog/${slug}`;
+
+  // JSON-LD structured data for Article
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    image: image ? `${siteUrl}${image}` : `${siteUrl}/images/og-default.jpg`,
+    author: {
+      "@type": "Organization",
+      name: author || "Prestyj Team",
+      url: siteUrl,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "PRESTYJ",
+      url: siteUrl,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrl}/logo.png`,
+      },
+    },
+    datePublished: date,
+    dateModified: date,
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+    },
+    url: postUrl,
+    keywords: keywords?.join(", "),
+  };
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,13 +142,23 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Link>
 
           <header className="mb-12">
+            {date && (
+              <time
+                dateTime={date}
+                className="text-sm text-muted-foreground mb-2 block"
+              >
+                {new Date(date).toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
+              </time>
+            )}
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-              {page.data.title}
+              {title}
             </h1>
-            {page.data.description && (
-              <p className="text-xl text-muted-foreground">
-                {page.data.description}
-              </p>
+            {description && (
+              <p className="text-xl text-muted-foreground">{description}</p>
             )}
           </header>
 
