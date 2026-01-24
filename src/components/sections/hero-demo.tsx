@@ -15,8 +15,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
 import { Badge } from "@/components/ui/badge";
 import { Spotlight } from "@/components/effects/spotlight";
-
-const DEMO_API_BASE = "https://backend-api-production-b536.up.railway.app/api/v1/p/demo";
+import { triggerDemo } from "@/lib/demo-api";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -39,26 +38,6 @@ const itemVariants = {
     },
   },
 } as const;
-
-interface DemoResponse {
-  success: boolean;
-  message: string;
-}
-
-async function triggerDemo(type: "call" | "text", phoneNumber: string): Promise<DemoResponse> {
-  const response = await fetch(`${DEMO_API_BASE}/${type}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ phone_number: phoneNumber }),
-  });
-
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({}));
-    throw new Error(error.detail || "Something went wrong. Please try again.");
-  }
-
-  return response.json();
-}
 
 export function HeroDemoSection() {
   const [phone, setPhone] = useState("");

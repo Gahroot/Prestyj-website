@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Zap, MessageSquare, Calendar, RotateCcw } from "lucide-react";
 
+import { HowItWorksCTA } from "./how-it-works-cta";
+
 const steps = [
   {
     number: "01",
@@ -92,6 +94,8 @@ export function HowItWorksSection() {
             </motion.div>
           ))}
         </div>
+
+        <HowItWorksCTA />
       </div>
     </section>
   );
