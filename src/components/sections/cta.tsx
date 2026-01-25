@@ -8,8 +8,6 @@ import { Button } from "@/components/ui/button";
 export function CTASection() {
   return (
     <section className="py-24 relative overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-success/10" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div

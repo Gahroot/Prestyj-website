@@ -17,7 +17,7 @@ export function ObjectionAccordion({ content }: ObjectionAccordionProps) {
   return (
     <section
       id="objections"
-      className="py-24 bg-muted/30"
+      className="py-24"
       aria-labelledby="objections-heading"
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

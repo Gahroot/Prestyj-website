@@ -207,7 +207,7 @@ export default function ResultsPage() {
         </section>
 
         {/* Industry Comparison Section - Verified Stats */}
-        <section className="bg-muted/30 py-16 mb-20">
+        <section className="py-16 mb-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-2 mb-4">

@@ -465,7 +465,7 @@ export default function PrestyVsISAPage() {
         </section>
 
         {/* Comparison Table Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -623,7 +623,7 @@ export default function PrestyVsISAPage() {
         </section>
 
         {/* When AI Makes More Sense Section */}
-        <section className="py-20 bg-muted/30">
+        <section className="py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -680,7 +680,7 @@ export default function PrestyVsISAPage() {
         <CostCalculator />
 
         {/* Related Resources Section */}
-        <section className="py-16 bg-card/50">
+        <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-xl font-heading font-semibold text-foreground mb-6 text-center">
               Related Resources
@@ -719,7 +719,6 @@ export default function PrestyVsISAPage() {
 
         {/* CTA Section */}
         <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-success/10" />
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

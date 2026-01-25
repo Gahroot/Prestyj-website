@@ -141,7 +141,7 @@ export default function PrestyJVsYlopoPage() {
         </section>
 
         {/* Industry Stats */}
-        <section className="py-12 bg-card border-y border-border">
+        <section className="py-12 border-y border-border">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {industryStats.map((item, index) => (
@@ -255,7 +255,7 @@ export default function PrestyJVsYlopoPage() {
         </section>
 
         {/* Feature Comparison Table */}
-        <section className="py-20 bg-card/50">
+        <section className="py-20">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -373,7 +373,7 @@ export default function PrestyJVsYlopoPage() {
         </section>
 
         {/* Related Resources Section */}
-        <section className="py-16 bg-card/50">
+        <section className="py-16">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h3 className="text-xl font-heading font-semibold text-foreground mb-6 text-center">
               Related Resources
@@ -412,7 +412,6 @@ export default function PrestyJVsYlopoPage() {
 
         {/* CTA Section */}
         <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-success/10" />
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

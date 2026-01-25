@@ -183,7 +183,6 @@ export default function AlternativesHubPage() {
 
         {/* CTA Section */}
         <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background to-success/10" />
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
               Ready to See Prestyj in Action?

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
+import { Spotlight } from "@/components/effects/spotlight";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -104,8 +105,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} font-sans`}>
-        {children}
+      <body className={`${inter.variable} ${manrope.variable} font-sans relative min-h-screen`}>
+        <Spotlight className="fixed" />
+        <div className="relative z-10">{children}</div>
       </body>
     </html>
   );
