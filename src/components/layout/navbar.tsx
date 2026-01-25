@@ -24,9 +24,12 @@ const solutionLinks = [
   { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
 ];
 
-const compareLinks = [
-  { href: "/compare/prestyj-vs-ylopo", label: "Prestyj vs Ylopo" },
-  { href: "/compare/prestyj-vs-isa", label: "Prestyj vs Human ISA" },
+const alternativeLinks = [
+  { href: "/alternatives", label: "All Alternatives" },
+  { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo" },
+  { href: "/alternatives/human-isa", label: "Prestyj vs Human ISA" },
+  { href: "/alternatives/structurely", label: "Prestyj vs Structurely" },
+  { href: "/alternatives/follow-up-boss", label: "Prestyj + Follow Up Boss" },
 ];
 
 export function Navbar() {
@@ -66,10 +69,10 @@ export function Navbar() {
             </DropdownMenu>
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors text-sm">
-                Compare <ChevronDown className="h-4 w-4" />
+                Alternatives <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                {compareLinks.map((link) => (
+                {alternativeLinks.map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
                     <Link href={link.href}>{link.label}</Link>
                   </DropdownMenuItem>
@@ -119,8 +122,8 @@ export function Navbar() {
                   ))}
                 </div>
                 <div className="space-y-3">
-                  <span className="text-sm font-medium text-foreground">Compare</span>
-                  {compareLinks.map((link) => (
+                  <span className="text-sm font-medium text-foreground">Alternatives</span>
+                  {alternativeLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}

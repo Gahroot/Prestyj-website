@@ -8,9 +8,11 @@ const footerLinks = {
     { href: "#pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
   ],
-  compare: [
-    { href: "/compare/prestyj-vs-ylopo", label: "Prestyj vs Ylopo" },
-    { href: "/compare/prestyj-vs-isa", label: "Prestyj vs Human ISA" },
+  alternatives: [
+    { href: "/alternatives", label: "All Alternatives" },
+    { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo" },
+    { href: "/alternatives/human-isa", label: "Prestyj vs Human ISA" },
+    { href: "/alternatives/structurely", label: "Prestyj vs Structurely" },
   ],
   resources: [
     { href: "/blog", label: "Blog" },
@@ -55,11 +57,11 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Compare */}
+          {/* Alternatives */}
           <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Compare</h3>
+            <h3 className="font-heading font-semibold text-foreground mb-4">Alternatives</h3>
             <ul className="space-y-3">
-              {footerLinks.compare.map((link) => (
+              {footerLinks.alternatives.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
