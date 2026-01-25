@@ -8,6 +8,13 @@ const footerLinks = {
     { href: "#pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
   ],
+  bestFor: [
+    { href: "/best-for", label: "All Use Cases" },
+    { href: "/best-for/solo-agents", label: "Solo Agents" },
+    { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
+    { href: "/best-for/isa-replacement", label: "ISA Replacement" },
+    { href: "/best-for/new-agents", label: "New Agents" },
+  ],
   alternatives: [
     { href: "/alternatives", label: "All Alternatives" },
     { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo" },
@@ -29,7 +36,7 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
@@ -45,6 +52,23 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Best For */}
+          <div>
+            <h3 className="font-heading font-semibold text-foreground mb-4">Best For</h3>
+            <ul className="space-y-3">
+              {footerLinks.bestFor.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

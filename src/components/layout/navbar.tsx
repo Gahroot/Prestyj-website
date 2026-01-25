@@ -32,6 +32,14 @@ const alternativeLinks = [
   { href: "/alternatives/follow-up-boss", label: "Prestyj + Follow Up Boss" },
 ];
 
+const bestForLinks = [
+  { href: "/best-for", label: "All Use Cases" },
+  { href: "/best-for/solo-agents", label: "Solo Agents" },
+  { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
+  { href: "/best-for/isa-replacement", label: "ISA Replacement" },
+  { href: "/best-for/new-agents", label: "New Agents" },
+];
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -73,6 +81,18 @@ export function Navbar() {
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
                 {alternativeLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors text-sm">
+                Best For <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {bestForLinks.map((link) => (
                   <DropdownMenuItem key={link.href} asChild>
                     <Link href={link.href}>{link.label}</Link>
                   </DropdownMenuItem>
@@ -124,6 +144,19 @@ export function Navbar() {
                 <div className="space-y-3">
                   <span className="text-sm font-medium text-foreground">Alternatives</span>
                   {alternativeLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block text-muted-foreground hover:text-foreground transition-colors pl-4"
+                      onClick={() => setOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+                <div className="space-y-3">
+                  <span className="text-sm font-medium text-foreground">Best For</span>
+                  {bestForLinks.map((link) => (
                     <Link
                       key={link.href}
                       href={link.href}
