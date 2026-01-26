@@ -29,7 +29,7 @@ export const metadata: Metadata = {
       "Compare AI sales agents to human ISAs. Understand costs, availability, and when each option makes sense for your real estate business.",
   },
   alternates: {
-    canonical: "/compare/prestyj-vs-isa",
+    canonical: "https://prestyj.com/compare/prestyj-vs-isa",
   },
 };
 
