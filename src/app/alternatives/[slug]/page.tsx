@@ -13,6 +13,8 @@ export async function generateStaticParams() {
   return getAllAlternativeSlugs().map((slug) => ({ slug }));
 }
 
+const siteUrl = "https://prestyj.com";
+
 export async function generateMetadata({ params }: AlternativePageProps): Promise<Metadata> {
   const { slug } = await params;
   const alternative = getAlternative(slug);
@@ -23,6 +25,8 @@ export async function generateMetadata({ params }: AlternativePageProps): Promis
     };
   }
 
+  const pageUrl = `${siteUrl}/alternatives/${slug}`;
+
   return {
     title: alternative.meta.title,
     description: alternative.meta.description,
@@ -31,6 +35,10 @@ export async function generateMetadata({ params }: AlternativePageProps): Promis
       title: alternative.meta.title,
       description: alternative.meta.description,
       type: "website",
+      url: pageUrl,
+    },
+    alternates: {
+      canonical: pageUrl,
     },
   };
 }

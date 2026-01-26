@@ -6,7 +6,8 @@ var blogSchema = frontmatterSchema.extend({
   updated: z.string().optional(),
   author: z.string().optional().default("Prestyj Team"),
   keywords: z.array(z.string()).optional().default([]),
-  image: z.string().optional()
+  image: z.string().optional(),
+  noindex: z.boolean().optional().default(false)
 });
 var blog = defineDocs({
   dir: "content/blog",

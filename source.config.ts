@@ -7,6 +7,7 @@ const blogSchema = frontmatterSchema.extend({
   author: z.string().optional().default("Prestyj Team"),
   keywords: z.array(z.string()).optional().default([]),
   image: z.string().optional(),
+  noindex: z.boolean().optional().default(false),
 });
 
 export const blog = defineDocs({

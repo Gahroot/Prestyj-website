@@ -31,7 +31,7 @@ export async function generateMetadata({
     };
   }
 
-  const { title, description, keywords, author, image, date } = page.data;
+  const { title, description, keywords, author, image, date, noindex } = page.data;
   const postUrl = `${siteUrl}/blog/${slug}`;
   const ogImage = image || "/images/og-default.jpg";
 
@@ -68,17 +68,19 @@ export async function generateMetadata({
     alternates: {
       canonical: postUrl,
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
+    robots: noindex
+      ? { index: false, follow: false }
+      : {
+          index: true,
+          follow: true,
+          googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+          },
+        },
   };
 }
 

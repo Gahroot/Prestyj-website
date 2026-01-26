@@ -21,6 +21,9 @@ export const metadata: Metadata = {
     "follow up boss AI",
     "real geeks AI",
   ],
+  alternates: {
+    canonical: "https://prestyj.com/alternatives",
+  },
 };
 
 export default function AlternativesHubPage() {

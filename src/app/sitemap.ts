@@ -61,11 +61,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Blog posts
+  // Blog posts - use actual post dates for lastModified
   const blogPages = blogSource.getPages();
   const blogRoutes: MetadataRoute.Sitemap = blogPages.map((page) => ({
     url: `${baseUrl}${page.url}`,
-    lastModified: now,
+    lastModified: page.data.date ? new Date(page.data.date) : now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

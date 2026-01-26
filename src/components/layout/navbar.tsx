@@ -34,10 +34,8 @@ const alternativeLinks = [
 
 const bestForLinks = [
   { href: "/best-for", label: "All Use Cases" },
-  { href: "/best-for/solo-agents", label: "Solo Agents" },
   { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
   { href: "/best-for/isa-replacement", label: "ISA Replacement" },
-  { href: "/best-for/new-agents", label: "New Agents" },
 ];
 
 export function Navbar() {

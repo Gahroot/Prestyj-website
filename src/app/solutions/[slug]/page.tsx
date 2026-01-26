@@ -20,6 +20,8 @@ export async function generateStaticParams() {
   return getAllSolutionSlugs().map((slug) => ({ slug }));
 }
 
+const siteUrl = "https://prestyj.com";
+
 export async function generateMetadata({ params }: SolutionPageProps): Promise<Metadata> {
   const { slug } = await params;
   const solution = getSolution(slug);
@@ -30,6 +32,8 @@ export async function generateMetadata({ params }: SolutionPageProps): Promise<M
     };
   }
 
+  const pageUrl = `${siteUrl}/solutions/${slug}`;
+
   return {
     title: solution.meta.title,
     description: solution.meta.description,
@@ -38,6 +42,10 @@ export async function generateMetadata({ params }: SolutionPageProps): Promise<M
       title: solution.meta.title,
       description: solution.meta.description,
       type: "website",
+      url: pageUrl,
+    },
+    alternates: {
+      canonical: pageUrl,
     },
   };
 }

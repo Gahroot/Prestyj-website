@@ -10,21 +10,23 @@ const footerLinks = {
   ],
   bestFor: [
     { href: "/best-for", label: "All Use Cases" },
-    { href: "/best-for/solo-agents", label: "Solo Agents" },
     { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
     { href: "/best-for/isa-replacement", label: "ISA Replacement" },
-    { href: "/best-for/new-agents", label: "New Agents" },
   ],
   alternatives: [
     { href: "/alternatives", label: "All Alternatives" },
     { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo" },
     { href: "/alternatives/human-isa", label: "Prestyj vs Human ISA" },
     { href: "/alternatives/structurely", label: "Prestyj vs Structurely" },
+    { href: "/alternatives/cinc", label: "Prestyj vs CINC" },
+    { href: "/alternatives/real-geeks", label: "Prestyj vs Real Geeks" },
   ],
   resources: [
     { href: "/blog", label: "Blog" },
     { href: "/blog/why-leads-go-cold", label: "Why Leads Go Cold" },
     { href: "/blog/speed-to-lead", label: "Speed-to-Lead Guide" },
+    { href: "/compare/prestyj-vs-isa", label: "Prestyj vs ISA" },
+    { href: "/compare/prestyj-vs-ylopo", label: "Prestyj vs Ylopo" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },

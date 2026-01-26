@@ -20,6 +20,9 @@ export const metadata: Metadata = {
     "AI for real estate teams",
     "luxury real estate AI",
   ],
+  alternates: {
+    canonical: "https://prestyj.com/best-for",
+  },
 };
 
 export default function BestForHubPage() {

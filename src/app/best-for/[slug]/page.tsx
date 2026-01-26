@@ -13,6 +13,11 @@ export async function generateStaticParams() {
   return getAllBestForSlugs().map((slug) => ({ slug }));
 }
 
+const siteUrl = "https://prestyj.com";
+
+// Pages targeting wrong ICP (solopreneurs instead of enterprise buyers)
+const noindexSlugs = ["solo-agents", "new-agents"];
+
 export async function generateMetadata({ params }: BestForPageProps): Promise<Metadata> {
   const { slug } = await params;
   const bestFor = getBestFor(slug);
@@ -23,6 +28,9 @@ export async function generateMetadata({ params }: BestForPageProps): Promise<Me
     };
   }
 
+  const pageUrl = `${siteUrl}/best-for/${slug}`;
+  const shouldNoindex = noindexSlugs.includes(slug);
+
   return {
     title: bestFor.meta.title,
     description: bestFor.meta.description,
@@ -31,7 +39,14 @@ export async function generateMetadata({ params }: BestForPageProps): Promise<Me
       title: bestFor.meta.title,
       description: bestFor.meta.description,
       type: "website",
+      url: pageUrl,
     },
+    alternates: {
+      canonical: pageUrl,
+    },
+    robots: shouldNoindex
+      ? { index: false, follow: false }
+      : { index: true, follow: true },
   };
 }
 
