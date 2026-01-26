@@ -33,21 +33,29 @@ export default async function Image() {
             gap: "24px",
           }}
         >
+          {/* Floating P logo representation */}
           <div
             style={{
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              width: "120px",
-              height: "120px",
-              backgroundColor: "#ffffff",
-              borderRadius: "24px",
-              fontSize: "72px",
-              fontWeight: 700,
-              color: "#0a0a0a",
+              width: "140px",
+              height: "140px",
+              background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
+              borderRadius: "28px",
+              boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)",
             }}
           >
-            P
+            <span
+              style={{
+                fontSize: "90px",
+                fontWeight: 800,
+                color: "#ffffff",
+                textShadow: "0 2px 10px rgba(0,0,0,0.3)",
+              }}
+            >
+              P
+            </span>
           </div>
           <div
             style={{
