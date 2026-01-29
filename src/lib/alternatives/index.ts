@@ -5,6 +5,7 @@ import { structurely } from "./structurely";
 import { cinc } from "./cinc";
 import { followUpBoss } from "./follow-up-boss";
 import { realGeeks } from "./real-geeks";
+import { conversica } from "./conversica";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -13,6 +14,7 @@ export const alternatives: Record<string, AlternativePageContent> = {
   cinc,
   "follow-up-boss": followUpBoss,
   "real-geeks": realGeeks,
+  conversica,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
