@@ -88,8 +88,8 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
   icons: {
-    icon: "/icon.svg",
-    apple: "/apple-icon",
+    icon: "/icon.png",
+    apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.json",
   category: "technology",
