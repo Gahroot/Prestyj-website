@@ -1,249 +1,409 @@
 ---
 name: seo
-description: Daily SEO intelligence operation - research, strategize, and execute content improvements targeting enterprise buyers
+description: Enterprise SEO operation - competitor research, comparison content, and BOFU pages for $100K+ buyers
 ---
 
-# Daily SEO Intelligence Operation
+# Enterprise SEO Operation: Comparison & BOFU Content
 
-This command runs a comprehensive SEO operation designed to improve search rankings and attract high-ticket buyers (brokerages, enterprise clients who write $20K-$50K checks without hesitation). It researches, strategizes, and executes—all filtered through the lens of your ideal customer profile.
+This command runs a focused SEO operation designed to create decision-stage content for enterprise buyers evaluating lead response solutions. Target: VPs/Directors at 50+ office operations who write $100K+ checks.
 
-**Target ICP**: Brokerage owners, team leaders, enterprise real estate operations (NOT individual realtors or solopreneurs)
+**Primary Output**: Comparison pages, vs-competitor content, best-for pages, and alternative roundups—NOT educational articles.
 
 ---
 
-## Phase 1: Intelligence Gathering (10 Parallel Agents)
+## Phase 1: Intelligence Gathering (6 Parallel Agents)
 
-Launch ALL 10 agents simultaneously using the Task tool. Each agent should perform web research and analysis, then return actionable findings.
+Launch ALL 6 agents simultaneously using the Task tool.
 
-### Agent 1: Enterprise Buyer Psychology
-Research what brokerage owners and managers actually search for:
-- Pain points at scale (managing 50+ agents, handling 500+ leads/month)
-- What language do enterprise RE buyers use?
-- What problems keep them up at night?
-- Search queries that indicate serious buyer intent
-- Focus on buyers who view $20K-$50K as a reasonable investment
+### Agent 1: Competitor Intelligence
+Research competitors that enterprise buyers are actively evaluating:
 
-### Agent 2: Industry Trend Scout
-Research what's trending in real estate tech RIGHT NOW (today's date):
-- Breaking news in RE tech space
-- New regulations or market shifts affecting brokerages
-- Emerging technologies being discussed
-- Timely content opportunities (newsjacking potential)
-- What are RE tech publications writing about this week?
+**Direct Competitors:**
+- Conversica (enterprise AI sales assistant)
+- Structurely (real estate AI chat)
+- CINC AI (real estate lead conversion)
+- Ylopo AI (follow-up automation)
 
-### Agent 3: Competitor Content Analysis
-Research enterprise-focused RE SaaS competitors (like Ylopo, BoomTown, kvCORE, Real Geeks at enterprise tier):
-- What content are they publishing?
-- What topics do they cover that we don't?
-- Content gaps we can own
-- What messaging resonates with their enterprise audience?
+**Build-vs-Buy Alternatives:**
+- Internal ISA teams (hiring, training, management costs)
+- Offshore ISA services (quality, compliance, turnover)
 
-### Agent 4: Competitor Backlink Analysis
-Research where competitors earn authority:
-- What type of content earns backlinks in RE tech?
-- Which publications/sites link to competitors?
-- Link-worthy content formats (studies, calculators, original data)
-- PR and thought leadership opportunities
+**Adjacent Solutions:**
+- Drift Enterprise
+- Intercom for real estate
+- Generic AI voice platforms (Bland.ai, Retell, Vapi)
 
-### Agent 5: High-Intent Keyword Research
-Research keywords that signal serious enterprise buyer intent:
-- "Brokerage lead management" > "AI for realtors"
-- "Real estate team scaling" > "solo agent tools"
-- Keywords with commercial/transactional intent
-- Terms that indicate budget and authority to purchase
-- Focus on keywords that attract decision-makers, not tire-kickers
+**Research Focus:**
+- What are their weaknesses at enterprise scale (50+ offices)?
+- What do G2/Capterra reviews and complaints say?
+- Pricing gaps and hidden costs
+- Feature limitations for multi-location operations
+- Integration problems with common RE tech stacks
+- Contract/switching friction points
 
-### Agent 6: Long-tail Opportunity Mining
-Research specific, low-competition queries:
-- Detailed problems enterprise buyers Google
-- Question-based queries ("how do brokerages handle...")
-- Comparison queries at enterprise scale
-- Niche problems with high conversion potential
-- "Best [X] for large real estate teams" style queries
+### Agent 2: Comparison Keyword Research
+Find comparison-intent keywords that signal active buying:
 
-### Agent 7: SERP & Format Analysis
-Research what's currently winning in search results:
-- For target keywords, what content formats rank? (guides, calculators, case studies, comparisons)
-- What's the content depth of top-ranking pages?
-- Featured snippet opportunities
-- People Also Ask questions to answer
-- Content structure patterns that win
+**High-Intent Patterns:**
+- "[Competitor] vs [competitor]" searches
+- "[Competitor] alternatives for real estate"
+- "[Competitor] pricing enterprise"
+- "[Competitor] reviews 2026"
+- "Best AI lead response for franchise"
+- "Best AI lead response for multi-office"
+- "Enterprise real estate lead qualification"
 
-### Agent 8: Content Decay Detection
-Analyze our existing blog posts in `content/blog/`:
-- Which posts have outdated statistics or information?
-- Posts with dates/years that need updating
-- Broken internal or external links
-- Content that references old market conditions
-- Posts that could be refreshed with new data
+**Keywords MUST contain:**
+- "vs", "versus", "compare", "comparison"
+- "alternative", "alternatives to"
+- "pricing", "cost", "ROI"
+- "reviews", "complaints", "problems"
+- "enterprise", "franchise", "multi-office", "regional"
 
-### Agent 9: Audience Misalignment Audit
-Analyze our existing content for ICP fit:
-- Which posts attract solopreneurs instead of brokerages?
-- Content that speaks to "agents" instead of "teams" or "brokerages"
-- Posts with pricing/value props aimed at individuals
-- Candidates for repositioning toward enterprise angle
-- Content to potentially deprioritize or noindex
+**Reject keywords that:**
+- Target individual agents or small teams
+- Are educational ("what is", "how to")
+- Have no buying intent
 
-### Agent 10: Technical SEO Audit
-Analyze the codebase for technical SEO issues:
-- Check Core Web Vitals considerations in components
-- Validate JSON-LD schema on all page types
-- Find orphan content (pages with no internal links)
-- Check internal linking structure and cornerstone coverage
-- Verify sitemap includes all content
-- Check for missing meta descriptions or titles
-- Mobile/responsive issues
-- Image optimization opportunities (next/image usage)
+### Agent 3: Enterprise Pain Point Mining
+Research what VPs/Directors at 50+ office operations actually struggle with:
+
+**NOT These (Individual Agent Problems):**
+- "How to respond to leads faster"
+- "Best scripts for follow-up"
+- "Time management for ISAs"
+
+**YES These (Enterprise Operations Problems):**
+- "How to standardize lead response across 75 offices"
+- "How to measure lead response compliance across franchise"
+- "How to reduce ISA turnover impact on operations"
+- "How to enforce SLA consistency across regions"
+- "How to report on lead conversion across locations"
+- "How to integrate lead response with enterprise CRM"
+
+**Research Sources:**
+- LinkedIn posts from RE operations executives
+- Real estate franchise forums
+- Industry publications (Inman, RISMedia enterprise coverage)
+- Real estate tech conference topics
+- G2/Capterra reviews of enterprise RE tools
+
+### Agent 4: Content Audit
+Analyze current blog in `content/blog/` for:
+
+**Identify Posts That:**
+- Target wrong audience (individual agents) → candidates for noindex
+- Could be repositioned as comparison content
+- Are missing from competitor comparison coverage
+- Have outdated information hurting credibility
+- Rank for keywords but attract wrong audience
+
+**For Each Post, Determine:**
+- Current target audience (agent vs enterprise)
+- Current intent (educational vs decision-stage)
+- Reposition potential (can it become comparison content?)
+- Recommendation: keep, rewrite, noindex, or delete
+
+### Agent 5: Technical SEO Audit
+Analyze codebase for comparison page optimization:
+
+**Check For:**
+- Schema markup readiness for comparison/review pages
+- ProductComparison or Review schema opportunities
+- Internal linking to/from comparison cornerstone pages
+- Meta descriptions targeting comparison keywords
+- Open Graph optimization for comparison pages
+- Page speed issues on key pages
+- Mobile experience for comparison tables
+
+**Files to Check:**
+- `src/app/compare/` (if exists) or opportunity to create
+- `src/app/best-for/` (if exists) or opportunity to create
+- `src/app/alternatives/` (if exists) or opportunity to create
+- Blog post schema implementation
+
+### Agent 6: Backlink Opportunity Research
+Find where comparison/review content earns links:
+
+**Research:**
+- What content format earns links on G2, Capterra, TrustRadius?
+- Real estate tech publications that cite comparison content
+- Industry analyst coverage patterns
+- Software review aggregators
+- "Best [X] for real estate" roundup articles
+
+**Identify:**
+- Link-worthy content formats (original data, calculators, benchmarks)
+- Publications that link to RE tech comparisons
+- Content gaps competitors haven't filled
+
+---
+
+## Hard Relevance Gates (MANDATORY)
+
+Before proposing ANY content topic, it MUST pass ALL THREE gates.
+
+### Gate 1: Product Relevance
+Every topic must pass ALL:
+- [ ] Directly relates to lead response, qualification, or appointment booking
+- [ ] Reader could naturally consider Prestyj as a solution
+- [ ] CTA is organic, not forced
+
+**If ANY fail → REJECT immediately**
+
+### Gate 2: Buyer Stage
+- [ ] Reader is actively evaluating solutions (not just learning about problems)
+- [ ] Reader has budget authority or influences budget holder
+- [ ] Content helps them make a decision, not understand the space
+
+**If ANY fail → REJECT immediately**
+
+### Gate 3: Scale Fit
+- [ ] Content speaks to 50+ office operations
+- [ ] Addresses multi-location coordination challenges
+- [ ] Would be shared in an enterprise buying committee
+
+**If ANY fail → REJECT immediately**
+
+---
+
+## Kill List (NEVER Create)
+
+Immediately reject any topic that is:
+- Regulatory/compliance content (FinCEN, fair housing, licensing)
+- Individual agent productivity tips
+- "What is [concept]" educational content
+- Industry news without direct competitive angle
+- Content for teams < 20 agents
+- General AI trends/futures content
+- Content where the CTA feels forced
+- News that doesn't involve a competitor or buying decision
 
 ---
 
 ## Phase 2: The Strategist
 
-After ALL Phase 1 agents complete, synthesize their findings into a strategic plan.
+After ALL Phase 1 agents complete, synthesize findings.
 
 ### Synthesis Process
 
-1. **Collect all intelligence** from the 10 agents
+1. **Collect all intelligence** from the 6 agents
 
-2. **Filter through ICP lens** - For every opportunity ask:
-   - "Will this attract someone who writes $20K-$50K checks without blinking?"
-   - "Does this speak to brokerage owners or individual agents?"
-   - "Is this enterprise-grade or solopreneur content?"
+2. **Apply the 3 Hard Gates** to every opportunity:
+   - Gate 1: Product Relevance ✓ or ✗
+   - Gate 2: Buyer Stage ✓ or ✗
+   - Gate 3: Scale Fit ✓ or ✗
+   - If ANY gate fails → drop the topic
 
-3. **Score opportunities** by:
-   - **Impact**: How much will this move the needle on rankings/traffic?
-   - **ICP Alignment**: How well does this attract enterprise buyers?
-   - **Effort**: How much work to implement?
-   - **Timing**: Is this timely/urgent?
+3. **Categorize approved topics** by content format:
+
+### Content Formats (Choose One Per Topic)
+
+**Format A: Vs Competitor Pages** (`/compare/prestyj-vs-[competitor]`)
+```
+/compare/prestyj-vs-conversica
+/compare/prestyj-vs-structurely
+/compare/prestyj-vs-internal-isa-team
+/compare/prestyj-vs-offshore-isa
+```
+
+**Format B: Best-For Pages** (`/best-for/[segment]`)
+```
+/best-for/real-estate-franchises
+/best-for/regional-brokerage-networks
+/best-for/pe-backed-platforms
+/best-for/commercial-real-estate
+```
+
+**Format C: Alternative Pages** (`/alternatives/[competitor]-alternatives`)
+```
+/alternatives/conversica-alternatives
+/alternatives/structurely-alternatives
+/alternatives/internal-isa-alternatives
+```
 
 4. **Create THE PLAN** with categorized actions:
 
 ```
-📋 THE PLAN
+THE PLAN
 
-🆕 CREATE (New Content)
-Priority | Topic | Target Keyword | Format | ICP Rationale
----------|-------|----------------|--------|---------------
-1        | ...   | ...            | ...    | ...
+COMPARISON PAGES (New)
+Priority | Type | URL | Target Keyword | Competitor Weakness
+---------|------|-----|----------------|---------------------
+1        | Vs   | /compare/prestyj-vs-conversica | conversica vs alternatives | [specific weakness]
 
-🔄 REPOSITION (Existing → Enterprise Angle)
-Post | Current Angle | New Angle | Changes Needed
------|---------------|-----------|---------------
-...  | ...           | ...       | ...
+BEST-FOR PAGES (New)
+Priority | URL | Target Segment | Key Pain Point
+---------|-----|----------------|----------------
+1        | /best-for/franchises | 50+ office franchises | Standardization across locations
 
-🔃 REFRESH (Update for Freshness)
-Post | Issues Found | Updates Needed
------|--------------|----------------
-...  | ...          | ...
+ALTERNATIVE PAGES (New)
+Priority | URL | Target Keyword | Primary Competitor
+---------|-----|----------------|--------------------
+1        | /alternatives/conversica | conversica alternatives real estate | Conversica
 
-🔗 INTERLINK (Cornerstone Linking)
-From | To | Anchor Text Suggestion
------|-----|------------------------
-...  | ... | ...
+EXISTING CONTENT
+Post | Current State | Action | Reason
+-----|---------------|--------|--------
+...  | Wrong audience | noindex | Attracts agents not VPs
+...  | Outdated | Refresh | 2024 data
 
-🔧 TECHNICAL (Quick Wins)
+TECHNICAL FIXES
 Issue | File(s) | Fix
 ------|---------|----
-...   | ...     | ...
-
-⬇️ DEPRIORITIZE (Wrong Audience)
-Post | Problem | Recommendation
------|---------|---------------
-...  | ...     | (noindex / remove internal links / leave as-is)
+No comparison schema | src/app/compare/ | Add ProductComparison schema
 ```
 
 5. **Present plan to user for approval** using AskUserQuestion:
-   - Show the top 3-5 highest priority actions
-   - Ask which actions to proceed with
-   - Allow user to adjust priorities or skip items
+   - Show top 3-5 highest priority comparison/vs pages
+   - Confirm all pass the 3 gates
+   - Ask which to proceed with
 
 ---
 
 ## Phase 3: Execution
 
-After user approves the plan, execute the approved actions.
+### Comparison Page Structure (Max 150 Lines)
 
-### For NEW Content Creation
-
-Create blog posts in `content/blog/` with this exact format:
+For `/compare/prestyj-vs-[competitor]`:
 
 ```mdx
 ---
-title: "Your SEO-Optimized Title Here"
-description: "Compelling meta description under 160 characters targeting enterprise buyers."
+title: "Prestyj vs [Competitor]: Enterprise Real Estate Lead Response Compared"
+description: "Compare Prestyj and [Competitor] for 50+ office operations. See pricing, features, and which is best for your brokerage network."
 date: "YYYY-MM-DD"
-author: "Prestyj Team"
 keywords:
-  - primary keyword
-  - secondary keyword
-  - long-tail variation
-  - enterprise-focused term
-image: /images/blog/slug-name.jpg
+  - prestyj vs [competitor]
+  - [competitor] alternative
+  - enterprise real estate lead response
 ---
 
-## TL;DR
+## Quick Comparison
 
-[Executive summary - respect their time, they're busy running brokerages]
+| Feature | Prestyj | [Competitor] |
+|---------|---------|--------------|
+| Built for RE | Yes | [No/Partial] |
+| Multi-office | [Detail] | [Detail] |
+| Response time | [Metric] | [Metric] |
+| Pricing model | [Model] | [Model] |
+| Integration | [Stack] | [Stack] |
 
-## Key Takeaways
+## Who Should Choose Prestyj
 
-- **Takeaway 1** - with specific data or stat
-- **Takeaway 2** - actionable insight
-- **Takeaway 3** - addresses enterprise scale
+- Franchise operations with 50+ offices
+- [Specific use case]
+- [Specific use case]
+
+## Who Should Choose [Competitor]
+
+- [Honest assessment]
+- [Specific use case]
+
+## [Competitor]'s Limitations at Scale
+
+Based on reviews and enterprise feedback:
+- [Specific limitation with source]
+- [Specific limitation with source]
+- [Specific limitation with source]
+
+## Pricing Comparison
+
+[Honest pricing comparison if available, or note that enterprise pricing requires consultation]
+
+## Switching From [Competitor]
+
+- Migration support available
+- [Integration detail]
+- [Timeline expectation]
 
 ---
 
-[Main content - written for decision-makers, not practitioners]
-[Use "brokerage," "team," "operation" language, not "agent" or "realtor"]
-[Include specific numbers, ROI framing, scale considerations]
-
----
-
-## Frequently Asked Questions
-
-### [Question targeting a long-tail keyword]?
-
-[Answer with expertise, link to relevant content]
-
----
-
-## Related Reading
-
-- **[Related Post Title](/blog/slug)** — Brief description
-- **[Another Related Post](/blog/other-slug)** — Brief description
-
----
-
-*[CTA appropriate for enterprise buyers - demo, consultation, not "free trial"]*
+**Ready to compare in detail?** [Talk to someone who switched from [Competitor]](/book-demo)
 ```
 
-### For Content REFRESH
+### Best-For Page Structure (Max 150 Lines)
 
-Update existing MDX files:
-1. Add or update the `updated` field in frontmatter: `updated: "YYYY-MM-DD"`
-2. Update any outdated statistics with current data
-3. Refresh year references (2024 → 2026, etc.)
-4. Add enterprise-focused sections if repositioning
-5. Strengthen internal links to cornerstone content
-6. Ensure FAQ section targets current search queries
+For `/best-for/[segment]`:
 
-### For INTERLINKING
+```mdx
+---
+title: "AI Lead Response for [Segment]: Built for Your Scale"
+description: "[Segment] need lead response that works across [X] offices. See how Prestyj handles [specific challenge]."
+date: "YYYY-MM-DD"
+keywords:
+  - AI lead response [segment]
+  - [segment] lead qualification
+  - best lead response for [segment]
+---
 
-Add internal links following these rules:
-- Link to cornerstone content from all related posts
-- Use descriptive, keyword-rich anchor text (not "click here")
-- Ensure new posts link to 2-3 existing relevant posts
-- Update old posts to link to newer relevant content
-- Create two-way linking where appropriate
+## The [Segment] Challenge
 
-### For TECHNICAL Fixes
+[2-3 sentences on specific pain point at this scale]
 
-Implement fixes directly in the codebase:
-- Schema markup improvements in page components
-- Meta tag additions/corrections
-- Internal linking in navigation or content
-- Any quick-win technical improvements identified
+| Challenge | Why Generic Solutions Fail |
+|-----------|---------------------------|
+| [Challenge 1] | [Specific failure mode] |
+| [Challenge 2] | [Specific failure mode] |
+| [Challenge 3] | [Specific failure mode] |
+
+## How Prestyj Addresses [Segment] Needs
+
+### [Specific Feature 1]
+[How it solves their specific problem]
+
+### [Specific Feature 2]
+[How it solves their specific problem]
+
+## Proof Points
+
+- "[Quote or stat from similar organization]"
+- [Metric from similar deployment]
+
+---
+
+**See how [similar organization type] uses Prestyj** → [Book Demo](/book-demo)
+```
+
+### Alternative Page Structure (Max 100 Lines)
+
+For `/alternatives/[competitor]-alternatives`:
+
+```mdx
+---
+title: "[Competitor] Alternatives for Real Estate: 2026 Comparison"
+description: "Looking for [Competitor] alternatives? Compare options for enterprise real estate lead response."
+date: "YYYY-MM-DD"
+keywords:
+  - [competitor] alternatives
+  - [competitor] alternatives real estate
+  - best [competitor] alternative
+---
+
+## Why Teams Switch From [Competitor]
+
+Based on G2/Capterra reviews and enterprise feedback:
+- [Reason 1 with specifics]
+- [Reason 2 with specifics]
+- [Reason 3 with specifics]
+
+## [Competitor] Alternatives Compared
+
+| Solution | Best For | Limitation |
+|----------|----------|------------|
+| Prestyj | 50+ office RE operations | [Honest limitation] |
+| [Alt 2] | [Use case] | [Limitation] |
+| [Alt 3] | [Use case] | [Limitation] |
+
+## Why Prestyj for Real Estate Enterprise
+
+- Built specifically for real estate lead response
+- [Specific differentiator]
+- [Specific differentiator]
+
+---
+
+**Considering a switch?** [Talk to our migration team](/book-demo)
+```
 
 ---
 
@@ -257,35 +417,22 @@ npm run lint
 npm run build
 ```
 
-Fix ALL errors before continuing. If build fails, fix issues and re-run.
+Fix ALL errors before continuing.
 
 ### Step 2: Verify Content
 
-- Confirm new blog posts appear in build output
-- Verify sitemap will include new content (check `src/app/sitemap.ts` logic)
-- Ensure no broken internal links were introduced
+- Confirm new pages appear in build output
+- Verify comparison/best-for/alternatives routes work
+- Check schema markup renders correctly
 
-### Step 3: Review Changes
-
-```bash
-git status
-git diff
-```
-
-Review all changes to ensure:
-- Blog posts have correct frontmatter format
-- No accidental deletions or overwrites
-- Changes align with approved plan
-
-### Step 4: Commit and Push
+### Step 3: Commit
 
 ```bash
 git add -A
-git commit -m "SEO: [brief description of main changes]
+git commit -m "SEO: Add [comparison/best-for/alternative] pages
 
-- [New content created, if any]
-- [Content refreshed, if any]
-- [Technical improvements, if any]
+- [List of pages created]
+- [Technical fixes if any]
 
 Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
 git push
@@ -295,39 +442,35 @@ git push
 
 ## Output Summary
 
-After completion, provide a summary:
-
 ```
-✅ SEO OPERATION COMPLETE
+SEO OPERATION COMPLETE
 
-📊 Intelligence Gathered
-- [Key insight 1]
-- [Key insight 2]
-- [Key insight 3]
+Competitor Intelligence
+- [Key competitor weakness identified]
+- [Comparison keyword opportunity]
 
-📝 Actions Taken
-- Created: [X] new posts
-- Refreshed: [X] existing posts
-- Interlinks added: [X]
-- Technical fixes: [X]
+Pages Created
+- /compare/prestyj-vs-X
+- /best-for/X
+- /alternatives/X-alternatives
 
-🎯 Expected Impact
-- [Primary keyword/topic now covered]
-- [Enterprise positioning strengthened by...]
-- [Technical improvement benefit]
+Gate Verification
+- All topics passed 3 hard gates
+- [X] topics rejected by Gate 1 (product relevance)
+- [X] topics rejected by Gate 2 (buyer stage)
+- [X] topics rejected by Gate 3 (scale fit)
 
-📅 Recommended Next Run
-- [Any time-sensitive follow-ups]
-- [Content to monitor for performance]
+Technical Improvements
+- [Schema/linking fixes]
 ```
 
 ---
 
-## Important Notes
+## Important Reminders
 
-- **ICP Filter**: Every decision must pass the test: "Does this attract $50K check writers?"
-- **Quality > Quantity**: One excellent enterprise-focused post beats five generic ones
-- **Freshness Signals**: Always use current date, reference current year (2026)
-- **Enterprise Language**: Use "brokerage," "team," "operation" — avoid "agent," "realtor" when possible
-- **ROI Framing**: Enterprise buyers think in ROI and scale, not features
-- **Internal Linking**: Every new post should link to and from existing cornerstone content
+- **BOFU Only**: Every page must help someone make a buying decision
+- **Comparison First**: Default to vs/alternative content over educational
+- **150 Line Max**: Scannable in 2-3 minutes, not comprehensive guides
+- **Hard Gates**: If a topic fails ANY gate, reject it immediately
+- **Enterprise Scale**: 50+ offices, VPs/Directors, $100K+ decisions
+- **Kill List**: Check every topic against the kill list before proceeding
