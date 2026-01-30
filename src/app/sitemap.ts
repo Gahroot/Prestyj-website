@@ -90,15 +90,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  // Best-for pages
-  const bestForRoutes: MetadataRoute.Sitemap = getAllBestForSlugs().map(
-    (slug) => ({
+  // Best-for pages - exclude noindex pages (targeting wrong ICP)
+  const noindexBestForSlugs = ["solo-agents", "new-agents"];
+  const bestForRoutes: MetadataRoute.Sitemap = getAllBestForSlugs()
+    .filter((slug) => !noindexBestForSlugs.includes(slug))
+    .map((slug) => ({
       url: `${baseUrl}/best-for/${slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
-    })
-  );
+    }));
 
   // Compare pages
   const compareRoutes: MetadataRoute.Sitemap = [
@@ -110,6 +111,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/compare/prestyj-vs-ylopo`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-conversica`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-structurely`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,

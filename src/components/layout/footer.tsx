@@ -20,6 +20,7 @@ const footerLinks = {
     { href: "/alternatives/structurely", label: "Prestyj vs Structurely" },
     { href: "/alternatives/cinc", label: "Prestyj vs CINC" },
     { href: "/alternatives/real-geeks", label: "Prestyj vs Real Geeks" },
+    { href: "/alternatives/conversica", label: "Prestyj vs Conversica" },
   ],
   resources: [
     { href: "/blog", label: "Blog" },
@@ -27,6 +28,12 @@ const footerLinks = {
     { href: "/blog/speed-to-lead", label: "Speed-to-Lead Guide" },
     { href: "/compare/prestyj-vs-isa", label: "Prestyj vs ISA" },
     { href: "/compare/prestyj-vs-ylopo", label: "Prestyj vs Ylopo" },
+    { href: "/compare/prestyj-vs-structurely", label: "Prestyj vs Structurely" },
+    { href: "/compare/prestyj-vs-conversica", label: "Prestyj vs Conversica" },
+  ],
+  solutions: [
+    { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
+    { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
@@ -38,7 +45,7 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-7 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
@@ -54,6 +61,23 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-foreground mb-4">Product</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Solutions */}
+          <div>
+            <h3 className="font-heading font-semibold text-foreground mb-4">Solutions</h3>
+            <ul className="space-y-3">
+              {footerLinks.solutions.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

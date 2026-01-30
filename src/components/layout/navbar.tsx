@@ -29,6 +29,9 @@ const alternativeLinks = [
   { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo" },
   { href: "/alternatives/human-isa", label: "Prestyj vs Human ISA" },
   { href: "/alternatives/structurely", label: "Prestyj vs Structurely" },
+  { href: "/alternatives/cinc", label: "Prestyj vs CINC" },
+  { href: "/alternatives/real-geeks", label: "Prestyj vs Real Geeks" },
+  { href: "/alternatives/conversica", label: "Prestyj vs Conversica" },
   { href: "/alternatives/follow-up-boss", label: "Prestyj + Follow Up Boss" },
 ];
 
