@@ -28,16 +28,22 @@ const alternativeLinks = [
   { href: "/alternatives", label: "All Alternatives" },
   { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo" },
   { href: "/alternatives/human-isa", label: "Prestyj vs Human ISA" },
+  { href: "/alternatives/internal-isa", label: "Prestyj vs Internal ISA Team" },
+  { href: "/alternatives/drift", label: "Prestyj vs Drift" },
   { href: "/alternatives/structurely", label: "Prestyj vs Structurely" },
   { href: "/alternatives/cinc", label: "Prestyj vs CINC" },
-  { href: "/alternatives/real-geeks", label: "Prestyj vs Real Geeks" },
   { href: "/alternatives/conversica", label: "Prestyj vs Conversica" },
+  { href: "/alternatives/real-geeks", label: "Prestyj vs Real Geeks" },
   { href: "/alternatives/follow-up-boss", label: "Prestyj + Follow Up Boss" },
 ];
 
 const bestForLinks = [
   { href: "/best-for", label: "All Use Cases" },
   { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
+  { href: "/best-for/real-estate-franchises", label: "Real Estate Franchises" },
+  { href: "/best-for/regional-brokerage-networks", label: "Regional Brokerages" },
+  { href: "/best-for/pe-backed-platforms", label: "PE-Backed Platforms" },
+  { href: "/best-for/commercial-real-estate", label: "Commercial Real Estate" },
   { href: "/best-for/isa-replacement", label: "ISA Replacement" },
 ];
 

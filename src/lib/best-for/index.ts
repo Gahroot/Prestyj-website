@@ -5,6 +5,8 @@ import { isaReplacement } from "./isa-replacement";
 import { newAgents } from "./new-agents";
 import { realEstateFranchises } from "./real-estate-franchises";
 import { regionalBrokerageNetworks } from "./regional-brokerage-networks";
+import { peBackedPlatforms } from "./pe-backed-platforms";
+import { commercialRealEstate } from "./commercial-real-estate";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -13,6 +15,8 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "new-agents": newAgents,
   "real-estate-franchises": realEstateFranchises,
   "regional-brokerage-networks": regionalBrokerageNetworks,
+  "pe-backed-platforms": peBackedPlatforms,
+  "commercial-real-estate": commercialRealEstate,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

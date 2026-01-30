@@ -6,6 +6,8 @@ import { cinc } from "./cinc";
 import { followUpBoss } from "./follow-up-boss";
 import { realGeeks } from "./real-geeks";
 import { conversica } from "./conversica";
+import { internalIsa } from "./internal-isa";
+import { drift } from "./drift";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -15,6 +17,8 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "follow-up-boss": followUpBoss,
   "real-geeks": realGeeks,
   conversica,
+  "internal-isa": internalIsa,
+  drift,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
