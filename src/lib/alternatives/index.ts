@@ -8,6 +8,8 @@ import { realGeeks } from "./real-geeks";
 import { conversica } from "./conversica";
 import { internalIsa } from "./internal-isa";
 import { drift } from "./drift";
+import { retell } from "./retell";
+import { vapi } from "./vapi";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -19,6 +21,8 @@ export const alternatives: Record<string, AlternativePageContent> = {
   conversica,
   "internal-isa": internalIsa,
   drift,
+  retell,
+  vapi,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
