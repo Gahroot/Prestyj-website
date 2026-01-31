@@ -20,20 +20,9 @@ import {
   Zap,
   Loader2,
 } from "lucide-react";
+import { qualificationFormSchema, type QualificationFormData } from "@/lib/validations/form-schemas";
 
-export interface QualificationData {
-  businessType: string;
-  revenue: string;
-  projectType: string;
-  timeline: string;
-  budget: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  companyName: string;
-  projectDetails: string;
-}
+export type QualificationData = QualificationFormData;
 
 interface QualificationFormProps {
   onComplete: (data: QualificationData) => void;
@@ -186,6 +175,7 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
     const step = STEPS[currentStep];
     const newErrors: Partial<Record<keyof QualificationData, string>> = {};
 
+    // Check which fields are required for the current step
     switch (step.id) {
       case "businessType":
         if (!formData.businessType) newErrors.businessType = "Please select an option";
@@ -203,17 +193,15 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
         if (!formData.budget) newErrors.budget = "Please select an option";
         break;
       case "contact":
-        if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
-        if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
-        if (!formData.email.trim()) newErrors.email = "Email is required";
-        else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) newErrors.email = "Invalid email";
-        if (!formData.phone.trim()) {
-          newErrors.phone = "Phone is required";
-        } else {
-          const phoneDigits = formatPhoneNumber(formData.phone);
-          if (phoneDigits.length !== 10) {
-            newErrors.phone = "Please enter a valid 10-digit US phone number";
-          }
+        // Use Zod schema for robust validation of contact fields
+        const contactResult = qualificationFormSchema.safeParse(formData);
+        if (!contactResult.success) {
+          contactResult.error.issues.forEach((issue) => {
+            const field = issue.path[0] as keyof QualificationData;
+            if (['firstName', 'lastName', 'email', 'phone'].includes(field)) {
+              newErrors[field] = issue.message;
+            }
+          });
         }
         break;
     }
@@ -246,7 +234,7 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
         `Timeline: ${TIMELINE_OPTIONS.find((t) => t.value === formData.timeline)?.label || formData.timeline}`,
         `Budget: ${BUDGET_OPTIONS.find((b) => b.value === formData.budget)?.label || formData.budget}`,
       ];
-      if (formData.projectDetails.trim()) {
+      if (formData.projectDetails && formData.projectDetails.trim()) {
         noteParts.push(`Project Details: ${formData.projectDetails.trim()}`);
       }
 
@@ -256,7 +244,7 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
           last_name: formData.lastName.trim() || undefined,
           phone_number: formatPhoneNumber(formData.phone),
           email: formData.email.trim() || undefined,
-          company_name: formData.companyName.trim() || undefined,
+          company_name: formData.companyName && formData.companyName.trim() || undefined,
           notes: noteParts.join("\n"),
           source: "qualification_form",
           trigger_call: false,

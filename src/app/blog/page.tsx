@@ -10,6 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 const siteUrl = "https://prestyj.com";
 
@@ -80,10 +81,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <SafeJsonLd data={jsonLd} />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

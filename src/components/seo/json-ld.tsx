@@ -1,4 +1,5 @@
 import type { Organization, WebSite, Product, FAQPage, WithContext } from "schema-dts";
+import { SafeJsonLd } from "./safe-json-ld";
 
 const siteConfig = {
   name: "PRESTYJ",
@@ -28,12 +29,7 @@ export function OrganizationJsonLd() {
     },
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <SafeJsonLd data={jsonLd} />;
 }
 
 export function WebSiteJsonLd() {
@@ -53,12 +49,7 @@ export function WebSiteJsonLd() {
     } as WebSite["potentialAction"],
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <SafeJsonLd data={jsonLd} />;
 }
 
 export function ProductJsonLd() {
@@ -87,12 +78,7 @@ export function ProductJsonLd() {
     },
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <SafeJsonLd data={jsonLd} />;
 }
 
 interface FAQItem {
@@ -114,12 +100,7 @@ export function FAQJsonLd({ faqs }: { faqs: FAQItem[] }) {
     })),
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <SafeJsonLd data={jsonLd} />;
 }
 
 export function SoftwareApplicationJsonLd() {
@@ -152,10 +133,5 @@ export function SoftwareApplicationJsonLd() {
     ],
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <SafeJsonLd data={jsonLd} />;
 }

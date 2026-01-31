@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/footer";
 import { blogSource } from "@/lib/source";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -129,10 +130,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <SafeJsonLd data={jsonLd} />
       <Navbar />
       <main className="pt-24 pb-16">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

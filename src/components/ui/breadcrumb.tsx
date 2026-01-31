@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ChevronRight } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { SafeJsonLd } from "@/components/seo/safe-json-ld"
 
 export interface BreadcrumbItem {
   label: string
@@ -28,10 +29,7 @@ function Breadcrumb({ items, className, ...props }: BreadcrumbProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <SafeJsonLd data={jsonLd} />
       <nav
         data-slot="breadcrumb"
         aria-label="Breadcrumb"
