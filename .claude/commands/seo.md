@@ -7,7 +7,7 @@ description: Enterprise SEO operation - competitor research, comparison content,
 
 This command runs a focused SEO operation designed to create decision-stage content for enterprise buyers evaluating lead response solutions. Target: VPs/Directors at 50+ office operations who write $100K+ checks.
 
-**Primary Output**: Comparison pages, vs-competitor content, best-for pages, and alternative roundups—NOT educational articles.
+**Primary Output**: blog content, Comparison pages, vs-competitor content, best-for pages, and alternative roundups—NOT educational articles.
 
 ---
 
@@ -17,12 +17,6 @@ Launch ALL 6 agents simultaneously using the Task tool.
 
 ### Agent 1: Competitor Intelligence
 Research competitors that enterprise buyers are actively evaluating:
-
-**Direct Competitors:**
-- Conversica (enterprise AI sales assistant)
-- Structurely (real estate AI chat)
-- CINC AI (real estate lead conversion)
-- Ylopo AI (follow-up automation)
 
 **Build-vs-Buy Alternatives:**
 - Internal ISA teams (hiring, training, management costs)

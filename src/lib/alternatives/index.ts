@@ -10,6 +10,10 @@ import { internalIsa } from "./internal-isa";
 import { drift } from "./drift";
 import { retell } from "./retell";
 import { vapi } from "./vapi";
+import { boomtown } from "./boomtown";
+import { blandAi } from "./bland-ai";
+import { lindy } from "./lindy";
+import { lofty } from "./lofty";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -23,6 +27,10 @@ export const alternatives: Record<string, AlternativePageContent> = {
   drift,
   retell,
   vapi,
+  boomtown,
+  "bland-ai": blandAi,
+  lindy,
+  lofty,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
