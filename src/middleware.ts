@@ -1,12 +1,10 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 /**
  * Security middleware for Next.js 16
  * Implements Content Security Policy and other security headers
  */
-export function middleware(request: NextRequest) {
-  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
-
+export function middleware() {
   // Content Security Policy directives
   const cspDirectives = [
     { name: "default-src", values: ["'self'"] },
@@ -14,14 +12,12 @@ export function middleware(request: NextRequest) {
       name: "script-src",
       values: [
         "'self'",
-        `'nonce-${nonce}'`,
-        "'strict-dynamic'",
+        // Required for Next.js hydration and inline scripts
+        "'unsafe-inline'",
+        // Required for Next.js in some cases (especially with dynamic imports)
+        "'unsafe-eval'",
         // Cal.com embed (required for booking)
         "https://app.cal.com",
-        // Allow unsafe-inline in development only (for hot reload)
-        ...(process.env.NODE_ENV === "development" ? ["'unsafe-inline'"] : []),
-        // Allow unsafe-eval in development only (for React DevTools)
-        ...(process.env.NODE_ENV === "development" ? ["'unsafe-eval'"] : []),
       ],
     },
     {
@@ -108,10 +104,6 @@ export function middleware(request: NextRequest) {
     "Permissions-Policy",
     "geolocation=(), microphone=(), camera=()"
   );
-
-  // Pass nonce to the application via request headers
-  const requestHeaders = new Headers(request.headers);
-  requestHeaders.set("x-nonce", nonce);
 
   return response;
 }
