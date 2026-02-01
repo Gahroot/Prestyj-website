@@ -1,6 +1,11 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const retell: AlternativePageContent = {
+export const retell: AlternativePageContent = createAlternativePage({
   slug: "retell",
   type: "direct-competitor",
   competitor: {
@@ -8,7 +13,8 @@ export const retell: AlternativePageContent = {
     shortName: "Retell",
     pricing: "$0.07-0.31/min (after add-ons)",
     website: "https://retellai.com",
-    description: "Developer platform for building AI voice agents with drag-and-drop builder",
+    description:
+      "Developer platform for building AI voice agents with drag-and-drop builder",
   },
   meta: {
     title: "Best Retell AI Alternative for Real Estate | Prestyj",
@@ -25,8 +31,6 @@ export const retell: AlternativePageContent = {
   },
   hero: {
     badge: "Retell AI Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Retell AI Alternative?",
     subheadline:
       "Retell is a powerful developer platform for building AI voice agents. But if you want done-for-you lead response without the technical complexity, there's a better option.",
   },
@@ -70,17 +74,12 @@ export const retell: AlternativePageContent = {
         competitor: false,
         note: "Prestyj specializes in reviving dead leads",
       },
-      {
-        feature: "Built-in CRM",
-        prestyj: true,
-        competitor: false,
-        note: "Retell requires external CRM integration",
-      },
-      {
-        feature: "24/7 AI Response",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(
+        STANDARD_FEATURES.BUILT_IN_CRM,
+        false,
+        "Retell requires external CRM integration"
+      ),
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       {
         feature: "Appointment Booking",
         prestyj: true,
@@ -110,7 +109,7 @@ export const retell: AlternativePageContent = {
         "Not optimized for any specific industry",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Predictable pricing",
       note: "Based on your needs",
       pros: [
@@ -120,7 +119,6 @@ export const retell: AlternativePageContent = {
         "Built-in CRM included",
         "Done-for-you management",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -189,4 +187,4 @@ export const retell: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "No credit card required. No technical setup needed.",
   },
-};
+});

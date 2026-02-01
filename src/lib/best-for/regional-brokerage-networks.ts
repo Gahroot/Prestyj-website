@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const regionalBrokerageNetworks: BestForPageContent = {
+export const regionalBrokerageNetworks: BestForPageContent = createBestForPage({
   slug: "regional-brokerage-networks",
   niche: {
     name: "Regional Brokerage Networks",
@@ -23,32 +25,32 @@ export const regionalBrokerageNetworks: BestForPageContent = {
   },
   hero: {
     badge: "Built for Regional Operations",
-    headline: "The Best Lead Response for",
     headlineAccent: "Regional Brokerage Networks",
     subheadline:
       "Coordinate lead response across your regional portfolio. Centralized reporting, consistent execution, and the ROI metrics your leadership team needs.",
+    pattern: "BEST_LEAD_RESPONSE_FOR",
   },
   whyBestFor: [
     {
-      icon: "BarChart3",
+      icon: "BarChart3" as IconName,
       title: "Consolidated Reporting",
       description:
         "Roll up lead response metrics across all entities. No more weeks spent aggregating spreadsheets—see portfolio performance in real-time.",
     },
     {
-      icon: "Building2",
+      icon: "Building2" as IconName,
       title: "Multi-Entity Management",
       description:
         "Whether you operate through SPVs, JVs, or direct offices, manage lead response consistently while respecting entity boundaries.",
     },
     {
-      icon: "TrendingUp",
+      icon: "TrendingUp" as IconName,
       title: "Prove ROI to Leadership",
       description:
         "Clear attribution from lead response to closed deals. Justify your technology investment with metrics your CFO understands.",
     },
     {
-      icon: "Target",
+      icon: "Target" as IconName,
       title: "Regional Coordination",
       description:
         "Route leads across your network based on territory, specialization, or capacity. Maximize opportunities across your footprint.",
@@ -120,6 +122,7 @@ export const regionalBrokerageNetworks: BestForPageContent = {
         others: "Data isolation challenges",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -153,7 +156,6 @@ export const regionalBrokerageNetworks: BestForPageContent = {
     subheadline:
       "See how regional brokerage networks use Prestyj for portfolio-level visibility, consistent execution, and the ROI metrics leadership requires.",
     buttonText: "Book a Network Demo",
-    buttonHref: "/book-demo",
     footnote: "Enterprise deployment. Portfolio management included.",
   },
-};
+});

@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const realEstateInvestors: BestForPageContent = {
+export const realEstateInvestors: BestForPageContent = createBestForPage({
   slug: "real-estate-investors",
   niche: {
     name: "Real Estate Investors",
@@ -23,32 +25,32 @@ export const realEstateInvestors: BestForPageContent = {
   },
   hero: {
     badge: "Built for Real Estate Investors",
-    headline: "The Best AI for",
     headlineAccent: "Real Estate Investors",
     subheadline:
       "Sort motivated sellers from tire-kickers instantly. Qualify leads, collect property details, and book walkthroughs 24/7 so you focus on analyzing deals and making offers.",
+    pattern: "BEST_AI_FOR",
   },
   whyBestFor: [
     {
-      icon: "Target",
+      icon: "Target" as IconName,
       title: "Instant Motivated Seller Qualification",
       description:
         "AI asks the right questions upfront: timeline, motivation, condition, liens. Only qualified leads reach you, saving hours of wasted calls with unmotivated sellers.",
     },
     {
-      icon: "TrendingUp",
+      icon: "TrendingUp" as IconName,
       title: "Handle High-Volume Lead Flow",
       description:
         "Running PPC, direct mail, and SEO campaigns? AI responds to 100+ leads per day with the same speed and quality. Scale your marketing without scaling your team.",
     },
     {
-      icon: "ClipboardList",
+      icon: "ClipboardList" as IconName,
       title: "Automated Property Detail Collection",
       description:
         "AI gathers critical info before the walkthrough: square footage, bedrooms, bathrooms, condition, liens, repairs needed. You show up prepared to make offers.",
     },
     {
-      icon: "Calendar",
+      icon: "Calendar" as IconName,
       title: "Book Walkthroughs While You Sleep",
       description:
         "Motivated sellers move fast. AI books property walkthroughs to your calendar 24/7, even at midnight when sellers are browsing. Never lose a deal to a faster competitor.",
@@ -115,6 +117,7 @@ export const realEstateInvestors: BestForPageContent = {
         others: "High abandonment rate drives up cost",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -148,6 +151,5 @@ export const realEstateInvestors: BestForPageContent = {
     subheadline:
       "See how Prestyj qualifies motivated sellers, collects property details, and books walkthroughs automatically. Book a demo and watch AI handle investor leads in real-time.",
     buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
   },
-};
+});

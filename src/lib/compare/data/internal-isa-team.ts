@@ -1,7 +1,7 @@
-import { TrendingDown, Clock, Building2, BarChart3 } from "lucide-react";
 import type { ComparePageData, CompareMetadata } from "../types";
+import { createComparePage } from "@/lib/content-factory";
 
-export const internalIsaTeamCompareData: ComparePageData = {
+export const internalIsaTeamCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-internal-isa-team",
   competitorName: "Internal ISA Team",
   hero: {
@@ -32,10 +32,8 @@ export const internalIsaTeamCompareData: ComparePageData = {
   ],
   pricing: {
     prestyj: {
-      name: "Prestyj AI",
       price: "Custom pricing",
       priceSubtext: "Scaled for enterprise operations",
-      highlight: true,
       features: [
         { text: "Zero turnover risk", included: true },
         { text: "Deploys in days, not months", included: true },
@@ -45,7 +43,6 @@ export const internalIsaTeamCompareData: ComparePageData = {
       ],
     },
     competitor: {
-      name: "Internal ISA Team",
       price: "$57K-$69K",
       priceSubtext: "/year per ISA + benefits, taxes, management, turnover",
       features: [
@@ -116,25 +113,25 @@ export const internalIsaTeamCompareData: ComparePageData = {
     description: "The economics change at scale—here's why VPs and Directors make the move",
     reasons: [
       {
-        icon: TrendingDown,
+        icon: "TrendingDown",
         title: "Eliminate Turnover Costs",
         description:
           "At 30% annual turnover, a 50-office operation loses ~15 ISAs per year. At $18K per failed hire plus recruitment, turnover alone costs hundreds of thousands annually.",
       },
       {
-        icon: Clock,
+        icon: "Clock",
         title: "Skip the 4-5 Month Ramp Period",
         description:
           "New ISAs require $10K-$12.5K in salary before producing results. AI deploys fully operational in days, not months.",
       },
       {
-        icon: Building2,
+        icon: "Building2",
         title: "Scale Without Linear Cost Increase",
         description:
           "Doubling your offices doesn't mean doubling ISA headcount. AI scales to handle increased volume without proportional cost increases.",
       },
       {
-        icon: BarChart3,
+        icon: "BarChart3",
         title: "Unified Performance Visibility",
         description:
           "See lead response metrics across all 50+ offices in real-time. No more waiting for monthly reports or reconciling data from different locations.",
@@ -166,10 +163,9 @@ export const internalIsaTeamCompareData: ComparePageData = {
     description:
       "See how enterprise brokerages are replacing unpredictable ISA teams with consistent AI lead response. Calculate your potential savings.",
     buttonText: "Book Your Enterprise Demo",
-    buttonHref: "/book-demo",
     disclaimer: "See multi-office deployment. Calculate your ISA cost savings.",
   },
-};
+});
 
 export const internalIsaTeamMetadata: CompareMetadata = {
   slug: "prestyj-vs-internal-isa-team",

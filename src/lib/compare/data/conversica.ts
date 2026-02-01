@@ -1,7 +1,11 @@
-import { Clock, DollarSign, Zap, Building2 } from "lucide-react";
 import type { ComparePageData, CompareMetadata } from "../types";
+import {
+  createComparePage,
+  buildCompareFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const conversicaCompareData: ComparePageData = {
+export const conversicaCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-conversica",
   competitorName: "Conversica",
   hero: {
@@ -32,10 +36,8 @@ export const conversicaCompareData: ComparePageData = {
   ],
   pricing: {
     prestyj: {
-      name: "Prestyj",
       price: "Custom pricing",
       priceSubtext: "Scaled for your operation",
-      highlight: true,
       features: [
         { text: "Built exclusively for real estate", included: true },
         { text: "Multi-office management included", included: true },
@@ -47,7 +49,6 @@ export const conversicaCompareData: ComparePageData = {
       ],
     },
     competitor: {
-      name: "Conversica",
       price: "$2,999+",
       priceSubtext: "/month + Hidden enterprise costs",
       features: [
@@ -75,21 +76,9 @@ export const conversicaCompareData: ComparePageData = {
       competitor: "Limited",
       note: "Prestyj built for 50+ office operations from day one",
     },
-    {
-      feature: "AI Text Conversations",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "AI Voice Assistants",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "24/7 Lead Response",
-      prestyj: true,
-      competitor: true,
-    },
+    buildCompareFeature(STANDARD_FEATURES.AI_TEXT, true),
+    buildCompareFeature(STANDARD_FEATURES.AI_VOICE, true),
+    buildCompareFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
     {
       feature: "Same-Day Implementation",
       prestyj: true,
@@ -115,25 +104,25 @@ export const conversicaCompareData: ComparePageData = {
       "Key reasons VPs and Directors at 50+ office operations make the switch",
     reasons: [
       {
-        icon: Building2,
+        icon: "Building2",
         title: "Purpose-Built for Real Estate",
         description:
           "Conversica serves 20+ industries. Prestyj is built exclusively for real estate with workflows, compliance, and terminology your teams already understand.",
       },
       {
-        icon: Clock,
+        icon: "Clock",
         title: "Faster Time to Value",
         description:
           "Conversica requires 2+ weeks of setup plus ongoing strategy calls. Prestyj deploys across your offices in days, not months.",
       },
       {
-        icon: DollarSign,
+        icon: "DollarSign",
         title: "Predictable Total Cost",
         description:
           "Conversica's $2,999/month is just the start—customization, training, and maintenance add significantly. Prestyj pricing includes everything.",
       },
       {
-        icon: Zap,
+        icon: "Zap",
         title: "Enterprise Operations Focus",
         description:
           "Multi-location dashboards, standardized workflows, and portfolio-level reporting designed for VPs managing 50+ offices.",
@@ -165,10 +154,9 @@ export const conversicaCompareData: ComparePageData = {
     description:
       "Book a demo to see how Prestyj handles lead response across your entire operation—no lengthy implementation required.",
     buttonText: "Book Your Enterprise Demo",
-    buttonHref: "/book-demo",
     disclaimer: "See multi-office capabilities. No commitment required.",
   },
-};
+});
 
 export const conversicaMetadata: CompareMetadata = {
   slug: "prestyj-vs-conversica",

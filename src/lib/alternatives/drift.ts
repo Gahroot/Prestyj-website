@@ -1,6 +1,11 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const drift: AlternativePageContent = {
+export const drift: AlternativePageContent = createAlternativePage({
   slug: "drift",
   type: "direct-competitor",
   competitor: {
@@ -8,7 +13,8 @@ export const drift: AlternativePageContent = {
     shortName: "Drift",
     pricing: "$60K+/year + seat costs",
     website: "https://drift.com",
-    description: "Enterprise conversational AI platform for B2B sales teams, now part of Salesloft",
+    description:
+      "Enterprise conversational AI platform for B2B sales teams, now part of Salesloft",
   },
   meta: {
     title: "Drift Alternative for Real Estate Enterprise | Prestyj",
@@ -26,8 +32,6 @@ export const drift: AlternativePageContent = {
   },
   hero: {
     badge: "Drift Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Drift Enterprise Alternative?",
     subheadline:
       "Drift is a proven B2B sales platform—but it wasn't built for real estate. Compare implementation timelines, total costs, and real estate-specific capabilities.",
   },
@@ -55,13 +59,10 @@ export const drift: AlternativePageContent = {
         feature: "Built for Real Estate",
         prestyj: true,
         competitor: false,
-        note: "Drift is built for generic B2B sales, requires customization for RE workflows",
+        note:
+          "Drift is built for generic B2B sales, requires customization for RE workflows",
       },
-      {
-        feature: "AI Text Conversations",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
       {
         feature: "AI Voice Assistants",
         prestyj: true,
@@ -78,7 +79,8 @@ export const drift: AlternativePageContent = {
         feature: "Real Estate CRM Integrations",
         prestyj: true,
         competitor: false,
-        note: "No native Follow Up Boss, BoomTown, kvCORE, or Sierra integration",
+        note:
+          "No native Follow Up Boss, BoomTown, kvCORE, or Sierra integration",
       },
       {
         feature: "Multi-Office Management",
@@ -116,7 +118,7 @@ export const drift: AlternativePageContent = {
         "Routing logic struggles with complex scenarios",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Scaled for real estate operations",
       pros: [
@@ -126,7 +128,6 @@ export const drift: AlternativePageContent = {
         "Multi-office management included",
         "No per-seat add-on costs",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -194,4 +195,4 @@ export const drift: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "Deploy in days, not months. No per-seat add-ons.",
   },
-};
+});

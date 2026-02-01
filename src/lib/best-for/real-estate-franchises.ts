@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const realEstateFranchises: BestForPageContent = {
+export const realEstateFranchises: BestForPageContent = createBestForPage({
   slug: "real-estate-franchises",
   niche: {
     name: "Real Estate Franchises",
@@ -23,32 +25,32 @@ export const realEstateFranchises: BestForPageContent = {
   },
   hero: {
     badge: "Built for Franchise Operations",
-    headline: "The Best Lead Response for",
     headlineAccent: "Real Estate Franchises",
     subheadline:
       "Standardize lead response across 50+ offices. Ensure every location meets your SLAs while maintaining portfolio-level visibility and control.",
+    pattern: "BEST_LEAD_RESPONSE_FOR",
   },
   whyBestFor: [
     {
-      icon: "Building2",
+      icon: "Building2" as IconName,
       title: "Multi-Location Standardization",
       description:
         "Every office responds consistently. No more variance in lead handling quality between your top-performing and struggling locations.",
     },
     {
-      icon: "BarChart3",
+      icon: "BarChart3" as IconName,
       title: "Portfolio-Level Visibility",
       description:
         "See lead response performance across your entire franchise in real-time. Identify underperformers before they become problems.",
     },
     {
-      icon: "Shield",
+      icon: "Shield" as IconName,
       title: "Franchise SLA Compliance",
       description:
         "Enforce response time standards across all locations automatically. AI ensures every lead gets responded to within your franchise requirements.",
     },
     {
-      icon: "Target",
+      icon: "Target" as IconName,
       title: "Centralized Control, Local Execution",
       description:
         "Set standards at headquarters while allowing individual offices to customize within your brand guidelines.",
@@ -120,6 +122,7 @@ export const realEstateFranchises: BestForPageContent = {
         others: "Requires constant enforcement",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -153,7 +156,6 @@ export const realEstateFranchises: BestForPageContent = {
     subheadline:
       "See how leading franchise operations use Prestyj to ensure consistent lead response across 50+ offices. Portfolio visibility, SLA compliance, and zero turnover risk.",
     buttonText: "Book a Franchise Demo",
-    buttonHref: "/book-demo",
     footnote: "Enterprise deployment. Multi-location management included.",
   },
-};
+});

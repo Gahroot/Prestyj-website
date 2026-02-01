@@ -1,6 +1,7 @@
 import type { AlternativePageContent } from "./types";
+import { createAlternativePage } from "@/lib/content-factory";
 
-export const realGeeks: AlternativePageContent = {
+export const realGeeks: AlternativePageContent = createAlternativePage({
   slug: "real-geeks",
   type: "integration-partner",
   competitor: {
@@ -23,8 +24,6 @@ export const realGeeks: AlternativePageContent = {
   },
   hero: {
     badge: "Real Geeks Integration",
-    headline: "Add Instant AI Response to",
-    headlineAccent: "Your Real Geeks Setup",
     subheadline:
       "Real Geeks generates the leads. Prestyj engages them instantly. Together, you convert more leads to appointments.",
   },
@@ -107,7 +106,7 @@ export const realGeeks: AlternativePageContent = {
         "Dead leads need manual outreach",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Enhances your Real Geeks",
       pros: [
@@ -116,7 +115,6 @@ export const realGeeks: AlternativePageContent = {
         "24/7 automated engagement",
         "Hands-off appointment booking",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -183,4 +181,4 @@ export const realGeeks: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "Works alongside Real Geeks. No migration needed.",
   },
-};
+});

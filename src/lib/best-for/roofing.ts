@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const roofing: BestForPageContent = {
+export const roofing: BestForPageContent = createBestForPage({
   slug: "roofing",
   niche: {
     name: "Roofing Contractors",
@@ -22,32 +24,32 @@ export const roofing: BestForPageContent = {
   },
   hero: {
     badge: "Roofing AI",
-    headline: "AI Agents Built for",
     headlineAccent: "Roofing Contractors",
     subheadline:
       "Storm hits. Calls surge. Homeowners need answers now. AI responds to every emergency call, books inspections, and qualifies insurance claims—24/7 during storm season.",
+    pattern: "AI_AGENTS_BUILT_FOR",
   },
   whyBestFor: [
     {
-      icon: "CloudRain",
+      icon: "CloudRain" as IconName,
       title: "Handle Storm Surge Demand",
       description:
         "After major weather events, call volume explodes. AI scales instantly to handle 100+ calls simultaneously while competitors miss opportunities.",
     },
     {
-      icon: "Phone",
+      icon: "Phone" as IconName,
       title: "Never Miss Emergency Calls",
       description:
         "Homeowners call the moment they see damage—often outside business hours. AI answers every call instantly, even at 6 AM after overnight storms.",
     },
     {
-      icon: "Calendar",
+      icon: "Calendar" as IconName,
       title: "Automated Inspection Booking",
       description:
         "AI books roof inspections directly on your schedule. Customers get confirmed times; your estimators get a full pipeline.",
     },
     {
-      icon: "FileText",
+      icon: "FileText" as IconName,
       title: "Insurance Claim Coordination",
       description:
         "AI captures critical insurance details upfront: policy info, adjuster contact, claim number. Your team arrives prepared for every insurance job.",
@@ -119,6 +121,7 @@ export const roofing: BestForPageContent = {
         others: "$35,000-45,000+ for receptionist",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -152,7 +155,6 @@ export const roofing: BestForPageContent = {
     subheadline:
       "Every missed call during storm season is a $15,000 roof job to your competitor. Book a demo to see how AI captures every opportunity.",
     buttonText: "Book Your Demo",
-    buttonHref: "/book-demo",
     footnote: "No credit card required. Perfect for roofing contractors of all sizes.",
   },
-};
+});

@@ -1,13 +1,19 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const structurely: AlternativePageContent = {
+export const structurely: AlternativePageContent = createAlternativePage({
   slug: "structurely",
   type: "direct-competitor",
   competitor: {
     name: "Structurely",
     pricing: "$450/mo (250 leads)",
     website: "https://structurely.com",
-    description: "AI assistant for real estate lead qualification and appointment setting",
+    description:
+      "AI assistant for real estate lead qualification and appointment setting",
   },
   meta: {
     title: "Best Structurely Alternative for Real Estate | Prestyj",
@@ -23,8 +29,6 @@ export const structurely: AlternativePageContent = {
   },
   hero: {
     badge: "Structurely Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Structurely Alternative?",
     subheadline:
       "Both platforms offer AI-powered lead qualification. But if you're looking for lead reactivation and an all-in-one solution, there's a better option.",
   },
@@ -44,22 +48,13 @@ export const structurely: AlternativePageContent = {
   ],
   comparison: {
     features: [
-      {
-        feature: "AI Text Conversations",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "AI Voice Calling",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "Built-in CRM",
-        prestyj: true,
-        competitor: false,
-        note: "Structurely requires external CRM",
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, true),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.BUILT_IN_CRM,
+        false,
+        "Structurely requires external CRM"
+      ),
       {
         feature: "Lead Reactivation",
         prestyj: true,
@@ -72,16 +67,8 @@ export const structurely: AlternativePageContent = {
         competitor: true,
         note: "Structurely caps at 250 leads/mo on base plan",
       },
-      {
-        feature: "24/7 Response",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "Appointment Booking",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
+      buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
       {
         feature: "Done-For-You Setup",
         prestyj: true,
@@ -93,17 +80,14 @@ export const structurely: AlternativePageContent = {
       price: "$450",
       period: "/month",
       note: "250 lead limit",
-      pros: [
-        "Established platform",
-        "AI voice calling included",
-      ],
+      pros: ["Established platform", "AI voice calling included"],
       cons: [
         "Per-lead caps on base plan",
         "No built-in CRM",
         "Limited to new lead response (no reactivation)",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Based on your needs",
       pros: [
@@ -112,7 +96,6 @@ export const structurely: AlternativePageContent = {
         "Lead reactivation included",
         "Done-for-you setup and management",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -177,6 +160,7 @@ export const structurely: AlternativePageContent = {
       "See how Prestyj reactivates your dead leads AND responds instantly to new ones. Book a demo to learn more.",
     buttonText: "Book Your Free Demo",
     buttonHref: "/book-demo",
-    footnote: "No credit card required. See your lead reactivation potential in minutes.",
+    footnote:
+      "No credit card required. See your lead reactivation potential in minutes.",
   },
-};
+});

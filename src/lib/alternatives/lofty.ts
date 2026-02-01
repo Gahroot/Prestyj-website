@@ -1,6 +1,7 @@
 import type { AlternativePageContent } from "./types";
+import { createAlternativePage } from "@/lib/content-factory";
 
-export const lofty: AlternativePageContent = {
+export const lofty: AlternativePageContent = createAlternativePage({
   slug: "lofty",
   type: "integration-partner",
   competitor: {
@@ -8,7 +9,8 @@ export const lofty: AlternativePageContent = {
     shortName: "Lofty",
     pricing: "$500-1,500+/mo",
     website: "https://golofty.com",
-    description: "AI-powered CRM platform with lead generation, texting, and automation for real estate",
+    description:
+      "AI-powered CRM platform with lead generation, texting, and automation for real estate",
   },
   meta: {
     title: "Lofty Alternative | Add AI Voice Calling to Lofty CRM | Prestyj",
@@ -27,25 +29,10 @@ export const lofty: AlternativePageContent = {
   },
   hero: {
     badge: "Lofty Integration",
-    headline: "Supercharge Your Lofty CRM with",
-    headlineAccent: "AI Voice Calling",
     subheadline:
       "You don't need to replace Lofty. Add instant AI voice response and dead lead reactivation while keeping the CRM you already have.",
   },
-  industryStats: [
-    {
-      stat: "47 sec",
-      description: "average AI voice response time",
-    },
-    {
-      stat: "78%",
-      description: "of buyers choose first responder",
-    },
-    {
-      stat: "23%",
-      description: "dead leads reactivated with AI outreach",
-    },
-  ],
+  industryStats: "reactivation",
   comparison: {
     features: [
       {
@@ -113,7 +100,7 @@ export const lofty: AlternativePageContent = {
         "High price point for full features",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Integrates with your Lofty CRM",
       pros: [
@@ -122,7 +109,6 @@ export const lofty: AlternativePageContent = {
         "24/7 automated voice engagement",
         "Syncs appointments back to Lofty",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -187,6 +173,7 @@ export const lofty: AlternativePageContent = {
       "Keep the CRM you love. Add the AI voice response you're missing. See how Prestyj integrates with Lofty.",
     buttonText: "Book Your Free Demo",
     buttonHref: "/book-demo",
-    footnote: "Works alongside your existing Lofty setup. No migration required.",
+    footnote:
+      "Works alongside your existing Lofty setup. No migration required.",
   },
-};
+});

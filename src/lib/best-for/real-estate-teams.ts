@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const realEstateTeams: BestForPageContent = {
+export const realEstateTeams: BestForPageContent = createBestForPage({
   slug: "real-estate-teams",
   niche: {
     name: "Real Estate Teams",
@@ -22,32 +24,32 @@ export const realEstateTeams: BestForPageContent = {
   },
   hero: {
     badge: "Built for Real Estate Teams",
-    headline: "The Best Lead Response for",
     headlineAccent: "Real Estate Teams",
     subheadline:
       "Give every lead the instant, consistent response they deserve. Intelligent routing, 24/7 coverage, and zero ISA turnover headaches.",
+    pattern: "BEST_LEAD_RESPONSE_FOR",
   },
   whyBestFor: [
     {
-      icon: "Users",
+      icon: "Users" as IconName,
       title: "Intelligent Lead Distribution",
       description:
         "Route leads to the right agent based on availability, specialty, location, or round-robin. Every lead gets to the best agent for that opportunity.",
     },
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "Consistent 24/7 Coverage",
       description:
         "No more coverage gaps when ISAs are sick, quit, or on vacation. AI provides the same quality response at 3am as 3pm.",
     },
     {
-      icon: "Zap",
+      icon: "Zap" as IconName,
       title: "Eliminate Training Time",
       description:
         "Stop spending 2-4 weeks training new ISAs who might leave in 6 months. AI is ready instantly and never forgets your scripts.",
     },
     {
-      icon: "TrendingUp",
+      icon: "TrendingUp" as IconName,
       title: "Scale Instantly",
       description:
         "Double your lead volume without doubling your staff. AI handles unlimited leads with the same response quality.",
@@ -119,6 +121,7 @@ export const realEstateTeams: BestForPageContent = {
         others: "Varies by individual",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -152,6 +155,5 @@ export const realEstateTeams: BestForPageContent = {
     subheadline:
       "See how top real estate teams use Prestyj to respond to every lead instantly, route opportunities intelligently, and scale without hiring. Book a team demo today.",
     buttonText: "Book a Team Demo",
-    buttonHref: "/book-demo",
   },
-};
+});

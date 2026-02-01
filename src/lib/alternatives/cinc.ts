@@ -1,6 +1,11 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const cinc: AlternativePageContent = {
+export const cinc: AlternativePageContent = createAlternativePage({
   slug: "cinc",
   type: "direct-competitor",
   competitor: {
@@ -8,7 +13,8 @@ export const cinc: AlternativePageContent = {
     shortName: "CINC",
     pricing: "$1,500+/mo",
     website: "https://cincpro.com",
-    description: "All-in-one real estate platform with lead generation, CRM, and AI",
+    description:
+      "All-in-one real estate platform with lead generation, CRM, and AI",
   },
   meta: {
     title: "Best CINC Alternative for Real Estate | Prestyj",
@@ -24,8 +30,6 @@ export const cinc: AlternativePageContent = {
   },
   hero: {
     badge: "CINC Alternative",
-    headline: "Looking for a",
-    headlineAccent: "CINC Alternative?",
     subheadline:
       "CINC is powerful but complex. If you're looking for instant AI response and lead reactivation without the enterprise overhead, there's a simpler path.",
   },
@@ -45,11 +49,7 @@ export const cinc: AlternativePageContent = {
   ],
   comparison: {
     features: [
-      {
-        feature: "AI Lead Response",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
       {
         feature: "Lead Generation",
         prestyj: false,
@@ -62,11 +62,7 @@ export const cinc: AlternativePageContent = {
         competitor: false,
         note: "Prestyj revives your dead database",
       },
-      {
-        feature: "CRM Included",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
       {
         feature: "Simple Setup",
         prestyj: true,
@@ -107,7 +103,7 @@ export const cinc: AlternativePageContent = {
         "No dedicated lead reactivation",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Designed for solo agents to small teams",
       pros: [
@@ -116,7 +112,6 @@ export const cinc: AlternativePageContent = {
         "Done-for-you service",
         "Right-sized for your business",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -183,4 +178,4 @@ export const cinc: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "No credit card required. Simple setup, immediate results.",
   },
-};
+});

@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const peBackedPlatforms: BestForPageContent = {
+export const peBackedPlatforms: BestForPageContent = createBestForPage({
   slug: "pe-backed-platforms",
   niche: {
     name: "PE-Backed Real Estate Platforms",
@@ -23,32 +25,32 @@ export const peBackedPlatforms: BestForPageContent = {
   },
   hero: {
     badge: "Built for PE Portfolio Operations",
-    headline: "The Best Lead Response for",
     headlineAccent: "PE-Backed Real Estate Platforms",
     subheadline:
       "Standardize lead response across acquisitions. Unified investor reporting, rapid integration of new portfolio companies, and operational consistency at scale.",
+    pattern: "BEST_LEAD_RESPONSE_FOR",
   },
   whyBestFor: [
     {
-      icon: "Building2",
+      icon: "Building2" as IconName,
       title: "Acquisition Integration Speed",
       description:
         "Deploy standardized lead response to newly acquired brokerages in days, not months. Get new portfolio companies on your operational playbook immediately.",
     },
     {
-      icon: "BarChart3",
+      icon: "BarChart3" as IconName,
       title: "Investor-Ready Reporting",
       description:
         "Portfolio-level dashboards showing lead response metrics across all holdings. The visibility your board and LPs expect, without manual data aggregation.",
     },
     {
-      icon: "Target",
+      icon: "Target" as IconName,
       title: "Operational Standardization",
       description:
         "Every acquisition operates with the same lead response standards. No more variance between legacy systems of acquired companies.",
     },
     {
-      icon: "Zap",
+      icon: "Zap" as IconName,
       title: "Value Creation Through Operations",
       description:
         "Demonstrate operational improvement to investors with measurable lead conversion gains across the portfolio—a clear value creation story.",
@@ -120,6 +122,7 @@ export const peBackedPlatforms: BestForPageContent = {
         others: "Multiple vendors per portfolio company",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -153,7 +156,6 @@ export const peBackedPlatforms: BestForPageContent = {
     subheadline:
       "See how PE-backed real estate platforms use Prestyj to unify operations across acquisitions. Rapid integration, investor-ready reporting, and measurable value creation.",
     buttonText: "Book a Portfolio Demo",
-    buttonHref: "/book-demo",
     footnote: "Enterprise deployment. Portfolio-level pricing available.",
   },
-};
+});

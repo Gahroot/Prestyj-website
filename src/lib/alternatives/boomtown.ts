@@ -1,6 +1,11 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const boomtown: AlternativePageContent = {
+export const boomtown: AlternativePageContent = createAlternativePage({
   slug: "boomtown",
   type: "integration-partner",
   competitor: {
@@ -8,7 +13,8 @@ export const boomtown: AlternativePageContent = {
     shortName: "BoomTown",
     pricing: "$1,000+/mo",
     website: "https://boomtownroi.com",
-    description: "Enterprise real estate platform with CRM, lead generation, and AI texting",
+    description:
+      "Enterprise real estate platform with CRM, lead generation, and AI texting",
   },
   meta: {
     title: "BoomTown Alternative | Add AI Speed to Your CRM | Prestyj",
@@ -25,8 +31,6 @@ export const boomtown: AlternativePageContent = {
   },
   hero: {
     badge: "BoomTown Integration",
-    headline: "Keep Your BoomTown CRM,",
-    headlineAccent: "Add Instant AI Response",
     subheadline:
       "You don't need to replace BoomTown's powerful platform. Add sub-60-second AI response and dead lead reactivation while keeping the CRM and tools you already use.",
   },
@@ -75,12 +79,11 @@ export const boomtown: AlternativePageContent = {
         prestyj: false,
         competitor: true,
       },
-      {
-        feature: "AI Appointment Booking",
-        prestyj: true,
-        competitor: false,
-        note: "Automatically books qualified leads to your calendar",
-      },
+      buildAlternativeFeature(
+        STANDARD_FEATURES.APPOINTMENT_BOOKING,
+        false,
+        "Automatically books qualified leads to your calendar"
+      ),
       {
         feature: "24/7 Lead Engagement",
         prestyj: true,
@@ -111,7 +114,7 @@ export const boomtown: AlternativePageContent = {
         "Manual follow-up still required for dead leads",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Works alongside your BoomTown setup",
       pros: [
@@ -120,7 +123,6 @@ export const boomtown: AlternativePageContent = {
         "24/7 conversational AI engagement",
         "Syncs appointments back to BoomTown",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -187,6 +189,7 @@ export const boomtown: AlternativePageContent = {
       "Keep BoomTown's CRM and lead gen. Add instant AI response and database reactivation without the complexity.",
     buttonText: "Book Your Free Demo",
     buttonHref: "/book-demo",
-    footnote: "Works alongside your existing BoomTown setup. No migration required.",
+    footnote:
+      "Works alongside your existing BoomTown setup. No migration required.",
   },
-};
+});

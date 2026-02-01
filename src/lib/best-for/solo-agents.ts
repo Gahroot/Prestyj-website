@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const soloAgents: BestForPageContent = {
+export const soloAgents: BestForPageContent = createBestForPage({
   slug: "solo-agents",
   niche: {
     name: "Solo Real Estate Agents",
@@ -22,32 +24,32 @@ export const soloAgents: BestForPageContent = {
   },
   hero: {
     badge: "Built for Solo Agents",
-    headline: "The Best AI for",
     headlineAccent: "Solo Real Estate Agents",
     subheadline:
       "You wear every hat in your business. Let AI handle lead response 24/7 so you can focus on showings, negotiations, and closing deals.",
+    pattern: "BEST_AI_FOR",
   },
   whyBestFor: [
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "Never Miss a Lead While Showing",
       description:
         "78% of buyers work with the first agent to respond. Prestyj responds in under 60 seconds while you're at showings, open houses, or anywhere else.",
     },
     {
-      icon: "DollarSign",
+      icon: "DollarSign" as IconName,
       title: "ISA Results Without ISA Costs",
       description:
         "A human ISA costs $4,000+/month plus 15-25% commission. Get the same lead qualification and follow-up at a fraction of the cost.",
     },
     {
-      icon: "Zap",
+      icon: "Zap" as IconName,
       title: "Instant Setup, No Learning Curve",
       description:
         "You're already stretched thin. Prestyj deploys in minutes, not weeks. No complex training or configuration required.",
     },
     {
-      icon: "Users",
+      icon: "Users" as IconName,
       title: "Scale Without Hiring",
       description:
         "Handle 10 leads or 100 leads with the same responsiveness. Grow your business without the overhead of employees.",
@@ -84,16 +86,6 @@ export const soloAgents: BestForPageContent = {
     headers: ["Feature", "Prestyj", "Doing It Yourself"],
     rows: [
       {
-        feature: "Response Time",
-        prestyj: "Under 60 seconds, 24/7",
-        others: "Minutes to hours (when available)",
-      },
-      {
-        feature: "Availability",
-        prestyj: "24/7/365, never misses a lead",
-        others: "Limited to your working hours",
-      },
-      {
         feature: "Lead Qualification",
         prestyj: "AI qualifies every lead automatically",
         others: "Manual qualification takes your time",
@@ -114,6 +106,7 @@ export const soloAgents: BestForPageContent = {
         others: "Free, but costs you deals",
       },
     ],
+    includeCommonRows: true,
   },
   faq: [
     {
@@ -147,6 +140,5 @@ export const soloAgents: BestForPageContent = {
     subheadline:
       "See how Prestyj gives you the lead response of a full team without the overhead. Book a free demo and watch AI engage your leads in real-time.",
     buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
   },
-};
+});

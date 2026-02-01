@@ -1,6 +1,11 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const blandAi: AlternativePageContent = {
+export const blandAi: AlternativePageContent = createAlternativePage({
   slug: "bland-ai",
   type: "direct-competitor",
   competitor: {
@@ -8,7 +13,8 @@ export const blandAi: AlternativePageContent = {
     shortName: "Bland",
     pricing: "$0.09/min (voice)",
     website: "https://bland.ai",
-    description: "Developer-first AI voice and multi-channel platform for building conversational agents",
+    description:
+      "Developer-first AI voice and multi-channel platform for building conversational agents",
   },
   meta: {
     title: "Best Bland AI Alternative for Real Estate | Prestyj",
@@ -26,8 +32,6 @@ export const blandAi: AlternativePageContent = {
   },
   hero: {
     badge: "Bland AI Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Bland AI Alternative?",
     subheadline:
       "Bland AI is a powerful developer platform for building multi-channel AI agents. But if you want done-for-you real estate lead response without the technical complexity, there's a better option.",
   },
@@ -71,22 +75,17 @@ export const blandAi: AlternativePageContent = {
         competitor: false,
         note: "Prestyj specializes in reviving dead leads",
       },
-      {
-        feature: "Built-in CRM",
-        prestyj: true,
-        competitor: false,
-        note: "Bland is a platform—you bring your own tools",
-      },
+      buildAlternativeFeature(
+        STANDARD_FEATURES.BUILT_IN_CRM,
+        false,
+        "Bland is a platform—you bring your own tools"
+      ),
       {
         feature: "Multi-Channel (Voice, SMS, Chat)",
         prestyj: true,
         competitor: true,
       },
-      {
-        feature: "24/7 AI Response",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       {
         feature: "Done-For-You Management",
         prestyj: true,
@@ -114,7 +113,7 @@ export const blandAi: AlternativePageContent = {
         "Complex setup and ongoing management",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Predictable pricing",
       note: "Based on your needs",
       pros: [
@@ -125,7 +124,6 @@ export const blandAi: AlternativePageContent = {
         "Done-for-you management",
         "Transparent pricing—no surprise costs",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -194,6 +192,7 @@ export const blandAi: AlternativePageContent = {
       "Why spend months building and thousands on unpredictable per-minute costs? See Prestyj work in minutes without any setup hassle.",
     buttonText: "Book Your Free Demo",
     buttonHref: "/book-demo",
-    footnote: "No credit card required. No technical setup needed. See results in minutes.",
+    footnote:
+      "No credit card required. No technical setup needed. See results in minutes.",
   },
-};
+});

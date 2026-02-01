@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const solar: BestForPageContent = {
+export const solar: BestForPageContent = createBestForPage({
   slug: "solar",
   niche: {
     name: "Solar Companies",
@@ -22,32 +24,32 @@ export const solar: BestForPageContent = {
   },
   hero: {
     badge: "Solar AI",
-    headline: "AI Agents Built for",
     headlineAccent: "Solar Companies",
     subheadline:
       "Hundreds of leads. Long sales cycles. TCPA compliance. AI qualifies homeowners instantly, books site surveys 24/7, and follows up on proposals—all while staying compliant.",
+    pattern: "AI_AGENTS_BUILT_FOR",
   },
   whyBestFor: [
     {
-      icon: "Filter",
+      icon: "Filter" as IconName,
       title: "Qualify Leads at Scale",
       description:
         "AI pre-qualifies every lead in under 60 seconds: homeowner status, roof condition, utility bills, decision timeline. Your sales team only talks to qualified prospects.",
     },
     {
-      icon: "Calendar",
+      icon: "Calendar" as IconName,
       title: "24/7 Site Survey Scheduling",
       description:
         "AI books site survey appointments directly on your calendar. No more phone tag. Homeowners get confirmed times within minutes of expressing interest.",
     },
     {
-      icon: "Shield",
+      icon: "Shield" as IconName,
       title: "TCPA-Compliant Follow-Up",
       description:
         "AI follows TCPA regulations automatically: proper consent verification, do-not-call list checking, call time restrictions. Reduce compliance risk while staying persistent.",
     },
     {
-      icon: "FileText",
+      icon: "FileText" as IconName,
       title: "Proposal Follow-Up That Converts",
       description:
         "60% of solar deals close after multiple follow-ups. AI nurtures leads after proposals: answers questions, addresses objections, and schedules review calls—without sounding pushy.",
@@ -119,6 +121,7 @@ export const solar: BestForPageContent = {
         others: "Manual data entry",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -152,7 +155,6 @@ export const solar: BestForPageContent = {
     subheadline:
       "Every lead that waits 24 hours is talking to your competitor. Book a demo to see how AI qualifies, books, and converts more solar prospects.",
     buttonText: "Book Your Demo",
-    buttonHref: "/book-demo",
     footnote: "No credit card required. Built for solar installers of all sizes.",
   },
-};
+});

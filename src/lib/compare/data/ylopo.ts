@@ -1,7 +1,11 @@
-import { Clock, DollarSign, Zap, Users } from "lucide-react";
 import type { ComparePageData, CompareMetadata } from "../types";
+import {
+  createComparePage,
+  buildCompareFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const ylopoCompareData: ComparePageData = {
+export const ylopoCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-ylopo",
   competitorName: "Ylopo",
   hero: {
@@ -12,26 +16,11 @@ export const ylopoCompareData: ComparePageData = {
       "Both platforms offer AI-powered lead engagement for real estate professionals. Here's an honest comparison to help you make the right choice for your business.",
     description: "",
   },
-  stats: [
-    {
-      value: "78%",
-      label: "of buyers work with the first agent to respond",
-    },
-    {
-      value: "80%",
-      label: "of leads go cold due to slow response times",
-    },
-    {
-      value: "$4k+/mo",
-      label: "average cost of an ISA plus commission",
-    },
-  ],
+  stats: "standard",
   pricing: {
     prestyj: {
-      name: "Prestyj",
       price: "Custom pricing",
       priceSubtext: "Tailored to your needs",
-      highlight: true,
       features: [
         { text: "No required ad spend", included: true },
         { text: "Built-in CRM included", included: true },
@@ -39,7 +28,6 @@ export const ylopoCompareData: ComparePageData = {
       ],
     },
     competitor: {
-      name: "Ylopo",
       price: "$395",
       priceSubtext: "/month + Required ad spend",
       features: [
@@ -59,73 +47,48 @@ export const ylopoCompareData: ComparePageData = {
     },
   },
   features: [
-    {
-      feature: "AI Text Conversations",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "AI Voice Assistants",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "24/7 Lead Response",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "Built-in CRM",
-      prestyj: true,
-      competitor: false,
-      note: "Ylopo requires separate CRM integration",
-    },
-    {
-      feature: "Appointment Booking",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "Lead Qualification",
-      prestyj: true,
-      competitor: true,
-    },
+    buildCompareFeature(STANDARD_FEATURES.AI_TEXT, true),
+    buildCompareFeature(STANDARD_FEATURES.AI_VOICE, true),
+    buildCompareFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
+    buildCompareFeature(
+      STANDARD_FEATURES.BUILT_IN_CRM,
+      false,
+      "Ylopo requires separate CRM integration"
+    ),
+    buildCompareFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
+    buildCompareFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
     {
       feature: "No Ad Spend Required",
       prestyj: true,
       competitor: false,
       note: "Ylopo pricing requires additional ad spend",
     },
-    {
-      feature: "Calendar Integration",
-      prestyj: true,
-      competitor: true,
-    },
+    buildCompareFeature(STANDARD_FEATURES.CALENDAR_INTEGRATION, true),
   ],
   whySwitch: {
     title: "Why Agents Switch from Ylopo",
     description: "Key reasons real estate professionals choose Prestyj",
     reasons: [
       {
-        icon: DollarSign,
+        icon: "DollarSign",
         title: "Simpler Pricing Structure",
         description:
           "No required ad spend on top of monthly fees. Prestyj offers transparent, custom pricing tailored to your needs.",
       },
       {
-        icon: Zap,
+        icon: "Zap",
         title: "All-in-One Platform",
         description:
           "Built-in CRM eliminates the need for separate integrations. Everything you need in one place.",
       },
       {
-        icon: Clock,
+        icon: "Clock",
         title: "Faster Implementation",
         description:
           "Get up and running quickly without complex third-party CRM setup and configuration.",
       },
       {
-        icon: Users,
+        icon: "Users",
         title: "Dedicated Support",
         description:
           "Personalized onboarding and ongoing support to ensure your success with the platform.",
@@ -157,10 +120,9 @@ export const ylopoCompareData: ComparePageData = {
     description:
       "Book a personalized demo to see how Prestyj can transform your lead management and help you close more deals.",
     buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
     disclaimer: "No credit card required. See results in minutes.",
   },
-};
+});
 
 export const ylopoMetadata: CompareMetadata = {
   slug: "prestyj-vs-ylopo",

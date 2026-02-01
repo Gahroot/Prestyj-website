@@ -1,13 +1,19 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const conversica: AlternativePageContent = {
+export const conversica: AlternativePageContent = createAlternativePage({
   slug: "conversica",
   type: "direct-competitor",
   competitor: {
     name: "Conversica",
     pricing: "$2,999+/month",
     website: "https://conversica.com",
-    description: "Enterprise AI sales assistant serving multiple industries",
+    description:
+      "Enterprise AI sales assistant serving multiple industries",
   },
   meta: {
     title: "Best Conversica Alternative for Real Estate | Prestyj",
@@ -24,8 +30,6 @@ export const conversica: AlternativePageContent = {
   },
   hero: {
     badge: "Conversica Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Conversica Alternative?",
     subheadline:
       "Conversica is proven enterprise AI—but it's not built for real estate. If you need vertical-specific workflows without the generic platform compromise, there's a better option.",
   },
@@ -61,16 +65,8 @@ export const conversica: AlternativePageContent = {
         competitor: "Limited",
         note: "Prestyj architected for 50+ office operations",
       },
-      {
-        feature: "AI Text Conversations",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "AI Voice Calling",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, true),
       {
         feature: "Same-Day Deployment",
         prestyj: true,
@@ -112,7 +108,7 @@ export const conversica: AlternativePageContent = {
         "Difficult to reach support",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Scaled for your operation",
       pros: [
@@ -121,7 +117,6 @@ export const conversica: AlternativePageContent = {
         "Implementation, training, support included",
         "Deploys in days, not weeks",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -188,4 +183,4 @@ export const conversica: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "Multi-office deployment included. No commitment required.",
   },
-};
+});

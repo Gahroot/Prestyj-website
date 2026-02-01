@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const insuranceAgencies: BestForPageContent = {
+export const insuranceAgencies: BestForPageContent = createBestForPage({
   slug: "insurance-agencies",
   niche: {
     name: "Insurance Agencies",
@@ -22,32 +24,32 @@ export const insuranceAgencies: BestForPageContent = {
   },
   hero: {
     badge: "Insurance AI",
-    headline: "AI Agents Built for",
     headlineAccent: "Insurance Agencies",
     subheadline:
       "Quote requests come in around the clock. AI responds in under 60 seconds, qualifies coverage needs, and books appointments while you focus on closing policies.",
+    pattern: "AI_AGENTS_BUILT_FOR",
   },
   whyBestFor: [
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "Save 13+ Hours Per Week",
       description:
         "McKinsey reports insurance agents save an average of 13 hours per week with AI automation. That's time back to focus on high-value client relationships.",
     },
     {
-      icon: "Zap",
+      icon: "Zap" as IconName,
       title: "Sub-60-Second Response",
       description:
         "When someone requests a quote at 10 PM, AI responds instantly. Speed-to-lead matters in insurance—the first agent to respond wins the policy.",
     },
     {
-      icon: "Shield",
+      icon: "Shield" as IconName,
       title: "Consistent Qualification",
       description:
         "AI asks the right questions every time: coverage type, current carrier, policy expiration, budget. No leads fall through the cracks.",
     },
     {
-      icon: "Calendar",
+      icon: "Calendar" as IconName,
       title: "Appointments on Your Calendar",
       description:
         "Qualified prospects are booked directly on your calendar. Wake up to appointments, not a list of callbacks.",
@@ -119,6 +121,7 @@ export const insuranceAgencies: BestForPageContent = {
         others: "Separate system needed",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -152,7 +155,6 @@ export const insuranceAgencies: BestForPageContent = {
     subheadline:
       "The first agent to respond wins the policy. Book a demo to see how AI can put you first in line for every lead.",
     buttonText: "Book Your Demo",
-    buttonHref: "/book-demo",
     footnote: "No credit card required. See your lead response transformation in minutes.",
   },
-};
+});

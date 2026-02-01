@@ -1,7 +1,11 @@
-import { Clock, DollarSign, Users, Building2 } from "lucide-react";
 import type { ComparePageData, CompareMetadata } from "../types";
+import {
+  createComparePage,
+  buildCompareFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const structurelyCompareData: ComparePageData = {
+export const structurelyCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-structurely",
   competitorName: "Structurely",
   hero: {
@@ -32,10 +36,8 @@ export const structurelyCompareData: ComparePageData = {
   ],
   pricing: {
     prestyj: {
-      name: "Prestyj",
       price: "Custom pricing",
       priceSubtext: "Scaled for your operation",
-      highlight: true,
       features: [
         { text: "Built for 50+ office operations", included: true },
         { text: "Unlimited leads and locations", included: true },
@@ -44,7 +46,6 @@ export const structurelyCompareData: ComparePageData = {
       ],
     },
     competitor: {
-      name: "Structurely",
       price: "$179-499",
       priceSubtext: "/month or $3/lead pricing",
       features: [
@@ -84,16 +85,8 @@ export const structurelyCompareData: ComparePageData = {
       competitor: false,
       note: "No documented enterprise features for 50+ office operations",
     },
-    {
-      feature: "AI Text Conversations",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "AI Voice Assistants",
-      prestyj: true,
-      competitor: true,
-    },
+    buildCompareFeature(STANDARD_FEATURES.AI_TEXT, true),
+    buildCompareFeature(STANDARD_FEATURES.AI_VOICE, true),
     {
       feature: "Proprietary AI Technology",
       prestyj: true,
@@ -123,25 +116,25 @@ export const structurelyCompareData: ComparePageData = {
     description: "Key reasons enterprise operations outgrow Structurely",
     reasons: [
       {
-        icon: Building2,
+        icon: "Building2",
         title: "Built for Enterprise Scale",
         description:
           "Structurely's pricing tiers cap at 30 seats and 225 leads/month. Prestyj is architected for franchise operations handling thousands of leads across 50+ offices.",
       },
       {
-        icon: Users,
+        icon: "Users",
         title: "Proprietary Technology",
         description:
           "Structurely's AI powers CINC's platform too—you're using shared technology. Prestyj's AI is built exclusively for your operation.",
       },
       {
-        icon: DollarSign,
+        icon: "DollarSign",
         title: "Reliable Billing",
         description:
           "Multiple reports of Structurely billing issues including $1,300+ charged after cancellation. Prestyj pricing is transparent with no billing surprises.",
       },
       {
-        icon: Clock,
+        icon: "Clock",
         title: "True Multi-Location Support",
         description:
           "Coordinate lead response across your entire portfolio with centralized dashboards, standardized workflows, and office-level accountability.",
@@ -173,10 +166,9 @@ export const structurelyCompareData: ComparePageData = {
     description:
       "Book a demo to see how Prestyj handles enterprise-scale lead response across your entire franchise or regional network.",
     buttonText: "Book Your Enterprise Demo",
-    buttonHref: "/book-demo",
     disclaimer: "See multi-office capabilities. No commitment required.",
   },
-};
+});
 
 export const structurelyMetadata: CompareMetadata = {
   slug: "prestyj-vs-structurely",

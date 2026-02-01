@@ -1,13 +1,19 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const ylopo: AlternativePageContent = {
+export const ylopo: AlternativePageContent = createAlternativePage({
   slug: "ylopo",
   type: "direct-competitor",
   competitor: {
     name: "Ylopo",
     pricing: "$600-1,200/mo + ad spend",
     website: "https://ylopo.com",
-    description: "AI-powered lead generation and nurturing platform for real estate teams",
+    description:
+      "AI-powered lead generation and nurturing platform for real estate teams",
   },
   meta: {
     title: "Best Ylopo Alternative for Real Estate Agents | Prestyj",
@@ -23,69 +29,29 @@ export const ylopo: AlternativePageContent = {
   },
   hero: {
     badge: "Ylopo Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Ylopo Alternative?",
     subheadline:
       "Both platforms offer AI-powered lead engagement for real estate professionals. Here's an honest comparison to help you make the right choice for your business.",
   },
-  industryStats: [
-    {
-      stat: "78%",
-      description: "of buyers work with the first agent to respond",
-    },
-    {
-      stat: "80%",
-      description: "of leads go cold due to slow response times",
-    },
-    {
-      stat: "$4k+/mo",
-      description: "average cost of an ISA plus commission",
-    },
-  ],
+  industryStats: "standard", // Uses STANDARD_INDUSTRY_STATS automatically
   comparison: {
     features: [
-      {
-        feature: "AI Text Conversations",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "AI Voice Assistants",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "24/7 Lead Response",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "Built-in CRM",
-        prestyj: true,
-        competitor: false,
-        note: "Ylopo requires separate CRM integration",
-      },
-      {
-        feature: "Appointment Booking",
-        prestyj: true,
-        competitor: true,
-      },
-      {
-        feature: "Lead Qualification",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, true),
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.BUILT_IN_CRM,
+        false,
+        "Ylopo requires separate CRM integration"
+      ),
+      buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
+      buildAlternativeFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
       {
         feature: "No Ad Spend Required",
         prestyj: true,
         competitor: false,
         note: "Ylopo pricing requires additional ad spend",
       },
-      {
-        feature: "Calendar Integration",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.CALENDAR_INTEGRATION, true),
     ],
     competitorPricing: {
       price: "$395",
@@ -97,16 +63,7 @@ export const ylopo: AlternativePageContent = {
         "Separate CRM integration costs may apply",
       ],
     },
-    prestyjPricing: {
-      price: "Custom pricing",
-      note: "Tailored to your needs",
-      pros: [
-        "No required ad spend",
-        "Built-in CRM included",
-        "All-in-one platform",
-      ],
-      cons: [],
-    },
+    // prestyjPricing automatically built with defaults (cons: [])
   },
   whySwitch: [
     {
@@ -164,12 +121,5 @@ export const ylopo: AlternativePageContent = {
       description: "Case studies from agents using Prestyj",
     },
   ],
-  cta: {
-    headline: "Ready to See Prestyj in Action?",
-    subheadline:
-      "Book a personalized demo to see how Prestyj can transform your lead management and help you close more deals.",
-    buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
-    footnote: "No credit card required. See results in minutes.",
-  },
-};
+  // CTA automatically uses STANDARD_DEMO template
+});

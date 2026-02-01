@@ -1,16 +1,19 @@
 import type { AlternativePageContent } from "./types";
+import { createAlternativePage } from "@/lib/content-factory";
 
-export const internalIsa: AlternativePageContent = {
+export const internalIsa: AlternativePageContent = createAlternativePage({
   slug: "internal-isa",
   type: "direct-competitor",
   competitor: {
     name: "Internal ISA Teams",
     shortName: "Internal ISA",
     pricing: "$57K-$69K/year per ISA + benefits",
-    description: "In-house Inside Sales Agents hired, trained, and managed by your brokerage",
+    description:
+      "In-house Inside Sales Agents hired, trained, and managed by your brokerage",
   },
   meta: {
-    title: "Internal ISA Team Alternative for Enterprise Real Estate | Prestyj",
+    title:
+      "Internal ISA Team Alternative for Enterprise Real Estate | Prestyj",
     description:
       "Compare AI lead response vs. internal ISA teams for 50+ office operations. See the real costs: 30% annual turnover, 4-5 month ramp time, and management overhead.",
     keywords: [
@@ -25,8 +28,6 @@ export const internalIsa: AlternativePageContent = {
   },
   hero: {
     badge: "Build vs Buy Analysis",
-    headline: "Looking for an",
-    headlineAccent: "Internal ISA Team Alternative?",
     subheadline:
       "Internal ISA teams require significant investment in hiring, training, and management. Compare the total cost of ownership for 50+ office operations.",
   },
@@ -66,13 +67,15 @@ export const internalIsa: AlternativePageContent = {
         feature: "Multi-Office Scalability",
         prestyj: true,
         competitor: "Difficult",
-        note: "Scaling ISA teams across 50+ offices requires significant hiring and management overhead",
+        note:
+          "Scaling ISA teams across 50+ offices requires significant hiring and management overhead",
       },
       {
         feature: "No Turnover Risk",
         prestyj: true,
         competitor: false,
-        note: "30% annual turnover means constant recruitment and retraining cycles",
+        note:
+          "30% annual turnover means constant recruitment and retraining cycles",
       },
       {
         feature: "Instant Ramp-Up",
@@ -117,7 +120,7 @@ export const internalIsa: AlternativePageContent = {
         "Business hours only without shift premiums",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Scaled for enterprise operations",
       pros: [
@@ -128,7 +131,6 @@ export const internalIsa: AlternativePageContent = {
         "Portfolio-level reporting built-in",
         "TCPA compliance by design",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -196,4 +198,4 @@ export const internalIsa: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "See multi-office deployment. Calculate your ISA cost savings.",
   },
-};
+});

@@ -1,7 +1,7 @@
-import { Users, Heart, Brain } from "lucide-react";
 import type { ComparePageData, CompareMetadata } from "../types";
+import { createComparePage } from "@/lib/content-factory";
 
-export const isaCompareData: ComparePageData = {
+export const isaCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-isa",
   competitorName: "Human ISA",
   hero: {
@@ -32,10 +32,8 @@ export const isaCompareData: ComparePageData = {
   },
   pricing: {
     prestyj: {
-      name: "AI Agent",
       price: "Custom pricing",
       priceSubtext: "Tailored to your needs",
-      highlight: true,
       features: [
         { text: "24/7/365 availability", included: true },
         { text: "Under 60 seconds response time", included: true },
@@ -45,7 +43,6 @@ export const isaCompareData: ComparePageData = {
       ],
     },
     competitor: {
-      name: "Human ISA",
       price: "$4,000+",
       priceSubtext: "/month base salary",
       features: [
@@ -111,25 +108,25 @@ export const isaCompareData: ComparePageData = {
       "There are legitimate scenarios where a human ISA might be the better choice for your business.",
     reasons: [
       {
-        icon: Users,
+        icon: "Users",
         title: "Complex Client Relationships",
         description:
           "Luxury markets or high-touch clients who expect personalized human interaction from the first contact.",
       },
       {
-        icon: Brain,
+        icon: "Brain",
         title: "Local Market Expertise",
         description:
           "ISAs with deep neighborhood knowledge can provide nuanced insights that build immediate trust.",
       },
       {
-        icon: Heart,
+        icon: "Heart",
         title: "Bilingual Requirements",
         description:
           "Markets requiring fluent conversation in multiple languages with cultural understanding.",
       },
       {
-        icon: Users,
+        icon: "Users",
         title: "Team Culture Fit",
         description:
           "When in-person collaboration and team dynamics are essential to your business model.",
@@ -179,10 +176,9 @@ export const isaCompareData: ComparePageData = {
     description:
       "Book a demo and see how an AI agent handles your leads. No pressure, no commitment - just see if it is the right fit for your business.",
     buttonText: "Book a Demo",
-    buttonHref: "/book-demo",
     disclaimer: "Free demo. No credit card required.",
   },
-};
+});
 
 // Additional data for the "When AI Makes More Sense" section
 // This is a separate export because it's rendered as its own section

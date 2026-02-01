@@ -2,38 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  Check,
-  X,
-  Clock,
-  DollarSign,
-  Zap,
-  Users,
-  RefreshCw,
-  Database,
-  Handshake,
-  Target,
-} from "lucide-react";
+import { ArrowRight, Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { AlternativePageContent } from "@/lib/alternatives";
-
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Clock,
-  DollarSign,
-  Zap,
-  Users,
-  RefreshCw,
-  Database,
-  Handshake,
-  Target,
-};
-
-function getIcon(iconName: string) {
-  return iconMap[iconName] || Zap;
-}
+import { getIconSafe } from "@/lib/content-factory/constants/icons";
 
 interface AlternativePageClientProps {
   alternative: AlternativePageContent;
@@ -327,7 +301,7 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {alternative.whySwitch.map((item, index) => {
-              const Icon = getIcon(item.icon);
+              const Icon = getIconSafe(item.icon);
               return (
                 <motion.div
                   key={index}

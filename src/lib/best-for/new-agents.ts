@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const newAgents: BestForPageContent = {
+export const newAgents: BestForPageContent = createBestForPage({
   slug: "new-agents",
   niche: {
     name: "New Real Estate Agents",
@@ -22,32 +24,32 @@ export const newAgents: BestForPageContent = {
   },
   hero: {
     badge: "Perfect for New Agents",
-    headline: "The Best Lead Management for",
     headlineAccent: "New Real Estate Agents",
     subheadline:
       "You're building your career from scratch. Get the same lead response capabilities as top producers without the top producer budget.",
+    pattern: "BEST_AI_FOR",
   },
   whyBestFor: [
     {
-      icon: "DollarSign",
+      icon: "DollarSign" as IconName,
       title: "Affordable for New Agents",
       description:
         "You can't afford a $4,000/month ISA when you're just starting out. Prestyj gives you professional lead response at a price that makes sense for your stage.",
     },
     {
-      icon: "Zap",
+      icon: "Zap" as IconName,
       title: "Zero Learning Curve",
       description:
         "You're already learning scripts, contracts, and market knowledge. Prestyj is ready in minutes with no complex setup. Focus on learning real estate, not software.",
     },
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "Compete with Experienced Agents",
       description:
         "78% of buyers work with the first responder. With AI, you respond as fast as the top producer with a full team. Level the playing field from day one.",
     },
     {
-      icon: "TrendingUp",
+      icon: "TrendingUp" as IconName,
       title: "Build Your Pipeline Fast",
       description:
         "Every lead counts when you're starting out. AI ensures no lead goes cold while you're learning. Build momentum from your very first inquiry.",
@@ -114,6 +116,7 @@ export const newAgents: BestForPageContent = {
         others: "N/A",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -147,6 +150,5 @@ export const newAgents: BestForPageContent = {
     subheadline:
       "Don't wait until you can afford an ISA to compete with top producers. Book a demo and see how new agents are using AI to build their pipeline fast.",
     buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
   },
-};
+});

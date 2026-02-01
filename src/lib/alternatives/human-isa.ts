@@ -1,13 +1,15 @@
 import type { AlternativePageContent } from "./types";
+import { createAlternativePage } from "@/lib/content-factory";
 
-export const humanIsa: AlternativePageContent = {
+export const humanIsa: AlternativePageContent = createAlternativePage({
   slug: "human-isa",
   type: "direct-competitor",
   competitor: {
     name: "Human ISA",
     shortName: "ISA",
     pricing: "$4,000+/mo + 15-25% commission",
-    description: "Traditional inside sales agents for lead qualification and follow-up",
+    description:
+      "Traditional inside sales agents for lead qualification and follow-up",
   },
   meta: {
     title: "Best Human ISA Alternative | AI Sales Agent | Prestyj",
@@ -24,29 +26,10 @@ export const humanIsa: AlternativePageContent = {
   },
   hero: {
     badge: "ISA Alternative",
-    headline: "AI Sales Agent vs Human ISA:",
-    headlineAccent: "The Real Comparison",
     subheadline:
       "Should you hire a human Inside Sales Agent or use AI? We break down the real costs, capabilities, and use cases to help you make the right choice for your business.",
   },
-  industryStats: [
-    {
-      stat: "$4k+",
-      description: "ISA monthly salary",
-    },
-    {
-      stat: "78%",
-      description: "choose first responder",
-    },
-    {
-      stat: "80%",
-      description: "leads lost to slow response",
-    },
-    {
-      stat: "2-4 wks",
-      description: "ISA training time",
-    },
-  ],
+  industryStats: "standard",
   comparison: {
     features: [
       {
@@ -111,7 +94,7 @@ export const humanIsa: AlternativePageContent = {
         "Ongoing training costs",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "No commission splits ever",
       pros: [
@@ -120,7 +103,6 @@ export const humanIsa: AlternativePageContent = {
         "Unlimited lead capacity",
         "Zero commission splits",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -188,4 +170,4 @@ export const humanIsa: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "Free demo. No credit card required.",
   },
-};
+});

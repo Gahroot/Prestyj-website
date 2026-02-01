@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const hvac: BestForPageContent = {
+export const hvac: BestForPageContent = createBestForPage({
   slug: "hvac",
   niche: {
     name: "HVAC Companies",
@@ -22,32 +24,32 @@ export const hvac: BestForPageContent = {
   },
   hero: {
     badge: "HVAC AI",
-    headline: "AI Agents Built for",
     headlineAccent: "HVAC Companies",
     subheadline:
       "AC breaks at midnight. Furnace dies on Saturday. AI answers every call, books service appointments, and dispatches your team—24/7/365.",
+    pattern: "AI_AGENTS_BUILT_FOR",
   },
   whyBestFor: [
     {
-      icon: "Phone",
+      icon: "Phone" as IconName,
       title: "Never Miss a Service Call",
       description:
         "Homeowners call when their HVAC breaks—not during business hours. AI answers every call instantly, even at 2 AM on a holiday weekend.",
     },
     {
-      icon: "Calendar",
+      icon: "Calendar" as IconName,
       title: "Automated Appointment Booking",
       description:
         "AI books service appointments directly on your schedule. Customers get confirmed times; you get a full calendar.",
     },
     {
-      icon: "AlertCircle",
+      icon: "AlertCircle" as IconName,
       title: "Emergency Prioritization",
       description:
         "AI identifies emergencies (no heat in winter, no AC in summer) and prioritizes them appropriately. Urgent calls get flagged for immediate attention.",
     },
     {
-      icon: "DollarSign",
+      icon: "DollarSign" as IconName,
       title: "Fraction of Receptionist Cost",
       description:
         "A full-time receptionist costs $35,000-45,000/year. AI provides better coverage 24/7 at a fraction of the cost.",
@@ -119,6 +121,7 @@ export const hvac: BestForPageContent = {
         others: "Varies by person/day",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -152,7 +155,6 @@ export const hvac: BestForPageContent = {
     subheadline:
       "Every missed call is revenue to your competitor. Book a demo to see how AI keeps you first in line for every service request.",
     buttonText: "Book Your Demo",
-    buttonHref: "/book-demo",
     footnote: "No credit card required. Perfect for HVAC contractors of all sizes.",
   },
-};
+});

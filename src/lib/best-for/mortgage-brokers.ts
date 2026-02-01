@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const mortgageBrokers: BestForPageContent = {
+export const mortgageBrokers: BestForPageContent = createBestForPage({
   slug: "mortgage-brokers",
   niche: {
     name: "Mortgage Brokers",
@@ -22,32 +24,32 @@ export const mortgageBrokers: BestForPageContent = {
   },
   hero: {
     badge: "Mortgage AI",
-    headline: "AI Agents Built for",
     headlineAccent: "Mortgage Brokers",
     subheadline:
       "Rate shoppers don't wait. AI responds in under 60 seconds, pre-qualifies borrowers, and books consultations while you focus on closing loans.",
+    pattern: "AI_AGENTS_BUILT_FOR",
   },
   whyBestFor: [
     {
-      icon: "Zap",
+      icon: "Zap" as IconName,
       title: "First Response Wins the Loan",
       description:
         "Rate shoppers submit to multiple lenders. The first broker to respond professionally wins the relationship. AI makes you first, every time.",
     },
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "24/7 Rate Inquiry Response",
       description:
         "Borrowers research rates at night and on weekends. AI engages them instantly while competitors' leads sit in inboxes until Monday.",
     },
     {
-      icon: "CheckCircle",
+      icon: "CheckCircle" as IconName,
       title: "Pre-Qualification in Minutes",
       description:
         "AI gathers loan amount, property type, credit range, income type, and timeline. You get pre-qualified leads ready for consultation.",
     },
     {
-      icon: "Calendar",
+      icon: "Calendar" as IconName,
       title: "Consultations Booked Automatically",
       description:
         "Qualified borrowers book directly on your calendar. Wake up to a full schedule of pre-qualified loan consultations.",
@@ -119,6 +121,7 @@ export const mortgageBrokers: BestForPageContent = {
         others: "Limited by headcount",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -152,7 +155,6 @@ export const mortgageBrokers: BestForPageContent = {
     subheadline:
       "The first broker to respond professionally wins the loan. Book a demo to see how AI puts you first in line.",
     buttonText: "Book Your Demo",
-    buttonHref: "/book-demo",
     footnote: "No credit card required. Built for mortgage professionals.",
   },
-};
+});

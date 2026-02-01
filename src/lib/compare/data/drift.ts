@@ -1,7 +1,11 @@
-import { Building2, Clock, DollarSign, Shield } from "lucide-react";
 import type { ComparePageData, CompareMetadata } from "../types";
+import {
+  createComparePage,
+  buildCompareFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const driftCompareData: ComparePageData = {
+export const driftCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-drift",
   competitorName: "Drift",
   hero: {
@@ -32,10 +36,8 @@ export const driftCompareData: ComparePageData = {
   ],
   pricing: {
     prestyj: {
-      name: "Prestyj",
       price: "Custom pricing",
       priceSubtext: "",
-      highlight: true,
       features: [
         { text: "Built specifically for real estate", included: true },
         { text: "Deploys in days, not months", included: true },
@@ -45,7 +47,6 @@ export const driftCompareData: ComparePageData = {
       ],
     },
     competitor: {
-      name: "Drift Enterprise",
       price: "$60K+",
       priceSubtext: "/year license",
       features: [
@@ -68,17 +69,12 @@ export const driftCompareData: ComparePageData = {
       competitor: false,
       note: "Drift is a generic B2B sales platform requiring extensive customization for RE workflows",
     },
-    {
-      feature: "AI Text Conversations",
-      prestyj: true,
-      competitor: true,
-    },
-    {
-      feature: "AI Voice Assistants",
-      prestyj: true,
-      competitor: "Limited",
-      note: "Drift focuses on chat-first; voice is secondary",
-    },
+    buildCompareFeature(STANDARD_FEATURES.AI_TEXT, true),
+    buildCompareFeature(
+      STANDARD_FEATURES.AI_VOICE,
+      "Limited",
+      "Drift focuses on chat-first; voice is secondary"
+    ),
     {
       feature: "Implementation Time",
       prestyj: "Days",
@@ -116,25 +112,25 @@ export const driftCompareData: ComparePageData = {
       "Key reasons VPs and Directors at 50+ office operations choose purpose-built solutions",
     reasons: [
       {
-        icon: Building2,
+        icon: "Building2",
         title: "Purpose-Built for Real Estate",
         description:
           "Drift serves 20+ industries generically. Prestyj is built exclusively for real estate with workflows, terminology, and integrations your teams already understand.",
       },
       {
-        icon: Clock,
+        icon: "Clock",
         title: "Deploy in Days, Not Months",
         description:
           "Drift enterprise deployments take 12+ weeks with custom routing and multi-brand configurations. Prestyj deploys across your offices in days.",
       },
       {
-        icon: DollarSign,
+        icon: "DollarSign",
         title: "No Seat-Based Cost Explosion",
         description:
           "Drift charges $80/seat/month for inbox access. For 50 offices with 2 managers each, that's $96K/year in seat costs alone—on top of the $60K+ base license.",
       },
       {
-        icon: Shield,
+        icon: "Shield",
         title: "Security You Can Trust",
         description:
           "The August 2025 Drift OAuth breach forced enterprises to disconnect Salesforce integrations. We prioritize security with no history of breaches.",
@@ -178,10 +174,9 @@ export const driftCompareData: ComparePageData = {
     description:
       "See how enterprise real estate operations are choosing purpose-built solutions over generic B2B platforms. Deploy in days, not months.",
     buttonText: "Book Your Enterprise Demo",
-    buttonHref: "/book-demo",
     disclaimer: "See multi-office capabilities. No 12-week implementation.",
   },
-};
+});
 
 export const driftMetadata: CompareMetadata = {
   slug: "prestyj-vs-drift",

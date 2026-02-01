@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const commercialRealEstate: BestForPageContent = {
+export const commercialRealEstate: BestForPageContent = createBestForPage({
   slug: "commercial-real-estate",
   niche: {
     name: "Commercial Real Estate",
@@ -23,32 +25,32 @@ export const commercialRealEstate: BestForPageContent = {
   },
   hero: {
     badge: "Built for Commercial Real Estate",
-    headline: "The Best Lead Response for",
     headlineAccent: "Commercial Real Estate",
     subheadline:
       "Handle the complexity of CRE deals: multi-stakeholder qualification, longer sales cycles, and property-specific inquiries at enterprise scale.",
+    pattern: "BEST_LEAD_RESPONSE_FOR",
   },
   whyBestFor: [
     {
-      icon: "Building2",
+      icon: "Building2" as IconName,
       title: "Multi-Stakeholder Qualification",
       description:
         "CRE deals involve decision-makers across finance, operations, and executive teams. AI qualifies each stakeholder appropriately and routes to the right broker.",
     },
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "Long-Cycle Lead Nurturing",
       description:
         "Commercial deals take months or years. AI maintains engagement throughout extended sales cycles without dropping leads or losing context.",
     },
     {
-      icon: "Target",
+      icon: "Target" as IconName,
       title: "Property-Type Specialization",
       description:
         "Office, industrial, retail, and multifamily require different qualification approaches. AI adapts conversations to property type and tenant requirements.",
     },
     {
-      icon: "BarChart3",
+      icon: "BarChart3" as IconName,
       title: "Portfolio-Level Pipeline Visibility",
       description:
         "See deal flow across property types, markets, and brokers. Understand where leads are in extended sales cycles and forecast more accurately.",
@@ -120,6 +122,7 @@ export const commercialRealEstate: BestForPageContent = {
         others: "Not designed for investment properties",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -153,7 +156,6 @@ export const commercialRealEstate: BestForPageContent = {
     subheadline:
       "See how commercial real estate brokerages use Prestyj to qualify complex deals, nurture long sales cycles, and engage multiple stakeholders—all with AI built for CRE.",
     buttonText: "Book a CRE Demo",
-    buttonHref: "/book-demo",
     footnote: "See property-type specific qualification in action.",
   },
-};
+});

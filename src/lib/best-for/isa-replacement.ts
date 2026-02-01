@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const isaReplacement: BestForPageContent = {
+export const isaReplacement: BestForPageContent = createBestForPage({
   slug: "isa-replacement",
   niche: {
     name: "ISA Replacement",
@@ -22,32 +24,32 @@ export const isaReplacement: BestForPageContent = {
   },
   hero: {
     badge: "ISA Alternative",
-    headline: "The Best ISA Alternative for",
     headlineAccent: "Real Estate Professionals",
     subheadline:
       "Human ISAs cost $4,000+/month plus 15-25% commission. AI delivers 24/7 coverage, instant response, and zero commission splits. Do the math.",
+    pattern: "BEST_AI_FOR",
   },
   whyBestFor: [
     {
-      icon: "DollarSign",
+      icon: "DollarSign" as IconName,
       title: "Save $48,000+ Per Year",
       description:
         "A human ISA costs $4,000+/month base plus commissions. Prestyj delivers superior coverage at a fraction of the cost. That's money back in your pocket.",
     },
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "True 24/7 Coverage",
       description:
         "Human ISAs work 40 hours/week. Prestyj works 168 hours/week. No sick days, no vacations, no coverage gaps. Every lead gets instant response.",
     },
     {
-      icon: "Percent",
+      icon: "Percent" as IconName,
       title: "Keep 100% of Your Commission",
       description:
         "ISAs typically take 15-25% of every closed deal. On a $15,000 commission, that's $2,250-$3,750 gone. AI takes zero commission, ever.",
     },
     {
-      icon: "Zap",
+      icon: "Zap" as IconName,
       title: "Instant, Consistent Performance",
       description:
         "No 2-4 week training period. No performance variance. No turnover. AI delivers the same high-quality response on day 1 as day 1,000.",
@@ -129,6 +131,7 @@ export const isaReplacement: BestForPageContent = {
         others: "Varies daily",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -162,6 +165,5 @@ export const isaReplacement: BestForPageContent = {
     subheadline:
       "Calculate your savings: $4,000+/month salary + 15-25% commission splits. Book a demo to see how Prestyj delivers better results at a fraction of the cost.",
     buttonText: "See Your Potential Savings",
-    buttonHref: "/book-demo",
   },
-};
+});

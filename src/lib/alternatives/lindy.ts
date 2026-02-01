@@ -1,6 +1,11 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const lindy: AlternativePageContent = {
+export const lindy: AlternativePageContent = createAlternativePage({
   slug: "lindy",
   type: "direct-competitor",
   competitor: {
@@ -8,7 +13,8 @@ export const lindy: AlternativePageContent = {
     shortName: "Lindy",
     pricing: "Starting at $299/month",
     website: "https://lindy.ai",
-    description: "End-to-end AI agent platform for lead generation and business automation",
+    description:
+      "End-to-end AI agent platform for lead generation and business automation",
   },
   meta: {
     title: "Best Lindy AI Alternative for Real Estate | Prestyj",
@@ -25,8 +31,6 @@ export const lindy: AlternativePageContent = {
   },
   hero: {
     badge: "Lindy AI Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Lindy AI Alternative?",
     subheadline:
       "Lindy is a versatile AI agent platform for business automation. But if you're a real estate team that needs expert voice calling for lead response and reactivation, there's a better choice.",
   },
@@ -76,11 +80,7 @@ export const lindy: AlternativePageContent = {
         competitor: "Limited",
         note: "Prestyj includes full lead management",
       },
-      {
-        feature: "24/7 AI Response",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       {
         feature: "Post-Call Follow-up",
         prestyj: "Automated",
@@ -113,7 +113,7 @@ export const lindy: AlternativePageContent = {
         "Standard AI voice quality",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Predictable pricing",
       note: "Based on your needs",
       pros: [
@@ -124,7 +124,6 @@ export const lindy: AlternativePageContent = {
         "Built-in CRM and lead management",
         "Ultra-realistic voice quality",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -193,4 +192,4 @@ export const lindy: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "No credit card required. No setup complexity.",
   },
-};
+});

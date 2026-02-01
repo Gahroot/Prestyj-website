@@ -1,13 +1,19 @@
 import type { AlternativePageContent } from "./types";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
-export const vapi: AlternativePageContent = {
+export const vapi: AlternativePageContent = createAlternativePage({
   slug: "vapi",
   type: "direct-competitor",
   competitor: {
     name: "Vapi",
     pricing: "$0.05/min + LLM + telephony costs",
     website: "https://vapi.ai",
-    description: "Developer platform for building voice AI agents with modular architecture",
+    description:
+      "Developer platform for building voice AI agents with modular architecture",
   },
   meta: {
     title: "Best Vapi Alternative for Real Estate | Prestyj",
@@ -24,8 +30,6 @@ export const vapi: AlternativePageContent = {
   },
   hero: {
     badge: "Vapi Alternative",
-    headline: "Looking for a",
-    headlineAccent: "Vapi Alternative?",
     subheadline:
       "Vapi offers powerful developer APIs for voice AI. But if you're a real estate team that wants AI lead response without the technical complexity, there's a better path.",
   },
@@ -69,23 +73,18 @@ export const vapi: AlternativePageContent = {
         competitor: false,
         note: "Prestyj specializes in reviving dead leads",
       },
-      {
-        feature: "Built-in CRM",
-        prestyj: true,
-        competitor: false,
-        note: "Vapi requires you to build CRM integrations",
-      },
+      buildAlternativeFeature(
+        STANDARD_FEATURES.BUILT_IN_CRM,
+        false,
+        "Vapi requires you to build CRM integrations"
+      ),
       {
         feature: "Post-Call Automation",
         prestyj: true,
         competitor: "Limited",
         note: "Prestyj handles full lead lifecycle",
       },
-      {
-        feature: "24/7 AI Response",
-        prestyj: true,
-        competitor: true,
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       {
         feature: "Customer Support",
         prestyj: "Priority support",
@@ -112,7 +111,7 @@ export const vapi: AlternativePageContent = {
         "Not optimized for any industry",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Predictable pricing",
       note: "Based on your needs",
       pros: [
@@ -123,7 +122,6 @@ export const vapi: AlternativePageContent = {
         "Done-for-you management and optimization",
         "Priority customer support",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -192,4 +190,4 @@ export const vapi: AlternativePageContent = {
     buttonHref: "/book-demo",
     footnote: "No credit card required. No developers needed.",
   },
-};
+});

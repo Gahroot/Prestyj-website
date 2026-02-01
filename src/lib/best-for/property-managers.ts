@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const propertyManagers: BestForPageContent = {
+export const propertyManagers: BestForPageContent = createBestForPage({
   slug: "property-managers",
   niche: {
     name: "Property Managers",
@@ -22,32 +24,32 @@ export const propertyManagers: BestForPageContent = {
   },
   hero: {
     badge: "Property Management AI",
-    headline: "AI Agents Built for",
     headlineAccent: "Property Managers",
     subheadline:
       "Maintenance emergencies don't wait for business hours. AI handles tenant calls 24/7, triages urgent vs routine requests, and books showings while you focus on operations.",
+    pattern: "AI_AGENTS_BUILT_FOR",
   },
   whyBestFor: [
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "24/7 Tenant Support",
       description:
         "Maintenance issues happen at midnight. Prospective tenants call on weekends. AI answers every call, every time—no more after-hours disruptions to your personal life.",
     },
     {
-      icon: "AlertTriangle",
+      icon: "AlertTriangle" as IconName,
       title: "Intelligent Emergency Triage",
       description:
         "AI distinguishes between true emergencies (burst pipe, no heat) and routine requests (light bulb out). Critical issues escalate immediately; others are scheduled appropriately.",
     },
     {
-      icon: "Calendar",
+      icon: "Calendar" as IconName,
       title: "Automated Showing Coordination",
       description:
         "Prospective tenants can schedule showings instantly without phone tag. AI checks availability, books appointments, and sends confirmations—reducing no-shows and vacancy days.",
     },
     {
-      icon: "Users",
+      icon: "Users" as IconName,
       title: "Prospect Qualification",
       description:
         "AI pre-qualifies applicants by gathering move-in date, income verification, credit score range, and rental history before you invest time in showings.",
@@ -119,6 +121,7 @@ export const propertyManagers: BestForPageContent = {
         others: "Manual entry prone to errors",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -152,7 +155,6 @@ export const propertyManagers: BestForPageContent = {
     subheadline:
       "Property management doesn't have to mean 24/7 personal availability. Book a demo to see how AI handles tenant calls while you focus on growing your portfolio.",
     buttonText: "Book Your Demo",
-    buttonHref: "/book-demo",
     footnote: "No credit card required. See your call volume transformation in minutes.",
   },
-};
+});

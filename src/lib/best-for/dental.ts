@@ -1,6 +1,8 @@
+import { createBestForPage } from "@/lib/content-factory";
+import type { IconName } from "@/lib/content-factory";
 import type { BestForPageContent } from "./types";
 
-export const dental: BestForPageContent = {
+export const dental: BestForPageContent = createBestForPage({
   slug: "dental",
   niche: {
     name: "Dental Offices",
@@ -24,32 +26,32 @@ export const dental: BestForPageContent = {
   },
   hero: {
     badge: "Dental Practice AI",
-    headline: "AI Agents Built for",
     headlineAccent: "Dental Offices",
     subheadline:
       "No-shows cost $150-$300 per slot. AI reduces no-shows by 60%, handles appointment booking 24/7, and automates patient intake—so your team can focus on patient care.",
+    pattern: "AI_AGENTS_BUILT_FOR",
   },
   whyBestFor: [
     {
-      icon: "CalendarCheck",
+      icon: "CalendarCheck" as IconName,
       title: "Reduce No-Shows by 60%",
       description:
         "Automated appointment reminders via voice and text reduce no-shows from 15-20% down to 6-8%. That's 2-3 recovered appointments per day for the average practice.",
     },
     {
-      icon: "Clock",
+      icon: "Clock" as IconName,
       title: "Save Front Desk 15+ Hours/Week",
       description:
         "AI handles appointment confirmations, reminders, rescheduling requests, and new patient intake calls. Your staff focuses on in-office patients, not phone tag.",
     },
     {
-      icon: "Phone",
+      icon: "Phone" as IconName,
       title: "24/7 New Patient Booking",
       description:
         "New patients call evenings and weekends. AI responds instantly, gathers insurance info, and books first appointments—before they call your competitor.",
     },
     {
-      icon: "Shield",
+      icon: "Shield" as IconName,
       title: "HIPAA-Compliant by Default",
       description:
         "Built for healthcare with encrypted conversations, secure data handling, and full HIPAA compliance. No PHI exposure, complete audit trails.",
@@ -126,6 +128,7 @@ export const dental: BestForPageContent = {
         others: "15-20 hours/month",
       },
     ],
+    includeCommonRows: false,
   },
   faq: [
     {
@@ -169,7 +172,6 @@ export const dental: BestForPageContent = {
     subheadline:
       "Reduce no-shows by 60%, capture every new patient call, and give your front desk 15 hours back every week. Book a demo to see the impact on your practice.",
     buttonText: "Book Your Demo",
-    buttonHref: "/book-demo",
     footnote: "HIPAA-compliant. No credit card required. Works with all major dental software.",
   },
-};
+});

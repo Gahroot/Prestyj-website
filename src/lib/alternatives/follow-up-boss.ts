@@ -1,6 +1,7 @@
 import type { AlternativePageContent } from "./types";
+import { createAlternativePage } from "@/lib/content-factory";
 
-export const followUpBoss: AlternativePageContent = {
+export const followUpBoss: AlternativePageContent = createAlternativePage({
   slug: "follow-up-boss",
   type: "integration-partner",
   competitor: {
@@ -25,25 +26,10 @@ export const followUpBoss: AlternativePageContent = {
   },
   hero: {
     badge: "FUB Integration",
-    headline: "Supercharge Your Follow Up Boss with",
-    headlineAccent: "AI-Powered Lead Response",
     subheadline:
       "You don't need to replace Follow Up Boss. Add instant AI response and dead lead reactivation while keeping the CRM you already love.",
   },
-  industryStats: [
-    {
-      stat: "47 sec",
-      description: "average AI response time",
-    },
-    {
-      stat: "78%",
-      description: "of buyers choose first responder",
-    },
-    {
-      stat: "23%",
-      description: "dead leads reactivated with AI outreach",
-    },
-  ],
+  industryStats: "reactivation",
   comparison: {
     features: [
       {
@@ -109,7 +95,7 @@ export const followUpBoss: AlternativePageContent = {
         "Dead leads require manual outreach",
       ],
     },
-    prestyjPricing: {
+    prestyjPricingOverrides: {
       price: "Custom pricing",
       note: "Integrates with your FUB",
       pros: [
@@ -118,7 +104,6 @@ export const followUpBoss: AlternativePageContent = {
         "24/7 automated engagement",
         "Syncs appointments back to FUB",
       ],
-      cons: [],
     },
   },
   whySwitch: [
@@ -183,6 +168,7 @@ export const followUpBoss: AlternativePageContent = {
       "Keep the CRM you love. Add the AI response speed you need. See how Prestyj integrates with Follow Up Boss.",
     buttonText: "Book Your Free Demo",
     buttonHref: "/book-demo",
-    footnote: "Works alongside your existing FUB setup. No migration required.",
+    footnote:
+      "Works alongside your existing FUB setup. No migration required.",
   },
-};
+});

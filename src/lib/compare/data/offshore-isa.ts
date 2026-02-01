@@ -1,7 +1,7 @@
-import { Shield, Globe, AlertTriangle, BarChart3 } from "lucide-react";
 import type { ComparePageData, CompareMetadata } from "../types";
+import { createComparePage } from "@/lib/content-factory";
 
-export const offshoreIsaCompareData: ComparePageData = {
+export const offshoreIsaCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-offshore-isa",
   competitorName: "Offshore ISA Services",
   hero: {
@@ -32,10 +32,8 @@ export const offshoreIsaCompareData: ComparePageData = {
   ],
   pricing: {
     prestyj: {
-      name: "Prestyj AI",
       price: "Custom pricing",
       priceSubtext: "TCPA compliance included",
-      highlight: true,
       features: [
         { text: "TCPA compliance by design", included: true },
         { text: "Consistent brand voice every time", included: true },
@@ -45,7 +43,6 @@ export const offshoreIsaCompareData: ComparePageData = {
       ],
     },
     competitor: {
-      name: "Offshore ISA Services",
       price: "$1,500-$3,000",
       priceSubtext: "/month per agent + compliance risk exposure",
       features: [
@@ -116,25 +113,25 @@ export const offshoreIsaCompareData: ComparePageData = {
     description: "Risk reduction and quality consistency drive the decision",
     reasons: [
       {
-        icon: Shield,
+        icon: "Shield",
         title: "Eliminate TCPA Compliance Risk",
         description:
           "New 2026 regulations require one-to-one consent per seller across 15+ state mini-TCPA laws. AI has compliance built into every conversation—no training required.",
       },
       {
-        icon: Globe,
+        icon: "Globe",
         title: "Consistent Brand Voice",
         description:
           "Offshore teams struggle to match your brand tone. AI delivers the same quality conversation whether it's the first call or the ten-thousandth.",
       },
       {
-        icon: AlertTriangle,
+        icon: "AlertTriangle",
         title: "Remove Provider Risk",
         description:
           "When your offshore provider has turnover or quality issues, your lead response suffers. AI eliminates third-party dependency.",
       },
       {
-        icon: BarChart3,
+        icon: "BarChart3",
         title: "Real-Time Portfolio Visibility",
         description:
           "See lead response metrics across all 50+ offices instantly. No more waiting for offshore provider reports or reconciling different data formats.",
@@ -146,7 +143,7 @@ export const offshoreIsaCompareData: ComparePageData = {
       type: "tcpa-warning",
       position: "after-pricing",
       data: {
-        icon: AlertTriangle,
+        icon: "AlertTriangle",
         title: "2026 TCPA Compliance Warning",
         description:
           "New FCC rules effective January 2026 require one-to-one consent per seller. 15+ states have mini-TCPA laws with varying requirements. Violations cost $500-$1,500 per call—not per consumer. Class action filings surged 285% in September 2025 alone.",
@@ -201,10 +198,9 @@ export const offshoreIsaCompareData: ComparePageData = {
     description:
       "See how enterprise operations are replacing offshore provider risk with AI-powered consistency. TCPA compliance, brand voice control, and real-time visibility included.",
     buttonText: "Book Your Enterprise Demo",
-    buttonHref: "/book-demo",
     disclaimer: "See compliance features. Evaluate quality consistency.",
   },
-};
+});
 
 export const offshoreIsaMetadata: CompareMetadata = {
   slug: "prestyj-vs-offshore-isa",
