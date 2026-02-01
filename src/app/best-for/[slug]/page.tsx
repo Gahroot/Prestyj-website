@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { BestForPageClient } from "@/components/sections/best-for/best-for-page-client";
 import { getBestFor, getAllBestForSlugs } from "@/lib/best-for";
+import { FAQJsonLd } from "@/components/seo/json-ld";
 
 interface BestForPageProps {
   params: Promise<{ slug: string }>;
@@ -60,6 +61,7 @@ export default async function BestForPage({ params }: BestForPageProps) {
 
   return (
     <>
+      <FAQJsonLd faqs={bestFor.faq} />
       <Navbar />
       <main className="pt-16">
         <BestForPageClient bestFor={bestFor} />
