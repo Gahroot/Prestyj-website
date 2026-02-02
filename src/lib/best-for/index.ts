@@ -16,6 +16,10 @@ import { propertyManagers } from "./property-managers";
 import { solar } from "./solar";
 import { dental } from "./dental";
 import { doneForYouAi } from "./done-for-you-ai";
+import { aiLeadResponse } from "./ai-lead-response";
+import { aiVoiceQualification } from "./ai-voice-qualification";
+import { aiAppointmentSetting } from "./ai-appointment-setting";
+import { customAiDevelopment } from "./custom-ai-development";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -35,6 +39,10 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "solar": solar,
   "dental": dental,
   "done-for-you-ai": doneForYouAi,
+  "ai-lead-response": aiLeadResponse,
+  "ai-voice-qualification": aiVoiceQualification,
+  "ai-appointment-setting": aiAppointmentSetting,
+  "custom-ai-development": customAiDevelopment,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
