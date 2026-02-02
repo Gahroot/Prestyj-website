@@ -15,6 +15,7 @@ import { roofing } from "./roofing";
 import { propertyManagers } from "./property-managers";
 import { solar } from "./solar";
 import { dental } from "./dental";
+import { doneForYouAi } from "./done-for-you-ai";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -33,6 +34,7 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "property-managers": propertyManagers,
   "solar": solar,
   "dental": dental,
+  "done-for-you-ai": doneForYouAi,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
