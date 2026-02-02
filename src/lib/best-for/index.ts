@@ -16,6 +16,9 @@ import { propertyManagers } from "./property-managers";
 import { solar } from "./solar";
 import { dental } from "./dental";
 import { doneForYouAi } from "./done-for-you-ai";
+import { financialAdvisors } from "./financial-advisors";
+import { wealthManagementFirms } from "./wealth-management-firms";
+import { insuranceCarriers } from "./insurance-carriers";
 import { aiLeadResponse } from "./ai-lead-response";
 import { aiVoiceQualification } from "./ai-voice-qualification";
 import { aiAppointmentSetting } from "./ai-appointment-setting";
@@ -32,8 +35,11 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "commercial-real-estate": commercialRealEstate,
   "real-estate-investors": realEstateInvestors,
   "insurance-agencies": insuranceAgencies,
+  "insurance-carriers": insuranceCarriers,
   "hvac": hvac,
   "mortgage-brokers": mortgageBrokers,
+  "financial-advisors": financialAdvisors,
+  "wealth-management-firms": wealthManagementFirms,
   "roofing": roofing,
   "property-managers": propertyManagers,
   "solar": solar,
