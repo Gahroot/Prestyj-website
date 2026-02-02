@@ -13,7 +13,7 @@ import { getAllAlternativeSlugs } from "./alternatives";
 import { getAllSolutionSlugs } from "./solutions";
 import { getAllBestForSlugs } from "./best-for";
 
-const BASE_URL = "https://prestyj.com";
+const BASE_URL = "https://www.prestyj.com";
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 export interface IndexNowResponse {
@@ -116,7 +116,7 @@ export async function submitUrls(urls: string[]): Promise<IndexNowResponse> {
   }
 
   const payload: IndexNowSubmission = {
-    host: "prestyj.com",
+    host: "www.prestyj.com",
     key,
     keyLocation: `${BASE_URL}/${key}.txt`,
     urlList: urls,
