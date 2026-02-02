@@ -74,9 +74,21 @@ export function CalcomInlineEmbed({ className }: CalcomInlineEmbedProps) {
 
     const Cal = window.Cal;
 
-    Cal("init", "inline", { origin: "https://app.cal.com" });
+    // Initialize Cal.com
+    Cal("init", { origin: "https://app.cal.com" });
 
-    Cal("inline", "inline", {
+    // Configure UI settings
+    Cal("ui", {
+      theme: "dark",
+      hideEventTypeDetails: false,
+      layout: "month_view",
+      styles: {
+        branding: { brandColor: "#7058e3" },
+      },
+    });
+
+    // Create inline embed
+    Cal("inline", {
       elementOrSelector: "#cal-inline-embed",
       calLink: CAL_LINK,
       config: {
@@ -84,15 +96,6 @@ export function CalcomInlineEmbed({ className }: CalcomInlineEmbedProps) {
         styles: {
           branding: { brandColor: "#7058e3" },
         },
-      },
-    });
-
-    Cal("inline", "ui", {
-      theme: "dark",
-      hideEventTypeDetails: false,
-      layout: "month_view",
-      styles: {
-        branding: { brandColor: "#7058e3" },
       },
     });
   }, [isLoaded]);
@@ -143,9 +146,11 @@ export function CalcomPopupButton({ children, className }: CalcomPopupButtonProp
 
     const Cal = window.Cal;
 
-    Cal("init", "popup", { origin: "https://app.cal.com" });
+    // Initialize Cal.com
+    Cal("init", { origin: "https://app.cal.com" });
 
-    Cal("popup", "ui", {
+    // Configure UI settings
+    Cal("ui", {
       theme: "dark",
       hideEventTypeDetails: false,
       styles: {
@@ -159,7 +164,7 @@ export function CalcomPopupButton({ children, className }: CalcomPopupButtonProp
 
     const Cal = window.Cal;
 
-    Cal("popup", "modal", {
+    Cal("modal", {
       calLink: CAL_LINK,
       config: {
         theme: "dark",

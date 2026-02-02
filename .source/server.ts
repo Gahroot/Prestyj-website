@@ -1,20 +1,24 @@
 // @ts-nocheck
-import * as __fd_glob_17 from "../content/blog/why-leads-go-cold.mdx?collection=blog"
-import * as __fd_glob_16 from "../content/blog/unit-economics-ai-lead-response.mdx?collection=blog"
-import * as __fd_glob_15 from "../content/blog/speed-to-lead.mdx?collection=blog"
-import * as __fd_glob_14 from "../content/blog/speed-to-lead-statistics.mdx?collection=blog"
-import * as __fd_glob_13 from "../content/blog/lead-reactivation-guide.mdx?collection=blog"
-import * as __fd_glob_12 from "../content/blog/isa-vs-ai.mdx?collection=blog"
-import * as __fd_glob_11 from "../content/blog/isa-cost-2026.mdx?collection=blog"
-import * as __fd_glob_10 from "../content/blog/fair-housing-ai-bias-enterprise-brokerages.mdx?collection=blog"
-import * as __fd_glob_9 from "../content/blog/enterprise-lead-infrastructure.mdx?collection=blog"
-import * as __fd_glob_8 from "../content/blog/done-for-you-ai-agents-guide.mdx?collection=blog"
-import * as __fd_glob_7 from "../content/blog/designing-lead-response-operations-50-offices.mdx?collection=blog"
-import * as __fd_glob_6 from "../content/blog/build-vs-buy-ai-sales-agents-real-estate.mdx?collection=blog"
-import * as __fd_glob_5 from "../content/blog/best-ai-tools-real-estate.mdx?collection=blog"
-import * as __fd_glob_4 from "../content/blog/ai-voice-agent-vs-human-receptionist.mdx?collection=blog"
-import * as __fd_glob_3 from "../content/blog/ai-voice-agent-pricing-guide.mdx?collection=blog"
-import * as __fd_glob_2 from "../content/blog/ai-voice-agent-costs-compared.mdx?collection=blog"
+import * as __fd_glob_21 from "../content/blog/why-leads-go-cold.mdx?collection=blog"
+import * as __fd_glob_20 from "../content/blog/white-label-ai-calling.mdx?collection=blog"
+import * as __fd_glob_19 from "../content/blog/unit-economics-ai-lead-response.mdx?collection=blog"
+import * as __fd_glob_18 from "../content/blog/speed-to-lead.mdx?collection=blog"
+import * as __fd_glob_17 from "../content/blog/speed-to-lead-statistics.mdx?collection=blog"
+import * as __fd_glob_16 from "../content/blog/lead-reactivation-guide.mdx?collection=blog"
+import * as __fd_glob_15 from "../content/blog/isa-vs-ai.mdx?collection=blog"
+import * as __fd_glob_14 from "../content/blog/isa-cost-2026.mdx?collection=blog"
+import * as __fd_glob_13 from "../content/blog/fair-housing-ai-bias-enterprise-brokerages.mdx?collection=blog"
+import * as __fd_glob_12 from "../content/blog/enterprise-lead-infrastructure.mdx?collection=blog"
+import * as __fd_glob_11 from "../content/blog/done-for-you-ai-agents-guide.mdx?collection=blog"
+import * as __fd_glob_10 from "../content/blog/designing-lead-response-operations-50-offices.mdx?collection=blog"
+import * as __fd_glob_9 from "../content/blog/build-vs-buy-ai-sales-agents-real-estate.mdx?collection=blog"
+import * as __fd_glob_8 from "../content/blog/best-ai-tools-real-estate.mdx?collection=blog"
+import * as __fd_glob_7 from "../content/blog/ai-voice-agent-vs-human-receptionist.mdx?collection=blog"
+import * as __fd_glob_6 from "../content/blog/ai-voice-agent-pricing-guide.mdx?collection=blog"
+import * as __fd_glob_5 from "../content/blog/ai-voice-agent-costs-compared.mdx?collection=blog"
+import * as __fd_glob_4 from "../content/blog/ai-sales-text-messaging.mdx?collection=blog"
+import * as __fd_glob_3 from "../content/blog/ai-sales-follow-up-automation.mdx?collection=blog"
+import * as __fd_glob_2 from "../content/blog/ai-sales-calling-guide.mdx?collection=blog"
 import * as __fd_glob_1 from "../content/blog/ai-sales-agents-explained.mdx?collection=blog"
 import * as __fd_glob_0 from "../content/blog/ai-lead-response-systems-2026.mdx?collection=blog"
 import { server } from 'fumadocs-mdx/runtime/server';
@@ -25,4 +29,4 @@ const create = server<typeof Config, import("fumadocs-mdx/runtime/types").Intern
   }
 }>({"doc":{"passthroughs":["extractedReferences"]}});
 
-export const blog = await create.docs("blog", "content/blog", {}, {"ai-lead-response-systems-2026.mdx": __fd_glob_0, "ai-sales-agents-explained.mdx": __fd_glob_1, "ai-voice-agent-costs-compared.mdx": __fd_glob_2, "ai-voice-agent-pricing-guide.mdx": __fd_glob_3, "ai-voice-agent-vs-human-receptionist.mdx": __fd_glob_4, "best-ai-tools-real-estate.mdx": __fd_glob_5, "build-vs-buy-ai-sales-agents-real-estate.mdx": __fd_glob_6, "designing-lead-response-operations-50-offices.mdx": __fd_glob_7, "done-for-you-ai-agents-guide.mdx": __fd_glob_8, "enterprise-lead-infrastructure.mdx": __fd_glob_9, "fair-housing-ai-bias-enterprise-brokerages.mdx": __fd_glob_10, "isa-cost-2026.mdx": __fd_glob_11, "isa-vs-ai.mdx": __fd_glob_12, "lead-reactivation-guide.mdx": __fd_glob_13, "speed-to-lead-statistics.mdx": __fd_glob_14, "speed-to-lead.mdx": __fd_glob_15, "unit-economics-ai-lead-response.mdx": __fd_glob_16, "why-leads-go-cold.mdx": __fd_glob_17, });
+export const blog = await create.docs("blog", "content/blog", {}, {"ai-lead-response-systems-2026.mdx": __fd_glob_0, "ai-sales-agents-explained.mdx": __fd_glob_1, "ai-sales-calling-guide.mdx": __fd_glob_2, "ai-sales-follow-up-automation.mdx": __fd_glob_3, "ai-sales-text-messaging.mdx": __fd_glob_4, "ai-voice-agent-costs-compared.mdx": __fd_glob_5, "ai-voice-agent-pricing-guide.mdx": __fd_glob_6, "ai-voice-agent-vs-human-receptionist.mdx": __fd_glob_7, "best-ai-tools-real-estate.mdx": __fd_glob_8, "build-vs-buy-ai-sales-agents-real-estate.mdx": __fd_glob_9, "designing-lead-response-operations-50-offices.mdx": __fd_glob_10, "done-for-you-ai-agents-guide.mdx": __fd_glob_11, "enterprise-lead-infrastructure.mdx": __fd_glob_12, "fair-housing-ai-bias-enterprise-brokerages.mdx": __fd_glob_13, "isa-cost-2026.mdx": __fd_glob_14, "isa-vs-ai.mdx": __fd_glob_15, "lead-reactivation-guide.mdx": __fd_glob_16, "speed-to-lead-statistics.mdx": __fd_glob_17, "speed-to-lead.mdx": __fd_glob_18, "unit-economics-ai-lead-response.mdx": __fd_glob_19, "white-label-ai-calling.mdx": __fd_glob_20, "why-leads-go-cold.mdx": __fd_glob_21, });
