@@ -50,6 +50,9 @@ const blogSlugs = [
   "unit-economics-ai-lead-response",
   "speed-to-lead",
   "ai-sales-agents-explained",
+  "ai-receptionist-roi-by-industry",
+  "hipaa-compliant-ai-receptionist",
+  "ai-receptionist-vs-human-cost-2026",
 ];
 
 // Alternative pages
@@ -63,6 +66,8 @@ const alternativeSlugs = [
   "conversica",
   "internal-isa",
   "drift",
+  "bland-ai",
+  "vapi",
 ];
 
 // Solution pages
@@ -76,6 +81,11 @@ const bestForSlugs = [
   "regional-brokerage-networks",
   "pe-backed-platforms",
   "commercial-real-estate",
+  "ai-voice-receptionist",
+  "ai-voice-receptionist-dental",
+  "ai-voice-receptionist-legal",
+  "ai-voice-receptionist-medical",
+  "ai-voice-receptionist-insurance",
 ];
 
 // Compare pages
