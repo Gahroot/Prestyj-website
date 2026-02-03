@@ -23,6 +23,11 @@ import { aiLeadResponse } from "./ai-lead-response";
 import { aiVoiceQualification } from "./ai-voice-qualification";
 import { aiAppointmentSetting } from "./ai-appointment-setting";
 import { customAiDevelopment } from "./custom-ai-development";
+import { aiVoiceReceptionist } from "./ai-voice-receptionist";
+import { aiVoiceReceptionistDental } from "./ai-voice-receptionist-dental";
+import { aiVoiceReceptionistLegal } from "./ai-voice-receptionist-legal";
+import { aiVoiceReceptionistMedical } from "./ai-voice-receptionist-medical";
+import { aiVoiceReceptionistInsurance } from "./ai-voice-receptionist-insurance";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -49,6 +54,11 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "ai-voice-qualification": aiVoiceQualification,
   "ai-appointment-setting": aiAppointmentSetting,
   "custom-ai-development": customAiDevelopment,
+  "ai-voice-receptionist": aiVoiceReceptionist,
+  "ai-voice-receptionist-dental": aiVoiceReceptionistDental,
+  "ai-voice-receptionist-legal": aiVoiceReceptionistLegal,
+  "ai-voice-receptionist-medical": aiVoiceReceptionistMedical,
+  "ai-voice-receptionist-insurance": aiVoiceReceptionistInsurance,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
