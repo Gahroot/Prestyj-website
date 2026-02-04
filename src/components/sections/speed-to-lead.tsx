@@ -48,12 +48,12 @@ export function SpeedToLeadSection() {
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
               Stop Losing Leads.
               <br />
-              <span className="text-primary">Start Closing Deals.</span>
+              <span className="text-primary">Start Booking More.</span>
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-lg">
               Your AI agent responds to every lead in under 60 seconds, qualifies them, and books
-              appointments on your calendar. 24/7. No salary. No commission splits.
+              appointments on your calendar. 24/7. No salary. No overhead costs.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 pt-4">
@@ -106,10 +106,18 @@ export function SpeedToLeadSection() {
               <div className="w-12 h-12 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Calendar className="w-6 h-6 text-warning" />
               </div>
-              <span className="text-3xl font-bold text-warning">3x</span>
+              <span className="text-3xl font-bold text-warning">3x*</span>
               <p className="text-sm text-muted-foreground mt-1">more appointments</p>
             </motion.div>
           </motion.div>
+        </motion.div>
+        <motion.div
+          className="text-center mt-8"
+          variants={itemVariants}
+        >
+          <p className="text-xs text-muted-foreground">
+            *Results vary by industry and implementation. Average results based on client data.
+          </p>
         </motion.div>
       </div>
     </section>

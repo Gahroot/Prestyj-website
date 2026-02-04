@@ -20,7 +20,7 @@ export function CTASection() {
             Ready to Stop Losing Leads?
           </h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Every hour you wait, potential clients are slipping away to faster agents.
+            Every hour you wait, potential clients are slipping away to faster competitors.
             Let your AI agent work while you sleep.
           </p>
           <Button size="lg" className="text-lg px-10 py-6" asChild>

@@ -40,10 +40,10 @@ export function SolutionSection() {
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
               An AI Agent That
               <br />
-              <span className="text-primary">Actually Closes</span>
+              <span className="text-primary">Actually Converts</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Your agent handles lead follow-up so you can focus on what you do best: closing deals.
+              Your agent handles lead follow-up so you can focus on what you do best: growing your business.
               No more missed calls. No more cold leads. No more hiring headaches.
             </p>
             <div className="space-y-4">
@@ -53,7 +53,7 @@ export function SolutionSection() {
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <div className="w-2 h-2 rounded-full bg-success" />
-                <span>No commission splits</span>
+                <span>No overhead costs</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <div className="w-2 h-2 rounded-full bg-success" />

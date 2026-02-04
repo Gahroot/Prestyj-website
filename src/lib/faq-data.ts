@@ -7,12 +7,12 @@ export const faqs = [
   {
     question: "How does it integrate with my existing tools?",
     answer:
-      "Your agent works with your existing CRM and calendar. We support integrations with Follow Up Boss, kvCORE, Chime, Google Calendar, Outlook, and more. Setup typically takes less than 30 minutes.",
+      "Your agent works with your existing CRM and calendar. We support integrations with Follow Up Boss, kvCORE, Chime, Salesforce, HubSpot, Pipedrive, Google Calendar, Outlook, and more. Setup typically takes less than 30 minutes.",
   },
   {
     question: "What happens when a lead asks something the agent can't answer?",
     answer:
-      "Your agent is designed to handle the qualification conversation. For specific property questions or complex scenarios, it smoothly hands off to you with full context. You get notified immediately so you can jump in when needed.",
+      "Your agent is designed to handle the qualification conversation. For specific questions or complex scenarios, it smoothly hands off to you with full context. You get notified immediately so you can jump in when needed.",
   },
   {
     question: "How fast does it actually respond?",

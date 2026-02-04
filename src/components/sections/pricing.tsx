@@ -30,7 +30,7 @@ export function PricingSection() {
             Pricing That Makes Sense
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Less than the cost of a missed commission. Way less than hiring an ISA.
+            Less than the cost of one missed deal. Way less than hiring a sales assistant.
           </p>
         </motion.div>
 

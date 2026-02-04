@@ -9,21 +9,21 @@ const painPoints = [
     icon: Clock,
     title: "Leads go cold while you're busy",
     description:
-      "You're at a showing. A new lead comes in. By the time you call back, they've already talked to 3 other agents.",
+      "You're at a showing, in a meeting, or with a client. A new lead comes in. By the time you call back, they've already moved on.",
     color: "text-warning",
   },
   {
     icon: PhoneMissed,
-    title: "Missed calls = missed commissions",
+    title: "Missed calls = missed revenue",
     description:
-      "78% of buyers work with the first agent who responds. Every unanswered call is money walking out the door.",
+      "78% of customers work with the first person who responds. Every unanswered call is money walking out the door.",
     color: "text-destructive",
   },
   {
     icon: DollarSign,
     title: "Hiring is expensive and unreliable",
     description:
-      "A good ISA costs $4k/month plus commission. And they still call in sick, take vacations, and quit.",
+      "A good ISA or sales assistant costs $4k/month plus commissions. And they still call in sick, take vacations, and quit.",
     color: "text-primary",
   },
 ];
@@ -62,7 +62,7 @@ export function PainPointsSection() {
             Sound Familiar?
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Every day, real estate agents lose deals they should have won. Here&apos;s why.
+            Every day, sales professionals and real estate agents lose deals they should have won. Here&apos;s why.
           </p>
         </motion.div>
 

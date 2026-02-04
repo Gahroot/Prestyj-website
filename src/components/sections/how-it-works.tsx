@@ -11,7 +11,7 @@ const steps = [
     icon: Zap,
     title: "Speed-to-Lead",
     description:
-      "A new lead comes in. Your agent responds in under 60 seconds via text. While your competitors are still checking their phones.",
+      "A new lead comes in. Your agent responds in under 60 seconds via text or call. While your competitors are still checking their phones.",
     highlight: "47 second average response",
   },
   {
@@ -19,7 +19,7 @@ const steps = [
     icon: MessageSquare,
     title: "Smart Qualification",
     description:
-      "Your agent asks the right questions naturally. Timeline, budget, pre-approval status. No scripts that feel robotic.",
+      "Your agent asks the right questions naturally. Timeline, budget, qualification criteria. No scripts that feel robotic.",
     highlight: "BANT qualification built-in",
   },
   {

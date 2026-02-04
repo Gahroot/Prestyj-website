@@ -90,7 +90,10 @@ export function HeroDemoSection() {
             Voice AI built for every customer conversation
           </h1>
           <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
-            Let our AI handle calls and texts so you can focus on closing deals.
+            Book 3x more deals* and get your life back. Sales AI working 24/7 so you never miss an opportunity.
+          </p>
+          <p className="text-xs text-muted-foreground/80 max-w-md mx-auto lg:mx-0">
+            *Average results. Individual performance may vary.
           </p>
         </motion.div>
 
