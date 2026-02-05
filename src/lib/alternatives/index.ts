@@ -14,6 +14,15 @@ import { boomtown } from "./boomtown";
 import { blandAi } from "./bland-ai";
 import { lindy } from "./lindy";
 import { lofty } from "./lofty";
+import { kvcore } from "./kvcore";
+import { sierraInteractive } from "./sierra-interactive";
+import { airDotAi } from "./air-dot-ai";
+import { synthflow } from "./synthflow";
+import { homebot } from "./homebot";
+import { betterbot } from "./betterbot";
+import { eliseai } from "./eliseai";
+import { smartAlto } from "./smart-alto";
+import { isaService } from "./isa-service";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -31,6 +40,15 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "bland-ai": blandAi,
   lindy,
   lofty,
+  kvcore,
+  "sierra-interactive": sierraInteractive,
+  "air-dot-ai": airDotAi,
+  synthflow,
+  homebot,
+  betterbot,
+  eliseai,
+  "smart-alto": smartAlto,
+  "isa-service": isaService,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {

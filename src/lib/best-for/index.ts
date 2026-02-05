@@ -28,6 +28,12 @@ import { aiVoiceReceptionistDental } from "./ai-voice-receptionist-dental";
 import { aiVoiceReceptionistLegal } from "./ai-voice-receptionist-legal";
 import { aiVoiceReceptionistMedical } from "./ai-voice-receptionist-medical";
 import { aiVoiceReceptionistInsurance } from "./ai-voice-receptionist-insurance";
+import { lawFirms } from "./law-firms";
+import { autoDealerships } from "./auto-dealerships";
+import { realEstateWholesalers } from "./real-estate-wholesalers";
+import { contractors } from "./contractors";
+import { realEstateCoach } from "./real-estate-coach";
+import { fintech } from "./fintech";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -59,6 +65,12 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "ai-voice-receptionist-legal": aiVoiceReceptionistLegal,
   "ai-voice-receptionist-medical": aiVoiceReceptionistMedical,
   "ai-voice-receptionist-insurance": aiVoiceReceptionistInsurance,
+  "law-firms": lawFirms,
+  "auto-dealerships": autoDealerships,
+  "real-estate-wholesalers": realEstateWholesalers,
+  "contractors": contractors,
+  "real-estate-coach": realEstateCoach,
+  "fintech": fintech,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
