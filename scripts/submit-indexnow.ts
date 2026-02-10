@@ -14,7 +14,7 @@
  */
 
 const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
-const BASE_URL = "https://prestyj.com";
+const BASE_URL = "https://www.prestyj.com";
 
 interface IndexNowSubmission {
   host: string;
@@ -53,6 +53,11 @@ const blogSlugs = [
   "ai-receptionist-roi-by-industry",
   "hipaa-compliant-ai-receptionist",
   "ai-receptionist-vs-human-cost-2026",
+  // New 2026 blog posts
+  "small-business-ai-receptionist-2026",
+  "ai-cold-outreach-vs-human-2026",
+  "bilingual-ai-receptionist-2026",
+  "ai-voice-agent-integration-guide-2026",
 ];
 
 // Alternative pages
@@ -116,7 +121,7 @@ function getAllUrls(): string[] {
 
 async function submitUrls(urls: string[], key: string): Promise<void> {
   const payload: IndexNowSubmission = {
-    host: "prestyj.com",
+    host: "www.prestyj.com",
     key,
     keyLocation: `${BASE_URL}/${key}.txt`,
     urlList: urls,
@@ -174,7 +179,7 @@ async function main() {
       "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts"
     );
     console.error(
-      "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts --url https://prestyj.com/blog/example"
+      "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts --url https://www.prestyj.com/blog/example"
     );
     console.error("  npx tsx scripts/submit-indexnow.ts --dry-run");
     process.exit(1);
