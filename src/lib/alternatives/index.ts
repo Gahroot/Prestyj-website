@@ -23,6 +23,17 @@ import { betterbot } from "./betterbot";
 import { eliseai } from "./eliseai";
 import { smartAlto } from "./smart-alto";
 import { isaService } from "./isa-service";
+import { smithAi } from "./smith-ai";
+import { rubyReceptionist } from "./ruby-receptionist";
+import { goodcall } from "./goodcall";
+import { polyAi } from "./poly-ai";
+import { cloudtalk } from "./cloudtalk";
+import { answerConnect } from "./answer-connect";
+import { voiceflow } from "./voiceflow";
+import { myAiFrontDesk } from "./my-ai-front-desk";
+import { blandAiAlt } from "./bland-ai-alt";
+import { dialpad } from "./dialpad";
+import { ringCentral } from "./ringcentral";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -49,6 +60,17 @@ export const alternatives: Record<string, AlternativePageContent> = {
   eliseai,
   "smart-alto": smartAlto,
   "isa-service": isaService,
+  "smith-ai": smithAi,
+  "ruby-receptionist": rubyReceptionist,
+  goodcall,
+  "poly-ai": polyAi,
+  cloudtalk,
+  "answer-connect": answerConnect,
+  voiceflow,
+  "my-ai-front-desk": myAiFrontDesk,
+  "bland-ai-alt": blandAiAlt,
+  dialpad,
+  "ring-central": ringCentral,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {

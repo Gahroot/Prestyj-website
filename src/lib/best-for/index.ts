@@ -29,11 +29,31 @@ import { aiVoiceReceptionistLegal } from "./ai-voice-receptionist-legal";
 import { aiVoiceReceptionistMedical } from "./ai-voice-receptionist-medical";
 import { aiVoiceReceptionistInsurance } from "./ai-voice-receptionist-insurance";
 import { lawFirms } from "./law-firms";
+import { plasticSurgery } from "./plastic-surgery";
+import { plumbing } from "./plumbing";
 import { autoDealerships } from "./auto-dealerships";
 import { realEstateWholesalers } from "./real-estate-wholesalers";
 import { contractors } from "./contractors";
 import { realEstateCoach } from "./real-estate-coach";
 import { fintech } from "./fintech";
+import { accountingFirms } from "./accounting-firms";
+import { veterinaryClinics } from "./veterinary-clinics";
+import { restaurants } from "./restaurants";
+import { salonsAndSpas } from "./salons-and-spas";
+import { gymsAndFitnessCenters } from "./gyms-and-fitness-centers";
+import { retailStores } from "./retail-stores";
+import { mentalHealthClinics } from "./mental-health-clinics";
+import { electricians } from "./electricians";
+import { autoRepairShops } from "./auto-repair-shops";
+import { pestControl } from "./pest-control";
+import { seniorCare } from "./senior-care";
+import { windowAndDoorManufacturers } from "./window-and-door-manufacturers";
+import { landscapingLawnCare } from "./landscaping-lawn-care";
+import { paintingContractors } from "./painting-contractors";
+import { movers } from "./movers";
+import { sidingContractors } from "./siding-contractors";
+import { garageDoor } from "./garage-door";
+import { flooringContractors } from "./flooring-contractors";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -66,11 +86,31 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "ai-voice-receptionist-medical": aiVoiceReceptionistMedical,
   "ai-voice-receptionist-insurance": aiVoiceReceptionistInsurance,
   "law-firms": lawFirms,
+  "plastic-surgery": plasticSurgery,
+  "plumbing": plumbing,
   "auto-dealerships": autoDealerships,
   "real-estate-wholesalers": realEstateWholesalers,
   "contractors": contractors,
   "real-estate-coach": realEstateCoach,
   "fintech": fintech,
+  "accounting-firms": accountingFirms,
+  "veterinary-clinics": veterinaryClinics,
+  "restaurants": restaurants,
+  "salons-and-spas": salonsAndSpas,
+  "gyms-and-fitness-centers": gymsAndFitnessCenters,
+  "retail-stores": retailStores,
+  "mental-health-clinics": mentalHealthClinics,
+  "electricians": electricians,
+  "auto-repair-shops": autoRepairShops,
+  "pest-control": pestControl,
+  "senior-care": seniorCare,
+  "window-and-door-manufacturers": windowAndDoorManufacturers,
+  "landscaping-lawn-care": landscapingLawnCare,
+  "painting-contractors": paintingContractors,
+  "movers": movers,
+  "siding-contractors": sidingContractors,
+  "garage-door": garageDoor,
+  "flooring-contractors": flooringContractors,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
