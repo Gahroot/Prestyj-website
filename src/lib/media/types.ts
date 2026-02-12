@@ -64,9 +64,16 @@ export interface ZImageCreateResponse {
 export interface ZImageDetailResponse {
   code: number;
   data: {
-    status: "processing" | "success" | "failed";
+    taskId: string;
+    model: string;
+    status: "waiting" | "queuing" | "generating" | "success" | "failed";
+    resultJson?: string;
     imageUrl?: string;
-    progress?: number;
+    failCode?: string;
+    failMsg?: string;
+    costTime?: number;
+    completeTime?: number;
+    createTime?: number;
   };
 }
 

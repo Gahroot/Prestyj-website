@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -159,6 +160,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </h1>
             {description && (
               <p className="text-xl text-muted-foreground">{description}</p>
+            )}
+            {image && (
+              <figure className="mt-8">
+                <Image
+                  src={image}
+                  alt={`${title}${keywords?.length ? ` — ${keywords.slice(0, 3).join(", ")}` : ""}`}
+                  width={1200}
+                  height={630}
+                  className="w-full rounded-lg"
+                  priority
+                />
+                <figcaption className="sr-only">
+                  {title} — PRESTYJ AI-powered lead response
+                </figcaption>
+              </figure>
             )}
           </header>
 

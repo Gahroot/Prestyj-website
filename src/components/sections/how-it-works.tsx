@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Zap, MessageSquare, Calendar, RotateCcw } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { HowItWorksCTA } from "./how-it-works-cta";
@@ -10,6 +11,7 @@ const steps = [
     description:
       "A new lead comes in. Your agent responds in under 60 seconds via text or call. While your competitors are still checking their phones.",
     highlight: "47 second average response",
+    image: "/images/industry/industry-shot-speed-to-lead.png",
   },
   {
     number: "02",
@@ -18,6 +20,7 @@ const steps = [
     description:
       "Your agent asks the right questions naturally. Timeline, budget, qualification criteria. No scripts that feel robotic.",
     highlight: "BANT qualification built-in",
+    image: "/images/industry/industry-shot-smart-qualification.png",
   },
   {
     number: "03",
@@ -26,6 +29,7 @@ const steps = [
     description:
       "Qualified leads get booked directly on your calendar. You wake up to appointments, not follow-up tasks.",
     highlight: "Direct calendar integration",
+    image: "/images/industry/industry-shot-appointment-booking.png",
   },
   {
     number: "04",
@@ -34,6 +38,7 @@ const steps = [
     description:
       "Old leads sitting in your CRM? Your agent re-engages them with personalized follow-ups. Turn cold leads warm again.",
     highlight: "Resurrect dormant leads",
+    image: "/images/industry/industry-shot-lead-recovery.png",
   },
 ];
 
@@ -75,8 +80,14 @@ export function HowItWorksSection() {
                 </span>
               </div>
               <div className="flex-1 w-full">
-                <div className="bg-background border border-border rounded-lg p-8 h-48 flex items-center justify-center">
-                  <step.icon className="h-16 w-16 text-primary/30" />
+                <div className="bg-background border border-border rounded-lg overflow-hidden">
+                  <Image
+                    src={step.image}
+                    alt={`${step.title} — ${step.highlight} with PRESTYJ AI lead response`}
+                    width={640}
+                    height={360}
+                    className="w-full h-48 object-cover"
+                  />
                 </div>
               </div>
             </AnimateOnScroll>

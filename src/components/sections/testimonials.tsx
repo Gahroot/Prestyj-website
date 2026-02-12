@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const testimonials = [
@@ -9,6 +9,7 @@ const testimonials = [
     name: "Sarah Mitchell",
     role: "Real Estate Agent, Austin TX",
     initials: "SM",
+    image: "/images/testimonials/testimonial-portrait-sarah-mitchell.png",
   },
   {
     quote:
@@ -16,6 +17,7 @@ const testimonials = [
     name: "Marcus Chen",
     role: "Broker, Seattle WA",
     initials: "MC",
+    image: "/images/testimonials/testimonial-portrait-marcus-chen.png",
   },
   {
     quote:
@@ -23,6 +25,7 @@ const testimonials = [
     name: "Jennifer Adams",
     role: "Team Lead, Miami FL",
     initials: "JA",
+    image: "/images/testimonials/testimonial-portrait-jennifer-adams.png",
   },
 ];
 
@@ -47,6 +50,7 @@ export function TestimonialsSection() {
                   <p className="text-foreground mb-6 italic">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div className="flex items-center gap-3">
                     <Avatar>
+                      <AvatarImage src={testimonial.image} alt={testimonial.name} />
                       <AvatarFallback className="bg-primary/20 text-primary">
                         {testimonial.initials}
                       </AvatarFallback>

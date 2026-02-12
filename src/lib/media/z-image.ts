@@ -95,8 +95,11 @@ export async function generateImage(
       Authorization: `Bearer ${getApiKey()}`,
     },
     body: JSON.stringify({
-      prompt,
-      aspectRatio: mapAspectRatio(aspectRatio),
+      model: "z-image",
+      input: {
+        prompt,
+        aspect_ratio: mapAspectRatio(aspectRatio),
+      },
     }),
   });
 
@@ -107,6 +110,9 @@ export async function generateImage(
   }
 
   const result = (await response.json()) as ZImageCreateResponse;
+  if (result.code !== 200) {
+    throw new Error(`Z-Image create error: code ${result.code}`);
+  }
   return result.data.taskId;
 }
 
@@ -116,14 +122,15 @@ export async function generateImage(
  */
 export async function waitForCompletion(taskId: string): Promise<string> {
   const maxAttempts = 60;
-  let delayMs = 2000;
+  let delayMs = 3000;
   const maxDelayMs = 15_000;
 
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    await new Promise((resolve) => setTimeout(resolve, delayMs));
     await rateLimiter.acquire();
 
     const response = await fetch(
-      `${BASE_URL}/getDetail?taskId=${encodeURIComponent(taskId)}`,
+      `${BASE_URL}/recordInfo?taskId=${encodeURIComponent(taskId)}`,
       {
         headers: {
           Authorization: `Bearer ${getApiKey()}`,
@@ -138,17 +145,26 @@ export async function waitForCompletion(taskId: string): Promise<string> {
     }
 
     const result = (await response.json()) as ZImageDetailResponse;
+    const state = result.data.status;
 
-    if (result.data.status === "success" && result.data.imageUrl) {
-      return result.data.imageUrl;
+    if (state === "success") {
+      if (result.data.resultJson) {
+        const parsed = JSON.parse(result.data.resultJson) as {
+          resultUrls: string[];
+        };
+        return parsed.resultUrls[0];
+      }
+      if (result.data.imageUrl) {
+        return result.data.imageUrl;
+      }
+      throw new Error(`Z-Image success but no URL for task ${taskId}`);
     }
 
-    if (result.data.status === "failed") {
+    if (state === "failed") {
       throw new Error(`Z-Image generation failed for task ${taskId}`);
     }
 
-    // Exponential backoff
-    await new Promise((resolve) => setTimeout(resolve, delayMs));
+    // Exponential backoff (still waiting/queuing/generating)
     delayMs = Math.min(delayMs * 1.5, maxDelayMs);
   }
 

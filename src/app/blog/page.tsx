@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -111,7 +112,18 @@ export default function BlogPage() {
             <div className="grid gap-6">
               {sortedPosts.map((post) => (
                 <Link key={post.url} href={post.url}>
-                  <Card className="bg-card border-border hover:border-primary/50 transition-colors">
+                  <Card className="bg-card border-border hover:border-primary/50 transition-colors overflow-hidden">
+                    {post.data.image && (
+                      <div className="relative w-full h-48">
+                        <Image
+                          src={post.data.image}
+                          alt={`${post.data.title} — PRESTYJ AI lead response`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 768px"
+                        />
+                      </div>
+                    )}
                     <CardHeader>
                       {post.data.date && (
                         <time
