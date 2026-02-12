@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
 import {
   Phone,
   MessageSquare,
@@ -12,6 +11,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { triggerDemo } from "@/lib/demo-api";
 
 export function HowItWorksCTA() {
@@ -47,11 +47,8 @@ export function HowItWorksCTA() {
   const isPhoneValid = normalizeToE164(phone).length >= 12;
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+    <AnimateOnScroll
+      delay={0.2}
       className="mt-16 bg-background border border-border rounded-xl p-6 lg:p-8"
     >
       {isSuccess ? (
@@ -140,6 +137,6 @@ export function HowItWorksCTA() {
           </div>
         </div>
       )}
-    </motion.div>
+    </AnimateOnScroll>
   );
 }

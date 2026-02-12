@@ -1,7 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { MessageCircle, Calendar, Zap, Moon } from "lucide-react";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const features = [
   {
@@ -31,12 +29,7 @@ export function SolutionSection() {
     <section className="py-24 relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
+          <AnimateOnScroll>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
               An AI Agent That
               <br />
@@ -64,22 +57,13 @@ export function SolutionSection() {
                 <span>No training required</span>
               </div>
             </div>
-          </motion.div>
+          </AnimateOnScroll>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4"
-          >
+          <AnimateOnScroll delay={0.2} className="grid grid-cols-2 gap-4">
             {features.map((feature, index) => (
-              <motion.div
+              <AnimateOnScroll
                 key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                delay={0.3 + index * 0.1}
                 className="bg-card border border-border rounded-lg p-6"
               >
                 <feature.icon className="h-8 w-8 text-primary mb-3" />
@@ -87,9 +71,9 @@ export function SolutionSection() {
                   {feature.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
-              </motion.div>
+              </AnimateOnScroll>
             ))}
-          </motion.div>
+          </AnimateOnScroll>
         </div>
       </div>
     </section>

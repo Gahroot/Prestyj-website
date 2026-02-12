@@ -1,10 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const included = [
   "Instant lead response (under 60 seconds)",
@@ -19,27 +17,16 @@ export function PricingSection() {
   return (
     <section id="pricing" className="py-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
+        <AnimateOnScroll className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
             Pricing That Makes Sense
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Less than the cost of one missed deal. Way less than hiring a sales assistant.
           </p>
-        </motion.div>
+        </AnimateOnScroll>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
+        <AnimateOnScroll delay={0.2}>
           <Card className="bg-background border-primary/50 border-2">
             <CardContent className="p-8 md:p-12">
               <div className="text-center mb-8">
@@ -73,7 +60,7 @@ export function PricingSection() {
               </div>
             </CardContent>
           </Card>
-        </motion.div>
+        </AnimateOnScroll>
       </div>
     </section>
   );

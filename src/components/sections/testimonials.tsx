@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const testimonials = [
   {
@@ -28,53 +26,22 @@ const testimonials = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5 },
-  },
-};
-
 export function TestimonialsSection() {
   return (
     <section className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
             Agents Like You Are Winning
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Don&apos;t take our word for it. Here&apos;s what happens when you let AI handle your leads.
           </p>
-        </motion.div>
+        </AnimateOnScroll>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
-        >
-          {testimonials.map((testimonial) => (
-            <motion.div key={testimonial.name} variants={itemVariants}>
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <AnimateOnScroll key={testimonial.name} delay={index * 0.15}>
               <Card className="bg-card border-border h-full">
                 <CardContent className="p-6">
                   <p className="text-foreground mb-6 italic">&ldquo;{testimonial.quote}&rdquo;</p>
@@ -91,9 +58,9 @@ export function TestimonialsSection() {
                   </div>
                 </CardContent>
               </Card>
-            </motion.div>
+            </AnimateOnScroll>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

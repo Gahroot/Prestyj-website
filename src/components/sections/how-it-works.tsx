@@ -1,8 +1,5 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Zap, MessageSquare, Calendar, RotateCcw } from "lucide-react";
-
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { HowItWorksCTA } from "./how-it-works-cta";
 
 const steps = [
@@ -44,29 +41,20 @@ export function HowItWorksSection() {
   return (
     <section id="how-it-works" className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
+        <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
             How It Works
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             From lead to appointment in 4 simple steps. Fully automated.
           </p>
-        </motion.div>
+        </AnimateOnScroll>
 
         <div className="space-y-12">
           {steps.map((step, index) => (
-            <motion.div
+            <AnimateOnScroll
               key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              delay={index * 0.1}
               className={`flex flex-col ${
                 index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
               } items-center gap-8 md:gap-16`}
@@ -91,7 +79,7 @@ export function HowItWorksSection() {
                   <step.icon className="h-16 w-16 text-primary/30" />
                 </div>
               </div>
-            </motion.div>
+            </AnimateOnScroll>
           ))}
         </div>
 

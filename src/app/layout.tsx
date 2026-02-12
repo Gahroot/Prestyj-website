@@ -15,10 +15,11 @@ const manrope = Manrope({
 
 const siteConfig = {
   name: "PRESTYJ",
-  title: "PRESTYJ - AI Sales Agents for Real Estate",
+  title: "Book 3x More Deals & Get Your Life Back. Sales AI working 24/7",
   description:
     "Stop losing leads. Your AI agent responds to every lead in under 60 seconds, qualifies them, and books appointments on your calendar. 24/7. No salary. No commission splits.",
   url: "https://prestyj.com",
+  ogImage: "/og-image.jpg",
   creator: "@prestyj",
 };
 
@@ -41,14 +42,14 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "AI sales agent",
-    "real estate AI",
+    "AI phone answering",
     "lead response automation",
     "appointment booking AI",
-    "real estate automation",
+    "sales automation",
     "AI lead qualification",
     "24/7 lead response",
-    "real estate lead management",
-    "AI assistant for realtors",
+    "AI voice agent",
+    "automated sales assistant",
     "automated lead nurturing",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
@@ -66,12 +67,21 @@ export const metadata: Metadata = {
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.title,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.title,
     description: siteConfig.description,
     creator: siteConfig.creator,
+    images: [siteConfig.ogImage],
   },
   robots: {
     index: true,

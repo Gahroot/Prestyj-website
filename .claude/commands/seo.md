@@ -1,470 +1,233 @@
 ---
 name: seo
-description: Enterprise SEO operation - competitor research, comparison content, and BOFU pages for $100K+ buyers
+description: Dynamic SEO command - research SERPs, identify high-leverage opportunities, and execute content creation for broader AI agent market
 ---
 
-# Enterprise SEO Operation: Comparison & BOFU Content
+# Dynamic SEO Gap Analysis
 
-This command runs a focused SEO operation designed to create decision-stage content for enterprise buyers evaluating lead response solutions. Target: VPs/Directors at 50+ office operations who write $100K+ checks.
+This command discovers what content you're missing by first inventorying everything that exists, then finding gaps through web research. It produces a prioritized plan for approval - it does NOT create content.
 
-**Primary Output**: blog content, Comparison pages, vs-competitor content, best-for pages, and alternative roundups—NOT educational articles.
-
----
-
-## Phase 1: Intelligence Gathering (6 Parallel Agents)
-
-Launch ALL 6 agents simultaneously using the Task tool.
-
-### Agent 1: Competitor Intelligence
-Research competitors that enterprise buyers are actively evaluating:
-
-**Build-vs-Buy Alternatives:**
-- Internal ISA teams (hiring, training, management costs)
-- Offshore ISA services (quality, compliance, turnover)
-
-**Adjacent Solutions:**
-- Drift Enterprise
-- Intercom for real estate
-- Generic AI voice platforms (Bland.ai, Retell, Vapi)
-
-**Research Focus:**
-- What are their weaknesses at enterprise scale (50+ offices)?
-- What do G2/Capterra reviews and complaints say?
-- Pricing gaps and hidden costs
-- Feature limitations for multi-location operations
-- Integration problems with common RE tech stacks
-- Contract/switching friction points
-
-### Agent 2: Comparison Keyword Research
-Find comparison-intent keywords that signal active buying:
-
-**High-Intent Patterns:**
-- "[Competitor] vs [competitor]" searches
-- "[Competitor] alternatives for real estate"
-- "[Competitor] pricing enterprise"
-- "[Competitor] reviews 2026"
-- "Best AI lead response for franchise"
-- "Best AI lead response for multi-office"
-- "Enterprise real estate lead qualification"
-
-**Keywords MUST contain:**
-- "vs", "versus", "compare", "comparison"
-- "alternative", "alternatives to"
-- "pricing", "cost", "ROI"
-- "reviews", "complaints", "problems"
-- "enterprise", "franchise", "multi-office", "regional"
-
-**Reject keywords that:**
-- Target individual agents or small teams
-- Are educational ("what is", "how to")
-- Have no buying intent
-
-### Agent 3: Enterprise Pain Point Mining
-Research what VPs/Directors at 50+ office operations actually struggle with:
-
-**NOT These (Individual Agent Problems):**
-- "How to respond to leads faster"
-- "Best scripts for follow-up"
-- "Time management for ISAs"
-
-**YES These (Enterprise Operations Problems):**
-- "How to standardize lead response across 75 offices"
-- "How to measure lead response compliance across franchise"
-- "How to reduce ISA turnover impact on operations"
-- "How to enforce SLA consistency across regions"
-- "How to report on lead conversion across locations"
-- "How to integrate lead response with enterprise CRM"
-
-**Research Sources:**
-- LinkedIn posts from RE operations executives
-- Real estate franchise forums
-- Industry publications (Inman, RISMedia enterprise coverage)
-- Real estate tech conference topics
-- G2/Capterra reviews of enterprise RE tools
-
-### Agent 4: Content Audit
-Analyze current blog in `content/blog/` for:
-
-**Identify Posts That:**
-- Target wrong audience (individual agents) → candidates for noindex
-- Could be repositioned as comparison content
-- Are missing from competitor comparison coverage
-- Have outdated information hurting credibility
-- Rank for keywords but attract wrong audience
-
-**For Each Post, Determine:**
-- Current target audience (agent vs enterprise)
-- Current intent (educational vs decision-stage)
-- Reposition potential (can it become comparison content?)
-- Recommendation: keep, rewrite, noindex, or delete
-
-### Agent 5: Technical SEO Audit
-Analyze codebase for comparison page optimization:
-
-**Check For:**
-- Schema markup readiness for comparison/review pages
-- ProductComparison or Review schema opportunities
-- Internal linking to/from comparison cornerstone pages
-- Meta descriptions targeting comparison keywords
-- Open Graph optimization for comparison pages
-- Page speed issues on key pages
-- Mobile experience for comparison tables
-
-**Files to Check:**
-- `src/app/compare/` (if exists) or opportunity to create
-- `src/app/best-for/` (if exists) or opportunity to create
-- `src/app/alternatives/` (if exists) or opportunity to create
-- Blog post schema implementation
-
-### Agent 6: Backlink Opportunity Research
-Find where comparison/review content earns links:
-
-**Research:**
-- What content format earns links on G2, Capterra, TrustRadius?
-- Real estate tech publications that cite comparison content
-- Industry analyst coverage patterns
-- Software review aggregators
-- "Best [X] for real estate" roundup articles
-
-**Identify:**
-- Link-worthy content formats (original data, calculators, benchmarks)
-- Publications that link to RE tech comparisons
-- Content gaps competitors haven't filled
+**Core Principle**: Inventory first. Research second. Recommend only what's missing.
 
 ---
 
-## Hard Relevance Gates (MANDATORY)
+## Phase 1: Full Content Inventory (MANDATORY FIRST STEP)
 
-Before proposing ANY content topic, it MUST pass ALL THREE gates.
+Before any research, build a complete map of everything that exists. Launch 3 parallel agents.
 
-### Gate 1: Product Relevance
-Every topic must pass ALL:
-- [ ] Directly relates to lead response, qualification, or appointment booking
-- [ ] Reader could naturally consider Prestyj as a solution
-- [ ] CTA is organic, not forced
+### Agent 1: Page Inventory
 
-**If ANY fail → REJECT immediately**
+Read and catalog every page route in the site. For each, record the URL path and what it targets (keyword, audience, intent).
 
-### Gate 2: Buyer Stage
-- [ ] Reader is actively evaluating solutions (not just learning about problems)
-- [ ] Reader has budget authority or influences budget holder
-- [ ] Content helps them make a decision, not understand the space
+**Scan these locations:**
+- `src/app/**/page.tsx` - All app routes (compare, best-for, alternatives, solutions, blog, calculators, etc.)
+- `src/lib/best-for/` - All best-for page data files and the index
+- `src/lib/alternatives/` - All alternative page data files and the index
+- `src/lib/compare/` - All comparison page data files (if data-driven)
+- Any hub pages that aggregate content (check for `getAll*` functions)
 
-**If ANY fail → REJECT immediately**
-
-### Gate 3: Scale Fit
-- [ ] Content speaks to 50+ office operations
-- [ ] Addresses multi-location coordination challenges
-- [ ] Would be shared in an enterprise buying committee
-
-**If ANY fail → REJECT immediately**
-
----
-
-## Kill List (NEVER Create)
-
-Immediately reject any topic that is:
-- Regulatory/compliance content (FinCEN, fair housing, licensing)
-- Individual agent productivity tips
-- "What is [concept]" educational content
-- Industry news without direct competitive angle
-- Content for teams < 20 agents
-- General AI trends/futures content
-- Content where the CTA feels forced
-- News that doesn't involve a competitor or buying decision
-
----
-
-## Phase 2: The Strategist
-
-After ALL Phase 1 agents complete, synthesize findings.
-
-### Synthesis Process
-
-1. **Collect all intelligence** from the 6 agents
-
-2. **Apply the 3 Hard Gates** to every opportunity:
-   - Gate 1: Product Relevance ✓ or ✗
-   - Gate 2: Buyer Stage ✓ or ✗
-   - Gate 3: Scale Fit ✓ or ✗
-   - If ANY gate fails → drop the topic
-
-3. **Categorize approved topics** by content format:
-
-### Content Formats (Choose One Per Topic)
-
-**Format A: Vs Competitor Pages** (`/compare/prestyj-vs-[competitor]`)
+**Output a table:**
 ```
-/compare/prestyj-vs-conversica
-/compare/prestyj-vs-structurely
-/compare/prestyj-vs-internal-isa-team
-/compare/prestyj-vs-offshore-isa
+EXISTING PAGES
+Route                              | Type        | Target Keyword/Topic
+/compare/prestyj-vs-X             | Comparison  | [what it targets]
+/best-for/X                        | Best-For    | [what it targets]
+/alternatives/X                    | Alternative | [what it targets]
+/solutions/X                       | Solution    | [what it targets]
+/blog/X                            | Blog        | [what it targets]
+...                                | ...         | ...
 ```
 
-**Format B: Best-For Pages** (`/best-for/[segment]`)
+### Agent 2: Blog Content Inventory
+
+Read every file in `content/blog/*.mdx`. For each post, extract:
+- Title and description from frontmatter
+- Primary topic/keyword it targets
+- Target audience (who is this for?)
+- Content type (educational, comparison, guide, case study, etc.)
+- Approximate word count
+- Date (how fresh is it?)
+
+**Output a table:**
 ```
-/best-for/real-estate-franchises
-/best-for/regional-brokerage-networks
-/best-for/pe-backed-platforms
-/best-for/commercial-real-estate
-```
-
-**Format C: Alternative Pages** (`/alternatives/[competitor]-alternatives`)
-```
-/alternatives/conversica-alternatives
-/alternatives/structurely-alternatives
-/alternatives/internal-isa-alternatives
-```
-
-4. **Create THE PLAN** with categorized actions:
-
-```
-THE PLAN
-
-COMPARISON PAGES (New)
-Priority | Type | URL | Target Keyword | Competitor Weakness
----------|------|-----|----------------|---------------------
-1        | Vs   | /compare/prestyj-vs-conversica | conversica vs alternatives | [specific weakness]
-
-BEST-FOR PAGES (New)
-Priority | URL | Target Segment | Key Pain Point
----------|-----|----------------|----------------
-1        | /best-for/franchises | 50+ office franchises | Standardization across locations
-
-ALTERNATIVE PAGES (New)
-Priority | URL | Target Keyword | Primary Competitor
----------|-----|----------------|--------------------
-1        | /alternatives/conversica | conversica alternatives real estate | Conversica
-
-EXISTING CONTENT
-Post | Current State | Action | Reason
------|---------------|--------|--------
-...  | Wrong audience | noindex | Attracts agents not VPs
-...  | Outdated | Refresh | 2024 data
-
-TECHNICAL FIXES
-Issue | File(s) | Fix
-------|---------|----
-No comparison schema | src/app/compare/ | Add ProductComparison schema
+EXISTING BLOG POSTS
+File                               | Title                  | Target Keyword    | Audience        | Type         | Date
+content/blog/X.mdx                | [Title]                | [keyword]         | [who]           | [type]       | [date]
+...
 ```
 
-5. **Present plan to user for approval** using AskUserQuestion:
-   - Show top 3-5 highest priority comparison/vs pages
-   - Confirm all pass the 3 gates
-   - Ask which to proceed with
+### Agent 3: Site Architecture & Linking
 
----
+Understand how content is structured and connected:
+- What content types exist (blog, best-for, alternatives, compare, solutions)?
+- What are the hub/index pages that link to child pages?
+- What TypeScript interfaces/types define each content format?
+- What industries/verticals are currently covered?
+- What competitors are currently covered?
 
-## Phase 3: Execution
-
-### Comparison Page Structure (Max 150 Lines)
-
-For `/compare/prestyj-vs-[competitor]`:
-
-```mdx
----
-title: "Prestyj vs [Competitor]: Enterprise Real Estate Lead Response Compared"
-description: "Compare Prestyj and [Competitor] for 50+ office operations. See pricing, features, and which is best for your brokerage network."
-date: "YYYY-MM-DD"
-keywords:
-  - prestyj vs [competitor]
-  - [competitor] alternative
-  - enterprise real estate lead response
----
-
-## Quick Comparison
-
-| Feature | Prestyj | [Competitor] |
-|---------|---------|--------------|
-| Built for RE | Yes | [No/Partial] |
-| Multi-office | [Detail] | [Detail] |
-| Response time | [Metric] | [Metric] |
-| Pricing model | [Model] | [Model] |
-| Integration | [Stack] | [Stack] |
-
-## Who Should Choose Prestyj
-
-- Franchise operations with 50+ offices
-- [Specific use case]
-- [Specific use case]
-
-## Who Should Choose [Competitor]
-
-- [Honest assessment]
-- [Specific use case]
-
-## [Competitor]'s Limitations at Scale
-
-Based on reviews and enterprise feedback:
-- [Specific limitation with source]
-- [Specific limitation with source]
-- [Specific limitation with source]
-
-## Pricing Comparison
-
-[Honest pricing comparison if available, or note that enterprise pricing requires consultation]
-
-## Switching From [Competitor]
-
-- Migration support available
-- [Integration detail]
-- [Timeline expectation]
-
----
-
-**Ready to compare in detail?** [Talk to someone who switched from [Competitor]](/book-demo)
+**Output a summary:**
 ```
-
-### Best-For Page Structure (Max 150 Lines)
-
-For `/best-for/[segment]`:
-
-```mdx
----
-title: "AI Lead Response for [Segment]: Built for Your Scale"
-description: "[Segment] need lead response that works across [X] offices. See how Prestyj handles [specific challenge]."
-date: "YYYY-MM-DD"
-keywords:
-  - AI lead response [segment]
-  - [segment] lead qualification
-  - best lead response for [segment]
----
-
-## The [Segment] Challenge
-
-[2-3 sentences on specific pain point at this scale]
-
-| Challenge | Why Generic Solutions Fail |
-|-----------|---------------------------|
-| [Challenge 1] | [Specific failure mode] |
-| [Challenge 2] | [Specific failure mode] |
-| [Challenge 3] | [Specific failure mode] |
-
-## How Prestyj Addresses [Segment] Needs
-
-### [Specific Feature 1]
-[How it solves their specific problem]
-
-### [Specific Feature 2]
-[How it solves their specific problem]
-
-## Proof Points
-
-- "[Quote or stat from similar organization]"
-- [Metric from similar deployment]
-
----
-
-**See how [similar organization type] uses Prestyj** → [Book Demo](/book-demo)
-```
-
-### Alternative Page Structure (Max 100 Lines)
-
-For `/alternatives/[competitor]-alternatives`:
-
-```mdx
----
-title: "[Competitor] Alternatives for Real Estate: 2026 Comparison"
-description: "Looking for [Competitor] alternatives? Compare options for enterprise real estate lead response."
-date: "YYYY-MM-DD"
-keywords:
-  - [competitor] alternatives
-  - [competitor] alternatives real estate
-  - best [competitor] alternative
----
-
-## Why Teams Switch From [Competitor]
-
-Based on G2/Capterra reviews and enterprise feedback:
-- [Reason 1 with specifics]
-- [Reason 2 with specifics]
-- [Reason 3 with specifics]
-
-## [Competitor] Alternatives Compared
-
-| Solution | Best For | Limitation |
-|----------|----------|------------|
-| Prestyj | 50+ office RE operations | [Honest limitation] |
-| [Alt 2] | [Use case] | [Limitation] |
-| [Alt 3] | [Use case] | [Limitation] |
-
-## Why Prestyj for Real Estate Enterprise
-
-- Built specifically for real estate lead response
-- [Specific differentiator]
-- [Specific differentiator]
-
----
-
-**Considering a switch?** [Talk to our migration team](/book-demo)
+CONTENT ARCHITECTURE
+- Content types: [list]
+- Industries covered: [list]
+- Competitors covered: [list]
+- Hub pages: [list with paths]
+- Content templates/types: [list with file paths]
 ```
 
 ---
 
-## Phase 4: Verification & Commit
+## Phase 2: Gap Discovery (3 Parallel Agents)
 
-### Step 1: Run Quality Checks
+Using the inventory from Phase 1 as a baseline, research what's missing. Every agent MUST cross-reference findings against the Phase 1 inventory and exclude anything that already exists.
 
-```bash
-npm run typecheck
-npm run lint
-npm run build
+### Agent 1: SERP & Keyword Research
+
+Search the web for keywords relevant to AI voice agents, AI receptionists, AI lead response, AI sales agents, and related terms across ALL industries (not just real estate).
+
+**Research approach:**
+- Search for core product keywords + industry combinations
+- Look at "People Also Ask" and related searches
+- Find comparison/vs queries that exist in search
+- Find "best X for Y" queries
+- Find "[competitor] alternative" queries
+- Identify keywords where SERPs are thin, outdated, or low-quality
+
+**CRITICAL: Cross-reference every finding against the Phase 1 inventory.** If a page or post already targets that keyword/topic, skip it entirely. Only surface genuinely new opportunities.
+
+**Output format for each opportunity:**
+```
+KEYWORD: [keyword or topic]
+ALREADY COVERED? No (checked against inventory)
+SERP QUALITY: [Thin/Outdated/Competitive/No results]
+CONTENT TYPE NEEDED: [Blog/Best-For/Alternative/Comparison/Solution/Landing Page]
+NOTES: [Why this is an opportunity]
 ```
 
-Fix ALL errors before continuing.
+### Agent 2: Competitor & Market Research
 
-### Step 2: Verify Content
+Research what competitors and adjacent companies are ranking for that Prestyj is NOT covering. Do NOT use a hardcoded list - discover competitors dynamically by searching for terms like:
+- "AI voice agent companies"
+- "AI receptionist software"
+- "AI lead response platforms"
+- "AI sales calling tools"
+- "AI appointment setting software"
 
-- Confirm new pages appear in build output
-- Verify comparison/best-for/alternatives routes work
-- Check schema markup renders correctly
+For competitors found, research:
+- What content are they ranking for?
+- What keywords do they target that Prestyj doesn't?
+- What industries do they serve that Prestyj hasn't created content for?
+- Where are they weak or thin that Prestyj could beat?
 
-### Step 3: Commit
+**CRITICAL: Exclude competitors already covered in existing /compare/, /alternatives/ pages.** Only surface new competitors or new angles on covered competitors.
 
-```bash
-git add -A
-git commit -m "SEO: Add [comparison/best-for/alternative] pages
+### Agent 3: Industry & Vertical Gaps
 
-- [List of pages created]
-- [Technical fixes if any]
+Research which industries have demand for AI voice/receptionist/lead response solutions but are NOT yet covered by existing content.
 
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
-git push
+**Approach:**
+- Search for "[industry] AI receptionist", "[industry] AI voice agent", etc.
+- Identify industries with active search demand
+- Check which industries already have dedicated pages (from Phase 1 inventory)
+- Surface only uncovered industries with real demand
+
+**CRITICAL: Skip any industry already covered in best-for pages, solutions pages, or blog content.**
+
+---
+
+## Phase 3: Scoring & Prioritization
+
+After Phase 2 completes, score every opportunity that passed the duplicate filter.
+
+### Relevance Gate (Every opportunity MUST pass)
+
+- [ ] Relates to AI agents, voice AI, lead response, receptionist, sales automation, or adjacent topics
+- [ ] A reader could naturally consider Prestyj as a solution
+- [ ] Content would NOT duplicate the intent of any existing page or post
+- [ ] Information is available to create accurate, honest content
+
+**If ANY fail -> DROP the opportunity**
+
+### Kill List (NEVER Recommend)
+
+Drop any topic that is:
+- Already covered by existing content (same keyword intent, even if different angle)
+- Content for developers building AI agents (wrong audience - Prestyj serves businesses)
+- Generic "what is AI" educational fluff with no buying connection
+- Regulatory/compliance content
+- Content requiring claims that can't be substantiated
+- News commentary without lasting SEO value
+
+### Leverage Score (0-100)
+
+Score each surviving opportunity:
+
+```
+Traffic Potential (0-30): How much search demand exists?
+Competition Gap  (0-25): How weak is the current SERP? Can we win?
+Conversion Intent(0-20): How close to a buying decision is the searcher?
+Effort Required  (0-15): How much work to create? (quick fixes score highest)
+Time to Rank     (0-10): How fast could this realistically rank?
 ```
 
 ---
 
-## Output Summary
+## Phase 4: Present The Plan
+
+Present findings to the user using AskUserQuestion. Do NOT create any content.
+
+### Format the plan as:
 
 ```
-SEO OPERATION COMPLETE
+CONTENT INVENTORY SUMMARY
+- Total pages: [X]
+- Blog posts: [X]
+- Compare pages: [X]
+- Best-for pages: [X]
+- Alternative pages: [X]
+- Solution pages: [X]
+- Industries covered: [list]
+- Competitors covered: [list]
 
-Competitor Intelligence
-- [Key competitor weakness identified]
-- [Comparison keyword opportunity]
+GAP ANALYSIS - TOP OPPORTUNITIES
+(Ordered by leverage score, duplicates excluded)
 
-Pages Created
-- /compare/prestyj-vs-X
-- /best-for/X
-- /alternatives/X-alternatives
+#  | Score | Type        | Topic/Keyword              | Why It's a Gap
+1  | 92    | Best-For    | [industry] AI receptionist | No coverage, high demand
+2  | 87    | Alternative | [competitor] alternative   | Competitor not covered yet
+3  | 85    | Blog        | [keyword]                  | Thin SERP, high intent
+4  | 80    | Comparison  | Prestyj vs [competitor]    | Competitor gaining traction
+5  | 75    | Solution    | [use case]                 | No landing page exists
+...
 
-Gate Verification
-- All topics passed 3 hard gates
-- [X] topics rejected by Gate 1 (product relevance)
-- [X] topics rejected by Gate 2 (buyer stage)
-- [X] topics rejected by Gate 3 (scale fit)
+QUICK WINS (Improvements to existing content)
+#  | Score | File/Page                | Action Needed
+1  | 88    | [file]                   | [what to fix]
+2  | 82    | [file]                   | [what to fix]
+...
 
-Technical Improvements
-- [Schema/linking fixes]
+CONTENT REFRESH CANDIDATES
+#  | Score | File/Page                | Issue            | Recommendation
+1  | 70    | [file]                   | Outdated stats   | Update with 2026 data
+...
 ```
+
+### Ask the user:
+- Which opportunities to pursue
+- Whether to proceed with quick wins
+- Any priorities to adjust
+
+**STOP HERE. Do not create content until the user approves specific items.**
 
 ---
 
 ## Important Reminders
 
-- **BOFU Only**: Every page must help someone make a buying decision
-- **Comparison First**: Default to vs/alternative content over educational
-- **150 Line Max**: Scannable in 2-3 minutes, not comprehensive guides
-- **Hard Gates**: If a topic fails ANY gate, reject it immediately
-- **Enterprise Scale**: 50+ offices, VPs/Directors, $100K+ decisions
-- **Kill List**: Check every topic against the kill list before proceeding
+1. **Inventory first, always.** Never recommend content without checking what exists.
+2. **No hardcoded lists.** Discover competitors, industries, and keywords dynamically through research.
+3. **Cross-reference everything.** Every recommendation must be checked against existing content.
+4. **Multi-industry.** Prestyj serves multiple industries, not just real estate.
+5. **Plan only.** This command produces recommendations. Content creation is a separate step.
+6. **Be honest about gaps.** If the site already has good coverage in an area, say so.
+7. **Fresh research.** Always do live web searches - don't rely on cached knowledge.
+8. **Leverage scoring.** Prioritize by impact, not by what seems interesting.

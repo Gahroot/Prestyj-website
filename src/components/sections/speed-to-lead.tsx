@@ -1,46 +1,16 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { ArrowRight, Play, Zap, Clock, Calendar } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-} as const;
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-      ease: "easeOut" as const,
-    },
-  },
-} as const;
+import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 export function SpeedToLeadSection() {
   return (
     <section id="speed-to-lead" className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <AnimateOnScroll className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}
-          <motion.div className="space-y-6" variants={itemVariants}>
+          <div className="space-y-6">
             <Badge variant="outline" className="border-primary/50 text-primary">
               Speed-to-Lead Solution
             </Badge>
@@ -70,55 +40,40 @@ export function SpeedToLeadSection() {
                 </a>
               </Button>
             </div>
-          </motion.div>
+          </div>
 
           {/* Right side - Stats cards */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-6"
-            variants={containerVariants}
-          >
-            <motion.div
-              className="bg-background p-6 rounded-xl border border-border text-center"
-              variants={itemVariants}
-            >
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="bg-background p-6 rounded-xl border border-border text-center">
               <div className="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-6 h-6 text-success" />
               </div>
               <span className="text-3xl font-bold text-success">47s</span>
               <p className="text-sm text-muted-foreground mt-1">avg. response time</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="bg-background p-6 rounded-xl border border-border text-center"
-              variants={itemVariants}
-            >
+            <div className="bg-background p-6 rounded-xl border border-border text-center">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-6 h-6 text-primary" />
               </div>
               <span className="text-3xl font-bold text-primary">24/7</span>
               <p className="text-sm text-muted-foreground mt-1">availability</p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="bg-background p-6 rounded-xl border border-border text-center"
-              variants={itemVariants}
-            >
+            <div className="bg-background p-6 rounded-xl border border-border text-center">
               <div className="w-12 h-12 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Calendar className="w-6 h-6 text-warning" />
               </div>
               <span className="text-3xl font-bold text-warning">3x*</span>
               <p className="text-sm text-muted-foreground mt-1">more appointments</p>
-            </motion.div>
-          </motion.div>
-        </motion.div>
-        <motion.div
-          className="text-center mt-8"
-          variants={itemVariants}
-        >
+            </div>
+          </div>
+        </AnimateOnScroll>
+        <div className="text-center mt-8">
           <p className="text-xs text-muted-foreground">
             *Results vary by industry and implementation. Average results based on client data.
           </p>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
