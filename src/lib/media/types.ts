@@ -19,6 +19,7 @@ export type Industry =
   | "hvac"
   | "plumbing"
   | "dental"
+  | "medical"
   | "legal"
   | "insurance"
   | "home-services"
@@ -66,7 +67,9 @@ export interface ZImageDetailResponse {
   data: {
     taskId: string;
     model: string;
-    status: "waiting" | "queuing" | "generating" | "success" | "failed";
+    // API returns 'state' not 'status', but we check both for compatibility
+    state?: "waiting" | "queuing" | "generating" | "success" | "failed";
+    status?: "waiting" | "queuing" | "generating" | "success" | "failed";
     resultJson?: string;
     imageUrl?: string;
     failCode?: string;

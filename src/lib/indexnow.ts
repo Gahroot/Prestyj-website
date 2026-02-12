@@ -1,20 +1,6 @@
-/**
- * IndexNow API integration for instant search engine indexing
- * Supports: Bing, Yandex, Naver, Seznam, Yep
- *
- * Setup:
- * 1. Get API key from https://www.bing.com/indexnow/getstarted
- * 2. Create file: public/{YOUR_API_KEY}.txt containing just the key
- * 3. Set INDEXNOW_API_KEY in your environment variables
- */
-
-import { blogSource } from "./source";
 import { getAllAlternativeSlugs } from "./alternatives";
 import { getAllSolutionSlugs } from "./solutions";
 import { getAllBestForSlugs } from "./best-for";
-
-const BASE_URL = "https://www.prestyj.com";
-const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 export interface IndexNowResponse {
   success: boolean;
@@ -30,146 +16,17 @@ export interface IndexNowSubmission {
   urlList: string[];
 }
 
-/**
- * Get the IndexNow API key from environment
- */
 export function getIndexNowKey(): string | undefined {
   return process.env.INDEXNOW_API_KEY;
 }
 
-/**
- * Submit a single URL to IndexNow
- */
-export async function submitUrl(url: string): Promise<IndexNowResponse> {
-  const key = getIndexNowKey();
+const BASE_URL = "https://www.prestyj.com";
 
-  if (!key) {
-    return {
-      success: false,
-      message: "INDEXNOW_API_KEY not configured",
-      error: "Missing API key",
-    };
-  }
-
-  const params = new URLSearchParams({
-    url,
-    key,
-  });
-
-  try {
-    const response = await fetch(`${INDEXNOW_ENDPOINT}?${params.toString()}`, {
-      method: "GET",
-    });
-
-    if (response.ok || response.status === 202) {
-      return {
-        success: true,
-        message: `Successfully submitted: ${url}`,
-        urlCount: 1,
-      };
-    }
-
-    return {
-      success: false,
-      message: `Failed to submit: ${url}`,
-      error: `HTTP ${response.status}: ${response.statusText}`,
-    };
-  } catch (error) {
-    return {
-      success: false,
-      message: `Error submitting: ${url}`,
-      error: error instanceof Error ? error.message : "Unknown error",
-    };
-  }
-}
-
-/**
- * Submit multiple URLs to IndexNow (batch submission)
- * Maximum 10,000 URLs per request
- */
-export async function submitUrls(urls: string[]): Promise<IndexNowResponse> {
-  const key = getIndexNowKey();
-
-  if (!key) {
-    return {
-      success: false,
-      message: "INDEXNOW_API_KEY not configured",
-      error: "Missing API key",
-    };
-  }
-
-  if (urls.length === 0) {
-    return {
-      success: false,
-      message: "No URLs provided",
-      error: "Empty URL list",
-    };
-  }
-
-  // IndexNow has a limit of 10,000 URLs per request
-  if (urls.length > 10000) {
-    return {
-      success: false,
-      message: "Too many URLs",
-      error: "Maximum 10,000 URLs per request",
-    };
-  }
-
-  const payload: IndexNowSubmission = {
-    host: "www.prestyj.com",
-    key,
-    keyLocation: `${BASE_URL}/${key}.txt`,
-    urlList: urls,
-  };
-
-  try {
-    const response = await fetch(INDEXNOW_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-      body: JSON.stringify(payload),
-    });
-
-    // IndexNow returns 200 or 202 on success
-    if (response.ok || response.status === 202) {
-      return {
-        success: true,
-        message: `Successfully submitted ${urls.length} URLs to IndexNow`,
-        urlCount: urls.length,
-      };
-    }
-
-    // Handle specific error codes
-    const errorMessages: Record<number, string> = {
-      400: "Invalid request format",
-      403: "Key not valid or not matching key location",
-      422: "URLs don't belong to the host or key not found at keyLocation",
-      429: "Too many requests (rate limited)",
-    };
-
-    return {
-      success: false,
-      message: `Failed to submit ${urls.length} URLs`,
-      error: errorMessages[response.status] || `HTTP ${response.status}`,
-    };
-  } catch (error) {
-    return {
-      success: false,
-      message: "Error submitting URLs to IndexNow",
-      error: error instanceof Error ? error.message : "Unknown error",
-    };
-  }
-}
-
-/**
- * Get all indexable URLs from the site
- */
 export function getAllUrls(): string[] {
   const urls: string[] = [];
 
   // Static routes
-  const staticRoutes = [
+  urls.push(
     "",
     "/book-demo",
     "/blog",
@@ -177,31 +34,46 @@ export function getAllUrls(): string[] {
     "/alternatives",
     "/best-for",
     "/privacy",
-    "/terms",
-  ];
-
-  urls.push(...staticRoutes.map((route) => `${BASE_URL}${route}`));
+    "/terms"
+  );
 
   // Blog posts
-  const blogPages = blogSource.getPages();
-  urls.push(...blogPages.map((page) => `${BASE_URL}${page.url}`));
+  const blogPosts = [
+    "/blog/roofing-speed-to-lead-2026",
+    "/blog/missed-call-text-back-roofers-2026",
+    "/blog/ai-storm-response-roofing-2026",
+    "/blog/roofing-lead-magnet-2026",
+  ];
+
+  for (const post of blogPosts) {
+    urls.push(BASE_URL + post);
+  }
 
   // Alternative pages
   const alternativeSlugs = getAllAlternativeSlugs();
-  urls.push(
-    ...alternativeSlugs.map((slug) => `${BASE_URL}/alternatives/${slug}`)
-  );
+  for (const slug of alternativeSlugs) {
+    urls.push(BASE_URL + "/alternatives/" + slug);
+  }
 
   // Solution pages
   const solutionSlugs = getAllSolutionSlugs();
-  urls.push(...solutionSlugs.map((slug) => `${BASE_URL}/solutions/${slug}`));
+  for (const slug of solutionSlugs) {
+    urls.push(BASE_URL + "/solutions/" + slug);
+  }
 
   // Best-for pages (excluding noindex pages)
-  const noindexBestForSlugs = ["solo-agents", "new-agents"];
-  const bestForSlugs = getAllBestForSlugs().filter(
-    (slug) => !noindexBestForSlugs.includes(slug)
+  const bestForSlugs = getAllBestForSlugs();
+  const noindexSlugs: string[] = ["solo-agents", "new-agents"];
+  const filteredBestForSlugs = bestForSlugs.filter(
+    (slug) => !noindexSlugs.includes(slug)
   );
-  urls.push(...bestForSlugs.map((slug) => `${BASE_URL}/best-for/${slug}`));
+
+  for (const slug of filteredBestForSlugs) {
+    urls.push(BASE_URL + "/best-for/" + slug);
+  }
+
+  // Lead magnet page
+  urls.push(BASE_URL + "/lead-magnet");
 
   // Compare pages
   const compareRoutes = [
@@ -213,14 +85,71 @@ export function getAllUrls(): string[] {
     "/compare/prestyj-vs-internal-isa-team",
     "/compare/prestyj-vs-offshore-isa",
   ];
-  urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
+  urls.push(...compareRoutes.map((route) => BASE_URL + route));
 
   return urls;
 }
 
-/**
- * Submit all site URLs to IndexNow
- */
+export async function submitUrls(urls: string[]): Promise<IndexNowResponse> {
+  const key = getIndexNowKey();
+
+  if (!key) {
+    return {
+      success: false,
+      message: "INDEXNOW_API_KEY not configured",
+      error: "Missing API key",
+    };
+  }
+
+  const payload = {
+    host: "www.prestyj.com",
+    key: getIndexNowKey(),
+    keyLocation: getIndexNowKey(),
+    urlList: urls,
+  };
+
+  try {
+    const response = await fetch("https://api.indexnow.org/IndexNow", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (response.ok || response.status === 202) {
+      return {
+        success: true,
+        message: "Successfully submitted " + urls.length + " URLs to IndexNow",
+        urlCount: urls.length,
+      };
+    }
+
+    const errorMessages: Record<number, string> = {
+      400: "Invalid request format",
+      403: "Key not valid or not matching key location",
+      422: "URLs don't belong to host or key not found at keyLocation",
+      429: "Too many requests (rate limited)",
+    };
+
+    return {
+      success: false,
+      message: "Failed to submit " + urls.length + " URLs",
+      error: errorMessages[response.status] || "HTTP " + response.status,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      message: "Error submitting URLs to IndexNow",
+      error: error instanceof Error ? error.message : "Unknown error",
+    };
+  }
+}
+
+export async function submitUrl(url: string): Promise<IndexNowResponse> {
+  return submitUrls([url]);
+}
+
 export async function submitAllUrls(): Promise<IndexNowResponse> {
   const urls = getAllUrls();
   return submitUrls(urls);

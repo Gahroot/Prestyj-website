@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { BestForPageClient } from "@/components/sections/best-for/best-for-page-client";
 import { getBestFor, getAllBestForSlugs } from "@/lib/best-for";
 import { FAQJsonLd } from "@/components/seo/json-ld";
+import { LeadMagnetBanner } from "@/components/lead-magnet/banner";
 
 interface BestForPageProps {
   params: Promise<{ slug: string }>;
@@ -64,6 +65,7 @@ export default async function BestForPage({ params }: BestForPageProps) {
       <FAQJsonLd faqs={bestFor.faq} />
       <Navbar />
       <main className="pt-16">
+        {slug === "roofing" && <LeadMagnetBanner variant="compact" />}
         <BestForPageClient bestFor={bestFor} />
       </main>
       <Footer />

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { LeadMagnetBanner } from "@/components/lead-magnet/banner";
 import {
   LandingHero,
   LandingPainPoints,
@@ -63,6 +64,7 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
       <Navbar />
       <main>
         <LandingHero content={solution.hero} />
+        {slug === "roofing" && <LeadMagnetBanner variant="roofing" />}
         <LandingPainPoints content={solution.painPoints} />
         {solution.calculator && <ROICalculator content={solution.calculator} />}
         <LandingBenefits content={solution.benefits} />

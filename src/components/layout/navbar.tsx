@@ -28,8 +28,11 @@ export function Navbar() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
-            <Button asChild>
+          <div className="hidden md:flex items-center gap-3">
+            <Button variant="outline" size="sm" asChild>
+              <Link href="/lead-magnet">Free Playbook</Link>
+            </Button>
+            <Button size="sm" asChild>
               <Link href="/book-demo">Book a Demo</Link>
             </Button>
           </div>

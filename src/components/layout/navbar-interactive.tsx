@@ -123,9 +123,14 @@ export function NavbarMobile() {
               </Link>
             ))}
           </div>
-          <Button className="w-full mt-4" asChild>
-            <Link href="/book-demo" onClick={() => setOpen(false)}>Book a Demo</Link>
-          </Button>
+          <div className="flex flex-col gap-3 mt-4">
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/lead-magnet" onClick={() => setOpen(false)}>Free Playbook</Link>
+            </Button>
+            <Button className="w-full" asChild>
+              <Link href="/book-demo" onClick={() => setOpen(false)}>Book a Demo</Link>
+            </Button>
+          </div>
         </div>
       </SheetContent>
     </Sheet>

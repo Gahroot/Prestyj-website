@@ -129,6 +129,8 @@ export const INDUSTRY_SUBJECTS: Record<Industry, string> = {
     "plumber under a kitchen sink with wrench, homeowner watching nearby",
   dental:
     "dentist in modern practice speaking with a patient, clean clinical setting",
+  medical:
+    "medical professional in a clinic speaking with a patient, clean modern healthcare setting",
   legal:
     "attorney in an office meeting with a client, bookshelves, professional attire",
   insurance:

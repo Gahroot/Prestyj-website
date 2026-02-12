@@ -5,9 +5,15 @@ export const navLinks = [
   { href: "/blog", label: "Blog" },
 ];
 
+export const ctaLinks = [
+  { href: "/lead-magnet", label: "Free Playbook", variant: "secondary" as const },
+  { href: "/book-demo", label: "Book Demo", variant: "primary" as const },
+];
+
 export const solutionLinks = [
   { href: "/solutions/lead-reactivation", label: "Dead Lead Reactivation" },
   { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
+  { href: "/solutions/roofing", label: "Roofing Contractors" },
 ];
 
 export const alternativeLinks = [
@@ -27,6 +33,7 @@ export const alternativeLinks = [
 
 export const bestForLinks = [
   { href: "/best-for", label: "All Use Cases" },
+  { href: "/best-for/roofing", label: "Roofing Contractors" },
   { href: "/best-for/solo-agents", label: "Solo Agents" },
   { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
   { href: "/best-for/real-estate-franchises", label: "Real Estate Franchises" },

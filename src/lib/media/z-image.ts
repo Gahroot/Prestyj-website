@@ -145,7 +145,8 @@ export async function waitForCompletion(taskId: string): Promise<string> {
     }
 
     const result = (await response.json()) as ZImageDetailResponse;
-    const state = result.data.status;
+    // API returns 'state' not 'status'
+    const state = result.data.state || result.data.status;
 
     if (state === "success") {
       if (result.data.resultJson) {
