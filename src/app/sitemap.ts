@@ -48,6 +48,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/lead-magnet`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/ai-call-handling-calculator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/team-commission-calculator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/privacy`,
       lastModified: now,
       changeFrequency: "yearly",
@@ -101,20 +119,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  // Compare pages
+  // Compare pages (excluding redirected ones: ylopo → /alternatives/ylopo, isa → /alternatives/human-isa)
   const compareRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/compare/prestyj-vs-isa`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ylopo`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
     {
       url: `${baseUrl}/compare/prestyj-vs-conversica`,
       lastModified: now,
@@ -123,6 +129,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/compare/prestyj-vs-structurely`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-drift`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-internal-isa-team`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-offshore-isa`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,

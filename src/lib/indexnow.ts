@@ -1,3 +1,4 @@
+import { blogSource } from "./source";
 import { getAllAlternativeSlugs } from "./alternatives";
 import { getAllSolutionSlugs } from "./solutions";
 import { getAllBestForSlugs } from "./best-for";
@@ -20,45 +21,42 @@ export function getIndexNowKey(): string | undefined {
   return process.env.INDEXNOW_API_KEY;
 }
 
-const BASE_URL = "https://www.prestyj.com";
+const BASE_URL = "https://prestyj.com";
 
 export function getAllUrls(): string[] {
   const urls: string[] = [];
 
   // Static routes
   urls.push(
-    "",
-    "/book-demo",
-    "/blog",
-    "/results",
-    "/alternatives",
-    "/best-for",
-    "/privacy",
-    "/terms"
+    BASE_URL,
+    `${BASE_URL}/book-demo`,
+    `${BASE_URL}/blog`,
+    `${BASE_URL}/results`,
+    `${BASE_URL}/alternatives`,
+    `${BASE_URL}/best-for`,
+    `${BASE_URL}/privacy`,
+    `${BASE_URL}/terms`,
+    `${BASE_URL}/lead-magnet`,
+    `${BASE_URL}/ai-call-handling-calculator`,
+    `${BASE_URL}/team-commission-calculator`
   );
 
-  // Blog posts
-  const blogPosts = [
-    "/blog/roofing-speed-to-lead-2026",
-    "/blog/missed-call-text-back-roofers-2026",
-    "/blog/ai-storm-response-roofing-2026",
-    "/blog/roofing-lead-magnet-2026",
-  ];
-
-  for (const post of blogPosts) {
-    urls.push(BASE_URL + post);
+  // Blog posts - dynamically from content source
+  const blogPages = blogSource.getPages();
+  for (const page of blogPages) {
+    urls.push(`${BASE_URL}${page.url}`);
   }
 
   // Alternative pages
   const alternativeSlugs = getAllAlternativeSlugs();
   for (const slug of alternativeSlugs) {
-    urls.push(BASE_URL + "/alternatives/" + slug);
+    urls.push(`${BASE_URL}/alternatives/${slug}`);
   }
 
   // Solution pages
   const solutionSlugs = getAllSolutionSlugs();
   for (const slug of solutionSlugs) {
-    urls.push(BASE_URL + "/solutions/" + slug);
+    urls.push(`${BASE_URL}/solutions/${slug}`);
   }
 
   // Best-for pages (excluding noindex pages)
@@ -69,23 +67,18 @@ export function getAllUrls(): string[] {
   );
 
   for (const slug of filteredBestForSlugs) {
-    urls.push(BASE_URL + "/best-for/" + slug);
+    urls.push(`${BASE_URL}/best-for/${slug}`);
   }
-
-  // Lead magnet page
-  urls.push(BASE_URL + "/lead-magnet");
 
   // Compare pages
   const compareRoutes = [
-    "/compare/prestyj-vs-isa",
-    "/compare/prestyj-vs-ylopo",
     "/compare/prestyj-vs-conversica",
     "/compare/prestyj-vs-structurely",
     "/compare/prestyj-vs-drift",
     "/compare/prestyj-vs-internal-isa-team",
     "/compare/prestyj-vs-offshore-isa",
   ];
-  urls.push(...compareRoutes.map((route) => BASE_URL + route));
+  urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
   return urls;
 }
@@ -102,9 +95,9 @@ export async function submitUrls(urls: string[]): Promise<IndexNowResponse> {
   }
 
   const payload = {
-    host: "www.prestyj.com",
-    key: getIndexNowKey(),
-    keyLocation: getIndexNowKey(),
+    host: "prestyj.com",
+    key,
+    keyLocation: key,
     urlList: urls,
   };
 
@@ -120,7 +113,7 @@ export async function submitUrls(urls: string[]): Promise<IndexNowResponse> {
     if (response.ok || response.status === 202) {
       return {
         success: true,
-        message: "Successfully submitted " + urls.length + " URLs to IndexNow",
+        message: `Successfully submitted ${urls.length} URLs to IndexNow`,
         urlCount: urls.length,
       };
     }
@@ -134,8 +127,8 @@ export async function submitUrls(urls: string[]): Promise<IndexNowResponse> {
 
     return {
       success: false,
-      message: "Failed to submit " + urls.length + " URLs",
-      error: errorMessages[response.status] || "HTTP " + response.status,
+      message: `Failed to submit ${urls.length} URLs`,
+      error: errorMessages[response.status] || `HTTP ${response.status}`,
     };
   } catch (error) {
     return {
