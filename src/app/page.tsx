@@ -46,31 +46,35 @@ const CTASection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "PRESTYJ - AI Sales Agents for Real Estate | 24/7 Lead Response",
+  title: "Prestyj | AI Sales Agents & Automated Appointment Setting for Service Businesses",
   description:
-    "PRESTYJ AI Sales Agents respond to leads in under 60 seconds, qualify prospects, and book appointments 24/7. Increase conversion rates by 391% with instant lead engagement for real estate teams.",
+    "Deploy AI agents that qualify leads and book appointments 24/7. Prestyj responds to every lead in under 60 seconds for real estate, home services, and high-growth service businesses. No salary. No commission splits.",
   keywords: [
     "AI sales agent",
-    "real estate AI",
+    "service business automation",
+    "AI receptionist",
+    "home services AI",
+    "contractor lead response",
+    "AI appointment booking",
+    "missed call text back",
+    "AI workforce",
     "lead response automation",
-    "ISA replacement",
     "speed to lead",
     "lead qualification",
-    "appointment booking",
-    "real estate lead conversion",
+    "real estate AI",
   ],
   openGraph: {
-    title: "PRESTYJ - AI Sales Agents for Real Estate",
+    title: "Prestyj | AI Sales Agents & Automated Appointment Setting for Service Businesses",
     description:
-      "Respond to leads in under 60 seconds. Qualify prospects and book appointments 24/7 with AI-powered sales agents.",
+      "Deploy AI agents that qualify leads and book appointments 24/7. Responds to every lead in under 60 seconds for real estate, home services, and high-growth service businesses.",
     type: "website",
     url: "https://prestyj.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PRESTYJ - AI Sales Agents for Real Estate",
+    title: "Prestyj | AI Sales Agents & Automated Appointment Setting for Service Businesses",
     description:
-      "Respond to leads in under 60 seconds. Qualify prospects and book appointments 24/7.",
+      "Deploy AI agents that qualify leads and book appointments 24/7. Responds to every lead in under 60 seconds for real estate, home services, and high-growth service businesses.",
   },
   alternates: {
     canonical: "https://prestyj.com",

@@ -1,329 +1,259 @@
 ---
 name: rank-me
-description: Dynamic SEO command - research SERPs, identify high-leverage opportunities, and execute content creation for broader AI agent market
+description: Execute high-leverage SEO content creation - research, create, and deploy differentiated content using the hub & spoke strategy
 ---
 
-# Dynamic SEO Operation: Rank-Me
+# Rank-Me: SEO Content Execution Engine
 
-This command dynamically researches and executes the highest-leverage SEO wins for the AI agent market. Unlike `/seo` (enterprise real estate focus), `/rank-me` does live SERP research across ALL high-ticket service industries and prioritizes opportunities by leverage score.
+This command creates content that ranks. It does targeted SERP research, identifies the single highest-leverage opportunity, gets approval, then creates differentiated content and deploys it.
 
-**Goal**: Find and execute the fastest path to page 1 rankings for AI agent-related keywords.
+**Goal**: Create content so good and specific that it dominates SERPs that are currently thin, outdated, or generic.
 
----
-
-## Target Keywords (Industry-Agnostic)
-
-Research and target across ALL high-ticket service industries:
-
-**Core Service Keywords:**
-- AI voice agents / AI voice calling
-- AI sales agents / AI sales assistant
-- done-for-you AI texting agents / done-for-you AI voice agents
-- AI lead response / AI lead qualification
-- AI inbound receptionist / AI phone answering
-- AI outbound calling / outbound texting
-- batch text campaigns with AI responses
-- AI agents for business / custom AI solutions
-- AI appointment booking / AI scheduling
-- done-for-you AI agents
-
-**Industry Verticals (prioritize by opportunity):**
-- Real estate (existing focus)
-- Insurance agencies
-- Mortgage brokers
-- Solar installers
-- HVAC companies
-- Roofing contractors
-- Home services / contractors
-- Auto dealerships
-- Medical/dental practices
-- Law firms
-- Any high-ticket service with lead response needs
-
-**Strategy**: Identify which industry + keyword combinations have lowest competition and highest ranking potential, then prioritize regardless of industry.
+**Core Principle**: One excellent piece of content beats five mediocre ones. Quality and differentiation over volume.
 
 ---
 
-## Phase 1: SERP Intelligence (5 Parallel Agents)
+## The Strategy (Hardcoded)
 
-Launch ALL 5 agents simultaneously using the Task tool.
+Prestyj = **"The AI Workforce for Service Businesses"**
 
-### Agent 1: SERP Snapshot
-Research current search landscape for target keywords:
+### Content Clusters (Priority Order)
 
-**For Each Core Keyword:**
-- Web search for "[keyword]" and "[keyword] for [industry]"
-- Identify who's ranking (competitors, directories, blogs)
-- Note content types ranking (listicles, landing pages, comparisons)
-- Find content gaps and "thin content" opportunities
-- Look for "almost there" opportunities (outdated/thin content we can beat)
+1. **Home Services** — Highest intent, lowest competition. Plumbers, HVAC, electricians, roofers, contractors losing money on missed calls.
+2. **Functional Automation** — CRM integrations, custom workflows. Target power users on ServiceTitan, Jobber, Follow Up Boss.
+3. **VS & Comparison** — Category-defining pages. "AI vs Human Receptionist", "AI vs Answering Service".
+4. **Real Estate** — Defend existing base. ISA replacement, team scaling, follow-up automation.
+5. **Authority Building** — Dream keywords. "Business automation agency", "fully autonomous sales team".
 
-**Output Format:**
+### Content Types Available
+
+| Type | Location | When to Use |
+|------|----------|-------------|
+| Blog Post | `content/blog/[slug].mdx` | Keyword-targeted articles, thought leadership, how-to guides |
+| Solution Page | `src/lib/solutions/[slug].ts` | Industry vertical landing pages (home-services, insurance) |
+| Best-For Page | `src/lib/best-for/[slug].ts` | Niche-specific targeting (AI for plumbers, AI for dentists) |
+| Alternative Page | `src/lib/alternatives/[slug].ts` | Competitor alternative pages |
+| Compare Page | `src/app/compare/[slug]/page.tsx` | VS pages (Prestyj vs X, AI vs Human) |
+
+---
+
+## Phase 1: Targeted Opportunity Research (3 Parallel Agents)
+
+Each agent focuses on finding the BEST opportunity to create right now.
+
+### Agent 1: SERP Hunter
+
+Do live web searches for high-intent keywords across the strategy clusters. Focus on finding SERPs that are **thin, outdated, or beatable**.
+
+**Search Pattern — Rotate through these:**
+
+Home Services (search 5-8 of these):
+- "AI receptionist for [plumbers/HVAC/electricians/roofers/contractors]"
+- "after hours answering service for [industry]"
+- "missed call text back [industry]"
+- "AI appointment booking [industry]"
+- "[industry] virtual receptionist"
+- "[industry] phone answering solution"
+- "automated dispatch [HVAC/plumbing]"
+
+Functional Automation (search 3-5 of these):
+- "AI automation for ServiceTitan"
+- "AI for Jobber users"
+- "AI lead response for Follow Up Boss"
+- "connect AI agent to [CRM]"
+- "automate inbound lead qualification"
+- "custom AI sales workflows"
+
+VS/Comparison (search 3-5 of these):
+- "AI receptionist vs human receptionist"
+- "AI receptionist vs answering service"
+- "AI answering service cost comparison"
+- "[new competitor 2026] review"
+- "best AI phone answering 2026"
+
+Authority/Dream (search 2-3 of these):
+- "business automation agency"
+- "replace receptionist with AI"
+- "AI employee cost vs human"
+- "book appointments while sleeping"
+
+**For each search, report:**
 ```
-KEYWORD: [keyword]
-TOP 3 RESULTS:
-1. [URL] - [Type] - [Quality: High/Medium/Low]
-2. [URL] - [Type] - [Quality: High/Medium/Low]
-3. [URL] - [Type] - [Quality: High/Medium/Low]
-OPPORTUNITY: [None/Low/Medium/High]
-NOTES: [Why this is/isn't an opportunity]
+KEYWORD: [exact term]
+SERP STRENGTH: [1-10, where 1 = empty/thin, 10 = dominated by authorities]
+TOP 3 RESULTS: [URL - Type - Quality]
+BEATABLE: [Yes/No/Maybe] — [Why]
+OUR ANGLE: [What we'd do differently]
+RECOMMENDED CONTENT TYPE: [Blog/Solution/Best-For/VS/Programmatic]
 ```
 
-### Agent 2: Competitor Content Audit
-Research what competitors are ranking for:
+### Agent 2: Existing Content Quick-Check
 
-**Competitors to Research:**
-- Bland.ai
-- Retell.ai
-- Vapi
-- Conversica
-- Structurely
-- AIRe (Air.ai)
-- Drift
-- Intercom
+Do a FAST scan of existing content to avoid creating duplicates. This should take < 2 minutes.
 
-**For Each:**
-- What keywords are they ranking for?
-- What content types are performing?
-- What gaps exist in their coverage?
+**Read these files only:**
+- `src/lib/best-for/index.ts` — get the list of existing slugs
+- `src/lib/alternatives/index.ts` — get the list of existing slugs
+- `src/lib/solutions/` — list solution slugs
+- List filenames in `content/blog/`
+- List routes in `src/app/compare/`
+
+**Output a compact dedup reference:**
+```
+EXISTING SLUGS:
+Best-For: [list]
+Alternatives: [list]
+Solutions: [list]
+Blog: [list of filenames]
+Compare: [list]
+```
+
+### Agent 3: Competitor Intelligence
+
+Research 2-3 competitors to find content gaps and positioning angles:
+
+**Search for:**
+- "AI receptionist software 2026"
+- "best AI voice agent for business"
+- "AI answering service for small business"
+- "[top competitor name] features"
+- "[top competitor name] pricing"
+
+**Find:**
+- What content types are competitors creating?
+- What keywords are they targeting that we're NOT?
+- Where is their content weak/thin/outdated?
+- What NEW competitors have emerged that we don't have alternative pages for?
 - What positioning angles are they using?
 
-### Agent 3: Keyword Opportunity Finder
-Find long-tail and comparison opportunities:
-
-**Search Patterns:**
-- "[core keyword] alternatives"
-- "[core keyword] vs [competitor]"
-- "best [core keyword] for [industry]"
-- "[competitor] alternative"
-- "[core keyword] pricing"
-- "[core keyword] reviews 2026"
-- "people also ask" related to core keywords
-
-**Output Format:**
+**Output:**
 ```
-KEYWORD: [long-tail keyword]
-SEARCH VOLUME ESTIMATE: [Low/Medium/High]
-COMPETITION: [Low/Medium/High]
-CONTENT TYPE NEEDED: [Blog/Best-For/Alternative/Comparison]
+COMPETITOR: [Name]
+HAVE ALT PAGE: [Yes/No]
+THEIR CONTENT STRENGTH: [Weak/Medium/Strong]
+GAPS WE CAN EXPLOIT: [List specific opportunities]
 ```
-
-### Agent 4: Content Decay Detector
-Audit existing content in `content/blog/`:
-
-**Check Each Post For:**
-- Age (>6 months = refresh candidate)
-- Outdated information (old stats, dead links)
-- Thin content (<800 words for comprehensive topics)
-- Missing internal links
-- Title optimization opportunities (add "AI" keywords)
-- Missing structured data
-
-**Output Format:**
-```
-FILE: content/blog/[slug].mdx
-AGE: [X months]
-WORD COUNT: [N words]
-ISSUES: [List of issues]
-RECOMMENDATION: [Refresh/Update Title/Add Links/No Action]
-PRIORITY: [High/Medium/Low]
-```
-
-### Agent 5: Quick Win Identifier
-Find fast, high-impact improvements:
-
-**Check For:**
-- Blog titles missing "AI" that could benefit from it
-- Pages ranking positions 5-15 (almost page 1)
-- Missing meta descriptions
-- Missing/incomplete schema markup
-- Internal linking gaps (orphan pages)
-- Image alt text opportunities
-- Broken internal/external links
-
-**Files to Audit:**
-- `content/blog/*.mdx` (all blog posts)
-- `src/app/**/page.tsx` (all pages)
-- `src/lib/best-for/*.ts`
-- `src/lib/alternatives/*.ts`
 
 ---
 
-## Phase 2: Opportunity Scoring
+## Phase 2: Opportunity Scoring & Selection
 
-After all Phase 1 agents complete, synthesize and score opportunities.
+After Phase 1 completes, combine findings and select the top opportunities.
 
-### Leverage Scoring Algorithm
-
-Score each opportunity 0-100:
+### Scoring (0-100)
 
 ```
-LEVERAGE SCORE =
-  Traffic Potential (0-30) +
-  Competition Level (0-25) +
-  Conversion Intent (0-20) +
-  Effort Required (0-15) +
-  Time to Rank (0-10)
+Traffic Potential   (0-30): Search demand signal strength
+Competition Gap     (0-25): How beatable is the SERP?
+Conversion Intent   (0-20): How close to buying is the searcher?
+Effort Required     (0-15): How fast can we ship this?
+Time to Rank        (0-10): How quickly will this index and rank?
 ```
 
-**Traffic Potential (0-30):**
-- 30: High-volume head term with proven search demand
-- 20: Medium-volume term or long-tail with consistent searches
-- 10: Low-volume long-tail or niche term
-- 0: No demonstrated search demand
+### Mandatory Differentiation Check
 
-**Competition Level (0-25):**
-- 25: No quality content exists / thin SERP
-- 20: Only low-quality or outdated content exists
-- 15: Medium competition, we can differentiate
-- 10: Strong competition but gap exists
-- 0: Dominated by high-authority sites
+For each top opportunity, answer: **"Why will OUR content beat what's currently ranking?"**
 
-**Conversion Intent (0-20):**
-- 20: Direct buying intent ("AI voice agent pricing", "best AI for X")
-- 15: Comparison intent ("[X] vs [Y]", "alternatives to")
-- 10: Solution-seeking intent ("how to automate lead response")
-- 5: Research intent (may convert later)
-- 0: Purely educational / no buying intent
+Must have at least ONE:
+- [ ] **More specific** — We target exact industry/use-case, they're generic
+- [ ] **More practical** — We show real implementation, costs, ROI numbers
+- [ ] **More current** — Their content is outdated, ours has 2026 data/trends
+- [ ] **Better format** — We offer a tool/calculator/interactive, they have a wall of text
+- [ ] **Unique authority** — We actually do this work daily, they're writing from outside
+- [ ] **Uncovered niche** — Nobody is creating content for this search at all
 
-**Effort Required (0-15):**
-- 15: Quick fix (<30 min) - title tweak, meta update
-- 12: Minor update (30-60 min) - refresh existing content
-- 8: New content using existing template (1-2 hours)
-- 4: New content requiring research (2-4 hours)
-- 0: Major project (new page type, significant research)
+**No differentiator = skip it. Do NOT create "me too" content.**
 
-**Time to Rank (0-10):**
-- 10: Can rank immediately (thin SERP, low competition)
-- 7: Should rank within 2-4 weeks
-- 4: May take 1-3 months
-- 0: Long-term play (6+ months)
+### Relevance Gate
 
-### Categorize Opportunities
+- [ ] Relates to AI agents, voice AI, lead response, sales automation, receptionist, appointment booking
+- [ ] Business owner reading this would consider Prestyj
+- [ ] Does NOT duplicate intent of existing page
+- [ ] We can write this accurately
 
-Group scored opportunities into:
-
-**QUICK WINS** (< 30 min, score 70+)
-- Title optimizations
-- Meta description updates
-- Internal linking additions
-- Schema markup fixes
-
-**NEW CONTENT** (score 65+)
-- Blog posts (`content/blog/*.mdx`)
-- Best-for pages (`src/lib/best-for/[slug].ts`)
-- Alternative pages (`src/lib/alternatives/[slug].ts`)
-
-**CONTENT REFRESH** (existing content, score 60+)
-- Update outdated stats/info
-- Expand thin content
-- Improve targeting
-
-**TECHNICAL FIXES** (score varies)
-- Broken links
-- Missing schema
-- Crawlability issues
-
----
-
-## Hard Relevance Gates (MANDATORY)
-
-Before proposing ANY content, it MUST pass ALL THREE gates.
-
-### Gate 1: Keyword Relevance
-- [ ] Relates to AI agents, lead response, sales automation, voice/text AI
-- [ ] Searcher could naturally consider Prestyj as a solution
-- [ ] CTA to /book-demo is organic, not forced
-
-**If ANY fail -> REJECT**
-
-### Gate 2: Competition Assessment
-At least ONE must be true:
-- [ ] No quality content exists for this keyword
-- [ ] Existing content is outdated (>12 months old)
-- [ ] Existing content is thin (<500 words)
-- [ ] We can provide unique angle/data/perspective
-
-**If NONE true -> REJECT**
-
-### Gate 3: Content Fit
-All must be true:
-- [ ] Can use existing templates/TypeScript types
-- [ ] Information is available for accurate content
-- [ ] Fits existing site architecture
-
-**If ANY fail -> REJECT**
-
----
-
-## Kill List (NEVER Create)
-
-Immediately reject any topic that is:
-
-- Content for developers building AI agents (wrong audience)
-- Generic "what is AI" educational content (no buying intent)
-- Topics without buying intent
-- Topics where CTA feels forced
-- Duplicates of existing content intent
-- Industry news without competitive angle
-- Content requiring claims we can't substantiate
-- Regulatory/compliance content (complex, risky)
-- Content targeting individual consumers (B2B focus)
+**Any fail = drop it.**
 
 ---
 
 ## Phase 3: User Approval Gate
 
-Present findings using this format:
+Present the top 3-5 opportunities:
 
 ```
 ===============================================
-     THE PLAN - [DATE]
+     RANK-ME TARGETS - [DATE]
 ===============================================
 
-QUICK WINS (< 30 min total)
-+---------+----------------------------------+
-| SCORE   | ACTION                           |
-+---------+----------------------------------+
-| 95      | Add "AI" to 3 blog titles        |
-| 88      | Add schema to comparison pages   |
-| 82      | Fix 5 internal linking gaps      |
-+---------+----------------------------------+
+#1 (SCORE: XX/100)
+TYPE: [Blog Post / Solution Page / Best-For / VS Page / Alt Page]
+TARGET KEYWORD: "[keyword]"
+PROPOSED URL: /[path]
+SERP STATUS: [Thin/Outdated/Beatable]
+OUR DIFFERENTIATOR: [One sentence — why we'll win]
+EFFORT: [Quick/Medium/Involved]
 
-NEW CONTENT
-+---------+-------------+----------------------+--------------------+
-| SCORE   | TYPE        | URL                  | TARGET KEYWORD     |
-+---------+-------------+----------------------+--------------------+
-| 92      | Best-For    | /best-for/insurance  | AI for insurance   |
-| 85      | Alternative | /alternatives/bland  | bland.ai alt       |
-| 78      | Blog        | /blog/ai-voice-vs... | AI voice agents    |
-+---------+-------------+----------------------+--------------------+
+#2 (SCORE: XX/100)
+[Same format]
 
-CONTENT REFRESH
-+---------+----------------------------------+--------------------+
-| SCORE   | FILE                             | ACTION             |
-+---------+----------------------------------+--------------------+
-| 75      | content/blog/old-post.mdx        | Update stats, +AI  |
-+---------+----------------------------------+--------------------+
+#3 (SCORE: XX/100)
+[Same format]
 
-Reply: "approve all" or "approve 1,3,5" or "show more" or "reject"
+===============================================
+Reply: "approve all" or "approve 1,3" or "reject" or "more options"
+===============================================
 ```
 
-**Wait for user response before proceeding.**
+**Wait for user approval before creating anything.**
 
 ---
 
-## Phase 4: Content Execution
+## Phase 4: Content Creation
 
-For each approved item, execute in parallel where possible.
+For each approved item, create the content. Launch parallel agents for independent items.
 
-### For Blog Posts (`content/blog/*.mdx`)
+**CRITICAL RULE**: Every piece of content must be DIFFERENT from what's currently ranking. Before writing, re-read the top 2-3 SERP results and ensure our content:
+- Takes a different angle
+- Provides unique value (specific numbers, real scenarios, practical steps)
+- Speaks to a more specific audience
+- Includes information competitors don't have
 
-Create MDX file following existing blog patterns:
-- Frontmatter with title, description, date
-- H2 sections with clear hierarchy
-- Internal links to relevant pages
-- CTA to /book-demo where natural
+### For Blog Posts (`content/blog/[slug].mdx`)
+
+**Create MDX file with frontmatter:**
+```mdx
+---
+title: "[Title — include primary keyword naturally]"
+description: "[Compelling meta description, 150-155 chars, include keyword]"
+date: [YYYY-MM-DD]
+---
+
+[Content following these rules:]
+- Open with a specific, relatable scenario (not generic "in today's world")
+- Include real numbers: costs, ROI, time savings, response times
+- Reference specific industries/tools/CRMs by name
+- Internal link to relevant /best-for, /solutions, /alternatives pages (2-4 links)
+- Natural CTA to /book-demo (NOT forced)
+- H2 sections that could each be a featured snippet
+- 1200-2000 words for guides, 800-1200 for comparisons
+- Include a comparison table if applicable
+- End with clear next steps, not a fluffy conclusion
+```
+
+**Differentiation checklist before saving:**
+- [ ] Would a reader learn something they can't get from the top 3 SERP results?
+- [ ] Does this include specific numbers, scenarios, or examples?
+- [ ] Is the angle unique to Prestyj's positioning?
+- [ ] Does it naturally lead to product consideration without being salesy?
+
+### For Solution Pages (`src/lib/solutions/[slug].ts`)
+
+Read the existing solution page types and data structure first:
+- Read `src/lib/solutions/types.ts` for the interface
+- Read one existing solution (e.g., `src/lib/solutions/roofing.ts`) as a template
+
+**Create the data file following the EXACT TypeScript interface.**
+
+Then update `src/lib/solutions/index.ts` to import and export the new solution.
 
 ### For Best-For Pages (`src/lib/best-for/[slug].ts`)
 
@@ -335,46 +265,46 @@ import type { BestForPageContent } from "./types";
 export const [camelCaseName]: BestForPageContent = {
   slug: "[slug]",
   niche: {
-    name: "[Full Name]",
+    name: "[Full Industry Name]",
     shortName: "[Short Name]",
-    description: "[One sentence description]",
+    description: "[One sentence — specific to this industry's AI needs]",
   },
   meta: {
-    title: "[Title] | Prestyj",
-    description: "[Meta description 155 chars]",
-    keywords: ["keyword1", "keyword2", ...],
+    title: "AI [Receptionist/Sales Agent/etc.] for [Industry] | Prestyj",
+    description: "[155 chars — specific pain point + solution for this industry]",
+    keywords: ["[industry] AI receptionist", "[industry] AI", ...],
   },
   hero: {
-    badge: "[Badge text]",
-    headline: "[Headline Part 1]",
-    headlineAccent: "[Accented Part]",
-    subheadline: "[Subheadline]",
+    badge: "[Industry] AI Solution",
+    headline: "[Industry-specific headline part 1]",
+    headlineAccent: "[Accented/highlighted part]",
+    subheadline: "[Specific value prop for this industry]",
   },
   whyBestFor: [
-    { icon: "IconName", title: "Title", description: "Description" },
-    // 4 items
+    { icon: "IconName", title: "[Industry-specific benefit]", description: "[Detail]" },
+    // 4 items — each must be specific to this industry, NOT generic
   ],
   painPoints: [
-    { problem: "Problem statement", solution: "How Prestyj solves it" },
-    // 4-5 items
+    { problem: "[Industry-specific problem]", solution: "[How Prestyj solves it]" },
+    // 4-5 items — use real scenarios from this industry
   ],
   comparison: {
-    headers: ["Feature", "Prestyj AI", "Alternative"],
+    headers: ["Feature", "Prestyj AI", "[Industry standard alternative]"],
     rows: [
-      { feature: "Feature", prestyj: "Prestyj value", others: "Others value" },
+      { feature: "[Feature]", prestyj: "[Our value]", others: "[Their value]" },
       // 5-7 rows
     ],
   },
   faq: [
-    { question: "Question?", answer: "Answer" },
+    { question: "[Industry-specific question]?", answer: "[Specific answer]" },
     // 4-5 items
   ],
   cta: {
-    headline: "CTA Headline",
-    subheadline: "CTA subheadline",
-    buttonText: "Button Text",
+    headline: "[Industry-specific CTA]",
+    subheadline: "[Specific outcome promise]",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
-    footnote: "Optional footnote",
+    footnote: "[Optional — setup time, guarantee, etc.]",
   },
 };
 ```
@@ -393,82 +323,89 @@ export const [camelCaseName]: AlternativePageContent = {
   type: "direct-competitor",
   competitor: {
     name: "[Competitor Name]",
-    pricing: "[Pricing if known]",
+    pricing: "[Pricing if known, or 'Contact for pricing']",
     website: "[URL]",
-    description: "[One sentence]",
+    description: "[Honest one sentence about what they do]",
   },
   meta: {
-    title: "Best [Competitor] Alternative | Prestyj",
-    description: "[Meta description 155 chars]",
-    keywords: ["[competitor] alternative", ...],
+    title: "Best [Competitor] Alternative for Service Businesses | Prestyj",
+    description: "[155 chars — why someone might switch]",
+    keywords: ["[competitor] alternative", "[competitor] vs prestyj", ...],
   },
   hero: {
     badge: "[Competitor] Alternative",
     headline: "Looking for a",
     headlineAccent: "[Competitor] Alternative?",
-    subheadline: "[Why they might be looking]",
+    subheadline: "[Specific reason they might be looking — based on real competitor weakness]",
   },
   industryStats: [
-    { stat: "XX%", description: "Description" },
+    { stat: "[XX%]", description: "[Relevant stat]" },
     // 3-4 items
   ],
   comparison: {
     features: [
-      { feature: "Feature", prestyj: true, competitor: false, note: "Note" },
-      // 6-8 rows
+      { feature: "[Feature]", prestyj: true, competitor: false, note: "[Context]" },
+      // 6-8 rows — be fair and honest
     ],
     competitorPricing: {
-      price: "$X",
+      price: "$[X]",
       period: "/month",
-      note: "Note",
-      pros: ["Pro 1", "Pro 2"],
-      cons: ["Con 1", "Con 2"],
+      note: "[Context]",
+      pros: ["[Genuine pro 1]", "[Genuine pro 2]"],
+      cons: ["[Real con 1]", "[Real con 2]"],
     },
     prestyjPricing: {
       price: "Custom pricing",
-      note: "Note",
-      pros: ["Pro 1", "Pro 2"],
+      note: "[Value prop]",
+      pros: ["[Pro 1]", "[Pro 2]"],
       cons: [],
     },
   },
   whySwitch: [
-    { icon: "IconName", title: "Title", description: "Description" },
+    { icon: "IconName", title: "[Reason]", description: "[Detail]" },
     // 4 items
   ],
-  whenCompetitorFits: ["Scenario 1", "Scenario 2"],
-  whenPrestyjFits: ["Scenario 1", "Scenario 2"],
+  whenCompetitorFits: ["[Honest scenario 1]", "[Honest scenario 2]"],
+  whenPrestyjFits: ["[Scenario 1]", "[Scenario 2]"],
   relatedResources: [
-    { href: "/path", title: "Title", description: "Description" },
+    { href: "/blog/[related]", title: "[Related Post]", description: "[Why relevant]" },
   ],
   cta: {
-    headline: "CTA Headline",
-    subheadline: "Subheadline",
+    headline: "[CTA Headline]",
+    subheadline: "[Subheadline]",
     buttonText: "Book Demo",
     buttonHref: "/book-demo",
-    footnote: "Optional",
   },
 };
 ```
 
 **After creating, update `src/lib/alternatives/index.ts`** to import and export the new page.
 
+### For VS / Compare Pages
+
+Read an existing compare page first to match the pattern:
+- Check `src/app/compare/` for existing page structure
+- Match the component usage and layout
+
+Create the page at `src/app/compare/[slug]/page.tsx`.
+
 ### Icon Reference
 
-Use Lucide React icons. Common icons for these pages:
-- Building2, Building, Home
-- Phone, MessageSquare, Mail
-- Clock, Timer, Zap
-- Target, BarChart3, TrendingUp
-- Shield, Lock, CheckCircle
-- DollarSign, CreditCard
-- Users, UserCheck, Headphones
-- Bot, Cpu, Sparkles
+Use Lucide React icons. Common icons:
+- Building2, Building, Home, Wrench, Hammer
+- Phone, PhoneIncoming, PhoneMissed, MessageSquare
+- Clock, Timer, Zap, AlertTriangle
+- Target, BarChart3, TrendingUp, ArrowUpRight
+- Shield, Lock, CheckCircle, XCircle
+- DollarSign, CreditCard, Wallet
+- Users, UserCheck, Headphones, Bot
+- Cpu, Sparkles, Workflow, Settings
 
 ---
 
 ## Phase 5: Verification & Deploy
 
-### Step 1: Run Quality Checks
+### Step 1: Quality Checks
 
 ```bash
 npm run typecheck
@@ -476,73 +413,70 @@ npm run lint
 npm run build
 ```
 
-**Fix ALL errors before continuing.** Do not proceed with errors.
+**Fix ALL errors. Do not proceed with errors or warnings (except pre-existing ones).**
 
-### Step 2: Verify Content
+Pre-existing warnings to ignore:
+- `src/app/ai-calculator-results/page.tsx`: unused `setResults`, `setInputs`
+- `src/lib/compare/types.ts`: unused `ReactNode` import
 
-- Confirm new pages appear in build output
-- Check that TypeScript types are satisfied
-- Verify no broken imports
+### Step 2: Verify Content Quality
 
-### Step 3: Commit Changes
+Before committing, re-read the created content and check:
+- [ ] Title includes primary keyword naturally
+- [ ] Meta description is compelling and 150-155 chars
+- [ ] Content is specific (mentions real industries, tools, numbers)
+- [ ] Internal links point to existing pages (verify they exist)
+- [ ] No broken imports
+- [ ] CTA to /book-demo is present and natural
+- [ ] Content is genuinely different from top SERP results
+
+### Step 3: Commit
 
 ```bash
-git add [specific files]
-git commit -m "SEO: [Description of changes]
+git add [specific files only]
+git commit -m "SEO: [Content type] — [what was created]
 
-- [List of pages created]
-- [List of quick fixes applied]
-- [Content refreshes if any]
+- [Specific page/post 1]
+- [Specific page/post 2]
+- Target keywords: [list]
 
-Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>"
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
 ```
 
-### Step 4: Trigger IndexNow
+### Step 4: IndexNow Notification
 
-For new/updated pages, submit to search engines:
+Submit new/updated URLs to search engines via the existing IndexNow integration:
 
-```typescript
-import { submitUrls } from "@/lib/indexnow";
-
-// Submit the URLs that were created/updated
-const urls = [
-  "https://prestyj.com/best-for/[new-slug]",
-  "https://prestyj.com/alternatives/[new-slug]",
-  // ... other URLs
-];
-
-await submitUrls(urls);
+```bash
+# Use the existing IndexNow API route or script
 ```
 
-Or run via the existing IndexNow integration.
+Check `src/lib/indexnow.ts` and `src/app/api/indexnow/` for the existing implementation.
 
 ### Step 5: Output Summary
 
 ```
 ===============================================
-     RANK-ME COMPLETE
+     RANK-ME COMPLETE - [DATE]
 ===============================================
 
 CREATED:
-+ /best-for/[slug] (AI for [industry])
-+ /alternatives/[slug] ([competitor] alternative)
-+ content/blog/[slug].mdx
++ [URL 1] — [Type] — Target: "[keyword]"
++ [URL 2] — [Type] — Target: "[keyword]"
 
-QUICK FIXES APPLIED:
-+ Added "AI" to 3 blog titles
-+ Fixed 5 internal linking gaps
-+ Added schema to 2 pages
+WHY THIS CONTENT WILL RANK:
+• [Differentiator 1]
+• [Differentiator 2]
 
 VERIFICATION:
 [check] Typecheck passed
 [check] Lint passed
 [check] Build passed
-[check] IndexNow notified (X URLs)
+[check] IndexNow notified
 
-NEXT STEPS:
-- Monitor rankings in 2-4 weeks
-- Run /rank-me again to find new opportunities
-- Consider: /rank-me --focus "[specific keyword]"
+NEXT OPPORTUNITY:
+→ [What to create next based on research]
+→ Run /rank-me again or /seo for full research
 
 ===============================================
 ```
@@ -551,38 +485,43 @@ NEXT STEPS:
 
 ## Usage Examples
 
-**Default run (full research):**
+**Default run (full research + create top opportunity):**
 ```
-User: /rank-me
-```
-
-**Focus on specific keyword area:**
-```
-User: /rank-me --focus "AI voice agents"
+/rank-me
 ```
 
-**Focus on specific industry:**
+**Focus on a specific cluster:**
 ```
-User: /rank-me --focus "insurance"
+/rank-me home services
+/rank-me CRM integrations
+/rank-me comparison pages
 ```
 
-**Quick wins only:**
+**Focus on specific keyword:**
 ```
-User: /rank-me --quick
+/rank-me "AI receptionist for plumbers"
+```
+
+**Create a specific page type:**
+```
+/rank-me new solution page for home services
+/rank-me vs page: AI vs answering service
 ```
 
 ---
 
 ## Important Reminders
 
-1. **Live Research**: Always do fresh web searches - don't rely on cached knowledge
-2. **Leverage First**: Prioritize by score, not by what seems interesting
-3. **Gates Are Hard**: If a topic fails ANY gate, reject it immediately
-4. **Use Templates**: Follow existing TypeScript interfaces exactly
-5. **Verify Everything**: Never skip the build/typecheck step
-6. **IndexNow**: Always notify search engines of new content
-7. **Be Honest**: Don't make claims we can't substantiate
-8. **Keep It Scannable**: Content should be digestible in 2-3 minutes
+1. **Differentiation is mandatory.** Never create "me too" content. Every piece must have a clear reason to exist.
+2. **Specificity wins.** "AI receptionist for HVAC companies" beats "AI for business" every time.
+3. **Strategy-guided.** Every content piece maps to a cluster in the hub & spoke strategy.
+4. **Quality over quantity.** One piece that ranks page 1 > five pieces on page 5.
+5. **Home services first.** Highest intent, lowest competition — always weight this cluster.
+6. **Live research.** Always do fresh web searches. Don't use cached knowledge.
+7. **Honest content.** Don't make claims we can't back up. Be fair to competitors.
+8. **Verify everything.** Typecheck, lint, build — no exceptions.
+9. **Include real numbers.** Costs, ROI, response times, conversion rates make content credible.
+10. **IndexNow always.** Notify search engines of every new page.
 
 ---
 
@@ -590,10 +529,12 @@ User: /rank-me --quick
 
 | File | When Modified |
 |------|---------------|
-| `content/blog/*.mdx` | New blog posts |
+| `content/blog/[slug].mdx` | New blog posts |
 | `src/lib/best-for/[slug].ts` | New best-for pages |
 | `src/lib/best-for/index.ts` | When adding best-for pages |
 | `src/lib/alternatives/[slug].ts` | New alternative pages |
 | `src/lib/alternatives/index.ts` | When adding alternative pages |
+| `src/lib/solutions/[slug].ts` | New solution pages |
+| `src/lib/solutions/index.ts` | When adding solution pages |
+| `src/app/compare/[slug]/page.tsx` | New VS/compare pages |
 | `src/app/sitemap.ts` | If new route types added |
-| `src/lib/indexnow.ts` | If new route types added |

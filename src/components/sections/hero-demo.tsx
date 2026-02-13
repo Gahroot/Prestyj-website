@@ -12,17 +12,14 @@ export function HeroDemoSection() {
         <div className="space-y-6 text-center lg:text-left" style={{ animation: "fade-up 0.5s ease-out 0.15s both" }}>
           <div className="flex justify-center lg:justify-start">
             <Badge variant="outline" className="border-primary/50 text-primary">
-              AI Voice Agents by PRESTYJ
+              The AI Workforce for Service Businesses
             </Badge>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.1]">
-            Voice AI built for every customer conversation
+            Deploy AI Agents That Qualify Leads & Book Appointments 24/7
           </h1>
           <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
-            Book 3x more deals* and get your life back. Sales AI working 24/7 so you never miss an opportunity.
-          </p>
-          <p className="text-xs text-muted-foreground/80 max-w-md mx-auto lg:mx-0">
-            *Average results. Individual performance may vary.
+            Every lead answered in under 60 seconds. AI that qualifies, books, and follows up—for real estate, home services, and high-growth businesses.
           </p>
         </div>
 

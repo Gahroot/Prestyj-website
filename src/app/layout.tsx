@@ -15,9 +15,9 @@ const manrope = Manrope({
 
 const siteConfig = {
   name: "PRESTYJ",
-  title: "Book 3x More Deals & Get Your Life Back. Sales AI working 24/7",
+  title: "AI Sales Agents & Automated Appointment Setting | Prestyj",
   description:
-    "Stop losing leads. Your AI agent responds to every lead in under 60 seconds, qualifies them, and books appointments on your calendar. 24/7. No salary. No commission splits.",
+    "Deploy AI agents that qualify leads and book appointments 24/7. Instant response for real estate, home services, and high-growth service businesses. No salary. No commission splits.",
   url: "https://prestyj.com",
   ogImage: "/og-image.jpg",
   creator: "@prestyj_",
@@ -42,6 +42,11 @@ export const metadata: Metadata = {
   description: siteConfig.description,
   keywords: [
     "AI sales agent",
+    "service business automation",
+    "AI receptionist",
+    "contractor AI",
+    "home services AI",
+    "missed call text back",
     "AI phone answering",
     "lead response automation",
     "appointment booking AI",
@@ -50,7 +55,6 @@ export const metadata: Metadata = {
     "24/7 lead response",
     "AI voice agent",
     "automated sales assistant",
-    "automated lead nurturing",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,

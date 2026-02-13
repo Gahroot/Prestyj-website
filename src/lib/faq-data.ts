@@ -7,7 +7,7 @@ export const faqs = [
   {
     question: "How does it integrate with my existing tools?",
     answer:
-      "Your agent works with your existing CRM and calendar. We support integrations with Follow Up Boss, kvCORE, Chime, Salesforce, HubSpot, Pipedrive, Google Calendar, Outlook, and more. Setup typically takes less than 30 minutes.",
+      "Your agent works with your existing CRM and calendar. We support integrations with Follow Up Boss, ServiceTitan, Jobber, HubSpot, Salesforce, Pipedrive, Google Calendar, Outlook, and more. Setup typically takes less than 30 minutes.",
   },
   {
     question: "What happens when a lead asks something the agent can't answer?",

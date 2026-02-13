@@ -54,6 +54,9 @@ import { movers } from "./movers";
 import { sidingContractors } from "./siding-contractors";
 import { garageDoor } from "./garage-door";
 import { flooringContractors } from "./flooring-contractors";
+import { servicetitanUsers } from "./servicetitan-users";
+import { jobberUsers } from "./jobber-users";
+import { followUpBossUsers } from "./follow-up-boss-users";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -111,6 +114,9 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "siding-contractors": sidingContractors,
   "garage-door": garageDoor,
   "flooring-contractors": flooringContractors,
+  "servicetitan-users": servicetitanUsers,
+  "jobber-users": jobberUsers,
+  "follow-up-boss-users": followUpBossUsers,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

@@ -5,7 +5,7 @@ const siteConfig = {
   name: "PRESTYJ",
   url: "https://prestyj.com",
   description:
-    "Stop losing leads. Your AI agent responds to every lead in under 60 seconds, qualifies them, and books appointments on your calendar. 24/7. No salary. No commission splits.",
+    "Deploy AI agents that qualify leads and book appointments 24/7. Instant response for real estate, home services, and high-growth service businesses.",
   logo: "https://prestyj.com/icon-512.png",
 };
 
@@ -59,7 +59,7 @@ export function ProductJsonLd() {
     "@type": "Product",
     name: "PRESTYJ AI Sales Agent",
     description:
-      "AI-powered sales agent for real estate professionals. Responds to leads in under 60 seconds, qualifies prospects, and books appointments automatically.",
+      "AI-powered sales and appointment-setting agent for service businesses. Responds to leads in under 60 seconds, qualifies prospects, and books appointments automatically.",
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -75,7 +75,7 @@ export function ProductJsonLd() {
     category: "Software",
     audience: {
       "@type": "Audience",
-      audienceType: "Real Estate Professionals",
+      audienceType: "Service Business Owners",
     },
   };
 
@@ -131,6 +131,8 @@ export function SoftwareApplicationJsonLd() {
       "24/7 availability",
       "CRM integration",
       "Multi-channel support",
+      "Multi-industry support",
+      "Missed call text back",
     ],
   };
 
