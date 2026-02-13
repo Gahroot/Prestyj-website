@@ -16,7 +16,7 @@ export function generateCompareMetadata(config: CompareMetadata): Metadata {
       siteName: "PrestyJ",
       images: [
         {
-          url: "/og-image.png",
+          url: "/og-image.jpg",
           width: 1200,
           height: 630,
           alt: `PrestyJ vs ${competitorName}`,
@@ -29,7 +29,7 @@ export function generateCompareMetadata(config: CompareMetadata): Metadata {
       card: "summary_large_image",
       title,
       description,
-      images: ["/og-image.png"],
+      images: ["/og-image.jpg"],
     },
     alternates: {
       canonical: canonicalUrl,

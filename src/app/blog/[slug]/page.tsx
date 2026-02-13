@@ -35,7 +35,7 @@ export async function generateMetadata({
 
   const { title, description, keywords, author, image, date, noindex } = page.data;
   const postUrl = `${siteUrl}/blog/${slug}`;
-  const ogImage = image || "/images/og-default.jpg";
+  const ogImage = image || "/og-image.jpg";
 
   return {
     title: `${title} | PRESTYJ Blog`,
