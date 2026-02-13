@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { z } from "zod";
+import z from "zod";
 
 const API_BASE_URL = "https://backend-api-production-b536.up.railway.app";
 
 // Simple validation schema for ROI calculator
 const roiCalculatorSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
-  email: z.string().email("Valid email is required"),
+  email: z.string().refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Valid email is required"),
   resourceId: z.string(),
   businessType: z.string().optional(),
   metadata: z.record(z.string(), z.any()).optional(),
@@ -15,7 +15,7 @@ const roiCalculatorSchema = z.object({
 // Lead magnet form schema
 const leadMagnetSchema = z.object({
   name: z.string().min(1, "Name is required"),
-  email: z.string().email("Valid email is required"),
+  email: z.string().refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Valid email is required"),
   company: z.string().optional(),
   magnetType: z.literal("roofing-playbook"),
 });

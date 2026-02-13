@@ -38,7 +38,8 @@ export function getAllUrls(): string[] {
     `${BASE_URL}/terms`,
     `${BASE_URL}/lead-magnet`,
     `${BASE_URL}/ai-call-handling-calculator`,
-    `${BASE_URL}/team-commission-calculator`
+    `${BASE_URL}/team-commission-calculator`,
+    `${BASE_URL}/platform`
   );
 
   // Blog posts - dynamically from content source
@@ -77,6 +78,7 @@ export function getAllUrls(): string[] {
     "/compare/prestyj-vs-drift",
     "/compare/prestyj-vs-internal-isa-team",
     "/compare/prestyj-vs-offshore-isa",
+    "/compare/prestyj-vs-answering-service",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 

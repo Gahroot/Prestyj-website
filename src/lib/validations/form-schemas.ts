@@ -1,4 +1,4 @@
-import { z } from "zod";
+import z from "zod";
 
 /**
  * Qualification form validation schema
@@ -15,7 +15,10 @@ export const qualificationFormSchema = z.object({
   email: z
     .string()
     .min(1, "Email is required")
-    .email("Please enter a valid email address")
+    .refine(
+      (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+      { message: "Please enter a valid email address" }
+    )
     .trim()
     .toLowerCase(),
   phone: z
@@ -43,7 +46,10 @@ export const leadPayloadSchema = z.object({
   first_name: z.string().min(1),
   last_name: z.string().optional(),
   phone_number: z.string().length(10),
-  email: z.string().email().optional(),
+  email: z.string().refine(
+    (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
+    { message: "Invalid email" }
+  ).optional(),
   company_name: z.string().optional(),
   notes: z.string().optional(),
   source: z.string(),

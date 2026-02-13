@@ -2,7 +2,7 @@
  * Validation schemas for lead magnet forms
  */
 
-import { z } from "zod";
+import z from "zod";
 
 /**
  * Team Commission Calculator Schema
@@ -37,7 +37,7 @@ export const teamCalculatorSchema = z.object({
 
   // Contact info
   name: z.string().min(2, "Name is required"),
-  email: z.string().email("Valid email required"),
+  email: z.string().refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Valid email required"),
   companyName: z.string().optional(),
   role: z.enum(["team-lead", "broker", "isa-manager", "other"]),
 });

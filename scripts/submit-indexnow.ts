@@ -2,19 +2,22 @@
 /**
  * Submit all site URLs to IndexNow
  *
+ * Dynamically discovers all URLs from content sources and slug registries.
+ *
  * Usage:
- *   INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts
- *
- * Or with the npm script:
- *   INDEXNOW_API_KEY=your-key npm run indexnow
- *
- * Options:
- *   --dry-run  List URLs without submitting
- *   --url URL  Submit a single URL only
+ *   npm run indexnow              # Submit all URLs
+ *   npm run indexnow:dry          # Dry run - list URLs
+ *   npm run indexnow -- --url URL # Submit a single URL
  */
 
-const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
-const BASE_URL = "https://www.prestyj.com";
+import { readdirSync } from "fs";
+import { join } from "path";
+import { getAllAlternativeSlugs } from "../src/lib/alternatives";
+import { getAllSolutionSlugs } from "../src/lib/solutions";
+import { getAllBestForSlugs } from "../src/lib/best-for";
+
+const INDEXNOW_ENDPOINT = "https://yandex.com/indexnow";
+const BASE_URL = "https://prestyj.com";
 
 interface IndexNowSubmission {
   host: string;
@@ -23,97 +26,64 @@ interface IndexNowSubmission {
   urlList: string[];
 }
 
-// Static routes
-const staticRoutes = [
-  "",
-  "/book-demo",
-  "/blog",
-  "/results",
-  "/alternatives",
-  "/best-for",
-  "/privacy",
-  "/terms",
-];
-
-// Blog posts (hardcoded list - update as needed or import from source)
-const blogSlugs = [
-  "speed-to-lead-statistics",
-  "best-ai-tools-real-estate",
-  "enterprise-lead-infrastructure",
-  "isa-cost-2026",
-  "isa-vs-ai",
-  "why-leads-go-cold",
-  "lead-reactivation-guide",
-  "build-vs-buy-ai-sales-agents-real-estate",
-  "fair-housing-ai-bias-enterprise-brokerages",
-  "designing-lead-response-operations-50-offices",
-  "unit-economics-ai-lead-response",
-  "speed-to-lead",
-  "ai-sales-agents-explained",
-  "ai-receptionist-roi-by-industry",
-  "hipaa-compliant-ai-receptionist",
-  "ai-receptionist-vs-human-cost-2026",
-  // New 2026 blog posts
-  "small-business-ai-receptionist-2026",
-  "ai-cold-outreach-vs-human-2026",
-  "bilingual-ai-receptionist-2026",
-  "ai-voice-agent-integration-guide-2026",
-];
-
-// Alternative pages
-const alternativeSlugs = [
-  "ylopo",
-  "human-isa",
-  "structurely",
-  "cinc",
-  "follow-up-boss",
-  "real-geeks",
-  "conversica",
-  "internal-isa",
-  "drift",
-  "bland-ai",
-  "vapi",
-];
-
-// Solution pages
-const solutionSlugs = ["speed-to-lead", "lead-reactivation"];
-
-// Best-for pages (excluding noindex pages)
-const bestForSlugs = [
-  "real-estate-teams",
-  "isa-replacement",
-  "real-estate-franchises",
-  "regional-brokerage-networks",
-  "pe-backed-platforms",
-  "commercial-real-estate",
-  "ai-voice-receptionist",
-  "ai-voice-receptionist-dental",
-  "ai-voice-receptionist-legal",
-  "ai-voice-receptionist-medical",
-  "ai-voice-receptionist-insurance",
-];
-
-// Compare pages
-const compareRoutes = [
-  "/compare/prestyj-vs-isa",
-  "/compare/prestyj-vs-ylopo",
-  "/compare/prestyj-vs-conversica",
-  "/compare/prestyj-vs-structurely",
-  "/compare/prestyj-vs-drift",
-  "/compare/prestyj-vs-internal-isa-team",
-  "/compare/prestyj-vs-offshore-isa",
-];
+function getBlogSlugs(): string[] {
+  const blogDir = join(process.cwd(), "content", "blog");
+  return readdirSync(blogDir)
+    .filter((f) => f.endsWith(".mdx"))
+    .map((f) => f.replace(/\.mdx$/, ""));
+}
 
 function getAllUrls(): string[] {
   const urls: string[] = [];
 
-  urls.push(...staticRoutes.map((route) => `${BASE_URL}${route}`));
-  urls.push(...blogSlugs.map((slug) => `${BASE_URL}/blog/${slug}`));
+  // Static routes
   urls.push(
-    ...alternativeSlugs.map((slug) => `${BASE_URL}/alternatives/${slug}`)
+    BASE_URL,
+    `${BASE_URL}/book-demo`,
+    `${BASE_URL}/blog`,
+    `${BASE_URL}/results`,
+    `${BASE_URL}/alternatives`,
+    `${BASE_URL}/best-for`,
+    `${BASE_URL}/privacy`,
+    `${BASE_URL}/terms`,
+    `${BASE_URL}/lead-magnet`,
+    `${BASE_URL}/ai-call-handling-calculator`,
+    `${BASE_URL}/team-commission-calculator`,
+    `${BASE_URL}/platform`
   );
-  urls.push(...solutionSlugs.map((slug) => `${BASE_URL}/solutions/${slug}`));
-  urls.push(...bestForSlugs.map((slug) => `${BASE_URL}/best-for/${slug}`));
+
+  // Blog posts - scan content/blog directory
+  for (const slug of getBlogSlugs()) {
+    urls.push(`${BASE_URL}/blog/${slug}`);
+  }
+
+  // Alternative pages
+  for (const slug of getAllAlternativeSlugs()) {
+    urls.push(`${BASE_URL}/alternatives/${slug}`);
+  }
+
+  // Solution pages
+  for (const slug of getAllSolutionSlugs()) {
+    urls.push(`${BASE_URL}/solutions/${slug}`);
+  }
+
+  // Best-for pages (excluding noindex pages)
+  const noindexSlugs = ["solo-agents", "new-agents"];
+  for (const slug of getAllBestForSlugs()) {
+    if (!noindexSlugs.includes(slug)) {
+      urls.push(`${BASE_URL}/best-for/${slug}`);
+    }
+  }
+
+  // Compare pages
+  const compareRoutes = [
+    "/compare/prestyj-vs-conversica",
+    "/compare/prestyj-vs-structurely",
+    "/compare/prestyj-vs-drift",
+    "/compare/prestyj-vs-internal-isa-team",
+    "/compare/prestyj-vs-offshore-isa",
+    "/compare/prestyj-vs-answering-service",
+  ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
   return urls;
@@ -121,7 +91,7 @@ function getAllUrls(): string[] {
 
 async function submitUrls(urls: string[], key: string): Promise<void> {
   const payload: IndexNowSubmission = {
-    host: "www.prestyj.com",
+    host: "prestyj.com",
     key,
     keyLocation: `${BASE_URL}/${key}.txt`,
     urlList: urls,
@@ -140,9 +110,7 @@ async function submitUrls(urls: string[], key: string): Promise<void> {
 
   if (response.ok || response.status === 202) {
     console.log(`✓ Successfully submitted ${urls.length} URLs to IndexNow`);
-    console.log(
-      `  Status: ${response.status} ${response.statusText}`
-    );
+    console.log(`  Status: ${response.status} ${response.statusText}`);
     console.log(`\nSearch engines notified: Bing, Yandex, Naver, Seznam, Yep`);
     console.log(
       `Note: Google does not support IndexNow. Use Search Console for Google.`
@@ -179,7 +147,7 @@ async function main() {
       "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts"
     );
     console.error(
-      "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts --url https://www.prestyj.com/blog/example"
+      "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts --url https://prestyj.com/blog/example"
     );
     console.error("  npx tsx scripts/submit-indexnow.ts --dry-run");
     process.exit(1);

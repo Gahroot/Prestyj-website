@@ -18,13 +18,13 @@ const footerLinks = {
   ],
   bestFor: [
     { href: "/best-for", label: "All Use Cases" },
-    { href: "/best-for/solo-agents", label: "Solo Agents" },
-    { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
-    { href: "/best-for/real-estate-franchises", label: "Real Estate Franchises" },
-    { href: "/best-for/isa-replacement", label: "ISA Replacement" },
-    { href: "/best-for/insurance-agencies", label: "Insurance Agencies" },
     { href: "/best-for/hvac", label: "HVAC Companies" },
-    { href: "/best-for/mortgage-brokers", label: "Mortgage Brokers" },
+    { href: "/best-for/plumbing", label: "Plumbing" },
+    { href: "/best-for/roofing", label: "Roofing" },
+    { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
+    { href: "/best-for/servicetitan-users", label: "ServiceTitan Users" },
+    { href: "/best-for/jobber-users", label: "Jobber Users" },
+    { href: "/best-for/follow-up-boss-users", label: "Follow Up Boss Users" },
   ],
   alternatives: [
     { href: "/alternatives", label: "All Alternatives" },
@@ -38,15 +38,18 @@ const footerLinks = {
   ],
   resources: [
     { href: "/blog", label: "Blog" },
+    { href: "/compare/prestyj-vs-answering-service", label: "AI vs Answering Service" },
     { href: "/compare/prestyj-vs-internal-isa-team", label: "AI vs Internal ISA" },
     { href: "/compare/prestyj-vs-offshore-isa", label: "AI vs Offshore ISA" },
-    { href: "/compare/prestyj-vs-drift", label: "Prestyj vs Drift" },
     { href: "/compare/prestyj-vs-conversica", label: "Prestyj vs Conversica" },
     { href: "/compare/prestyj-vs-structurely", label: "Prestyj vs Structurely" },
   ],
   solutions: [
+    { href: "/solutions/home-services", label: "Home Services" },
     { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
     { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
+    { href: "/solutions/roofing", label: "Roofing Contractors" },
+    { href: "/platform", label: "Platform" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
@@ -65,7 +68,7 @@ export function Footer() {
               <span className="text-xl font-bold font-heading text-primary">PRESTYJ</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              AI Sales Agents that respond, qualify, and book appointments 24/7.
+              The AI Workforce for Service Businesses. Respond, qualify, and book 24/7.
             </p>
             <div className="mt-4 flex items-center gap-3">
               {socialLinks.map((link) => (
