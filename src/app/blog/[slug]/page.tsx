@@ -65,7 +65,7 @@ export async function generateMetadata({
       title,
       description,
       images: [ogImage],
-      creator: "@prestyj",
+      creator: "@prestyj_",
     },
     alternates: {
       canonical: postUrl,

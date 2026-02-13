@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     title: "Real Estate Lead Generation Blog | PRESTYJ",
     description:
       "Expert tips on speed-to-lead response, AI sales agents, and closing more real estate deals.",
-    creator: "@prestyj",
+    creator: "@prestyj_",
   },
   alternates: {
     canonical: `${siteUrl}/blog`,

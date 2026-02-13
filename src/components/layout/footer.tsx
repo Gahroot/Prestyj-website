@@ -1,5 +1,13 @@
 import Link from "next/link";
+import { Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+
+const socialLinks = [
+  { href: "https://www.instagram.com/prestyj_/", label: "Instagram", icon: Instagram },
+  { href: "https://www.linkedin.com/company/prestyj/", label: "LinkedIn", icon: Linkedin },
+  { href: "https://www.facebook.com/profile.php?id=61582824703610", label: "Facebook", icon: Facebook },
+  { href: "https://x.com/prestyj_", label: "X", icon: Twitter },
+];
 
 const footerLinks = {
   product: [
@@ -59,6 +67,20 @@ export function Footer() {
             <p className="mt-4 text-sm text-muted-foreground">
               AI Sales Agents that respond, qualify, and book appointments 24/7.
             </p>
+            <div className="mt-4 flex items-center gap-3">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <link.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Product */}

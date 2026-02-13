@@ -20,7 +20,7 @@ const siteConfig = {
     "Stop losing leads. Your AI agent responds to every lead in under 60 seconds, qualifies them, and books appointments on your calendar. 24/7. No salary. No commission splits.",
   url: "https://prestyj.com",
   ogImage: "/og-image.jpg",
-  creator: "@prestyj",
+  creator: "@prestyj_",
 };
 
 export const viewport: Viewport = {

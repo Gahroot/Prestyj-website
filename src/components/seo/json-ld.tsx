@@ -18,9 +18,10 @@ export function OrganizationJsonLd() {
     logo: siteConfig.logo,
     description: siteConfig.description,
     sameAs: [
-      // Add social media links here when available
-      // "https://twitter.com/prestyj",
-      // "https://linkedin.com/company/prestyj",
+      "https://www.instagram.com/prestyj_/",
+      "https://www.linkedin.com/company/prestyj/",
+      "https://www.facebook.com/profile.php?id=61582824703610",
+      "https://x.com/prestyj_",
     ],
     contactPoint: {
       "@type": "ContactPoint",
