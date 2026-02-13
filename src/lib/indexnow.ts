@@ -97,12 +97,12 @@ export async function submitUrls(urls: string[]): Promise<IndexNowResponse> {
   const payload = {
     host: "prestyj.com",
     key,
-    keyLocation: key,
+    keyLocation: `https://prestyj.com/${key}.txt`,
     urlList: urls,
   };
 
   try {
-    const response = await fetch("https://api.indexnow.org/IndexNow", {
+    const response = await fetch("https://yandex.com/indexnow", {
       method: "POST",
       headers: {
         "Content-Type": "application/json; charset=utf-8",
