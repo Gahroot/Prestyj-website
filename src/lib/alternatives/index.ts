@@ -34,6 +34,8 @@ import { myAiFrontDesk } from "./my-ai-front-desk";
 import { blandAiAlt } from "./bland-ai-alt";
 import { dialpad } from "./dialpad";
 import { ringCentral } from "./ringcentral";
+import { leadtruffle } from "./leadtruffle";
+import { retellAi } from "./retell-ai";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -71,6 +73,8 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "bland-ai-alt": blandAiAlt,
   dialpad,
   "ring-central": ringCentral,
+  leadtruffle,
+  "retell-ai": retellAi,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
