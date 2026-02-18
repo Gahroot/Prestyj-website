@@ -79,6 +79,7 @@ export function getAllUrls(): string[] {
     "/compare/prestyj-vs-internal-isa-team",
     "/compare/prestyj-vs-offshore-isa",
     "/compare/prestyj-vs-answering-service",
+    "/compare/ai-consultant-vs-diy-ai",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
