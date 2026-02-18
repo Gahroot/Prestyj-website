@@ -83,6 +83,14 @@ function getAllUrls(): string[] {
     "/compare/prestyj-vs-internal-isa-team",
     "/compare/prestyj-vs-offshore-isa",
     "/compare/prestyj-vs-answering-service",
+    "/compare/ai-consultant-vs-diy-ai",
+    // AI consulting comparison pages
+    "/compare/ai-consultant-vs-ai-agency",
+    "/compare/fractional-ai-consultant-vs-full-time-employee",
+    "/compare/ai-implementation-partner-vs-consultant",
+    "/compare/ai-consultant-vs-freelancer",
+    "/compare/ai-consultant-vs-big4-consulting",
+    "/compare/ai-consultant-roi-calculator",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
