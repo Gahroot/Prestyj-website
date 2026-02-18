@@ -14,7 +14,7 @@ interface CompareFactoryInput {
     description?: string;
     keyStats?: Array<{ value: string; label: string }>;
   };
-  stats?: Array<{ value: string; label: string }> | "standard";
+  stats?: Array<{ value: string; label: string; description?: string }> | "standard";
   pricing: {
     prestyj: Omit<ComparePageData["pricing"]["prestyj"], "name">;
     competitor: Omit<ComparePageData["pricing"]["competitor"], "name">;
