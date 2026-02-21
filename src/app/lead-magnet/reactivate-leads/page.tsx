@@ -6,13 +6,11 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import {
   Download,
-  Phone,
   Mail,
   Building2,
   FileText,
   CheckCircle,
   Loader2,
-  UserCheck,
 } from "lucide-react";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
 import { submitLead } from "@/lib/api";
@@ -370,44 +368,39 @@ export default function ReactivateLeadsPage() {
                       transition={{ delay: 0.2, type: "spring" }}
                       className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto"
                     >
-                      <Phone className="w-8 h-8 text-primary" />
+                      <CheckCircle className="w-8 h-8 text-primary" />
                     </motion.div>
 
                     {/* Success Message */}
                     <div>
                       <h2 className="text-2xl font-heading font-bold mb-3">
-                        Check Your Phone!
+                        Check Your Inbox!
                       </h2>
                       <p className="text-muted-foreground">
-                        Our AI is calling you right now. Pick up to experience
-                        lead reactivation in action.
+                        Your copy of{" "}
+                        <span className="font-semibold">
+                          How to Reactivate Dead Leads with AI
+                        </span>{" "}
+                        is on its way to{" "}
+                        <span className="font-medium">{formData.email}</span>.
                       </p>
                     </div>
 
-                    {/* What Just Happened */}
+                    {/* What's Next */}
                     <div className="bg-primary/5 rounded-lg p-4 text-left space-y-3">
-                      <p className="font-medium flex items-center gap-2">
-                        <UserCheck className="w-4 h-4 text-primary" />
-                        What Just Happened:
-                      </p>
+                      <p className="font-medium">What&apos;s Next:</p>
                       <ol className="space-y-2 text-sm text-muted-foreground">
                         <li className="flex gap-2">
                           <span className="text-primary font-bold">1.</span>
-                          <span>
-                            You submitted your info — like an old lead would
-                          </span>
+                          <span>Check your email for the download link</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-primary font-bold">2.</span>
-                          <span>
-                            Our AI called you in seconds — no human needed
-                          </span>
+                          <span>Read the guide and pick your reactivation strategy</span>
                         </li>
                         <li className="flex gap-2">
                           <span className="text-primary font-bold">3.</span>
-                          <span>
-                            Imagine this happening to every lead in your database
-                          </span>
+                          <span>Book a demo to see it in action</span>
                         </li>
                       </ol>
                     </div>
@@ -417,7 +410,7 @@ export default function ReactivateLeadsPage() {
                       href="/book-demo"
                       className="inline-flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground font-medium py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors text-center"
                     >
-                      Book a Full Demo
+                      Book a Demo
                     </a>
                   </motion.div>
                 )}
