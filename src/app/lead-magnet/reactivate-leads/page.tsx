@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import {
+  Download,
   Phone,
   Mail,
   Building2,
@@ -225,15 +226,15 @@ export default function ReactivateLeadsPage() {
                       {/* Form Header */}
                       <div className="text-center mb-8">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                          <Phone className="w-4 h-4" />
-                          Free Guide + Live Demo
+                          <Download className="w-4 h-4" />
+                          Instant Download
                         </div>
                         <h2 className="text-2xl font-heading font-bold">
                           Get Your Free Guide
                         </h2>
                         <p className="text-muted-foreground">
-                          Enter your details and our AI will call you instantly to
-                          show you how lead reactivation works.
+                          Enter your details and we&apos;ll send the guide
+                          straight to your inbox.
                         </p>
                       </div>
 
@@ -282,7 +283,7 @@ export default function ReactivateLeadsPage() {
                             className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                           />
                           <p className="text-xs text-muted-foreground mt-1">
-                            Our AI will call this number instantly after you submit.
+                            So we can send you a quick summary via text.
                           </p>
                         </div>
 
@@ -337,8 +338,8 @@ export default function ReactivateLeadsPage() {
                             </>
                           ) : (
                             <>
-                              <Phone className="w-4 h-4" />
-                              Get Guide & See AI Call Live
+                              <Download className="w-4 h-4" />
+                              Get Your Free Guide
                             </>
                           )}
                         </button>
