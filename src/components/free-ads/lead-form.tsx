@@ -284,7 +284,6 @@ export function LeadForm() {
                     errors.firstName ? "border-destructive" : "border-border"
                   )}
                   placeholder="John"
-                  autoFocus
                 />
                 {errors.firstName && (
                   <p className="text-sm text-destructive mt-1">
@@ -340,7 +339,6 @@ export function LeadForm() {
                 errors.email ? "border-destructive" : "border-border"
               )}
               placeholder="john@company.com"
-              autoFocus
             />
             {errors.email && (
               <p className="text-sm text-destructive mt-1">{errors.email}</p>
@@ -368,7 +366,6 @@ export function LeadForm() {
                 errors.phone ? "border-destructive" : "border-border"
               )}
               placeholder="(555) 123-4567"
-              autoFocus
             />
             {errors.phone && (
               <p className="text-sm text-destructive mt-1">{errors.phone}</p>
