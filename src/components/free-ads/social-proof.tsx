@@ -25,7 +25,7 @@ export function SocialProof() {
   };
 
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-8 md:py-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -101,6 +101,11 @@ export function LeadForm() {
   const [submitState, setSubmitState] = useState<
     "form" | "qualified" | "waitlist"
   >("form");
+  const stepInputRef = useRef<HTMLInputElement>(null);
+
+  const focusStepInput = useCallback(() => {
+    stepInputRef.current?.focus({ preventScroll: true });
+  }, []);
 
   const validateCurrentStep = (): boolean => {
     const step = STEPS[currentStep];
@@ -281,7 +286,6 @@ export function LeadForm() {
                   onChange={(e) =>
                     handleInputChange("firstName", e.target.value)
                   }
-                  autoFocus
                   className={cn(
                     "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
                     "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
@@ -334,10 +338,10 @@ export function LeadForm() {
               Email Address
             </label>
             <input
+              ref={stepInputRef}
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
-              autoFocus
               className={cn(
                 "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
                 "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
@@ -362,10 +366,10 @@ export function LeadForm() {
               Phone Number
             </label>
             <input
+              ref={stepInputRef}
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
-              autoFocus
               className={cn(
                 "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
                 "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
@@ -489,6 +493,9 @@ export function LeadForm() {
                 animate="center"
                 exit="exit"
                 transition={{ duration: 0.3, ease: "easeInOut" }}
+                onAnimationComplete={(definition) => {
+                  if (definition === "center") focusStepInput();
+                }}
               >
                 {renderStepContent()}
               </motion.div>

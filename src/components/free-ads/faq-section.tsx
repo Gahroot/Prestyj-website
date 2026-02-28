@@ -1,5 +1,6 @@
 "use client";
 
+import type { ReactNode } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -9,7 +10,7 @@ import {
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 
-const faqs = [
+const faqs: { question: string; answer: ReactNode }[] = [
   {
     question: "Are the 300 video ads really free?",
     answer:
@@ -18,17 +19,58 @@ const faqs = [
   {
     question: "What kind of footage do I need to send?",
     answer:
-      "Just raw video of you or your team — talking to camera, walking through a property, behind-the-scenes, anything. We show up with scripts and make it effortless. Zero experience on camera needed. Most of our clients wrap up in about 20 minutes.",
+      "We'll walk you through everything on the call. We send you the scripts — you just record yourself on your phone using a teleprompter app. No production crew, no fancy equipment. Relatability sells.",
   },
   {
     question: "What happens after I get my 300 ads?",
     answer:
-      "If you qualify, we offer a full done-for-you system: we upload all 300 ads to your Facebook ad account, build you a custom landing page, and set up AI that instantly calls, texts, qualifies, and books leads for you. You just show up to the appointments.",
+      "We hope you give us the opportunity to run those ads for you and set up our full system. If not, the ads are yours and we go our separate ways.",
   },
   {
     question: "How much does the full system cost?",
-    answer:
-      "Setup is $3K-$5K (landing page, AI setup, ad account structure) with a $1K-$2K monthly retainer for ad management, AI maintenance, and support. You'll also need a minimum of $1,000/month in ad spend paid directly to Meta.",
+    answer: (
+      <div className="space-y-2">
+        <p><span className="font-semibold text-foreground">$5K</span> setup fee</p>
+        <p><span className="font-semibold text-foreground">$2K</span> / month</p>
+        <p className="pt-1">You&apos;ll also need a minimum of $1,000/month in ad spend paid directly to Meta.</p>
+      </div>
+    ),
+  },
+  {
+    question: "Can I buy more ads?",
+    answer: (
+      <div className="space-y-3">
+        <p>Yes, we have different packages.</p>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-2 pr-4 font-semibold text-foreground">Package</th>
+                <th className="text-left py-2 pr-4 font-semibold text-foreground">Regular</th>
+                <th className="text-left py-2 font-semibold text-foreground">Subscriber Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border/50">
+                <td className="py-2 pr-4">300 ads</td>
+                <td className="py-2 pr-4">$3,000</td>
+                <td className="py-2 font-semibold text-success">$1,500</td>
+              </tr>
+              <tr className="border-b border-border/50">
+                <td className="py-2 pr-4">500 ads</td>
+                <td className="py-2 pr-4">$4,000</td>
+                <td className="py-2 font-semibold text-success">$2,000</td>
+              </tr>
+              <tr>
+                <td className="py-2 pr-4">1000 ads</td>
+                <td className="py-2 pr-4">$5,000</td>
+                <td className="py-2 font-semibold text-success">$2,500</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ),
   },
   {
     question: "How is this different from other ad agencies?",

@@ -21,7 +21,7 @@ export function HeroVideo() {
   };
 
   return (
-    <section className="relative h-dvh flex flex-col items-center justify-start px-4 pt-8 md:pt-12 pb-4 overflow-hidden">
+    <section className="relative min-h-0 md:h-dvh flex flex-col items-center justify-start px-4 pt-8 md:pt-12 pb-6 overflow-hidden">
       <div className="max-w-5xl mx-auto w-full flex flex-col items-center gap-3 md:gap-4 text-center">
         <motion.h1
           className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-[1.1] tracking-tight text-foreground"
