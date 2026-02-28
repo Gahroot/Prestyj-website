@@ -281,6 +281,7 @@ export function LeadForm() {
                   onChange={(e) =>
                     handleInputChange("firstName", e.target.value)
                   }
+                  autoFocus
                   className={cn(
                     "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
                     "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
@@ -336,6 +337,7 @@ export function LeadForm() {
               type="email"
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
+              autoFocus
               className={cn(
                 "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
                 "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
@@ -363,6 +365,7 @@ export function LeadForm() {
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
+              autoFocus
               className={cn(
                 "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
                 "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
