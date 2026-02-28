@@ -61,6 +61,7 @@ export function middleware() {
       values: [
         "'self'",
         "https://app.cal.com", // Cal.com inline embed
+        "https://player.vimeo.com", // Vimeo video embeds
       ],
     },
     {
