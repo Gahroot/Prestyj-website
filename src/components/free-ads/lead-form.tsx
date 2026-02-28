@@ -147,7 +147,7 @@ export function LeadForm() {
           formData.adSpend;
 
         await fetch(
-          "https://backend-api-production-b536.up.railway.app/api/v1/lead-form/ls_VPUWE5hD",
+          "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },
