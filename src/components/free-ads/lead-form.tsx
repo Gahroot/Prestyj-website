@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { submitLead, formatPhoneNumber } from "@/lib/api";
+import { formatPhoneNumber } from "@/lib/api";
 import {
   ArrowRight,
   ArrowLeft,
@@ -146,16 +146,20 @@ export function LeadForm() {
           AD_SPEND_OPTIONS.find((o) => o.value === formData.adSpend)?.label ||
           formData.adSpend;
 
-        await submitLead({
-          first_name: formData.firstName.trim(),
-          last_name: formData.lastName.trim(),
-          phone_number: formatPhoneNumber(formData.phone),
-          email: formData.email.trim(),
-          notes: `Monthly Ad Spend: ${adSpendLabel}`,
-          source: "free_ads_landing",
-          trigger_call: false,
-          trigger_text: false,
-        });
+        await fetch(
+          "https://backend-api-production-b536.up.railway.app/api/v1/lead-form/ls_VPUWE5hD",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              first_name: formData.firstName.trim(),
+              last_name: formData.lastName.trim(),
+              phone_number: formatPhoneNumber(formData.phone),
+              email: formData.email.trim(),
+              notes: `Monthly Ad Spend: ${adSpendLabel}`,
+            }),
+          }
+        );
       } catch {
         // Still route them — don't block the UX
       } finally {
