@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const VIMEO_VIDEO_ID = "VIDEO_ID_HERE";
+const VIMEO_VIDEO_ID = "1169158190";
 
 export function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
