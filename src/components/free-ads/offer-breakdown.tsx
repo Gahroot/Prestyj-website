@@ -3,7 +3,7 @@
 import {
   Video,
   Clock,
-  Upload,
+  Megaphone,
   Globe,
   Bot,
   CalendarCheck,
@@ -27,10 +27,10 @@ const features = [
     free: true,
   },
   {
-    icon: Upload,
-    title: "Uploaded to Facebook",
+    icon: Megaphone,
+    title: "We Run the Ads for You",
     description:
-      "We don't just hand you files. We upload all 300 ads directly to your ad account.",
+      "We don't just hand you creatives and wish you luck. We launch and manage the campaigns in your ad account. You do nothing.",
     free: false,
   },
   {
