@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { formatPhoneNumber } from "@/lib/api";
+import { trackEvent } from "@/lib/meta-pixel";
 import {
   ArrowRight,
   ArrowLeft,
@@ -168,6 +169,12 @@ export function LeadForm() {
       } catch {
         // Still route them — don't block the UX
       } finally {
+        trackEvent("Lead", {
+          email: formData.email,
+          phone: formData.phone,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+        });
         setIsSubmitting(false);
         setSubmitState(
           isQualified(formData.adSpend) ? "qualified" : "waitlist"

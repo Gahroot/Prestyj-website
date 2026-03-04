@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
+import { trackEvent } from "@/lib/meta-pixel";
 
 const CAL_LINK = "nolan-grout-x0fgn8/30min";
 
@@ -10,6 +11,12 @@ interface CalcomInlineEmbedProps {
 }
 
 export function CalcomInlineEmbed({ className }: CalcomInlineEmbedProps) {
+  const handleBookingMessage = useCallback((e: MessageEvent) => {
+    if (e.data?.type === "CAL:bookingSuccessful" || e.data?.type === "__calBookingSuccessful") {
+      trackEvent("Schedule");
+    }
+  }, []);
+
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
@@ -22,7 +29,10 @@ export function CalcomInlineEmbed({ className }: CalcomInlineEmbedProps) {
         },
       });
     })();
-  }, []);
+
+    window.addEventListener("message", handleBookingMessage);
+    return () => window.removeEventListener("message", handleBookingMessage);
+  }, [handleBookingMessage]);
 
   return (
     <Cal

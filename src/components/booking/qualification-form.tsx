@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { submitLead, formatPhoneNumber } from "@/lib/api";
+import { trackEvent } from "@/lib/meta-pixel";
 import {
   ArrowRight,
   ArrowLeft,
@@ -251,6 +252,12 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
           trigger_text: false,
         });
 
+        trackEvent("Lead", {
+          email: formData.email,
+          phone: formData.phone,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+        });
         onComplete(formData);
       } catch (error) {
         setSubmitError(error instanceof Error ? error.message : "Something went wrong. Please try again.");
