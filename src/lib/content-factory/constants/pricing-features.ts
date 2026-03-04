@@ -1,19 +1,23 @@
 export const PRESTYJ_PRICING_FEATURES = {
-  NO_AD_SPEND: "No required ad spend",
-  BUILT_IN_CRM: "Built-in CRM included",
-  ALL_IN_ONE: "All-in-one platform",
-  UNLIMITED_LEADS: "Unlimited lead handling",
+  AD_MANAGEMENT: "Done-for-you ad management",
+  AD_BUDGET: "Ad budget included in plan",
+  BATCH_ADS: "Batch video ads",
+  LANDING_PAGE: "Conversion-optimized landing page",
+  FULL_WEBSITE: "Full business website",
+  CRM_SYNC: "CRM Sync",
+  AI_CHAT_TEXT: "AI Chat & Text Agent",
+  AI_VOICE: "AI Voice Agent",
+  AI_RECEPTIONIST: "AI Receptionist",
   LEAD_REACTIVATION: "Lead reactivation included",
-  DONE_FOR_YOU: "Done-for-you setup and management",
 } as const;
 
 export const PRESTYJ_STANDARD_PRICING = {
-  price: "Custom pricing",
-  note: "Tailored to your needs",
+  price: "Starting at $1,997/mo",
+  note: "Setup fee + monthly. Ad budget included.",
   pros: [
-    PRESTYJ_PRICING_FEATURES.NO_AD_SPEND,
-    PRESTYJ_PRICING_FEATURES.BUILT_IN_CRM,
-    PRESTYJ_PRICING_FEATURES.ALL_IN_ONE,
+    PRESTYJ_PRICING_FEATURES.AD_MANAGEMENT,
+    PRESTYJ_PRICING_FEATURES.BATCH_ADS,
+    PRESTYJ_PRICING_FEATURES.CRM_SYNC,
   ] as string[],
   cons: [] as string[], // ALWAYS empty for Prestyj
 };

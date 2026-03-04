@@ -13,7 +13,7 @@ const footerLinks = {
   product: [
     { href: "#how-it-works", label: "How It Works" },
     { href: "/results", label: "Results" },
-    { href: "#pricing", label: "Pricing" },
+    { href: "/pricing", label: "Pricing" },
     { href: "#faq", label: "FAQ" },
   ],
   bestFor: [

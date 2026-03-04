@@ -67,8 +67,8 @@ export function ProductJsonLd() {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: "497",
-      highPrice: "997",
+      lowPrice: "1997",
+      highPrice: "5997",
       offerCount: "3",
       availability: "https://schema.org/InStock",
     },
@@ -114,7 +114,7 @@ export function SoftwareApplicationJsonLd() {
     description: siteConfig.description,
     offers: {
       "@type": "Offer",
-      price: "497",
+      price: "1997",
       priceCurrency: "USD",
     },
     aggregateRating: {
