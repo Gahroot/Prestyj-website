@@ -73,6 +73,11 @@ const faqs: { question: string; answer: ReactNode }[] = [
     ),
   },
   {
+    question: "Can I see samples before committing?",
+    answer:
+      "You already are. The ad you clicked, this landing page you're reading, and the AI that will follow up with you after you submit — that's the exact system we build for your business. You're the sample.",
+  },
+  {
     question: "How is this different from other ad agencies?",
     answer:
       "Most agencies hand you a few ads and a report. We build the entire pipeline: 300 ads, landing page, and an AI system that responds to leads in seconds — not hours. No leads slip through the cracks because a human wasn't fast enough.",

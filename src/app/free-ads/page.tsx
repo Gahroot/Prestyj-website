@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HeroVideo } from "@/components/free-ads/hero-video";
+import { LiveProof } from "@/components/free-ads/live-proof";
 import { SocialProof } from "@/components/free-ads/social-proof";
 import { OfferBreakdown } from "@/components/free-ads/offer-breakdown";
 import { LeadForm } from "@/components/free-ads/lead-form";
@@ -22,6 +23,7 @@ export default function FreeAdsPage() {
     <main className="min-h-screen">
       <HeroVideo />
       <SocialProof />
+      <LiveProof />
       <OfferBreakdown />
       <LeadForm />
       <FreeAdsFAQ />
