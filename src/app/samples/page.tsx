@@ -3,9 +3,12 @@ import Link from "next/link";
 import { ArrowRight, Shuffle, Layers, Zap } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { SocialProof } from "@/components/free-ads/social-proof";
+import { LiveProof } from "@/components/free-ads/live-proof";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import { VideoCarousel } from "@/components/sections/video-carousel";
 
 export const metadata: Metadata = {
   title: "Video Ad Samples | See the Ads We Actually Run | PRESTYJ",
@@ -20,41 +23,13 @@ export const metadata: Metadata = {
 };
 
 const VIDEOS = [
-  {
-    id: "1171065337",
-    title: "300 ads from 1 hour",
-    tag: "Hook A · Body 1 · CTA 1",
-  },
-  {
-    id: "1171065301",
-    title: "300 ads, 24 hours",
-    tag: "Hook B · Body 1 · CTA 1",
-  },
-  {
-    id: "1171065268",
-    title: "Hook variation test",
-    tag: "Hook C · Body 2 · CTA 1",
-  },
-  {
-    id: "1171065240",
-    title: "CTA swap comparison",
-    tag: "Hook A · Body 1 · CTA 3",
-  },
-  {
-    id: "1171065198",
-    title: "Body recut example",
-    tag: "Hook B · Body 3 · CTA 2",
-  },
-  {
-    id: "1171065126",
-    title: "Full combo variation",
-    tag: "Hook D · Body 2 · CTA 4",
-  },
-  {
-    id: "1171065094",
-    title: "Multi-hook remix",
-    tag: "Hook E · Body 1 · CTA 5",
-  },
+  "1171065337",
+  "1171065301",
+  "1171065268",
+  "1171065240",
+  "1171065198",
+  "1171065126",
+  "1171065094",
 ];
 
 const PROCESS_STEPS = [
@@ -102,37 +77,15 @@ export default function SamplesPage() {
           </div>
         </section>
 
-        {/* Video Grid */}
+        {/* Video Carousel */}
         <section className="py-16 md:py-24 px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {VIDEOS.map((video, index) => (
-                <AnimateOnScroll key={video.id} delay={index * 0.1}>
-                  <div className="bg-card border border-border rounded-2xl overflow-hidden">
-                    <div className="aspect-video">
-                      <iframe
-                        src={`https://player.vimeo.com/video/${video.id}?autoplay=0&background=0`}
-                        className="w-full h-full"
-                        frameBorder="0"
-                        allow="fullscreen"
-                        allowFullScreen
-                        title={video.title}
-                      />
-                    </div>
-                    <div className="p-4">
-                      <Badge variant="outline" className="mb-2">
-                        {video.tag}
-                      </Badge>
-                      <h3 className="font-heading font-semibold text-foreground">
-                        {video.title}
-                      </h3>
-                    </div>
-                  </div>
-                </AnimateOnScroll>
-              ))}
-            </div>
+          <div className="max-w-6xl mx-auto px-8 md:px-16">
+            <VideoCarousel videos={VIDEOS} />
           </div>
         </section>
+
+        <SocialProof ctaHref="/free-ads" />
+        <LiveProof ctaHref="/free-ads" />
 
         {/* Process */}
         <section className="py-16 md:py-24 px-4 bg-muted/30">

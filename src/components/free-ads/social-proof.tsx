@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { Star } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,7 @@ const testimonials = [
   },
 ];
 
-export function SocialProof() {
+export function SocialProof({ ctaHref }: { ctaHref?: string }) {
   const scrollToForm = () => {
     document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -60,13 +61,23 @@ export function SocialProof() {
         </div>
 
         <AnimateOnScroll className="flex justify-center">
-          <Button
-            size="lg"
-            onClick={scrollToForm}
-            className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
-          >
-            Get My FREE Ads
-          </Button>
+          {ctaHref ? (
+            <Button
+              size="lg"
+              asChild
+              className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+            >
+              <Link href={ctaHref}>Get My FREE Ads</Link>
+            </Button>
+          ) : (
+            <Button
+              size="lg"
+              onClick={scrollToForm}
+              className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+            >
+              Get My FREE Ads
+            </Button>
+          )}
         </AnimateOnScroll>
       </div>
     </section>
