@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useCallback } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -9,6 +10,18 @@ import {
 } from "@/components/ui/carousel";
 
 export function VideoCarousel({ videos }: { videos: string[] }) {
+  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+
+  const handlePointerUp = useCallback(
+    (id: string, e: React.PointerEvent) => {
+      // Only activate on tap (not drag). Check movement via pointerType.
+      if (e.pointerType === "touch" || e.pointerType === "pen") {
+        setActiveVideo(id);
+      }
+    },
+    [],
+  );
+
   return (
     <Carousel
       opts={{ align: "start", loop: true, dragFree: true }}
@@ -21,7 +34,7 @@ export function VideoCarousel({ videos }: { videos: string[] }) {
             className="pl-2 basis-[70%] sm:basis-[45%] md:basis-[30%]"
           >
             <div className="rounded-xl overflow-hidden border border-border">
-              <div className="aspect-[9/16]">
+              <div className="aspect-[9/16] relative">
                 <iframe
                   src={`https://player.vimeo.com/video/${id}?autoplay=0&background=0`}
                   className="w-full h-full"
@@ -30,6 +43,12 @@ export function VideoCarousel({ videos }: { videos: string[] }) {
                   allowFullScreen
                   title="Video ad sample"
                 />
+                {activeVideo !== id && (
+                  <div
+                    className="absolute inset-0 z-10 cursor-pointer"
+                    onPointerUp={(e) => handlePointerUp(id, e)}
+                  />
+                )}
               </div>
             </div>
           </CarouselItem>
