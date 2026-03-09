@@ -21,9 +21,10 @@ export function trackEvent(eventName: string, userData?: UserData) {
     window.fbq("track", eventName, {}, { eventID: eventId });
   }
 
-  // Server-side CAPI fire (fire-and-forget)
+  // Server-side CAPI fire (fire-and-forget, keepalive survives page navigation)
   fetch("/api/meta-capi", {
     method: "POST",
+    keepalive: true,
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       eventName,

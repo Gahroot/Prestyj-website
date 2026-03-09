@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
   try {
     const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
     if (!accessToken) {
+      console.warn("[META CAPI] META_CAPI_ACCESS_TOKEN is not set — skipping server event");
       return NextResponse.json({ ok: true });
     }
 
@@ -56,7 +57,7 @@ export async function POST(request: NextRequest) {
       user_data: userData,
     };
 
-    await fetch(
+    const capiResponse = await fetch(
       `https://graph.facebook.com/v21.0/${PIXEL_ID}/events?access_token=${accessToken}`,
       {
         method: "POST",
@@ -64,8 +65,26 @@ export async function POST(request: NextRequest) {
         body: JSON.stringify({ data: [event] }),
       }
     );
-  } catch {
-    // Never fail — tracking should not break UX
+
+    const capiBody = await capiResponse.json();
+
+    if (!capiResponse.ok) {
+      console.error("[META CAPI] Error response:", {
+        status: capiResponse.status,
+        body: capiBody,
+        eventName,
+        eventId,
+      });
+    } else {
+      console.log("[META CAPI] Success:", {
+        eventName,
+        eventId,
+        fbtrace: capiBody.fbtrace_id,
+        eventsReceived: capiBody.events_received,
+      });
+    }
+  } catch (error) {
+    console.error("[META CAPI] Fetch failed:", error);
   }
 
   return NextResponse.json({ ok: true });
