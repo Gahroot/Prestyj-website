@@ -12,14 +12,14 @@ export function HeroDemoSection() {
         <div className="space-y-6 text-center lg:text-left" style={{ animation: "fade-up 0.5s ease-out 0.15s both" }}>
           <div className="flex justify-center lg:justify-start">
             <Badge variant="outline" className="border-primary/50 text-primary">
-              The AI Workforce for Service Businesses
+              AI Lead Generation & Sales Automation
             </Badge>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.1]">
-            Deploy AI Agents That Qualify Leads & Book Appointments 24/7
+            AI Agents That Qualify Leads & Book Appointments 24/7
           </h1>
           <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
-            Every lead answered in under 60 seconds. AI that qualifies, books, and follows up—for real estate, home services, and high-growth businesses.
+            AI lead generation and sales automation that responds instantly, qualifies prospects, and books appointments. Transform your lead conversion with intelligent AI sales agents.
           </p>
         </div>
 
