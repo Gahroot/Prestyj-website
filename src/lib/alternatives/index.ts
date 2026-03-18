@@ -36,6 +36,7 @@ import { dialpad } from "./dialpad";
 import { ringCentral } from "./ringcentral";
 import { leadtruffle } from "./leadtruffle";
 import { retellAi } from "./retell-ai";
+import { sierraAi } from "./sierra-ai";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -75,6 +76,7 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "ring-central": ringCentral,
   leadtruffle,
   "retell-ai": retellAi,
+  "sierra-ai": sierraAi,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
