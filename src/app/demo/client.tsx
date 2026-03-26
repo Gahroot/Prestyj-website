@@ -8,6 +8,7 @@ import { AiFeaturesSection } from "@/components/demo/ai-features-section";
 import { IntegrationsSection } from "@/components/demo/integrations-section";
 import { CompetitiveAdvantageSection } from "@/components/demo/competitive-advantage-section";
 import { OneVideoSection } from "@/components/demo/one-video-section";
+import { BatchContentSection } from "@/components/demo/batch-content-section";
 
 export function DemoPageClient() {
   return (
@@ -81,6 +82,9 @@ export function DemoPageClient() {
 
       {/* 1 Video → 300 Ads */}
       <OneVideoSection />
+
+      {/* BatchContent */}
+      <BatchContentSection />
 
       {/* Footer */}
       <footer className="py-16 text-center border-t border-zinc-800/50">
