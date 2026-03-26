@@ -9,6 +9,7 @@ import { IntegrationsSection } from "@/components/demo/integrations-section";
 import { CompetitiveAdvantageSection } from "@/components/demo/competitive-advantage-section";
 import { OneVideoSection } from "@/components/demo/one-video-section";
 import { BatchContentSection } from "@/components/demo/batch-content-section";
+import { PocketAgentSection } from "@/components/demo/pocket-agent-section";
 
 export function DemoPageClient() {
   return (
@@ -85,6 +86,9 @@ export function DemoPageClient() {
 
       {/* BatchContent */}
       <BatchContentSection />
+
+      {/* Pocket Agent */}
+      <PocketAgentSection />
 
       {/* Footer */}
       <footer className="py-16 text-center border-t border-zinc-800/50">
