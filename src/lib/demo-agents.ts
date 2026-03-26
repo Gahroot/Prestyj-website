@@ -13,6 +13,16 @@ export interface DemoAgent {
   description: string;
   color: string;
   icon: string;
+  /** Headline shown in the section */
+  sectionTitle: string;
+  /** Subtitle shown in the section */
+  sectionDescription: string;
+  /** CTA button label on the final contact step */
+  ctaLabel: string;
+  /** Message shown after successful submission */
+  successMessage: string;
+  /** Label for the contact step name field */
+  contactPrompt: string;
   formSteps: FormStep[];
 }
 
@@ -24,6 +34,12 @@ export const DEMO_AGENTS: DemoAgent[] = [
     description: "Southeast Michigan's premier real estate brokerage",
     color: "#2563eb",
     icon: "🏢",
+    sectionTitle: "Find Your Dream Home in Southeast Michigan",
+    sectionDescription:
+      "Tell us what you're looking for and a Dobi agent will reach out to help you get started.",
+    ctaLabel: "Connect With an Agent",
+    successMessage: "A Dobi agent will be in touch shortly!",
+    contactPrompt: "Let's get you connected with an agent",
     formSteps: [
       {
         id: "inquiry",
@@ -58,6 +74,12 @@ export const DEMO_AGENTS: DemoAgent[] = [
     description: "Your trusted local real estate expert",
     color: "#7c3aed",
     icon: "🏠",
+    sectionTitle: "Ready to Buy or Sell? Let's Talk",
+    sectionDescription:
+      "Answer a couple quick questions and we'll match you with the right support for your move.",
+    ctaLabel: "Get Started",
+    successMessage: "We'll be reaching out to you shortly!",
+    contactPrompt: "Enter your details to get started",
     formSteps: [
       {
         id: "intent",
@@ -90,6 +112,12 @@ export const DEMO_AGENTS: DemoAgent[] = [
     description: "Fast, reliable title & closing services",
     color: "#059669",
     icon: "📋",
+    sectionTitle: "Need Help With Your Title or Closing?",
+    sectionDescription:
+      "Whether you're placing a new order or checking on an existing one, we're here to help.",
+    ctaLabel: "Request More Info",
+    successMessage: "Our team will follow up with you shortly!",
+    contactPrompt: "Let us know how to reach you",
     formSteps: [
       {
         id: "reason",
@@ -117,6 +145,12 @@ export const DEMO_AGENTS: DemoAgent[] = [
     description: "Quality residential construction & remodeling",
     color: "#dc2626",
     icon: "🏗️",
+    sectionTitle: "Get a Free Quote for Your Next Project",
+    sectionDescription:
+      "Tell us about your project and timeline — we'll put together a custom estimate for you.",
+    ctaLabel: "Get My Quote",
+    successMessage: "We're preparing your estimate — expect to hear from us soon!",
+    contactPrompt: "Where should we send your quote?",
     formSteps: [
       {
         id: "projectType",
