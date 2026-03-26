@@ -30,11 +30,17 @@ export async function triggerDemo(
 export async function triggerEmbedCall(
   publicId: string,
   phoneNumber: string,
+  callerName?: string,
+  notes?: string,
 ): Promise<DemoResponse> {
   const response = await fetch(`${EMBED_API_BASE}/${publicId}/call`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ phone_number: phoneNumber }),
+    body: JSON.stringify({
+      phone_number: phoneNumber,
+      caller_name: callerName || undefined,
+      notes: notes || undefined,
+    }),
   });
 
   if (!response.ok) {

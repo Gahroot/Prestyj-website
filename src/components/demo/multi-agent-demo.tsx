@@ -18,11 +18,12 @@ export function MultiAgentDemo() {
           06
         </span>
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
-          Pick a company. Get called by their AI.
+          Tell us about your project. Get a personalized AI call.
         </h2>
         <p className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-2xl">
-          Each card is a different AI agent for a real company. Enter your
-          number, hit call, and experience what their customers would.
+          Each card is a different AI agent for a real company. Answer a few
+          quick questions, and the AI will call you using that context — just
+          like a real lead would experience.
         </p>
       </motion.div>
 
@@ -31,7 +32,7 @@ export function MultiAgentDemo() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay: 0.15 }}
-        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6"
+        className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
         {DEMO_AGENTS.map((agent) => (
           <AgentDemoCard key={agent.publicId} agent={agent} />
