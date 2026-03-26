@@ -5,7 +5,7 @@ const siteConfig = {
   name: "PRESTYJ",
   url: "https://prestyj.com",
   description:
-    "Deploy AI agents that qualify leads and book appointments 24/7. Instant response for real estate, home services, and high-growth service businesses.",
+    "AI that responds to your ad leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7. Built for real estate teams and brokerages running Facebook and YouTube ads.",
   logo: "https://prestyj.com/icon-512.png",
 };
 
@@ -59,7 +59,7 @@ export function ProductJsonLd() {
     "@type": "Product",
     name: "PRESTYJ AI Sales Agent",
     description:
-      "AI-powered sales and appointment-setting agent for service businesses. Responds to leads in under 60 seconds, qualifies prospects, and books appointments automatically.",
+      "AI-powered lead response and appointment-setting platform for real estate teams and brokerages. Responds to ad leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7.",
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -75,7 +75,7 @@ export function ProductJsonLd() {
     category: "Software",
     audience: {
       "@type": "Audience",
-      audienceType: "Service Business Owners",
+      audienceType: "Real Estate Teams and Brokerages",
     },
   };
 
@@ -134,6 +134,47 @@ export function SoftwareApplicationJsonLd() {
       "Multi-industry support",
       "Missed call text back",
     ],
+  };
+
+  return <SafeJsonLd data={jsonLd} />;
+}
+
+export function ServiceJsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "AI Lead Response & Appointment Setting for Real Estate Teams",
+    description:
+      "AI-powered lead response, lead qualification, and appointment-setting services for real estate teams and brokerages running Facebook and YouTube ads.",
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    serviceType: [
+      "AI Lead Generation",
+      "AI Lead Response",
+      "AI Sales Agent",
+      "AI Receptionist",
+      "Lead Reactivation",
+      "Sales Automation",
+      "Marketing Automation",
+      "Business Automation",
+      "AI Customer Engagement",
+    ],
+    areaServed: "United States",
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "AI Agent Services",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Lead Generation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Lead Response" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Sales Agent" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Receptionist" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lead Reactivation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sales Automation" } },
+      ],
+    },
   };
 
   return <SafeJsonLd data={jsonLd} />;

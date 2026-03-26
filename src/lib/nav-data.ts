@@ -11,11 +11,26 @@ export const ctaLinks = [
 ];
 
 export const solutionLinks = [
-  { href: "/solutions/home-services", label: "Home Services" },
-  { href: "/solutions/lead-reactivation", label: "Dead Lead Reactivation" },
   { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
-  { href: "/solutions/roofing", label: "Roofing Contractors" },
+  { href: "/solutions/lead-reactivation", label: "Dead Lead Reactivation" },
+  { href: "/solutions/ai-lead-generation", label: "AI Lead Generation" },
+  { href: "/solutions/sales-automation", label: "Sales Automation" },
+  { href: "/solutions/marketing-automation", label: "Marketing Automation" },
+  { href: "/solutions/business-automation", label: "Business Automation" },
   { href: "/platform", label: "Platform & Technology" },
+];
+
+export const solutionCategories = [
+  { href: "/solutions/ai-lead-generation", label: "AI Lead Generation" },
+  { href: "/best-for/ai-lead-response", label: "AI Lead Response" },
+  { href: "/best-for/ai-sales-agent", label: "AI Sales Agent" },
+  { href: "/best-for/ai-voice-receptionist", label: "AI Receptionist" },
+  { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
+  { href: "/solutions/sales-automation", label: "Sales Automation" },
+  { href: "/solutions/marketing-automation", label: "Marketing Automation" },
+  { href: "/best-for/conversion-rate-optimization", label: "Conversion Optimization" },
+  { href: "/solutions/business-automation", label: "Business Automation" },
+  { href: "/best-for/ai-customer-engagement", label: "AI Customer Engagement" },
 ];
 
 export const alternativeLinks = [
@@ -35,12 +50,11 @@ export const alternativeLinks = [
 
 export const bestForLinks = [
   { href: "/best-for", label: "All Use Cases" },
-  { href: "/best-for/roofing", label: "Roofing Contractors" },
-  { href: "/best-for/hvac", label: "HVAC Companies" },
-  { href: "/best-for/plumbing", label: "Plumbing Companies" },
   { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
-  { href: "/best-for/servicetitan-users", label: "ServiceTitan Users" },
-  { href: "/best-for/jobber-users", label: "Jobber Users" },
+  { href: "/best-for/real-estate-franchises", label: "Real Estate Franchises" },
+  { href: "/best-for/regional-brokerage-networks", label: "Regional Brokerages" },
+  { href: "/best-for/isa-replacement", label: "ISA Replacement" },
   { href: "/best-for/follow-up-boss-users", label: "Follow Up Boss Users" },
-  { href: "/best-for/insurance-agencies", label: "Insurance Agencies" },
+  { href: "/best-for/commercial-real-estate", label: "Commercial Real Estate" },
+  { href: "/best-for/property-managers", label: "Property Managers" },
 ];

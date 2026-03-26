@@ -5,22 +5,22 @@ const features = [
   {
     icon: Zap,
     title: "Instant Response",
-    description: "Leads get a response in under 60 seconds. Every time.",
+    description: "Under 60 seconds, every time. While your competitors are still checking Slack.",
   },
   {
     icon: MessageCircle,
-    title: "Natural Conversations",
-    description: "Your leads won't know they're talking to AI.",
+    title: "Sounds Like Your Team",
+    description: "Leads engage with a named team member. No robotic scripts. No awkward handoffs.",
   },
   {
     icon: Calendar,
-    title: "Books Appointments",
-    description: "Qualified leads land directly on your calendar.",
+    title: "Fills Your Calendar",
+    description: "Qualified appointments land on your calendar. You show up and close.",
   },
   {
     icon: Moon,
-    title: "Never Sleeps",
-    description: "24/7 coverage. Nights, weekends, holidays.",
+    title: "Never Clocks Out",
+    description: "Saturday at 11pm. Sunday morning. Holidays. It doesn't take time off.",
   },
 ];
 
@@ -31,30 +31,33 @@ export function SolutionSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <AnimateOnScroll>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
-              An AI Agent That
+              Your AI Team Member.
               <br />
-              <span className="text-primary">Actually Converts</span>
+              <span className="text-primary">Always On. Always On Brand.</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Your agent handles lead follow-up so you can focus on what you do best: growing your business.
-              No more missed calls. No more cold leads. No more hiring headaches.
+              Think of it like Jamie — your best assistant who picks up every lead, replies naturally as part of your team, and books qualified appointments on your calendar. Your clients will never know it&apos;s AI. They&apos;ll just know your team is incredibly responsive.
             </p>
             <div className="space-y-4">
               <div className="flex items-center gap-3 text-muted-foreground">
                 <div className="w-2 h-2 rounded-full bg-success" />
-                <span>No salary to pay</span>
+                <span>Replies as a named team member (&ldquo;Hey, it&apos;s Alex from [Your Brokerage]&rdquo;)</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <div className="w-2 h-2 rounded-full bg-success" />
-                <span>No overhead costs</span>
+                <span>Qualifies buyers, sellers, and investors naturally</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <div className="w-2 h-2 rounded-full bg-success" />
-                <span>No sick days or vacations</span>
+                <span>Books directly to your calendar — no back-and-forth</span>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <div className="w-2 h-2 rounded-full bg-success" />
-                <span>No training required</span>
+                <span>Re-engages old leads sitting cold in your CRM</span>
+              </div>
+              <div className="flex items-center gap-3 text-muted-foreground">
+                <div className="w-2 h-2 rounded-full bg-success" />
+                <span>Works nights, weekends, and holidays without overtime</span>
               </div>
             </div>
           </AnimateOnScroll>

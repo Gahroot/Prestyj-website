@@ -7,16 +7,16 @@ import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 const stats = [
   {
     icon: DollarSign,
-    value: "$10K–$50K",
-    label: "Average job value",
-    description: "One closed roofing or HVAC job pays for months of service.",
+    value: "$8K–$25K",
+    label: "Average commission per closing",
+    description: "One closed deal from an ad lead pays for months of service.",
   },
   {
     icon: Users,
     value: "78%",
     label: "Work with first responder",
     description:
-      "Homeowners hire the first company that responds. Be that company.",
+      "Buyers and sellers hire the agent who responds first. Be that agent.",
   },
   {
     icon: Zap,
@@ -34,18 +34,18 @@ export function PricingROISection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <AnimateOnScroll>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-6">
-              One Job Pays for{" "}
+              One Closing Pays for{" "}
               <span className="text-primary">Months of Service</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              A single roofing job is worth $10K–$50K. A new HVAC install runs
-              $5K–$15K. A window replacement closes at $8K–$25K. Your AI agent
-              pays for itself with the first booked appointment.
+              The average real estate commission on a $400K home is $10K–$12K.
+              Your AI pays for itself with the first appointment that converts —
+              and every deal after that is pure ROI.
             </p>
             <p className="text-muted-foreground mb-4">
               The math is simple: the cost of missing one lead is higher than an
               entire year of service. Every minute you wait to respond, your
-              close rate drops. Every lead that goes to voicemail is money
+              close rate drops. Every lead that goes unanswered is a commission
               walking out the door.
             </p>
             <p className="text-muted-foreground">

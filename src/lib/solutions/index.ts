@@ -5,6 +5,14 @@ import { roofing } from "./roofing";
 import { homeServices } from "./home-services";
 import { aiPilotProgram } from "./ai-pilot-program";
 import { aiProofOfConcept } from "./ai-proof-of-concept";
+import { aiLeadGeneration } from "./ai-lead-generation";
+import { salesAutomation } from "./sales-automation";
+import { marketingAutomation } from "./marketing-automation";
+import { businessAutomation } from "./business-automation";
+import { realEstate } from "./real-estate";
+import { facebookAdLeads } from "./facebook-ad-leads";
+import { youtubeAdLeads } from "./youtube-ad-leads";
+import { realEstateLeadConversion } from "./real-estate-lead-conversion";
 
 export const solutions: Record<string, SolutionPageContent> = {
   "speed-to-lead": speedToLead,
@@ -13,6 +21,14 @@ export const solutions: Record<string, SolutionPageContent> = {
   "home-services": homeServices,
   "ai-pilot-program-consulting": aiPilotProgram,
   "ai-proof-of-concept-consulting": aiProofOfConcept,
+  "ai-lead-generation": aiLeadGeneration,
+  "sales-automation": salesAutomation,
+  "marketing-automation": marketingAutomation,
+  "business-automation": businessAutomation,
+  "real-estate": realEstate,
+  "facebook-ad-leads": facebookAdLeads,
+  "youtube-ad-leads": youtubeAdLeads,
+  "real-estate-lead-conversion": realEstateLeadConversion,
 };
 
 export function getSolution(slug: string): SolutionPageContent | undefined {

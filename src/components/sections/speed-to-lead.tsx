@@ -12,18 +12,17 @@ export function SpeedToLeadSection() {
           {/* Left side - Content */}
           <div className="space-y-6">
             <Badge variant="outline" className="border-primary/50 text-primary">
-              Speed-to-Lead Solution
+              Built for Teams Running Paid Ads
             </Badge>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-foreground">
-              Stop Losing Leads.
+              You&apos;re Paying for Every Lead.
               <br />
-              <span className="text-primary">Start Booking More.</span>
+              <span className="text-primary">Stop Letting Them Go Cold.</span>
             </h2>
 
             <p className="text-lg text-muted-foreground max-w-lg">
-              Your AI agent responds to every lead in under 60 seconds, qualifies them, and books
-              appointments on your calendar. 24/7. No salary. No overhead costs.
+              Real estate team leaders spending $1,000+ a month on ads can&apos;t afford a 4-hour response time. Your AI team member responds in under 60 seconds — qualifying buyers, re-engaging sellers, and booking appointments while you&apos;re at a showing, in a meeting, or off the clock.
             </p>
 
             <div className="flex flex-col sm:flex-row items-start gap-4 pt-4">
@@ -49,7 +48,7 @@ export function SpeedToLeadSection() {
                 <Zap className="w-6 h-6 text-success" />
               </div>
               <span className="text-3xl font-bold text-success">47s</span>
-              <p className="text-sm text-muted-foreground mt-1">avg. response time</p>
+              <p className="text-sm text-muted-foreground mt-1">avg. lead response time</p>
             </div>
 
             <div className="bg-background p-6 rounded-xl border border-border text-center">
@@ -57,7 +56,7 @@ export function SpeedToLeadSection() {
                 <Clock className="w-6 h-6 text-primary" />
               </div>
               <span className="text-3xl font-bold text-primary">24/7</span>
-              <p className="text-sm text-muted-foreground mt-1">availability</p>
+              <p className="text-sm text-muted-foreground mt-1">nights, weekends, holidays</p>
             </div>
 
             <div className="bg-background p-6 rounded-xl border border-border text-center">
@@ -65,7 +64,7 @@ export function SpeedToLeadSection() {
                 <Calendar className="w-6 h-6 text-warning" />
               </div>
               <span className="text-3xl font-bold text-warning">3x*</span>
-              <p className="text-sm text-muted-foreground mt-1">more appointments</p>
+              <p className="text-sm text-muted-foreground mt-1">more booked appointments</p>
             </div>
           </div>
         </AnimateOnScroll>

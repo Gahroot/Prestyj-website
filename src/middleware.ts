@@ -48,6 +48,8 @@ export function middleware() {
         "'self'",
         // API endpoints
         "https://backend-api-production-b536.up.railway.app",
+        // OpenAI Realtime API (WebRTC token exchange for voice widget)
+        "https://api.openai.com",
         // Search engine indexing
         "https://api.indexnow.org",
         "https://www.bing.com",
@@ -62,6 +64,8 @@ export function middleware() {
         "'self'",
         "https://app.cal.com", // Cal.com inline embed
         "https://player.vimeo.com", // Vimeo video embeds
+        "https://backend-api-production-b536.up.railway.app", // AI agent embed widget
+        "https://frontend-navy-five-92.vercel.app", // AI agent embed pages
       ],
     },
     {
@@ -103,7 +107,7 @@ export function middleware() {
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set(
     "Permissions-Policy",
-    "geolocation=(), microphone=(), camera=()"
+    "geolocation=(), microphone=(self \"https://frontend-navy-five-92.vercel.app\" \"https://backend-api-production-b536.up.railway.app\"), camera=()"
   );
 
   return response;

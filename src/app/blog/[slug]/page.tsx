@@ -8,6 +8,7 @@ import { blogSource } from "@/lib/source";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -104,7 +105,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "@type": "Article",
     headline: title,
     description,
-    image: image ? `${siteUrl}${image}` : `${siteUrl}/images/og-default.jpg`,
+    image: image ? `${siteUrl}${image}` : `${siteUrl}/og-image.jpg`,
     author: {
       "@type": "Organization",
       name: author || "Prestyj Team",
@@ -116,7 +117,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       url: siteUrl,
       logo: {
         "@type": "ImageObject",
-        url: `${siteUrl}/logo.png`,
+        url: `${siteUrl}/icon-512.png`,
       },
     },
     datePublished: date,
@@ -129,8 +130,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     keywords: keywords?.join(", "),
   };
 
+  const breadcrumbs = [
+    { name: "Home", url: siteUrl },
+    { name: "Blog", url: `${siteUrl}/blog` },
+    { name: title, url: postUrl },
+  ];
+
   return (
     <>
+      <BreadcrumbJsonLd items={breadcrumbs} />
       <SafeJsonLd data={jsonLd} />
       <Navbar />
       <main className="pt-24 pb-16">

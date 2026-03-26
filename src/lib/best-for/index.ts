@@ -57,6 +57,17 @@ import { flooringContractors } from "./flooring-contractors";
 import { servicetitanUsers } from "./servicetitan-users";
 import { jobberUsers } from "./jobber-users";
 import { followUpBossUsers } from "./follow-up-boss-users";
+import { conversionRateOptimization } from "./conversion-rate-optimization";
+import { aiCustomerEngagement } from "./ai-customer-engagement";
+import { aiSalesAgent } from "./ai-sales-agent";
+import { realEstateBrokerages } from "./real-estate-brokerages";
+import { facebookAdsRealEstate } from "./facebook-ads-real-estate";
+import { youtubeAdsRealEstate } from "./youtube-ads-real-estate";
+import { realEstateTeamLeaders } from "./real-estate-team-leaders";
+import { kvcoreUsers } from "./kvcore-users";
+import { sierraInteractiveUsers } from "./sierra-interactive-users";
+import { cincUsers } from "./cinc-users";
+import { realGeeksUsers } from "./real-geeks-users";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -117,6 +128,17 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "servicetitan-users": servicetitanUsers,
   "jobber-users": jobberUsers,
   "follow-up-boss-users": followUpBossUsers,
+  "conversion-rate-optimization": conversionRateOptimization,
+  "ai-customer-engagement": aiCustomerEngagement,
+  "ai-sales-agent": aiSalesAgent,
+  "real-estate-brokerages": realEstateBrokerages,
+  "facebook-ads-real-estate": facebookAdsRealEstate,
+  "youtube-ads-real-estate": youtubeAdsRealEstate,
+  "real-estate-team-leaders": realEstateTeamLeaders,
+  "kvcore-users": kvcoreUsers,
+  "sierra-interactive-users": sierraInteractiveUsers,
+  "cinc-users": cincUsers,
+  "real-geeks-users": realGeeksUsers,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

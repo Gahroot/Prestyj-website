@@ -16,31 +16,31 @@ import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 const siteUrl = "https://prestyj.com";
 
 export const metadata: Metadata = {
-  title: "Real Estate Lead Generation Blog | PRESTYJ",
+  title: "AI Lead Generation & Sales Automation Blog | Prestyj",
   description:
-    "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more real estate deals. Free strategies from PRESTYJ.",
+    "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more deals for service businesses. Free strategies from Prestyj.",
   keywords: [
-    "real estate blog",
-    "lead generation tips",
-    "speed to lead",
+    "lead generation blog",
     "AI sales agents",
-    "real estate marketing",
+    "speed to lead",
+    "service business marketing",
     "lead conversion strategies",
+    "sales automation",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: `${siteUrl}/blog`,
-    title: "Real Estate Lead Generation Blog | PRESTYJ",
+    title: "AI Lead Generation & Sales Automation Blog | Prestyj",
     description:
-      "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more real estate deals.",
+      "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more deals for service businesses.",
     siteName: "PRESTYJ",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Real Estate Lead Generation Blog | PRESTYJ",
+    title: "AI Lead Generation & Sales Automation Blog | Prestyj",
     description:
-      "Expert tips on speed-to-lead response, AI sales agents, and closing more real estate deals.",
+      "Expert tips on speed-to-lead response, AI sales agents, and closing more deals for service businesses.",
     creator: "@prestyj_",
   },
   alternates: {
@@ -64,7 +64,7 @@ export default function BlogPage() {
     "@type": "Blog",
     name: "PRESTYJ Blog",
     description:
-      "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more real estate deals.",
+      "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more deals for service businesses.",
     url: `${siteUrl}/blog`,
     publisher: {
       "@type": "Organization",
@@ -94,7 +94,7 @@ export default function BlogPage() {
               Resources
             </Badge>
             <h1 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-              Real Estate Lead Generation Blog
+              AI Sales & Lead Generation Blog
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Speed-to-lead strategies, AI insights, and tactics to close more

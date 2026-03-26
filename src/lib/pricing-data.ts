@@ -10,6 +10,10 @@ import {
   Phone,
   PhoneIncoming,
   RotateCcw,
+  Calendar,
+  MessageSquare,
+  Bell,
+  ClipboardList,
 } from "lucide-react";
 
 export type TierId = "minimum" | "pro" | "max";
@@ -58,25 +62,29 @@ export const pricingTiers: PricingTier[] = [
     highlights: [
       "$1,000/mo ad budget included",
       "300 batch video ads/mo",
+      "AI appointment agent + calendar",
       "Landing page + CRM Sync",
-      "Done-for-you ad management",
     ],
     features: {
       AD_MANAGEMENT: true,
       AD_BUDGET: true,
       BATCH_ADS: true,
       LANDING_PAGE: true,
+      QUALIFICATION_FORM: false,
       FULL_WEBSITE: false,
       CRM_SYNC: true,
-      AI_CHAT_TEXT: false,
+      CALENDAR_INTEGRATION: true,
+      AI_APPOINTMENT_AGENT: true,
+      AI_CHATBOT: false,
+      AI_TEXTING: false,
+      LEAD_REACTIVATION: false,
       AI_VOICE: false,
       AI_RECEPTIONIST: false,
-      LEAD_REACTIVATION: false,
     },
     story:
-      "You're a roofer who just started running ads. You need leads coming in and a landing page that converts. The Minimum plan gives you done-for-you ad management, 300 batch video ads a month, a conversion-optimized landing page, and CRM Sync to track every lead.",
+      "You're a growing real estate team running Facebook ads. Leads come in but half go cold because nobody responds fast enough. The Minimum plan gives you done-for-you ad management, 300 batch video ads a month, a conversion-optimized landing page, and an AI appointment agent that instantly responds to every lead in under 60 seconds, reminds prospects of their appointments, and follows up on no-shows automatically.",
     bestFor:
-      "Solo operators and small crews getting started with digital marketing and lead generation.",
+      "Small real estate teams and solo team leaders getting started with paid advertising and AI-powered lead follow-up.",
   },
   {
     id: "pro",
@@ -89,25 +97,29 @@ export const pricingTiers: PricingTier[] = [
     highlights: [
       "$1,500/mo ad budget included",
       "500 batch video ads/mo",
-      "AI chat, text & voice agents",
-      "Full website + lead reactivation",
+      "AI chatbot + texting agent",
+      "Lead reactivation + full website",
     ],
     features: {
       AD_MANAGEMENT: true,
       AD_BUDGET: true,
       BATCH_ADS: true,
       LANDING_PAGE: true,
+      QUALIFICATION_FORM: true,
       FULL_WEBSITE: true,
       CRM_SYNC: true,
-      AI_CHAT_TEXT: true,
-      AI_VOICE: true,
-      AI_RECEPTIONIST: false,
+      CALENDAR_INTEGRATION: true,
+      AI_APPOINTMENT_AGENT: true,
+      AI_CHATBOT: true,
+      AI_TEXTING: true,
       LEAD_REACTIVATION: true,
+      AI_VOICE: false,
+      AI_RECEPTIONIST: false,
     },
     story:
-      "You're running a window & door company with 2-3 crews. Leads are coming in from multiple sources but half go cold because nobody follows up fast enough. The Pro plan adds voice calling, a full website, higher ad budget, and lead reactivation — your AI agent works the phones and re-engages old leads automatically.",
+      "You're a 10–20 agent brokerage running $3K–$5K/month in Facebook and YouTube ads. Leads pour in from multiple sources but half go cold before anyone follows up. The Pro plan adds an AI chatbot for your website, an AI texting agent that engages leads via SMS, a multi-step qualification form that routes buyers vs. sellers, and lead reactivation to re-engage your cold database automatically.",
     bestFor:
-      "Growing service businesses ready to dominate their market with full AI-powered lead management.",
+      "Mid-size real estate teams and brokerages running paid ads who need full AI-powered lead management across every channel.",
   },
   {
     id: "max",
@@ -120,39 +132,50 @@ export const pricingTiers: PricingTier[] = [
     highlights: [
       "$2,000/mo ad budget included",
       "1,000 batch video ads/mo",
-      "All AI agents + AI receptionist",
-      "Full website + lead reactivation",
+      "AI voice agent + receptionist",
+      "Complete AI automation suite",
     ],
     features: {
       AD_MANAGEMENT: true,
       AD_BUDGET: true,
       BATCH_ADS: true,
       LANDING_PAGE: true,
+      QUALIFICATION_FORM: true,
       FULL_WEBSITE: true,
       CRM_SYNC: true,
-      AI_CHAT_TEXT: true,
+      CALENDAR_INTEGRATION: true,
+      AI_APPOINTMENT_AGENT: true,
+      AI_CHATBOT: true,
+      AI_TEXTING: true,
+      LEAD_REACTIVATION: true,
       AI_VOICE: true,
       AI_RECEPTIONIST: true,
-      LEAD_REACTIVATION: true,
     },
     story:
-      "You're running a multi-location roofing or HVAC operation. You need an AI receptionist handling inbound calls, outbound follow-ups, lead reactivation across your entire database, and a massive ad presence across your service areas. The Max plan is your complete AI marketing department.",
+      "You're a multi-office brokerage or franchise operation doing $50M+. You need AI handling inbound lead response across all offices, an AI voice agent making outbound follow-ups to every new lead, lead reactivation across your entire database, and maximum ad volume across your markets. The Max plan is your complete AI marketing and lead conversion department.",
     bestFor:
-      "Multi-location operations and established businesses wanting maximum lead flow and full AI automation.",
+      "Large brokerages, franchise operations, and PE-backed real estate platforms wanting enterprise-grade AI automation and maximum lead flow.",
   },
 ];
 
 export const pricingFeatures: PricingFeature[] = [
+  // Marketing & Ads
   { key: "AD_MANAGEMENT", label: "Ad Management", icon: Megaphone, category: "marketing" },
   { key: "AD_BUDGET", label: "Ad Budget Included", icon: DollarSign, category: "marketing" },
   { key: "BATCH_ADS", label: "Batch Video Ads", icon: LayoutGrid, category: "marketing" },
+  // Platform
   { key: "LANDING_PAGE", label: "Landing Page", icon: FileText, category: "platform" },
+  { key: "QUALIFICATION_FORM", label: "Multi-Step Qualification Form", icon: ClipboardList, category: "platform" },
   { key: "FULL_WEBSITE", label: "Full Website", icon: Globe, category: "platform" },
   { key: "CRM_SYNC", label: "CRM Sync", icon: Database, category: "platform" },
-  { key: "AI_CHAT_TEXT", label: "AI Chat & Text Agent", icon: Bot, category: "ai" },
+  { key: "CALENDAR_INTEGRATION", label: "Calendar Integration", icon: Calendar, category: "platform" },
+  // AI Agents
+  { key: "AI_APPOINTMENT_AGENT", label: "AI Appointment Agent", icon: Bell, category: "ai" },
+  { key: "AI_CHATBOT", label: "AI Chatbot", icon: Bot, category: "ai" },
+  { key: "AI_TEXTING", label: "AI Texting Agent", icon: MessageSquare, category: "ai" },
+  { key: "LEAD_REACTIVATION", label: "Lead Reactivation", icon: RotateCcw, category: "ai" },
   { key: "AI_VOICE", label: "AI Voice Agent", icon: Phone, category: "ai" },
   { key: "AI_RECEPTIONIST", label: "AI Receptionist", icon: PhoneIncoming, category: "ai" },
-  { key: "LEAD_REACTIVATION", label: "Lead Reactivation", icon: RotateCcw, category: "ai" },
 ];
 
 export const pricingFaqs: PricingFAQ[] = [
@@ -184,7 +207,7 @@ export const pricingFaqs: PricingFAQ[] = [
   {
     question: "What industries do you work with?",
     answer:
-      "We specialize in service businesses: roofing, HVAC, plumbing, windows & doors, solar, landscaping, and similar trades. Our AI agents are trained specifically for service industry conversations and objection handling.",
+      "We specialize in real estate teams and brokerages running paid advertising on Facebook, YouTube, and Google. Our AI agents are trained specifically for real estate conversations — qualifying buyers vs. sellers, handling objections, and booking appointments directly onto your agents' calendars.",
   },
   {
     question: "How long does onboarding take?",

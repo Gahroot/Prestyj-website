@@ -18,13 +18,13 @@ const footerLinks = {
   ],
   bestFor: [
     { href: "/best-for", label: "All Use Cases" },
-    { href: "/best-for/hvac", label: "HVAC Companies" },
-    { href: "/best-for/plumbing", label: "Plumbing" },
-    { href: "/best-for/roofing", label: "Roofing" },
     { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
-    { href: "/best-for/servicetitan-users", label: "ServiceTitan Users" },
-    { href: "/best-for/jobber-users", label: "Jobber Users" },
+    { href: "/best-for/real-estate-franchises", label: "Real Estate Franchises" },
+    { href: "/best-for/regional-brokerage-networks", label: "Regional Brokerages" },
+    { href: "/best-for/isa-replacement", label: "ISA Replacement" },
     { href: "/best-for/follow-up-boss-users", label: "Follow Up Boss Users" },
+    { href: "/best-for/commercial-real-estate", label: "Commercial Real Estate" },
+    { href: "/best-for/property-managers", label: "Property Managers" },
   ],
   alternatives: [
     { href: "/alternatives", label: "All Alternatives" },
@@ -45,11 +45,20 @@ const footerLinks = {
     { href: "/compare/prestyj-vs-structurely", label: "Prestyj vs Structurely" },
   ],
   solutions: [
-    { href: "/solutions/home-services", label: "Home Services" },
     { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
     { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
-    { href: "/solutions/roofing", label: "Roofing Contractors" },
+    { href: "/solutions/ai-lead-generation", label: "AI Lead Generation" },
+    { href: "/solutions/sales-automation", label: "Sales Automation" },
+    { href: "/solutions/marketing-automation", label: "Marketing Automation" },
+    { href: "/solutions/business-automation", label: "Business Automation" },
     { href: "/platform", label: "Platform" },
+  ],
+  aiSolutions: [
+    { href: "/best-for/ai-lead-response", label: "AI Lead Response" },
+    { href: "/best-for/ai-sales-agent", label: "AI Sales Agent" },
+    { href: "/best-for/ai-voice-receptionist", label: "AI Receptionist" },
+    { href: "/best-for/conversion-rate-optimization", label: "Conversion Optimization" },
+    { href: "/best-for/ai-customer-engagement", label: "Customer Engagement" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
@@ -61,14 +70,14 @@ export function Footer() {
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-7 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-8 gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2">
               <span className="text-xl font-bold font-heading text-primary">PRESTYJ</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
-              The AI Workforce for Service Businesses. Respond, qualify, and book 24/7.
+              AI lead response and appointment setting for real estate teams and brokerages. Respond, qualify, and book 24/7.
             </p>
             <div className="mt-4 flex items-center gap-3">
               {socialLinks.map((link) => (
@@ -125,6 +134,23 @@ export function Footer() {
             <h3 className="font-heading font-semibold text-foreground mb-4">Best For</h3>
             <ul className="space-y-3">
               {footerLinks.bestFor.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* AI Solutions */}
+          <div>
+            <h3 className="font-heading font-semibold text-foreground mb-4">AI Solutions</h3>
+            <ul className="space-y-3">
+              {footerLinks.aiSolutions.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

@@ -66,6 +66,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/real-estate-roi-calculator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/lead-magnet/brokerage-playbook`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/platform`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -85,14 +97,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Blog posts - use actual post dates for lastModified
+  // Blog posts - use actual post dates for lastModified; exclude noindexed posts
   const blogPages = blogSource.getPages();
-  const blogRoutes: MetadataRoute.Sitemap = blogPages.map((page) => ({
-    url: `${baseUrl}${page.url}`,
-    lastModified: page.data.date ? new Date(page.data.date) : now,
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
+  const blogRoutes: MetadataRoute.Sitemap = blogPages
+    .filter((page) => !page.data.noindex)
+    .map((page) => ({
+      url: `${baseUrl}${page.url}`,
+      lastModified: page.data.date ? new Date(page.data.date) : now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
 
   // Alternative pages
   const alternativeRoutes: MetadataRoute.Sitemap = getAllAlternativeSlugs().map(
@@ -114,8 +128,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  // Best-for pages - exclude noindex pages (targeting wrong ICP)
-  const noindexBestForSlugs = ["solo-agents", "new-agents"];
+  // Best-for pages - exclude noindex pages (non-RE niches, wrong ICP)
+  const noindexBestForSlugs = [
+    "solo-agents", "new-agents",
+    "hvac", "roofing", "plumbing", "solar", "contractors", "electricians",
+    "landscaping-lawn-care", "painting-contractors", "window-and-door-manufacturers",
+    "siding-contractors", "garage-door", "flooring-contractors", "pest-control", "movers",
+    "dental", "law-firms", "plastic-surgery", "mental-health-clinics", "veterinary-clinics",
+    "accounting-firms", "auto-dealerships", "auto-repair-shops", "senior-care", "retail-stores",
+    "restaurants", "salons-and-spas", "gyms-and-fitness-centers",
+    "servicetitan-users", "jobber-users",
+    "ai-voice-receptionist-dental", "ai-voice-receptionist-legal",
+    "ai-voice-receptionist-medical", "ai-voice-receptionist-insurance",
+  ];
   const bestForRoutes: MetadataRoute.Sitemap = getAllBestForSlugs()
     .filter((slug) => !noindexBestForSlugs.includes(slug))
     .map((slug) => ({

@@ -5,25 +5,25 @@ import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 const testimonials = [
   {
     quote:
-      "I was skeptical at first. An AI handling my leads? But it booked 12 appointments in the first week. I'm a believer now.",
+      "I was skeptical. An AI representing my team? But it booked 12 qualified appointments the first week. My agents are spending time closing, not chasing.",
     name: "Sarah Mitchell",
-    role: "Real Estate Agent, Austin TX",
+    role: "Team Leader, 32-Agent Brokerage, Austin TX",
     initials: "SM",
     image: "/images/testimonials/testimonial-portrait-sarah-mitchell.png",
   },
   {
     quote:
-      "My response time went from 4 hours to 47 seconds. I'm closing deals I would have lost before.",
+      "My response time went from 4 hours to 47 seconds. We're closing deals we used to lose to whoever called back first. The ROI paid for itself in the first month.",
     name: "Marcus Chen",
-    role: "Broker, Seattle WA",
+    role: "Broker-Owner, Seattle WA",
     initials: "MC",
     image: "/images/testimonials/testimonial-portrait-marcus-chen.png",
   },
   {
     quote:
-      "Fired my ISA and replaced it with PRESTYJ. Better results, fraction of the cost. No more HR headaches.",
+      "Replaced my ISA with Prestyj. Better results, fraction of the cost, zero HR headaches. My team focuses on closings. The AI handles the rest.",
     name: "Jennifer Adams",
-    role: "Team Lead, Miami FL",
+    role: "Real Estate Team Lead, Miami FL",
     initials: "JA",
     image: "/images/testimonials/testimonial-portrait-jennifer-adams.png",
   },
@@ -35,10 +35,10 @@ export function TestimonialsSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-            Agents Like You Are Winning
+            Team Leaders Who Run Like a Business
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Don&apos;t take our word for it. Here&apos;s what happens when you let AI handle your leads.
+            What happens when you stop relying on manual follow-up and start running your leads like a system.
           </p>
         </AnimateOnScroll>
 

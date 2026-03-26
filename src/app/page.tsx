@@ -10,6 +10,7 @@ import {
   ProductJsonLd,
   FAQJsonLd,
   SoftwareApplicationJsonLd,
+  ServiceJsonLd,
 } from "@/components/seo/json-ld";
 
 const SpeedToLeadSection = dynamic(
@@ -46,35 +47,38 @@ const CTASection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Prestyj | AI Sales Agents & Automated Appointment Setting for Service Businesses",
+  title: "Prestyj | AI Sales Assistant for Real Estate Teams & Brokerages",
   description:
-    "Deploy AI agents that qualify leads and book appointments 24/7. Prestyj responds to every lead in under 60 seconds for real estate, home services, and high-growth service businesses. No salary. No commission splits.",
+    "Prestyj gives real estate teams and brokerages a dedicated AI team member that responds to leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7. Built for team leaders who run ads and think like business owners.",
   keywords: [
-    "AI sales agent",
-    "service business automation",
-    "AI receptionist",
-    "home services AI",
-    "contractor lead response",
-    "AI appointment booking",
-    "missed call text back",
-    "AI workforce",
-    "lead response automation",
-    "speed to lead",
-    "lead qualification",
-    "real estate AI",
+    "real estate AI assistant",
+    "AI lead follow-up real estate",
+    "speed to lead real estate",
+    "real estate team automation",
+    "brokerage lead conversion",
+    "AI ISA replacement",
+    "real estate lead response",
+    "AI team member real estate",
+    "real estate appointment booking",
+    "lead conversion real estate",
+    "real estate CRM automation",
+    "Follow Up Boss AI",
+    "real estate team leader tools",
+    "brokerage automation",
+    "AI sales assistant real estate",
   ],
   openGraph: {
-    title: "Prestyj | AI Sales Agents & Automated Appointment Setting for Service Businesses",
+    title: "Prestyj | AI Sales Assistant for Real Estate Teams & Brokerages",
     description:
-      "Deploy AI agents that qualify leads and book appointments 24/7. Responds to every lead in under 60 seconds for real estate, home services, and high-growth service businesses.",
+      "Prestyj gives real estate teams and brokerages a dedicated AI team member that responds to leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7. Built for team leaders who run ads and think like business owners.",
     type: "website",
     url: "https://prestyj.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prestyj | AI Sales Agents & Automated Appointment Setting for Service Businesses",
+    title: "Prestyj | AI Sales Assistant for Real Estate Teams & Brokerages",
     description:
-      "Deploy AI agents that qualify leads and book appointments 24/7. Responds to every lead in under 60 seconds for real estate, home services, and high-growth service businesses.",
+      "Prestyj gives real estate teams and brokerages a dedicated AI team member that responds to leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7. Built for team leaders who run ads and think like business owners.",
   },
   alternates: {
     canonical: "https://prestyj.com",
@@ -88,6 +92,7 @@ export default function Home() {
       <WebSiteJsonLd />
       <ProductJsonLd />
       <SoftwareApplicationJsonLd />
+      <ServiceJsonLd />
       <FAQJsonLd faqs={faqs} />
       <Navbar />
       <main>

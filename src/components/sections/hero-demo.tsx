@@ -12,14 +12,16 @@ export function HeroDemoSection() {
         <div className="space-y-6 text-center lg:text-left" style={{ animation: "fade-up 0.5s ease-out 0.15s both" }}>
           <div className="flex justify-center lg:justify-start">
             <Badge variant="outline" className="border-primary/50 text-primary">
-              AI Lead Generation & Sales Automation
+              AI Team Member for Real Estate Teams & Brokerages
             </Badge>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.1]">
-            AI Agents That Qualify Leads & Book Appointments 24/7
+            Your Leads Deserve a Response.
+            <br />
+            <span className="text-primary">Not Tomorrow. Right Now.</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
-            AI lead generation and sales automation that responds instantly, qualifies prospects, and books appointments. Transform your lead conversion with intelligent AI sales agents.
+            Prestyj gives your team a dedicated AI member that responds to every lead in under 60 seconds — day, night, weekends. Like having your best assistant working around the clock, without the salary, the overhead, or the sick days.
           </p>
         </div>
 

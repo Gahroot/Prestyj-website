@@ -2,31 +2,31 @@ export const faqs = [
   {
     question: "Will my leads know they're talking to AI?",
     answer:
-      "No. Your agent uses natural language that feels human. We've tested extensively - leads engage just as well (often better) than with human follow-up. The conversation flows naturally, asks relevant questions, and responds contextually.",
+      "No — and that's intentional. Your AI team member replies as a named person on your team (\"Hey, it's Alex from [Your Brokerage]\"). The conversation is natural, contextual, and on-brand. Leads engage just as well as with a human assistant — often better, because they hear back in under 60 seconds.",
   },
   {
-    question: "How does it integrate with my existing tools?",
+    question: "How is this different from hiring an ISA?",
     answer:
-      "Your agent works with your existing CRM and calendar. We support integrations with Follow Up Boss, ServiceTitan, Jobber, HubSpot, Salesforce, Pipedrive, Google Calendar, Outlook, and more. Setup typically takes less than 30 minutes.",
+      "A good ISA costs $4,000–$6,000/month, works 9-to-5, takes vacations, and eventually quits. Your AI team member works 24/7, never calls in sick, doesn't need HR management, and costs a fraction of that. It handles the front-end qualification so your ISA — if you keep one — only touches the hot leads.",
   },
   {
-    question: "What happens when a lead asks something the agent can't answer?",
+    question: "Does it work with our CRM?",
     answer:
-      "Your agent is designed to handle the qualification conversation. For specific questions or complex scenarios, it smoothly hands off to you with full context. You get notified immediately so you can jump in when needed.",
+      "Yes. Prestyj integrates with Follow Up Boss, Sierra Interactive, kvCORE, HubSpot, Salesforce, and more. Leads flow in, get worked, and qualified contacts sync back to your CRM with full conversation history. Setup is typically under 30 minutes.",
   },
   {
-    question: "How fast does it actually respond?",
+    question: "What kind of leads does it handle?",
     answer:
-      "Our average response time is 47 seconds. That's from lead submission to first text message. Compare that to the industry average of 47 hours. Speed-to-lead is the #1 predictor of conversion.",
+      "Buyers, sellers, investors — any inbound lead from your paid ads, website, or organic sources. It also re-engages old leads sitting in your database. If you've got a list of leads you've given up on, your AI team member can work those too.",
+  },
+  {
+    question: "What happens when a lead asks something it can't answer?",
+    answer:
+      "It hands off cleanly. You get notified immediately with full conversation context so you can jump in without the lead ever feeling dropped. It's designed to handle qualification, not replace your expertise on the complex stuff.",
   },
   {
     question: "Is there a long-term contract?",
     answer:
-      "No long-term commitments required. We believe in earning your business every month. Most clients see ROI within the first week and stay because results speak for themselves, not because they're locked in.",
-  },
-  {
-    question: "Does it work nights and weekends?",
-    answer:
-      "That's the whole point. Your agent works 24/7/365. Saturday at 11pm when you're with family? It's working. Sunday morning? It's working. Holidays? It doesn't take them off.",
+      "No. Month-to-month. We earn your business because the results speak — most team leaders see ROI in the first week. We don't need contracts to keep clients.",
   },
 ];

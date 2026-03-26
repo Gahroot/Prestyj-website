@@ -12,6 +12,7 @@ import {
   ROICalculator,
 } from "@/components/sections/landing";
 import { getSolution, getAllSolutionSlugs } from "@/lib/solutions";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 interface SolutionPageProps {
   params: Promise<{ slug: string }>;
@@ -59,8 +60,15 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
     notFound();
   }
 
+  const breadcrumbs = [
+    { name: "Home", url: siteUrl },
+    { name: "Solutions", url: `${siteUrl}/solutions` },
+    { name: solution.meta.title, url: `${siteUrl}/solutions/${slug}` },
+  ];
+
   return (
     <>
+      <BreadcrumbJsonLd items={breadcrumbs} />
       <Navbar />
       <main>
         <LandingHero content={solution.hero} />

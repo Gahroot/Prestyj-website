@@ -49,7 +49,12 @@ function getAllUrls(): string[] {
     `${BASE_URL}/lead-magnet`,
     `${BASE_URL}/ai-call-handling-calculator`,
     `${BASE_URL}/team-commission-calculator`,
-    `${BASE_URL}/platform`
+    `${BASE_URL}/platform`,
+    `${BASE_URL}/faq`,
+    `${BASE_URL}/pricing`,
+    `${BASE_URL}/samples`,
+    `${BASE_URL}/free-ads`,
+    `${BASE_URL}/bulk-video-ad-pricing`
   );
 
   // Blog posts - scan content/blog directory
@@ -91,6 +96,8 @@ function getAllUrls(): string[] {
     "/compare/ai-consultant-vs-freelancer",
     "/compare/ai-consultant-vs-big4-consulting",
     "/compare/ai-consultant-roi-calculator",
+    // AI vs Traditional comparison
+    "/compare/ai-lead-generation-vs-traditional",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
