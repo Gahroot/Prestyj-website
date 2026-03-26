@@ -21,25 +21,24 @@ export const DEMO_AGENTS: DemoAgent[] = [
     publicId: "ag_LXptHpWq",
     name: "Rachel",
     company: "Dobi Real Estate",
-    description:
-      "Brokerage receptionist — qualifies buyers & sellers, routes to agents",
+    description: "Southeast Michigan's premier real estate brokerage",
     color: "#2563eb",
     icon: "🏢",
     formSteps: [
       {
-        id: "intent",
-        question: "Are you looking to buy or sell?",
+        id: "inquiry",
+        question: "How can we help you today?",
         type: "select",
         options: [
-          { value: "buy", label: "Buy a property" },
-          { value: "sell", label: "Sell my property" },
-          { value: "both", label: "Both — buy and sell" },
-          { value: "invest", label: "Investment property" },
+          { value: "Join the brokerage", label: "Join the brokerage" },
+          { value: "Speak to an agent", label: "Speak to an agent" },
+          { value: "Property inquiry", label: "Property inquiry" },
+          { value: "General question", label: "General question" },
         ],
       },
       {
         id: "area",
-        question: "What area are you interested in?",
+        question: "What area are you in?",
         type: "select",
         options: [
           { value: "Troy", label: "Troy" },
@@ -47,8 +46,6 @@ export const DEMO_AGENTS: DemoAgent[] = [
           { value: "Bloomfield Hills", label: "Bloomfield Hills" },
           { value: "Rochester", label: "Rochester" },
           { value: "Royal Oak", label: "Royal Oak" },
-          { value: "Novi", label: "Novi" },
-          { value: "West Bloomfield", label: "West Bloomfield" },
           { value: "Other SE Michigan", label: "Other SE Michigan" },
         ],
       },
@@ -58,20 +55,19 @@ export const DEMO_AGENTS: DemoAgent[] = [
     publicId: "ag_l28wHbyl",
     name: "Amy",
     company: "Marian Grout Real Estate",
-    description:
-      "Personal realtor assistant — schedules showings, takes messages",
+    description: "Your trusted local real estate expert",
     color: "#7c3aed",
     icon: "🏠",
     formSteps: [
       {
-        id: "propertyType",
-        question: "What type of property?",
+        id: "intent",
+        question: "Are you looking to buy or sell?",
         type: "select",
         options: [
-          { value: "Single family home", label: "Single Family Home" },
-          { value: "Condo", label: "Condo" },
-          { value: "Townhome", label: "Townhome" },
-          { value: "Multi-family", label: "Multi-Family" },
+          { value: "Buy a home", label: "Buy a home" },
+          { value: "Sell my home", label: "Sell my home" },
+          { value: "Both", label: "Both" },
+          { value: "Just exploring", label: "Just exploring" },
         ],
       },
       {
@@ -82,7 +78,7 @@ export const DEMO_AGENTS: DemoAgent[] = [
           { value: "ASAP", label: "ASAP" },
           { value: "1-3 months", label: "1–3 months" },
           { value: "3-6 months", label: "3–6 months" },
-          { value: "Just exploring", label: "Just exploring" },
+          { value: "Not sure yet", label: "Not sure yet" },
         ],
       },
     ],
@@ -91,8 +87,7 @@ export const DEMO_AGENTS: DemoAgent[] = [
     publicId: "ag_72ObhPOO",
     name: "Tina",
     company: "22 Title",
-    description:
-      "Title company receptionist — checks order status, answers closing questions",
+    description: "Fast, reliable title & closing services",
     color: "#059669",
     icon: "📋",
     formSteps: [
@@ -119,8 +114,7 @@ export const DEMO_AGENTS: DemoAgent[] = [
     publicId: "ag_g0bjj8NZ",
     name: "Mike",
     company: "Rhino Building Company",
-    description:
-      "Residential construction lead handler — qualifies projects & budgets",
+    description: "Quality residential construction & remodeling",
     color: "#dc2626",
     icon: "🏗️",
     formSteps: [

@@ -10,8 +10,11 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
+import { cn } from "@/lib/utils";
 import { triggerEmbedCall } from "@/lib/demo-api";
 import type { DemoAgent, FormStep } from "@/lib/demo-agents";
 
@@ -68,7 +71,6 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
       .map((s) => {
         const answer = answers[s.id];
         if (!answer) return null;
-        // For select steps, find the label
         if (s.type === "select" && s.options) {
           const opt = s.options.find((o) => o.value === answer);
           return `${s.question}: ${opt?.label || answer}`;
@@ -133,9 +135,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
         <h3 className="text-lg font-heading font-bold text-white mt-2">
           {agent.company}
         </h3>
-        <p className="text-sm text-zinc-400 mt-0.5">
-          AI Agent: <span className="text-zinc-300">{agent.name}</span>
-        </p>
+        <p className="text-sm text-zinc-400 mt-0.5">{agent.description}</p>
       </div>
 
       {isSuccess ? (
@@ -145,7 +145,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
             Phone ringing in ~10 seconds
           </p>
           <p className="text-zinc-500 text-xs mt-1">
-            {agent.name} will reference your answers on the call
+            Your answers have been shared so the call is personalized
           </p>
         </div>
       ) : (
@@ -185,32 +185,37 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                   {currentFormStep.type === "select" &&
                     currentFormStep.options && (
                       <div className="grid grid-cols-2 gap-2">
-                        {currentFormStep.options.map((opt) => (
-                          <button
-                            key={opt.value}
-                            type="button"
-                            onClick={() =>
-                              handleSelect(currentFormStep, opt.value)
-                            }
-                            className="px-3 py-2.5 rounded-lg text-sm text-left transition-all border"
-                            style={{
-                              backgroundColor:
-                                answers[currentFormStep.id] === opt.value
-                                  ? agent.color
-                                  : "rgb(39 39 42)",
-                              borderColor:
-                                answers[currentFormStep.id] === opt.value
-                                  ? agent.color
-                                  : "rgb(63 63 70)",
-                              color:
-                                answers[currentFormStep.id] === opt.value
-                                  ? "white"
-                                  : "rgb(212 212 216)",
-                            }}
-                          >
-                            {opt.label}
-                          </button>
-                        ))}
+                        {currentFormStep.options.map((opt) => {
+                          const isSelected =
+                            answers[currentFormStep.id] === opt.value;
+                          return (
+                            <button
+                              key={opt.value}
+                              type="button"
+                              onClick={() =>
+                                handleSelect(currentFormStep, opt.value)
+                              }
+                              className={cn(
+                                "px-3 py-2.5 rounded-xl text-sm text-left transition-all duration-200 border-2",
+                                "hover:bg-zinc-700/50",
+                                isSelected
+                                  ? "border-primary bg-primary/10 ring-2 ring-primary/20 text-white"
+                                  : "border-zinc-700 bg-zinc-800 text-zinc-300",
+                              )}
+                              style={
+                                isSelected
+                                  ? {
+                                      borderColor: agent.color,
+                                      backgroundColor: `${agent.color}15`,
+                                      boxShadow: `0 0 0 2px ${agent.color}30`,
+                                    }
+                                  : undefined
+                              }
+                            >
+                              {opt.label}
+                            </button>
+                          );
+                        })}
                       </div>
                     )}
 
@@ -235,31 +240,37 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                   className="space-y-3"
                 >
                   <p className="text-sm font-medium text-white">
-                    Last step — your info so {agent.name} can call you
+                    Enter your info and we&apos;ll call you right back
                   </p>
 
-                  <input
-                    type="text"
-                    placeholder="Your name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    disabled={isPending}
-                    className="w-full h-12 px-4 text-sm rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-offset-0"
-                    style={
-                      {
-                        "--tw-ring-color": agent.color,
-                      } as React.CSSProperties
-                    }
-                  />
+                  <div className="space-y-1.5">
+                    <Label htmlFor={`name-${agent.publicId}`} className="text-zinc-400">
+                      Your name
+                    </Label>
+                    <Input
+                      id={`name-${agent.publicId}`}
+                      type="text"
+                      placeholder="First and last name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      disabled={isPending}
+                      className="h-12 bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
+                    />
+                  </div>
 
-                  <PhoneInput
-                    id={`agent-phone-${agent.publicId}`}
-                    value={phone}
-                    onChange={setPhone}
-                    disabled={isPending}
-                    aria-invalid={!!error}
-                    className="h-12 text-sm bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
-                  />
+                  <div className="space-y-1.5">
+                    <Label htmlFor={`agent-phone-${agent.publicId}`} className="text-zinc-400">
+                      Phone number
+                    </Label>
+                    <PhoneInput
+                      id={`agent-phone-${agent.publicId}`}
+                      value={phone}
+                      onChange={setPhone}
+                      disabled={isPending}
+                      aria-invalid={!!error}
+                      className="h-12 text-sm bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
+                    />
+                  </div>
 
                   {error && (
                     <Alert variant="destructive" role="alert">
@@ -280,12 +291,12 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                     {isPending ? (
                       <>
                         <Loader2 className="size-4 animate-spin" />
-                        <span>Calling...</span>
+                        <span>Requesting...</span>
                       </>
                     ) : (
                       <>
                         <Phone className="size-4" />
-                        Call Me as {agent.name}
+                        Request a Call
                       </>
                     )}
                   </Button>
@@ -314,7 +325,7 @@ function TextStepInput({
 
   return (
     <div className="space-y-2">
-      <input
+      <Input
         type="text"
         placeholder={step.placeholder || "Type your answer..."}
         value={text}
@@ -322,8 +333,7 @@ function TextStepInput({
         onKeyDown={(e) => {
           if (e.key === "Enter" && text.trim()) onNext(text.trim());
         }}
-        className="w-full h-12 px-4 text-sm rounded-lg bg-zinc-800 border border-zinc-700 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-offset-0"
-        style={{ "--tw-ring-color": agentColor } as React.CSSProperties}
+        className="h-12 bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
       />
       <Button
         type="button"
