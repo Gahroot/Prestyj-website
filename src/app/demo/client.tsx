@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { DemoSection } from "@/components/demo/demo-section";
 import { AgentDemoCard } from "@/components/demo/agent-demo-card";
 import { DEMO_AGENTS } from "@/lib/demo-agents";
+import { AiFeaturesSection } from "@/components/demo/ai-features-section";
 import { CompetitiveAdvantageSection } from "@/components/demo/competitive-advantage-section";
 import { OneVideoSection } from "@/components/demo/one-video-section";
 
@@ -67,6 +68,9 @@ export function DemoPageClient() {
           <AgentDemoCard agent={agent} />
         </DemoSection>
       ))}
+
+      {/* AI Features */}
+      <AiFeaturesSection />
 
       {/* Competitive Advantage */}
       <CompetitiveAdvantageSection />
