@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { DemoSection } from "@/components/demo/demo-section";
 import { AgentDemoCard } from "@/components/demo/agent-demo-card";
 import { DEMO_AGENTS } from "@/lib/demo-agents";
+import { CompetitiveAdvantageSection } from "@/components/demo/competitive-advantage-section";
+import { OneVideoSection } from "@/components/demo/one-video-section";
 
 export function DemoPageClient() {
   return (
@@ -17,7 +19,7 @@ export function DemoPageClient() {
             transition={{ duration: 0.5 }}
           >
             <span className="text-xl font-heading font-bold tracking-tight text-white">
-              PRESTIGE
+              PRESTYJ
             </span>
           </motion.div>
 
@@ -66,10 +68,16 @@ export function DemoPageClient() {
         </DemoSection>
       ))}
 
+      {/* Competitive Advantage */}
+      <CompetitiveAdvantageSection />
+
+      {/* 1 Video → 300 Ads */}
+      <OneVideoSection />
+
       {/* Footer */}
-      <footer className="py-16 text-center">
+      <footer className="py-16 text-center border-t border-zinc-800/50">
         <p className="text-zinc-600 text-sm">
-          Prestige AI — Private Demo
+          PRESTYJ — Private Demo
         </p>
       </footer>
     </main>
