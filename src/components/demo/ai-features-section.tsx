@@ -118,8 +118,8 @@ function FeatureItem({ feature, index }: { feature: Feature; index: number }) {
         <feature.icon className="h-4 w-4 text-primary" />
       </div>
       <div>
-        <p className="text-white font-heading font-semibold text-sm">{feature.title}</p>
-        <p className="text-zinc-400 text-sm mt-0.5 leading-relaxed">{feature.description}</p>
+        <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-sm">{feature.title}</p>
+        <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm mt-0.5 leading-relaxed">{feature.description}</p>
       </div>
     </motion.div>
   );
@@ -144,8 +144,8 @@ function DifferentiatorItem({
         <item.icon className="h-5 w-5 text-primary" />
       </div>
       <div>
-        <p className="text-white font-heading font-semibold text-lg mb-2">{item.title}</p>
-        <p className="text-zinc-400 text-sm leading-relaxed">{item.description}</p>
+        <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-lg mb-2">{item.title}</p>
+        <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">{item.description}</p>
       </div>
     </motion.div>
   );
@@ -155,7 +155,7 @@ function DifferentiatorItem({
 
 export function AiFeaturesSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50">
+    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -169,10 +169,10 @@ export function AiFeaturesSection() {
           <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             Everything It Can Do
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
             One AI. Every Touchpoint.
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-2xl mx-auto">
             From the first reply to the closed deal — every step of the follow-up process, handled.
           </p>
         </motion.div>
@@ -184,7 +184,7 @@ export function AiFeaturesSection() {
           ))}
         </div>
 
-        <Separator className="bg-zinc-800/50 mb-16" />
+        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 mb-16" />
 
         {/* Part 2 — Differentiators */}
         <motion.div
@@ -197,10 +197,10 @@ export function AiFeaturesSection() {
           <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             What Makes It Different
           </span>
-          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mb-3">
+          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-3">
             Built for the Way Real Teams Actually Work
           </h3>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 max-w-2xl mx-auto">
             These aren&apos;t features you&apos;ll find in off-the-shelf tools. They&apos;re the reason clients don&apos;t leave.
           </p>
         </motion.div>
@@ -221,7 +221,7 @@ export function AiFeaturesSection() {
         >
           <p className="text-zinc-500 text-sm">
             Don&apos;t see what you need?{" "}
-            <span className="text-zinc-300 font-medium">It can probably do that too.</span>{" "}
+            <span className="text-zinc-300 group-data-[demo-light]:text-zinc-700 font-medium">It can probably do that too.</span>{" "}
             The system is built to be extended — if your workflow needs it, we can add it.
           </p>
         </motion.div>

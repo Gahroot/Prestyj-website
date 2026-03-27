@@ -96,7 +96,7 @@ function LiveIntegrationCard({ integration }: { integration: Integration }) {
         <integration.icon className="h-4 w-4 text-primary" />
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-white font-heading font-semibold text-sm">{integration.name}</p>
+        <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-sm">{integration.name}</p>
         <p className="text-zinc-500 text-xs">{integration.category}</p>
       </div>
       <div className="flex items-center gap-1.5 shrink-0">
@@ -109,11 +109,11 @@ function LiveIntegrationCard({ integration }: { integration: Integration }) {
 
 function AvailableIntegrationPill({ integration }: { integration: Integration }) {
   return (
-    <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-800 bg-zinc-900/60">
+    <div className="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-zinc-800 group-data-[demo-light]:border-gray-200 bg-zinc-900/60 group-data-[demo-light]:bg-gray-100/60">
       <integration.icon className="h-4 w-4 text-zinc-500 shrink-0" />
       <div>
-        <p className="text-zinc-300 text-sm font-medium leading-none">{integration.name}</p>
-        <p className="text-zinc-600 text-xs mt-0.5">{integration.category}</p>
+        <p className="text-zinc-300 group-data-[demo-light]:text-zinc-700 text-sm font-medium leading-none">{integration.name}</p>
+        <p className="text-zinc-600 group-data-[demo-light]:text-zinc-400 text-xs mt-0.5">{integration.category}</p>
       </div>
     </div>
   );
@@ -123,7 +123,7 @@ function AvailableIntegrationPill({ integration }: { integration: Integration })
 
 export function IntegrationsSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50">
+    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -137,11 +137,11 @@ export function IntegrationsSection() {
           <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             Tool Access
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
             It Doesn&apos;t Just Talk.{" "}
             <span className="text-primary">It Works Inside Your Tools.</span>
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-2xl mx-auto">
             The agents have real tool access — they can read, write, and trigger actions inside your existing platforms. Not a chatbot. An actual worker inside your stack.
           </p>
         </motion.div>
@@ -156,7 +156,7 @@ export function IntegrationsSection() {
         >
           <div className="flex items-center gap-2 mb-4">
             <Plug className="h-4 w-4 text-primary" />
-            <p className="text-white font-heading font-semibold text-sm">Connected Now</p>
+            <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-sm">Connected Now</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {liveIntegrations.map((integration) => (
@@ -165,7 +165,7 @@ export function IntegrationsSection() {
           </div>
         </motion.div>
 
-        <Separator className="bg-zinc-800/50 my-8" />
+        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 my-8" />
 
         {/* Available integrations */}
         <motion.div
@@ -177,7 +177,7 @@ export function IntegrationsSection() {
         >
           <div className="flex items-center gap-2 mb-4">
             <Globe className="h-4 w-4 text-zinc-500" />
-            <p className="text-zinc-400 font-heading font-semibold text-sm">Available on Request</p>
+            <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 font-heading font-semibold text-sm">Available on Request</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
             {availableIntegrations.map((integration, i) => (
@@ -200,20 +200,20 @@ export function IntegrationsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4"
+          className="rounded-xl border border-zinc-800 group-data-[demo-light]:border-gray-200 bg-zinc-900/40 group-data-[demo-light]:bg-gray-100/40 p-6 flex flex-col sm:flex-row items-start sm:items-center gap-4"
         >
           <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
             <Plug className="h-5 w-5 text-primary" />
           </div>
           <div className="flex-1">
-            <p className="text-white font-heading font-semibold mb-1">
+            <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold mb-1">
               Using something we haven&apos;t listed?
             </p>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">
               If it has an API, the agent can use it. We scope and build integrations as part of onboarding — your stack doesn&apos;t need to change to work with ours.
             </p>
           </div>
-          <Badge variant="outline" className="border-zinc-700 text-zinc-400 whitespace-nowrap shrink-0">
+          <Badge variant="outline" className="border-zinc-700 group-data-[demo-light]:border-gray-300 text-zinc-400 group-data-[demo-light]:text-zinc-600 whitespace-nowrap shrink-0">
             Any platform
           </Badge>
         </motion.div>

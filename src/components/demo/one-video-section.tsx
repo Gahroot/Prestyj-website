@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function OneVideoSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50">
+    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -21,10 +21,10 @@ export function OneVideoSection() {
           <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             How It Works
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
             1 Video <span className="text-primary">→</span> 300 Ads
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
+          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-2xl mx-auto">
             Fully automated. Zero manual editing. Runs in the background.
           </p>
         </motion.div>
@@ -38,9 +38,9 @@ export function OneVideoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="bg-zinc-900 border-zinc-800 overflow-hidden h-full">
+            <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden h-full">
               {/* Two stacked video thumbnails */}
-              <div className="grid grid-cols-2 gap-0.5 bg-zinc-800">
+              <div className="grid grid-cols-2 gap-0.5 bg-zinc-800 group-data-[demo-light]:bg-gray-200">
                 <div className="relative aspect-[9/16]">
                   <Image
                     src="/images/demo/13_minutes_of_raw_footage.png"
@@ -65,13 +65,13 @@ export function OneVideoSection() {
                 </div>
               </div>
               <CardContent className="p-6 space-y-2">
-                <Badge variant="outline" className="border-zinc-600 text-zinc-400 text-xs">
+                <Badge variant="outline" className="border-zinc-600 group-data-[demo-light]:border-gray-300 text-zinc-400 group-data-[demo-light]:text-zinc-600 text-xs">
                   Raw Footage
                 </Badge>
-                <p className="text-3xl font-heading font-extrabold text-white leading-none">
+                <p className="text-3xl font-heading font-extrabold text-white group-data-[demo-light]:text-zinc-900 leading-none">
                   1 Video
                 </p>
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">
                   13 min for first-timers. 8 min for experienced users. No script, no studio, no production crew.
                 </p>
               </CardContent>
@@ -98,8 +98,8 @@ export function OneVideoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Card className="bg-zinc-900 border-zinc-800 overflow-hidden h-full">
-              <div className="relative w-full aspect-video bg-black">
+            <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden h-full">
+              <div className="relative w-full aspect-video bg-black group-data-[demo-light]:bg-gray-200">
                 <Image
                   src="/images/demo/video_ads_mass_preview.png"
                   alt="300 ready-to-go video ads — thumbnail preview"
@@ -114,7 +114,7 @@ export function OneVideoSection() {
                 <p className="text-3xl font-heading font-extrabold text-primary leading-none">
                   300 Ads
                 </p>
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">
                   Every hook × meat × CTA variation. Named, organized, and ready to upload to any ad platform.
                 </p>
               </CardContent>
@@ -134,16 +134,16 @@ export function OneVideoSection() {
             <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-3">
               Final Output Sample
             </span>
-            <h3 className="text-2xl font-heading font-bold text-white">
+            <h3 className="text-2xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900">
               Here&apos;s What One Finished Ad Looks Like
             </h3>
-            <p className="text-zinc-400 text-sm mt-2">
+            <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm mt-2">
               This came out of a single raw recording — zero manual editing.
             </p>
           </div>
 
           <div className="flex justify-center">
-            <div className="relative w-full max-w-[320px] aspect-[9/16] rounded-xl overflow-hidden border border-zinc-800 shadow-lg">
+            <div className="relative w-full max-w-[320px] aspect-[9/16] rounded-xl overflow-hidden border border-zinc-800 group-data-[demo-light]:border-gray-200 shadow-lg">
               <iframe
                 src="https://www.youtube.com/embed/qh9gYvwDQQM"
                 title="Final result ad sample"
@@ -195,10 +195,10 @@ export function OneVideoSection() {
                 {step.number}
               </span>
               <div>
-                <h3 className="text-white font-heading font-semibold text-xl mb-1">
+                <h3 className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-xl mb-1">
                   {step.title}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">{step.description}</p>
+                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">{step.description}</p>
               </div>
             </motion.div>
           ))}

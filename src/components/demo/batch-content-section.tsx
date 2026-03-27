@@ -63,8 +63,8 @@ function StepCard({ step, index }: { step: Step; index: number }) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
-      <Card className="bg-zinc-900 border-zinc-800 overflow-hidden h-full">
-        <div className="relative w-full aspect-video bg-black">
+      <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden h-full">
+        <div className="relative w-full aspect-video bg-black group-data-[demo-light]:bg-gray-200">
           <Image
             src={step.image}
             alt={step.imageAlt}
@@ -79,9 +79,9 @@ function StepCard({ step, index }: { step: Step; index: number }) {
           <div>
             <div className="flex items-center gap-2 mb-1">
               <step.icon className="h-4 w-4 text-primary shrink-0" />
-              <p className="text-white font-heading font-semibold">{step.title}</p>
+              <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold">{step.title}</p>
             </div>
-            <p className="text-zinc-400 text-sm">{step.caption}</p>
+            <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm">{step.caption}</p>
           </div>
         </CardContent>
       </Card>
@@ -93,7 +93,7 @@ function StepCard({ step, index }: { step: Step; index: number }) {
 
 export function BatchContentSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50">
+    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Heading */}
@@ -107,10 +107,10 @@ export function BatchContentSection() {
           <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
             BatchContent
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
             Turn Long-Form Into a <span className="text-primary">Content Library</span>
           </h2>
-          <p className="text-zinc-400 text-lg max-w-xl mx-auto">
+          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-xl mx-auto">
             One video. AI finds the clips, scores them, and renders everything — ready for Reels, Shorts, and TikTok.
           </p>
         </motion.div>
@@ -122,7 +122,7 @@ export function BatchContentSection() {
           ))}
         </div>
 
-        <Separator className="bg-zinc-800/50 mb-16" />
+        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 mb-16" />
 
         {/* Stitch feature */}
         <motion.div
@@ -139,15 +139,15 @@ export function BatchContentSection() {
               </div>
               <span className="text-primary text-sm font-medium font-heading">Clip Stitching</span>
             </div>
-            <h3 className="text-2xl font-heading font-bold text-white">
+            <h3 className="text-2xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900">
               Not Just Clips — Full Narratives
             </h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">
+            <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">
               The AI pulls segments from across the whole video and stitches them into one cohesive short — hook, payoff, and all. No editor needed.
             </p>
           </div>
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className="relative w-full aspect-video bg-black">
+          <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden">
+            <div className="relative w-full aspect-video bg-black group-data-[demo-light]:bg-gray-200">
               <Image
                 src="/images/demo/batchcontent_stitch_feature.png"
                 alt="Clip stitching — AI assembles narrative arcs"
@@ -168,11 +168,11 @@ export function BatchContentSection() {
         >
           <div className="flex items-center gap-2 mb-4">
             <Zap className="h-4 w-4 text-primary" />
-            <p className="text-white font-heading font-semibold text-sm">GPU-Accelerated Rendering</p>
+            <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-sm">GPU-Accelerated Rendering</p>
           </div>
 
           {/* Render in progress screenshot */}
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
+          <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden">
             <div className="relative w-full" style={{ aspectRatio: "1568/226" }}>
               <Image
                 src="/images/demo/rendering_clips_pt1_45percent.png"
@@ -184,7 +184,7 @@ export function BatchContentSection() {
           </Card>
 
           {/* Render complete screenshot */}
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
+          <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden">
             <div className="relative w-full" style={{ aspectRatio: "1541/103" }}>
               <Image
                 src="/images/demo/render_done_2m17s_render_time.png"
@@ -204,7 +204,7 @@ export function BatchContentSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.3, delay: i * 0.07 }}
-                className="text-center py-4 rounded-xl border border-zinc-800 bg-zinc-900"
+                className="text-center py-4 rounded-xl border border-zinc-800 group-data-[demo-light]:border-gray-200 bg-zinc-900 group-data-[demo-light]:bg-white"
               >
                 <p className="text-2xl font-heading font-bold text-primary">{stat.value}</p>
                 <p className="text-zinc-500 text-xs mt-1">{stat.label}</p>
@@ -222,10 +222,10 @@ export function BatchContentSection() {
         >
           <div className="flex items-center gap-2 mb-4">
             <FolderOpen className="h-4 w-4 text-primary" />
-            <p className="text-white font-heading font-semibold text-sm">Ready to Post</p>
+            <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-sm">Ready to Post</p>
           </div>
-          <Card className="bg-zinc-900 border-zinc-800 overflow-hidden">
-            <div className="relative w-full aspect-video bg-black">
+          <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden">
+            <div className="relative w-full aspect-video bg-black group-data-[demo-light]:bg-gray-200">
               <Image
                 src="/images/demo/rendered_videos_in_folder.png"
                 alt="Output folder — scored and stitched clips ready to post"

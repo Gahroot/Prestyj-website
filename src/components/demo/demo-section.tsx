@@ -43,10 +43,10 @@ export function DemoSection({
           <span className="text-sm font-mono tracking-widest text-[#7058e3] uppercase">
             {number}
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight text-white group-data-[demo-light]:text-zinc-900">
             {title}
           </h2>
-          <p className="text-lg md:text-xl text-zinc-400 leading-relaxed max-w-lg">
+          <p className="text-lg md:text-xl leading-relaxed max-w-lg text-zinc-400 group-data-[demo-light]:text-zinc-600">
             {description}
           </p>
         </motion.div>
