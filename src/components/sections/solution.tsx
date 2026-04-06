@@ -1,5 +1,6 @@
 import { MessageCircle, Calendar, Zap, Moon } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import BorderGlow from "@/components/ui/border-glow";
 
 const features = [
   {
@@ -67,13 +68,14 @@ export function SolutionSection() {
               <AnimateOnScroll
                 key={feature.title}
                 delay={0.3 + index * 0.1}
-                className="bg-card border border-border rounded-lg p-6"
               >
+              <BorderGlow borderRadius={10} innerClassName="p-6">
                 <feature.icon className="h-8 w-8 text-primary mb-3" />
                 <h3 className="font-heading font-semibold text-foreground mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>
+              </BorderGlow>
               </AnimateOnScroll>
             ))}
           </AnimateOnScroll>

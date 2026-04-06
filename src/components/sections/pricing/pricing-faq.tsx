@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { pricingFaqs } from "@/lib/pricing-data";
+import BorderGlow from "@/components/ui/border-glow";
 
 export function PricingFAQSection() {
   return (
@@ -26,10 +27,10 @@ export function PricingFAQSection() {
         <AnimateOnScroll delay={0.2}>
           <Accordion type="single" collapsible className="space-y-4">
             {pricingFaqs.map((faq, index) => (
+              <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
               <AccordionItem
-                key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6"
+                className="border-none"
               >
                 <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
                   {faq.question}
@@ -38,6 +39,7 @@ export function PricingFAQSection() {
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
+              </BorderGlow>
             ))}
           </Accordion>
         </AnimateOnScroll>

@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { formatCurrency, formatNumber } from "@/lib/calculator/commission-loss";
 import type { CalculatorResults } from "@/lib/calculator/commission-loss";
+import BorderGlow from "@/components/ui/border-glow";
 
 function ThankYouContent() {
   const searchParams = useSearchParams();
@@ -69,7 +70,7 @@ function ThankYouContent() {
         </div>
 
         {/* Results Preview */}
-        <div className="mb-12 rounded-lg border bg-card p-6 md:p-8">
+        <BorderGlow borderRadius={10} innerClassName="p-6 md:p-8" className="mb-12">
           <h2 className="mb-6 text-2xl font-bold">Your Team&apos;s Results</h2>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -125,10 +126,10 @@ function ThankYouContent() {
               in missed commissions per year across your team
             </p>
           </div>
-        </div>
+        </BorderGlow>
 
         {/* Download Section */}
-        <div className="mb-12 rounded-lg border bg-card p-6 text-center md:p-8">
+        <BorderGlow borderRadius={10} innerClassName="p-6 text-center md:p-8" className="mb-12">
           <h2 className="mb-4 text-2xl font-bold">Get Your Full Report</h2>
           <p className="mb-6 text-muted-foreground">
             Download the complete PDF with ROI analysis, benchmarks, and actionable next steps
@@ -138,10 +139,10 @@ function ThankYouContent() {
               Download Report Now
             </a>
           </Button>
-        </div>
+        </BorderGlow>
 
         {/* ROI Preview */}
-        <div className="mb-12 rounded-lg border bg-card p-6 md:p-8">
+        <BorderGlow borderRadius={10} innerClassName="p-6 md:p-8" className="mb-12">
           <h2 className="mb-4 text-2xl font-bold">Recovery Opportunity</h2>
           <div className="grid gap-6 md:grid-cols-2">
             <div>
@@ -169,7 +170,7 @@ function ThankYouContent() {
               </p>
             </div>
           </div>
-        </div>
+        </BorderGlow>
 
         {/* Next Steps CTA */}
         <div className="rounded-lg border bg-gradient-to-br from-primary/10 to-primary/5 p-6 text-center md:p-8">

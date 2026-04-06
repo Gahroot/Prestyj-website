@@ -17,6 +17,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import BorderGlow from "@/components/ui/border-glow";
 import {
   businessAutomation,
   businessAutomationComparison,
@@ -72,10 +73,10 @@ export default function BusinessAutomationPage() {
               <AnimateOnScroll delay={0.2}>
                 <Accordion type="single" collapsible className="space-y-4">
                   {businessAutomation.faqs.map((faq, index) => (
+                    <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
                     <AccordionItem
-                      key={index}
                       value={`item-${index}`}
-                      className="bg-card border border-border rounded-lg px-6"
+                      className="border-none"
                     >
                       <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
                         {faq.question}
@@ -84,6 +85,7 @@ export default function BusinessAutomationPage() {
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
+                    </BorderGlow>
                   ))}
                 </Accordion>
               </AnimateOnScroll>

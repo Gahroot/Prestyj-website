@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/accordion";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { AlertCircle, CheckCircle, Zap } from "lucide-react";
+import BorderGlow from "@/components/ui/border-glow";
 
 export default function AILeadGenerationVsTraditionalPage() {
   return (
@@ -36,7 +37,7 @@ export default function AILeadGenerationVsTraditionalPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {traditionalMethodPainPoints.map((point, index) => (
               <AnimateOnScroll key={index} delay={index * 0.1}>
-                <div className="bg-card border border-border rounded-lg p-6 h-full">
+                <BorderGlow borderRadius={10} innerClassName="p-6" className="h-full">
                   <div className="flex items-start gap-3">
                     <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-1" />
                     <div>
@@ -48,7 +49,7 @@ export default function AILeadGenerationVsTraditionalPage() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </BorderGlow>
               </AnimateOnScroll>
             ))}
           </div>
@@ -70,7 +71,7 @@ export default function AILeadGenerationVsTraditionalPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {aiLeadGenBenefits.map((benefit, index) => (
               <AnimateOnScroll key={index} delay={index * 0.1}>
-                <div className="bg-card border border-border rounded-lg p-6 h-full">
+                <BorderGlow borderRadius={10} innerClassName="p-6" className="h-full">
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
                     <div>
@@ -82,7 +83,7 @@ export default function AILeadGenerationVsTraditionalPage() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </BorderGlow>
               </AnimateOnScroll>
             ))}
           </div>
@@ -104,10 +105,10 @@ export default function AILeadGenerationVsTraditionalPage() {
           <AnimateOnScroll delay={0.2}>
             <Accordion type="single" collapsible className="space-y-4">
               {aiVsTraditionalFAQ.map((faq, index) => (
+                <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
                 <AccordionItem
-                  key={index}
                   value={`item-${index}`}
-                  className="bg-card border border-border rounded-lg px-6"
+                  className="border-none"
                 >
                   <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
                     {faq.question}
@@ -116,6 +117,7 @@ export default function AILeadGenerationVsTraditionalPage() {
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
+                </BorderGlow>
               ))}
             </Accordion>
           </AnimateOnScroll>

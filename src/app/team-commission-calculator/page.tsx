@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { TeamCalculatorForm } from "@/components/lead-magnet/team-calculator-form";
+import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata: Metadata = {
   title: "Team Commission Loss Calculator | Free Real Estate ROI Tool",
@@ -33,24 +34,24 @@ export default function TeamCommissionCalculatorPage() {
 
         {/* Trust Signals */}
         <div className="mb-12 grid gap-6 sm:grid-cols-3">
-          <div className="rounded-lg border bg-card p-4">
+          <BorderGlow borderRadius={10} innerClassName="p-4">
             <p className="text-3xl font-bold text-primary">78%</p>
             <p className="text-sm text-muted-foreground">
               of buyers work with the first agent who responds
             </p>
-          </div>
-          <div className="rounded-lg border bg-card p-4">
+          </BorderGlow>
+          <BorderGlow borderRadius={10} innerClassName="p-4">
             <p className="text-3xl font-bold text-destructive">4+ hours</p>
             <p className="text-sm text-muted-foreground">
               industry average response time
             </p>
-          </div>
-          <div className="rounded-lg border bg-card p-4">
+          </BorderGlow>
+          <BorderGlow borderRadius={10} innerClassName="p-4">
             <p className="text-3xl font-bold text-primary">47 sec</p>
             <p className="text-sm text-muted-foreground">
               AI average response time
             </p>
-          </div>
+          </BorderGlow>
         </div>
       </div>
 
@@ -61,7 +62,7 @@ export default function TeamCommissionCalculatorPage() {
       <div className="mx-auto mt-16 max-w-3xl">
         <h2 className="mb-6 text-center text-2xl font-bold">What You&apos;ll Get</h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="flex gap-3 rounded-lg border bg-card p-4">
+          <BorderGlow borderRadius={10} innerClassName="p-4 flex gap-3">
             <svg
               className="h-6 w-6 shrink-0 text-primary"
               fill="none"
@@ -81,9 +82,9 @@ export default function TeamCommissionCalculatorPage() {
                 See exactly how much commission your team is leaving on the table
               </p>
             </div>
-          </div>
+          </BorderGlow>
 
-          <div className="flex gap-3 rounded-lg border bg-card p-4">
+          <BorderGlow borderRadius={10} innerClassName="p-4 flex gap-3">
             <svg
               className="h-6 w-6 shrink-0 text-primary"
               fill="none"
@@ -103,9 +104,9 @@ export default function TeamCommissionCalculatorPage() {
                 Understand individual agent impact and team performance
               </p>
             </div>
-          </div>
+          </BorderGlow>
 
-          <div className="flex gap-3 rounded-lg border bg-card p-4">
+          <BorderGlow borderRadius={10} innerClassName="p-4 flex gap-3">
             <svg
               className="h-6 w-6 shrink-0 text-primary"
               fill="none"
@@ -125,9 +126,9 @@ export default function TeamCommissionCalculatorPage() {
                 See potential recovery with instant AI response
               </p>
             </div>
-          </div>
+          </BorderGlow>
 
-          <div className="flex gap-3 rounded-lg border bg-card p-4">
+          <BorderGlow borderRadius={10} innerClassName="p-4 flex gap-3">
             <svg
               className="h-6 w-6 shrink-0 text-primary"
               fill="none"
@@ -147,9 +148,9 @@ export default function TeamCommissionCalculatorPage() {
                 Compare your team&apos;s efficiency to top performers
               </p>
             </div>
-          </div>
+          </BorderGlow>
 
-          <div className="flex gap-3 rounded-lg border bg-card p-4">
+          <BorderGlow borderRadius={10} innerClassName="p-4 flex gap-3">
             <svg
               className="h-6 w-6 shrink-0 text-primary"
               fill="none"
@@ -169,9 +170,9 @@ export default function TeamCommissionCalculatorPage() {
                 Get prioritized recommendations ranked by impact
               </p>
             </div>
-          </div>
+          </BorderGlow>
 
-          <div className="flex gap-3 rounded-lg border bg-card p-4">
+          <BorderGlow borderRadius={10} innerClassName="p-4 flex gap-3">
             <svg
               className="h-6 w-6 shrink-0 text-primary"
               fill="none"
@@ -191,7 +192,7 @@ export default function TeamCommissionCalculatorPage() {
                 Downloadable report you can share with your team
               </p>
             </div>
-          </div>
+          </BorderGlow>
         </div>
       </div>
 

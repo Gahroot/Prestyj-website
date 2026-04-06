@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { pricingTiers } from "@/lib/pricing-data";
+import BorderGlow from "@/components/ui/border-glow";
 
 export function PricingStoriesSection() {
   return (
@@ -39,14 +40,14 @@ export function PricingStoriesSection() {
                 </div>
               </div>
               <div className="flex-1 w-full">
-                <div className="bg-card border border-border rounded-lg p-8 text-center">
+                <BorderGlow borderRadius={10} innerClassName="p-8 text-center">
                   <p className="text-3xl font-heading font-bold text-foreground mb-2">
                     ${tier.monthlyPrice.toLocaleString()}/mo
                   </p>
                   <p className="text-sm text-muted-foreground">
                     {tier.adBudget} &middot; {tier.batchAds} batch ads
                   </p>
-                </div>
+                </BorderGlow>
               </div>
             </AnimateOnScroll>
           ))}

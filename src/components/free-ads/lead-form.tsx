@@ -18,6 +18,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import Cal from "@calcom/embed-react";
+import BorderGlow from "@/components/ui/border-glow";
 
 type FormData = {
   firstName: string;
@@ -437,12 +438,12 @@ export function LeadForm() {
   return (
     <section id="lead-form" className="py-12 md:py-16">
       <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
         <form
           onSubmit={(e) => {
             e.preventDefault();
             handleNext();
           }}
-          className="bg-card border border-border rounded-2xl p-8 md:p-10"
         >
           {/* Progress dots */}
           <div className="flex justify-center gap-2 mb-8">
@@ -558,6 +559,7 @@ export function LeadForm() {
             </a>.
           </p>
         </form>
+        </BorderGlow>
       </div>
     </section>
   );

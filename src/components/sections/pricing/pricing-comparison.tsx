@@ -10,6 +10,7 @@ import {
   pricingFeatures,
   featureCategories,
 } from "@/lib/pricing-data";
+import BorderGlow from "@/components/ui/border-glow";
 
 const categories = Object.entries(featureCategories) as [
   keyof typeof featureCategories,
@@ -31,7 +32,7 @@ export function PricingComparisonSection() {
 
         {/* Desktop table */}
         <AnimateOnScroll delay={0.2} className="hidden md:block">
-          <div className="bg-card border border-border rounded-lg overflow-hidden">
+          <BorderGlow borderRadius={10} innerStyle={{ overflow: 'hidden', borderRadius: 'inherit' }}>
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
@@ -151,7 +152,7 @@ export function PricingComparisonSection() {
                 })}
               </tbody>
             </table>
-          </div>
+          </BorderGlow>
         </AnimateOnScroll>
 
         {/* Mobile cards */}

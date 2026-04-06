@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { ArrowRight, Bot, Phone, MessageSquare, RefreshCw, Zap, Megaphone, DollarSign } from "lucide-react";
+import BorderGlow from "@/components/ui/border-glow";
 
 const siteUrl = "https://prestyj.com";
 
@@ -452,7 +453,7 @@ export default function FAQPage() {
         <section className="pb-12">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimateOnScroll delay={0.1}>
-              <div className="bg-card border border-border rounded-xl p-6">
+              <BorderGlow borderRadius={14} innerClassName="p-6">
                 <h2 className="font-heading font-semibold text-foreground mb-4">
                   Jump to a Section
                 </h2>
@@ -468,7 +469,7 @@ export default function FAQPage() {
                     </a>
                   ))}
                 </div>
-              </div>
+              </BorderGlow>
             </AnimateOnScroll>
           </div>
         </section>
@@ -496,10 +497,10 @@ export default function FAQPage() {
               <AnimateOnScroll delay={sectionIndex * 0.05 + 0.1}>
                 <Accordion type="single" collapsible className="space-y-4">
                   {section.faqs.map((faq, index) => (
+                    <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
                     <AccordionItem
-                      key={index}
                       value={`${section.id}-${index}`}
-                      className="bg-card border border-border rounded-lg px-6"
+                      className="border-none"
                     >
                       <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
                         {faq.question}
@@ -508,6 +509,7 @@ export default function FAQPage() {
                         {faq.answer}
                       </AccordionContent>
                     </AccordionItem>
+                    </BorderGlow>
                   ))}
                 </Accordion>
 
@@ -541,18 +543,19 @@ export default function FAQPage() {
                   { href: "/solutions/business-automation", title: "Business Automation", description: "Eliminate manual busywork with AI workflows" },
                   { href: "/pricing", title: "Pricing Plans", description: "View plans for every business size" },
                 ].map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="bg-card border border-border rounded-lg p-4 hover:border-primary/50 transition-colors"
-                  >
-                    <h3 className="font-heading font-semibold text-foreground mb-1">
-                      {link.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {link.description}
-                    </p>
-                  </Link>
+                  <BorderGlow key={link.href} borderRadius={10} innerClassName="p-4" className="hover:opacity-90 transition-opacity">
+                    <Link
+                      href={link.href}
+                      className="block"
+                    >
+                      <h3 className="font-heading font-semibold text-foreground mb-1">
+                        {link.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">
+                        {link.description}
+                      </p>
+                    </Link>
+                  </BorderGlow>
                 ))}
               </div>
             </AnimateOnScroll>

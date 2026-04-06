@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { teamCalculatorSchema, responseTimeOptions, roleOptions } from "@/lib/validations/lead-magnet-schemas";
+import BorderGlow from "@/components/ui/border-glow";
 import type { TeamCalculatorInput } from "@/lib/validations/lead-magnet-schemas";
 import { calculateCommissionLoss, formatCurrency, formatNumber } from "@/lib/calculator/commission-loss";
 import type { CalculatorResults } from "@/lib/calculator/commission-loss";
@@ -306,7 +307,7 @@ export function TeamCalculatorForm() {
             </div>
 
             {/* Results Preview */}
-            <div className="space-y-4 rounded-lg border bg-card p-6">
+            <BorderGlow borderRadius={10} innerClassName="p-6" className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <p className="text-sm text-muted-foreground">Monthly Loss</p>
@@ -346,7 +347,7 @@ export function TeamCalculatorForm() {
                   <span className="text-xl font-bold">{calculationResults.teamEfficiencyScore}/100</span>
                 </div>
               </div>
-            </div>
+            </BorderGlow>
 
             {/* Contact Form */}
             <div className="space-y-4">

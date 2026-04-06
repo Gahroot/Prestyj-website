@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
+import BorderGlow from "@/components/ui/border-glow";
 
 const features = [
   {
@@ -76,7 +77,7 @@ export function OfferBreakdown() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {features.map((feature, index) => (
             <AnimateOnScroll key={index} delay={index * 0.1}>
-              <div className="bg-card border border-border rounded-xl p-6 h-full relative">
+              <BorderGlow borderRadius={14} innerClassName="p-6" className="h-full relative">
                 <span
                   className={`absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded-full ${
                     feature.free
@@ -95,7 +96,7 @@ export function OfferBreakdown() {
                 <p className="text-muted-foreground text-sm">
                   {feature.description}
                 </p>
-              </div>
+              </BorderGlow>
             </AnimateOnScroll>
           ))}
         </div>

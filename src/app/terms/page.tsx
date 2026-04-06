@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import Link from "next/link";
+import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata = {
   title: "Terms of Service - PRESTYJ",
@@ -39,7 +40,8 @@ export default function TermsPage() {
               </p>
             </section>
 
-            <section id="sms-terms" className="bg-card border border-border rounded-lg p-6">
+            <BorderGlow borderRadius={10} innerClassName="p-6">
+            <section id="sms-terms">
               <h2 className="text-xl font-heading font-semibold text-foreground mb-4">
                 SMS/Text Messaging Terms
               </h2>
@@ -82,6 +84,7 @@ export default function TermsPage() {
                 Our SMS services are compatible with major U.S. carriers including AT&T, Verizon, T-Mobile, Sprint, and most regional carriers. Carrier participation may vary.
               </p>
             </section>
+            </BorderGlow>
 
             <section>
               <h2 className="text-xl font-heading font-semibold text-foreground mb-4">

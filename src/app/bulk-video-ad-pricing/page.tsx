@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata: Metadata = {
   title: "Bulk Video Ad Pricing | 300, 500, or 1000 Ads | PRESTYJ",
@@ -120,10 +121,10 @@ export default function BulkVideoAdPricingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TIERS.map((tier, index) => (
               <AnimateOnScroll key={tier.name} delay={index * 0.1}>
-                <div
-                  className={`relative bg-card border rounded-2xl p-8 flex flex-col ${
-                    tier.popular ? "border-primary shadow-xl shadow-primary/10" : "border-border"
-                  }`}
+                <BorderGlow
+                  borderRadius={18}
+                  innerClassName="p-8 flex flex-col"
+                  className={`relative ${tier.popular ? "shadow-xl shadow-primary/10" : ""}`}
                 >
                   {tier.popular && (
                     <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-sm font-bold px-4 py-1 rounded-full">
@@ -174,7 +175,7 @@ export default function BulkVideoAdPricingPage() {
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Link>
                   </Button>
-                </div>
+                </BorderGlow>
               </AnimateOnScroll>
             ))}
           </div>
@@ -193,7 +194,7 @@ export default function BulkVideoAdPricingPage() {
             </p>
           </AnimateOnScroll>
 
-          <div className="bg-card border border-border rounded-2xl overflow-hidden">
+          <BorderGlow borderRadius={18} innerStyle={{ overflow: 'hidden', borderRadius: 'inherit' }}>
             <table className="w-full">
               <thead>
                 <tr className="border-b border-border">
@@ -218,7 +219,7 @@ export default function BulkVideoAdPricingPage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </BorderGlow>
         </div>
       </section>
 

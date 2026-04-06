@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata = {
   title: "Privacy Policy - PRESTYJ",
@@ -45,7 +46,8 @@ export default function PrivacyPage() {
               </ul>
             </section>
 
-            <section id="sms-privacy" className="bg-card border border-border rounded-lg p-6">
+            <BorderGlow borderRadius={10} innerClassName="p-6">
+            <section id="sms-privacy">
               <h2 className="text-xl font-heading font-semibold text-foreground mb-4">
                 SMS/Text Messaging Privacy
               </h2>
@@ -66,6 +68,7 @@ export default function PrivacyPage() {
                 <strong className="text-foreground">Help:</strong> For assistance, reply <strong className="text-primary">HELP</strong> to any message or contact us at the information provided below.
               </p>
             </section>
+            </BorderGlow>
 
             <section>
               <h2 className="text-xl font-heading font-semibold text-foreground mb-4">

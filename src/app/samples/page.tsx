@@ -8,6 +8,7 @@ import { LiveProof } from "@/components/free-ads/live-proof";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import BorderGlow from "@/components/ui/border-glow";
 import { VideoCarousel } from "@/components/sections/video-carousel";
 
 export const metadata: Metadata = {
@@ -106,7 +107,7 @@ export default function SamplesPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               {PROCESS_STEPS.map((step, index) => (
                 <AnimateOnScroll key={step.title} delay={index * 0.1}>
-                  <div className="bg-card border border-border rounded-2xl p-8 text-center">
+                  <BorderGlow borderRadius={18} innerClassName="p-8 text-center">
                     <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                       <step.icon className="w-7 h-7 text-primary" />
                     </div>
@@ -114,7 +115,7 @@ export default function SamplesPage() {
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground">{step.description}</p>
-                  </div>
+                  </BorderGlow>
                 </AnimateOnScroll>
               ))}
             </div>

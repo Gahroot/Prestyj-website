@@ -4,6 +4,7 @@ import Link from "next/link";
 import { MousePointerClick, Globe, Bot, CheckCircle } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
+import BorderGlow from "@/components/ui/border-glow";
 
 const steps = [
   {
@@ -53,7 +54,7 @@ export function LiveProof({ ctaHref }: { ctaHref?: string }) {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {steps.map((step, index) => (
             <AnimateOnScroll key={index} delay={index * 0.1}>
-              <div className="relative bg-card border border-border rounded-xl p-5 text-center h-full">
+              <BorderGlow borderRadius={14} innerClassName="p-5 text-center" className="relative h-full">
                 {index < steps.length - 1 && (
                   <div className="hidden lg:block absolute top-1/2 -right-2.5 -translate-y-1/2 text-muted-foreground/40 text-xl font-bold">
                     &rarr;
@@ -68,7 +69,7 @@ export function LiveProof({ ctaHref }: { ctaHref?: string }) {
                 <p className="text-muted-foreground text-xs leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </BorderGlow>
             </AnimateOnScroll>
           ))}
         </div>

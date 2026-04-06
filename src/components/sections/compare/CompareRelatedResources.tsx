@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { fadeInUp, transitions, viewport } from "@/lib/compare/animations";
 import type { RelatedResource } from "@/lib/compare/types";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface CompareRelatedResourcesProps {
   resources: RelatedResource[];
@@ -25,22 +26,23 @@ export function CompareRelatedResources({ resources }: CompareRelatedResourcesPr
             {resources.map((resource, index) => (
               <motion.div
                 key={index}
-                className="rounded-lg border bg-card p-6"
                 {...fadeInUp}
                 transition={transitions.staggered(index)}
                 viewport={viewport}
               >
-                <h3 className="mb-3 text-lg font-bold">{resource.title}</h3>
-                <p className="mb-4 text-sm text-muted-foreground">
-                  {resource.description}
-                </p>
-                <Link
-                  href={resource.href}
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
-                >
-                  {resource.linkText}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+                <BorderGlow borderRadius={10} innerClassName="p-6">
+                  <h3 className="mb-3 text-lg font-bold">{resource.title}</h3>
+                  <p className="mb-4 text-sm text-muted-foreground">
+                    {resource.description}
+                  </p>
+                  <Link
+                    href={resource.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                  >
+                    {resource.linkText}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </BorderGlow>
               </motion.div>
             ))}
           </div>

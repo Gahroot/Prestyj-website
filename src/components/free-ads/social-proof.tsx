@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
+import BorderGlow from "@/components/ui/border-glow";
 
 const testimonials = [
   {
@@ -40,7 +41,7 @@ export function SocialProof({ ctaHref }: { ctaHref?: string }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={index} delay={index * 0.15}>
-              <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col">
+              <BorderGlow borderRadius={14} innerClassName="p-6 flex flex-col" className="h-full">
                 <div className="flex gap-1 mb-4">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
@@ -55,7 +56,7 @@ export function SocialProof({ ctaHref }: { ctaHref?: string }) {
                 <p className="text-muted-foreground text-sm flex-1">
                   {testimonial.text}
                 </p>
-              </div>
+              </BorderGlow>
             </AnimateOnScroll>
           ))}
         </div>

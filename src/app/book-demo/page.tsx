@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/footer";
 import { CalcomInlineEmbed } from "@/components/booking/cal-embed";
 import { QualificationForm, type QualificationData } from "@/components/booking/qualification-form";
 import { CheckCircle, Clock, Zap, User, Building2, Calendar } from "lucide-react";
+import BorderGlow from "@/components/ui/border-glow";
 
 export default function BookDemoPage() {
   const calendarRef = useRef<HTMLDivElement>(null);
@@ -56,9 +57,9 @@ export default function BookDemoPage() {
                 </div>
 
                 {/* Qualification Form */}
-                <div className="bg-card rounded-2xl border border-border shadow-sm p-6 sm:p-10">
+                <BorderGlow borderRadius={18} innerClassName="p-6 sm:p-10" className="shadow-sm">
                   <QualificationForm onComplete={handleQualificationComplete} />
-                </div>
+                </BorderGlow>
 
                 {/* Trust signals below form */}
                 <div className="mt-12 grid sm:grid-cols-3 gap-6 text-center">
@@ -135,11 +136,14 @@ export default function BookDemoPage() {
                 )}
 
                 {/* Cal.com Embed */}
-                <div
-                  ref={calendarRef}
-                  className="bg-card rounded-xl border border-border shadow-sm overflow-hidden"
+                <div ref={calendarRef}>
+                <BorderGlow
+                  borderRadius={14}
+                  innerStyle={{ overflow: 'hidden', borderRadius: 'inherit' }}
+                  className="shadow-sm"
                 >
                   <CalcomInlineEmbed />
+                </BorderGlow>
                 </div>
 
                 {/* What to Expect Section */}

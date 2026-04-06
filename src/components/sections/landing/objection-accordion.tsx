@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { SolutionObjections } from "@/lib/solutions/types";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface ObjectionAccordionProps {
   content: SolutionObjections;
@@ -43,10 +44,10 @@ export function ObjectionAccordion({ content }: ObjectionAccordionProps) {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
+          <BorderGlow borderRadius={14} className="shadow-sm">
           <Accordion
             type="single"
             collapsible
-            className="bg-card rounded-xl border border-border shadow-sm"
           >
             {content.objections.map((item, index) => (
               <AccordionItem
@@ -63,6 +64,7 @@ export function ObjectionAccordion({ content }: ObjectionAccordionProps) {
               </AccordionItem>
             ))}
           </Accordion>
+          </BorderGlow>
         </motion.div>
       </div>
     </section>

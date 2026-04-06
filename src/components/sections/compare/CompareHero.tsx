@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { fadeInUp, transitions, viewport } from "@/lib/compare/animations";
 import type { HeroSection } from "@/lib/compare/types";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface CompareHeroProps {
   data: HeroSection;
@@ -66,14 +67,14 @@ export function CompareHero({ data }: CompareHeroProps) {
               viewport={viewport}
             >
               {keyStats.map((stat, index) => (
-                <div key={index} className="rounded-lg border bg-card p-6">
+                <BorderGlow key={index} borderRadius={10} innerClassName="p-6">
                   <div className="text-3xl font-bold text-primary">
                     {stat.value}
                   </div>
                   <div className="mt-2 text-sm text-muted-foreground">
                     {stat.label}
                   </div>
-                </div>
+                </BorderGlow>
               ))}
             </motion.div>
           )}

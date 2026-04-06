@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
 import { triggerDemo } from "@/lib/demo-api";
+import BorderGlow from "@/components/ui/border-glow";
 
 export function HeroDemoForm() {
   const [phone, setPhone] = useState("");
@@ -45,7 +46,7 @@ export function HeroDemoForm() {
   const isPhoneValid = normalizeToE164(phone).length >= 12;
 
   return (
-    <div className="bg-card p-8 rounded-2xl relative border border-border shadow-lg">
+    <BorderGlow borderRadius={18} innerClassName="p-8" className="relative shadow-lg">
       <div className="space-y-3 mb-8">
         <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
           Don&apos;t believe us?
@@ -129,6 +130,6 @@ export function HeroDemoForm() {
           </Button>
         </div>
       )}
-    </div>
+    </BorderGlow>
   );
 }

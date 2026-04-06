@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
 import { submitLead } from "@/lib/api";
+import BorderGlow from "@/components/ui/border-glow";
 
 export default function ReactivateLeadsPage() {
   const [submitted, setSubmitted] = useState(false);
@@ -104,7 +105,7 @@ export default function ReactivateLeadsPage() {
               </p>
 
               {/* What You Get */}
-              <div className="bg-card rounded-xl border border-border p-6 space-y-4">
+              <BorderGlow borderRadius={14} innerClassName="p-6 space-y-4">
                 <h2 className="text-lg font-heading font-bold mb-4">
                   What&apos;s Inside
                 </h2>
@@ -160,7 +161,7 @@ export default function ReactivateLeadsPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </BorderGlow>
 
               {/* Who This Is For */}
               <div className="bg-primary/5 rounded-xl border border-primary/20 p-6">
@@ -220,7 +221,7 @@ export default function ReactivateLeadsPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="bg-card rounded-2xl border border-border shadow-xl p-8 sm:p-10">
+                    <BorderGlow borderRadius={18} innerClassName="p-8 sm:p-10" className="shadow-xl">
                       {/* Form Header */}
                       <div className="text-center mb-8">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -350,7 +351,7 @@ export default function ReactivateLeadsPage() {
                           <span>No spam, ever. Unsubscribe anytime.</span>
                         </div>
                       </div>
-                    </div>
+                    </BorderGlow>
                   </motion.div>
                 ) : (
                   <motion.div
@@ -359,8 +360,8 @@ export default function ReactivateLeadsPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-card rounded-2xl border border-border shadow-xl p-8 sm:p-10 text-center space-y-6"
                   >
+                  <BorderGlow borderRadius={18} innerClassName="p-8 sm:p-10 text-center space-y-6" className="shadow-xl">
                     {/* Success Icon */}
                     <motion.div
                       initial={{ scale: 0 }}
@@ -412,6 +413,7 @@ export default function ReactivateLeadsPage() {
                     >
                       Book a Demo
                     </a>
+                  </BorderGlow>
                   </motion.div>
                 )}
               </AnimatePresence>

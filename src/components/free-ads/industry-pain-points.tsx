@@ -2,6 +2,7 @@
 
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
+import BorderGlow from "@/components/ui/border-glow";
 import {
   AlertTriangle,
   CloudLightning,
@@ -56,7 +57,7 @@ export function IndustryPainPoints({ painPoints, ctaText = "Get My FREE Ads" }: 
             const Icon = iconMap[painPoint.icon];
             return (
               <AnimateOnScroll key={index} delay={index * 0.1}>
-                <div className="bg-card border border-border rounded-xl p-6 h-full flex gap-4">
+                <BorderGlow borderRadius={14} innerClassName="p-6 flex gap-4" className="h-full">
                   <div className="w-12 h-12 rounded-full bg-destructive/10 flex items-center justify-center flex-shrink-0">
                     <Icon className="w-6 h-6 text-destructive" />
                   </div>
@@ -68,7 +69,7 @@ export function IndustryPainPoints({ painPoints, ctaText = "Get My FREE Ads" }: 
                       {painPoint.description}
                     </p>
                   </div>
-                </div>
+                </BorderGlow>
               </AnimateOnScroll>
             );
           })}

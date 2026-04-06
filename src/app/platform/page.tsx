@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Zap, Bot, Calendar, Shield, Code, Plug, Server, Cpu, Headphones, BarChart3 } from "lucide-react";
+import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata: Metadata = {
   title: "Platform | Custom AI Sales Agents & Automation Workflows | Prestyj",
@@ -134,11 +135,11 @@ export default function PlatformPage() {
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {capabilities.map((cap) => (
-                <div key={cap.title} className="bg-card border border-border rounded-xl p-6">
+                <BorderGlow key={cap.title} borderRadius={14} innerClassName="p-6">
                   <cap.icon className="h-8 w-8 text-primary mb-4" />
                   <h3 className="text-lg font-heading font-semibold text-foreground mb-2">{cap.title}</h3>
                   <p className="text-sm text-muted-foreground">{cap.description}</p>
-                </div>
+                </BorderGlow>
               ))}
             </div>
           </div>

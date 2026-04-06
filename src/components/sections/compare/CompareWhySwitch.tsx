@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeInUp, transitions, viewport } from "@/lib/compare/animations";
 import type { WhySwitchSection } from "@/lib/compare/types";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface CompareWhySwitchProps {
   data: WhySwitchSection;
@@ -28,14 +29,15 @@ export function CompareWhySwitch({ data }: CompareWhySwitchProps) {
               return (
                 <motion.div
                   key={index}
-                  className="rounded-lg border bg-card p-8"
                   {...fadeInUp}
                   transition={transitions.staggered(index)}
                   viewport={viewport}
                 >
-                  <Icon className="mb-4 h-12 w-12 text-primary" />
-                  <h3 className="mb-3 text-xl font-bold">{reason.title}</h3>
-                  <p className="text-muted-foreground">{reason.description}</p>
+                  <BorderGlow borderRadius={10} innerClassName="p-8">
+                    <Icon className="mb-4 h-12 w-12 text-primary" />
+                    <h3 className="mb-3 text-xl font-bold">{reason.title}</h3>
+                    <p className="text-muted-foreground">{reason.description}</p>
+                  </BorderGlow>
                 </motion.div>
               );
             })}

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { fadeInUp, transitions, viewport } from "@/lib/compare/animations";
 import type { StatItem } from "@/lib/compare/types";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface CompareStatsProps {
   stats: StatItem[];
@@ -18,20 +19,21 @@ export function CompareStats({ stats }: CompareStatsProps) {
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              className="rounded-lg border bg-card p-8 text-center"
               {...fadeInUp}
               transition={transitions.staggered(index)}
               viewport={viewport}
             >
-              <div className="text-4xl font-bold text-primary">
-                {stat.value}
-              </div>
-              <div className="mt-2 text-lg font-semibold">{stat.label}</div>
-              {stat.description && (
-                <div className="mt-2 text-sm text-muted-foreground">
-                  {stat.description}
+              <BorderGlow borderRadius={10} innerClassName="p-8 text-center">
+                <div className="text-4xl font-bold text-primary">
+                  {stat.value}
                 </div>
-              )}
+                <div className="mt-2 text-lg font-semibold">{stat.label}</div>
+                {stat.description && (
+                  <div className="mt-2 text-sm text-muted-foreground">
+                    {stat.description}
+                  </div>
+                )}
+              </BorderGlow>
             </motion.div>
           ))}
         </div>

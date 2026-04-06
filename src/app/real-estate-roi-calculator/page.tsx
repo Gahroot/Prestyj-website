@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Calculator, TrendingUp, DollarSign, Users, ArrowRight } from "lucide-react";
 import Link from "next/link";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface CalculatorInputs {
   monthlyAdSpend: number;
@@ -118,7 +119,7 @@ export default function RealEstateROICalculatorPage() {
           <div className="max-w-5xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8">
               {/* Inputs */}
-              <div className="bg-card rounded-2xl border border-border p-8 space-y-6">
+              <BorderGlow borderRadius={18} innerClassName="p-8 space-y-6">
                 <h2 className="text-xl font-heading font-bold">Your Team&apos;s Numbers</h2>
 
                 <div className="space-y-5">
@@ -227,12 +228,12 @@ export default function RealEstateROICalculatorPage() {
                     and Prestyj Pro plan at ${AI_MONTHLY_COST.toLocaleString()}/month.
                   </p>
                 </div>
-              </div>
+              </BorderGlow>
 
               {/* Results */}
               <div className="space-y-4">
                 {/* Monthly Lead Volume */}
-                <div className="bg-card rounded-2xl border border-border p-6">
+                <BorderGlow borderRadius={18} innerClassName="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <Users className="h-5 w-5 text-primary" />
@@ -243,10 +244,10 @@ export default function RealEstateROICalculatorPage() {
                     {results.monthlyLeads}
                   </div>
                   <p className="text-sm text-muted-foreground">leads per month from your ad spend</p>
-                </div>
+                </BorderGlow>
 
                 {/* Appointments Comparison */}
-                <div className="bg-card rounded-2xl border border-border p-6">
+                <BorderGlow borderRadius={18} innerClassName="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-2 bg-primary/10 rounded-lg">
                       <TrendingUp className="h-5 w-5 text-primary" />
@@ -272,7 +273,7 @@ export default function RealEstateROICalculatorPage() {
                       +{formatNumber(results.additionalAppointments)} additional appointments/month
                     </p>
                   </div>
-                </div>
+                </BorderGlow>
 
                 {/* Revenue Impact */}
                 <div className="bg-primary/5 rounded-2xl border border-primary/20 p-6">
@@ -321,7 +322,7 @@ export default function RealEstateROICalculatorPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="bg-card rounded-2xl border border-border p-6 text-center">
+                <BorderGlow borderRadius={18} innerClassName="p-6 text-center">
                   <h3 className="font-heading font-bold text-lg mb-2">
                     Ready to Unlock This Revenue?
                   </h3>
@@ -339,7 +340,7 @@ export default function RealEstateROICalculatorPage() {
                   <p className="text-xs text-muted-foreground mt-3">
                     No credit card required. 30-minute call.
                   </p>
-                </div>
+                </BorderGlow>
               </div>
             </div>
 

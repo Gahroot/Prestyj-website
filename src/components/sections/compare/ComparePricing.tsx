@@ -5,6 +5,7 @@ import { Check, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { fadeInLeft, fadeInRight, transitions, viewport } from "@/lib/compare/animations";
 import type { PricingSection } from "@/lib/compare/types";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface ComparePricingProps {
   data: PricingSection;
@@ -29,85 +30,89 @@ export function ComparePricing({ data }: ComparePricingProps) {
           <div className="grid gap-8 md:grid-cols-2">
             {/* PrestyJ Card */}
             <motion.div
-              className={`rounded-lg border bg-card p-8 ${
-                prestyj.highlight ? "ring-2 ring-primary" : ""
-              }`}
               {...fadeInLeft}
               transition={transitions.default}
               viewport={viewport}
             >
-              {prestyj.highlight && (
-                <Badge className="mb-4">Most Popular</Badge>
-              )}
-              <h3 className="mb-2 text-2xl font-bold">{prestyj.name}</h3>
-              <div className="mb-6">
-                <div className="text-4xl font-bold">{prestyj.price}</div>
-                {prestyj.priceSubtext && (
-                  <div className="mt-2 text-sm text-muted-foreground">
-                    {prestyj.priceSubtext}
-                  </div>
+              <BorderGlow
+                borderRadius={10}
+                innerClassName="p-8"
+                className={prestyj.highlight ? "ring-2 ring-primary" : ""}
+              >
+                {prestyj.highlight && (
+                  <Badge className="mb-4">Most Popular</Badge>
                 )}
-              </div>
-              <ul className="space-y-3">
-                {prestyj.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    {feature.included ? (
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
-                    ) : (
-                      <X className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
-                    )}
-                    <div>
-                      <span className={!feature.included ? "text-muted-foreground" : ""}>
-                        {feature.text}
-                      </span>
-                      {feature.note && (
-                        <div className="mt-1 text-xs text-muted-foreground">
-                          {feature.note}
-                        </div>
-                      )}
+                <h3 className="mb-2 text-2xl font-bold">{prestyj.name}</h3>
+                <div className="mb-6">
+                  <div className="text-4xl font-bold">{prestyj.price}</div>
+                  {prestyj.priceSubtext && (
+                    <div className="mt-2 text-sm text-muted-foreground">
+                      {prestyj.priceSubtext}
                     </div>
-                  </li>
-                ))}
-              </ul>
+                  )}
+                </div>
+                <ul className="space-y-3">
+                  {prestyj.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      {feature.included ? (
+                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
+                      ) : (
+                        <X className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
+                      )}
+                      <div>
+                        <span className={!feature.included ? "text-muted-foreground" : ""}>
+                          {feature.text}
+                        </span>
+                        {feature.note && (
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {feature.note}
+                          </div>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </BorderGlow>
             </motion.div>
 
             {/* Competitor Card */}
             <motion.div
-              className="rounded-lg border bg-card p-8"
               {...fadeInRight}
               transition={transitions.default}
               viewport={viewport}
             >
-              <h3 className="mb-2 text-2xl font-bold">{competitor.name}</h3>
-              <div className="mb-6">
-                <div className="text-4xl font-bold">{competitor.price}</div>
-                {competitor.priceSubtext && (
-                  <div className="mt-2 text-sm text-muted-foreground">
-                    {competitor.priceSubtext}
-                  </div>
-                )}
-              </div>
-              <ul className="space-y-3">
-                {competitor.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    {feature.included ? (
-                      <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
-                    ) : (
-                      <X className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
-                    )}
-                    <div>
-                      <span className={!feature.included ? "text-muted-foreground" : ""}>
-                        {feature.text}
-                      </span>
-                      {feature.note && (
-                        <div className="mt-1 text-xs text-muted-foreground">
-                          {feature.note}
-                        </div>
-                      )}
+              <BorderGlow borderRadius={10} innerClassName="p-8">
+                <h3 className="mb-2 text-2xl font-bold">{competitor.name}</h3>
+                <div className="mb-6">
+                  <div className="text-4xl font-bold">{competitor.price}</div>
+                  {competitor.priceSubtext && (
+                    <div className="mt-2 text-sm text-muted-foreground">
+                      {competitor.priceSubtext}
                     </div>
-                  </li>
-                ))}
-              </ul>
+                  )}
+                </div>
+                <ul className="space-y-3">
+                  {competitor.features.map((feature, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      {feature.included ? (
+                        <Check className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
+                      ) : (
+                        <X className="mt-0.5 h-5 w-5 shrink-0 text-muted-foreground" />
+                      )}
+                      <div>
+                        <span className={!feature.included ? "text-muted-foreground" : ""}>
+                          {feature.text}
+                        </span>
+                        {feature.note && (
+                          <div className="mt-1 text-xs text-muted-foreground">
+                            {feature.note}
+                          </div>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </BorderGlow>
             </motion.div>
           </div>
         </div>

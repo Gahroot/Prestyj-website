@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Download, Mail, Building2, FileText, CheckCircle, Loader2 } from "lucide-react";
+import BorderGlow from "@/components/ui/border-glow";
 
 interface FormData {
   name: string;
@@ -115,7 +116,7 @@ export default function BrokeragePlaybookPage() {
               </p>
 
               {/* What You Get */}
-              <div className="bg-card rounded-xl border border-border p-6 space-y-4">
+              <BorderGlow borderRadius={14} innerClassName="p-6 space-y-4">
                 <h2 className="text-lg font-heading font-bold mb-4">What&apos;s Inside</h2>
 
                 <div className="space-y-4">
@@ -154,7 +155,7 @@ export default function BrokeragePlaybookPage() {
                     </div>
                   ))}
                 </div>
-              </div>
+              </BorderGlow>
 
               {/* Who This Is For */}
               <div className="bg-primary/5 rounded-xl border border-primary/20 p-6">
@@ -205,7 +206,7 @@ export default function BrokeragePlaybookPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <div className="bg-card rounded-2xl border border-border shadow-xl p-8 sm:p-10">
+                    <BorderGlow borderRadius={18} innerClassName="p-8 sm:p-10" className="shadow-xl">
                       {/* Form Header */}
                       <div className="text-center mb-8">
                         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
@@ -336,7 +337,7 @@ export default function BrokeragePlaybookPage() {
                           <span>No spam, ever. Unsubscribe anytime.</span>
                         </div>
                       </div>
-                    </div>
+                    </BorderGlow>
                   </motion.div>
                 ) : (
                   <motion.div
@@ -345,8 +346,8 @@ export default function BrokeragePlaybookPage() {
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
-                    className="bg-card rounded-2xl border border-border shadow-xl p-8 sm:p-10 text-center"
                   >
+                  <BorderGlow borderRadius={18} innerClassName="p-8 sm:p-10 text-center" className="shadow-xl">
                     <motion.div
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
@@ -401,6 +402,7 @@ export default function BrokeragePlaybookPage() {
                     >
                       Book Your Strategy Call
                     </a>
+                  </BorderGlow>
                   </motion.div>
                 )}
               </AnimatePresence>

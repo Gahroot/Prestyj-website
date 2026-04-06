@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata: Metadata = {
   title: "AI Sales Agent Alternatives | Compare Top Solutions | Prestyj",
@@ -279,7 +280,7 @@ export default function AISalesAgentAlternativesPage() {
                   </div>
                 </div>
               </div>
-              <div className="bg-card border border-border rounded-xl p-6">
+              <BorderGlow borderRadius={14} innerClassName="p-6">
                 <h3 className="font-heading font-semibold text-foreground mb-4">
                   Key Capabilities
                 </h3>
@@ -321,7 +322,7 @@ export default function AISalesAgentAlternativesPage() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </BorderGlow>
             </div>
           </div>
         </section>
@@ -507,10 +508,10 @@ export default function AISalesAgentAlternativesPage() {
 
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
+                <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
                 <AccordionItem
-                  key={index}
                   value={`item-${index}`}
-                  className="bg-card border border-border rounded-lg px-6"
+                  className="border-none"
                 >
                   <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
                     {faq.question}
@@ -519,6 +520,7 @@ export default function AISalesAgentAlternativesPage() {
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
+                </BorderGlow>
               ))}
             </Accordion>
           </div>
