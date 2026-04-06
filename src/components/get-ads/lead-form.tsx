@@ -20,14 +20,20 @@ import {
   Award,
   Globe,
   Target,
+  Building2,
   CheckCircle,
   Loader2,
-  ExternalLink,
   Plus,
   Trash2,
+  FileText,
+  Copy,
+  Check,
 } from "lucide-react";
 import Cal from "@calcom/embed-react";
 import BorderGlow from "@/components/ui/border-glow";
+
+const SCRIPT_GEN_URL =
+  "https://script-gen-production-5b56.up.railway.app/generate";
 
 type PainPointEntry = {
   painPoint: string;
@@ -44,6 +50,9 @@ type FormData = {
   lastName: string;
   email: string;
   phone: string;
+  businessName: string;
+  city: string;
+  serviceArea: string;
   painPoints: PainPointEntry[];
   targetAudience: string;
   offer: string;
@@ -57,6 +66,7 @@ type StepId =
   | "name"
   | "email"
   | "phone"
+  | "business"
   | "painPoints"
   | "targetAudience"
   | "offer"
@@ -89,6 +99,12 @@ const STEPS: Step[] = [
     title: "What's your phone number?",
     subtitle: "For quick updates on your ads",
     icon: <Phone className="w-6 h-6" />,
+  },
+  {
+    id: "business",
+    title: "Tell us about your business",
+    subtitle: "Your business name and where you operate",
+    icon: <Building2 className="w-6 h-6" />,
   },
   {
     id: "painPoints",
@@ -166,6 +182,18 @@ const inputClasses = (hasError: boolean) =>
     hasError ? "border-destructive" : "border-border"
   );
 
+const GENERATING_MESSAGES = [
+  "Analyzing your business profile...",
+  "Crafting hook variations...",
+  "Writing ad body copy...",
+  "Generating call-to-action combos...",
+  "Building your 300-ad script library...",
+  "Polishing final scripts...",
+  "Almost there — verifying quality...",
+];
+
+type SubmitState = "form" | "generating" | "complete" | "error";
+
 export function GetAdsLeadForm() {
   const [currentStep, setCurrentStep] = useState(0);
   const [direction, setDirection] = useState(0);
@@ -174,6 +202,9 @@ export function GetAdsLeadForm() {
     lastName: "",
     email: "",
     phone: "",
+    businessName: "",
+    city: "",
+    serviceArea: "",
     painPoints: [
       { painPoint: "", solution: "" },
       { painPoint: "", solution: "" },
@@ -191,10 +222,14 @@ export function GetAdsLeadForm() {
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitState, setSubmitState] = useState<
-    "form" | "qualified" | "waitlist"
-  >("form");
+  const [submitState, setSubmitState] = useState<SubmitState>("form");
+  const [generatingMessage, setGeneratingMessage] = useState(0);
+  const [scriptMarkdown, setScriptMarkdown] = useState("");
+  const [copied, setCopied] = useState(false);
   const stepInputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
+  const messageIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
+    null
+  );
 
   const focusStepInput = useCallback(() => {
     stepInputRef.current?.focus({ preventScroll: true });
@@ -222,6 +257,10 @@ export function GetAdsLeadForm() {
         else if (formData.phone.replace(/\D/g, "").length < 10)
           newErrors.phone = "Enter a valid phone number";
         break;
+      case "business":
+        if (!formData.businessName.trim())
+          newErrors.businessName = "Business name is required";
+        break;
       case "painPoints": {
         const filled = formData.painPoints.filter(
           (pp) => pp.painPoint.trim() || pp.solution.trim()
@@ -230,7 +269,8 @@ export function GetAdsLeadForm() {
           newErrors.painPoints = "Add at least one pain point";
         formData.painPoints.forEach((pp, i) => {
           if (pp.painPoint.trim() && !pp.solution.trim())
-            newErrors[`solution_${i}`] = "Add the solution for this pain point";
+            newErrors[`solution_${i}`] =
+              "Add the solution for this pain point";
           if (!pp.painPoint.trim() && pp.solution.trim())
             newErrors[`painPoint_${i}`] = "Add the pain point";
         });
@@ -273,47 +313,91 @@ export function GetAdsLeadForm() {
       setCurrentStep((prev) => prev + 1);
     } else {
       setIsSubmitting(true);
+      setSubmitState("generating");
+      setGeneratingMessage(0);
+
+      // Rotate status messages while generating
+      messageIntervalRef.current = setInterval(() => {
+        setGeneratingMessage((prev) =>
+          prev < GENERATING_MESSAGES.length - 1 ? prev + 1 : prev
+        );
+      }, 25000);
+
+      // Build API payload
+      const topStats = formData.credibilityClaims
+        .filter((c) => c.value.trim())
+        .map((c) => `${c.label}: ${c.value}`);
+
+      const painPointsSolutions = formData.painPoints
+        .filter((pp) => pp.painPoint.trim())
+        .map((pp) => ({
+          pain_point: pp.painPoint.trim(),
+          solution: pp.solution.trim(),
+        }));
+
+      const scriptPayload = {
+        business_name: formData.businessName.trim(),
+        target_audience: formData.targetAudience.trim(),
+        pain_points_solutions: painPointsSolutions,
+        offer: formData.offer.trim(),
+        lead_magnet: formData.leadMagnetName.trim(),
+        top_stats: topStats,
+        website_url: formData.websiteUrl.trim(),
+        ...(formData.landingPageUrl.trim() && {
+          landing_page_url: formData.landingPageUrl.trim(),
+        }),
+        ...(formData.city.trim() && { city: formData.city.trim() }),
+        ...(formData.serviceArea.trim() && {
+          service_area: formData.serviceArea.trim(),
+        }),
+        contact_name: `${formData.firstName.trim()} ${formData.lastName.trim()}`,
+        contact_email: formData.email.trim(),
+        contact_phone: formatPhoneNumber(formData.phone),
+      };
+
+      // Fire lead capture + script gen in parallel
+      const leadPromise = fetch(
+        "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            first_name: formData.firstName.trim(),
+            last_name: formData.lastName.trim(),
+            phone_number: formatPhoneNumber(formData.phone),
+            email: formData.email.trim(),
+            notes: `Business: ${formData.businessName}\nCity: ${formData.city}\nService Area: ${formData.serviceArea}\n\n--- PAIN POINTS & SOLUTIONS ---\n${painPointsSolutions.map((pp, i) => `${i + 1}. ${pp.pain_point} → ${pp.solution}`).join("\n")}\n\n--- TARGET AUDIENCE ---\n${formData.targetAudience}\n\n--- OFFER ---\n${formData.offer}\n\n--- LEAD MAGNET ---\n${formData.leadMagnetName}\n\n--- CREDIBILITY ---\n${topStats.join("\n")}\n\n--- URLS ---\nWebsite: ${formData.websiteUrl}${formData.landingPageUrl ? `\nLanding Page: ${formData.landingPageUrl}` : ""}`,
+          }),
+        }
+      ).catch(() => {
+        // Don't block on lead capture failure
+      });
+
+      const scriptPromise = fetch(SCRIPT_GEN_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(scriptPayload),
+        signal: AbortSignal.timeout(300000), // 5 min timeout
+      });
 
       try {
-        const painPointsSummary = formData.painPoints
-          .filter((pp) => pp.painPoint.trim())
-          .map(
-            (pp, i) =>
-              `Pain Point ${i + 1}: ${pp.painPoint} → Solution: ${pp.solution}`
-          )
-          .join("\n");
+        const [, scriptRes] = await Promise.all([leadPromise, scriptPromise]);
 
-        const credibilitySummary = formData.credibilityClaims
-          .filter((c) => c.value.trim())
-          .map((c) => `${c.label}: ${c.value}`)
-          .join("\n");
+        if (!scriptRes.ok) {
+          throw new Error(`Script API returned ${scriptRes.status}`);
+        }
 
-        const notes = [
-          `--- PAIN POINTS & SOLUTIONS ---\n${painPointsSummary}`,
-          `--- TARGET AUDIENCE ---\n${formData.targetAudience}`,
-          `--- OFFER ---\n${formData.offer}`,
-          `--- LEAD MAGNET ---\n${formData.leadMagnetName}`,
-          `--- CREDIBILITY ---\n${credibilitySummary}`,
-          `--- URLS ---\nWebsite: ${formData.websiteUrl}${formData.landingPageUrl ? `\nLanding Page: ${formData.landingPageUrl}` : ""}`,
-        ].join("\n\n");
-
-        await fetch(
-          "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              first_name: formData.firstName.trim(),
-              last_name: formData.lastName.trim(),
-              phone_number: formatPhoneNumber(formData.phone),
-              email: formData.email.trim(),
-              notes,
-            }),
-          }
-        );
+        const scriptData = await scriptRes.json();
+        setScriptMarkdown(scriptData.markdown || "");
+        setSubmitState("complete");
       } catch {
-        // Still route them — don't block the UX
+        // If script gen fails, still show success with Cal booking
+        setSubmitState("error");
       } finally {
+        if (messageIntervalRef.current) {
+          clearInterval(messageIntervalRef.current);
+          messageIntervalRef.current = null;
+        }
         trackEvent("Lead", {
           email: formData.email,
           phone: formData.phone,
@@ -321,7 +405,6 @@ export function GetAdsLeadForm() {
           lastName: formData.lastName,
         });
         setIsSubmitting(false);
-        setSubmitState("qualified");
       }
     }
   };
@@ -391,7 +474,148 @@ export function GetAdsLeadForm() {
     });
   };
 
-  if (submitState === "qualified") {
+  const handleCopyScripts = async () => {
+    await navigator.clipboard.writeText(scriptMarkdown);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  // --- Generating state ---
+  if (submitState === "generating") {
+    return (
+      <section id="lead-form" className="py-12 md:py-16">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
+            <div className="text-center space-y-6">
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10"
+              >
+                <Loader2 className="w-8 h-8 text-primary" />
+              </motion.div>
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+                  Generating Your 300 Ad Scripts
+                </h2>
+                <p className="text-muted-foreground text-lg mb-2">
+                  This takes 2–5 minutes. Don&apos;t close this page.
+                </p>
+              </div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={generatingMessage}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="flex items-center justify-center gap-2 text-primary font-medium"
+                >
+                  <FileText className="w-4 h-4" />
+                  {GENERATING_MESSAGES[generatingMessage]}
+                </motion.div>
+              </AnimatePresence>
+              <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+                <motion.div
+                  className="h-full bg-primary rounded-full"
+                  initial={{ width: "5%" }}
+                  animate={{ width: "90%" }}
+                  transition={{ duration: 240, ease: "linear" }}
+                />
+              </div>
+            </div>
+          </BorderGlow>
+        </div>
+      </section>
+    );
+  }
+
+  // --- Complete state (scripts ready) ---
+  if (submitState === "complete") {
+    return (
+      <section id="lead-form" className="py-12 md:py-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center"
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 mb-6">
+              <CheckCircle className="w-8 h-8 text-success" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
+              Your 300 Ad Scripts Are Ready!
+            </h2>
+            <p className="text-muted-foreground text-lg">
+              Copy the scripts below, then book a call to start running them.
+            </p>
+          </motion.div>
+
+          {/* Script output */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <BorderGlow borderRadius={18} innerClassName="p-6">
+              <div className="flex items-center justify-between mb-4">
+                <h3 className="font-heading font-bold text-foreground text-lg">
+                  Ad Scripts
+                </h3>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleCopyScripts}
+                  className="gap-2"
+                >
+                  {copied ? (
+                    <>
+                      <Check className="w-4 h-4" />
+                      Copied!
+                    </>
+                  ) : (
+                    <>
+                      <Copy className="w-4 h-4" />
+                      Copy All
+                    </>
+                  )}
+                </Button>
+              </div>
+              <div className="max-h-[500px] overflow-y-auto rounded-lg bg-muted/50 p-4 border border-border">
+                <pre className="whitespace-pre-wrap text-sm text-foreground font-mono leading-relaxed">
+                  {scriptMarkdown}
+                </pre>
+              </div>
+            </BorderGlow>
+          </motion.div>
+
+          {/* Cal booking */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            <div className="text-center mb-4">
+              <h3 className="text-2xl font-heading font-bold text-foreground">
+                Now Book Your Strategy Call
+              </h3>
+              <p className="text-muted-foreground">
+                We&apos;ll map out your ad campaign and get these scripts
+                running.
+              </p>
+            </div>
+            <Cal
+              calLink="nolan-grout-x0fgn8/30min"
+              style={{ width: "100%", height: "100%", overflow: "scroll" }}
+              config={{ theme: "dark" }}
+            />
+          </motion.div>
+        </div>
+      </section>
+    );
+  }
+
+  // --- Error state (script gen failed, still show Cal) ---
+  if (submitState === "error") {
     return (
       <section id="lead-form" className="py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -408,7 +632,7 @@ export function GetAdsLeadForm() {
             </h2>
             <p className="text-muted-foreground text-lg">
               Book your strategy call below and we&apos;ll map out your ad
-              campaign.
+              campaign and deliver your scripts.
             </p>
           </motion.div>
           <motion.div
@@ -421,45 +645,6 @@ export function GetAdsLeadForm() {
               style={{ width: "100%", height: "100%", overflow: "scroll" }}
               config={{ theme: "dark" }}
             />
-          </motion.div>
-        </div>
-      </section>
-    );
-  }
-
-  if (submitState === "waitlist") {
-    return (
-      <section id="lead-form" className="py-12 md:py-16">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-              <CheckCircle className="w-8 h-8 text-primary" />
-            </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
-              Thanks! You&apos;re on the List
-            </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              We&apos;ll reach out when a spot opens up. In the meantime, join
-              our free community to start learning.
-            </p>
-            <Button
-              size="lg"
-              variant="outline"
-              className="font-bold text-base px-8 py-6 rounded-lg"
-              asChild
-            >
-              <a
-                href="https://www.skool.com/prestyj"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Join Our Community
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </a>
-            </Button>
           </motion.div>
         </div>
       </section>
@@ -559,6 +744,66 @@ export function GetAdsLeadForm() {
             {errors.phone && (
               <p className="text-sm text-destructive mt-1">{errors.phone}</p>
             )}
+          </motion.div>
+        );
+
+      case "business":
+        return (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="space-y-4"
+          >
+            <div>
+              <label className="block text-sm font-medium text-foreground mb-1.5">
+                Business Name
+              </label>
+              <input
+                ref={stepInputRef as React.RefObject<HTMLInputElement>}
+                type="text"
+                value={formData.businessName}
+                onChange={(e) => updateField("businessName", e.target.value)}
+                className={inputClasses(!!errors.businessName)}
+                placeholder="e.g. Smith Roofing Co."
+              />
+              {errors.businessName && (
+                <p className="text-sm text-destructive mt-1">
+                  {errors.businessName}
+                </p>
+              )}
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1.5">
+                  City{" "}
+                  <span className="text-muted-foreground font-normal">
+                    (optional)
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  value={formData.city}
+                  onChange={(e) => updateField("city", e.target.value)}
+                  className={inputClasses(false)}
+                  placeholder="e.g. Dallas"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-foreground mb-1.5">
+                  Service Area{" "}
+                  <span className="text-muted-foreground font-normal">
+                    (optional)
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  value={formData.serviceArea}
+                  onChange={(e) => updateField("serviceArea", e.target.value)}
+                  className={inputClasses(false)}
+                  placeholder="e.g. DFW Metroplex"
+                />
+              </div>
+            </div>
           </motion.div>
         );
 
@@ -829,10 +1074,12 @@ export function GetAdsLeadForm() {
 
   return (
     <section id="lead-form" className="py-12 md:py-16">
-      <div className={cn(
-        "mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300",
-        STEPS[currentStep].id === "painPoints" ? "max-w-5xl" : "max-w-xl"
-      )}>
+      <div
+        className={cn(
+          "mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300",
+          STEPS[currentStep].id === "painPoints" ? "max-w-5xl" : "max-w-xl"
+        )}
+      >
         <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
           <form
             onSubmit={(e) => {
@@ -935,7 +1182,7 @@ export function GetAdsLeadForm() {
                     </>
                   ) : currentStep === STEPS.length - 1 ? (
                     <>
-                      Submit
+                      Generate My Ads
                       <CheckCircle className="w-4 h-4 ml-2" />
                     </>
                   ) : (
