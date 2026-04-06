@@ -569,64 +569,79 @@ export function GetAdsLeadForm() {
             animate={{ opacity: 1, y: 0 }}
             className="space-y-4"
           >
-            {formData.painPoints.map((pp, i) => (
-              <div key={i} className="rounded-xl border-2 border-border bg-card/50 p-4 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-semibold text-primary">
-                    #{i + 1}
-                  </span>
-                  {formData.painPoints.length > 1 && (
-                    <button
-                      type="button"
-                      onClick={() => removePainPoint(i)}
-                      className="text-muted-foreground hover:text-destructive transition-colors"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
-                  )}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {formData.painPoints.map((pp, i) => (
+                <div
+                  key={i}
+                  className="rounded-xl border-2 border-border bg-card/50 p-4 space-y-3"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm font-semibold text-primary">
+                      #{i + 1}
+                    </span>
+                    {formData.painPoints.length > 1 && (
+                      <button
+                        type="button"
+                        onClick={() => removePainPoint(i)}
+                        className="text-muted-foreground hover:text-destructive transition-colors"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-1">
+                      <AlertTriangle className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
+                      Pain Point
+                    </label>
+                    <Textarea
+                      value={pp.painPoint}
+                      onChange={(e) =>
+                        updatePainPoint(i, "painPoint", e.target.value)
+                      }
+                      className={cn(
+                        "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
+                        "focus:border-primary focus:ring-2 focus:ring-primary/20",
+                        errors[`painPoint_${i}`]
+                          ? "border-destructive"
+                          : "border-border"
+                      )}
+                      placeholder="e.g. Leads go cold because nobody follows up fast enough"
+                    />
+                    {errors[`painPoint_${i}`] && (
+                      <p className="text-sm text-destructive mt-1">
+                        {errors[`painPoint_${i}`]}
+                      </p>
+                    )}
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-foreground mb-1">
+                      <Lightbulb className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
+                      Your Solution
+                    </label>
+                    <Textarea
+                      value={pp.solution}
+                      onChange={(e) =>
+                        updatePainPoint(i, "solution", e.target.value)
+                      }
+                      className={cn(
+                        "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
+                        "focus:border-primary focus:ring-2 focus:ring-primary/20",
+                        errors[`solution_${i}`]
+                          ? "border-destructive"
+                          : "border-border"
+                      )}
+                      placeholder="e.g. AI responds to every lead in under 60 seconds"
+                    />
+                    {errors[`solution_${i}`] && (
+                      <p className="text-sm text-destructive mt-1">
+                        {errors[`solution_${i}`]}
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    <AlertTriangle className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
-                    Pain Point
-                  </label>
-                  <input
-                    type="text"
-                    value={pp.painPoint}
-                    onChange={(e) =>
-                      updatePainPoint(i, "painPoint", e.target.value)
-                    }
-                    className={inputClasses(!!errors[`painPoint_${i}`])}
-                    placeholder="e.g. Leads go cold because nobody follows up fast enough"
-                  />
-                  {errors[`painPoint_${i}`] && (
-                    <p className="text-sm text-destructive mt-1">
-                      {errors[`painPoint_${i}`]}
-                    </p>
-                  )}
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-1">
-                    <Lightbulb className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
-                    Your Solution
-                  </label>
-                  <input
-                    type="text"
-                    value={pp.solution}
-                    onChange={(e) =>
-                      updatePainPoint(i, "solution", e.target.value)
-                    }
-                    className={inputClasses(!!errors[`solution_${i}`])}
-                    placeholder="e.g. AI responds to every lead in under 60 seconds"
-                  />
-                  {errors[`solution_${i}`] && (
-                    <p className="text-sm text-destructive mt-1">
-                      {errors[`solution_${i}`]}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
             {formData.painPoints.length < 5 && (
               <button
                 type="button"
@@ -814,7 +829,10 @@ export function GetAdsLeadForm() {
 
   return (
     <section id="lead-form" className="py-12 md:py-16">
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className={cn(
+        "mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300",
+        STEPS[currentStep].id === "painPoints" ? "max-w-5xl" : "max-w-xl"
+      )}>
         <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
           <form
             onSubmit={(e) => {
