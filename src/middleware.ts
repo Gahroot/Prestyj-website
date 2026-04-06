@@ -64,6 +64,7 @@ export function middleware() {
         "'self'",
         "https://app.cal.com", // Cal.com inline embed
         "https://player.vimeo.com", // Vimeo video embeds
+        "https://www.youtube.com", // YouTube video embeds
         "https://backend-api-production-b536.up.railway.app", // AI agent embed widget
         "https://frontend-navy-five-92.vercel.app", // AI agent embed pages
       ],
