@@ -15,6 +15,7 @@ import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { PhoneInput, normalizeToE164 } from "@/components/ui/phone-input";
 import { cn } from "@/lib/utils";
+import BorderGlow from "@/components/ui/border-glow";
 import { triggerEmbedCall } from "@/lib/demo-api";
 import type { DemoAgent, FormStep } from "@/lib/demo-agents";
 
@@ -126,7 +127,10 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
   const progress = ((step + 1) / totalSteps) * 100;
 
   return (
-    <div className="bg-card rounded-2xl border border-border shadow-sm overflow-hidden">
+    <BorderGlow
+      borderRadius={18}
+      innerStyle={{ overflow: 'hidden', borderRadius: 'inherit' }}
+    >
       {/* Progress bar */}
       <div className="h-1 bg-muted">
         <motion.div
@@ -359,7 +363,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
           </div>
         )}
       </div>
-    </div>
+    </BorderGlow>
   );
 }
 
