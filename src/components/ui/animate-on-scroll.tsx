@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useEffect, type ReactNode } from "react";
+import { motion } from "motion/react";
+import { type ReactNode } from "react";
 
 interface AnimateOnScrollProps {
   children: ReactNode;
@@ -9,39 +10,28 @@ interface AnimateOnScrollProps {
   as?: "div" | "section";
 }
 
+const motionComponents = {
+  div: motion.div,
+  section: motion.section,
+};
+
 export function AnimateOnScroll({
   children,
   className = "",
   delay = 0,
-  as: Tag = "div",
+  as = "div",
 }: AnimateOnScrollProps) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          if (delay > 0) {
-            setTimeout(() => el.classList.add("in-view"), delay * 1000);
-          } else {
-            el.classList.add("in-view");
-          }
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 },
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [delay]);
+  const MotionTag = motionComponents[as];
 
   return (
-    <Tag ref={ref as React.RefObject<HTMLDivElement>} className={`scroll-animate ${className}`}>
+    <MotionTag
+      className={className}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-10%" }}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+    >
       {children}
-    </Tag>
+    </MotionTag>
   );
 }

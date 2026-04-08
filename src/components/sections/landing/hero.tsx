@@ -5,7 +5,10 @@ import { ArrowRight, Play } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Spotlight } from "@/components/effects/spotlight";
+import BlurText from "@/components/ui/blur-text";
+import ShinyText from "@/components/ui/shiny-text";
+import ClickSpark from "@/components/ui/click-spark";
+
 import type { SolutionHero } from "@/lib/solutions/types";
 
 const colorClasses = {
@@ -22,8 +25,6 @@ interface LandingHeroProps {
 export function LandingHero({ content }: LandingHeroProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      <Spotlight />
-
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <motion.div
@@ -32,20 +33,14 @@ export function LandingHero({ content }: LandingHeroProps) {
             transition={{ duration: 0.5 }}
           >
             <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
-              {content.badge}
+              <ShinyText text={content.badge} speed={3} color="#b0b0b0" shineColor="#7058e3" />
             </Badge>
           </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6"
-          >
-            {content.headline}
-            <br />
-            <span className="text-primary">{content.headlineAccent}</span>
-          </motion.h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6">
+            <BlurText text={content.headline} delay={75} animateBy="words" className="justify-center" />
+            <BlurText text={content.headlineAccent} delay={75} animateBy="words" className="justify-center text-primary" />
+          </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -62,12 +57,14 @@ export function LandingHero({ content }: LandingHeroProps) {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button size="lg" className="text-lg px-8" asChild>
-              <Link href="/book-demo">
-                Book a Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
+              <Button size="lg" className="text-lg px-8" asChild>
+                <Link href="/book-demo">
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </ClickSpark>
             <Button variant="ghost" size="lg" className="text-lg" asChild>
               <a href="#benefits">
                 <Play className="mr-2 h-5 w-5" />

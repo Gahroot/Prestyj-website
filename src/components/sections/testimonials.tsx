@@ -1,6 +1,6 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import SpotlightCard from "@/components/ui/spotlight-card";
 
 const testimonials = [
   {
@@ -45,8 +45,8 @@ export function TestimonialsSection() {
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={testimonial.name} delay={index * 0.15}>
-              <Card className="bg-card border-border h-full">
-                <CardContent className="p-6">
+              <SpotlightCard spotlightColor="rgba(94, 229, 179, 0.15)" className="border border-border bg-card rounded-xl h-full">
+                <div className="p-6 relative">
                   <p className="text-foreground mb-6 italic">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div className="flex items-center gap-3">
                     <Avatar>
@@ -60,8 +60,8 @@ export function TestimonialsSection() {
                       <p className="text-sm text-muted-foreground">{testimonial.role}</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </SpotlightCard>
             </AnimateOnScroll>
           ))}
         </div>

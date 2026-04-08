@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/nav-data";
 import { NavbarDropdowns, NavbarMobile } from "@/components/layout/navbar-interactive";
+import Magnet from "@/components/ui/magnet";
 
 export function Navbar() {
   return (
@@ -32,9 +33,11 @@ export function Navbar() {
             <Button variant="outline" size="sm" asChild>
               <Link href="/lead-magnet">Free Playbook</Link>
             </Button>
-            <Button size="sm" asChild>
-              <Link href="/book-demo">Book a Demo</Link>
-            </Button>
+            <Magnet padding={50} magnetStrength={2}>
+              <Button size="sm" asChild>
+                <Link href="/book-demo">Book a Demo</Link>
+              </Button>
+            </Magnet>
           </div>
 
           {/* Mobile Menu */}

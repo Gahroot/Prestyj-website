@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
-import { Spotlight } from "@/components/effects/spotlight";
+import { AuroraBackground } from "@/components/effects/aurora-background";
 import { PIXEL_ID } from "@/lib/meta-pixel";
 
 const inter = Inter({
@@ -139,7 +139,7 @@ fbq('track', 'PageView');`}
             alt=""
           />
         </noscript>
-        <Spotlight className="fixed" />
+        <AuroraBackground />
         <div className="relative z-10">{children}</div>
       </body>
     </html>
