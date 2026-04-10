@@ -69,6 +69,8 @@ import { sierraInteractiveUsers } from "./sierra-interactive-users";
 import { cincUsers } from "./cinc-users";
 import { realGeeksUsers } from "./real-geeks-users";
 import { newConstructionBuilders } from "./new-construction-builders";
+import { propertyManagerVideoAds } from "./property-manager-video-ads";
+import { mortgageBrokerVideoAds } from "./mortgage-broker-video-ads";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -141,6 +143,8 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "cinc-users": cincUsers,
   "real-geeks-users": realGeeksUsers,
   "new-construction-builders": newConstructionBuilders,
+  "property-manager-video-ads": propertyManagerVideoAds,
+  "mortgage-broker-video-ads": mortgageBrokerVideoAds,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
