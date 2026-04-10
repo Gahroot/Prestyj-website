@@ -48,6 +48,7 @@ export function middleware() {
         "'self'",
         // API endpoints
         "https://backend-api-production-b536.up.railway.app",
+        "https://script-gen-production-5b56.up.railway.app",
         // OpenAI Realtime API (WebRTC token exchange for voice widget)
         "https://api.openai.com",
         // Search engine indexing
