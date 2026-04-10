@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -31,6 +31,12 @@ import {
 } from "lucide-react";
 import Cal from "@calcom/embed-react";
 import BorderGlow from "@/components/ui/border-glow";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/carousel";
 
 const SCRIPT_GEN_URL =
   "https://script-gen-production-5b56.up.railway.app/generate";
@@ -149,6 +155,8 @@ const STEPS: Step[] = [
   },
 ];
 
+const MAX_PAIN_POINTS = 10;
+
 const CREDIBILITY_PRESETS = [
   { label: "Amount Sold", placeholder: "e.g. $5M+ in revenue" },
   { label: "Clients Helped", placeholder: "e.g. 500+ happy clients" },
@@ -237,6 +245,9 @@ export function GetAdsLeadForm({
   const [generatingMessage, setGeneratingMessage] = useState(0);
   const [scriptMarkdown, setScriptMarkdown] = useState("");
   const [copied, setCopied] = useState(false);
+  const [painPointCarouselApi, setPainPointCarouselApi] =
+    useState<CarouselApi | null>(null);
+  const [currentPainPointIndex, setCurrentPainPointIndex] = useState(0);
   const stepInputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
   const messageIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
     null
@@ -245,6 +256,19 @@ export function GetAdsLeadForm({
   const focusStepInput = useCallback(() => {
     stepInputRef.current?.focus({ preventScroll: true });
   }, []);
+
+  useEffect(() => {
+    if (!painPointCarouselApi) return;
+    const sync = () =>
+      setCurrentPainPointIndex(painPointCarouselApi.selectedScrollSnap());
+    sync();
+    painPointCarouselApi.on("select", sync);
+    painPointCarouselApi.on("reInit", sync);
+    return () => {
+      painPointCarouselApi.off("select", sync);
+      painPointCarouselApi.off("reInit", sync);
+    };
+  }, [painPointCarouselApi]);
 
   const validateCurrentStep = (): boolean => {
     const step = STEPS[currentStep];
@@ -482,11 +506,16 @@ export function GetAdsLeadForm({
   };
 
   const addPainPoint = () => {
-    if (formData.painPoints.length < 5) {
+    if (formData.painPoints.length < MAX_PAIN_POINTS) {
+      const nextIndex = formData.painPoints.length;
       updateField("painPoints", [
         ...formData.painPoints,
         { painPoint: "", solution: "" },
       ]);
+      requestAnimationFrame(() => {
+        painPointCarouselApi?.reInit();
+        painPointCarouselApi?.scrollTo(nextIndex);
+      });
     }
   };
 
@@ -496,6 +525,10 @@ export function GetAdsLeadForm({
         "painPoints",
         formData.painPoints.filter((_, i) => i !== index)
       );
+      requestAnimationFrame(() => {
+        painPointCarouselApi?.reInit();
+        painPointCarouselApi?.scrollTo(Math.max(0, index - 1));
+      });
     }
   };
 
@@ -843,96 +876,182 @@ export function GetAdsLeadForm({
           </motion.div>
         );
 
-      case "painPoints":
+      case "painPoints": {
+        const canAdd =
+          !lockedPainPointCount &&
+          formData.painPoints.length < MAX_PAIN_POINTS;
+        const canRemove =
+          !lockedPainPointCount && formData.painPoints.length > 1;
         return (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             className="space-y-4"
           >
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {formData.painPoints.map((pp, i) => (
-                <div
+            <div className="flex items-center justify-between px-1">
+              <span className="text-sm font-medium text-muted-foreground">
+                Pain point {currentPainPointIndex + 1} of{" "}
+                {formData.painPoints.length}
+                {!lockedPainPointCount && ` (max ${MAX_PAIN_POINTS})`}
+              </span>
+              <span className="text-xs text-muted-foreground hidden sm:block">
+                Swipe or drag to navigate
+              </span>
+            </div>
+
+            <Carousel
+              setApi={setPainPointCarouselApi}
+              opts={{ align: "center", containScroll: "trimSnaps" }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-4">
+                {formData.painPoints.map((pp, i) => (
+                  <CarouselItem key={i} className="pl-4 basis-full">
+                    <div className="rounded-xl border-2 border-border bg-card/50 p-4 space-y-3 h-full">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm font-semibold text-primary">
+                          #{i + 1}
+                        </span>
+                        {canRemove && (
+                          <button
+                            type="button"
+                            onClick={() => removePainPoint(i)}
+                            className="text-muted-foreground hover:text-destructive transition-colors"
+                            aria-label={`Remove pain point ${i + 1}`}
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        )}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-1">
+                          <AlertTriangle className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
+                          Pain Point
+                        </label>
+                        <Textarea
+                          value={pp.painPoint}
+                          onChange={(e) =>
+                            updatePainPoint(i, "painPoint", e.target.value)
+                          }
+                          className={cn(
+                            "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
+                            "focus:border-primary focus:ring-2 focus:ring-primary/20",
+                            errors[`painPoint_${i}`]
+                              ? "border-destructive"
+                              : "border-border"
+                          )}
+                          placeholder="e.g. Leads go cold because nobody follows up fast enough"
+                        />
+                        {errors[`painPoint_${i}`] && (
+                          <p className="text-sm text-destructive mt-1">
+                            {errors[`painPoint_${i}`]}
+                          </p>
+                        )}
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-foreground mb-1">
+                          <Lightbulb className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
+                          Your Solution
+                        </label>
+                        <Textarea
+                          value={pp.solution}
+                          onChange={(e) =>
+                            updatePainPoint(i, "solution", e.target.value)
+                          }
+                          className={cn(
+                            "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
+                            "focus:border-primary focus:ring-2 focus:ring-primary/20",
+                            errors[`solution_${i}`]
+                              ? "border-destructive"
+                              : "border-border"
+                          )}
+                          placeholder="e.g. AI responds to every lead in under 60 seconds"
+                        />
+                        {errors[`solution_${i}`] && (
+                          <p className="text-sm text-destructive mt-1">
+                            {errors[`solution_${i}`]}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+
+            <div className="flex items-center justify-center gap-1.5 pt-1">
+              {formData.painPoints.map((_, i) => (
+                <button
                   key={i}
-                  className="rounded-xl border-2 border-border bg-card/50 p-4 space-y-3"
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-semibold text-primary">
-                      #{i + 1}
-                    </span>
-                    {!lockedPainPointCount && formData.painPoints.length > 1 && (
-                      <button
-                        type="button"
-                        onClick={() => removePainPoint(i)}
-                        className="text-muted-foreground hover:text-destructive transition-colors"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1">
-                      <AlertTriangle className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
-                      Pain Point
-                    </label>
-                    <Textarea
-                      value={pp.painPoint}
-                      onChange={(e) =>
-                        updatePainPoint(i, "painPoint", e.target.value)
-                      }
-                      className={cn(
-                        "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
-                        "focus:border-primary focus:ring-2 focus:ring-primary/20",
-                        errors[`painPoint_${i}`]
-                          ? "border-destructive"
-                          : "border-border"
-                      )}
-                      placeholder="e.g. Leads go cold because nobody follows up fast enough"
-                    />
-                    {errors[`painPoint_${i}`] && (
-                      <p className="text-sm text-destructive mt-1">
-                        {errors[`painPoint_${i}`]}
-                      </p>
-                    )}
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-1">
-                      <Lightbulb className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
-                      Your Solution
-                    </label>
-                    <Textarea
-                      value={pp.solution}
-                      onChange={(e) =>
-                        updatePainPoint(i, "solution", e.target.value)
-                      }
-                      className={cn(
-                        "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
-                        "focus:border-primary focus:ring-2 focus:ring-primary/20",
-                        errors[`solution_${i}`]
-                          ? "border-destructive"
-                          : "border-border"
-                      )}
-                      placeholder="e.g. AI responds to every lead in under 60 seconds"
-                    />
-                    {errors[`solution_${i}`] && (
-                      <p className="text-sm text-destructive mt-1">
-                        {errors[`solution_${i}`]}
-                      </p>
-                    )}
-                  </div>
-                </div>
+                  type="button"
+                  onClick={() => painPointCarouselApi?.scrollTo(i)}
+                  aria-label={`Go to pain point ${i + 1}`}
+                  className={cn(
+                    "h-2 rounded-full transition-all",
+                    i === currentPainPointIndex
+                      ? "w-6 bg-primary"
+                      : "w-2 bg-muted hover:bg-muted-foreground/40"
+                  )}
+                />
               ))}
             </div>
-            {!lockedPainPointCount && formData.painPoints.length < 5 && (
-              <button
+
+            <div className="flex items-center justify-between gap-3 pt-2">
+              <Button
                 type="button"
-                onClick={addPainPoint}
-                className="flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+                variant="outline"
+                size="sm"
+                onClick={() =>
+                  painPointCarouselApi?.scrollTo(
+                    Math.max(0, currentPainPointIndex - 1)
+                  )
+                }
+                disabled={currentPainPointIndex === 0}
               >
-                <Plus className="w-4 h-4" />
-                Add another pain point
-              </button>
-            )}
+                <ArrowLeft className="w-4 h-4 mr-1" />
+                Prev
+              </Button>
+
+              {canAdd ? (
+                <Button
+                  type="button"
+                  variant="secondary"
+                  size="sm"
+                  onClick={addPainPoint}
+                  className="gap-1.5"
+                >
+                  <Plus className="w-4 h-4" />
+                  Add pain point
+                </Button>
+              ) : (
+                <span className="text-xs text-muted-foreground">
+                  {lockedPainPointCount
+                    ? `${formData.painPoints.length} locked for this tier`
+                    : `Max ${MAX_PAIN_POINTS} reached`}
+                </span>
+              )}
+
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={() =>
+                  painPointCarouselApi?.scrollTo(
+                    Math.min(
+                      formData.painPoints.length - 1,
+                      currentPainPointIndex + 1
+                    )
+                  )
+                }
+                disabled={
+                  currentPainPointIndex === formData.painPoints.length - 1
+                }
+              >
+                Next
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </div>
+
             {errors.painPoints && (
               <p className="text-sm text-destructive text-center">
                 {errors.painPoints}
@@ -940,6 +1059,7 @@ export function GetAdsLeadForm({
             )}
           </motion.div>
         );
+      }
 
       case "targetAudience":
         return (
@@ -1110,12 +1230,7 @@ export function GetAdsLeadForm({
 
   return (
     <section id="lead-form" className="py-12 md:py-16">
-      <div
-        className={cn(
-          "mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300",
-          STEPS[currentStep].id === "painPoints" ? "max-w-5xl" : "max-w-xl"
-        )}
-      >
+      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-xl">
         <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
           <form
             onSubmit={(e) => {
