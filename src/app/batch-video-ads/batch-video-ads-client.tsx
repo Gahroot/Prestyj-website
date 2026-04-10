@@ -98,8 +98,12 @@ const TIERS: BatchTier[] = [
 
 const FAQS = [
   {
-    q: "What footage do I actually need to send?",
-    a: "15–20 minutes of you reading a teleprompter. Selfie style, at home, in your car, wherever. The whole point is that it looks casual — like another creator on the feed, not a polished ad. No crew, no studio, no lighting kit. Just you and your phone.",
+    q: "What do I actually have to do?",
+    a: "Fill out the form, then wait for us to send you your scripts. When they arrive, prop up your phone, hit record, and read the whole script in one take — about 15–20 minutes. Selfie style, at home or in your car, wherever. You don't write anything, you don't plan anything, you don't have to know what a good hook looks like. You just read what we send. Send us back the one raw video file and we handle the rest.",
+  },
+  {
+    q: "What if I mess up mid-recording?",
+    a: "Don't stop. Just take a breath, say the line number again, and re-read it. We edit around the fumbles — that's part of the system. The whole point is that you don't have to be perfect, you just have to get through the script in one take.",
   },
   {
     q: "How fast is 24 hours really?",
@@ -111,7 +115,7 @@ const FAQS = [
   },
   {
     q: "Why do I need this many variations?",
-    a: "Hook testing alone needs 50+ variations to find what actually works. At 1 ad a day (what most teams manage) that's two months before you even know what hook lands. And nobody hears your pain points or offer if they scroll past the hook. Batch testing runs every angle in parallel — you find winners in the first week of spend instead of the sixth month.",
+    a: "Hook testing alone needs 50+ variations to find what actually works. At 1 ad a day (what most teams manage) that's two months before you even know what hook lands. And if nobody gets past the hook, nobody ever hears your solution to their pain points — no matter how good your offer is. Batch testing runs every angle in parallel so you find your winners in the first week of spend instead of the sixth month.",
   },
   {
     q: "Do you revise ads if I don't like them?",
@@ -180,9 +184,10 @@ export function BatchVideoAdsClient() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-4"
           >
-            Send us 15–20 minutes of casual selfie footage. Get back{" "}
+            We write your scripts. You read them in one take — 15–20 minutes,
+            selfie style. We turn that one recording into{" "}
             <span className="text-foreground font-semibold">
-              hundreds of scripted ads that look like content, not ads
+              hundreds of ads that look like content, not ads
             </span>{" "}
             — so people actually watch past the hook.
           </motion.p>
@@ -210,12 +215,19 @@ export function BatchVideoAdsClient() {
                 </a>
               </Button>
             </ClickSpark>
-            <Button variant="ghost" size="lg" className="text-lg" asChild>
-              <a href="#how">
-                <Film className="mr-2 h-5 w-5" />
-                How It Works
-              </a>
-            </Button>
+            <ClickSpark sparkColor="#5ee5b3" sparkCount={10} sparkRadius={25}>
+              <Button
+                size="lg"
+                variant="outline"
+                className="text-lg px-8 font-bold"
+                asChild
+              >
+                <a href="#lead-form">
+                  Start My Batch
+                  <Rocket className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </ClickSpark>
           </motion.div>
 
           <motion.div
@@ -252,28 +264,35 @@ export function BatchVideoAdsClient() {
               How This Works
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              No crew. No studio. No months of production. Three steps.
+              You don&apos;t think about what to record. You don&apos;t write scripts.
+              You show up and read what we send. Four steps.
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 step: "01",
-                title: "Record 15–20 minutes",
-                body: "You read a teleprompter on your phone. Selfie, casual, at home or wherever. That's all the footage we need.",
-                icon: <Film className="w-7 h-7" />,
+                title: "Tell us about your business",
+                body: "Fill out the form on this page. Business name, audience, pain points, offer. Takes a few minutes.",
+                icon: <Target className="w-7 h-7" />,
               },
               {
                 step: "02",
-                title: "We script hundreds of variations",
-                body: "We turn your footage into 300+ unique ad scripts across every hook, body, and pain point angle — tailored to your audience and offer.",
+                title: "We write your scripts",
+                body: "We send you back a full script — every hook, body, and CTA already written. You don't write a single word.",
                 icon: <Sparkles className="w-7 h-7" />,
               },
               {
                 step: "03",
-                title: "Launch them all at once",
-                body: "You run every angle in parallel. The data tells you what's winning in days — not months of posting one ad at a time.",
+                title: "One-take recording",
+                body: "Prop up your phone, read the script start to finish. ~15–20 minutes. One video file. That's it.",
+                icon: <Film className="w-7 h-7" />,
+              },
+              {
+                step: "04",
+                title: "Hundreds of ads, 24 hours later",
+                body: "Send us the raw footage. We turn it into your full batch of ads — ready to launch and test every angle in parallel.",
                 icon: <Rocket className="w-7 h-7" />,
               },
             ].map((item, i) => (
@@ -293,6 +312,17 @@ export function BatchVideoAdsClient() {
               </AnimateOnScroll>
             ))}
           </div>
+
+          <AnimateOnScroll className="mt-12 text-center">
+            <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
+              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+                <a href="#pricing">
+                  Pick My Batch
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </ClickSpark>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -397,6 +427,17 @@ export function BatchVideoAdsClient() {
               </BorderGlow>
             </AnimateOnScroll>
           </div>
+
+          <AnimateOnScroll className="text-center">
+            <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
+              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+                <a href="#pricing">
+                  Start Finding My Winners
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </ClickSpark>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -480,6 +521,17 @@ export function BatchVideoAdsClient() {
               lands.
             </p>
           </AnimateOnScroll>
+
+          <AnimateOnScroll className="mt-12 text-center">
+            <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
+              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+                <a href="#pricing">
+                  Get My Ads Running
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </ClickSpark>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -506,8 +558,8 @@ export function BatchVideoAdsClient() {
               },
               {
                 icon: <Film className="w-6 h-6" />,
-                title: "One 20-minute session",
-                body: "No ongoing content grind. Record once, get enough creative to run for months of testing.",
+                title: "Show up and read",
+                body: "We send the scripts. You prop up your phone and read. One 15–20 minute session, one video file, zero thinking about what to say.",
               },
               {
                 icon: <Eye className="w-6 h-6" />,
@@ -540,6 +592,17 @@ export function BatchVideoAdsClient() {
               </AnimateOnScroll>
             ))}
           </div>
+
+          <AnimateOnScroll className="mt-12 text-center">
+            <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
+              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+                <a href="#pricing">
+                  See Pricing
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </ClickSpark>
+          </AnimateOnScroll>
         </div>
       </section>
 
@@ -561,14 +624,14 @@ export function BatchVideoAdsClient() {
               <AnimateOnScroll key={tier.id} delay={index * 0.1}>
                 <BorderGlow
                   borderRadius={18}
-                  innerClassName="p-8 flex flex-col h-full"
+                  innerClassName="p-8 pt-10 flex flex-col h-full relative"
                   className={cn(
-                    "relative h-full",
+                    "h-full",
                     tier.popular && "shadow-xl shadow-primary/20 md:scale-105"
                   )}
                 >
                   {tier.popular && (
-                    <span className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-sm font-bold px-4 py-1 rounded-full whitespace-nowrap">
+                    <span className="absolute top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
                       Most Popular
                     </span>
                   )}
