@@ -108,7 +108,7 @@ const STEPS: Step[] = [
   },
   {
     id: "painPoints",
-    title: "Top 3 Pain Points & Solutions",
+    title: "Your Pain Points & Solutions",
     subtitle:
       "What problems does your audience face — and how do you solve them?",
     icon: <AlertTriangle className="w-6 h-6" />,
@@ -182,19 +182,31 @@ const inputClasses = (hasError: boolean) =>
     hasError ? "border-destructive" : "border-border"
   );
 
-const GENERATING_MESSAGES = [
+const buildGeneratingMessages = (adCount: number) => [
   "Analyzing your business profile...",
   "Crafting hook variations...",
   "Writing ad body copy...",
   "Generating call-to-action combos...",
-  "Building your 300-ad script library...",
+  `Building your ${adCount}-ad script library...`,
   "Polishing final scripts...",
   "Almost there — verifying quality...",
 ];
 
 type SubmitState = "form" | "generating" | "complete" | "error";
 
-export function GetAdsLeadForm() {
+export type GetAdsLeadFormProps = {
+  /** Total ads copy displayed in headings. Defaults to 300. */
+  adCount?: number;
+  /** If set, pre-initializes this many pain points and locks add/remove. */
+  lockedPainPointCount?: number;
+};
+
+export function GetAdsLeadForm({
+  adCount = 300,
+  lockedPainPointCount,
+}: GetAdsLeadFormProps = {}) {
+  const GENERATING_MESSAGES = buildGeneratingMessages(adCount);
+  const initialPainPointCount = lockedPainPointCount ?? 3;
   const [currentStep, setCurrentStep] = useState(0);
   const [direction, setDirection] = useState(0);
   const [formData, setFormData] = useState<FormData>({
@@ -205,11 +217,10 @@ export function GetAdsLeadForm() {
     businessName: "",
     city: "",
     serviceArea: "",
-    painPoints: [
-      { painPoint: "", solution: "" },
-      { painPoint: "", solution: "" },
-      { painPoint: "", solution: "" },
-    ],
+    painPoints: Array.from({ length: initialPainPointCount }, () => ({
+      painPoint: "",
+      solution: "",
+    })),
     targetAudience: "",
     offer: "",
     leadMagnetName: "",
@@ -496,7 +507,7 @@ export function GetAdsLeadForm() {
               </motion.div>
               <div>
                 <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
-                  Generating Your 300 Ad Scripts
+                  Generating Your {adCount} Ad Scripts
                 </h2>
                 <p className="text-muted-foreground text-lg mb-2">
                   This takes 2–5 minutes. Don&apos;t close this page.
@@ -543,7 +554,7 @@ export function GetAdsLeadForm() {
               <CheckCircle className="w-8 h-8 text-success" />
             </div>
             <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
-              Your 300 Ad Scripts Are Ready!
+              Your {adCount} Ad Scripts Are Ready!
             </h2>
             <p className="text-muted-foreground text-lg">
               Copy the scripts below, then book a call to start running them.
@@ -824,7 +835,7 @@ export function GetAdsLeadForm() {
                     <span className="text-sm font-semibold text-primary">
                       #{i + 1}
                     </span>
-                    {formData.painPoints.length > 1 && (
+                    {!lockedPainPointCount && formData.painPoints.length > 1 && (
                       <button
                         type="button"
                         onClick={() => removePainPoint(i)}
@@ -887,7 +898,7 @@ export function GetAdsLeadForm() {
                 </div>
               ))}
             </div>
-            {formData.painPoints.length < 5 && (
+            {!lockedPainPointCount && formData.painPoints.length < 5 && (
               <button
                 type="button"
                 onClick={addPainPoint}
