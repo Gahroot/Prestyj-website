@@ -13,6 +13,7 @@ import { realEstate } from "./real-estate";
 import { facebookAdLeads } from "./facebook-ad-leads";
 import { youtubeAdLeads } from "./youtube-ad-leads";
 import { realEstateLeadConversion } from "./real-estate-lead-conversion";
+import { batchVideoAdsRealEstate } from "./batch-video-ads-real-estate";
 
 export const solutions: Record<string, SolutionPageContent> = {
   "speed-to-lead": speedToLead,
@@ -29,6 +30,7 @@ export const solutions: Record<string, SolutionPageContent> = {
   "facebook-ad-leads": facebookAdLeads,
   "youtube-ad-leads": youtubeAdLeads,
   "real-estate-lead-conversion": realEstateLeadConversion,
+  "batch-video-ads-real-estate": batchVideoAdsRealEstate,
 };
 
 export function getSolution(slug: string): SolutionPageContent | undefined {

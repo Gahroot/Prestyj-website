@@ -68,6 +68,7 @@ import { kvcoreUsers } from "./kvcore-users";
 import { sierraInteractiveUsers } from "./sierra-interactive-users";
 import { cincUsers } from "./cinc-users";
 import { realGeeksUsers } from "./real-geeks-users";
+import { newConstructionBuilders } from "./new-construction-builders";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -139,6 +140,7 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "sierra-interactive-users": sierraInteractiveUsers,
   "cinc-users": cincUsers,
   "real-geeks-users": realGeeksUsers,
+  "new-construction-builders": newConstructionBuilders,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

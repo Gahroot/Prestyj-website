@@ -39,6 +39,8 @@ import { retellAi } from "./retell-ai";
 import { sierraAi } from "./sierra-ai";
 import { decagonAi } from "./decagon-ai";
 import { ada } from "./ada";
+import { creatify } from "./creatify";
+import { arcads } from "./arcads";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -81,6 +83,8 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "sierra-ai": sierraAi,
   "decagon-ai": decagonAi,
   ada,
+  creatify,
+  arcads,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
