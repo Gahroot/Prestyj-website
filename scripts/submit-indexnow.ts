@@ -54,7 +54,21 @@ function getAllUrls(): string[] {
     `${BASE_URL}/pricing`,
     `${BASE_URL}/samples`,
     `${BASE_URL}/free-ads`,
-    `${BASE_URL}/bulk-video-ad-pricing`
+    `${BASE_URL}/free-ads/contractors`,
+    `${BASE_URL}/free-ads/hvac`,
+    `${BASE_URL}/free-ads/plumbers`,
+    `${BASE_URL}/free-ads/roofers`,
+    `${BASE_URL}/bulk-video-ad-pricing`,
+    `${BASE_URL}/batch-video-ads`,
+    `${BASE_URL}/get-ads`,
+    `${BASE_URL}/get-ads/contractors`,
+    `${BASE_URL}/get-ads/hvac`,
+    `${BASE_URL}/get-ads/plumbers`,
+    `${BASE_URL}/get-ads/roofers`,
+    `${BASE_URL}/real-estate-roi-calculator`,
+    `${BASE_URL}/lead-magnet/brokerage-playbook`,
+    `${BASE_URL}/lead-magnet/reactivate-leads`,
+    `${BASE_URL}/demo`
   );
 
   // Blog posts - scan content/blog directory
@@ -88,6 +102,8 @@ function getAllUrls(): string[] {
     "/compare/prestyj-vs-internal-isa-team",
     "/compare/prestyj-vs-offshore-isa",
     "/compare/prestyj-vs-answering-service",
+    "/compare/prestyj-vs-isa",
+    "/compare/prestyj-vs-ylopo",
     "/compare/ai-consultant-vs-diy-ai",
     // AI consulting comparison pages
     "/compare/ai-consultant-vs-ai-agency",
