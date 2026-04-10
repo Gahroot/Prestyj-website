@@ -388,18 +388,43 @@ export function GetAdsLeadForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(scriptPayload),
-        signal: AbortSignal.timeout(300000), // 5 min timeout
+        signal: AbortSignal.timeout(30000),
       });
 
       try {
         const [, scriptRes] = await Promise.all([leadPromise, scriptPromise]);
 
-        if (!scriptRes.ok) {
+        if (scriptRes.status !== 202) {
           throw new Error(`Script API returned ${scriptRes.status}`);
         }
 
-        const scriptData = await scriptRes.json();
-        setScriptMarkdown(scriptData.markdown || "");
+        const job = await scriptRes.json();
+        const statusUrl: string | undefined = job.status_url;
+        if (!statusUrl) {
+          throw new Error("Missing status_url in job response");
+        }
+
+        const deadline = Date.now() + 300000;
+        let markdown = "";
+        while (Date.now() < deadline) {
+          await new Promise((r) => setTimeout(r, 5000));
+          const statusRes = await fetch(statusUrl, {
+            signal: AbortSignal.timeout(10000),
+          });
+          if (!statusRes.ok) continue;
+          const state = await statusRes.json();
+          if (state.status === "completed") {
+            markdown = state.markdown || "";
+            break;
+          }
+          if (state.status === "failed") {
+            throw new Error(state.error || "Script generation failed");
+          }
+        }
+        if (!markdown) {
+          throw new Error("Script generation timed out");
+        }
+        setScriptMarkdown(markdown);
         setSubmitState("complete");
       } catch {
         // If script gen fails, still show success with Cal booking
