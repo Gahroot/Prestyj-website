@@ -15,6 +15,7 @@ import {
   Sparkles,
   Flame,
   Rocket,
+  Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -24,8 +25,46 @@ import CountUp from "@/components/ui/count-up";
 import ClickSpark from "@/components/ui/click-spark";
 import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import { VideoCarousel } from "@/components/sections/video-carousel";
 import { GetAdsLeadForm } from "@/components/get-ads/lead-form";
 import { cn } from "@/lib/utils";
+
+const GMB_REVIEWS_URL = "https://share.google/NDBtHySNKzPF0mTvG";
+
+const SAMPLE_VIDEOS = [
+  "1182069557",
+  "1182069871",
+  "1173092805",
+  "1173092688",
+  "1173092572",
+  "1171065337",
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "300 Facebook video ads in less than 12 hours — nailed the scripts, edits, and hooks on every single one.",
+    full: "I had an incredible experience working with Nolan. In less than 12 hours, he produced 300 Facebook video ads — and somehow managed to absolutely nail the scripts, edits, and hooks on every single one. If you're looking for someone who can deliver high-volume creative production without sacrificing quality, Nolan is the real deal.",
+    author: "Randy Narciso",
+    source: "Google Review",
+    href: GMB_REVIEWS_URL,
+  },
+  {
+    quote:
+      "Saved me a ton of time making 300 versions of content for my Meta ads. Delivery was fast and straightforward.",
+    full: "The service Nolan provided helped me save a ton of time making 300 versions of content for my meta ads. His delivery was fast and straight forward!",
+    author: "Max Sherrod",
+    source: "Google Review · Local Guide",
+    href: GMB_REVIEWS_URL,
+  },
+  {
+    quote: "If I could give them more than 5 stars I would.",
+    full: "100% happy and will definitely be using their services in the future. If I could give them more than 5 stars I would.",
+    author: "Verified client",
+    source: "Client testimonial",
+    href: null,
+  },
+];
 
 type TierId = "minimum" | "pro" | "max";
 
@@ -256,6 +295,30 @@ export function BatchVideoAdsClient() {
         </div>
       </section>
 
+      {/* TRUST STRIP */}
+      <section className="py-6 border-y border-border/50 bg-muted/10">
+        <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm">
+          <div className="flex items-center gap-2">
+            <div className="flex gap-0.5">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-success text-success" />
+              ))}
+            </div>
+            <span className="font-semibold text-foreground">Rated 5★ on Google</span>
+          </div>
+          <span className="hidden sm:inline text-muted-foreground">·</span>
+          <a
+            href={GMB_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline inline-flex items-center gap-1"
+          >
+            Read reviews on Google
+            <ArrowRight className="w-3.5 h-3.5" />
+          </a>
+        </div>
+      </section>
+
       {/* HOW IT WORKS — simple explainer */}
       <section id="how" className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
@@ -441,6 +504,74 @@ export function BatchVideoAdsClient() {
         </div>
       </section>
 
+      {/* TESTIMONIALS */}
+      <section className="py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <AnimateOnScroll className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+              People Who&apos;ve Actually Done This
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Not stock quotes. Real clients who sent us their footage and got their batch back.
+            </p>
+          </AnimateOnScroll>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {TESTIMONIALS.map((t, i) => (
+              <AnimateOnScroll key={t.author} delay={i * 0.1}>
+                <BorderGlow borderRadius={14} innerClassName="p-6 h-full flex flex-col">
+                  <div className="flex gap-1 mb-4">
+                    {Array.from({ length: 5 }).map((_, j) => (
+                      <Star
+                        key={j}
+                        className="w-5 h-5 fill-success text-success"
+                      />
+                    ))}
+                  </div>
+                  <p className="text-foreground font-heading font-semibold text-lg mb-3">
+                    &ldquo;{t.quote}&rdquo;
+                  </p>
+                  <p className="text-muted-foreground text-sm flex-1 mb-4">
+                    {t.full}
+                  </p>
+                  <div className="pt-4 border-t border-border/50">
+                    <p className="font-semibold text-foreground text-sm">
+                      {t.author}
+                    </p>
+                    {t.href ? (
+                      <a
+                        href={t.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs text-primary hover:underline"
+                      >
+                        {t.source} →
+                      </a>
+                    ) : (
+                      <p className="text-xs text-muted-foreground">
+                        {t.source}
+                      </p>
+                    )}
+                  </div>
+                </BorderGlow>
+              </AnimateOnScroll>
+            ))}
+          </div>
+
+          <AnimateOnScroll className="text-center">
+            <a
+              href={GMB_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline inline-flex items-center gap-1 text-sm"
+            >
+              Read all reviews on Google
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* NATIVE vs PRODUCTION */}
       <section className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
@@ -606,6 +737,33 @@ export function BatchVideoAdsClient() {
         </div>
       </section>
 
+      {/* SAMPLES */}
+      <section className="py-24 px-4">
+        <div className="max-w-6xl mx-auto">
+          <AnimateOnScroll className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+              See What You&apos;ll Actually Get
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              Real ads from real batches. Each one built from a single 15–20 minute recording.
+            </p>
+          </AnimateOnScroll>
+
+          <div className="px-4 md:px-16">
+            <VideoCarousel videos={SAMPLE_VIDEOS} />
+          </div>
+
+          <AnimateOnScroll className="mt-10 text-center">
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/samples">
+                See more samples
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </AnimateOnScroll>
+        </div>
+      </section>
+
       {/* PRICING */}
       <section id="pricing" className="py-24 px-4">
         <div className="max-w-6xl mx-auto">
@@ -697,7 +855,7 @@ export function BatchVideoAdsClient() {
               Start Your Batch
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Tell us about your business and we&apos;ll start writing your{" "}
+              Fill this out so we can tailor every script to your business, audience, and offer — the more specific you are, the sharper your{" "}
               <span className="text-primary font-semibold">{selectedAdCount} ads</span>.
             </p>
           </AnimateOnScroll>
