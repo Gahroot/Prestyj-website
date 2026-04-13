@@ -71,6 +71,9 @@ import { realGeeksUsers } from "./real-geeks-users";
 import { newConstructionBuilders } from "./new-construction-builders";
 import { propertyManagerVideoAds } from "./property-manager-video-ads";
 import { mortgageBrokerVideoAds } from "./mortgage-broker-video-ads";
+import { brokerageRecruitingVideoAds } from "./brokerage-recruiting-video-ads";
+import { newConstructionBuilderVideoAds } from "./new-construction-builder-video-ads";
+import { titleCompanyVideoAds } from "./title-company-video-ads";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -145,6 +148,9 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "new-construction-builders": newConstructionBuilders,
   "property-manager-video-ads": propertyManagerVideoAds,
   "mortgage-broker-video-ads": mortgageBrokerVideoAds,
+  "brokerage-recruiting-video-ads": brokerageRecruitingVideoAds,
+  "new-construction-builder-video-ads": newConstructionBuilderVideoAds,
+  "title-company-video-ads": titleCompanyVideoAds,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
