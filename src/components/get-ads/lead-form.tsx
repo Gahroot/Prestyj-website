@@ -1,12 +1,13 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { formatPhoneNumber } from "@/lib/api";
 import { trackEvent } from "@/lib/meta-pixel";
+import type { BatchTierId } from "@/lib/batch-tiers";
 import {
   ArrowRight,
   ArrowLeft,
@@ -28,6 +29,8 @@ import {
   FileText,
   Copy,
   Check,
+  Film,
+  Send,
 } from "lucide-react";
 import Cal from "@calcom/embed-react";
 import BorderGlow from "@/components/ui/border-glow";
@@ -207,21 +210,47 @@ export type GetAdsLeadFormProps = {
   adCount?: number;
   /** If set, pre-initializes this many pain points and locks add/remove. */
   lockedPainPointCount?: number;
+  /** Set when this form is running inside a paid intake flow. */
+  sessionId?: string;
+  /** Tier id from the Stripe session (metadata). */
+  tierId?: BatchTierId;
+  prefillEmail?: string;
+  prefillFirstName?: string;
+  prefillLastName?: string;
+  prefillPhone?: string;
 };
 
 export function GetAdsLeadForm({
   adCount = 300,
   lockedPainPointCount,
+  sessionId,
+  tierId,
+  prefillEmail,
+  prefillFirstName,
+  prefillLastName,
+  prefillPhone,
 }: GetAdsLeadFormProps = {}) {
   const GENERATING_MESSAGES = buildGeneratingMessages(adCount);
   const initialPainPointCount = lockedPainPointCount ?? 3;
+  const isPaidFlow = Boolean(sessionId);
+
+  // In the paid flow, skip identity steps — we already have email/name/phone from Stripe.
+  const VISIBLE_STEPS = useMemo(() => {
+    if (isPaidFlow) {
+      return STEPS.filter(
+        (s) => s.id !== "name" && s.id !== "email" && s.id !== "phone"
+      );
+    }
+    return STEPS;
+  }, [isPaidFlow]);
+
   const [currentStep, setCurrentStep] = useState(0);
   const [direction, setDirection] = useState(0);
   const [formData, setFormData] = useState<FormData>({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
+    firstName: prefillFirstName ?? "",
+    lastName: prefillLastName ?? "",
+    email: prefillEmail ?? "",
+    phone: prefillPhone ? formatPhoneNumber(prefillPhone) : "",
     businessName: "",
     city: "",
     serviceArea: "",
@@ -271,7 +300,7 @@ export function GetAdsLeadForm({
   }, [painPointCarouselApi]);
 
   const validateCurrentStep = (): boolean => {
-    const step = STEPS[currentStep];
+    const step = VISIBLE_STEPS[currentStep];
     const newErrors: Record<string, string> = {};
 
     switch (step.id) {
@@ -340,132 +369,145 @@ export function GetAdsLeadForm({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleNext = async () => {
-    if (!validateCurrentStep()) return;
+  const runSubmission = async () => {
+    setIsSubmitting(true);
+    setSubmitState("generating");
+    setGeneratingMessage(0);
 
-    if (currentStep < STEPS.length - 1) {
-      setDirection(1);
-      setCurrentStep((prev) => prev + 1);
-    } else {
-      setIsSubmitting(true);
-      setSubmitState("generating");
-      setGeneratingMessage(0);
+    // Rotate status messages while generating
+    messageIntervalRef.current = setInterval(() => {
+      setGeneratingMessage((prev) =>
+        prev < GENERATING_MESSAGES.length - 1 ? prev + 1 : prev
+      );
+    }, 25000);
 
-      // Rotate status messages while generating
-      messageIntervalRef.current = setInterval(() => {
-        setGeneratingMessage((prev) =>
-          prev < GENERATING_MESSAGES.length - 1 ? prev + 1 : prev
-        );
-      }, 25000);
+    const topStats = formData.credibilityClaims
+      .filter((c) => c.value.trim())
+      .map((c) => `${c.label}: ${c.value}`);
 
-      // Build API payload
-      const topStats = formData.credibilityClaims
-        .filter((c) => c.value.trim())
-        .map((c) => `${c.label}: ${c.value}`);
+    const painPointsSolutions = formData.painPoints
+      .filter((pp) => pp.painPoint.trim())
+      .map((pp) => ({
+        pain_point: pp.painPoint.trim(),
+        solution: pp.solution.trim(),
+      }));
 
-      const painPointsSolutions = formData.painPoints
-        .filter((pp) => pp.painPoint.trim())
-        .map((pp) => ({
-          pain_point: pp.painPoint.trim(),
-          solution: pp.solution.trim(),
-        }));
+    const scriptPayload = {
+      business_name: formData.businessName.trim(),
+      target_audience: formData.targetAudience.trim(),
+      pain_points_solutions: painPointsSolutions,
+      offer: formData.offer.trim(),
+      lead_magnet: formData.leadMagnetName.trim(),
+      top_stats: topStats,
+      website_url: formData.websiteUrl.trim(),
+      ...(formData.landingPageUrl.trim() && {
+        landing_page_url: formData.landingPageUrl.trim(),
+      }),
+      ...(formData.city.trim() && { city: formData.city.trim() }),
+      ...(formData.serviceArea.trim() && {
+        service_area: formData.serviceArea.trim(),
+      }),
+      contact_name: `${formData.firstName.trim()} ${formData.lastName.trim()}`,
+      contact_email: formData.email.trim(),
+      contact_phone: formatPhoneNumber(formData.phone),
+    };
 
-      const scriptPayload = {
-        business_name: formData.businessName.trim(),
-        target_audience: formData.targetAudience.trim(),
-        pain_points_solutions: painPointsSolutions,
-        offer: formData.offer.trim(),
-        lead_magnet: formData.leadMagnetName.trim(),
-        top_stats: topStats,
-        website_url: formData.websiteUrl.trim(),
-        ...(formData.landingPageUrl.trim() && {
-          landing_page_url: formData.landingPageUrl.trim(),
-        }),
-        ...(formData.city.trim() && { city: formData.city.trim() }),
-        ...(formData.serviceArea.trim() && {
-          service_area: formData.serviceArea.trim(),
-        }),
-        contact_name: `${formData.firstName.trim()} ${formData.lastName.trim()}`,
-        contact_email: formData.email.trim(),
-        contact_phone: formatPhoneNumber(formData.phone),
-      };
+    // Free flow: fire lead capture to the CRM in parallel. Paid flow: /api/start-job handles it.
+    const leadPromise = isPaidFlow
+      ? Promise.resolve()
+      : fetch(
+          "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              first_name: formData.firstName.trim(),
+              last_name: formData.lastName.trim(),
+              phone_number: formatPhoneNumber(formData.phone),
+              email: formData.email.trim(),
+              notes: `Business: ${formData.businessName}\nCity: ${formData.city}\nService Area: ${formData.serviceArea}\n\n--- PAIN POINTS & SOLUTIONS ---\n${painPointsSolutions.map((pp, i) => `${i + 1}. ${pp.pain_point} → ${pp.solution}`).join("\n")}\n\n--- TARGET AUDIENCE ---\n${formData.targetAudience}\n\n--- OFFER ---\n${formData.offer}\n\n--- LEAD MAGNET ---\n${formData.leadMagnetName}\n\n--- CREDIBILITY ---\n${topStats.join("\n")}\n\n--- URLS ---\nWebsite: ${formData.websiteUrl}${formData.landingPageUrl ? `\nLanding Page: ${formData.landingPageUrl}` : ""}`,
+            }),
+          }
+        ).catch(() => {});
 
-      // Fire lead capture + script gen in parallel
-      const leadPromise = fetch(
-        "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD",
-        {
+    const scriptPromise = isPaidFlow
+      ? fetch("/api/start-job", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            first_name: formData.firstName.trim(),
-            last_name: formData.lastName.trim(),
-            phone_number: formatPhoneNumber(formData.phone),
-            email: formData.email.trim(),
-            notes: `Business: ${formData.businessName}\nCity: ${formData.city}\nService Area: ${formData.serviceArea}\n\n--- PAIN POINTS & SOLUTIONS ---\n${painPointsSolutions.map((pp, i) => `${i + 1}. ${pp.pain_point} → ${pp.solution}`).join("\n")}\n\n--- TARGET AUDIENCE ---\n${formData.targetAudience}\n\n--- OFFER ---\n${formData.offer}\n\n--- LEAD MAGNET ---\n${formData.leadMagnetName}\n\n--- CREDIBILITY ---\n${topStats.join("\n")}\n\n--- URLS ---\nWebsite: ${formData.websiteUrl}${formData.landingPageUrl ? `\nLanding Page: ${formData.landingPageUrl}` : ""}`,
+            session_id: sessionId,
+            tier_id: tierId,
+            script_payload: scriptPayload,
           }),
-        }
-      ).catch(() => {
-        // Don't block on lead capture failure
-      });
-
-      const scriptPromise = fetch(SCRIPT_GEN_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(scriptPayload),
-        signal: AbortSignal.timeout(30000),
-      });
-
-      try {
-        const [, scriptRes] = await Promise.all([leadPromise, scriptPromise]);
-
-        if (scriptRes.status !== 202) {
-          throw new Error(`Script API returned ${scriptRes.status}`);
-        }
-
-        const job = await scriptRes.json();
-        const statusUrl: string | undefined = job.status_url;
-        if (!statusUrl) {
-          throw new Error("Missing status_url in job response");
-        }
-
-        const deadline = Date.now() + 300000;
-        let markdown = "";
-        while (Date.now() < deadline) {
-          await new Promise((r) => setTimeout(r, 5000));
-          const statusRes = await fetch(statusUrl, {
-            signal: AbortSignal.timeout(10000),
-          });
-          if (!statusRes.ok) continue;
-          const state = await statusRes.json();
-          if (state.status === "completed") {
-            markdown = state.markdown || "";
-            break;
-          }
-          if (state.status === "failed") {
-            throw new Error(state.error || "Script generation failed");
-          }
-        }
-        if (!markdown) {
-          throw new Error("Script generation timed out");
-        }
-        setScriptMarkdown(markdown);
-        setSubmitState("complete");
-      } catch {
-        // If script gen fails, still show success with Cal booking
-        setSubmitState("error");
-      } finally {
-        if (messageIntervalRef.current) {
-          clearInterval(messageIntervalRef.current);
-          messageIntervalRef.current = null;
-        }
-        trackEvent("Lead", {
-          email: formData.email,
-          phone: formData.phone,
-          firstName: formData.firstName,
-          lastName: formData.lastName,
+          signal: AbortSignal.timeout(30000),
+        })
+      : fetch(SCRIPT_GEN_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(scriptPayload),
+          signal: AbortSignal.timeout(30000),
         });
-        setIsSubmitting(false);
+
+    try {
+      const [, scriptRes] = await Promise.all([leadPromise, scriptPromise]);
+
+      if (scriptRes.status !== 202) {
+        throw new Error(`Script API returned ${scriptRes.status}`);
       }
+
+      const job = await scriptRes.json();
+      const statusUrl: string | undefined = job.status_url;
+      if (!statusUrl) {
+        throw new Error("Missing status_url in job response");
+      }
+
+      const deadline = Date.now() + 300000;
+      let markdown = "";
+      while (Date.now() < deadline) {
+        await new Promise((r) => setTimeout(r, 5000));
+        const statusRes = await fetch(statusUrl, {
+          signal: AbortSignal.timeout(10000),
+        });
+        if (!statusRes.ok) continue;
+        const state = await statusRes.json();
+        if (state.status === "completed") {
+          markdown = state.markdown || "";
+          break;
+        }
+        if (state.status === "failed") {
+          throw new Error(state.error || "Script generation failed");
+        }
+      }
+      if (!markdown) {
+        throw new Error("Script generation timed out");
+      }
+      setScriptMarkdown(markdown);
+      setSubmitState("complete");
+    } catch {
+      setSubmitState("error");
+    } finally {
+      if (messageIntervalRef.current) {
+        clearInterval(messageIntervalRef.current);
+        messageIntervalRef.current = null;
+      }
+      trackEvent("Lead", {
+        email: formData.email,
+        phone: formData.phone,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+      });
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleNext = async () => {
+    if (!validateCurrentStep()) return;
+
+    if (currentStep < VISIBLE_STEPS.length - 1) {
+      setDirection(1);
+      setCurrentStep((prev) => prev + 1);
+    } else {
+      await runSubmission();
     }
   };
 
@@ -615,7 +657,9 @@ export function GetAdsLeadForm({
               Your {adCount} Ad Scripts Are Ready!
             </h2>
             <p className="text-muted-foreground text-lg">
-              Copy the scripts below, then book a call to start running them.
+              {isPaidFlow
+                ? "Copy them below. We've also emailed a copy for safekeeping."
+                : "Copy the scripts below, then book a call to start running them."}
             </p>
           </motion.div>
 
@@ -657,34 +701,115 @@ export function GetAdsLeadForm({
             </BorderGlow>
           </motion.div>
 
-          {/* Cal booking */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-          >
-            <div className="text-center mb-4">
-              <h3 className="text-2xl font-heading font-bold text-foreground">
-                Now Book Your Strategy Call
-              </h3>
-              <p className="text-muted-foreground">
-                We&apos;ll map out your ad campaign and get these scripts
-                running.
-              </p>
-            </div>
-            <Cal
-              calLink="nolan-grout-x0fgn8/30min"
-              style={{ width: "100%", height: "100%", overflow: "scroll" }}
-              config={{ theme: "dark" }}
-            />
-          </motion.div>
+          {/* Next steps: paid vs free */}
+          {isPaidFlow ? (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <BorderGlow borderRadius={18} innerClassName="p-6 md:p-8">
+                <h3 className="text-2xl font-heading font-bold text-foreground mb-4">
+                  Next: record and send your footage
+                </h3>
+                <ol className="space-y-4 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
+                      1
+                    </div>
+                    <span>
+                      Prop your phone up selfie-style, read the whole script
+                      start-to-finish in one take. ~15–20 minutes. Fumbles are
+                      fine — we edit around them.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
+                      <Film className="w-4 h-4" />
+                    </div>
+                    <span>
+                      Upload the raw file to Google Drive, Dropbox, or
+                      WeTransfer.
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
+                      <Send className="w-4 h-4" />
+                    </div>
+                    <span>
+                      Reply to your confirmation email with the link. Your
+                      batch ships within{" "}
+                      <span className="text-foreground font-semibold">
+                        24 hours of receiving footage
+                      </span>
+                      .
+                    </span>
+                  </li>
+                </ol>
+              </BorderGlow>
+            </motion.div>
+          ) : (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="text-center mb-4">
+                <h3 className="text-2xl font-heading font-bold text-foreground">
+                  Now Book Your Strategy Call
+                </h3>
+                <p className="text-muted-foreground">
+                  We&apos;ll map out your ad campaign and get these scripts
+                  running.
+                </p>
+              </div>
+              <Cal
+                calLink="nolan-grout-x0fgn8/30min"
+                style={{ width: "100%", height: "100%", overflow: "scroll" }}
+                config={{ theme: "dark" }}
+              />
+            </motion.div>
+          )}
         </div>
       </section>
     );
   }
 
-  // --- Error state (script gen failed, still show Cal) ---
+  // --- Error state ---
   if (submitState === "error") {
+    if (isPaidFlow) {
+      return (
+        <section id="lead-form" className="py-12 md:py-16">
+          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
+              <div className="text-center space-y-5">
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-destructive/10 text-destructive">
+                  <AlertTriangle className="w-8 h-8" />
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground">
+                  Script generation hit a snag
+                </h2>
+                <p className="text-muted-foreground">
+                  Your payment is safe. Please try again — or reply to your
+                  Stripe receipt and we&apos;ll generate your scripts manually
+                  within the hour.
+                </p>
+                <Button
+                  size="lg"
+                  className="font-bold"
+                  onClick={() => {
+                    setSubmitState("form");
+                    setIsSubmitting(false);
+                  }}
+                >
+                  Try Again
+                </Button>
+              </div>
+            </BorderGlow>
+          </div>
+        </section>
+      );
+    }
     return (
       <section id="lead-form" className="py-12 md:py-16">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -721,7 +846,7 @@ export function GetAdsLeadForm({
   }
 
   const renderStepContent = () => {
-    const step = STEPS[currentStep];
+    const step = VISIBLE_STEPS[currentStep];
 
     switch (step.id) {
       case "name":
@@ -1240,7 +1365,7 @@ export function GetAdsLeadForm({
           >
             {/* Progress dots */}
             <div className="flex justify-center gap-2 mb-8">
-              {STEPS.map((_, index) => (
+              {VISIBLE_STEPS.map((_, index) => (
                 <div
                   key={index}
                   className={cn(
@@ -1263,7 +1388,7 @@ export function GetAdsLeadForm({
                 animate={{ scale: 1, opacity: 1 }}
                 className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-4"
               >
-                {STEPS[currentStep].icon}
+                {VISIBLE_STEPS[currentStep].icon}
               </motion.div>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -1274,10 +1399,10 @@ export function GetAdsLeadForm({
                   transition={{ duration: 0.2 }}
                 >
                   <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
-                    {STEPS[currentStep].title}
+                    {VISIBLE_STEPS[currentStep].title}
                   </h2>
                   <p className="text-muted-foreground">
-                    {STEPS[currentStep].subtitle}
+                    {VISIBLE_STEPS[currentStep].subtitle}
                   </p>
                 </motion.div>
               </AnimatePresence>
@@ -1318,7 +1443,7 @@ export function GetAdsLeadForm({
 
               <div className="flex items-center gap-3">
                 <span className="text-xs text-muted-foreground hidden sm:block">
-                  Step {currentStep + 1} of {STEPS.length}
+                  Step {currentStep + 1} of {VISIBLE_STEPS.length}
                 </span>
                 <Button
                   type="submit"
@@ -1331,7 +1456,7 @@ export function GetAdsLeadForm({
                       <Loader2 className="w-4 h-4 mr-2 animate-spin" />
                       Submitting...
                     </>
-                  ) : currentStep === STEPS.length - 1 ? (
+                  ) : currentStep === VISIBLE_STEPS.length - 1 ? (
                     <>
                       Generate My Ads
                       <CheckCircle className="w-4 h-4 ml-2" />

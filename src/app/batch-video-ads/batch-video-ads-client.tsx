@@ -16,6 +16,7 @@ import {
   Flame,
   Rocket,
   Star,
+  Loader2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -26,8 +27,8 @@ import ClickSpark from "@/components/ui/click-spark";
 import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { VideoCarousel } from "@/components/sections/video-carousel";
-import { GetAdsLeadForm } from "@/components/get-ads/lead-form";
 import { cn } from "@/lib/utils";
+import type { BatchTierId } from "@/lib/batch-tiers";
 
 const GMB_REVIEWS_URL = "https://share.google/NDBtHySNKzPF0mTvG";
 
@@ -66,10 +67,8 @@ const TESTIMONIALS = [
   },
 ];
 
-type TierId = "minimum" | "pro" | "max";
-
-type BatchTier = {
-  id: TierId;
+type UITier = {
+  id: BatchTierId;
   name: string;
   price: string;
   adCount: number;
@@ -80,7 +79,7 @@ type BatchTier = {
   popular?: boolean;
 };
 
-const TIERS: BatchTier[] = [
+const TIERS: UITier[] = [
   {
     id: "minimum",
     name: "Minimum",
@@ -171,15 +170,31 @@ const FAQS = [
 ];
 
 export function BatchVideoAdsClient() {
-  const [selectedPainPoints, setSelectedPainPoints] = useState<number | undefined>(undefined);
-  const [selectedAdCount, setSelectedAdCount] = useState<number>(500);
+  const [loadingTier, setLoadingTier] = useState<BatchTierId | null>(null);
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
 
-  const scrollToForm = (adCount: number, painPoints: number) => {
-    setSelectedAdCount(adCount);
-    setSelectedPainPoints(painPoints);
-    setTimeout(() => {
-      document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
-    }, 50);
+  const startCheckout = async (tier: BatchTierId) => {
+    setCheckoutError(null);
+    setLoadingTier(tier);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ tier }),
+      });
+      if (!res.ok) {
+        throw new Error(`Checkout failed (${res.status})`);
+      }
+      const data = (await res.json()) as { url?: string };
+      if (!data.url) throw new Error("Missing checkout URL");
+      window.location.href = data.url;
+    } catch (error) {
+      console.error(error);
+      setCheckoutError(
+        "We couldn't start checkout. Please try again in a moment."
+      );
+      setLoadingTier(null);
+    }
   };
 
   return (
@@ -261,7 +276,7 @@ export function BatchVideoAdsClient() {
                 className="text-lg px-8 font-bold"
                 asChild
               >
-                <a href="#lead-form">
+                <a href="#pricing">
                   Start My Batch
                   <Rocket className="ml-2 h-5 w-5" />
                 </a>
@@ -828,10 +843,20 @@ export function BatchVideoAdsClient() {
                       size="lg"
                       variant={tier.popular ? "default" : "outline"}
                       className="w-full font-bold"
-                      onClick={() => scrollToForm(tier.adCount, tier.painPoints)}
+                      disabled={loadingTier !== null}
+                      onClick={() => startCheckout(tier.id)}
                     >
-                      Start {tier.name}
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      {loadingTier === tier.id ? (
+                        <>
+                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          Redirecting…
+                        </>
+                      ) : (
+                        <>
+                          Start {tier.name}
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </>
+                      )}
                     </Button>
                   </ClickSpark>
                 </BorderGlow>
@@ -839,31 +864,19 @@ export function BatchVideoAdsClient() {
             ))}
           </div>
 
+          {checkoutError && (
+            <p className="text-center text-sm text-destructive mt-6 max-w-xl mx-auto">
+              {checkoutError}
+            </p>
+          )}
+
           <p className="text-center text-xs text-muted-foreground mt-10 max-w-2xl mx-auto">
-            *24 hours from when we receive your footage. Weekends: footage received Sunday
-            counts as Monday — delivered by end of day Tuesday. Revisions for errors only —
-            this is ad creative testing, not boutique edit work.
+            Secure checkout via Stripe. *24-hour turnaround guaranteed from the
+            moment we receive your footage. Weekends: footage received Sunday
+            counts as Monday — delivered by end of day Tuesday. Revisions for
+            errors only — this is ad creative testing, not boutique edit work.
           </p>
         </div>
-      </section>
-
-      {/* FORM */}
-      <section className="py-12 px-4 bg-muted/20">
-        <div className="max-w-5xl mx-auto text-center mb-4">
-          <AnimateOnScroll>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
-              Start Your Batch
-            </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Fill this out so we can tailor every script to your business, audience, and offer — the more specific you are, the sharper your{" "}
-              <span className="text-primary font-semibold">{selectedAdCount} ads</span>.
-            </p>
-          </AnimateOnScroll>
-        </div>
-        <GetAdsLeadForm
-          adCount={selectedAdCount}
-          lockedPainPointCount={selectedPainPoints}
-        />
       </section>
 
       {/* FAQ */}

@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "indexnow": "tsx scripts/submit-indexnow.ts",
-    "indexnow:dry": "tsx scripts/submit-indexnow.ts --dry-run"
+    "indexnow:dry": "tsx scripts/submit-indexnow.ts --dry-run",
+    "gen-scripts": "tsx scripts/gen-prestyj-promo-scripts.ts"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
@@ -40,7 +41,10 @@
     "react-dom": "19.2.3",
     "react-hook-form": "^7.71.2",
     "react-safe-json-ld": "^1.0.3",
+    "resend": "^6.12.0",
+    "stripe": "^22.0.2",
     "tailwind-merge": "^3.4.0",
+    "vercel": "^51.5.1",
     "zod": "^4.3.6"
   },
   "devDependencies": {
