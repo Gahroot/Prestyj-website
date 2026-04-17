@@ -24,7 +24,7 @@ const TIERS = [
     tagline: "Test your first angles",
     popular: false,
     features: [
-      "300 unique ad scripts",
+      "300 unique vertical video ads",
       "3 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",
@@ -37,7 +37,7 @@ const TIERS = [
     tagline: "The sweet spot",
     popular: true,
     features: [
-      "500 unique ad scripts",
+      "500 unique vertical video ads",
       "5 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",
@@ -51,7 +51,7 @@ const TIERS = [
     tagline: "Go wide, find winners fast",
     popular: false,
     features: [
-      "1000 unique ad scripts",
+      "1000 unique vertical video ads",
       "10 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",

@@ -22,7 +22,7 @@ export const BATCH_TIERS: Record<BatchTierId, BatchTier> = {
     adCount: 300,
     painPoints: 3,
     highlights: [
-      "300 unique ad scripts",
+      "300 unique vertical video ads",
       "3 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",
@@ -39,7 +39,7 @@ export const BATCH_TIERS: Record<BatchTierId, BatchTier> = {
     painPoints: 5,
     popular: true,
     highlights: [
-      "500 unique ad scripts",
+      "500 unique vertical video ads",
       "5 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",
@@ -56,7 +56,7 @@ export const BATCH_TIERS: Record<BatchTierId, BatchTier> = {
     adCount: 1000,
     painPoints: 10,
     highlights: [
-      "1000 unique ad scripts",
+      "1000 unique vertical video ads",
       "10 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",

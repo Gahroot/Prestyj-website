@@ -89,7 +89,7 @@ const TIERS: UITier[] = [
     tagline: "Test your first angles",
     icon: <Zap className="w-5 h-5" />,
     highlights: [
-      "300 unique ad scripts",
+      "300 unique vertical video ads",
       "3 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",
@@ -106,7 +106,7 @@ const TIERS: UITier[] = [
     tagline: "The sweet spot",
     icon: <Flame className="w-5 h-5" />,
     highlights: [
-      "500 unique ad scripts",
+      "500 unique vertical video ads",
       "5 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",
@@ -123,7 +123,7 @@ const TIERS: UITier[] = [
     tagline: "Go wide, find winners fast",
     icon: <Rocket className="w-5 h-5" />,
     highlights: [
-      "1000 unique ad scripts",
+      "1000 unique vertical video ads",
       "10 pain points tested",
       "Hook, body & CTA variations",
       "24-hour turnaround*",
