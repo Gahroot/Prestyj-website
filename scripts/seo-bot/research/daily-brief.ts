@@ -217,6 +217,7 @@ export async function buildDailyBrief(
     temperature: 0.5,
     cacheSystem: true,
     responseFormat: "json",
+    useWebSearch: true,
   });
 
   const brief = parseResearchBrief(response.content, dateIso);

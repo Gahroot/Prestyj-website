@@ -150,6 +150,9 @@ import { realEstateVideoAdsPennsylvania } from "./real-estate-video-ads-pennsylv
 import { realEstateVideoAdsOhio } from "./real-estate-video-ads-ohio";
 import { realEstateVideoAdsIllinois } from "./real-estate-video-ads-illinois";
 
+// SEO-BOT-APPEND-IMPORTS
+import { videoAdsForRealtorsFresno } from "./video-ads-for-realtors-fresno";
+
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
   "real-estate-teams": realEstateTeams,
@@ -303,6 +306,8 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "real-estate-video-ads-pennsylvania": realEstateVideoAdsPennsylvania,
   "real-estate-video-ads-ohio": realEstateVideoAdsOhio,
   "real-estate-video-ads-illinois": realEstateVideoAdsIllinois,
+  // SEO-BOT-APPEND-REGISTER
+  "video-ads-for-realtors-fresno": videoAdsForRealtorsFresno,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

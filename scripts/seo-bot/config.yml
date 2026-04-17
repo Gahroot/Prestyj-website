@@ -48,32 +48,29 @@ tasks:
     provider: gemini-pro
     model: gemini-2.5-pro
     fallback:
-      provider: anthropic
-      model: claude-sonnet-4-6
+      provider: gemini
+      model: gemini-2.5-flash
   nichePage:
     provider: gemini-pro
     model: gemini-2.5-pro
     fallback:
-      provider: anthropic
-      model: claude-sonnet-4-6
+      provider: gemini
+      model: gemini-2.5-flash
   comparison:
-    provider: anthropic
-    model: claude-sonnet-4-6
+    provider: gemini-pro
+    model: gemini-2.5-pro
     fallback:
-      provider: gemini-pro
-      model: gemini-2.5-pro
+      provider: gemini
+      model: gemini-2.5-flash
   blogPost:
-    provider: anthropic
-    model: claude-sonnet-4-6
+    provider: gemini-pro
+    model: gemini-2.5-pro
     fallback:
-      provider: gemini-pro
-      model: gemini-2.5-pro
+      provider: gemini
+      model: gemini-2.5-flash
   titleRewrite:
     provider: gemini
     model: gemini-2.5-flash
-    fallback:
-      provider: anthropic-haiku
-      model: claude-haiku-4-5-20251001
   socialCopy:
     provider: gemini
     model: gemini-2.5-flash
@@ -81,8 +78,8 @@ tasks:
     provider: gemini
     model: gemini-2.5-flash
   dailyResearch:
-    provider: anthropic
-    model: claude-sonnet-4-6
+    provider: gemini-pro
+    model: gemini-2.5-pro
 
 rotation:
   monday:

@@ -23,6 +23,49 @@ const PRICING: Record<string, PriceTier> = {
 
 const FALLBACK_PRICING: PriceTier = { inputPerM: 5, outputPerM: 15 };
 
+/**
+ * Gemini's responseSchema accepts only a subset of JSON Schema / OpenAPI.
+ * Unsupported keywords (additionalProperties, $schema, $id, examples, default,
+ * const, etc.) cause a 400 Bad Request. Recursively strip them.
+ */
+const GEMINI_SCHEMA_ALLOWED = new Set([
+  "type",
+  "properties",
+  "required",
+  "items",
+  "enum",
+  "format",
+  "description",
+  "nullable",
+  "minItems",
+  "maxItems",
+  "minimum",
+  "maximum",
+  "minLength",
+  "maxLength",
+  "pattern",
+  "title",
+  "anyOf",
+  "oneOf",
+  "allOf",
+  "propertyOrdering",
+]);
+
+function sanitizeGeminiSchema(schema: unknown): unknown {
+  if (Array.isArray(schema)) {
+    return schema.map(sanitizeGeminiSchema);
+  }
+  if (schema && typeof schema === "object") {
+    const out: Record<string, unknown> = {};
+    for (const [key, val] of Object.entries(schema as Record<string, unknown>)) {
+      if (!GEMINI_SCHEMA_ALLOWED.has(key)) continue;
+      out[key] = sanitizeGeminiSchema(val);
+    }
+    return out;
+  }
+  return schema;
+}
+
 function resolvePricing(model: string): PriceTier {
   if (PRICING[model]) return PRICING[model];
   const prefix = Object.keys(PRICING).find((k) => model.startsWith(k));
@@ -82,17 +125,33 @@ export class GeminiProvider implements LLMProvider {
     const start = Date.now();
     const client = this.client();
 
-    const generationConfig: GenerationConfig = {
-      maxOutputTokens: req.maxTokens,
+    // Gemini 2.5 models default to dynamic "thinking" which eats the
+    // maxOutputTokens budget. Bump the budget so the visible response has
+    // room. For non-research tasks we disable thinking entirely.
+    const isFlash = req.model.includes("flash");
+    const needsThinking = req.useWebSearch === true;
+    const thinkingBudget = needsThinking
+      ? undefined
+      : isFlash
+        ? 0
+        : 512;
+    const outputBudget = Math.max(req.maxTokens, 2048);
+
+    const generationConfig: GenerationConfig & {
+      thinkingConfig?: { thinkingBudget?: number };
+    } = {
+      maxOutputTokens: outputBudget,
     };
+    if (typeof thinkingBudget === "number") {
+      generationConfig.thinkingConfig = { thinkingBudget };
+    }
     if (typeof req.temperature === "number") {
       generationConfig.temperature = req.temperature;
     }
-    if (req.responseFormat === "json") {
+    // Google Search grounding is mutually exclusive with JSON mode; prefer search.
+    const useSearch = req.useWebSearch === true;
+    if (req.responseFormat === "json" && !useSearch) {
       generationConfig.responseMimeType = "application/json";
-      if (req.jsonSchema) {
-        generationConfig.responseSchema = req.jsonSchema as unknown as GenerationConfig["responseSchema"];
-      }
     }
 
     const modelParams: ModelParams = {
@@ -100,6 +159,11 @@ export class GeminiProvider implements LLMProvider {
       systemInstruction: req.system,
       generationConfig,
     };
+    if (useSearch) {
+      (modelParams as unknown as { tools: unknown[] }).tools = [
+        { googleSearch: {} },
+      ];
+    }
 
     try {
       const model = client.getGenerativeModel(modelParams);

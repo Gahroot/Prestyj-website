@@ -11,6 +11,15 @@
  *   npx tsx scripts/seo-bot/cli.ts digest
  */
 
+import { config as loadDotenv } from "dotenv";
+import path from "node:path";
+import { existsSync } from "node:fs";
+
+const envLocal = path.resolve(process.cwd(), ".env.local");
+if (existsSync(envLocal)) loadDotenv({ path: envLocal });
+const envDefault = path.resolve(process.cwd(), ".env");
+if (existsSync(envDefault)) loadDotenv({ path: envDefault });
+
 import { loadConfig } from "./load-config";
 import { runDaily } from "./orchestration/daily-run";
 import { runWeeklyDigest } from "./orchestration/weekly-digest";

@@ -11,6 +11,13 @@ export interface LLMRequest {
   cacheSystem?: boolean;
   responseFormat?: "text" | "json";
   jsonSchema?: Record<string, unknown>;
+  /**
+   * Enable web search grounding. Gemini: uses Google Search grounding tool.
+   * Anthropic: enables web_search tool. Ignored by OpenAI-compat providers.
+   * When true, responseFormat should be "text" — Gemini requires JSON mode off
+   * when tools are active.
+   */
+  useWebSearch?: boolean;
 }
 
 export interface LLMUsage {

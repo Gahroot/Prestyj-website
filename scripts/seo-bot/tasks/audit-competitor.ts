@@ -27,16 +27,56 @@ const PayloadSchema = z.object({
   url: z.string().url(),
 });
 
-const ReportSchema = z.object({
-  pricing: z.string(),
-  positioning: z.string(),
-  recentFeatures: z
-    .union([z.array(z.string()), z.string()])
-    .transform((v) => (Array.isArray(v) ? v : [v])),
-  gapsForPrestyj: z
-    .union([z.array(z.string()), z.string()])
-    .transform((v) => (Array.isArray(v) ? v : [v])),
-});
+function flattenToString(v: unknown): string {
+  if (typeof v === "string") return v;
+  if (v === null || v === undefined) return "";
+  if (Array.isArray(v)) return v.map(flattenToString).filter(Boolean).join("\n");
+  if (typeof v === "object") {
+    const obj = v as Record<string, unknown>;
+    const lines: string[] = [];
+    for (const [key, val] of Object.entries(obj)) {
+      const rendered = flattenToString(val);
+      if (rendered.length === 0) continue;
+      const label = key
+        .replace(/([A-Z])/g, " $1")
+        .replace(/^./, (c) => c.toUpperCase())
+        .trim();
+      lines.push(`**${label}:** ${rendered}`);
+    }
+    return lines.join("\n");
+  }
+  return String(v);
+}
+
+function flattenToStringArray(v: unknown): string[] {
+  if (Array.isArray(v)) {
+    return v.map(flattenToString).filter((s) => s.length > 0);
+  }
+  const flat = flattenToString(v);
+  return flat.length > 0 ? [flat] : [];
+}
+
+const AnyValue = z.unknown();
+
+const ReportSchema = z
+  .object({
+    pricing: AnyValue.optional(),
+    positioning: AnyValue.optional(),
+    recentFeatures: AnyValue.optional(),
+    gapsForPrestyj: AnyValue.optional(),
+    // Tolerate alternative keys from the richer prompt structure
+    recentFeatureAdditions: AnyValue.optional(),
+    gaps: AnyValue.optional(),
+  })
+  .passthrough()
+  .transform((obj) => ({
+    pricing: flattenToString(obj.pricing) || "Pricing not stated.",
+    positioning: flattenToString(obj.positioning) || "Positioning not stated.",
+    recentFeatures: flattenToStringArray(
+      obj.recentFeatures ?? obj.recentFeatureAdditions
+    ),
+    gapsForPrestyj: flattenToStringArray(obj.gapsForPrestyj ?? obj.gaps),
+  }));
 
 const AuditJsonSchema = {
   type: "object",
@@ -106,9 +146,52 @@ function stripHtml(html: string): string {
 
 function parseJsonLoose(raw: string): unknown {
   const trimmed = raw.trim();
-  const fenceMatch = trimmed.match(/^```(?:json)?\s*\n([\s\S]*?)\n```$/);
-  const body = fenceMatch ? fenceMatch[1] : trimmed;
-  return JSON.parse(body);
+  // Try fenced first
+  const fenceMatch = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  let body = fenceMatch && fenceMatch[1] ? fenceMatch[1].trim() : trimmed;
+
+  // Extract the largest valid-looking JSON block by first { to last }
+  const firstBrace = body.indexOf("{");
+  const lastBrace = body.lastIndexOf("}");
+  if (firstBrace >= 0 && lastBrace > firstBrace) {
+    body = body.slice(firstBrace, lastBrace + 1);
+  }
+
+  // Normalize smart quotes and trailing commas that LLMs sometimes emit
+  body = body
+    .replace(/[\u201C\u201D]/g, '"')
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/,(\s*[}\]])/g, "$1");
+
+  try {
+    return JSON.parse(body);
+  } catch (err) {
+    const errMsg = err instanceof Error ? err.message : String(err);
+    const posMatch = errMsg.match(/position (\d+)/);
+    const pos = posMatch ? parseInt(posMatch[1], 10) : 0;
+    // Dump raw response for debugging
+    try {
+      const fs = require("fs") as typeof import("fs");
+      fs.writeFileSync("/tmp/seo-bot-raw.json", raw);
+    } catch {
+      /* ignore */
+    }
+    const contextStart = Math.max(0, pos - 30);
+    const contextEnd = Math.min(body.length, pos + 30);
+    const snippet = body.slice(contextStart, contextEnd);
+    const hex = Array.from(snippet)
+      .map((c) => {
+        const code = c.charCodeAt(0);
+        return code >= 0x20 && code < 0x7f
+          ? c
+          : `\\u${code.toString(16).padStart(4, "0")}`;
+      })
+      .join("");
+    console.error(
+      `[audit-competitor] parse failed: ${errMsg}\n  raw dumped to /tmp/seo-bot-raw.json\n  hex-escaped snippet: ${hex}`
+    );
+    throw err;
+  }
 }
 
 function todayYMD(): string {

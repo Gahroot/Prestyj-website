@@ -1,4 +1,16 @@
 {
-  "items": [],
-  "lastUpdated": "2026-04-17T00:00:00.000Z"
+  "items": [
+    {
+      "slug": "video-ads-for-realtors-fresno",
+      "type": "geo-page",
+      "title": "Video Ads for Fresno Realtors | 300 Ads in 24 Hours | Prestyj",
+      "description": "Fresno agents: 300–1,000 video ads in 24 hours from one recording. Tuned for Fresno MLS, Bay Area relos, Clovis schools, and Woodward Park luxury. From $1,497.",
+      "filePath": "/home/groot/prestyj/src/lib/best-for/video-ads-for-realtors-fresno.ts",
+      "shippedAt": "2026-04-17T21:59:47.937Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.0436675
+    }
+  ],
+  "lastUpdated": "2026-04-17T21:59:47.944Z"
 }
