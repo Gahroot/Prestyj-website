@@ -74,6 +74,14 @@ import { mortgageBrokerVideoAds } from "./mortgage-broker-video-ads";
 import { brokerageRecruitingVideoAds } from "./brokerage-recruiting-video-ads";
 import { newConstructionBuilderVideoAds } from "./new-construction-builder-video-ads";
 import { titleCompanyVideoAds } from "./title-company-video-ads";
+import { videoAdsForRealtors } from "./video-ads-for-realtors";
+import { videoAdsForRoofers } from "./video-ads-for-roofers";
+import { videoAdsForHvacOwners } from "./video-ads-for-hvac-owners";
+import { videoAdsForChiropractors } from "./video-ads-for-chiropractors";
+import { videoAdsForLawFirmOwners } from "./video-ads-for-law-firm-owners";
+import { videoAdsForAgencyOwners } from "./video-ads-for-agency-owners";
+import { videoAdsForContractors } from "./video-ads-for-contractors";
+import { videoAdsForFinancialAdvisors } from "./video-ads-for-financial-advisors";
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
@@ -151,6 +159,14 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "brokerage-recruiting-video-ads": brokerageRecruitingVideoAds,
   "new-construction-builder-video-ads": newConstructionBuilderVideoAds,
   "title-company-video-ads": titleCompanyVideoAds,
+  "video-ads-for-realtors": videoAdsForRealtors,
+  "video-ads-for-roofers": videoAdsForRoofers,
+  "video-ads-for-hvac-owners": videoAdsForHvacOwners,
+  "video-ads-for-chiropractors": videoAdsForChiropractors,
+  "video-ads-for-law-firm-owners": videoAdsForLawFirmOwners,
+  "video-ads-for-agency-owners": videoAdsForAgencyOwners,
+  "video-ads-for-contractors": videoAdsForContractors,
+  "video-ads-for-financial-advisors": videoAdsForFinancialAdvisors,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {
