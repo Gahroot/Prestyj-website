@@ -113,8 +113,8 @@ export const creatifyCompareData: ComparePageData = createComparePage({
 export const creatifyMetadata: CompareMetadata = {
   slug: "prestyj-vs-creatify",
   competitorName: "Creatify",
-  title: "Prestyj vs Creatify: Done-For-You Scripts vs AI Ad Generator",
+  title: "PRESTYJ vs Creatify: Done-For-You or DIY Scripts? (2026)",
   description:
-    "Creatify renders AI ads from scripts you write. Prestyj writes scripts AND films your real face for 300-1,000 ads in 24 hours. Compare the difference.",
+    "Creatify renders AI avatars from scripts you write. PRESTYJ writes scripts AND films your real face. 300-1,000 ads in 24 hours, from $1,497 one-time.",
   keywords: ["creatify alternative", "creatify vs prestyj", "ai ad generator alternative", "batch video ads", "ai ugc alternative"],
 };

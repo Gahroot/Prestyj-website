@@ -113,8 +113,8 @@ export const heygenCompareData: ComparePageData = createComparePage({
 export const heygenMetadata: CompareMetadata = {
   slug: "prestyj-vs-heygen",
   competitorName: "HeyGen",
-  title: "Prestyj vs HeyGen: Real-Face Batch Ads vs AI Avatars",
+  title: "PRESTYJ vs HeyGen: Your Real Face or an AI Clone? (2026)",
   description:
-    "HeyGen renders AI avatars from scripts you write. Prestyj scripts and films your real face for 300-1,000 ads in 24 hours. Compare trust, cost, and turnaround.",
+    "HeyGen's avatar of you still looks AI. PRESTYJ films the actual you - 300-1,000 scripted ads in 24 hours for $1,497 one-time, not $89/mo forever.",
   keywords: ["heygen alternative", "heygen vs prestyj", "ai avatar ad alternative", "real owner ugc", "batch video ads"],
 };

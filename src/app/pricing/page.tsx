@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PricingHero } from "@/components/sections/pricing/pricing-hero";
 import { PricingTiersSection } from "@/components/sections/pricing/pricing-tiers";
+import { BatchVideoAdsCrossSellSection } from "@/components/sections/pricing/batch-video-ads-cross-sell";
 import { PricingComparisonSection } from "@/components/sections/pricing/pricing-comparison";
 import { PricingStoriesSection } from "@/components/sections/pricing/pricing-stories";
 import { PricingROISection } from "@/components/sections/pricing/pricing-roi";
@@ -17,6 +18,7 @@ export default function PricingPage() {
       <Navbar />
       <main>
         <PricingHero />
+        <BatchVideoAdsCrossSellSection />
         <PricingTiersSection />
         <PricingComparisonSection />
         <PricingStoriesSection />

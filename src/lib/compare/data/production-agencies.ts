@@ -113,8 +113,8 @@ export const productionAgenciesCompareData: ComparePageData = createComparePage(
 export const productionAgenciesMetadata: CompareMetadata = {
   slug: "prestyj-vs-production-agencies",
   competitorName: "Production Agencies",
-  title: "Prestyj vs Production Agencies: Batch Ads vs Polished Spots",
+  title: "PRESTYJ vs Production Agencies: 1,000 Ads or 2 Polished Spots?",
   description:
-    "Production agencies ship 1-5 polished spots in 4-12 weeks. Prestyj ships 300-1,000 native batch ads in 24 hours for a flat fee. Compare cost, volume, and performance.",
+    "Agencies ship 1-5 polished spots in 12 weeks for $20K+. PRESTYJ ships 300-1,000 native real-face ads in 24 hours for $1,497. Polished ads get scrolled.",
   keywords: ["video production agency alternative", "ad agency alternative", "batch video ads", "paid social creative volume", "ugc style batch ads"],
 };

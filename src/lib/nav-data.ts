@@ -1,4 +1,5 @@
 export const navLinks = [
+  { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
   { href: "#how-it-works", label: "How It Works" },
   { href: "/results", label: "Results" },
   { href: "/pricing", label: "Pricing" },
@@ -11,6 +12,11 @@ export const ctaLinks = [
 ];
 
 export const solutionLinks = [
+  {
+    href: "/batch-video-ads",
+    label: "Batch Video Ads",
+    description: "300–1,000 scripted vertical video ads in 24 hours.",
+  },
   { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
   { href: "/solutions/lead-reactivation", label: "Dead Lead Reactivation" },
   { href: "/solutions/ai-lead-generation", label: "AI Lead Generation" },

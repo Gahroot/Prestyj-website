@@ -9,9 +9,9 @@ export const videoAdsForHvacOwners: BestForPageContent = {
       "HVAC company owners using batch video ad creative testing to drive summer emergency calls, annual maintenance club signups, heat pump rebate conversions, and installer-pipeline demand.",
   },
   meta: {
-    title: "Video Ads for HVAC Owners | Emergency, Maintenance & Install Ads | Prestyj",
+    title: "300 HVAC Video Ads in 24 Hours (From $1,497) | PRESTYJ",
     description:
-      "HVAC owners: record once, get 300–1,000 scripted vertical video ads for summer emergencies, maintenance clubs, heat pump rebates, and tankless upsells. One-time $1,497. 24-hour delivery.",
+      "AC died at 8am - be the ad they see at 8:05. 300-1,000 scripted emergency, maintenance club, and heat pump rebate ads with your real face in 24 hours.",
     keywords: [
       "video ads for hvac",
       "facebook ads for hvac companies",

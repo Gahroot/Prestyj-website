@@ -9,9 +9,9 @@ export const videoAdsForLawFirmOwners: BestForPageContent = {
       "Solo and small-firm attorneys using batch video ad creative testing to drive qualified intake for PI, family, criminal defense, estate planning, and other consumer legal verticals while staying within state bar advertising rules.",
   },
   meta: {
-    title: "Video Ads for Law Firm Owners | Bar-Compliant Intake Creative | Prestyj",
+    title: "300 Bar-Compliant Law Firm Video Ads in 24 Hours | PRESTYJ",
     description:
-      "Law firm owners: record once, get 300–1,000 scripted, state-bar-compliant vertical video ads for PI, family law, criminal defense, estate planning, and more. One-time $1,497. 24-hour delivery.",
+      "Beat the billboard firm. 300-1,000 bar-compliant PI, family, and criminal defense video ads with your real face, delivered in 24 hours. From $1,497.",
     keywords: [
       "video ads for law firms",
       "facebook ads for attorneys",

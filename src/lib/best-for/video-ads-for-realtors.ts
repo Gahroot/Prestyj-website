@@ -9,9 +9,9 @@ export const videoAdsForRealtors: BestForPageContent = {
       "Real estate agents using batch video ad creative testing on Facebook and Instagram to generate buyer and seller leads — post-NAR-settlement, in markets where every agent is running the same 'just listed' carousel.",
   },
   meta: {
-    title: "Video Ads for Realtors | 300–1,000 Done-For-You Ads | Prestyj",
+    title: "300 Real Estate Video Ads in 24 Hours (From $1,497) | PRESTYJ",
     description:
-      "Realtors: record yourself once for 20 minutes, get 300–1,000 scripted vertical video ads in 24 hours. Test buyer vs seller hooks, just-listed vs coming-soon, post-NAR messaging. One-time pricing from $1,497.",
+      "Stop running the same 'just listed' ad as every realtor in your market. 300-1,000 scripted vertical ads with your real face, in 24 hours. From $1,497.",
     keywords: [
       "video ads for realtors",
       "facebook ads for real estate agents",

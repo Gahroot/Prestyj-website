@@ -9,9 +9,9 @@ export const videoAdsForContractors: BestForPageContent = {
       "General contractors, remodelers, and design-build firms using batch video ad creative testing to fill bid calendars, book showroom visits, and convert high-ticket remodeling projects on Facebook and Instagram.",
   },
   meta: {
-    title: "Video Ads for Contractors | Remodeling & Design-Build Ads | Prestyj",
+    title: "300 Contractor Video Ads in 24 Hours (From $1,497) | PRESTYJ",
     description:
-      "General contractors: record once, get 300–1,000 scripted vertical video ads for kitchen, bath, whole-home, and ADU remodels. Book showroom visits and bid calls. One-time $1,497. 24-hour delivery.",
+      "Stop competing with every handyman in your zip. 300-1,000 scripted kitchen, whole-home, and ADU remodel ads with your real face in 24 hours. From $1,497.",
     keywords: [
       "video ads for contractors",
       "facebook ads for remodeling companies",

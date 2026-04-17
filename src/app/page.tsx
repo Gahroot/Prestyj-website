@@ -17,6 +17,10 @@ const SpeedToLeadSection = dynamic(
   () => import("@/components/sections/speed-to-lead").then((m) => m.SpeedToLeadSection),
   { ssr: true },
 );
+const BatchVideoAdsCTASection = dynamic(
+  () => import("@/components/sections/batch-video-ads-cta").then((m) => m.BatchVideoAdsCTASection),
+  { ssr: true },
+);
 const PainPointsSection = dynamic(
   () => import("@/components/sections/pain-points").then((m) => m.PainPointsSection),
   { ssr: true },
@@ -97,6 +101,7 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroDemoSection />
+        <BatchVideoAdsCTASection />
         <SpeedToLeadSection />
         <PainPointsSection />
         <SolutionSection />

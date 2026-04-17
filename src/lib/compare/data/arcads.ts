@@ -113,8 +113,8 @@ export const arcadsCompareData: ComparePageData = createComparePage({
 export const arcadsMetadata: CompareMetadata = {
   slug: "prestyj-vs-arcads",
   competitorName: "Arcads",
-  title: "Prestyj vs Arcads: Real Face Batch Ads vs AI Avatars",
+  title: "PRESTYJ vs Arcads: Real Faces or AI Avatars? (2026)",
   description:
-    "Arcads uses AI actors. Prestyj turns your real face into 300-1,000 scripted video ads in 24 hours for a one-time price. Compare pricing, trust, and turnaround.",
+    "Arcads makes AI avatar ads. PRESTYJ makes real-face video ads from your selfie footage. 300-1,000 ads in 24 hours, starting at $1,497. See which wins.",
   keywords: ["arcads alternative", "arcads vs prestyj", "ai avatar ads alternative", "real face ugc", "batch video ads"],
 };

@@ -68,7 +68,12 @@ function getAllUrls(): string[] {
     `${BASE_URL}/real-estate-roi-calculator`,
     `${BASE_URL}/lead-magnet/brokerage-playbook`,
     `${BASE_URL}/lead-magnet/reactivate-leads`,
-    `${BASE_URL}/demo`
+    `${BASE_URL}/demo`,
+    `${BASE_URL}/ad-fatigue-solution`,
+    `${BASE_URL}/how-many-ad-creatives-to-test`,
+    `${BASE_URL}/how-often-refresh-ad-creative`,
+    `${BASE_URL}/why-facebook-ads-stop-working`,
+    `${BASE_URL}/ai-ads-vs-human-ads`
   );
 
   // Blog posts - scan content/blog directory
@@ -114,6 +119,15 @@ function getAllUrls(): string[] {
     "/compare/ai-consultant-roi-calculator",
     // AI vs Traditional comparison
     "/compare/ai-lead-generation-vs-traditional",
+    // Batch video ads competitors
+    "/compare/prestyj-vs-arcads",
+    "/compare/prestyj-vs-creatify",
+    "/compare/prestyj-vs-heygen",
+    "/compare/prestyj-vs-billo",
+    "/compare/prestyj-vs-fiverr-video-ads",
+    "/compare/prestyj-vs-ai-avatar-ads",
+    "/compare/prestyj-vs-ugc-creators",
+    "/compare/prestyj-vs-production-agencies",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 

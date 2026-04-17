@@ -4,6 +4,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import BorderGlow from "@/components/ui/border-glow";
+import { BatchVideoAdsProductJsonLd } from "@/components/seo/batch-video-ads-product-json-ld";
 
 export const metadata: Metadata = {
   title: "Batch Video Ad Pricing | Minimum, Pro, Max | PRESTYJ",
@@ -65,6 +66,7 @@ const TIERS = [
 export default function BulkVideoAdPricingPage() {
   return (
     <main className="min-h-screen">
+      <BatchVideoAdsProductJsonLd />
       {/* Hero */}
       <section className="py-16 md:py-24 px-4">
         <div className="max-w-4xl mx-auto text-center">

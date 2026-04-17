@@ -10,6 +10,11 @@ import { Badge } from "@/components/ui/badge";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import BorderGlow from "@/components/ui/border-glow";
 import { VideoCarousel } from "@/components/sections/video-carousel";
+import {
+  VideoObjectJsonLd,
+  type VideoDescriptor,
+} from "@/components/seo/video-object-json-ld";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Video Ad Samples | See the Ads We Actually Run | PRESTYJ",
@@ -38,6 +43,98 @@ const VIDEOS = [
   "1171065094",
 ];
 
+const VIDEO_DESCRIPTORS: VideoDescriptor[] = [
+  {
+    vimeoId: "1182069557",
+    name: "Vertical Video Ad Sample - Real Estate Pattern Interrupt Hook",
+    description:
+      "Vertical video ad sample featuring a pattern-interrupt hook for real estate agents, produced via the PRESTYJ combinatorial batch video ads method.",
+    uploadDate: "2026-02-10",
+  },
+  {
+    vimeoId: "1182069871",
+    name: "Vertical Video Ad Sample - Realtor Bold Claim Hook",
+    description:
+      "Short-form vertical ad featuring a bold-claim opening hook for realtors, remixed from a single shoot using the PRESTYJ batch video ads production system.",
+    uploadDate: "2026-02-10",
+  },
+  {
+    vimeoId: "1173092805",
+    name: "Vertical Video Ad Sample - Home Services Curiosity Gap Hook",
+    description:
+      "Vertical ad sample opening with a curiosity-gap hook for home services advertisers, built from the PRESTYJ 10-hook combinatorial framework.",
+    uploadDate: "2026-01-22",
+  },
+  {
+    vimeoId: "1173092688",
+    name: "Vertical Video Ad Sample - Problem-Solution Body",
+    description:
+      "Vertical ad sample demonstrating the problem-solution body structure, one of five core body templates in the PRESTYJ batch video ads system.",
+    uploadDate: "2026-01-22",
+  },
+  {
+    vimeoId: "1173092572",
+    name: "Vertical Video Ad Sample - Testimonial Body",
+    description:
+      "Vertical ad sample built around a testimonial body, showcasing social proof paired with a direct call to action from the PRESTYJ creative matrix.",
+    uploadDate: "2026-01-22",
+  },
+  {
+    vimeoId: "1171065337",
+    name: "Vertical Video Ad Sample - Demo Body With Urgency CTA",
+    description:
+      "Vertical ad sample combining a product-demo body with an urgency-led CTA variant from the PRESTYJ batch video ads combinatorial system.",
+    uploadDate: "2026-01-08",
+  },
+  {
+    vimeoId: "1171065301",
+    name: "Vertical Video Ad Sample - Before-After Body",
+    description:
+      "Vertical ad sample using a before-after body structure to demonstrate transformation outcomes, produced via the PRESTYJ batch video ads method.",
+    uploadDate: "2026-01-08",
+  },
+  {
+    vimeoId: "1171065268",
+    name: "Vertical Video Ad Sample - Authority Body With Scarcity CTA",
+    description:
+      "Vertical ad sample pairing an authority-positioning body with a scarcity-driven CTA, remixed from the PRESTYJ combinatorial creative library.",
+    uploadDate: "2026-01-08",
+  },
+  {
+    vimeoId: "1171065240",
+    name: "Vertical Video Ad Sample - Direct CTA Variant",
+    description:
+      "Vertical ad sample featuring a direct call-to-action variant, one of six CTA templates in the PRESTYJ batch video ads production system.",
+    uploadDate: "2026-01-08",
+  },
+  {
+    vimeoId: "1171065198",
+    name: "Vertical Video Ad Sample - Question CTA Variant",
+    description:
+      "Vertical ad sample closing with a question-style CTA to spike engagement, drawn from the PRESTYJ batch video ads combinatorial creative matrix.",
+    uploadDate: "2026-01-08",
+  },
+  {
+    vimeoId: "1171065126",
+    name: "Vertical Video Ad Sample - Benefit-Led CTA Variant",
+    description:
+      "Vertical ad sample closing with a benefit-led CTA that reinforces the core offer, built via the PRESTYJ 300-ad combinatorial production workflow.",
+    uploadDate: "2026-01-08",
+  },
+  {
+    vimeoId: "1171065094",
+    name: "Vertical Video Ad Sample - Social Proof CTA Variant",
+    description:
+      "Vertical ad sample closing with a social-proof CTA for ad creative testing at scale, produced via the PRESTYJ batch video ads method.",
+    uploadDate: "2026-01-08",
+  },
+];
+
+const BREADCRUMB_ITEMS = [
+  { name: "Home", url: "https://prestyj.com" },
+  { name: "Samples", url: "https://prestyj.com/samples" },
+];
+
 const PROCESS_STEPS = [
   {
     icon: Shuffle,
@@ -62,6 +159,8 @@ const PROCESS_STEPS = [
 export default function SamplesPage() {
   return (
     <>
+      <VideoObjectJsonLd videos={VIDEO_DESCRIPTORS} />
+      <BreadcrumbJsonLd items={BREADCRUMB_ITEMS} />
       <Navbar />
       <main className="min-h-screen">
         {/* Hero */}

@@ -25,10 +25,17 @@ export function NavbarDropdowns() {
         <DropdownMenuTrigger className="flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors text-sm">
           Solutions <ChevronDown className="h-4 w-4" />
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent align="end" className="w-72">
           {solutionLinks.map((link) => (
             <DropdownMenuItem key={link.href} asChild>
-              <Link href={link.href}>{link.label}</Link>
+              <Link href={link.href} className="flex flex-col items-start gap-0.5 py-2">
+                <span className={link.description ? "font-semibold text-primary" : ""}>
+                  {link.label}
+                </span>
+                {link.description && (
+                  <span className="text-xs text-muted-foreground">{link.description}</span>
+                )}
+              </Link>
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>
@@ -78,7 +85,11 @@ export function NavbarMobile() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-lg text-muted-foreground hover:text-foreground transition-colors"
+              className={
+                link.highlight
+                  ? "text-lg text-primary font-semibold hover:text-primary/80 transition-colors"
+                  : "text-lg text-muted-foreground hover:text-foreground transition-colors"
+              }
               onClick={() => setOpen(false)}
             >
               {link.label}
@@ -90,7 +101,11 @@ export function NavbarMobile() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block text-muted-foreground hover:text-foreground transition-colors pl-4"
+                className={
+                  link.description
+                    ? "block text-primary font-semibold hover:text-primary/80 transition-colors pl-4"
+                    : "block text-muted-foreground hover:text-foreground transition-colors pl-4"
+                }
                 onClick={() => setOpen(false)}
               >
                 {link.label}

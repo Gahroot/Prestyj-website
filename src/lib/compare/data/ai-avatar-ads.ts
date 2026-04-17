@@ -120,8 +120,8 @@ export const aiAvatarAdsCompareData: ComparePageData = createComparePage({
 export const aiAvatarAdsMetadata: CompareMetadata = {
   slug: "prestyj-vs-ai-avatar-ads",
   competitorName: "AI Avatar Ads",
-  title: "Prestyj vs AI Avatar Ads: Why Real-Face Batch Ads Win in 2026",
+  title: "Real Faces Beat AI Avatars in Service Ads | PRESTYJ vs AI",
   description:
-    "AI avatar tools (Arcads, HeyGen, Creatify, Synthesia) are great software — and poor fit for trust-based service businesses. Compare real-face batch ads vs synthetic.",
+    "AI avatar ads feel fake. PRESTYJ produces 300-1,000 scripted video ads with your real face in 24 hours - for $1,497, not $5K+ monthly subscriptions.",
   keywords: ["ai avatar ads alternative", "real face ugc", "anti-ai ugc", "batch video ads", "owner-led ads"],
 };

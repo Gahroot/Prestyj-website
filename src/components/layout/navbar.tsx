@@ -20,7 +20,11 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm"
+                className={
+                  link.highlight
+                    ? "text-primary hover:text-primary/80 transition-colors text-sm font-semibold"
+                    : "text-muted-foreground hover:text-foreground transition-colors text-sm"
+                }
               >
                 {link.label}
               </Link>

@@ -113,8 +113,8 @@ export const fiverrVideoAdsCompareData: ComparePageData = createComparePage({
 export const fiverrVideoAdsMetadata: CompareMetadata = {
   slug: "prestyj-vs-fiverr-video-ads",
   competitorName: "Fiverr Video Ads",
-  title: "Prestyj vs Fiverr Video Ads: Batch System vs Freelance Gig Lottery",
+  title: "PRESTYJ vs Fiverr Video Ads: Why the Gig Lottery Fails",
   description:
-    "Fiverr sellers vary wildly in quality and timeline. Prestyj delivers 300-1,000 scripted video ads in 24 hours for one flat fee. Compare cost and reliability.",
+    "Fiverr is a coin flip - one great gig, ten template mills. PRESTYJ ships 300-1,000 scripted ads with your real face in 24 hours. $1,497 flat, one team.",
   keywords: ["fiverr video ads alternative", "fiverr vs prestyj", "freelance video ad alternative", "batch video ads", "scripted video ads"],
 };

@@ -83,6 +83,73 @@ import { videoAdsForAgencyOwners } from "./video-ads-for-agency-owners";
 import { videoAdsForContractors } from "./video-ads-for-contractors";
 import { videoAdsForFinancialAdvisors } from "./video-ads-for-financial-advisors";
 
+// Geo: 50 metro-specific and 15 state-specific real estate video ad pages
+import { videoAdsForRealtorsAustin } from "./video-ads-for-realtors-austin";
+import { videoAdsForRealtorsDallasFortWorth } from "./video-ads-for-realtors-dallas-fort-worth";
+import { videoAdsForRealtorsHouston } from "./video-ads-for-realtors-houston";
+import { videoAdsForRealtorsSanAntonio } from "./video-ads-for-realtors-san-antonio";
+import { videoAdsForRealtorsPhoenix } from "./video-ads-for-realtors-phoenix";
+import { videoAdsForRealtorsDenver } from "./video-ads-for-realtors-denver";
+import { videoAdsForRealtorsAtlanta } from "./video-ads-for-realtors-atlanta";
+import { videoAdsForRealtorsTampa } from "./video-ads-for-realtors-tampa";
+import { videoAdsForRealtorsNashville } from "./video-ads-for-realtors-nashville";
+import { videoAdsForRealtorsCharlotte } from "./video-ads-for-realtors-charlotte";
+import { videoAdsForRealtorsRaleigh } from "./video-ads-for-realtors-raleigh";
+import { videoAdsForRealtorsOrlando } from "./video-ads-for-realtors-orlando";
+import { videoAdsForRealtorsJacksonville } from "./video-ads-for-realtors-jacksonville";
+import { videoAdsForRealtorsMiami } from "./video-ads-for-realtors-miami";
+import { videoAdsForRealtorsNewYork } from "./video-ads-for-realtors-new-york";
+import { videoAdsForRealtorsLosAngeles } from "./video-ads-for-realtors-los-angeles";
+import { videoAdsForRealtorsSanDiego } from "./video-ads-for-realtors-san-diego";
+import { videoAdsForRealtorsSeattle } from "./video-ads-for-realtors-seattle";
+import { videoAdsForRealtorsPortland } from "./video-ads-for-realtors-portland";
+import { videoAdsForRealtorsBoston } from "./video-ads-for-realtors-boston";
+import { videoAdsForRealtorsChicago } from "./video-ads-for-realtors-chicago";
+import { videoAdsForRealtorsMinneapolis } from "./video-ads-for-realtors-minneapolis";
+import { videoAdsForRealtorsColumbus } from "./video-ads-for-realtors-columbus";
+import { videoAdsForRealtorsIndianapolis } from "./video-ads-for-realtors-indianapolis";
+import { videoAdsForRealtorsKansasCity } from "./video-ads-for-realtors-kansas-city";
+import { videoAdsForRealtorsStLouis } from "./video-ads-for-realtors-st-louis";
+import { videoAdsForRealtorsLasVegas } from "./video-ads-for-realtors-las-vegas";
+import { videoAdsForRealtorsSaltLakeCity } from "./video-ads-for-realtors-salt-lake-city";
+import { videoAdsForRealtorsSacramento } from "./video-ads-for-realtors-sacramento";
+import { videoAdsForRealtorsOklahomaCity } from "./video-ads-for-realtors-oklahoma-city";
+import { videoAdsForRealtorsWashingtonDc } from "./video-ads-for-realtors-washington-dc";
+import { videoAdsForRealtorsBaltimore } from "./video-ads-for-realtors-baltimore";
+import { videoAdsForRealtorsPhiladelphia } from "./video-ads-for-realtors-philadelphia";
+import { videoAdsForRealtorsPittsburgh } from "./video-ads-for-realtors-pittsburgh";
+import { videoAdsForRealtorsCleveland } from "./video-ads-for-realtors-cleveland";
+import { videoAdsForRealtorsDetroit } from "./video-ads-for-realtors-detroit";
+import { videoAdsForRealtorsMilwaukee } from "./video-ads-for-realtors-milwaukee";
+import { videoAdsForRealtorsNewOrleans } from "./video-ads-for-realtors-new-orleans";
+import { videoAdsForRealtorsMemphis } from "./video-ads-for-realtors-memphis";
+import { videoAdsForRealtorsBirmingham } from "./video-ads-for-realtors-birmingham";
+import { videoAdsForRealtorsLouisville } from "./video-ads-for-realtors-louisville";
+import { videoAdsForRealtorsRichmond } from "./video-ads-for-realtors-richmond";
+import { videoAdsForRealtorsHartford } from "./video-ads-for-realtors-hartford";
+import { videoAdsForRealtorsBuffalo } from "./video-ads-for-realtors-buffalo";
+import { videoAdsForRealtorsRochester } from "./video-ads-for-realtors-rochester";
+import { videoAdsForRealtorsAlbuquerque } from "./video-ads-for-realtors-albuquerque";
+import { videoAdsForRealtorsTucson } from "./video-ads-for-realtors-tucson";
+import { videoAdsForRealtorsBoise } from "./video-ads-for-realtors-boise";
+import { videoAdsForRealtorsFortWorth } from "./video-ads-for-realtors-fort-worth";
+import { videoAdsForRealtorsSanJose } from "./video-ads-for-realtors-san-jose";
+import { realEstateVideoAdsTexas } from "./real-estate-video-ads-texas";
+import { realEstateVideoAdsFlorida } from "./real-estate-video-ads-florida";
+import { realEstateVideoAdsCalifornia } from "./real-estate-video-ads-california";
+import { realEstateVideoAdsArizona } from "./real-estate-video-ads-arizona";
+import { realEstateVideoAdsColorado } from "./real-estate-video-ads-colorado";
+import { realEstateVideoAdsNorthCarolina } from "./real-estate-video-ads-north-carolina";
+import { realEstateVideoAdsGeorgia } from "./real-estate-video-ads-georgia";
+import { realEstateVideoAdsTennessee } from "./real-estate-video-ads-tennessee";
+import { realEstateVideoAdsNevada } from "./real-estate-video-ads-nevada";
+import { realEstateVideoAdsWashington } from "./real-estate-video-ads-washington";
+import { realEstateVideoAdsOregon } from "./real-estate-video-ads-oregon";
+import { realEstateVideoAdsNewYork } from "./real-estate-video-ads-new-york";
+import { realEstateVideoAdsPennsylvania } from "./real-estate-video-ads-pennsylvania";
+import { realEstateVideoAdsOhio } from "./real-estate-video-ads-ohio";
+import { realEstateVideoAdsIllinois } from "./real-estate-video-ads-illinois";
+
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
   "real-estate-teams": realEstateTeams,
@@ -167,6 +234,75 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "video-ads-for-agency-owners": videoAdsForAgencyOwners,
   "video-ads-for-contractors": videoAdsForContractors,
   "video-ads-for-financial-advisors": videoAdsForFinancialAdvisors,
+
+  // Geo: 50 metro-specific real estate video ad pages
+  "video-ads-for-realtors-austin": videoAdsForRealtorsAustin,
+  "video-ads-for-realtors-dallas-fort-worth": videoAdsForRealtorsDallasFortWorth,
+  "video-ads-for-realtors-houston": videoAdsForRealtorsHouston,
+  "video-ads-for-realtors-san-antonio": videoAdsForRealtorsSanAntonio,
+  "video-ads-for-realtors-phoenix": videoAdsForRealtorsPhoenix,
+  "video-ads-for-realtors-denver": videoAdsForRealtorsDenver,
+  "video-ads-for-realtors-atlanta": videoAdsForRealtorsAtlanta,
+  "video-ads-for-realtors-tampa": videoAdsForRealtorsTampa,
+  "video-ads-for-realtors-nashville": videoAdsForRealtorsNashville,
+  "video-ads-for-realtors-charlotte": videoAdsForRealtorsCharlotte,
+  "video-ads-for-realtors-raleigh": videoAdsForRealtorsRaleigh,
+  "video-ads-for-realtors-orlando": videoAdsForRealtorsOrlando,
+  "video-ads-for-realtors-jacksonville": videoAdsForRealtorsJacksonville,
+  "video-ads-for-realtors-miami": videoAdsForRealtorsMiami,
+  "video-ads-for-realtors-new-york": videoAdsForRealtorsNewYork,
+  "video-ads-for-realtors-los-angeles": videoAdsForRealtorsLosAngeles,
+  "video-ads-for-realtors-san-diego": videoAdsForRealtorsSanDiego,
+  "video-ads-for-realtors-seattle": videoAdsForRealtorsSeattle,
+  "video-ads-for-realtors-portland": videoAdsForRealtorsPortland,
+  "video-ads-for-realtors-boston": videoAdsForRealtorsBoston,
+  "video-ads-for-realtors-chicago": videoAdsForRealtorsChicago,
+  "video-ads-for-realtors-minneapolis": videoAdsForRealtorsMinneapolis,
+  "video-ads-for-realtors-columbus": videoAdsForRealtorsColumbus,
+  "video-ads-for-realtors-indianapolis": videoAdsForRealtorsIndianapolis,
+  "video-ads-for-realtors-kansas-city": videoAdsForRealtorsKansasCity,
+  "video-ads-for-realtors-st-louis": videoAdsForRealtorsStLouis,
+  "video-ads-for-realtors-las-vegas": videoAdsForRealtorsLasVegas,
+  "video-ads-for-realtors-salt-lake-city": videoAdsForRealtorsSaltLakeCity,
+  "video-ads-for-realtors-sacramento": videoAdsForRealtorsSacramento,
+  "video-ads-for-realtors-oklahoma-city": videoAdsForRealtorsOklahomaCity,
+  "video-ads-for-realtors-washington-dc": videoAdsForRealtorsWashingtonDc,
+  "video-ads-for-realtors-baltimore": videoAdsForRealtorsBaltimore,
+  "video-ads-for-realtors-philadelphia": videoAdsForRealtorsPhiladelphia,
+  "video-ads-for-realtors-pittsburgh": videoAdsForRealtorsPittsburgh,
+  "video-ads-for-realtors-cleveland": videoAdsForRealtorsCleveland,
+  "video-ads-for-realtors-detroit": videoAdsForRealtorsDetroit,
+  "video-ads-for-realtors-milwaukee": videoAdsForRealtorsMilwaukee,
+  "video-ads-for-realtors-new-orleans": videoAdsForRealtorsNewOrleans,
+  "video-ads-for-realtors-memphis": videoAdsForRealtorsMemphis,
+  "video-ads-for-realtors-birmingham": videoAdsForRealtorsBirmingham,
+  "video-ads-for-realtors-louisville": videoAdsForRealtorsLouisville,
+  "video-ads-for-realtors-richmond": videoAdsForRealtorsRichmond,
+  "video-ads-for-realtors-hartford": videoAdsForRealtorsHartford,
+  "video-ads-for-realtors-buffalo": videoAdsForRealtorsBuffalo,
+  "video-ads-for-realtors-rochester": videoAdsForRealtorsRochester,
+  "video-ads-for-realtors-albuquerque": videoAdsForRealtorsAlbuquerque,
+  "video-ads-for-realtors-tucson": videoAdsForRealtorsTucson,
+  "video-ads-for-realtors-boise": videoAdsForRealtorsBoise,
+  "video-ads-for-realtors-fort-worth": videoAdsForRealtorsFortWorth,
+  "video-ads-for-realtors-san-jose": videoAdsForRealtorsSanJose,
+
+  // Geo: 15 state-level real estate video ad pages
+  "real-estate-video-ads-texas": realEstateVideoAdsTexas,
+  "real-estate-video-ads-florida": realEstateVideoAdsFlorida,
+  "real-estate-video-ads-california": realEstateVideoAdsCalifornia,
+  "real-estate-video-ads-arizona": realEstateVideoAdsArizona,
+  "real-estate-video-ads-colorado": realEstateVideoAdsColorado,
+  "real-estate-video-ads-north-carolina": realEstateVideoAdsNorthCarolina,
+  "real-estate-video-ads-georgia": realEstateVideoAdsGeorgia,
+  "real-estate-video-ads-tennessee": realEstateVideoAdsTennessee,
+  "real-estate-video-ads-nevada": realEstateVideoAdsNevada,
+  "real-estate-video-ads-washington": realEstateVideoAdsWashington,
+  "real-estate-video-ads-oregon": realEstateVideoAdsOregon,
+  "real-estate-video-ads-new-york": realEstateVideoAdsNewYork,
+  "real-estate-video-ads-pennsylvania": realEstateVideoAdsPennsylvania,
+  "real-estate-video-ads-ohio": realEstateVideoAdsOhio,
+  "real-estate-video-ads-illinois": realEstateVideoAdsIllinois,
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

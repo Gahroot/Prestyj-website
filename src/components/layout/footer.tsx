@@ -45,6 +45,7 @@ const footerLinks = {
     { href: "/compare/prestyj-vs-structurely", label: "Prestyj vs Structurely" },
   ],
   solutions: [
+    { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
     { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
     { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
     { href: "/solutions/ai-lead-generation", label: "AI Lead Generation" },
@@ -120,7 +121,11 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    className={
+                      "highlight" in link && link.highlight
+                        ? "text-sm text-primary font-semibold hover:text-primary/80 transition-colors"
+                        : "text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    }
                   >
                     {link.label}
                   </Link>

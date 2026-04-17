@@ -9,9 +9,9 @@ export const videoAdsForChiropractors: BestForPageContent = {
       "Chiropractic practice owners using batch video ad creative testing to drive new patient intake, convert cash-pay packages, and defend against PT/dry-needling competition on Facebook and Instagram.",
   },
   meta: {
-    title: "Video Ads for Chiropractors | New Patient Intake Creative | Prestyj",
+    title: "300 Chiropractor Video Ads in 24 Hours (From $1,497) | PRESTYJ",
     description:
-      "Chiropractors: record once, get 300–1,000 scripted vertical video ads for new patient intake, cash-pay package pitches, and decompression/adjustment demos. One-time $1,497. Delivered in 24 hours.",
+      "Stop running another '$49 exam' ad. 300-1,000 scripted sciatica, decompression, and new-patient ads with your real face, in 24 hours. From $1,497.",
     keywords: [
       "video ads for chiropractors",
       "chiropractor facebook ads",
