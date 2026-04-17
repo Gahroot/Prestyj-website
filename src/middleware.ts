@@ -18,6 +18,8 @@ export function middleware() {
         "'unsafe-eval'",
         // Cal.com embed (required for booking)
         "https://app.cal.com",
+        // Meta Pixel
+        "https://connect.facebook.net",
       ],
     },
     {
@@ -57,6 +59,9 @@ export function middleware() {
         // Cal.com embed
         "https://app.cal.com",
         "wss://app.cal.com",
+        // Meta Pixel
+        "https://www.facebook.com",
+        "https://connect.facebook.net",
       ],
     },
     {

@@ -456,10 +456,11 @@ export function GetAdsLeadForm({
       }
 
       const job = await scriptRes.json();
-      const statusUrl: string | undefined = job.status_url;
-      if (!statusUrl) {
+      const rawStatusUrl: string | undefined = job.status_url;
+      if (!rawStatusUrl) {
         throw new Error("Missing status_url in job response");
       }
+      const statusUrl = rawStatusUrl.replace(/^http:\/\//i, "https://");
 
       const deadline = Date.now() + 300000;
       let markdown = "";
