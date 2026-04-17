@@ -10,10 +10,13 @@
     "typecheck": "tsc --noEmit",
     "indexnow": "tsx scripts/submit-indexnow.ts",
     "indexnow:dry": "tsx scripts/submit-indexnow.ts --dry-run",
-    "gen-scripts": "tsx scripts/gen-prestyj-promo-scripts.ts"
+    "gen-scripts": "tsx scripts/gen-prestyj-promo-scripts.ts",
+    "seo-bot": "tsx scripts/seo-bot/cli.ts"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
     "@calcom/embed-react": "^1.5.3",
+    "@google/generative-ai": "^0.24.1",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",
     "@radix-ui/react-avatar": "^1.1.11",
@@ -32,10 +35,12 @@
     "framer-motion": "^12.27.0",
     "fumadocs-core": "^16.4.7",
     "fumadocs-mdx": "^14.2.5",
+    "js-yaml": "^4.1.1",
     "lucide-react": "^0.562.0",
     "motion": "^12.38.0",
     "next": "16.1.3",
     "ogl": "^1.0.11",
+    "openai": "^6.34.0",
     "radix-ui": "^1.4.3",
     "react": "19.2.3",
     "react-dom": "19.2.3",
@@ -49,6 +54,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

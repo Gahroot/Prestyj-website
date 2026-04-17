@@ -1,0 +1,159 @@
+geoPages:
+  - type: geo-page
+    priority: 9
+    payload:
+      kind: metro
+      city: Fresno
+      state: California
+      mlsName: Fresno MLS
+      slug: video-ads-for-realtors-fresno
+  - type: geo-page
+    priority: 9
+    payload:
+      kind: metro
+      city: Bakersfield
+      state: California
+      mlsName: Bakersfield AOR
+      slug: video-ads-for-realtors-bakersfield
+  - type: geo-page
+    priority: 8
+    payload:
+      kind: metro
+      city: Colorado Springs
+      state: Colorado
+      mlsName: PPMLS
+      slug: video-ads-for-realtors-colorado-springs
+  - type: geo-page
+    priority: 8
+    payload:
+      kind: metro
+      city: Reno
+      state: Nevada
+      mlsName: NNRMLS
+      slug: video-ads-for-realtors-reno
+  - type: geo-page
+    priority: 8
+    payload:
+      kind: metro
+      city: Knoxville
+      state: Tennessee
+      mlsName: Knoxville Area AOR
+      slug: video-ads-for-realtors-knoxville
+
+nichePages:
+  - type: niche-page
+    priority: 9
+    payload:
+      platform: meta
+      industry: realtors
+      slug: solutions/batch-video-ads-meta-for-realtors
+  - type: niche-page
+    priority: 9
+    payload:
+      platform: tiktok
+      industry: realtors
+      slug: solutions/batch-video-ads-tiktok-for-realtors
+  - type: niche-page
+    priority: 8
+    payload:
+      platform: youtube-shorts
+      industry: realtors
+      slug: solutions/batch-video-ads-youtube-shorts-for-realtors
+  - type: niche-page
+    priority: 7
+    payload:
+      platform: meta
+      industry: roofers
+      slug: solutions/batch-video-ads-meta-for-roofers
+  - type: niche-page
+    priority: 7
+    payload:
+      platform: meta
+      industry: hvac
+      slug: solutions/batch-video-ads-meta-for-hvac
+
+comparisons:
+  - type: comparison
+    priority: 9
+    payload:
+      competitor: Submagic
+      slug: prestyj-vs-submagic
+  - type: comparison
+    priority: 9
+    payload:
+      competitor: OpusClip
+      slug: prestyj-vs-opusclip
+  - type: comparison
+    priority: 8
+    payload:
+      competitor: CapCut for Business
+      slug: prestyj-vs-capcut
+  - type: comparison
+    priority: 8
+    payload:
+      competitor: Insense
+      slug: prestyj-vs-insense
+  - type: comparison
+    priority: 7
+    payload:
+      competitor: JoinBrands
+      slug: prestyj-vs-joinbrands
+
+blogPosts:
+  - type: blog-post
+    priority: 9
+    payload:
+      workingTitle: "How Many Video Ads Should a Real Estate Agent Test? (2026 Data)"
+      targetKeyword: how many video ads should real estate agent test
+      slug: how-many-video-ads-real-estate-agent-test-2026
+  - type: blog-post
+    priority: 9
+    payload:
+      workingTitle: "Real Estate Video Ad Hooks That Actually Convert in 2026"
+      targetKeyword: real estate video ad hooks
+      slug: real-estate-video-ad-hooks-that-convert-2026
+  - type: blog-post
+    priority: 8
+    payload:
+      workingTitle: "Why AI Avatar Ads Underperform Real-Face Video for Realtors"
+      targetKeyword: ai avatar ads vs real face video
+      slug: ai-avatar-ads-vs-real-face-video-realtors-2026
+  - type: blog-post
+    priority: 8
+    payload:
+      workingTitle: "Cost to Produce 500 Real Estate Video Ads — Full Breakdown"
+      targetKeyword: cost to produce real estate video ads
+      slug: cost-to-produce-500-real-estate-video-ads-2026
+  - type: blog-post
+    priority: 7
+    payload:
+      workingTitle: "Facebook Ad Creative Fatigue for Realtors — How Often to Rotate"
+      targetKeyword: facebook ad creative fatigue realtors
+      slug: facebook-ad-creative-fatigue-realtors-2026
+
+competitors:
+  - type: competitor
+    priority: 9
+    payload:
+      name: Arcads
+      url: https://www.arcads.ai
+  - type: competitor
+    priority: 9
+    payload:
+      name: Creatify
+      url: https://www.creatify.ai
+  - type: competitor
+    priority: 8
+    payload:
+      name: HeyGen
+      url: https://www.heygen.com
+  - type: competitor
+    priority: 8
+    payload:
+      name: Billo
+      url: https://billo.app
+  - type: competitor
+    priority: 7
+    payload:
+      name: Submagic
+      url: https://submagic.co

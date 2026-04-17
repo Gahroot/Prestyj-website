@@ -1,0 +1,134 @@
+baseUrl: https://prestyj.com
+
+providers:
+  anthropic:
+    type: anthropic
+    apiKeyEnv: ANTHROPIC_API_KEY
+    defaultModel: claude-sonnet-4-6
+  anthropic-haiku:
+    type: anthropic
+    apiKeyEnv: ANTHROPIC_API_KEY
+    defaultModel: claude-haiku-4-5-20251001
+  gemini:
+    type: gemini
+    apiKeyEnv: GEMINI_API_KEY
+    defaultModel: gemini-2.5-flash
+  gemini-pro:
+    type: gemini
+    apiKeyEnv: GEMINI_API_KEY
+    defaultModel: gemini-2.5-pro
+  deepseek:
+    type: openai-compat
+    apiKeyEnv: DEEPSEEK_API_KEY
+    baseURL: https://api.deepseek.com/v1
+    defaultModel: deepseek-chat
+  qwen:
+    type: openai-compat
+    apiKeyEnv: DASHSCOPE_API_KEY
+    baseURL: https://dashscope-intl.aliyuncs.com/compatible-mode/v1
+    defaultModel: qwen-plus
+  moonshot:
+    type: openai-compat
+    apiKeyEnv: MOONSHOT_API_KEY
+    baseURL: https://api.moonshot.ai/v1
+    defaultModel: kimi-k2-0905-preview
+  groq:
+    type: openai-compat
+    apiKeyEnv: GROQ_API_KEY
+    baseURL: https://api.groq.com/openai/v1
+    defaultModel: llama-3.3-70b-versatile
+  openrouter:
+    type: openai-compat
+    apiKeyEnv: OPENROUTER_API_KEY
+    baseURL: https://openrouter.ai/api/v1
+    defaultModel: anthropic/claude-sonnet-4-6
+
+tasks:
+  geoPage:
+    provider: gemini-pro
+    model: gemini-2.5-pro
+    fallback:
+      provider: anthropic
+      model: claude-sonnet-4-6
+  nichePage:
+    provider: gemini-pro
+    model: gemini-2.5-pro
+    fallback:
+      provider: anthropic
+      model: claude-sonnet-4-6
+  comparison:
+    provider: anthropic
+    model: claude-sonnet-4-6
+    fallback:
+      provider: gemini-pro
+      model: gemini-2.5-pro
+  blogPost:
+    provider: anthropic
+    model: claude-sonnet-4-6
+    fallback:
+      provider: gemini-pro
+      model: gemini-2.5-pro
+  titleRewrite:
+    provider: gemini
+    model: gemini-2.5-flash
+    fallback:
+      provider: anthropic-haiku
+      model: claude-haiku-4-5-20251001
+  socialCopy:
+    provider: gemini
+    model: gemini-2.5-flash
+  competitorAudit:
+    provider: gemini
+    model: gemini-2.5-flash
+  dailyResearch:
+    provider: anthropic
+    model: claude-sonnet-4-6
+
+rotation:
+  monday:
+    - dailyResearch
+    - geoPage
+    - geoPage
+    - geoPage
+    - nichePage
+    - nichePage
+  tuesday:
+    - dailyResearch
+    - blogPost
+  wednesday:
+    - dailyResearch
+    - geoPage
+    - geoPage
+    - geoPage
+    - comparison
+  thursday:
+    - dailyResearch
+    - titleRewrite
+  friday:
+    - dailyResearch
+    - competitorAudit
+    - socialCopy
+  saturday:
+    - socialCopy
+  sunday: []
+
+circuitBreaker:
+  maxPagesPerDay: 8
+  maxBlogsPerDay: 2
+  maxCostPerDayUSD: 5.00
+  maxApiErrorsBeforeHalt: 3
+
+output:
+  reportDir: scripts/seo-bot/output/reports
+  socialDir: scripts/seo-bot/output/social
+  abTestDir: scripts/seo-bot/output/ab-test
+
+state:
+  backlogFile: scripts/seo-bot/state/backlog.yml
+  shippedFile: scripts/seo-bot/state/shipped.json
+  metricsFile: scripts/seo-bot/state/metrics.json
+
+baseDirs:
+  bestFor: src/lib/best-for
+  compare: src/lib/compare/data
+  blog: content/blog
