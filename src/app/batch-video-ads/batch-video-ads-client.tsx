@@ -209,14 +209,14 @@ export function BatchVideoAdsClient() {
   return (
     <main className="min-h-screen">
       {/* HERO */}
-      <section className="relative min-h-[85vh] flex items-center justify-center pt-16 overflow-hidden">
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <section className="relative pt-16 overflow-hidden">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10 md:pt-6 md:pb-12 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+            <Badge variant="outline" className="mb-3 border-primary/50 text-primary">
               <ShinyText
                 text="BATCH VIDEO ADS"
                 speed={3}
@@ -226,7 +226,7 @@ export function BatchVideoAdsClient() {
             </Badge>
           </motion.div>
 
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
             <BlurText
               text="Your Ad Creative Testing,"
               delay={60}
@@ -245,7 +245,7 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative w-full max-w-3xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl mb-8"
+            className="relative w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl mb-5"
           >
             <iframe
               src={`https://player.vimeo.com/video/${VSL_VIMEO_ID}?autoplay=1&muted=${isMuted ? "1" : "0"}&loop=0&background=0`}
@@ -280,7 +280,7 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mb-4"
+            className="text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto mb-3"
           >
             Send 15–20 minutes of casual selfie footage. Get back{" "}
             <span className="text-foreground font-semibold">
@@ -293,7 +293,7 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="text-xs text-muted-foreground/70 max-w-2xl mx-auto mb-8"
+            className="text-xs text-muted-foreground/70 max-w-2xl mx-auto mb-5"
           >
             *24 hours from when we receive your footage. Footage received Sunday counts as Monday — delivered by end of day Tuesday.
           </motion.p>
@@ -331,7 +331,7 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground"
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground"
           >
             <div className="flex items-center gap-2">
               <CountUp to={300} duration={1.5} className="text-2xl font-bold text-primary" />
