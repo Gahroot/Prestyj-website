@@ -17,6 +17,7 @@ import {
   Rocket,
   Star,
   Loader2,
+  VolumeX,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -31,6 +32,7 @@ import { cn } from "@/lib/utils";
 import type { BatchTierId } from "@/lib/batch-tiers";
 
 const GMB_REVIEWS_URL = "https://share.google/NDBtHySNKzPF0mTvG";
+const VSL_VIMEO_ID = "1185604057";
 
 const SAMPLE_VIDEOS = [
   "1182069557",
@@ -172,6 +174,13 @@ const FAQS = [
 export function BatchVideoAdsClient() {
   const [loadingTier, setLoadingTier] = useState<BatchTierId | null>(null);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
+  const [isMuted, setIsMuted] = useState(true);
+  const [showVideoOverlay, setShowVideoOverlay] = useState(true);
+
+  const handleUnmute = () => {
+    setIsMuted(false);
+    setShowVideoOverlay(false);
+  };
 
   const startCheckout = async (tier: BatchTierId) => {
     setCheckoutError(null);
@@ -217,7 +226,7 @@ export function BatchVideoAdsClient() {
             </Badge>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
             <BlurText
               text="Your Ad Creative Testing,"
               delay={60}
@@ -232,14 +241,48 @@ export function BatchVideoAdsClient() {
             />
           </h1>
 
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="relative w-full max-w-3xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl mb-8"
+          >
+            <iframe
+              src={`https://player.vimeo.com/video/${VSL_VIMEO_ID}?autoplay=1&muted=${isMuted ? "1" : "0"}&loop=0&background=0`}
+              className="absolute inset-0 w-full h-full"
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+              title="Batch video ads — how it works"
+            />
+
+            {showVideoOverlay && (
+              <div
+                onClick={handleUnmute}
+                className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center cursor-pointer transition-all hover:bg-black/30 z-10"
+              >
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 md:p-6 flex flex-col items-center gap-2 shadow-2xl">
+                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                    <VolumeX className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-foreground font-heading font-semibold text-base">
+                    Your Video Is Playing
+                  </p>
+                  <p className="text-muted-foreground text-sm">
+                    Click To Unmute
+                  </p>
+                </div>
+              </div>
+            )}
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-4"
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto mb-4"
           >
-            We write your scripts. You read them in one take — 15–20 minutes,
-            selfie style. We turn that one recording into{" "}
+            Send 15–20 minutes of casual selfie footage. Get back{" "}
             <span className="text-foreground font-semibold">
               hundreds of ads that look like content, not ads
             </span>{" "}
@@ -249,7 +292,7 @@ export function BatchVideoAdsClient() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5, delay: 0.35 }}
             className="text-xs text-muted-foreground/70 max-w-2xl mx-auto mb-8"
           >
             *24 hours from when we receive your footage. Footage received Sunday counts as Monday — delivered by end of day Tuesday.
@@ -264,8 +307,8 @@ export function BatchVideoAdsClient() {
             <ClickSpark sparkColor="#7058e3" sparkCount={12} sparkRadius={28}>
               <Button size="lg" className="text-lg px-8 font-bold" asChild>
                 <a href="#pricing">
-                  See Pricing
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                  Start My Batch Now
+                  <Rocket className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </ClickSpark>
@@ -277,8 +320,8 @@ export function BatchVideoAdsClient() {
                 asChild
               >
                 <a href="#pricing">
-                  Start My Batch
-                  <Rocket className="ml-2 h-5 w-5" />
+                  See Pricing
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
             </ClickSpark>

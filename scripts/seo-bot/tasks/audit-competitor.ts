@@ -1,4 +1,4 @@
-import { promises as fs } from "fs";
+import { promises as fs, writeFileSync } from "fs";
 import path from "path";
 import { z } from "zod";
 import type {
@@ -171,8 +171,7 @@ function parseJsonLoose(raw: string): unknown {
     const pos = posMatch ? parseInt(posMatch[1], 10) : 0;
     // Dump raw response for debugging
     try {
-      const fs = require("fs") as typeof import("fs");
-      fs.writeFileSync("/tmp/seo-bot-raw.json", raw);
+      writeFileSync("/tmp/seo-bot-raw.json", raw);
     } catch {
       /* ignore */
     }
