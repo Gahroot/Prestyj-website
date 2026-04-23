@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { getPaidSession } from "@/lib/stripe";
 import { getBatchTierByPriceId } from "@/lib/batch-tiers";
 import { IntakeClient } from "./intake-client";
+import { PurchaseConversion } from "./purchase-conversion";
 
 export const metadata: Metadata = {
   title: "Your Intake — Batch Video Ads | PRESTYJ",
@@ -45,6 +46,22 @@ export default async function IntakePage({
 
   return (
     <main className="min-h-screen pt-24 pb-12">
+      <PurchaseConversion
+        value={(session.amountTotal ?? 0) / 100}
+        currency={(session.currency ?? "usd").toUpperCase()}
+        transactionId={session.sessionId}
+        userData={{
+          email: session.customerEmail ?? undefined,
+          phoneNumber: session.customerPhone ?? undefined,
+          firstName: firstName || undefined,
+          lastName: lastName || undefined,
+          street: session.customerAddress?.line1 ?? undefined,
+          city: session.customerAddress?.city ?? undefined,
+          region: session.customerAddress?.state ?? undefined,
+          postalCode: session.customerAddress?.postalCode ?? undefined,
+          country: session.customerAddress?.country ?? undefined,
+        }}
+      />
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
         <p className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-success/40 text-success text-xs font-semibold uppercase tracking-wide mb-4">
           Payment confirmed · {tier.name}

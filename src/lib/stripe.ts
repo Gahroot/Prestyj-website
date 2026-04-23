@@ -18,6 +18,13 @@ export type PaidSessionSummary = {
   customerEmail: string | null;
   customerName: string | null;
   customerPhone: string | null;
+  customerAddress: {
+    line1: string | null;
+    city: string | null;
+    state: string | null;
+    postalCode: string | null;
+    country: string | null;
+  } | null;
 };
 
 export async function getPaidSession(
@@ -38,6 +45,8 @@ export async function getPaidSession(
   const priceId = session.line_items?.data[0]?.price?.id;
   if (!priceId) return null;
 
+  const address = session.customer_details?.address;
+
   return {
     sessionId: session.id,
     priceId,
@@ -46,5 +55,14 @@ export async function getPaidSession(
     customerEmail: session.customer_details?.email ?? null,
     customerName: session.customer_details?.name ?? null,
     customerPhone: session.customer_details?.phone ?? null,
+    customerAddress: address
+      ? {
+          line1: address.line1 ?? null,
+          city: address.city ?? null,
+          state: address.state ?? null,
+          postalCode: address.postal_code ?? null,
+          country: address.country ?? null,
+        }
+      : null,
   };
 }
