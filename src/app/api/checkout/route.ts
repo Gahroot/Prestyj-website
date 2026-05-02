@@ -35,6 +35,8 @@ export async function POST(request: NextRequest) {
     request.nextUrl.origin ??
     "https://prestyj.com";
 
+  const affiliateRef = request.cookies.get("affiliate_ref")?.value;
+
   try {
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
@@ -50,12 +52,14 @@ export async function POST(request: NextRequest) {
         tier: tier.id,
         ad_count: String(tier.adCount),
         pain_points: String(tier.painPoints),
+        ...(affiliateRef ? { affiliate_ref: affiliateRef } : {}),
       },
       payment_intent_data: {
         metadata: {
           tier: tier.id,
           ad_count: String(tier.adCount),
           pain_points: String(tier.painPoints),
+          ...(affiliateRef ? { affiliate_ref: affiliateRef } : {}),
         },
       },
     });

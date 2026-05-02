@@ -1,0 +1,112 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Affiliate {
+  id             String       @id @default(cuid())
+  slug           String       @unique
+  name           String
+  email          String       @unique
+  commissionRate Float        @default(0.20)
+  balanceCents   Int          @default(0)
+  payoutEmail    String?
+  payoutNotes    String?
+  active         Boolean      @default(true)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  clicks         Click[]
+  conversions    Conversion[]
+  payouts        Payout[]
+  magicTokens    MagicToken[]
+
+  @@map("affiliates")
+}
+
+model Click {
+  id          String    @id @default(cuid())
+  affiliateId String    @map("affiliate_id")
+  affiliate   Affiliate @relation(fields: [affiliateId], references: [id], onDelete: Cascade)
+  ip          String?
+  userAgent   String?   @map("user_agent")
+  referer     String?
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@index([affiliateId])
+  @@index([createdAt])
+  @@map("clicks")
+}
+
+model Conversion {
+  id              String           @id @default(cuid())
+  affiliateId     String           @map("affiliate_id")
+  affiliate       Affiliate        @relation(fields: [affiliateId], references: [id], onDelete: Cascade)
+  stripeSessionId String           @unique @map("stripe_session_id")
+  tier            String
+  amountCents     Int              @map("amount_cents")
+  commissionCents Int              @map("commission_cents")
+  status          ConversionStatus @default(PENDING)
+  customerEmail   String?          @map("customer_email")
+  approvedAt      DateTime?        @map("approved_at")
+  refundedAt      DateTime?        @map("refunded_at")
+  payoutId        String?          @map("payout_id")
+  payout          Payout?          @relation(fields: [payoutId], references: [id])
+  createdAt       DateTime         @default(now()) @map("created_at")
+
+  @@index([affiliateId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("conversions")
+}
+
+enum ConversionStatus {
+  PENDING
+  APPROVED
+  PAID
+  REFUNDED
+}
+
+model Payout {
+  id          String       @id @default(cuid())
+  affiliateId String       @map("affiliate_id")
+  affiliate   Affiliate    @relation(fields: [affiliateId], references: [id], onDelete: Cascade)
+  amountCents Int          @map("amount_cents")
+  method      String?
+  reference   String?
+  status      PayoutStatus @default(PENDING)
+  paidAt      DateTime?    @map("paid_at")
+  createdAt   DateTime     @default(now()) @map("created_at")
+  conversions Conversion[]
+
+  @@index([affiliateId])
+  @@map("payouts")
+}
+
+enum PayoutStatus {
+  PENDING
+  PAID
+  FAILED
+}
+
+model MagicToken {
+  id          String    @id @default(cuid())
+  affiliateId String    @map("affiliate_id")
+  affiliate   Affiliate @relation(fields: [affiliateId], references: [id], onDelete: Cascade)
+  token       String    @unique
+  type        TokenType @default(LOGIN)
+  expiresAt   DateTime  @map("expires_at")
+  usedAt      DateTime? @map("used_at")
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@index([token])
+  @@map("magic_tokens")
+}
+
+enum TokenType {
+  LOGIN
+  SESSION
+}

@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { AuroraBackground } from "@/components/effects/aurora-background";
 import { PIXEL_ID } from "@/lib/meta-pixel";
+import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -150,6 +151,8 @@ fbq('track', 'PageView');`}
             alt=""
           />
         </noscript>
+        <OrganizationJsonLd />
+        <WebSiteJsonLd />
         <AuroraBackground />
         <div className="relative z-10">{children}</div>
       </body>

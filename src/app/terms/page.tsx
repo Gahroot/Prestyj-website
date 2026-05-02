@@ -18,7 +18,7 @@ export default function TermsPage() {
             Terms of Service
           </h1>
           <p className="text-sm text-muted-foreground mb-8">
-            Last Updated: January 19, 2026
+            Last Updated: May 2, 2026
           </p>
 
           <div className="prose prose-invert max-w-none space-y-8">
@@ -197,6 +197,41 @@ export default function TermsPage() {
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 These Terms shall be governed by and construed in accordance with the laws of the United States and the State of Delaware, without regard to conflict of law principles.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-heading font-semibold text-foreground mb-4">
+                Media Master Desktop Application
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                The following terms apply to users of Media Master, our desktop application for AI-powered creative generation and multi-platform publishing:
+              </p>
+
+              <h3 className="text-lg font-heading font-medium text-foreground mb-3 mt-4">
+                User Responsibilities
+              </h3>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                <li>You are responsible for maintaining your own API keys and third-party service accounts (e.g., fal.ai)</li>
+                <li>You retain full ownership of all content generated using Media Master</li>
+                <li>You are responsible for ensuring that published content complies with each social media platform&apos;s terms of service and community guidelines</li>
+                <li>You must not use Media Master to generate misleading, deceptive, defamatory, or harmful content</li>
+                <li>You must not use Media Master to spam, impersonate, or harass any individual or organization</li>
+                <li>You are responsible for any content published through your connected social media accounts</li>
+              </ul>
+
+              <h3 className="text-lg font-heading font-medium text-foreground mb-3 mt-4">
+                Third-Party Services
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Media Master integrates with third-party services including fal.ai and various social media platforms. These services are governed by their own terms of service and privacy policies. PRESTYJ does not guarantee the availability, accuracy, or performance of any third-party API or service.
+              </p>
+
+              <h3 className="text-lg font-heading font-medium text-foreground mb-3 mt-4">
+                Content Ownership & Licensing
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                You retain all rights to content you create using Media Master. By using the application, you acknowledge that AI-generated content may be subject to varying intellectual property protections depending on your jurisdiction. PRESTYJ makes no claims to ownership of your generated content.
               </p>
             </section>
 

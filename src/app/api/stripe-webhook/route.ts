@@ -3,6 +3,7 @@ import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { getResend } from "@/lib/resend";
 import { getBatchTierByPriceId } from "@/lib/batch-tiers";
+import { prisma } from "@/lib/prisma";
 
 export const runtime = "nodejs";
 
@@ -125,6 +126,90 @@ async function sendIntakeFallbackEmail(
   }
 }
 
+async function recordAffiliateConversion(
+  session: Stripe.Checkout.Session,
+  tierId: string
+): Promise<void> {
+  const ref = session.metadata?.affiliate_ref;
+  if (!ref) return;
+
+  try {
+    const affiliate = await prisma.affiliate.findUnique({
+      where: { slug: ref, active: true },
+    });
+    if (!affiliate) return;
+
+    const amountCents = session.amount_total ?? 0;
+    const commissionCents = Math.round(amountCents * affiliate.commissionRate);
+
+    await prisma.$transaction([
+      prisma.conversion.create({
+        data: {
+          affiliateId: affiliate.id,
+          stripeSessionId: session.id,
+          tier: tierId,
+          amountCents,
+          commissionCents,
+          status: "PENDING",
+          customerEmail: session.customer_details?.email ?? undefined,
+        },
+      }),
+      prisma.affiliate.update({
+        where: { id: affiliate.id },
+        data: { balanceCents: { increment: commissionCents } },
+      }),
+    ]);
+
+    console.log("[stripe-webhook] affiliate conversion recorded:", {
+      slug: ref,
+      session: session.id,
+      commissionCents,
+    });
+  } catch (error) {
+    console.error("[stripe-webhook] affiliate conversion error:", error);
+  }
+}
+
+async function handleRefund(charge: Stripe.Charge): Promise<void> {
+  const paymentIntentId =
+    typeof charge.payment_intent === "string"
+      ? charge.payment_intent
+      : charge.payment_intent?.id;
+  if (!paymentIntentId) return;
+
+  try {
+    const sessions = await getStripe().checkout.sessions.list({
+      payment_intent: paymentIntentId,
+      limit: 1,
+    });
+    const sessionId = sessions.data[0]?.id;
+    if (!sessionId) return;
+
+    const conversion = await prisma.conversion.findUnique({
+      where: { stripeSessionId: sessionId },
+    });
+    if (!conversion || conversion.status === "REFUNDED") return;
+
+    await prisma.$transaction([
+      prisma.conversion.update({
+        where: { id: conversion.id },
+        data: { status: "REFUNDED", refundedAt: new Date() },
+      }),
+      prisma.affiliate.update({
+        where: { id: conversion.affiliateId },
+        data: { balanceCents: { decrement: conversion.commissionCents } },
+      }),
+    ]);
+
+    console.log("[stripe-webhook] affiliate conversion refunded:", {
+      session: sessionId,
+      commissionCents: conversion.commissionCents,
+    });
+  } catch (error) {
+    console.error("[stripe-webhook] refund handler error:", error);
+  }
+}
+
 async function handleCheckoutCompleted(
   session: Stripe.Checkout.Session
 ): Promise<void> {
@@ -149,9 +234,12 @@ async function handleCheckoutCompleted(
     return;
   }
 
+  const tier = getBatchTierByPriceId(priceId);
+
   await Promise.allSettled([
     fireMetaPurchase(session, priceId),
     sendIntakeFallbackEmail(session, priceId),
+    recordAffiliateConversion(session, tier?.id ?? "unknown"),
   ]);
 }
 
@@ -189,10 +277,7 @@ export async function POST(request: NextRequest) {
         );
         break;
       case "charge.refunded":
-        console.log(
-          "[stripe-webhook] charge.refunded:",
-          (event.data.object as Stripe.Charge).id
-        );
+        await handleRefund(event.data.object as Stripe.Charge);
         break;
       default:
         // Ignore events we don't care about

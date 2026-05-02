@@ -9,6 +9,9 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { FAQJsonLd } from "@/components/seo/json-ld";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -99,6 +102,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { title, description, author, date, image, keywords } = page.data;
   const postUrl = `${siteUrl}/blog/${slug}`;
 
+  // Get raw MDX content for word count and FAQ extraction
+  const mdxPath = join(process.cwd(), "content/blog", `${slug}.mdx`);
+  let rawContent = "";
+  try {
+    rawContent = await readFile(mdxPath, "utf-8");
+  } catch {
+    // File read failed, skip content analysis
+  }
+  const wordCount = rawContent.split(/\s+/).filter(Boolean).length;
+
+  // Extract FAQ headings from MDX content
+  const faqItems: Array<{ question: string; answer: string }> = [];
+  const faqRegex = /##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)[\s\S]*?(?=##|$)/i;
+  const faqSection = faqRegex.exec(rawContent);
+  if (faqSection) {
+    const questionRegex = /###\s+(.+)/g;
+    let match: RegExpExecArray | null;
+    while ((match = questionRegex.exec(faqSection[0])) !== null) {
+      faqItems.push({
+        question: match[1].replace(/\*\*/g, "").trim(),
+        answer: "See full answer in the article.",
+      });
+    }
+  }
+
   // JSON-LD structured data for Article
   const jsonLd = {
     "@context": "https://schema.org",
@@ -128,6 +156,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     url: postUrl,
     keywords: keywords?.join(", "),
+    wordCount,
   };
 
   const breadcrumbs = [
@@ -140,6 +169,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <BreadcrumbJsonLd items={breadcrumbs} />
       <SafeJsonLd data={jsonLd} />
+      {faqItems.length > 0 && <FAQJsonLd faqs={faqItems} />}
       <Navbar />
       <main className="pt-24 pb-16">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">

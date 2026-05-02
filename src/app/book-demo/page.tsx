@@ -8,6 +8,8 @@ import { CalcomInlineEmbed } from "@/components/booking/cal-embed";
 import { QualificationForm, type QualificationData } from "@/components/booking/qualification-form";
 import { CheckCircle, Clock, Zap, User, Building2, Calendar } from "lucide-react";
 import BorderGlow from "@/components/ui/border-glow";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 export default function BookDemoPage() {
   const calendarRef = useRef<HTMLDivElement>(null);
@@ -25,6 +27,28 @@ export default function BookDemoPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://prestyj.com" },
+          { name: "Book a Demo", url: "https://prestyj.com/book-demo" },
+        ]}
+      />
+      <SafeJsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Prestyj Strategy Call & Demo",
+          description:
+            "Book a 30-minute strategy call to see how Prestyj's AI sales agents can automate lead response, qualification, and appointment booking for your business.",
+          provider: {
+            "@type": "Organization",
+            name: "PRESTYJ",
+            url: "https://prestyj.com",
+          },
+          serviceType: "Consultation",
+          areaServed: "United States",
+        }}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

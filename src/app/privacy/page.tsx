@@ -17,7 +17,7 @@ export default function PrivacyPage() {
             Privacy Policy
           </h1>
           <p className="text-sm text-muted-foreground mb-8">
-            Last Updated: January 19, 2026
+            Last Updated: May 2, 2026
           </p>
 
           <div className="prose prose-invert max-w-none space-y-8">
@@ -154,6 +154,45 @@ export default function PrivacyPage() {
               <p className="text-muted-foreground leading-relaxed">
                 We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date.
               </p>
+            </section>
+
+            <section>
+              <h2 className="text-xl font-heading font-semibold text-foreground mb-4">
+                Media Master Desktop Application
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Media Master is our desktop application for AI-powered creative generation and multi-platform social media publishing. The following applies specifically to Media Master users:
+              </p>
+
+              <h3 className="text-lg font-heading font-medium text-foreground mb-3 mt-4">
+                Data Collection & Storage
+              </h3>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                <li><strong className="text-foreground">Local Storage:</strong> All app data — including API keys, uploaded images, offer and character configurations, generated content, and publishing history — is stored locally on your device. No user content is sent to PRESTYJ servers.</li>
+                <li><strong className="text-foreground">API Keys:</strong> Your fal.ai API key is stored locally and used only to communicate directly with fal.ai for image generation. PRESTYJ does not access or transmit your API key.</li>
+                <li><strong className="text-foreground">Social Media Connections:</strong> OAuth tokens for connected social platforms (Facebook, Instagram, TikTok, LinkedIn, X, YouTube, Threads, Pinterest, Reddit) are stored locally on your device. You control what gets published and to which platforms. PRESTYJ does not access your social media accounts.</li>
+                <li><strong className="text-foreground">Waitlist Signups:</strong> When you join the Media Master waitlist, your name and email address are sent to PRESTYJ&apos;s CRM for communication purposes.</li>
+              </ul>
+
+              <h3 className="text-lg font-heading font-medium text-foreground mb-3 mt-4">
+                Third-Party Services
+              </h3>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                <li><strong className="text-foreground">fal.ai:</strong> Image prompts and reference images are sent to fal.ai&apos;s API for AI image generation. fal.ai processes this data according to their own privacy policy.</li>
+                <li><strong className="text-foreground">Social Platform APIs:</strong> When you publish content, it is sent directly from your device to the respective social media platform&apos;s API. Each platform processes data according to their own terms and privacy policies.</li>
+              </ul>
+
+              <h3 className="text-lg font-heading font-medium text-foreground mb-3 mt-4">
+                Data Deletion
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                You can request deletion of your personal data at any time:
+              </p>
+              <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                <li><strong className="text-foreground">CRM Data:</strong> To delete your waitlist signup information (name and email), email <a href="mailto:hello@prestyj.com" className="text-primary hover:underline">hello@prestyj.com</a> with the subject line &quot;Data Deletion Request.&quot; Requests are processed within 30 days and you will receive a confirmation email once complete.</li>
+                <li><strong className="text-foreground">Local App Data:</strong> All Media Master application data stored on your device can be deleted by uninstalling the application or manually deleting the application data directory.</li>
+                <li><strong className="text-foreground">Published Content:</strong> Content already published to social media platforms must be deleted directly on those platforms. PRESTYJ cannot remove content from third-party services on your behalf.</li>
+              </ul>
             </section>
 
             <section>

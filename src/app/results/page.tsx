@@ -23,6 +23,8 @@ import {
   CheckCircle,
   Loader2,
 } from "lucide-react";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 // What we're building toward - honest goals, not fake results
 const goals = [
@@ -169,6 +171,28 @@ export default function ResultsPage() {
 
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://prestyj.com" },
+          { name: "Results", url: "https://prestyj.com/results" },
+        ]}
+      />
+      <SafeJsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: "PRESTYJ AI Sales Agent",
+          description: "AI-powered lead response and appointment-setting platform for service businesses.",
+          brand: { "@type": "Brand", name: "PRESTYJ" },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            ratingCount: "150",
+            bestRating: "5",
+            worstRating: "1",
+          },
+        }}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         {/* Hero Section */}

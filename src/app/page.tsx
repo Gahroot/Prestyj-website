@@ -5,8 +5,6 @@ import { Footer } from "@/components/layout/footer";
 import { BatchAdsHeroSection } from "@/components/sections/batch-ads-hero";
 import { faqs } from "@/lib/faq-data";
 import {
-  OrganizationJsonLd,
-  WebSiteJsonLd,
   ProductJsonLd,
   FAQJsonLd,
   SoftwareApplicationJsonLd,
@@ -88,8 +86,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <OrganizationJsonLd />
-      <WebSiteJsonLd />
       <ProductJsonLd />
       <SoftwareApplicationJsonLd />
       <ServiceJsonLd />

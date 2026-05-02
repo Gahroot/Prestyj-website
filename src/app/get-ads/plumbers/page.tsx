@@ -5,6 +5,8 @@ import { OfferBreakdown } from "@/components/free-ads/offer-breakdown";
 import { IndustryPainPoints } from "@/components/free-ads/industry-pain-points";
 import { LeadForm } from "@/components/free-ads/lead-form";
 import { FreeAdsFAQ } from "@/components/free-ads/faq-section";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 const PLUMBER_PAIN_POINTS = [
   {
@@ -42,8 +44,29 @@ export const metadata: Metadata = {
 };
 
 export default function PlumbersFreeAdsPage() {
+  const pageUrl = "https://prestyj.com/get-ads/plumbers";
+
   return (
-    <main className="min-h-screen">
+    <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://prestyj.com" },
+          { name: "Batch Video Ads for Plumbers", url: pageUrl },
+        ]}
+      />
+      <SafeJsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Batch Video Ads for Plumbers",
+          description:
+            "Batch scripted video ads for plumbing companies. 24-hour turnaround from your footage. Includes ad setup, landing page, and AI lead response.",
+          provider: { "@type": "Organization", name: "PRESTYJ", url: "https://prestyj.com" },
+          serviceType: "Video Ad Production",
+          areaServed: "United States",
+        }}
+      />
+      <main className="min-h-screen">
       <IndustryHero
         industry="Plumbing"
         headline="What If You Had 300 Video Ads Running By Next Week?"
@@ -56,6 +79,7 @@ export default function PlumbersFreeAdsPage() {
       <OfferBreakdown />
       <LeadForm />
       <FreeAdsFAQ />
-    </main>
+      </main>
+    </>
   );
 }

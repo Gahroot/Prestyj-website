@@ -7,6 +7,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { getAlternativesByType } from "@/lib/alternatives";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 export const metadata: Metadata = {
   title: "Real Estate AI Alternatives | Compare Prestyj to Top Platforms",
@@ -29,9 +31,32 @@ export const metadata: Metadata = {
 export default function AlternativesHubPage() {
   const directCompetitors = getAlternativesByType("direct-competitor");
   const integrationPartners = getAlternativesByType("integration-partner");
+  const allAlternatives = [...directCompetitors, ...integrationPartners];
+  const siteUrl = "https://prestyj.com";
+
+  const breadcrumbs = [
+    { name: "Home", url: siteUrl },
+    { name: "Alternatives", url: `${siteUrl}/alternatives` },
+  ];
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Prestyj Alternatives — AI Sales Agent Comparisons",
+    description: "Compare Prestyj to top real estate AI platforms, CRMs, and ISA services.",
+    numberOfItems: allAlternatives.length,
+    itemListElement: allAlternatives.map((alt, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: `Prestyj vs ${alt.competitor.name}`,
+      url: `${siteUrl}/alternatives/${alt.slug}`,
+    })),
+  };
 
   return (
     <>
+      <BreadcrumbJsonLd items={breadcrumbs} />
+      <SafeJsonLd data={itemListSchema} />
       <Navbar />
       <main className="pt-16">
         {/* Hero Section */}

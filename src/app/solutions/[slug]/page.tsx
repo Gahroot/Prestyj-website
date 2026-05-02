@@ -13,6 +13,8 @@ import {
 } from "@/components/sections/landing";
 import { getSolution, getAllSolutionSlugs } from "@/lib/solutions";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { FAQJsonLd } from "@/components/seo/json-ld";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 interface SolutionPageProps {
   params: Promise<{ slug: string }>;
@@ -66,9 +68,39 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
     { name: solution.meta.title, url: `${siteUrl}/solutions/${slug}` },
   ];
 
+  // Build FAQ items from solution FAQs and objections
+  const faqItems: { question: string; answer: string }[] = [];
+  if (solution.faqs) {
+    faqItems.push(...solution.faqs);
+  }
+  if (solution.objections) {
+    faqItems.push(
+      ...solution.objections.objections.map((o) => ({
+        question: o.objection,
+        answer: o.response,
+      })),
+    );
+  }
+
+  // Service schema for this specific solution
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: solution.meta.title,
+    description: solution.meta.description,
+    provider: {
+      "@type": "Organization",
+      name: "PRESTYJ",
+      url: siteUrl,
+    },
+    areaServed: "United States",
+  };
+
   return (
     <>
       <BreadcrumbJsonLd items={breadcrumbs} />
+      <SafeJsonLd data={serviceSchema} />
+      {faqItems.length > 0 && <FAQJsonLd faqs={faqItems} />}
       <Navbar />
       <main>
         <LandingHero content={solution.hero} />

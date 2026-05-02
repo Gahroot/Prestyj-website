@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Zap, Bot, Calendar, Shield, Code, Plug, Server, Cpu, Headphones, BarChart3 } from "lucide-react";
 import BorderGlow from "@/components/ui/border-glow";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
   title: "Platform | Custom AI Sales Agents & Automation Workflows | Prestyj",
@@ -94,8 +96,64 @@ const useCases = [
 ];
 
 export default function PlatformPage() {
+  const softwareAppSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "Prestyj AI Sales Platform",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description:
+      "Build custom AI sales agents with multi-agent workflows, CRM integrations, custom voice agents, and enterprise-grade automation for high-growth service businesses.",
+    url: "https://prestyj.com/platform",
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      lowPrice: "1997",
+      highPrice: "5997",
+      offerCount: 3,
+      availability: "https://schema.org/InStock",
+    },
+    featureList: capabilities.map((cap) => cap.title),
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      ratingCount: "150",
+      bestRating: "5",
+      worstRating: "1",
+    },
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "Custom AI Sales Agent Development",
+    description:
+      "Platform for building purpose-built AI sales agents with custom workflows, deep integrations, and enterprise-grade reliability for service businesses.",
+    provider: {
+      "@type": "Organization",
+      name: "PRESTYJ",
+      url: "https://prestyj.com",
+    },
+    serviceType: [
+      "AI Sales Agent Development",
+      "Custom AI Workflows",
+      "Multi-Agent Architecture",
+      "AI Voice Agent Development",
+      "CRM Integration",
+    ],
+    areaServed: "United States",
+  };
+
+  const breadcrumbs = [
+    { name: "Home", url: "https://prestyj.com" },
+    { name: "Platform", url: "https://prestyj.com/platform" },
+  ];
+
   return (
     <>
+      <BreadcrumbJsonLd items={breadcrumbs} />
+      <SafeJsonLd data={softwareAppSchema} />
+      <SafeJsonLd data={serviceSchema} />
       <Navbar />
       <main>
         {/* Hero */}
