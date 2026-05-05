@@ -28,6 +28,9 @@ import { aiVoiceReceptionistDental } from "./ai-voice-receptionist-dental";
 import { aiVoiceReceptionistLegal } from "./ai-voice-receptionist-legal";
 import { aiVoiceReceptionistMedical } from "./ai-voice-receptionist-medical";
 import { aiVoiceReceptionistInsurance } from "./ai-voice-receptionist-insurance";
+import { aiVoiceReceptionistHvac } from "./ai-voice-receptionist-hvac";
+import { aiVoiceReceptionistPlumbing } from "./ai-voice-receptionist-plumbing";
+import { aiVoiceReceptionistRealEstate } from "./ai-voice-receptionist-real-estate";
 import { lawFirms } from "./law-firms";
 import { plasticSurgery } from "./plastic-surgery";
 import { plumbing } from "./plumbing";
@@ -183,6 +186,9 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "ai-voice-receptionist-legal": aiVoiceReceptionistLegal,
   "ai-voice-receptionist-medical": aiVoiceReceptionistMedical,
   "ai-voice-receptionist-insurance": aiVoiceReceptionistInsurance,
+  "ai-voice-receptionist-hvac": aiVoiceReceptionistHvac,
+  "ai-voice-receptionist-plumbing": aiVoiceReceptionistPlumbing,
+  "ai-voice-receptionist-real-estate": aiVoiceReceptionistRealEstate,
   "law-firms": lawFirms,
   "plastic-surgery": plasticSurgery,
   "plumbing": plumbing,
