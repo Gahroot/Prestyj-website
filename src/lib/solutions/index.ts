@@ -27,6 +27,30 @@ import { aiReceptionistRealEstate } from "./ai-receptionist-real-estate";
 import { aiAppointmentScheduling } from "./ai-appointment-scheduling";
 import { leadReactivationRealEstate } from "./lead-reactivation-real-estate";
 import { aiSalesAgentCost } from "./ai-sales-agent-cost";
+import { batchVideoAdsForContractors } from "./batch-video-ads-for-contractors";
+import { batchVideoAdsForHvacCompanies } from "./batch-video-ads-for-hvac-companies";
+import { batchVideoAdsForMortgageBrokers } from "./batch-video-ads-for-mortgage-brokers";
+import { batchVideoAdsForRoofers } from "./batch-video-ads-for-roofers";
+import { batchVideoAdsForAgencyOwners } from "./batch-video-ads-for-agency-owners";
+import { adCreativeTestingService } from "./ad-creative-testing-service";
+import { videoAdProductionVolume } from "./video-ad-production-volume";
+import { aiCreativeStudioServiceBusinesses } from "./ai-creative-studio-service-businesses";
+import { aiSocialMediaContentGenerator } from "./ai-social-media-content-generator";
+import { aiAdCreativeGenerator } from "./ai-ad-creative-generator";
+import { aiImageGenerationForBusiness } from "./ai-image-generation-for-business";
+import { multiPlatformPublishingTool } from "./multi-platform-publishing-tool";
+import { aiImplementationConsulting } from "./ai-implementation-consulting";
+import { aiIntegrationService } from "./ai-integration-service";
+import { customAiAgentImplementation } from "./custom-ai-agent-implementation";
+import { aiStrategyConsulting } from "./ai-strategy-consulting";
+import { aiRolloutPlanning } from "./ai-rollout-planning";
+import { fractionalAiOfficer } from "./fractional-ai-officer";
+import { aiWorkflowAutomationConsulting } from "./ai-workflow-automation-consulting";
+import { adCreativeTestingAgency } from "./ad-creative-testing-agency";
+import { facebookAdCreativeTesting } from "./facebook-ad-creative-testing-agency";
+import { videoAdTestingFramework } from "./video-ad-testing-framework";
+import { adFatigueManagement } from "./ad-fatigue-management";
+import { creativeRefreshService } from "./creative-refresh-service";
 
 export const solutions: Record<string, SolutionPageContent> = {
   "speed-to-lead": speedToLead,
@@ -57,6 +81,30 @@ export const solutions: Record<string, SolutionPageContent> = {
   "ai-appointment-scheduling": aiAppointmentScheduling,
   "lead-reactivation-real-estate": leadReactivationRealEstate,
   "ai-sales-agent-cost": aiSalesAgentCost,
+  "batch-video-ads-for-contractors": batchVideoAdsForContractors,
+  "batch-video-ads-for-hvac-companies": batchVideoAdsForHvacCompanies,
+  "batch-video-ads-for-mortgage-brokers": batchVideoAdsForMortgageBrokers,
+  "batch-video-ads-for-roofers": batchVideoAdsForRoofers,
+  "batch-video-ads-for-agency-owners": batchVideoAdsForAgencyOwners,
+  "ad-creative-testing-service": adCreativeTestingService,
+  "video-ad-production-volume": videoAdProductionVolume,
+  "ai-creative-studio-service-businesses": aiCreativeStudioServiceBusinesses,
+  "ai-social-media-content-generator": aiSocialMediaContentGenerator,
+  "ai-ad-creative-generator": aiAdCreativeGenerator,
+  "ai-image-generation-for-business": aiImageGenerationForBusiness,
+  "multi-platform-publishing-tool": multiPlatformPublishingTool,
+  "ai-implementation-consulting": aiImplementationConsulting,
+  "ai-integration-service": aiIntegrationService,
+  "custom-ai-agent-implementation": customAiAgentImplementation,
+  "ai-strategy-consulting": aiStrategyConsulting,
+  "ai-rollout-planning": aiRolloutPlanning,
+  "fractional-ai-officer": fractionalAiOfficer,
+  "ai-workflow-automation-consulting": aiWorkflowAutomationConsulting,
+  "ad-creative-testing-agency": adCreativeTestingAgency,
+  "facebook-ad-creative-testing-agency": facebookAdCreativeTesting,
+  "video-ad-testing-framework": videoAdTestingFramework,
+  "ad-fatigue-management": adFatigueManagement,
+  "creative-refresh-service": creativeRefreshService,
 };
 
 export function getSolution(slug: string): SolutionPageContent | undefined {

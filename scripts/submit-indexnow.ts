@@ -128,6 +128,7 @@ function getAllUrls(): string[] {
     "/compare/prestyj-vs-ai-avatar-ads",
     "/compare/prestyj-vs-ugc-creators",
     "/compare/prestyj-vs-production-agencies",
+    "/compare/prestyj-vs-pencil",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
