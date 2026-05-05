@@ -1,0 +1,8 @@
+"use client";
+
+import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
+import { synthesiaCompareData } from "@/lib/compare/data/synthesia";
+
+export default function PrestyJVsSynthesiaPage() {
+  return <ComparePageWrapper data={synthesiaCompareData} />;
+}

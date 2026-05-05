@@ -85,6 +85,18 @@ import { videoAdsForLawFirmOwners } from "./video-ads-for-law-firm-owners";
 import { videoAdsForAgencyOwners } from "./video-ads-for-agency-owners";
 import { videoAdsForContractors } from "./video-ads-for-contractors";
 import { videoAdsForFinancialAdvisors } from "./video-ads-for-financial-advisors";
+import { videoAdsForSolarCompanies } from "./video-ads-for-solar-companies";
+import { videoAdsForPestControl } from "./video-ads-for-pest-control";
+import { videoAdsForElectricians } from "./video-ads-for-electricians";
+import { videoAdsForPlumbingOwners } from "./video-ads-for-plumbing-owners";
+import { videoAdsForDentalPractices } from "./video-ads-for-dental-practices";
+import { videoAdsForMedSpas } from "./video-ads-for-med-spas";
+import { videoAdsForInsuranceAgents } from "./video-ads-for-insurance-agents";
+import { videoAdsForAutoDealerships } from "./video-ads-for-auto-dealerships";
+import { videoAdsForSeniorCare } from "./video-ads-for-senior-care";
+import { socialContentForContractors } from "./social-content-for-contractors";
+import { socialContentForRealEstateTeams } from "./social-content-for-real-estate-teams";
+import { socialContentForAgencies } from "./social-content-for-agencies";
 
 // Geo: 50 metro-specific and 15 state-specific real estate video ad pages
 import { videoAdsForRealtorsAustin } from "./video-ads-for-realtors-austin";
@@ -243,6 +255,18 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "video-ads-for-agency-owners": videoAdsForAgencyOwners,
   "video-ads-for-contractors": videoAdsForContractors,
   "video-ads-for-financial-advisors": videoAdsForFinancialAdvisors,
+  "video-ads-for-solar-companies": videoAdsForSolarCompanies,
+  "video-ads-for-pest-control": videoAdsForPestControl,
+  "video-ads-for-electricians": videoAdsForElectricians,
+  "video-ads-for-plumbing-owners": videoAdsForPlumbingOwners,
+  "video-ads-for-dental-practices": videoAdsForDentalPractices,
+  "video-ads-for-med-spas": videoAdsForMedSpas,
+  "video-ads-for-insurance-agents": videoAdsForInsuranceAgents,
+  "video-ads-for-auto-dealerships": videoAdsForAutoDealerships,
+  "video-ads-for-senior-care": videoAdsForSeniorCare,
+  "social-content-for-contractors": socialContentForContractors,
+  "social-content-for-real-estate-teams": socialContentForRealEstateTeams,
+  "social-content-for-agencies": socialContentForAgencies,
 
   // Geo: 50 metro-specific real estate video ad pages
   "video-ads-for-realtors-austin": videoAdsForRealtorsAustin,

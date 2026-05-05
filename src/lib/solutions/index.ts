@@ -51,6 +51,21 @@ import { facebookAdCreativeTesting } from "./facebook-ad-creative-testing-agency
 import { videoAdTestingFramework } from "./video-ad-testing-framework";
 import { adFatigueManagement } from "./ad-fatigue-management";
 import { creativeRefreshService } from "./creative-refresh-service";
+import { socialMediaContentService } from "./social-media-content-service";
+import { aiSocialMediaManager } from "./ai-social-media-manager";
+import { automatedSocialMediaPosts } from "./automated-social-media-posts";
+import { instagramCarouselContentService } from "./instagram-carousel-content-service";
+import { multiPlatformContentCreation } from "./multi-platform-content-creation";
+import { aiContentCalendarService } from "./ai-content-calendar-service";
+import { socialMediaPostingService } from "./social-media-posting-service";
+import { aiInstagramPostsService } from "./ai-instagram-posts-service";
+import { ugcStyleAdProduction } from "./ugc-style-ad-production";
+import { adHookTestingService } from "./ad-hook-testing-service";
+import { winningAdAngleFinder } from "./winning-ad-angle-finder";
+import { videoAdScriptWritingService } from "./video-ad-script-writing-service";
+import { facebookAdCreativeVolume } from "./facebook-ad-creative-volume";
+import { tiktokAdCreativeTesting } from "./tiktok-ad-creative-testing";
+import { youtubeShortsAdProduction } from "./youtube-shorts-ad-production";
 
 export const solutions: Record<string, SolutionPageContent> = {
   "speed-to-lead": speedToLead,
@@ -105,6 +120,21 @@ export const solutions: Record<string, SolutionPageContent> = {
   "video-ad-testing-framework": videoAdTestingFramework,
   "ad-fatigue-management": adFatigueManagement,
   "creative-refresh-service": creativeRefreshService,
+  "social-media-content-service": socialMediaContentService,
+  "ai-social-media-manager": aiSocialMediaManager,
+  "automated-social-media-posts": automatedSocialMediaPosts,
+  "instagram-carousel-content-service": instagramCarouselContentService,
+  "multi-platform-content-creation": multiPlatformContentCreation,
+  "ai-content-calendar-service": aiContentCalendarService,
+  "social-media-posting-service": socialMediaPostingService,
+  "ai-instagram-posts-service": aiInstagramPostsService,
+  "ugc-style-ad-production": ugcStyleAdProduction,
+  "ad-hook-testing-service": adHookTestingService,
+  "winning-ad-angle-finder": winningAdAngleFinder,
+  "video-ad-script-writing-service": videoAdScriptWritingService,
+  "facebook-ad-creative-volume": facebookAdCreativeVolume,
+  "tiktok-ad-creative-testing": tiktokAdCreativeTesting,
+  "youtube-shorts-ad-production": youtubeShortsAdProduction,
 };
 
 export function getSolution(slug: string): SolutionPageContent | undefined {
