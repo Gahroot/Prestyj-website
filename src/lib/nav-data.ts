@@ -15,6 +15,7 @@ import {
   PhoneCall,
   Landmark,
   KeyRound,
+  Share2,
   type LucideIcon,
 } from "lucide-react";
 
@@ -27,6 +28,7 @@ export type DropdownLink = {
 
 export const navLinks = [
   { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
+  { href: "/done-for-you-social-media", label: "Content Engine", highlight: true },
   { href: "/results", label: "Results" },
   { href: "/pricing", label: "Pricing" },
 ];
@@ -42,6 +44,12 @@ export const solutionLinks: DropdownLink[] = [
     label: "Batch Video Ads",
     description: "300–1,000 scripted vertical video ads in 24 hours.",
     icon: Video,
+  },
+  {
+    href: "/done-for-you-social-media",
+    label: "Done-For-You Social Media",
+    description: "1,500+ posts/month across 7 platforms — on autopilot.",
+    icon: Share2,
   },
   {
     href: "/solutions/speed-to-lead",
