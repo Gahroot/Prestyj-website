@@ -10,7 +10,7 @@ import type { Metadata } from "next";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
-import { readFile } from "fs/promises";
+import { readFile, stat } from "fs/promises";
 import { join } from "path";
 
 interface BlogPostPageProps {
@@ -99,36 +99,87 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const MDXContent = page.data.body;
-  const { title, description, author, date, image, keywords } = page.data;
+  const { title, description, author, date, image, keywords, updated } = page.data;
   const postUrl = `${siteUrl}/blog/${slug}`;
 
-  // Get raw MDX content for word count and FAQ extraction
+  // Get raw MDX content for word count, FAQ extraction, and step extraction
   const mdxPath = join(process.cwd(), "content/blog", `${slug}.mdx`);
   let rawContent = "";
+  let fileModified: string | undefined;
   try {
     rawContent = await readFile(mdxPath, "utf-8");
+    const fileStat = await stat(mdxPath);
+    fileModified = fileStat.mtime.toISOString().split("T")[0];
   } catch {
     // File read failed, skip content analysis
   }
   const wordCount = rawContent.split(/\s+/).filter(Boolean).length;
 
-  // Extract FAQ headings from MDX content
+  // Determine dateModified: frontmatter `updated` > file mtime > datePublished
+  const dateModified = updated || fileModified || date;
+
+  // Extract FAQ items with answers from MDX content
   const faqItems: Array<{ question: string; answer: string }> = [];
   const faqRegex = /##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)[\s\S]*?(?=##|$)/i;
   const faqSection = faqRegex.exec(rawContent);
   if (faqSection) {
-    const questionRegex = /###\s+(.+)/g;
-    let match: RegExpExecArray | null;
-    while ((match = questionRegex.exec(faqSection[0])) !== null) {
-      faqItems.push({
-        question: match[1].replace(/\*\*/g, "").trim(),
-        answer: "See full answer in the article.",
-      });
+    // Split FAQ section into individual Q&A pairs (### question + following paragraphs)
+    const qaPairs = faqSection[0].split(/(?=###\s+)/);
+    for (const qa of qaPairs) {
+      const questionMatch = /^###\s+(.+)/.exec(qa);
+      if (questionMatch) {
+        const question = questionMatch[1].replace(/\*\*/g, "").trim();
+        // Extract answer text: everything after the question heading, stripped of markdown
+        const answerText = qa
+          .replace(/^###\s+.*/, "") // Remove the question heading
+          .replace(/\*\*([^*]+)\*\*/g, "$1") // Bold
+          .replace(/\*([^*]+)\*/g, "$1") // Italic
+          .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1") // Links
+          .replace(/^#{1,4}\s+/gm, "") // Sub-headings
+          .replace(/^[-*]\s+/gm, "") // List markers
+          .replace(/^\d+\.\s+/gm, "") // Numbered list markers
+          .replace(/^>\s?/gm, "") // Blockquotes
+          .replace(/`{1,3}[^`]*`{1,3}/g, "") // Inline code
+          .replace(/\n{2,}/g, " ") // Multiple newlines → space
+          .trim();
+        faqItems.push({
+          question,
+          answer: answerText || "See full answer in the article.",
+        });
+      }
     }
   }
 
+  // Extract step-by-step HowTo data from MDX content
+  const howToSteps: Array<{ name: string; text: string }> = [];
+  const stepRegex = /^##\s+Step\s+\d+[::\s]\s*(.+)$/gm;
+  let stepMatch: RegExpExecArray | null;
+  while ((stepMatch = stepRegex.exec(rawContent)) !== null) {
+    const stepName = stepMatch[1].trim();
+    // Extract text between this ## heading and the next ## heading
+    const stepStart = stepMatch.index + stepMatch[0].length;
+    const nextSection = rawContent.indexOf("\n## ", stepStart);
+    const stepBody = rawContent.slice(
+      stepStart,
+      nextSection === -1 ? rawContent.length : nextSection,
+    );
+    const stepText = stepBody
+      .replace(/\*\*([^*]+)\*\*/g, "$1")
+      .replace(/\*([^*]+)\*/g, "$1")
+      .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
+      .replace(/^#{3,4}\s+.*/gm, "") // Sub-headings within step
+      .replace(/^[-*]\s+/gm, "")
+      .replace(/^\d+\.\s+/gm, "")
+      .replace(/^>\s?/gm, "")
+      .replace(/`{1,3}[^`]*`{1,3}/g, "")
+      .replace(/\n{2,}/g, " ")
+      .trim()
+      .slice(0, 500); // Cap length for structured data
+    howToSteps.push({ name: stepName, text: stepText });
+  }
+
   // JSON-LD structured data for Article
-  const jsonLd = {
+  const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
@@ -149,7 +200,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       },
     },
     datePublished: date,
-    dateModified: date,
+    dateModified,
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": postUrl,
@@ -158,6 +209,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     keywords: keywords?.join(", "),
     wordCount,
   };
+
+  // JSON-LD structured data for HowTo (only for step-by-step posts)
+  const howToJsonLd =
+    howToSteps.length >= 2
+      ? {
+          "@context": "https://schema.org",
+          "@type": "HowTo",
+          name: title,
+          description,
+          totalTime: undefined as string | undefined,
+          step: howToSteps.map((step, index) => ({
+            "@type": "HowToStep",
+            position: index + 1,
+            name: step.name,
+            text: step.text || `Complete step ${index + 1}: ${step.name}`,
+            url: `${postUrl}#step-${index + 1}`,
+          })),
+        }
+      : null;
 
   const breadcrumbs = [
     { name: "Home", url: siteUrl },
@@ -168,8 +238,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <>
       <BreadcrumbJsonLd items={breadcrumbs} />
-      <SafeJsonLd data={jsonLd} />
+      <SafeJsonLd data={articleJsonLd} />
       {faqItems.length > 0 && <FAQJsonLd faqs={faqItems} />}
+      {howToJsonLd && <SafeJsonLd data={howToJsonLd} />}
       <Navbar />
       <main className="pt-24 pb-16">
         <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
