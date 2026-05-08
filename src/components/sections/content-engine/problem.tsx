@@ -1,40 +1,33 @@
 import { X } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import {
+  defaultContentEngineConfig,
+  type ProblemConfig,
+} from "@/lib/content-engine";
 
-const PAINS = [
-  {
-    title: "Your agency ships 30 posts/month for $5K.",
-    detail: "$166 per post. You renew anyway.",
-  },
-  {
-    title: "Your in-house hire burns out in 6 months.",
-    detail: "$55K/year, gone the second something better appears.",
-  },
-  {
-    title: "You're posting from your phone at 11pm.",
-    detail: "Twice a week. Reach is flat.",
-  },
-  {
-    title: "One account isn't enough anymore.",
-    detail: "Your buyers live across 7 platforms and 3 personas. You're showing up on one.",
-  },
-];
+interface ContentEngineProblemProps {
+  config?: ProblemConfig;
+}
 
-export function ContentEngineProblem() {
+export function ContentEngineProblem({
+  config = defaultContentEngineConfig.problem,
+}: ContentEngineProblemProps) {
+  const { headline, subhead, pains } = config;
+
   return (
     <section className="py-24">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-            Posting Once a Day Won&apos;t Cut It in 2026.
+            {headline}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            The math doesn&apos;t work with humans.
+            {subhead}
           </p>
         </AnimateOnScroll>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {PAINS.map((pain, i) => (
+          {pains.map((pain, i) => (
             <AnimateOnScroll key={pain.title} delay={i * 0.1}>
               <div className="bg-card border border-border rounded-lg p-6 h-full">
                 <div className="flex items-start gap-3">

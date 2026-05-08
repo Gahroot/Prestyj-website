@@ -1,72 +1,14 @@
 import { Check, X } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import {
+  defaultContentEngineConfig,
+  type ComparisonConfig,
+  type ComparisonCell,
+} from "@/lib/content-engine";
 
-type Row = {
-  feature: string;
-  prestyj: string | true;
-  agency: string | false;
-  freelancer: string | false;
-  inHouse: string | false;
-};
-
-const ROWS: Row[] = [
-  {
-    feature: "Accounts managed",
-    prestyj: "Up to 3+",
-    agency: "1",
-    freelancer: "1",
-    inHouse: "1–2",
-  },
-  {
-    feature: "Platforms covered",
-    prestyj: "Up to 7",
-    agency: "2–3",
-    freelancer: "1–2",
-    inHouse: "2–3",
-  },
-  {
-    feature: "Brand + personal brand",
-    prestyj: true,
-    agency: false,
-    freelancer: false,
-    inHouse: false,
-  },
-  {
-    feature: "Posts per month",
-    prestyj: "270–2,700",
-    agency: "30–60",
-    freelancer: "20–40",
-    inHouse: "60–120",
-  },
-  {
-    feature: "Posts on weekends/holidays",
-    prestyj: true,
-    agency: false,
-    freelancer: false,
-    inHouse: false,
-  },
-  {
-    feature: "Calls in sick",
-    prestyj: true,
-    agency: false,
-    freelancer: false,
-    inHouse: false,
-  },
-  {
-    feature: "Live in 24 hours",
-    prestyj: true,
-    agency: false,
-    freelancer: "sometimes",
-    inHouse: false,
-  },
-  {
-    feature: "Monthly cost",
-    prestyj: "$2K–$5K",
-    agency: "$5K–$15K",
-    freelancer: "$2K–$8K",
-    inHouse: "$8K–$12K loaded",
-  },
-];
+interface ContentEngineComparisonProps {
+  config?: ComparisonConfig;
+}
 
 function Cell({ value }: { value: string | true | false }) {
   if (value === true) {
@@ -86,16 +28,20 @@ function Cell({ value }: { value: string | true | false }) {
   return <span className="text-sm">{value}</span>;
 }
 
-export function ContentEngineComparison() {
+export function ContentEngineComparison({
+  config = defaultContentEngineConfig.comparison,
+}: ContentEngineComparisonProps) {
+  const { headline, subhead, rows } = config;
+
   return (
     <section className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-            Prestyj vs. Every Other Way to Post.
+            {headline}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Same job. Different math.
+            {subhead}
           </p>
         </AnimateOnScroll>
 
@@ -122,7 +68,7 @@ export function ContentEngineComparison() {
                 </tr>
               </thead>
               <tbody>
-                {ROWS.map((row, i) => (
+                {rows.map((row: ComparisonCell, i: number) => (
                   <tr
                     key={row.feature}
                     className={i % 2 === 0 ? "bg-background" : "bg-muted/10"}

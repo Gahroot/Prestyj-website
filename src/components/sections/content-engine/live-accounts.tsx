@@ -1,87 +1,39 @@
-import {
-  Instagram,
-  Facebook,
-  Youtube,
-  Linkedin,
-  Twitter,
-  ExternalLink,
-} from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import {
+  defaultContentEngineConfig,
+  type LiveAccountsConfig,
+} from "@/lib/content-engine";
 
-/**
- * Social account data — kept in sync with the sameAs array in
- * OrganizationJsonLd (src/components/seo/json-ld.tsx).
- */
-const ACCOUNTS = [
-  {
-    platform: "Instagram",
-    url: "https://www.instagram.com/prestyj_/",
-    icon: Instagram,
-    handle: "@prestyj_",
-    description: "Daily reels, carousels & behind-the-scenes.",
-  },
-  {
-    platform: "Facebook",
-    url: "https://www.facebook.com/profile.php?id=61582824703610",
-    icon: Facebook,
-    handle: "Prestyj",
-    description: "Long-form posts & community updates.",
-  },
-  {
-    platform: "TikTok",
-    url: "https://www.tiktok.com/@prestyj_",
-    icon: Youtube, // TikTok not in lucide; Youtube as generic video stand-in
-    handle: "@prestyj_",
-    description: "Short-form hooks & viral tests.",
-  },
-  {
-    platform: "YouTube",
-    url: "https://www.youtube.com/@prestyj_",
-    icon: Youtube,
-    handle: "@prestyj_",
-    description: "Tutorials, breakdowns & case studies.",
-  },
-  {
-    platform: "LinkedIn",
-    url: "https://www.linkedin.com/company/prestyj/",
-    icon: Linkedin,
-    handle: "Prestyj",
-    description: "B2B thought leadership & product updates.",
-  },
-  {
-    platform: "Threads",
-    url: "https://www.threads.net/@prestyj_",
-    icon: Twitter, // Threads not in lucide; Twitter as text-first stand-in
-    handle: "@prestyj_",
-    description: "Conversational posts & engagement.",
-  },
-  {
-    platform: "X",
-    url: "https://x.com/prestyj_",
-    icon: Twitter,
-    handle: "@prestyj_",
-    description: "Hot takes, threads & real-time updates.",
-  },
-] as const;
+interface ContentEngineLiveAccountsProps {
+  config?: LiveAccountsConfig;
+}
 
-export function ContentEngineLiveAccounts() {
+export function ContentEngineLiveAccounts({
+  config = defaultContentEngineConfig.liveAccounts,
+}: ContentEngineLiveAccountsProps) {
+  const { headline, headlineAccent, subhead, accounts } = config;
+
   return (
     <section className="py-24 bg-muted/20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-            See Us Posting <span className="text-primary">Right Now</span>.
+            {headline}{" "}
+            {headlineAccent && (
+              <span className="text-primary">{headlineAccent}</span>
+            )}
+            .
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            These aren&apos;t mockups. Every account is live, posting daily, powered
-            by the same engine you&apos;ll get.
+            {subhead}
           </p>
         </AnimateOnScroll>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {ACCOUNTS.map((account, index) => (
+          {accounts.map((account, index) => (
             <AnimateOnScroll key={account.platform} delay={index * 0.05}>
               <div className="group bg-card border border-border rounded-lg p-5 h-full hover:border-primary/40 transition-colors">
                 <div className="flex items-start justify-between mb-3">
