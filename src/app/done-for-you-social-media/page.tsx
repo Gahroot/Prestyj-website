@@ -9,6 +9,7 @@ import { ContentEngineProofBar } from "@/components/sections/content-engine/proo
 import { ContentEngineProblem } from "@/components/sections/content-engine/problem";
 import { ContentEngineSolution } from "@/components/sections/content-engine/solution";
 import { ContentEngineProofScreenshots } from "@/components/sections/content-engine/proof-screenshots";
+import { ContentEngineLiveAccounts } from "@/components/sections/content-engine/live-accounts";
 import { ContentEngineHowItWorks } from "@/components/sections/content-engine/how-it-works";
 import { ContentEnginePricing } from "@/components/sections/content-engine/pricing";
 import { ContentEngineComparison } from "@/components/sections/content-engine/comparison";
@@ -20,15 +21,20 @@ const PAGE_URL = "https://prestyj.com/done-for-you-social-media";
 
 export const metadata: Metadata = {
   title:
-    "Done-For-You Social Media | 1,500+ Posts/Month Across 7 Platforms — Prestyj Content Engine",
+    "Done-For-You Social Media Swarm | Live in 24 Hours — Prestyj",
   description:
-    "Most agencies ship 30 posts a month for $5K. We ship 1,500+. The Prestyj Content Engine is an AI-powered done-for-you social media service producing 50+ posts a day across Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, and X — from $2,000/mo.",
+    "One brand isn't enough. Run a content swarm across your business, your personal brand, and niche accounts. Up to 7 platforms, 2,700+ posts/month, live in 24 hours. From $1,997/mo.",
   keywords: [
     "done for you social media",
     "social media management service",
     "AI social media management",
     "social media content service",
-    "1000 posts per month",
+    "content swarm",
+    "multi-account social media",
+    "personal brand management",
+    "done for you personal brand",
+    "24 hour social media setup",
+    "algorithm safe social media",
     "social media on autopilot",
     "AI content engine",
     "AI content department",
@@ -44,18 +50,18 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Done-For-You Social Media | 1,500+ Posts/Month — Prestyj Content Engine",
+      "Done-For-You Social Media Swarm | Live in 24 Hours — Prestyj",
     description:
-      "50+ posts a day across 7 platforms. AI content engine that ships 1,500+ posts/month for less than the cost of one junior hire. From $2,000/mo.",
+      "One brand isn't enough. Run a content swarm across your business, your personal brand, and niche accounts. Up to 7 platforms, 2,700+ posts/month, live in 24 hours. From $1,997/mo.",
     type: "website",
     url: PAGE_URL,
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Done-For-You Social Media | 1,500+ Posts/Month — Prestyj Content Engine",
+      "Done-For-You Social Media Swarm | Live in 24 Hours — Prestyj",
     description:
-      "50+ posts a day across 7 platforms. AI content engine that ships 1,500+ posts/month for less than the cost of one junior hire.",
+      "One brand isn't enough. Run a content swarm across your business, your personal brand, and niche accounts. Up to 7 platforms, 2,700+ posts/month, live in 24 hours.",
   },
   alternates: {
     canonical: PAGE_URL,
@@ -66,9 +72,9 @@ export default function DoneForYouSocialMediaPage() {
   const serviceJsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Prestyj Content Engine — Done-For-You Social Media",
+    name: "Prestyj Content Swarm — Done-For-You Social Media",
     description:
-      "AI-powered done-for-you social media management service producing 50+ posts/day (1,500+/month) across Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, and X. Includes brand kit, content sequencing, native publishing, monthly creative refresh, and reporting.",
+      "AI-powered done-for-you social media swarm running multiple accounts (brand, personal brand, and niche pages) across Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, and X. Live in 24 hours from account access. Up to 2,700+ posts/month with a volume guarantee.",
     provider: {
       "@type": "Organization",
       name: "PRESTYJ",
@@ -79,6 +85,8 @@ export default function DoneForYouSocialMediaPage() {
       "Social Media Management",
       "AI Content Generation",
       "Done-For-You Social Media",
+      "Multi-Account Social Media",
+      "Personal Brand Management",
       "Multi-Platform Publishing",
       "Content Marketing Automation",
     ],
@@ -87,43 +95,43 @@ export default function DoneForYouSocialMediaPage() {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: "2000",
-      highPrice: "5000",
+      lowPrice: "1997",
+      highPrice: "4997",
       offerCount: "3",
       availability: "https://schema.org/InStock",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Content Engine Plans",
+      name: "Content Swarm Plans",
       itemListElement: [
         {
           "@type": "Offer",
           name: "Minimum Plan",
-          price: "2000",
+          price: "1997",
           priceCurrency: "USD",
           itemOffered: {
             "@type": "Service",
-            name: "Minimum Plan — 3 platforms, 30+ posts/day",
+            name: "Minimum Plan — 1 account, 3 platforms, ~270 posts/month",
           },
         },
         {
           "@type": "Offer",
           name: "Pro Plan",
-          price: "3000",
+          price: "2997",
           priceCurrency: "USD",
           itemOffered: {
             "@type": "Service",
-            name: "Pro Plan — 5–6 platforms, 50+ posts/day, 1,500+/month",
+            name: "Pro Plan — 2 accounts, 5 platforms, ~900 posts/month",
           },
         },
         {
           "@type": "Offer",
           name: "Max Plan",
-          price: "5000",
+          price: "4997",
           priceCurrency: "USD",
           itemOffered: {
             "@type": "Service",
-            name: "Max Plan — All platforms, multi-brand, unlimited automations",
+            name: "Max Plan — 3 accounts, 7 platforms, ~2,700 posts/month",
           },
         },
       ],
@@ -150,6 +158,7 @@ export default function DoneForYouSocialMediaPage() {
         <ContentEngineProblem />
         <ContentEngineSolution />
         <ContentEngineProofScreenshots />
+        <ContentEngineLiveAccounts />
         <ContentEngineHowItWorks />
         <ContentEnginePricing />
         <ContentEngineComparison />
