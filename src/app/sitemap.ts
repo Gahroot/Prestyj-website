@@ -3,6 +3,7 @@ import { blogSource } from "@/lib/source";
 import { getAllAlternativeSlugs } from "@/lib/alternatives";
 import { getAllSolutionSlugs } from "@/lib/solutions";
 import { getAllBestForSlugs } from "@/lib/best-for";
+import { getAllLocationSlugs } from "@/lib/locations";
 
 const baseUrl = "https://prestyj.com";
 
@@ -105,6 +106,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/platform`,
       lastModified: now,
       changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/statistics`,
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
     {
@@ -356,6 +363,52 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/compare/structurely-vs-prestyj`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/follow-up-boss-vs-prestyj`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/lofty-vs-prestyj`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/resimpli-vs-prestyj`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/alanna-ai-vs-prestyj`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  ];
+
+  // Location pages
+  const locationRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/locations`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    ...getAllLocationSlugs().map((slug) => ({
+      url: `${baseUrl}/locations/${slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
   ];
 
   return [
@@ -365,5 +418,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...solutionRoutes,
     ...bestForRoutes,
     ...compareRoutes,
+    ...locationRoutes,
   ];
 }
