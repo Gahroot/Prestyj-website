@@ -1,37 +1,35 @@
-import { ClipboardList, Cog, Rocket, RefreshCw } from "lucide-react";
+import { CreditCard, Cog, Rocket, RefreshCw } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const STEPS = [
   {
     number: "01",
-    icon: ClipboardList,
-    title: "Intake & Brand Kit",
-    description:
-      "We build your brand kit: voice, offers, avatars, colors, proof points, and the angles that move your buyer. One 60-minute call. We handle the rest.",
-    highlight: "Done in week one",
+    icon: CreditCard,
+    title: "Pay & Connect",
+    description: "Pick a plan. Grant account access. We start the clock.",
+    highlight: "Day 0",
   },
   {
     number: "02",
     icon: Cog,
-    title: "We Build Your Engine",
+    title: "AI Builds Your Engine",
     description:
-      "Prompt architecture, content sequencing, automation pipelines, and platform connections — wired up to your accounts and tested before anything goes live.",
-    highlight: "1–2 weeks of buildout",
+      "Brand kit, voice, prompt stack, platform connections — wired up and live in 24 hours.",
+    highlight: "Live in 24h or setup fee refunded",
   },
   {
     number: "03",
     icon: Rocket,
-    title: "50+ Posts/Day Start Shipping",
+    title: "Posts Start Shipping",
     description:
-      "The engine goes live. Posts ship daily across every platform you signed up for — formatted natively, scheduled smart, on-brand every time.",
-    highlight: "1,500+ posts/month",
+      "Multiple accounts, 7 platforms, every single day. Algorithm-safe volume.",
+    highlight: "Day 1 onward",
   },
   {
     number: "04",
     icon: RefreshCw,
-    title: "Monthly Refresh & Reporting",
-    description:
-      "We rotate avatars, swap hooks, test new formats, and report on what's actually moving the needle. The engine gets smarter every month.",
+    title: "Monthly Refresh + Reporting",
+    description: "Hooks rotate. Avatars evolve. You see what's working.",
     highlight: "Always optimizing",
   },
 ];
@@ -42,10 +40,10 @@ export function ContentEngineHowItWorks() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-            From Zero to 1,500 Posts/Month in Under 3 Weeks.
+            From Payment to Posting in 24 Hours.
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            One intake call. We build the machine. It ships forever.
+            One link. The AI handles the rest.
           </p>
         </AnimateOnScroll>
 

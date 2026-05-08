@@ -1,6 +1,7 @@
 "use client";
 
-import { DollarSign, Users, Zap } from "lucide-react";
+import { DollarSign, Users, Zap, TrendingUp } from "lucide-react";
+import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
@@ -24,6 +25,13 @@ const stats = [
     label: "AI response time",
     description:
       "Your agent responds before competitors even see the notification.",
+  },
+  {
+    icon: TrendingUp,
+    value: "3–5x",
+    label: "Average ROI in first 90 days",
+    description:
+      "Clients typically see 3–5x return on investment within the first quarter.",
   },
 ];
 
@@ -53,6 +61,14 @@ export function PricingROISection() {
               and never forgets to follow up. It&apos;s the highest-ROI hire
               you&apos;ll ever make.
             </p>
+            <div className="mt-6">
+              <Link
+                href="/platform"
+                className="text-sm text-primary hover:text-primary/80 underline underline-offset-2"
+              >
+                See how our AI platform works →
+              </Link>
+            </div>
           </AnimateOnScroll>
 
           <AnimateOnScroll delay={0.2} className="space-y-6">

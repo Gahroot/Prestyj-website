@@ -22,6 +22,12 @@ import {
   History,
   Heart,
   CheckCircle,
+  Search,
+  Calculator,
+  Layers,
+  AlertTriangle,
+  FileText,
+  Workflow,
 } from "lucide-react";
 import type { IconName } from "./types";
 import type { LucideIcon } from "lucide-react";
@@ -50,6 +56,12 @@ export const iconMap: Record<IconName, LucideIcon> = {
   History,
   Heart,
   CheckCircle,
+  Search,
+  Calculator,
+  Layers,
+  AlertTriangle,
+  FileText,
+  Workflow,
 };
 
 export function getIcon(name: IconName): LucideIcon {

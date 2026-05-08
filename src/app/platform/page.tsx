@@ -8,6 +8,11 @@ import { Zap, Bot, Calendar, Shield, Code, Plug, Server, Cpu, Headphones, BarCha
 import BorderGlow from "@/components/ui/border-glow";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { FAQJsonLd } from "@/components/seo/json-ld";
+import { PlatformStatsSection } from "@/components/sections/platform/platform-stats";
+import { PlatformComparisonSection } from "@/components/sections/platform/platform-comparison";
+import { PlatformFAQSection } from "@/components/sections/platform/platform-faq";
+import { platformFaqs } from "@/lib/platform-data";
 
 export const metadata: Metadata = {
   title: "Platform | Custom AI Sales Agents & Automation Workflows | Prestyj",
@@ -154,6 +159,7 @@ export default function PlatformPage() {
       <BreadcrumbJsonLd items={breadcrumbs} />
       <SafeJsonLd data={softwareAppSchema} />
       <SafeJsonLd data={serviceSchema} />
+      <FAQJsonLd faqs={platformFaqs} />
       <Navbar />
       <main>
         {/* Hero */}
@@ -174,11 +180,25 @@ export default function PlatformPage() {
                 <Link href="/book-demo">Book a Demo</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/solutions/home-services">See Solutions</Link>
+                <Link href="/pricing">See Pricing</Link>
               </Button>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm">
+              <Link href="/free-ads" className="text-primary hover:text-primary/80 underline underline-offset-2">
+                Free batch video ads →
+              </Link>
+              <Link href="/batch-video-ads" className="text-primary hover:text-primary/80 underline underline-offset-2">
+                Batch ad production →
+              </Link>
+              <Link href="/solutions/home-services" className="text-primary hover:text-primary/80 underline underline-offset-2">
+                Home services solutions →
+              </Link>
             </div>
           </div>
         </section>
+
+        {/* Statistics */}
+        <PlatformStatsSection />
 
         {/* Capabilities Grid */}
         <section className="py-20 px-4 sm:px-6 lg:px-8">
@@ -202,6 +222,9 @@ export default function PlatformPage() {
             </div>
           </div>
         </section>
+
+        {/* Comparison */}
+        <PlatformComparisonSection />
 
         {/* Use Cases */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
@@ -247,6 +270,9 @@ export default function PlatformPage() {
           </div>
         </section>
 
+        {/* FAQ */}
+        <PlatformFAQSection />
+
         {/* CTA */}
         <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
           <div className="max-w-3xl mx-auto text-center">
@@ -256,9 +282,22 @@ export default function PlatformPage() {
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
               Whether you need a single AI receptionist or a full multi-agent sales system, we build it custom for your business.
             </p>
-            <Button size="lg" asChild>
-              <Link href="/book-demo">Book a Demo</Link>
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" asChild>
+                <Link href="/book-demo">Book a Demo</Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link href="/pricing">View Pricing</Link>
+              </Button>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm">
+              <Link href="/free-ads" className="text-primary hover:text-primary/80 underline underline-offset-2">
+                Try free batch video ads →
+              </Link>
+              <Link href="/batch-video-ads" className="text-primary hover:text-primary/80 underline underline-offset-2">
+                Learn about batch ads →
+              </Link>
+            </div>
             <p className="text-xs text-muted-foreground mt-4">
               No commitment required. See a live demo customized to your industry.
             </p>

@@ -38,8 +38,28 @@ export function HeroVideo() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          We send you the scripts and help you film. Just stand in front of the camera and read.
+          Free video ads for service businesses — we send you the scripts and help you film. Just stand in front of the camera and read.
         </motion.p>
+
+        {/* Stats row */}
+        <motion.div
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2 text-sm text-muted-foreground"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+        >
+          <span>
+            <span className="text-foreground font-semibold">300+</span> unique ad variations
+          </span>
+          <span className="hidden sm:inline text-border">·</span>
+          <span>
+            <span className="text-foreground font-semibold">24hr</span> turnaround
+          </span>
+          <span className="hidden sm:inline text-border">·</span>
+          <span>
+            <span className="text-foreground font-semibold">1</span> recording session
+          </span>
+        </motion.div>
 
         <motion.div
           className="relative w-full max-w-3xl aspect-video rounded-lg overflow-hidden shadow-2xl"

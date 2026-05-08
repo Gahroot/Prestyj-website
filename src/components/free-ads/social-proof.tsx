@@ -10,14 +10,17 @@ const testimonials = [
   {
     text: "If you are looking to start making some videos, this is the company to hire. It took 20 minutes, they showed up with scripts, all I had to do was read and walk.",
     highlight: "20 minutes. Scripts ready. All I had to do was read and walk.",
+    role: "Real Estate Team Lead",
   },
   {
     text: "I have zero experience on camera. It was so much easier than anticipated. They couldn't make it easier for their clients if they tried.",
     highlight: "Zero experience on camera. So much easier than anticipated.",
+    role: "HVAC Contractor",
   },
   {
     text: "100% happy and will definitely be using their services in the future. If I could give them more than 5 stars I would.",
     highlight: "If I could give them more than 5 stars I would.",
+    role: "Home Services Business Owner",
   },
 ];
 
@@ -55,6 +58,9 @@ export function SocialProof({ ctaHref }: { ctaHref?: string }) {
                 </p>
                 <p className="text-muted-foreground text-sm flex-1">
                   {testimonial.text}
+                </p>
+                <p className="text-xs text-primary font-medium mt-3 pt-3 border-t border-border">
+                  {testimonial.role}
                 </p>
               </BorderGlow>
             </AnimateOnScroll>

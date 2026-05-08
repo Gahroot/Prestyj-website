@@ -21,7 +21,13 @@ export type IconName =
   | "UserX"
   | "History"
   | "Heart"
-  | "CheckCircle";
+  | "CheckCircle"
+  | "Search"
+  | "Calculator"
+  | "Layers"
+  | "AlertTriangle"
+  | "FileText"
+  | "Workflow";
 
 export interface SolutionHero {
   badge: string;

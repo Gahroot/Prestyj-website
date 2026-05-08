@@ -1,10 +1,10 @@
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const STATS = [
-  { value: "50+", label: "Posts published every day" },
-  { value: "1,500+", label: "Posts shipped per month" },
-  { value: "7", label: "Platforms running in parallel" },
-  { value: "0", label: "Content calendars to approve" },
+  { value: "24h", label: "Live from payment to first post" },
+  { value: "3", label: "Accounts running in parallel" },
+  { value: "7", label: "Platforms covered" },
+  { value: "2,700+", label: "Posts shipped per month" },
 ];
 
 export function ContentEngineProofBar() {

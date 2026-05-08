@@ -6,186 +6,162 @@ import {
 } from "@/lib/content-factory";
 
 export const structurelyCompareData: ComparePageData = createComparePage({
-  slug: "prestyj-vs-structurely",
+  slug: "structurely-vs-prestyj",
   competitorName: "Structurely",
   hero: {
-    badge: "Enterprise Comparison",
-    title: "Prestyj vs Structurely",
-    titleAccent: "Which Scales for Enterprise?",
+    badge: "Structurely vs Prestyj",
+    title: "Structurely vs Prestyj",
+    titleAccent: "AI Real Estate Comparison",
     subtitle:
-      "Structurely (Aisa Holmes) is popular with individual agents and small teams. But can it handle the demands of 50+ office franchise operations?",
+      "Structurely offers a chatbot for lead qualification. Prestyj delivers a full AI-powered lead conversion platform with CRM, marketing automation, and multi-channel outreach.",
     description: "",
   },
   stats: [
     {
-      value: "$179-499",
-      label: "Structurely monthly range",
+      value: "2016",
+      label: "Structurely founded",
     },
     {
-      value: "30 seats",
-      label: "max on Structurely's top tier",
+      value: "Text + Voice AI",
+      label: "Structurely channels only",
     },
     {
-      value: "225",
-      label: "leads/month max on Build tier",
+      value: "Lead Qualification",
+      label: "Structurely's primary focus",
     },
     {
-      value: "50+",
-      label: "offices Prestyj serves",
+      value: "Full Pipeline",
+      label: "Prestyj end-to-end coverage",
     },
   ],
   pricing: {
     prestyj: {
-      price: "Custom pricing",
-      priceSubtext: "Scaled for your operation",
+      price: "$1,997",
+      priceSubtext: "/month (replaces 5+ tools)",
       features: [
-        { text: "Built for 50+ office operations", included: true },
-        { text: "Unlimited leads and locations", included: true },
-        { text: "Proprietary AI technology", included: true },
-        { text: "Transparent billing, no surprises", included: true },
+        { text: "All-in-one platform included", included: true },
+        { text: "Native CRM + marketing automation", included: true },
+        { text: "Multi-channel AI (text, voice, email)", included: true },
+        { text: "Works for all real estate verticals", included: true },
       ],
     },
     competitor: {
-      price: "$179-499",
-      priceSubtext: "/month or $3/lead pricing",
+      price: "$299",
+      priceSubtext: "/month + separate tool costs",
       features: [
-        {
-          text: "Good for small teams and individual agents",
-          included: true,
-        },
-        {
-          text: "57% reported response rate",
-          included: true,
-        },
-        {
-          text: "Max 30 seats, 225 leads/month on top tier",
-          included: false,
-        },
-        {
-          text: "AI shared with CINC platform",
-          included: false,
-        },
-        {
-          text: "Reported billing/cancellation issues",
-          included: false,
-        },
+        { text: "Text and voice AI chatbot", included: true },
+        { text: "Lead qualification only", included: true },
+        { text: "Requires separate CRM integration", included: false },
+        { text: "Limited to chatbot functionality", included: false },
       ],
     },
   },
   features: [
-    {
-      feature: "Built for Enterprise Scale",
-      prestyj: true,
-      competitor: false,
-      note: "Structurely targets agents handling 50-225 leads/month",
-    },
-    {
-      feature: "Multi-Office Management",
-      prestyj: true,
-      competitor: false,
-      note: "No documented enterprise features for 50+ office operations",
-    },
     buildCompareFeature(STANDARD_FEATURES.AI_TEXT, true),
     buildCompareFeature(STANDARD_FEATURES.AI_VOICE, true),
+    buildCompareFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
+    buildCompareFeature(
+      STANDARD_FEATURES.BUILT_IN_CRM,
+      false,
+      "Structurely requires separate CRM integration"
+    ),
+    buildCompareFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, false),
+    buildCompareFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
     {
-      feature: "Proprietary AI Technology",
+      feature: "Marketing Automation",
       prestyj: true,
       competitor: false,
-      note: "Structurely AI is shared via CINC partnership",
+      note: "Structurely is limited to conversational AI",
     },
     {
-      feature: "Predictable Billing",
+      feature: "Email AI Outreach",
       prestyj: true,
       competitor: false,
-      note: "Users report billing issues including post-cancellation charges",
+      note: "Structurely focuses on text and voice only",
     },
-    {
-      feature: "Enterprise Support",
-      prestyj: true,
-      competitor: "Limited",
-      note: "Reports of poor support responsiveness and ghosting",
-    },
-    {
-      feature: "Portfolio-Level Reporting",
-      prestyj: true,
-      competitor: false,
-    },
+    buildCompareFeature(STANDARD_FEATURES.CALENDAR_INTEGRATION, false),
   ],
   whySwitch: {
-    title: "Why Franchise Operations Choose Prestyj",
-    description: "Key reasons enterprise operations outgrow Structurely",
+    title: "Why Agents Switch from Structurely to Prestyj",
+    description: "Key reasons real estate professionals choose Prestyj over Structurely",
     reasons: [
       {
-        icon: "Building2",
-        title: "Built for Enterprise Scale",
+        icon: "Zap",
+        title: "Beyond Chatbot to Full Pipeline",
         description:
-          "Structurely's pricing tiers cap at 30 seats and 225 leads/month. Prestyj is architected for franchise operations handling thousands of leads across 50+ offices.",
+          "Structurely handles lead qualification conversations. Prestyj manages the entire conversion pipeline from first touch to close.",
       },
       {
-        icon: "Users",
-        title: "Proprietary Technology",
+        icon: "Database",
+        title: "Native CRM Included",
         description:
-          "Structurely's AI powers CINC's platform too—you're using shared technology. Prestyj's AI is built exclusively for your operation.",
+          "Stop paying for and integrating separate CRM tools. Prestyj's built-in CRM keeps every lead, conversation, and deal in one place.",
       },
       {
-        icon: "DollarSign",
-        title: "Reliable Billing",
+        icon: "MessageCircle",
+        title: "Marketing Automation Included",
         description:
-          "Multiple reports of Structurely billing issues including $1,300+ charged after cancellation. Prestyj pricing is transparent with no billing surprises.",
+          "Prestyj includes automated email sequences, drip campaigns, and follow-up workflows—no additional marketing tools needed.",
       },
       {
-        icon: "Clock",
-        title: "True Multi-Location Support",
+        icon: "Phone",
+        title: "Multi-Channel AI",
         description:
-          "Coordinate lead response across your entire portfolio with centralized dashboards, standardized workflows, and office-level accountability.",
+          "Structurely covers text and voice. Prestyj adds email AI, giving you three channels to reach and convert every lead.",
+      },
+      {
+        icon: "Globe",
+        title: "Works for All RE Verticals",
+        description:
+          "Whether you're residential, commercial, title, or mortgage, Prestyj adapts to your business. Structurely is built primarily for agent lead gen.",
       },
     ],
   },
   relatedResources: [
     {
-      title: "Prestyj vs Conversica",
-      description: "Compare enterprise AI platforms",
-      href: "/compare/prestyj-vs-conversica",
-      linkText: "Read comparison",
-    },
-    {
       title: "Structurely Alternative",
-      description: "Full alternative analysis",
+      description: "Full alternative analysis for Structurely users",
       href: "/alternatives/structurely",
       linkText: "View analysis",
     },
     {
-      title: "Best for Franchises",
-      description: "Why franchise operations choose Prestyj",
-      href: "/best-for/real-estate-franchises",
+      title: "Best for Real Estate Agents",
+      description: "Why agents choose Prestyj for their business",
+      href: "/best-for/real-estate-agents",
       linkText: "Learn more",
+    },
+    {
+      title: "See Real Results",
+      description: "Case studies from agents using Prestyj",
+      href: "/results",
+      linkText: "View results",
     },
   ],
   cta: {
-    title: "Ready to Scale Beyond Structurely?",
+    title: "Ready to See Prestyj in Action?",
     description:
-      "Book a demo to see how Prestyj handles enterprise-scale lead response across your entire franchise or regional network.",
-    buttonText: "Book Your Enterprise Demo",
-    disclaimer: "See multi-office capabilities. No commitment required.",
+      "Book a personalized demo to see how Prestyj can transform your lead management and help you close more deals.",
+    buttonText: "Book Your Free Demo",
+    disclaimer: "No credit card required. See results in minutes.",
   },
 });
 
 export const structurelyMetadata: CompareMetadata = {
-  slug: "prestyj-vs-structurely",
+  slug: "structurely-vs-prestyj",
   competitorName: "Structurely",
-  title: "Prestyj vs Structurely: Enterprise Real Estate AI Comparison",
+  title: "Structurely vs Prestyj | AI Real Estate Comparison",
   description:
-    "Compare Prestyj and Structurely for franchise and multi-office operations. Structurely focuses on small teams (50-225 leads/mo). See which scales for 50+ office brokerages.",
+    "Compare Structurely chatbot vs Prestyj full platform. Structurely offers text+voice AI for $299/mo. Prestyj delivers native CRM, marketing automation, and multi-channel AI for $1,997/mo—replacing 5+ tools.",
   keywords: [
     "Structurely alternative",
     "Structurely vs Prestyj",
     "Prestyj vs Structurely",
-    "Structurely alternative enterprise",
-    "Structurely franchise",
-    "AI lead response comparison",
-    "Structurely pricing",
     "Structurely review",
-    "real estate AI chatbot",
-    "Aisa Holmes alternative",
+    "Structurely pricing",
+    "AI real estate comparison",
+    "real estate chatbot alternative",
+    "best AI for real estate agents",
+    "Structurely competitor",
+    "AI lead conversion platform",
   ],
 };

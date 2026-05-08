@@ -3,24 +3,20 @@ import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const PAINS = [
   {
-    title: "Your agency ships 30 posts/month for $5K",
-    detail:
-      "That's $166 per post. They blame the algorithm when nothing performs. You renew anyway because firing them means starting over.",
+    title: "Your agency ships 30 posts/month for $5K.",
+    detail: "$166 per post. You renew anyway.",
   },
   {
-    title: "Your in-house hire burns out in 6 months",
-    detail:
-      "Junior social manager: $55K/year + benefits. They post inconsistently, take vacations, and quit the second something better comes along.",
+    title: "Your in-house hire burns out in 6 months.",
+    detail: "$55K/year, gone the second something better appears.",
   },
   {
-    title: "You're posting from your phone at 11pm",
-    detail:
-      "DIY mode. You know you should batch. You don't. Posts go out twice a week. Reach is flat. The algorithm rewards consistency you can't deliver.",
+    title: "You're posting from your phone at 11pm.",
+    detail: "Twice a week. Reach is flat.",
   },
   {
-    title: "Freelancers charge $100 per post",
-    detail:
-      "And you need 50 a day across 7 platforms. Do the math — it's $150K/month before anyone hits publish. Not a real option.",
+    title: "One account isn't enough anymore.",
+    detail: "Your buyers live across 7 platforms and 3 personas. You're showing up on one.",
   },
 ];
 
@@ -30,10 +26,10 @@ export function ContentEngineProblem() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-            Every Way You&apos;ve Tried to Post Consistently Has Failed.
+            Posting Once a Day Won&apos;t Cut It in 2026.
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Not because you&apos;re lazy. Because the math doesn&apos;t work with humans.
+            The math doesn&apos;t work with humans.
           </p>
         </AnimateOnScroll>
 

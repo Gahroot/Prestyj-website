@@ -8,6 +8,11 @@ import { regionalBrokerageNetworks } from "./regional-brokerage-networks";
 import { peBackedPlatforms } from "./pe-backed-platforms";
 import { commercialRealEstate } from "./commercial-real-estate";
 import { realEstateInvestors } from "./real-estate-investors";
+import { aiRealEstateWholesalers } from "./ai-real-estate-wholesalers";
+import { aiRealEstateInvestors } from "./ai-real-estate-investors";
+import { aiHomeBuilders } from "./ai-home-builders";
+import { aiTitleCompanies } from "./ai-title-companies";
+import { aiRealEstateAgents } from "./ai-real-estate-agents";
 import { insuranceAgencies } from "./insurance-agencies";
 import { hvac } from "./hvac";
 import { mortgageBrokers } from "./mortgage-brokers";
@@ -71,6 +76,17 @@ import { kvcoreUsers } from "./kvcore-users";
 import { sierraInteractiveUsers } from "./sierra-interactive-users";
 import { cincUsers } from "./cinc-users";
 import { realGeeksUsers } from "./real-geeks-users";
+import { housecallProUsers } from "./housecall-pro-users";
+import { fieldedgeUsers } from "./fieldedge-users";
+import { workizUsers } from "./workiz-users";
+import { gorilladeskUsers } from "./gorilladesk-users";
+import { boomtownUsers } from "./boomtown-users";
+import { chimeUsers } from "./chime-users";
+import { salesforceUsers } from "./salesforce-users";
+import { hubspotUsers } from "./hubspot-users";
+import { pipedriveUsers } from "./pipedrive-users";
+import { closeUsers } from "./close-users";
+import { calendlyUsers } from "./calendly-users";
 import { newConstructionBuilders } from "./new-construction-builders";
 import { propertyManagerVideoAds } from "./property-manager-video-ads";
 import { mortgageBrokerVideoAds } from "./mortgage-broker-video-ads";
@@ -178,6 +194,11 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "pe-backed-platforms": peBackedPlatforms,
   "commercial-real-estate": commercialRealEstate,
   "real-estate-investors": realEstateInvestors,
+  "ai-real-estate-wholesalers": aiRealEstateWholesalers,
+  "ai-real-estate-investors": aiRealEstateInvestors,
+  "ai-home-builders": aiHomeBuilders,
+  "ai-title-companies": aiTitleCompanies,
+  "ai-real-estate-agents": aiRealEstateAgents,
   "insurance-agencies": insuranceAgencies,
   "insurance-carriers": insuranceCarriers,
   "hvac": hvac,
@@ -241,6 +262,17 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "sierra-interactive-users": sierraInteractiveUsers,
   "cinc-users": cincUsers,
   "real-geeks-users": realGeeksUsers,
+  "housecall-pro-users": housecallProUsers,
+  "fieldedge-users": fieldedgeUsers,
+  "workiz-users": workizUsers,
+  "gorilladesk-users": gorilladeskUsers,
+  "boomtown-users": boomtownUsers,
+  "chime-users": chimeUsers,
+  "salesforce-users": salesforceUsers,
+  "hubspot-users": hubspotUsers,
+  "pipedrive-users": pipedriveUsers,
+  "close-users": closeUsers,
+  "calendly-users": calendlyUsers,
   "new-construction-builders": newConstructionBuilders,
   "property-manager-video-ads": propertyManagerVideoAds,
   "mortgage-broker-video-ads": mortgageBrokerVideoAds,

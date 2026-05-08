@@ -1,42 +1,24 @@
-import { Layers, Wand2, Calendar, BarChart3, Palette, Share2 } from "lucide-react";
+import { Users, Share2, Target } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const PILLARS = [
   {
-    icon: Wand2,
-    title: "AI-Generated Creative at Scale",
+    icon: Users,
+    title: "Multi-Account Swarm",
     description:
-      "85+ prompt templates. Image, carousel, and short-form video creative — formatted natively for each platform. Your brand voice, your offers, your colors.",
-  },
-  {
-    icon: Layers,
-    title: "Strategic Content Sequencing",
-    description:
-      "Not random posts. A real strategy: hooks, proof, offers, education, social proof, and CTAs — sequenced so your feed builds trust and converts attention.",
+      "Your brand. Your personal page. Your niche accounts. Up to 3+ accounts, each on autopilot, each targeting a different buyer.",
   },
   {
     icon: Share2,
-    title: "Native Multi-Platform Publishing",
+    title: "Native Across 7 Platforms",
     description:
-      "Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, X — formatted correctly for each. No reposting square images to a vertical platform and hoping.",
+      "IG, FB, TikTok, YouTube, LinkedIn, Threads, X. Formatted right for each. No square images on vertical platforms.",
   },
   {
-    icon: Calendar,
-    title: "24/7 Posting Cadence",
+    icon: Target,
+    title: "Ad-Ready by Default",
     description:
-      "50+ posts per day, every day. The algorithm rewards volume + consistency. We deliver both — without you ever opening a content calendar.",
-  },
-  {
-    icon: Palette,
-    title: "Monthly Brand Refresh",
-    description:
-      "Avatars rotate. Hooks evolve. New formats get tested. Your feed never goes stale because the engine is constantly being optimized in the background.",
-  },
-  {
-    icon: BarChart3,
-    title: "Real Reporting, Not Vanity Metrics",
-    description:
-      "What hooks worked. What formats converted. What platforms moved the needle. We tell you what to double down on — not how many likes you got.",
+      "Every post is hook-tested and ready to run as a paid ad. The same content that grows your organic powers your funnel.",
   },
 ];
 
@@ -46,15 +28,15 @@ export function ContentEngineSolution() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
-            Meet Your AI Content Department.
+            The Content Is the Targeting.
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            For less than the cost of one junior hire, you get an entire content team
-            running 24/7 — built to do what humans can&apos;t.
+            Every audience sees content built for them — because we run every account
+            that matters.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6">
           {PILLARS.map((pillar, i) => (
             <AnimateOnScroll key={pillar.title} delay={i * 0.05}>
               <div className="bg-card border border-border rounded-lg p-6 h-full hover:border-primary/40 transition-colors">

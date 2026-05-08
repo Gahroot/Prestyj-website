@@ -38,6 +38,7 @@ const footerLinks = {
   ],
   resources: [
     { href: "/blog", label: "Blog" },
+    { href: "/statistics", label: "Statistics", highlight: true },
     { href: "/compare/prestyj-vs-answering-service", label: "AI vs Answering Service" },
     { href: "/compare/prestyj-vs-internal-isa-team", label: "AI vs Internal ISA" },
     { href: "/compare/prestyj-vs-offshore-isa", label: "AI vs Offshore ISA" },

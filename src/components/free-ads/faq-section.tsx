@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -23,16 +24,40 @@ const faqs: { question: string; answer: ReactNode }[] = [
   },
   {
     question: "What happens after I get my 300 ads?",
-    answer:
-      "We hope you give us the opportunity to run those ads for you and set up our full system. If not, the ads are yours and we go our separate ways.",
+    answer: (
+      <>
+        We hope you give us the opportunity to run those ads for you and set up
+        our full{" "}
+        <Link
+          href="/platform"
+          className="text-primary underline underline-offset-2 hover:text-primary/80"
+        >
+          AI platform
+        </Link>
+        . If not, the ads are yours and we go our separate ways.
+      </>
+    ),
   },
   {
     question: "How much does the full system cost?",
     answer: (
       <div className="space-y-2">
-        <p><span className="font-semibold text-foreground">$5K</span> setup fee</p>
-        <p><span className="font-semibold text-foreground">$2K</span> / month</p>
-        <p className="pt-1">You&apos;ll also need a minimum of $1,000/month in ad spend paid directly to Meta.</p>
+        <p>
+          <span className="font-semibold text-foreground">$5K</span> setup fee
+        </p>
+        <p>
+          <span className="font-semibold text-foreground">$2K</span> / month
+        </p>
+        <p className="pt-1">
+          You&apos;ll also need a minimum of $1,000/month in ad spend paid
+          directly to Meta.{" "}
+          <Link
+            href="/pricing"
+            className="text-primary underline underline-offset-2 hover:text-primary/80"
+          >
+            See full pricing details →
+          </Link>
+        </p>
       </div>
     ),
   },
@@ -45,9 +70,15 @@ const faqs: { question: string; answer: ReactNode }[] = [
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-border">
-                <th className="text-left py-2 pr-4 font-semibold text-foreground">Package</th>
-                <th className="text-left py-2 pr-4 font-semibold text-foreground">Regular</th>
-                <th className="text-left py-2 font-semibold text-foreground">Subscriber Price</th>
+                <th className="text-left py-2 pr-4 font-semibold text-foreground">
+                  Package
+                </th>
+                <th className="text-left py-2 pr-4 font-semibold text-foreground">
+                  Regular
+                </th>
+                <th className="text-left py-2 font-semibold text-foreground">
+                  Subscriber Price
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -74,13 +105,35 @@ const faqs: { question: string; answer: ReactNode }[] = [
   },
   {
     question: "Can I see samples before committing?",
-    answer:
-      "You already are. The ad you clicked, this landing page you're reading, and the AI that will follow up with you after you submit — that's the exact system we build for your business. You're the sample.",
+    answer: (
+      <>
+        You already are. The ad you clicked, this landing page you&apos;re
+        reading, and the AI that will follow up with you after you submit —
+        that&apos;s the exact system we build for your business. You can also{" "}
+        <Link
+          href="/samples"
+          className="text-primary underline underline-offset-2 hover:text-primary/80"
+        >
+          see more video ad samples →
+        </Link>
+        .
+      </>
+    ),
   },
   {
     question: "How is this different from other ad agencies?",
     answer:
       "Most agencies hand you a few ads and a report. We build the entire pipeline: 300 ads, landing page, and an AI system that responds to leads in seconds — not hours. No leads slip through the cracks because a human wasn't fast enough.",
+  },
+  {
+    question: "What industries do you create video ads for?",
+    answer:
+      "We create video ads for service businesses including real estate teams, HVAC contractors, plumbers, roofers, landscapers, and home service companies. Our scripts and ad strategies are tailored to each industry's buyer psychology and seasonal patterns.",
+  },
+  {
+    question: "What platforms do the video ads work on?",
+    answer:
+      "Our video ads are optimized for Meta (Facebook and Instagram), TikTok, YouTube Shorts, and Google Video campaigns. Each batch includes platform-specific aspect ratios and durations so your ads perform well wherever you run them.",
   },
 ];
 

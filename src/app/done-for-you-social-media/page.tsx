@@ -8,8 +8,10 @@ import { ContentEngineHero } from "@/components/sections/content-engine/hero";
 import { ContentEngineProofBar } from "@/components/sections/content-engine/proof-bar";
 import { ContentEngineProblem } from "@/components/sections/content-engine/problem";
 import { ContentEngineSolution } from "@/components/sections/content-engine/solution";
+import { ContentEngineVideoWalkthrough } from "@/components/sections/content-engine/video-walkthrough";
 import { ContentEngineProofScreenshots } from "@/components/sections/content-engine/proof-screenshots";
 import { ContentEngineLiveAccounts } from "@/components/sections/content-engine/live-accounts";
+import { ContentEngineLiveFeed } from "@/components/sections/content-engine/live-feed";
 import { ContentEngineHowItWorks } from "@/components/sections/content-engine/how-it-works";
 import { ContentEnginePricing } from "@/components/sections/content-engine/pricing";
 import { ContentEngineComparison } from "@/components/sections/content-engine/comparison";
@@ -157,8 +159,10 @@ export default function DoneForYouSocialMediaPage() {
         <ContentEngineProofBar />
         <ContentEngineProblem />
         <ContentEngineSolution />
+        <ContentEngineVideoWalkthrough />
         <ContentEngineProofScreenshots />
         <ContentEngineLiveAccounts />
+        <ContentEngineLiveFeed />
         <ContentEngineHowItWorks />
         <ContentEnginePricing />
         <ContentEngineComparison />

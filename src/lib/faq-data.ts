@@ -29,4 +29,14 @@ export const faqs = [
     answer:
       "No. Month-to-month. We earn your business because the results speak — most team leaders see ROI in the first week. We don't need contracts to keep clients.",
   },
+  {
+    question: "What are batch video ads?",
+    answer:
+      "Batch video ads are hundreds of unique short-form video ad variations created from a single 15-minute recording session. We use combinatorial creative testing — mixing different hooks, angles, scripts, and CTAs — to produce 300+ ads optimized for Meta, TikTok, and YouTube Shorts. This lets you test every variation at scale and find your winning ad in a week instead of six months. Learn more at prestyj.com/batch-video-ads.",
+  },
+  {
+    question: "How fast can I start running ads?",
+    answer:
+      "Most clients are live within 7–10 business days of signing up. We handle everything — AI agent training, landing page build, ad campaign creation, and CRM setup. You just need a 30-minute kickoff call and a 15-minute recording session. See plan details and timelines at prestyj.com/pricing.",
+  },
 ];

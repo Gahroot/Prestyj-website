@@ -37,7 +37,7 @@ export function BatchAdsHeroSection() {
           </h1>
 
           <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
-            300+ video ads from one 15-minute recording. Test every hook, angle, and pitch — walk away with the data on what actually converts, so you (or your team, or your agency) can double down on winners instead of guessing.
+            300+ video ads from one 15-minute recording. Video ad testing at scale — test every hook, angle, and pitch to find what actually converts, so you can double down on winners instead of guessing.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 pt-2">
@@ -85,6 +85,15 @@ export function BatchAdsHeroSection() {
             <span>
               <span className="text-foreground font-semibold">1</span> recording session
             </span>
+          </div>
+
+          <div className="pt-2 text-center lg:text-left">
+            <Link
+              href="/platform"
+              className="text-sm text-primary hover:text-primary/80 underline underline-offset-2"
+            >
+              See the AI platform →
+            </Link>
           </div>
         </div>
 

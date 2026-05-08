@@ -11,6 +11,10 @@ import {
   ServiceJsonLd,
 } from "@/components/seo/json-ld";
 
+const StatisticsSection = dynamic(
+  () => import("@/components/sections/statistics").then((m) => m.StatisticsSection),
+  { ssr: true },
+);
 const BatchVideoAdsCTASection = dynamic(
   () => import("@/components/sections/batch-video-ads-cta").then((m) => m.BatchVideoAdsCTASection),
   { ssr: true },
@@ -96,6 +100,7 @@ export default function Home() {
         <BatchVideoAdsCTASection />
         <HowItWorksSection />
         <TestimonialsSection />
+        <StatisticsSection />
         <PricingSection />
         <PainPointsSection />
         <SolutionSection />

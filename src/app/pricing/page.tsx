@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { PricingHero } from "@/components/sections/pricing/pricing-hero";
@@ -12,6 +13,37 @@ import { FAQJsonLd } from "@/components/seo/json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pricingFaqs, pricingTiers } from "@/lib/pricing-data";
+
+export const metadata: Metadata = {
+  title: "Pricing | AI Lead Response & Batch Video Ads for Service Businesses | Prestyj",
+  description:
+    "Transparent pricing for Prestyj's AI lead response, appointment setting, and batch video ad platform. Plans from $1,997/mo. No contracts.",
+  keywords: [
+    "AI lead response pricing",
+    "batch video ads pricing",
+    "AI sales agent cost",
+    "real estate AI pricing",
+    "service business advertising cost",
+    "AI appointment setting pricing",
+    "video ad production pricing",
+  ],
+  openGraph: {
+    title: "Pricing | AI Lead Response & Batch Video Ads for Service Businesses | Prestyj",
+    description:
+      "Transparent pricing for Prestyj's AI lead response, appointment setting, and batch video ad platform. Plans from $1,997/mo.",
+    type: "website",
+    url: "https://prestyj.com/pricing",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing | AI Lead Response & Batch Video Ads | Prestyj",
+    description:
+      "Transparent pricing for AI lead response and batch video ads. Plans from $1,997/mo. No contracts.",
+  },
+  alternates: {
+    canonical: "https://prestyj.com/pricing",
+  },
+};
 
 export default function PricingPage() {
   const pricingPageUrl = "https://prestyj.com/pricing";
