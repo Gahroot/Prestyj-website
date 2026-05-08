@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import ClickSpark from "@/components/ui/click-spark";
+import { TrackedLink } from "@/components/ui/tracked-link";
 
 export function ContentEngineCTA() {
   return (
@@ -18,10 +18,14 @@ export function ContentEngineCTA() {
           </p>
           <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
             <Button size="lg" className="text-lg px-10 py-6" asChild>
-              <Link href="/book-demo">
+              <TrackedLink
+                href="/book-demo"
+                eventName="ContentEngineLeadIntent"
+                eventLabel="final-cta"
+              >
                 Book Your Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
+              </TrackedLink>
             </Button>
           </ClickSpark>
           <p className="text-sm text-muted-foreground mt-6">

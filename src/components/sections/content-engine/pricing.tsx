@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { Check, ArrowRight, ShieldCheck, Clock, Ban } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
+import { TrackedLink } from "@/components/ui/tracked-link";
 
 type Tier = {
   id: "minimum" | "pro" | "max";
@@ -183,10 +183,14 @@ export function ContentEnginePricing() {
                       variant={isPro ? "default" : "outline"}
                       asChild
                     >
-                      <Link href="/book-demo">
+                      <TrackedLink
+                        href="/book-demo"
+                        eventName="ContentEngineLeadIntent"
+                        eventLabel={`pricing-${tier.id}`}
+                      >
                         {tier.cta}
                         <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
+                      </TrackedLink>
                     </Button>
                   </CardContent>
                 </Card>
@@ -208,10 +212,14 @@ export function ContentEnginePricing() {
                 </p>
               </div>
               <Button size="lg" className="font-bold w-full md:w-auto shrink-0" asChild>
-                <Link href="/book-demo">
+                <TrackedLink
+                  href="/book-demo"
+                  eventName="ContentEngineLeadIntent"
+                  eventLabel="pricing-custom"
+                >
                   Talk to Us
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </TrackedLink>
               </Button>
             </CardContent>
           </Card>

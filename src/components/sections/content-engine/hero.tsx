@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { TrackedLink } from "@/components/ui/tracked-link";
 
 const PLATFORMS = [
   "Instagram",
@@ -41,10 +41,14 @@ export function ContentEngineHero() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-1 mb-6">
           <Button size="lg" className="text-lg px-8 font-bold w-full sm:w-auto" asChild>
-            <Link href="#pricing">
+            <TrackedLink
+              href="#pricing"
+              eventName="ContentEngineLeadIntent"
+              eventLabel="hero-see-plans"
+            >
               See Plans
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+            </TrackedLink>
           </Button>
           <Button
             size="lg"
@@ -52,7 +56,13 @@ export function ContentEngineHero() {
             className="text-lg px-8 font-bold w-full sm:w-auto"
             asChild
           >
-            <Link href="/book-demo">Book a Demo</Link>
+            <TrackedLink
+              href="/book-demo"
+              eventName="ContentEngineLeadIntent"
+              eventLabel="hero-book-demo"
+            >
+              Book a Demo
+            </TrackedLink>
           </Button>
         </div>
 
