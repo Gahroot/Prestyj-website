@@ -7,119 +7,151 @@ import {
 
 export const sierraInteractive: AlternativePageContent = createAlternativePage({
   slug: "sierra-interactive",
-  type: "integration-partner",
+  type: "direct-competitor",
   competitor: {
     name: "Sierra Interactive",
-    shortName: "Sierra Interactive",
-    pricing: "$749-1,499/mo + ad spend",
+    pricing: "Starting at $399/mo",
     website: "https://sierrainteractive.com",
-    description: "Real estate marketing platform with lead generation and CRM",
+    description: "Real estate CRM and lead management platform for teams",
   },
   meta: {
-    title: "Sierra Interactive Alternatives for AI Lead Response | Prestyj",
+    title: "Sierra Interactive Alternatives | AI-Powered Real Estate CRM",
     description:
-      "Looking for Sierra Interactive alternatives? Compare Prestyj vs Sierra for AI voice lead response. Done-for-you implementation, integrates with your CRM, no ad spend required.",
+      "Sierra Interactive vs Prestyj comparison. See why real estate teams switch to Prestyj for AI-powered lead conversion, autonomous AI agents, and smarter pipeline automation.",
     keywords: [
-      "sierra interactive alternatives",
-      "sierra interactive vs prestyj",
-      "sierra interactive competitors",
-      "real estate lead generation alternatives",
-      "AI lead response platform",
+      "Sierra Interactive alternatives",
+      "Sierra Interactive vs Prestyj",
+      "real estate CRM with AI",
+      "AI lead management platform",
+      "real estate team automation",
     ],
   },
   hero: {
     badge: "Sierra Interactive Alternative",
     subheadline:
-      "Sierra Interactive is a powerful lead generation and CRM platform. Prestyj is the AI voice layer that responds to leads instantly—whether or not you use Sierra.",
+      "Sierra Interactive offers a solid CRM and team management tools, but its AI is limited to basic drip campaigns. Prestyj replaces outdated automation with autonomous AI agents that qualify leads, respond instantly, and book appointments 24/7.",
   },
   industryStats: "standard",
   comparison: {
     features: [
-      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, true),
-      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
-      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       buildAlternativeFeature(
-        STANDARD_FEATURES.BUILT_IN_CRM,
+        STANDARD_FEATURES.AI_TEXT,
         false,
-        "Prestyj integrates with Sierra and other CRMs"
+        "Sierra has basic auto-responders only"
       ),
-      buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
-      buildAlternativeFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.AI_VOICE,
+        false,
+        "No voice AI capabilities"
+      ),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.RESPONSE_24_7,
+        false,
+        "Limited to scheduled drip campaigns"
+      ),
+      buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.APPOINTMENT_BOOKING,
+        false,
+        "No AI-powered appointment scheduling"
+      ),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.LEAD_QUALIFICATION,
+        false,
+        "Basic lead scoring, no AI qualification"
+      ),
       {
-        feature: "Required Ad Spend",
-        prestyj: false,
+        feature: "Team Management Tools",
+        prestyj: true,
         competitor: true,
-        note: "Sierra requires minimum ad spend commitments",
+        note: "Sierra has strong team features; Prestyj matches with AI-enhanced routing",
+      },
+      {
+        feature: "Autonomous AI Agents",
+        prestyj: true,
+        competitor: false,
+        note: "Sierra relies on traditional drip campaigns",
       },
       buildAlternativeFeature(STANDARD_FEATURES.CALENDAR_INTEGRATION, true),
     ],
     competitorPricing: {
-      price: "$749-1,499",
+      price: "$399",
       period: "/month",
-      note: "+ required ad spend (typically $2K-10K/mo)",
-      pros: ["Excellent lead generation", "Strong SEO tools"],
+      note: "CRM and lead management focused",
+      pros: ["Good team management features", "Solid CRM for real estate teams"],
       cons: [
-        "Significant ad spend required on top of platform fees",
-        "Complex pricing with multiple tiers",
-        "AI features are secondary to lead gen",
-        "Voice AI not a core offering",
+        "AI is limited to basic drip campaigns",
+        "No autonomous AI agents",
+        "No voice AI for lead response",
+        "Traditional automation, not true AI",
       ],
     },
   },
   whySwitch: [
     {
-      icon: "Phone",
-      title: "Voice AI That Actually Converts",
+      icon: "Brain",
+      title: "Autonomous AI Agents vs. Basic Drip Campaigns",
       description:
-        "Sierra focuses on lead gen and chat. Prestyj provides voice AI that picks up the phone and conversations—converting 3-5x better than text alone.",
+        "Sierra's drip campaigns send the same message to everyone. Prestyj's AI agents have real conversations, answer questions, and adapt to each lead's needs.",
     },
     {
-      icon: "DollarSign",
-      title: "No Ad Spend Commitments",
+      icon: "Clock",
+      title: "AI That Qualifies Leads 24/7",
       description:
-        "Sierra requires thousands in monthly ad spend. Prestyj works with leads from any source—your existing channels work fine.",
+        "Don't let leads wait for business hours. Prestyj's AI responds instantly at 2 AM, qualifies the prospect, and books the appointment — no human needed.",
+    },
+    {
+      icon: "MessageSquare",
+      title: "Built-in Marketing Automation",
+      description:
+        "Prestyj includes intelligent email and SMS campaigns that adapt based on lead behavior. Sierra's marketing is basic and static.",
+    },
+    {
+      icon: "Phone",
+      title: "Voice AI for Immediate Lead Response",
+      description:
+        "When a lead calls, Prestyj answers with a human-like AI voice agent. Sierra has no voice AI — missed calls become missed deals.",
+    },
+    {
+      icon: "Target",
+      title: "Smarter Lead Scoring & Routing",
+      description:
+        "Prestyj's AI scores leads in real time and routes hot prospects to the right agent instantly. Sierra's routing is rules-based and slower.",
     },
     {
       icon: "Zap",
-      title: "Complements Your Stack",
+      title: "Modern Platform with Faster Innovation",
       description:
-        "Already using Sierra? Prestyj integrates to provide instant voice response. You don't have to choose one or the other.",
-    },
-    {
-      icon: "Users",
-      title: "Done-For-You Implementation",
-      description:
-      "Sierra requires significant configuration. Prestyj handles setup, integration, voice training, and optimization—we do the work.",
+        "Prestyj ships new AI capabilities weekly. Sierra's feature set evolves slowly, leaving you with yesterday's technology.",
     },
   ],
   whenCompetitorFits: [
-    "You need comprehensive lead generation services",
-    "You want website and SEO tools included",
-    "You have large ad budgets and want managed spend",
-    "You need full marketing + CRM solution",
+    "You want a traditional CRM with reliable team management features",
+    "You prefer manual follow-up and don't trust AI with your leads",
+    "You're already deeply integrated with Sierra's ecosystem",
   ],
   whenPrestyjFits: [
-    "You have leads but response time is the bottleneck",
-    "You want voice AI, not just chat",
-    "You don't want to commit to minimum ad spend",
-    "You need instant 24/7 lead response",
-    "You want done-for-you vs. DIY configuration",
+    "You want AI agents that actually converse with leads, not just send drips",
+    "You need 24/7 lead response without hiring night staff",
+    "You want voice AI to capture every incoming call",
+    "You prefer a platform that innovates quickly with new AI features",
+    "You want intelligent lead routing based on real conversation data",
   ],
   relatedResources: [
     {
-      href: "/alternatives/human-isa",
-      title: "AI vs Human ISA",
-      description: "Compare AI voice agents to inside sales teams",
-    },
-    {
       href: "/best-for/real-estate-teams",
       title: "Built for Real Estate Teams",
-      description: "How Prestyj serves teams and brokerages",
+      description: "How Prestyj scales with teams of any size",
     },
     {
-      href: "/blog/unit-economics-ai-lead-response",
-      title: "AI Lead Response ROI",
-      description: "Financial analysis of AI vs human teams",
+      href: "/solutions/lead-conversion",
+      title: "Lead Conversion Solutions",
+      description: "See how Prestyj converts more leads into appointments",
+    },
+    {
+      href: "/alternatives/follow-up-boss",
+      title: "Follow Up Boss Alternatives",
+      description: "Compare other CRM platforms for real estate teams",
     },
   ],
 });

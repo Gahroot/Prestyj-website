@@ -41,6 +41,8 @@ import { decagonAi } from "./decagon-ai";
 import { ada } from "./ada";
 import { creatify } from "./creatify";
 import { arcads } from "./arcads";
+import { resimpli } from "./resimpli";
+import { alannaAi } from "./alanna-ai";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -85,6 +87,8 @@ export const alternatives: Record<string, AlternativePageContent> = {
   ada,
   creatify,
   arcads,
+  resimpli,
+  "alanna-ai": alannaAi,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {

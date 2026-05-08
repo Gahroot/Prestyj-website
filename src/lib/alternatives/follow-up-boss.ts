@@ -1,174 +1,142 @@
 import type { AlternativePageContent } from "./types";
-import { createAlternativePage } from "@/lib/content-factory";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
 export const followUpBoss: AlternativePageContent = createAlternativePage({
   slug: "follow-up-boss",
-  type: "integration-partner",
+  type: "direct-competitor",
   competitor: {
     name: "Follow Up Boss",
     shortName: "FUB",
-    pricing: "$69-499/mo",
+    pricing: "Starting at $69/mo per user",
     website: "https://followupboss.com",
-    description: "Leading CRM for real estate teams and brokerages",
+    description: "Popular real estate CRM with 250+ integrations but no native AI agents",
   },
   meta: {
-    title: "Follow Up Boss Alternative | Supercharge FUB with AI | Prestyj",
+    title: "Follow Up Boss Alternatives | AI-Powered Real Estate CRM",
     description:
-      "Not looking to replace Follow Up Boss? Add AI-powered instant response and lead reactivation to your existing FUB setup. See how Prestyj complements your CRM.",
+      "Follow Up Boss vs Prestyj comparison. See why teams switch from FUB to Prestyj for AI-powered lead conversion, native AI agents, and automated pipeline management.",
     keywords: [
-      "follow up boss alternative",
+      "Follow Up Boss alternatives",
+      "Follow Up Boss vs Prestyj",
       "FUB alternative",
-      "follow up boss AI",
-      "FUB integration",
-      "real estate CRM AI",
-      "follow up boss automation",
+      "AI CRM real estate",
+      "real estate CRM with AI",
     ],
   },
   hero: {
-    badge: "FUB Integration",
+    badge: "Follow Up Boss Alternative",
     subheadline:
-      "You don't need to replace Follow Up Boss. Add instant AI response and dead lead reactivation while keeping the CRM you already love.",
+      "Follow Up Boss is a great CRM — but it relies on third-party integrations for AI. Prestyj combines a powerful CRM with native AI agents, marketing automation, and transaction coordination in one platform.",
   },
-  industryStats: "reactivation",
+  industryStats: "standard",
   comparison: {
     features: [
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, false, "Requires third-party integration"),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, false, "Requires third-party integration"),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.RESPONSE_24_7,
+        false,
+        "Only with added AI integration"
+      ),
+      buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
+      buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
+      buildAlternativeFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, false, "Requires AI add-on"),
       {
-        feature: "CRM & Contact Management",
-        prestyj: false,
-        competitor: true,
-        note: "FUB excels at this—keep using it",
-      },
-      {
-        feature: "Instant AI Lead Response",
+        feature: "Marketing Automation",
         prestyj: true,
         competitor: false,
-        note: "Add sub-60-second response to your FUB leads",
+        note: "FUB has no native marketing automation",
       },
       {
-        feature: "Dead Lead Reactivation",
+        feature: "Transaction Coordination",
         prestyj: true,
         competitor: false,
-        note: "Revive your cold FUB database automatically",
+        note: "FUB focuses on CRM and follow-up only",
       },
-      {
-        feature: "24/7 Lead Engagement",
-        prestyj: true,
-        competitor: false,
-        note: "AI responds nights and weekends",
-      },
-      {
-        feature: "Pipeline Management",
-        prestyj: false,
-        competitor: true,
-      },
-      {
-        feature: "Team Collaboration",
-        prestyj: false,
-        competitor: true,
-      },
-      {
-        feature: "AI Appointment Booking",
-        prestyj: true,
-        competitor: false,
-        note: "Automatically books qualified leads to your calendar",
-      },
-      {
-        feature: "Lead Qualification",
-        prestyj: true,
-        competitor: "Manual",
-        note: "AI qualifies before handing off",
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.CALENDAR_INTEGRATION, true),
     ],
     competitorPricing: {
-      price: "$69-499",
-      period: "/month",
-      note: "Excellent CRM, limited automation",
-      pros: [
-        "Industry-leading CRM for real estate",
-        "Excellent team collaboration features",
-        "Robust pipeline management",
-        "Wide integration ecosystem",
-      ],
+      price: "$69",
+      period: "/user/month",
+      note: "CRM only — AI tools cost extra",
+      pros: ["Excellent CRM with 250+ integrations", "Great team collaboration features"],
       cons: [
-        "No built-in instant AI response",
-        "Manual follow-up required",
-        "Dead leads require manual outreach",
-      ],
-    },
-    prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Integrates with your FUB",
-      pros: [
-        "Instant AI response for FUB leads",
-        "Dead lead reactivation campaigns",
-        "24/7 automated engagement",
-        "Syncs appointments back to FUB",
+        "No native AI agents — requires bolt-on tools",
+        "No built-in marketing automation",
+        "No transaction coordination",
+        "Per-user pricing adds up for teams",
       ],
     },
   },
   whySwitch: [
     {
       icon: "Zap",
-      title: "Instant Lead Response",
+      title: "Native AI Agents vs. Bolt-On Integrations",
       description:
-        "When a lead hits FUB, AI responds in under 60 seconds. No more speed-to-lead problems.",
+        "Stop patching together third-party AI tools. Prestyj's AI agents are built directly into the platform — no integrations, no breakage, no extra cost.",
     },
     {
-      icon: "RefreshCw",
-      title: "Revive Your Dead Database",
+      icon: "Brain",
+      title: "AI That Works IN Your CRM, Not Alongside It",
       description:
-        "Those thousands of old leads in FUB? AI can re-engage them automatically and find the ones ready to transact now.",
+        "Prestyj's AI lives inside your CRM, automatically logging conversations, updating lead scores, and moving deals through your pipeline.",
     },
     {
-      icon: "Clock",
-      title: "24/7 Coverage",
+      icon: "Puzzle",
+      title: "No Need for 5+ Tool Subscriptions",
       description:
-        "AI handles nights, weekends, and holidays while you sleep. Every lead gets instant engagement.",
+        "FUB + AI tool + marketing tool + transaction tool = $$$. Prestyj replaces your entire stack with one platform and one subscription.",
     },
     {
-      icon: "Handshake",
-      title: "Seamless Integration",
+      icon: "MessageSquare",
+      title: "Marketing Automation Built-In",
       description:
-        "Prestyj works alongside FUB—qualified leads and booked appointments sync back to your CRM.",
+        "Prestyj includes automated email sequences, SMS campaigns, and retargeting — no need for a separate marketing platform.",
+    },
+    {
+      icon: "ClipboardList",
+      title: "Transaction Coordination Included",
+      description:
+        "Manage deals from contract to close with built-in transaction management. FUB stops at follow-up; Prestyj sees it through.",
+    },
+    {
+      icon: "Users",
+      title: "One Platform vs. CRM + AI Tool + Marketing Tool",
+      description:
+        "Simplify your tech stack. One login, one bill, one support team — and everything works together seamlessly.",
     },
   ],
   whenCompetitorFits: [
-    "You need a CRM for pipeline and contact management (keep using FUB!)",
-    "You want team collaboration and assignment rules",
-    "You need robust reporting and analytics",
-    "Your team is already trained on FUB workflows",
+    "You love your current CRM and only need basic follow-up",
+    "You already have dedicated AI, marketing, and transaction tools",
+    "You want the cheapest CRM and don't mind managing multiple subscriptions",
   ],
   whenPrestyjFits: [
-    "You want to add instant AI response to your FUB leads",
-    "You have dead leads in FUB you want to reactivate",
-    "You need 24/7 lead engagement without hiring staff",
-    "You want AI to qualify leads before they hit your pipeline",
-    "You're happy with FUB but want to supercharge it",
+    "You want native AI agents that work inside your CRM",
+    "You're tired of managing 4+ separate tools and bills",
+    "You need marketing automation and transaction management included",
+    "You want a single platform your whole team can learn quickly",
+    "You value done-for-you setup over DIY integrations",
   ],
   relatedResources: [
     {
-      href: "/alternatives/real-geeks",
-      title: "Prestyj + Real Geeks",
-      description: "Add AI response to Real Geeks",
+      href: "/best-for/real-estate-teams",
+      title: "Built for Real Estate Teams",
+      description: "How Prestyj scales with teams of any size",
     },
     {
-      href: "/solutions/lead-reactivation",
-      title: "Lead Reactivation",
-      description: "How we revive dead CRM databases",
+      href: "/solutions/pipeline-automation",
+      title: "Pipeline Automation",
+      description: "See how Prestyj automates your entire sales pipeline",
     },
     {
-      href: "/solutions/speed-to-lead",
-      title: "Speed to Lead",
-      description: "Why instant response wins deals",
+      href: "/alternatives/structurely",
+      title: "Structurely Alternatives",
+      description: "Compare other AI chatbot platforms for real estate",
     },
   ],
-  cta: {
-    headline: "Ready to Supercharge Your Follow Up Boss?",
-    subheadline:
-      "Keep the CRM you love. Add the AI response speed you need. See how Prestyj integrates with Follow Up Boss.",
-    buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
-    footnote:
-      "Works alongside your existing FUB setup. No migration required.",
-  },
 });

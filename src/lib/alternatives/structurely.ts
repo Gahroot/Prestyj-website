@@ -10,157 +10,135 @@ export const structurely: AlternativePageContent = createAlternativePage({
   type: "direct-competitor",
   competitor: {
     name: "Structurely",
-    pricing: "$450/mo (250 leads)",
+    pricing: "Starting at $299/mo",
     website: "https://structurely.com",
-    description:
-      "AI assistant for real estate lead qualification and appointment setting",
+    description: "AI chatbot for real estate lead qualification via text and voice",
   },
   meta: {
-    title: "Best Structurely Alternative for Real Estate | Prestyj",
+    title: "Structurely Alternatives | Better AI for Real Estate Lead Conversion",
     description:
-      "Looking for a Structurely alternative? Compare Prestyj vs Structurely: built-in CRM, lead reactivation, no per-lead limits. See why agents are switching.",
+      "Comparing Structurely vs Prestyj. See why real estate teams choose Prestyj for AI-powered lead conversion, voice agents, and full-pipeline automation.",
     keywords: [
-      "structurely alternative",
-      "structurely vs prestyj",
-      "structurely competitors",
-      "AI lead qualification",
-      "real estate AI assistant",
+      "Structurely alternatives",
+      "Structurely vs Prestyj",
+      "AI chatbot real estate",
+      "AI ISA alternative",
+      "real estate AI texting",
     ],
   },
   hero: {
     badge: "Structurely Alternative",
     subheadline:
-      "Both platforms offer AI-powered lead qualification. But if you're looking for lead reactivation and an all-in-one solution, there's a better option.",
+      "Structurely is a powerful chatbot for lead qualification. But if you need a complete pipeline solution — CRM, marketing automation, and transaction management — Prestyj delivers what Structurely can't.",
   },
-  industryStats: [
-    {
-      stat: "47 sec",
-      description: "average Prestyj response time",
-    },
-    {
-      stat: "23%",
-      description: "of dead leads reactivate with proper outreach",
-    },
-    {
-      stat: "80%",
-      description: "of leads go cold due to slow response",
-    },
-  ],
+  industryStats: "standard",
   comparison: {
     features: [
       buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
       buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, true),
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Structurely requires external CRM"
+        "Structurely requires a separate CRM like Follow Up Boss"
       ),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.APPOINTMENT_BOOKING,
+        true
+      ),
+      buildAlternativeFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
       {
-        feature: "Lead Reactivation",
+        feature: "Marketing Automation",
         prestyj: true,
         competitor: false,
-        note: "Prestyj specializes in reviving dead leads",
+        note: "Structurely has no built-in marketing automation",
       },
       {
-        feature: "Per-Lead Limits",
-        prestyj: false,
-        competitor: true,
-        note: "Structurely caps at 250 leads/mo on base plan",
-      },
-      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
-      buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
-      {
-        feature: "Done-For-You Setup",
+        feature: "Transaction Management",
         prestyj: true,
         competitor: false,
-        note: "Prestyj handles everything for you",
+        note: "Structurely is limited to lead qualification only",
       },
+      buildAlternativeFeature(STANDARD_FEATURES.CALENDAR_INTEGRATION, true),
     ],
     competitorPricing: {
-      price: "$450",
+      price: "$299",
       period: "/month",
-      note: "250 lead limit",
-      pros: ["Established platform", "AI voice calling included"],
+      note: "AI texting & calling only",
+      pros: ["Affordable entry price", "Good for basic lead qualification"],
       cons: [
-        "Per-lead caps on base plan",
-        "No built-in CRM",
-        "Limited to new lead response (no reactivation)",
-      ],
-    },
-    prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Based on your needs",
-      pros: [
-        "Unlimited lead handling",
-        "Built-in CRM included",
-        "Lead reactivation included",
-        "Done-for-you setup and management",
+        "Requires separate CRM subscription",
+        "No marketing automation",
+        "No transaction management",
+        "Limited to lead qualification only",
       ],
     },
   },
   whySwitch: [
     {
-      icon: "RefreshCw",
-      title: "Lead Reactivation Built-In",
+      icon: "Zap",
+      title: "Beyond Chatbot — Full Pipeline Automation",
       description:
-        "Don't just respond to new leads—revive the thousands of dead leads already in your database. Prestyj specializes in done-for-you lead reactivation.",
+        "Structurely qualifies leads. Prestyj manages your entire pipeline from first contact to close with CRM, marketing, and transaction tools built in.",
     },
     {
       icon: "Database",
-      title: "No Per-Lead Limits",
+      title: "Built-in CRM vs. Needing Follow Up Boss Separately",
       description:
-        "Structurely's base plan caps at 250 leads. Prestyj scales with your business without artificial limits.",
+        "Stop paying for two tools. Prestyj includes a full CRM so your leads, conversations, and deals live in one place.",
     },
     {
-      icon: "Zap",
-      title: "All-in-One Platform",
+      icon: "MessageSquare",
+      title: "Voice + Text + Email + Marketing in One",
       description:
-        "Built-in CRM means no juggling multiple tools or paying for separate integrations.",
+        "Structurely handles text and voice. Prestyj unifies every channel — plus marketing automation — so nothing falls through the cracks.",
+    },
+    {
+      icon: "Target",
+      title: "Lead Scoring with Deal Intelligence",
+      description:
+        "Prestyj scores leads using real deal data, not just conversation signals. Know which prospects are actually ready to buy.",
     },
     {
       icon: "Users",
-      title: "Done-For-You Service",
+      title: "Works for ALL Real Estate Verticals",
       description:
-        "We don't just give you tools—we run your lead engagement for you. Set it and forget it.",
+        "Structurely is built for agents. Prestyj serves agents, investors, wholesalers, title companies, and property managers alike.",
+    },
+    {
+      icon: "DollarSign",
+      title: "Transparent Pricing with No Hidden Add-Ons",
+      description:
+        "No surprise charges for extra integrations. Prestyj's pricing is clear and includes everything you need to run your pipeline.",
     },
   ],
   whenCompetitorFits: [
-    "You only need to respond to new incoming leads",
-    "You already have a CRM you're happy with",
-    "You receive fewer than 250 leads per month",
-    "You prefer to manage the AI yourself",
+    "You only need AI texting/chatbot and nothing else",
+    "You already have a full CRM and marketing stack you're happy with",
+    "You want the cheapest possible AI ISA solution",
   ],
   whenPrestyjFits: [
-    "You want to reactivate your existing dead leads (not just respond to new ones)",
-    "You need an all-in-one platform with CRM included",
-    "You receive more than 250 leads per month",
-    "You want a done-for-you service that handles everything",
-    "You want instant response AND long-term lead nurturing",
+    "You need more than just a chatbot — you want full pipeline management",
+    "You want CRM + AI + marketing automation in one platform",
+    "You manage leads across multiple real estate verticals",
+    "You're tired of stitching together 3+ tools to run your business",
+    "You want lead scoring and deal intelligence built in",
   ],
   relatedResources: [
     {
-      href: "/alternatives/ylopo",
-      title: "Prestyj vs Ylopo",
-      description: "Compare to another AI lead platform",
+      href: "/best-for/real-estate-agents",
+      title: "Built for Real Estate Agents",
+      description: "How Prestyj serves solo agents and growing teams",
     },
     {
-      href: "/solutions/lead-reactivation",
-      title: "Lead Reactivation",
-      description: "Learn how we revive dead leads",
+      href: "/solutions/lead-conversion",
+      title: "Lead Conversion Solutions",
+      description: "See how Prestyj converts more leads into appointments",
     },
     {
-      href: "/results",
-      title: "See Real Results",
-      description: "Case studies from agents using Prestyj",
+      href: "/alternatives/human-isa",
+      title: "AI vs Human ISA",
+      description: "Compare AI agents to traditional inside sales agents",
     },
   ],
-  cta: {
-    headline: "Ready to Do More Than Just Respond?",
-    subheadline:
-      "See how Prestyj reactivates your dead leads AND responds instantly to new ones. Book a demo to learn more.",
-    buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
-    footnote:
-      "No credit card required. See your lead reactivation potential in minutes.",
-  },
 });

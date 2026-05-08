@@ -1,179 +1,145 @@
 import type { AlternativePageContent } from "./types";
-import { createAlternativePage } from "@/lib/content-factory";
+import {
+  createAlternativePage,
+  buildAlternativeFeature,
+  STANDARD_FEATURES,
+} from "@/lib/content-factory";
 
 export const lofty: AlternativePageContent = createAlternativePage({
   slug: "lofty",
-  type: "integration-partner",
+  type: "direct-competitor",
   competitor: {
     name: "Lofty (formerly Chime)",
-    shortName: "Lofty",
-    pricing: "$500-1,500+/mo",
-    website: "https://golofty.com",
-    description:
-      "AI-powered CRM platform with lead generation, texting, and automation for real estate",
+    pricing: "Starting at $499/mo",
+    website: "https://lofty.com",
+    description: "Real estate CRM with AI assistant and marketing automation",
   },
   meta: {
-    title: "Lofty Alternative | Add AI Voice Calling to Lofty CRM | Prestyj",
+    title: "Lofty Alternatives | Better AI Real Estate Platform",
     description:
-      "Not looking to replace Lofty? Add AI-powered instant voice response and lead reactivation to your existing Lofty setup. Voice calling is the missing piece.",
+      "Lofty vs Prestyj comparison. See why teams switch from Lofty to Prestyj for more powerful AI agents, better lead conversion, and full-pipeline automation.",
     keywords: [
-      "lofty alternative",
-      "chime alternative",
-      "lofty CRM alternative",
-      "lofty AI",
-      "chime CRM alternative",
-      "lofty integration",
-      "real estate CRM AI voice",
-      "lofty voice calling",
+      "Lofty alternatives",
+      "Lofty vs Prestyj",
+      "Chime alternative",
+      "real estate AI platform",
+      "AI CRM real estate",
     ],
   },
   hero: {
-    badge: "Lofty Integration",
+    badge: "Lofty Alternative",
     subheadline:
-      "You don't need to replace Lofty. Add instant AI voice response and dead lead reactivation while keeping the CRM you already have.",
+      "Lofty offers CRM and basic AI assistance, but its AI is limited, pricing is complex, and the learning curve is steep. Prestyj delivers more powerful AI agents, simpler onboarding, and better conversion — without the bloat.",
   },
-  industryStats: "reactivation",
+  industryStats: "standard",
   comparison: {
     features: [
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.AI_VOICE,
+        false,
+        "Lofty's AI assistant is text-based only"
+      ),
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
+      buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
+      buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.LEAD_QUALIFICATION,
+        true,
+        "Lofty's AI qualification is basic"
+      ),
       {
-        feature: "CRM & Lead Management",
-        prestyj: false,
+        feature: "Marketing Automation",
+        prestyj: true,
         competitor: true,
-        note: "Lofty excels at this—keep using it",
+        note: "Lofty includes marketing but setup is complex",
       },
       {
-        feature: "AI Text Messaging",
-        prestyj: false,
-        competitor: true,
-        note: "Lofty has strong text automation",
-      },
-      {
-        feature: "Instant AI Voice Calling",
+        feature: "Transparent Pricing",
         prestyj: true,
         competitor: false,
-        note: "Add sub-60-second voice response to your Lofty leads",
+        note: "Lofty pricing has hidden fees and add-ons",
       },
-      {
-        feature: "Dead Lead Reactivation",
-        prestyj: true,
-        competitor: false,
-        note: "Revive your cold Lofty database with AI voice outreach",
-      },
-      {
-        feature: "24/7 Voice Engagement",
-        prestyj: true,
-        competitor: false,
-        note: "AI voice responds nights and weekends",
-      },
-      {
-        feature: "Lead Generation",
-        prestyj: false,
-        competitor: true,
-        note: "Lofty provides lead gen tools",
-      },
-      {
-        feature: "IDX Website",
-        prestyj: false,
-        competitor: true,
-      },
-      {
-        feature: "AI Appointment Booking",
-        prestyj: true,
-        competitor: false,
-        note: "Voice AI automatically books qualified leads to your calendar",
-      },
+      buildAlternativeFeature(STANDARD_FEATURES.CALENDAR_INTEGRATION, true),
     ],
     competitorPricing: {
-      price: "$500-1,500+",
+      price: "$499",
       period: "/month",
-      note: "Powerful CRM with AI texting, but voice calling is missing",
-      pros: [
-        "AI-powered texting and automation",
-        "Lead generation and marketing tools",
-        "IDX website included",
-        "Comprehensive CRM features",
-      ],
+      note: "Complex pricing with add-ons for full features",
+      pros: ["Includes CRM and marketing automation", "Good for large teams"],
       cons: [
-        "No built-in AI voice calling",
-        "Text-only automation misses phone-first leads",
-        "Dead leads require manual outreach",
-        "High price point for full features",
-      ],
-    },
-    prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Integrates with your Lofty CRM",
-      pros: [
-        "Instant AI voice response for Lofty leads",
-        "Dead lead reactivation via voice campaigns",
-        "24/7 automated voice engagement",
-        "Syncs appointments back to Lofty",
+        "AI capabilities are limited and basic",
+        "Complex pricing with hidden fees",
+        "Steep learning curve for new users",
+        "Voice AI not available",
       ],
     },
   },
   whySwitch: [
     {
-      icon: "Phone",
-      title: "Voice Calling is the Missing Piece",
+      icon: "Brain",
+      title: "More Sophisticated AI Agents",
       description:
-        "Lofty handles text well, but many leads want to talk. Add AI voice calling to engage phone-first buyers instantly.",
+        "Lofty's AI assistant handles simple tasks. Prestyj's agents qualify leads, book appointments, and nurture prospects with human-like intelligence.",
     },
     {
       icon: "Zap",
-      title: "Instant Voice Response",
+      title: "Simpler Setup & Onboarding",
       description:
-        "When a lead hits Lofty, AI calls them in under 60 seconds. No more speed-to-lead problems for voice engagement.",
+        "Lofty's steep learning curve slows teams down. Prestyj is designed for fast implementation — most teams are live within days.",
     },
     {
-      icon: "RefreshCw",
-      title: "Revive Your Dead Database",
+      icon: "TrendingUp",
+      title: "Better Lead Conversion Rates",
       description:
-        "Those thousands of old leads in Lofty? AI voice outreach can re-engage them and find the ones ready to transact now.",
+        "Prestyj's voice-first AI and intelligent follow-up convert more leads into appointments than Lofty's basic text-based assistant.",
     },
     {
-      icon: "Handshake",
-      title: "Seamless Integration",
+      icon: "DollarSign",
+      title: "More Transparent Pricing",
       description:
-        "Prestyj works alongside Lofty—qualified leads and booked appointments sync back to your CRM.",
+        "No surprise add-ons or hidden fees. Prestyj's pricing is straightforward so you can budget with confidence.",
+    },
+    {
+      icon: "Users",
+      title: "Works Across All RE Verticals",
+      description:
+        "Lofty is built for traditional agents. Prestyj serves agents, investors, wholesalers, title companies, and property managers.",
+    },
+    {
+      icon: "Phone",
+      title: "Superior Voice AI Capabilities",
+      description:
+        "Lofty lacks voice AI entirely. Prestyj's voice agents respond to calls instantly, qualify leads in real time, and book appointments hands-free.",
     },
   ],
   whenCompetitorFits: [
-    "You need a CRM with lead generation and marketing (keep using Lofty!)",
-    "You want AI text messaging automation",
-    "You need an IDX website",
-    "Your team is already trained on Lofty workflows",
+    "You're a large traditional team that needs extensive CRM customization",
+    "You have the resources for a long onboarding and training process",
+    "You want a platform with built-in IDX website features",
   ],
   whenPrestyjFits: [
-    "You want to add instant AI voice calling to your Lofty leads",
-    "You have dead leads in Lofty you want to reactivate via voice",
-    "You need 24/7 voice engagement without hiring staff",
-    "Your market prefers phone calls over text",
-    "You're happy with Lofty but want to add voice AI",
+    "You want more powerful AI without the complexity",
+    "You need voice AI for immediate lead response",
+    "You prefer transparent pricing with no hidden fees",
+    "You serve multiple real estate verticals",
+    "You want to go live quickly without a steep learning curve",
   ],
   relatedResources: [
     {
-      href: "/alternatives/follow-up-boss",
-      title: "Prestyj + Follow Up Boss",
-      description: "Add AI response to FUB",
+      href: "/best-for/real-estate-agents",
+      title: "Built for Real Estate Agents",
+      description: "How Prestyj serves agents and growing teams",
     },
     {
-      href: "/solutions/lead-reactivation",
-      title: "Lead Reactivation",
-      description: "How we revive dead CRM databases",
+      href: "/solutions/lead-conversion",
+      title: "Lead Conversion Solutions",
+      description: "See how Prestyj converts more leads into appointments",
     },
     {
-      href: "/solutions/speed-to-lead",
-      title: "Speed to Lead",
-      description: "Why instant response wins deals",
+      href: "/alternatives/kvcore",
+      title: "kvCORE Alternatives",
+      description: "Compare other enterprise real estate platforms",
     },
   ],
-  cta: {
-    headline: "Ready to Add Voice AI to Your Lofty CRM?",
-    subheadline:
-      "Keep the CRM you love. Add the AI voice response you're missing. See how Prestyj integrates with Lofty.",
-    buttonText: "Book Your Free Demo",
-    buttonHref: "/book-demo",
-    footnote:
-      "Works alongside your existing Lofty setup. No migration required.",
-  },
 });
