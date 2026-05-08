@@ -113,6 +113,8 @@ import { videoAdsForSeniorCare } from "./video-ads-for-senior-care";
 import { socialContentForContractors } from "./social-content-for-contractors";
 import { socialContentForRealEstateTeams } from "./social-content-for-real-estate-teams";
 import { socialContentForAgencies } from "./social-content-for-agencies";
+import { socialContentForCoaches } from "./social-content-for-coaches";
+import { socialContentForEcommerceBrands } from "./social-content-for-ecommerce-brands";
 
 // Geo: 50 metro-specific and 15 state-specific real estate video ad pages
 import { videoAdsForRealtorsAustin } from "./video-ads-for-realtors-austin";
@@ -299,6 +301,8 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "social-content-for-contractors": socialContentForContractors,
   "social-content-for-real-estate-teams": socialContentForRealEstateTeams,
   "social-content-for-agencies": socialContentForAgencies,
+  "social-content-for-coaches": socialContentForCoaches,
+  "social-content-for-ecommerce-brands": socialContentForEcommerceBrands,
 
   // Geo: 50 metro-specific real estate video ad pages
   "video-ads-for-realtors-austin": videoAdsForRealtorsAustin,
