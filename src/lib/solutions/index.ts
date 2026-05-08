@@ -66,6 +66,36 @@ import { videoAdScriptWritingService } from "./video-ad-script-writing-service";
 import { facebookAdCreativeVolume } from "./facebook-ad-creative-volume";
 import { tiktokAdCreativeTesting } from "./tiktok-ad-creative-testing";
 import { youtubeShortsAdProduction } from "./youtube-shorts-ad-production";
+import { aiForRealEstateWholesalers } from "./ai-for-real-estate-wholesalers";
+import { aiForRealEstateInvestors } from "./ai-for-real-estate-investors";
+import { aiForHomeBuilders } from "./ai-for-home-builders";
+import { aiForTitleCompanies } from "./ai-for-title-companies";
+import { agenticAiRealEstate } from "./agentic-ai-real-estate";
+import { aiCallingService } from "./ai-calling-service";
+import { aiOutboundCalls } from "./ai-outbound-calls";
+import { aiAppointmentSetter } from "./ai-appointment-setter";
+import { aiFollowUpSystem } from "./ai-follow-up-system";
+import { aiLeadQualification } from "./ai-lead-qualification";
+import { aiMissedCallTextBack } from "./ai-missed-call-text-back";
+import { aiAnsweringService } from "./ai-answering-service";
+import { aiConversationPlatform } from "./ai-conversation-platform";
+import { aiInboundCallHandling } from "./ai-inbound-call-handling";
+import { aiLeadResponse } from "./ai-lead-response";
+import { aiColdCalling } from "./ai-cold-calling";
+import { aiPhoneAnswering } from "./ai-phone-answering";
+import { aiVirtualReceptionist } from "./ai-virtual-receptionist";
+import { aiVoiceAssistantBusiness } from "./ai-voice-assistant-business";
+import { aiTextBackService } from "./ai-text-back-service";
+import { aiWebChatWidget } from "./ai-web-chat-widget";
+import { aiEmailFollowUp } from "./ai-email-follow-up";
+import { aiLeadNurturing } from "./ai-lead-nurturing";
+import { aiShowRateOptimization } from "./ai-show-rate-optimization";
+import { aiNoShowReduction } from "./ai-no-show-reduction";
+import { aiPipelineAutomation } from "./ai-pipeline-automation";
+import { aiClosingAssistant } from "./ai-closing-assistant";
+import { aiDialer } from "./ai-dialer";
+import { aiObjectionHandling } from "./ai-objection-handling";
+import { aiCrmAutomation } from "./ai-crm-automation";
 
 export const solutions: Record<string, SolutionPageContent> = {
   "speed-to-lead": speedToLead,
@@ -135,6 +165,36 @@ export const solutions: Record<string, SolutionPageContent> = {
   "facebook-ad-creative-volume": facebookAdCreativeVolume,
   "tiktok-ad-creative-testing": tiktokAdCreativeTesting,
   "youtube-shorts-ad-production": youtubeShortsAdProduction,
+  "ai-for-real-estate-wholesalers": aiForRealEstateWholesalers,
+  "ai-for-real-estate-investors": aiForRealEstateInvestors,
+  "ai-for-home-builders": aiForHomeBuilders,
+  "ai-for-title-companies": aiForTitleCompanies,
+  "agentic-ai-real-estate": agenticAiRealEstate,
+  "ai-calling-service": aiCallingService,
+  "ai-outbound-calls": aiOutboundCalls,
+  "ai-appointment-setter": aiAppointmentSetter,
+  "ai-follow-up-system": aiFollowUpSystem,
+  "ai-lead-qualification": aiLeadQualification,
+  "ai-missed-call-text-back": aiMissedCallTextBack,
+  "ai-answering-service": aiAnsweringService,
+  "ai-conversation-platform": aiConversationPlatform,
+  "ai-inbound-call-handling": aiInboundCallHandling,
+  "ai-lead-response": aiLeadResponse,
+  "ai-cold-calling": aiColdCalling,
+  "ai-phone-answering": aiPhoneAnswering,
+  "ai-virtual-receptionist": aiVirtualReceptionist,
+  "ai-voice-assistant-business": aiVoiceAssistantBusiness,
+  "ai-text-back-service": aiTextBackService,
+  "ai-web-chat-widget": aiWebChatWidget,
+  "ai-email-follow-up": aiEmailFollowUp,
+  "ai-lead-nurturing": aiLeadNurturing,
+  "ai-show-rate-optimization": aiShowRateOptimization,
+  "ai-no-show-reduction": aiNoShowReduction,
+  "ai-pipeline-automation": aiPipelineAutomation,
+  "ai-closing-assistant": aiClosingAssistant,
+  "ai-dialer": aiDialer,
+  "ai-objection-handling": aiObjectionHandling,
+  "ai-crm-automation": aiCrmAutomation,
 };
 
 export function getSolution(slug: string): SolutionPageContent | undefined {
