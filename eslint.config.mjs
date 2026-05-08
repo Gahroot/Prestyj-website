@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Fumadocs generated files:
     ".source/**",
+    // Vercel build output:
+    ".vercel/**",
   ]),
 ]);
 
