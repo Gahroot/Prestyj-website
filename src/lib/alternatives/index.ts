@@ -43,6 +43,7 @@ import { creatify } from "./creatify";
 import { arcads } from "./arcads";
 import { resimpli } from "./resimpli";
 import { alannaAi } from "./alanna-ai";
+import { socialMediaAgencies } from "./social-media-agencies";
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -89,6 +90,7 @@ export const alternatives: Record<string, AlternativePageContent> = {
   arcads,
   resimpli,
   "alanna-ai": alannaAi,
+  "social-media-agencies": socialMediaAgencies,
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {
