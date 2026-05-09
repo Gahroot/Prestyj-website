@@ -364,6 +364,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/compare/prestyj-vs-social-media-agency`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/compare/prestyj-vs-opus-clip`,
       lastModified: now,
       changeFrequency: "monthly" as const,
