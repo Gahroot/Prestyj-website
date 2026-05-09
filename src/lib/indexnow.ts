@@ -79,6 +79,7 @@ export function getAllUrls(): string[] {
     "/compare/prestyj-vs-internal-isa-team",
     "/compare/prestyj-vs-offshore-isa",
     "/compare/prestyj-vs-answering-service",
+    "/compare/prestyj-vs-junior-social-hire",
     "/compare/ai-consultant-vs-diy-ai",
     // AI consulting comparison pages
     "/compare/ai-consultant-vs-ai-agency",
