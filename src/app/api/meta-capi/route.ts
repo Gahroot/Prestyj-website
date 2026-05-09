@@ -19,16 +19,25 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { eventName, eventId, email, phone, firstName, lastName, sourceUrl } =
-      body as {
-        eventName: string;
-        eventId: string;
-        email?: string;
-        phone?: string;
-        firstName?: string;
-        lastName?: string;
-        sourceUrl?: string;
-      };
+    const {
+      eventName,
+      eventId,
+      email,
+      phone,
+      firstName,
+      lastName,
+      sourceUrl,
+      customData,
+    } = body as {
+      eventName: string;
+      eventId: string;
+      email?: string;
+      phone?: string;
+      firstName?: string;
+      lastName?: string;
+      sourceUrl?: string;
+      customData?: Record<string, unknown>;
+    };
 
     // Build user_data with hashed PII
     const userData: Record<string, string> = {};
@@ -48,7 +57,7 @@ export async function POST(request: NextRequest) {
     if (clientIp) userData.client_ip_address = clientIp;
     if (clientUserAgent) userData.client_user_agent = clientUserAgent;
 
-    const event = {
+    const event: Record<string, unknown> = {
       event_name: eventName,
       event_time: Math.floor(Date.now() / 1000),
       event_id: eventId,
@@ -56,6 +65,10 @@ export async function POST(request: NextRequest) {
       action_source: "website",
       user_data: userData,
     };
+
+    if (customData && Object.keys(customData).length > 0) {
+      event.custom_data = customData;
+    }
 
     const capiResponse = await fetch(
       `https://graph.facebook.com/v21.0/${PIXEL_ID}/events?access_token=${accessToken}`,

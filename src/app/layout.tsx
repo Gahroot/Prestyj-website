@@ -3,7 +3,7 @@ import { Inter, Manrope } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { AuroraBackground } from "@/components/effects/aurora-background";
-import { PIXEL_ID } from "@/lib/meta-pixel";
+import { PIXEL_ID, LINKEDIN_PARTNER_ID } from "@/lib/meta-pixel";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
 
 const inter = Inter({
@@ -129,6 +129,25 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'AW-18112004799', {'allow_enhanced_conversions': true});`}
         </Script>
+        {LINKEDIN_PARTNER_ID && (
+          <>
+            <Script id="linkedin-insight-init" strategy="afterInteractive">
+              {`_linkedin_partner_id = "${LINKEDIN_PARTNER_ID}";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);`}
+            </Script>
+            <Script id="linkedin-insight-loader" strategy="afterInteractive">
+              {`(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);`}
+            </Script>
+          </>
+        )}
         <Script id="meta-pixel" strategy="afterInteractive">
           {`!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -150,6 +169,16 @@ fbq('track', 'PageView');`}
             src={`https://www.facebook.com/tr?id=${PIXEL_ID}&ev=PageView&noscript=1`}
             alt=""
           />
+          {LINKEDIN_PARTNER_ID && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              height="1"
+              width="1"
+              style={{ display: "none" }}
+              src={`https://px.ads.linkedin.com/collect/?pid=${LINKEDIN_PARTNER_ID}&fmt=gif`}
+              alt=""
+            />
+          )}
         </noscript>
         <OrganizationJsonLd />
         <WebSiteJsonLd />

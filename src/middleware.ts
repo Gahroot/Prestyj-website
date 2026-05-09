@@ -20,6 +20,8 @@ export function middleware() {
         "https://app.cal.com",
         // Meta Pixel
         "https://connect.facebook.net",
+        // LinkedIn Insight Tag
+        "https://snap.licdn.com",
       ],
     },
     {
@@ -62,6 +64,9 @@ export function middleware() {
         // Meta Pixel
         "https://www.facebook.com",
         "https://connect.facebook.net",
+        // LinkedIn Insight Tag (page-load + event-specific conversions)
+        "https://px.ads.linkedin.com",
+        "https://snap.licdn.com",
       ],
     },
     {

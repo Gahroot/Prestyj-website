@@ -15,6 +15,7 @@ import { ContentEngineComparison } from "@/components/sections/content-engine/co
 import { ContentEngineFAQ } from "@/components/sections/content-engine/faq";
 import { ContentEngineAvatarGrid } from "@/components/sections/content-engine/avatar-grid";
 import { ContentEngineCTA } from "@/components/sections/content-engine/cta";
+import { ContentEngineVisitorPixel } from "@/components/seo/content-engine-visitor-pixel";
 
 import type { ContentEnginePageConfig } from "@/lib/content-engine/page-config";
 import type { ReactNode } from "react";
@@ -30,6 +31,7 @@ export function ContentEnginePageLayout({
 }: ContentEnginePageLayoutProps) {
   return (
     <>
+      <ContentEngineVisitorPixel />
       <Navbar />
       <main>
         <ContentEngineHero config={config.hero} />
