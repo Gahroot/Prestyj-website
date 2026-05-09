@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { trackEvent } from "@/lib/meta-pixel";
+import { trackGoogleAdsConversion } from "@/lib/google-ads";
 
 type TrackedLinkProps = {
   eventName: string;
@@ -22,6 +23,7 @@ export function TrackedLink({
     if (typeof window !== "undefined" && window.fbq) {
       window.fbq("track", eventName, { eventLabel });
     }
+    trackGoogleAdsConversion(eventLabel);
   };
 
   return (

@@ -4,16 +4,16 @@ import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { ContentEnginePageLayout } from "@/components/sections/content-engine/content-engine-page-layout";
-import { autopilotContentEngineConfig } from "@/lib/content-engine/autopilot-config";
+import { replaceAHireConfig } from "@/lib/content-engine/replace-a-hire-config";
 
-const PAGE_URL = "https://prestyj.com/social-media-on-autopilot";
+const PAGE_URL = "https://prestyj.com/ai-content-department";
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Prestyj Autopilot — Social Media On Autopilot",
+  name: "Prestyj AI Content Department — Replace-a-Hire",
   description:
-    "Fully hands-off social media management powered by AI. Zero-touch content creation, scheduling, publishing, and optimization across Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, and X. Live in 24 hours. From $1,997/mo.",
+    "AI-powered content department replacing a junior social media hire. 1,000+ posts per month across Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, and X. Live in 24 hours. From $1,997/mo.",
   provider: {
     "@type": "Organization",
     name: "PRESTYJ",
@@ -23,10 +23,9 @@ const serviceJsonLd = {
   serviceType: [
     "Social Media Management",
     "AI Content Generation",
-    "Automated Social Media",
-    "Hands-Off Social Media",
     "Content Marketing Automation",
     "Done-For-You Social Media",
+    "Social Media Staffing Alternative",
   ],
   areaServed: "United States",
   url: PAGE_URL,
@@ -40,7 +39,7 @@ const serviceJsonLd = {
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Autopilot Content Plans",
+    name: "AI Content Department Plans",
     itemListElement: [
       {
         "@type": "Offer",
@@ -49,7 +48,7 @@ const serviceJsonLd = {
         priceCurrency: "USD",
         itemOffered: {
           "@type": "Service",
-          name: "Minimum Plan — 1 account, 3 platforms, ~270 posts/month on autopilot",
+          name: "Minimum Plan — 1 account, 3 platforms, ~270 posts/month",
         },
       },
       {
@@ -59,7 +58,7 @@ const serviceJsonLd = {
         priceCurrency: "USD",
         itemOffered: {
           "@type": "Service",
-          name: "Pro Plan — 2 accounts, 5 platforms, ~900 posts/month on autopilot",
+          name: "Pro Plan — 2 accounts, 5 platforms, ~900 posts/month",
         },
       },
       {
@@ -69,14 +68,14 @@ const serviceJsonLd = {
         priceCurrency: "USD",
         itemOffered: {
           "@type": "Service",
-          name: "Max Plan — 3 accounts, 7 platforms, ~2,700 posts/month on autopilot",
+          name: "Max Plan — 3 accounts, 7 platforms, ~2,700 posts/month",
         },
       },
     ],
   },
 };
 
-export default function SocialMediaOnAutopilotPage() {
+export default function AIContentDepartmentPage() {
   return (
     <>
       <SafeJsonLd data={serviceJsonLd} />
@@ -84,13 +83,13 @@ export default function SocialMediaOnAutopilotPage() {
         items={[
           { name: "Home", url: "https://prestyj.com" },
           {
-            name: "Social Media On Autopilot",
+            name: "AI Content Department",
             url: PAGE_URL,
           },
         ]}
       />
-      <FAQJsonLd faqs={autopilotContentEngineConfig.faq.faqs} />
-      <ContentEnginePageLayout config={autopilotContentEngineConfig} />
+      <FAQJsonLd faqs={replaceAHireConfig.faq.faqs} />
+      <ContentEnginePageLayout config={replaceAHireConfig} />
     </>
   );
 }

@@ -1,5 +1,3 @@
-"use client";
-
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContentEngineHero } from "@/components/sections/content-engine/hero";
@@ -15,42 +13,33 @@ import { ContentEnginePricing } from "@/components/sections/content-engine/prici
 import { ContentEngineComparison } from "@/components/sections/content-engine/comparison";
 import { ContentEngineFAQ } from "@/components/sections/content-engine/faq";
 import { ContentEngineCTA } from "@/components/sections/content-engine/cta";
-import { autopilotContentEngineConfig } from "@/lib/content-engine/autopilot-config";
 
-const {
-  hero: heroConfig,
-  proofBar: proofBarConfig,
-  problem: problemConfig,
-  solution: solutionConfig,
-  videoWalkthrough: videoWalkthroughConfig,
-  proofScreenshots: proofScreenshotsConfig,
-  liveAccounts: liveAccountsConfig,
-  liveFeed: liveFeedConfig,
-  howItWorks: howItWorksConfig,
-  pricing: pricingConfig,
-  comparison: comparisonConfig,
-  faq: faqConfig,
-  cta: ctaConfig,
-} = autopilotContentEngineConfig;
+import type { ContentEnginePageConfig } from "@/lib/content-engine/page-config";
 
-export function AutopilotPageContent() {
+interface ContentEnginePageLayoutProps {
+  config: ContentEnginePageConfig;
+}
+
+export function ContentEnginePageLayout({
+  config,
+}: ContentEnginePageLayoutProps) {
   return (
     <>
       <Navbar />
       <main>
-        <ContentEngineHero config={heroConfig} />
-        <ContentEngineProofBar config={proofBarConfig} />
-        <ContentEngineProblem config={problemConfig} />
-        <ContentEngineSolution config={solutionConfig} />
-        <ContentEngineVideoWalkthrough config={videoWalkthroughConfig} />
-        <ContentEngineProofScreenshots config={proofScreenshotsConfig} />
-        <ContentEngineLiveAccounts config={liveAccountsConfig} />
-        <ContentEngineLiveFeed config={liveFeedConfig} />
-        <ContentEngineHowItWorks config={howItWorksConfig} />
-        <ContentEngineComparison config={comparisonConfig} />
-        <ContentEnginePricing config={pricingConfig} />
-        <ContentEngineFAQ config={faqConfig} />
-        <ContentEngineCTA config={ctaConfig} />
+        <ContentEngineHero config={config.hero} />
+        <ContentEngineProofBar config={config.proofBar} />
+        <ContentEngineProblem config={config.problem} />
+        <ContentEngineSolution config={config.solution} />
+        <ContentEngineVideoWalkthrough config={config.videoWalkthrough} />
+        <ContentEngineProofScreenshots config={config.proofScreenshots} />
+        <ContentEngineLiveAccounts config={config.liveAccounts} />
+        <ContentEngineLiveFeed config={config.liveFeed} />
+        <ContentEngineHowItWorks config={config.howItWorks} />
+        <ContentEnginePricing config={config.pricing} />
+        <ContentEngineComparison config={config.comparison} />
+        <ContentEngineFAQ config={config.faq} />
+        <ContentEngineCTA config={config.cta} />
       </main>
       <Footer />
     </>

@@ -1,50 +1,12 @@
-import type { Metadata } from "next";
+"use client";
+
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
-import { AISocialMediaManagementPageContent } from "@/components/sections/content-engine/ai-social-media-management-page-content";
+import { ContentEnginePageLayout } from "@/components/sections/content-engine/content-engine-page-layout";
 import { aiSocialMediaManagementConfig } from "@/lib/content-engine/ai-social-media-management-config";
 
 const PAGE_URL = "https://prestyj.com/ai-social-media-management";
-
-export const metadata: Metadata = {
-  title: "AI Social Media Management \u2014 Fully Autonomous, 7 Platforms | Prestyj",
-  description:
-    "AI social media management that actually runs itself. Creates, publishes, and optimizes content across Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, and X. Zero daily effort. From $1,997/mo.",
-  keywords: [
-    "AI social media management",
-    "AI social media manager",
-    "AI social media tools",
-    "automated social media management",
-    "AI social media automation",
-    "social media management AI",
-    "best AI social media management",
-    "AI content management",
-    "AI powered social media management",
-    "social media management software AI",
-    "fully automated social media",
-    "AI social media marketing",
-    "hands-off social media management",
-    "done for you social media",
-    "AI social media scheduler",
-  ],
-  openGraph: {
-    title: "AI Social Media Management \u2014 Fully Autonomous, 7 Platforms | Prestyj",
-    description:
-      "AI social media management that creates, publishes, and optimizes content across 7 platforms. Zero daily effort. Live in 24 hours. From $1,997/mo.",
-    type: "website",
-    url: PAGE_URL,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "AI Social Media Management \u2014 Fully Autonomous, 7 Platforms",
-    description:
-      "AI social media management that runs itself. Creates, publishes, and optimizes across 7 platforms. Zero effort. From $1,997/mo.",
-  },
-  alternates: {
-    canonical: PAGE_URL,
-  },
-};
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
@@ -87,7 +49,7 @@ const serviceJsonLd = {
         priceCurrency: "USD",
         itemOffered: {
           "@type": "Service",
-          name: "Minimum Plan \u2014 1 account, 3 platforms, ~270 AI-managed posts/month",
+          name: "Minimum Plan — 1 account, 3 platforms, ~270 AI-managed posts/month",
         },
       },
       {
@@ -97,7 +59,7 @@ const serviceJsonLd = {
         priceCurrency: "USD",
         itemOffered: {
           "@type": "Service",
-          name: "Pro Plan \u2014 2 accounts, 5 platforms, ~900 AI-managed posts/month",
+          name: "Pro Plan — 2 accounts, 5 platforms, ~900 AI-managed posts/month",
         },
       },
       {
@@ -107,7 +69,7 @@ const serviceJsonLd = {
         priceCurrency: "USD",
         itemOffered: {
           "@type": "Service",
-          name: "Max Plan \u2014 3 accounts, 7 platforms, ~2,700 AI-managed posts/month",
+          name: "Max Plan — 3 accounts, 7 platforms, ~2,700 AI-managed posts/month",
         },
       },
     ],
@@ -128,7 +90,7 @@ export default function AISocialMediaManagementPage() {
         ]}
       />
       <FAQJsonLd faqs={aiSocialMediaManagementConfig.faq.faqs} />
-      <AISocialMediaManagementPageContent />
+      <ContentEnginePageLayout config={aiSocialMediaManagementConfig} />
     </>
   );
 }
