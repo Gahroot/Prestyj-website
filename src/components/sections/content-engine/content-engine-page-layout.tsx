@@ -17,13 +17,16 @@ import { ContentEngineAvatarGrid } from "@/components/sections/content-engine/av
 import { ContentEngineCTA } from "@/components/sections/content-engine/cta";
 
 import type { ContentEnginePageConfig } from "@/lib/content-engine/page-config";
+import type { ReactNode } from "react";
 
 interface ContentEnginePageLayoutProps {
   config: ContentEnginePageConfig;
+  afterProofBar?: ReactNode;
 }
 
 export function ContentEnginePageLayout({
   config,
+  afterProofBar,
 }: ContentEnginePageLayoutProps) {
   return (
     <>
@@ -31,6 +34,7 @@ export function ContentEnginePageLayout({
       <main>
         <ContentEngineHero config={config.hero} />
         <ContentEngineProofBar config={config.proofBar} />
+        {afterProofBar}
         <ContentEngineProblem config={config.problem} />
         <ContentEngineSolution config={config.solution} />
         <ContentEngineVideoWalkthrough config={config.videoWalkthrough} />

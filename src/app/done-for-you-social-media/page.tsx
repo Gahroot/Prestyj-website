@@ -4,6 +4,7 @@ import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { ContentEnginePageLayout } from "@/components/sections/content-engine/content-engine-page-layout";
+import { ContentEngineResultsDashboard } from "@/components/sections/content-engine/results-dashboard";
 import { defaultContentEngineConfig } from "@/lib/content-engine/defaults";
 
 const PAGE_URL = "https://prestyj.com/done-for-you-social-media";
@@ -91,7 +92,10 @@ export default function DoneForYouSocialMediaPage() {
         ]}
       />
       <FAQJsonLd faqs={defaultContentEngineConfig.faq.faqs} />
-      <ContentEnginePageLayout config={defaultContentEngineConfig} />
+      <ContentEnginePageLayout
+        config={defaultContentEngineConfig}
+        afterProofBar={<ContentEngineResultsDashboard />}
+      />
     </>
   );
 }
