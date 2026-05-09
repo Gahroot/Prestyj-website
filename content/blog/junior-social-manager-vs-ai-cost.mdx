@@ -1,0 +1,429 @@
+---
+title: "Junior Social Media Manager vs AI Content Engine: Full TCO and Cost-Per-Post Breakdown (2026)"
+description: "Honest, fully-loaded TCO of a junior social media manager — salary, benefits, tools, training, churn, replacement cost — compared line-by-line to an AI content engine. Cost-per-post math at 30, 90, 300, and 1,500 posts/month."
+date: "2026-05-09"
+author: "Prestyj Team"
+keywords:
+  - junior social media manager cost
+  - social media manager salary 2026
+  - AI content engine vs social media manager
+  - cost per post social media
+  - social media TCO
+  - done for you social media
+  - AI content department
+  - social media manager total cost of ownership
+image: /images/content-engine/proof-1.webp
+---
+
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import {
+  DollarSign,
+  Users,
+  Wrench,
+  GraduationCap,
+  RefreshCcw,
+  Calculator,
+  TrendingDown,
+  TrendingUp,
+  AlertTriangle,
+  CheckCircle2,
+  Receipt,
+  PiggyBank,
+  Briefcase,
+  Sparkles,
+  Scale,
+  Clock,
+} from "lucide-react";
+
+Hiring a junior social media manager looks cheap on the offer letter. It almost never is.
+
+The published salary is the smallest line in the budget. By the time you've added benefits, payroll taxes, the SaaS stack they need to do the job, the manager hours spent reviewing their work, the ramp period where they're not really productive yet, and the very high probability you'll be hiring their replacement inside 18 months — the real cost is roughly **2.3–3.1x the base salary**.
+
+Meanwhile, an AI content engine — whether you build one in-house or run something like [done-for-you social media](/done-for-you-social-media) — has a fundamentally different cost shape. Mostly fixed. No benefits. No churn. No 90-day ramp. And the marginal cost per additional post trends toward zero as volume scales.
+
+This post is the full TCO breakdown, line by line, with cost-per-post math at four different output volumes. No hand-waving. No "it depends." Real numbers you can drop into a spreadsheet.
+
+<div className="not-prose my-8">
+  <Alert>
+    <Receipt />
+    <AlertTitle>The one-line version</AlertTitle>
+    <AlertDescription>
+      A junior social media manager shipping 30 posts/month costs ~$5.42 per post fully-loaded. An AI content engine shipping 1,500 posts/month costs ~$2.67 per post — and the gap widens with volume, not narrows.
+    </AlertDescription>
+  </Alert>
+</div>
+
+---
+
+## TL;DR
+
+- **Junior social media manager fully-loaded cost:** $97,500–$135,000/year (on a $48K–$58K base salary)
+- **The "salary multiplier" is real:** 2.3–3.1x base salary by the time you add benefits, taxes, tools, training, management overhead, and amortized churn cost
+- **Realistic output of one junior:** 25–40 finished posts/month across 2–3 platforms, with 5–10 hours/week of senior review
+- **Cost-per-post for a junior at 30 posts/month:** ~$270–$375/post fully-loaded
+- **AI content engine cost (in-house build):** $4,800–$9,500/month all-in for 300+ posts/month
+- **AI content engine cost (managed, like the Prestyj [AI content department](/ai-content-department)):** $4,000–$12,000/month for 300–1,500+ posts/month
+- **Cost-per-post at 1,500 posts/month with managed AI:** **$2.67–$8.00**
+- **Break-even:** A managed AI engine is cheaper than one junior at *any* output volume above ~25 posts/month, and the cost-per-post advantage is 30–100x at scale
+
+---
+
+## Key Takeaways
+
+- The published salary is roughly **40–45%** of true loaded cost — the rest is benefits, taxes, tools, training, management overhead, and the amortized cost of replacing them
+- **Average tenure for a junior social media manager is 14–22 months**, which means most companies pay full ramp cost twice every three years
+- A junior shipping 30 posts/month can't actually multi-platform fan-out at scale; the realistic ceiling is 2–3 platforms before quality collapses
+- AI content engines are **mostly fixed cost** — adding the 31st post or the 301st post costs nearly the same as the first
+- The right comparison isn't "AI vs. human" — it's "AI engine + 1 senior strategist" vs. "1 junior + 1 senior reviewing them"
+- At 300+ posts/month, an AI engine is 30–100x cheaper per post than a junior manager, even when you include the senior strategist who supervises it
+
+---
+
+## What Counts as a "Junior Social Media Manager" in 2026
+
+Before the math, a definition. We're talking about an in-house, full-time, W-2 employee with:
+
+- 1–3 years of experience
+- Owns content calendar, posting, basic graphic design, light copywriting, community management
+- Reports to a marketing manager or director
+- Expected to ship 25–40 posts/month across 2–3 platforms (Instagram, LinkedIn, TikTok being the typical mix)
+- Not expected to lead strategy, run paid media, or own performance attribution
+
+This is the role most home-services and real-estate operators are actually hiring — not a senior strategist, not an agency, not a freelancer. The "I just need someone to run my social" hire.
+
+---
+
+## Line-by-Line TCO of a Junior Social Media Manager
+
+Six cost categories. Each one is a line on the budget that founders consistently underestimate or forget entirely.
+
+<div className="not-prose my-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <DollarSign className="size-5 text-primary" />
+        <Badge variant="outline">Cost 1</Badge>
+      </div>
+      <CardTitle className="mt-2">Base Salary</CardTitle>
+      <CardDescription>The number on the offer letter.</CardDescription>
+    </CardHeader>
+    <CardContent className="text-sm text-muted-foreground">
+      $48,000–$58,000/year median in US metros for 1–3 years of experience. Higher in NYC/SF/LA. Lower in tier-3 markets.
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <Users className="size-5 text-primary" />
+        <Badge variant="outline">Cost 2</Badge>
+      </div>
+      <CardTitle className="mt-2">Benefits & Taxes</CardTitle>
+      <CardDescription>Health, dental, 401k match, FICA, FUTA, SUTA.</CardDescription>
+    </CardHeader>
+    <CardContent className="text-sm text-muted-foreground">
+      Roughly 28–35% of base. Health insurance alone runs $7,000–$13,000/year per employee. Payroll taxes add ~7.65%.
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <Wrench className="size-5 text-primary" />
+        <Badge variant="outline">Cost 3</Badge>
+      </div>
+      <CardTitle className="mt-2">Tool Stack</CardTitle>
+      <CardDescription>Scheduler, design, analytics, AI assists.</CardDescription>
+    </CardHeader>
+    <CardContent className="text-sm text-muted-foreground">
+      Hootsuite/Later/Buffer + Canva Pro + Adobe CC + analytics + ChatGPT/Claude + stock = $3,200–$5,400/year per seat.
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <GraduationCap className="size-5 text-primary" />
+        <Badge variant="outline">Cost 4</Badge>
+      </div>
+      <CardTitle className="mt-2">Onboarding & Training</CardTitle>
+      <CardDescription>Ramp time, courses, conferences, brand bibles.</CardDescription>
+    </CardHeader>
+    <CardContent className="text-sm text-muted-foreground">
+      90 days of partial productivity ($6,000–$10,000 in lost output) + $1,500–$3,000 in formal training annually.
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <Briefcase className="size-5 text-primary" />
+        <Badge variant="outline">Cost 5</Badge>
+      </div>
+      <CardTitle className="mt-2">Management Overhead</CardTitle>
+      <CardDescription>The senior person reviewing their work.</CardDescription>
+    </CardHeader>
+    <CardContent className="text-sm text-muted-foreground">
+      5–10 hours/week of marketing manager time at $75–$120 fully-loaded = $19,500–$62,400/year of supervision cost.
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <RefreshCcw className="size-5 text-primary" />
+        <Badge variant="outline">Cost 6</Badge>
+      </div>
+      <CardTitle className="mt-2">Churn & Replacement</CardTitle>
+      <CardDescription>Average tenure: 14–22 months. Then you pay again.</CardDescription>
+    </CardHeader>
+    <CardContent className="text-sm text-muted-foreground">
+      Recruiting, severance, lost institutional knowledge, re-ramp = $12,000–$25,000 per turnover event, amortized annually.
+    </CardContent>
+  </Card>
+</div>
+
+### Annual Cost Breakdown
+
+| Cost Category | Low Estimate | Mid Estimate | High Estimate |
+|---|---|---|---|
+| **Base salary** | $48,000 | $53,000 | $58,000 |
+| **Benefits (health, dental, 401k match)** | $9,000 | $11,500 | $14,000 |
+| **Payroll taxes (FICA, FUTA, SUTA, workers' comp)** | $4,500 | $5,200 | $6,200 |
+| **Tool stack (scheduler, Canva, Adobe, AI, stock)** | $3,200 | $4,300 | $5,400 |
+| **Equipment (laptop, phone allowance, peripherals)** | $1,200 | $2,000 | $3,000 |
+| **Office / remote stipend** | $0 | $1,800 | $4,800 |
+| **Onboarding / ramp loss (90 days partial productivity)** | $6,000 | $8,000 | $10,000 |
+| **Annual training & conferences** | $1,500 | $2,200 | $3,000 |
+| **Management overhead (5–10 hrs/wk senior review)** | $19,500 | $36,000 | $62,400 |
+| **Churn replacement, amortized (tenure: 14–22 months)** | $4,500 | $8,500 | $14,000 |
+| **TOTAL fully-loaded annual cost** | **$97,400** | **$132,500** | **$180,800** |
+| **As multiple of base salary** | **2.03x** | **2.50x** | **3.12x** |
+
+That last row is the punchline. **You are not paying $53,000 for a junior social media manager. You are paying somewhere between $97,000 and $180,000.**
+
+<div className="not-prose my-8">
+  <Alert>
+    <AlertTriangle />
+    <AlertTitle>The line founders forget the most</AlertTitle>
+    <AlertDescription>
+      Management overhead. A junior who isn't being reviewed by a senior is a brand liability. The 5–10 hours/week of senior time is real cost — and at $75–$120/hour fully-loaded for a marketing manager, it's often the *biggest* line after base salary.
+    </AlertDescription>
+  </Alert>
+</div>
+
+---
+
+## What Does One Junior Actually Produce?
+
+This is the part most cost comparisons skip. Cost without output is meaningless.
+
+A realistic monthly output for a junior social media manager — from someone who's actually managed this seat — looks like:
+
+- **25–40 finished, scheduled, published posts** across 2–3 platforms
+- **3–6 hours/week of community management** (replies, DMs, comment moderation)
+- **1–2 monthly performance reports** of varying quality
+- **Some basic graphic design** in Canva (not custom branded illustrations or motion)
+- **Light copywriting** (caption variants, basic hooks — typically not high-conversion-tested)
+
+That's 25–40 posts/month. Call it 30 as a fair midpoint. **Multiply across the 7 surfaces a serious operator should be on (Instagram Reels + Grid, TikTok, YouTube Shorts, Facebook, X, Threads, LinkedIn) and you're at 4–5 posts per surface per month.** Below the algorithmic threshold for most platforms in 2026, where the recommender wants 1+ posts/day to trust the account.
+
+To actually run 7-platform fan-out at 50+ posts/day, you're looking at a team of 5–7 juniors plus a senior to coordinate them. That math gets ugly fast — we cover it in [why 30 posts/month isn't enough](/blog/why-30-posts-month-isnt-enough).
+
+### Cost Per Post — Junior Manager
+
+| Output Tier | Posts/Month | Annual Cost | Cost Per Post |
+|---|---|---|---|
+| **Underperforming junior** | 20 | $132,500 | **$552/post** |
+| **Average junior** | 30 | $132,500 | **$368/post** |
+| **High-output junior** | 40 | $132,500 | **$276/post** |
+| **Junior team of 3 (90 posts/mo)** | 90 | $397,500 | **$368/post** |
+
+Cost-per-post for a junior is **roughly flat** because the bottleneck is human hours, not fixed cost. To double output, you double the team. To 10x output, you 10x the team. There is no leverage.
+
+---
+
+## The AI Content Engine: A Fundamentally Different Cost Shape
+
+An AI content engine has nothing in common with a junior on the cost-shape side. It's mostly fixed cost. It scales linearly in volume but sub-linearly in dollars. There are no benefits, no churn, no payroll taxes, no ramp.
+
+There are two flavors:
+
+1. **Build it in-house** — assemble the stack yourself, hire one senior to run it
+2. **Buy a managed engine** — pay a vendor like Prestyj's [AI content department](/ai-content-department) to operate it for you
+
+Both produce dramatically lower cost-per-post than human labor, but the cost shapes differ slightly.
+
+### In-House AI Content Engine — Annual TCO
+
+| Cost Category | Low | Mid | High |
+|---|---|---|---|
+| **AI tooling (Claude, GPT, video AI, image AI, transcription)** | $4,800 | $9,600 | $18,000 |
+| **Scheduler / multi-account distributor** | $1,200 | $2,400 | $4,800 |
+| **Editing software (Descript, CapCut Pro, Adobe CC)** | $1,800 | $3,200 | $5,400 |
+| **Stock / B-roll / music licensing** | $1,200 | $2,400 | $4,800 |
+| **Compute / storage / API overage** | $1,800 | $4,800 | $9,600 |
+| **Senior strategist (1 FTE running the engine, fully loaded)** | $48,000 | $72,000 | $96,000 |
+| **TOTAL fully-loaded annual cost** | **$58,800** | **$94,400** | **$138,600** |
+
+Note the senior strategist line. An AI engine without human oversight produces brand-damaging slop — that's not a controversial claim, it's table stakes. But **one senior can supervise the output of an engine producing 300–1,500+ posts/month**, which is something no team of juniors can match at any cost.
+
+### Managed AI Content Engine — Monthly Pricing
+
+If you don't want to build the engine yourself, the cost looks even better because the vendor amortizes the tooling and senior strategists across many clients.
+
+| Tier | Monthly Cost | Posts/Month | Cost Per Post |
+|---|---|---|---|
+| **Starter** | $4,000 | 300 | **$13.33/post** |
+| **Growth** | $7,500 | 750 | **$10.00/post** |
+| **Scale** | $12,000 | 1,500 | **$8.00/post** |
+| **Swarm (multi-account)** | $18,000 | 4,500 | **$4.00/post** |
+
+That's the math you can't get anywhere else: at 4,500 posts/month across a multi-account swarm, you're at **$4 per finished, scheduled, on-brand post.** A junior at the same volume would cost roughly $400 per post — a 100x gap.
+
+---
+
+## Side-By-Side: Junior Manager vs AI Content Engine
+
+<div className="not-prose my-8 grid gap-6 md:grid-cols-2">
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <Briefcase className="size-5 text-amber-500" />
+        <CardTitle>Junior Social Media Manager</CardTitle>
+      </div>
+      <CardDescription>1 FTE, fully loaded, 30 posts/month</CardDescription>
+    </CardHeader>
+    <CardContent className="space-y-3 text-sm text-muted-foreground">
+      <div className="flex gap-2"><TrendingUp className="size-4 text-amber-500 mt-0.5 shrink-0" /> $132,500/year all-in</div>
+      <div className="flex gap-2"><TrendingUp className="size-4 text-amber-500 mt-0.5 shrink-0" /> ~$368/post at typical output</div>
+      <div className="flex gap-2"><TrendingUp className="size-4 text-amber-500 mt-0.5 shrink-0" /> 2–3 platform ceiling before quality drops</div>
+      <div className="flex gap-2"><TrendingUp className="size-4 text-amber-500 mt-0.5 shrink-0" /> Linear scaling — 10x output = 10x cost</div>
+      <div className="flex gap-2"><TrendingUp className="size-4 text-amber-500 mt-0.5 shrink-0" /> 14–22 month average tenure (re-hire risk)</div>
+      <div className="flex gap-2"><TrendingUp className="size-4 text-amber-500 mt-0.5 shrink-0" /> 90-day ramp before useful output</div>
+    </CardContent>
+  </Card>
+  <Card>
+    <CardHeader>
+      <div className="flex items-center gap-2">
+        <Sparkles className="size-5 text-emerald-500" />
+        <CardTitle>AI Content Engine (managed)</CardTitle>
+      </div>
+      <CardDescription>Vendor-run, 300–1,500 posts/month</CardDescription>
+    </CardHeader>
+    <CardContent className="space-y-3 text-sm text-muted-foreground">
+      <div className="flex gap-2"><TrendingDown className="size-4 text-emerald-500 mt-0.5 shrink-0" /> $48,000–$144,000/year all-in</div>
+      <div className="flex gap-2"><TrendingDown className="size-4 text-emerald-500 mt-0.5 shrink-0" /> $4–$13/post depending on tier</div>
+      <div className="flex gap-2"><TrendingDown className="size-4 text-emerald-500 mt-0.5 shrink-0" /> 7+ platforms with native fan-out</div>
+      <div className="flex gap-2"><TrendingDown className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Sub-linear scaling — 10x output ≈ 2–3x cost</div>
+      <div className="flex gap-2"><TrendingDown className="size-4 text-emerald-500 mt-0.5 shrink-0" /> No churn, no benefits, no payroll taxes</div>
+      <div className="flex gap-2"><TrendingDown className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Live in 24–72 hours from kickoff</div>
+    </CardContent>
+  </Card>
+</div>
+
+### Cost-Per-Post At Every Volume Level
+
+This is the table that ends the debate. Same monthly post output, four different staffing models.
+
+| Posts/Month | Junior Manager(s) | In-House AI Engine | Managed AI Engine |
+|---|---|---|---|
+| **30 posts** | $368/post | $262/post | $133/post |
+| **90 posts** | $368/post (3 juniors) | $87/post | $44/post |
+| **300 posts** | $368/post (10 juniors) | $26/post | **$13/post** |
+| **1,500 posts** | $368/post (50 juniors) | $5.20/post | **$8/post** |
+| **4,500 posts** | not feasible | not feasible alone | **$4/post** |
+
+The pattern is unmistakable. **Junior cost-per-post is flat. AI engine cost-per-post collapses with volume.** At 300 posts/month — what an algorithmically serious operator actually needs — managed AI is roughly **28x cheaper per post.**
+
+<div className="not-prose my-8">
+  <Alert>
+    <Calculator />
+    <AlertTitle>The math that decides this for most teams</AlertTitle>
+    <AlertDescription>
+      One senior strategist supervising an AI engine ships more on-brand, on-platform, on-cadence content than any team of 5 juniors can — at roughly the same total cost. The choice is not "AI vs. human." It's "1 senior + AI engine" vs. "1 senior + 5 juniors burning out and turning over."
+    </AlertDescription>
+  </Alert>
+</div>
+
+---
+
+## Where the Junior Manager Still Wins
+
+This isn't a hit piece on junior hires. There are real situations where a junior is the right answer.
+
+- **Hyper-local community management.** Replying to DMs, showing up at local events, building 1:1 relationships with customers. AI doesn't do this credibly.
+- **Sub-30-posts/month operations.** If you're shipping 4 posts a week to a single platform, you don't need an engine. You need a part-timer.
+- **Brands with extremely sensitive voice / regulatory exposure.** Healthcare, legal, financial services where every claim must be lawyer-reviewed. An engine still works here, but the human-in-the-loop ratio approaches 1:1 and the economics get worse.
+- **In-the-field capture is the bottleneck.** If you can't get the camera to the job site, no engine on earth will save you. A junior who'll show up and shoot is worth more than any AI subscription.
+
+The honest framing: **a junior is a tactical hire for a small surface area. An AI engine is an infrastructure decision for an operator who wants algorithmic relevance across 5+ platforms.**
+
+---
+
+## The Hidden Cost Most Founders Never Count
+
+There's one cost we left out of the TCO table because it's hard to quantify but real: **the strategic cost of being below the algorithmic threshold.**
+
+A junior shipping 30 posts/month across 3 platforms is producing roughly 10 posts per surface per month — **one every three days.** The recommender on Instagram, TikTok, and LinkedIn now expects 1+ posts/day to consider an account active. Below that cadence, your reach gets throttled, your follower growth flatlines, and your CAC from organic effectively goes to infinity.
+
+You're paying $132,500/year for a result that isn't algorithmically viable in 2026. The cost isn't $368/post. It's $132,500 for content that doesn't compound.
+
+An AI engine at 300+ posts/month on the same surfaces gets you above threshold on all of them. The reach compounds. The cost-per-impression collapses. **The thing you're actually buying isn't posts — it's the algorithmic permission to grow.**
+
+---
+
+## How To Actually Calculate Your Number
+
+Skip the generic "$50K junior" math. Run this for your real situation:
+
+1. **Take the base salary** for a junior in your metro (Glassdoor, Levels.fyi, Built In, Payscale)
+2. **Multiply by 1.35** for benefits + taxes (slightly higher in CA/NY)
+3. **Add $4,500** for tools + equipment
+4. **Add the senior review cost** — be honest about how many hours your marketing director will spend reviewing this person's work × their fully-loaded hourly rate
+5. **Add $8,500** for amortized churn + ramp (assume 18-month tenure)
+6. **Divide by realistic monthly output** (30 posts/month is a fair starting point)
+
+You'll land somewhere between $250 and $500 per post for an in-house junior in 2026. That's the number to compare against an engine quote.
+
+---
+
+## Frequently Asked Questions
+
+### What's a fair salary for a junior social media manager in 2026?
+
+National median for 1–3 years of experience is $48,000–$58,000 base. NYC, SF, LA, Boston, Seattle add $8,000–$15,000. Tier-3 markets and remote-first companies often land $42,000–$50,000. Hourly contractors (1099) run $25–$55/hour.
+
+### Why is the management overhead line so big?
+
+Because a junior who isn't reviewed produces off-brand, off-voice, sometimes legally risky content. The realistic review burden is 5–10 hours/week of senior time. At a fully-loaded marketing manager rate of $75–$120/hour, that's $19,500–$62,400/year of supervision cost — frequently bigger than the junior's salary line by itself.
+
+### Doesn't an AI content engine also need senior oversight?
+
+Yes — and we baked it into both tables. The difference is that **one senior can supervise an engine producing 300–1,500 posts/month**, while one senior supervising juniors is bottlenecked at 1–2 juniors before review quality collapses. The leverage ratio is the entire game.
+
+### What if I just hire a freelancer or agency instead of a junior?
+
+A freelancer at $1,500–$3,500/month gets you 12–30 posts/month with zero benefits or management overhead. Better cost shape than a junior, worse than an engine. A traditional agency at $3,000–$8,000/month typically caps at 30 posts/month per platform — fine for low-volume operations, uncompetitive at scale. We break the agency math down further in the [done-for-you social media](/done-for-you-social-media) page.
+
+### How does an AI engine produce 1,500 posts/month without becoming slop?
+
+Atomization. One pillar shoot (60–90 minutes of long-form capture) becomes 50–150 atomic posts, each shipped in 5–10 hook/caption variants. Two pillars per week per account stack covers a 1,500-post month comfortably. The full pipeline architecture is in [how we ship 50+ posts a day](/blog/how-we-ship-50-posts-a-day).
+
+### When is a junior actually the right hire instead of an engine?
+
+Three scenarios: (1) total output is under 30 posts/month and you don't plan to scale it, (2) you need a human physically present for community management, in-store events, or local relationships, or (3) your industry has regulatory constraints (healthcare, legal, financial) so tight that human review is required at the per-post level.
+
+### What's the break-even point between a junior and an AI engine?
+
+A managed AI engine starts at roughly $4,000/month for ~300 posts. A junior at $11,000/month fully-loaded ships ~30 posts. The engine wins on cost-per-post at *any* volume above ~25 posts/month, and the gap is 28x at 300 posts/month and 100x at 4,500 posts/month.
+
+---
+
+## What To Do With This Number
+
+If you've already got a junior on the roster and they're hitting their numbers, this isn't a "fire them" post. Most teams that win in 2026 will run **a senior strategist + an AI engine + one human for community/IRL capture** — and that "human for community" can absolutely be the junior you already have, redirected from posting to relationship work where they actually create more value.
+
+If you're about to hire your first social media manager: do the math first. The fully-loaded junior is real money. An engine — built or bought — produces 10–50x the post volume at a similar or lower total cost.
+
+If you want the engine but don't want to build it, the [AI content department](/ai-content-department) at Prestyj is exactly that: a senior strategist + the full atomization pipeline + multi-account distribution + daily review loop, run for you. If you also need someone to run the capture (we show up, we shoot, we leave with files), that's [done-for-you social media](/done-for-you-social-media).
+
+The cheapest cost-per-post is never the cheapest hire. It's the right architecture. The math above should make it obvious which one you're actually choosing.
