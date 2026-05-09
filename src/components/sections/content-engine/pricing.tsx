@@ -84,7 +84,11 @@ export function ContentEnginePricing({
                       asChild
                     >
                       <TrackedLink
-                        href="/book-demo"
+                        href={
+                          isPro
+                            ? "/done-for-you-social-media/intake"
+                            : "/book-demo"
+                        }
                         eventName="ContentEngineLeadIntent"
                         eventLabel={`pricing-${tier.id}`}
                       >

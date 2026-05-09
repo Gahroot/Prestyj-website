@@ -1,15 +1,43 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { Suspense, useState, useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { CalcomInlineEmbed } from "@/components/booking/cal-embed";
 import { QualificationForm, type QualificationData } from "@/components/booking/qualification-form";
-import { CheckCircle, Clock, Zap, User, Building2, Calendar } from "lucide-react";
+import { CheckCircle, Clock, Zap, User, Building2, Calendar, Sparkles } from "lucide-react";
 import BorderGlow from "@/components/ui/border-glow";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+
+function IntakeSuccessBanner() {
+  const searchParams = useSearchParams();
+  if (searchParams?.get("intake") !== "success") return null;
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="mb-8 flex items-start gap-3 rounded-xl border border-success/30 bg-success/5 p-4 sm:p-5"
+    >
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-success/15">
+        <Sparkles className="h-5 w-5 text-success" />
+      </div>
+      <div>
+        <p className="font-heading text-base font-bold text-foreground sm:text-lg">
+          Brand kit received — thank you!
+        </p>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Our team is already prepping your content swarm. Pick a time below
+          for your strategy call so we can walk you through the plan and get
+          you live in 24 hours.
+        </p>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function BookDemoPage() {
   const calendarRef = useRef<HTMLDivElement>(null);
@@ -52,6 +80,9 @@ export default function BookDemoPage() {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Suspense fallback={null}>
+            <IntakeSuccessBanner />
+          </Suspense>
           <AnimatePresence mode="wait">
             {!showCalendar ? (
               <motion.div

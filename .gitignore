@@ -50,3 +50,6 @@ next-env.d.ts
 
 # media master assets
 media-master/
+
+# Local intake submissions
+.data/
