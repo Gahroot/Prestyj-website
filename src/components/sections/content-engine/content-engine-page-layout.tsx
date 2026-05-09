@@ -12,6 +12,7 @@ import { ContentEngineHowItWorks } from "@/components/sections/content-engine/ho
 import { ContentEnginePricing } from "@/components/sections/content-engine/pricing";
 import { ContentEngineComparison } from "@/components/sections/content-engine/comparison";
 import { ContentEngineFAQ } from "@/components/sections/content-engine/faq";
+import { ContentEngineAvatarGrid } from "@/components/sections/content-engine/avatar-grid";
 import { ContentEngineCTA } from "@/components/sections/content-engine/cta";
 
 import type { ContentEnginePageConfig } from "@/lib/content-engine/page-config";
@@ -38,6 +39,7 @@ export function ContentEnginePageLayout({
         <ContentEngineHowItWorks config={config.howItWorks} />
         <ContentEnginePricing config={config.pricing} />
         <ContentEngineComparison config={config.comparison} />
+        <ContentEngineAvatarGrid />
         <ContentEngineFAQ config={config.faq} />
         <ContentEngineCTA config={config.cta} />
       </main>

@@ -31,6 +31,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { BestForPageContent } from "@/lib/best-for";
+import { isSocialAvatarSlug } from "@/lib/content-engine";
+import { CanonicalServiceLink } from "@/components/sections/best-for/canonical-service-link";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Clock,
@@ -58,6 +60,8 @@ interface BestForPageClientProps {
 }
 
 export function BestForPageClient({ bestFor }: BestForPageClientProps) {
+  const isSocialAvatar = isSocialAvatarSlug(bestFor.slug);
+
   return (
     <>
       {/* Breadcrumb */}
@@ -108,6 +112,12 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
           </div>
         </div>
       </section>
+
+      {isSocialAvatar && (
+        <CanonicalServiceLink
+          nicheLabel={bestFor.niche.shortName || bestFor.niche.name}
+        />
+      )}
 
       {/* Why Best For Section */}
       <section className="py-20">
