@@ -39,7 +39,14 @@ export function getAllUrls(): string[] {
     `${BASE_URL}/lead-magnet`,
     `${BASE_URL}/ai-call-handling-calculator`,
     `${BASE_URL}/team-commission-calculator`,
-    `${BASE_URL}/platform`
+    `${BASE_URL}/platform`,
+    // Content engine variants
+    `${BASE_URL}/done-for-you-social-media`,
+    `${BASE_URL}/1000-posts-per-month`,
+    `${BASE_URL}/ai-content-department`,
+    `${BASE_URL}/social-media-on-autopilot`,
+    `${BASE_URL}/ai-social-media-management`,
+    `${BASE_URL}/managed-social-media-service`
   );
 
   // Blog posts - dynamically from content source
@@ -88,6 +95,24 @@ export function getAllUrls(): string[] {
     "/compare/ai-consultant-vs-freelancer",
     "/compare/ai-consultant-vs-big4-consulting",
     "/compare/ai-consultant-roi-calculator",
+    // Social media / content competitors
+    "/compare/alanna-ai-vs-prestyj",
+    "/compare/follow-up-boss-vs-prestyj",
+    "/compare/lofty-vs-prestyj",
+    "/compare/prestyj-vs-adcreative-ai",
+    "/compare/prestyj-vs-buffer",
+    "/compare/prestyj-vs-canva",
+    "/compare/prestyj-vs-capcut",
+    "/compare/prestyj-vs-fiverr-social-media",
+    "/compare/prestyj-vs-hootsuite",
+    "/compare/prestyj-vs-invideo",
+    "/compare/prestyj-vs-later",
+    "/compare/prestyj-vs-opus-clip",
+    "/compare/prestyj-vs-social-media-agency",
+    "/compare/prestyj-vs-sprout-social",
+    "/compare/prestyj-vs-synthesia",
+    "/compare/resimpli-vs-prestyj",
+    "/compare/structurely-vs-prestyj",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
