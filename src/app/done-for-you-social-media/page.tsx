@@ -6,6 +6,7 @@ import { FAQJsonLd } from "@/components/seo/json-ld";
 import { ContentEnginePageLayout } from "@/components/sections/content-engine/content-engine-page-layout";
 import { ContentEngineResultsDashboard } from "@/components/sections/content-engine/results-dashboard";
 import { defaultContentEngineConfig } from "@/lib/content-engine/defaults";
+import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 
 const PAGE_URL = "https://prestyj.com/done-for-you-social-media";
 
@@ -96,6 +97,7 @@ export default function DoneForYouSocialMediaPage() {
         config={defaultContentEngineConfig}
         afterProofBar={<ContentEngineResultsDashboard />}
       />
+      <ExitIntentPopup />
     </>
   );
 }

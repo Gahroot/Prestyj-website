@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { ContentEnginePageLayout } from "@/components/sections/content-engine/content-engine-page-layout";
 import { replaceAHireConfig } from "@/lib/content-engine/replace-a-hire-config";
+import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 
 const PAGE_URL = "https://prestyj.com/ai-content-department";
 
@@ -90,6 +91,7 @@ export default function AIContentDepartmentPage() {
       />
       <FAQJsonLd faqs={replaceAHireConfig.faq.faqs} />
       <ContentEnginePageLayout config={replaceAHireConfig} />
+      <ExitIntentPopup />
     </>
   );
 }

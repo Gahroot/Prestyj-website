@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { ContentEnginePageLayout } from "@/components/sections/content-engine/content-engine-page-layout";
 import { aiSocialMediaManagementConfig } from "@/lib/content-engine/ai-social-media-management-config";
+import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 
 const PAGE_URL = "https://prestyj.com/ai-social-media-management";
 
@@ -91,6 +92,7 @@ export default function AISocialMediaManagementPage() {
       />
       <FAQJsonLd faqs={aiSocialMediaManagementConfig.faq.faqs} />
       <ContentEnginePageLayout config={aiSocialMediaManagementConfig} />
+      <ExitIntentPopup />
     </>
   );
 }

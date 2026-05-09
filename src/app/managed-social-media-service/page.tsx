@@ -5,6 +5,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { ContentEnginePageLayout } from "@/components/sections/content-engine/content-engine-page-layout";
 import { managedSocialMediaServiceConfig } from "@/lib/content-engine/managed-service-config";
+import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 
 const PAGE_URL = "https://prestyj.com/managed-social-media-service";
 
@@ -91,6 +92,7 @@ export default function ManagedSocialMediaServicePage() {
       />
       <FAQJsonLd faqs={managedSocialMediaServiceConfig.faq.faqs} />
       <ContentEnginePageLayout config={managedSocialMediaServiceConfig} />
+      <ExitIntentPopup />
     </>
   );
 }

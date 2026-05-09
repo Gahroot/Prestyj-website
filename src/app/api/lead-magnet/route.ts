@@ -17,8 +17,14 @@ const leadMagnetSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Valid email is required"),
   company: z.string().optional(),
-  magnetType: z.literal("roofing-playbook"),
+  magnetType: z.enum(["roofing-playbook", "qualvol-playbook"]),
 });
+
+// Map magnet types to download URLs
+const MAGNET_DOWNLOAD_URLS: Record<string, string> = {
+  "roofing-playbook": "/content/lead-magnet/roofers-24-7-lead-response-playbook.md",
+  "qualvol-playbook": "/content/lead-magnet/qualvol-content-playbook.md",
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -51,12 +57,12 @@ export async function POST(request: NextRequest) {
 
     if (isLeadMagnet) {
       // Lead magnet form submission
-      const data = validation.data as { name: string; email: string; company?: string };
+      const data = validation.data as { name: string; email: string; company?: string; magnetType: "roofing-playbook" | "qualvol-playbook" };
       leadPayload = {
         first_name: data.name.split(" ")[0], // Use first name only
         email: data.email,
-        notes: `Lead Magnet: roofing-playbook${data.company ? `\nCompany: ${data.company}` : ""}`,
-        source: "lead-magnet-roofing-playbook",
+        notes: `Lead Magnet: ${data.magnetType}${data.company ? `\nCompany: ${data.company}` : ""}`,
+        source: `lead-magnet-${data.magnetType}`,
         trigger_call: false,
         trigger_text: false,
       };
@@ -100,6 +106,14 @@ export async function POST(request: NextRequest) {
 
     const responseData = await response.json();
 
+    // Resolve download URL based on magnet type
+    const magnetType = isLeadMagnet
+      ? (validation.data as { magnetType: string }).magnetType
+      : null;
+    const downloadUrl = isLeadMagnet && magnetType
+      ? MAGNET_DOWNLOAD_URLS[magnetType] ?? MAGNET_DOWNLOAD_URLS["roofing-playbook"]
+      : `/ai-calculator-results`;
+
     // Return success with download URL for lead magnets
     return NextResponse.json({
       success: true,
@@ -107,9 +121,7 @@ export async function POST(request: NextRequest) {
         ? "Playbook sent to your email! Check your inbox."
         : "Lead captured successfully",
       contactId: responseData.contact_id,
-      downloadUrl: isLeadMagnet
-        ? "/content/lead-magnet/roofers-24-7-lead-response-playbook.md"
-        : `/ai-calculator-results`,
+      downloadUrl,
     });
   } catch (error) {
     console.error("Lead magnet submission error:", error);
