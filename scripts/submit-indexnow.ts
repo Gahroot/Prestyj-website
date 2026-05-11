@@ -154,6 +154,28 @@ function getAllUrls(): string[] {
     "/compare/prestyj-vs-synthesia",
     "/compare/resimpli-vs-prestyj",
     "/compare/structurely-vs-prestyj",
+    // Programmatic batch-video-ad matrix
+    "/compare/prestyj-vs-agency-video-for-mortgage-brokers",
+    "/compare/prestyj-vs-agency-video-for-service-business-owners",
+    "/compare/prestyj-vs-ai-avatar-tool-video-for-agency-owners",
+    "/compare/prestyj-vs-ai-avatar-tool-video-for-real-estate-teams",
+    "/compare/prestyj-vs-fiverr-video-for-media-buyers",
+    "/compare/prestyj-vs-fiverr-video-for-plumbing-contractors",
+    "/compare/prestyj-vs-in-house-video-for-cmos",
+    "/compare/prestyj-vs-in-house-video-for-roofing-contractors",
+    "/compare/prestyj-vs-ugc-creator-video-for-coaches",
+    "/compare/prestyj-vs-ugc-creator-video-for-hvac-companies",
+    // Programmatic social-vertical matrix
+    "/compare/prestyj-vs-fiverr-for-creators",
+    "/compare/prestyj-vs-fiverr-for-ecommerce-brands",
+    "/compare/prestyj-vs-in-house-hire-for-cmos",
+    "/compare/prestyj-vs-in-house-hire-for-coaches",
+    "/compare/prestyj-vs-in-house-hire-for-saas-founders",
+    "/compare/prestyj-vs-smma-for-consultants",
+    "/compare/prestyj-vs-smma-for-media-buyers",
+    "/compare/prestyj-vs-smma-for-service-business-owners",
+    "/compare/prestyj-vs-va-plus-templates-for-agency-owners",
+    "/compare/prestyj-vs-va-plus-templates-for-personal-brands",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
