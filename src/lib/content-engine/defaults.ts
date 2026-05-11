@@ -26,25 +26,25 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
       icon: Sparkles,
       text: "Done-For-You Social Media \u00B7 Live in 24 Hours",
     },
-    headline: "One Brand Isn\u2019t Enough Anymore.",
-    headlineAccent: "Run a Content Swarm.",
+    headline: "270\u20132,700 Posts/Month. 7 Platforms.",
+    headlineAccent: "Live in 24 Hours.",
     subhead:
-      "Your brand. Your personal page. Your niche accounts. All on autopilot. From $1,997/mo.",
+      "From $0.74 per post \u2014 vs $166/post at the average agency. Your brand, your personal page, your niche accounts. All on autopilot. From $1,997/mo.",
     subheadAccent: "All on autopilot.",
     ctas: [
       {
-        label: "See Plans",
+        label: "See 50 Posts Shipped in 24h",
         href: "#pricing",
         variant: "default",
         eventName: "ContentEngineLeadIntent",
         eventLabel: "hero-see-plans",
       },
       {
-        label: "Book a Demo",
-        href: "/book-demo",
+        label: "Compare Real Costs",
+        href: "#hidden-cost",
         variant: "outline",
         eventName: "ContentEngineLeadIntent",
-        eventLabel: "hero-book-demo",
+        eventLabel: "hero-hidden-cost",
       },
     ],
     videoSrc: "/videos/dfy-vsl.mp4",
@@ -331,11 +331,32 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
         inHouse: false,
       },
       {
-        feature: "Monthly cost",
-        prestyj: "$2K\u2013$5K",
+        feature: "Monthly cost (all-in)",
+        prestyj: "$1,997\u2013$4,997",
         agency: "$5K\u2013$15K",
         freelancer: "$2K\u2013$8K",
         inHouse: "$8K\u2013$12K loaded",
+      },
+      {
+        feature: "Effective cost per post",
+        prestyj: "$0.74\u2013$7.40",
+        agency: "$83\u2013$500",
+        freelancer: "$50\u2013$400",
+        inHouse: "$66\u2013$200",
+      },
+      {
+        feature: "Setup time",
+        prestyj: "24 hours",
+        agency: "4\u20136 weeks",
+        freelancer: "1\u20133 weeks",
+        inHouse: "6\u201312 weeks to hire + ramp",
+      },
+      {
+        feature: "Cancel anytime",
+        prestyj: true,
+        agency: false,
+        freelancer: "sometimes",
+        inHouse: false,
       },
     ],
   },
@@ -345,9 +366,24 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
     subhead: "If yours isn\u2019t here, ask on the demo call.",
     faqs: [
       {
+        question: "What does this actually cost vs an agency?",
+        answer:
+          "$1,997\u2013$4,997/month, all-in. The average social agency charges $5K\u2013$15K/month for 30\u201360 posts. That\u2019s $166\u2013$500 per post. We\u2019re $0.74\u2013$7.40 per post depending on tier. The cost math isn\u2019t close \u2014 and yes, that includes the AI image generation, multi-platform publishing, and the strategist.",
+      },
+      {
+        question: "What\u2019s NOT included? Be specific.",
+        answer:
+          "No paid media buying or ad spend management. No influencer outreach. No community moderation outside the optional Engagement Layer add-on. No video shoots with talent on payroll \u2014 we use AI avatars, repurposed clips, and your existing assets. No SEO writing or long-form blog. No website work. If your buyer journey needs any of those, we\u2019ll tell you and refer out.",
+      },
+      {
+        question: "How does this compare to Ocoya / Predis.ai / Buffer + a VA?",
+        answer:
+          "Tools schedule. You still have to make the content. We make the content AND post it natively to all 7 platforms with formatting baked in. A VA + Buffer setup runs ~$2K\u2013$4K/month for a fraction of the volume \u2014 and you manage the VA. We\u2019re a department; they\u2019re a stack you have to operate.",
+      },
+      {
         question: "How fast do you actually get this live?",
         answer:
-          "24 hours from when you grant account access. If we miss it, your setup fee is refunded.",
+          "24 hours from when you grant account access. If we miss it, your setup fee is refunded \u2014 in writing. Most clients see their first 30\u201350 posts shipped before the 24-hour mark.",
       },
       {
         question: 'What\u2019s an "account"?',
@@ -397,13 +433,13 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
   },
 
   cta: {
-    headline: "Stop Posting Once a Day. Run the Swarm.",
-    subhead: "Live in 24 hours. Cancel anytime. Talk to us before you renew with your agency.",
-    buttonLabel: "Book Your Demo",
+    headline: "See 50 Posts Shipped In Your First 24 Hours.",
+    subhead: "Live in 24h or setup fee refunded. Cancel anytime. Talk to us before you renew with your agency.",
+    buttonLabel: "Start My Swarm \u2014 Live in 24h",
     buttonHref: "/book-demo",
     eventName: "ContentEngineLeadIntent",
     eventLabel: "final-cta",
-    footnote: "See it running live before you commit.",
+    footnote: "See it running live on our own accounts before you commit.",
     sparkColor: "#7058e3",
   },
 

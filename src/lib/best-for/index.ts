@@ -198,6 +198,51 @@ import { realEstateVideoAdsIllinois } from "./real-estate-video-ads-illinois";
 // SEO-BOT-APPEND-IMPORTS
 import { videoAdsForRealtorsFresno } from "./video-ads-for-realtors-fresno";
 
+// BATCH-MATRIX-IMPORTS-START
+import { batchVideoAdsForCoaches } from "./batch-video-ads-for-coaches";
+import { costPerTestedAdAngleForCoaches } from "./cost-per-tested-ad-angle-for-coaches";
+import { batchVideoAdsForMediaBuyers } from "./batch-video-ads-for-media-buyers";
+import { costPerTestedAdAngleForMediaBuyers } from "./cost-per-tested-ad-angle-for-media-buyers";
+import { batchVideoAdsForCmos } from "./batch-video-ads-for-cmos";
+import { costPerTestedAdAngleForCmos } from "./cost-per-tested-ad-angle-for-cmos";
+import { batchVideoAdsForAgencyOwners } from "./batch-video-ads-for-agency-owners";
+import { costPerTestedAdAngleForAgencyOwners } from "./cost-per-tested-ad-angle-for-agency-owners";
+import { batchVideoAdsForServiceBusinessOwners } from "./batch-video-ads-for-service-business-owners";
+import { costPerTestedAdAngleForServiceBusinessOwners } from "./cost-per-tested-ad-angle-for-service-business-owners";
+import { batchVideoAdsForHvacCompanies } from "./batch-video-ads-for-hvac-companies";
+import { costPerTestedAdAngleForHvacCompanies } from "./cost-per-tested-ad-angle-for-hvac-companies";
+import { batchVideoAdsForPlumbingContractors } from "./batch-video-ads-for-plumbing-contractors";
+import { costPerTestedAdAngleForPlumbingContractors } from "./cost-per-tested-ad-angle-for-plumbing-contractors";
+import { batchVideoAdsForRoofingContractors } from "./batch-video-ads-for-roofing-contractors";
+import { costPerTestedAdAngleForRoofingContractors } from "./cost-per-tested-ad-angle-for-roofing-contractors";
+import { batchVideoAdsForRealEstateTeams } from "./batch-video-ads-for-real-estate-teams";
+import { costPerTestedAdAngleForRealEstateTeams } from "./cost-per-tested-ad-angle-for-real-estate-teams";
+import { batchVideoAdsForMortgageBrokers } from "./batch-video-ads-for-mortgage-brokers";
+import { costPerTestedAdAngleForMortgageBrokers } from "./cost-per-tested-ad-angle-for-mortgage-brokers";
+// SOCIAL-VERTICAL-MATRIX-IMPORTS-START
+import { doneForYouSocialForCoaches } from "./done-for-you-social-for-coaches";
+import { socialVolumeStrategyForCoaches } from "./social-volume-strategy-for-coaches";
+import { doneForYouSocialForMediaBuyers } from "./done-for-you-social-for-media-buyers";
+import { socialVolumeStrategyForMediaBuyers } from "./social-volume-strategy-for-media-buyers";
+import { doneForYouSocialForCmos } from "./done-for-you-social-for-cmos";
+import { socialVolumeStrategyForCmos } from "./social-volume-strategy-for-cmos";
+import { doneForYouSocialForAgencyOwners } from "./done-for-you-social-for-agency-owners";
+import { socialVolumeStrategyForAgencyOwners } from "./social-volume-strategy-for-agency-owners";
+import { doneForYouSocialForServiceBusinessOwners } from "./done-for-you-social-for-service-business-owners";
+import { socialVolumeStrategyForServiceBusinessOwners } from "./social-volume-strategy-for-service-business-owners";
+import { doneForYouSocialForEcommerceBrands } from "./done-for-you-social-for-ecommerce-brands";
+import { socialVolumeStrategyForEcommerceBrands } from "./social-volume-strategy-for-ecommerce-brands";
+import { doneForYouSocialForSaasFounders } from "./done-for-you-social-for-saas-founders";
+import { socialVolumeStrategyForSaasFounders } from "./social-volume-strategy-for-saas-founders";
+import { doneForYouSocialForPersonalBrands } from "./done-for-you-social-for-personal-brands";
+import { socialVolumeStrategyForPersonalBrands } from "./social-volume-strategy-for-personal-brands";
+import { doneForYouSocialForCreators } from "./done-for-you-social-for-creators";
+import { socialVolumeStrategyForCreators } from "./social-volume-strategy-for-creators";
+import { doneForYouSocialForConsultants } from "./done-for-you-social-for-consultants";
+import { socialVolumeStrategyForConsultants } from "./social-volume-strategy-for-consultants";
+  // SOCIAL-VERTICAL-MATRIX-IMPORTS-END
+  // BATCH-MATRIX-IMPORTS-END
+
 export const bestForPages: Record<string, BestForPageContent> = {
   "solo-agents": soloAgents,
   "real-estate-teams": realEstateTeams,
@@ -398,6 +443,51 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "real-estate-video-ads-illinois": realEstateVideoAdsIllinois,
   // SEO-BOT-APPEND-REGISTER
   "video-ads-for-realtors-fresno": videoAdsForRealtorsFresno,
+  // BATCH-MATRIX-REGISTER-START
+  "batch-video-ads-for-coaches": batchVideoAdsForCoaches,
+  "cost-per-tested-ad-angle-for-coaches": costPerTestedAdAngleForCoaches,
+  "batch-video-ads-for-media-buyers": batchVideoAdsForMediaBuyers,
+  "cost-per-tested-ad-angle-for-media-buyers": costPerTestedAdAngleForMediaBuyers,
+  "batch-video-ads-for-cmos": batchVideoAdsForCmos,
+  "cost-per-tested-ad-angle-for-cmos": costPerTestedAdAngleForCmos,
+  "batch-video-ads-for-agency-owners": batchVideoAdsForAgencyOwners,
+  "cost-per-tested-ad-angle-for-agency-owners": costPerTestedAdAngleForAgencyOwners,
+  "batch-video-ads-for-service-business-owners": batchVideoAdsForServiceBusinessOwners,
+  "cost-per-tested-ad-angle-for-service-business-owners": costPerTestedAdAngleForServiceBusinessOwners,
+  "batch-video-ads-for-hvac-companies": batchVideoAdsForHvacCompanies,
+  "cost-per-tested-ad-angle-for-hvac-companies": costPerTestedAdAngleForHvacCompanies,
+  "batch-video-ads-for-plumbing-contractors": batchVideoAdsForPlumbingContractors,
+  "cost-per-tested-ad-angle-for-plumbing-contractors": costPerTestedAdAngleForPlumbingContractors,
+  "batch-video-ads-for-roofing-contractors": batchVideoAdsForRoofingContractors,
+  "cost-per-tested-ad-angle-for-roofing-contractors": costPerTestedAdAngleForRoofingContractors,
+  "batch-video-ads-for-real-estate-teams": batchVideoAdsForRealEstateTeams,
+  "cost-per-tested-ad-angle-for-real-estate-teams": costPerTestedAdAngleForRealEstateTeams,
+  "batch-video-ads-for-mortgage-brokers": batchVideoAdsForMortgageBrokers,
+  "cost-per-tested-ad-angle-for-mortgage-brokers": costPerTestedAdAngleForMortgageBrokers,
+  // SOCIAL-VERTICAL-MATRIX-REGISTER-START
+  "done-for-you-social-for-coaches": doneForYouSocialForCoaches,
+  "social-volume-strategy-for-coaches": socialVolumeStrategyForCoaches,
+  "done-for-you-social-for-media-buyers": doneForYouSocialForMediaBuyers,
+  "social-volume-strategy-for-media-buyers": socialVolumeStrategyForMediaBuyers,
+  "done-for-you-social-for-cmos": doneForYouSocialForCmos,
+  "social-volume-strategy-for-cmos": socialVolumeStrategyForCmos,
+  "done-for-you-social-for-agency-owners": doneForYouSocialForAgencyOwners,
+  "social-volume-strategy-for-agency-owners": socialVolumeStrategyForAgencyOwners,
+  "done-for-you-social-for-service-business-owners": doneForYouSocialForServiceBusinessOwners,
+  "social-volume-strategy-for-service-business-owners": socialVolumeStrategyForServiceBusinessOwners,
+  "done-for-you-social-for-ecommerce-brands": doneForYouSocialForEcommerceBrands,
+  "social-volume-strategy-for-ecommerce-brands": socialVolumeStrategyForEcommerceBrands,
+  "done-for-you-social-for-saas-founders": doneForYouSocialForSaasFounders,
+  "social-volume-strategy-for-saas-founders": socialVolumeStrategyForSaasFounders,
+  "done-for-you-social-for-personal-brands": doneForYouSocialForPersonalBrands,
+  "social-volume-strategy-for-personal-brands": socialVolumeStrategyForPersonalBrands,
+  "done-for-you-social-for-creators": doneForYouSocialForCreators,
+  "social-volume-strategy-for-creators": socialVolumeStrategyForCreators,
+  "done-for-you-social-for-consultants": doneForYouSocialForConsultants,
+  "social-volume-strategy-for-consultants": socialVolumeStrategyForConsultants,
+  // SOCIAL-VERTICAL-MATRIX-REGISTER-END
+  // BATCH-MATRIX-REGISTER-END
+
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

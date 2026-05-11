@@ -23,11 +23,17 @@ import type { ReactNode } from "react";
 interface ContentEnginePageLayoutProps {
   config: ContentEnginePageConfig;
   afterProofBar?: ReactNode;
+  afterSolution?: ReactNode;
+  afterComparison?: ReactNode;
+  afterCta?: ReactNode;
 }
 
 export function ContentEnginePageLayout({
   config,
   afterProofBar,
+  afterSolution,
+  afterComparison,
+  afterCta,
 }: ContentEnginePageLayoutProps) {
   return (
     <>
@@ -39,6 +45,7 @@ export function ContentEnginePageLayout({
         {afterProofBar}
         <ContentEngineProblem config={config.problem} />
         <ContentEngineSolution config={config.solution} />
+        {afterSolution}
         <ContentEngineVideoWalkthrough config={config.videoWalkthrough} />
         <ContentEngineProofScreenshots config={config.proofScreenshots} />
         <ContentEngineCaseStudy />
@@ -47,9 +54,11 @@ export function ContentEnginePageLayout({
         <ContentEngineHowItWorks config={config.howItWorks} />
         <ContentEnginePricing config={config.pricing} />
         <ContentEngineComparison config={config.comparison} />
+        {afterComparison}
         <ContentEngineAvatarGrid />
         <ContentEngineFAQ config={config.faq} />
         <ContentEngineCTA config={config.cta} />
+        {afterCta}
       </main>
       <Footer />
     </>

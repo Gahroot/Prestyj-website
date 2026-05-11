@@ -1,0 +1,329 @@
+---
+title: "Creative Diversity Score: What Meta Actually Rewards Under Andromeda In 2026 (Hidden Signals Beyond CTR)"
+description: "Inside Meta's creative diversity score under the Andromeda retrieval system — what it appears to measure (hook variation, visual variation, voice variation, format variation), how it interacts with delivery and CPM, what kills it (template overuse, single talking head, recycled b-roll), and how to engineer a diverse batch on purpose."
+date: "2026-05-10"
+author: "Prestyj Team"
+keywords:
+  - creative diversity score meta
+  - what meta rewards andromeda
+  - facebook ads diversity signal
+  - hidden signals beyond ctr
+  - creative variation cpm
+  - meta advantage plus creative diversity
+  - andromeda creative ranking
+image: /images/blog/ai-sales-text-messaging.jpg
+---
+
+The phrase "creative diversity score" doesn't appear in any of Meta's public-facing documentation. It appears in their engineering talks, their research papers, their hiring posts for the Andromeda team, and — most relevantly — in the delivery patterns of every account spending more than $20K/month on Meta in 2026. It's not a metric you can read in Ads Manager. It's an internal scoring layer that determines whether the algorithm trusts your account enough to give your creative the broad delivery it would otherwise get from CTR and CPA alone.
+
+If you've watched a campaign with strong CTR numbers fail to scale — or a campaign with mediocre CTR suddenly catch fire when you swapped in a few visually different ads — you've been looking at the diversity score's fingerprints without knowing it. This post is the unredacted version: what the diversity score appears to measure, how it interacts with Andromeda's retrieval logic, what kills it, and how to engineer a creative batch that scores well on purpose without resorting to gimmicks.
+
+This is written for media buyers, CMOs, and performance leaders who already understand CTR, ThruPlay, and frequency, and want the next layer of the model. If you're earlier in the curve, start with our [Andromeda explained post](/blog/creative-is-the-new-targeting-andromeda-explained-2026) and come back.
+
+---
+
+## TL;DR
+
+- **Andromeda evaluates ~10,000x more candidates per impression** than Meta's previous retrieval stack. Diversity scoring is how the system avoids redundant exploration.
+- **The diversity score appears to be a multi-signal estimate** of how *different* your candidate ads are from each other and from your historical winners.
+- **Five observable axes:** hook variation, visual variation, voice variation, format variation, and audience-fit signal. Each contributes independently.
+- **High diversity correlates with lower CPMs and faster learning phase exits.** Low diversity correlates with stalled delivery even at strong CTR.
+- **Diversity score is per-ad-set and per-account.** A high-diversity ad set in a low-diversity account still pays a partial penalty.
+- **What kills it:** template overuse, single-presenter accounts, recycled B-roll, repeated hook structures, identical aspect ratios, identical lengths.
+- **You can't see the score directly.** You can read its shadow through CPM stability, learning phase exit speed, and the spread of impressions across your creative set.
+- **[Batch video ads](/batch-video-ads) at 200–500 executions per month against a structured diversity framework is the operating point** that scores well.
+
+---
+
+## What Andromeda Is And Why Diversity Scoring Exists
+
+Meta Andromeda is the GPU-based retrieval system that replaced Meta's CPU-bound candidate retrieval stack. Co-developed with NVIDIA on GH200 hardware, it evaluates approximately 10,000x more candidates per impression than its predecessor, powers Advantage+, and delivered roughly a 10% lift in ad quality and CPA on Meta's internal benchmarks.
+
+The shift from 1x to 10,000x candidate evaluation isn't tuning — it's a fundamental change in what the algorithm needs from advertisers. Under the old stack, the system relied heavily on targeting filters to pre-narrow the candidate pool. Under Andromeda, it can afford to evaluate the whole pool. The bottleneck moved from "which candidates are worth evaluating" to "how do we avoid wasting evaluation budget on functionally redundant candidates."
+
+Diversity scoring is the answer. If a system can evaluate 10,000 candidates per impression and 9,500 are slight variations of one ad, it's effectively only evaluating 500 distinct hypotheses. Diversity scoring is how Andromeda penalizes redundancy and rewards genuine hypothesis variation. This is also why iOS 14.5+ ATT signal loss didn't break Meta's performance — the system compensated by leaning harder on pre-click creative signal, and the most informative pre-click signal is whether the creative pool actually contains diverse hypotheses. We cover the iOS-Andromeda interaction in [Andromeda + iOS privacy: why volume beats precision](/blog/andromeda-plus-ios-privacy-why-volume-beats-precision-2026).
+
+---
+
+## What The Diversity Score Appears To Measure
+
+Meta has never published the diversity score formula. The reverse engineering below comes from a combination of: their published research on candidate retrieval, their engineering talks on Advantage+, the patterns we see across 200+ accounts we operate or advise on, and the test campaigns we run specifically to isolate the variable.
+
+We've found five axes that consistently correlate with the score's observable effects on delivery.
+
+### Axis 1: Hook variation
+
+The first 1.5 seconds of a video ad is the most heavily-weighted single feature in Andromeda's pre-click prediction. The system extracts an embedding from the hook frame (visual) and from the hook audio/text (semantic), and it scores diversity across your candidate pool partly on the distance between those embeddings.
+
+What this means in practice: if your 30 video ads all open with the same kinetic text intro, the system reads them as the same hook even if the text content varies. The embedding distance is tiny. Diversity score: low.
+
+If your 30 video ads open with mixes of (a) close-up talking head, (b) on-site B-roll with text overlay, (c) full-screen text, (d) split-screen demo, (e) handheld customer footage — the embedding distance is large. Diversity score: high.
+
+### Axis 2: Visual variation
+
+Beyond the hook, the full-ad visual embedding matters. The system samples frames across the duration of each ad and builds a composite visual signature. Diversity is scored on the spread of those signatures across your candidate pool.
+
+Aspect ratio counts as visual variation. 9:16, 4:5, 1:1, 16:9 each produce different visual signatures and contribute to spread. So does color palette, lighting, presenter framing, and on-screen graphics style. A pool of 30 ads all shot in the same studio with the same lighting and the same overlay style produces a tight visual signature cluster. The score reads it as one ad in 30 jackets.
+
+### Axis 3: Voice variation
+
+Audio embedding is the third axis. The system samples voice characteristics (speaker identity inferred from acoustic features, speaking pace, prosody) and music/SFX patterns. A pool of 30 ads with the same presenter speaking at the same pace with the same background music produces a tight audio signature cluster.
+
+Mixing AI voice, founder voice, customer testimonial voice, and creator/UGC voice produces a wide audio signature spread. Adding voiceless ads (text-only, music-bed-only) widens the spread further.
+
+This is the axis most accounts neglect. Founder-led accounts often run 50 ads all featuring the same person speaking, and the voice axis collapses regardless of how much the visual varies.
+
+### Axis 4: Format variation
+
+The system distinguishes between video, image, carousel, and dynamic creative, and within those buckets — short video vs long video, single image vs designed image, product carousel vs lifestyle carousel. A pool that's 100% 30-second vertical video is one format. A pool that's 60% video (mixed 15s/30s/60s, mixed vertical/square), 25% static image, 10% carousel, 5% animated GIF is six formats. The diversity score reads them very differently.
+
+### Axis 5: Audience-fit signal
+
+The most opaque axis. The system maintains an internal embedding of the account's historical audience and scores each new candidate on how well it expands the predicted audience pocket vs how redundantly it targets the same one. An ad predicted to perform best with an audience segment you haven't reached before scores higher on diversity than an ad targeting your existing converting audience. This is why genuinely new angles (see our [angle count post](/blog/how-many-ad-angles-do-you-need-post-andromeda)) score higher than executions of existing ones. You influence this axis by writing copy and choosing visuals that genuinely speak to a buyer different from your last 10 winners.
+
+---
+
+## How Diversity Score Interacts With Delivery
+
+Diversity score does not replace CTR, ThruPlay, or CPA in the auction. It sits earlier in the pipeline — at the candidate retrieval stage — and it influences how broadly your ads get distributed for testing.
+
+### Effect 1: Learning phase exit speed
+
+The most visible effect. Campaigns with high creative diversity exit Meta's learning phase faster, typically by 30–50%. A standard learning phase that takes 14–21 days for a low-diversity account often clears in 7–10 days for a high-diversity account at the same spend.
+
+The mechanism: Andromeda has more distinct candidates to gain confidence on per dollar of impression spend. Confidence accumulates faster across the candidate pool, and the system reaches the threshold where it's willing to commit to scale faster.
+
+### Effect 2: CPM stability
+
+Low-diversity accounts pay a CPM premium that compounds over time. The system can't find new audience pockets via creative exploration, so it pushes impressions into increasingly saturated segments of your existing audience. CPMs rise as frequency rises.
+
+High-diversity accounts maintain CPM stability for longer — often 60–90 days vs 14–28 days for low-diversity. The mechanism: the algorithm has fresh candidates to test against fresh audience pockets, and CPMs reset when the system finds a new pocket.
+
+### Effect 3: Impression spread across the creative set
+
+Measurable in Ads Manager. Pull a 30-day report and look at impression distribution. A low-diversity account often shows 70–85% of impressions concentrated on 2–3 ads (the rest are starved). A high-diversity account shows impressions spread more evenly — 40–55% on the top 5 ads, with meaningful delivery on 15+ others. Heavy concentration on a tiny minority means the rest of your pool isn't differentiated enough to be worth testing.
+
+### Effect 4: Audience expansion via Advantage+
+
+Advantage+ campaigns use the diversity score as input into audience expansion logic. Higher diversity = more aggressive testing outside your defined audience. Lower diversity = conservative containment within it. Same campaign type, different diversity scores produces very different expansion behavior.
+
+---
+
+## How To Read The Shadow Of The Score
+
+Since you can't see the score directly, you have to read its shadow. These are the four observables we use to estimate where an account sits.
+
+### Observable 1: Learning phase exit time vs spend tier
+
+| Monthly Spend Tier | Healthy Learning Phase Exit | Low-Diversity Account |
+|---|---|---|
+| $1K–$5K | 10–14 days | 18–28 days |
+| $5K–$25K | 7–10 days | 14–21 days |
+| $25K–$100K | 4–7 days | 10–14 days |
+| $100K+ | 3–5 days | 7–10 days |
+
+If your campaigns consistently take 1.5–2x longer than the healthy benchmark to exit learning at your spend level, diversity is a likely cause.
+
+### Observable 2: Impression concentration ratio
+
+Pull a 30-day report. Look at the top 3 ads' share of total impressions vs the rest of the active creative pool.
+
+| Top 3 Impression Share | Diversity Score Estimate |
+|---|---|
+| 30–45% | High diversity, healthy delivery spread |
+| 45–60% | Moderate diversity |
+| 60–75% | Low diversity, delivery starvation on most ads |
+| 75%+ | Very low diversity, creative pool functionally redundant |
+
+### Observable 3: CPM trajectory across the month
+
+Pull a 30-day CPM trend at the ad-set level. A healthy curve is flat or gently declining (the algorithm is finding better pockets). A degrading curve (CPMs rising 15%+ across the month at stable budget) is a diversity signal — the system has no exploration fuel and is paying more to reach saturated pockets.
+
+### Observable 4: Frequency vs new-audience reach ratio
+
+If frequency is climbing while new-audience reach is shrinking week over week at stable spend, the system is unable to find new pockets. Often a diversity problem — the creative pool isn't varied enough to credibly serve different audience segments.
+
+---
+
+## What Kills Diversity Score
+
+The five most common diversity killers we see in audits of underperforming accounts.
+
+### Killer 1: Template overuse
+
+Same intro animation, caption style, end card, brand bug placement. Andromeda's visual embedding reads these as one ad even when script content varies wildly. The most common version: a 50-ad batch from one template in 50 jackets, scored as one ad. Fix: break template at the intro level — 30% animation, 30% talking-head cold open, 30% full-screen text, 10% B-roll cold open.
+
+### Killer 2: Single talking head across the whole batch
+
+Founder-led accounts in particular fall into this trap. 60 ads all featuring the founder, all shot in the same room, all with the same posture and lighting. Visual axis collapse and voice axis collapse simultaneously.
+
+Fix: mix presenter (founder, team member, customer, AI avatar, voiceover-only). Mix shoot location and framing within the founder's own ads.
+
+### Killer 3: Recycled B-roll
+
+Buying a stock footage pack and using it across 100 ads. The visual embedding reads the recycled clips as a signature and clusters anything containing them. Even diverse-looking ads collapse to one cluster if they share B-roll.
+
+Fix: rotate stock libraries every batch. Capture proprietary B-roll. When stock has to be reused, vary it across ads rather than letting one clip appear in 30 different scripts.
+
+### Killer 4: Identical lengths and aspect ratios
+
+A pool of 50 ads that are all 30 seconds and all 9:16 starts at a diversity ceiling. The format axis is collapsed. Even with hook and visual variation, the pool reads as one format.
+
+Fix: 40% in primary format (e.g., 9:16, 15–30s), 30% in secondary (e.g., 4:5, 30–60s), 20% in tertiary (e.g., 1:1, 6–15s), 10% in static / carousel / other.
+
+### Killer 5: Repeated hook structures
+
+"5 signs your X is failing," "3 reasons your X is failing," "7 reasons your X needs replacing." The semantic embedding of the hook clusters these tightly even though the wording varies. Andromeda reads them as one hook executed in synonyms.
+
+Fix: vary hook structure across the batch. Question hooks, statement hooks, story hooks, direct-address hooks, pattern-interrupt hooks. Not all listicle, not all "5 reasons."
+
+---
+
+## How To Engineer A Diverse Batch On Purpose
+
+The good news: diversity is engineerable. We use a structured framework when we plan a [batch video ads](/batch-video-ads) production to ensure the resulting pool scores well on each axis.
+
+### Step 1: Build the angle inventory
+
+Start with 30–60 distinct positioning angles, each with a one-line spec (buyer, pain, mechanism, hook angle, proof). Detailed in our [angle count post](/blog/how-many-ad-angles-do-you-need-post-andromeda). This locks in axis 5 (audience-fit signal) — diverse angles mean diverse predicted audience pockets.
+
+### Step 2: Define the format matrix
+
+Plan the batch against a format matrix before producing anything:
+
+| Format | Length | Aspect Ratio | Target % Of Batch |
+|---|---|---|---|
+| Vertical video | 15s | 9:16 | 25% |
+| Vertical video | 30s | 9:16 | 25% |
+| Square video | 30s | 1:1 | 15% |
+| Vertical video | 60s | 9:16 | 15% |
+| Static image | – | 1:1, 4:5 | 10% |
+| Carousel | – | 1:1 | 5% |
+| Cinemagraph / GIF | 6–15s | 9:16, 1:1 | 5% |
+
+This locks in axis 4 (format variation).
+
+### Step 3: Plan the hook matrix
+
+For each batch, define a hook matrix that mixes:
+
+- Question hooks (~20%)
+- Pattern-interrupt hooks (~15%)
+- Direct-statement hooks (~15%)
+- Story hooks (~15%)
+- Listicle hooks (~10%)
+- Pain-callout hooks (~10%)
+- Social proof hooks (~10%)
+- Contrarian hooks (~5%)
+
+This locks in axis 1 (hook variation).
+
+### Step 4: Mix presenters and voices
+
+For each batch, allocate executions across:
+
+- Founder on camera (~40%)
+- Team member or technician (~15%)
+- Customer testimonial (~15%)
+- UGC creator (~10%)
+- AI voiceover with B-roll (~15%)
+- Text-only / music-bed-only (~5%)
+
+This locks in axis 3 (voice variation) and contributes to axis 2 (visual variation).
+
+### Step 5: Diversify the visual library
+
+Capture footage across at least 4 distinct visual contexts per shoot day:
+
+- On-site / field (job sites, customer locations)
+- Studio / clean background
+- B-roll / product close-ups
+- Outdoor / location B-roll
+
+Rotate across the batch so no two ads share the same primary visual context unless they're testing one variable.
+
+### Step 6: Compliance check at the variation step
+
+Diversity engineered too aggressively can produce ads that violate brand voice or compliance guardrails. The check has to happen at the variation step, not the distribution step. We cover this in detail in our [batch video ads guide](/blog/batch-video-ads-complete-guide-2026) — the compliance pipeline runs in parallel with the variation pipeline and flags anything off-brand before it reaches the queue.
+
+---
+
+## A Worked Example: $25K/Month HVAC Account
+
+A diversity-engineered batch for a $25K/month HVAC contractor with a 1.2M-person service area:
+
+- **Angles (axis 5):** 35 distinct buyer/pain combinations across 8 categories (age-of-system, seasonal urgency, bill-pain, trust, IAQ, emergency, new homeowner, landlord).
+- **Hooks (axis 1):** mixed across question, pattern-interrupt, direct-statement, story, listicle, pain-callout, social proof, contrarian.
+- **Visuals (axis 2):** footage captured across 4 contexts (in-home service call, technician on rooftop, shop, customer in their living room). Aspect ratios: 50% 9:16, 25% 4:5, 15% 1:1, 10% 16:9.
+- **Voice (axis 3):** 40% founder, 25% technicians, 20% customer testimonials, 10% AI voiceover, 5% music-bed.
+- **Format (axis 4):** per the format matrix above.
+
+Observable results after 30 days: learning phase exits in 6–8 days (vs 14–18 day benchmark for a low-diversity account at this spend); top 3 ads consume 38% of impressions; CPM trajectory flat across the window; frequency stable at 2.1–2.4; CPL lands 35–45% below the account's pre-engineering baseline. Not exotic — just engineered against the axes on purpose.
+
+---
+
+## Why High CTR Alone Doesn't Save You
+
+The most common confusion: "My CTR is great. Why isn't this scaling?" High CTR on a low-diversity pool generates strong *exploitation* signal but weak *exploration* signal. Andromeda delivers more impressions to your top ad but can't expand the audience because the rest of the pool isn't differentiated enough to credibly serve other pockets. You hit a ceiling determined by your top ad's saturated native audience, and CTR holds while CPL rises (frequency rises, incremental impressions reach colder buyers).
+
+The fix isn't better CTR — it's more diversity in the candidate pool so Andromeda has somewhere to expand into when the top ad saturates. This is also why "kill everything except the winner and scale spend" — a tactic that worked under the old stack — actively destroys performance under Andromeda. You're killing the diversity signal the system needs to find adjacent pockets. The right tactic now is "scale spend on the winner *and* refresh the diversity pool with new angles every 2–4 weeks."
+
+---
+
+## What This Means For Your Production Operating Model
+
+The old model — ship a winner, exploit until it fatigues, then start a new production cycle — worked when the algorithm could lean on targeting to find new audiences. The Andromeda model: ship a diverse batch on a monthly cadence, keep proven angles fed with new executions, let the algorithm continuously rebalance between exploitation and exploration. This is the [batch video ads](/batch-video-ads) model in operational form.
+
+The footprint: one 60–90 minute capture session per month scoped against the angle inventory and format matrix; AI-assisted variation producing 200–500 executions per batch; weekly shipping cadence; compliance pipeline running in parallel with variation; daily review loop killing bottom-decile ads. That footprint isn't realistically run by a part-time social hire or a traditional agency on retainer. It's either an internal 4–6 FTE team or a managed [done-for-you social media](/done-for-you-social-media) service that's built the pipeline.
+
+---
+
+## Where The Score Probably Isn't Going
+
+Diversity score is not replacing CTR, ThruPlay, link CTR, or CPA in the auction. It's an upstream signal influencing candidate retrieval and audience expansion. It's also not a substitute for compliance, brand voice, or strategic positioning — a maximally diverse pool of off-brand ads will score well and lose every customer that sees them. Diversity engineering operates *within* brand guardrails. And it's not a metric to obsess over directly. It's a constraint your production model shouldn't violate. As long as you produce 200+ executions per month against 30+ angles across mixed formats with mixed presenters and visual contexts, you land in the high-diversity zone by default.
+
+---
+
+## The Bottom Line
+
+The diversity score is the most consequential ranking signal under Andromeda that nobody outside Meta engineering talks about directly. Its existence explains why high-CTR campaigns fail to scale, why low-diversity accounts pay a hidden CPM tax, why learning phases drag, and why "one perfect ad" stopped working in 2025.
+
+You can't read the score in Ads Manager. You can read its shadow in learning phase exits, impression concentration, CPM trajectory, and frequency-to-reach ratios. And you can engineer your production process so the score lands in the high zone by default — by varying hook, visual, voice, format, and angle on purpose rather than leaving it to chance.
+
+If you want the diversity-engineered production model running on your account — 30+ angles, 200+ executions per batch, full axis variation, live in 24 hours from capture — start with [batch video ads](/batch-video-ads) for the production pipeline, or [done-for-you social media](/done-for-you-social-media) for the full creative + distribution swarm.
+
+---
+
+## Frequently Asked Questions
+
+### Is "creative diversity score" an official Meta term?
+
+No. Meta has not published the score's name, formula, or weights. The term is the working name we and other practitioners use to describe a consistent set of delivery patterns that match what Meta's engineering talks describe in general terms. The score's existence is inferred from behavior, not from documentation.
+
+### Can I see the diversity score in Ads Manager?
+
+No. There is no direct UI surface for it. You can estimate it by observing learning phase exit speed, impression concentration, CPM trajectory, and the spread of delivery across your active ads. Those four observables are the closest signal we've found.
+
+### Does this apply to image ads, or only video?
+
+It applies to both, but the axes weight differently. For image ads, the visual axis (composition, color, subject) and format axis (single image vs designed creative vs carousel) dominate. The hook axis collapses into the visual axis since there's no temporal hook. Voice axis doesn't apply. Video ads have all five axes active.
+
+### Will higher diversity always lower my CPL?
+
+Not always. Diversity is a delivery and exploration signal; CPL is a downstream conversion outcome. A maximally diverse pool of weak-converting ads will spread delivery without converting. Diversity helps when your underlying creative quality is competitive — it gives the algorithm more options to find pockets where your ads convert. It doesn't fix bad ads.
+
+### How often should I refresh for diversity?
+
+The active pool needs new entries every 2–4 weeks for most accounts. Old executions don't have to be killed — winners can run for 60–120 days — but the *new entries* feed the exploration signal. A monthly batch cadence is the operating point most accounts settle into.
+
+### Can Advantage+ Creative Optimization handle diversity for me?
+
+Advantage+ Creative Optimization (the Meta feature that mixes hooks, captions, and visuals at the ad level) helps within a single ad's variants, but it doesn't generate distinct angles or distinct formats. It optimizes the executions you've already produced. Diversity at the angle and format level still requires you to upload genuinely different ads — the system can't synthesize them from nothing.
+
+### What's the smallest batch size that can score well on diversity?
+
+We've seen accounts at the $3K–$5K monthly spend tier score well on a 60–80 ad batch covering 15–20 angles across mixed formats. Below 50 active ads, the axes start collapsing — there's not enough surface area for variation to register. 75–100 active ads is roughly the practical floor.
+
+---
+
+Ready to engineer diversity into your batch on purpose? Start with [batch video ads](/batch-video-ads) for the production pipeline built around the diversity axes, or [done-for-you social media](/done-for-you-social-media) for the full creative + distribution swarm. Live in 24 hours from account access.

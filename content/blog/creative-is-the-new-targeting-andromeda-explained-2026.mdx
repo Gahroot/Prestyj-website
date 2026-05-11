@@ -1,0 +1,292 @@
+---
+title: "Creative Is The New Targeting: The Andromeda-Era Framework Media Buyers And CMOs Use In 2026 (Hidden Costs Of Old Targeting Playbooks)"
+description: "The deep-dive thesis on why creative diversity replaced audience targeting as the primary performance lever after Meta's Andromeda update — with the retrieval/ranking model explained, the 50/20/30 angle split, the machine-readable creative brief, and a buyer's guide for media buyers, CMOs, and agency owners evaluating creative ops in 2026."
+date: "2026-05-10"
+author: "Prestyj Team"
+keywords:
+  - creative is the new targeting
+  - andromeda framework media buyers
+  - creative diversity score meta
+  - machine readable creative brief
+  - 50 20 30 angle split
+  - agency proposal beyond targeting
+  - cmo creative ops 2026
+  - hidden costs of detailed targeting
+image: /images/blog/ai-sales-follow-up-automation.jpg
+---
+
+import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+If you run media for a living — agency side, in-house, or as a fractional CMO — the most important shift in Meta advertising since the iOS 14.5 signal collapse is happening right now, mostly without a clear name attached to it. The internal pitch deck slide for it would read, in three words: **creative is targeting.**
+
+It is no longer accurate to describe an audience strategy and a creative strategy as separate workstreams. After Andromeda — Meta's GPU-based retrieval system co-developed with NVIDIA, which evaluates roughly 10,000x more ad candidates per impression than the system it replaced — the audience layer has been absorbed into the ranking system. The only inputs the system meaningfully takes from advertisers anymore are **(1) creative,** **(2) very coarse audience constraints (geography, age, exclusions),** and **(3) optimization signal (event quality, conversion volume, value).** Of those three, creative is the only one most advertisers can move materially in any given quarter.
+
+This is the framework post for media buyers, CMOs, and agency owners who need to rebuild the operating model around that reality. The retrieval/ranking primer, the diversity-score model, the 50/20/30 angle split, the machine-readable creative brief — and what an agency proposal that takes Andromeda seriously actually looks like versus the rebadged "we'll test 3 ads a month" decks still dominating the space.
+
+---
+
+## TL;DR
+
+- **Andromeda is a retrieval revolution, not a targeting one.** It changed *how Meta selects which ads to even consider* per impression — opening the candidate pool from ~thousands to ~tens of millions. Your old audience inputs are largely redundant with what Andromeda already infers.
+- **Creative diversity is the new targeting lever** because retrieval can only retrieve creatives that exist in your account. Every distinct hook/format/angle is effectively a "targeting slot" the algorithm can use.
+- **The 50/20/30 angle split** — 50% proven-winner derivatives, 20% adjacent angle exploration, 30% wildcard hypotheses — is the production allocation we use to keep creative supply both diverse and grounded.
+- **The machine-readable creative brief** is structured to feed retrieval signals (hook category, claim type, format, talent, intent stage) rather than the brand-deck-style narrative briefs that still dominate agency workflows.
+- **Old-targeting agency proposals are now a hidden cost.** A retainer that spends 60% of its hours on audience strategy and 40% on creative is allocated against a 2019 reality. The 2026 inversion is roughly 80% creative ops / 20% media management.
+- This is the thesis post of the cluster. For the small-business plain-English version see [What The Meta Andromeda Update Means For Small Business Ads](/blog/what-meta-andromeda-update-means-for-small-business-ads). For the production economics see [batch video ads](/batch-video-ads).
+
+---
+
+## How Retrieval And Ranking Actually Work Under Andromeda
+
+Almost every published "Andromeda explainer" stops at "10,000x more candidates." If you're a media buyer or CMO, you need a more accurate mental model than that, because it changes how you write briefs.
+
+Meta's ad delivery pipeline runs in roughly three phases on every impression:
+
+1. **Candidate generation (retrieval).** Out of every active ad eligible for this user, narrow to a shortlist. This is the phase Andromeda rebuilt — a deep retrieval model running on NVIDIA GH200 superchips, scoring orders of magnitude more candidates than the prior approximate-nearest-neighbor stack.
+2. **Ranking.** For each shortlisted candidate, predict the value to Meta (and the advertiser) of serving it: probability of click, probability of conversion, predicted value, predicted negative feedback, predicted dwell, etc.
+3. **Auction.** Combine predicted value with the advertiser's bid and the user-experience signals to pick a winner.
+
+Critically, **the retrieval phase is where audience matching happens.** It's not a separate "audience matcher" upstream of ranking — it's embedded in the retrieval model's learned representation of "what kind of person responds to what kind of creative." When Meta says "Andromeda evaluates more candidates per impression," what they really mean is "we can match more creatives against more user-feature vectors per impression."
+
+What this implies for advertisers:
+
+- **You don't pre-define the audience anymore. The creative defines who finds it.** A pain-point hook about ice dams will retrieve into a user-pocket of homeowners in cold climates who Andromeda has signals on. A curiosity hook about "the cheapest month to list your house" will retrieve into a different pocket entirely — without you ever defining either.
+- **Each distinct creative is effectively a probe into a different audience slice.** 30 distinct creatives = 30 probes. 5 distinct creatives = 5 probes. The probes themselves are the audience strategy.
+- **Audience targeting controls now mostly act as filters on top of retrieval, not as the retrieval input.** Geography filters out users outside your service area. Age range filters out demographic mismatches. Beyond those, your interest stacks are mostly cosmetic.
+
+If you're briefing creative against a 2019 mental model — "we need ads for the homeowner persona" — you're under-using the system. The 2026 mental model is: **each ad's hook + angle + format + talent combination is its own micro-targeting decision.** The retrieval engine will figure out who it belongs to, if you give it enough variety to work with.
+
+---
+
+## Why Audience Signals Matter Less Than Creative Signals Now
+
+A few years ago, the highest-leverage skill in performance media was audience research — finding the interest stack, the lookalike layer, the layered exclusion that unlocked a 30% CPA drop. That skill has decayed in value, fast.
+
+The reason is structural: every audience signal an advertiser can construct manually is a *coarse approximation* of a feature set Meta already has natively. When you build a lookalike of your purchaser file, you're handing Meta a noisy projection of a customer pattern Meta has already vectorized in dozens of latent dimensions. Andromeda's retrieval model has access to those latent dimensions directly. Your projection adds noise.
+
+This is why broad-audience Advantage+ campaigns have been quietly outperforming carefully-targeted manual campaigns since late 2024. It isn't that "targeting doesn't matter." It's that the targeting has moved inside the model, on signal the model has and you don't. Your job is no longer to describe the audience. Your job is to **give the model the creative variety it needs to discover audience pockets the bid is profitable in.**
+
+Specifically, the signals that *do* still matter from advertisers:
+
+- **Conversion event quality.** Andromeda's ranking phase relies heavily on downstream conversion signal. A clean Conversions API setup with deduped events and accurate values is now worth more than any audience stack.
+- **Event volume.** Below ~50 conversions/week per ad set, ranking is on modeled data with high variance. Above ~50, signal stabilizes. Below 15/week, the ad set is functionally in cold-start indefinitely.
+- **Value signal.** Reporting back actual lead-to-deal value (not just lead-creation) compounds. Andromeda's value-optimization mode meaningfully outperforms volume-optimization for higher-LTV verticals once the value signal is clean.
+- **Creative volume + diversity.** The subject of the rest of this post.
+
+If your agency proposal still spends a full discovery week on persona work and another two on audience architecture, ask what fraction of that work will still be alive in the account in 12 months. The honest answer in 2026 is: very little of it.
+
+---
+
+## The Diversity-Score Model
+
+Meta has not formally documented a "creative diversity score" in advertiser-facing materials, but it surfaces indirectly across delivery insights, Advantage+ Creative recommendations, and internal Meta research papers on retrieval models. The functional shape of it is consistent across what we observe in client accounts.
+
+**Functional definition:** a per-ad-account scalar (or vector) that increases with the distinctness of active creatives across multiple feature dimensions, and that the retrieval system implicitly rewards by making more candidate slots available per impression to accounts that score higher.
+
+The dimensions diversity is measured across, in approximate order of weight:
+
+1. **Visual layout** — talking head vs. screen recording vs. testimonial vs. animation vs. UGC vs. static vs. carousel. A library of 100 talking-head ads is one visual layout, scored as a single point of variety.
+2. **Hook category** — pain-point, curiosity, social proof, contrarian, offer, educational, story, transformation. Each is a different retrieval slot.
+3. **Format & aspect** — 9:16 Reels-native, 4:5 Feed-native, 1:1 square, 16:9, plus carousel, plus single-image. Multiplies retrieval surface coverage.
+4. **Talent / on-screen presence** — same founder on every ad caps diversity. Mixing UGC creators, customer testimonials, voiceover-only, and animated creatives lifts it dramatically.
+5. **Length bucket** — 6s, 15s, 30s, 60s, 90s+. Different lengths route into different placements and dwell-time scoring pockets.
+6. **Claim type / intent stage** — top-of-funnel awareness, mid-funnel education, bottom-funnel offer. Same product, different stage = different score input.
+7. **Audio profile** — voiceover, on-camera dialogue, music-only, silent (caption-driven), trending audio. Audio variety matters for the Reels/TikTok-influenced surfaces.
+8. **Color palette / saturation profile** — softer signal, but visible in larger libraries.
+
+The cluster post [Creative Diversity Score: What Meta Rewards In 2026](/blog/creative-diversity-score-what-meta-rewards-2026) goes deeper on each dimension. The point for a media buyer is that diversity is **not the same as creative volume.** 200 hook variants of one talking-head ad is one diversity point with high cardinality. 30 ads spread across 6 layouts × 5 hook categories × 3 lengths is genuinely diverse and will outperform the 200-variant library at lower production cost.
+
+<div className="not-prose my-8">
+  <Alert>
+    <AlertTitle>Operational consequence</AlertTitle>
+    <AlertDescription>
+      Plan creative ops as a matrix, not a list. Each ad lives in a cell of (layout × hook × format × length × talent × stage). Aim for coverage across cells, not raw count of ads. A media buyer who can read a creative library as a matrix is doing 80% of the new job correctly.
+    </AlertDescription>
+  </Alert>
+</div>
+
+---
+
+## The 50/20/30 Angle Split
+
+The hardest planning question after "how many ads" is "what angles." Without a framework, you over-index on whatever worked last quarter and starve the system of the variety it needs to find the next winner. We use a fixed split on every account, recalibrated monthly:
+
+| Bucket | % Of Production | What It Is | Why It Exists |
+|---|---|---|---|
+| Proven-winner derivatives | 50% | Variations on hooks/angles/formats that have already won in this account in the last 60 days | Compound the known winners; harvest the audience pocket they unlocked before fatigue |
+| Adjacent exploration | 20% | Angles one step away from winners (same pain, different framing; same offer, different proof; same talent, different format) | Find the second-best version of what's working and the bridge to the next winner |
+| Wildcard hypotheses | 30% | Angles with no current evidence — contrarian, niche, untested talent, new format | Statistical room for the breakout. Without this bucket, you converge on local maxima and CPLs creep up over time |
+
+Three notes from running this in real accounts:
+
+1. **The 30% wildcard bucket is the one CMOs cut first under pressure, and it's the highest-leverage one to protect.** Roughly 60–70% of the breakout ads we've identified across managed accounts came from wildcard angles that didn't survive a "would I run this" gut check at brief stage.
+2. **The 50% proven-winner bucket erodes fast.** A hook that won 60 days ago typically has a 4–8 week half-life of derivatives before fatigue catches up. Don't over-mine.
+3. **The 20% adjacent bucket is where institutional learning lives.** It's the bucket that turns "we got lucky with one ad" into "we now understand this audience pocket and can ladder into it deliberately."
+
+For coaches and creators, the version of this split looks slightly different — see [Andromeda Impact On Coaches & Creators Ads](/blog/andromeda-impact-on-coaches-creators-ads-2026). For service businesses, the proven-winner bucket tends to be larger (60/15/25) because pain-point hooks are more stable. For real estate and mortgage, wildcard tends to be larger (40/15/45) because the audience cycles in and out faster.
+
+---
+
+## How To Brief Creative To Be Machine-Readable
+
+Most creative briefs were designed to be read by humans in a strategy meeting. They are paragraph-heavy, persona-led, narrative-shaped. They communicate intent beautifully and produce single hero ads efficiently. They do not produce creative libraries that map cleanly onto retrieval feature dimensions.
+
+A machine-readable brief is structured the way the retrieval engine implicitly indexes ads. Every ad in the brief has explicit values for the dimensions that matter to diversity scoring. This makes the brief executable at batch scale (a [batch video ads](/batch-video-ads) team can ship 30 ads against it without 30 separate strategy conversations) and it makes the post-launch analysis tractable (you can analyze performance by feature, not by gut).
+
+The minimum machine-readable brief schema we use:
+
+```
+Ad ID: HVAC-2026-04-V073
+Angle bucket: Adjacent exploration
+Hook category: Curiosity
+Pain point ID: P-007 (cold spots in older homes)
+Claim type: Educational (no offer claim)
+Format: Reels-native vertical
+Aspect: 9:16
+Length: 22s
+Talent: Founder
+Visual layout: Talking-head + B-roll cutaway
+Audio: Voiceover + ambient
+Stage: Mid-funnel
+CTA: Soft (book a free walkthrough)
+Brand voice tags: Plainspoken, no-jargon, mildly skeptical
+Compliance flags: Energy claims require source citation
+Source pillar: Pillar-2024-Q4-W11 (90-min founder podcast, segment 04:18–04:46)
+```
+
+That schema serves three audiences simultaneously: a production team can execute the ad without ambiguity, a media buyer can categorize and analyze it after launch, and the algorithm gets a creative whose feature vector is deliberately positioned in the diversity matrix instead of accidentally clustered with everything else.
+
+We layer this schema on top of a per-account **angle library** (every pain-point, every claim, every offer the account is allowed to run) and a per-account **hook library** (every opening line that's been tested or is being tested). New ads draw from those libraries by ID rather than by re-inventing the language each time.
+
+---
+
+## What An Agency Proposal Beyond Targeting Looks Like
+
+If you're an agency owner reading this, or a CMO evaluating agencies, here's the structural shift in the proposal.
+
+**The 2019 proposal allocated roughly:**
+
+- 30% of retainer hours: media management (campaign architecture, audience strategy, bid management)
+- 30%: creative strategy (concept development, brief writing)
+- 20%: creative production (filming, editing)
+- 10%: analytics + reporting
+- 10%: account management
+
+**The 2026 proposal allocates roughly:**
+
+- 10% of retainer hours: media management (mostly Advantage+ structure maintenance, event quality, exclusions)
+- 15%: creative strategy (angle library, hook library, 50/20/30 allocation, monthly diversity matrix)
+- 55%: creative production (batch shooting, atomization, variation, format multiplexing)
+- 10%: analytics + reporting (now feature-level, not campaign-level)
+- 10%: account management
+
+The fivefold shift in the production line item is the part that breaks most agencies. Their cost structure assumes filming is the most expensive thing they do, so they protect against it by producing few ads. When the model inverts and production becomes the highest-leverage line, agencies that haven't built batch production capacity (or partnered with one) can't deliver the allocation profitably — and they keep selling the 30/30/20/10/10 allocation because that's what their P&L can support.
+
+This is the hidden cost of working with an agency that hasn't adapted: you're paying for a cost structure designed around a constraint (production is expensive and slow) that no longer applies. The relative cost of an ad in 2026 has dropped 50–100x from 2019. Any proposal that doesn't reflect that drop on the production line is mispriced.
+
+A simple test you can run on any agency proposal:
+
+- How many active ads will be in the account at month 3?
+- How many distinct hooks does that imply?
+- What's the implied per-ad production cost at that volume?
+- Is that cost compatible with creative diversity scoring (real distinctness across the 8 dimensions), or is it volume of permutations of one hero ad?
+
+If the answers are &lt;20 ads, &lt;5 hooks, $200+ per ad, and "mostly permutations" — you're buying a 2019 service. The cluster post [Cost Of Perfectionism: Why Agencies Filming 5 Ads/Month Lose](/blog/cost-of-perfectionism-why-agencies-filming-5-ads-month-lose-2026) goes deeper on the economics.
+
+---
+
+## What CMOs Should Actually Measure
+
+Reporting frameworks haven't caught up to the operating model. Most CMO-level dashboards still report campaign-level CPL, ROAS, and audience performance. Those are now lagging, low-resolution signals.
+
+The Andromeda-era CMO dashboard:
+
+| Metric | What It Tells You | Healthy Range (Lead-Gen) |
+|---|---|---|
+| Active creatives | Whether you're feeding the retrieval engine | ≥30 for $5k+/mo accounts; ≥75 for $10k+/mo |
+| Distinct hook categories | Coverage across audience pockets | ≥5 active at any time |
+| Distinct visual layouts | Diversity-score coverage | ≥4 active at any time |
+| % spend on top-1 ad | Concentration risk | ≤25%; &gt;50% is a thin-library warning |
+| Weekly creative refresh rate | Fatigue management | ≥20% of library refreshed weekly |
+| Conversion event volume | Ranking signal quality | ≥50/week per ad set, ≥200/week per campaign |
+| Conversions API event quality score | Ranking signal cleanliness | ≥8/10 in Events Manager |
+| % of ads spending >$50 before kill decision | Discipline on giving the system room | ≥80% |
+| Creative production unit cost | Whether your supply chain can sustain the model | ≤$50/ad blended |
+
+We have not seen a single 2026 account with healthy unit economics that scored poorly on more than two of those metrics. We have seen many accounts with poor unit economics that scored well on the old CPL/ROAS dashboard while quietly failing five of the metrics above.
+
+The cluster post [Why CPM Is Rising And Creative Volume Fixes It](/blog/why-cpm-is-rising-and-creative-volume-fixes-it-2026) drills into the CPM-and-frequency feedback loop these metrics catch early.
+
+---
+
+## How To Re-Org A Performance Team Around This
+
+Structural moves we've seen work inside brands and agencies:
+
+- **Merge "creative strategy" and "media buying" into one pod.** Same job now. Owns angle library, brief schema, matrix coverage, and launching.
+- **Externalize batch production.** Internal teams almost never hit the per-ad unit cost needed to make the 55% production allocation work. Use a [batch video ads](/batch-video-ads) provider or build a dedicated batch pod.
+- **Pair every pod with a [done-for-you social media](/done-for-you-social-media) operator** running organic off the same pillar captures. Organic and paid share 70–80% of production cost when batched.
+- **Move analytics from monthly to weekly cadence** — daily above $20k/mo. Andromeda's signal cycles in 3–7 days; monthly reviews lag the model.
+- **Shrink the audience-research function dramatically.** A full-time audience strategist on a 2026 media team is mostly org-chart inertia.
+
+---
+
+## When This Framework Doesn't Apply
+
+To be honest about the limits:
+
+- **Brand campaigns** (reach, awareness, video views) — fewer ads, longer creative half-lives, more emphasis on craft.
+- **B2B with very small TAMs** (&lt;5,000 potential buyers). ABM-style operations remain the better model.
+- **Heavily regulated verticals** (financial services, medical, legal) where compliance limits throughput. The framework still applies, just at a lower rate with higher per-ad cost.
+
+For most direct-response, lead-gen, and DTC operators, the framework is the default.
+
+---
+
+## Putting It Together
+
+The framework collapsed to one paragraph: under Andromeda, ad performance is bottlenecked by the creative library, not the audience definition. Build creative ops around an explicit diversity matrix, allocate production 50/20/30 across proven/adjacent/wildcard, brief in machine-readable schema, externalize batch production, and reorient measurement around creative feature performance rather than campaign aggregates. Whatever percentage of your team is still spending its week tuning interest stacks is allocated against a system that no longer exists.
+
+The agencies and in-house teams quietly compounding 2x ROAS lifts in 2026 are not running better targeting. They are running a different operating model.
+
+---
+
+## Frequently Asked Questions
+
+### Doesn't "creative is the new targeting" sound like a slogan vendors use to upsell production services?
+
+It does, which is why the framework above is mechanical rather than rhetorical. The retrieval-engine description is verifiable in Meta's published research on Andromeda. The diversity-score effects are observable in any account that runs A/B at scale. The 50/20/30 split, the brief schema, and the dashboard metrics are operational artifacts, not pitches. If a vendor says "creative is the new targeting" and can't draw the retrieval/ranking diagram or explain the diversity matrix, the slogan is being misused.
+
+### How do I get internal buy-in for shifting budget from media management to creative production?
+
+Run the parallel test. Take 20% of the account budget, route it through an Advantage+ campaign with 30+ distinct creatives, leave the other 80% on the old structure for 30 days. Compare CPL, CPM, frequency, and time-to-exit-learning. The data does the convincing. We have not seen a single mid-sized account where the parallel test failed to produce a 20%+ CPL drop on the volume side, and most show 35–50%.
+
+### Is this true on TikTok and YouTube too, or just Meta?
+
+The exact retrieval architecture is Meta-specific (Andromeda is a Meta system on NVIDIA hardware). But the directional principle — algorithmic retrieval expanding, manual targeting shrinking, creative variety becoming the primary lever — applies on TikTok and YouTube as well. TikTok's retrieval model has been creative-led since launch. YouTube's ad system has been moving in the same direction since the Performance Max rollout on Google. If anything, Meta is the last major surface to fully commit.
+
+### How does this affect lookalike audiences and custom audiences?
+
+Lookalikes below 5% are mostly redundant with Advantage+ Audience under Andromeda. Lookalikes 5–10% can still provide a useful "starting point" signal on cold accounts. Custom audiences (engagement, video viewers, customer file) remain valuable for *retargeting* and *exclusions* but are decreasingly useful as primary prospecting layers. Plan for them to drift toward exclusion-and-retargeting use only over the next 12–18 months.
+
+### What's the right team size for the creative production function on a $50k/month account?
+
+Roughly one creative ops lead (matrix planning, brief schema, analytics) + one production pod (batch shooting, editing, atomization) capable of shipping 100–200 ads/month. Externalized via batch providers, the same throughput is usually 20–40% of the cost of building it in-house. Most $50k/mo accounts we see end up with a hybrid: a thin internal creative ops lead + an outsourced production pipeline.
+
+### How do I evaluate a [batch video ads](/batch-video-ads) provider through this lens?
+
+Five questions. (1) Can they brief and ship against an explicit diversity matrix, or is everything "30 variations of a hook"? (2) Per-ad unit cost at 100/month? At 300/month? (3) Do they distinguish proven-winner derivatives from wildcard exploration in production allocation? (4) Can they reformat across aspect ratios and lengths natively? (5) Do they integrate with [done-for-you social media](/done-for-you-social-media) production so organic and paid share pillar source material? Vague answers on (1) and (3) signal a hook-permutation shop, not an Andromeda-aligned partner.
+
+### Will generative video tools change this in 12 months?
+
+They'll push production costs down another 2–5x and expand the wildcard bucket. They won't change the framework. Generative creative still needs the diversity matrix and the briefing schema — arguably more, because untriaged generative output is the highest-cardinality, lowest-distinctness library imaginable.
+
+---
+
+## The Bottom Line
+
+The phrase "creative is the new targeting" is doing real work, not slogan work. Andromeda moved the audience inference into the retrieval model, leaving advertisers with one lever they can actually move at scale: the variety and volume of creative supply they feed into the system. The operating model that wins in 2026 is built around that one lever — diversity matrix, 50/20/30 angle split, machine-readable briefs, batch production economics, and feature-level measurement.
+
+If you want a partner that ships this operating model live in days rather than quarters, that's what [batch video ads](/batch-video-ads) and [done-for-you social media](/done-for-you-social-media) at Prestyj are built to deliver — same framework, your brand, your account, your retention of all owned IP.

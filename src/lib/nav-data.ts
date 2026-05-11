@@ -132,4 +132,13 @@ export const bestForLinks: DropdownLink[] = [
   { href: "/best-for/follow-up-boss-users", label: "Follow Up Boss Users", description: "Supercharge your FUB stack.", icon: RefreshCw },
   { href: "/best-for/commercial-real-estate", label: "Commercial Real Estate", description: "CRE team workflows.", icon: Landmark },
   { href: "/best-for/property-managers", label: "Property Managers", description: "Property management ops.", icon: KeyRound },
+  // Batch video ad matrix — high-intent vertical landing pages
+  { href: "/best-for/batch-video-ads-for-real-estate-teams", label: "Batch Ads for RE Teams", description: "500 vertical ads in 24 hours.", icon: Video },
+  { href: "/best-for/batch-video-ads-for-agency-owners", label: "Batch Ads for Agencies", description: "Founder-led ads at scale.", icon: Video },
+  { href: "/best-for/batch-video-ads-for-coaches", label: "Batch Ads for Coaches", description: "300-1,000 ads from one recording.", icon: Video },
+  // SOCIAL-VERTICAL-MATRIX-NAV-START
+  { href: "/best-for/done-for-you-social-for-coaches", label: "Social for Coaches", description: "1,500+ posts/mo for coaches.", icon: Share2 },
+  { href: "/best-for/done-for-you-social-for-agency-owners", label: "Social for Agency Owners", description: "Founder brand at scale.", icon: Share2 },
+  { href: "/best-for/done-for-you-social-for-saas-founders", label: "Social for SaaS Founders", description: "Founder-led LinkedIn distribution.", icon: Share2 },
+  // SOCIAL-VERTICAL-MATRIX-NAV-END
 ];

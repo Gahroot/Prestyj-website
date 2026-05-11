@@ -28,6 +28,10 @@ import ClickSpark from "@/components/ui/click-spark";
 import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { VideoCarousel } from "@/components/sections/video-carousel";
+import { BatchAudienceSelector } from "@/components/sections/batch-video-ads/audience-selector";
+import { HiddenCostTable, type HiddenCostRow } from "@/components/sections/batch-video-ads/hidden-cost-table";
+import { AndromedaPOV } from "@/components/sections/batch-video-ads/andromeda-pov";
+import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 import { cn } from "@/lib/utils";
 import type { BatchTierId } from "@/lib/batch-tiers";
 
@@ -136,10 +140,106 @@ const TIERS: UITier[] = [
   },
 ];
 
+const HIDDEN_COST_ROWS: HiddenCostRow[] = [
+  {
+    feature: "Cost per ad variation (300+ batch)",
+    prestyj: "$4–$5",
+    agency: "$200–$2,000",
+    ugc: "$75–$300",
+    inHouse: "$60–$120",
+  },
+  {
+    feature: "Cost per pain-point angle tested",
+    prestyj: "$400–$500",
+    agency: "$5K–$15K",
+    ugc: "$1K–$3K",
+    inHouse: "$2K–$4K loaded",
+  },
+  {
+    feature: "Monthly all-in cost",
+    prestyj: "$1,497–$3,997 per sprint",
+    agency: "$5K–$25K retainer",
+    ugc: "$3K–$8K + product",
+    inHouse: "$6K–$10K salary + benefits",
+  },
+  {
+    feature: "Turnaround: footage → 300 ads",
+    prestyj: "24 hours*",
+    agency: "4–8 weeks",
+    ugc: "3–6 weeks",
+    inHouse: "6–12 weeks",
+  },
+  {
+    feature: "Pain points tested in parallel",
+    prestyj: "3–10",
+    agency: "1–2",
+    ugc: "1",
+    inHouse: "1–2",
+  },
+  {
+    feature: "Scripts written for you",
+    prestyj: true,
+    agency: false,
+    ugc: false,
+    inHouse: false,
+  },
+  {
+    feature: "Hook A/B variation matrix",
+    prestyj: true,
+    agency: "upsell",
+    ugc: false,
+    inHouse: "manual",
+  },
+  {
+    feature: "Looks like content, not an ad",
+    prestyj: true,
+    agency: false,
+    ugc: true,
+    inHouse: "sometimes",
+  },
+  {
+    feature: "Calls in sick / quits / ghosts",
+    prestyj: false,
+    agency: true,
+    ugc: true,
+    inHouse: true,
+  },
+  {
+    feature: "Feeds Andromeda volume floor",
+    prestyj: true,
+    agency: false,
+    ugc: false,
+    inHouse: false,
+  },
+  {
+    feature: "Contract length",
+    prestyj: "One sprint, no renewal",
+    agency: "3–12 mo retainer",
+    ugc: "Per-creator deals",
+    inHouse: "W2 / 6-mo ramp",
+  },
+];
+
 const FAQS = [
   {
     q: "What do I actually have to do?",
     a: "Fill out the form, then wait for us to send you your scripts. When they arrive, prop up your phone, hit record, and read the whole script in one take — about 15–20 minutes. Selfie style, at home or in your car, wherever. You don't write anything, you don't plan anything, you don't have to know what a good hook looks like. You just read what we send. Send us back the one raw video file and we handle the rest.",
+  },
+  {
+    q: "What's NOT included? Be specific.",
+    a: "No media buying. No ad account management. No campaign setup inside Meta/TikTok/YouTube. No landing page builds. No copywriting outside the ad scripts. No paid actors or studio crew. No long-form / VSL editing. No analytics dashboards. You get the finished vertical ad files (9:16, captioned, ready to upload) and that's it — your media buyer or agency runs them. If you want media buying, we'll refer you.",
+  },
+  {
+    q: "How does pricing actually work? Any hidden fees?",
+    a: "Three tiers, one-time payment per sprint: $1,497 (300 ads / 3 pain points), $2,497 (500 ads / 5 pain points), $3,997 (1,000 ads / 10 pain points). That's the entire invoice. No platform fees, no usage fees, no per-edit fees, no rush fees, no monthly retainer. Pay once per sprint, get the files, done. If you want another sprint next month, you pay again. We don't lock you in.",
+  },
+  {
+    q: "How is this different from hiring a UGC creator?",
+    a: "A UGC creator films themselves saying your script — usually 3–6 ads for $500–$1,500 each, 2–4 weeks later. We use YOUR face (or your founder's), write every script for you, and deliver 300–1,000 variations in 24 hours. UGC is a person. We're a creative system. UGC is great if you want a few polished pieces. We're built for the volume Andromeda actually requires.",
+  },
+  {
+    q: "How is this different from a creative agency?",
+    a: "Agencies bill $5K–$25K/month and ship 4–10 ads in that window. Math: $500–$2,000 per ad. We charge $4–$5 per ad and ship in 24 hours. The agency model is built for a pre-Andromeda world where one polished hero ad ran for 6 months. That ad's half-life is now 5–14 days. The economics broke. We're what replaced it.",
   },
   {
     q: "What if I mess up mid-recording?",
@@ -228,13 +328,13 @@ export function BatchVideoAdsClient() {
 
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
             <BlurText
-              text="Your Ad Creative Testing,"
+              text="300–1,000 Scripted Ads."
               delay={60}
               animateBy="words"
               className="justify-center"
             />
             <BlurText
-              text="Running in 24 Hours*"
+              text="$4 per Variation. 24 Hours.*"
               delay={60}
               animateBy="words"
               className="justify-center text-primary"
@@ -284,9 +384,11 @@ export function BatchVideoAdsClient() {
           >
             Send 15–20 minutes of casual selfie footage. Get back{" "}
             <span className="text-foreground font-semibold">
-              hundreds of ads that look like content, not ads
+              300–1,000 scripted ad variations that look like content, not ads
             </span>{" "}
-            — so people actually watch past the hook.
+            — for the volume Andromeda now requires. From{" "}
+            <span className="text-foreground font-semibold">$1,497 per sprint</span>{" "}
+            (~$4/variation) vs $500–$2K/ad at an agency.
           </motion.p>
 
           <motion.p
@@ -307,7 +409,7 @@ export function BatchVideoAdsClient() {
             <ClickSpark sparkColor="#7058e3" sparkCount={12} sparkRadius={28}>
               <Button size="lg" className="text-lg px-8 font-bold" asChild>
                 <a href="#pricing">
-                  Start My Batch Now
+                  Get 100 Ad Angles in 1 Sprint
                   <Rocket className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -319,8 +421,8 @@ export function BatchVideoAdsClient() {
                 className="text-lg px-8 font-bold"
                 asChild
               >
-                <a href="#pricing">
-                  See Pricing
+                <a href="#hidden-cost">
+                  See What Agencies Charge
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -376,6 +478,9 @@ export function BatchVideoAdsClient() {
           </a>
         </div>
       </section>
+
+      {/* AUDIENCE SELECTOR */}
+      <BatchAudienceSelector />
 
       {/* HOW IT WORKS — simple explainer */}
       <section id="how" className="py-24 px-4">
@@ -438,7 +543,7 @@ export function BatchVideoAdsClient() {
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="text-lg px-8 font-bold" asChild>
                 <a href="#pricing">
-                  Pick My Batch
+                  Get My 300-Ad Sprint Started
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -553,7 +658,7 @@ export function BatchVideoAdsClient() {
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="text-lg px-8 font-bold" asChild>
                 <a href="#pricing">
-                  Start Finding My Winners
+                  Test 10 Angles in 24 Hours
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -561,6 +666,9 @@ export function BatchVideoAdsClient() {
           </AnimateOnScroll>
         </div>
       </section>
+
+      {/* ANDROMEDA / CREATIVE-AS-TARGETING POV */}
+      <AndromedaPOV />
 
       {/* TESTIMONIALS */}
       <section className="py-24 px-4">
@@ -629,6 +737,11 @@ export function BatchVideoAdsClient() {
           </AnimateOnScroll>
         </div>
       </section>
+
+      {/* HIDDEN COST TABLE — us vs agency vs UGC vs in-house */}
+      <div id="hidden-cost">
+        <HiddenCostTable rows={HIDDEN_COST_ROWS} />
+      </div>
 
       {/* NATIVE vs PRODUCTION */}
       <section className="py-24 px-4">
@@ -715,7 +828,7 @@ export function BatchVideoAdsClient() {
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="text-lg px-8 font-bold" asChild>
                 <a href="#pricing">
-                  Get My Ads Running
+                  Ship 500 Native-Look Ads This Week
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -786,7 +899,7 @@ export function BatchVideoAdsClient() {
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="text-lg px-8 font-bold" asChild>
                 <a href="#pricing">
-                  See Pricing
+                  Get My Batch Pricing
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -967,7 +1080,7 @@ export function BatchVideoAdsClient() {
                 asChild
               >
                 <Link href="#pricing">
-                  Pick My Batch
+                  Get 300 Ads Shipped in 24h
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>
               </Button>
@@ -975,6 +1088,9 @@ export function BatchVideoAdsClient() {
           </AnimateOnScroll>
         </div>
       </section>
+
+      {/* SCROLL/EXIT-INTENT LEAD MAGNET */}
+      <ExitIntentPopup />
     </main>
   );
 }

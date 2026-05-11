@@ -435,6 +435,131 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
+    // BATCH-MATRIX-COMPARE-START
+    {
+      url: `${baseUrl}/compare/prestyj-vs-ugc-creator-video-for-coaches`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-fiverr-video-for-media-buyers`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-in-house-video-for-cmos`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-ai-avatar-tool-video-for-agency-owners`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-agency-video-for-service-business-owners`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-ugc-creator-video-for-hvac-companies`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-fiverr-video-for-plumbing-contractors`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-in-house-video-for-roofing-contractors`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-ai-avatar-tool-video-for-real-estate-teams`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-agency-video-for-mortgage-brokers`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    // SOCIAL-VERTICAL-MATRIX-COMPARE-START
+    {
+      url: `${baseUrl}/compare/prestyj-vs-in-house-hire-for-coaches`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-smma-for-media-buyers`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-in-house-hire-for-cmos`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-va-plus-templates-for-agency-owners`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-smma-for-service-business-owners`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-fiverr-for-ecommerce-brands`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-in-house-hire-for-saas-founders`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-va-plus-templates-for-personal-brands`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-fiverr-for-creators`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-smma-for-consultants`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+  // SOCIAL-VERTICAL-MATRIX-COMPARE-END
+  // BATCH-MATRIX-COMPARE-END
+
   ];
 
   // Location pages
