@@ -36,7 +36,6 @@ const footerLinks = {
   resources: [
     { href: "/blog", label: "Blog" },
     { href: "/statistics", label: "Statistics", highlight: true },
-    { href: "/samples", label: "Samples" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },

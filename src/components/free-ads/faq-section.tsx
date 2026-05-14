@@ -110,20 +110,8 @@ const faqs: { question: string; answer: ReactNode }[] = [
   },
   {
     question: "Can I see samples before committing?",
-    answer: (
-      <>
-        You already are. The ad you clicked, this landing page you&apos;re reading, and the AI that
-        will follow up with you after you submit — that&apos;s the exact system we build for your
-        business. You can also{" "}
-        <Link
-          href="/samples"
-          className="text-primary hover:text-primary/80 underline underline-offset-2"
-        >
-          see more video ad samples →
-        </Link>
-        .
-      </>
-    ),
+    answer:
+      "You already are. The ad you clicked, this landing page you're reading, and the AI that will follow up with you after you submit — that's the exact system we build for your business.",
   },
   {
     question: "How is this different from other ad agencies?",

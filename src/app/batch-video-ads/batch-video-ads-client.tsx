@@ -93,7 +93,7 @@ const TIERS: UITier[] = [
     adCount: 300,
     painPoints: 3,
     tagline: "Test your first angles",
-    icon: <Zap className="w-5 h-5" />,
+    icon: <Zap className="h-5 w-5" />,
     highlights: [
       "300 unique vertical video ads",
       "3 pain points tested",
@@ -110,7 +110,7 @@ const TIERS: UITier[] = [
     painPoints: 5,
     popular: true,
     tagline: "The sweet spot",
-    icon: <Flame className="w-5 h-5" />,
+    icon: <Flame className="h-5 w-5" />,
     highlights: [
       "500 unique vertical video ads",
       "5 pain points tested",
@@ -127,7 +127,7 @@ const TIERS: UITier[] = [
     adCount: 1000,
     painPoints: 10,
     tagline: "Go wide, find winners fast",
-    icon: <Rocket className="w-5 h-5" />,
+    icon: <Rocket className="h-5 w-5" />,
     highlights: [
       "1000 unique vertical video ads",
       "10 pain points tested",
@@ -299,9 +299,7 @@ export function BatchVideoAdsClient() {
       window.location.href = data.url;
     } catch (error) {
       console.error(error);
-      setCheckoutError(
-        "We couldn't start checkout. Please try again in a moment."
-      );
+      setCheckoutError("We couldn't start checkout. Please try again in a moment.");
       setLoadingTier(null);
     }
   };
@@ -309,24 +307,19 @@ export function BatchVideoAdsClient() {
   return (
     <main className="min-h-screen">
       {/* HERO */}
-      <section className="relative pt-16 overflow-hidden">
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-10 md:pt-6 md:pb-12 text-center">
+      <section className="relative overflow-hidden pt-16">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 pt-4 pb-10 text-center sm:px-6 md:pt-6 md:pb-12 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="outline" className="mb-3 border-primary/50 text-primary">
-              <ShinyText
-                text="BATCH VIDEO ADS"
-                speed={3}
-                color="#b0b0b0"
-                shineColor="#7058e3"
-              />
+            <Badge variant="outline" className="border-primary/50 text-primary mb-3">
+              <ShinyText text="BATCH VIDEO ADS" speed={3} color="#b0b0b0" shineColor="#7058e3" />
             </Badge>
           </motion.div>
 
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
+          <h1 className="font-heading text-foreground mb-4 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
             <BlurText
               text="300–1,000 Scripted Ads."
               delay={60}
@@ -337,7 +330,7 @@ export function BatchVideoAdsClient() {
               text="$4 per Variation. 24 Hours.*"
               delay={60}
               animateBy="words"
-              className="justify-center text-primary"
+              className="text-primary justify-center"
             />
           </h1>
 
@@ -345,11 +338,11 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative w-full max-w-2xl mx-auto aspect-video rounded-lg overflow-hidden shadow-2xl mb-5"
+            className="relative mx-auto mb-5 aspect-video w-full max-w-2xl overflow-hidden rounded-lg shadow-2xl"
           >
             <iframe
               src={`https://player.vimeo.com/video/${VSL_VIMEO_ID}?autoplay=1&muted=${isMuted ? "1" : "0"}&loop=0&background=0`}
-              className="absolute inset-0 w-full h-full"
+              className="absolute inset-0 h-full w-full"
               frameBorder="0"
               allow="autoplay; fullscreen"
               allowFullScreen
@@ -359,18 +352,16 @@ export function BatchVideoAdsClient() {
             {showVideoOverlay && (
               <div
                 onClick={handleUnmute}
-                className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center cursor-pointer transition-all hover:bg-black/30 z-10"
+                className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/40 backdrop-blur-[2px] transition-all hover:bg-black/30"
               >
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 md:p-6 flex flex-col items-center gap-2 shadow-2xl">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                    <VolumeX className="w-6 h-6 text-primary" />
+                <div className="flex flex-col items-center gap-2 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-md md:p-6">
+                  <div className="bg-primary/20 flex h-12 w-12 items-center justify-center rounded-full">
+                    <VolumeX className="text-primary h-6 w-6" />
                   </div>
-                  <p className="text-foreground font-heading font-semibold text-base">
+                  <p className="text-foreground font-heading text-base font-semibold">
                     Your Video Is Playing
                   </p>
-                  <p className="text-muted-foreground text-sm">
-                    Click To Unmute
-                  </p>
+                  <p className="text-muted-foreground text-sm">Click To Unmute</p>
                 </div>
               </div>
             )}
@@ -380,7 +371,7 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto mb-3"
+            className="text-muted-foreground mx-auto mb-3 max-w-3xl text-sm sm:text-base"
           >
             Send 15–20 minutes of casual selfie footage. Get back{" "}
             <span className="text-foreground font-semibold">
@@ -395,19 +386,20 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.35 }}
-            className="text-xs text-muted-foreground/70 max-w-2xl mx-auto mb-5"
+            className="text-muted-foreground/70 mx-auto mb-5 max-w-2xl text-xs"
           >
-            *24 hours from when we receive your footage. Footage received Sunday counts as Monday — delivered by end of day Tuesday.
+            *24 hours from when we receive your footage. Footage received Sunday counts as Monday —
+            delivered by end of day Tuesday.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <ClickSpark sparkColor="#7058e3" sparkCount={12} sparkRadius={28}>
-              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+              <Button size="lg" className="px-8 text-lg font-bold" asChild>
                 <a href="#pricing">
                   Get 100 Ad Angles in 1 Sprint
                   <Rocket className="ml-2 h-5 w-5" />
@@ -415,6 +407,7 @@ export function BatchVideoAdsClient() {
               </Button>
             </ClickSpark>
             <ClickSpark sparkColor="#5ee5b3" sparkCount={10} sparkRadius={25}>
+<<<<<<< Updated upstream
               <Button
                 size="lg"
                 variant="outline"
@@ -423,6 +416,11 @@ export function BatchVideoAdsClient() {
               >
                 <a href="#hidden-cost">
                   See What Agencies Charge
+=======
+              <Button size="lg" variant="outline" className="px-8 text-lg font-bold" asChild>
+                <a href="#pricing">
+                  See Pricing
+>>>>>>> Stashed changes
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -433,22 +431,22 @@ export function BatchVideoAdsClient() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground"
+            className="text-muted-foreground mt-10 flex flex-col items-center justify-center gap-8 sm:flex-row"
           >
             <div className="flex items-center gap-2">
-              <CountUp to={300} duration={1.5} className="text-2xl font-bold text-primary" />
-              <span className="text-2xl font-bold text-primary">+</span>
+              <CountUp to={300} duration={1.5} className="text-primary text-2xl font-bold" />
+              <span className="text-primary text-2xl font-bold">+</span>
               <span className="text-sm">ads per batch</span>
             </div>
-            <div className="hidden sm:block w-px h-8 bg-border" />
+            <div className="bg-border hidden h-8 w-px sm:block" />
             <div className="flex items-center gap-2">
-              <CountUp to={24} duration={1.5} className="text-2xl font-bold text-success" />
-              <span className="text-2xl font-bold text-success">hr</span>
+              <CountUp to={24} duration={1.5} className="text-success text-2xl font-bold" />
+              <span className="text-success text-2xl font-bold">hr</span>
               <span className="text-sm">turnaround*</span>
             </div>
-            <div className="hidden sm:block w-px h-8 bg-border" />
+            <div className="bg-border hidden h-8 w-px sm:block" />
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-warning">1</span>
+              <span className="text-warning text-2xl font-bold">1</span>
               <span className="text-sm">recording session</span>
             </div>
           </motion.div>
@@ -456,25 +454,25 @@ export function BatchVideoAdsClient() {
       </section>
 
       {/* TRUST STRIP */}
-      <section className="py-6 border-y border-border/50 bg-muted/10">
-        <div className="max-w-5xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm">
+      <section className="border-border/50 bg-muted/10 border-y py-6">
+        <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-3 px-4 text-sm sm:flex-row sm:gap-6">
           <div className="flex items-center gap-2">
             <div className="flex gap-0.5">
               {Array.from({ length: 5 }).map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-success text-success" />
+                <Star key={i} className="fill-success text-success h-4 w-4" />
               ))}
             </div>
-            <span className="font-semibold text-foreground">Rated 5★ on Google</span>
+            <span className="text-foreground font-semibold">Rated 5★ on Google</span>
           </div>
-          <span className="hidden sm:inline text-muted-foreground">·</span>
+          <span className="text-muted-foreground hidden sm:inline">·</span>
           <a
             href={GMB_REVIEWS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:underline inline-flex items-center gap-1"
+            className="text-primary inline-flex items-center gap-1 hover:underline"
           >
             Read reviews on Google
-            <ArrowRight className="w-3.5 h-3.5" />
+            <ArrowRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </section>
@@ -483,54 +481,54 @@ export function BatchVideoAdsClient() {
       <BatchAudienceSelector />
 
       {/* HOW IT WORKS — simple explainer */}
-      <section id="how" className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <AnimateOnScroll className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section id="how" className="px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-16 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               How This Works
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              You don&apos;t think about what to record. You don&apos;t write scripts.
-              You show up and read what we send. Four steps.
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+              You don&apos;t think about what to record. You don&apos;t write scripts. You show up
+              and read what we send. Four steps.
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 step: "01",
                 title: "Tell us about your business",
                 body: "Fill out the form on this page. Business name, audience, pain points, offer. Takes a few minutes.",
-                icon: <Target className="w-7 h-7" />,
+                icon: <Target className="h-7 w-7" />,
               },
               {
                 step: "02",
                 title: "We write your scripts",
                 body: "We send you back a full script — every hook, body, and CTA already written. You don't write a single word.",
-                icon: <Sparkles className="w-7 h-7" />,
+                icon: <Sparkles className="h-7 w-7" />,
               },
               {
                 step: "03",
                 title: "One-take recording",
                 body: "Prop up your phone, read the script start to finish. ~15–20 minutes. One video file. That's it.",
-                icon: <Film className="w-7 h-7" />,
+                icon: <Film className="h-7 w-7" />,
               },
               {
                 step: "04",
                 title: "Hundreds of ads, 24 hours later",
                 body: "Send us the raw footage. We turn it into your full batch of ads — ready to launch and test every angle in parallel.",
-                icon: <Rocket className="w-7 h-7" />,
+                icon: <Rocket className="h-7 w-7" />,
               },
             ].map((item, i) => (
               <AnimateOnScroll key={item.step} delay={i * 0.1}>
                 <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-xs font-mono text-primary">{item.step}</span>
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="text-primary font-mono text-xs">{item.step}</span>
+                    <div className="bg-primary/10 text-primary inline-flex h-12 w-12 items-center justify-center rounded-full">
                       {item.icon}
                     </div>
                   </div>
-                  <h3 className="text-xl font-heading font-bold text-foreground mb-3">
+                  <h3 className="font-heading text-foreground mb-3 text-xl font-bold">
                     {item.title}
                   </h3>
                   <p className="text-muted-foreground leading-relaxed">{item.body}</p>
@@ -541,7 +539,7 @@ export function BatchVideoAdsClient() {
 
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
-              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+              <Button size="lg" className="px-8 text-lg font-bold" asChild>
                 <a href="#pricing">
                   Get My 300-Ad Sprint Started
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -553,47 +551,47 @@ export function BatchVideoAdsClient() {
       </section>
 
       {/* THE MATH OF TRADITIONAL TESTING */}
-      <section className="py-24 px-4 bg-muted/20">
-        <div className="max-w-5xl mx-auto">
-          <AnimateOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section className="bg-muted/20 px-4 py-24">
+        <div className="mx-auto max-w-5xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               The Math of Finding a Winning Ad
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Most businesses never find their winning ad — because the traditional
-              way takes longer than the business can survive.
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
+              Most businesses never find their winning ad — because the traditional way takes longer
+              than the business can survive.
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+          <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-2">
             <AnimateOnScroll>
               <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-destructive/10 text-destructive flex items-center justify-center">
-                    <Clock className="w-5 h-5" />
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="bg-destructive/10 text-destructive flex h-10 w-10 items-center justify-center rounded-full">
+                    <Clock className="h-5 w-5" />
                   </div>
-                  <h3 className="font-heading font-bold text-xl text-foreground">
+                  <h3 className="font-heading text-foreground text-xl font-bold">
                     The traditional way
                   </h3>
                 </div>
-                <ul className="space-y-4 text-muted-foreground">
+                <ul className="text-muted-foreground space-y-4">
                   <li className="flex items-start gap-3">
-                    <TrendingDown className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <TrendingDown className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       Hook testing alone needs{" "}
-                      <span className="text-foreground font-semibold">50+ variations</span> to
-                      find what works.
+                      <span className="text-foreground font-semibold">50+ variations</span> to find
+                      what works.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <TrendingDown className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <TrendingDown className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       At 1 ad per day (what most teams manage), 50 hooks ={" "}
                       <span className="text-foreground font-semibold">2 months</span>.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <TrendingDown className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <TrendingDown className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       A full 300-ad test set?{" "}
                       <span className="text-foreground font-semibold">~6 months</span> of daily
@@ -601,7 +599,7 @@ export function BatchVideoAdsClient() {
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <TrendingDown className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <TrendingDown className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       And nobody hears your pain points or offer if they scroll past the hook.
                     </span>
@@ -612,39 +610,39 @@ export function BatchVideoAdsClient() {
 
             <AnimateOnScroll delay={0.1}>
               <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-full bg-success/10 text-success flex items-center justify-center">
-                    <Zap className="w-5 h-5" />
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="bg-success/10 text-success flex h-10 w-10 items-center justify-center rounded-full">
+                    <Zap className="h-5 w-5" />
                   </div>
-                  <h3 className="font-heading font-bold text-xl text-foreground">
+                  <h3 className="font-heading text-foreground text-xl font-bold">
                     Batch testing with us
                   </h3>
                 </div>
-                <ul className="space-y-4 text-muted-foreground">
+                <ul className="text-muted-foreground space-y-4">
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       Every hook, every pain point, every angle tested{" "}
                       <span className="text-foreground font-semibold">in one go</span>.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       One 15–20 minute recording session →{" "}
                       <span className="text-foreground font-semibold">months of creative</span>.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       Find your winning hooks in the{" "}
-                      <span className="text-foreground font-semibold">first week of spend</span>
-                      , not the sixth month.
+                      <span className="text-foreground font-semibold">first week of spend</span>,
+                      not the sixth month.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       Know exactly which pain points convert — because you actually tested them.
                     </span>
@@ -656,7 +654,7 @@ export function BatchVideoAdsClient() {
 
           <AnimateOnScroll className="text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
-              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+              <Button size="lg" className="px-8 text-lg font-bold" asChild>
                 <a href="#pricing">
                   Test 10 Angles in 24 Hours
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -671,52 +669,43 @@ export function BatchVideoAdsClient() {
       <AndromedaPOV />
 
       {/* TESTIMONIALS */}
-      <section className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <AnimateOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section className="px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               People Who&apos;ve Actually Done This
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               Not stock quotes. Real clients who sent us their footage and got their batch back.
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <AnimateOnScroll key={t.author} delay={i * 0.1}>
                 <BorderGlow borderRadius={14} innerClassName="p-6 h-full flex flex-col">
-                  <div className="flex gap-1 mb-4">
+                  <div className="mb-4 flex gap-1">
                     {Array.from({ length: 5 }).map((_, j) => (
-                      <Star
-                        key={j}
-                        className="w-5 h-5 fill-success text-success"
-                      />
+                      <Star key={j} className="fill-success text-success h-5 w-5" />
                     ))}
                   </div>
-                  <p className="text-foreground font-heading font-semibold text-lg mb-3">
+                  <p className="text-foreground font-heading mb-3 text-lg font-semibold">
                     &ldquo;{t.quote}&rdquo;
                   </p>
-                  <p className="text-muted-foreground text-sm flex-1 mb-4">
-                    {t.full}
-                  </p>
-                  <div className="pt-4 border-t border-border/50">
-                    <p className="font-semibold text-foreground text-sm">
-                      {t.author}
-                    </p>
+                  <p className="text-muted-foreground mb-4 flex-1 text-sm">{t.full}</p>
+                  <div className="border-border/50 border-t pt-4">
+                    <p className="text-foreground text-sm font-semibold">{t.author}</p>
                     {t.href ? (
                       <a
                         href={t.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xs text-primary hover:underline"
+                        className="text-primary text-xs hover:underline"
                       >
                         {t.source} →
                       </a>
                     ) : (
-                      <p className="text-xs text-muted-foreground">
-                        {t.source}
-                      </p>
+                      <p className="text-muted-foreground text-xs">{t.source}</p>
                     )}
                   </div>
                 </BorderGlow>
@@ -729,10 +718,10 @@ export function BatchVideoAdsClient() {
               href={GMB_REVIEWS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline inline-flex items-center gap-1 text-sm"
+              className="text-primary inline-flex items-center gap-1 text-sm hover:underline"
             >
               Read all reviews on Google
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="h-4 w-4" />
             </a>
           </AnimateOnScroll>
         </div>
@@ -744,39 +733,39 @@ export function BatchVideoAdsClient() {
       </div>
 
       {/* NATIVE vs PRODUCTION */}
-      <section className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <AnimateOnScroll className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section className="px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-16 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               Why These Outperform Polished Production Ads
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              People can spot a produced ad in half a second. Once they do, they scroll.
-              The whole game is earning the attention <em>before</em> they know it&apos;s an ad.
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
+              People can spot a produced ad in half a second. Once they do, they scroll. The whole
+              game is earning the attention <em>before</em> they know it&apos;s an ad.
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <AnimateOnScroll>
               <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                <Badge variant="outline" className="mb-4 border-destructive/40 text-destructive">
+                <Badge variant="outline" className="border-destructive/40 text-destructive mb-4">
                   Polished production ads
                 </Badge>
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="text-muted-foreground space-y-3">
                   <li className="flex items-start gap-3">
-                    <Eye className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <Eye className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Look like ads → scrolled past in under a second</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Eye className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <Eye className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Expensive crew, studio, edit passes — weeks per spot</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Eye className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <Eye className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>One or two angles tested, at most</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Eye className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <Eye className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Audience never hears your hook, let alone your pitch</span>
                   </li>
                 </ul>
@@ -785,31 +774,27 @@ export function BatchVideoAdsClient() {
 
             <AnimateOnScroll delay={0.1}>
               <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                <Badge variant="outline" className="mb-4 border-success/40 text-success">
+                <Badge variant="outline" className="border-success/40 text-success mb-4">
                   Batch UGC-style ads
                 </Badge>
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="text-muted-foreground space-y-3">
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
                       Look like another creator on the feed — viewers stop and actually listen
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                    <span>
-                      15–20 min of casual selfie footage. No crew. No studio.
-                    </span>
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <span>15–20 min of casual selfie footage. No crew. No studio.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Hundreds of angles tested in parallel</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
-                    <span>
-                      Same message, same offer — but the format earns the attention
-                    </span>
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <span>Same message, same offer — but the format earns the attention</span>
                   </li>
                 </ul>
               </BorderGlow>
@@ -817,16 +802,15 @@ export function BatchVideoAdsClient() {
           </div>
 
           <AnimateOnScroll delay={0.2}>
-            <p className="text-center text-muted-foreground mt-10 max-w-3xl mx-auto">
-              You&apos;re still paying to be there. You&apos;re still targeting your audience.
-              You just don&apos;t <em>look</em> like an advertiser — so the message actually
-              lands.
+            <p className="text-muted-foreground mx-auto mt-10 max-w-3xl text-center">
+              You&apos;re still paying to be there. You&apos;re still targeting your audience. You
+              just don&apos;t <em>look</em> like an advertiser — so the message actually lands.
             </p>
           </AnimateOnScroll>
 
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
-              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+              <Button size="lg" className="px-8 text-lg font-bold" asChild>
                 <a href="#pricing">
                   Ship 500 Native-Look Ads This Week
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -838,58 +822,56 @@ export function BatchVideoAdsClient() {
       </section>
 
       {/* BENEFITS */}
-      <section className="py-24 px-4 bg-muted/20">
-        <div className="max-w-6xl mx-auto">
-          <AnimateOnScroll className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section className="bg-muted/20 px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-16 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               What You Actually Get
             </h2>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
             {[
               {
-                icon: <Target className="w-6 h-6" />,
+                icon: <Target className="h-6 w-6" />,
                 title: "Every angle in one shot",
                 body: "Test every hook, body, and pain point at the same time instead of guessing which to try first.",
               },
               {
-                icon: <Zap className="w-6 h-6" />,
+                icon: <Zap className="h-6 w-6" />,
                 title: "Winning hooks in days",
                 body: "Stop waiting six months to find out what works. Your data comes back fast because you're running everything at once.",
               },
               {
-                icon: <Film className="w-6 h-6" />,
+                icon: <Film className="h-6 w-6" />,
                 title: "Show up and read",
                 body: "We send the scripts. You prop up your phone and read. One 15–20 minute session, one video file, zero thinking about what to say.",
               },
               {
-                icon: <Eye className="w-6 h-6" />,
+                icon: <Eye className="h-6 w-6" />,
                 title: "Looks like content, not ads",
                 body: "Casual selfie footage earns attention the way polished production never will.",
               },
               {
-                icon: <Sparkles className="w-6 h-6" />,
+                icon: <Sparkles className="h-6 w-6" />,
                 title: "Pain points that convert",
                 body: "Find out which problems your audience actually cares about — without burning months on the wrong one.",
               },
               {
-                icon: <Clock className="w-6 h-6" />,
+                icon: <Clock className="h-6 w-6" />,
                 title: "24-hour turnaround*",
                 body: "Footage in, scripts out in a day. No production bottleneck, no editing delays.",
               },
             ].map((benefit, i) => (
               <AnimateOnScroll key={benefit.title} delay={i * 0.05}>
                 <BorderGlow borderRadius={18} innerClassName="p-6 h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
+                  <div className="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full">
                     {benefit.icon}
                   </div>
-                  <h3 className="font-heading font-bold text-lg text-foreground mb-2">
+                  <h3 className="font-heading text-foreground mb-2 text-lg font-bold">
                     {benefit.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {benefit.body}
-                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{benefit.body}</p>
                 </BorderGlow>
               </AnimateOnScroll>
             ))}
@@ -897,7 +879,7 @@ export function BatchVideoAdsClient() {
 
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
-              <Button size="lg" className="text-lg px-8 font-bold" asChild>
+              <Button size="lg" className="px-8 text-lg font-bold" asChild>
                 <a href="#pricing">
                   Get My Batch Pricing
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -909,13 +891,13 @@ export function BatchVideoAdsClient() {
       </section>
 
       {/* SAMPLES */}
-      <section className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <AnimateOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section className="px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               See What You&apos;ll Actually Get
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               Real ads from real batches. Each one built from a single 15–20 minute recording.
             </p>
           </AnimateOnScroll>
@@ -923,32 +905,23 @@ export function BatchVideoAdsClient() {
           <div className="px-4 md:px-16">
             <VideoCarousel videos={SAMPLE_VIDEOS} />
           </div>
-
-          <AnimateOnScroll className="mt-10 text-center">
-            <Button variant="outline" size="lg" asChild>
-              <Link href="/samples">
-                See more samples
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-          </AnimateOnScroll>
         </div>
       </section>
 
       {/* PRICING */}
-      <section id="pricing" className="py-24 px-4">
-        <div className="max-w-6xl mx-auto">
-          <AnimateOnScroll className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section id="pricing" className="px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-16 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               Pick Your Batch
             </h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Pick how many pain points you want to test. The more angles you run, the
-              faster you find what wins.
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+              Pick how many pain points you want to test. The more angles you run, the faster you
+              find what wins.
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {TIERS.map((tier, index) => (
               <AnimateOnScroll key={tier.id} delay={index * 0.1}>
                 <BorderGlow
@@ -956,39 +929,37 @@ export function BatchVideoAdsClient() {
                   innerClassName="p-8 pt-10 flex flex-col h-full relative"
                   className={cn(
                     "h-full",
-                    tier.popular && "shadow-xl shadow-primary/20 md:scale-105"
+                    tier.popular && "shadow-primary/20 shadow-xl md:scale-105",
                   )}
                 >
                   {tier.popular && (
-                    <span className="absolute top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="bg-primary text-primary-foreground absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-bold tracking-wide whitespace-nowrap uppercase">
                       Most Popular
                     </span>
                   )}
 
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary">
+                  <div className="mb-2 flex items-center gap-2">
+                    <div className="bg-primary/10 text-primary inline-flex h-8 w-8 items-center justify-center rounded-full">
                       {tier.icon}
                     </div>
-                    <h3 className="text-2xl font-heading font-bold text-foreground">
-                      {tier.name}
-                    </h3>
+                    <h3 className="font-heading text-foreground text-2xl font-bold">{tier.name}</h3>
                   </div>
-                  <p className="text-sm text-muted-foreground mb-6">{tier.tagline}</p>
+                  <p className="text-muted-foreground mb-6 text-sm">{tier.tagline}</p>
 
                   <div className="mb-6">
                     <div className="flex items-baseline gap-2">
-                      <span className="text-4xl font-bold text-foreground">{tier.price}</span>
-                      <span className="text-sm text-muted-foreground">one-time</span>
+                      <span className="text-foreground text-4xl font-bold">{tier.price}</span>
+                      <span className="text-muted-foreground text-sm">one-time</span>
                     </div>
-                    <p className="text-sm text-primary font-semibold mt-2">
+                    <p className="text-primary mt-2 text-sm font-semibold">
                       {tier.adCount} ads · {tier.painPoints} pain points
                     </p>
                   </div>
 
-                  <ul className="space-y-3 flex-1 mb-8">
+                  <ul className="mb-8 flex-1 space-y-3">
                     {tier.highlights.map((feature) => (
                       <li key={feature} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                        <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                         <span className="text-foreground text-sm">{feature}</span>
                       </li>
                     ))}
@@ -1004,13 +975,13 @@ export function BatchVideoAdsClient() {
                     >
                       {loadingTier === tier.id ? (
                         <>
-                          <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                           Redirecting…
                         </>
                       ) : (
                         <>
                           Start {tier.name}
-                          <ArrowRight className="w-4 h-4 ml-2" />
+                          <ArrowRight className="ml-2 h-4 w-4" />
                         </>
                       )}
                     </Button>
@@ -1021,25 +992,25 @@ export function BatchVideoAdsClient() {
           </div>
 
           {checkoutError && (
-            <p className="text-center text-sm text-destructive mt-6 max-w-xl mx-auto">
+            <p className="text-destructive mx-auto mt-6 max-w-xl text-center text-sm">
               {checkoutError}
             </p>
           )}
 
-          <p className="text-center text-xs text-muted-foreground mt-10 max-w-2xl mx-auto">
-            Secure checkout via Stripe. *24-hour turnaround guaranteed from the
-            moment we receive your footage. Weekends: footage received Sunday
-            counts as Monday — delivered by end of day Tuesday. Revisions for
-            errors only — this is ad creative testing, not boutique edit work.
+          <p className="text-muted-foreground mx-auto mt-10 max-w-2xl text-center text-xs">
+            Secure checkout via Stripe. *24-hour turnaround guaranteed from the moment we receive
+            your footage. Weekends: footage received Sunday counts as Monday — delivered by end of
+            day Tuesday. Revisions for errors only — this is ad creative testing, not boutique edit
+            work.
           </p>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-24 px-4">
-        <div className="max-w-3xl mx-auto">
-          <AnimateOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section className="px-4 py-24">
+        <div className="mx-auto max-w-3xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               Questions
             </h2>
           </AnimateOnScroll>
@@ -1047,14 +1018,12 @@ export function BatchVideoAdsClient() {
           <div className="space-y-4">
             {FAQS.map((item, index) => (
               <AnimateOnScroll key={item.q} delay={index * 0.05}>
-                <details className="group bg-card border border-border rounded-xl">
-                  <summary className="cursor-pointer p-6 font-heading font-semibold text-foreground flex items-center justify-between gap-4">
+                <details className="group bg-card border-border rounded-xl border">
+                  <summary className="font-heading text-foreground flex cursor-pointer items-center justify-between gap-4 p-6 font-semibold">
                     <span>{item.q}</span>
-                    <span className="transition group-open:rotate-180 text-primary">▼</span>
+                    <span className="text-primary transition group-open:rotate-180">▼</span>
                   </summary>
-                  <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
-                    {item.a}
-                  </div>
+                  <div className="text-muted-foreground px-6 pb-6 leading-relaxed">{item.a}</div>
                 </details>
               </AnimateOnScroll>
             ))}
@@ -1063,25 +1032,29 @@ export function BatchVideoAdsClient() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-24 px-4 bg-primary/5">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="bg-primary/5 px-4 py-24">
+        <div className="mx-auto max-w-3xl text-center">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               Stop Guessing What Works
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              One recording session. Hundreds of angles. Your winners found in days, not
-              months.
+            <p className="text-muted-foreground mb-8 text-lg md:text-xl">
+              One recording session. Hundreds of angles. Your winners found in days, not months.
             </p>
             <ClickSpark sparkColor="#7058e3" sparkCount={12} sparkRadius={28}>
               <Button
                 size="lg"
-                className="font-bold text-lg px-12 py-7 rounded-lg shadow-lg shadow-primary/25"
+                className="shadow-primary/25 rounded-lg px-12 py-7 text-lg font-bold shadow-lg"
                 asChild
               >
                 <Link href="#pricing">
+<<<<<<< Updated upstream
                   Get 300 Ads Shipped in 24h
                   <ArrowRight className="w-5 h-5 ml-2" />
+=======
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
+>>>>>>> Stashed changes
                 </Link>
               </Button>
             </ClickSpark>
