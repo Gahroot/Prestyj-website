@@ -6,55 +6,55 @@ import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata: Metadata = {
-  title: "Batch Video Ad Pricing | Minimum, Pro, Max | PRESTYJ",
+  title: "Batch Video Ad Pricing | 300, 500, or 1,000 Ads | PRESTYJ",
   description:
-    "Transparent pricing for batch video ad creative testing. 300, 500, or 1000 scripted ads. Pick how many pain points you want to test. 24-hour turnaround.",
+    "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 scripted ads. Pick how many customer problems you want each ad to speak to. 1–2 business day turnaround.",
   openGraph: {
     title: "Batch Video Ad Pricing | PRESTYJ",
     description:
-      "Transparent pricing for batch video ad creative testing. Pick your pain point count.",
+      "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 ads.",
     type: "website",
   },
 };
 
 const TIERS = [
   {
-    name: "Minimum",
+    name: "300 Ads",
     price: "$1,497",
     tagline: "Test your first angles",
     popular: false,
     features: [
       "300 unique vertical video ads",
-      "3 pain points tested",
+      "3 customer problems each ad speaks to (e.g., price, speed, trust)",
       "Hook, body & CTA variations",
-      "24-hour turnaround*",
+      "1–2 business day turnaround",
       "Error revisions included",
     ],
   },
   {
-    name: "Pro",
+    name: "500 Ads",
     price: "$2,497",
     tagline: "The sweet spot",
     popular: true,
     features: [
       "500 unique vertical video ads",
-      "5 pain points tested",
+      "5 customer problems each ad speaks to (e.g., price, speed, trust)",
       "Hook, body & CTA variations",
-      "24-hour turnaround*",
+      "1–2 business day turnaround",
       "Error revisions included",
       "Priority queue",
     ],
   },
   {
-    name: "Max",
+    name: "1,000 Ads",
     price: "$3,997",
     tagline: "Go wide, find winners fast",
     popular: false,
     features: [
-      "1000 unique vertical video ads",
-      "10 pain points tested",
+      "1,000 unique vertical video ads",
+      "10 customer problems each ad speaks to (e.g., price, speed, trust)",
       "Hook, body & CTA variations",
-      "24-hour turnaround*",
+      "1–2 business day turnaround",
       "Error revisions included",
       "Priority queue",
       "Full-spectrum angle coverage",
@@ -73,8 +73,8 @@ export default function BulkVideoAdPricingPage() {
               Batch Video Ad Pricing
             </h1>
             <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-xl md:text-2xl">
-              Pick how many pain points you want to test. 300, 500, or 1000 scripted ads — delivered
-              in 24 hours.*
+              Pick how many customer problems you want each ad to speak to. 300, 500, or 1,000
+              scripted ads — delivered in 1–2 business days.
             </p>
           </AnimateOnScroll>
         </div>
@@ -133,7 +133,7 @@ export default function BulkVideoAdPricingPage() {
                     className="w-full font-bold"
                     asChild
                   >
-                    <Link href="/batch-video-ads#pricing">
+                    <Link href="/book-demo">
                       Get Started
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
@@ -148,9 +148,8 @@ export default function BulkVideoAdPricingPage() {
       {/* Fine print */}
       <section className="px-4 py-8">
         <p className="text-muted-foreground mx-auto max-w-2xl text-center text-xs">
-          *24 hours from when we receive your footage. Weekends: footage received Sunday counts as
-          Monday — delivered by end of day Tuesday. Revisions for errors only — this is ad creative
-          testing, not boutique edit work.
+          Turnaround measured in business days from when we receive your footage. Revisions for
+          errors only — this is ad creative testing, not boutique edit work.
         </p>
       </section>
 
@@ -169,7 +168,7 @@ export default function BulkVideoAdPricingPage() {
               className="shadow-primary/25 rounded-lg px-12 py-7 text-lg font-bold shadow-lg"
               asChild
             >
-              <Link href="/batch-video-ads#pricing">
+              <Link href="/book-demo">
                 Start My Batch
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
