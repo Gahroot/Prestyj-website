@@ -11,9 +11,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 const siteUrl = "https://prestyj.com";
 
 export const metadata: Metadata = {
-  title: "Home Service Facebook Ads by City",
+  title: "Prestyj by City",
   description:
-    "Find Prestyj's AI-powered Facebook ad services for home service businesses in your city. HVAC, roofing, plumbing, solar, and general contractors across 20+ major US metros.",
+    "Prestyj's AI agents for marketing & sales by city — local lead capture, response, qualification, and meeting booking across 20+ major US metros.",
   keywords: [
     "home service ads by city",
     "HVAC advertising near me",
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     "local home service marketing",
   ],
   openGraph: {
-    title: "Home Service Facebook Ads by City",
+    title: "Prestyj by City",
     description:
-      "Find Prestyj's AI-powered Facebook ad services for home service businesses in your city.",
+      "Prestyj's AI agents for marketing & sales by city — across 20+ major US metros.",
     type: "website",
     url: `${siteUrl}/locations`,
   },

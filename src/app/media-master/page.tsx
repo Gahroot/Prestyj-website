@@ -23,9 +23,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { WaitlistForm } from "@/components/media-master-waitlist-form";
 
 export const metadata: Metadata = {
-  title: "Download Media Master | AI Creative Studio for Service Businesses",
+  title: "Download Media Master",
   description:
-    "Download Media Master — the desktop app that generates AI-powered creatives, manages offers and characters, and publishes to Facebook, Instagram, TikTok, LinkedIn, YouTube, and more. Built for coaches, consultants, agencies, and home service businesses.",
+    "Media Master — the creative studio desktop app in our AI agents for marketing & sales suite. Generates AI creatives, manages offers and characters, and publishes to Facebook, Instagram, TikTok, LinkedIn, and YouTube.",  
   keywords: [
     "Media Master download",
     "AI creative studio",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     "multi-platform publishing tool",
   ],
   openGraph: {
-    title: "Download Media Master | AI Creative Studio for Service Businesses",
+    title: "Download Media Master",
     description:
-      "Generate AI-powered creatives, manage your brand, and publish to every platform — all from one desktop app.",
+      "Media Master — the creative studio desktop app in our AI agents for marketing & sales suite. Generate creatives, manage your brand, and publish to every major platform.",
     type: "website",
     url: "https://prestyj.com/media-master",
   },

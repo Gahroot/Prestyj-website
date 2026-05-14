@@ -38,11 +38,11 @@ const HVAC_PAIN_POINTS = [
 export const metadata: Metadata = {
   title: "300 Free Video Ads for HVAC Companies",
   description:
-    "What if you had 300 video ads running by next week? We'll create them for free. You just send the footage. 24-hour turnaround. Exclusively for HVAC contractors.",
+    "300 free video ads for HVAC companies when you start a Prestyj plan. Part of our AI agents for marketing & sales — 24-hour turnaround from one recording session.",
   openGraph: {
     title: "300 Free Video Ads for HVAC Companies",
     description:
-      "What if you had 300 video ads running by next week? We'll create them for free. You just send the footage.",
+      "300 free video ads for HVAC companies when you start a Prestyj plan. Part of our AI agents for marketing & sales.",
     type: "website",
   },
 };

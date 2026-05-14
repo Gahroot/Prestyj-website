@@ -3,9 +3,9 @@ import type { Metadata } from "next";
 const PAGE_URL = "https://prestyj.com/ai-content-department";
 
 export const metadata: Metadata = {
-  title: "AI Content Department — Your AI Agent for Social Media",
+  title: "AI Content Department",
   description:
-    "AI Content Department — the AI agent for social media inside Prestyj's marketing & sales AI agent suite. 1,000+ posts/month across 7 platforms, live in 24 hours. From $1,997/mo.",
+    "AI Content Department — the social media AI agent in our marketing & sales agent suite. 1,000+ posts per month across 7 platforms, live in 24 hours, from $1,997/mo.",
   keywords: [
     "AI content department",
     "AI agent for social media",
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     "cost per post social media",
   ],
   openGraph: {
-    title: "AI Content Department — Your AI Agent for Social Media",
+    title: "AI Content Department",
     description:
-      "An AI agent that runs your social media. 1,000+ posts/month across 7 platforms, live in 24 hours. Part of Prestyj's marketing & sales AI agent suite. From $1,997/mo.",
+      "AI Content Department — the social media AI agent in our marketing & sales agent suite. 1,000+ posts per month across 7 platforms, live in 24 hours, from $1,997/mo.",
     type: "website",
     url: PAGE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Content Department — Your AI Agent for Social Media",
+    title: "AI Content Department",
     description:
-      "An AI agent that runs your social media. 1,000+ posts/month across 7 platforms. From $1,997/mo.",
+      "AI Content Department — the social media AI agent in our marketing & sales agent suite. 1,000+ posts per month across 7 platforms.",
   },
   alternates: {
     canonical: PAGE_URL,

@@ -16,7 +16,7 @@ const pageUrl = "https://prestyj.com/statistics";
 
 export const metadata: Metadata = {
   title: `${totalStatCount}+ Lead Response, Video Ad & AI Sales Statistics (2025–2026)`,
-  description: `A comprehensive collection of ${totalStatCount}+ cite-worthy statistics on speed-to-lead, video advertising performance, AI adoption in sales, lead conversion benchmarks, and cost per lead by industry. Updated for 2025–2026.`,
+  description: `${totalStatCount}+ cite-worthy statistics on speed-to-lead, video advertising performance, AI adoption in marketing and sales, lead conversion benchmarks, and cost per lead by industry — updated for 2025–2026.`,
   keywords: [
     "speed to lead statistics",
     "lead response time statistics",

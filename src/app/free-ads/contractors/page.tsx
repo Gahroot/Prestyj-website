@@ -38,10 +38,11 @@ const CONTRACTOR_PAIN_POINTS = [
 export const metadata: Metadata = {
   title: "300 Free Video Ads for Contractors",
   description:
-    "What if you had 300 video ads running by next week? We'll create them for free. You just send the footage. 24-hour turnaround. For general contractors.",
+    "300 free video ads for contractors when you start a Prestyj plan. Part of our AI agents for marketing & sales — 24-hour turnaround from one recording session.",
   openGraph: {
     title: "300 Free Video Ads for Contractors",
-    description: "What if you had 300 video ads running by next week? We'll create them for free.",
+    description:
+      "300 free video ads for contractors when you start a Prestyj plan. Part of our AI agents for marketing & sales.",
     type: "website",
   },
 };

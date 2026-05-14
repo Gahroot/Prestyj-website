@@ -19,9 +19,9 @@ import { faqs } from "@/lib/faq-data";
 const siteUrl = "https://prestyj.com";
 
 export const metadata: Metadata = {
-  title: "FAQ | AI Agents for Marketing & Sales",
+  title: "FAQ",
   description:
-    "Common questions about Prestyj — what you get, pricing, onboarding, integrations, and how our AI agents for marketing and sales actually work.",
+    "Common questions about Prestyj's AI agents for marketing and sales — what you get, pricing, onboarding, integrations, and how the agents work.",
   keywords: [
     "AI agents FAQ",
     "AI marketing agent",
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
     "Prestyj FAQ",
   ],
   openGraph: {
-    title: "FAQ | AI Agents for Marketing & Sales",
+    title: "FAQ",
     description:
-      "Common questions about Prestyj — what you get, pricing, onboarding, integrations, and how our AI agents for marketing and sales actually work.",
+      "Common questions about Prestyj's AI agents for marketing and sales — what you get, pricing, onboarding, integrations, and how the agents work.",
     type: "website",
     url: `${siteUrl}/faq`,
   },

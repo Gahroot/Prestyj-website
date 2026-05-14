@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 export const metadata: Metadata = {
-  title: "Batch Video Ads | 300–1000 Scripted Ads in 24 Hours",
+  title: "Batch Video Ads",
   description:
-    "Send us 15–20 minutes of casual selfie footage. Get back hundreds of scripted ad variations that look like content, not ads. Find winning hooks in days — not six months of one-a-day posting.",
+    "Batch Video Ads — part of our AI agents for marketing & sales. Generate 300–1,000 scripted video ad variations from a single recording session, delivered in 24 hours.",
   openGraph: {
-    title: "Batch Video Ads | Hundreds of Ad Variations in 24 Hours",
+    title: "Batch Video Ads",
     description:
-      "One recording session. Hundreds of ad angles tested in parallel. Stop guessing what works.",
+      "Batch Video Ads — part of our AI agents for marketing & sales. 300–1,000 scripted video ad variations from one recording session.",
     type: "website",
   },
 };

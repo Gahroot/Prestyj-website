@@ -15,7 +15,7 @@ import { freeAdsFaqs } from "@/lib/free-ads-data";
 export const metadata: Metadata = {
   title: "Get 300 Free Video Ads with a Prestyj Plan",
   description:
-    "Get 300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). 24-hour turnaround from a single recording session — for contractors, real estate, and home service businesses.",
+    "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Part of our AI agents for marketing & sales — 24-hour turnaround from one recording session.",
   keywords: [
     "free video ads",
     "free video ads for service businesses",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Get 300 Free Video Ads with a Prestyj Plan",
     description:
-      "300 free video ads when you start a Prestyj plan from $1,997/mo. Setup fee applies. 24-hour turnaround. Built for contractors, real estate, and home services.",
+      "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Part of our AI agents for marketing & sales.",
     type: "website",
     url: "https://prestyj.com/free-ads",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Get 300 Free Video Ads with a Prestyj Plan",
     description:
-      "300 free video ads when you start a Prestyj plan from $1,997/mo. Setup fee applies. 24-hour turnaround.",
+      "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Part of our AI agents for marketing & sales.",
   },
   alternates: {
     canonical: "https://prestyj.com/free-ads",

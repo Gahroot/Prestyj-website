@@ -9,10 +9,11 @@ import { bulkAdPricingTiers } from "@/lib/bulk-ad-pricing-data";
 export const metadata: Metadata = {
   title: "Batch Video Ad Pricing",
   description:
-    "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 scripted ads. Pick how many customer problems you want each ad to speak to. 1–2 business day turnaround.",
+    "Pricing for Batch Video Ads — part of our AI agents for marketing & sales. 300, 500, or 1,000 scripted video ad variations with a 1–2 business day turnaround.",
   openGraph: {
     title: "Batch Video Ad Pricing",
-    description: "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 ads.",
+    description:
+      "Pricing for Batch Video Ads — part of our AI agents for marketing & sales. 300, 500, or 1,000 scripted video ad variations.",
     type: "website",
   },
 };
