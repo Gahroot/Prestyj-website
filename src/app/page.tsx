@@ -15,10 +15,6 @@ const StatisticsSection = dynamic(
   () => import("@/components/sections/statistics").then((m) => m.StatisticsSection),
   { ssr: true },
 );
-const BatchVideoAdsCTASection = dynamic(
-  () => import("@/components/sections/batch-video-ads-cta").then((m) => m.BatchVideoAdsCTASection),
-  { ssr: true },
-);
 const HowItWorksSection = dynamic(
   () => import("@/components/sections/how-it-works").then((m) => m.HowItWorksSection),
   { ssr: true },
@@ -95,13 +91,12 @@ export default function Home() {
       <Navbar />
       <main>
         <HomeHeroSection />
-        <BatchVideoAdsCTASection />
-        <HowItWorksSection />
-        <TestimonialsSection />
-        <StatisticsSection />
-        <PricingSection />
         <PainPointsSection />
         <SolutionSection />
+        <HowItWorksSection />
+        <StatisticsSection />
+        <TestimonialsSection />
+        <PricingSection />
         <FAQSection />
         <CTASection />
       </main>
