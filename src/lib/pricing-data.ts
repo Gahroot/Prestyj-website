@@ -32,6 +32,12 @@ export interface PricingTier {
   story: string;
   bestFor: string;
   /**
+   * Short audience label for compact UI (e.g. comparison table column
+   * sub-headers). Keep to ~3-5 words. For the long marketing sentence, use
+   * `bestFor` instead.
+   */
+  audience: string;
+  /**
    * Direct-buy path: when true, the pricing card shows a secondary CTA that
    * goes to a 2-field intake (name + work email) and then to Stripe checkout
    * for the setup fee + first month. Tiers that genuinely need a scoping
@@ -115,6 +121,7 @@ export const pricingTiers: PricingTier[] = [
       "You're handling under 50 leads a month, but half go cold because nobody responds fast enough. The Starter plan runs your ads for you, ships 300 short-form video ads a month, gives you a conversion-optimized landing page, and puts an AI agent on every new lead that replies in under 60 seconds, books the meeting on your calendar, and chases no-shows automatically.",
     bestFor:
       "Businesses doing under 50 leads/month who need a reliable top of funnel and instant lead follow-up without hiring.",
+    audience: "Solo / small team",
     directBuyEnabled: true,
   },
   {
@@ -158,6 +165,7 @@ export const pricingTiers: PricingTier[] = [
       "You're handling 50–250 leads a month from ads, your website, and your existing database. The volume is real, but follow-up is uneven and your team can't keep up. The Pro plan adds AI agents that chat on your website, text every new lead back in seconds, qualify buyers from tire-kickers with a multi-step form, and reactivate cold leads in your CRM so nothing gets left on the table.",
     bestFor:
       "Growing businesses doing 50–250 leads/month who need AI agents covering every channel — web, SMS, and database — at once.",
+    audience: "10–20 agents",
     directBuyEnabled: true,
   },
   {
@@ -202,6 +210,7 @@ export const pricingTiers: PricingTier[] = [
       "You're handling 250+ leads a month, or running multiple locations, and a single team can't reasonably cover every channel anymore. The Scale plan runs your full marketing and sales motion with AI agents — inbound chat and text on every lead, an AI voice agent calling every new lead within minutes, an AI receptionist answering every inbound call, and ad volume tuned for multi-market reach.",
     bestFor:
       "High-volume or multi-location businesses doing 250+ leads/month who want AI agents running marketing and sales end-to-end.",
+    audience: "Multi-office",
     // Multi-market / multi-location + AI voice/receptionist setup needs a
     // scoping conversation. Direct-buy would create false expectations.
     directBuyEnabled: false,
