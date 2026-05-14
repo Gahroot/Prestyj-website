@@ -18,9 +18,9 @@ const manrope = Manrope({
 
 const siteConfig = {
   name: "PRESTYJ",
-  title: "AI Lead Response & Appointment Setting for Real Estate Teams | Prestyj",
+  title: "Prestyj | AI Agents for Marketing & Sales",
   description:
-    "AI that responds to your ad leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7. Built for real estate teams and brokerages running Facebook and YouTube ads.",
+    "We build AI agents for marketing and sales. AI agents and automations that capture leads, respond in seconds, qualify, and book meetings — 24/7.",
   url: "https://prestyj.com",
   ogImage: "/og-image.jpg",
   creator: "@prestyj_",
@@ -44,18 +44,13 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "AI lead response real estate",
-    "real estate team lead conversion",
-    "AI appointment setting real estate",
-    "brokerage lead management",
-    "AI ISA replacement",
-    "real estate Facebook ad leads",
-    "speed to lead real estate",
-    "AI for real estate brokerages",
-    "Follow Up Boss AI integration",
-    "real estate lead follow up automation",
-    "AI sales agent real estate teams",
-    "real estate ad lead response",
+    "AI sales agent",
+    "AI marketing agent",
+    "AI lead response",
+    "AI appointment setter",
+    "AI marketing automation",
+    "AI sales automation",
+    "AI agents for business",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
@@ -117,7 +112,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} ${manrope.variable} font-sans relative min-h-screen`}>
+      <body className={`${inter.variable} ${manrope.variable} relative min-h-screen font-sans`}>
         <Script
           id="google-ads-gtag"
           src="https://www.googletagmanager.com/gtag/js?id=AW-18112004799"
