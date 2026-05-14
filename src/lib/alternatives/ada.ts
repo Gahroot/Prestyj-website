@@ -93,7 +93,7 @@ export const ada: AlternativePageContent = createAlternativePage({
         feature: "Multi-Agent Architecture",
         prestyj: true,
         competitor: false,
-        note: "Ada uses single-agent model; Prestyny deploys specialized agents per sales stage",
+        note: "Ada uses single-agent model; Prestyj deploys specialized agents per sales stage",
       },
       {
         feature: "Speed-to-Lead Optimization",
@@ -166,7 +166,7 @@ export const ada: AlternativePageContent = createAlternativePage({
       icon: "Phone",
       title: "Voice-First vs. Chat-Only",
       description:
-        "Phone leads convert 23% higher than chat leads. Ada is chat-only, missing the highest-converting channel. Prestyny's voice-first architecture with AI calling + SMS delivers 4.1% conversion rates. If your leads come from phone calls, Ada can't help them.",
+        "Phone leads convert 23% higher than chat leads. Ada is chat-only, missing the highest-converting channel. Prestyj's voice-first architecture with AI calling + SMS delivers 4.1% conversion rates. If your leads come from phone calls, Ada can't help them.",
     },
     {
       icon: "Target",

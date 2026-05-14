@@ -121,7 +121,7 @@ export const chimeUsers: BestForPageContent = createBestForPage({
         "Prestyj connects to Chime via API. When leads enter your Chime CRM, Prestyj receives them instantly and begins AI follow-up. All conversations and bookings sync back to Chime automatically.",
     },
     {
-      question: "Does Prestyk work with Chime's dialer and text features?",
+      question: "Does Prestyj work with Chime's dialer and text features?",
       answer:
         "Prestyj complements Chime's built-in communication tools. AI handles the initial outreach and qualification, then hands off warm leads to agents who use Chime's dialer for relationship-building calls.",
     },

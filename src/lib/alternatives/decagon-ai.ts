@@ -211,7 +211,7 @@ export const decagonAi: AlternativePageContent = createAlternativePage({
     {
       href: "/blog/sales-ai-agent-vs-human-cost-comparison-2026",
       title: "AI vs Human Cost Comparison",
-      description: "ROI analysis: Prestyny vs. Decagon pricing and performance",
+      description: "ROI analysis: Prestyj vs. Decagon pricing and performance",
     },
     {
       href: "/best-for/real-estate-teams",

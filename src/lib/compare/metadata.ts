@@ -13,13 +13,13 @@ export function generateCompareMetadata(config: CompareMetadata): Metadata {
       title,
       description,
       url: canonicalUrl,
-      siteName: "PrestyJ",
+      siteName: "Prestyj",
       images: [
         {
           url: "/og-image.jpg",
           width: 1200,
           height: 630,
-          alt: `PrestyJ vs ${competitorName}`,
+          alt: `Prestyj vs ${competitorName}`,
         },
       ],
       locale: "en_US",
