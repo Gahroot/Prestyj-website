@@ -1,21 +1,8 @@
 import {
-  Video,
-  Zap,
-  RefreshCw,
-  Sparkles,
-  TrendingUp,
+  Bot,
   Megaphone,
-  Workflow,
-  Layers,
-  Grid2x2,
-  GitCompare,
-  Users,
-  Building2,
-  Building,
-  PhoneCall,
-  Landmark,
-  KeyRound,
-  Share2,
+  Zap,
+  Wrench,
   type LucideIcon,
 } from "lucide-react";
 
@@ -27,118 +14,40 @@ export type DropdownLink = {
 };
 
 export const navLinks = [
-  { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
-  { href: "/done-for-you-social-media", label: "Content Engine", highlight: true },
-  { href: "/results", label: "Results" },
+  { href: "/platform", label: "Product" },
+  { href: "#solutions", label: "Solutions", dropdown: true as const },
+  { href: "/results", label: "Customers" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const ctaLinks = [
-  { href: "/lead-magnet", label: "Free Playbook", variant: "secondary" as const },
-  { href: "/book-demo", label: "Book Demo", variant: "primary" as const },
+  { href: "/book-demo", label: "Book a Demo", variant: "primary" as const },
 ];
 
 export const solutionLinks: DropdownLink[] = [
   {
-    href: "/batch-video-ads",
-    label: "Batch Video Ads",
-    description: "300–1,000 scripted vertical video ads in 24 hours.",
-    icon: Video,
+    href: "/solutions/ai-sales-agents",
+    label: "AI Sales Agents",
+    description: "Autonomous agents that qualify, follow up, and close.",
+    icon: Bot,
   },
   {
-    href: "/done-for-you-social-media",
-    label: "Done-For-You Social Media",
-    description: "1,500+ posts/month across 7 platforms — on autopilot.",
-    icon: Share2,
-  },
-  {
-    href: "/solutions/speed-to-lead",
-    label: "Speed to Lead",
-    description: "Respond to ad leads in under 60 seconds.",
-    icon: Zap,
-  },
-  {
-    href: "/solutions/lead-reactivation",
-    label: "Dead Lead Reactivation",
-    description: "Re-engage cold leads at scale.",
-    icon: RefreshCw,
-  },
-  {
-    href: "/solutions/ai-lead-generation",
-    label: "AI Lead Generation",
-    description: "Find and qualify buyers and sellers 24/7.",
-    icon: Sparkles,
-  },
-  {
-    href: "/solutions/sales-automation",
-    label: "Sales Automation",
-    description: "Automate your entire sales pipeline.",
-    icon: TrendingUp,
-  },
-  {
-    href: "/solutions/marketing-automation",
-    label: "Marketing Automation",
-    description: "Nurture leads on autopilot.",
+    href: "/solutions/ai-marketing-agents",
+    label: "AI Marketing Agents",
+    description: "Agents that run campaigns, content, and outreach 24/7.",
     icon: Megaphone,
   },
   {
-    href: "/solutions/business-automation",
-    label: "Business Automation",
-    description: "Automate back-office operations.",
-    icon: Workflow,
+    href: "/solutions/ai-lead-response",
+    label: "AI Lead Response & Booking",
+    description: "Sub-60-second response and calendar booking on autopilot.",
+    icon: Zap,
   },
   {
-    href: "/platform",
-    label: "Platform & Technology",
-    description: "How Prestyj works under the hood.",
-    icon: Layers,
+    href: "/solutions/custom-ai-builds",
+    label: "Custom AI Builds",
+    description: "Bespoke AI agents tailored to your sales and marketing stack.",
+    icon: Wrench,
   },
-];
-
-export const solutionCategories = [
-  { href: "/solutions/ai-lead-generation", label: "AI Lead Generation" },
-  { href: "/best-for/ai-lead-response", label: "AI Lead Response" },
-  { href: "/best-for/ai-sales-agent", label: "AI Sales Agent" },
-  { href: "/best-for/ai-voice-receptionist", label: "AI Receptionist" },
-  { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
-  { href: "/solutions/sales-automation", label: "Sales Automation" },
-  { href: "/solutions/marketing-automation", label: "Marketing Automation" },
-  { href: "/best-for/conversion-rate-optimization", label: "Conversion Optimization" },
-  { href: "/solutions/business-automation", label: "Business Automation" },
-  { href: "/best-for/ai-customer-engagement", label: "AI Customer Engagement" },
-];
-
-export const alternativeLinks: DropdownLink[] = [
-  { href: "/alternatives", label: "All Alternatives", description: "Compare Prestyj to every option.", icon: Grid2x2 },
-  { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo", description: "AI lead nurture compared.", icon: GitCompare },
-  { href: "/alternatives/human-isa", label: "Prestyj vs Human ISA", description: "AI vs hiring an ISA.", icon: GitCompare },
-  { href: "/alternatives/internal-isa", label: "Prestyj vs Internal ISA Team", description: "AI vs an in-house team.", icon: GitCompare },
-  { href: "/alternatives/drift", label: "Prestyj vs Drift", description: "Real estate vs generic chat.", icon: GitCompare },
-  { href: "/alternatives/structurely", label: "Prestyj vs Structurely", description: "Lead qualification compared.", icon: GitCompare },
-  { href: "/alternatives/cinc", label: "Prestyj vs CINC", description: "Lead platforms compared.", icon: GitCompare },
-  { href: "/alternatives/conversica", label: "Prestyj vs Conversica", description: "Enterprise AI compared.", icon: GitCompare },
-  { href: "/alternatives/retell", label: "Prestyj vs Retell AI", description: "Voice AI for real estate.", icon: GitCompare },
-  { href: "/alternatives/vapi", label: "Prestyj vs Vapi", description: "Voice API compared.", icon: GitCompare },
-  { href: "/alternatives/real-geeks", label: "Prestyj vs Real Geeks", description: "IDX vs AI conversion.", icon: GitCompare },
-  { href: "/alternatives/follow-up-boss", label: "Prestyj + Follow Up Boss", description: "Prestyj layered on FUB.", icon: GitCompare },
-];
-
-export const bestForLinks: DropdownLink[] = [
-  { href: "/best-for", label: "All Use Cases", description: "Every team type we serve.", icon: Grid2x2 },
-  { href: "/best-for/real-estate-teams", label: "Real Estate Teams", description: "10–50 agent teams.", icon: Users },
-  { href: "/best-for/real-estate-franchises", label: "Real Estate Franchises", description: "Multi-office franchises.", icon: Building2 },
-  { href: "/best-for/regional-brokerage-networks", label: "Regional Brokerages", description: "Brokerage networks.", icon: Building },
-  { href: "/best-for/isa-replacement", label: "ISA Replacement", description: "Replace or augment your ISA.", icon: PhoneCall },
-  { href: "/best-for/follow-up-boss-users", label: "Follow Up Boss Users", description: "Supercharge your FUB stack.", icon: RefreshCw },
-  { href: "/best-for/commercial-real-estate", label: "Commercial Real Estate", description: "CRE team workflows.", icon: Landmark },
-  { href: "/best-for/property-managers", label: "Property Managers", description: "Property management ops.", icon: KeyRound },
-  // Batch video ad matrix — high-intent vertical landing pages
-  { href: "/best-for/batch-video-ads-for-real-estate-teams", label: "Batch Ads for RE Teams", description: "500 vertical ads in 24 hours.", icon: Video },
-  { href: "/best-for/batch-video-ads-for-agency-owners", label: "Batch Ads for Agencies", description: "Founder-led ads at scale.", icon: Video },
-  { href: "/best-for/batch-video-ads-for-coaches", label: "Batch Ads for Coaches", description: "300-1,000 ads from one recording.", icon: Video },
-  // SOCIAL-VERTICAL-MATRIX-NAV-START
-  { href: "/best-for/done-for-you-social-for-coaches", label: "Social for Coaches", description: "1,500+ posts/mo for coaches.", icon: Share2 },
-  { href: "/best-for/done-for-you-social-for-agency-owners", label: "Social for Agency Owners", description: "Founder brand at scale.", icon: Share2 },
-  { href: "/best-for/done-for-you-social-for-saas-founders", label: "Social for SaaS Founders", description: "Founder-led LinkedIn distribution.", icon: Share2 },
-  // SOCIAL-VERTICAL-MATRIX-NAV-END
 ];

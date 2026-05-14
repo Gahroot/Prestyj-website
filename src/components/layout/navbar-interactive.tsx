@@ -5,18 +5,14 @@ import { useState } from "react";
 import { Menu, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import {
-  navLinks,
-  solutionLinks,
-  type DropdownLink,
-} from "@/lib/nav-data";
+import { navLinks, solutionLinks, type DropdownLink } from "@/lib/nav-data";
 
 function NavDropdown({ label, items }: { label: string; items: DropdownLink[] }) {
   return (
     <li className="group/navitem relative">
       <button
         type="button"
-        className="inline-flex items-center gap-1.5 whitespace-nowrap px-3 py-2 text-sm text-white/90 transition-colors hover:text-primary"
+        className="hover:text-primary inline-flex items-center gap-1.5 px-3 py-2 text-sm whitespace-nowrap text-white/90 transition-colors"
       >
         {label}
         <ChevronDown className="h-3 w-3 opacity-60 transition-transform duration-200 group-hover/navitem:rotate-180" />
@@ -33,9 +29,9 @@ function NavDropdown({ label, items }: { label: string; items: DropdownLink[] })
                   <item.icon className="h-4 w-4 text-zinc-400" />
                 </span>
                 <span className="flex flex-1 flex-col">
-                  <span className="text-sm font-medium leading-tight text-white">{item.label}</span>
+                  <span className="text-sm leading-tight font-medium text-white">{item.label}</span>
                   {item.description && (
-                    <span className="mt-0.5 text-sm font-light leading-tight text-zinc-500">
+                    <span className="mt-0.5 text-sm leading-tight font-light text-zinc-500">
                       {item.description}
                     </span>
                   )}
@@ -50,14 +46,22 @@ function NavDropdown({ label, items }: { label: string; items: DropdownLink[] })
   );
 }
 
-export function NavbarDropdowns() {
-  return <NavDropdown label="Platform" items={solutionLinks} />;
+export function SolutionsDropdown({ label = "Solutions" }: { label?: string }) {
+  return <NavDropdown label={label} items={solutionLinks} />;
 }
 
-function MobileSection({ title, items, onNavigate }: { title: string; items: DropdownLink[]; onNavigate: () => void }) {
+function MobileSection({
+  title,
+  items,
+  onNavigate,
+}: {
+  title: string;
+  items: DropdownLink[];
+  onNavigate: () => void;
+}) {
   return (
     <div className="mt-4">
-      <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-zinc-500">{title}</p>
+      <p className="mb-2 text-xs font-semibold tracking-wider text-zinc-500 uppercase">{title}</p>
       <div className="flex flex-col gap-2">
         {items.map((item) => (
           <Link
@@ -66,7 +70,7 @@ function MobileSection({ title, items, onNavigate }: { title: string; items: Dro
             onClick={onNavigate}
             className="flex items-center gap-3 rounded-lg p-2 text-white/80 transition-colors hover:bg-zinc-900 hover:text-white"
           >
-            <item.icon className="h-5 w-5 text-primary" />
+            <item.icon className="text-primary h-5 w-5" />
             <div>
               <p className="text-sm font-medium">{item.label}</p>
               {item.description && <p className="text-xs text-zinc-500">{item.description}</p>}
@@ -95,29 +99,26 @@ export function NavbarMobile() {
           <SheetTitle className="text-white">PRESTYJ</SheetTitle>
         </SheetHeader>
         <nav className="mt-8 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              onClick={close}
-              className={
-                link.highlight
-                  ? "text-lg font-semibold text-primary transition-colors hover:text-primary/80"
-                  : "text-lg font-medium text-white transition-colors hover:text-primary"
-              }
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.dropdown ? null : (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={close}
+                className="hover:text-primary text-lg font-medium text-white transition-colors"
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
 
-          <MobileSection title="Platform" items={solutionLinks} onNavigate={close} />
+          <MobileSection title="Solutions" items={solutionLinks} onNavigate={close} />
 
           <div className="mt-8 flex flex-col gap-3">
-            <Button asChild variant="outline" className="w-full border-zinc-700 bg-transparent text-white hover:bg-zinc-900 hover:text-white">
-              <Link href="/lead-magnet" onClick={close}>Free Playbook</Link>
-            </Button>
             <Button asChild className="w-full">
-              <Link href="/book-demo" onClick={close}>Book a Demo</Link>
+              <Link href="/book-demo" onClick={close}>
+                Book a Demo
+              </Link>
             </Button>
           </div>
         </nav>
