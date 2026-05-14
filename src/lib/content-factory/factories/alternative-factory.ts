@@ -5,10 +5,7 @@ import type {
   PricingInfo,
 } from "@/lib/alternatives/types";
 import { buildHeroWithPattern } from "../constants/hero-patterns";
-import {
-  STANDARD_INDUSTRY_STATS,
-  REACTIVATION_STATS,
-} from "../constants/industry-stats";
+import { STANDARD_INDUSTRY_STATS, REACTIVATION_STATS } from "../constants/industry-stats";
 import { CTA_TEMPLATES } from "../constants/cta-snippets";
 import { PRESTYJ_STANDARD_PRICING } from "../constants/pricing-features";
 import type { IconName } from "../constants/icons";
@@ -25,10 +22,7 @@ interface AlternativeFactoryInput {
   };
   meta: { title: string; description: string; keywords: string[] };
   hero: { badge: string; subheadline: string };
-  industryStats?:
-    | "standard"
-    | "reactivation"
-    | Array<{ stat: string; description: string }>;
+  industryStats?: "standard" | "reactivation" | Array<{ stat: string; description: string }>;
   comparison: {
     features: FeatureRow[];
     competitorPricing: PricingInfo;
@@ -51,21 +45,19 @@ interface AlternativeFactoryInput {
   }>;
 }
 
-export function createAlternativePage(
-  input: AlternativeFactoryInput
-): AlternativePageContent {
+export function createAlternativePage(input: AlternativeFactoryInput): AlternativePageContent {
   const heroSection = buildHeroWithPattern(
     "LOOKING_FOR_ALTERNATIVE",
-    `${input.competitor.name} Alternative?`,
+    input.competitor.name,
     input.hero.badge,
-    input.hero.subheadline
+    input.hero.subheadline,
   );
 
-  let statsSection;
+  let statsSection: AlternativePageContent["industryStats"] = [];
   if (input.industryStats === "standard") {
-    statsSection = STANDARD_INDUSTRY_STATS;
+    statsSection = [...STANDARD_INDUSTRY_STATS];
   } else if (input.industryStats === "reactivation") {
-    statsSection = REACTIVATION_STATS;
+    statsSection = [...REACTIVATION_STATS];
   } else if (Array.isArray(input.industryStats)) {
     statsSection = input.industryStats;
   }
@@ -73,7 +65,6 @@ export function createAlternativePage(
   const prestyjPricing: PricingInfo = {
     ...PRESTYJ_STANDARD_PRICING,
     ...input.comparison.prestyjPricingOverrides,
-    cons: [], // ALWAYS empty for Prestyj
   };
 
   const ctaSection = {

@@ -13,9 +13,9 @@ export const CTA_SNIPPETS = {
 
 export const CTA_TEMPLATES = {
   STANDARD_DEMO: {
-    headline: "Ready to See Prestyj in Action?",
+    headline: "Book a Demo",
     subheadline:
-      "Book a personalized demo to see how Prestyj can transform your lead management and help you close more deals.",
+      "See Prestyj's AI agents respond to a lead, qualify, and book a meeting — live, in 30 minutes.",
     ...CTA_SNIPPETS.BOOK_FREE_DEMO,
     footnote: CTA_SNIPPETS.NO_CREDIT_CARD,
   },

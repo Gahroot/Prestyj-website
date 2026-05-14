@@ -12,7 +12,7 @@ export interface PricingInfo {
   period?: string;
   note?: string;
   pros: string[];
-  cons: string[];
+  cons?: string[];
 }
 
 export interface WhySwitchReason {

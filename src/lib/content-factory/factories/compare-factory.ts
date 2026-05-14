@@ -40,13 +40,11 @@ export function createComparePage(input: CompareFactoryInput): ComparePageData {
         }))
       : input.stats;
 
-  const whySwitchReasons: SwitchReason[] = input.whySwitch.reasons.map(
-    (reason) => ({
-      icon: getIcon(reason.icon),
-      title: reason.title,
-      description: reason.description,
-    })
-  );
+  const whySwitchReasons: SwitchReason[] = input.whySwitch.reasons.map((reason) => ({
+    icon: getIcon(reason.icon),
+    title: reason.title,
+    description: reason.description,
+  }));
 
   const pricingSection = {
     prestyj: { name: "Prestyj", highlight: true, ...input.pricing.prestyj },
@@ -54,7 +52,7 @@ export function createComparePage(input: CompareFactoryInput): ComparePageData {
   };
 
   const ctaSection = {
-    title: "Ready to See Prestyj in Action?",
+    title: CTA_TEMPLATES.STANDARD_DEMO.headline,
     description: CTA_TEMPLATES.STANDARD_DEMO.subheadline,
     buttonText: CTA_TEMPLATES.STANDARD_DEMO.buttonText,
     buttonHref: CTA_TEMPLATES.STANDARD_DEMO.buttonHref,
@@ -71,9 +69,9 @@ export function createComparePage(input: CompareFactoryInput): ComparePageData {
       titleAccent: input.hero.titleAccent,
       subtitle: input.hero.subtitle,
       description: input.hero.description || "",
-      keyStats: input.hero.keyStats,
+      ...(input.hero.keyStats !== undefined && { keyStats: input.hero.keyStats }),
     },
-    stats: statsSection,
+    ...(statsSection !== undefined && { stats: statsSection }),
     pricing: pricingSection,
     features: input.features,
     whySwitch: {
@@ -81,8 +79,8 @@ export function createComparePage(input: CompareFactoryInput): ComparePageData {
       description: input.whySwitch.description,
       reasons: whySwitchReasons,
     },
-    relatedResources: input.relatedResources,
+    ...(input.relatedResources !== undefined && { relatedResources: input.relatedResources }),
     cta: ctaSection,
-    specialSections: input.specialSections,
+    ...(input.specialSections !== undefined && { specialSections: input.specialSections }),
   };
 }

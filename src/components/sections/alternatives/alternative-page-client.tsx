@@ -19,8 +19,8 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
   return (
     <>
       {/* Breadcrumb */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <nav className="flex text-sm text-muted-foreground">
+      <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8">
+        <nav className="text-muted-foreground flex text-sm">
           <Link href="/alternatives" className="hover:text-foreground transition-colors">
             Alternatives
           </Link>
@@ -30,16 +30,16 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-success/5" />
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-16">
+        <div className="from-primary/10 via-background to-success/5 absolute inset-0 bg-gradient-to-br" />
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+              <Badge variant="outline" className="border-primary/50 text-primary mb-6">
                 {alternative.hero.badge}
               </Badge>
             </motion.div>
@@ -48,7 +48,7 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-6"
+              className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl"
             >
               {alternative.hero.headline}
               <br />
@@ -59,7 +59,7 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+              className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg sm:text-xl"
             >
               {alternative.hero.subheadline}
             </motion.p>
@@ -69,9 +69,9 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
 
       {/* Industry Stats */}
       {alternative.industryStats && (
-        <section className="py-12 border-y border-border">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <section className="border-border border-y py-12">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
               {alternative.industryStats.map((item, index) => (
                 <motion.div
                   key={index}
@@ -81,10 +81,10 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
+                  <div className="text-primary mb-2 text-3xl font-bold md:text-4xl">
                     {item.stat}
                   </div>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
+                  <p className="text-muted-foreground text-sm">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -94,25 +94,25 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
 
       {/* Pricing Comparison */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               {isIntegration ? "How They Work Together" : "Pricing Comparison"}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               {isIntegration
                 ? "Understanding what each platform brings to the table"
                 : "Understanding the true cost of each platform"}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
             {/* Competitor Pricing */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -128,7 +128,7 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
                   <div className="text-3xl font-bold">
                     {alternative.comparison.competitorPricing.price}
                     {alternative.comparison.competitorPricing.period && (
-                      <span className="text-lg font-normal text-muted-foreground">
+                      <span className="text-muted-foreground text-lg font-normal">
                         {alternative.comparison.competitorPricing.period}
                       </span>
                     )}
@@ -138,16 +138,16 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
                       {alternative.comparison.competitorPricing.note}
                     </div>
                   )}
-                  <ul className="space-y-2 text-muted-foreground">
+                  <ul className="text-muted-foreground space-y-2">
                     {alternative.comparison.competitorPricing.pros.map((pro, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-success shrink-0 mt-0.5" />
+                        <Check className="text-success mt-0.5 h-5 w-5 shrink-0" />
                         <span>{pro}</span>
                       </li>
                     ))}
-                    {alternative.comparison.competitorPricing.cons.map((con, i) => (
+                    {(alternative.comparison.competitorPricing.cons ?? []).map((con, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <X className="h-5 w-5 text-destructive shrink-0 mt-0.5" />
+                        <X className="text-destructive mt-0.5 h-5 w-5 shrink-0" />
                         <span>{con}</span>
                       </li>
                     ))}
@@ -163,7 +163,7 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full border-primary">
+              <Card className="border-primary h-full">
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-2xl">Prestyj</CardTitle>
@@ -174,7 +174,7 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
                   <div className="text-3xl font-bold">
                     {alternative.comparison.prestyjPricing.price}
                     {alternative.comparison.prestyjPricing.period && (
-                      <span className="text-lg font-normal text-muted-foreground">
+                      <span className="text-muted-foreground text-lg font-normal">
                         {alternative.comparison.prestyjPricing.period}
                       </span>
                     )}
@@ -184,11 +184,17 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
                       {alternative.comparison.prestyjPricing.note}
                     </div>
                   )}
-                  <ul className="space-y-2 text-muted-foreground">
+                  <ul className="text-muted-foreground space-y-2">
                     {alternative.comparison.prestyjPricing.pros.map((pro, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-success shrink-0 mt-0.5" />
+                        <Check className="text-success mt-0.5 h-5 w-5 shrink-0" />
                         <span>{pro}</span>
+                      </li>
+                    ))}
+                    {(alternative.comparison.prestyjPricing.cons ?? []).map((con, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <X className="text-destructive mt-0.5 h-5 w-5 shrink-0" />
+                        <span>{con}</span>
                       </li>
                     ))}
                   </ul>
@@ -201,18 +207,18 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
 
       {/* Feature Comparison Table */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               Feature Comparison
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               See how the platforms stack up side by side
             </p>
           </motion.div>
@@ -226,44 +232,44 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
           >
             <table className="w-full border-collapse">
               <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-4 px-4 font-heading font-semibold text-foreground">
+                <tr className="border-border border-b">
+                  <th className="font-heading text-foreground px-4 py-4 text-left font-semibold">
                     Feature
                   </th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-primary">
+                  <th className="font-heading text-primary px-4 py-4 text-center font-semibold">
                     Prestyj
                   </th>
-                  <th className="text-center py-4 px-4 font-heading font-semibold text-muted-foreground">
+                  <th className="font-heading text-muted-foreground px-4 py-4 text-center font-semibold">
                     {alternative.competitor.shortName || alternative.competitor.name}
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {alternative.comparison.features.map((row, index) => (
-                  <tr key={index} className="border-b border-border/50">
-                    <td className="py-4 px-4">
-                      <div className="font-medium text-foreground">{row.feature}</div>
+                  <tr key={index} className="border-border/50 border-b">
+                    <td className="px-4 py-4">
+                      <div className="text-foreground font-medium">{row.feature}</div>
                       {row.note && (
-                        <div className="text-sm text-muted-foreground mt-1">{row.note}</div>
+                        <div className="text-muted-foreground mt-1 text-sm">{row.note}</div>
                       )}
                     </td>
-                    <td className="text-center py-4 px-4">
+                    <td className="px-4 py-4 text-center">
                       {typeof row.prestyj === "boolean" ? (
                         row.prestyj ? (
-                          <Check className="h-6 w-6 text-success mx-auto" />
+                          <Check className="text-success mx-auto h-6 w-6" />
                         ) : (
-                          <X className="h-6 w-6 text-muted-foreground mx-auto" />
+                          <X className="text-muted-foreground mx-auto h-6 w-6" />
                         )
                       ) : (
                         <span className="text-foreground">{row.prestyj}</span>
                       )}
                     </td>
-                    <td className="text-center py-4 px-4">
+                    <td className="px-4 py-4 text-center">
                       {typeof row.competitor === "boolean" ? (
                         row.competitor ? (
-                          <Check className="h-6 w-6 text-success mx-auto" />
+                          <Check className="text-success mx-auto h-6 w-6" />
                         ) : (
-                          <X className="h-6 w-6 text-muted-foreground mx-auto" />
+                          <X className="text-muted-foreground mx-auto h-6 w-6" />
                         )
                       ) : (
                         <span className="text-muted-foreground">{row.competitor}</span>
@@ -279,27 +285,27 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
 
       {/* Why Switch Section */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               {isIntegration
                 ? `Why Add Prestyj to ${alternative.competitor.name}`
                 : `Why Agents Switch from ${alternative.competitor.name}`}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               {isIntegration
                 ? "Key benefits of combining the platforms"
                 : "Key reasons real estate professionals choose Prestyj"}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {alternative.whySwitch.map((item, index) => {
               const Icon = getIconSafe(item.icon);
               return (
@@ -313,11 +319,11 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
                   <Card className="h-full">
                     <CardContent className="pt-6">
                       <div className="flex items-start gap-4">
-                        <div className="p-3 bg-primary/10 rounded-lg shrink-0">
-                          <Icon className="h-6 w-6 text-primary" />
+                        <div className="bg-primary/10 shrink-0 rounded-lg p-3">
+                          <Icon className="text-primary h-6 w-6" />
                         </div>
                         <div>
-                          <h3 className="text-lg font-heading font-semibold text-foreground mb-2">
+                          <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
                             {item.title}
                           </h3>
                           <p className="text-muted-foreground">{item.description}</p>
@@ -334,8 +340,8 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
 
       {/* When Each Fits */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {/* When Competitor Fits */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -352,8 +358,8 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
                 <CardContent>
                   <ul className="space-y-3">
                     {alternative.whenCompetitorFits.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                        <Check className="h-5 w-5 text-success shrink-0 mt-0.5" />
+                      <li key={i} className="text-muted-foreground flex items-start gap-3">
+                        <Check className="text-success mt-0.5 h-5 w-5 shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -369,15 +375,15 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <Card className="h-full border-primary">
+              <Card className="border-primary h-full">
                 <CardHeader>
                   <CardTitle className="text-xl">When Prestyj Is Right</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-3">
                     {alternative.whenPrestyjFits.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                        <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <li key={i} className="text-muted-foreground flex items-start gap-3">
+                        <Check className="text-primary mt-0.5 h-5 w-5 shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -391,19 +397,19 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
 
       {/* Related Resources Section */}
       <section className="py-16">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-xl font-heading font-semibold text-foreground mb-6 text-center">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h3 className="font-heading text-foreground mb-6 text-center text-xl font-semibold">
             Related Resources
           </h3>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid gap-4 sm:grid-cols-3">
             {alternative.relatedResources.map((resource, i) => (
               <Link
                 key={i}
                 href={resource.href}
-                className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors"
+                className="border-border hover:border-primary/50 rounded-lg border p-4 transition-colors"
               >
-                <p className="font-medium text-foreground mb-1">{resource.title}</p>
-                <p className="text-sm text-muted-foreground">{resource.description}</p>
+                <p className="text-foreground mb-1 font-medium">{resource.title}</p>
+                <p className="text-muted-foreground text-sm">{resource.description}</p>
               </Link>
             ))}
           </div>
@@ -411,30 +417,28 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-24">
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
               {alternative.cta.headline}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
               {alternative.cta.subheadline}
             </p>
-            <Button size="lg" className="text-lg px-10 py-6" asChild>
+            <Button size="lg" className="px-10 py-6 text-lg" asChild>
               <Link href={alternative.cta.buttonHref}>
                 {alternative.cta.buttonText}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             {alternative.cta.footnote && (
-              <p className="text-sm text-muted-foreground mt-6">
-                {alternative.cta.footnote}
-              </p>
+              <p className="text-muted-foreground mt-6 text-sm">{alternative.cta.footnote}</p>
             )}
           </motion.div>
         </div>

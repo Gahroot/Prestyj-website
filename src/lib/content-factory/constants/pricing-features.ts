@@ -11,6 +11,8 @@ export const PRESTYJ_PRICING_FEATURES = {
   LEAD_REACTIVATION: "Lead reactivation included",
 } as const;
 
+// No `cons` field here. If a Prestyj plan has real trade-offs on a given page,
+// the page passes `prestyjPricingOverrides.cons` explicitly — don't hide them.
 export const PRESTYJ_STANDARD_PRICING = {
   price: "Starting at $1,997/mo",
   note: "Setup fee + monthly. Ad budget included.",
@@ -19,5 +21,4 @@ export const PRESTYJ_STANDARD_PRICING = {
     PRESTYJ_PRICING_FEATURES.BATCH_ADS,
     PRESTYJ_PRICING_FEATURES.CRM_SYNC,
   ] as string[],
-  cons: [] as string[], // ALWAYS empty for Prestyj
 };
