@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Download, Mail, Building2, FileText, CheckCircle, Loader2 } from "lucide-react";
@@ -354,7 +355,7 @@ export default function LeadMagnetPage() {
                       {downloadUrl && (
                         <button
                           onClick={handleDownloadClick}
-                          className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-medium transition-colors"
+                          className="bg-primary text-primary-foreground hover:bg-primary/90 mb-6 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-medium transition-colors"
                         >
                           <Download className="h-4 w-4" />
                           Download Your Playbook Now
@@ -371,7 +372,7 @@ export default function LeadMagnetPage() {
                           </li>
                           <li className="flex gap-2">
                             <span className="text-primary font-bold">2.</span>
-                            <span>Book a demo to see AI response in action</span>
+                            <span>Implement the 60-second response standard</span>
                           </li>
                           <li className="flex gap-2">
                             <span className="text-primary font-bold">3.</span>
@@ -380,12 +381,16 @@ export default function LeadMagnetPage() {
                         </ol>
                       </div>
 
-                      {/* CTA Button */}
-                      <a
-                        href="/book-demo"
-                        className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-center font-medium transition-colors"
-                      >
-                        <Download className="h-4 w-4" />Book a Demo</a>
+                      {/* Secondary CTA — demoted to subtle link */}
+                      <p className="text-muted-foreground mt-6 text-sm">
+                        Want to see AI response in action?{" "}
+                        <Link
+                          href="/book-demo"
+                          className="text-primary font-medium underline-offset-4 hover:underline"
+                        >
+                          Book a 15-min demo →
+                        </Link>
+                      </p>
                     </BorderGlow>
                   </motion.div>
                 )}
