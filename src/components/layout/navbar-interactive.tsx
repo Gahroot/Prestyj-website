@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Menu, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { navLinks, solutionLinks, type DropdownLink } from "@/lib/nav-data";
+import { navLinks, primaryCta, solutionLinks, type DropdownLink } from "@/lib/nav-data";
 
 function NavDropdown({ label, items }: { label: string; items: DropdownLink[] }) {
   return (
@@ -97,6 +97,9 @@ export function NavbarMobile() {
       <SheetContent side="right" className="w-full border-zinc-800 bg-zinc-950 sm:max-w-sm">
         <SheetHeader>
           <SheetTitle className="text-white">PRESTYJ</SheetTitle>
+          <p className="text-xs font-light tracking-wide text-white/60">
+            AI agents for marketing &amp; sales
+          </p>
         </SheetHeader>
         <nav className="mt-8 flex flex-col gap-4">
           {navLinks.map((link) =>
@@ -116,8 +119,8 @@ export function NavbarMobile() {
 
           <div className="mt-8 flex flex-col gap-3">
             <Button asChild className="w-full">
-              <Link href="/book-demo" onClick={close}>
-                Book a Demo
+              <Link href={primaryCta.href} onClick={close}>
+                {primaryCta.label}
               </Link>
             </Button>
           </div>

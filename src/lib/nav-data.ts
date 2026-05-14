@@ -21,9 +21,19 @@ export const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-export const ctaLinks = [
-  { href: "/book-demo", label: "Book a Demo", variant: "primary" as const },
-];
+export type CtaLink = {
+  href: string;
+  label: string;
+  variant: "primary" | "secondary";
+};
+
+export const primaryCta: CtaLink = {
+  href: "/book-demo",
+  label: "Book a Demo",
+  variant: "primary",
+};
+
+export const ctaLinks: readonly CtaLink[] = [primaryCta];
 
 export const solutionLinks: DropdownLink[] = [
   {
