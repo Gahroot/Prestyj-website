@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Become a Founding Case Study | PRESTYJ AI Sales Agents",
+  title: "Founding Customers Wanted | PRESTYJ AI Sales Agents",
   description:
-    "Partner with PRESTYJ as a founding customer. Get priority support, founding rates, and be featured as a real estate AI success story.",
+    "PRESTYJ is pre-revenue and looking for founding customers. No case studies yet — be the first. Priority support, founding rates, and featured story.",
   keywords: [
     "AI sales agent results",
     "real estate AI case study",
@@ -12,9 +12,9 @@ export const metadata: Metadata = {
     "AI lead response results",
   ],
   openGraph: {
-    title: "Become a Founding Case Study | PRESTYJ AI Sales Agents",
+    title: "Founding Customers Wanted | PRESTYJ AI Sales Agents",
     description:
-      "Partner with PRESTYJ as a founding customer. Get priority support, founding rates, and be featured as a success story.",
+      "PRESTYJ is pre-revenue and looking for founding customers. No case studies yet — be the first.",
     type: "website",
     url: "https://prestyj.com/results",
   },

@@ -25,11 +25,11 @@ const footerLinks = {
     { href: "/platform", label: "Platform" },
     { href: "/#how-it-works", label: "How It Works" },
     { href: "/pricing", label: "Pricing" },
-    { href: "/results", label: "Results" },
+    { href: "/results", label: "Founding Customers" },
     { href: "/#faq", label: "FAQ" },
   ],
   company: [
-    { href: "/results", label: "Customers" },
+    { href: "/results", label: "Founding Customers" },
     { href: "/contact", label: "Contact" },
     { href: "/book-demo", label: "Book a Demo" },
   ],

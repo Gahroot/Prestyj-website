@@ -26,19 +26,19 @@ import {
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
-// What we're building toward - honest goals, not fake results
+// What we're building toward - aspirational targets, not measured results
 const goals = [
   {
     icon: Clock,
     target: "<60s",
-    label: "Response Time Goal",
+    label: "Response Time Target",
     description: "Instant lead engagement",
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
   {
     icon: TrendingUp,
-    target: "3x",
+    target: "3×",
     label: "Appointment Target",
     description: "More booked meetings",
     color: "text-success",
@@ -47,29 +47,32 @@ const goals = [
   {
     icon: Users,
     target: "90%+",
-    label: "Engagement Goal",
+    label: "Engagement Target",
     description: "Lead response rate",
     color: "text-warning",
     bgColor: "bg-warning/10",
   },
 ];
 
-// Verified industry statistics with sources
+// Cited industry statistics with primary sources
 const industryStats = [
   {
-    stat: "4+ hours",
-    description: "Average industry response time to new leads",
-    source: "Industry research",
+    stat: "42 hours",
+    description: "Average B2B lead response time across industries",
+    source: "Amplemarket / Voiso, 2024–2025",
+    href: "https://amplemarket.com/blog/lead-response-time-statistics",
   },
   {
     stat: "78%",
-    description: "Of buyers work with the first agent who responds",
-    source: "NAR research",
+    description: "Of B2B buyers buy from the vendor that responds first",
+    source: "LeadConnect / Chili Piper, 2025",
+    href: "https://www.chilipiper.com/post/sales-statistics",
   },
   {
-    stat: "80%",
-    description: "Of leads go cold due to slow follow-up",
-    source: "Real estate industry data",
+    stat: "77%",
+    description: "Of inbound leads never receive any response at all",
+    source: "InsideSales (via Convoso), 2025",
+    href: "https://www.convoso.com/blog/lead-response-statistics/",
   },
 ];
 
@@ -175,7 +178,7 @@ export default function ResultsPage() {
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "https://prestyj.com" },
-          { name: "Results", url: "https://prestyj.com/results" },
+          { name: "Founding Customers", url: "https://prestyj.com/results" },
         ]}
       />
       <SafeJsonLd
@@ -193,14 +196,15 @@ export default function ResultsPage() {
         {/* Hero Section */}
         <section className="mx-auto mb-20 max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <Badge variant="outline" className="border-primary/50 text-primary mb-6">
-            Early Access
+            Pre-Launch · No Customers Yet
           </Badge>
           <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
-            Be Our First Success Story
+            Founding Customers Wanted
           </h1>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
-            We&apos;re looking for founding customers to partner with. Get priority access, founding
-            rates, and be featured as a case study.
+            We&apos;re pre-revenue and looking for founding partners. No case studies yet — be the
+            first. In return: priority access, founding rates, and a featured story when we have
+            real numbers to share.
           </p>
         </section>
 
@@ -212,11 +216,16 @@ export default function ResultsPage() {
             viewport={{ once: true }}
             className="mb-10 text-center"
           >
+            <Badge variant="outline" className="border-warning/50 text-warning mb-4">
+              Targets · Not measured results
+            </Badge>
             <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
               What We&apos;re Building Toward
             </h2>
-            <p className="text-muted-foreground">
-              Our performance targets based on industry benchmarks
+            <p className="text-muted-foreground mx-auto max-w-2xl">
+              The numbers below are the targets we&apos;ve set for ourselves — not customer
+              outcomes. We&apos;ll publish real results once founding customers complete their
+              first quarter with us.
             </p>
           </motion.div>
 
@@ -405,7 +414,8 @@ export default function ResultsPage() {
                 The Cost of Slow Response
               </h2>
               <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-                These verified industry statistics show why speed-to-lead matters.
+                Cited industry statistics — not PRESTYJ customer data — showing why speed-to-lead
+                matters.
               </p>
             </div>
 
@@ -420,7 +430,17 @@ export default function ResultsPage() {
                 <motion.div key={index} variants={itemVariants} className="text-center">
                   <p className="text-foreground mb-3 text-5xl font-bold">{item.stat}</p>
                   <p className="text-foreground mb-2 font-medium">{item.description}</p>
-                  <p className="text-muted-foreground text-xs">Source: {item.source}</p>
+                  <p className="text-muted-foreground text-xs">
+                    Source:{" "}
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-foreground underline underline-offset-2"
+                    >
+                      {item.source}
+                    </a>
+                  </p>
                 </motion.div>
               ))}
             </motion.div>
