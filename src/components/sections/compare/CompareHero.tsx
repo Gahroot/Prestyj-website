@@ -13,18 +13,23 @@ interface CompareHeroProps {
 export function CompareHero({ data }: CompareHeroProps) {
   const { badge, title, titleAccent, subtitle, description, keyStats } = data;
 
-  // Split title by the accent word
-  const titleParts = title.split(titleAccent);
+  // If the accent appears as a substring of the title, highlight it inline.
+  // Otherwise render it as a styled second line so it isn't silently dropped.
+  const accentInTitle = titleAccent.length > 0 && title.includes(titleAccent);
+  const titleParts = accentInTitle ? title.split(titleAccent) : null;
+
+  if (process.env.NODE_ENV !== "production" && !accentInTitle && titleAccent) {
+    console.warn(
+      `[CompareHero] titleAccent "${titleAccent}" not found as a substring of title "${title}". ` +
+        `Rendering accent as a second line. Update the data so titleAccent appears inside title to highlight it inline.`,
+    );
+  }
 
   return (
-    <section className="relative overflow-hidden border-b bg-gradient-to-b from-background to-muted/20 py-20">
-      <div className="container relative z-10">
+    <section className="from-background to-muted/20 relative overflow-hidden border-b bg-gradient-to-b py-20">
+      <div className="relative z-10 container">
         <div className="mx-auto max-w-3xl text-center">
-          <motion.div
-            {...fadeInUp}
-            transition={transitions.default}
-            viewport={viewport}
-          >
+          <motion.div {...fadeInUp} transition={transitions.default} viewport={viewport}>
             <Badge variant="secondary" className="mb-4">
               {badge}
             </Badge>
@@ -36,13 +41,23 @@ export function CompareHero({ data }: CompareHeroProps) {
             transition={transitions.withDelay(0.1)}
             viewport={viewport}
           >
-            {titleParts[0]}
-            <span className="text-primary">{titleAccent}</span>
-            {titleParts[1]}
+            {titleParts ? (
+              <>
+                {titleParts[0]}
+                <span className="text-primary">{titleAccent}</span>
+                {titleParts.slice(1).join(titleAccent)}
+              </>
+            ) : (
+              <>
+                {title}
+                <br />
+                <span className="text-primary">{titleAccent}</span>
+              </>
+            )}
           </motion.h1>
 
           <motion.p
-            className="mb-6 text-xl text-muted-foreground"
+            className="text-muted-foreground mb-6 text-xl"
             {...fadeInUp}
             transition={transitions.withDelay(0.2)}
             viewport={viewport}
@@ -51,7 +66,7 @@ export function CompareHero({ data }: CompareHeroProps) {
           </motion.p>
 
           <motion.p
-            className="mb-8 text-lg text-muted-foreground"
+            className="text-muted-foreground mb-8 text-lg"
             {...fadeInUp}
             transition={transitions.withDelay(0.3)}
             viewport={viewport}
@@ -68,12 +83,8 @@ export function CompareHero({ data }: CompareHeroProps) {
             >
               {keyStats.map((stat, index) => (
                 <BorderGlow key={index} borderRadius={10} innerClassName="p-6">
-                  <div className="text-3xl font-bold text-primary">
-                    {stat.value}
-                  </div>
-                  <div className="mt-2 text-sm text-muted-foreground">
-                    {stat.label}
-                  </div>
+                  <div className="text-primary text-3xl font-bold">{stat.value}</div>
+                  <div className="text-muted-foreground mt-2 text-sm">{stat.label}</div>
                 </BorderGlow>
               ))}
             </motion.div>

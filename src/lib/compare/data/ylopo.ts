@@ -6,7 +6,7 @@ export const ylopoCompareData: ComparePageData = createComparePage({
   competitorName: "Ylopo",
   hero: {
     badge: "Comparison Guide",
-    title: "Prestyj vs Ylopo ",
+    title: "Prestyj vs Ylopo",
     titleAccent: "Which AI Sales Agent Is Right for You?",
     subtitle:
       "Both platforms offer AI-powered lead engagement for real estate professionals. Here's an honest comparison to help you make the right choice for your business.",

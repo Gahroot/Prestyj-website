@@ -16,7 +16,7 @@ export function CompareFeatureTable({ features, competitorName }: CompareFeature
       return value ? (
         <Check className="mx-auto h-5 w-5 text-green-500" />
       ) : (
-        <X className="mx-auto h-5 w-5 text-muted-foreground" />
+        <X className="text-muted-foreground mx-auto h-5 w-5" />
       );
     }
     return <span className="text-sm">{value}</span>;
@@ -30,8 +30,8 @@ export function CompareFeatureTable({ features, competitorName }: CompareFeature
             <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
               Feature Comparison
             </h2>
-            <p className="text-lg text-muted-foreground">
-              Compare PrestyJ with {competitorName} feature by feature
+            <p className="text-muted-foreground text-lg">
+              Compare Prestyj with {competitorName} feature by feature
             </p>
           </div>
 
@@ -45,12 +45,8 @@ export function CompareFeatureTable({ features, competitorName }: CompareFeature
               <table className="w-full">
                 <thead className="bg-muted/50">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold">
-                      Feature
-                    </th>
-                    <th className="px-6 py-4 text-center text-sm font-semibold">
-                      PrestyJ
-                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold">Feature</th>
+                    <th className="px-6 py-4 text-center text-sm font-semibold">Prestyj</th>
                     <th className="px-6 py-4 text-center text-sm font-semibold">
                       {competitorName}
                     </th>
@@ -63,18 +59,12 @@ export function CompareFeatureTable({ features, competitorName }: CompareFeature
                         <div>
                           <div className="font-medium">{feature.feature}</div>
                           {feature.note && (
-                            <div className="mt-1 text-xs text-muted-foreground">
-                              {feature.note}
-                            </div>
+                            <div className="text-muted-foreground mt-1 text-xs">{feature.note}</div>
                           )}
                         </div>
                       </td>
-                      <td className="px-6 py-4 text-center">
-                        {renderValue(feature.prestyj)}
-                      </td>
-                      <td className="px-6 py-4 text-center">
-                        {renderValue(feature.competitor)}
-                      </td>
+                      <td className="px-6 py-4 text-center">{renderValue(feature.prestyj)}</td>
+                      <td className="px-6 py-4 text-center">{renderValue(feature.competitor)}</td>
                     </tr>
                   ))}
                 </tbody>
