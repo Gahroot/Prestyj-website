@@ -31,6 +31,29 @@ export interface PricingTier {
   features: Record<string, boolean>;
   story: string;
   bestFor: string;
+  /**
+   * Direct-buy path: when true, the pricing card shows a secondary CTA that
+   * goes to a 2-field intake (name + work email) and then to Stripe checkout
+   * for the setup fee + first month. Tiers that genuinely need a scoping
+   * conversation (multi-market, multi-location, custom integrations) should
+   * stay `false` and route through `/book-demo`.
+   */
+  directBuyEnabled: boolean;
+}
+
+export function getPricingTier(id: TierId): PricingTier {
+  const tier = pricingTiers.find((t) => t.id === id);
+  if (!tier) throw new Error(`Unknown pricing tier: ${id}`);
+  return tier;
+}
+
+export function isTierId(value: unknown): value is TierId {
+  return value === "starter" || value === "pro" || value === "scale";
+}
+
+export function isDirectBuyTier(value: unknown): value is TierId {
+  if (!isTierId(value)) return false;
+  return getPricingTier(value).directBuyEnabled;
 }
 
 export interface PricingFeature {
@@ -92,6 +115,7 @@ export const pricingTiers: PricingTier[] = [
       "You're handling under 50 leads a month, but half go cold because nobody responds fast enough. The Starter plan runs your ads for you, ships 300 short-form video ads a month, gives you a conversion-optimized landing page, and puts an AI agent on every new lead that replies in under 60 seconds, books the meeting on your calendar, and chases no-shows automatically.",
     bestFor:
       "Businesses doing under 50 leads/month who need a reliable top of funnel and instant lead follow-up without hiring.",
+    directBuyEnabled: true,
   },
   {
     id: "pro",
@@ -134,6 +158,7 @@ export const pricingTiers: PricingTier[] = [
       "You're handling 50–250 leads a month from ads, your website, and your existing database. The volume is real, but follow-up is uneven and your team can't keep up. The Pro plan adds AI agents that chat on your website, text every new lead back in seconds, qualify buyers from tire-kickers with a multi-step form, and reactivate cold leads in your CRM so nothing gets left on the table.",
     bestFor:
       "Growing businesses doing 50–250 leads/month who need AI agents covering every channel — web, SMS, and database — at once.",
+    directBuyEnabled: true,
   },
   {
     id: "scale",
@@ -177,6 +202,9 @@ export const pricingTiers: PricingTier[] = [
       "You're handling 250+ leads a month, or running multiple locations, and a single team can't reasonably cover every channel anymore. The Scale plan runs your full marketing and sales motion with AI agents — inbound chat and text on every lead, an AI voice agent calling every new lead within minutes, an AI receptionist answering every inbound call, and ad volume tuned for multi-market reach.",
     bestFor:
       "High-volume or multi-location businesses doing 250+ leads/month who want AI agents running marketing and sales end-to-end.",
+    // Multi-market / multi-location + AI voice/receptionist setup needs a
+    // scoping conversation. Direct-buy would create false expectations.
+    directBuyEnabled: false,
   },
 ];
 

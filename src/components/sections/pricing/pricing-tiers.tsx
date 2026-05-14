@@ -80,17 +80,35 @@ export function PricingTiersSection() {
                       </p>
                     </div>
 
-                    <Button
-                      size="lg"
-                      className="w-full"
-                      variant={isPro ? "default" : "outline"}
-                      asChild
-                    >
-                      <Link href="/book-demo">
-                        Book a Demo
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Link>
-                    </Button>
+                    <div className="space-y-2">
+                      <Button
+                        size="lg"
+                        className="w-full"
+                        variant={isPro ? "default" : "outline"}
+                        asChild
+                      >
+                        <Link href="/book-demo">
+                          Book a Demo
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                      {tier.directBuyEnabled ? (
+                        <Button
+                          size="lg"
+                          className="w-full"
+                          variant={isPro ? "outline" : "secondary"}
+                          asChild
+                        >
+                          <Link href={`/start/${tier.id}`}>Buy {tier.name} now</Link>
+                        </Button>
+                      ) : null}
+                    </div>
+
+                    <p className="text-muted-foreground mt-3 text-center text-[11px]">
+                      {tier.directBuyEnabled
+                        ? "Direct-buy includes a 30-min kickoff call. No long contract."
+                        : "This plan needs a quick scoping call. Book a demo to get started."}
+                    </p>
                   </CardContent>
                 </Card>
               </AnimateOnScroll>

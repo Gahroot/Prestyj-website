@@ -3,13 +3,13 @@ import type Stripe from "stripe";
 import { getStripe } from "@/lib/stripe";
 import { getResend } from "@/lib/resend";
 import { getBatchTierByPriceId } from "@/lib/batch-tiers";
+import { getPlanByPriceId, getPlanTierByPriceId } from "@/lib/plan-checkout";
 import { prisma } from "@/lib/prisma";
 
 export const runtime = "nodejs";
 
 const META_PIXEL_ID = "892763637077397";
-const RESEND_FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://prestyj.com";
 
 async function sha256(value: string): Promise<string> {
@@ -20,17 +20,22 @@ async function sha256(value: string): Promise<string> {
     .join("");
 }
 
-async function fireMetaPurchase(
-  session: Stripe.Checkout.Session,
-  priceId: string
-): Promise<void> {
+async function fireMetaPurchase(session: Stripe.Checkout.Session, priceId: string): Promise<void> {
   const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
   if (!accessToken) {
     console.warn("[stripe-webhook] META_CAPI_ACCESS_TOKEN not set");
     return;
   }
 
-  const tier = getBatchTierByPriceId(priceId);
+  const batchTier = getBatchTierByPriceId(priceId);
+  const planTier = batchTier ? null : getPlanTierByPriceId(priceId);
+  const contentId = batchTier?.id ?? planTier?.id;
+  const contentName = batchTier
+    ? `Batch Video Ads — ${batchTier.name}`
+    : planTier
+      ? `Prestyj Plan — ${planTier.name}`
+      : undefined;
+  const sourceUrl = batchTier ? `${SITE_URL}/batch-video-ads` : `${SITE_URL}/pricing`;
   const value = (session.amount_total ?? 0) / 100;
   const currency = (session.currency ?? "usd").toUpperCase();
   const details = session.customer_details;
@@ -54,14 +59,14 @@ async function fireMetaPurchase(
     event_time: Math.floor(Date.now() / 1000),
     event_id: session.id,
     action_source: "website",
-    event_source_url: `${SITE_URL}/batch-video-ads`,
+    event_source_url: sourceUrl,
     user_data: userData,
     custom_data: {
       value,
       currency,
       content_type: "product",
-      content_ids: tier ? [tier.id] : undefined,
-      content_name: tier ? `Batch Video Ads — ${tier.name}` : undefined,
+      content_ids: contentId ? [contentId] : undefined,
+      content_name: contentName,
     },
   };
 
@@ -72,7 +77,7 @@ async function fireMetaPurchase(
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: [event] }),
-      }
+      },
     );
     const json = await res.json();
     if (!res.ok) {
@@ -92,14 +97,17 @@ async function fireMetaPurchase(
 
 async function sendIntakeFallbackEmail(
   session: Stripe.Checkout.Session,
-  priceId: string
+  priceId: string,
 ): Promise<void> {
   const to = session.customer_details?.email;
   if (!to) return;
 
+  // Only send the batch-ads intake email for batch-ads purchases. Plan
+  // direct-buys land on /onboarding, which already explains next steps.
   const tier = getBatchTierByPriceId(priceId);
-  const tierName = tier?.name ?? "Batch";
-  const adCount = tier?.adCount ?? 300;
+  if (!tier) return;
+  const tierName = tier.name;
+  const adCount = tier.adCount;
   const firstName = (session.customer_details?.name ?? "").split(/\s+/)[0];
   const intakeUrl = `${SITE_URL}/intake?session_id=${session.id}`;
 
@@ -128,7 +136,7 @@ async function sendIntakeFallbackEmail(
 
 async function recordAffiliateConversion(
   session: Stripe.Checkout.Session,
-  tierId: string
+  tierId: string,
 ): Promise<void> {
   const ref = session.metadata?.affiliate_ref;
   if (!ref) return;
@@ -151,7 +159,9 @@ async function recordAffiliateConversion(
           amountCents,
           commissionCents,
           status: "PENDING",
-          customerEmail: session.customer_details?.email ?? undefined,
+          ...(session.customer_details?.email && {
+            customerEmail: session.customer_details.email,
+          }),
         },
       }),
       prisma.affiliate.update({
@@ -172,9 +182,7 @@ async function recordAffiliateConversion(
 
 async function handleRefund(charge: Stripe.Charge): Promise<void> {
   const paymentIntentId =
-    typeof charge.payment_intent === "string"
-      ? charge.payment_intent
-      : charge.payment_intent?.id;
+    typeof charge.payment_intent === "string" ? charge.payment_intent : charge.payment_intent?.id;
   if (!paymentIntentId) return;
 
   try {
@@ -210,9 +218,7 @@ async function handleRefund(charge: Stripe.Charge): Promise<void> {
   }
 }
 
-async function handleCheckoutCompleted(
-  session: Stripe.Checkout.Session
-): Promise<void> {
+async function handleCheckoutCompleted(session: Stripe.Checkout.Session): Promise<void> {
   const stripe = getStripe();
   let priceId: string | undefined;
 
@@ -229,17 +235,34 @@ async function handleCheckoutCompleted(
     console.warn(
       "[stripe-webhook] No priceId for session",
       session.id,
-      "— skipping tier-dependent actions"
+      "— skipping tier-dependent actions",
     );
     return;
   }
 
-  const tier = getBatchTierByPriceId(priceId);
+  // Plan checkouts have two line items (setup + monthly) — prefer the setup
+  // price for attribution since it's the one-time signal for this purchase.
+  let attributionPriceId = priceId;
+  if (session.mode === "subscription") {
+    try {
+      const allLineItems = await stripe.checkout.sessions.listLineItems(session.id, { limit: 5 });
+      const setupPriceId = allLineItems.data
+        .map((item) => item.price?.id)
+        .find((id) => typeof id === "string" && getPlanByPriceId(id) !== null);
+      if (setupPriceId) attributionPriceId = setupPriceId;
+    } catch (error) {
+      console.error("[stripe-webhook] listLineItems (plan) error:", error);
+    }
+  }
+
+  const batchTier = getBatchTierByPriceId(attributionPriceId);
+  const planTier = batchTier ? null : getPlanTierByPriceId(attributionPriceId);
+  const tierId = batchTier?.id ?? planTier?.id ?? "unknown";
 
   await Promise.allSettled([
-    fireMetaPurchase(session, priceId),
-    sendIntakeFallbackEmail(session, priceId),
-    recordAffiliateConversion(session, tier?.id ?? "unknown"),
+    fireMetaPurchase(session, attributionPriceId),
+    sendIntakeFallbackEmail(session, attributionPriceId),
+    recordAffiliateConversion(session, tierId),
   ]);
 }
 
@@ -259,11 +282,7 @@ export async function POST(request: NextRequest) {
 
   let event: Stripe.Event;
   try {
-    event = getStripe().webhooks.constructEvent(
-      rawBody,
-      signature,
-      webhookSecret
-    );
+    event = getStripe().webhooks.constructEvent(rawBody, signature, webhookSecret);
   } catch (error) {
     console.error("[stripe-webhook] signature verification failed:", error);
     return NextResponse.json({ error: "Invalid signature" }, { status: 400 });
@@ -272,9 +291,7 @@ export async function POST(request: NextRequest) {
   try {
     switch (event.type) {
       case "checkout.session.completed":
-        await handleCheckoutCompleted(
-          event.data.object as Stripe.Checkout.Session
-        );
+        await handleCheckoutCompleted(event.data.object as Stripe.Checkout.Session);
         break;
       case "charge.refunded":
         await handleRefund(event.data.object as Stripe.Charge);
