@@ -146,9 +146,10 @@ export default function ResultsPage() {
     setSubmitError(null);
 
     try {
+      const lastName = formData.lastName.trim();
       await submitLead({
         first_name: formData.firstName.trim(),
-        last_name: formData.lastName.trim() || undefined,
+        ...(lastName && { last_name: lastName }),
         phone_number: formatPhoneNumber(formData.phone),
         email: formData.email.trim(),
         notes: formData.market ? `Market: ${formData.market}` : "Founding case study interest",
@@ -182,42 +183,36 @@ export default function ResultsPage() {
           "@context": "https://schema.org",
           "@type": "Product",
           name: "PRESTYJ AI Sales Agent",
-          description: "AI-powered lead response and appointment-setting platform for service businesses.",
+          description:
+            "AI-powered lead response and appointment-setting platform for service businesses.",
           brand: { "@type": "Brand", name: "PRESTYJ" },
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.9",
-            ratingCount: "150",
-            bestRating: "5",
-            worstRating: "1",
-          },
         }}
       />
       <Navbar />
       <main className="pt-24 pb-16">
         {/* Hero Section */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-20">
-          <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+        <section className="mx-auto mb-20 max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+          <Badge variant="outline" className="border-primary/50 text-primary mb-6">
             Early Access
           </Badge>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-bold text-foreground mb-6">
+          <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
             Be Our First Success Story
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
             We&apos;re looking for founding customers to partner with. Get priority access, founding
             rates, and be featured as a case study.
           </p>
         </section>
 
         {/* Goals Section - What we're building toward */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+        <section className="mx-auto mb-20 max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-10"
+            className="mb-10 text-center"
           >
-            <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+            <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
               What We&apos;re Building Toward
             </h2>
             <p className="text-muted-foreground">
@@ -230,18 +225,18 @@ export default function ResultsPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid sm:grid-cols-3 gap-6"
+            className="grid gap-6 sm:grid-cols-3"
           >
             {goals.map((goal) => (
               <motion.div key={goal.label} variants={itemVariants}>
-                <Card className="bg-card border-border text-center h-full">
+                <Card className="bg-card border-border h-full text-center">
                   <CardContent className="pt-8 pb-6">
-                    <div className={cn("p-4 rounded-full w-fit mx-auto mb-4", goal.bgColor)}>
-                      <goal.icon className={cn("w-8 h-8", goal.color)} />
+                    <div className={cn("mx-auto mb-4 w-fit rounded-full p-4", goal.bgColor)}>
+                      <goal.icon className={cn("h-8 w-8", goal.color)} />
                     </div>
-                    <p className={cn("text-4xl font-bold mb-2", goal.color)}>{goal.target}</p>
-                    <p className="text-lg font-semibold text-foreground mb-1">{goal.label}</p>
-                    <p className="text-sm text-muted-foreground">{goal.description}</p>
+                    <p className={cn("mb-2 text-4xl font-bold", goal.color)}>{goal.target}</p>
+                    <p className="text-foreground mb-1 text-lg font-semibold">{goal.label}</p>
+                    <p className="text-muted-foreground text-sm">{goal.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -250,19 +245,19 @@ export default function ResultsPage() {
         </section>
 
         {/* Founding Case Study CTA */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-          <div className="bg-gradient-to-br from-primary/5 via-background to-success/5 rounded-2xl border border-border p-8 sm:p-12">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="mx-auto mb-20 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="from-primary/5 via-background to-success/5 border-border rounded-2xl border bg-gradient-to-br p-8 sm:p-12">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
               {/* Left - Benefits */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
               >
-                <Badge variant="outline" className="mb-4 border-success/50 text-success">
+                <Badge variant="outline" className="border-success/50 text-success mb-4">
                   Limited Spots
                 </Badge>
-                <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+                <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
                   Become a Founding Case Study
                 </h2>
                 <p className="text-muted-foreground mb-8">
@@ -273,12 +268,12 @@ export default function ResultsPage() {
                 <div className="space-y-4">
                   {foundingBenefits.map((benefit) => (
                     <div key={benefit.title} className="flex gap-4">
-                      <div className="p-2 rounded-lg bg-primary/10 h-fit">
-                        <benefit.icon className="w-5 h-5 text-primary" />
+                      <div className="bg-primary/10 h-fit rounded-lg p-2">
+                        <benefit.icon className="text-primary h-5 w-5" />
                       </div>
                       <div>
-                        <p className="font-semibold text-foreground">{benefit.title}</p>
-                        <p className="text-sm text-muted-foreground">{benefit.description}</p>
+                        <p className="text-foreground font-semibold">{benefit.title}</p>
+                        <p className="text-muted-foreground text-sm">{benefit.description}</p>
                       </div>
                     </div>
                   ))}
@@ -297,12 +292,12 @@ export default function ResultsPage() {
                       <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="text-center py-8"
+                        className="py-8 text-center"
                       >
-                        <div className="p-4 rounded-full bg-success/10 w-fit mx-auto mb-4">
-                          <CheckCircle className="w-10 h-10 text-success" />
+                        <div className="bg-success/10 mx-auto mb-4 w-fit rounded-full p-4">
+                          <CheckCircle className="text-success h-10 w-10" />
                         </div>
-                        <h3 className="text-xl font-heading font-bold text-foreground mb-2">
+                        <h3 className="font-heading text-foreground mb-2 text-xl font-bold">
                           You&apos;re on the list!
                         </h3>
                         <p className="text-muted-foreground">
@@ -320,7 +315,7 @@ export default function ResultsPage() {
                               className={cn(errors.firstName && "border-destructive")}
                             />
                             {errors.firstName && (
-                              <p className="text-xs text-destructive mt-1">{errors.firstName}</p>
+                              <p className="text-destructive mt-1 text-xs">{errors.firstName}</p>
                             )}
                           </div>
                           <div>
@@ -341,7 +336,7 @@ export default function ResultsPage() {
                             className={cn(errors.email && "border-destructive")}
                           />
                           {errors.email && (
-                            <p className="text-xs text-destructive mt-1">{errors.email}</p>
+                            <p className="text-destructive mt-1 text-xs">{errors.email}</p>
                           )}
                         </div>
 
@@ -354,7 +349,7 @@ export default function ResultsPage() {
                             className={cn(errors.phone && "border-destructive")}
                           />
                           {errors.phone && (
-                            <p className="text-xs text-destructive mt-1">{errors.phone}</p>
+                            <p className="text-destructive mt-1 text-xs">{errors.phone}</p>
                           )}
                         </div>
 
@@ -367,24 +362,24 @@ export default function ResultsPage() {
                         </div>
 
                         {submitError && (
-                          <p className="text-sm text-destructive text-center">{submitError}</p>
+                          <p className="text-destructive text-center text-sm">{submitError}</p>
                         )}
 
                         <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                           {isSubmitting ? (
                             <>
-                              <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                               Submitting...
                             </>
                           ) : (
                             <>
                               Apply to Be a Case Study
-                              <ArrowRight className="w-4 h-4 ml-2" />
+                              <ArrowRight className="ml-2 h-4 w-4" />
                             </>
                           )}
                         </Button>
 
-                        <p className="text-xs text-muted-foreground text-center">
+                        <p className="text-muted-foreground text-center text-xs">
                           No commitment required. We&apos;ll reach out to discuss fit.
                         </p>
                       </form>
@@ -397,19 +392,19 @@ export default function ResultsPage() {
         </section>
 
         {/* Industry Comparison Section - Verified Stats */}
-        <section className="py-16 mb-20">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <AlertTriangle className="w-5 h-5 text-warning" />
+        <section className="mb-20 py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <div className="mb-4 flex items-center justify-center gap-2">
+                <AlertTriangle className="text-warning h-5 w-5" />
                 <Badge variant="outline" className="border-warning/50 text-warning">
                   Industry Reality
                 </Badge>
               </div>
-              <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+              <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
                 The Cost of Slow Response
               </h2>
-              <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
                 These verified industry statistics show why speed-to-lead matters.
               </p>
             </div>
@@ -419,13 +414,13 @@ export default function ResultsPage() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="grid md:grid-cols-3 gap-8"
+              className="grid gap-8 md:grid-cols-3"
             >
               {industryStats.map((item, index) => (
                 <motion.div key={index} variants={itemVariants} className="text-center">
-                  <p className="text-5xl font-bold text-foreground mb-3">{item.stat}</p>
-                  <p className="text-foreground font-medium mb-2">{item.description}</p>
-                  <p className="text-xs text-muted-foreground">Source: {item.source}</p>
+                  <p className="text-foreground mb-3 text-5xl font-bold">{item.stat}</p>
+                  <p className="text-foreground mb-2 font-medium">{item.description}</p>
+                  <p className="text-muted-foreground text-xs">Source: {item.source}</p>
                 </motion.div>
               ))}
             </motion.div>
@@ -433,55 +428,53 @@ export default function ResultsPage() {
         </section>
 
         {/* Related Resources Section */}
-        <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-          <h3 className="text-xl font-heading font-semibold text-foreground mb-6 text-center">
+        <section className="mx-auto mb-20 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h3 className="font-heading text-foreground mb-6 text-center text-xl font-semibold">
             Learn More
           </h3>
-          <div className="grid sm:grid-cols-3 gap-4">
+          <div className="grid gap-4 sm:grid-cols-3">
             <Link
               href="/compare/prestyj-vs-ylopo"
-              className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors"
+              className="border-border hover:border-primary/50 rounded-lg border p-4 transition-colors"
             >
-              <p className="font-medium text-foreground mb-1">Prestyj vs Ylopo</p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-foreground mb-1 font-medium">Prestyj vs Ylopo</p>
+              <p className="text-muted-foreground text-sm">
                 See how we compare to other AI platforms
               </p>
             </Link>
             <Link
               href="/compare/prestyj-vs-isa"
-              className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors"
+              className="border-border hover:border-primary/50 rounded-lg border p-4 transition-colors"
             >
-              <p className="font-medium text-foreground mb-1">AI vs Human ISA</p>
-              <p className="text-sm text-muted-foreground">Compare AI agents to traditional ISAs</p>
+              <p className="text-foreground mb-1 font-medium">AI vs Human ISA</p>
+              <p className="text-muted-foreground text-sm">Compare AI agents to traditional ISAs</p>
             </Link>
             <Link
               href="/blog/why-leads-go-cold"
-              className="p-4 rounded-lg border border-border hover:border-primary/50 transition-colors"
+              className="border-border hover:border-primary/50 rounded-lg border p-4 transition-colors"
             >
-              <p className="font-medium text-foreground mb-1">Why 80% of Leads Go Cold</p>
-              <p className="text-sm text-muted-foreground">
-                The data behind lead response times
-              </p>
+              <p className="text-foreground mb-1 font-medium">Why 80% of Leads Go Cold</p>
+              <p className="text-muted-foreground text-sm">The data behind lead response times</p>
             </Link>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-gradient-to-br from-primary/10 via-background to-success/5 rounded-2xl p-8 sm:p-12 border border-border">
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+        <section className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <div className="from-primary/10 via-background to-success/5 border-border rounded-2xl border bg-gradient-to-br p-8 sm:p-12">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               Not Ready for Case Study?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+            <p className="text-muted-foreground mx-auto mb-8 max-w-xl text-lg">
               No problem. Book a demo to see how PRESTYJ can transform your lead response.
             </p>
-            <Button size="lg" className="text-lg px-10 py-6" asChild>
+            <Button size="lg" className="px-10 py-6 text-lg" asChild>
               <Link href="/book-demo">
                 Book Your Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <p className="text-sm text-muted-foreground mt-4">
+            <p className="text-muted-foreground mt-4 text-sm">
               Free demo. No credit card required.
             </p>
           </div>

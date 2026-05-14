@@ -47,6 +47,11 @@ export const metadata: Metadata = {
 
 export default function PricingPage() {
   const pricingPageUrl = "https://prestyj.com/pricing";
+  const firstTier = pricingTiers[0];
+  const lastTier = pricingTiers[pricingTiers.length - 1];
+  if (!firstTier || !lastTier) {
+    throw new Error("pricingTiers must contain at least one tier");
+  }
 
   const productSchema = {
     "@context": "https://schema.org",
@@ -59,8 +64,8 @@ export default function PricingPage() {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: String(pricingTiers[0].monthlyPrice),
-      highPrice: String(pricingTiers[pricingTiers.length - 1].monthlyPrice),
+      lowPrice: String(firstTier.monthlyPrice),
+      highPrice: String(lastTier.monthlyPrice),
       offerCount: pricingTiers.length,
       availability: "https://schema.org/InStock",
       offers: pricingTiers.map((tier) => ({
@@ -88,16 +93,9 @@ export default function PricingPage() {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: String(pricingTiers[0].monthlyPrice),
-      highPrice: String(pricingTiers[pricingTiers.length - 1].monthlyPrice),
+      lowPrice: String(firstTier.monthlyPrice),
+      highPrice: String(lastTier.monthlyPrice),
       offerCount: pricingTiers.length,
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "150",
-      bestRating: "5",
-      worstRating: "1",
     },
   };
 

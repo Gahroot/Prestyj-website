@@ -5,7 +5,7 @@ const siteConfig = {
   name: "PRESTYJ",
   url: "https://prestyj.com",
   description:
-    "AI that responds to your ad leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7. Built for real estate teams and brokerages running Facebook and YouTube ads.",
+    "We build AI agents for marketing & sales. AI agents and automations that capture leads, respond instantly, qualify them, and book meetings — built for businesses.",
   logo: "https://prestyj.com/icon-512.png",
 };
 
@@ -34,20 +34,22 @@ export function OrganizationJsonLd() {
 }
 
 export function WebSiteJsonLd() {
+  const potentialAction = {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
+    },
+    "query-input": "required name=search_term_string",
+  } as NonNullable<WebSite["potentialAction"]>;
+
   const jsonLd: WithContext<WebSite> = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: siteConfig.name,
     url: siteConfig.url,
     description: siteConfig.description,
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${siteConfig.url}/blog?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    } as WebSite["potentialAction"],
+    potentialAction,
   };
 
   return <SafeJsonLd data={jsonLd} />;
@@ -57,9 +59,9 @@ export function ProductJsonLd() {
   const jsonLd: WithContext<Product> = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "PRESTYJ AI Sales Agent",
+    name: "Prestyj AI Agents for Marketing & Sales",
     description:
-      "AI-powered lead response and appointment-setting platform for real estate teams and brokerages. Responds to ad leads in under 60 seconds, qualifies buyers and sellers, and books appointments 24/7.",
+      "AI agents and automations that capture leads, respond instantly, qualify them, and book meetings — built for businesses.",
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -75,7 +77,7 @@ export function ProductJsonLd() {
     category: "Software",
     audience: {
       "@type": "Audience",
-      audienceType: "Real Estate Teams and Brokerages",
+      audienceType: "Businesses",
     },
   };
 
@@ -108,7 +110,7 @@ export function SoftwareApplicationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "PRESTYJ AI Sales Agent",
+    name: "Prestyj AI Agents for Marketing & Sales",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: siteConfig.description,
@@ -116,13 +118,6 @@ export function SoftwareApplicationJsonLd() {
       "@type": "Offer",
       price: "1997",
       priceCurrency: "USD",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      ratingCount: "150",
-      bestRating: "5",
-      worstRating: "1",
     },
     featureList: [
       "60-second lead response",
@@ -143,9 +138,9 @@ export function ServiceJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AI Lead Response & Appointment Setting for Real Estate Teams",
+    name: "AI Agents for Marketing & Sales",
     description:
-      "AI-powered lead response, lead qualification, and appointment-setting services for real estate teams and brokerages running Facebook and YouTube ads.",
+      "AI agents and automations that capture leads, respond instantly, qualify them, and book meetings — built for businesses.",
     provider: {
       "@type": "Organization",
       name: siteConfig.name,

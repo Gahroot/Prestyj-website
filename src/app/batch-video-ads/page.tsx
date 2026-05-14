@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
-import { BatchVideoAdsProductJsonLd } from "@/components/seo/batch-video-ads-product-json-ld";
 
 export const metadata: Metadata = {
   title: "Batch Video Ads | 300–1000 Scripted Ads in 24 Hours | PRESTYJ",
@@ -17,7 +16,6 @@ export const metadata: Metadata = {
 export default function BatchVideoAdsPage() {
   return (
     <>
-      <BatchVideoAdsProductJsonLd />
       <BatchVideoAdsClient />
     </>
   );
