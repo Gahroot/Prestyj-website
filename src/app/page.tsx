@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { BatchAdsHeroSection } from "@/components/sections/batch-ads-hero";
+import { HomeHeroSection } from "@/components/sections/home-hero";
 import { faqs } from "@/lib/faq-data";
 import {
   ProductJsonLd,
@@ -94,7 +94,7 @@ export default function Home() {
       <FAQJsonLd faqs={faqs} />
       <Navbar />
       <main>
-        <BatchAdsHeroSection />
+        <HomeHeroSection />
         <BatchVideoAdsCTASection />
         <HowItWorksSection />
         <TestimonialsSection />
