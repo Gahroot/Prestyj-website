@@ -38,7 +38,7 @@ export function ContentEnginePageLayout({
       <ContentEngineVisitorPixel />
       <Navbar />
       <main>
-        <ContentEngineHero config={config.hero} />
+        <ContentEngineHero config={config.hero} contentName={config.contentName} />
         <ContentEngineProofBar config={config.proofBar} />
         {afterProofBar}
         <ContentEngineProblem config={config.problem} />
@@ -49,11 +49,11 @@ export function ContentEnginePageLayout({
         <ContentEngineLiveAccounts config={config.liveAccounts} />
         <ContentEngineLiveFeed config={config.liveFeed} />
         <ContentEngineHowItWorks config={config.howItWorks} />
-        <ContentEnginePricing config={config.pricing} />
+        <ContentEnginePricing config={config.pricing} contentName={config.contentName} />
         <ContentEngineComparison config={config.comparison} />
         {afterComparison}
         <ContentEngineFAQ config={config.faq} />
-        <ContentEngineCTA config={config.cta} />
+        <ContentEngineCTA config={config.cta} contentName={config.contentName} />
         {afterCta}
       </main>
       <Footer />

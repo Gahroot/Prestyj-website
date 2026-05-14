@@ -11,7 +11,7 @@ export interface HeroCTA {
   label: string;
   href: string;
   variant?: "default" | "outline";
-  eventName: string;
+  /** Location on the page (e.g. `hero-see-math`). Passed to TrackedLink as eventLabel. */
   eventLabel: string;
 }
 
@@ -155,7 +155,7 @@ export interface CTAConfig {
   subhead: string;
   buttonLabel: string;
   buttonHref: string;
-  eventName: string;
+  /** Location on the page. Passed to TrackedLink as eventLabel. */
   eventLabel: string;
   footnote: string;
   sparkColor: string;
@@ -195,7 +195,7 @@ export interface PricingConfig {
     description: string;
     buttonLabel: string;
     href: string;
-    eventName: string;
+    /** Location on the page. Passed to TrackedLink as eventLabel. */
     eventLabel: string;
   };
   addons: PricingAddon[];
@@ -214,6 +214,12 @@ export interface VideoWalkthroughConfig {
 // ─── Top-level page config ─────────────────────────────────────────────
 
 export interface ContentEnginePageConfig {
+  /**
+   * Stable slug identifying this page (e.g. `ai-content-department`). Sent as
+   * the Meta Pixel `content_name` parameter on every `LeadIntent` click so the
+   * single shared audience can be segmented per page in Ads Manager.
+   */
+  contentName: string;
   hero: HeroConfig;
   problem: ProblemConfig;
   solution: SolutionConfig;

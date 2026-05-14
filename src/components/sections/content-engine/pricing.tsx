@@ -8,10 +8,12 @@ import { defaultContentEngineConfig, type PricingConfig } from "@/lib/content-en
 
 interface ContentEnginePricingProps {
   config?: PricingConfig;
+  contentName?: string;
 }
 
 export function ContentEnginePricing({
   config = defaultContentEngineConfig.pricing,
+  contentName = defaultContentEngineConfig.contentName,
 }: ContentEnginePricingProps) {
   const { headline, subhead, tiers, customCta, addons, guarantees } = config;
 
@@ -74,7 +76,7 @@ export function ContentEnginePricing({
                     <Button className="w-full" variant={isPro ? "default" : "outline"} asChild>
                       <TrackedLink
                         href={isPro ? "/ai-content-department/intake" : "/book-demo"}
-                        eventName="ContentEngineLeadIntent"
+                        contentName={contentName}
                         eventLabel={`pricing-${tier.id}`}
                       >
                         {tier.cta}
@@ -100,7 +102,7 @@ export function ContentEnginePricing({
               <Button size="lg" className="w-full shrink-0 font-bold md:w-auto" asChild>
                 <TrackedLink
                   href={customCta.href}
-                  eventName={customCta.eventName}
+                  contentName={contentName}
                   eventLabel={customCta.eventLabel}
                 >
                   {customCta.buttonLabel}

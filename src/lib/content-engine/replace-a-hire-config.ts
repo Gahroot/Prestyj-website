@@ -27,6 +27,7 @@ import {
 import type { ContentEnginePageConfig } from "./page-config";
 
 export const replaceAHireConfig: ContentEnginePageConfig = {
+  contentName: "ai-content-department",
   hero: {
     badge: {
       icon: Bot,
@@ -42,14 +43,12 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
         label: "See the Math",
         href: "#comparison",
         variant: "default",
-        eventName: "ReplaceAHireLeadIntent",
         eventLabel: "hero-see-math",
       },
       {
         label: "Book a Demo",
         href: "/book-demo",
         variant: "outline",
-        eventName: "ReplaceAHireLeadIntent",
         eventLabel: "hero-book-demo",
       },
     ],
@@ -425,7 +424,6 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
       "An entire content department for less than one junior hire\u2019s salary. Live in 24 hours. Cancel anytime.",
     buttonLabel: "Book a Demo",
     buttonHref: "/book-demo",
-    eventName: "ReplaceAHireLeadIntent",
     eventLabel: "final-cta",
     footnote: "See the AI content department running live before you commit.",
     sparkColor: "#7058e3",
@@ -503,7 +501,6 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
         "We\u2019ll build something custom \u2014 your account count, your platforms, your volume target.",
       buttonLabel: "Book a Demo",
       href: "/book-demo",
-      eventName: "ReplaceAHireLeadIntent",
       eventLabel: "pricing-custom",
     },
     addons: [

@@ -21,6 +21,7 @@ import {
 import type { ContentEnginePageConfig } from "./page-config";
 
 export const defaultContentEngineConfig: ContentEnginePageConfig = {
+  contentName: "content-engine",
   hero: {
     badge: {
       icon: Sparkles,
@@ -36,14 +37,12 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
         label: "See 50 Posts Shipped in 24h",
         href: "#pricing",
         variant: "default",
-        eventName: "ContentEngineLeadIntent",
         eventLabel: "hero-see-plans",
       },
       {
         label: "Compare Real Costs",
         href: "#hidden-cost",
         variant: "outline",
-        eventName: "ContentEngineLeadIntent",
         eventLabel: "hero-hidden-cost",
       },
     ],
@@ -426,10 +425,10 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
 
   cta: {
     headline: "See 50 Posts Shipped In Your First 24 Hours.",
-    subhead: "Live in 24h or setup fee refunded. Cancel anytime. Talk to us before you renew with your agency.",
+    subhead:
+      "Live in 24h or setup fee refunded. Cancel anytime. Talk to us before you renew with your agency.",
     buttonLabel: "Book a Demo",
     buttonHref: "/book-demo",
-    eventName: "ContentEngineLeadIntent",
     eventLabel: "final-cta",
     footnote: "See it running live on our own accounts before you commit.",
     sparkColor: "#7058e3",
@@ -507,7 +506,6 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
         "We\u2019ll build something custom \u2014 your account count, your platforms, your stack.",
       buttonLabel: "Book a Demo",
       href: "/book-demo",
-      eventName: "ContentEngineLeadIntent",
       eventLabel: "pricing-custom",
     },
     addons: [

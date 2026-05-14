@@ -14,8 +14,7 @@ const PIXEL_ID = "892763637077397";
  * build time. The base tag in app/layout.tsx is gated on this being present
  * so local/dev builds do not fire LinkedIn requests.
  */
-const LINKEDIN_PARTNER_ID =
-  process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID ?? "";
+const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID ?? "";
 
 /**
  * Optional event-specific LinkedIn conversion ID for the Content Engine
@@ -29,6 +28,17 @@ const LINKEDIN_CONTENT_ENGINE_CONVERSION_ID =
 /** Custom Meta Pixel event name for the Content Engine retargeting audience. */
 export const CONTENT_ENGINE_VISITOR_EVENT = "ContentEngineVisitor";
 
+/**
+ * Single custom Meta Pixel event for any soft-conversion CTA click across the
+ * site ("I want to learn more / I might buy"). One event, one audience large
+ * enough to optimize against. Per-page distinction is carried in the
+ * `content_name` parameter; per-CTA location is carried in `event_label`.
+ *
+ * Hard conversions stay on standard Pixel events: `Lead` (form submission),
+ * `Schedule` (Cal.com booking), `Purchase` (Stripe checkout).
+ */
+export const LEAD_INTENT_EVENT = "LeadIntent";
+
 type UserData = {
   email?: string;
   phone?: string;
@@ -36,12 +46,16 @@ type UserData = {
   lastName?: string;
 };
 
-export function trackEvent(eventName: string, userData?: UserData) {
+export function trackEvent(
+  eventName: string,
+  userData?: UserData,
+  customData?: Record<string, string>,
+) {
   const eventId = crypto.randomUUID();
 
   // Client-side pixel fire
   if (typeof window !== "undefined" && window.fbq) {
-    window.fbq("track", eventName, {}, { eventID: eventId });
+    window.fbq("track", eventName, customData ?? {}, { eventID: eventId });
   }
 
   // Server-side CAPI fire (fire-and-forget, keepalive survives page navigation)
@@ -57,6 +71,7 @@ export function trackEvent(eventName: string, userData?: UserData) {
       phone: userData?.phone,
       firstName: userData?.firstName,
       lastName: userData?.lastName,
+      customData,
     }),
   }).catch(() => {
     // Never break UX for tracking
@@ -80,7 +95,7 @@ export function trackContentEngineVisitor(variant: string) {
       "trackCustom",
       CONTENT_ENGINE_VISITOR_EVENT,
       { variant, content_category: "content-engine" },
-      { eventID: eventId }
+      { eventID: eventId },
     );
 
     // Server-side CAPI mirror for iOS / ad-blocker resilience
@@ -100,11 +115,7 @@ export function trackContentEngineVisitor(variant: string) {
   }
 
   // LinkedIn — event-specific conversion (audience + reporting)
-  if (
-    typeof window !== "undefined" &&
-    window.lintrk &&
-    LINKEDIN_CONTENT_ENGINE_CONVERSION_ID
-  ) {
+  if (typeof window !== "undefined" && window.lintrk && LINKEDIN_CONTENT_ENGINE_CONVERSION_ID) {
     window.lintrk("track", {
       conversion_id: Number(LINKEDIN_CONTENT_ENGINE_CONVERSION_ID),
     });
