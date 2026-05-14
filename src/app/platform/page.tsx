@@ -15,6 +15,7 @@ import {
   Cpu,
   Headphones,
   BarChart3,
+  CheckCircle,
 } from "lucide-react";
 import BorderGlow from "@/components/ui/border-glow";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
@@ -25,6 +26,7 @@ import { PlatformComparisonSection } from "@/components/sections/platform/platfo
 import { PlatformFAQSection } from "@/components/sections/platform/platform-faq";
 import { platformFaqs } from "@/lib/platform-data";
 import { pricingTiers } from "@/lib/pricing-data";
+import { getIntegrationGroups } from "@/lib/integrations";
 
 export const metadata: Metadata = {
   title: "Platform | The AI Agent Platform That Runs Your Marketing & Sales",
@@ -63,7 +65,7 @@ const capabilities = [
     icon: Plug,
     title: "Deep CRM Integrations",
     description:
-      "Native connections to ServiceTitan, Jobber, Follow Up Boss, HubSpot, Salesforce, and 50+ platforms. Bi-directional sync keeps your pipeline current in real-time.",
+      "Native Follow Up Boss connector live today, with kvCORE, Sierra Interactive, ServiceTitan, Jobber, HubSpot, Salesforce, and more built during onboarding. Bi-directional sync keeps your pipeline current in real-time.",
   },
   {
     icon: Code,
@@ -91,35 +93,7 @@ const capabilities = [
   },
 ];
 
-const integrationGroups: { category: string; description: string; tools: string[] }[] = [
-  {
-    category: "CRM Sync",
-    description:
-      "Bi-directional sync so every lead, note, and booking lands where your team already works.",
-    tools: ["HubSpot", "Salesforce", "Follow Up Boss", "kvCORE", "Pipedrive"],
-  },
-  {
-    category: "Field Service & Operations",
-    description: "Jobs, dispatch, and customer history flow straight into your AI agents' context.",
-    tools: ["ServiceTitan", "Jobber", "Housecall Pro"],
-  },
-  {
-    category: "Calendar & Scheduling",
-    description: "AI agents book real availability — never double-book, never overbook.",
-    tools: ["Google Calendar", "Outlook"],
-  },
-  {
-    category: "Phone & Messaging",
-    description:
-      "Power voice agents, SMS agents, and inbound receptionists on numbers you control.",
-    tools: ["Twilio", "RingCentral"],
-  },
-  {
-    category: "Automation & Workflow",
-    description: "Trigger and extend agent workflows across the rest of your stack.",
-    tools: ["Zapier", "Make", "Slack"],
-  },
-];
+const integrationGroups = getIntegrationGroups();
 
 const useCases = [
   {
@@ -323,25 +297,49 @@ export default function PlatformPage() {
               </p>
             </div>
             <div className="grid gap-6 md:grid-cols-2">
-              {integrationGroups.map((group) => (
-                <div key={group.category} className="bg-card border-border rounded-xl border p-6">
-                  <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
-                    {group.category}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 text-sm">{group.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {group.tools.map((name) => (
-                      <span
-                        key={name}
-                        className="bg-background border-border text-foreground rounded-full border px-3 py-1 text-sm"
-                      >
-                        {name}
-                      </span>
-                    ))}
+              {integrationGroups.map(({ category, integrations: tools }) => {
+                const CategoryIcon = category.icon;
+                return (
+                  <div key={category.id} className="bg-card border-border rounded-xl border p-6">
+                    <div className="mb-2 flex items-center gap-2">
+                      <CategoryIcon className="text-primary h-5 w-5" />
+                      <h3 className="font-heading text-foreground text-lg font-semibold">
+                        {category.label}
+                      </h3>
+                    </div>
+                    <p className="text-muted-foreground mb-4 text-sm">{category.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {tools.map((tool) => (
+                        <span
+                          key={tool.name}
+                          className={
+                            tool.status === "live"
+                              ? "bg-primary/10 border-primary/30 text-foreground inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm"
+                              : "bg-background border-border text-foreground inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm"
+                          }
+                        >
+                          {tool.name}
+                          {tool.status === "live" ? (
+                            <span className="text-primary inline-flex items-center gap-1 text-xs font-medium">
+                              <CheckCircle className="h-3 w-3" />
+                              Live
+                            </span>
+                          ) : (
+                            <span className="text-muted-foreground text-xs">On request</span>
+                          )}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
+            <p className="text-muted-foreground mx-auto mt-8 max-w-2xl text-center text-sm">
+              <span className="text-foreground font-medium">Honest version:</span> Follow Up Boss is
+              the connector we run in production today. Everything else is built during onboarding
+              using the vendor&rsquo;s API or webhooks — typically inside the 7–10 day go-live
+              window. If your tool isn&rsquo;t listed and has an API, we can connect to it.
+            </p>
           </div>
         </section>
 

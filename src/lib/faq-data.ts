@@ -49,7 +49,7 @@ export const faqs: FAQItem[] = [
   {
     question: "Does it work with our CRM and other tools?",
     answer:
-      "Yes. We integrate with the major CRMs (HubSpot, Salesforce, Pipedrive, and most industry-specific platforms), calendars (Google, Outlook), ad platforms (Google, Meta, TikTok), and communication channels (SMS, email, web chat, voice). If your tool has an API or webhook, we can connect to it.",
+      "Yes. Follow Up Boss is the connector we run in production today; we build connectors to other major CRMs — kvCORE, Sierra Interactive, ServiceTitan, Jobber, Housecall Pro, HubSpot, Salesforce, Pipedrive — as part of onboarding, plus calendars (Google, Outlook), ad platforms (Google, Meta, TikTok), and communication channels (SMS, email, web chat, voice). See the full list at prestyj.com/platform. If your tool has an API or webhook, we can connect to it.",
   },
   {
     question: "What happens when a lead asks something the agent can't answer?",

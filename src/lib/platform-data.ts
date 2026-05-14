@@ -21,7 +21,7 @@ export const platformFaqs: PlatformFAQ[] = [
   {
     question: "What CRM integrations are available?",
     answer:
-      "We integrate natively with 50+ platforms including ServiceTitan, Jobber, Housecall Pro, Follow Up Boss, kvCORE, HubSpot, Salesforce, Pipedrive, and more. Bi-directional sync keeps your pipeline current in real-time. We also support custom integrations via API, Zapier, and Make.",
+      "Follow Up Boss is the native connector we run in production today. We build connectors to the other major CRMs — kvCORE, Sierra Interactive, CINC, Real Geeks, ServiceTitan, Jobber, Housecall Pro, HubSpot, Salesforce, and Pipedrive — during onboarding using each vendor’s API or webhooks, typically inside the 7–10 day go-live window. Bi-directional sync keeps your pipeline current in real-time. We also support custom integrations via Zapier and Make.",
   },
   {
     question: "How fast can I get started?",
@@ -52,9 +52,9 @@ export const platformFaqs: PlatformFAQ[] = [
 
 export const platformStats = [
   {
-    value: "50+",
+    value: "15+",
     label: "CRM and tool integrations",
-    description: "Native connections to the tools you already use",
+    description: "Native and on-request connectors to the tools you already use",
   },
   {
     value: "24/7",
@@ -84,7 +84,7 @@ export const platformComparison = {
     },
     {
       feature: "CRM integration",
-      prestyj: "50+ native integrations",
+      prestyj: "Follow Up Boss native; others built during onboarding",
       generic: "Limited or Zapier-only",
       inhouse: "Months of development",
     },
