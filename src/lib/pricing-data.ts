@@ -27,6 +27,7 @@ export interface PricingTier {
   adBudget: string;
   batchAds: string;
   highlights: string[];
+  setupIncludes: string[];
   features: Record<string, boolean>;
   story: string;
   bestFor: string;
@@ -65,6 +66,12 @@ export const pricingTiers: PricingTier[] = [
       "Books meetings directly on your calendar (24/7)",
       "Custom landing page that syncs every lead into your CRM",
     ],
+    setupIncludes: [
+      "AI appointment agent trained on your business",
+      "Custom landing page built & launched",
+      "Ad campaigns created across Google & Meta",
+      "CRM, calendar & phone number setup",
+    ],
     features: {
       AD_MANAGEMENT: true,
       AD_BUDGET: true,
@@ -100,6 +107,13 @@ export const pricingTiers: PricingTier[] = [
       "AI agents that chat on your website and text leads back instantly",
       "Wakes up cold leads in your database and routes them to your team",
     ],
+    setupIncludes: [
+      "Full website + multi-step qualification form built",
+      "AI chatbot & texting agent trained on your business",
+      "Ad campaigns created across Google & Meta",
+      "Lead reactivation campaign for your existing database",
+      "CRM, calendar & phone number setup",
+    ],
     features: {
       AD_MANAGEMENT: true,
       AD_BUDGET: true,
@@ -134,6 +148,14 @@ export const pricingTiers: PricingTier[] = [
       "1,000 short-form video ads delivered monthly",
       "AI voice agent that calls every new lead and books the meeting",
       "AI receptionist that answers your inbound calls around the clock",
+    ],
+    setupIncludes: [
+      "AI voice agent + AI receptionist trained on your business",
+      "Full website + qualification form built",
+      "AI chatbot & texting agent configured",
+      "Multi-market ad campaigns created across Google & Meta",
+      "Lead reactivation campaign for your existing database",
+      "CRM, calendar & phone number setup",
     ],
     features: {
       AD_MANAGEMENT: true,

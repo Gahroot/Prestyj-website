@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
@@ -15,7 +14,7 @@ export function PricingSection() {
             Pricing
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            Plans from $1,997/mo. No contracts. Cancel anytime.
+            Plans from $1,997/mo + one-time setup. No contracts. Cancel anytime.
           </p>
         </AnimateOnScroll>
 
@@ -23,6 +22,7 @@ export function PricingSection() {
           <div className="grid gap-6 md:grid-cols-3">
             {pricingTiers.map((tier) => {
               const isPro = tier.id === "pro";
+              const firstMonthTotal = tier.monthlyPrice + tier.setupFee;
               return (
                 <Card
                   key={tier.id}
@@ -32,24 +32,28 @@ export function PricingSection() {
                       : "bg-card border-border"
                   }`}
                 >
-                  {isPro && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <Badge>Most Popular</Badge>
-                    </div>
-                  )}
                   <CardContent className="p-6">
-                    <h3 className="font-heading text-foreground mb-1 text-lg font-bold">
+                    <h3 className="font-heading text-foreground mb-3 text-lg font-bold">
                       {tier.name}
                     </h3>
-                    <div className="mb-4">
-                      <span className="font-heading text-foreground text-3xl font-bold">
+                    <div className="mb-2 flex flex-wrap items-baseline gap-x-2">
+                      <span className="font-heading text-foreground text-2xl font-bold">
                         ${tier.monthlyPrice.toLocaleString()}
+                        <span className="text-muted-foreground text-sm font-normal">/mo</span>
                       </span>
-                      <span className="text-muted-foreground text-sm">/mo</span>
-                      <p className="text-muted-foreground mt-1 text-xs">
-                        ${tier.setupFee.toLocaleString()} setup fee
-                      </p>
+                      <span className="text-muted-foreground">+</span>
+                      <span className="font-heading text-foreground text-2xl font-bold">
+                        ${tier.setupFee.toLocaleString()}
+                        <span className="text-muted-foreground text-sm font-normal"> setup</span>
+                      </span>
                     </div>
+                    <p className="text-muted-foreground mb-4 text-xs">
+                      Total first month:{" "}
+                      <span className="text-foreground font-semibold">
+                        ${firstMonthTotal.toLocaleString()}
+                      </span>{" "}
+                      &middot; then ${tier.monthlyPrice.toLocaleString()}/mo
+                    </p>
                     <p className="text-muted-foreground mb-6 text-sm">
                       <span className="text-foreground font-semibold">Best for: </span>
                       {tier.bestFor}
@@ -61,6 +65,22 @@ export function PricingSection() {
                           <span className="text-foreground text-sm">{item}</span>
                         </div>
                       ))}
+                    </div>
+                    <div className="border-border mb-6 rounded-md border border-dashed p-3">
+                      <p className="text-foreground mb-1.5 text-[11px] font-semibold tracking-wide uppercase">
+                        Setup covers
+                      </p>
+                      <ul className="space-y-1">
+                        {tier.setupIncludes.map((item) => (
+                          <li
+                            key={item}
+                            className="text-muted-foreground flex items-start gap-2 text-xs"
+                          >
+                            <span className="bg-primary mt-1.5 inline-block h-1 w-1 flex-shrink-0 rounded-full" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                     <Button
                       size="sm"
