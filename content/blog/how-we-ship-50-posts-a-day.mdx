@@ -1,5 +1,5 @@
 ---
-title: "Done-For-You Social Media: The Hidden Cost Of Agency Retainers Vs Volume Posting At 50 Posts/Day (2026)"
+title: "How We Ship 50+ Posts a Day With AI"
 description: "Hidden costs of done-for-you social media retainers — what agencies don't price in, what's actually inside a 50-posts-a-day content engine, and how the per-post math compares for coaches, media buyers, CMOs, and agency owners evaluating in 2026."
 date: "2026-05-09"
 author: "Prestyj Team"
@@ -19,7 +19,12 @@ import Image from "next/image";
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
 import { Separator } from "@/components/ui/separator";
 import {
   Mic,
@@ -44,14 +49,15 @@ Most "done-for-you social media" pitches hide the same three line items: the edi
 
 This post is the unredacted version. The actual stack, the actual people, the actual screenshots behind a content engine shipping 50+ posts a day across 7 platforms — and the side-by-side pricing breakdown beyond the sticker so you can see what an agency retainer hides versus what high-volume posting actually costs per asset.
 
-If you're a service business owner, agency owner, or CMO evaluating whether to build this in-house, keep paying a 30-posts-a-month agency, or run [done-for-you social media](/done-for-you-social-media) with us, this is the artifact you can use to make that decision honestly — including the hidden costs vendors typically leave off the proposal.
+If you're a service business owner, agency owner, or CMO evaluating whether to build this in-house, keep paying a 30-posts-a-month agency, or run [done-for-you social media](/ai-content-department) with us, this is the artifact you can use to make that decision honestly — including the hidden costs vendors typically leave off the proposal.
 
 <div className="not-prose my-8">
   <Alert>
     <Rocket />
     <AlertTitle>The one-line version</AlertTitle>
     <AlertDescription>
-      One 90-minute pillar shoot per week becomes 350+ atomic posts. Six pipelines run in parallel. A two-person editorial pod supervises the swarm. Live in 24 hours from account access.
+      One 90-minute pillar shoot per week becomes 350+ atomic posts. Six pipelines run in parallel.
+      A two-person editorial pod supervises the swarm. Live in 24 hours from account access.
     </AlertDescription>
   </Alert>
 </div>
@@ -75,7 +81,7 @@ Before any framework: three screenshots of what 50 posts/day across the swarm ac
 
 <div className="not-prose my-10 grid gap-6 md:grid-cols-3">
   <figure className="space-y-2">
-    <div className="overflow-hidden rounded-xl border bg-card">
+    <div className="bg-card overflow-hidden rounded-xl border">
       <Image
         src="/images/content-engine/proof-1.webp"
         alt="Prestyj content swarm — multi-account posting cadence dashboard"
@@ -84,12 +90,12 @@ Before any framework: three screenshots of what 50 posts/day across the swarm ac
         className="h-auto w-full"
       />
     </div>
-    <figcaption className="text-xs text-muted-foreground text-center">
+    <figcaption className="text-muted-foreground text-center text-xs">
       Multi-account posting cadence — one of several brand stacks in the swarm.
     </figcaption>
   </figure>
   <figure className="space-y-2">
-    <div className="overflow-hidden rounded-xl border bg-card">
+    <div className="bg-card overflow-hidden rounded-xl border">
       <Image
         src="/images/content-engine/proof-2.webp"
         alt="Prestyj content swarm — short-form reach and engagement signal"
@@ -98,12 +104,12 @@ Before any framework: three screenshots of what 50 posts/day across the swarm ac
         className="h-auto w-full"
       />
     </div>
-    <figcaption className="text-xs text-muted-foreground text-center">
+    <figcaption className="text-muted-foreground text-center text-xs">
       Above-threshold reach after the recommender starts trusting the account.
     </figcaption>
   </figure>
   <figure className="space-y-2">
-    <div className="overflow-hidden rounded-xl border bg-card">
+    <div className="bg-card overflow-hidden rounded-xl border">
       <Image
         src="/images/content-engine/proof-3.webp"
         alt="Prestyj content swarm — daily breakout post performance"
@@ -112,7 +118,7 @@ Before any framework: three screenshots of what 50 posts/day across the swarm ac
         className="h-auto w-full"
       />
     </div>
-    <figcaption className="text-xs text-muted-foreground text-center">
+    <figcaption className="text-muted-foreground text-center text-xs">
       Daily breakout posts surfaced by the performance pipeline for double-down.
     </figcaption>
   </figure>
@@ -130,79 +136,85 @@ Six pipelines, each owning one failure mode. If any pipeline breaks, the swarm s
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Mic className="size-5 text-primary" />
+        <Mic className="text-primary size-5" />
         <Badge variant="outline">Pipeline 1</Badge>
       </div>
       <CardTitle className="mt-2">Source Capture</CardTitle>
       <CardDescription>One 60–120 minute pillar per week per account stack.</CardDescription>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Podcast, walk-and-talk, on-site shoot, sales call recording, customer interview. The only meaningfully human step.
+    <CardContent className="text-muted-foreground text-sm">
+      Podcast, walk-and-talk, on-site shoot, sales call recording, customer interview. The only
+      meaningfully human step.
     </CardContent>
   </Card>
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Scissors className="size-5 text-primary" />
+        <Scissors className="text-primary size-5" />
         <Badge variant="outline">Pipeline 2</Badge>
       </div>
       <CardTitle className="mt-2">Atomization</CardTitle>
       <CardDescription>Pillar → 50–150 atomic cuts.</CardDescription>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      AI-assisted clipping, auto-captioning, hook extraction, B-roll injection, format conversion (vertical / horizontal / square / static).
+    <CardContent className="text-muted-foreground text-sm">
+      AI-assisted clipping, auto-captioning, hook extraction, B-roll injection, format conversion
+      (vertical / horizontal / square / static).
     </CardContent>
   </Card>
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Wand2 className="size-5 text-primary" />
+        <Wand2 className="text-primary size-5" />
         <Badge variant="outline">Pipeline 3</Badge>
       </div>
       <CardTitle className="mt-2">Variation</CardTitle>
       <CardDescription>5–10 hook/caption/thumbnail variants per atomic asset.</CardDescription>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Each cut ships in multiple jacket styles. The recommender picks the winner. We don't pre-decide.
+    <CardContent className="text-muted-foreground text-sm">
+      Each cut ships in multiple jacket styles. The recommender picks the winner. We don't
+      pre-decide.
     </CardContent>
   </Card>
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Share2 className="size-5 text-primary" />
+        <Share2 className="text-primary size-5" />
         <Badge variant="outline">Pipeline 4</Badge>
       </div>
       <CardTitle className="mt-2">Distribution</CardTitle>
       <CardDescription>Scheduling across 7 platforms × 3–5 accounts.</CardDescription>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Native uploaders where the algorithm punishes third-party APIs. Direct API where it doesn't. Different formatting per surface.
+    <CardContent className="text-muted-foreground text-sm">
+      Native uploaders where the algorithm punishes third-party APIs. Direct API where it doesn't.
+      Different formatting per surface.
     </CardContent>
   </Card>
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <LineChart className="size-5 text-primary" />
+        <LineChart className="text-primary size-5" />
         <Badge variant="outline">Pipeline 5</Badge>
       </div>
       <CardTitle className="mt-2">Performance</CardTitle>
       <CardDescription>Daily review. Doubles-down on winners within 24 hours.</CardDescription>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Top-decile posts get re-cut into 3–5 derivative posts and fed back into atomization the same day.
+    <CardContent className="text-muted-foreground text-sm">
+      Top-decile posts get re-cut into 3–5 derivative posts and fed back into atomization the same
+      day.
     </CardContent>
   </Card>
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <ShieldCheck className="size-5 text-primary" />
+        <ShieldCheck className="text-primary size-5" />
         <Badge variant="outline">Pipeline 6</Badge>
       </div>
       <CardTitle className="mt-2">Compliance</CardTitle>
       <CardDescription>Brand voice, legal, claims, asset rights.</CardDescription>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Guardrails enforced at the variation step, not at the distribution step. Catching off-brand at distribution is too late.
+    <CardContent className="text-muted-foreground text-sm">
+      Guardrails enforced at the variation step, not at the distribution step. Catching off-brand at
+      distribution is too late.
     </CardContent>
   </Card>
 </div>
@@ -226,12 +238,14 @@ What we use as pillars, in priority order:
     <Camera />
     <AlertTitle>The capture rule we won't break</AlertTitle>
     <AlertDescription>
-      One pillar per week, minimum, per account stack. Skip a week and the swarm runs dry in 14 days. Skip two weeks and the algorithm starts demoting the account because the cadence falls below threshold.
+      One pillar per week, minimum, per account stack. Skip a week and the swarm runs dry in 14
+      days. Skip two weeks and the algorithm starts demoting the account because the cadence falls
+      below threshold.
     </AlertDescription>
   </Alert>
 </div>
 
-For clients on [done-for-you social media](/done-for-you-social-media), we run the capture for them — show up to the location or the Zoom, run the camera, ask the questions, leave with the raw files. For clients on the [AI content department](/ai-content-department) tier, they self-capture against a weekly prompt list we send.
+For clients on [done-for-you social media](/ai-content-department), we run the capture for them — show up to the location or the Zoom, run the camera, ask the questions, leave with the raw files. For clients on the [AI content department](/ai-content-department) tier, they self-capture against a weekly prompt list we send.
 
 Either way: this is the bottleneck. Everything else scales. Capture doesn't.
 
@@ -254,17 +268,35 @@ That's 52–108 atomic posts from a single capture session. Stack two pillar pie
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Workflow className="size-5 text-primary" />
+        <Workflow className="text-primary size-5" />
         <CardTitle>What the AI actually does</CardTitle>
       </div>
     </CardHeader>
-    <CardContent className="space-y-3 text-sm text-muted-foreground">
-      <div className="flex gap-2"><CheckCircle2 className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Transcribes the pillar with speaker diarization</div>
-      <div className="flex gap-2"><CheckCircle2 className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Identifies hook moments by semantic + retention modeling</div>
-      <div className="flex gap-2"><CheckCircle2 className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Cuts to vertical/horizontal/square with reframing</div>
-      <div className="flex gap-2"><CheckCircle2 className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Burns word-by-word captions in brand-safe styles</div>
-      <div className="flex gap-2"><CheckCircle2 className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Generates 5–10 caption + hook variants per cut</div>
-      <div className="flex gap-2"><CheckCircle2 className="size-4 text-emerald-500 mt-0.5 shrink-0" /> Suggests thumbnails, B-roll inserts, and music beds</div>
+    <CardContent className="text-muted-foreground space-y-3 text-sm">
+      <div className="flex gap-2">
+        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" /> Transcribes the pillar
+        with speaker diarization
+      </div>
+      <div className="flex gap-2">
+        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" /> Identifies hook moments
+        by semantic + retention modeling
+      </div>
+      <div className="flex gap-2">
+        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" /> Cuts to
+        vertical/horizontal/square with reframing
+      </div>
+      <div className="flex gap-2">
+        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" /> Burns word-by-word
+        captions in brand-safe styles
+      </div>
+      <div className="flex gap-2">
+        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" /> Generates 5–10 caption
+        + hook variants per cut
+      </div>
+      <div className="flex gap-2">
+        <CheckCircle2 className="mt-0.5 size-4 shrink-0 text-emerald-500" /> Suggests thumbnails,
+        B-roll inserts, and music beds
+      </div>
     </CardContent>
   </Card>
   <Card>
@@ -274,13 +306,31 @@ That's 52–108 atomic posts from a single capture session. Stack two pillar pie
         <CardTitle>What the AI doesn't do</CardTitle>
       </div>
     </CardHeader>
-    <CardContent className="space-y-3 text-sm text-muted-foreground">
-      <div className="flex gap-2"><AlertTriangle className="size-4 text-amber-500 mt-0.5 shrink-0" /> Approve a cut without an editor's eyes on it</div>
-      <div className="flex gap-2"><AlertTriangle className="size-4 text-amber-500 mt-0.5 shrink-0" /> Make claims, numbers, or guarantees that weren't in the source</div>
-      <div className="flex gap-2"><AlertTriangle className="size-4 text-amber-500 mt-0.5 shrink-0" /> Pick the brand's strategic priorities for the week</div>
-      <div className="flex gap-2"><AlertTriangle className="size-4 text-amber-500 mt-0.5 shrink-0" /> Override compliance flags from Pipeline 6</div>
-      <div className="flex gap-2"><AlertTriangle className="size-4 text-amber-500 mt-0.5 shrink-0" /> Decide which winners to double-down on (that's the strategist)</div>
-      <div className="flex gap-2"><AlertTriangle className="size-4 text-amber-500 mt-0.5 shrink-0" /> Talk to the client. Humans only.</div>
+    <CardContent className="text-muted-foreground space-y-3 text-sm">
+      <div className="flex gap-2">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" /> Approve a cut without an
+        editor's eyes on it
+      </div>
+      <div className="flex gap-2">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" /> Make claims, numbers, or
+        guarantees that weren't in the source
+      </div>
+      <div className="flex gap-2">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" /> Pick the brand's
+        strategic priorities for the week
+      </div>
+      <div className="flex gap-2">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" /> Override compliance
+        flags from Pipeline 6
+      </div>
+      <div className="flex gap-2">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" /> Decide which winners to
+        double-down on (that's the strategist)
+      </div>
+      <div className="flex gap-2">
+        <AlertTriangle className="mt-0.5 size-4 shrink-0 text-amber-500" /> Talk to the client.
+        Humans only.
+      </div>
     </CardContent>
   </Card>
 </div>
@@ -302,7 +352,9 @@ This is the part that's invisible in agency pitches and obvious to anyone who's 
     <Target />
     <AlertTitle>The variation budget</AlertTitle>
     <AlertDescription>
-      Every atomic cut gets 5–10 variants generated automatically. We schedule 2–3 of them in week 1, hold the rest in reserve, and ship the reserves in weeks 2–6 if the cut showed any signal. A cut that flops in all variants gets killed and replaced.
+      Every atomic cut gets 5–10 variants generated automatically. We schedule 2–3 of them in week
+      1, hold the rest in reserve, and ship the reserves in weeks 2–6 if the cut showed any signal.
+      A cut that flops in all variants gets killed and replaced.
     </AlertDescription>
   </Alert>
 </div>
@@ -319,38 +371,59 @@ Our distribution rules:
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Layers className="size-5 text-primary" />
+        <Layers className="text-primary size-5" />
         <CardTitle>Per-platform formatting</CardTitle>
       </div>
     </CardHeader>
-    <CardContent className="space-y-4 text-sm text-muted-foreground">
+    <CardContent className="text-muted-foreground space-y-4 text-sm">
       <div>
-        <div className="font-semibold text-foreground">Instagram Reels</div>
-        <p>9:16, captions burned in, hook in first 1.5s, CTA at 80% of runtime, 3–5 hashtags max, posted via native uploader.</p>
+        <div className="text-foreground font-semibold">Instagram Reels</div>
+        <p>
+          9:16, captions burned in, hook in first 1.5s, CTA at 80% of runtime, 3–5 hashtags max,
+          posted via native uploader.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">TikTok</div>
-        <p>9:16 with platform-native fonts on overlays, hook in first 1.0s, hashtags in caption (not first comment), trending sounds when contextually honest.</p>
+        <div className="text-foreground font-semibold">TikTok</div>
+        <p>
+          9:16 with platform-native fonts on overlays, hook in first 1.0s, hashtags in caption (not
+          first comment), trending sounds when contextually honest.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">YouTube Shorts</div>
-        <p>9:16, longer-tolerance hooks (2.0s), title-bait first frame, descriptions optimized for search not feed.</p>
+        <div className="text-foreground font-semibold">YouTube Shorts</div>
+        <p>
+          9:16, longer-tolerance hooks (2.0s), title-bait first frame, descriptions optimized for
+          search not feed.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">LinkedIn</div>
-        <p>Square or 4:5 video, 7/10 professional voice on captions, hook in first line of text, no link in post body (link in first comment).</p>
+        <div className="text-foreground font-semibold">LinkedIn</div>
+        <p>
+          Square or 4:5 video, 7/10 professional voice on captions, hook in first line of text, no
+          link in post body (link in first comment).
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">X / Threads</div>
-        <p>Punchy text-first posts, video as supporting evidence, threading where the argument runs long, posted 5–15x/day.</p>
+        <div className="text-foreground font-semibold">X / Threads</div>
+        <p>
+          Punchy text-first posts, video as supporting evidence, threading where the argument runs
+          long, posted 5–15x/day.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">Facebook Reels</div>
-        <p>9:16 with larger captions (older homeowner demo), longer hook tolerance (2.5s), post via Meta's native Reels composer.</p>
+        <div className="text-foreground font-semibold">Facebook Reels</div>
+        <p>
+          9:16 with larger captions (older homeowner demo), longer hook tolerance (2.5s), post via
+          Meta's native Reels composer.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">Google Business Profile</div>
-        <p>1 post/day with local-relevance keywords, photo + 1500-char update, direct lead intent capture.</p>
+        <div className="text-foreground font-semibold">Google Business Profile</div>
+        <p>
+          1 post/day with local-relevance keywords, photo + 1500-char update, direct lead intent
+          capture.
+        </p>
       </div>
     </CardContent>
   </Card>
@@ -375,32 +448,35 @@ Every morning, the strategist on each account stack opens the performance dashbo
       </div>
       <CardTitle className="mt-2 text-base">Double-down</CardTitle>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Re-cut into 3–5 derivative posts the same day. Push reserve variants. Cross-post to other accounts in the stack. Boost via paid where the unit economics work.
+    <CardContent className="text-muted-foreground text-sm">
+      Re-cut into 3–5 derivative posts the same day. Push reserve variants. Cross-post to other
+      accounts in the stack. Boost via paid where the unit economics work.
     </CardContent>
   </Card>
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Repeat className="size-5 text-primary" />
+        <Repeat className="text-primary size-5" />
         <Badge variant="outline">Middle 70%</Badge>
       </div>
       <CardTitle className="mt-2 text-base">Hold &amp; observe</CardTitle>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Let it run. Some sleeper hits emerge in days 3–10 as the recommender slow-tests them. We don't kill anything in this bucket prematurely.
+    <CardContent className="text-muted-foreground text-sm">
+      Let it run. Some sleeper hits emerge in days 3–10 as the recommender slow-tests them. We don't
+      kill anything in this bucket prematurely.
     </CardContent>
   </Card>
   <Card className="border-destructive/30">
     <CardHeader>
       <div className="flex items-center gap-2">
-        <AlertTriangle className="size-5 text-destructive" />
+        <AlertTriangle className="text-destructive size-5" />
         <Badge variant="destructive">Bottom decile</Badge>
       </div>
       <CardTitle className="mt-2 text-base">Kill &amp; replace</CardTitle>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Pull from rotation, archive the variant, and feed the failure pattern back into Pipeline 3 so the variation layer stops generating that mistake.
+    <CardContent className="text-muted-foreground text-sm">
+      Pull from rotation, archive the variant, and feed the failure pattern back into Pipeline 3 so
+      the variation layer stops generating that mistake.
     </CardContent>
   </Card>
 </div>
@@ -443,39 +519,59 @@ To make this concrete, here's a real schedule from a representative account stac
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Clock className="size-5 text-primary" />
+        <Clock className="text-primary size-5" />
         <CardTitle>Tuesday — one account stack — 52 posts shipped</CardTitle>
       </div>
     </CardHeader>
     <CardContent className="space-y-4 text-sm">
       <div className="grid grid-cols-[80px_1fr] gap-3">
-        <div className="font-mono text-muted-foreground">06:00</div>
-        <div className="text-muted-foreground"><span className="text-foreground font-semibold">Strategist review.</span> 25 minutes. Tags Monday's posts. Identifies 4 winners for double-down.</div>
+        <div className="text-muted-foreground font-mono">06:00</div>
+        <div className="text-muted-foreground">
+          <span className="text-foreground font-semibold">Strategist review.</span> 25 minutes. Tags
+          Monday's posts. Identifies 4 winners for double-down.
+        </div>
       </div>
       <Separator />
       <div className="grid grid-cols-[80px_1fr] gap-3">
-        <div className="font-mono text-muted-foreground">07:00</div>
-        <div className="text-muted-foreground"><span className="text-foreground font-semibold">Editor sweep.</span> Queue review on overnight AI cuts from Monday's pillar. 75 cuts in, ~58 cuts out (77% keep rate).</div>
+        <div className="text-muted-foreground font-mono">07:00</div>
+        <div className="text-muted-foreground">
+          <span className="text-foreground font-semibold">Editor sweep.</span> Queue review on
+          overnight AI cuts from Monday's pillar. 75 cuts in, ~58 cuts out (77% keep rate).
+        </div>
       </div>
       <Separator />
       <div className="grid grid-cols-[80px_1fr] gap-3">
-        <div className="font-mono text-muted-foreground">08:00</div>
-        <div className="text-muted-foreground"><span className="text-foreground font-semibold">Variation generation.</span> 58 cuts × 6 variants = 348 candidate posts. Compliance pipeline flags 11. Editor resolves.</div>
+        <div className="text-muted-foreground font-mono">08:00</div>
+        <div className="text-muted-foreground">
+          <span className="text-foreground font-semibold">Variation generation.</span> 58 cuts × 6
+          variants = 348 candidate posts. Compliance pipeline flags 11. Editor resolves.
+        </div>
       </div>
       <Separator />
       <div className="grid grid-cols-[80px_1fr] gap-3">
-        <div className="font-mono text-muted-foreground">09:00–22:00</div>
-        <div className="text-muted-foreground"><span className="text-foreground font-semibold">Scheduled distribution.</span> 52 posts ship across TikTok (12), Reels (10), Shorts (8), Facebook (6), X (10), Threads (4), LinkedIn (2).</div>
+        <div className="text-muted-foreground font-mono">09:00–22:00</div>
+        <div className="text-muted-foreground">
+          <span className="text-foreground font-semibold">Scheduled distribution.</span> 52 posts
+          ship across TikTok (12), Reels (10), Shorts (8), Facebook (6), X (10), Threads (4),
+          LinkedIn (2).
+        </div>
       </div>
       <Separator />
       <div className="grid grid-cols-[80px_1fr] gap-3">
-        <div className="font-mono text-muted-foreground">14:00</div>
-        <div className="text-muted-foreground"><span className="text-foreground font-semibold">Mid-day double-down.</span> Tuesday's morning post on TikTok is hitting 40K views in 5 hours. 3 derivative re-cuts queued for Wednesday.</div>
+        <div className="text-muted-foreground font-mono">14:00</div>
+        <div className="text-muted-foreground">
+          <span className="text-foreground font-semibold">Mid-day double-down.</span> Tuesday's
+          morning post on TikTok is hitting 40K views in 5 hours. 3 derivative re-cuts queued for
+          Wednesday.
+        </div>
       </div>
       <Separator />
       <div className="grid grid-cols-[80px_1fr] gap-3">
-        <div className="font-mono text-muted-foreground">22:00</div>
-        <div className="text-muted-foreground"><span className="text-foreground font-semibold">Overnight AI batch.</span> Atomization runs on the next pillar. 90 candidate cuts ready for Wednesday's 7am editor sweep.</div>
+        <div className="text-muted-foreground font-mono">22:00</div>
+        <div className="text-muted-foreground">
+          <span className="text-foreground font-semibold">Overnight AI batch.</span> Atomization
+          runs on the next pillar. 90 candidate cuts ready for Wednesday's 7am editor sweep.
+        </div>
       </div>
     </CardContent>
   </Card>
@@ -483,7 +579,7 @@ To make this concrete, here's a real schedule from a representative account stac
 
 Total human time on the account stack that day: roughly **2.5 hours of editor work + 45 minutes of strategist work + 15 minutes of compliance review.** Three and a half hours of human labor produced 52 posts.
 
-That's the unit economics that make the math work. A 30-posts-a-month agency burns 3–4 hours of human labor *per post.* We burn 4 minutes.
+That's the unit economics that make the math work. A 30-posts-a-month agency burns 3–4 hours of human labor _per post._ We burn 4 minutes.
 
 ---
 
@@ -491,7 +587,7 @@ That's the unit economics that make the math work. A 30-posts-a-month agency bur
 
 We get this question every week, so here's the honest answer.
 
-The thing that makes [done-for-you social media](/done-for-you-social-media) at this volume economically possible is that the marginal cost per post is dominated by *infrastructure* (transcription, GPU inference, scheduler licenses, storage) not by *labor.* Labor scales with account stacks, not with post count.
+The thing that makes [done-for-you social media](/ai-content-department) at this volume economically possible is that the marginal cost per post is dominated by _infrastructure_ (transcription, GPU inference, scheduler licenses, storage) not by _labor._ Labor scales with account stacks, not with post count.
 
 A single editor + strategist pod can supervise 4–6 account stacks shipping 50+ posts/day each. That's **200–300 posts/day per pod** at a labor cost that would have produced 6–10 posts/day at a traditional agency.
 
@@ -504,35 +600,52 @@ This is the only model that produces 1,500–2,700+ posts per month per client w
 A few things that come up in sales calls regularly that we won't take on, no matter the contract size.
 
 <div className="not-prose my-8">
-  <Accordion type="single" collapsible className="rounded-lg border bg-card px-4">
+  <Accordion type="single" collapsible className="bg-card rounded-lg border px-4">
     <AccordionItem value="q1">
-      <AccordionTrigger className="text-left">"Can you skip the pillar shoot and just generate everything from scratch?"</AccordionTrigger>
-      <AccordionContent className="text-sm text-muted-foreground">
-        No. Posts generated from no source material trigger the recommender's synthetic-content suppressors and read as obviously hollow to humans. The pillar is the entire point. Without it, you have spam, not a content engine.
+      <AccordionTrigger className="text-left">
+        "Can you skip the pillar shoot and just generate everything from scratch?"
+      </AccordionTrigger>
+      <AccordionContent className="text-muted-foreground text-sm">
+        No. Posts generated from no source material trigger the recommender's synthetic-content
+        suppressors and read as obviously hollow to humans. The pillar is the entire point. Without
+        it, you have spam, not a content engine.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="q2">
-      <AccordionTrigger className="text-left">"Can we approve every post before it ships?"</AccordionTrigger>
-      <AccordionContent className="text-sm text-muted-foreground">
-        Not at this volume. Per-post approval kills the unit economics and re-introduces the bottleneck the engine was built to eliminate. We approve the brand voice, the topic strategy, the compliance guardrails, and the founder veto list — then the swarm runs against those rules. Approval is at the rules layer, not the post layer.
+      <AccordionTrigger className="text-left">
+        "Can we approve every post before it ships?"
+      </AccordionTrigger>
+      <AccordionContent className="text-muted-foreground text-sm">
+        Not at this volume. Per-post approval kills the unit economics and re-introduces the
+        bottleneck the engine was built to eliminate. We approve the brand voice, the topic
+        strategy, the compliance guardrails, and the founder veto list — then the swarm runs against
+        those rules. Approval is at the rules layer, not the post layer.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="q3">
       <AccordionTrigger className="text-left">"Can you guarantee a viral post?"</AccordionTrigger>
-      <AccordionContent className="text-sm text-muted-foreground">
-        No. Anyone who guarantees this is lying. We guarantee volume, cadence, on-brand quality floors, and the operational discipline that makes virality probabilistically inevitable over a 90–180 day window. We don't guarantee any specific post.
+      <AccordionContent className="text-muted-foreground text-sm">
+        No. Anyone who guarantees this is lying. We guarantee volume, cadence, on-brand quality
+        floors, and the operational discipline that makes virality probabilistically inevitable over
+        a 90–180 day window. We don't guarantee any specific post.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="q4">
-      <AccordionTrigger className="text-left">"Can we use the engine without a founder personality on camera?"</AccordionTrigger>
-      <AccordionContent className="text-sm text-muted-foreground">
-        Yes, but with a tradeoff. Brand-only stacks compound 30–50% slower than founder-led stacks because the algorithm rewards human faces and consistent voices. We run brand-only when it's the only option, but we'll always recommend the founder account in parallel.
+      <AccordionTrigger className="text-left">
+        "Can we use the engine without a founder personality on camera?"
+      </AccordionTrigger>
+      <AccordionContent className="text-muted-foreground text-sm">
+        Yes, but with a tradeoff. Brand-only stacks compound 30–50% slower than founder-led stacks
+        because the algorithm rewards human faces and consistent voices. We run brand-only when it's
+        the only option, but we'll always recommend the founder account in parallel.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="q5">
       <AccordionTrigger className="text-left">"Can we own the AI models you use?"</AccordionTrigger>
-      <AccordionContent className="text-sm text-muted-foreground">
-        You own your brand voice profile, your asset library, your compliance ruleset, and every post generated. The model orchestration, the variation prompts, and the workflow code are ours. Standard SaaS-style boundaries.
+      <AccordionContent className="text-muted-foreground text-sm">
+        You own your brand voice profile, your asset library, your compliance ruleset, and every
+        post generated. The model orchestration, the variation prompts, and the workflow code are
+        ours. Standard SaaS-style boundaries.
       </AccordionContent>
     </AccordionItem>
   </Accordion>
@@ -550,8 +663,9 @@ Most agencies take 4–8 weeks to "ramp." We ship in 24 hours from the moment yo
       <Badge variant="outline">Hour 0–4</Badge>
       <CardTitle className="mt-2 text-base">Account access &amp; voice intake</CardTitle>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      You hand over platform access. We pull existing content, train the brand voice profile, lock the compliance ruleset.
+    <CardContent className="text-muted-foreground text-sm">
+      You hand over platform access. We pull existing content, train the brand voice profile, lock
+      the compliance ruleset.
     </CardContent>
   </Card>
   <Card>
@@ -559,8 +673,9 @@ Most agencies take 4–8 weeks to "ramp." We ship in 24 hours from the moment yo
       <Badge variant="outline">Hour 4–12</Badge>
       <CardTitle className="mt-2 text-base">First pillar capture</CardTitle>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Founder records (or we shoot) one 60-minute pillar against our prompt list. Atomization starts the moment files arrive.
+    <CardContent className="text-muted-foreground text-sm">
+      Founder records (or we shoot) one 60-minute pillar against our prompt list. Atomization starts
+      the moment files arrive.
     </CardContent>
   </Card>
   <Card>
@@ -568,8 +683,9 @@ Most agencies take 4–8 weeks to "ramp." We ship in 24 hours from the moment yo
       <Badge variant="outline">Hour 12–20</Badge>
       <CardTitle className="mt-2 text-base">Variation &amp; scheduling</CardTitle>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Editor runs first sweep. Variation pipeline generates the first 7 days of posts. Distribution queue fills.
+    <CardContent className="text-muted-foreground text-sm">
+      Editor runs first sweep. Variation pipeline generates the first 7 days of posts. Distribution
+      queue fills.
     </CardContent>
   </Card>
   <Card>
@@ -577,8 +693,9 @@ Most agencies take 4–8 weeks to "ramp." We ship in 24 hours from the moment yo
       <Badge variant="outline">Hour 20–24</Badge>
       <CardTitle className="mt-2 text-base">First posts ship</CardTitle>
     </CardHeader>
-    <CardContent className="text-sm text-muted-foreground">
-      Engine goes live. Daily review loop starts on day 2. First measurable reach climb typically lands in week 2–3.
+    <CardContent className="text-muted-foreground text-sm">
+      Engine goes live. Daily review loop starts on day 2. First measurable reach climb typically
+      lands in week 2–3.
     </CardContent>
   </Card>
 </div>
@@ -609,9 +726,7 @@ If any of those describe you, a traditional 30-posts-a-month agency might honest
 
 The Prestyj content engine isn't magic, and it isn't free. It's six pipelines, two humans per account stack, one weekly pillar, and a daily review loop — all stacked so the marginal cost of the 51st post each day is functionally zero.
 
-That's the operating model that makes 50+ posts a day across 7 platforms economically possible. Everything else is grooming the brochure.
-
-If you want to see what this looks like running on your accounts — same stack, your brand voice, live in 24 hours — start with [done-for-you social media](/done-for-you-social-media) for the full swarm, or the [AI content department](/ai-content-department) tier if you want a lighter footprint to replace a junior social hire.
+That's what an AI marketing agent looks like in production. The [AI Content Department](/ai-content-department) is this exact stack — source pipeline, atomization, variation, distribution, performance, and compliance — run on your accounts, in your brand voice, live in 24 hours. Everything else is grooming the brochure.
 
 ---
 
@@ -639,8 +754,4 @@ You own your brand voice profile, your asset library, every post generated, and 
 
 ### What's the difference between done-for-you and the AI content department?
 
-[Done-for-you social media](/done-for-you-social-media) runs the full swarm — multi-account stack, 1,500–2,700+ posts/month, weekly pillar capture handled by us. The [AI content department](/ai-content-department) tier is the replace-a-hire footprint — 1,000+ posts/month, lighter onboarding, you handle pillar capture against our prompts. Both ship in 24 hours from account access.
-
----
-
-Ready to see this stack running on your brand? Start with [done-for-you social media](/done-for-you-social-media) for the full swarm, or the [AI content department](/ai-content-department) for the replace-a-hire footprint. Live in 24 hours from account access.
+[Done-for-you social media](/ai-content-department) runs the full swarm — multi-account stack, 1,500–2,700+ posts/month, weekly pillar capture handled by us. The [AI content department](/ai-content-department) tier is the replace-a-hire footprint — 1,000+ posts/month, lighter onboarding, you handle pillar capture against our prompts. Both ship in 24 hours from account access.

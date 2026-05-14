@@ -1,5 +1,5 @@
 ---
-title: "AI Content Vs Human Content For Coaches, CMOs, And Agency Owners: The Hidden Cost Comparison Vendors Don't Show You (2026)"
+title: "AI Content vs Human Content: The Real Cost Comparison"
 description: "AI content vs human content comparison for coaches, media buyers, CMOs, agency owners, and service business owners — the hidden costs on both sides, the pricing breakdown beyond per-post quotes, the real definition of AI slop, and the blended model that beats either pure approach on cost-per-quality-unit in 2026."
 date: "2026-05-09"
 author: "Prestyj Team"
@@ -18,11 +18,39 @@ image: /images/blog/ai-content-vs-human-content.jpg
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@/components/ui/accordion";
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Bot, User, Sparkles, AlertTriangle, CheckCircle2, X, Layers, Workflow, Zap, Target, Scale, ShieldAlert, Wand2, ArrowRight } from "lucide-react";
+import {
+  Bot,
+  User,
+  Sparkles,
+  AlertTriangle,
+  CheckCircle2,
+  X,
+  Layers,
+  Workflow,
+  Zap,
+  Target,
+  Scale,
+  ShieldAlert,
+  Wand2,
+  ArrowRight,
+} from "lucide-react";
 
 The "AI vs human content" debate has collapsed into two unhelpful camps, and both are quietly expensive. On one side, AI maximalists who think a prompt and a publish button are a content strategy — and don't price in the brand-trust decay and recommender demotion that follows. On the other, purists who treat any AI assistance as ethical contamination — and don't price in the volume floor their pure-human pipeline never clears.
 
@@ -35,7 +63,10 @@ This post is the side-by-side AI-vs-human comparison your CFO would actually acc
     <Sparkles />
     <AlertTitle>The one-line version</AlertTitle>
     <AlertDescription>
-      AI wins on volume, variation, and pattern-completion. Humans win on judgment, taste, and lived experience. "AI slop" isn't a problem with AI — it's a problem with skipping the source material. The blended model — human source, AI atomization, human review — beats both pure approaches by an order of magnitude on cost-per-quality-unit.
+      AI wins on volume, variation, and pattern-completion. Humans win on judgment, taste, and lived
+      experience. "AI slop" isn't a problem with AI — it's a problem with skipping the source
+      material. The blended model — human source, AI atomization, human review — beats both pure
+      approaches by an order of magnitude on cost-per-quality-unit.
     </AlertDescription>
   </Alert>
 </div>
@@ -45,8 +76,8 @@ This post is the side-by-side AI-vs-human comparison your CFO would actually acc
 ## TL;DR
 
 - **AI wins** at: volume, variation, formatting, translation, summarization, fact-collation, structured atomization of existing source material.
-- **Humans win** at: lived experience, original perspective, taste, narrative judgment, trust signaling, and anything where the *author* is the value (a partner essay, a CEO POV, a customer story told first-person).
-- **"AI slop"** is a real category — it's not "content made with AI." It's content generated *from no source material* — pure model output with no real footage, customer, or experience underneath.
+- **Humans win** at: lived experience, original perspective, taste, narrative judgment, trust signaling, and anything where the _author_ is the value (a partner essay, a CEO POV, a customer story told first-person).
+- **"AI slop"** is a real category — it's not "content made with AI." It's content generated _from no source material_ — pure model output with no real footage, customer, or experience underneath.
 - **The pure-AI failure mode** is generic, voice-less, source-less filler that erodes brand trust and gets demoted by recommenders.
 - **The pure-human failure mode** is high-quality output at a volume so low it never clears the algorithmic threshold for distribution.
 - **The blended model** — human source pipeline, AI atomization and variation, human editorial floor — beats both at 5–50x lower cost per published asset.
@@ -55,7 +86,7 @@ This post is the side-by-side AI-vs-human comparison your CFO would actually acc
 
 ## Why the "AI vs Human" Framing Is Already Broken
 
-The debate is framed as a binary because it's easier to argue about than the real question. The real question is *which sub-task in the content pipeline are we talking about,* because the AI-vs-human answer changes at every step.
+The debate is framed as a binary because it's easier to argue about than the real question. The real question is _which sub-task in the content pipeline are we talking about,_ because the AI-vs-human answer changes at every step.
 
 A typical content pipeline has roughly six stages: **source generation → angle/positioning → drafting → variation → formatting → distribution.** AI and humans have wildly different comparative advantages at each one.
 
@@ -63,30 +94,38 @@ A typical content pipeline has roughly six stages: **source generation → angle
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <User className="size-5 text-primary" />
+        <User className="text-primary size-5" />
         <Badge variant="outline">Where humans dominate</Badge>
       </div>
       <CardTitle className="mt-2">Source + Angle</CardTitle>
-      <CardDescription>The lived experience, the taste call, the "why does this exist" decision.</CardDescription>
+      <CardDescription>
+        The lived experience, the taste call, the "why does this exist" decision.
+      </CardDescription>
     </CardHeader>
     <CardContent>
-      <p className="text-sm text-muted-foreground">
-        Original footage, founder POV, real customer stories, the contrarian take, the editorial spine. AI cannot generate these — it can only reshape them. If you skip this step, every downstream output is hollow.
+      <p className="text-muted-foreground text-sm">
+        Original footage, founder POV, real customer stories, the contrarian take, the editorial
+        spine. AI cannot generate these — it can only reshape them. If you skip this step, every
+        downstream output is hollow.
       </p>
     </CardContent>
   </Card>
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Bot className="size-5 text-primary" />
+        <Bot className="text-primary size-5" />
         <Badge variant="outline">Where AI dominates</Badge>
       </div>
       <CardTitle className="mt-2">Variation + Formatting</CardTitle>
-      <CardDescription>The 50-different-hooks problem, the cross-platform reformat, the bulk caption rewrite.</CardDescription>
+      <CardDescription>
+        The 50-different-hooks problem, the cross-platform reformat, the bulk caption rewrite.
+      </CardDescription>
     </CardHeader>
     <CardContent>
-      <p className="text-sm text-muted-foreground">
-        Once the source exists, AI can produce 100 variants in the time a human writes one. Per-variant marginal cost approaches zero. Humans cannot compete on this axis and shouldn't try.
+      <p className="text-muted-foreground text-sm">
+        Once the source exists, AI can produce 100 variants in the time a human writes one.
+        Per-variant marginal cost approaches zero. Humans cannot compete on this axis and shouldn't
+        try.
       </p>
     </CardContent>
   </Card>
@@ -94,7 +133,7 @@ A typical content pipeline has roughly six stages: **source generation → angle
 
 The error in most "AI vs human" arguments is that someone picks the stage where their preferred answer is obvious, and generalizes. AI maximalists point at variation (where AI is 100x better) and conclude "AI wins everything." Purists point at source (where AI produces nothing) and conclude "AI produces nothing." Both are correct about their stage and wrong about the others.
 
-The right question is never "AI or human." It's "AI or human at *this specific stage,* given the throughput, quality floor, and trust requirement of *this specific output.*"
+The right question is never "AI or human." It's "AI or human at _this specific stage,_ given the throughput, quality floor, and trust requirement of _this specific output._"
 
 ---
 
@@ -110,7 +149,7 @@ This isn't "AI replacing the editor" — it's AI doing the mechanical decomposit
 
 ### 2. Cross-Platform Reformatting
 
-The same idea has to live as a 90-second TikTok, a 280-character X post, a LinkedIn long-form, an email subject line, a Google Business Profile post, and an Instagram carousel. The *idea* is one human decision; the six format conversions are a mechanical translation problem. AI is dramatically better at format translation than at idea generation.
+The same idea has to live as a 90-second TikTok, a 280-character X post, a LinkedIn long-form, an email subject line, a Google Business Profile post, and an Instagram carousel. The _idea_ is one human decision; the six format conversions are a mechanical translation problem. AI is dramatically better at format translation than at idea generation.
 
 ### 3. Structured Information Density
 
@@ -129,7 +168,10 @@ The 1-to-1,000 problem: take one offer, personalize the hook for 1,000 prospects
     <Zap />
     <AlertTitle>The pattern</AlertTitle>
     <AlertDescription>
-      AI wins where the task is mechanical decomposition, format translation, or structured restatement of existing source material. The thing being created is not "new content" — it's a derivative of existing content reshaped for a new context. AI is, essentially, an industrial-scale derivative work engine.
+      AI wins where the task is mechanical decomposition, format translation, or structured
+      restatement of existing source material. The thing being created is not "new content" — it's a
+      derivative of existing content reshaped for a new context. AI is, essentially, an
+      industrial-scale derivative work engine.
     </AlertDescription>
   </Alert>
 </div>
@@ -158,25 +200,28 @@ Customer interviews, original surveys, on-site case studies, real numbers from y
 
 ### 5. Voice and Brand Specificity
 
-Strong, recognizable, idiosyncratic voice — the kind you can identify in a single sentence — is the cumulative product of thousands of small judgment calls about word choice, rhythm, what *not* to say. AI defaults to a homogenized middle-of-the-distribution voice. You can prompt against it, but the system pull is constant; without active human editorial enforcement, AI output drifts back to neutral.
+Strong, recognizable, idiosyncratic voice — the kind you can identify in a single sentence — is the cumulative product of thousands of small judgment calls about word choice, rhythm, what _not_ to say. AI defaults to a homogenized middle-of-the-distribution voice. You can prompt against it, but the system pull is constant; without active human editorial enforcement, AI output drifts back to neutral.
 
 <div className="not-prose my-8">
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Scale className="size-5 text-primary" />
+        <Scale className="text-primary size-5" />
         <CardTitle>The honest comparative test</CardTitle>
       </div>
     </CardHeader>
     <CardContent className="space-y-3">
-      <p className="text-sm text-muted-foreground">
-        Take any piece of content and ask: <strong>"If I removed the author's name, would the value of this piece survive?"</strong>
+      <p className="text-muted-foreground text-sm">
+        Take any piece of content and ask:{" "}
+        <strong>"If I removed the author's name, would the value of this piece survive?"</strong>
       </p>
-      <p className="text-sm text-muted-foreground">
-        If yes — the value is in the information, the structure, the format. AI is the right tool. The piece is fungible.
+      <p className="text-muted-foreground text-sm">
+        If yes — the value is in the information, the structure, the format. AI is the right tool.
+        The piece is fungible.
       </p>
-      <p className="text-sm text-muted-foreground">
-        If no — the value <em>is</em> the author. Human is the right tool. The piece is non-fungible and AI cannot replicate the signal of a specific human standing behind specific words.
+      <p className="text-muted-foreground text-sm">
+        If no — the value <em>is</em> the author. Human is the right tool. The piece is non-fungible
+        and AI cannot replicate the signal of a specific human standing behind specific words.
       </p>
     </CardContent>
   </Card>
@@ -205,13 +250,13 @@ A reader can identify slop within 30 seconds. So can the algorithm — completio
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <ShieldAlert className="size-5 text-destructive" />
+        <ShieldAlert className="text-destructive size-5" />
         <Badge variant="destructive">Slop</Badge>
       </div>
       <CardTitle className="mt-2">Source-less AI output</CardTitle>
     </CardHeader>
     <CardContent>
-      <ul className="space-y-2 text-sm text-muted-foreground">
+      <ul className="text-muted-foreground space-y-2 text-sm">
         <li>"3 reasons your HVAC business needs a website" (no source)</li>
         <li>Stock-image carousel of "tips for homeowners"</li>
         <li>AI-invented testimonial from a non-existent customer</li>
@@ -223,13 +268,13 @@ A reader can identify slop within 30 seconds. So can the algorithm — completio
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <CheckCircle2 className="size-5 text-primary" />
+        <CheckCircle2 className="text-primary size-5" />
         <Badge variant="outline">Not slop</Badge>
       </div>
       <CardTitle className="mt-2">AI-assisted real source</CardTitle>
     </CardHeader>
     <CardContent>
-      <ul className="space-y-2 text-sm text-muted-foreground">
+      <ul className="text-muted-foreground space-y-2 text-sm">
         <li>80 cuts of one real founder talking-head shoot, AI-captioned</li>
         <li>Carousel built from your own job-site footage</li>
         <li>Case study from a real customer, AI-formatted into 5 platform variants</li>
@@ -242,7 +287,7 @@ A reader can identify slop within 30 seconds. So can the algorithm — completio
 
 The distinction matters because it dissolves the "AI vs human" frame entirely. The real axis is **source-backed vs source-less.** Source-backed AI content is indistinguishable from human-produced content in measured engagement and trust scores. Source-less content — whether human-written or AI-generated — performs poorly. A bored intern writing platitudes off a content calendar is producing the same category as an unsupervised AI: source-less filler. The algorithm and the reader treat them the same.
 
-This is also why the "ban AI from our content" position is incoherent on examination. The actual thing brands want to ban is *source-less content.* AI is just the cheapest way to produce it at scale — but it's not the only way, and banning the tool while still producing source-less work via cheap human labor solves nothing.
+This is also why the "ban AI from our content" position is incoherent on examination. The actual thing brands want to ban is _source-less content._ AI is just the cheapest way to produce it at scale — but it's not the only way, and banning the tool while still producing source-less work via cheap human labor solves nothing.
 
 ---
 
@@ -254,38 +299,56 @@ The blended model isn't "AI plus a human spell-check pass." It's a specific oper
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Workflow className="size-5 text-primary" />
+        <Workflow className="text-primary size-5" />
         <CardTitle>The five-stage blended pipeline</CardTitle>
       </div>
     </CardHeader>
     <CardContent className="space-y-4">
       <div>
-        <div className="font-semibold text-foreground">1. Source pipeline — human</div>
-        <p className="text-sm text-muted-foreground mt-1">8–15 pillar pieces per month: founder shoots, ride-alongs, customer interviews, before/afters, original opinion essays. The non-fungible substrate everything else derives from.</p>
+        <div className="text-foreground font-semibold">1. Source pipeline — human</div>
+        <p className="text-muted-foreground mt-1 text-sm">
+          8–15 pillar pieces per month: founder shoots, ride-alongs, customer interviews,
+          before/afters, original opinion essays. The non-fungible substrate everything else derives
+          from.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">2. Angle and editorial frame — human</div>
-        <p className="text-sm text-muted-foreground mt-1">A human editor sets the take, the audience cut, and the brand voice rules. The 30-minute decision that governs the next 1,000 outputs.</p>
+        <div className="text-foreground font-semibold">2. Angle and editorial frame — human</div>
+        <p className="text-muted-foreground mt-1 text-sm">
+          A human editor sets the take, the audience cut, and the brand voice rules. The 30-minute
+          decision that governs the next 1,000 outputs.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">3. Atomization and variation — AI</div>
-        <p className="text-sm text-muted-foreground mt-1">Cuts, reformats, captions, hooks, platform-specific rewrites, multilingual versions, structured tables. Volume-multiplier work AI is built for.</p>
+        <div className="text-foreground font-semibold">3. Atomization and variation — AI</div>
+        <p className="text-muted-foreground mt-1 text-sm">
+          Cuts, reformats, captions, hooks, platform-specific rewrites, multilingual versions,
+          structured tables. Volume-multiplier work AI is built for.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">4. Editorial review — human</div>
-        <p className="text-sm text-muted-foreground mt-1">Editor reviews <em>batches</em>, not individual posts. Kills off-voice variants, approves the 70% that pass the floor, flags patterns to retrain on.</p>
+        <div className="text-foreground font-semibold">4. Editorial review — human</div>
+        <p className="text-muted-foreground mt-1 text-sm">
+          Editor reviews <em>batches</em>, not individual posts. Kills off-voice variants, approves
+          the 70% that pass the floor, flags patterns to retrain on.
+        </p>
       </div>
       <div>
-        <div className="font-semibold text-foreground">5. Distribution and learning — AI + human</div>
-        <p className="text-sm text-muted-foreground mt-1">AI handles scheduling, A/B routing, performance tagging. Human reviews weekly performance to update the source pipeline priorities.</p>
+        <div className="text-foreground font-semibold">
+          5. Distribution and learning — AI + human
+        </div>
+        <p className="text-muted-foreground mt-1 text-sm">
+          AI handles scheduling, A/B routing, performance tagging. Human reviews weekly performance
+          to update the source pipeline priorities.
+        </p>
       </div>
     </CardContent>
   </Card>
 </div>
 
-The key insight is at stage 4. Editor-in-the-loop reviewing *batches* is what holds the quality floor at scale. Without it, the system drifts into slop within weeks. With it, output stays at a consistent 6–7/10 quality across thousands of posts per month — high enough to clear the algorithm threshold, varied enough to avoid pattern fatigue, on-voice enough to compound as brand equity rather than dilute it.
+The key insight is at stage 4. Editor-in-the-loop reviewing _batches_ is what holds the quality floor at scale. Without it, the system drifts into slop within weeks. With it, output stays at a consistent 6–7/10 quality across thousands of posts per month — high enough to clear the algorithm threshold, varied enough to avoid pattern fatigue, on-voice enough to compound as brand equity rather than dilute it.
 
-This is the operating model behind [done-for-you social media](/done-for-you-social-media) for service businesses — not "AI generates everything" and not "humans write every post," but a specific division of labor that makes per-post marginal cost approach $2–$5 while keeping quality above the floor.
+This is the operating model behind [done-for-you social media](/ai-content-department) for service businesses — not "AI generates everything" and not "humans write every post," but a specific division of labor that makes per-post marginal cost approach $2–$5 while keeping quality above the floor.
 
 ---
 
@@ -380,37 +443,77 @@ The pattern is clean: **trust load and volume need pull in opposite directions.*
     <AccordionItem value="readers-can-tell">
       <AccordionTrigger>"Readers can always tell when content is AI-generated."</AccordionTrigger>
       <AccordionContent>
-        Readers can reliably tell when content is <em>source-less</em>, regardless of whether AI or a bored human wrote it. Source-backed AI content — derived from real footage, real interviews, real numbers — passes blind reader tests at parity with fully human-written content in 2026 studies. The "tell" people identify is the genericness signature of source-less output, not a fingerprint of AI authorship per se. Fix the source pipeline and the "AI tell" disappears.
+        Readers can reliably tell when content is <em>source-less</em>, regardless of whether AI or
+        a bored human wrote it. Source-backed AI content — derived from real footage, real
+        interviews, real numbers — passes blind reader tests at parity with fully human-written
+        content in 2026 studies. The "tell" people identify is the genericness signature of
+        source-less output, not a fingerprint of AI authorship per se. Fix the source pipeline and
+        the "AI tell" disappears.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="seo-penalty">
       <AccordionTrigger>"Won't Google penalize AI content?"</AccordionTrigger>
       <AccordionContent>
-        Google's stated policy since 2023 is that they evaluate content quality and helpfulness, not authorship method. The pages that get demoted are unhelpful — thin, derivative, source-less — which correlates with bulk-AI production but isn't caused by it. Source-backed content using AI for structure, formatting, and atomization performs identically to human-only content of equivalent depth. The pages getting penalized would be penalized whether a human or a model wrote the source-less filler.
+        Google's stated policy since 2023 is that they evaluate content quality and helpfulness, not
+        authorship method. The pages that get demoted are unhelpful — thin, derivative, source-less
+        — which correlates with bulk-AI production but isn't caused by it. Source-backed content
+        using AI for structure, formatting, and atomization performs identically to human-only
+        content of equivalent depth. The pages getting penalized would be penalized whether a human
+        or a model wrote the source-less filler.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="brand-voice">
       <AccordionTrigger>"AI can't capture our brand voice."</AccordionTrigger>
       <AccordionContent>
-        Out of the box, no — AI defaults to a homogenized voice. With a properly-built voice prompt (tone rules, vocabulary, banned phrases, exemplar passages, and 30+ reference posts), AI matches a defined brand voice well enough to clear blind editorial review at 70–85% pass rates. The remaining 15–30% gets killed by the editor-in-the-loop pass. The system replicates voice; what it cannot do is <em>invent</em> voice. Voice is a human design decision; voice consistency at scale is an AI execution capability.
+        Out of the box, no — AI defaults to a homogenized voice. With a properly-built voice prompt
+        (tone rules, vocabulary, banned phrases, exemplar passages, and 30+ reference posts), AI
+        matches a defined brand voice well enough to clear blind editorial review at 70–85% pass
+        rates. The remaining 15–30% gets killed by the editor-in-the-loop pass. The system
+        replicates voice; what it cannot do is <em>invent</em> voice. Voice is a human design
+        decision; voice consistency at scale is an AI execution capability.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="ethics">
       <AccordionTrigger>"Is using AI for content ethically suspect?"</AccordionTrigger>
       <AccordionContent>
-        It depends entirely on disclosure and source. Using AI to atomize your own source material into more distribution surfaces is operationally similar to hiring an editor and a graphic designer — it's tooling for the work, not deception about authorship. The ethics get questionable when AI is used to fabricate experiences the brand hasn't actually had, invent customers who don't exist, or publish opinion essays under named human bylines that the named human didn't write or read. The tool isn't the ethical question; the source-and-attribution practices around the tool are.
+        It depends entirely on disclosure and source. Using AI to atomize your own source material
+        into more distribution surfaces is operationally similar to hiring an editor and a graphic
+        designer — it's tooling for the work, not deception about authorship. The ethics get
+        questionable when AI is used to fabricate experiences the brand hasn't actually had, invent
+        customers who don't exist, or publish opinion essays under named human bylines that the
+        named human didn't write or read. The tool isn't the ethical question; the
+        source-and-attribution practices around the tool are.
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="future">
-      <AccordionTrigger>"Won't AI just keep getting better and replace human content entirely?"</AccordionTrigger>
+      <AccordionTrigger>
+        "Won't AI just keep getting better and replace human content entirely?"
+      </AccordionTrigger>
       <AccordionContent>
-        Model capability will keep improving. The thing it cannot do — and won't be able to do on any visible roadmap — is have lived experience. The CEO firing the customer, the technician on the weird job, the founder's actual contested opinion: these require a specific human living a specific life and reporting back. As AI capability rises, the relative value of source material rises with it, because every model is downstream of the source. The endgame is not "AI replaces human content" — it's "human source becomes the highest-leverage input in a content economy where everything else is commoditized."
+        Model capability will keep improving. The thing it cannot do — and won't be able to do on
+        any visible roadmap — is have lived experience. The CEO firing the customer, the technician
+        on the weird job, the founder's actual contested opinion: these require a specific human
+        living a specific life and reporting back. As AI capability rises, the relative value of
+        source material rises with it, because every model is downstream of the source. The endgame
+        is not "AI replaces human content" — it's "human source becomes the highest-leverage input
+        in a content economy where everything else is commoditized."
       </AccordionContent>
     </AccordionItem>
     <AccordionItem value="small-team">
-      <AccordionTrigger>"We're a small team — can we actually run the blended model?"</AccordionTrigger>
+      <AccordionTrigger>
+        "We're a small team — can we actually run the blended model?"
+      </AccordionTrigger>
       <AccordionContent>
-        Yes, and you have to. Small teams cannot afford the pure-human model (the volume math doesn't work) and shouldn't run the pure-AI model (the trust math doesn't work). The blended model is specifically what makes serious content production accessible to teams under 10 people, because the human inputs concentrate to the highest-leverage tasks (one shoot day, one editor pass per batch) while AI absorbs the mechanical volume work. This is the entire reason productized <Link href="/done-for-you-social-media" className="underline">done-for-you social media</Link> exists as a category for small service businesses.
+        Yes, and you have to. Small teams cannot afford the pure-human model (the volume math
+        doesn't work) and shouldn't run the pure-AI model (the trust math doesn't work). The blended
+        model is specifically what makes serious content production accessible to teams under 10
+        people, because the human inputs concentrate to the highest-leverage tasks (one shoot day,
+        one editor pass per batch) while AI absorbs the mechanical volume work. This is the entire
+        reason productized{" "}
+        <Link href="/ai-content-department" className="underline">
+          done-for-you social media
+        </Link>{" "}
+        exists as a category for small service businesses.
       </AccordionContent>
     </AccordionItem>
   </Accordion>
@@ -426,12 +529,12 @@ Concrete example. A roofing company with $6M in revenue and one marketing person
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <User className="size-5 text-primary" />
+        <User className="text-primary size-5" />
         <CardTitle className="text-base">Human inputs</CardTitle>
       </div>
     </CardHeader>
     <CardContent>
-      <ul className="space-y-2 text-sm text-muted-foreground">
+      <ul className="text-muted-foreground space-y-2 text-sm">
         <li>1 founder shoot day (4 hours)</li>
         <li>2 ride-along job-site visits</li>
         <li>3 customer interview calls</li>
@@ -443,12 +546,12 @@ Concrete example. A roofing company with $6M in revenue and one marketing person
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Wand2 className="size-5 text-primary" />
+        <Wand2 className="text-primary size-5" />
         <CardTitle className="text-base">AI processing</CardTitle>
       </div>
     </CardHeader>
     <CardContent>
-      <ul className="space-y-2 text-sm text-muted-foreground">
+      <ul className="text-muted-foreground space-y-2 text-sm">
         <li>Cuts: 600+ vertical clips</li>
         <li>Captions: platform-specific per clip</li>
         <li>Hook variants: 3–5 per clip</li>
@@ -460,12 +563,12 @@ Concrete example. A roofing company with $6M in revenue and one marketing person
   <Card>
     <CardHeader>
       <div className="flex items-center gap-2">
-        <Target className="size-5 text-primary" />
+        <Target className="text-primary size-5" />
         <CardTitle className="text-base">Output shipped</CardTitle>
       </div>
     </CardHeader>
     <CardContent>
-      <ul className="space-y-2 text-sm text-muted-foreground">
+      <ul className="text-muted-foreground space-y-2 text-sm">
         <li>~1,000 posts/month, all platforms</li>
         <li>6–7/10 quality, on-voice</li>
         <li>Per-post marginal cost: $3–$5</li>
@@ -499,18 +602,9 @@ The "AI vs human content" debate is the wrong question because it treats two com
 
 The brands that will win the content category in 2026 aren't the ones with the strongest opinion in the AI-vs-human debate. They're the ones who stopped having the debate, built the source pipeline, plugged AI into the variation layer, and started shipping at the volume that compounds.
 
-If you're a service business looking at the math and realizing the in-house build-out for a real blended content engine is 4–6 hires and 6–12 months, the off-the-shelf path is productized [done-for-you social media](/done-for-you-social-media). It's the same blended pipeline operationalized as a service: you supply the source material on a monthly cadence, the system handles atomization, editorial review, and distribution. Per-post marginal cost lands where it needs to land for the unit economics to work.
+That blended pipeline is exactly what an AI marketing agent is for. Prestyj's [AI Content Department](/ai-content-department) runs it end-to-end — your source material in, atomized, edited, and shipped across every platform at the cadence the algorithm actually rewards. The source pipeline stays human. Everything downstream is the agent.
 
 The question isn't whether AI belongs in your content stack. It's where in the stack it belongs, and what the human work next to it actually has to be.
-
-<div className="not-prose my-12 flex justify-center">
-  <Button asChild size="lg">
-    <Link href="/done-for-you-social-media">
-      See the blended content engine
-      <ArrowRight className="ml-2 size-4" />
-    </Link>
-  </Button>
-</div>
 
 ---
 
