@@ -9,16 +9,16 @@ import { Footer } from "@/components/layout/footer";
 import { getAllBestForPages } from "@/lib/best-for";
 
 export const metadata: Metadata = {
-  title: "Best AI Sales Agent for Your Niche | Prestyj",
+  title: "AI Agents for Marketing & Sales — by Industry | Prestyj",
   description:
-    "Discover why Prestyj is the best AI sales agent for your specific real estate niche. Find tailored solutions for solo agents, teams, luxury markets, and more.",
+    "See how Prestyj's AI agents work for your industry. Built for service businesses, real estate, professional services, and more.",
   keywords: [
-    "best AI for real estate agents",
-    "AI sales agent for realtors",
-    "real estate AI by niche",
-    "AI for solo agents",
-    "AI for real estate teams",
-    "luxury real estate AI",
+    "AI agents for marketing",
+    "AI agents for sales",
+    "AI agents by industry",
+    "AI for service businesses",
+    "AI for real estate",
+    "AI for professional services",
   ],
   alternates: {
     canonical: "https://prestyj.com/best-for",
@@ -38,19 +38,19 @@ export default function BestForHubPage() {
           <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <Badge variant="outline" className="border-primary/50 text-primary mb-6">
-                Best For Your Niche
+                AI Agents by Industry
               </Badge>
 
               <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
-                Find the Perfect AI Solution
+                AI Agents for Marketing & Sales
                 <br />
-                <span className="text-primary">For Your Business</span>
+                <span className="text-primary">Built for Your Industry</span>
               </h1>
 
               <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg sm:text-xl">
-                Every real estate professional has unique needs. Explore how Prestyj adapts to your
-                specific niche, whether you&apos;re a solo agent, leading a team, or specializing in
-                luxury properties.
+                See how Prestyj&apos;s AI agents work for your industry. Built for service
+                businesses, real estate, professional services, and more — tuned to the way your
+                buyers actually decide.
               </p>
             </div>
           </div>
@@ -61,11 +61,11 @@ export default function BestForHubPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
               <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
-                Solutions by Niche
+                Solutions by Industry
               </h2>
               <p className="text-muted-foreground">
-                Select your niche to see how Prestyj can help you succeed with AI-powered lead
-                management tailored to your specific needs.
+                Pick your industry to see how Prestyj&apos;s AI agents handle marketing and sales
+                workflows for businesses like yours.
               </p>
             </div>
 
@@ -108,41 +108,41 @@ export default function BestForHubPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
-                Why Agents Choose Prestyj
+                Why Teams Choose Prestyj
               </h2>
               <p className="text-muted-foreground mx-auto max-w-2xl">
-                Regardless of your niche, Prestyj delivers consistent results that help you close
-                more deals.
+                Whatever your industry, Prestyj&apos;s AI agents plug into your stack and start
+                producing pipeline — without a new headcount.
               </p>
             </div>
 
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-primary mb-2 text-4xl font-bold">47 sec</div>
-                  <p className="text-foreground mb-1 font-medium">Average Response Time</p>
+                  <div className="text-primary mb-2 text-4xl font-bold">24/7</div>
+                  <p className="text-foreground mb-1 font-medium">Always-On Coverage</p>
                   <p className="text-muted-foreground text-sm">
-                    AI responds to every lead instantly, 24/7/365
+                    AI agents work nights, weekends, and holidays — every lead gets a response.
                   </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-primary mb-2 text-4xl font-bold">23%</div>
-                  <p className="text-foreground mb-1 font-medium">Dead Leads Reactivated</p>
+                  <div className="text-primary mb-2 text-4xl font-bold">Days</div>
+                  <p className="text-foreground mb-1 font-medium">Not Months to Launch</p>
                   <p className="text-muted-foreground text-sm">
-                    Revive the leads you already paid for
+                    Industry-tuned agents go live in days, not the quarter-long rollout of a hire.
                   </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-primary mb-2 text-4xl font-bold">0%</div>
-                  <p className="text-foreground mb-1 font-medium">Commission Split</p>
+                  <div className="text-primary mb-2 text-4xl font-bold">1</div>
+                  <p className="text-foreground mb-1 font-medium">Flat Monthly Fee</p>
                   <p className="text-muted-foreground text-sm">
-                    Keep 100% of your commission, unlike human ISAs
+                    No commission splits, no per-seat math — predictable cost as volume scales.
                   </p>
                 </CardContent>
               </Card>
@@ -157,8 +157,8 @@ export default function BestForHubPage() {
               Ready to See Prestyj in Action?
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
-              Book a personalized demo tailored to your specific niche. We&apos;ll show you exactly
-              how Prestyj can transform your lead management and help you close more deals.
+              Book a personalized demo tailored to your industry. We&apos;ll show you exactly how
+              Prestyj&apos;s AI agents handle marketing and sales for businesses like yours.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
               <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
