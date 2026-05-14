@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle, Calendar, TrendingUp, Phone } from "lucide-react";
+import { CheckCircle, Calendar, TrendingUp, Mail } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -70,10 +70,10 @@ export default function CalculatorResultsPage() {
 
   if (!results || !inputs) {
     return (
-      <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      <main className="from-background to-muted/20 min-h-screen bg-gradient-to-b">
         <section className="container mx-auto px-4 py-24 text-center">
           <h1 className="text-3xl font-bold">Loading Your Results...</h1>
-          <p className="mt-4 text-muted-foreground">
+          <p className="text-muted-foreground mt-4">
             If this page doesn&apos;t load, please return to the calculator and try again.
           </p>
         </section>
@@ -82,15 +82,15 @@ export default function CalculatorResultsPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <main className="from-background to-muted/20 min-h-screen bg-gradient-to-b">
       {/* Success Header */}
       <section className="container mx-auto px-4 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-            <CheckCircle className="h-8 w-8 text-primary" />
+          <div className="bg-primary/10 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+            <CheckCircle className="text-primary h-8 w-8" />
           </div>
           <h1 className="text-4xl font-bold tracking-tight">Check Your Email!</h1>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="text-muted-foreground mt-4 text-lg">
             We&apos;ve sent your detailed ROI report to your inbox.
           </p>
         </div>
@@ -102,22 +102,26 @@ export default function CalculatorResultsPage() {
           {/* Business Summary */}
           <Card>
             <CardHeader>
-              <CardTitle>Your {getBusinessTypeLabel(inputs.businessType)} Business Analysis</CardTitle>
+              <CardTitle>
+                Your {getBusinessTypeLabel(inputs.businessType)} Business Analysis
+              </CardTitle>
               <CardDescription>Based on your business data</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="grid gap-4 md:grid-cols-3">
                 <div>
-                  <p className="text-sm text-muted-foreground">Monthly Calls</p>
+                  <p className="text-muted-foreground text-sm">Monthly Calls</p>
                   <p className="text-2xl font-bold">{inputs.monthlyCallVolume}</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Current Answer Rate</p>
+                  <p className="text-muted-foreground text-sm">Current Answer Rate</p>
                   <p className="text-2xl font-bold">{inputs.currentAnswerRate}%</p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Average Job Value</p>
-                  <p className="text-2xl font-bold">{formatCurrency(parseFloat(inputs.averageJobValue))}</p>
+                  <p className="text-muted-foreground text-sm">Average Job Value</p>
+                  <p className="text-2xl font-bold">
+                    {formatCurrency(parseFloat(inputs.averageJobValue))}
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -127,17 +131,17 @@ export default function CalculatorResultsPage() {
           <Card className="border-primary">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <TrendingUp className="h-5 w-5 text-primary" />
+                <TrendingUp className="text-primary h-5 w-5" />
                 Your ROI Summary
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="text-center space-y-2">
-                <p className="text-sm text-muted-foreground">Potential Annual Net Benefit</p>
-                <p className="text-5xl font-bold text-primary">
+              <div className="space-y-2 text-center">
+                <p className="text-muted-foreground text-sm">Potential Annual Net Benefit</p>
+                <p className="text-primary text-5xl font-bold">
                   {formatCurrency(results.netAnnualBenefit)}
                 </p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   That&apos;s {results.additionalJobsPerMonth} more jobs per month
                 </p>
               </div>
@@ -145,30 +149,28 @@ export default function CalculatorResultsPage() {
               <Separator />
 
               <div className="grid gap-4 md:grid-cols-2">
-                <div className="text-center p-4 bg-destructive/5 rounded-lg">
-                  <p className="text-sm text-muted-foreground mb-2">Currently Losing</p>
-                  <p className="text-3xl font-bold text-destructive">
+                <div className="bg-destructive/5 rounded-lg p-4 text-center">
+                  <p className="text-muted-foreground mb-2 text-sm">Currently Losing</p>
+                  <p className="text-destructive text-3xl font-bold">
                     {formatCurrency(results.annualRevenueLost)}
                   </p>
-                  <p className="text-xs text-muted-foreground mt-1">
+                  <p className="text-muted-foreground mt-1 text-xs">
                     {results.missedCallsPerMonth} missed calls/month
                   </p>
                 </div>
-                <div className="text-center p-4 bg-primary/5 rounded-lg">
-                  <p className="text-sm text-muted-foreground mb-2">Could Recover</p>
-                  <p className="text-3xl font-bold text-primary">
+                <div className="bg-primary/5 rounded-lg p-4 text-center">
+                  <p className="text-muted-foreground mb-2 text-sm">Could Recover</p>
+                  <p className="text-primary text-3xl font-bold">
                     {formatCurrency(results.potentialRecoveredRevenue)}
                   </p>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {results.roi}% ROI
-                  </p>
+                  <p className="text-muted-foreground mt-1 text-xs">{results.roi}% ROI</p>
                 </div>
               </div>
 
-              <div className="text-center p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-lg">
-                <p className="text-sm font-medium mb-2">Payback Period</p>
-                <p className="text-4xl font-bold text-primary">{results.paybackPeriod}</p>
-                <p className="text-sm text-muted-foreground">months</p>
+              <div className="from-primary/10 to-primary/5 rounded-lg bg-gradient-to-br p-6 text-center">
+                <p className="mb-2 text-sm font-medium">Payback Period</p>
+                <p className="text-primary text-4xl font-bold">{results.paybackPeriod}</p>
+                <p className="text-muted-foreground text-sm">months</p>
               </div>
             </CardContent>
           </Card>
@@ -184,35 +186,37 @@ export default function CalculatorResultsPage() {
             <CardContent className="space-y-4">
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold text-sm flex-shrink-0">
+                  <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-semibold">
                     1
                   </div>
                   <div>
                     <p className="font-medium">Book a 15-Minute Demo</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       See the AI in action with a live call demonstration
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold text-sm flex-shrink-0">
+                  <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-semibold">
                     2
                   </div>
                   <div>
                     <p className="font-medium">Quick Setup (30 Minutes)</p>
-                    <p className="text-sm text-muted-foreground">
-                      We&apos;ll configure your AI agent to match your business and connect to your calendar
+                    <p className="text-muted-foreground text-sm">
+                      We&apos;ll configure your AI agent to match your business and connect to your
+                      calendar
                     </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary/10 text-primary font-semibold text-sm flex-shrink-0">
+                  <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-semibold">
                     3
                   </div>
                   <div>
                     <p className="font-medium">Start Capturing Every Lead</p>
-                    <p className="text-sm text-muted-foreground">
-                      Your AI agent answers calls 24/7, qualifies leads, and books appointments automatically
+                    <p className="text-muted-foreground text-sm">
+                      Your AI agent answers calls 24/7, qualifies leads, and books appointments
+                      automatically
                     </p>
                   </div>
                 </div>
@@ -220,34 +224,34 @@ export default function CalculatorResultsPage() {
 
               <Separator className="my-6" />
 
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Button size="lg" className="flex-1" asChild>
-                  <a href="/book-demo">
+                  <Link href="/book-demo">
                     <Calendar className="mr-2 h-5 w-5" />
                     Book Your Free Demo
-                  </a>
+                  </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="flex-1" asChild>
-                  <a href="tel:+1234567890">
-                    <Phone className="mr-2 h-5 w-5" />
-                    Call Us Now
-                  </a>
+                  <Link href="/contact">
+                    <Mail className="mr-2 h-5 w-5" />
+                    Contact Us
+                  </Link>
                 </Button>
               </div>
 
-              <p className="text-xs text-center text-muted-foreground">
-                No credit card required • 30-day money-back guarantee • Cancel anytime
+              <p className="text-muted-foreground text-center text-xs">
+                No credit card required
               </p>
             </CardContent>
           </Card>
 
           {/* Additional Resources */}
-          <div className="text-center space-y-4">
-            <p className="text-sm text-muted-foreground">
+          <div className="space-y-4 text-center">
+            <p className="text-muted-foreground text-sm">
               Want to see more examples and case studies?
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
-              <Link href="/" className="text-primary hover:underline">
+              <Link href="/results" className="text-primary hover:underline">
                 View Case Studies
               </Link>
               <span className="text-muted-foreground">•</span>
