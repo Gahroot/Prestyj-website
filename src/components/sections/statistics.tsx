@@ -3,52 +3,57 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
-const stats = [
+type Stat = {
+  value: string;
+  label: string;
+  source?: string;
+};
+
+const stats: Stat[] = [
   {
-    value: "300+",
-    label: "Video ads from a single 15-minute recording",
-  },
-  {
-    value: "47s",
-    label: "Average lead response time",
+    value: "Under a minute",
+    label: "Typical AI agent response time to a new inbound lead",
   },
   {
     value: "78%",
-    label: "Of buyers choose the first responder",
+    label: "Of buyers purchase from the company that responds first",
+    source: "Harvard Business Review, 2011",
   },
   {
-    value: "3–5x",
-    label: "Average ROI within 90 days",
+    value: "24/7",
+    label: "AI agents qualify and reply while your team sleeps",
   },
   {
-    value: "< 60s",
-    label: "AI response vs. 4+ hour industry average",
+    value: "Weeks, not quarters",
+    label: "Time to deploy a working AI agent in your pipeline",
   },
 ];
 
 export function StatisticsSection() {
   return (
     <section className="py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-            The Numbers Speak for Themselves
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-12 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
+            Built for results in 90 days.
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real performance data from businesses using Prestyj&apos;s batch
-            video ads and AI lead response platform.
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            Real performance data from businesses using Prestyj&apos;s AI agents.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <AnimateOnScroll key={stat.label} delay={index * 0.1}>
               <Card className="bg-card border-border h-full">
-                <CardContent className="p-6 text-center">
-                  <p className="text-3xl font-heading font-bold text-primary mb-2">
-                    {stat.value}
-                  </p>
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
+                <CardContent className="flex h-full flex-col p-6 text-center">
+                  <p className="font-heading text-primary mb-2 text-3xl font-bold">{stat.value}</p>
+                  <p className="text-muted-foreground text-sm">{stat.label}</p>
+                  {stat.source ? (
+                    <p className="text-muted-foreground/70 mt-auto pt-3 text-xs">
+                      Source: {stat.source}
+                    </p>
+                  ) : null}
                 </CardContent>
               </Card>
             </AnimateOnScroll>
