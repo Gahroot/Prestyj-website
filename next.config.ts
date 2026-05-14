@@ -765,6 +765,16 @@ const nextConfig: NextConfig = {
         destination: "/solutions/batch-video-ads-for-lead-generation",
         permanent: true,
       },
+      // Top-level /ai-sales-assistant was a duplicate-positioning landing page
+      // (composed entirely of generic shared sections — same as the home page)
+      // selling a real-estate-only "AI team member". Consolidated under the
+      // canonical /solutions/ai-lead-response page to align with core
+      // "AI agents for marketing & sales" positioning.
+      {
+        source: "/ai-sales-assistant",
+        destination: "/solutions/ai-lead-response",
+        permanent: true,
+      },
       // → /ai-content-department (top-level page absorbs all social-media
       // product variants from earlier consolidation task).
       {

@@ -7,8 +7,8 @@ export interface FAQItem {
  * Canonical FAQ list for Prestyj.
  *
  * Positioning: "We build AI agents for marketing & sales."
- * Industry-neutral. Used on the home page, /ai-sales-assistant, /faq, and
- * anywhere else FAQs ship. Keep this list tight — it's a single source of truth.
+ * Industry-neutral. Used on the home page, /faq, and anywhere else FAQs
+ * ship. Keep this list tight — it's a single source of truth.
  */
 export const faqs: FAQItem[] = [
   {

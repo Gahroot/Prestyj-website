@@ -1,0 +1,527 @@
+---
+title: "Custom AI Agent Build Cost Breakdown 2026: 14 Line Items From $42K to $620K"
+description: "Real cost of building a custom AI agent in 2026 — every line item from discovery to ongoing maintenance. DIY engineering, agency, no-code platform, and done-for-you side-by-side with low/mid/high estimates."
+date: "2026-05-14"
+author: "Prestyj Team"
+keywords:
+  - custom AI agent build cost
+  - cost to build AI agent 2026
+  - AI agent development cost breakdown
+  - DIY AI agent cost
+  - AI agent agency pricing
+  - build vs buy AI agent
+  - custom AI agent engineering hours
+  - AI agent maintenance cost
+image: /images/blog/custom-ai-agent-build-cost-breakdown-2026.jpg
+---
+
+Every founder who's been quoted "$50K to build a custom AI agent" has the same shock six months later when the real invoice lands at $180K, the launch date has slipped twice, and the agency is asking for another retainer to handle "ongoing prompt tuning." The headline build number is almost never the build cost.
+
+**TL;DR:** A truly custom AI agent — voice, chat, or hybrid — costs **$42K–$620K in year one** depending on path. The four paths produce wildly different all-in numbers: **DIY in-house engineering ($180K–$620K)**, **agency build ($95K–$280K)**, **no-code platform self-serve like Vapi/Bland/Retell ($42K–$120K)**, and **done-for-you platforms like Prestyj ($7K–$30K)**. The spread comes from 14 line items most quotes ignore: discovery, prompt engineering, infrastructure, integrations, QA, compliance, model deprecation rework, and ongoing drift maintenance. Most teams underestimate true year-one spend by **2.5–4x**.
+
+## Key Takeaways
+
+- **Engineering hours are the biggest hidden number** — a serious custom agent eats **600–1,800 engineering hours** in year one at a fully-loaded rate of **$110–$180/hr** for in-house staff or **$175–$300/hr** at an agency
+- **Prompt engineering is never one-and-done** — **40–120 hours to launch** plus **10–25 hours/month** ongoing at **$150–$300/hr** to fight drift, swap models, and ship new use cases
+- **LLM tokens, voice infra, and telephony** add **$0.14–$0.31/minute fully loaded** on voice agents — a single agent at 5,000 calls/month burns **$1,400–$3,800/month** in pure usage cost
+- **Each integration is its own mini-project** — CRM ($3K–$15K), calendar ($1.5K–$6K), ticketing ($2K–$10K), billing ($3K–$12K), and they break every time the upstream API ships a breaking change
+- **Compliance review is non-optional** in HVAC (TCPA), real estate (Fair Housing + TCPA), dental (HIPAA), and law (privilege, advertising rules) — **$8K–$60K upfront** plus **$5K–$20K/year** in ongoing audits
+- **Ongoing maintenance runs $4K–$22K/month** once you load in human QA, drift tuning, model swaps, observability, on-call, and hosting
+- **Done-for-you platforms compress all of the above into $599–$2,499/month** flat with no per-line-item billing
+
+---
+
+## The Four Paths: Cost Comparison Table
+
+Every team building a custom AI agent in 2026 is choosing between four paths. Here's the fully-loaded comparison — base price plus every line item the SOW typically leaves off.
+
+| Line Item                                 | DIY In-House Build           | Agency Custom Build             | No-Code Platform (Vapi / Bland / Retell) | Done-For-You (Prestyj)         |
+| ----------------------------------------- | ---------------------------- | ------------------------------- | ---------------------------------------- | ------------------------------ |
+| **Discovery + scoping**                   | $10K–$30K (PM + eng time)    | $5K–$25K                        | $0–$500                                  | $0 included                    |
+| **Engineering build (hours)**             | 600–1,800 hrs @ $110–$180/hr | 250–800 hrs @ $175–$300/hr      | 80–280 hrs @ $110–$200/hr                | $0 included                    |
+| **Initial build cost**                    | $66K–$320K                   | $44K–$240K                      | $9K–$56K                                 | $0 included                    |
+| **Prompt engineering (launch)**           | $6K–$18K (in-house)          | $3K–$12K                        | $2K–$8K                                  | $0 included                    |
+| **LLM API tokens (5k calls/mo)**          | $1,400–$3,800/mo             | $1,400–$3,800/mo (pass-through) | $1,400–$3,800/mo                         | $0 (absorbed)                  |
+| **Voice infra (STT/TTS/telephony)**       | $0.05–$0.12/min              | $0.05–$0.12/min                 | $0.05–$0.12/min (often unbundled)        | $0 (absorbed)                  |
+| **Integrations (CRM / calendar / etc.)**  | 40–120 hrs each ($4.4K–$22K) | $3K–$15K each                   | $0–$500 (Zapier) or 20–60 hrs            | Included for major CRMs        |
+| **Hosting + observability**               | $400–$3,000/mo               | $400–$3,000/mo                  | $200–$1,200/mo                           | $0 included                    |
+| **Human QA / supervision**                | $4K–$10K/mo (FTE share)      | $2K–$8K/mo                      | $2K–$8K/mo                               | $0 included                    |
+| **Compliance review (HIPAA / TCPA / FH)** | $15K–$80K upfront            | $8K–$60K upfront                | Your responsibility                      | Included for covered verticals |
+| **Model deprecation rework**              | 15–40 hrs/swap (internal)    | 15–40 hrs/swap ($2.6K–$12K)     | 15–40 hrs/swap                           | $0 (absorbed)                  |
+| **Drift re-tuning**                       | 5–15 hrs/mo (internal)       | 5–15 hrs/mo ($750–$4,500/mo)    | 5–15 hrs/mo                              | $0 included                    |
+| **Time to production**                    | 6–18 months                  | 4–9 months                      | 4–12 weeks                               | **2–4 weeks**                  |
+| **Year 1 all-in (5k calls/mo)**           | **$180,000–$620,000**        | **$95,000–$280,000**            | **$42,000–$120,000**                     | **$7,188–$29,988**             |
+
+The pattern: **the further left you go, the more your "fixed price" hides as hourly billing and engineering opportunity cost.** A custom build done well at an agency typically costs 3–9x what a done-for-you platform costs in year one — and you still own the maintenance and the regulatory exposure.
+
+---
+
+## Why "We'll Just Build It Ourselves" Almost Always Misfires
+
+The mental model most operators bring to custom AI is "it's just software" — scope it, build it, ship it, maintain it on the same cycle as a CRM integration or a website redesign. AI agents aren't software projects. They're **products you operate forever**: tuned, monitored, re-tuned, re-evaluated against new models, re-integrated when APIs change, and re-reviewed when regulators update guidance.
+
+That's why year-one build budgets routinely land at 2.5–4x the original quote. The build is finite. The agent's lifecycle isn't.
+
+For the buy-side framing of this same tradeoff, see our [build vs buy guide for real estate enterprises](/blog/build-vs-buy-ai-sales-agents-real-estate) and the deeper [hidden costs of custom AI agents breakdown](/blog/hidden-costs-custom-ai-agents-2026).
+
+---
+
+## The 14 Line Items in a Real Custom AI Agent Build
+
+Every line item below shows up in real invoices. Most don't appear on the initial SOW.
+
+### 1. Discovery and scoping ($5K–$30K)
+
+Before anyone writes a prompt, someone has to map the conversation. That means stakeholder interviews, workflow mapping, conversation design, success criteria, integration audit, compliance scoping, and a build estimate.
+
+- **Agency:** $5K–$25K (20–80 hours at $200–$300/hr)
+- **In-house:** $10K–$30K in fully-loaded PM and engineering time
+- **No-code platform:** $0–$500 (the platform's onboarding wizard does most of it)
+- **Done-for-you:** included
+
+**Real estate example:** A 40-agent brokerage scoping an AI inbound caller for buyer leads typically needs 30–50 hours of discovery to map intake questions, MLS data flow, agent routing rules, and TCPA consent capture. That's $6K–$15K before a single token is spent.
+
+**HVAC example:** A multi-location HVAC operator with seasonal capacity swings needs discovery for after-hours routing, dispatch handoff, ServiceTitan integration, and emergency vs non-emergency triage. Budget 40–70 hours, $8K–$21K.
+
+### 2. Engineering build hours ($44K–$320K)
+
+This is the line item that swings the most. A custom AI agent that handles voice, multi-turn conversation, CRM writeback, and human handoff is typically:
+
+- **In-house build:** 600–1,800 engineering hours over 6–18 months. At a fully-loaded rate of $110–$180/hr (salary + benefits + overhead + opportunity cost), that's **$66K–$320K** in pure engineering time.
+- **Agency build:** 250–800 hours at $175–$300/hr — **$44K–$240K**. Agencies are faster because they've shipped the pattern before, but you're paying retail.
+- **No-code platform:** 80–280 hours of integration engineering at $110–$200/hr — **$9K–$56K**. The platform provides the orchestrator; you still wire the integrations, the prompts, and the eval harness.
+
+**Dental example:** A 6-location DSO building an in-house AI scheduler for new-patient calls usually ends up at 900–1,400 hours when you factor in HIPAA-safe storage, the eaglesoft / Dentrix integration, the recall logic, and the insurance verification flow. At $130/hr fully loaded, that's $117K–$182K just in engineering — not counting the prompt work or the QA team.
+
+### 3. Prompt engineering ($2K–$18K to launch, plus ongoing)
+
+Prompts aren't "write it once." A production prompt stack for a single agent typically includes:
+
+- A system prompt (the core role and rules)
+- 5–25 few-shot examples per scenario
+- 2–10 specialized sub-prompts (objection handling, data capture, hangup recovery, etc.)
+- An eval harness with 100–500 test conversations
+- A regression suite that runs on every prompt change
+
+**Launch cost:** 20–80 hours at $150–$300/hr — **$3K–$24K** for an agency, **$6K–$18K** in fully-loaded in-house cost.
+
+**Ongoing cost:** 10–25 hours/month forever. New scripts. New objections. New regulations. New model releases. Budget **$1,500–$7,500/month** ongoing.
+
+**Law firm example:** Personal injury intake agents need 60–120 hours of prompt engineering at launch — the objection patterns, the urgency calibration, the privilege guardrails, the conflict-check logic. That's $9K–$36K before you've taken a single call.
+
+### 4. LLM API tokens at scale ($800–$12K/month)
+
+Token billing compounds silently. A voice agent burns far more tokens than a chatbot because every turn includes:
+
+- The full conversation history (growing each turn)
+- Retrieved context (RAG over your knowledge base)
+- Tool-call schemas and results
+- Reasoning traces (if using o-series or extended thinking models)
+
+| Volume              | GPT-4o-class    | GPT-5 / Claude Sonnet | With RAG + Tools |
+| ------------------- | --------------- | --------------------- | ---------------- |
+| 1,000 calls/month   | $160–$420       | $400–$1,100           | $700–$2,200      |
+| 5,000 calls/month   | $800–$2,100     | $2,000–$5,500         | $3,500–$11,000   |
+| 25,000 calls/month  | $4,000–$10,500  | $10,000–$27,500       | $17,500–$55,000  |
+| 100,000 calls/month | $16,000–$42,000 | $40,000–$110,000      | $70,000–$220,000 |
+
+Done-for-you platforms absorb this into a flat retainer; DIY and agency builds pass it through at cost plus a markup of 10–30%.
+
+### 5. Voice infrastructure ($0.05–$0.12/min)
+
+If you're building a voice agent, you stack:
+
+- **STT (Deepgram, AssemblyAI):** $0.01–$0.03/min
+- **TTS (ElevenLabs, Cartesia, OpenAI):** $0.01–$0.05/min
+- **Telephony (Twilio, Telnyx, Plivo):** $0.01–$0.03/min
+- **Orchestration (LiveKit, Pipecat, custom):** $0.01–$0.02/min
+
+That's **$0.05–$0.12/min on top of LLM cost.** At 5,000 calls/month averaging 4 minutes each (20,000 minutes), that's **$1,000–$2,400/month** in pure voice infra, before LLM tokens.
+
+For more on this stack and how platforms price it, see our [AI voice agent costs comparison](/blog/ai-voice-agent-costs-compared).
+
+### 6. CRM and calendar integrations ($3K–$15K each)
+
+Every integration is a project. Real estate teams need Follow Up Boss, kvCore, or BoomTown. HVAC needs ServiceTitan, Housecall Pro, or Jobber. Dental needs Dentrix, Eaglesoft, or Open Dental. Law firms need Clio, MyCase, or PracticePanther.
+
+| Integration type     | Agency cost | In-house hours | No-code (Zapier) |
+| -------------------- | ----------- | -------------- | ---------------- |
+| CRM (read/write)     | $3K–$15K    | 40–120 hrs     | $0–$500          |
+| Calendar (booking)   | $1.5K–$6K   | 20–60 hrs      | $0–$200          |
+| Ticketing / dispatch | $2K–$10K    | 30–90 hrs      | $0–$400          |
+| Billing / payments   | $3K–$12K    | 40–100 hrs     | Not viable       |
+| Knowledge base / RAG | $4K–$18K    | 60–140 hrs     | Limited          |
+
+Zapier-class integrations save money upfront but introduce latency (1–6 seconds per call) and break when payloads change. Production-grade agents need direct API integrations.
+
+### 7. Hosting, observability, and monitoring ($400–$3,000/month)
+
+You're operating a 24/7 service. That means:
+
+- **Compute (AWS / Vercel / Render):** $200–$1,500/month
+- **Observability (Datadog, Helicone, LangSmith, Langfuse):** $100–$800/month
+- **On-call (PagerDuty, Opsgenie):** $50–$300/month
+- **Error tracking (Sentry):** $50–$400/month
+
+You can run on the cheap end with hobby-tier tools, but a serious production agent — especially one handling regulated verticals — needs the upper end. Skip observability and you'll burn 3x more engineering hours debugging hallucinations and edge cases.
+
+### 8. Human QA and supervision ($2K–$10K/month)
+
+Nobody quotes this line item, and it's the one that breaks budgets. A production agent in a regulated vertical needs:
+
+- **Daily call review:** 5–15 calls/day sampled and scored against rubric
+- **Edge-case escalation queue:** humans handling refunds, complaints, multi-account scenarios
+- **Compliance review:** monthly TCPA / HIPAA / Fair Housing spot checks
+
+That's 20–60 hours/month of skilled human time at $40–$120/hr — **$800–$7,200/month**, plus the management overhead of running a small QA function.
+
+### 9. Compliance review ($8K–$80K upfront, $5K–$20K/year ongoing)
+
+Verticals you can't ignore:
+
+| Vertical        | Required review                                | Upfront cost | Annual audit |
+| --------------- | ---------------------------------------------- | ------------ | ------------ |
+| Real estate     | TCPA, Fair Housing, state telemarketing rules  | $8K–$30K     | $5K–$12K     |
+| Dental / health | HIPAA, state dental practice rules, BAA review | $15K–$60K    | $8K–$25K     |
+| HVAC / home svc | TCPA, state contractor disclosure              | $5K–$20K     | $3K–$10K     |
+| Law             | Privilege, state bar advertising, conflicts    | $12K–$45K    | $7K–$20K     |
+| Financial / mtg | TCPA, ECOA, state lender rules, RESPA          | $15K–$80K    | $10K–$30K    |
+
+Done-for-you platforms operating in these verticals typically absorb the compliance cost because they amortize across many customers; one-off custom builds wear the full cost.
+
+### 10. Model deprecation rework (15–40 hours per swap)
+
+The hidden tax nobody warns you about. When OpenAI deprecated GPT-4 → GPT-4o → GPT-5, every team running a custom agent had to:
+
+- Re-run their eval harness
+- Re-tune prompts (different models follow instructions differently)
+- Re-check tool-call formats
+- Re-verify guardrails
+
+Budget **15–40 engineering hours per major model swap**, which happens roughly every 6–12 months. At $200/hr, that's **$3K–$8K per swap, 1–2x/year**.
+
+### 11. Drift re-tuning (5–15 hours/month)
+
+Your products change. Your scripts change. Your competitors change their pitch. The agent's performance degrades silently if you don't re-tune. Budget **5–15 hours/month** at $150–$300/hr — **$750–$4,500/month** ongoing.
+
+### 12. Edge-case engineering (40–200 hours over year one)
+
+Production reveals scenarios no scoping doc captured: callers who switch languages mid-conversation, people who hand the phone to a third party, callers using speakerphone in a noisy environment, voicemails that get transcribed as questions. Each becomes a small engineering project. Budget **40–200 hours** spread over the first year — **$4K–$60K** depending on path.
+
+### 13. Reporting and analytics ($5K–$30K)
+
+Operators need dashboards: call volume, transfer rate, qualification rate, average call duration, cost per qualified lead, agent uptime. Custom dashboards are 40–120 hours of work; plugging into Metabase / Looker / Hex saves time but still needs the data pipeline built.
+
+### 14. Project management overhead (10–20% of total build)
+
+The line item finance teams forget. Someone has to run the project: scoping, vendor management, status reports, change orders, internal stakeholder updates. Budget **10–20% of total project cost** for PM overhead.
+
+---
+
+## Path 1: DIY In-House Engineering Build
+
+You hire (or redirect) engineers and ML talent to build the agent in-house.
+
+**What you sign up for:**
+
+- 1.5–3 FTE engineers for 6–18 months
+- 0.5–1 FTE PM / product designer
+- 0.25–0.5 FTE compliance / legal
+- Ongoing 1–2 FTE to operate forever
+
+**Year 1 all-in:** $180K–$620K
+
+**Best for:** Companies where the AI agent is the product (not a feature), companies with deep ML/voice infrastructure expertise already in-house, companies that need IP ownership for a strategic reason.
+
+**Worst for:** Operators in HVAC, dental, real estate, law, or any vertical where the agent is **context, not core**. You're paying enterprise-software money to rebuild a commodity.
+
+**Real example:** A mid-size brokerage we talked to spent $340K and 14 months building an in-house AI inbound responder, only to retire it when their core CRM vendor shipped a comparable feature for $89/seat/month. The build was real engineering; the strategic call was wrong.
+
+---
+
+## Path 2: Agency Custom Build
+
+You hire an agency or consultancy to build a custom agent end-to-end.
+
+**What you sign up for:**
+
+- Fixed-price SOW that almost always converts to time-and-materials after change orders
+- 4–9 month build timeline
+- Hourly billing for prompt tuning, integrations, and post-launch work
+- A handoff document and (sometimes) source code
+
+**Year 1 all-in:** $95K–$280K
+
+**Best for:** Teams that need a custom-built agent but don't want to staff an internal AI team; teams with unique workflows that no off-the-shelf platform supports.
+
+**Worst for:** Teams that need ongoing iteration. Agencies optimize for project completion, not lifecycle operation. After launch, every change is a new SOW or hourly retainer.
+
+**Hidden trap:** The "handoff." Agency-built agents are notoriously hard to operate without the agency. The prompts, the eval data, the integration plumbing, the observability — all built to the agency's conventions, not yours. Six months in, you're either paying the agency a retainer or starting over.
+
+---
+
+## Path 3: No-Code Platform Self-Serve (Vapi, Bland, Retell, Synthflow)
+
+You buy a developer platform and configure the agent yourself.
+
+**What you sign up for:**
+
+- Per-minute usage billing (often unbundled — LLM, STT, TTS, telephony stacked separately)
+- Engineering work to integrate with your stack
+- DIY prompt engineering and eval
+- DIY compliance review
+- DIY ongoing operations
+
+**Year 1 all-in:** $42K–$120K
+
+**Best for:** Technical teams that want to ship fast, have engineering capacity, and are comfortable owning the operating layer. Great for prototypes and internal tools.
+
+**Worst for:** Non-technical operators. The platforms hand you a Lego kit, not a finished agent. The "no-code" label is generous — production deployments need real engineering.
+
+**Pricing reality:** Advertised rates are $0.05–$0.11/min. Real fully-loaded cost lands at **$0.15–$0.31/min** once you add the LLM, STT, TTS, and telephony pass-throughs. See [our voice agent cost comparison](/blog/ai-voice-agent-costs-compared) for the platform-by-platform breakdown.
+
+**Best for** each platform:
+
+- **Vapi** — developer-first teams building voice into their own product
+- **Retell** — fast prototypes with reasonable defaults
+- **Bland** — outbound-heavy use cases where per-minute cost matters most
+- **Synthflow** — operators who want a slightly more managed feel without going full done-for-you
+
+---
+
+## Path 4: Done-For-You Platforms (Prestyj)
+
+You buy a platform that includes the agent, the infrastructure, the prompts, the integrations, the compliance, and the ongoing operations as a flat monthly fee.
+
+**What you sign up for:**
+
+- 2–4 week onboarding
+- Flat monthly retainer ($599–$2,499 for most operators)
+- All line items above absorbed into the retainer
+- Vendor manages model swaps, drift tuning, compliance updates
+
+**Year 1 all-in:** $7K–$30K
+
+**Best for:** Operators in HVAC, dental, real estate, law, mortgage, roofing, and other verticals where the AI agent is context (a necessary utility), not core (the product itself).
+
+**Worst for:** Companies where the agent IS the product. If you're building a public-facing AI product, you need to own the stack.
+
+For a deep dive on what done-for-you actually includes vs. DIY, see our [done-for-you AI agents guide](/blog/done-for-you-ai-agents-guide) and the [done-for-you AI pricing guide](/blog/done-for-you-ai-pricing-guide). For the architectural patterns these platforms use, see our [multi-agent sales system architecture guide](/blog/multi-agent-sales-system-architecture).
+
+---
+
+## Build Cost By Volume Tier
+
+Volume changes the calculus. At low volumes, custom builds are economically irrational; at very high volumes, in-house builds can amortize.
+
+| Volume / month | DIY In-House | Agency Build | No-Code Platform | Done-For-You (Prestyj) |
+| -------------- | ------------ | ------------ | ---------------- | ---------------------- |
+| 500 calls      | $185K–$520K  | $92K–$210K   | $24K–$60K        | $7K–$15K               |
+| 5,000 calls    | $200K–$580K  | $115K–$260K  | $48K–$120K       | $12K–$30K              |
+| 25,000 calls   | $240K–$680K  | $160K–$340K  | $130K–$320K      | $24K–$60K              |
+| 100,000 calls  | $340K–$920K  | $280K–$580K  | $440K–$1.1M      | $84K–$180K             |
+
+Note the inflection: at **100,000 calls/month**, no-code platforms become more expensive than agency builds because per-minute billing compounds. At that volume, an in-house build starts to look reasonable — _if_ you actually have the engineering team.
+
+For most operators below 25,000 calls/month, done-for-you wins on TCO. For our 3-year TCO model, see [custom AI agent vs off-the-shelf 3-year TCO](/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco).
+
+---
+
+## Vertical-Specific Build Cost Examples
+
+### Real estate (40-agent brokerage, 3,000 inbound leads/month)
+
+- Discovery + scoping: $15K
+- Build: 700 hours @ $200/hr agency = $140K
+- Prompt engineering launch: $8K
+- LLM tokens: $1,800/mo = $21.6K/yr
+- Voice infra: $1,600/mo = $19.2K/yr
+- Integrations (Follow Up Boss + Google Cal): $14K
+- Hosting + observability: $1,400/mo = $16.8K/yr
+- Compliance (TCPA + Fair Housing): $18K upfront + $7K/yr
+- QA: $3.5K/mo = $42K/yr
+- **Agency year 1: ~$202K**
+
+Same brokerage on a done-for-you platform: **$11.4K–$24K/year all-in**.
+
+### HVAC (multi-location, 8,000 calls/month, ServiceTitan stack)
+
+- Discovery + scoping: $18K
+- Build: 900 hours @ $220/hr agency = $198K
+- Prompt engineering launch: $11K
+- LLM tokens: $2,400/mo = $28.8K/yr
+- Voice infra: $2,400/mo = $28.8K/yr
+- Integrations (ServiceTitan + dispatch + payments): $32K
+- Hosting + observability: $1,800/mo = $21.6K/yr
+- Compliance (TCPA): $9K upfront + $4K/yr
+- QA: $4.5K/mo = $54K/yr
+- **Agency year 1: ~$269K**
+
+Same HVAC operator on done-for-you: **$18K–$30K/year all-in**.
+
+### Dental (6-location DSO, 4,500 calls/month, HIPAA)
+
+- Discovery + scoping: $22K
+- Build: 1,100 hours @ $230/hr agency = $253K
+- Prompt engineering launch: $14K
+- LLM tokens: $2,000/mo = $24K/yr
+- Voice infra: $1,800/mo = $21.6K/yr
+- Integrations (Dentrix + Eaglesoft + insurance verification): $42K
+- Hosting + observability (HIPAA-compliant): $2,400/mo = $28.8K/yr
+- Compliance (HIPAA + BAA): $35K upfront + $14K/yr
+- QA (HIPAA-aware): $5.5K/mo = $66K/yr
+- **Agency year 1: ~$362K**
+
+Same DSO on done-for-you with HIPAA: **$24K–$48K/year all-in**.
+
+### Law (10-attorney PI firm, 1,200 intakes/month)
+
+- Discovery + scoping: $19K
+- Build: 800 hours @ $250/hr agency = $200K
+- Prompt engineering launch: $15K (heavy on objection / urgency / privilege)
+- LLM tokens: $900/mo = $10.8K/yr
+- Voice infra: $700/mo = $8.4K/yr
+- Integrations (Clio + calendar + intake forms): $19K
+- Hosting + observability: $1,200/mo = $14.4K/yr
+- Compliance (state bar + privilege): $28K upfront + $11K/yr
+- QA: $3K/mo = $36K/yr
+- **Agency year 1: ~$201K**
+
+Same firm on done-for-you: **$11K–$24K/year all-in**.
+
+---
+
+## What Vendors Don't Tell You
+
+### "We'll give you a fixed-price quote"
+
+The fixed price covers the build, not the lifecycle. Every prompt tweak, integration update, model swap, and edge-case fix after launch is hourly billing or a retainer.
+
+### "The platform handles compliance"
+
+Most no-code platforms explicitly disclaim compliance. The platform is HIPAA-eligible only if you have a BAA with them AND with every sub-processor (LLM, STT, TTS, telephony, hosting). Most teams skip the BAA chain and learn about it during an audit.
+
+### "Our build is reusable"
+
+Custom builds are rarely reusable across use cases. The discovery, prompts, evals, and integrations are tightly coupled to the workflow they were built for. Adding a second use case is usually 60–80% of a new build.
+
+### "Ongoing maintenance is minimal"
+
+Maintenance is the largest 3-year cost category for any custom build. Plan for **$4K–$22K/month** in ongoing operations — that's QA, drift tuning, model swaps, compliance updates, integration repairs, and observability.
+
+### "You'll own the IP"
+
+You'll own the source code. You won't own the prompt engineering know-how, the eval datasets, or the operational playbook — those live in the agency's heads. Switching agencies usually means rebuilding 40–60% of the agent.
+
+---
+
+## Common Build Cost Mistakes to Avoid
+
+1. **Comparing initial build cost only.** The build is 20–35% of three-year TCO. Maintenance is the rest. Always model 36 months.
+
+2. **Ignoring engineering opportunity cost.** Every hour your senior engineers spend on the AI agent is an hour not spent on your actual product or core operation. At $180/hr fully loaded, that's real money.
+
+3. **Treating prompt engineering as one-and-done.** It's a recurring cost, forever. Budget 10–25 hours/month of skilled prompt work.
+
+4. **Underestimating compliance.** Most teams scope compliance as "we'll figure it out later" and then either ship without proper review (regulatory risk) or freeze for 8–16 weeks while counsel catches up (cost overrun).
+
+5. **Choosing per-minute platforms at high volume.** Per-minute billing is great at low volume and brutal at high volume. Above 25,000 calls/month, the line crosses and managed platforms win on cost.
+
+6. **Buying the no-code label.** "No-code" platforms still need integration engineering, prompt engineering, eval engineering, and operations. The label oversells the time saved.
+
+7. **Skipping the eval harness.** You can't tune what you can't measure. Custom builds without 100–500 test conversations end up flying blind, and drift compounds.
+
+---
+
+## How to Decide Which Path Is Right
+
+Use this scoring framework:
+
+| Question                                             | DIY In-House | Agency Build | No-Code | Done-For-You |
+| ---------------------------------------------------- | ------------ | ------------ | ------- | ------------ |
+| Is the AI agent your product, or a utility?          | Product      | Either       | Either  | Utility      |
+| Do you have 2+ ML/voice engineers in-house?          | Yes          | Helpful      | Yes     | No needed    |
+| Time to live in under 8 weeks?                       | No           | No           | Maybe   | Yes          |
+| Volume above 50,000 calls/month?                     | Yes          | Maybe        | No      | Yes          |
+| Regulated vertical (HIPAA, TCPA, Fair Housing)?      | Possible     | Possible     | Risky   | Yes          |
+| Want flat-rate predictable pricing?                  | No           | No           | No      | Yes          |
+| OK with 36+ month commitment to in-house operations? | Yes          | No           | No      | No           |
+
+For a deeper decision framework, see our companion piece on [should you build or buy your AI agent](/blog/should-you-build-or-buy-ai-agent-2026).
+
+---
+
+## FAQ
+
+### How much does it cost to build a custom AI agent in 2026?
+
+A custom AI agent costs **$95K–$280K in year one** through an agency, **$180K–$620K** for an in-house build, or **$42K–$120K** on a no-code platform — fully loaded. Done-for-you platforms compress the same outcome to **$7K–$30K/year** with no per-line-item billing. The spread is driven by 14 line items most quotes ignore.
+
+### What are the hidden costs of building an AI agent?
+
+The biggest hidden costs are **prompt engineering** ($150–$300/hr, 10–25 hrs/month ongoing), **LLM tokens at scale** ($800–$12K/month), **integrations** ($3K–$15K each), **compliance review** ($8K–$80K upfront), **human QA** ($2K–$10K/month), **model deprecation rework** (15–40 hours per swap, 1–2x/year), and **drift re-tuning** (5–15 hrs/month). See the [full hidden costs of custom AI agents breakdown](/blog/hidden-costs-custom-ai-agents-2026).
+
+### How long does it take to build a custom AI agent?
+
+Time to production is **6–18 months for in-house builds**, **4–9 months for agency builds**, **4–12 weeks for no-code platforms**, and **2–4 weeks for done-for-you platforms**. "Bet the brand on it" production quality typically takes another 6–12 months beyond initial launch for custom builds.
+
+### How many engineering hours does an AI agent build take?
+
+A serious custom AI agent build takes **600–1,800 engineering hours** in year one for an in-house team, or **250–800 hours** at an agency that's shipped the pattern before. That doesn't include the **400–800 ongoing hours/year** for maintenance, prompt tuning, integration repairs, and model swaps.
+
+### Is it cheaper to build or buy an AI agent?
+
+For operators in HVAC, dental, real estate, law, and most verticals where the AI agent is a utility (not the product), **buying is 5–25x cheaper over 36 months**. For companies where the AI agent is the public-facing product or a strategic differentiator, building can make sense — but only if you have the engineering team and the appetite for a multi-year operating commitment.
+
+### What's the cheapest way to get a custom AI agent?
+
+A done-for-you platform at **$599–$2,499/month** is the cheapest path to a production-grade custom AI agent for most operators. No-code platforms are cheaper on paper but layer hidden costs (engineering, integrations, prompt work, QA) that bring real spend to **$42K–$120K/year**. See [done-for-you AI pricing](/blog/done-for-you-ai-pricing-guide) for the full pricing model.
+
+### How much does ongoing maintenance cost?
+
+Ongoing maintenance for a custom AI agent runs **$4K–$22K/month** depending on volume and complexity. That includes human QA ($2K–$10K), drift tuning ($750–$4,500), hosting and observability ($400–$3,000), model swap rework (amortized $300–$1,000/month), compliance updates ($500–$2,000), and integration repairs ($500–$3,000).
+
+### Can no-code platforms really replace custom builds?
+
+For 70–80% of standard sales, lead-response, and service use cases, yes — no-code platforms produce comparable outcomes to custom builds at 30–50% of the cost. Custom builds win on truly unique workflows, deep proprietary integrations, very high volumes (above 50K calls/month), or when the AI agent itself is the public product.
+
+### What's the ROI break-even point for a custom AI agent?
+
+For operators replacing 1–3 FTEs of human response work, done-for-you platforms break even in **2–5 months**. Agency custom builds break even in **9–18 months**. In-house builds typically break even in **18–36 months** — and that's only if the project ships on time and on budget, which historically happens in 30–45% of in-house AI projects.
+
+### How do I avoid getting overcharged on a custom AI agent build?
+
+Demand a **line-itemized SOW** that explicitly covers all 14 line items in this guide. Require **fixed-price phases** with defined deliverables (not pure time-and-materials). Insist on **eval-harness deliverables** — code and test conversations you can rerun yourself. Lock in **post-launch hourly rates** in the original contract so you're not renegotiating from a position of weakness. And run the same scope past at least two done-for-you platforms — if the price gap is 5x or more, the custom build is almost never worth it.
+
+---
+
+## When a Custom Build Actually Makes Sense
+
+We're not anti-custom. Custom builds are the right answer when:
+
+- **The AI agent is your product**, not a feature in your operation
+- **You have unique workflows** no off-the-shelf platform supports (and you've verified this with 3+ done-for-you vendors, not just one)
+- **You're operating at very high volume** (50,000+ calls/month) where per-minute economics matter more than build cost
+- **You have a strategic IP reason** to own the agent end-to-end
+- **You already have 2+ senior ML/voice engineers** sitting on bench capacity
+
+If none of those apply, the math almost always favors a done-for-you platform.
+
+---
+
+## Related Reading
+
+- [Hidden Costs of Custom AI Agents: 12 Fees Vendors Don't Quote (2026)](/blog/hidden-costs-custom-ai-agents-2026)
+- [Custom AI Agent vs Off-the-Shelf: 3-Year TCO Comparison](/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco)
+- [Should You Build or Buy Your AI Agent in 2026? Decision Framework](/blog/should-you-build-or-buy-ai-agent-2026)
+- [Done-For-You AI Agents Guide](/blog/done-for-you-ai-agents-guide)
+- [Done-For-You AI Pricing Guide](/blog/done-for-you-ai-pricing-guide)
+- [Multi-Agent Sales System Architecture](/blog/multi-agent-sales-system-architecture)
+- [AI Voice Agent Costs Compared (7 Platforms)](/blog/ai-voice-agent-costs-compared)
+- [Build vs Buy AI Sales Agents (Real Estate)](/blog/build-vs-buy-ai-sales-agents-real-estate)
+
+Explore the platform: [AI Sales Agent](/solutions/ai-lead-response) · [Platform overview](/platform) · [AI Content Department](/ai-content-department) · [Pricing](/pricing)
+
+---
+
+_Ready to skip the build cycle? [Book a demo](/book-demo) and see a production-grade custom AI agent live in your stack within 2–4 weeks — at a flat monthly rate, with every line item in this post already absorbed._

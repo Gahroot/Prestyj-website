@@ -1,0 +1,526 @@
+---
+title: "Custom AI Agent vs Off-the-Shelf: 3-Year TCO Comparison (2026)"
+description: "Full 3-year total cost of ownership comparison for AI agents: custom build vs no-code platforms (Vapi, Bland, Retell) vs white-label vs done-for-you. Year-by-year cost tables, model deprecation, and break-even analysis."
+date: "2026-05-14"
+author: "Prestyj Team"
+keywords:
+  - AI agent 3 year TCO
+  - custom AI agent vs off the shelf
+  - AI agent total cost of ownership
+  - AI agent break even analysis
+  - Vapi vs Bland vs Retell TCO
+  - white label AI agent cost
+  - done for you AI agent TCO
+  - AI agent maintenance cost 2026
+image: /images/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco.jpg
+---
+
+Most AI agent decisions are made on year-one cost, which is exactly why most AI agent decisions are wrong. The build is the smallest line on the 3-year ledger. Maintenance, model deprecations, drift, compliance audits, and engineering opportunity cost stack year after year — and the platform you picked because it had the cheapest setup quote often ends up the most expensive in year three.
+
+**TL;DR:** Over 36 months, a custom AI agent runs **$380K–$1.1M (in-house build)**, **$210K–$520K (agency build)**, **$95K–$280K (no-code platform like Vapi/Bland/Retell)**, **$72K–$210K (white-label)**, and **$21K–$90K (done-for-you platforms like Prestyj)**. Maintenance averages **40–65% of 3-year TCO** — most teams budget under 20%. Model deprecations cost **15–40 engineering hours each** and hit every 6–12 months. Break-even vs. human response staff lands at **2–5 months for done-for-you**, **9–18 months for agency builds**, and **18–36 months for in-house builds**.
+
+## Key Takeaways
+
+- **Year-one cost is ~20–35% of 3-year TCO** for custom builds — maintenance is the dominant line item
+- **Done-for-you 3-year TCO: $21K–$90K** for typical SMB/mid-market operators vs **$210K–$1.1M** for custom builds
+- **Model deprecations hit every 6–12 months** — budget **15–40 engineering hours and $3K–$12K per swap**
+- **No-code platforms (Vapi, Bland, Retell) win year one but lose year three** at any meaningful volume — per-minute billing compounds faster than flat-rate retainers
+- **White-label adds 30–60% markup** over the underlying platform cost but compresses launch time by 60–80%
+- **Break-even vs human response staff** is **2–5 months done-for-you**, **9–18 months agency**, **18–36 months in-house**
+- **Engineering opportunity cost** is the most-ignored TCO line — 1.5–3 FTEs tied up on a custom build = $400K–$900K in opportunity cost over 36 months
+
+---
+
+## 3-Year TCO Comparison Table
+
+Every operator running this decision should start with this table. Numbers assume a typical mid-market operator at **5,000 calls or messages/month** in a single vertical (HVAC, dental, real estate, law, or mortgage). Fully loaded — every line item, no asterisks.
+
+| Cost Bucket                              | DIY In-House Build | Agency Custom Build | No-Code Platform (Vapi / Bland / Retell) | White-Label     | Done-For-You (Prestyj) |
+| ---------------------------------------- | ------------------ | ------------------- | ---------------------------------------- | --------------- | ---------------------- |
+| **Year 1 build / setup**                 | $180K–$620K        | $95K–$280K          | $42K–$120K                               | $28K–$95K       | $7K–$30K               |
+| **Year 2 operating cost**                | $110K–$280K        | $70K–$140K          | $32K–$90K                                | $24K–$70K       | $7K–$30K               |
+| **Year 3 operating cost**                | $130K–$320K        | $80K–$160K          | $38K–$110K                               | $28K–$80K       | $7K–$30K               |
+| **Model deprecation rework (3 yrs)**     | $9K–$24K           | $9K–$24K            | $9K–$24K                                 | Vendor-absorbed | Vendor-absorbed        |
+| **Compliance audits (3 yrs)**            | $15K–$60K          | $15K–$60K           | Your responsibility ($15K–$60K)          | Shared          | Included               |
+| **Engineering opportunity cost (3 yrs)** | $300K–$900K        | $40K–$120K          | $20K–$80K                                | $10K–$40K       | $0                     |
+| **3-year TCO (all-in)**                  | **$380K–$1.1M**    | **$210K–$520K**     | **$95K–$280K**                           | **$72K–$210K**  | **$21K–$90K**          |
+| **Cost multiplier vs done-for-you**      | **12–18x**         | **6–10x**           | **3–4.5x**                               | **2.4–3.5x**    | **1x baseline**        |
+| **Time to production**                   | 6–18 months        | 4–9 months          | 4–12 weeks                               | 6–14 weeks      | 2–4 weeks              |
+| **Break-even vs 2 human SDRs**           | 18–36 months       | 9–18 months         | 5–12 months                              | 4–9 months      | **2–5 months**         |
+
+The math is uncomfortable for custom builds: **a done-for-you platform costs 6–18x less over 36 months than any flavor of custom build** while shipping 6–24 weeks faster. The custom build wins only when the AI agent is the product, not a back-office utility.
+
+For the line-item-by-line-item breakdown of where the custom-build cost comes from, see our [custom AI agent build cost breakdown](/blog/custom-ai-agent-build-cost-breakdown-2026) and the [hidden costs of custom AI agents](/blog/hidden-costs-custom-ai-agents-2026).
+
+---
+
+## Why Year-One Cost Is the Wrong Anchor
+
+Every team starts the build vs buy debate with: _"How much to build?"_ That question makes the custom build look survivable. The right question is: _"How much over 36 months, including everything we won't ship because the engineers are stuck on this?"_
+
+Three structural reasons year-one cost lies:
+
+1. **Custom builds frontload deliverables and backload cost.** Year-one looks like a $120K agency invoice. Years 2–3 look like 30–50 hours/month of retainer billing, plus integrations, plus model swaps, plus a compliance audit, plus the FTE who quietly became the agent's PM.
+2. **AI agents aren't software, they're products you operate forever.** Software ships and stabilizes. Agents drift. Every prompt change, model swap, regulatory update, and product change requires re-tuning. The maintenance line never goes to zero.
+3. **Engineering opportunity cost is invisible in year one.** The two senior engineers operating your custom agent in year two are two engineers not building the thing your competitors are building.
+
+---
+
+## Path 1: DIY In-House Custom Build — Year-by-Year
+
+You hire (or redirect) ML, voice, and backend engineers to build and operate the agent in-house.
+
+### Year 1: $180K–$620K
+
+- Discovery + scoping: $10K–$30K (PM + eng time)
+- Initial build: 600–1,800 hours @ $110–$180/hr fully loaded = **$66K–$320K**
+- Prompt engineering launch: $6K–$18K
+- LLM tokens (5k calls/mo): $17K–$45K
+- Voice infrastructure: $12K–$29K
+- Integrations: $20K–$80K
+- Hosting + observability: $5K–$36K
+- Human QA: $48K–$120K (FTE share)
+- Compliance review: $15K–$80K
+
+### Year 2: $110K–$280K
+
+- Ongoing engineering ops: 1.5–2.5 FTE share = **$60K–$180K**
+- LLM tokens: $17K–$45K
+- Voice infrastructure: $12K–$29K
+- Hosting + observability: $5K–$36K
+- Model deprecation rework (1–2 swaps): $3K–$8K
+- Compliance audit: $5K–$20K
+- Drift re-tuning: $9K–$54K
+- Integration repairs: $5K–$25K
+
+### Year 3: $130K–$320K
+
+- Ongoing engineering ops: $70K–$200K (FTE costs rising)
+- LLM tokens: $17K–$50K
+- Voice infrastructure: $12K–$32K
+- Hosting + observability: $5K–$40K
+- Model deprecation rework: $4K–$12K
+- Compliance audit: $6K–$22K
+- Drift re-tuning: $11K–$60K
+- Integration repairs + new use cases: $15K–$60K
+
+### 3-year TCO: $420K–$1.22M before engineering opportunity cost
+
+Once you load in **$300K–$900K of engineering opportunity cost** (1.5–3 senior engineers tied up for 36 months at $200K–$300K fully loaded), the real TCO is **$720K–$2.12M**. Most operators don't carry this line on the P&L, but the CFO eventually finds it.
+
+**Best for:** Companies where the AI agent IS the product and IP ownership is strategic. Worst for everyone else.
+
+---
+
+## Path 2: Agency Custom Build — Year-by-Year
+
+You hire a specialized AI agency to build the agent end-to-end on a fixed-price-then-time-and-materials structure.
+
+### Year 1: $95K–$280K
+
+- Discovery + scoping: $5K–$25K
+- Initial build: $44K–$240K
+- Prompt engineering launch: $3K–$12K
+- LLM tokens + voice infrastructure: $29K–$74K
+- Integrations: $14K–$50K (4–6 systems)
+- Hosting + observability: $5K–$36K
+- Human QA retainer: $24K–$96K
+- Compliance review: $8K–$60K
+
+### Year 2: $70K–$140K
+
+- Maintenance retainer: $24K–$60K
+- LLM tokens + voice infra: $29K–$74K
+- Hosting + observability: $5K–$36K
+- Model deprecation rework: $3K–$8K
+- Compliance audit: $5K–$12K
+- Drift re-tuning: $9K–$54K
+- Integration repairs: $4K–$20K
+
+### Year 3: $80K–$160K
+
+- Maintenance retainer: $30K–$72K (renegotiated up)
+- LLM tokens + voice infra: $29K–$80K
+- Hosting + observability: $5K–$40K
+- Model deprecation rework: $3K–$8K
+- Compliance audit: $5K–$15K
+- Drift re-tuning: $11K–$60K
+- Integration repairs + new use cases: $8K–$40K
+
+### 3-year TCO: $245K–$580K plus $40K–$120K opportunity cost = **$285K–$700K**
+
+**Hidden trap:** The agency optimizes for project completion; you carry the long-tail ops cost. After year one, every change is a new SOW or hourly billing. Switching agencies typically means rebuilding 40–60% of the agent.
+
+**Best for:** One-off bespoke builds where you need a custom outcome but don't want to staff an internal AI team. Bad for anyone who wants flat predictable spend.
+
+---
+
+## Path 3: No-Code Platforms (Vapi, Bland, Retell, Synthflow) — Year-by-Year
+
+You buy a developer platform and configure the agent yourself. Per-minute usage billing dominates the cost curve.
+
+### Year 1: $42K–$120K
+
+- Platform setup: $0–$2K
+- Engineering / integration: 80–280 hours = $9K–$56K
+- Prompt engineering launch: $2K–$8K
+- LLM tokens (often unbundled): $17K–$45K
+- Voice infrastructure (often unbundled): $12K–$29K
+- Telephony pass-through: $2.4K–$7K
+- Platform fees: $6K–$15K
+- Integrations beyond Zapier: $4K–$24K
+- QA (DIY): $4K–$30K
+- Compliance (your responsibility): $0–$20K (typically deferred)
+
+### Year 2: $32K–$90K
+
+- Platform fees: $6K–$15K (often raised)
+- LLM tokens: $17K–$48K (volume often grows)
+- Voice infrastructure: $12K–$32K
+- Telephony: $2.4K–$8K
+- Drift re-tuning: $6K–$30K
+- Model deprecation rework: $3K–$8K
+- Integration repairs: $3K–$15K
+- QA: $4K–$30K
+
+### Year 3: $38K–$110K
+
+- Platform fees: $7K–$18K (rising tiers as volume scales)
+- LLM tokens: $19K–$56K
+- Voice infrastructure: $13K–$36K
+- Telephony: $2.5K–$9K
+- Drift re-tuning: $7K–$36K
+- Model deprecation rework: $3K–$8K
+- Integration repairs + new use cases: $5K–$24K
+- QA: $5K–$36K
+- Compliance audit (deferred from year 1, now mandatory): $15K–$30K
+
+### 3-year TCO: $112K–$320K plus $20K–$80K opportunity cost = **$132K–$400K**
+
+**Critical inflection:** At volumes above 25,000 calls/month, the per-minute model breaks down. The line crosses managed platforms and done-for-you offerings — at 100,000 calls/month, no-code platforms can cost more than agency custom builds. See our [AI voice agent costs comparison](/blog/ai-voice-agent-costs-compared) for the volume curves.
+
+**Best for:**
+
+- **Vapi** — technical teams under 5,000 calls/month wanting maximum flexibility
+- **Retell** — fast prototypes and proof-of-concept work
+- **Bland** — outbound-heavy programs where per-minute cost matters most
+- **Synthflow** — operators who want a slightly more managed experience
+
+**Worst for:** Non-technical operators, regulated verticals where compliance burden falls on you, and any team running above 25,000 calls/month.
+
+---
+
+## Path 4: White-Label AI — Year-by-Year
+
+You buy a white-labeled version of a managed AI agent platform from a reseller or agency partner, often re-branded as your product or service.
+
+### Year 1: $28K–$95K
+
+- Setup / configuration: $4K–$18K
+- Branding + customization: $3K–$12K
+- Integrations: $6K–$25K
+- Platform license: $12K–$36K
+- Training + onboarding: $3K–$8K
+- Compliance review (shared with vendor): $0–$8K (often shared)
+
+### Year 2: $24K–$70K
+
+- Platform license: $12K–$36K
+- Ongoing optimization: $4K–$15K
+- Integration repairs: $2K–$8K
+- New use case adds: $6K–$15K
+
+### Year 3: $28K–$80K
+
+- Platform license: $14K–$42K (annual increases typical)
+- Ongoing optimization: $5K–$18K
+- Integration repairs: $3K–$10K
+- New use cases: $6K–$15K
+- Renewal negotiation overhead: ~$5K loaded
+
+### 3-year TCO: $80K–$245K plus $10K–$40K opportunity cost = **$90K–$285K**
+
+**Hidden trap:** White-label markups are typically **30–60% over the underlying platform**, in exchange for branding and reseller services. The economics work best when the reseller adds genuine vertical knowledge or ongoing optimization. The economics break when the reseller is just a logo on someone else's tech.
+
+**Best for:** Agencies offering AI as a service to their own client base. SMB operators who want a partner that handles vendor management. Bad for end operators with internal capacity to manage a direct platform relationship.
+
+For our take on white-label AI calling specifically, see [white-label AI calling](/blog/white-label-ai-calling).
+
+---
+
+## Path 5: Done-For-You Platforms (Prestyj) — Year-by-Year
+
+You buy a managed platform that includes the agent, infrastructure, prompts, integrations, compliance, QA, and ongoing operations as a flat monthly retainer.
+
+### Year 1: $7K–$30K
+
+- Onboarding: $0 included
+- Platform retainer: $7,188–$29,988 ($599–$2,499/month)
+- All line items absorbed: LLM tokens, voice infra, telephony, integrations, hosting, observability, human QA, compliance, drift tuning, model deprecation rework
+
+### Year 2: $7K–$30K
+
+- Same flat retainer
+- All line items absorbed, including model deprecations, drift, and compliance audits
+
+### Year 3: $7K–$30K
+
+- Same flat retainer
+- All line items absorbed
+
+### 3-year TCO: $21K–$90K with **zero engineering opportunity cost**
+
+The flat-rate model works because the vendor amortizes the cost across many operators in the same vertical. You're not paying retail for the LLM tokens, you're not paying retail for the voice infra, you're not paying retail for the compliance review, and you're not paying for the engineering hours that have already been invested in building the platform.
+
+For the full pricing model, see our [done-for-you AI pricing guide](/blog/done-for-you-ai-pricing-guide).
+
+**Best for:** Operators in HVAC, dental, real estate, law, mortgage, roofing, med spa, and any vertical where the AI agent is context (a utility), not core (the product). Worst for companies where the agent IS the product.
+
+---
+
+## TCO By Volume Tier
+
+The path that wins changes with volume. Here's 3-year TCO across volume tiers for a typical mid-market operator.
+
+| Monthly Volume | DIY In-House | Agency Build | No-Code Platform | White-Label | Done-For-You (Prestyj) |
+| -------------- | ------------ | ------------ | ---------------- | ----------- | ---------------------- |
+| 500 calls      | $385K–$1.0M  | $200K–$420K  | $55K–$130K       | $70K–$160K  | $21K–$45K              |
+| 5,000 calls    | $420K–$1.12M | $245K–$520K  | $112K–$320K      | $90K–$245K  | $36K–$90K              |
+| 25,000 calls   | $480K–$1.28M | $320K–$680K  | $310K–$720K      | $180K–$420K | $72K–$180K             |
+| 100,000 calls  | $720K–$1.7M  | $560K–$1.16M | $1.1M–$2.6M      | $480K–$980K | $240K–$540K            |
+
+Note the inversion: **at 100,000 calls/month, no-code platforms become more expensive than agency custom builds** because per-minute billing compounds. Done-for-you platforms remain dominant across every volume tier we've modeled because the flat-rate structure scales linearly while custom builds carry a heavy fixed overhead and no-code platforms scale punitively above 25K/month.
+
+---
+
+## Maintenance Is the Real Cost
+
+The most-underestimated line on every 3-year TCO is maintenance. Custom builds spend **40–65% of 3-year TCO on maintenance** — not building. Breakdown of where maintenance dollars go:
+
+| Maintenance Category     | Year 1         | Year 2         | Year 3         | 3-yr Total      |
+| ------------------------ | -------------- | -------------- | -------------- | --------------- |
+| Prompt drift re-tuning   | $9K–$54K       | $9K–$54K       | $11K–$60K      | $29K–$168K      |
+| Model deprecation rework | $3K–$8K        | $3K–$8K        | $3K–$8K        | $9K–$24K        |
+| Integration repairs      | $5K–$25K       | $4K–$20K       | $5K–$25K       | $14K–$70K       |
+| Human QA / supervision   | $24K–$120K     | $24K–$120K     | $28K–$140K     | $76K–$380K      |
+| Compliance audits        | $0 (built)     | $5K–$20K       | $6K–$22K       | $11K–$42K       |
+| Hosting + observability  | $5K–$36K       | $5K–$36K       | $5K–$40K       | $15K–$112K      |
+| Platform fee increases   | $0             | $1K–$3K        | $2K–$6K        | $3K–$9K         |
+| **Total maintenance**    | **$46K–$243K** | **$51K–$261K** | **$60K–$301K** | **$157K–$805K** |
+
+Done-for-you platforms compress this entire line into the flat monthly retainer. That's the structural reason the TCO gap is so wide.
+
+---
+
+## Model Deprecation: The Hidden Quarterly Tax
+
+LLMs aren't stable platforms. They're rapidly evolving products with predictable deprecation cycles. Since 2023, major foundation-model providers have deprecated production-grade models roughly every **6–12 months**:
+
+| Year    | Deprecated → Replaced               | Migration cost (eng hrs) |
+| ------- | ----------------------------------- | ------------------------ |
+| 2023    | GPT-3.5 → GPT-4                     | 20–50 hrs                |
+| 2024 H1 | GPT-4 → GPT-4-turbo                 | 10–25 hrs                |
+| 2024 H2 | GPT-4-turbo → GPT-4o                | 15–35 hrs                |
+| 2025 H1 | GPT-4o → GPT-5                      | 20–45 hrs                |
+| 2025 H2 | Claude 3.5 → Claude Sonnet 4        | 15–30 hrs                |
+| 2026 H1 | (next generation, expected Q2 2026) | 20–40 hrs estimated      |
+
+Each migration requires:
+
+- Re-running your full eval harness against the new model
+- Re-tuning prompts (different models follow instructions differently)
+- Re-verifying tool-call formats and JSON schemas
+- Re-checking guardrails for new failure modes
+- Potentially adjusting context window strategy and pricing
+
+At **$200–$300/hr for a senior prompt engineer**, that's **$3K–$12K per migration**, **1–2 times per year** for any custom build. Done-for-you platforms absorb this; no-code platforms pass it back to you.
+
+---
+
+## Break-Even Analysis vs Human Response Staff
+
+Every AI agent decision is implicitly a build vs hire decision. The break-even point — when cumulative AI agent cost equals cumulative cost of the human staff it replaces — varies dramatically by path.
+
+Assumptions: replacing **2 fully-loaded human SDRs / ISAs / front-desk staff at $65K each fully loaded ($130K/year combined)**.
+
+| Path                   | Year 1 Cost | Cumulative break-even | Notes                                |
+| ---------------------- | ----------- | --------------------- | ------------------------------------ |
+| DIY In-House Build     | $180K–$620K | **18–36 months**      | Often never reaches break-even       |
+| Agency Custom Build    | $95K–$280K  | **9–18 months**       | Highly dependent on retainer creep   |
+| No-Code Platform       | $42K–$120K  | **5–12 months**       | Faster but risk shifts to compliance |
+| White-Label            | $28K–$95K   | **4–9 months**        | Depends on reseller markup           |
+| Done-For-You (Prestyj) | $7K–$30K    | **2–5 months**        | Fastest, lowest risk                 |
+
+The break-even number is only half the story. The full picture is **risk-adjusted break-even** — a custom build that costs $250K and ships 9 months late didn't break even; it broke the budget.
+
+---
+
+## Vertical-Specific 3-Year TCO
+
+### Real estate (40-agent brokerage, 3,000 leads/month)
+
+| Path                 | Year 1 | Year 2 | Year 3 | 3-yr TCO  |
+| -------------------- | ------ | ------ | ------ | --------- |
+| DIY In-House         | $260K  | $145K  | $165K  | **$570K** |
+| Agency               | $202K  | $98K   | $115K  | **$415K** |
+| No-Code (Vapi class) | $86K   | $58K   | $72K   | **$216K** |
+| White-Label          | $62K   | $42K   | $52K   | **$156K** |
+| Done-For-You         | $18K   | $18K   | $18K   | **$54K**  |
+
+### HVAC (multi-location, 8,000 calls/month, ServiceTitan)
+
+| Path         | Year 1 | Year 2 | Year 3 | 3-yr TCO  |
+| ------------ | ------ | ------ | ------ | --------- |
+| DIY In-House | $340K  | $185K  | $215K  | **$740K** |
+| Agency       | $269K  | $128K  | $148K  | **$545K** |
+| No-Code      | $105K  | $76K   | $92K   | **$273K** |
+| White-Label  | $78K   | $55K   | $68K   | **$201K** |
+| Done-For-You | $24K   | $24K   | $24K   | **$72K**  |
+
+### Dental (6-location DSO, 4,500 calls/month, HIPAA)
+
+| Path                 | Year 1 | Year 2 | Year 3 | 3-yr TCO  |
+| -------------------- | ------ | ------ | ------ | --------- |
+| DIY In-House         | $440K  | $220K  | $250K  | **$910K** |
+| Agency               | $362K  | $155K  | $180K  | **$697K** |
+| No-Code              | $135K  | $92K   | $108K  | **$335K** |
+| White-Label          | $98K   | $68K   | $82K   | **$248K** |
+| Done-For-You (HIPAA) | $36K   | $36K   | $36K   | **$108K** |
+
+### Law (10-attorney PI firm, 1,200 intakes/month)
+
+| Path         | Year 1 | Year 2 | Year 3 | 3-yr TCO  |
+| ------------ | ------ | ------ | ------ | --------- |
+| DIY In-House | $245K  | $135K  | $155K  | **$535K** |
+| Agency       | $201K  | $95K   | $112K  | **$408K** |
+| No-Code      | $72K   | $48K   | $58K   | **$178K** |
+| White-Label  | $56K   | $38K   | $46K   | **$140K** |
+| Done-For-You | $14K   | $14K   | $14K   | **$42K**  |
+
+Across every vertical we model, done-for-you wins by **3–14x** over 36 months. The gap is widest in regulated verticals (dental, law, mortgage) where compliance amortization matters most.
+
+---
+
+## What Vendors Don't Tell You About 3-Year TCO
+
+### "Setup is included"
+
+Setup is included in the headline number. Optimization, change requests, new use cases, model swaps, and compliance audits are not. Always demand a year-2 and year-3 quote in writing.
+
+### "The platform handles model upgrades"
+
+Most no-code platforms do _not_ handle model upgrades automatically. They release a new model option; you do the migration work. Verify in writing whether the vendor or you owns the eval rerun, prompt re-tune, and regression testing.
+
+### "Pricing is locked in"
+
+Platform fee increases of 5–15%/year are standard. Three years in, you're paying 15–50% more than the original quote even before volume increases. Done-for-you contracts typically lock pricing for the term.
+
+### "Maintenance is minimal once we ship"
+
+Maintenance is **40–65% of 3-year TCO** for custom builds. Any vendor minimizing this line is either inexperienced or hiding the number.
+
+### "You'll save money once you have your own engineers running it"
+
+The in-house pivot is the most common cost-overrun pattern. Operators start on an agency build, decide to hire in-house ops "to save money," and end up paying for both: the agency retainer plus the new FTE who needs 6–12 months to come up to speed.
+
+---
+
+## Common TCO Mistakes to Avoid
+
+1. **Modeling year one only.** The build is 20–35% of 3-year TCO. Always model 36 months minimum.
+
+2. **Ignoring engineering opportunity cost.** Two senior engineers tied up on a custom AI agent for 18 months is **$600K–$900K of opportunity cost**. That's the most-skipped line in every TCO exercise.
+
+3. **Underestimating maintenance.** Custom builds spend 40–65% of 3-year TCO on maintenance. Most teams budget under 20%.
+
+4. **Per-minute billing at scale.** Below 5,000 calls/month, per-minute is great. Above 25,000, it's a tax. Above 100,000, it's a disaster. Run the volume curve before committing.
+
+5. **Ignoring model deprecation cycles.** Budget 1–2 model swaps per year for any custom build. That's $6K–$24K/year you didn't quote.
+
+6. **Skipping compliance review.** Deferred compliance becomes mandatory audit in year 2 or 3, almost always at peak inconvenience. Build it into year-one cost.
+
+7. **Choosing white-label without checking the underlying platform.** A white-label agent inherits all the strengths and weaknesses of the underlying tech. If the underlying platform has compliance gaps, so does the white-label wrapper.
+
+---
+
+## Decision Framework: Which Path Wins on TCO?
+
+Use the scoring matrix below — score 0 or 1 on each row, total at the bottom.
+
+| Question                                                      | Custom Build (in-house or agency) | Done-For-You / No-Code     |
+| ------------------------------------------------------------- | --------------------------------- | -------------------------- |
+| Is the AI agent your public product (not a back-office tool)? | 1                                 | 0                          |
+| Do you have 2+ senior ML/voice engineers in-house already?    | 1                                 | 0                          |
+| Are you operating above 50K calls/month?                      | 1                                 | 0 (re-evaluate above 100K) |
+| Do you need fully customized workflows no platform supports?  | 1                                 | 0                          |
+| Are you comfortable with 36-month operating commitment?       | 1                                 | 0                          |
+| Do you want flat predictable monthly cost?                    | 0                                 | 1                          |
+| Is time-to-live under 8 weeks critical?                       | 0                                 | 1                          |
+| Are you in a regulated vertical (HIPAA/TCPA/FH)?              | 0                                 | 1                          |
+
+Score above for each path. If you scored 4+ on the custom build column **and** have the engineering team to back it, custom can work. Below 4, done-for-you wins on TCO every time.
+
+For a deeper decision framework, see our [should you build or buy your AI agent guide](/blog/should-you-build-or-buy-ai-agent-2026).
+
+---
+
+## FAQ
+
+### What is the 3-year TCO of a custom AI agent?
+
+Over 36 months, a custom AI agent costs **$380K–$1.1M for in-house builds**, **$210K–$520K for agency builds**, **$95K–$280K for no-code platforms (Vapi, Bland, Retell)**, **$72K–$210K for white-label**, and **$21K–$90K for done-for-you platforms like Prestyj**. The spread is driven by maintenance, model deprecations, compliance audits, and engineering opportunity cost — which collectively make up **40–65% of 3-year TCO** for custom builds.
+
+### What's cheaper: building or buying an AI agent over 3 years?
+
+Buying via a done-for-you platform is **6–18x cheaper** than building over 36 months for almost every operator. Custom builds win on 3-year TCO only when the AI agent is the public product, the company has 2+ senior ML/voice engineers in-house, and the volume exceeds 50,000 calls/month.
+
+### How much does AI agent maintenance cost per year?
+
+Maintenance runs **$110K–$280K/year for in-house builds**, **$70K–$140K/year for agency builds**, **$32K–$90K/year for no-code platforms**, and **$0 (absorbed into flat retainer) for done-for-you platforms**. Maintenance is consistently the largest 3-year TCO line item for custom builds.
+
+### How often do AI agents need to be re-tuned?
+
+Production AI agents need **5–15 hours/month of drift re-tuning** plus **1–2 major model deprecation reworks per year (15–40 engineering hours each)**. New use cases, regulatory updates, and product changes add another 5–20 hours/month. Done-for-you platforms absorb all of this; custom builds pay it monthly.
+
+### What is the break-even point for an AI agent vs hiring humans?
+
+Break-even vs 2 fully-loaded human SDRs ($130K/year combined) lands at **18–36 months for in-house builds**, **9–18 months for agency builds**, **5–12 months for no-code platforms**, **4–9 months for white-label**, and **2–5 months for done-for-you platforms** like Prestyj.
+
+### How much does model deprecation cost?
+
+Each major LLM model deprecation (which happens every 6–12 months) costs **15–40 engineering hours and $3K–$12K** for a custom AI agent. That's prompt re-tuning, eval rerun, regression testing, and tool-call format verification. Over 3 years, expect **3–6 migrations totaling $9K–$72K**. Done-for-you and white-label platforms typically absorb this cost.
+
+### Are no-code platforms cheaper than done-for-you over 3 years?
+
+No-code platforms (Vapi, Bland, Retell, Synthflow) are cheaper than done-for-you only at very low volume (under 1,000 calls/month) and only if your team has the engineering capacity to operate them. At 5,000+ calls/month, done-for-you platforms cost **3–4.5x less** over 36 months because per-minute billing compounds while flat-rate doesn't.
+
+### What's the hidden cost of AI agent ownership?
+
+The biggest hidden costs of 3-year ownership are **engineering opportunity cost** ($300K–$900K for in-house builds), **model deprecation rework** ($9K–$24K over 3 years), **compliance audits** ($11K–$42K), **prompt drift re-tuning** ($29K–$168K), and **human QA / supervision** ($76K–$380K). See our deep dive on [hidden costs of custom AI agents](/blog/hidden-costs-custom-ai-agents-2026).
+
+### How do I forecast AI agent TCO accurately?
+
+Always model 36 months minimum. Include: (1) build cost, (2) ongoing LLM token cost at projected volume, (3) voice infrastructure (if applicable), (4) human QA at 5–15 hours/day, (5) drift re-tuning at 5–15 hours/month, (6) model deprecation at 15–40 hours/quarter, (7) compliance audits at $5K–$20K/year, (8) integration repairs at 2–5% of build cost/year, and (9) engineering opportunity cost at $200K–$300K per FTE tied up.
+
+### Is white-label AI a good deal over 3 years?
+
+White-label has the second-best 3-year TCO ($72K–$210K) after done-for-you ($21K–$90K). It works best when the reseller adds genuine vertical expertise or ongoing optimization. It's a bad deal when the reseller is just a logo on someone else's platform with a 30–60% markup and no operational value-add. See [white-label AI calling](/blog/white-label-ai-calling) for the deeper analysis.
+
+---
+
+## Related Reading
+
+- [Custom AI Agent Build Cost Breakdown 2026 (14 Line Items)](/blog/custom-ai-agent-build-cost-breakdown-2026)
+- [Should You Build or Buy Your AI Agent in 2026? Decision Framework](/blog/should-you-build-or-buy-ai-agent-2026)
+- [Hidden Costs of Custom AI Agents: 12 Fees Vendors Don't Quote](/blog/hidden-costs-custom-ai-agents-2026)
+- [Done-For-You AI Agents Guide](/blog/done-for-you-ai-agents-guide)
+- [Done-For-You AI Pricing Guide](/blog/done-for-you-ai-pricing-guide)
+- [Multi-Agent Sales System Architecture](/blog/multi-agent-sales-system-architecture)
+- [AI Voice Agent Costs Compared (7 Platforms)](/blog/ai-voice-agent-costs-compared)
+- [Build vs Buy AI Sales Agents (Real Estate)](/blog/build-vs-buy-ai-sales-agents-real-estate)
+
+Explore the platform: [AI Sales Agent](/solutions/ai-lead-response) · [Platform overview](/platform) · [AI Content Department](/ai-content-department) · [Pricing](/pricing)
+
+---
+
+_Want a flat 3-year TCO instead of a moving target? [Book a demo](/book-demo) and see exactly what your operation would cost on Prestyj — every line item absorbed, every model deprecation handled, every compliance audit included._
