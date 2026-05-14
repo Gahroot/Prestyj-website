@@ -13,8 +13,15 @@ export const HERO_PATTERNS = {
   BEST_LEAD_RESPONSE_FOR: {
     headline: "We respond to every lead in under 60 seconds —",
   },
-  LOOKING_FOR_ALTERNATIVE: {
-    headline: "The AI-agent alternative to",
+  // Used by the alternative-page factory. The factory overrides `headline`
+  // with the competitor name (placed on the first line) and `headlineAccent`
+  // becomes the colored "vs Prestyj" tagline below it. This avoids the
+  // article-agreement (a/an) and plural-mismatch problems that any
+  // "Looking for a {competitor}" / "alternative to {competitor}" template
+  // hits when {competitor} is plural (e.g. "Social Media Agencies") or
+  // starts with a vowel (e.g. "Internal ISA").
+  COMPETITOR_VS_PRESTYJ: {
+    headline: "",
   },
 } as const;
 
@@ -23,7 +30,12 @@ export function buildHeroWithPattern(
   headlineAccent: string,
   badge: string,
   subheadline: string,
-) {
+): {
+  badge: string;
+  headline: string;
+  headlineAccent: string;
+  subheadline: string;
+} {
   return {
     badge,
     ...HERO_PATTERNS[pattern],

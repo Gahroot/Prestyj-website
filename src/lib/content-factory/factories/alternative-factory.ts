@@ -4,7 +4,6 @@ import type {
   FeatureRow,
   PricingInfo,
 } from "@/lib/alternatives/types";
-import { buildHeroWithPattern } from "../constants/hero-patterns";
 import { STANDARD_INDUSTRY_STATS, REACTIVATION_STATS } from "../constants/industry-stats";
 import { CTA_TEMPLATES } from "../constants/cta-snippets";
 import { PRESTYJ_STANDARD_PRICING } from "../constants/pricing-features";
@@ -46,12 +45,15 @@ interface AlternativeFactoryInput {
 }
 
 export function createAlternativePage(input: AlternativeFactoryInput): AlternativePageContent {
-  const heroSection = buildHeroWithPattern(
-    "LOOKING_FOR_ALTERNATIVE",
-    input.competitor.name,
-    input.hero.badge,
-    input.hero.subheadline,
-  );
+  // Competitor name on line 1, "vs Prestyj" tagline (colored) on line 2.
+  // Sidesteps a/an article agreement and singular/plural mismatch problems
+  // entirely, and keeps the competitor name prominent in the H1 for SEO.
+  const heroSection = {
+    badge: input.hero.badge,
+    headline: input.competitor.name,
+    headlineAccent: "vs Prestyj",
+    subheadline: input.hero.subheadline,
+  };
 
   let statsSection: AlternativePageContent["industryStats"] = [];
   if (input.industryStats === "standard") {

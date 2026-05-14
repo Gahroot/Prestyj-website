@@ -25,7 +25,7 @@ Generates `/alternatives/[slug]` pages (`AlternativePageContent` from `src/lib/a
 | `type` | `AlternativeType` | Category enum (e.g., voice-agent, isa) |
 | `competitor` | `{ name, shortName?, pricing?, website?, description? }` | The thing we're an alternative to |
 | `meta` | `{ title, description, keywords[] }` | SEO |
-| `hero` | `{ badge, subheadline }` | Headline always becomes `"Looking for a {competitor.name} Alternative?"` via `LOOKING_FOR_ALTERNATIVE` pattern |
+| `hero` | `{ badge, subheadline }` | Headline is `{competitor.name}` with accent `"vs Prestyj"` below it (avoids a/an and plural-agreement issues) |
 | `industryStats` | `"standard" \| "reactivation" \| StatItem[]` | Picks `STANDARD_INDUSTRY_STATS` / `REACTIVATION_STATS` or custom |
 | `comparison.features` | `FeatureRow[]` | Built via `buildAlternativeFeature(STANDARD_FEATURES.X, ...)` |
 | `comparison.competitorPricing` | `PricingInfo` | Per-competitor, hand-supplied |
@@ -82,7 +82,7 @@ Generates `/compare/[slug]` head-to-head pages (`ComparePageData` from `src/lib/
 |---|---|---|
 | `industry-stats.ts` | `INDUSTRY_STATS`, `STANDARD_INDUSTRY_STATS`, `REACTIVATION_STATS` | Reusable stat triples (78% buyer-first, 80% leads cold, $4k ISA, 23% reactivation, 47s response) |
 | `cta-snippets.ts` | `CTA_SNIPPETS`, `CTA_TEMPLATES` | `STANDARD_DEMO` and `TEAM_DEMO` templates spread by every factory |
-| `hero-patterns.ts` | `HERO_PATTERNS`, `buildHeroWithPattern` | 4 prefix patterns: AI Agents Built for / The Best AI for / The Best Lead Response for / Looking for a |
+| `hero-patterns.ts` | `HERO_PATTERNS`, `buildHeroWithPattern` | 4 patterns: AI Agents Built for / The Best AI for / The Best Lead Response for / Competitor vs Prestyj (alternative factory overrides headline) |
 | `feature-rows.ts` | `STANDARD_FEATURES`, `buildAlternativeFeature`, `buildCompareFeature` | 7 baseline feature rows (AI text, AI voice, 24/7, CRM, booking, qualification, calendar) |
 | `pricing-features.ts` | `PRESTYJ_PRICING_FEATURES`, `PRESTYJ_STANDARD_PRICING` | `Starting at $1,997/mo`, `cons: []` enforced |
 | `icons.ts` | `ICON_MAP`, `getIcon`, `getIconSafe`, `IconName` | Allow-listed lucide icons (33 names) |
