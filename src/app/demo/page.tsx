@@ -5,7 +5,7 @@ import { DemoPageClient } from "./client";
 export const metadata: Metadata = {
   title: "Live Demo",
   description:
-    "Try Prestyj's AI agents for marketing & sales live — voice, chat, call, text, and lead form, all in one interactive demo.",
+    "Test Prestyj's AI agents live. Call, text, or fill out the form — our AI will respond as if you were a real lead.",
   robots: { index: false, follow: false },
 };
 
