@@ -10,6 +10,8 @@ import type { Metadata } from "next";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
+import { PostCta } from "@/components/blog/post-cta";
+import { RelatedPosts } from "@/components/blog/related-posts";
 import { readFile, stat } from "fs/promises";
 import { join } from "path";
 
@@ -25,9 +27,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: BlogPostPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
   const page = blogSource.getPage([slug]);
 
@@ -127,7 +127,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     const qaPairs = faqSection[0].split(/(?=###\s+)/);
     for (const qa of qaPairs) {
       const questionMatch = /^###\s+(.+)/.exec(qa);
-      if (questionMatch) {
+      if (questionMatch?.[1]) {
         const question = questionMatch[1].replace(/\*\*/g, "").trim();
         // Extract answer text: everything after the question heading, stripped of markdown
         const answerText = qa
@@ -155,6 +155,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const stepRegex = /^##\s+Step\s+\d+[::\s]\s*(.+)$/gm;
   let stepMatch: RegExpExecArray | null;
   while ((stepMatch = stepRegex.exec(rawContent)) !== null) {
+    if (!stepMatch[1]) continue;
     const stepName = stepMatch[1].trim();
     // Extract text between this ## heading and the next ## heading
     const stepStart = stepMatch.index + stepMatch[0].length;
@@ -243,7 +244,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {howToJsonLd && <SafeJsonLd data={howToJsonLd} />}
       <Navbar />
       <main className="pt-24 pb-16">
-        <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <Link href="/blog">
             <Button variant="ghost" className="mb-8">
               <ArrowLeft className="mr-2 h-4 w-4" />
@@ -253,10 +254,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
           <header className="mb-12">
             {date && (
-              <time
-                dateTime={date}
-                className="text-sm text-muted-foreground mb-2 block"
-              >
+              <time dateTime={date} className="text-muted-foreground mb-2 block text-sm">
                 {new Date(date).toLocaleDateString("en-US", {
                   year: "numeric",
                   month: "long",
@@ -264,32 +262,32 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 })}
               </time>
             )}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-4">
+            <h1 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
               {title}
             </h1>
-            {description && (
-              <p className="text-xl text-muted-foreground">{description}</p>
-            )}
+            {description && <p className="text-muted-foreground text-xl">{description}</p>}
             {image && (
               <figure className="mt-8">
                 <Image
                   src={image}
-                  alt={`${title}${keywords?.length ? ` — ${keywords.slice(0, 3).join(", ")}` : ""}`}
+                  alt={`${title} — Prestyj`}
                   width={1200}
                   height={630}
                   className="w-full rounded-lg"
                   priority
                 />
-                <figcaption className="sr-only">
-                  {title} — PRESTYJ AI-powered lead response
-                </figcaption>
+                <figcaption className="sr-only">{title} — Prestyj</figcaption>
               </figure>
             )}
           </header>
 
-          <div className="prose prose-invert prose-lg max-w-none prose-headings:font-heading prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-code:text-primary">
+          <div className="prose prose-invert prose-lg prose-headings:font-heading prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-code:text-primary max-w-none">
             <MDXContent />
           </div>
+
+          <PostCta />
+
+          <RelatedPosts currentSlug={slug} keywords={keywords ?? []} />
         </article>
       </main>
       <Footer />

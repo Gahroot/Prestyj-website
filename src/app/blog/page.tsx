@@ -4,12 +4,7 @@ import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { blogSource } from "@/lib/source";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
@@ -85,39 +80,33 @@ export default function BlogPage() {
       <SafeJsonLd data={jsonLd} />
       <Navbar />
       <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge
-              variant="outline"
-              className="mb-4 border-primary/50 text-primary"
-            >
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <Badge variant="outline" className="border-primary/50 text-primary mb-4">
               Resources
             </Badge>
-            <h1 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h1 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               AI Sales & Lead Generation Blog
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Speed-to-lead strategies, AI insights, and tactics to close more
-              deals.
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+              Speed-to-lead strategies, AI insights, and tactics to close more deals.
             </p>
           </div>
 
           {sortedPosts.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-muted-foreground">
-                No posts yet. Check back soon!
-              </p>
+            <div className="py-12 text-center">
+              <p className="text-muted-foreground">No posts yet. Check back soon!</p>
             </div>
           ) : (
             <div className="grid gap-6">
               {sortedPosts.map((post) => (
                 <Link key={post.url} href={post.url}>
-                  <Card className="bg-card border-border hover:border-primary/50 transition-colors overflow-hidden">
+                  <Card className="bg-card border-border hover:border-primary/50 overflow-hidden transition-colors">
                     {post.data.image && (
-                      <div className="relative w-full h-48">
+                      <div className="relative h-48 w-full">
                         <Image
                           src={post.data.image}
-                          alt={`${post.data.title} — PRESTYJ AI lead response`}
+                          alt={`${post.data.title} — Prestyj`}
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, 768px"
@@ -128,16 +117,13 @@ export default function BlogPage() {
                       {post.data.date && (
                         <time
                           dateTime={post.data.date}
-                          className="text-sm text-muted-foreground mb-1 block"
+                          className="text-muted-foreground mb-1 block text-sm"
                         >
-                          {new Date(post.data.date).toLocaleDateString(
-                            "en-US",
-                            {
-                              year: "numeric",
-                              month: "long",
-                              day: "numeric",
-                            }
-                          )}
+                          {new Date(post.data.date).toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
                         </time>
                       )}
                       <CardTitle className="font-heading text-foreground">
@@ -145,9 +131,7 @@ export default function BlogPage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-muted-foreground">
-                        {post.data.description}
-                      </p>
+                      <p className="text-muted-foreground">{post.data.description}</p>
                     </CardContent>
                   </Card>
                 </Link>
