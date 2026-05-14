@@ -193,13 +193,11 @@ export default function LeadMagnetPage() {
                 </ul>
               </div>
 
-              {/* Social Proof */}
+              {/* Social Proof placeholder — early customer results coming soon */}
               <div className="border-border border-t pt-6">
-                <p className="text-muted-foreground text-sm italic">
-                  &quot;This playbook showed us exactly what we were missing. We implemented AI
-                  response and captured $450K in additional storm revenue the first season.&quot;
+                <p className="text-muted-foreground text-sm">
+                  Early customer results coming soon.
                 </p>
-                <p className="mt-2 text-sm font-medium">&mdash; Apex Roofing, Denver CO</p>
               </div>
             </motion.div>
 

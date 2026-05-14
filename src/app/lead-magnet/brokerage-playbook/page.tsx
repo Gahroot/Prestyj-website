@@ -180,14 +180,11 @@ export default function BrokeragePlaybookPage() {
                 </ul>
               </div>
 
-              {/* Social Proof */}
+              {/* Social Proof placeholder — early customer results coming soon */}
               <div className="border-t border-border pt-6">
-                <p className="text-sm text-muted-foreground italic">
-                  &quot;We implemented this playbook and went from 2% to 8% lead-to-appointment rate on
-                  our Facebook campaigns in 45 days. The AI ISA cost comparison alone saved us from
-                  hiring a third ISA.&quot;
+                <p className="text-sm text-muted-foreground">
+                  Early customer results coming soon.
                 </p>
-                <p className="text-sm font-medium mt-2">&mdash; Team Leader, 22-Agent Brokerage, Phoenix AZ</p>
               </div>
             </motion.div>
 

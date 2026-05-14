@@ -193,15 +193,10 @@ export default function ReactivateLeadsPage() {
                 </ul>
               </div>
 
-              {/* Social Proof */}
+              {/* Social Proof placeholder — early customer results coming soon */}
               <div className="border-t border-border pt-6">
-                <p className="text-sm text-muted-foreground italic">
-                  &quot;We reactivated 2,400 old leads and booked 47 appointments
-                  in the first week. The AI handled everything — calls, texts,
-                  follow-ups.&quot;
-                </p>
-                <p className="text-sm font-medium mt-2">
-                  &mdash; Home Services Company, Tampa FL
+                <p className="text-sm text-muted-foreground">
+                  Early customer results coming soon.
                 </p>
               </div>
             </motion.div>
