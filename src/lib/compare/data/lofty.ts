@@ -2,7 +2,7 @@ import type { ComparePageData, CompareMetadata } from "../types";
 import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const loftyCompareData: ComparePageData = createComparePage({
-  slug: "lofty-vs-prestyj",
+  slug: "prestyj-vs-lofty",
   competitorName: "Lofty",
   hero: {
     badge: "Lofty vs Prestyj",
@@ -137,7 +137,7 @@ export const loftyCompareData: ComparePageData = createComparePage({
 });
 
 export const loftyMetadata: CompareMetadata = {
-  slug: "lofty-vs-prestyj",
+  slug: "prestyj-vs-lofty",
   competitorName: "Lofty",
   title: "Lofty vs Prestyj | AI Real Estate Platform Comparison",
   description:

@@ -2,7 +2,7 @@ import type { ComparePageData, CompareMetadata } from "../types";
 import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const alannaAiCompareData: ComparePageData = createComparePage({
-  slug: "alanna-ai-vs-prestyj",
+  slug: "prestyj-vs-alanna-ai",
   competitorName: "Alanna.ai",
   hero: {
     badge: "Alanna.ai vs Prestyj",
@@ -137,7 +137,7 @@ export const alannaAiCompareData: ComparePageData = createComparePage({
 });
 
 export const alannaAiMetadata: CompareMetadata = {
-  slug: "alanna-ai-vs-prestyj",
+  slug: "prestyj-vs-alanna-ai",
   competitorName: "Alanna.ai",
   title: "Alanna.ai vs Prestyj | Title AI vs Full Conversion Platform",
   description:

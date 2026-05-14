@@ -148,7 +148,7 @@ export const aiLeadGenVsTraditionalData: ComparePageData = createComparePage({
     {
       title: "Prestyj vs Human ISA",
       description: "Compare AI to hiring dedicated sales staff",
-      href: "/compare/prestyj-vs-isa",
+      href: "/alternatives/human-isa",
       linkText: "Read comparison",
     },
     {

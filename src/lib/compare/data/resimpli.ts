@@ -2,7 +2,7 @@ import type { ComparePageData, CompareMetadata } from "../types";
 import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const resimpliCompareData: ComparePageData = createComparePage({
-  slug: "resimpli-vs-prestyj",
+  slug: "prestyj-vs-resimpli",
   competitorName: "REsimpli",
   hero: {
     badge: "REsimpli vs Prestyj",
@@ -145,7 +145,7 @@ export const resimpliCompareData: ComparePageData = createComparePage({
 });
 
 export const resimpliMetadata: CompareMetadata = {
-  slug: "resimpli-vs-prestyj",
+  slug: "prestyj-vs-resimpli",
   competitorName: "REsimpli",
   title: "REsimpli vs Prestyj | Investor CRM vs AI Conversion Platform",
   description:

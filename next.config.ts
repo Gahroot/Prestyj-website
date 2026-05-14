@@ -32,7 +32,11 @@ const nextConfig: NextConfig = {
       { source: "/compare/prestyj-vs-invideo", destination: "/compare", permanent: true },
       { source: "/compare/prestyj-vs-billo", destination: "/compare", permanent: true },
       { source: "/compare/prestyj-vs-fiverr-video-ads", destination: "/compare", permanent: true },
-      { source: "/compare/prestyj-vs-fiverr-social-media", destination: "/compare", permanent: true },
+      {
+        source: "/compare/prestyj-vs-fiverr-social-media",
+        destination: "/compare",
+        permanent: true,
+      },
       { source: "/compare/prestyj-vs-buffer", destination: "/compare", permanent: true },
       { source: "/compare/prestyj-vs-later", destination: "/compare", permanent: true },
       { source: "/compare/prestyj-vs-hootsuite", destination: "/compare", permanent: true },
@@ -48,9 +52,55 @@ const nextConfig: NextConfig = {
       { source: "/alternatives/dialpad", destination: "/", permanent: true },
       { source: "/alternatives/ring-central", destination: "/", permanent: true },
       { source: "/alternatives/cloudtalk", destination: "/", permanent: true },
+      // AI vs human-staff comparison pages consolidated under canonical
+      // /alternatives/human-isa to remove overlapping content (was 4 near-duplicate
+      // pages: prestyj-vs-isa, prestyj-vs-internal-isa-team, prestyj-vs-offshore-isa,
+      // prestyj-vs-answering-service).
       {
         source: "/compare/prestyj-vs-isa",
         destination: "/alternatives/human-isa",
+        permanent: true,
+      },
+      {
+        source: "/compare/prestyj-vs-internal-isa-team",
+        destination: "/alternatives/human-isa",
+        permanent: true,
+      },
+      {
+        source: "/compare/prestyj-vs-offshore-isa",
+        destination: "/alternatives/human-isa",
+        permanent: true,
+      },
+      {
+        source: "/compare/prestyj-vs-answering-service",
+        destination: "/alternatives/human-isa",
+        permanent: true,
+      },
+      // Reverse-orientation duplicate compare pages (X-vs-prestyj) consolidated to
+      // canonical prestyj-vs-X orientation to eliminate duplicate content.
+      {
+        source: "/compare/structurely-vs-prestyj",
+        destination: "/compare/prestyj-vs-structurely",
+        permanent: true,
+      },
+      {
+        source: "/compare/alanna-ai-vs-prestyj",
+        destination: "/compare/prestyj-vs-alanna-ai",
+        permanent: true,
+      },
+      {
+        source: "/compare/follow-up-boss-vs-prestyj",
+        destination: "/compare/prestyj-vs-follow-up-boss",
+        permanent: true,
+      },
+      {
+        source: "/compare/lofty-vs-prestyj",
+        destination: "/compare/prestyj-vs-lofty",
+        permanent: true,
+      },
+      {
+        source: "/compare/resimpli-vs-prestyj",
+        destination: "/compare/prestyj-vs-resimpli",
         permanent: true,
       },
       // AI-consultant / fractional-CAIO positioning pages were diluting the
@@ -271,12 +321,32 @@ const nextConfig: NextConfig = {
       // 17 `social-content-for-*` persona pages were re-branding Prestyj as a
       // content service, diluting the AI marketing & sales core positioning.
       // 301 to /best-for hub.
-      { source: "/best-for/social-content-for-agencies", destination: "/best-for", permanent: true },
+      {
+        source: "/best-for/social-content-for-agencies",
+        destination: "/best-for",
+        permanent: true,
+      },
       { source: "/best-for/social-content-for-coaches", destination: "/best-for", permanent: true },
-      { source: "/best-for/social-content-for-consultants", destination: "/best-for", permanent: true },
-      { source: "/best-for/social-content-for-contractors", destination: "/best-for", permanent: true },
-      { source: "/best-for/social-content-for-creators", destination: "/best-for", permanent: true },
-      { source: "/best-for/social-content-for-dentists", destination: "/best-for", permanent: true },
+      {
+        source: "/best-for/social-content-for-consultants",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-contractors",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-creators",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-dentists",
+        destination: "/best-for",
+        permanent: true,
+      },
       {
         source: "/best-for/social-content-for-ecommerce-brands",
         destination: "/best-for",
@@ -297,8 +367,16 @@ const nextConfig: NextConfig = {
         destination: "/best-for",
         permanent: true,
       },
-      { source: "/best-for/social-content-for-law-firms", destination: "/best-for", permanent: true },
-      { source: "/best-for/social-content-for-med-spas", destination: "/best-for", permanent: true },
+      {
+        source: "/best-for/social-content-for-law-firms",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-med-spas",
+        destination: "/best-for",
+        permanent: true,
+      },
       {
         source: "/best-for/social-content-for-mortgage-brokers",
         destination: "/best-for",

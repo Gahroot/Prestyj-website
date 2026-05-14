@@ -171,14 +171,9 @@ export const internalIsa: AlternativePageContent = createAlternativePage({
   ],
   relatedResources: [
     {
-      href: "/compare/prestyj-vs-internal-isa-team",
-      title: "AI vs ISA Team: Full Cost Analysis",
-      description: "Detailed breakdown of total cost of ownership",
-    },
-    {
-      href: "/compare/prestyj-vs-offshore-isa",
-      title: "AI vs Offshore ISA Services",
-      description: "Compare to outsourced ISA alternatives",
+      href: "/alternatives/human-isa",
+      title: "AI vs Human ISA: Full Cost Analysis",
+      description: "Detailed breakdown of total cost of ownership across ISA staffing models",
     },
     {
       href: "/best-for/real-estate-franchises",

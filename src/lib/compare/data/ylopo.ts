@@ -95,7 +95,7 @@ export const ylopoCompareData: ComparePageData = createComparePage({
     {
       title: "AI vs Human ISA",
       description: "Compare AI agents to traditional inside sales agents",
-      href: "/compare/prestyj-vs-isa",
+      href: "/alternatives/human-isa",
       linkText: "Read comparison",
     },
     {

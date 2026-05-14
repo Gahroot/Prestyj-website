@@ -2,7 +2,7 @@ import type { ComparePageData, CompareMetadata } from "../types";
 import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const structurelyCompareData: ComparePageData = createComparePage({
-  slug: "structurely-vs-prestyj",
+  slug: "prestyj-vs-structurely",
   competitorName: "Structurely",
   hero: {
     badge: "Structurely vs Prestyj",
@@ -143,7 +143,7 @@ export const structurelyCompareData: ComparePageData = createComparePage({
 });
 
 export const structurelyMetadata: CompareMetadata = {
-  slug: "structurely-vs-prestyj",
+  slug: "prestyj-vs-structurely",
   competitorName: "Structurely",
   title: "Structurely vs Prestyj | AI Real Estate Comparison",
   description:

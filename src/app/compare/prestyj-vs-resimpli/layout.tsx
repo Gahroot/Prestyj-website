@@ -3,10 +3,6 @@ import { resimpliMetadata } from "@/lib/compare/data/resimpli";
 
 export const metadata = generateCompareMetadata(resimpliMetadata);
 
-export default function REsimpliVsPrestyjLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PrestyjVsResimpliLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

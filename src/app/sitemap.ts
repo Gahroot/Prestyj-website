@@ -217,7 +217,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Compare pages (excluding redirected ones: ylopo → /alternatives/ylopo, isa → /alternatives/human-isa)
+  // Compare pages (excluding redirected ones: ylopo → /alternatives/ylopo;
+  // isa/internal-isa-team/offshore-isa/answering-service → /alternatives/human-isa;
+  // reverse-orientation X-vs-prestyj URLs → canonical prestyj-vs-X)
   const compareRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/compare/prestyj-vs-conversica`,
@@ -233,24 +235,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/compare/prestyj-vs-drift`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-internal-isa-team`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-offshore-isa`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-answering-service`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
@@ -322,31 +306,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/compare/structurely-vs-prestyj`,
+      url: `${baseUrl}/compare/prestyj-vs-follow-up-boss`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/compare/follow-up-boss-vs-prestyj`,
+      url: `${baseUrl}/compare/prestyj-vs-lofty`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/compare/lofty-vs-prestyj`,
+      url: `${baseUrl}/compare/prestyj-vs-resimpli`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/compare/resimpli-vs-prestyj`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/alanna-ai-vs-prestyj`,
+      url: `${baseUrl}/compare/prestyj-vs-alanna-ai`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,

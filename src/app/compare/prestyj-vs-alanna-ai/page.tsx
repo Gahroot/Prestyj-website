@@ -3,6 +3,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { alannaAiCompareData } from "@/lib/compare/data/alanna-ai";
 
-export default function AlannaAiVsPrestyjPage() {
+export default function PrestyjVsAlannaAiPage() {
   return <ComparePageWrapper data={alannaAiCompareData} />;
 }

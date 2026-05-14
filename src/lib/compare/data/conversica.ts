@@ -134,7 +134,7 @@ export const conversicaCompareData: ComparePageData = createComparePage({
     {
       title: "AI vs Human ISA",
       description: "The full cost comparison for enterprise teams",
-      href: "/compare/prestyj-vs-isa",
+      href: "/alternatives/human-isa",
       linkText: "Read comparison",
     },
     {

@@ -224,8 +224,8 @@ export default function ResultsPage() {
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl">
               The numbers below are the targets we&apos;ve set for ourselves — not customer
-              outcomes. We&apos;ll publish real results once founding customers complete their
-              first quarter with us.
+              outcomes. We&apos;ll publish real results once founding customers complete their first
+              quarter with us.
             </p>
           </motion.div>
 
@@ -463,7 +463,7 @@ export default function ResultsPage() {
               </p>
             </Link>
             <Link
-              href="/compare/prestyj-vs-isa"
+              href="/alternatives/human-isa"
               className="border-border hover:border-primary/50 rounded-lg border p-4 transition-colors"
             >
               <p className="text-foreground mb-1 font-medium">AI vs Human ISA</p>
@@ -489,7 +489,9 @@ export default function ResultsPage() {
               No problem. Book a demo to see how PRESTYJ can transform your lead response.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
-              <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <p className="text-muted-foreground mt-4 text-sm">

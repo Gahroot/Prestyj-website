@@ -3,10 +3,6 @@ import { alannaAiMetadata } from "@/lib/compare/data/alanna-ai";
 
 export const metadata = generateCompareMetadata(alannaAiMetadata);
 
-export default function AlannaAiVsPrestyjLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function PrestyjVsAlannaAiLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }

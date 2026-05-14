@@ -71,25 +71,22 @@ export function getAllUrls(): string[] {
     urls.push(`${BASE_URL}/best-for/${slug}`);
   }
 
-  // Compare pages
+  // Compare pages (canonical prestyj-vs-X orientation only;
+  // ISA/answering-service variants redirect to /alternatives/human-isa)
   const compareRoutes = [
     "/compare/prestyj-vs-conversica",
     "/compare/prestyj-vs-structurely",
     "/compare/prestyj-vs-drift",
-    "/compare/prestyj-vs-internal-isa-team",
-    "/compare/prestyj-vs-offshore-isa",
-    "/compare/prestyj-vs-answering-service",
     "/compare/prestyj-vs-junior-social-hire",
     // Social media / content competitors
-    "/compare/alanna-ai-vs-prestyj",
-    "/compare/follow-up-boss-vs-prestyj",
-    "/compare/lofty-vs-prestyj",
+    "/compare/prestyj-vs-alanna-ai",
+    "/compare/prestyj-vs-follow-up-boss",
+    "/compare/prestyj-vs-lofty",
     "/compare/prestyj-vs-adcreative-ai",
     "/compare/prestyj-vs-social-media-agency",
     "/compare/prestyj-vs-sprout-social",
     "/compare/prestyj-vs-synthesia",
-    "/compare/resimpli-vs-prestyj",
-    "/compare/structurely-vs-prestyj",
+    "/compare/prestyj-vs-resimpli",
   ];
   urls.push(...compareRoutes.map((route) => `${BASE_URL}${route}`));
 
