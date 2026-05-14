@@ -14,7 +14,7 @@ export const creatorsSocialMediaAgencyAlternative: AlternativePageContent = crea
       "Traditional social media agencies serving full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product — retainer-based engagements shipping 20–30 posts per month with a senior strategist on calls and a junior team doing the actual production.",
   },
   meta: {
-    title: "Creators Social Media Agency Alternative | Prestyj — 1,500+ Posts/Month",
+    title: "Creators Social Media Agency Alternative — 1,500+ Posts/Month",
     description:
       "Looking for a creators social media agency alternative? Prestyj replaces the $3K–$15K/mo agency retainer with an AI content engine: 1,500+ posts/month across 7 platforms, vertical-researched for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product, no contract, no account manager.",
     keywords: [
@@ -127,13 +127,24 @@ export const creatorsSocialMediaAgencyAlternative: AlternativePageContent = crea
       price: "$3K–$15K",
       period: "/month retainer",
       note: "3–12 month contract typical, plus per-platform upcharges and the account-manager overhead inflating every line item. A traditional social media marketing agency selling retainer-based posting, strategy decks, and account management — typically $3K–$15K/month for 20–30 posts.",
-      pros: ["Senior strategist on calls when you want a meeting","Brand workshops and pillar docs delivered up front","Established relationship model for clients who prefer agencies"],
-      cons: ["20–30 posts/month is the industry-standard ceiling","$3K–$15K/month means $100–$750 per post once you do the math","3–12 month contracts lock you in before you see results","Slow 2–4 week creative cycles miss trends and platform shifts","Account-manager overhead inflates the line item","Quality varies wildly between agencies and the junior staff actually doing the work"],
+      pros: [
+        "Senior strategist on calls when you want a meeting",
+        "Brand workshops and pillar docs delivered up front",
+        "Established relationship model for clients who prefer agencies",
+      ],
+      cons: [
+        "20–30 posts/month is the industry-standard ceiling",
+        "$3K–$15K/month means $100–$750 per post once you do the math",
+        "3–12 month contracts lock you in before you see results",
+        "Slow 2–4 week creative cycles miss trends and platform shifts",
+        "Account-manager overhead inflates the line item",
+        "Quality varies wildly between agencies and the junior staff actually doing the work",
+      ],
     },
     prestyjPricingOverrides: {
-      price: "$3,000",
-      period: "/month",
-      note: "All-in. 1,500+ posts/month across 7 platforms. Creators-researched scripts, voice-trained captions, no contract, no account manager.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "1,500+ posts/month across 7 platforms — flat fee",
         "Daily auto-publish with Creators-specific scripts and captions",
@@ -171,7 +182,8 @@ export const creatorsSocialMediaAgencyAlternative: AlternativePageContent = crea
     },
     {
       icon: "Target",
-      title: "Built for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product",
+      title:
+        "Built for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product",
       description:
         "Generic agencies pivot from creators to dentists to SaaS without changing their playbook. Prestyj is purpose-built for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product — every script, hook, and content angle is written for the creators-specific pain points your business actually sells against. Creator voice IS the product — generic 'creator tips' content erases what makes your audience watch. Voice training, format consistency, and on-brand caption patterns are the entire game.",
     },
@@ -201,7 +213,8 @@ export const creatorsSocialMediaAgencyAlternative: AlternativePageContent = crea
     {
       href: "/ai-content-department",
       title: "AI Content Department — the AI agent for social media",
-      description: "How Prestyj.s AI Content Department replaces your agency, freelancer, and in-house stack.",
+      description:
+        "How Prestyj.s AI Content Department replaces your agency, freelancer, and in-house stack.",
     },
     {
       href: "/best-for/done-for-you-social-for-creators",
@@ -211,12 +224,14 @@ export const creatorsSocialMediaAgencyAlternative: AlternativePageContent = crea
     {
       href: "/best-for/social-volume-strategy-for-creators",
       title: "Social Volume Strategy for Creators",
-      description: "Cadence math, platform priorities, and the 2026 volume strategy for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product.",
+      description:
+        "Cadence math, platform priorities, and the 2026 volume strategy for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product.",
     },
     {
       href: "/compare/prestyj-vs-fiverr-for-creators",
       title: "Prestyj vs Fiverr (for Creators)",
-      description: "Head-to-head comparison against the dominant non-agency alternative for creators.",
+      description:
+        "Head-to-head comparison against the dominant non-agency alternative for creators.",
     },
   ],
   cta: {

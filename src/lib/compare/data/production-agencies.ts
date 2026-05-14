@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const productionAgenciesCompareData: ComparePageData = createComparePage(
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -147,9 +147,9 @@ export const productionAgenciesCompareData: ComparePageData = createComparePage(
 export const productionAgenciesMetadata: CompareMetadata = {
   slug: "prestyj-vs-production-agencies",
   competitorName: "Production Agencies",
-  title: "PRESTYJ vs Production Agencies: 1,000 Ads or 2 Polished Spots?",
+  title: "Prestyj vs Production Agencies: 1,000 Ads or 2 Polished Spots?",
   description:
-    "Agencies ship 1-5 polished spots in 12 weeks for $20K+. PRESTYJ ships 300-1,000 native real-face ads in 24 hours for $1,497. Polished ads get scrolled.",
+    "Agencies ship 1-5 polished spots in 12 weeks for $20K+. Prestyj ships 300-1,000 native real-face ads in 24 hours for $1,497. Polished ads get scrolled.",
   keywords: [
     "video production agency alternative",
     "ad agency alternative",

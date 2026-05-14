@@ -16,7 +16,7 @@ export const eliseai: AlternativePageContent = createAlternativePage({
     description: "AI leasing assistant and workflow automation for multifamily",
   },
   meta: {
-    title: "EliseAI Alternatives for Multifamily AI Leasing | Prestyj",
+    title: "EliseAI Alternatives for Multifamily AI Leasing",
     description:
       "Looking for EliseAI alternatives? Compare Prestyj vs EliseAI for multifamily AI leasing. Done-for-you implementation, transparent pricing, and voice-first lead response.",
     keywords: [

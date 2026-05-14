@@ -2,7 +2,7 @@ import type { Organization, WebSite, Product, FAQPage, WithContext } from "schem
 import { SafeJsonLd } from "./safe-json-ld";
 
 const siteConfig = {
-  name: "PRESTYJ",
+  name: "Prestyj",
   url: "https://prestyj.com",
   description:
     "We build AI agents for marketing & sales. AI agents and automations that capture leads, respond instantly, qualify them, and book meetings — built for businesses.",

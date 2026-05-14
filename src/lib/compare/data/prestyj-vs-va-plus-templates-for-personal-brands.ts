@@ -26,7 +26,10 @@ export const personalBrandsVsVaPlusTemplatesForCompareData: ComparePageData = cr
       "solopreneur thought leaders, course creators, and authors monetizing through audience keep defaulting to va + canva templates stack for social — and watching them ship 40–80 posts/month at 40–80 templated posts/month, formulaic output. Prestyj is the AI content engine alternative: 1,500+ posts/month across 7 platforms, Personal Brands-researched, voice-trained, month-to-month from $3,000/mo flat.",
     description: "",
     keyStats: [
-      { value: "$3K/mo vs $800–$2,500/month (VA salary + Canva Pro)", label: "AI engine vs va + templates" },
+      {
+        value: "$3K/mo vs $800–$2,500/month (VA salary + Canva Pro)",
+        label: "AI engine vs va + templates",
+      },
       { value: "1,500+ vs 40–80", label: "Posts/month — Prestyj vs va + templates" },
       { value: "7 vs 1–3", label: "Platforms covered" },
       { value: "Days vs 4–8 wks", label: "Onboarding time" },
@@ -34,8 +37,8 @@ export const personalBrandsVsVaPlusTemplatesForCompareData: ComparePageData = cr
   },
   pricing: {
     prestyj: {
-      price: "$3,000",
-      priceSubtext: "/month · 1,500+ posts · Personal Brands-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · AI agents + content engine · tuned for Personal Brands",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -53,18 +56,40 @@ export const personalBrandsVsVaPlusTemplatesForCompareData: ComparePageData = cr
     },
   },
   features: [
-    { feature: "Personal Brands-specific vertical research", prestyj: true, competitor: false, note: "VA + Canva Templates Stack does not research personal brands pain points by default" },
+    {
+      feature: "Personal Brands-specific vertical research",
+      prestyj: true,
+      competitor: false,
+      note: "VA + Canva Templates Stack does not research personal brands pain points by default",
+    },
     { feature: "Posts per month", prestyj: "1,500+", competitor: "40–80" },
-    { feature: "Platforms covered", prestyj: "7 (LinkedIn, X, Instagram, YouTube, +)", competitor: "1–3 typical" },
-    { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$800–$2,500/month (VA salary + Canva Pro)" },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (LinkedIn, X, Instagram, YouTube, +)",
+      competitor: "1–3 typical",
+    },
+    {
+      feature: "Monthly cost",
+      prestyj: "$3,000 flat",
+      competitor: "$800–$2,500/month (VA salary + Canva Pro)",
+    },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$50–$750" },
     { feature: "Voice training on your existing content", prestyj: true, competitor: false },
     { feature: "Daily auto-publish", prestyj: true, competitor: false },
-    { feature: "Long-term contract required", prestyj: false, competitor: false, note: "Per-gig or per-month — but you replace the cost monthly" },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: false,
+      note: "Per-gig or per-month — but you replace the cost monthly",
+    },
     { feature: "Onboarding time", prestyj: "Days", competitor: "2–6 weeks (training)" },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "VA timezone + hours" },
     { feature: "Performance learning loop", prestyj: true, competitor: false },
-    { feature: "Risk of voice drift", prestyj: "Low — trained on your existing content", competitor: "High — templates flatten voice" },
+    {
+      feature: "Risk of voice drift",
+      prestyj: "Low — trained on your existing content",
+      competitor: "High — templates flatten voice",
+    },
   ],
   whySwitch: {
     title: "Why Personal Brands Pick the AI Content Engine Over VA + Canva Templates Stack",
@@ -104,10 +129,30 @@ export const personalBrandsVsVaPlusTemplatesForCompareData: ComparePageData = cr
     ],
   },
   relatedResources: [
-    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
-    { title: "Done-For-You Social Media for Personal Brands", description: "Personal Brands-specific offer page", href: "/best-for/done-for-you-social-for-personal-brands", linkText: "Read use case" },
-    { title: "Social Volume Strategy for Personal Brands", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-personal-brands", linkText: "See the strategy" },
-    { title: "Personal Brands Social Media Agency Alternative", description: "Alternative to traditional personal brands social media agencies", href: "/alternatives/personal-brands-social-media-agency-alternative", linkText: "Compare" },
+    {
+      title: "AI Content Department — the AI agent for social media",
+      description: "See the Prestyj AI Content Department product",
+      href: "/ai-content-department",
+      linkText: "Learn more",
+    },
+    {
+      title: "Done-For-You Social Media for Personal Brands",
+      description: "Personal Brands-specific offer page",
+      href: "/best-for/done-for-you-social-for-personal-brands",
+      linkText: "Read use case",
+    },
+    {
+      title: "Social Volume Strategy for Personal Brands",
+      description: "Cadence math and 2026 platform priorities",
+      href: "/best-for/social-volume-strategy-for-personal-brands",
+      linkText: "See the strategy",
+    },
+    {
+      title: "Personal Brands Social Media Agency Alternative",
+      description: "Alternative to traditional personal brands social media agencies",
+      href: "/alternatives/personal-brands-social-media-agency-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Personal Brands Pick the AI Content Engine Over VA + Canva Templates Stack.",
@@ -122,7 +167,7 @@ export const personalBrandsVsVaPlusTemplatesForCompareData: ComparePageData = cr
 export const personalBrandsVsVaPlusTemplatesForCompareDataMetadata: CompareMetadata = {
   slug: "prestyj-vs-va-plus-templates-for-personal-brands",
   competitorName: "VA + Canva Templates Stack (for Personal Brands)",
-  title: "PRESTYJ vs VA + Canva Templates Stack for Personal Brands (2026 Cadence Math)",
+  title: "Prestyj vs VA + Canva Templates Stack for Personal Brands (2026 Cadence Math)",
   description:
     "An offshore or part-time VA running a Canva template library and a scheduling tool — the duct-tape stack many solo operators reach for before hiring a real team. See full posts-per-month math and why solopreneur thought leaders, course creators, and authors monetizing through audience pick the AI content engine from $3,000/mo over $800–$2,500/month (VA salary + Canva Pro).",
   keywords: [

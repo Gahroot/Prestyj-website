@@ -11,7 +11,7 @@ export const chicago: LocationPageContent = {
       "Chicago is the third-largest home services market in the country and one of the most underrated for contractors who know how to advertise. Brutal winters, polar vortex events, and a housing stock dominated by century-old brick two-flats, bungalows, and pre-war condo buildings generate enormous, recurring demand for heating, plumbing, and structural work. The metro spans three states and dozens of micro-markets, from the Gold Coast and Lincoln Park to Naperville, Oak Park, and Schaumburg. Contractors who can run neighborhood-specific Facebook campaigns instead of blasting the whole DMA are running circles around bigger, less precise competitors.",
   },
   meta: {
-    title: "Facebook Ads for Chicago Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Chicago Home Service Contractors",
     description:
       "Grow your Chicago HVAC, roofing, plumbing, or contracting business with Facebook ads built for Chicagoland's brutal winters and aging pre-war housing stock.",
     keywords: [
@@ -92,8 +92,7 @@ export const chicago: LocationPageContent = {
         "We never run a single Chicagoland campaign. We segment at the neighborhood and ZIP level — Lincoln Park looks nothing like Cicero, and the North Shore is a different planet from the South Suburbs. Each segment gets its own creative, offer, and audience definition based on housing stock, income, and the actual jobs you want to win there. Treating Chicago as one market is the fastest way to burn ad budget in this city.",
     },
     {
-      question:
-        "How do I time Facebook ads around Chicago's wild seasonal demand swings?",
+      question: "How do I time Facebook ads around Chicago's wild seasonal demand swings?",
       answer:
         "Chicago contractors live and die by seasonal timing, and most get it wrong. We pre-build heating campaigns in late September before the first cold snap, ramp roofing and exterior work in February for spring scheduling, and run tune-up and maintenance ads in shoulder months when CPMs are 40-60% cheaper. The contractors waiting until the polar vortex hits to turn ads on are paying triple what they need to.",
     },
@@ -110,8 +109,7 @@ export const chicago: LocationPageContent = {
         "They work very well, but the creative has to match. Premium audiences ignore discount-driven offers and respond to craftsmanship, designer collaborations, architecture-aware remodels, and warranty depth. We build North Shore campaigns with completely different visual style and messaging tone than what we'd run in Aurora or Joliet — same platform, fundamentally different audience strategy.",
     },
     {
-      question:
-        "Which Chicagoland areas deliver the best ROI for home service Facebook ads?",
+      question: "Which Chicagoland areas deliver the best ROI for home service Facebook ads?",
       answer:
         "Depends entirely on the service. North Side neighborhoods (Lincoln Park, Lakeview, Logan Square) and inner-ring suburbs (Oak Park, Evanston) are repipe, gut-rehab, and pre-war HVAC goldmines. North Shore and DuPage are premium remodel and luxury-tier service territory. Outer suburbs (Naperville, Schaumburg, Crystal Lake) drive newer-home services and solar. We build campaigns at the ZIP and even building-age level instead of blasting the entire metro.",
     },

@@ -11,7 +11,7 @@ export const doneForYouSocialForCoaches: BestForPageContent = {
       "Done-for-you social media content service for business, executive, and life coaches selling $2K–$25K coaching programs and group offers. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for Coaches | Prestyj",
+    title: "Done-For-You Social Media for Coaches",
     description:
       "Done-for-you social media content for coaches. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for business, executive, and life coaches selling $2K–$25K coaching programs and group offers.",
     keywords: [
@@ -67,7 +67,8 @@ export const doneForYouSocialForCoaches: BestForPageContent = {
         "Prestyj produces 30–50 posts per day across LinkedIn, Instagram, YouTube Shorts, X and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "You stare at a blank screen for 30 minutes before every post — writer's block is killing your pipeline",
+      problem:
+        "You stare at a blank screen for 30 minutes before every post — writer's block is killing your pipeline",
       solution:
         "Prestyj's content engine is trained on coaches-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
@@ -77,7 +78,8 @@ export const doneForYouSocialForCoaches: BestForPageContent = {
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for business, executive, and life coaches selling $2K–$25K coaching programs and group offers.",
     },
     {
-      problem: "Hiring a social media manager costs $3K–$5K/month and they still can't capture your coaching voice",
+      problem:
+        "Hiring a social media manager costs $3K–$5K/month and they still can't capture your coaching voice",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },

@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const sproutSocialCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -160,9 +160,9 @@ export const sproutSocialCompareData: ComparePageData = createComparePage({
 export const sproutSocialMetadata: CompareMetadata = {
   slug: "prestyj-vs-sprout-social",
   competitorName: "Sprout Social",
-  title: "PRESTYJ vs Sprout Social: A Scheduler Won't Create Your Ads (2026)",
+  title: "Prestyj vs Sprout Social: A Scheduler Won't Create Your Ads (2026)",
   description:
-    "Sprout Social is $249-$499/seat/mo and creates zero ads. PRESTYJ ships 300-1,000 vertical video ads with your real face in 24 hours for $1,497 one-time.",
+    "Sprout Social is $249-$499/seat/mo and creates zero ads. Prestyj ships 300-1,000 vertical video ads with your real face in 24 hours for $1,497 one-time.",
   keywords: [
     "sprout social alternative",
     "sprout social vs prestyj",

@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const creatifyCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -157,9 +157,9 @@ export const creatifyCompareData: ComparePageData = createComparePage({
 export const creatifyMetadata: CompareMetadata = {
   slug: "prestyj-vs-creatify",
   competitorName: "Creatify",
-  title: "PRESTYJ vs Creatify: Done-For-You or DIY Scripts? (2026)",
+  title: "Prestyj vs Creatify: Done-For-You or DIY Scripts? (2026)",
   description:
-    "Creatify renders AI avatars from scripts you write. PRESTYJ writes scripts AND films your real face. 300-1,000 ads in 24 hours, from $1,497 one-time.",
+    "Creatify renders AI avatars from scripts you write. Prestyj writes scripts AND films your real face. 300-1,000 ads in 24 hours, from $1,497 one-time.",
   keywords: [
     "creatify alternative",
     "creatify vs prestyj",

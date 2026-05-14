@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const synthesiaCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -168,9 +168,9 @@ export const synthesiaCompareData: ComparePageData = createComparePage({
 export const synthesiaMetadata: CompareMetadata = {
   slug: "prestyj-vs-synthesia",
   competitorName: "Synthesia",
-  title: "PRESTYJ vs Synthesia: AI Avatar or Real Owner Face? (2026)",
+  title: "Prestyj vs Synthesia: AI Avatar or Real Owner Face? (2026)",
   description:
-    "Synthesia's AI avatars are built for training, not paid ads. PRESTYJ films the real you — 300-1,000 vertical ads in 24 hours for $1,497 one-time, no subscription.",
+    "Synthesia's AI avatars are built for training, not paid ads. Prestyj films the real you — 300-1,000 vertical ads in 24 hours for $1,497 one-time, no subscription.",
   keywords: [
     "synthesia alternative",
     "synthesia vs prestyj",

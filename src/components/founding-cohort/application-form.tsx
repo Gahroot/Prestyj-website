@@ -76,8 +76,7 @@ const STEPS: ReadonlyArray<{
   {
     key: "fit",
     title: "What you sell",
-    description:
-      "Tell us your offer and why you're the right fit for a founding spot.",
+    description: "Tell us your offer and why you're the right fit for a founding spot.",
     icon: Users,
     fields: ["offer", "whyYou"],
   },
@@ -87,12 +86,7 @@ const STEPS: ReadonlyArray<{
     description:
       "Founding spots aren't free — you pay in testimonial, review, and results data. Confirm you're in for all four.",
     icon: CheckCircle2,
-    fields: [
-      "agreeTestimonial",
-      "agreeReview",
-      "agreeRun14Days",
-      "agreeResultsRights",
-    ],
+    fields: ["agreeTestimonial", "agreeReview", "agreeRun14Days", "agreeResultsRights"],
   },
 ];
 
@@ -150,9 +144,7 @@ export function FoundingCohortApplicationForm() {
     // they waste effort on the rest if they can't qualify anyway.
     if (step.key === "qualify") {
       const spendValue = form.getValues("monthlyAdSpend");
-      const option = MONTHLY_AD_SPEND_OPTIONS.find(
-        (o) => o.value === spendValue,
-      );
+      const option = MONTHLY_AD_SPEND_OPTIONS.find((o) => o.value === spendValue);
       if (option && !option.qualifies) {
         setRejection({
           reason: "client_qualify_out",
@@ -193,9 +185,7 @@ export function FoundingCohortApplicationForm() {
 
       router.push(json.approvedHref);
     } catch (err) {
-      setSubmitError(
-        err instanceof Error ? err.message : "Something went wrong. Try again.",
-      );
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Try again.");
     }
   };
 
@@ -217,14 +207,14 @@ export function FoundingCohortApplicationForm() {
       <Card className="border-border/80 shadow-sm">
         <CardContent className="space-y-6 p-6 sm:p-8 lg:p-10">
           <div className="flex items-start gap-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-muted text-muted-foreground">
+            <div className="bg-muted text-muted-foreground flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
               <AlertCircle className="h-6 w-6" />
             </div>
             <div>
               <h2 className="font-heading text-2xl font-bold tracking-tight">
                 Not a founding-cohort fit right now
               </h2>
-              <p className="mt-2 text-muted-foreground">{rejection.message}</p>
+              <p className="text-muted-foreground mt-2">{rejection.message}</p>
             </div>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -256,7 +246,7 @@ export function FoundingCohortApplicationForm() {
     <Card className="border-border/80 shadow-sm">
       <CardContent className="p-6 sm:p-8 lg:p-10">
         <div className="mb-8 space-y-4">
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
+          <div className="text-muted-foreground flex items-center justify-between text-sm">
             <span>
               Step {stepIndex + 1} of {STEPS.length}
             </span>
@@ -264,33 +254,25 @@ export function FoundingCohortApplicationForm() {
           </div>
           <Progress value={progress} />
           <div className="flex items-start gap-4 pt-2">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <div className="bg-primary/10 text-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
               <StepIcon className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-heading text-2xl font-bold tracking-tight">
-                {step.title}
-              </h2>
+              <h2 className="font-heading text-2xl font-bold tracking-tight">{step.title}</h2>
               <p className="text-muted-foreground">{step.description}</p>
             </div>
           </div>
         </div>
 
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-6"
-            noValidate
-          >
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
             {step.key === "basics" && <BasicsStep form={form} />}
-            {step.key === "qualify" && (
-              <QualifyStep form={form} togglePlatform={togglePlatform} />
-            )}
+            {step.key === "qualify" && <QualifyStep form={form} togglePlatform={togglePlatform} />}
             {step.key === "fit" && <FitStep form={form} />}
             {step.key === "commit" && <CommitStep form={form} />}
 
             {submitError && (
-              <p className="rounded-md border border-destructive/40 bg-destructive/5 p-3 text-sm text-destructive">
+              <p className="border-destructive/40 bg-destructive/5 text-destructive rounded-md border p-3 text-sm">
                 {submitError}
               </p>
             )}
@@ -308,12 +290,7 @@ export function FoundingCohortApplicationForm() {
               </Button>
 
               {!isLastStep ? (
-                <Button
-                  type="button"
-                  onClick={handleNext}
-                  size="lg"
-                  className="sm:min-w-40"
-                >
+                <Button type="button" onClick={handleNext} size="lg" className="sm:min-w-40">
                   Continue
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -451,8 +428,8 @@ function QualifyStep({
               </SelectContent>
             </Select>
             <FormDescription>
-              Founding spots are reserved for businesses already spending — the
-              case study needs real ad-account data.
+              Founding spots are reserved for businesses already spending — the case study needs
+              real ad-account data.
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -472,13 +449,7 @@ function QualifyStep({
                   <button
                     type="button"
                     key={option.value}
-                    onClick={() =>
-                      togglePlatform(
-                        option.value,
-                        field.value ?? [],
-                        field.onChange,
-                      )
-                    }
+                    onClick={() => togglePlatform(option.value, field.value ?? [], field.onChange)}
                     className={cn(
                       "rounded-lg border px-3 py-2 text-left text-sm font-medium transition",
                       active
@@ -541,9 +512,7 @@ function FitStep({ form }: StepProps) {
                 {...field}
               />
             </FormControl>
-            <FormDescription>
-              One or two sentences. Service, market, price point.
-            </FormDescription>
+            <FormDescription>One or two sentences. Service, market, price point.</FormDescription>
             <FormMessage />
           </FormItem>
         )}
@@ -562,8 +531,8 @@ function FitStep({ form }: StepProps) {
               />
             </FormControl>
             <FormDescription>
-              We&apos;re picking founders who&apos;ll actually run the ads and
-              have something to say in a testimonial.
+              We&apos;re picking founders who&apos;ll actually run the ads and have something to say
+              in a testimonial.
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -574,25 +543,19 @@ function FitStep({ form }: StepProps) {
 }
 
 const COMMITMENTS: Array<{
-  name:
-    | "agreeTestimonial"
-    | "agreeReview"
-    | "agreeRun14Days"
-    | "agreeResultsRights";
+  name: "agreeTestimonial" | "agreeReview" | "agreeRun14Days" | "agreeResultsRights";
   label: string;
   detail: string;
 }> = [
   {
     name: "agreeRun14Days",
     label: `Run the batch for ${FOUNDING_COHORT.testWindowDays}+ days at $${FOUNDING_COHORT.minDailyTestSpendUsd}/day minimum on the platform of your choice.`,
-    detail:
-      "No spend, no signal. We need real performance data, not a download-and-shelf.",
+    detail: "No spend, no signal. We need real performance data, not a download-and-shelf.",
   },
   {
     name: "agreeTestimonial",
     label: "Record a 3–5 minute video testimonial after the 14-day test.",
-    detail:
-      "What you tested, what won, the number that moved. Specifics, not vibes.",
+    detail: "What you tested, what won, the number that moved. Specifics, not vibes.",
   },
   {
     name: "agreeReview",
@@ -602,7 +565,7 @@ const COMMITMENTS: Array<{
   {
     name: "agreeResultsRights",
     label:
-      "Allow PRESTYJ to use your name, logo, ad screenshots, and performance data in marketing.",
+      "Allow Prestyj to use your name, logo, ad screenshots, and performance data in marketing.",
     detail:
       "Standard case-study rights — we don't share private financials or proprietary creative.",
   },
@@ -611,14 +574,11 @@ const COMMITMENTS: Array<{
 function CommitStep({ form }: StepProps) {
   return (
     <div className="space-y-4">
-      <div className="rounded-xl border border-primary/30 bg-primary/5 p-4 text-sm">
-        <p className="font-semibold text-foreground">
-          The deal, plainly:
-        </p>
-        <p className="mt-1 text-muted-foreground">
-          You get 300 video ads (a $1,497 batch) for $0. We get a founding case
-          study. All four boxes have to be checked or it doesn&apos;t work for
-          either of us.
+      <div className="border-primary/30 bg-primary/5 rounded-xl border p-4 text-sm">
+        <p className="text-foreground font-semibold">The deal, plainly:</p>
+        <p className="text-muted-foreground mt-1">
+          You get 300 video ads (a $1,497 batch) for $0. We get a founding case study. All four
+          boxes have to be checked or it doesn&apos;t work for either of us.
         </p>
       </div>
       {COMMITMENTS.map((commitment) => (
@@ -639,17 +599,15 @@ function CommitStep({ form }: StepProps) {
               >
                 <input
                   type="checkbox"
-                  className="mt-1 h-4 w-4 shrink-0 accent-primary"
+                  className="accent-primary mt-1 h-4 w-4 shrink-0"
                   checked={Boolean(field.value)}
                   onChange={(e) => field.onChange(e.target.checked)}
                 />
                 <span className="space-y-1">
-                  <span className="block text-sm font-medium text-foreground">
+                  <span className="text-foreground block text-sm font-medium">
                     {commitment.label}
                   </span>
-                  <span className="block text-xs text-muted-foreground">
-                    {commitment.detail}
-                  </span>
+                  <span className="text-muted-foreground block text-xs">{commitment.detail}</span>
                 </span>
               </label>
               <FormMessage />

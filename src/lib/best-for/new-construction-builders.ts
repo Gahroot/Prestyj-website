@@ -9,7 +9,7 @@ export const newConstructionBuilders: BestForPageContent = {
       "Home builders and new development sales teams testing video ad creative to drive model home tours, VIP list sign-ups, and pre-sales from social media.",
   },
   meta: {
-    title: "Batch Video Ads for New Construction Builders | Prestyj",
+    title: "Batch Video Ads for New Construction Builders",
     description:
       "New home builders: turn 20 minutes of model home footage into 300–1,000 video ad variations for Facebook and Instagram. Test which pain points — price, lifestyle, timing — drive the most model home tours.",
     keywords: [
@@ -57,7 +57,8 @@ export const newConstructionBuilders: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You're spending on Facebook ads but don't know which message attracts serious buyers",
+      problem:
+        "You're spending on Facebook ads but don't know which message attracts serious buyers",
       solution:
         "We build your batch around 3–10 specific buyer motivations — price lock urgency, community lifestyle, design customization, school district — so your ad spend generates real signal, not just impressions.",
     },

@@ -10,7 +10,7 @@ export const realEstateVideoAdsNewYork: BestForPageContent = {
       "New York State agents using batch vertical video ad creative to convert NYC condo / brownstone, Westchester / Long Island family, upstate (Rochester, Buffalo, Albany) across REBNY, OneKey, GRAR, WNYREIS and regional MLS territory under NY DOS compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for New York | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for New York | 300–1,000 Scripted Ads",
     description:
       "NY State agents: 300–1,000 vertical video ads in 24 hours. Tuned for REBNY, OneKey, upstate MLSs, and NY DOS compliance. From $1,497.",
     keywords: [
@@ -50,7 +50,8 @@ export const realEstateVideoAdsNewYork: BestForPageContent = {
     },
     {
       icon: "Building2",
-      title: "Hudson Valley (Beacon, Hudson, Saugerties) is a distinct second-home / weekender market",
+      title:
+        "Hudson Valley (Beacon, Hudson, Saugerties) is a distinct second-home / weekender market",
       description:
         "Hudson Valley attracts NYC weekender and permanent-escape buyers. Hudson Valley-specific creative with historic-home and commute-from-NYC honesty converts.",
     },
@@ -63,7 +64,8 @@ export const realEstateVideoAdsNewYork: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your NYC creative is generic 'Manhattan luxury' and doesn't reference specific buildings",
+      problem:
+        "Your NYC creative is generic 'Manhattan luxury' and doesn't reference specific buildings",
       solution:
         "We script building-aware creative: 'the three 57th Street buildings still offering negotiable terms in 2026,' 'Brooklyn Heights vs Cobble Hill — the block-level value gap.'",
     },

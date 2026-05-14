@@ -10,7 +10,7 @@ export const youtubeAdsRealEstate: BestForPageContent = createBestForPage({
     description: "Real estate teams converting YouTube ad leads with AI-powered instant response",
   },
   meta: {
-    title: "AI Lead Response for Real Estate YouTube Ads | Prestyj",
+    title: "AI Lead Response for Real Estate YouTube Ads",
     description:
       "Convert more YouTube ad leads into appointments. Prestyj responds instantly to every real estate YouTube lead, qualifies buyers and sellers, and books showings automatically.",
     keywords: [

@@ -11,7 +11,7 @@ export const socialVolumeStrategyForAgencyOwners: BestForPageContent = {
       "The 2026 social media volume strategy for founders of $30K–$300K/month marketing, creative, and growth agencies — why 1,500+ posts per month across 7 platforms is the cadence the algorithms now reward, and how to execute it without a 5-person content team.",
   },
   meta: {
-    title: "Social Media Volume Strategy for Agency Owners (2026 Cadence) | Prestyj",
+    title: "Social Media Volume Strategy for Agency Owners (2026 Cadence)",
     description:
       "How many posts per month should a agency owner publish in 2026? The data-driven volume strategy for founders of $30K–$300K/month marketing, creative, and growth agencies: platform priorities, cadence math, and the content engine that makes it executable.",
     keywords: [
@@ -43,7 +43,8 @@ export const socialVolumeStrategyForAgencyOwners: BestForPageContent = {
     },
     {
       icon: "Target",
-      title: "Platform priority stack: LinkedIn (primary for client acquisition), Instagram + X (founder brand)",
+      title:
+        "Platform priority stack: LinkedIn (primary for client acquisition), Instagram + X (founder brand)",
       description:
         "Not every platform is equal weight for founders of $30K–$300K/month marketing, creative, and growth agencies. The priority stack: LinkedIn (primary for client acquisition), Instagram + X (founder brand). LinkedIn and Instagram carry the highest leverage — the others matter for distribution but yield decays without daily input on the primary platforms.",
     },
@@ -62,7 +63,8 @@ export const socialVolumeStrategyForAgencyOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "The agency or in-house team shipping 20–30 posts/month is losing you reach every quarter",
+      problem:
+        "The agency or in-house team shipping 20–30 posts/month is losing you reach every quarter",
       solution:
         "Platform algorithms in 2026 demote low-cadence accounts — they read sparse posting as low-quality signal and reduce distribution. Agency Owners who scale to 1,500+ posts/month see 3–7× reach improvement within 60 days, not because individual posts are better but because algorithmic surface area expanded.",
     },

@@ -13,7 +13,8 @@ export const plumbingContractorsVideoProductionAlternative: AlternativePageConte
       "The legacy way residential and commercial plumbing contractors running $1M-$15M/year with 3-30 trucks buy video creative — typically a fiverr video editors engagement that ships 1-8 videos per cycle at high per-unit cost.",
   },
   meta: {
-    title: "Plumbing Contractors Video Production Alternative — Batch Creative That Ships in 24 Hours | PRESTYJ",
+    title:
+      "Plumbing Contractors Video Production Alternative — Batch Creative That Ships in 24 Hours",
     description:
       "Traditional plumbing video production ships 4 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-min recording. Same real face. ≈$5/ad. From $1,497 flat.",
     keywords: [
@@ -36,15 +37,18 @@ export const plumbingContractorsVideoProductionAlternative: AlternativePageConte
   industryStats: [
     {
       stat: "300-1,000",
-      description: "ad variations per plumbing batch — versus 1-8 from a typical production engagement",
+      description:
+        "ad variations per plumbing batch — versus 1-8 from a typical production engagement",
     },
     {
       stat: "≈$5",
-      description: "cost per ad at the 500-ad tier — versus $25-$500per gig for fiverr video editors",
+      description:
+        "cost per ad at the 500-ad tier — versus $25-$500per gig for fiverr video editors",
     },
     {
       stat: "24 hrs",
-      description: "turnaround from footage delivery — versus 14-45 days through traditional production",
+      description:
+        "turnaround from footage delivery — versus 14-45 days through traditional production",
     },
     {
       stat: "0",
@@ -114,8 +118,9 @@ export const plumbingContractorsVideoProductionAlternative: AlternativePageConte
       ],
     },
     prestyjPricing: {
-      price: "$1,497 – $3,997",
-      note: "Flat fee. 300 ads / 3 angles at $1,497. 500 ads / 5 angles at $2,497. 1,000 ads / 10 angles at $3,997.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "300-1,000 ad variations per batch",
         "Plumbing-researched scripts written for you",
@@ -169,7 +174,8 @@ export const plumbingContractorsVideoProductionAlternative: AlternativePageConte
     {
       href: "/batch-video-ads",
       title: "Batch Video Ads — the Service",
-      description: "How Prestyj turns 20 minutes of footage into 300-1,000 vertical ads in 24 hours.",
+      description:
+        "How Prestyj turns 20 minutes of footage into 300-1,000 vertical ads in 24 hours.",
     },
     {
       href: "/best-for/batch-video-ads-for-plumbing-contractors",
@@ -179,7 +185,8 @@ export const plumbingContractorsVideoProductionAlternative: AlternativePageConte
     {
       href: "/best-for/cost-per-tested-ad-angle-for-plumbing-contractors",
       title: "Cost Per Tested Ad Angle for Plumbing",
-      description: "Full pricing breakdown across batch, agency, freelancer, and in-house production paths.",
+      description:
+        "Full pricing breakdown across batch, agency, freelancer, and in-house production paths.",
     },
     {
       href: "/compare/prestyj-vs-fiverr-video-for-plumbing-contractors",

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Guide: Reactivate Dead Leads with AI | PRESTYJ",
+  title: "Free Guide: Reactivate Dead Leads with AI",
   description:
     "Download the free guide on how to reactivate dead leads using AI-powered outreach. Turn old contacts into booked appointments — automatically.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "dead lead recovery",
   ],
   openGraph: {
-    title: "Free Guide: Reactivate Dead Leads with AI | PRESTYJ",
+    title: "Free Guide: Reactivate Dead Leads with AI",
     description:
       "Your old leads are worth thousands. Download the free guide to reactivate them with AI-powered outreach.",
     type: "website",

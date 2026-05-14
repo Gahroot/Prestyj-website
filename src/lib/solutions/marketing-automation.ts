@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const marketingAutomation: SolutionPageContent = {
   slug: "marketing-automation",
   meta: {
-    title: "Marketing Automation | AI Ads & Landing Pages for Service Businesses | Prestyj",
+    title: "Marketing Automation | AI Ads & Landing Pages for Service Businesses",
     description:
       "Transform your marketing with AI-powered automation. Automated ad management, landing page optimization, and intelligent lead routing that maximizes ROI for home service businesses.",
     keywords: [

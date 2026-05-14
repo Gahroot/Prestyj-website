@@ -11,7 +11,7 @@ export const fintech: BestForPageContent = createBestForPage({
       "Fintech companies, neobanks, and financial technology firms needing AI customer response",
   },
   meta: {
-    title: "AI Voice for Fintech Companies | Prestyj",
+    title: "AI Voice for Fintech Companies",
     description:
       "Done-for-you AI voice response for fintech companies. Handle customer inquiries, qualify leads, and route to the right team 24/7. Compliance-aware and CRM-integrated.",
     keywords: [

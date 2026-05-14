@@ -11,7 +11,7 @@ export const commercialRealEstate: BestForPageContent = createBestForPage({
       "Commercial real estate brokerages with longer sales cycles and multi-stakeholder deals",
   },
   meta: {
-    title: "Best AI Lead Response for Commercial Real Estate | Prestyj",
+    title: "Best AI Lead Response for Commercial Real Estate",
     description:
       "Discover why CRE brokerages choose Prestyj. Handle multi-stakeholder qualification, longer sales cycles, and complex property inquiries with AI built for commercial deals.",
     keywords: [

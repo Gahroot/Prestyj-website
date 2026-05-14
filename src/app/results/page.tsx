@@ -185,10 +185,10 @@ export default function ResultsPage() {
         data={{
           "@context": "https://schema.org",
           "@type": "Product",
-          name: "PRESTYJ AI Sales Agent",
+          name: "Prestyj AI Sales Agent",
           description:
             "AI-powered lead response and appointment-setting platform for service businesses.",
-          brand: { "@type": "Brand", name: "PRESTYJ" },
+          brand: { "@type": "Brand", name: "Prestyj" },
         }}
       />
       <Navbar />
@@ -414,7 +414,7 @@ export default function ResultsPage() {
                 The Cost of Slow Response
               </h2>
               <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-                Cited industry statistics — not PRESTYJ customer data — showing why speed-to-lead
+                Cited industry statistics — not Prestyj customer data — showing why speed-to-lead
                 matters.
               </p>
             </div>
@@ -486,7 +486,7 @@ export default function ResultsPage() {
               Not Ready for Case Study?
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-xl text-lg">
-              No problem. Book a demo to see how PRESTYJ can transform your lead response.
+              No problem. Book a demo to see how Prestyj can transform your lead response.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
               <Link href="/book-demo">

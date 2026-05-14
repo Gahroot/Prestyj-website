@@ -9,7 +9,7 @@ export const videoAdsForElectricians: BestForPageContent = {
       "Electrical contractors using batch video ad creative testing to generate residential and commercial leads — covering panel upgrades, EV charger installs, generator installs, and emergency service angles.",
   },
   meta: {
-    title: "500 Electrician Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Electrician Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of electrician-specific video ads with your real face in 24 hours. Panel upgrades, EV chargers, generators, and emergency service angles. From $1,497.",
     keywords: [

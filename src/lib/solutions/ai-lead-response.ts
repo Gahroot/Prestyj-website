@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const aiLeadResponse: SolutionPageContent = {
   slug: "ai-lead-response",
   meta: {
-    title: "AI Lead Response | Contact Every Lead in Under 60 Seconds | Prestyj",
+    title: "AI Lead Response | Contact Every Lead in Under 60 Seconds",
     description:
       "Stop losing leads to slow follow-up. AI responds to every web form, call, text, and email in under 60 seconds—24/7. Built for businesses spending real money on lead generation.",
     keywords: [

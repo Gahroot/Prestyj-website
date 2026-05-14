@@ -32,8 +32,8 @@ export const conversicaCompareData: ComparePageData = createComparePage({
   ],
   pricing: {
     prestyj: {
-      price: "Custom pricing",
-      priceSubtext: "Scaled for your operation",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: [
         { text: "Built exclusively for real estate", included: true },
         { text: "Multi-office management included", included: true },

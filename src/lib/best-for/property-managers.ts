@@ -11,7 +11,7 @@ export const propertyManagers: BestForPageContent = createBestForPage({
       "Property management companies handling tenant calls, maintenance requests, and showings 24/7",
   },
   meta: {
-    title: "AI Agents for Property Managers | 24/7 Tenant & Maintenance Support | Prestyj",
+    title: "AI Agents for Property Managers | 24/7 Tenant & Maintenance Support",
     description:
       "AI voice and text agents for property management. Handle tenant calls 24/7, triage maintenance emergencies, schedule showings, and qualify prospects. Stop after-hours interruptions.",
     keywords: [

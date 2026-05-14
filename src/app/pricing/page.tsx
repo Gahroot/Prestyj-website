@@ -15,7 +15,7 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pricingFaqs, pricingTiers } from "@/lib/pricing-data";
 
 export const metadata: Metadata = {
-  title: "Pricing | AI Agents for Marketing & Sales | Prestyj",
+  title: "Pricing",
   description:
     "Transparent pricing for Prestyj's AI agents for marketing and sales. Lead response, appointment setting, and batch video ads for businesses. Plans from $1,997/mo. No contracts.",
   keywords: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "video ad production pricing",
   ],
   openGraph: {
-    title: "Pricing | AI Agents for Marketing & Sales | Prestyj",
+    title: "Pricing",
     description:
       "Transparent pricing for Prestyj's AI agents for marketing and sales. Plans from $1,997/mo.",
     type: "website",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pricing | AI Lead Response & Batch Video Ads | Prestyj",
+    title: "Pricing",
     description:
       "Transparent pricing for AI lead response and batch video ads. Plans from $1,997/mo. No contracts.",
   },
@@ -56,10 +56,10 @@ export default function PricingPage() {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "PRESTYJ AI Sales & Marketing Platform",
+    name: "Prestyj AI Sales & Marketing Platform",
     description:
       "AI agents for marketing and sales: lead response, appointment setting, batch video ads, and marketing automation for businesses.",
-    brand: { "@type": "Brand", name: "PRESTYJ" },
+    brand: { "@type": "Brand", name: "Prestyj" },
     url: pricingPageUrl,
     offers: {
       "@type": "AggregateOffer",
@@ -84,7 +84,7 @@ export default function PricingPage() {
   const softwareAppSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "PRESTYJ AI Sales & Marketing Platform",
+    name: "Prestyj AI Sales & Marketing Platform",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:

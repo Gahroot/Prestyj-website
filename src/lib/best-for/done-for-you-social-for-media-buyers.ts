@@ -11,7 +11,7 @@ export const doneForYouSocialForMediaBuyers: BestForPageContent = {
       "Done-for-you social media content service for in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for Media Buyers | Prestyj",
+    title: "Done-For-You Social Media for Media Buyers",
     description:
       "Done-for-you social media content for media buyers. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend.",
     keywords: [
@@ -37,7 +37,8 @@ export const doneForYouSocialForMediaBuyers: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "Media buyers with active LinkedIn presence command 2–3× higher freelance/in-house rates",
+      title:
+        "Media buyers with active LinkedIn presence command 2–3× higher freelance/in-house rates",
       description:
         "Media buyers with active LinkedIn presence command 2–3× higher freelance/in-house rates — your organic content is the highest-leverage compensation lever you control, and it's almost always being ignored",
     },
@@ -62,22 +63,26 @@ export const doneForYouSocialForMediaBuyers: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You can ship 50 ad sets a week — but your creative team can ship 4 videos, and your organic social is even slower",
+      problem:
+        "You can ship 50 ad sets a week — but your creative team can ship 4 videos, and your organic social is even slower",
       solution:
         "Prestyj produces 30–50 posts per day across LinkedIn, X, Threads, Facebook and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "Organic posts that contradict your paid creative angles confuse the algorithm and tank your CPA",
+      problem:
+        "Organic posts that contradict your paid creative angles confuse the algorithm and tank your CPA",
       solution:
         "Prestyj's content engine is trained on media buyers-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "Your personal LinkedIn is the strongest media-buyer brand asset you own — and it's been silent for 3 months",
+      problem:
+        "Your personal LinkedIn is the strongest media-buyer brand asset you own — and it's been silent for 3 months",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend.",
     },
     {
-      problem: "You're testing 50 ad creatives a week and posting 2 LinkedIn updates a month — the math is broken",
+      problem:
+        "You're testing 50 ad creatives a week and posting 2 LinkedIn updates a month — the math is broken",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },

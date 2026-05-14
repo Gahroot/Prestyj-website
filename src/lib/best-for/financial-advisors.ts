@@ -11,7 +11,7 @@ export const financialAdvisors: BestForPageContent = createBestForPage({
       "RIAs, wealth managers, and financial advisory firms needing compliant, done-for-you AI lead response",
   },
   meta: {
-    title: "Done-For-You AI Agents for Financial Advisors | Prestyj",
+    title: "Done-For-You AI Agents for Financial Advisors",
     description:
       "Get production-ready AI lead response for wealth management firms in weeks, not months. FINRA-aware, CRM-integrated, zero technical complexity. Done-for-you AI that converts prospects to appointments.",
     keywords: [

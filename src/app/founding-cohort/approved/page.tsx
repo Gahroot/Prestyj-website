@@ -10,7 +10,7 @@ import { FOUNDING_COHORT } from "@/lib/founding-cohort";
 const PAGE_URL = "https://prestyj.com/founding-cohort/approved";
 
 export const metadata: Metadata = {
-  title: "You're in — Founding Cohort Approved | Prestyj",
+  title: "You're in — Founding Cohort Approved",
   description:
     "Founding Cohort application approved. Use your promo code at checkout to claim your free 300-ad batch.",
   alternates: { canonical: PAGE_URL },
@@ -25,53 +25,44 @@ export default function FoundingCohortApprovedPage() {
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-6 text-center">
             <div className="flex justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary">
+              <div className="bg-primary/10 text-primary flex h-16 w-16 items-center justify-center rounded-full">
                 <CheckCircle2 className="h-8 w-8" />
               </div>
             </div>
             <div className="flex justify-center">
-              <Badge
-                variant="outline"
-                className="border-primary/50 text-primary"
-              >
+              <Badge variant="outline" className="border-primary/50 text-primary">
                 <Sparkles className="mr-1.5 h-3.5 w-3.5" />
                 Founding Cohort · Approved
               </Badge>
             </div>
-            <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
+            <h1 className="font-heading text-4xl leading-tight font-bold tracking-tight sm:text-5xl">
               You&apos;re in.
             </h1>
-            <p className="mx-auto max-w-xl text-lg text-muted-foreground">
-              You&apos;ve got a founding spot. Here&apos;s how to claim your
-              free 300-ad batch.
+            <p className="text-muted-foreground mx-auto max-w-xl text-lg">
+              You&apos;ve got a founding spot. Here&apos;s how to claim your free 300-ad batch.
             </p>
           </div>
 
           {/* Code card */}
-          <div className="mt-12 rounded-2xl border border-primary/40 bg-primary/5 p-6 sm:p-8">
-            <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+          <div className="border-primary/40 bg-primary/5 mt-12 rounded-2xl border p-6 sm:p-8">
+            <p className="text-primary text-xs font-semibold tracking-wider uppercase">
               Your promo code
             </p>
             <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <code className="font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              <code className="font-heading text-foreground text-3xl font-bold tracking-tight sm:text-4xl">
                 {FOUNDING_COHORT.promoCode}
               </code>
-              <CopyButton
-                text={FOUNDING_COHORT.promoCode}
-                size="default"
-              />
+              <CopyButton text={FOUNDING_COHORT.promoCode} size="default" />
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Apply this code at checkout on the Minimum tier (300 ads / 3 pain
-              points). Your total will drop to $0.
+            <p className="text-muted-foreground mt-4 text-sm">
+              Apply this code at checkout on the Minimum tier (300 ads / 3 pain points). Your total
+              will drop to $0.
             </p>
           </div>
 
           {/* Steps */}
           <div className="mt-10 space-y-4">
-            <h2 className="font-heading text-2xl font-bold tracking-tight">
-              Next steps
-            </h2>
+            <h2 className="font-heading text-2xl font-bold tracking-tight">Next steps</h2>
             <ol className="space-y-4">
               {[
                 {
@@ -97,16 +88,14 @@ export default function FoundingCohortApprovedPage() {
               ].map((step, i) => (
                 <li
                   key={step.title}
-                  className="flex gap-4 rounded-xl border border-border/80 bg-card p-5"
+                  className="border-border/80 bg-card flex gap-4 rounded-xl border p-5"
                 >
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+                  <div className="bg-primary text-primary-foreground flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold">
                     {i + 1}
                   </div>
                   <div>
                     <p className="font-semibold">{step.title}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      {step.body}
-                    </p>
+                    <p className="text-muted-foreground mt-1 text-sm">{step.body}</p>
                   </div>
                 </li>
               ))}
@@ -117,19 +106,16 @@ export default function FoundingCohortApprovedPage() {
           <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center">
             <Link
               href={FOUNDING_COHORT.checkoutHref}
-              className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-primary-foreground transition hover:bg-primary/90"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center gap-2 rounded-lg px-8 py-4 text-base font-bold transition"
             >
               Claim my free 300-ad batch
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>
 
-          <p className="mt-8 text-center text-sm text-muted-foreground">
+          <p className="text-muted-foreground mt-8 text-center text-sm">
             Code lost? Email us at{" "}
-            <a
-              href="mailto:hello@prestyj.com"
-              className="text-primary hover:underline"
-            >
+            <a href="mailto:hello@prestyj.com" className="text-primary hover:underline">
               hello@prestyj.com
             </a>{" "}
             and we&apos;ll resend it.

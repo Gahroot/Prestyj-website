@@ -11,7 +11,7 @@ export const regionalBrokerageNetworks: BestForPageContent = createBestForPage({
       "Multi-office regional operations with portfolio management and centralized reporting needs",
   },
   meta: {
-    title: "Best AI Lead Response for Regional Brokerage Networks | Prestyj",
+    title: "Best AI Lead Response for Regional Brokerage Networks",
     description:
       "Discover why regional brokerage networks choose Prestyj for centralized lead response management. Portfolio-level reporting, multi-office coordination, and enterprise ROI.",
     keywords: [

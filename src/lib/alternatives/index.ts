@@ -59,8 +59,8 @@ import { saasFoundersSocialMediaAgencyAlternative } from "./saas-founders-social
 import { personalBrandsSocialMediaAgencyAlternative } from "./personal-brands-social-media-agency-alternative";
 import { creatorsSocialMediaAgencyAlternative } from "./creators-social-media-agency-alternative";
 import { consultantsSocialMediaAgencyAlternative } from "./consultants-social-media-agency-alternative";
-  // SOCIAL-VERTICAL-MATRIX-IMPORTS-END
-  // BATCH-MATRIX-IMPORTS-END
+// SOCIAL-VERTICAL-MATRIX-IMPORTS-END
+// BATCH-MATRIX-IMPORTS-END
 
 export const alternatives: Record<string, AlternativePageContent> = {
   ylopo,
@@ -105,9 +105,11 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "media-buyers-video-production-alternative": mediaBuyersVideoProductionAlternative,
   "cmos-video-production-alternative": cmosVideoProductionAlternative,
   "agency-owners-video-production-alternative": agencyOwnersVideoProductionAlternative,
-  "service-business-owners-video-production-alternative": serviceBusinessOwnersVideoProductionAlternative,
+  "service-business-owners-video-production-alternative":
+    serviceBusinessOwnersVideoProductionAlternative,
   "hvac-companies-video-production-alternative": hvacCompaniesVideoProductionAlternative,
-  "plumbing-contractors-video-production-alternative": plumbingContractorsVideoProductionAlternative,
+  "plumbing-contractors-video-production-alternative":
+    plumbingContractorsVideoProductionAlternative,
   "roofing-contractors-video-production-alternative": roofingContractorsVideoProductionAlternative,
   "real-estate-teams-video-production-alternative": realEstateTeamsVideoProductionAlternative,
   "mortgage-brokers-video-production-alternative": mortgageBrokersVideoProductionAlternative,
@@ -116,7 +118,8 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "media-buyers-social-media-agency-alternative": mediaBuyersSocialMediaAgencyAlternative,
   "cmos-social-media-agency-alternative": cmosSocialMediaAgencyAlternative,
   "agency-owners-social-media-agency-alternative": agencyOwnersSocialMediaAgencyAlternative,
-  "service-business-owners-social-media-agency-alternative": serviceBusinessOwnersSocialMediaAgencyAlternative,
+  "service-business-owners-social-media-agency-alternative":
+    serviceBusinessOwnersSocialMediaAgencyAlternative,
   "ecommerce-brands-social-media-agency-alternative": ecommerceBrandsSocialMediaAgencyAlternative,
   "saas-founders-social-media-agency-alternative": saasFoundersSocialMediaAgencyAlternative,
   "personal-brands-social-media-agency-alternative": personalBrandsSocialMediaAgencyAlternative,
@@ -124,7 +127,6 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "consultants-social-media-agency-alternative": consultantsSocialMediaAgencyAlternative,
   // SOCIAL-VERTICAL-MATRIX-REGISTER-END
   // BATCH-MATRIX-REGISTER-END
-
 };
 
 export function getAlternative(slug: string): AlternativePageContent | undefined {

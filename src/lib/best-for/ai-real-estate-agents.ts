@@ -11,7 +11,7 @@ export const aiRealEstateAgents: BestForPageContent = createBestForPage({
       "Licensed real estate agents and realtors looking to automate lead follow-up, client communication, and transaction coordination",
   },
   meta: {
-    title: "Best AI for Real Estate Agents & Realtors | Prestyj",
+    title: "Best AI for Real Estate Agents & Realtors",
     description:
       "The best AI platform for real estate agents. Automate lead follow-up, client communication, listing marketing, and transaction coordination. Close more deals with your AI workforce.",
     keywords: [

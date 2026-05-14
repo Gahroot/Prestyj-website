@@ -9,7 +9,7 @@ export const videoAdsForFinancialAdvisors: BestForPageContent = {
       "Independent RIAs, fee-only financial advisors, and wealth managers using batch video ad creative testing to generate SEC/FINRA-compliant prospect flow without relying only on referrals.",
   },
   meta: {
-    title: "300 SEC-Compliant Advisor Video Ads in 24 Hours | PRESTYJ",
+    title: "300 SEC-Compliant Advisor Video Ads in 24 Hours",
     description:
       "Referrals cap your growth. 300-1,000 SEC Marketing Rule-compliant video ads with your real face, CCO-reviewable, delivered in 24 hours. From $1,497.",
     keywords: [

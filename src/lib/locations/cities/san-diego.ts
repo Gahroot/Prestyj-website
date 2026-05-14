@@ -11,7 +11,7 @@ export const sanDiego: LocationPageContent = {
       "San Diego is one of the most lucrative home services markets in the country — and one of the most misunderstood by contractors who try to win it on price. With $775K average home values, a Mediterranean climate that drives constant outdoor-living investment, and the largest military concentration on the West Coast, every service call here is worth more than the same job almost anywhere else. California's solar mandates, Title 24 efficiency requirements, and SDG&E's punishing electricity rates have created a regulatory environment that practically forces premium upgrades. The contractors who own San Diego's Facebook attention are landing some of the highest-ticket residential work in America.",
   },
   meta: {
-    title: "Facebook Ads for San Diego Home Service Contractors | Prestyj",
+    title: "Facebook Ads for San Diego Home Service Contractors",
     description:
       "Grow your San Diego HVAC, solar, roofing, plumbing, or general contracting business with Facebook ads built for Southern California's premium, high-regulation, solar-mandated market.",
     keywords: [
@@ -34,8 +34,7 @@ export const sanDiego: LocationPageContent = {
   marketStats: {
     households: "1.2M+",
     avgHomeValue: "$775K",
-    keyInsight:
-      "San Diego's $775K average home value means premium rates for every service call",
+    keyInsight: "San Diego's $775K average home value means premium rates for every service call",
   },
   services: [
     {
@@ -86,8 +85,7 @@ export const sanDiego: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "How has NEM 3.0 changed solar Facebook ad strategy in San Diego?",
+      question: "How has NEM 3.0 changed solar Facebook ad strategy in San Diego?",
       answer:
         "Dramatically — and most solar companies are still running NEM 2.0 messaging that doesn't make sense anymore. The 'sell back to the grid' pitch is dead; the new economics are about self-consumption, battery storage, and TOU rate optimization. We build Facebook campaigns that lead with energy independence, blackout resilience, and protection from SDG&E rate hikes — angles that actually pencil under NEM 3.0 and convert homeowners who would have ignored old-style solar ads.",
     },
@@ -110,8 +108,7 @@ export const sanDiego: LocationPageContent = {
         "Yes, when the creative matches the audience. Most contractors run the same stock-photo ads they'd run in Mira Mesa, and luxury homeowners scroll past instantly. We build Facebook campaigns with editorial-quality photography, completed-project case studies, and the kind of brand presentation that matches the architects, designers, and high-end retailers these homeowners already trust. The CPMs are higher; the ticket sizes are 5-10x higher.",
     },
     {
-      question:
-        "Which San Diego areas deliver the best ROI for home service Facebook ads?",
+      question: "Which San Diego areas deliver the best ROI for home service Facebook ads?",
       answer:
         "Depends on the service. La Jolla, Del Mar, Rancho Santa Fe, and Coronado for luxury renovations, premium HVAC, and concierge-tier roofing. Encinitas, Carlsbad, and Solana Beach for solar, remodels, and outdoor-living buildouts. North Park, Hillcrest, Kensington, and Point Loma for repipe, electrical, and historic-home work. Chula Vista, Eastlake, and Mira Mesa for volume HVAC, solar, and replacement work on newer-build homes. We segment campaigns at the neighborhood level — broadcasting to all of San Diego County wastes most of the budget.",
     },

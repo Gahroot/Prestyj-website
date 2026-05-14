@@ -13,7 +13,7 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
       "The legacy way real estate teams of 5-50 agents running paid social as a primary buyer/seller acquisition channel buy video creative — typically a ai avatar tools engagement that ships 1-8 videos per cycle at high per-unit cost.",
   },
   meta: {
-    title: "Real Estate Teams Video Production Alternative — Batch Creative That Ships in 24 Hours | PRESTYJ",
+    title: "Real Estate Teams Video Production Alternative — Batch Creative That Ships in 24 Hours",
     description:
       "Traditional re teams video production ships 4 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-min recording. Same real face. ≈$5/ad. From $1,497 flat.",
     keywords: [
@@ -36,7 +36,8 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
   industryStats: [
     {
       stat: "300-1,000",
-      description: "ad variations per re teams batch — versus 1-8 from a typical production engagement",
+      description:
+        "ad variations per re teams batch — versus 1-8 from a typical production engagement",
     },
     {
       stat: "≈$5",
@@ -44,7 +45,8 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
     },
     {
       stat: "24 hrs",
-      description: "turnaround from footage delivery — versus 14-45 days through traditional production",
+      description:
+        "turnaround from footage delivery — versus 14-45 days through traditional production",
     },
     {
       stat: "0",
@@ -114,8 +116,9 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
       ],
     },
     prestyjPricing: {
-      price: "$1,497 – $3,997",
-      note: "Flat fee. 300 ads / 3 angles at $1,497. 500 ads / 5 angles at $2,497. 1,000 ads / 10 angles at $3,997.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "300-1,000 ad variations per batch",
         "RE Teams-researched scripts written for you",
@@ -169,7 +172,8 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
     {
       href: "/batch-video-ads",
       title: "Batch Video Ads — the Service",
-      description: "How Prestyj turns 20 minutes of footage into 300-1,000 vertical ads in 24 hours.",
+      description:
+        "How Prestyj turns 20 minutes of footage into 300-1,000 vertical ads in 24 hours.",
     },
     {
       href: "/best-for/batch-video-ads-for-real-estate-teams",
@@ -179,7 +183,8 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
     {
       href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams",
       title: "Cost Per Tested Ad Angle for RE Teams",
-      description: "Full pricing breakdown across batch, agency, freelancer, and in-house production paths.",
+      description:
+        "Full pricing breakdown across batch, agency, freelancer, and in-house production paths.",
     },
     {
       href: "/compare/prestyj-vs-ai-avatar-tool-video-for-real-estate-teams",

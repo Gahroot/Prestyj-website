@@ -9,7 +9,7 @@ import { Footer } from "@/components/layout/footer";
 import { getAllBestForPages } from "@/lib/best-for";
 
 export const metadata: Metadata = {
-  title: "AI Agents for Marketing & Sales — by Industry | Prestyj",
+  title: "AI Agents for Marketing & Sales — by Industry",
   description:
     "See how Prestyj's AI agents work for your industry. Built for service businesses, real estate, professional services, and more.",
   keywords: [
@@ -161,7 +161,9 @@ export default function BestForHubPage() {
               Prestyj&apos;s AI agents handle marketing and sales for businesses like yours.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
-              <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <p className="text-muted-foreground mt-6 text-sm">

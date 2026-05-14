@@ -10,7 +10,7 @@ export const realEstateVideoAdsIllinois: BestForPageContent = {
       "Illinois agents using batch vertical video ad creative to convert Chicago North Shore, Western Suburbs, and downstate family markets across MRED MLS and regional IL MLS territory under IDFPR compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Illinois | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Illinois | 300–1,000 Scripted Ads",
     description:
       "Illinois agents: 300–1,000 vertical video ads in 24 hours. Tuned for MRED MLS, IDFPR compliance, North Shore, and Western Suburbs. From $1,497.",
     keywords: [

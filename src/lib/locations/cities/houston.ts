@@ -11,7 +11,7 @@ export const houston: LocationPageContent = {
       "Houston is a home services market unlike any other in America. Hurricane recovery, oppressive humidity, expansive clay soils, and the energy industry's purchasing power create a constant churn of repair, replace, and remodel work. The contractors who win here aren't the cheapest — they're the most visible when homeowners are stressed and ready to call.",
   },
   meta: {
-    title: "Facebook Ads for Houston Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Houston Home Service Contractors",
     description:
       "Storm-ready Facebook ad strategies for Houston HVAC, roofing, plumbing, and contracting businesses. Built for hurricane season, humidity, and the energy corridor.",
     keywords: [
@@ -98,20 +98,17 @@ export const houston: LocationPageContent = {
         "Maintenance and indoor air quality angles work incredibly well here. We run Facebook campaigns highlighting the specific Houston pain points — coil rust, mildew smell, unbearable humidity at night — that homeowners feel but rarely connect to their AC. Educational creative beats discount creative every time in this market.",
     },
     {
-      question:
-        "Are slab leak and foundation plumbing services worth advertising on Facebook?",
+      question: "Are slab leak and foundation plumbing services worth advertising on Facebook?",
       answer:
         "Absolutely — they're some of the highest-ticket residential jobs you can run, and they're a uniquely Houston problem because of the clay soil. Most plumbers don't market specifically for slab work, which means there's almost zero competition on Facebook for those exact pain points. We build niche campaigns around 'wet spots on floor,' 'sudden water bill spike,' and 'foundation cracks' that consistently outperform generic plumbing ads 3-to-1.",
     },
     {
-      question:
-        "Does Facebook advertising still work for Houston's Spanish-speaking market?",
+      question: "Does Facebook advertising still work for Houston's Spanish-speaking market?",
       answer:
         "It works extremely well — and it's massively underutilized. Roughly 40% of Greater Houston speaks Spanish at home, and the contractors running well-translated, culturally-aware Spanish-language Facebook campaigns are absolutely dominating in neighborhoods like Pasadena, Aldine, Spring Branch, and parts of Katy. We build dual-language campaign structures when it makes sense for your service area.",
     },
     {
-      question:
-        "What neighborhoods in Houston deliver the best return on Facebook ad spend?",
+      question: "What neighborhoods in Houston deliver the best return on Facebook ad spend?",
       answer:
         "For high-ticket work: Memorial, River Oaks, Bellaire, West University, The Woodlands, Sugar Land, and Cinco Ranch. For high-volume work: Katy, Cypress, Pearland, Spring, and Humble. For storm response: anywhere along the I-10 corridor and south toward Galveston after a hurricane track. We tailor geo-targeting to your actual service truck radius and ticket size.",
     },

@@ -33,8 +33,8 @@ export const highlevelCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$3,000/mo",
-      priceSubtext: "All-in · 1,500+ posts/mo · 7 platforms",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -181,9 +181,9 @@ export const highlevelCompareData: ComparePageData = createComparePage({
 export const highlevelMetadata: CompareMetadata = {
   slug: "prestyj-vs-highlevel",
   competitorName: "HighLevel",
-  title: "PRESTYJ vs HighLevel: SaaS Scheduler or Done-For-You Content Engine? (2026)",
+  title: "Prestyj vs HighLevel: SaaS Scheduler or Done-For-You Content Engine? (2026)",
   description:
-    "HighLevel costs $97-$497/mo for CRM + a social scheduler — but creates zero posts. PRESTYJ ships 1,500+ posts/month across 7 platforms for $3,000 — done for you, fed into HighLevel if you want.",
+    "HighLevel costs $97-$497/mo for CRM + a social scheduler — but creates zero posts. Prestyj ships 1,500+ posts/month across 7 platforms for $3,000 — done for you, fed into HighLevel if you want.",
   keywords: [
     "highlevel alternative",
     "gohighlevel social media",

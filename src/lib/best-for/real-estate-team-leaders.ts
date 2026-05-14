@@ -10,7 +10,7 @@ export const realEstateTeamLeaders: BestForPageContent = createBestForPage({
     description: "Team leaders scaling production without adding ISA headcount",
   },
   meta: {
-    title: "AI Tools for Real Estate Team Leaders | Prestyj",
+    title: "AI Tools for Real Estate Team Leaders",
     description:
       "Real estate team leaders use Prestyj to respond to leads instantly, eliminate ISA turnover, and scale team production without adding headcount. Built for leaders running paid ads.",
     keywords: [

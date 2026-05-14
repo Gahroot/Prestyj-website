@@ -11,7 +11,7 @@ export const atlanta: LocationPageContent = {
       "Atlanta is the engine of the Southeast — a metro defined by sprawling suburbs, towering pine canopies, brutal humidity, and one of the hottest housing markets in the country. From OTP suburbs like Alpharetta and Marietta to the in-town renaissance of West Midtown and the Beltline, Atlanta homeowners are constantly investing in their properties. The contractors winning here aren't the loudest — they're the ones consistently showing up in the right Facebook feeds.",
   },
   meta: {
-    title: "Facebook Ads for Atlanta Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Atlanta Home Service Contractors",
     description:
       "Facebook ad strategies built for Atlanta's humidity, tree canopy, and explosive suburban growth. Real leads for HVAC, roofing, plumbing, and contracting businesses.",
     keywords: [
@@ -104,14 +104,12 @@ export const atlanta: LocationPageContent = {
         "Hugely worth it — but only with the right creative. Buckhead, Alpharetta, and Milton homeowners aren't going to respond to discount messaging. They respond to portfolio-driven creative, design-forward video, and strong before/afters. We treat luxury contractor campaigns more like brand campaigns than lead-gen, and the close rates on those leads are dramatically higher than typical home service inquiries.",
     },
     {
-      question:
-        "How do humidity and pollen affect HVAC ad strategy in Atlanta?",
+      question: "How do humidity and pollen affect HVAC ad strategy in Atlanta?",
       answer:
         "Pollen season in March/April and humidity from May through September are two completely different campaign windows. Pollen drives indoor air quality, duct cleaning, and filter upgrade messaging. Humidity drives dehumidification, AC tune-up, and replacement messaging. We rotate creative seasonally so your ads always match what homeowners are actively complaining about — which is something most franchise marketing simply doesn't do.",
     },
     {
-      question:
-        "Which Atlanta suburbs deliver the best ROI for home service contractors?",
+      question: "Which Atlanta suburbs deliver the best ROI for home service contractors?",
       answer:
         "For high-ticket work: Buckhead, Alpharetta, Milton, Sandy Springs, Roswell, Brookhaven, and Johns Creek. For high-volume residential: Marietta, Kennesaw, Lawrenceville, Duluth, and Snellville. For storm and roofing response: anywhere along the I-20 corridor and the northern arc after a severe weather event. We dial in your campaigns to your actual service truck radius — not whatever Facebook's default 'Atlanta' targeting decides for you.",
     },

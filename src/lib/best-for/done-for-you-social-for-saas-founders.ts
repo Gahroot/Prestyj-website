@@ -11,7 +11,7 @@ export const doneForYouSocialForSaasFounders: BestForPageContent = {
       "Done-for-you social media content service for founders and CEOs of B2B SaaS companies at $1M–$20M ARR. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for SaaS Founders | Prestyj",
+    title: "Done-For-You Social Media for SaaS Founders",
     description:
       "Done-for-you social media content for saas founders. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for founders and CEOs of B2B SaaS companies at $1M–$20M ARR.",
     keywords: [
@@ -37,7 +37,8 @@ export const doneForYouSocialForSaasFounders: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "Founder-led LinkedIn at $5M ARR generates more qualified pipeline than $20K/month in paid LinkedIn ads",
+      title:
+        "Founder-led LinkedIn at $5M ARR generates more qualified pipeline than $20K/month in paid LinkedIn ads",
       description:
         "Founder-led LinkedIn at $5M ARR generates more qualified pipeline than $20K/month in paid LinkedIn ads — the founder voice is the single highest-leverage GTM asset a SaaS company owns",
     },
@@ -62,22 +63,26 @@ export const doneForYouSocialForSaasFounders: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Founder-led brand is your #1 distribution channel and you've posted 4 times this quarter",
+      problem:
+        "Founder-led brand is your #1 distribution channel and you've posted 4 times this quarter",
       solution:
         "Prestyj produces 30–50 posts per day across LinkedIn, X, YouTube, Threads and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "Your ICP-specific use-case stories are in customer Slack threads, not on LinkedIn where prospects can find them",
+      problem:
+        "Your ICP-specific use-case stories are in customer Slack threads, not on LinkedIn where prospects can find them",
       solution:
         "Prestyj's content engine is trained on saas founders-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "Build-in-public cadence requires daily posting — and you're shipping product 60+ hours a week",
+      problem:
+        "Build-in-public cadence requires daily posting — and you're shipping product 60+ hours a week",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for founders and CEOs of B2B SaaS companies at $1M–$20M ARR.",
     },
     {
-      problem: "Your competitors with worse product are outranking you on LinkedIn because they're posting and you aren't",
+      problem:
+        "Your competitors with worse product are outranking you on LinkedIn because they're posting and you aren't",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },

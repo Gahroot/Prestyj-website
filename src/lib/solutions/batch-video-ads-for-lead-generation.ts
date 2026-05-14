@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const batchVideoAdsForLeadGeneration: SolutionPageContent = {
   slug: "batch-video-ads-for-lead-generation",
   meta: {
-    title: "Batch Video Ads for Lead Generation | Test 50+ Hooks in Days | Prestyj",
+    title: "Batch Video Ads for Lead Generation | Test 50+ Hooks in Days",
     description:
       "Lead gen lives and dies by the hook. Prestyj turns one selfie recording into 300–1,000 scripted ad variations — each built around a distinct hook — so you find your winning hook in days instead of months, and watch CPL drop as a result.",
     keywords: [

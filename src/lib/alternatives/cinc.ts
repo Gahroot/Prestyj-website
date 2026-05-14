@@ -16,7 +16,7 @@ export const cinc: AlternativePageContent = createAlternativePage({
     description: "All-in-one real estate platform with lead generation, CRM, and AI",
   },
   meta: {
-    title: "Best CINC Alternative for Real Estate | Prestyj",
+    title: "Best CINC Alternative for Real Estate",
     description:
       "Looking for a CINC alternative? Compare Prestyj vs CINC: simpler setup, lead reactivation focus, no complex enterprise features you don't need.",
     keywords: [
@@ -99,8 +99,9 @@ export const cinc: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Designed for solo agents to small teams",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Simple setup, fast deployment",
         "Lead reactivation specialization",

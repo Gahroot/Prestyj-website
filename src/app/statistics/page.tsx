@@ -7,11 +7,7 @@ import Link from "next/link";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
-import {
-  statCategories,
-  statisticsFaqs,
-  totalStatCount,
-} from "@/lib/statistics-data";
+import { statCategories, statisticsFaqs, totalStatCount } from "@/lib/statistics-data";
 import { StatisticsTableOfContents } from "@/components/sections/statistics/table-of-contents";
 import { StatCategorySection } from "@/components/sections/statistics/stat-category-section";
 import { StatisticsFAQSection } from "@/components/sections/statistics/statistics-faq";
@@ -19,7 +15,7 @@ import { StatisticsFAQSection } from "@/components/sections/statistics/statistic
 const pageUrl = "https://prestyj.com/statistics";
 
 export const metadata: Metadata = {
-  title: `${totalStatCount}+ Lead Response, Video Ad & AI Sales Statistics (2025–2026) | Prestyj`,
+  title: `${totalStatCount}+ Lead Response, Video Ad & AI Sales Statistics (2025–2026)`,
   description: `A comprehensive collection of ${totalStatCount}+ cite-worthy statistics on speed-to-lead, video advertising performance, AI adoption in sales, lead conversion benchmarks, and cost per lead by industry. Updated for 2025–2026.`,
   keywords: [
     "speed to lead statistics",
@@ -66,7 +62,7 @@ export default function StatisticsPage() {
     url: pageUrl,
     publisher: {
       "@type": "Organization",
-      name: "PRESTYJ",
+      name: "Prestyj",
       url: "https://prestyj.com",
       logo: {
         "@type": "ImageObject",
@@ -77,7 +73,7 @@ export default function StatisticsPage() {
     dateModified: "2026-05-07",
     author: {
       "@type": "Organization",
-      name: "PRESTYJ",
+      name: "Prestyj",
     },
     mainEntityOfPage: {
       "@type": "WebPage",
@@ -95,7 +91,7 @@ export default function StatisticsPage() {
     url: pageUrl,
     creator: {
       "@type": "Organization",
-      name: "PRESTYJ",
+      name: "Prestyj",
       url: "https://prestyj.com",
     },
     temporalCoverage: "2024/2026",
@@ -114,21 +110,20 @@ export default function StatisticsPage() {
       <Navbar />
       <main>
         {/* Hero */}
-        <section className="relative pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="relative px-4 pt-24 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
             <Badge variant="outline" className="border-primary/50 text-primary mb-6">
               Research & Data
             </Badge>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.1] mb-6">
-              {totalStatCount}+ Cite-Worthy{" "}
-              <span className="text-primary">Statistics</span> for 2025–2026
+            <h1 className="font-heading text-foreground mb-6 text-4xl leading-[1.1] font-bold md:text-5xl lg:text-6xl">
+              {totalStatCount}+ Cite-Worthy <span className="text-primary">Statistics</span> for
+              2025–2026
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-              The most comprehensive collection of lead response, video
-              advertising, AI adoption, and industry benchmark statistics —
-              sourced, dated, and ready to cite in your content.
+            <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg">
+              The most comprehensive collection of lead response, video advertising, AI adoption,
+              and industry benchmark statistics — sourced, dated, and ready to cite in your content.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button size="lg" asChild>
                 <Link href="/book-demo">Book a Demo</Link>
               </Button>
@@ -136,7 +131,7 @@ export default function StatisticsPage() {
                 <Link href="/platform">Explore the Platform</Link>
               </Button>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm">
+            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
               <Link
                 href="/pricing"
                 className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -164,28 +159,24 @@ export default function StatisticsPage() {
 
         {/* Stat Categories */}
         {statCategories.map((category, index) => (
-          <StatCategorySection
-            key={category.id}
-            category={category}
-            index={index}
-          />
+          <StatCategorySection key={category.id} category={category} index={index} />
         ))}
 
         {/* FAQ */}
         <StatisticsFAQSection />
 
         {/* CTA */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+        <section className="bg-card/50 px-4 py-20 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
               Put These Statistics to Work
             </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-              Prestyj helps service businesses turn speed-to-lead and AI
-              advantages into booked appointments. Sub-60-second response, 24/7
-              coverage, and 300+ video ad variations from a single recording.
+            <p className="text-muted-foreground mx-auto mb-8 max-w-xl">
+              Prestyj helps service businesses turn speed-to-lead and AI advantages into booked
+              appointments. Sub-60-second response, 24/7 coverage, and 300+ video ad variations from
+              a single recording.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button size="lg" asChild>
                 <Link href="/book-demo">Book a Demo</Link>
               </Button>
@@ -193,7 +184,7 @@ export default function StatisticsPage() {
                 <Link href="/pricing">See Pricing</Link>
               </Button>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm">
+            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
               <Link
                 href="/free-ads"
                 className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -207,9 +198,8 @@ export default function StatisticsPage() {
                 Speed to lead solution →
               </Link>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">
-              No commitment required. See a live demo customized to your
-              industry.
+            <p className="text-muted-foreground mt-4 text-xs">
+              No commitment required. See a live demo customized to your industry.
             </p>
           </div>
         </section>

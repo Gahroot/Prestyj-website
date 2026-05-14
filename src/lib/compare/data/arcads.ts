@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const arcadsCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -165,9 +165,9 @@ export const arcadsCompareData: ComparePageData = createComparePage({
 export const arcadsMetadata: CompareMetadata = {
   slug: "prestyj-vs-arcads",
   competitorName: "Arcads",
-  title: "PRESTYJ vs Arcads: Real Faces or AI Avatars? (2026)",
+  title: "Prestyj vs Arcads: Real Faces or AI Avatars? (2026)",
   description:
-    "Arcads makes AI avatar ads. PRESTYJ makes real-face video ads from your selfie footage. 300-1,000 ads in 24 hours, starting at $1,497. See which wins.",
+    "Arcads makes AI avatar ads. Prestyj makes real-face video ads from your selfie footage. 300-1,000 ads in 24 hours, starting at $1,497. See which wins.",
   keywords: [
     "arcads alternative",
     "arcads vs prestyj",

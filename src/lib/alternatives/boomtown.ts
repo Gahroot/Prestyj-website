@@ -16,7 +16,7 @@ export const boomtown: AlternativePageContent = createAlternativePage({
     description: "Enterprise real estate platform with CRM, lead generation, and AI texting",
   },
   meta: {
-    title: "BoomTown Alternative | Add AI Speed to Your CRM | Prestyj",
+    title: "BoomTown Alternative | Add AI Speed to Your CRM",
     description:
       "Not replacing BoomTown? Add AI-powered instant lead response and database reactivation to your existing BoomTown setup. Keep your CRM, add the speed.",
     keywords: [
@@ -114,8 +114,9 @@ export const boomtown: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Works alongside your BoomTown setup",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Instant AI response for all leads",
         "Dead lead reactivation campaigns",

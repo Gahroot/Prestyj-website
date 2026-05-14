@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,8 @@ export const cmosVsInHouseVideoCompareData: ComparePageData = createComparePage(
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · CMOs-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · ad budget + batch video ads + AI agents · tuned for CMOs",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,7 +51,12 @@ export const cmosVsInHouseVideoCompareData: ComparePageData = createComparePage(
     },
   },
   features: [
-    { feature: "Scripts researched for CMOs pain points", prestyj: true, competitor: false, note: "In-House Video Production does not research your vertical by default" },
+    {
+      feature: "Scripts researched for CMOs pain points",
+      prestyj: true,
+      competitor: false,
+      note: "In-House Video Production does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual brand", prestyj: true, competitor: "Sometimes" },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "1-8 per quarter" },
     { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "2-6 weeks" },
@@ -63,7 +68,8 @@ export const cmosVsInHouseVideoCompareData: ComparePageData = createComparePage(
   ],
   whySwitch: {
     title: "Why CMOs Pick Batch Over In-House Video Production",
-    description: "An in-house team of 3 ships fewer ads per quarter than a single Prestyj batch — at 10x the cost.",
+    description:
+      "An in-house team of 3 ships fewer ads per quarter than a single Prestyj batch — at 10x the cost.",
     reasons: [
       {
         icon: "Zap",
@@ -98,10 +104,30 @@ export const cmosVsInHouseVideoCompareData: ComparePageData = createComparePage(
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for CMOs", description: "CMOs-specific use case", href: "/best-for/batch-video-ads-for-cmos", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for CMOs", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-cmos", linkText: "See the math" },
-    { title: "CMOs Video Production Alternative", description: "Alternative to traditional cmos video production", href: "/alternatives/cmos-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for CMOs",
+      description: "CMOs-specific use case",
+      href: "/best-for/batch-video-ads-for-cmos",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for CMOs",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-cmos",
+      linkText: "See the math",
+    },
+    {
+      title: "CMOs Video Production Alternative",
+      description: "Alternative to traditional cmos video production",
+      href: "/alternatives/cmos-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "CMOs Pick Batch Over In-House Video Production.",
@@ -116,7 +142,7 @@ export const cmosVsInHouseVideoCompareData: ComparePageData = createComparePage(
 export const cmosVsInHouseVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-in-house-video-for-cmos",
   competitorName: "In-House Video Production (for CMOs)",
-  title: "PRESTYJ vs In-House Video Production for CMOs (2026 Pricing Math)",
+  title: "Prestyj vs In-House Video Production for CMOs (2026 Pricing Math)",
   description:
     "An in-house team of 3 ships fewer ads per quarter than a single Prestyj batch — at 10x the cost. See full per-angle pricing math and why cmos pick batch from $1,497 over $180K-$450Kfully loaded annual.",
   keywords: [

@@ -16,7 +16,7 @@ export const synthflow: AlternativePageContent = createAlternativePage({
     description: "AI voice automation platform with workflow building",
   },
   meta: {
-    title: "Synthflow Alternatives for Real Estate | Prestyj",
+    title: "Synthflow Alternatives for Real Estate",
     description:
       "Looking for Synthflow alternatives? Compare Prestyj vs Synthflow for real estate AI voice agents. Done-for-you real estate training vs. DIY workflow building.",
     keywords: [

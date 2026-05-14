@@ -10,7 +10,7 @@ export const realEstateVideoAdsOregon: BestForPageContent = {
       "Oregon agents using batch vertical video ad creative to convert Silicon Forest tech relocation, Portland perception-honest buyers, and Oregon coast second-home markets across RMLS and regional Oregon MLS territory under OREA compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Oregon | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Oregon | 300–1,000 Scripted Ads",
     description:
       "Oregon agents: 300–1,000 vertical video ads in 24 hours. Tuned for RMLS, OREA compliance, Silicon Forest, and Oregon coast. From $1,497.",
     keywords: [
@@ -63,7 +63,8 @@ export const realEstateVideoAdsOregon: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your out-of-state buyers arrive with 2020 Portland perception and your ads ignore the reality",
+      problem:
+        "Your out-of-state buyers arrive with 2020 Portland perception and your ads ignore the reality",
       solution:
         "We script perception-honest creative: 'if you're considering Portland in 2026 and your friends are still sending you 2020 news articles, here's what's actually happening in Alameda, Irvington, and the neighborhoods that matter.'",
     },

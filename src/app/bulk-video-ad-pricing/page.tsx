@@ -7,11 +7,11 @@ import BorderGlow from "@/components/ui/border-glow";
 import { bulkAdPricingTiers } from "@/lib/bulk-ad-pricing-data";
 
 export const metadata: Metadata = {
-  title: "Batch Video Ad Pricing | 300, 500, or 1,000 Ads | PRESTYJ",
+  title: "Batch Video Ad Pricing",
   description:
     "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 scripted ads. Pick how many customer problems you want each ad to speak to. 1–2 business day turnaround.",
   openGraph: {
-    title: "Batch Video Ad Pricing | PRESTYJ",
+    title: "Batch Video Ad Pricing",
     description: "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 ads.",
     type: "website",
   },

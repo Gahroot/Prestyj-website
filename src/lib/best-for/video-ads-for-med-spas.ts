@@ -9,7 +9,7 @@ export const videoAdsForMedSpas: BestForPageContent = {
       "Medical spas using batch video ad creative testing to generate treatment bookings — covering Botox, fillers, body contouring, laser treatments, and anti-aging angles.",
   },
   meta: {
-    title: "500 Med Spa Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Med Spa Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of med spa-specific video ads with your real face in 24 hours. Botox, fillers, body contouring, laser, and anti-aging angles. From $1,497.",
     keywords: [

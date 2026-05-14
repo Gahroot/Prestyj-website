@@ -9,7 +9,7 @@ export const videoAdsForLawFirmOwners: BestForPageContent = {
       "Solo and small-firm attorneys using batch video ad creative testing to drive qualified intake for PI, family, criminal defense, estate planning, and other consumer legal verticals while staying within state bar advertising rules.",
   },
   meta: {
-    title: "300 Bar-Compliant Law Firm Video Ads in 24 Hours | PRESTYJ",
+    title: "300 Bar-Compliant Law Firm Video Ads in 24 Hours",
     description:
       "Beat the billboard firm. 300-1,000 bar-compliant PI, family, and criminal defense video ads with your real face, delivered in 24 hours. From $1,497.",
     keywords: [

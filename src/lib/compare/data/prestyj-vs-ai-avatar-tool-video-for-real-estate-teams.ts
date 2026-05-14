@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,8 @@ export const realEstateTeamsVsAiAvatarToolVideoCompareData: ComparePageData = cr
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · RE Teams-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · ad budget + batch video ads + AI agents · tuned for RE Teams",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,23 +51,46 @@ export const realEstateTeamsVsAiAvatarToolVideoCompareData: ComparePageData = cr
     },
   },
   features: [
-    { feature: "Scripts researched for RE Teams pain points", prestyj: true, competitor: false, note: "AI Avatar Tools does not research your vertical by default" },
+    {
+      feature: "Scripts researched for RE Teams pain points",
+      prestyj: true,
+      competitor: false,
+      note: "AI Avatar Tools does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual brand", prestyj: true, competitor: false },
-    { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "Unlimited but you write every script" },
-    { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "Minutes per render, but you script everything" },
+    {
+      feature: "Variations per engagement",
+      prestyj: "300-1,000",
+      competitor: "Unlimited but you write every script",
+    },
+    {
+      feature: "Turnaround SLA",
+      prestyj: "24 hrs guaranteed",
+      competitor: "Minutes per render, but you script everything",
+    },
     { feature: "Pricing model", prestyj: "One-time flat", competitor: "Monthly recurring" },
-    { feature: "Cost per ad (at 500 ads)", prestyj: "≈$5", competitor: "Subscription + script labor" },
-    { feature: "Cost per fully tested angle", prestyj: "≈$500", competitor: "$2K-$5K + scripting time" },
+    {
+      feature: "Cost per ad (at 500 ads)",
+      prestyj: "≈$5",
+      competitor: "Subscription + script labor",
+    },
+    {
+      feature: "Cost per fully tested angle",
+      prestyj: "≈$500",
+      competitor: "$2K-$5K + scripting time",
+    },
     { feature: "Built for RE Teams ad fatigue cycles", prestyj: true, competitor: false },
     { feature: "Vertical research bundled", prestyj: true, competitor: false },
   ],
   whySwitch: {
     title: "Why RE Teams Pick Batch Over AI Avatar Tools",
-    description: "A buyer spending $400K researches the agent before they call. An AI avatar tells them nothing. Your real face tells them everything.",
+    description:
+      "A buyer spending $400K researches the agent before they call. An AI avatar tells them nothing. Your real face tells them everything.",
     reasons: [
       {
         icon: "Zap",
-        title: "Buyer leads and seller leads need different creative — most teams run only buyer ads",
+        title:
+          "Buyer leads and seller leads need different creative — most teams run only buyer ads",
         description:
           "AI Avatar Tools cannot fix this. The unit they ship (per-video, per-gig, per-month) is fundamentally incompatible with the cadence paid social actually requires (50+ creatives per ad set to exit learning).",
       },
@@ -98,10 +121,30 @@ export const realEstateTeamsVsAiAvatarToolVideoCompareData: ComparePageData = cr
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Real Estate Teams", description: "RE Teams-specific use case", href: "/best-for/batch-video-ads-for-real-estate-teams", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for RE Teams", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams", linkText: "See the math" },
-    { title: "Real Estate Teams Video Production Alternative", description: "Alternative to traditional re teams video production", href: "/alternatives/real-estate-teams-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Real Estate Teams",
+      description: "RE Teams-specific use case",
+      href: "/best-for/batch-video-ads-for-real-estate-teams",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for RE Teams",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams",
+      linkText: "See the math",
+    },
+    {
+      title: "Real Estate Teams Video Production Alternative",
+      description: "Alternative to traditional re teams video production",
+      href: "/alternatives/real-estate-teams-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "RE Teams Pick Batch Over AI Avatar Tools.",
@@ -116,7 +159,7 @@ export const realEstateTeamsVsAiAvatarToolVideoCompareData: ComparePageData = cr
 export const realEstateTeamsVsAiAvatarToolVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-ai-avatar-tool-video-for-real-estate-teams",
   competitorName: "AI Avatar Tools (for RE Teams)",
-  title: "PRESTYJ vs AI Avatar Tools for RE Teams (2026 Pricing Math)",
+  title: "Prestyj vs AI Avatar Tools for RE Teams (2026 Pricing Math)",
   description:
     "A buyer spending $400K researches the agent before they call. An AI avatar tells them nothing. Your real face tells them everything. See full per-angle pricing math and why re teams pick batch from $1,497 over $110-$220/month.",
   keywords: [

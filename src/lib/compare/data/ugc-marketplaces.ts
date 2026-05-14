@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not a stranger or AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const ugcMarketplacesCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · You film, we edit",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · ad budget + batch video ads + AI agents · we handle production",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -178,9 +178,9 @@ export const ugcMarketplacesCompareData: ComparePageData = createComparePage({
 export const ugcMarketplacesMetadata: CompareMetadata = {
   slug: "prestyj-vs-ugc-marketplaces",
   competitorName: "UGC Marketplaces (Billo, Insense)",
-  title: "PRESTYJ vs UGC Marketplaces (Billo, Insense): Stranger or Your Face? (2026)",
+  title: "Prestyj vs UGC Marketplaces (Billo, Insense): Stranger or Your Face? (2026)",
   description:
-    "Billo and Insense pair you with UGC creators starting at $99-$500/video. PRESTYJ films you - the owner - in 300-1,000 scripted ads in 24 hours. $1,497 flat vs $50K+ for marketplace UGC.",
+    "Billo and Insense pair you with UGC creators starting at $99-$500/video. Prestyj films you - the owner - in 300-1,000 scripted ads in 24 hours. $1,497 flat vs $50K+ for marketplace UGC.",
   keywords: [
     "ugc marketplace alternative",
     "billo vs insense vs prestyj",

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const PAGE_URL = "https://prestyj.com/ai-content-department";
 
 export const metadata: Metadata = {
-  title: "AI Content Department — Your AI Agent for Social Media | Prestyj",
+  title: "AI Content Department — Your AI Agent for Social Media",
   description:
     "AI Content Department — the AI agent for social media inside Prestyj's marketing & sales AI agent suite. 1,000+ posts/month across 7 platforms, live in 24 hours. From $1,997/mo.",
   keywords: [
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "cost per post social media",
   ],
   openGraph: {
-    title: "AI Content Department — Your AI Agent for Social Media | Prestyj",
+    title: "AI Content Department — Your AI Agent for Social Media",
     description:
       "An AI agent that runs your social media. 1,000+ posts/month across 7 platforms, live in 24 hours. Part of Prestyj's marketing & sales AI agent suite. From $1,997/mo.",
     type: "website",

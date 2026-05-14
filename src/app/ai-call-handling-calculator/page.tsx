@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { RoiCalculator } from "@/components/sections/calculator/roi-calculator";
 
 export const metadata: Metadata = {
-  title: "AI Call Handling ROI Calculator | Prestyj",
+  title: "AI Call Handling ROI Calculator",
   description:
     "Calculate exactly how much revenue you're losing from missed calls and what AI voice agents could save you in the next 12 months. Get your personalized ROI report instantly.",
   keywords: [
@@ -23,18 +23,18 @@ export const metadata: Metadata = {
 
 export default function RoiCalculatorPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <main className="from-background to-muted/20 min-h-screen bg-gradient-to-b">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             Calculate Your AI Call Handling ROI
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground md:text-xl">
-            Discover exactly how much revenue you&apos;re losing from missed calls
-            and what AI voice agents could save you in the next 12 months.
+          <p className="text-muted-foreground mt-6 text-lg md:text-xl">
+            Discover exactly how much revenue you&apos;re losing from missed calls and what AI voice
+            agents could save you in the next 12 months.
           </p>
-          <p className="mt-4 text-sm text-muted-foreground">
+          <p className="text-muted-foreground mt-4 text-sm">
             Get your personalized ROI report in 60 seconds — no credit card required.
           </p>
         </div>

@@ -16,7 +16,7 @@ export const smartAlto: AlternativePageContent = createAlternativePage({
     description: "AI-powered inside sales agent service for real estate teams",
   },
   meta: {
-    title: "Smart Alto Alternatives for Real Estate ISA Teams | Prestyj",
+    title: "Smart Alto Alternatives for Real Estate ISA Teams",
     description:
       "Looking for Smart Alto alternatives? Compare Prestyj vs Smart Alto for AI lead response. Voice AI that handles calls, transparent pricing, and no per-lead fees.",
     keywords: [

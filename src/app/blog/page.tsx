@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Prestyj Blog — AI Agents for Marketing & Sales",
     description:
       "Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.",
-    siteName: "PRESTYJ",
+    siteName: "Prestyj",
   },
   twitter: {
     card: "summary_large_image",
@@ -66,13 +66,13 @@ export default function BlogPage(): React.ReactElement {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "PRESTYJ Blog",
+    name: "Prestyj Blog",
     description:
       "Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.",
     url: `${siteUrl}/blog`,
     publisher: {
       "@type": "Organization",
-      name: "PRESTYJ",
+      name: "Prestyj",
       url: siteUrl,
     },
     blogPost: sortedPosts.map((post) => ({
@@ -98,7 +98,8 @@ export default function BlogPage(): React.ReactElement {
               AI Agents for Marketing & Sales — Blog
             </h1>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.
+              Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales
+              automation.
             </p>
           </div>
 

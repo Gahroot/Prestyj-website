@@ -11,7 +11,7 @@ export const austin: LocationPageContent = {
       "Austin is one of the most demanding — and highest-paying — home services markets in the country. Tesla, Apple, Oracle, Samsung, and a deep bench of venture-backed startups have created a wealthy, tech-fluent homeowner base that expects premium service, smart-home integration, and slick digital experiences. Pair that with brutal Texas heat and an outdoor-living culture, and you've got contractors writing service contracts that simply don't exist in slower markets.",
   },
   meta: {
-    title: "Facebook Ads for Austin Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Austin Home Service Contractors",
     description:
       "Grow your Austin HVAC, solar, roofing, or contracting business with Facebook ads built for the tech-driven Texas market. Premium homeowners, high-ticket jobs, real strategy.",
     keywords: [
@@ -98,14 +98,12 @@ export const austin: LocationPageContent = {
         "It's saturated with bad ads — not good ones. Most solar companies are still running the same lead-form fatigue everyone has seen 100 times. We build educational long-form video campaigns that earn trust before asking for the appointment, so by the time a homeowner books, they're already 70% sold. That's how we get sub-$100 qualified appointments in a market that should cost $300+.",
     },
     {
-      question:
-        "How did the 2021 Texas freeze change the Austin home services market long-term?",
+      question: "How did the 2021 Texas freeze change the Austin home services market long-term?",
       answer:
         "It permanently shifted homeowner mindset. Plumbing protection, generators, freeze-resistant HVAC, and resilience upgrades went from 'someday' to 'priority.' Smart contractors are still riding that wave with Facebook campaigns that trigger around weather forecasts and anniversary content each February. It's one of the most predictable seasonal demand spikes in the country.",
     },
     {
-      question:
-        "Which Austin-area neighborhoods deliver the best ROI for home service ads?",
+      question: "Which Austin-area neighborhoods deliver the best ROI for home service ads?",
       answer:
         "Westlake, West Lake Hills, Tarrytown, and Barton Creek for premium remodels, luxury HVAC, and high-end outdoor living. Mueller, East Austin, and South Congress for solar, smart-home upgrades, and modern renovations. Round Rock, Cedar Park, and Leander for newer-home services and replacement work. Lakeway and Bee Cave for Hill Country additions and pool builds. We segment campaigns by exact submarket.",
     },

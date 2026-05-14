@@ -4,11 +4,11 @@ import { FAQJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
-  title: "How Many Ad Creatives Should You Test? [Free Calculator] | PRESTYJ",
+  title: "How Many Ad Creatives Should You Test? [Free Calculator]",
   description:
     "Free calculator: enter your ad spend and CPC to get the minimum number of creative variations you need to test per month for statistically valid results. Most accounts under-test by 10x.",
   openGraph: {
-    title: "How Many Ad Creatives Should You Test? | PRESTYJ",
+    title: "How Many Ad Creatives Should You Test?",
     description:
       "Free calculator to find your minimum creative test volume for statistical significance.",
     type: "website",

@@ -17,7 +17,7 @@ export const blandAi: AlternativePageContent = createAlternativePage({
       "Enterprise-grade developer platform for building custom conversational AI voice agents with complex workflows",
   },
   meta: {
-    title: "Best Bland AI Alternative | Prestyj AI Receptionist",
+    title: "Best Bland AI Alternative | AI Receptionist",
     description:
       "Looking for a Bland AI alternative? Compare Prestyj vs Bland: receptionist-focused & no-code vs developer platform, transparent SMB pricing vs complex enterprise billing, 15min setup vs weeks of development.",
     keywords: [
@@ -135,8 +135,9 @@ export const blandAi: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Predictable, all-inclusive",
-      note: "No per-minute surprises. One price covers everything.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "15-minute setup with zero code",
         "Built-in receptionist templates",

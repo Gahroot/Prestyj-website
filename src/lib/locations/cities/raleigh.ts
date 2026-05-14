@@ -11,7 +11,7 @@ export const raleigh: LocationPageContent = {
       "Raleigh sits at the heart of the Research Triangle — one of the densest concentrations of PhDs, software engineers, biotech researchers, and venture-backed talent anywhere outside Silicon Valley. Apple's $1B campus, Google's expansion, Meta's footprint, and the NC State / Duke / UNC research pipeline have created a tidal wave of high-income homeowners moving in faster than the market can build for them. Cary, Apex, Holly Springs, Wake Forest, and Morrisville are putting up new subdivisions every quarter, and the contractors with the strongest digital presence are quietly locking in 5–7 years of pre-booked work.",
   },
   meta: {
-    title: "Facebook Ads for Raleigh Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Raleigh Home Service Contractors",
     description:
       "Grow your Raleigh HVAC, roofing, plumbing, solar, or general contracting business with Facebook ads built for the Research Triangle's tech-driven, new-construction market.",
     keywords: [
@@ -34,8 +34,7 @@ export const raleigh: LocationPageContent = {
   marketStats: {
     households: "580K+",
     avgHomeValue: "$430K",
-    keyInsight:
-      "Research Triangle's tech boom is driving 25,000+ new housing starts per year",
+    keyInsight: "Research Triangle's tech boom is driving 25,000+ new housing starts per year",
   },
   services: [
     {
@@ -110,8 +109,7 @@ export const raleigh: LocationPageContent = {
         "Yes, but the messaging has to evolve with policy. The savings story alone gets weaker every time NC Utilities Commission revises net-metering — but battery backup, EV charging integration, and energy independence are getting stronger every year. We build Facebook campaigns that lead with resilience and self-consumption rather than pure bill savings, which keeps conversion stable even as rate structures shift.",
     },
     {
-      question:
-        "Which Triangle neighborhoods deliver the best ROI for home service Facebook ads?",
+      question: "Which Triangle neighborhoods deliver the best ROI for home service Facebook ads?",
       answer:
         "Depends on the service. North Raleigh, North Hills, and Brier Creek for premium HVAC and remodels. Cary, Apex, and Morrisville for solar, water filtration, and new-build retrofits. Wake Forest and Holly Springs for landscape, fencing, and deck work on newer homes. Inside-the-Beltline neighborhoods like Five Points, Hayes Barton, and Oakwood for repipe, electrical upgrades, and historic-home restoration. We segment Facebook campaigns at the ZIP and subdivision level, not city-wide.",
     },

@@ -11,7 +11,7 @@ export const batchVideoAdsForAgencyOwners: BestForPageContent = {
       "marketing, creative, and growth agency owners running $30K-$300K/month shops using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for Agency Owners: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for Agency Owners: 500 Ads in 24 Hours (From $1,497)",
     description:
       "Agency Owners ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -35,7 +35,8 @@ export const batchVideoAdsForAgencyOwners: BestForPageContent = {
   whyBestFor: [
     {
       icon: "Zap",
-      title: "The cobbler's kids have no shoes — you ship creative for clients but never for yourself",
+      title:
+        "The cobbler's kids have no shoes — you ship creative for clients but never for yourself",
       description:
         "This is the #1 silent killer for Agency Owners on paid social. The platforms reward creative diversity and punish repetition. When you ship 4 ads, you live in the learning phase forever — your CPL never compresses, the algorithm never finds your buyer cluster, and you blame the channel when the real bottleneck is creative volume. Batch fixes the volume problem in one delivery.",
     },
@@ -47,7 +48,8 @@ export const batchVideoAdsForAgencyOwners: BestForPageContent = {
     },
     {
       icon: "DollarSign",
-      title: "Every retainer churn forces you to scramble for new business with zero creative bench",
+      title:
+        "Every retainer churn forces you to scramble for new business with zero creative bench",
       description:
         "When the unit economics are this big — $3,000-$15,000/month in retainer per landed client — you cannot afford to be creative-starved. A single additional booked deal pays for the entire batch many times over. The math for Agency Owners is some of the most favorable in the entire batch-creative space.",
     },
@@ -66,17 +68,20 @@ export const batchVideoAdsForAgencyOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Agency Owners'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Agency Owners'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, Agency Owners consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },

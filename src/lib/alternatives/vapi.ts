@@ -17,7 +17,7 @@ export const vapi: AlternativePageContent = createAlternativePage({
       "Developer-first infrastructure platform for building custom voice AI agents with 99.99% uptime and API-native architecture",
   },
   meta: {
-    title: "Best Vapi Alternative | Prestyj Receptionist AI",
+    title: "Best Vapi Alternative | Receptionist AI",
     description:
       "Looking for a Vapi alternative? Vapi requires technical expertise and complex setup. Prestyj offers a no-code receptionist solution with built-in templates, transparent pricing, and instant deployment. Compare now.",
     keywords: [
@@ -133,8 +133,9 @@ export const vapi: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Transparent monthly",
-      note: "Everything included, no hidden per-minute charges",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Zero developer or technical knowledge needed",
         "Receptionist-specific templates included",

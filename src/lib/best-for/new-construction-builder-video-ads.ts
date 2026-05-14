@@ -9,7 +9,7 @@ export const newConstructionBuilderVideoAds: BestForPageContent = {
       "Custom and production home builders using batch video ad creative testing to drive qualified buyer traffic to model homes, community pages, and move-in-ready inventory.",
   },
   meta: {
-    title: "Batch Video Ads for Home Builders | New Construction Marketing | Prestyj",
+    title: "Batch Video Ads for Home Builders | New Construction Marketing",
     description:
       "Turn 20 minutes of builder footage into 300–1,000 new construction video ads. Test model homes, floorplans, incentives, and buyer pain points in parallel — find what fills your lot.",
     keywords: [
@@ -58,7 +58,8 @@ export const newConstructionBuilderVideoAds: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You're running Facebook ads for a community but don't know if you should lead with rates, incentives, or move-in timelines",
+      problem:
+        "You're running Facebook ads for a community but don't know if you should lead with rates, incentives, or move-in timelines",
       solution:
         "We build your batch around 3, 5, or 10 specific buyer objections — interest rate buydowns, closing cost credits, upgrade packages, move-in ready inventory, energy efficiency, warranty, school districts — so your ad spend generates signal on which message actually fills your lot in your specific market.",
     },
@@ -68,7 +69,8 @@ export const newConstructionBuilderVideoAds: BestForPageContent = {
         "New construction campaigns need 50+ creative variations to give Facebook's algorithm enough data to find your buyer profile. With 300–1,000 variations running in rotation, you eliminate creative fatigue as a variable and keep CPL steady through the entire selling season.",
     },
     {
-      problem: "Your marketing looks like every other builder's — drone footage, 'new homes now selling', contact form",
+      problem:
+        "Your marketing looks like every other builder's — drone footage, 'new homes now selling', contact form",
       solution:
         "Prestyj writes direct-response scripts that name the exact objection and answer it. 'Worried about buying at 7%? Here's what a 5.99% buydown actually saves you per month on a $450k home.' 'Wondering if it'll be ready for the school year? Our move-in ready inventory closes in 30 days.' Specific beats pretty every time in paid social.",
     },

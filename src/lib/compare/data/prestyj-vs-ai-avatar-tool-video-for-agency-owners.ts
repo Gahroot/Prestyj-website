@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,9 @@ export const agencyOwnersVsAiAvatarToolVideoCompareData: ComparePageData = creat
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · Agency Owners-researched",
+      price: "$1,997",
+      priceSubtext:
+        "/mo Starter · ad budget + batch video ads + AI agents · tuned for Agency Owners",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,23 +52,46 @@ export const agencyOwnersVsAiAvatarToolVideoCompareData: ComparePageData = creat
     },
   },
   features: [
-    { feature: "Scripts researched for Agency Owners pain points", prestyj: true, competitor: false, note: "AI Avatar Tools does not research your vertical by default" },
+    {
+      feature: "Scripts researched for Agency Owners pain points",
+      prestyj: true,
+      competitor: false,
+      note: "AI Avatar Tools does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual brand", prestyj: true, competitor: false },
-    { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "Unlimited but you write every script" },
-    { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "Minutes per render, but you script everything" },
+    {
+      feature: "Variations per engagement",
+      prestyj: "300-1,000",
+      competitor: "Unlimited but you write every script",
+    },
+    {
+      feature: "Turnaround SLA",
+      prestyj: "24 hrs guaranteed",
+      competitor: "Minutes per render, but you script everything",
+    },
     { feature: "Pricing model", prestyj: "One-time flat", competitor: "Monthly recurring" },
-    { feature: "Cost per ad (at 500 ads)", prestyj: "≈$5", competitor: "Subscription + script labor" },
-    { feature: "Cost per fully tested angle", prestyj: "≈$500", competitor: "$2K-$5K + scripting time" },
+    {
+      feature: "Cost per ad (at 500 ads)",
+      prestyj: "≈$5",
+      competitor: "Subscription + script labor",
+    },
+    {
+      feature: "Cost per fully tested angle",
+      prestyj: "≈$500",
+      competitor: "$2K-$5K + scripting time",
+    },
     { feature: "Built for Agency Owners ad fatigue cycles", prestyj: true, competitor: false },
     { feature: "Vertical research bundled", prestyj: true, competitor: false },
   ],
   whySwitch: {
     title: "Why Agency Owners Pick Batch Over AI Avatar Tools",
-    description: "Your prospects can clock an AI avatar in 2 seconds. The moment they do, your agency loses authority.",
+    description:
+      "Your prospects can clock an AI avatar in 2 seconds. The moment they do, your agency loses authority.",
     reasons: [
       {
         icon: "Zap",
-        title: "The cobbler's kids have no shoes — you ship creative for clients but never for yourself",
+        title:
+          "The cobbler's kids have no shoes — you ship creative for clients but never for yourself",
         description:
           "AI Avatar Tools cannot fix this. The unit they ship (per-video, per-gig, per-month) is fundamentally incompatible with the cadence paid social actually requires (50+ creatives per ad set to exit learning).",
       },
@@ -98,10 +122,30 @@ export const agencyOwnersVsAiAvatarToolVideoCompareData: ComparePageData = creat
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Agency Owners", description: "Agency Owners-specific use case", href: "/best-for/batch-video-ads-for-agency-owners", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for Agency Owners", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-agency-owners", linkText: "See the math" },
-    { title: "Agency Owners Video Production Alternative", description: "Alternative to traditional agency owners video production", href: "/alternatives/agency-owners-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Agency Owners",
+      description: "Agency Owners-specific use case",
+      href: "/best-for/batch-video-ads-for-agency-owners",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for Agency Owners",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-agency-owners",
+      linkText: "See the math",
+    },
+    {
+      title: "Agency Owners Video Production Alternative",
+      description: "Alternative to traditional agency owners video production",
+      href: "/alternatives/agency-owners-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Agency Owners Pick Batch Over AI Avatar Tools.",
@@ -116,7 +160,7 @@ export const agencyOwnersVsAiAvatarToolVideoCompareData: ComparePageData = creat
 export const agencyOwnersVsAiAvatarToolVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-ai-avatar-tool-video-for-agency-owners",
   competitorName: "AI Avatar Tools (for Agency Owners)",
-  title: "PRESTYJ vs AI Avatar Tools for Agency Owners (2026 Pricing Math)",
+  title: "Prestyj vs AI Avatar Tools for Agency Owners (2026 Pricing Math)",
   description:
     "Your prospects can clock an AI avatar in 2 seconds. The moment they do, your agency loses authority. See full per-angle pricing math and why agency owners pick batch from $1,497 over $110-$220/month.",
   keywords: [

@@ -11,7 +11,7 @@ export const columbus: LocationPageContent = {
       "Columbus is quietly one of the best home services markets in the Midwest — affordable enough to attract 50,000+ new residents a year, big enough to support real ticket sizes, and growing fast enough that the contractors planting their flag now are going to ride the wave for a decade. The Ohio State University anchors the economy, but it's the insurance and finance giants — Nationwide, Huntington, JPMorgan Chase's largest non-NYC operation, Cardinal Health, and Intel's massive new chip fab in Licking County — driving the homeowner-spending power. Suburbs like Dublin, Westerville, and New Albany are exploding with new construction, and the demand for home services is genuinely outrunning supply.",
   },
   meta: {
-    title: "Facebook Ads for Columbus Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Columbus Home Service Contractors",
     description:
       "Grow your Columbus HVAC, roofing, plumbing, solar, or general contracting business with Facebook ads built for Central Ohio's affordable, fast-growing, dual-season market.",
     keywords: [
@@ -86,8 +86,7 @@ export const columbus: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "Columbus contractor ad costs feel low. Is that an opportunity or a trap?",
+      question: "Columbus contractor ad costs feel low. Is that an opportunity or a trap?",
       answer:
         "It's a real opportunity, and the window won't stay open forever. Columbus CPMs are dramatically lower than Texas, Florida, or coastal markets because most local contractors haven't gotten serious about Facebook yet. That changes fast once Intel's fab and the broader growth wave attract national home-service brands looking for new markets. We help local contractors lock in cost-per-booked-job advantages now that compound for years before competition catches up.",
     },
@@ -98,14 +97,12 @@ export const columbus: LocationPageContent = {
         "Yes — but not for what most contractors think. Brand-new homes don't need roofs or HVAC for 10+ years, but they need water filtration, generators, fence and deck builds, finished basements, and landscape work within the first 12–24 months. We build Facebook campaigns targeted by move-in date and subdivision that catch homeowners exactly when those upgrade budgets are active.",
     },
     {
-      question:
-        "How does Intel's $20B chip fab actually change my Columbus marketing strategy?",
+      question: "How does Intel's $20B chip fab actually change my Columbus marketing strategy?",
       answer:
         "It changes the buyer profile in a 30-mile radius. Highly-paid engineers and managers relocating from California, Arizona, and Oregon are bringing renovation budgets and design expectations Central Ohio hasn't seen at scale before. We build Facebook campaigns that match those expectations — design-forward creative, transparent pricing, online booking — so contractors capture the relocator wave instead of losing it to whichever brand looks most professional in the feed.",
     },
     {
-      question:
-        "Is the Ohio State University area worth advertising into for home services?",
+      question: "Is the Ohio State University area worth advertising into for home services?",
       answer:
         "For most home services, no — student rentals are landlord-driven and low-margin. But the surrounding faculty and graduate-student-owned neighborhoods like Clintonville, Upper Arlington, and Worthington are excellent: stable, educated homeowners with 1940s-1970s housing stock that needs constant repipe, electrical, and HVAC work. We build Facebook campaigns that filter out renter audiences and focus on long-term owner-occupied homes where the lifetime customer value actually exists.",
     },

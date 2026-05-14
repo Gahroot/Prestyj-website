@@ -10,7 +10,7 @@ export const realEstateVideoAdsColorado: BestForPageContent = {
       "Colorado agents using batch vertical video ad creative to convert rate-lock sellers, mountain-town second-home buyers, and Denver metro sub-market families across REcolorado and IRES MLS territory under DORA compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Colorado | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Colorado | 300–1,000 Scripted Ads",
     description:
       "Colorado agents: 300–1,000 vertical video ads in 24 hours. Tuned for REcolorado, IRES, DORA compliance, mountain towns, and rate-lock sellers. From $1,497.",
     keywords: [

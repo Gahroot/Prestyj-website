@@ -11,7 +11,7 @@ export const sanAntonio: LocationPageContent = {
       "San Antonio is one of the most underestimated home services markets in Texas. Joint Base San Antonio drives a constant churn of military families relocating in and out, retirees flock here for the lower cost of living and warm climate, and historic neighborhoods like Monte Vista and King William generate steady preservation work. Add in a brutal eight-month cooling season, and you've got a market with more reliable demand than the flashier metros up I-35.",
   },
   meta: {
-    title: "Facebook Ads for San Antonio Home Service Contractors | Prestyj",
+    title: "Facebook Ads for San Antonio Home Service Contractors",
     description:
       "Grow your San Antonio HVAC, roofing, plumbing, or contracting business with Facebook ads built for the Alamo City's military and retiree-driven market. Real strategy, real leads.",
     keywords: [
@@ -110,8 +110,7 @@ export const sanAntonio: LocationPageContent = {
         "Historic home owners are a specialty audience that responds terribly to generic contractor messaging and exceptionally well to preservation-focused, craftsmanship-centered creative. We build dedicated campaigns featuring period-appropriate work, references to local preservation societies, and clear understanding of permit and HDRC requirements. It's a smaller audience but converts at premium rates with little competition for the keyword space.",
     },
     {
-      question:
-        "Which San Antonio neighborhoods deliver the best ROI for home service ads?",
+      question: "Which San Antonio neighborhoods deliver the best ROI for home service ads?",
       answer:
         "Stone Oak, Alamo Heights, Terrell Hills, and the Dominion for premium remodels, luxury HVAC, and high-end roofing. Monte Vista, King William, and Olmos Park for historic preservation and repipe work. Schertz, Cibolo, and Bulverde for newer-home services tied to military families. The far Northwest and Helotes for retirement renovations. We build hyper-targeted geo campaigns rather than blasting the whole metro.",
     },

@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,8 @@ export const hvacCompaniesVsUgcCreatorVideoCompareData: ComparePageData = create
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · HVAC-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · ad budget + batch video ads + AI agents · tuned for HVAC",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,7 +51,12 @@ export const hvacCompaniesVsUgcCreatorVideoCompareData: ComparePageData = create
     },
   },
   features: [
-    { feature: "Scripts researched for HVAC pain points", prestyj: true, competitor: false, note: "Home Services UGC Creators does not research your vertical by default" },
+    {
+      feature: "Scripts researched for HVAC pain points",
+      prestyj: true,
+      competitor: false,
+      note: "Home Services UGC Creators does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual company", prestyj: true, competitor: false },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "1-3 per creator" },
     { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "14-45 days" },
@@ -63,11 +68,13 @@ export const hvacCompaniesVsUgcCreatorVideoCompareData: ComparePageData = create
   ],
   whySwitch: {
     title: "Why HVAC Pick Batch Over Home Services UGC Creators",
-    description: "A UGC actress in her kitchen is not an HVAC technician. Homeowners trust the owner of the company they're letting into their attic — not a hired model.",
+    description:
+      "A UGC actress in her kitchen is not an HVAC technician. Homeowners trust the owner of the company they're letting into their attic — not a hired model.",
     reasons: [
       {
         icon: "Zap",
-        title: "Heat-wave Tuesday means peak demand on Wednesday — but your ads were last refreshed in March",
+        title:
+          "Heat-wave Tuesday means peak demand on Wednesday — but your ads were last refreshed in March",
         description:
           "Home Services UGC Creators cannot fix this. The unit they ship (per-video, per-gig, per-month) is fundamentally incompatible with the cadence paid social actually requires (50+ creatives per ad set to exit learning).",
       },
@@ -98,10 +105,30 @@ export const hvacCompaniesVsUgcCreatorVideoCompareData: ComparePageData = create
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for HVAC Companies", description: "HVAC-specific use case", href: "/best-for/batch-video-ads-for-hvac-companies", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for HVAC", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-hvac-companies", linkText: "See the math" },
-    { title: "HVAC Companies Video Production Alternative", description: "Alternative to traditional hvac video production", href: "/alternatives/hvac-companies-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for HVAC Companies",
+      description: "HVAC-specific use case",
+      href: "/best-for/batch-video-ads-for-hvac-companies",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for HVAC",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-hvac-companies",
+      linkText: "See the math",
+    },
+    {
+      title: "HVAC Companies Video Production Alternative",
+      description: "Alternative to traditional hvac video production",
+      href: "/alternatives/hvac-companies-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "HVAC Pick Batch Over Home Services UGC Creators.",
@@ -116,7 +143,7 @@ export const hvacCompaniesVsUgcCreatorVideoCompareData: ComparePageData = create
 export const hvacCompaniesVsUgcCreatorVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-ugc-creator-video-for-hvac-companies",
   competitorName: "Home Services UGC Creators (for HVAC)",
-  title: "PRESTYJ vs Home Services UGC Creators for HVAC (2026 Pricing Math)",
+  title: "Prestyj vs Home Services UGC Creators for HVAC (2026 Pricing Math)",
   description:
     "A UGC actress in her kitchen is not an HVAC technician. Homeowners trust the owner of the company they're letting into their attic — not a hired model. See full per-angle pricing math and why hvac pick batch from $1,497 over $200-$600per video.",
   keywords: [

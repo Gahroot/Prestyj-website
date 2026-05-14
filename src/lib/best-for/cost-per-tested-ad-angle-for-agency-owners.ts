@@ -11,7 +11,7 @@ export const costPerTestedAdAngleForAgencyOwners: BestForPageContent = {
       "Pricing math for marketing, creative, and growth agency owners running $30K-$300K/month shops who need to know the true unit cost of testing a new ad angle — not the headline price of a video, but the fully-loaded cost to run, learn, and decide on one positioning hypothesis.",
   },
   meta: {
-    title: "Cost Per Tested Ad Angle for Agency Owners (2026 Math) | PRESTYJ",
+    title: "Cost Per Tested Ad Angle for Agency Owners (2026 Math)",
     description:
       "What does it actually cost to test one ad angle for Agency Owners? Agency: $4K-$15K. Freelancer: $2K-$8K. Batch: ≈$500. Full pricing math, fatigue tax, and hidden costs broken down.",
     keywords: [
@@ -66,22 +66,26 @@ export const costPerTestedAdAngleForAgencyOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You compared a $300 freelancer video to a $1,497 batch and the freelancer 'won' — but you tested 1 ad and it failed",
+      problem:
+        "You compared a $300 freelancer video to a $1,497 batch and the freelancer 'won' — but you tested 1 ad and it failed",
       solution:
         "You did not test an angle. You tested an ad. An angle is a hook + body + CTA pattern with enough variations to exit Meta's learning phase. One ad cannot do that. The freelancer comparison is apples-to-oranges. Per-tested-angle math reveals the freelancer route at $9K-$15K versus batch at ≈$500.",
     },
     {
-      problem: "Your retainer agency calls every video they ship 'a tested angle' and bills $4K-$15K/month",
+      problem:
+        "Your retainer agency calls every video they ship 'a tested angle' and bills $4K-$15K/month",
       solution:
         "Two videos a month is not a tested angle. Ask your agency: how many variations did you ship for that hook? If the answer is under 30, you paid for video production, not for a test. Batch is engineered to ship 50-100+ variations of every angle in the same delivery — which is the only way the test is real.",
     },
     {
-      problem: "You can't tell which line item in the agency invoice is 'creative production' versus 'media management' versus 'reporting'",
+      problem:
+        "You can't tell which line item in the agency invoice is 'creative production' versus 'media management' versus 'reporting'",
       solution:
         "That ambiguity is intentional. It makes it impossible to do per-angle math. Batch is a flat-fee, single-line invoice: Flat fee. 300 ads / 3 angles at $1,497. 500 ads / 5 angles at $2,497. 1,000 ads / 10 angles at $3,997. Cost-per-angle is just (price ÷ angles). No interpretation required.",
     },
     {
-      problem: "Your in-house production cost feels 'free' because it's salaried — but the per-angle math is brutal",
+      problem:
+        "Your in-house production cost feels 'free' because it's salaried — but the per-angle math is brutal",
       solution:
         "An in-house video producer at $70K + benefits who ships 8 videos a quarter is costing roughly $11K-$14K per video, fully loaded. At 30 videos to test one angle, that's $330K-$420K per fully tested angle — before you've shipped a single batch refresh. Salaried production is not free; it is the most expensive way to buy creative volume.",
     },
@@ -92,7 +96,11 @@ export const costPerTestedAdAngleForAgencyOwners: BestForPageContent = {
     },
   ],
   comparison: {
-    headers: ["Cost Component", "Prestyj Batch (500 ads / 5 angles)", "Typical AI Avatar Tools Path"],
+    headers: [
+      "Cost Component",
+      "Prestyj Batch (500 ads / 5 angles)",
+      "Typical AI Avatar Tools Path",
+    ],
     rows: [
       {
         feature: "Headline price",
@@ -164,6 +172,7 @@ export const costPerTestedAdAngleForAgencyOwners: BestForPageContent = {
       "300-1,000 scripted ads, vertical-researched for agency owners, your real face, 24-hour delivery. Flat fee from $1,497 — the only pricing model where per-tested-angle math actually works.",
     buttonText: "Book a Demo",
     buttonHref: "/book-demo",
-    footnote: "One-time pricing from $1,497 · No retainer · Flat fee. 300 ads / 3 angles at $1,497. 500 ads / 5 angles at $2,497. 1,000 ads / 10 angles at $3,997.",
+    footnote:
+      "One-time pricing from $1,497 · No retainer · Flat fee. 300 ads / 3 angles at $1,497. 500 ads / 5 angles at $2,497. 1,000 ads / 10 angles at $3,997.",
   },
 };

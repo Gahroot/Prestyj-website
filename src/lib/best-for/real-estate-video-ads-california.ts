@@ -10,7 +10,7 @@ export const realEstateVideoAdsCalifornia: BestForPageContent = {
       "California agents using batch vertical video ad creative to convert Silicon Valley tech buyers, Prop 19 move-down sellers, post-fire rebuild buyers, and Bay Area to Sacramento out-migrations across CRMLS and regional MLS territory under DRE compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for California | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for California | 300–1,000 Scripted Ads",
     description:
       "California agents: 300–1,000 vertical video ads in 24 hours. Tuned for CRMLS, Prop 19 sellers, DRE compliance, tech buyers, and post-fire markets. From $1,497.",
     keywords: [
@@ -68,7 +68,8 @@ export const realEstateVideoAdsCalifornia: BestForPageContent = {
         "We script a Prop 19-specific seller track statewide: 'if you've been waiting to use your Prop 19 transfer,' with metro-specific mechanics (Bay Area to Sacramento, LA to Santa Barbara, San Diego to Riverside). Unlock inventory other agents ignore.",
     },
     {
-      problem: "Your Silicon Valley tech buyers are confused about 2026 stock-income mortgage rules",
+      problem:
+        "Your Silicon Valley tech buyers are confused about 2026 stock-income mortgage rules",
       solution:
         "We script tech-specific creative: 'if you're an Apple/Google/Meta/Nvidia employee with significant RSUs, here's how 2026 mortgage underwriting actually treats stock income.'",
     },

@@ -11,7 +11,7 @@ export const realGeeks: AlternativePageContent = createAlternativePage({
     description: "Real estate websites, CRM, and lead generation platform",
   },
   meta: {
-    title: "Real Geeks Alternative | Add AI to Real Geeks | Prestyj",
+    title: "Real Geeks Alternative | Add AI to Real Geeks",
     description:
       "Not looking to replace Real Geeks? Add instant AI lead response and reactivation to your existing Real Geeks setup. See how Prestyj enhances your platform.",
     keywords: [
@@ -107,8 +107,9 @@ export const realGeeks: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Enhances your Real Geeks",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Instant AI response for Real Geeks leads",
         "Dead lead reactivation campaigns",

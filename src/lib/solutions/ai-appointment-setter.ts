@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const aiAppointmentSetter: SolutionPageContent = {
   slug: "ai-appointment-setter",
   meta: {
-    title: "AI Appointment Setter | Book 3x More Meetings on Autopilot | Prestyj",
+    title: "AI Appointment Setter | Book 3x More Meetings on Autopilot",
     description:
       "Stop chasing leads. Prestyj's AI appointment setter qualifies prospects, handles objections, and books meetings directly onto your calendar 24/7. Built for real estate agents, home service businesses, and high-volume sales teams.",
     keywords: [

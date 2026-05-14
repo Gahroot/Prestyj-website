@@ -11,7 +11,7 @@ export const doneForYouSocialForCreators: BestForPageContent = {
       "Done-for-you social media content service for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for Creators | Prestyj",
+    title: "Done-For-You Social Media for Creators",
     description:
       "Done-for-you social media content for creators. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product.",
     keywords: [
@@ -37,7 +37,8 @@ export const doneForYouSocialForCreators: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "Creators with active multi-platform presence command 2–3× higher sponsorship rates and have 4× lower platform-risk",
+      title:
+        "Creators with active multi-platform presence command 2–3× higher sponsorship rates and have 4× lower platform-risk",
       description:
         "Creators with active multi-platform presence command 2–3× higher sponsorship rates and have 4× lower platform-risk — your distribution moat is the number of platforms you reliably show up on",
     },
@@ -62,22 +63,26 @@ export const doneForYouSocialForCreators: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Sponsorship contracts require X posts per week and you're scrambling to hit baseline organic cadence",
+      problem:
+        "Sponsorship contracts require X posts per week and you're scrambling to hit baseline organic cadence",
       solution:
         "Prestyj produces 30–50 posts per day across TikTok, Instagram, YouTube, X and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "Your sponsored content and organic creator content compete for the same slots and you can't ship both",
+      problem:
+        "Your sponsored content and organic creator content compete for the same slots and you can't ship both",
       solution:
         "Prestyj's content engine is trained on creators-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "Burnout is real — daily content for 3+ platforms for 5+ years isn't sustainable solo",
+      problem:
+        "Burnout is real — daily content for 3+ platforms for 5+ years isn't sustainable solo",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product.",
     },
     {
-      problem: "You hired an editor and a VA and you're still the bottleneck on scripting, captions, and ideation",
+      problem:
+        "You hired an editor and a VA and you're still the bottleneck on scripting, captions, and ideation",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },

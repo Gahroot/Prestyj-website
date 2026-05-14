@@ -9,7 +9,7 @@ export const videoAdsForInsuranceAgents: BestForPageContent = {
       "Insurance agents and agencies using batch video ad creative testing to generate policy leads — covering auto, home, life, and commercial insurance comparison angles.",
   },
   meta: {
-    title: "500 Insurance Agent Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Insurance Agent Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of insurance-specific video ads with your real face in 24 hours. Auto, home, life, and commercial insurance angles. From $1,497.",
     keywords: [

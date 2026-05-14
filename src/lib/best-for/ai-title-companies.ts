@@ -11,7 +11,7 @@ export const aiTitleCompanies: BestForPageContent = createBestForPage({
       "Title insurance and settlement services companies handling property title searches, examinations, and closings",
   },
   meta: {
-    title: "Best AI for Title Companies | Prestyj",
+    title: "Best AI for Title Companies",
     description:
       "The best AI platform for title companies. Automate title search, order entry, closing coordination, and wire fraud prevention. Modernize your title operations with AI agents.",
     keywords: [

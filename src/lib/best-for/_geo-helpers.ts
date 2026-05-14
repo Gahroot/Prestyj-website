@@ -1,21 +1,22 @@
+import { PRESTYJ_PRICE_DISPLAY, PRESTYJ_PRICE_VALUE } from "@/lib/content-factory";
 import type { ComparisonRow } from "./types";
 
 export const GEO_CTA_BUTTON = {
   buttonText: "Book a Demo",
   buttonHref: "/book-demo",
-  footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
+  footnote: `${PRESTYJ_PRICE_DISPLAY} Starter · ad budget + AI agents included · Month-to-month`,
 };
 
 export function geoComparisonRows(region: string): ComparisonRow[] {
   return [
     {
       feature: "Ad variations delivered",
-      prestyj: "300–1,000 unique variations",
+      prestyj: "300–1,000 unique variations included monthly",
       others: "4–10 ads per month on retainer",
     },
     {
       feature: "Cost structure",
-      prestyj: "One-time: $1,497 / $2,497 / $3,997",
+      prestyj: `${PRESTYJ_PRICE_VALUE}/mo all-in (ad budget + AI agents included)`,
       others: "$1,500–$4,000/month ongoing retainer",
     },
     {
@@ -48,6 +49,6 @@ export function geoComparisonRows(region: string): ComparisonRow[] {
 
 export const GEO_COMPARISON_HEADERS = [
   "Feature",
-  "Prestyj Batch Video Ads",
+  "Prestyj AI Marketing & Sales Platform",
   "Hiring a Local Real Estate Marketing Agency",
 ];

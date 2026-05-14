@@ -28,14 +28,14 @@ function Cell({ value }: { value: string | true | false }) {
   if (value === true) {
     return (
       <div className="flex justify-center">
-        <Check className="w-5 h-5 text-success" aria-label="yes" />
+        <Check className="text-success h-5 w-5" aria-label="yes" />
       </div>
     );
   }
   if (value === false) {
     return (
       <div className="flex justify-center">
-        <X className="w-5 h-5 text-destructive/70" aria-label="no" />
+        <X className="text-destructive/70 h-5 w-5" aria-label="no" />
       </div>
     );
   }
@@ -49,69 +49,62 @@ export function HiddenCostTable({
   footnote = "Figures are 2026 US-market averages from publicly available rate cards, agency RFPs, and Glassdoor loaded-cost data. Your mileage may vary, but the direction won't.",
   rows,
   columns = {
-    prestyj: "PRESTYJ",
+    prestyj: "Prestyj",
     agency: "Creative Agency",
     ugc: "UGC Creator",
     inHouse: "In-House Editor",
   },
 }: HiddenCostTableProps) {
   return (
-    <section className="py-24 px-4">
-      <div className="max-w-6xl mx-auto">
-        <AnimateOnScroll className="text-center mb-12">
-          <Badge variant="outline" className="mb-3 border-warning/50 text-warning">
-            <AlertTriangle className="w-3.5 h-3.5 mr-1.5" />
+    <section className="px-4 py-24">
+      <div className="mx-auto max-w-6xl">
+        <AnimateOnScroll className="mb-12 text-center">
+          <Badge variant="outline" className="border-warning/50 text-warning mb-3">
+            <AlertTriangle className="mr-1.5 h-3.5 w-3.5" />
             {eyebrow}
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
             {headline}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {subhead}
-          </p>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{subhead}</p>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.15}>
-          <div className="overflow-x-auto rounded-xl border border-border bg-card">
+          <div className="border-border bg-card overflow-x-auto rounded-xl border">
             <table className="w-full">
               <thead>
-                <tr className="border-b border-border bg-muted/30">
-                  <th className="text-left p-4 text-sm font-semibold text-muted-foreground min-w-[200px]">
+                <tr className="border-border bg-muted/30 border-b">
+                  <th className="text-muted-foreground min-w-[200px] p-4 text-left text-sm font-semibold">
                     Cost / Capability
                   </th>
-                  <th className="p-4 text-sm font-bold text-primary text-center min-w-[150px]">
+                  <th className="text-primary min-w-[150px] p-4 text-center text-sm font-bold">
                     {columns.prestyj}
                   </th>
-                  <th className="p-4 text-sm font-semibold text-muted-foreground text-center min-w-[150px]">
+                  <th className="text-muted-foreground min-w-[150px] p-4 text-center text-sm font-semibold">
                     {columns.agency}
                   </th>
-                  <th className="p-4 text-sm font-semibold text-muted-foreground text-center min-w-[150px]">
+                  <th className="text-muted-foreground min-w-[150px] p-4 text-center text-sm font-semibold">
                     {columns.ugc}
                   </th>
-                  <th className="p-4 text-sm font-semibold text-muted-foreground text-center min-w-[150px]">
+                  <th className="text-muted-foreground min-w-[150px] p-4 text-center text-sm font-semibold">
                     {columns.inHouse}
                   </th>
                 </tr>
               </thead>
               <tbody>
                 {rows.map((row, i) => (
-                  <tr
-                    key={row.feature}
-                    className={i % 2 === 0 ? "bg-background" : "bg-muted/10"}
-                  >
-                    <td className="p-4 text-sm font-medium text-foreground">
-                      {row.feature}
-                    </td>
-                    <td className="p-4 text-center text-foreground font-semibold">
+                  <tr key={row.feature} className={i % 2 === 0 ? "bg-background" : "bg-muted/10"}>
+                    <td className="text-foreground p-4 text-sm font-medium">{row.feature}</td>
+                    <td className="text-foreground p-4 text-center font-semibold">
                       <Cell value={row.prestyj} />
                     </td>
-                    <td className="p-4 text-center text-muted-foreground">
+                    <td className="text-muted-foreground p-4 text-center">
                       <Cell value={row.agency} />
                     </td>
-                    <td className="p-4 text-center text-muted-foreground">
+                    <td className="text-muted-foreground p-4 text-center">
                       <Cell value={row.ugc} />
                     </td>
-                    <td className="p-4 text-center text-muted-foreground">
+                    <td className="text-muted-foreground p-4 text-center">
                       <Cell value={row.inHouse} />
                     </td>
                   </tr>
@@ -122,7 +115,7 @@ export function HiddenCostTable({
         </AnimateOnScroll>
 
         {footnote && (
-          <p className="text-center text-xs text-muted-foreground mt-6 max-w-3xl mx-auto">
+          <p className="text-muted-foreground mx-auto mt-6 max-w-3xl text-center text-xs">
             {footnote}
           </p>
         )}

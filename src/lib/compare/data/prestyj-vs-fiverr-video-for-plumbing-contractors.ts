@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,8 @@ export const plumbingContractorsVsFiverrVideoCompareData: ComparePageData = crea
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · Plumbing-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · ad budget + batch video ads + AI agents · tuned for Plumbing",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,10 +51,19 @@ export const plumbingContractorsVsFiverrVideoCompareData: ComparePageData = crea
     },
   },
   features: [
-    { feature: "Scripts researched for Plumbing pain points", prestyj: true, competitor: false, note: "Fiverr Video Editors does not research your vertical by default" },
+    {
+      feature: "Scripts researched for Plumbing pain points",
+      prestyj: true,
+      competitor: false,
+      note: "Fiverr Video Editors does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual company", prestyj: true, competitor: "Sometimes" },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "1-5 per gig" },
-    { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "3-14 days, often slipped" },
+    {
+      feature: "Turnaround SLA",
+      prestyj: "24 hrs guaranteed",
+      competitor: "3-14 days, often slipped",
+    },
     { feature: "Pricing model", prestyj: "One-time flat", competitor: "Per video / per gig" },
     { feature: "Cost per ad (at 500 ads)", prestyj: "≈$5", competitor: "$25-$500 each" },
     { feature: "Cost per fully tested angle", prestyj: "≈$500", competitor: "$9K-$15K" },
@@ -63,11 +72,13 @@ export const plumbingContractorsVsFiverrVideoCompareData: ComparePageData = crea
   ],
   whySwitch: {
     title: "Why Plumbing Pick Batch Over Fiverr Video Editors",
-    description: "Your Fiverr editor has never written a sewer-replacement script. Prestyj's batch ships 50 plumbing-specific scripts in one delivery.",
+    description:
+      "Your Fiverr editor has never written a sewer-replacement script. Prestyj's batch ships 50 plumbing-specific scripts in one delivery.",
     reasons: [
       {
         icon: "Zap",
-        title: "Sewer-line jobs and water-heater jobs are different audiences — and your one ad treats them as one",
+        title:
+          "Sewer-line jobs and water-heater jobs are different audiences — and your one ad treats them as one",
         description:
           "Fiverr Video Editors cannot fix this. The unit they ship (per-video, per-gig, per-month) is fundamentally incompatible with the cadence paid social actually requires (50+ creatives per ad set to exit learning).",
       },
@@ -98,10 +109,30 @@ export const plumbingContractorsVsFiverrVideoCompareData: ComparePageData = crea
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Plumbing Contractors", description: "Plumbing-specific use case", href: "/best-for/batch-video-ads-for-plumbing-contractors", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for Plumbing", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-plumbing-contractors", linkText: "See the math" },
-    { title: "Plumbing Contractors Video Production Alternative", description: "Alternative to traditional plumbing video production", href: "/alternatives/plumbing-contractors-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Plumbing Contractors",
+      description: "Plumbing-specific use case",
+      href: "/best-for/batch-video-ads-for-plumbing-contractors",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for Plumbing",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-plumbing-contractors",
+      linkText: "See the math",
+    },
+    {
+      title: "Plumbing Contractors Video Production Alternative",
+      description: "Alternative to traditional plumbing video production",
+      href: "/alternatives/plumbing-contractors-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Plumbing Pick Batch Over Fiverr Video Editors.",
@@ -116,7 +147,7 @@ export const plumbingContractorsVsFiverrVideoCompareData: ComparePageData = crea
 export const plumbingContractorsVsFiverrVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-fiverr-video-for-plumbing-contractors",
   competitorName: "Fiverr Video Editors (for Plumbing)",
-  title: "PRESTYJ vs Fiverr Video Editors for Plumbing (2026 Pricing Math)",
+  title: "Prestyj vs Fiverr Video Editors for Plumbing (2026 Pricing Math)",
   description:
     "Your Fiverr editor has never written a sewer-replacement script. Prestyj's batch ships 50 plumbing-specific scripts in one delivery. See full per-angle pricing math and why plumbing pick batch from $1,497 over $25-$500per gig.",
   keywords: [

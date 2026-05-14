@@ -9,7 +9,7 @@ export const videoAdsForHvacOwners: BestForPageContent = {
       "HVAC company owners using batch video ad creative testing to drive summer emergency calls, annual maintenance club signups, heat pump rebate conversions, and installer-pipeline demand.",
   },
   meta: {
-    title: "300 HVAC Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "300 HVAC Video Ads in 24 Hours (From $1,497)",
     description:
       "AC died at 8am - be the ad they see at 8:05. 300-1,000 scripted emergency, maintenance club, and heat pump rebate ads with your real face in 24 hours.",
     keywords: [

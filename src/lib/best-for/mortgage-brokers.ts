@@ -10,7 +10,7 @@ export const mortgageBrokers: BestForPageContent = createBestForPage({
     description: "Mortgage brokers and loan officers looking for AI-powered lead response",
   },
   meta: {
-    title: "AI Agents for Mortgage Brokers | 24/7 Lead Response | Prestyj",
+    title: "AI Agents for Mortgage Brokers | 24/7 Lead Response",
     description:
       "AI voice and text agents for mortgage brokers. Respond to rate inquiries in under 60 seconds, qualify borrowers 24/7, and book more loan consultations.",
     keywords: [

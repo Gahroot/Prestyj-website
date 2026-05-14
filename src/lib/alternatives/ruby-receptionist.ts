@@ -16,7 +16,7 @@ export const rubyReceptionist: AlternativePageContent = createAlternativePage({
     description: "Premium live virtual receptionist service for small businesses and law firms",
   },
   meta: {
-    title: "Ruby Receptionist Alternative: AI Receptionist at 85% Less | Prestyj",
+    title: "Ruby Receptionist Alternative: AI Receptionist at 85% Less",
     description:
       "Looking for a Ruby Receptionist alternative? Compare Prestyj vs Ruby: 24/7 AI voice agents cost 85-95% less than live receptionists, with consistent quality and no sick days.",
     keywords: [

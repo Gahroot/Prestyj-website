@@ -12,7 +12,7 @@ export const creatify: AlternativePageContent = {
       "AI video ad generator that animates product URLs and images using synthetic avatars, with a batch mode for generating multiple variations.",
   },
   meta: {
-    title: "Creatify Alternative for Real Estate | Prestyj Batch Video Ads",
+    title: "Creatify Alternative for Real Estate | Batch Video Ads",
     description:
       "Creatify uses AI avatars built for e-commerce — not real estate agents. Prestyj turns your actual footage into 300–1,000 video ad variations for social media creative testing.",
     keywords: [
@@ -120,8 +120,9 @@ export const creatify: AlternativePageContent = {
       ],
     },
     prestyjPricing: {
-      price: "$1,497 – $3,997",
-      note: "Flat fee per batch. 300 ads / 3 pain points at $1,497. 1,000 ads / 10 pain points at $3,997. No subscription.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Your actual footage — real agent, real listings, real trust",
         "Fully done-for-you: you send footage, we deliver production-ready ads",

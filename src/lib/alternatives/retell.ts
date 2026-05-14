@@ -16,7 +16,7 @@ export const retell: AlternativePageContent = createAlternativePage({
     description: "Developer platform for building AI voice agents with drag-and-drop builder",
   },
   meta: {
-    title: "Best Retell AI Alternative for Real Estate | Prestyj",
+    title: "Best Retell AI Alternative for Real Estate",
     description:
       "Looking for a Retell AI alternative? Compare Prestyj vs Retell: done-for-you setup vs DIY, predictable pricing vs per-minute billing. See why real estate teams are switching.",
     keywords: [
@@ -109,8 +109,9 @@ export const retell: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Predictable pricing",
-      note: "Based on your needs",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Zero technical setup required",
         "Built specifically for real estate",

@@ -32,8 +32,8 @@ export const aiLeadGenVsTraditionalData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "Custom pricing",
-      priceSubtext: "Pay for results",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: [
         { text: "Under 60 second response time", included: true },
         { text: "24/7/365 availability", included: true },
@@ -273,7 +273,7 @@ export const aiVsTraditionalFAQ = [
 export const aiLeadGenVsTraditionalMetadata: CompareMetadata = {
   slug: "ai-lead-generation-vs-traditional",
   competitorName: "Traditional Lead Generation",
-  title: "AI Lead Generation vs Traditional Methods | 10x Faster Response | Prestyj",
+  title: "AI Lead Generation vs Traditional Methods | 10x Faster Response",
   description:
     "Compare AI-powered lead generation vs traditional methods. AI responds in under 60 seconds, costs less per lead, and scales instantly. See response times, costs, availability, and qualification rates compared.",
   keywords: [

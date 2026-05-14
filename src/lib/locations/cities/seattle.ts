@@ -11,7 +11,7 @@ export const seattle: LocationPageContent = {
       "Seattle is one of the wealthiest, most environmentally conscious, and most contractor-demanding home services markets in North America. Tech salaries from Amazon, Microsoft, and a deep bench of mid-cap startups have pushed median home values past $725K and turned routine remodels into seven-figure projects. Add 150+ rainy days a year, persistent moss and moisture issues, an aging Craftsman and mid-century housing stock, and a homeowner base that researches every decision obsessively, and you get a market where great Facebook advertising has to be smart, evidence-based, and visually polished — not pushy.",
   },
   meta: {
-    title: "Facebook Ads for Seattle Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Seattle Home Service Contractors",
     description:
       "Grow your Seattle HVAC, roofing, plumbing, solar, or contracting business with Facebook ads built for the Pacific Northwest's rain, tech wealth, and eco-conscious homeowners.",
     keywords: [

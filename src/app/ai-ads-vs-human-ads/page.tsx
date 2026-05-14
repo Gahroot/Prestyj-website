@@ -10,11 +10,11 @@ import { FAQJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
-  title: "AI Ads vs Human Ads: Which Actually Converts in 2026? | PRESTYJ",
+  title: "AI Ads vs Human Ads: Which Actually Converts in 2026?",
   description:
     "AI-generated avatars are fast and cheap — but for service businesses where trust drives the sale, a real owner on camera wins. Here's the honest breakdown with a comparison table.",
   openGraph: {
-    title: "AI Ads vs Human Ads: Which Converts in 2026? | PRESTYJ",
+    title: "AI Ads vs Human Ads: Which Converts in 2026?",
     description:
       "For service businesses, real faces beat AI avatars. Here's why, with a full comparison table.",
     type: "website",
@@ -99,7 +99,7 @@ export default function AiAdsVsHumanAdsPage() {
           </p>
           <Button size="lg" className="font-bold" asChild>
             <Link href="/book-demo">
-                Book a Demo
+              Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

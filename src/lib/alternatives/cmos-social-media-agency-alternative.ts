@@ -14,7 +14,7 @@ export const cmosSocialMediaAgencyAlternative: AlternativePageContent = createAl
       "Traditional social media agencies serving B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel — retainer-based engagements shipping 20–30 posts per month with a senior strategist on calls and a junior team doing the actual production.",
   },
   meta: {
-    title: "CMOs Social Media Agency Alternative | Prestyj — 1,500+ Posts/Month",
+    title: "CMOs Social Media Agency Alternative — 1,500+ Posts/Month",
     description:
       "Looking for a cmos social media agency alternative? Prestyj replaces the $3K–$15K/mo agency retainer with an AI content engine: 1,500+ posts/month across 7 platforms, vertical-researched for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel, no contract, no account manager.",
     keywords: [
@@ -127,13 +127,24 @@ export const cmosSocialMediaAgencyAlternative: AlternativePageContent = createAl
       price: "$3K–$15K",
       period: "/month retainer",
       note: "3–12 month contract typical, plus per-platform upcharges and the account-manager overhead inflating every line item. A traditional social media marketing agency selling retainer-based posting, strategy decks, and account management — typically $3K–$15K/month for 20–30 posts.",
-      pros: ["Senior strategist on calls when you want a meeting","Brand workshops and pillar docs delivered up front","Established relationship model for clients who prefer agencies"],
-      cons: ["20–30 posts/month is the industry-standard ceiling","$3K–$15K/month means $100–$750 per post once you do the math","3–12 month contracts lock you in before you see results","Slow 2–4 week creative cycles miss trends and platform shifts","Account-manager overhead inflates the line item","Quality varies wildly between agencies and the junior staff actually doing the work"],
+      pros: [
+        "Senior strategist on calls when you want a meeting",
+        "Brand workshops and pillar docs delivered up front",
+        "Established relationship model for clients who prefer agencies",
+      ],
+      cons: [
+        "20–30 posts/month is the industry-standard ceiling",
+        "$3K–$15K/month means $100–$750 per post once you do the math",
+        "3–12 month contracts lock you in before you see results",
+        "Slow 2–4 week creative cycles miss trends and platform shifts",
+        "Account-manager overhead inflates the line item",
+        "Quality varies wildly between agencies and the junior staff actually doing the work",
+      ],
     },
     prestyjPricingOverrides: {
-      price: "$3,000",
-      period: "/month",
-      note: "All-in. 1,500+ posts/month across 7 platforms. CMOs-researched scripts, voice-trained captions, no contract, no account manager.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "1,500+ posts/month across 7 platforms — flat fee",
         "Daily auto-publish with CMOs-specific scripts and captions",
@@ -171,7 +182,8 @@ export const cmosSocialMediaAgencyAlternative: AlternativePageContent = createAl
     },
     {
       icon: "Target",
-      title: "Built for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel",
+      title:
+        "Built for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel",
       description:
         "Generic agencies pivot from cmos to dentists to SaaS without changing their playbook. Prestyj is purpose-built for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel — every script, hook, and content angle is written for the cmos-specific pain points your business actually sells against. CMO voice is strategic, data-grounded, and brand-safe — generic 'leadership' content reads as ghost-written. Compliance guardrails and brand-voice training have to be baked in, not bolted on.",
     },
@@ -201,7 +213,8 @@ export const cmosSocialMediaAgencyAlternative: AlternativePageContent = createAl
     {
       href: "/ai-content-department",
       title: "AI Content Department — the AI agent for social media",
-      description: "How Prestyj.s AI Content Department replaces your agency, freelancer, and in-house stack.",
+      description:
+        "How Prestyj.s AI Content Department replaces your agency, freelancer, and in-house stack.",
     },
     {
       href: "/best-for/done-for-you-social-for-cmos",
@@ -211,7 +224,8 @@ export const cmosSocialMediaAgencyAlternative: AlternativePageContent = createAl
     {
       href: "/best-for/social-volume-strategy-for-cmos",
       title: "Social Volume Strategy for CMOs",
-      description: "Cadence math, platform priorities, and the 2026 volume strategy for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel.",
+      description:
+        "Cadence math, platform priorities, and the 2026 volume strategy for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel.",
     },
     {
       href: "/compare/prestyj-vs-in-house-hire-for-cmos",

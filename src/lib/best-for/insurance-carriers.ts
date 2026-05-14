@@ -11,7 +11,7 @@ export const insuranceCarriers: BestForPageContent = createBestForPage({
       "Insurance carriers and TPAs needing enterprise done-for-you AI for claims processing and policy servicing at scale",
   },
   meta: {
-    title: "Done-For-You AI Agents for Insurance Carriers | Prestyj",
+    title: "Done-For-You AI Agents for Insurance Carriers",
     description:
       "Enterprise insurance carriers get production-ready AI for claims FNOL, policy servicing, and agent support—integrated with Guidewire or Duck Creek. Deployed in weeks, not 18 months.",
     keywords: [

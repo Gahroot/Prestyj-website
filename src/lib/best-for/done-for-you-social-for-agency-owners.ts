@@ -11,7 +11,7 @@ export const doneForYouSocialForAgencyOwners: BestForPageContent = {
       "Done-for-you social media content service for founders of $30K–$300K/month marketing, creative, and growth agencies. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for Agency Owners | Prestyj",
+    title: "Done-For-You Social Media for Agency Owners",
     description:
       "Done-for-you social media content for agency owners. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for founders of $30K–$300K/month marketing, creative, and growth agencies.",
     keywords: [
@@ -37,7 +37,8 @@ export const doneForYouSocialForAgencyOwners: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "Agency owners with active personal brands close 30–50% higher retainers and shorten sales cycles by 2–3 weeks",
+      title:
+        "Agency owners with active personal brands close 30–50% higher retainers and shorten sales cycles by 2–3 weeks",
       description:
         "Agency owners with active personal brands close 30–50% higher retainers and shorten sales cycles by 2–3 weeks — your founder brand is the highest-leverage growth channel your agency owns and the one you're most likely to ignore",
     },
@@ -62,7 +63,8 @@ export const doneForYouSocialForAgencyOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You ship pitch-deck-grade content for clients and post nothing for yourself — every quarter",
+      problem:
+        "You ship pitch-deck-grade content for clients and post nothing for yourself — every quarter",
       solution:
         "Prestyj produces 30–50 posts per day across LinkedIn, Instagram, X, Threads and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
@@ -72,12 +74,14 @@ export const doneForYouSocialForAgencyOwners: BestForPageContent = {
         "Prestyj's content engine is trained on agency owners-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "One client churn becomes a survival event because you never built creative volume to backfill pipeline",
+      problem:
+        "One client churn becomes a survival event because you never built creative volume to backfill pipeline",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for founders of $30K–$300K/month marketing, creative, and growth agencies.",
     },
     {
-      problem: "Your team has the skills to do your social — but billable hours always win the priority fight",
+      problem:
+        "Your team has the skills to do your social — but billable hours always win the priority fight",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },

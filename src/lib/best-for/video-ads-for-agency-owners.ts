@@ -9,7 +9,7 @@ export const videoAdsForAgencyOwners: BestForPageContent = {
       "Marketing, creative, and growth agency owners using batch video ad creative testing to land new clients — without stopping the work they're doing for current clients to make creative for themselves.",
   },
   meta: {
-    title: "300 Agency Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "300 Agency Video Ads in 24 Hours (From $1,497)",
     description:
       "The cobbler's kids have no shoes. Record once, ship 300-1,000 founder-led video ads testing your positioning and offer in 24 hours. From $1,497.",
     keywords: [

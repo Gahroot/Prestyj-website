@@ -11,7 +11,7 @@ export const doneForYouSocialForCmos: BestForPageContent = {
       "Done-for-you social media content service for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for CMOs | Prestyj",
+    title: "Done-For-You Social Media for CMOs",
     description:
       "Done-for-you social media content for cmos. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel.",
     keywords: [
@@ -37,7 +37,8 @@ export const doneForYouSocialForCmos: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "CMOs with personal LinkedIn presence command board-level compensation and recruiter inbound",
+      title:
+        "CMOs with personal LinkedIn presence command board-level compensation and recruiter inbound",
       description:
         "CMOs with personal LinkedIn presence command board-level compensation and recruiter inbound — your executive brand is the strongest career asset you own, yet 90% of CMOs are dark on social",
     },
@@ -62,22 +63,26 @@ export const doneForYouSocialForCmos: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your agency ships 20–30 posts/month and the board is asking why the brand presence is invisible",
+      problem:
+        "Your agency ships 20–30 posts/month and the board is asking why the brand presence is invisible",
       solution:
         "Prestyj produces 30–50 posts per day across LinkedIn, Instagram, X, YouTube and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "Brand consistency across 5+ markets and 3+ product lines is impossible with the agency's manual cycle",
+      problem:
+        "Brand consistency across 5+ markets and 3+ product lines is impossible with the agency's manual cycle",
       solution:
         "Prestyj's content engine is trained on cmos-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "Legal/compliance review on every post is slowing your team to a 2-week turnaround per asset",
+      problem:
+        "Legal/compliance review on every post is slowing your team to a 2-week turnaround per asset",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel.",
     },
     {
-      problem: "Quarterly reporting decks measure activity, not learning velocity — and your CEO can tell",
+      problem:
+        "Quarterly reporting decks measure activity, not learning velocity — and your CEO can tell",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },

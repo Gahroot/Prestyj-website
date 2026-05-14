@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The QualVol Content Playbook | Quality + Volume Social Media | PRESTYJ",
+  title: "The QualVol Content Playbook | Quality + Volume Social Media",
   description:
     "Download the free QualVol Content Playbook. The swarm model, scoring rubrics, distribution matrices, and the workflow used to ship hundreds of on-brand posts per week without trading quality for volume.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "ai content department playbook",
   ],
   openGraph: {
-    title: "The QualVol Content Playbook | Free Download | PRESTYJ",
+    title: "The QualVol Content Playbook | Free Download",
     description:
       "Quality and volume aren't opposites. Download the playbook used to ship hundreds of on-brand posts per week across every platform.",
     type: "website",

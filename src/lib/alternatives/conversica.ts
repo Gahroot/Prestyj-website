@@ -15,7 +15,7 @@ export const conversica: AlternativePageContent = createAlternativePage({
     description: "Enterprise AI sales assistant serving multiple industries",
   },
   meta: {
-    title: "Best Conversica Alternative for Real Estate | Prestyj",
+    title: "Best Conversica Alternative for Real Estate",
     description:
       "Looking for a Conversica alternative for real estate? Prestyj is purpose-built for RE operations with faster deployment, transparent pricing, and no cross-industry compromise.",
     keywords: [
@@ -104,8 +104,9 @@ export const conversica: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Scaled for your operation",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Built exclusively for real estate",
         "Multi-office management included",

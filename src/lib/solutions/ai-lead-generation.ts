@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const aiLeadGeneration: SolutionPageContent = {
   slug: "ai-lead-generation",
   meta: {
-    title: "AI Lead Generation | Capture Leads 24/7 with AI Chatbots & Voice Agents | Prestyj",
+    title: "AI Lead Generation | Capture Leads 24/7 with AI Chatbots & Voice Agents",
     description:
       "Capture leads 24/7 with AI-powered chatbots, web forms, and voice agents. Instant qualification, automated booking, and never miss another opportunity.",
     keywords: [

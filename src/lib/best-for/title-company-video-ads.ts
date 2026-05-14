@@ -9,7 +9,7 @@ export const titleCompanyVideoAds: BestForPageContent = {
       "Title and escrow companies using batch video ad creative testing to win referral partners — agents, lenders, and investors — not direct consumers.",
   },
   meta: {
-    title: "Batch Video Ads for Title Companies | Referral Partner Marketing | Prestyj",
+    title: "Batch Video Ads for Title Companies | Referral Partner Marketing",
     description:
       "Turn 20 minutes of title-exec footage into 300–1,000 video ads targeting agents, lenders, and investors. Test every referral-partner angle and find what actually moves deals to your desk.",
     keywords: [
@@ -58,27 +58,32 @@ export const titleCompanyVideoAds: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You want more agent and lender referrals but can't fit another coffee meeting in your week",
+      problem:
+        "You want more agent and lender referrals but can't fit another coffee meeting in your week",
       solution:
         "Business development for title has always been 1:1: coffee meetings, closing gifts, lunch drop-offs. That scales to maybe 50 relationships before your calendar breaks. Paid social with the right creative reaches 5,000+ agents and lenders in your metro per month — but only if you have creative volume. Batch production is what makes paid referral marketing actually work for title.",
     },
     {
-      problem: "You don't know whether to lead with 'we answer the phone', 'on-time closings', or 'cleanest CDs in the state'",
+      problem:
+        "You don't know whether to lead with 'we answer the phone', 'on-time closings', or 'cleanest CDs in the state'",
       solution:
         "We build your batch around 3, 5, or 10 specific referral-partner pain points — closing delays, unresponsive processors, sloppy CDs, poor communication, inflexible schedules, bad customer experience for their client, compliance slipups — so your ad spend tells you which promise actually makes agents and lenders switch.",
     },
     {
-      problem: "Title companies in your market all sound the same — 'trusted, local, experienced since 1997'",
+      problem:
+        "Title companies in your market all sound the same — 'trusted, local, experienced since 1997'",
       solution:
         "Prestyj writes direct-response scripts that name the specific failure the agent or lender experienced last month and promise the opposite. 'If your last closing got delayed because the title company didn't answer the phone on Friday, here's how we handle Friday.' No generic trust language. Every variation is a specific pain → specific fix.",
     },
     {
-      problem: "You want to recruit agents, lenders, and investors simultaneously — but they have completely different concerns",
+      problem:
+        "You want to recruit agents, lenders, and investors simultaneously — but they have completely different concerns",
       solution:
         "Your batch can be segmented by referral persona. Agent tracks lead with on-time closings and processor responsiveness. Lender tracks lead with CD accuracy and clear-to-close speed. Investor tracks lead with 1031 experience and unusual transaction handling. Each persona gets its own dedicated creative set within the same batch.",
     },
     {
-      problem: "Your business development lead is too expensive to put in front of a camera for repeat shoots",
+      problem:
+        "Your business development lead is too expensive to put in front of a camera for repeat shoots",
       solution:
         "One 15–20 minute session is everything we need. Your title exec, BD rep, or senior processor props up a phone, reads the scripts we send, and we edit 300–1,000 variations from that single recording. No reshoots, no production days, no ongoing creative demand on your most expensive team members.",
     },

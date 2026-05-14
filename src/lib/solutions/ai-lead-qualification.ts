@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const aiLeadQualification: SolutionPageContent = {
   slug: "ai-lead-qualification",
   meta: {
-    title: "AI Lead Qualification | Instantly Score & Prioritize Every Lead | Prestyj",
+    title: "AI Lead Qualification | Instantly Score & Prioritize Every Lead",
     description:
       "Stop wasting hours on tire-kickers. AI agents score, qualify, and prioritize every lead by intent, budget, timeline, and readiness—so your team only calls leads ready to buy. Built for real estate, home services, and high-volume lead buyers.",
     keywords: [

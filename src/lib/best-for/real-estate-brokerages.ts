@@ -10,7 +10,7 @@ export const realEstateBrokerages: BestForPageContent = createBestForPage({
     description: "Brokerages managing multiple agents and high lead volumes from paid advertising",
   },
   meta: {
-    title: "Best AI Lead Response for Real Estate Brokerages | Prestyj",
+    title: "Best AI Lead Response for Real Estate Brokerages",
     description:
       "Prestyj helps real estate brokerages respond to every ad lead in under 60 seconds, qualify buyers and sellers, and book appointments 24/7. Built for brokerages doing $20M+.",
     keywords: [

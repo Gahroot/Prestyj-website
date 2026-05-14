@@ -66,16 +66,16 @@ export default async function AlternativePage({ params }: AlternativePageProps) 
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "PRESTYJ AI Sales Agent",
+    name: "Prestyj AI Sales Agent",
     description: `${alternative.hero.subheadline} Compare Prestyj vs ${alternative.competitor.name}.`,
-    brand: { "@type": "Brand", name: "PRESTYJ" },
+    brand: { "@type": "Brand", name: "Prestyj" },
     url: pageUrl,
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
       price: alternative.comparison.prestyjPricing.price.replace(/[^0-9]/g, "") || "1997",
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "PRESTYJ" },
+      seller: { "@type": "Organization", name: "Prestyj" },
     },
   };
 

@@ -16,7 +16,7 @@ export const isaService: AlternativePageContent = createAlternativePage({
     description: "Human inside sales agent services and outsourced ISA teams",
   },
   meta: {
-    title: "ISA Service Alternatives: AI vs Human ISAs | Prestyj",
+    title: "ISA Service Alternatives: AI vs Human ISAs",
     description:
       "Looking for ISA service alternatives? Compare AI vs human ISA services. Prestyj provides instant AI lead response at a fraction of the cost—no turnover, no training, 24/7 coverage.",
     keywords: [

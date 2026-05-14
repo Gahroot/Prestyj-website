@@ -17,7 +17,7 @@ export const goodcall: AlternativePageContent = createAlternativePage({
       "AI phone agent platform for small businesses with automated inbound call handling",
   },
   meta: {
-    title: "Best Goodcall Alternative | Prestyj AI Receptionist",
+    title: "Best Goodcall Alternative | AI Receptionist",
     description:
       "Looking for a Goodcall alternative? Compare Prestyj vs Goodcall: complete lead management vs basic call answering, done-for-you setup vs self-service, predictable pricing vs per-minute fees. See why businesses are switching.",
     keywords: [
@@ -143,8 +143,9 @@ export const goodcall: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Predictable, all-inclusive",
-      note: "One transparent price covers everything—no per-minute surprises",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Complete lead management, not just call answering",
         "Done-for-you setup and optimization",

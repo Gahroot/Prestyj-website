@@ -8,7 +8,10 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "1,500+ posts/month across 7 platforms", included: true },
   { text: "Coaches-researched scripts, hooks, and frameworks", included: true },
   { text: "Voice-trained captions on your existing content", included: true },
-  { text: "Daily multi-platform publishing (LinkedIn, Instagram, YouTube Shorts, X, +)", included: true },
+  {
+    text: "Daily multi-platform publishing (LinkedIn, Instagram, YouTube Shorts, X, +)",
+    included: true,
+  },
   { text: "Weekly content calendar — approve in 15–30 min", included: true },
   { text: "Performance learning loop tunes future posts", included: true },
   { text: "Live in days — not 4–8 week onboarding", included: true },
@@ -34,8 +37,8 @@ export const coachesVsInHouseHireForCompareData: ComparePageData = createCompare
   },
   pricing: {
     prestyj: {
-      price: "$3,000",
-      priceSubtext: "/month · 1,500+ posts · Coaches-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · AI agents + content engine · tuned for Coaches",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -53,18 +56,40 @@ export const coachesVsInHouseHireForCompareData: ComparePageData = createCompare
     },
   },
   features: [
-    { feature: "Coaches-specific vertical research", prestyj: true, competitor: false, note: "In-House Social Media Hire does not research coaches pain points by default" },
+    {
+      feature: "Coaches-specific vertical research",
+      prestyj: true,
+      competitor: false,
+      note: "In-House Social Media Hire does not research coaches pain points by default",
+    },
     { feature: "Posts per month", prestyj: "1,500+", competitor: "20–40" },
-    { feature: "Platforms covered", prestyj: "7 (LinkedIn, Instagram, YouTube Shorts, X, +)", competitor: "1–3 typical" },
-    { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$55K–$85K/year (fully loaded)" },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (LinkedIn, Instagram, YouTube Shorts, X, +)",
+      competitor: "1–3 typical",
+    },
+    {
+      feature: "Monthly cost",
+      prestyj: "$3,000 flat",
+      competitor: "$55K–$85K/year (fully loaded)",
+    },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$50–$750" },
     { feature: "Voice training on your existing content", prestyj: true, competitor: false },
     { feature: "Daily auto-publish", prestyj: true, competitor: false },
-    { feature: "Long-term contract required", prestyj: false, competitor: true, note: "Employment contract — plus severance risk" },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: true,
+      note: "Employment contract — plus severance risk",
+    },
     { feature: "Onboarding time", prestyj: "Days", competitor: "6–12 weeks (hiring + ramp)" },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "9–5 + PTO + sick days" },
     { feature: "Performance learning loop", prestyj: true, competitor: false },
-    { feature: "Risk of voice drift", prestyj: "Low — trained on your existing content", competitor: "Medium — depends on team turnover" },
+    {
+      feature: "Risk of voice drift",
+      prestyj: "Low — trained on your existing content",
+      competitor: "Medium — depends on team turnover",
+    },
   ],
   whySwitch: {
     title: "Why Coaches Pick the AI Content Engine Over In-House Social Media Hire",
@@ -104,10 +129,30 @@ export const coachesVsInHouseHireForCompareData: ComparePageData = createCompare
     ],
   },
   relatedResources: [
-    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
-    { title: "Done-For-You Social Media for Coaches", description: "Coaches-specific offer page", href: "/best-for/done-for-you-social-for-coaches", linkText: "Read use case" },
-    { title: "Social Volume Strategy for Coaches", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-coaches", linkText: "See the strategy" },
-    { title: "Coaches Social Media Agency Alternative", description: "Alternative to traditional coaches social media agencies", href: "/alternatives/coaches-social-media-agency-alternative", linkText: "Compare" },
+    {
+      title: "AI Content Department — the AI agent for social media",
+      description: "See the Prestyj AI Content Department product",
+      href: "/ai-content-department",
+      linkText: "Learn more",
+    },
+    {
+      title: "Done-For-You Social Media for Coaches",
+      description: "Coaches-specific offer page",
+      href: "/best-for/done-for-you-social-for-coaches",
+      linkText: "Read use case",
+    },
+    {
+      title: "Social Volume Strategy for Coaches",
+      description: "Cadence math and 2026 platform priorities",
+      href: "/best-for/social-volume-strategy-for-coaches",
+      linkText: "See the strategy",
+    },
+    {
+      title: "Coaches Social Media Agency Alternative",
+      description: "Alternative to traditional coaches social media agencies",
+      href: "/alternatives/coaches-social-media-agency-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Coaches Pick the AI Content Engine Over In-House Social Media Hire.",
@@ -122,7 +167,7 @@ export const coachesVsInHouseHireForCompareData: ComparePageData = createCompare
 export const coachesVsInHouseHireForCompareDataMetadata: CompareMetadata = {
   slug: "prestyj-vs-in-house-hire-for-coaches",
   competitorName: "In-House Social Media Hire (for Coaches)",
-  title: "PRESTYJ vs In-House Social Media Hire for Coaches (2026 Cadence Math)",
+  title: "Prestyj vs In-House Social Media Hire for Coaches (2026 Cadence Math)",
   description:
     "A salaried in-house social media coordinator or manager — usually a 1–3 year experience hire making $55K–$85K fully loaded — responsible for posting, captions, and basic creative. See full posts-per-month math and why business, executive, and life coaches selling $2K–$25K coaching programs and group offers pick the AI content engine from $3,000/mo over $55K–$85K/year (fully loaded).",
   keywords: [

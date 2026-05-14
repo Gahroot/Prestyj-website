@@ -12,7 +12,7 @@ export const blandAiAlt: AlternativePageContent = createAlternativePage({
     description: "Developer-focused AI voice calling platform",
   },
   meta: {
-    title: "Best Bland.ai Alternative for Service Businesses | Prestyj",
+    title: "Best Bland.ai Alternative for Service Businesses",
     description:
       "Looking for a Bland.ai alternative? Prestyj offers done-for-you AI voice agents with industry-specific templates, human oversight, and flat pricing—no coding required.",
     keywords: [
@@ -116,8 +116,9 @@ export const blandAiAlt: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Flat monthly fee based on volume. No per-minute surprises.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Done-for-you setup",
         "Industry-specific templates",

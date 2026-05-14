@@ -11,7 +11,7 @@ export const batchVideoAdsForHvacCompanies: BestForPageContent = {
       "residential HVAC companies running $2M-$25M/year with 5-50 trucks using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for HVAC Companies: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for HVAC Companies: 500 Ads in 24 Hours (From $1,497)",
     description:
       "HVAC Companies ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -35,19 +35,22 @@ export const batchVideoAdsForHvacCompanies: BestForPageContent = {
   whyBestFor: [
     {
       icon: "Zap",
-      title: "Heat-wave Tuesday means peak demand on Wednesday — but your ads were last refreshed in March",
+      title:
+        "Heat-wave Tuesday means peak demand on Wednesday — but your ads were last refreshed in March",
       description:
         "This is the #1 silent killer for HVAC on paid social. The platforms reward creative diversity and punish repetition. When you ship 4 ads, you live in the learning phase forever — your CPL never compresses, the algorithm never finds your buyer cluster, and you blame the channel when the real bottleneck is creative volume. Batch fixes the volume problem in one delivery.",
     },
     {
       icon: "Target",
-      title: "ServiceTitan tells you which job pays — it doesn't tell you which ad creative drove it",
+      title:
+        "ServiceTitan tells you which job pays — it doesn't tell you which ad creative drove it",
       description:
         "Different audiences need different hooks. Generic creative averages everything down. HVAC who run 5-10 angle-specific tracks (instead of one 'general' track) consistently see $22-$55 per booked appointment versus the $110-$240 per Angi/Yelp lead (sold to 3 competitors) they were getting before. Batch is engineered around angle-testing — every batch ships with multiple distinct hook tracks ready to A/B at the ad-set level.",
     },
     {
       icon: "DollarSign",
-      title: "Equipment financing offers convert 4x better in video — but you only have 2 financing creatives running",
+      title:
+        "Equipment financing offers convert 4x better in video — but you only have 2 financing creatives running",
       description:
         "When the unit economics are this big — $280 service call → $7,500-$22,000 system replacement — you cannot afford to be creative-starved. A single additional booked deal pays for the entire batch many times over. The math for HVAC is some of the most favorable in the entire batch-creative space.",
     },
@@ -66,17 +69,20 @@ export const batchVideoAdsForHvacCompanies: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for HVAC'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for HVAC'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, HVAC consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },

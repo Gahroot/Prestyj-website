@@ -16,7 +16,7 @@ export const airDotAi: AlternativePageContent = createAlternativePage({
     description: "AI voice agent platform for automated phone conversations",
   },
   meta: {
-    title: "Air.ai Alternatives for Real Estate Lead Response | Prestyj",
+    title: "Air.ai Alternatives for Real Estate Lead Response",
     description:
       "Looking for Air.ai alternatives? Compare Prestyj vs Air.ai for real estate AI voice agents. Done-for-you setup, real estate-trained AI, and predictable flat pricing instead of per-minute billing.",
     keywords: [

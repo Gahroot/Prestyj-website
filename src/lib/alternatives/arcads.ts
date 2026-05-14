@@ -12,7 +12,7 @@ export const arcads: AlternativePageContent = {
       "AI UGC video ad generator that produces lifelike synthetic avatar videos from text prompts — no filming required.",
   },
   meta: {
-    title: "Arcads Alternative for Real Estate Agents | Prestyj Batch Video Ads",
+    title: "Arcads Alternative for Real Estate Agents | Batch Video Ads",
     description:
       "Arcads generates AI avatar ads — not real estate agents. Prestyj turns your actual footage into 300–1,000 video ad variations for real estate creative testing at $4/ad.",
     keywords: [
@@ -117,8 +117,9 @@ export const arcads: AlternativePageContent = {
       ],
     },
     prestyjPricing: {
-      price: "$1,497 – $3,997",
-      note: "Flat fee. 300 ads / 3 pain points at $1,497. 500 ads / 5 pain points at $2,497. 1,000 ads / 10 pain points at $3,997.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Real footage — your face, your listings, your market",
         "Done-for-you: just send 20 minutes of footage",

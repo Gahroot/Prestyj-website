@@ -17,7 +17,7 @@ const manrope = Manrope({
 });
 
 const siteConfig = {
-  name: "PRESTYJ",
+  name: "Prestyj",
   title: "Prestyj | AI Agents for Marketing & Sales",
   description:
     "We build AI agents for marketing and sales. AI agents and automations that capture leads, respond in seconds, qualify, and book meetings — 24/7.",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: `%s | ${siteConfig.name}`,
+    template: "%s — Prestyj",
   },
   description: siteConfig.description,
   keywords: [

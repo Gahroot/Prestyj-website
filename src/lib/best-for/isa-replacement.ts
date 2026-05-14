@@ -10,7 +10,7 @@ export const isaReplacement: BestForPageContent = createBestForPage({
     description: "Agents and teams looking to replace or avoid expensive inside sales agents",
   },
   meta: {
-    title: "Best ISA Alternative for Real Estate | AI vs Human ISA | Prestyj",
+    title: "Best ISA Alternative for Real Estate | AI vs Human ISA",
     description:
       "Compare AI vs human ISA costs and capabilities. Save $48,000+/year while getting 24/7 coverage. See why agents are replacing ISAs with Prestyj AI.",
     keywords: [

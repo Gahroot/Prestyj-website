@@ -11,7 +11,7 @@ export const miami: LocationPageContent = {
       "Miami is one of the most lucrative — and most demanding — home services markets in the world. Hurricane risk drives some of the strictest building codes in the country, fueling premium roofing, impact-window, and structural work that simply can't be cheap. The luxury condo boom in Brickell, the legacy waterfront estates of Coconut Grove and Coral Gables, and a flood of international buyers from Latin America and Europe have pushed home values and renovation budgets to numbers that don't exist in most US metros. The contractors who own Miami's Facebook attention right now are landing six- and seven-figure projects on a steady cadence.",
   },
   meta: {
-    title: "Facebook Ads for Miami Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Miami Home Service Contractors",
     description:
       "Grow your Miami HVAC, roofing, plumbing, solar, or contracting business with Facebook ads built for South Florida's hurricane code, luxury condo, and international-buyer market.",
     keywords: [
@@ -34,8 +34,7 @@ export const miami: LocationPageContent = {
   marketStats: {
     households: "2.2M+",
     avgHomeValue: "$510K",
-    keyInsight:
-      "Miami's luxury condo and waterfront home market commands premium contractor rates",
+    keyInsight: "Miami's luxury condo and waterfront home market commands premium contractor rates",
   },
   services: [
     {
@@ -110,8 +109,7 @@ export const miami: LocationPageContent = {
         "Miami's insurance market is even more compressed than the rest of Florida — carriers are non-renewing aggressively on older roofs and demanding documentation on everything. That creates urgency you can lean into ethically. We build Facebook campaigns around insurance-renewal timelines, four-point inspection requirements, and roof-age non-renewal triggers, then route motivated homeowners directly into a documentation-ready quoting process. The urgency is real, the offer is genuinely useful, and conversions reflect that.",
     },
     {
-      question:
-        "Which Miami areas deliver the best ROI for home service Facebook ads?",
+      question: "Which Miami areas deliver the best ROI for home service Facebook ads?",
       answer:
         "Depends entirely on the service. Brickell, Edgewater, and downtown high-rises are condo-renovation, VRF HVAC, and luxury-kitchen territory. Coral Gables, Coconut Grove, Pinecrest, and Palmetto Bay are estate-tier remodel, roofing, and impact-window goldmines. Sunny Isles, Aventura, and Bal Harbour drive premium coastal HVAC and design-forward renovation work. Older inland neighborhoods like Little Havana and Allapattah are repipe and cast-iron-replacement strongholds. We segment Facebook campaigns at the neighborhood level instead of broadcasting to all of Miami-Dade.",
     },

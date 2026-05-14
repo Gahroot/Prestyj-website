@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const aiSalesAgentCost: SolutionPageContent = {
   slug: "ai-sales-agent-cost",
   meta: {
-    title: "AI Sales Agent Cost vs Human SDR | Cost Per Meeting Comparison | Prestyj",
+    title: "AI Sales Agent Cost vs Human SDR | Cost Per Meeting Comparison",
     description:
       "Compare AI sales agent costs vs human SDRs. See total cost of ownership including salary, commission, turnover, and ramp time. AI sales agents cost 60–80% less while qualifying leads 24/7.",
     keywords: [

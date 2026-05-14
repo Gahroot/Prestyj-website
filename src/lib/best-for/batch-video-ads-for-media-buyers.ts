@@ -11,7 +11,7 @@ export const batchVideoAdsForMediaBuyers: BestForPageContent = {
       "in-house media buyers and performance marketers managing $50K-$2M/month in paid social spend using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for Media Buyers: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for Media Buyers: 500 Ads in 24 Hours (From $1,497)",
     description:
       "Media Buyers ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -66,17 +66,20 @@ export const batchVideoAdsForMediaBuyers: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Media Buyers'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Media Buyers'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, Media Buyers consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },

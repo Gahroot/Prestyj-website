@@ -90,7 +90,7 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
     description: solution.meta.description,
     provider: {
       "@type": "Organization",
-      name: "PRESTYJ",
+      name: "Prestyj",
       url: siteUrl,
     },
     areaServed: "United States",
@@ -108,9 +108,7 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
         <LandingPainPoints content={solution.painPoints} />
         {solution.calculator && <ROICalculator content={solution.calculator} />}
         <LandingBenefits content={solution.benefits} />
-        {solution.objections && (
-          <ObjectionAccordion content={solution.objections} />
-        )}
+        {solution.objections && <ObjectionAccordion content={solution.objections} />}
         <LandingCTA content={solution.cta} />
       </main>
       <Footer />

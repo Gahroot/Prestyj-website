@@ -30,8 +30,8 @@ function IntakeSuccessBanner() {
           Brand kit received — thank you!
         </p>
         <p className="text-muted-foreground mt-1 text-sm">
-          Pick a time below for your strategy call so we can walk you through the plan and get
-          you live in 24 hours.
+          Pick a time below for your strategy call so we can walk you through the plan and get you
+          live in 24 hours.
         </p>
       </div>
     </motion.div>
@@ -69,7 +69,7 @@ export default function BookDemoPage() {
             "Book a 30-minute strategy call to see how Prestyj's AI sales agents can automate lead response, qualification, and appointment booking for your business.",
           provider: {
             "@type": "Organization",
-            name: "PRESTYJ",
+            name: "Prestyj",
             url: "https://prestyj.com",
           },
           serviceType: "Consultation",
@@ -175,7 +175,9 @@ export default function BookDemoPage() {
                       <CheckCircle className="text-primary h-5 w-5" />
                     </div>
                     <p className="font-medium">No Fluff</p>
-                    <p className="text-muted-foreground text-sm">Actionable insights &amp; strategy</p>
+                    <p className="text-muted-foreground text-sm">
+                      Actionable insights &amp; strategy
+                    </p>
                   </div>
                   <div className="flex flex-col items-center gap-2">
                     <div className="bg-primary/10 rounded-full p-3">

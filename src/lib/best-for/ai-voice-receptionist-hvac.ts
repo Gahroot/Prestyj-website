@@ -11,7 +11,7 @@ export const aiVoiceReceptionistHvac: BestForPageContent = createBestForPage({
       "HVAC companies needing intelligent call handling for emergency dispatch, seasonal overflow, and 24/7 service call management",
   },
   meta: {
-    title: "AI Voice Receptionist for HVAC | Emergency Dispatch & Seasonal Overflow 24/7 | Prestyj",
+    title: "AI Voice Receptionist for HVAC | Emergency Dispatch & Seasonal Overflow 24/7",
     description:
       "AI voice receptionist built for HVAC companies. Triage emergency calls, handle 3–5x seasonal volume spikes, dispatch on-call technicians, and integrate with ServiceTitan. Answer every call 24/7 and book more jobs.",
     keywords: [

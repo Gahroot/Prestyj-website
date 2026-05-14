@@ -9,7 +9,7 @@ export const mortgageBrokerVideoAds: BestForPageContent = {
       "Mortgage brokers and loan officers using batch video ad creative testing on Facebook and Instagram to find which buyer pain point — rate anxiety, pre-approval fear, bank vs. broker — generates the most applications.",
   },
   meta: {
-    title: "Batch Video Ads for Mortgage Brokers | Creative Testing | Prestyj",
+    title: "Batch Video Ads for Mortgage Brokers | Creative Testing",
     description:
       "Mortgage brokers: 20 minutes of footage → 300–1,000 video ads testing rate anxiety, pre-approval fear, self-employed buyers, and more. Find your winning angle fast.",
     keywords: [
@@ -58,7 +58,8 @@ export const mortgageBrokerVideoAds: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You don't know if your ads should lead with rate messaging, qualification ease, or broker advantage",
+      problem:
+        "You don't know if your ads should lead with rate messaging, qualification ease, or broker advantage",
       solution:
         "We build your batch around 3, 5, or 10 specific buyer pain points — rate lock anxiety, pre-approval fear, 'only need X% down,' bank vs. broker shopping, self-employed qualification, waiting-costs-more math — so you get real conversion data instead of running the same generic rate ad everyone else is running.",
     },

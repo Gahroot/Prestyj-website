@@ -9,7 +9,7 @@ export const brokerageRecruitingVideoAds: BestForPageContent = {
       "Real estate brokerages using batch video ad creative testing to recruit agents — testing comp splits, culture, tech stack, and lead-gen angles in parallel instead of guessing.",
   },
   meta: {
-    title: "Batch Video Ads for Brokerage Recruiting | Agent Recruiting Ads | Prestyj",
+    title: "Batch Video Ads for Brokerage Recruiting | Agent Recruiting Ads",
     description:
       "Turn 20 minutes of broker-owner footage into 300–1,000 agent recruiting video ads. Test every recruiting angle — splits, leads, culture, tech — and find what actually moves agents.",
     keywords: [
@@ -58,7 +58,8 @@ export const brokerageRecruitingVideoAds: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You're running recruiting ads but don't know if you should lead with splits, leads, or culture",
+      problem:
+        "You're running recruiting ads but don't know if you should lead with splits, leads, or culture",
       solution:
         "We build your batch around 3, 5, or 10 specific recruiting angles — higher splits, lead flow, tech stack, training, culture, team support, transition bonuses — so your ad spend tells you which pitch actually gets agents to book a conversation in your market.",
     },
@@ -68,12 +69,14 @@ export const brokerageRecruitingVideoAds: BestForPageContent = {
         "Meta's algorithm needs 50+ creative variations per ad set to exit the learning phase and stay out of fatigue. With 300–1,000 variations, you have enough creative diversity to run recruiting campaigns for months without CPL decay — not two weeks.",
     },
     {
-      problem: "The recruiting content every brokerage runs looks identical — 'join our family' and a group photo",
+      problem:
+        "The recruiting content every brokerage runs looks identical — 'join our family' and a group photo",
       solution:
         "Prestyj writes direct-response recruiting scripts that name the specific objection (splits, desk fees, dead lead pipeline, no tech, bad training) and answer it in the first 3 seconds. No generic 'we're hiring' ads. Every variation tests a different reason an agent would actually move.",
     },
     {
-      problem: "You want to recruit newly licensed agents AND experienced producers — but they respond to totally different messages",
+      problem:
+        "You want to recruit newly licensed agents AND experienced producers — but they respond to totally different messages",
       solution:
         "Your batch can be segmented by target persona. New-agent tracks lead with training, mentorship, and lead support. Experienced-producer tracks lead with splits, cap, and autonomy. Top-producer tracks lead with brand, back-office, and admin leverage. Each segment gets its own dedicated creative set within the same batch.",
     },
@@ -98,7 +101,8 @@ export const brokerageRecruitingVideoAds: BestForPageContent = {
       },
       {
         feature: "Persona segmentation",
-        prestyj: "New agent, experienced producer, top producer, team leader — all tested in parallel",
+        prestyj:
+          "New agent, experienced producer, top producer, team leader — all tested in parallel",
         others: "Usually a single 'join us' message",
       },
       {

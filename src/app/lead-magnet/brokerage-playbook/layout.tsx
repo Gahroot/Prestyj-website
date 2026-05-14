@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The $20M+ Brokerage Playbook: Convert 3x More Ad Leads with AI | Prestyj",
+  title: "The $20M+ Brokerage Playbook: Convert 3x More Ad Leads with AI",
   description:
     "Free playbook for real estate team leaders and broker-owners running Facebook and YouTube ads. Get the speed to lead data, AI vs. ISA cost comparison, and step-by-step follow-up system used by top brokerages.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "speed to lead real estate guide",
   ],
   openGraph: {
-    title: "The $20M+ Brokerage Playbook | Free Download | Prestyj",
+    title: "The $20M+ Brokerage Playbook | Free Download",
     description:
       "How top real estate teams convert 3x more Facebook and YouTube ad leads with AI. Free guide for team leaders and broker-owners.",
     type: "website",

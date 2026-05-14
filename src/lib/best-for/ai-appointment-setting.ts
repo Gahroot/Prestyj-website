@@ -10,7 +10,7 @@ export const aiAppointmentSetting: BestForPageContent = createBestForPage({
     description: "Sales teams needing to book more appointments without hiring appointment setters",
   },
   meta: {
-    title: "Best AI Appointment Setting Service | Book More Demos 24/7 | Prestyj",
+    title: "Best AI Appointment Setting Service | Book More Demos 24/7",
     description:
       "AI appointment setters book qualified demos and consultations around the clock. Check calendars, find availability, send confirmations, and reduce no-shows by 40%. Never miss an appointment opportunity.",
     keywords: [

@@ -11,7 +11,7 @@ export const internalIsa: AlternativePageContent = createAlternativePage({
     description: "In-house Inside Sales Agents hired, trained, and managed by your brokerage",
   },
   meta: {
-    title: "Internal ISA Team Alternative for Enterprise Real Estate | Prestyj",
+    title: "Internal ISA Team Alternative for Enterprise Real Estate",
     description:
       "Compare AI lead response vs. internal ISA teams for 50+ office operations. See the real costs: 30% annual turnover, 4-5 month ramp time, and management overhead.",
     keywords: [
@@ -117,8 +117,9 @@ export const internalIsa: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Scaled for enterprise operations",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Zero turnover risk",
         "Deploys in days, not months",

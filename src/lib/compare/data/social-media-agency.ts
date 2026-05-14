@@ -33,8 +33,8 @@ export const socialMediaAgencyCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$3,000/mo",
-      priceSubtext: "All-in · 1,500+ posts/mo · 7 platforms",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -167,9 +167,9 @@ export const socialMediaAgencyCompareData: ComparePageData = createComparePage({
 export const socialMediaAgencyMetadata: CompareMetadata = {
   slug: "prestyj-vs-social-media-agency",
   competitorName: "Social Media Agency",
-  title: "PRESTYJ vs Social Media Agency: 1,500 Posts for $3K or 30 for $15K? (2026)",
+  title: "Prestyj vs Social Media Agency: 1,500 Posts for $3K or 30 for $15K? (2026)",
   description:
-    "Traditional social media agencies charge $5K–$15K/mo for 20–30 posts. PRESTYJ ships 1,500+ posts/month across 7 platforms for $3,000 — month-to-month, no account managers, no contract.",
+    "Traditional social media agencies charge $5K–$15K/mo for 20–30 posts. Prestyj ships 1,500+ posts/month across 7 platforms for $3,000 — month-to-month, no account managers, no contract.",
   keywords: [
     "social media agency alternative",
     "social media agency vs prestyj",

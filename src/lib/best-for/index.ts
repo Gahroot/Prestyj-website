@@ -124,8 +124,8 @@ import { doneForYouSocialForCreators } from "./done-for-you-social-for-creators"
 import { socialVolumeStrategyForCreators } from "./social-volume-strategy-for-creators";
 import { doneForYouSocialForConsultants } from "./done-for-you-social-for-consultants";
 import { socialVolumeStrategyForConsultants } from "./social-volume-strategy-for-consultants";
-  // SOCIAL-VERTICAL-MATRIX-IMPORTS-END
-  // BATCH-MATRIX-IMPORTS-END
+// SOCIAL-VERTICAL-MATRIX-IMPORTS-END
+// BATCH-MATRIX-IMPORTS-END
 
 export const bestForPages: Record<string, BestForPageContent> = {
   "real-estate-teams": realEstateTeams,
@@ -217,7 +217,8 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "batch-video-ads-for-agency-owners": batchVideoAdsForAgencyOwners,
   "cost-per-tested-ad-angle-for-agency-owners": costPerTestedAdAngleForAgencyOwners,
   "batch-video-ads-for-service-business-owners": batchVideoAdsForServiceBusinessOwners,
-  "cost-per-tested-ad-angle-for-service-business-owners": costPerTestedAdAngleForServiceBusinessOwners,
+  "cost-per-tested-ad-angle-for-service-business-owners":
+    costPerTestedAdAngleForServiceBusinessOwners,
   "batch-video-ads-for-hvac-companies": batchVideoAdsForHvacCompanies,
   "cost-per-tested-ad-angle-for-hvac-companies": costPerTestedAdAngleForHvacCompanies,
   "batch-video-ads-for-plumbing-contractors": batchVideoAdsForPlumbingContractors,
@@ -238,7 +239,8 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "done-for-you-social-for-agency-owners": doneForYouSocialForAgencyOwners,
   "social-volume-strategy-for-agency-owners": socialVolumeStrategyForAgencyOwners,
   "done-for-you-social-for-service-business-owners": doneForYouSocialForServiceBusinessOwners,
-  "social-volume-strategy-for-service-business-owners": socialVolumeStrategyForServiceBusinessOwners,
+  "social-volume-strategy-for-service-business-owners":
+    socialVolumeStrategyForServiceBusinessOwners,
   "done-for-you-social-for-ecommerce-brands": doneForYouSocialForEcommerceBrands,
   "social-volume-strategy-for-ecommerce-brands": socialVolumeStrategyForEcommerceBrands,
   "done-for-you-social-for-saas-founders": doneForYouSocialForSaasFounders,
@@ -251,7 +253,6 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "social-volume-strategy-for-consultants": socialVolumeStrategyForConsultants,
   // SOCIAL-VERTICAL-MATRIX-REGISTER-END
   // BATCH-MATRIX-REGISTER-END
-
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

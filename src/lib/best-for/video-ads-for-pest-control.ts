@@ -9,7 +9,7 @@ export const videoAdsForPestControl: BestForPageContent = {
       "Pest control companies using batch video ad creative testing to dominate seasonal lead generation — covering termite, mosquito, rodent, and general pest control angles on Facebook and Instagram.",
   },
   meta: {
-    title: "500 Pest Control Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Pest Control Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of pest-control-specific video ads with your real face in 24 hours. Termite, mosquito, rodent, and seasonal angles. From $1,497.",
     keywords: [

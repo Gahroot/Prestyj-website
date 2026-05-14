@@ -11,7 +11,7 @@ export const socialVolumeStrategyForCmos: BestForPageContent = {
       "The 2026 social media volume strategy for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel — why 1,500+ posts per month across 7 platforms is the cadence the algorithms now reward, and how to execute it without a 5-person content team.",
   },
   meta: {
-    title: "Social Media Volume Strategy for CMOs (2026 Cadence) | Prestyj",
+    title: "Social Media Volume Strategy for CMOs (2026 Cadence)",
     description:
       "How many posts per month should a cmo publish in 2026? The data-driven volume strategy for B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel: platform priorities, cadence math, and the content engine that makes it executable.",
     keywords: [
@@ -62,7 +62,8 @@ export const socialVolumeStrategyForCmos: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "The agency or in-house team shipping 20–30 posts/month is losing you reach every quarter",
+      problem:
+        "The agency or in-house team shipping 20–30 posts/month is losing you reach every quarter",
       solution:
         "Platform algorithms in 2026 demote low-cadence accounts — they read sparse posting as low-quality signal and reduce distribution. CMOs who scale to 1,500+ posts/month see 3–7× reach improvement within 60 days, not because individual posts are better but because algorithmic surface area expanded.",
     },

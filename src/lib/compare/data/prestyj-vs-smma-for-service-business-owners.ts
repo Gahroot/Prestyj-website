@@ -8,7 +8,10 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "1,500+ posts/month across 7 platforms", included: true },
   { text: "Service Business Owners-researched scripts, hooks, and frameworks", included: true },
   { text: "Voice-trained captions on your existing content", included: true },
-  { text: "Daily multi-platform publishing (Facebook, Instagram, YouTube Shorts, TikTok, +)", included: true },
+  {
+    text: "Daily multi-platform publishing (Facebook, Instagram, YouTube Shorts, TikTok, +)",
+    included: true,
+  },
   { text: "Weekly content calendar — approve in 15–30 min", included: true },
   { text: "Performance learning loop tunes future posts", included: true },
   { text: "Live in days — not 4–8 week onboarding", included: true },
@@ -34,8 +37,8 @@ export const serviceBusinessOwnersVsSmmaForCompareData: ComparePageData = create
   },
   pricing: {
     prestyj: {
-      price: "$3,000",
-      priceSubtext: "/month · 1,500+ posts · Service Business Owners-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · AI agents + content engine · tuned for Service Business Owners",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -53,21 +56,40 @@ export const serviceBusinessOwnersVsSmmaForCompareData: ComparePageData = create
     },
   },
   features: [
-    { feature: "Service Business Owners-specific vertical research", prestyj: true, competitor: false, note: "SMMA / Social Media Marketing Agency does not research service business owners pain points by default" },
+    {
+      feature: "Service Business Owners-specific vertical research",
+      prestyj: true,
+      competitor: false,
+      note: "SMMA / Social Media Marketing Agency does not research service business owners pain points by default",
+    },
     { feature: "Posts per month", prestyj: "1,500+", competitor: "20–30" },
-    { feature: "Platforms covered", prestyj: "7 (Facebook, Instagram, YouTube Shorts, TikTok, +)", competitor: "1–3 typical" },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (Facebook, Instagram, YouTube Shorts, TikTok, +)",
+      competitor: "1–3 typical",
+    },
     { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$3K–$15K/month retainer" },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$50–$750" },
     { feature: "Voice training on your existing content", prestyj: true, competitor: false },
     { feature: "Daily auto-publish", prestyj: true, competitor: false },
-    { feature: "Long-term contract required", prestyj: false, competitor: true, note: "3–12 month agency contracts typical" },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: true,
+      note: "3–12 month agency contracts typical",
+    },
     { feature: "Onboarding time", prestyj: "Days", competitor: "4–8 weeks" },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "Account manager hours" },
     { feature: "Performance learning loop", prestyj: true, competitor: false },
-    { feature: "Risk of voice drift", prestyj: "Low — trained on your existing content", competitor: "Medium — depends on team turnover" },
+    {
+      feature: "Risk of voice drift",
+      prestyj: "Low — trained on your existing content",
+      competitor: "Medium — depends on team turnover",
+    },
   ],
   whySwitch: {
-    title: "Why Service Business Owners Pick the AI Content Engine Over SMMA / Social Media Marketing Agency",
+    title:
+      "Why Service Business Owners Pick the AI Content Engine Over SMMA / Social Media Marketing Agency",
     description:
       "A traditional social media marketing agency selling retainer-based posting, strategy decks, and account management — typically $3K–$15K/month for 20–30 posts. For owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops, the math stops working at scale.",
     reasons: [
@@ -104,13 +126,34 @@ export const serviceBusinessOwnersVsSmmaForCompareData: ComparePageData = create
     ],
   },
   relatedResources: [
-    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
-    { title: "Done-For-You Social Media for Service Business Owners", description: "Service Business Owners-specific offer page", href: "/best-for/done-for-you-social-for-service-business-owners", linkText: "Read use case" },
-    { title: "Social Volume Strategy for Service Business Owners", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-service-business-owners", linkText: "See the strategy" },
-    { title: "Service Business Owners Social Media Agency Alternative", description: "Alternative to traditional service business owners social media agencies", href: "/alternatives/service-business-owners-social-media-agency-alternative", linkText: "Compare" },
+    {
+      title: "AI Content Department — the AI agent for social media",
+      description: "See the Prestyj AI Content Department product",
+      href: "/ai-content-department",
+      linkText: "Learn more",
+    },
+    {
+      title: "Done-For-You Social Media for Service Business Owners",
+      description: "Service Business Owners-specific offer page",
+      href: "/best-for/done-for-you-social-for-service-business-owners",
+      linkText: "Read use case",
+    },
+    {
+      title: "Social Volume Strategy for Service Business Owners",
+      description: "Cadence math and 2026 platform priorities",
+      href: "/best-for/social-volume-strategy-for-service-business-owners",
+      linkText: "See the strategy",
+    },
+    {
+      title: "Service Business Owners Social Media Agency Alternative",
+      description: "Alternative to traditional service business owners social media agencies",
+      href: "/alternatives/service-business-owners-social-media-agency-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
-    title: "Service Business Owners Pick the AI Content Engine Over SMMA / Social Media Marketing Agency.",
+    title:
+      "Service Business Owners Pick the AI Content Engine Over SMMA / Social Media Marketing Agency.",
     description:
       "1,500+ service business owners-researched posts a month across 7 platforms. One flat fee of $3,000/mo. Voice-trained. No contract. Live in days.",
     buttonText: "Book a Demo",
@@ -122,7 +165,8 @@ export const serviceBusinessOwnersVsSmmaForCompareData: ComparePageData = create
 export const serviceBusinessOwnersVsSmmaForCompareDataMetadata: CompareMetadata = {
   slug: "prestyj-vs-smma-for-service-business-owners",
   competitorName: "SMMA / Social Media Marketing Agency (for Service Business Owners)",
-  title: "PRESTYJ vs SMMA / Social Media Marketing Agency for Service Business Owners (2026 Cadence Math)",
+  title:
+    "Prestyj vs SMMA / Social Media Marketing Agency for Service Business Owners (2026 Cadence Math)",
   description:
     "A traditional social media marketing agency selling retainer-based posting, strategy decks, and account management — typically $3K–$15K/month for 20–30 posts. See full posts-per-month math and why owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops pick the AI content engine from $3,000/mo over $3K–$15K/month retainer.",
   keywords: [

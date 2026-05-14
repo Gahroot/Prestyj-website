@@ -11,7 +11,7 @@ export const aiHomeBuilders: BestForPageContent = createBestForPage({
       "Residential construction companies building new homes and managing the buyer journey from model home to move-in",
   },
   meta: {
-    title: "Best AI for Home Builders | Prestyj",
+    title: "Best AI for Home Builders",
     description:
       "The best AI platform for home builders. Automate new construction lead follow-up, buyer communication, permit tracking, and construction scheduling with AI agents built for builders.",
     keywords: [

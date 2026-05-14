@@ -16,7 +16,7 @@ export const myAiFrontDesk: AlternativePageContent = createAlternativePage({
     description: "AI receptionist for small businesses with focus on simplicity",
   },
   meta: {
-    title: "My AI Front Desk Alternative: Enterprise-Grade AI | Prestyj",
+    title: "My AI Front Desk Alternative: Enterprise-Grade AI",
     description:
       "Looking for a My AI Front Desk alternative? Compare Prestyj vs My AI Front Desk: More capable AI voice agents, deeper integrations, and scalable for growing businesses.",
     keywords: [
@@ -114,9 +114,9 @@ export const myAiFrontDesk: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom",
-      period: "based on usage",
-      note: "Enterprise features included",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Advanced AI lead qualification",
         "Deep CRM integrations",

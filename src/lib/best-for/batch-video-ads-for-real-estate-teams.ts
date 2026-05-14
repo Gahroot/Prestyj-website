@@ -11,7 +11,7 @@ export const batchVideoAdsForRealEstateTeams: BestForPageContent = {
       "real estate teams of 5-50 agents running paid social as a primary buyer/seller acquisition channel using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for Real Estate Teams: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for Real Estate Teams: 500 Ads in 24 Hours (From $1,497)",
     description:
       "Real Estate Teams ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -41,7 +41,8 @@ export const batchVideoAdsForRealEstateTeams: BestForPageContent = {
     },
     {
       icon: "Target",
-      title: "Listing video ads, market-update ads, and seller-pain-point ads are three full creative tracks and your team has none",
+      title:
+        "Listing video ads, market-update ads, and seller-pain-point ads are three full creative tracks and your team has none",
       description:
         "Different audiences need different hooks. Generic creative averages everything down. RE Teams who run 5-10 angle-specific tracks (instead of one 'general' track) consistently see $12-$38 per qualified buyer/seller lead versus the $45-$140 per Zillow/CINC/Realtor.com lead they were getting before. Batch is engineered around angle-testing — every batch ships with multiple distinct hook tracks ready to A/B at the ad-set level.",
     },
@@ -66,17 +67,20 @@ export const batchVideoAdsForRealEstateTeams: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for RE Teams'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for RE Teams'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, RE Teams consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },

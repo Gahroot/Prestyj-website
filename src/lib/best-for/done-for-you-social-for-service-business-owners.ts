@@ -11,7 +11,7 @@ export const doneForYouSocialForServiceBusinessOwners: BestForPageContent = {
       "Done-for-you social media content service for owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for Service Business Owners | Prestyj",
+    title: "Done-For-You Social Media for Service Business Owners",
     description:
       "Done-for-you social media content for service business owners. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops.",
     keywords: [
@@ -37,7 +37,8 @@ export const doneForYouSocialForServiceBusinessOwners: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "Service businesses with daily multi-platform presence command 15–25% higher close rates on quoted jobs",
+      title:
+        "Service businesses with daily multi-platform presence command 15–25% higher close rates on quoted jobs",
       description:
         "Service businesses with daily multi-platform presence command 15–25% higher close rates on quoted jobs — local trust signals (review counts, post recency, photo volume) directly drive in-home conversion",
     },
@@ -67,17 +68,20 @@ export const doneForYouSocialForServiceBusinessOwners: BestForPageContent = {
         "Prestyj produces 30–50 posts per day across Facebook, Instagram, YouTube Shorts, TikTok and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "Before/after photos, technician footage, and 5-star reviews are rotting in a shared Google Drive",
+      problem:
+        "Before/after photos, technician footage, and 5-star reviews are rotting in a shared Google Drive",
       solution:
         "Prestyj's content engine is trained on service business owners-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "Your local competitors with worse work are out-posting you and winning Google Business reviews",
+      problem:
+        "Your local competitors with worse work are out-posting you and winning Google Business reviews",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops.",
     },
     {
-      problem: "You tried hiring an in-house person and they ghost-posted stock photos until you fired them",
+      problem:
+        "You tried hiring an in-house person and they ghost-posted stock photos until you fired them",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },
@@ -129,7 +133,8 @@ export const doneForYouSocialForServiceBusinessOwners: BestForPageContent = {
         "The honest answer is more than you think. The algorithms on Facebook (primary for local trust), Instagram, and TikTok reward accounts that post 3–5× daily across formats — short-form video, carousels, single posts, and stories. For owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops, the right baseline is 1,500+ per month across multiple platforms. Your before/after photos, 5-star reviews, and field tech footage are the highest-converting social content in your category — and 95% of it is rotting on your team's phones because no one has time to post it.",
     },
     {
-      question: "Will the content actually sound like a service business owner — or like generic AI content?",
+      question:
+        "Will the content actually sound like a service business owner — or like generic AI content?",
       answer:
         "Service-business voice is plainspoken, local, and trades-grounded — generic 'home services tips' content reads as imported. Your real voice (the tech's perspective, the customer testimonial, the field photo) is what builds local trust. During onboarding, you provide samples of your existing content, frameworks, and communication style. The output mirrors how you actually speak and write — not generic templates. You review every piece before it ships, and the model improves from your feedback over time.",
     },

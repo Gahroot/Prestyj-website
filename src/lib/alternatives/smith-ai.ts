@@ -16,7 +16,7 @@ export const smithAi: AlternativePageContent = createAlternativePage({
     description: "Hybrid AI + human receptionist service for small businesses and law firms",
   },
   meta: {
-    title: "Smith.ai Alternative: Pure AI Receptionist | Prestyj",
+    title: "Smith.ai Alternative: Pure AI Receptionist",
     description:
       "Looking for a Smith.ai alternative? Compare Prestyj vs Smith.ai: 24/7 AI voice agents at a fraction of the cost. No per-minute fees, no tier limits, true AI automation.",
     keywords: [

@@ -10,7 +10,7 @@ export const realEstateTeams: BestForPageContent = createBestForPage({
     description: "Multi-agent teams needing consistent lead distribution and follow-up",
   },
   meta: {
-    title: "Best Lead Response for Real Estate Teams | Prestyj",
+    title: "Best Lead Response for Real Estate Teams",
     description:
       "Discover why real estate teams choose Prestyj for consistent lead response and distribution. Eliminate ISA turnover, ensure 24/7 coverage, and scale your team's capacity.",
     keywords: [

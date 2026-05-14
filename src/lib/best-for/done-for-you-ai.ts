@@ -11,7 +11,7 @@ export const doneForYouAi: BestForPageContent = createBestForPage({
       "Businesses looking for turnkey AI agent implementation without technical complexity",
   },
   meta: {
-    title: "Done-For-You AI Agents | Turnkey Solutions with Zero Technical Complexity | Prestyj",
+    title: "Done-For-You AI Agents | Turnkey Solutions with Zero Technical Complexity",
     description:
       "Get AI voice and text agents implemented in days, not months. No coding, no setup, no maintenance. Done-for-you AI lead response with predictable pricing and guaranteed results.",
     keywords: [

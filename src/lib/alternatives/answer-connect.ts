@@ -16,7 +16,7 @@ export const answerConnect: AlternativePageContent = createAlternativePage({
     description: "24/7 live answering service with human receptionists",
   },
   meta: {
-    title: "AnswerConnect Alternative: AI Answering Service | Prestyj",
+    title: "AnswerConnect Alternative: AI Answering Service",
     description:
       "Looking for an AnswerConnect alternative? Prestyj provides AI-powered answering at a fraction of the cost—no per-minute fees, instant response, and consistent quality 24/7.",
     keywords: [

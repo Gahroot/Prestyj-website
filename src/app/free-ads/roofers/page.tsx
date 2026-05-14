@@ -37,11 +37,11 @@ const ROOFER_PAIN_POINTS = [
 ];
 
 export const metadata: Metadata = {
-  title: "300 Free Video Ads for Roofing Companies | PRESTYJ",
+  title: "300 Free Video Ads for Roofing Companies",
   description:
     "What if you had 300 video ads running by next week? We'll create them for free. You just send the footage. 24-hour turnaround. Storm season ready.",
   openGraph: {
-    title: "300 Free Video Ads for Roofing Companies | PRESTYJ",
+    title: "300 Free Video Ads for Roofing Companies",
     description:
       "What if you had 300 video ads running by next week? We'll create them for free. Storm season ready.",
     type: "website",
@@ -66,7 +66,7 @@ export default function RoofersFreeAdsPage() {
           name: "Free Batch Video Ads for Roofers",
           description:
             "300 free scripted video ads for roofing companies. 24-hour turnaround from your footage. Storm season ready with ad setup, landing page, and AI lead response.",
-          provider: { "@type": "Organization", name: "PRESTYJ", url: "https://prestyj.com" },
+          provider: { "@type": "Organization", name: "Prestyj", url: "https://prestyj.com" },
           serviceType: "Video Ad Production",
           areaServed: "United States",
         }}

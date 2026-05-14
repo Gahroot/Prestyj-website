@@ -8,7 +8,10 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "1,500+ posts/month across 7 platforms", included: true },
   { text: "Ecommerce Brands-researched scripts, hooks, and frameworks", included: true },
   { text: "Voice-trained captions on your existing content", included: true },
-  { text: "Daily multi-platform publishing (Instagram, Facebook, TikTok, Pinterest, +)", included: true },
+  {
+    text: "Daily multi-platform publishing (Instagram, Facebook, TikTok, Pinterest, +)",
+    included: true,
+  },
   { text: "Weekly content calendar — approve in 15–30 min", included: true },
   { text: "Performance learning loop tunes future posts", included: true },
   { text: "Live in days — not 4–8 week onboarding", included: true },
@@ -27,15 +30,18 @@ export const ecommerceBrandsVsFiverrForCompareData: ComparePageData = createComp
     description: "",
     keyStats: [
       { value: "$3K/mo vs $25–$500per gig", label: "AI engine vs fiverr" },
-      { value: "1,500+ vs Variable, 20–80 with heavy management", label: "Posts/month — Prestyj vs fiverr" },
+      {
+        value: "1,500+ vs Variable, 20–80 with heavy management",
+        label: "Posts/month — Prestyj vs fiverr",
+      },
       { value: "7 vs 1–3", label: "Platforms covered" },
       { value: "Days vs 4–8 wks", label: "Onboarding time" },
     ],
   },
   pricing: {
     prestyj: {
-      price: "$3,000",
-      priceSubtext: "/month · 1,500+ posts · Ecommerce Brands-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · AI agents + content engine · tuned for Ecommerce Brands",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -53,18 +59,40 @@ export const ecommerceBrandsVsFiverrForCompareData: ComparePageData = createComp
     },
   },
   features: [
-    { feature: "Ecommerce Brands-specific vertical research", prestyj: true, competitor: false, note: "Fiverr Freelancers does not research ecommerce brands pain points by default" },
-    { feature: "Posts per month", prestyj: "1,500+", competitor: "Variable, 20–80 with heavy management" },
-    { feature: "Platforms covered", prestyj: "7 (Instagram, Facebook, TikTok, Pinterest, +)", competitor: "1–3 typical" },
+    {
+      feature: "Ecommerce Brands-specific vertical research",
+      prestyj: true,
+      competitor: false,
+      note: "Fiverr Freelancers does not research ecommerce brands pain points by default",
+    },
+    {
+      feature: "Posts per month",
+      prestyj: "1,500+",
+      competitor: "Variable, 20–80 with heavy management",
+    },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (Instagram, Facebook, TikTok, Pinterest, +)",
+      competitor: "1–3 typical",
+    },
     { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$25–$500per gig" },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$50–$750" },
     { feature: "Voice training on your existing content", prestyj: true, competitor: false },
     { feature: "Daily auto-publish", prestyj: true, competitor: false },
-    { feature: "Long-term contract required", prestyj: false, competitor: false, note: "Per-gig or per-month — but you replace the cost monthly" },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: false,
+      note: "Per-gig or per-month — but you replace the cost monthly",
+    },
     { feature: "Onboarding time", prestyj: "Days", competitor: "Per-gig, per-seller, every time" },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "Per-gig availability" },
     { feature: "Performance learning loop", prestyj: true, competitor: false },
-    { feature: "Risk of voice drift", prestyj: "Low — trained on your existing content", competitor: "High — every gig is a new seller" },
+    {
+      feature: "Risk of voice drift",
+      prestyj: "Low — trained on your existing content",
+      competitor: "High — every gig is a new seller",
+    },
   ],
   whySwitch: {
     title: "Why Ecommerce Brands Pick the AI Content Engine Over Fiverr Freelancers",
@@ -104,10 +132,30 @@ export const ecommerceBrandsVsFiverrForCompareData: ComparePageData = createComp
     ],
   },
   relatedResources: [
-    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
-    { title: "Done-For-You Social Media for Ecommerce Brands", description: "Ecommerce Brands-specific offer page", href: "/best-for/done-for-you-social-for-ecommerce-brands", linkText: "Read use case" },
-    { title: "Social Volume Strategy for Ecommerce Brands", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-ecommerce-brands", linkText: "See the strategy" },
-    { title: "Ecommerce Brands Social Media Agency Alternative", description: "Alternative to traditional ecommerce brands social media agencies", href: "/alternatives/ecommerce-brands-social-media-agency-alternative", linkText: "Compare" },
+    {
+      title: "AI Content Department — the AI agent for social media",
+      description: "See the Prestyj AI Content Department product",
+      href: "/ai-content-department",
+      linkText: "Learn more",
+    },
+    {
+      title: "Done-For-You Social Media for Ecommerce Brands",
+      description: "Ecommerce Brands-specific offer page",
+      href: "/best-for/done-for-you-social-for-ecommerce-brands",
+      linkText: "Read use case",
+    },
+    {
+      title: "Social Volume Strategy for Ecommerce Brands",
+      description: "Cadence math and 2026 platform priorities",
+      href: "/best-for/social-volume-strategy-for-ecommerce-brands",
+      linkText: "See the strategy",
+    },
+    {
+      title: "Ecommerce Brands Social Media Agency Alternative",
+      description: "Alternative to traditional ecommerce brands social media agencies",
+      href: "/alternatives/ecommerce-brands-social-media-agency-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Ecommerce Brands Pick the AI Content Engine Over Fiverr Freelancers.",
@@ -122,7 +170,7 @@ export const ecommerceBrandsVsFiverrForCompareData: ComparePageData = createComp
 export const ecommerceBrandsVsFiverrForCompareDataMetadata: CompareMetadata = {
   slug: "prestyj-vs-fiverr-for-ecommerce-brands",
   competitorName: "Fiverr Freelancers (for Ecommerce Brands)",
-  title: "PRESTYJ vs Fiverr Freelancers for Ecommerce Brands (2026 Cadence Math)",
+  title: "Prestyj vs Fiverr Freelancers for Ecommerce Brands (2026 Cadence Math)",
   description:
     "A patchwork of Fiverr / Upwork gig workers handling individual deliverables (posts, captions, carousel design) — cheap per piece, expensive in management overhead. See full posts-per-month math and why DTC and ecommerce operators doing $1M–$50M in annual GMV pick the AI content engine from $3,000/mo over $25–$500per gig.",
   keywords: [

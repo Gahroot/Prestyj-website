@@ -11,7 +11,7 @@ export const batchVideoAdsForCoaches: BestForPageContent = {
       "high-ticket coaches, course creators, and group-program operators using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for Coaches: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for Coaches: 500 Ads in 24 Hours (From $1,497)",
     description:
       "Coaches ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -41,7 +41,8 @@ export const batchVideoAdsForCoaches: BestForPageContent = {
     },
     {
       icon: "Target",
-      title: "Webinar registrations stalled because every prospect has seen your same hook 12 times",
+      title:
+        "Webinar registrations stalled because every prospect has seen your same hook 12 times",
       description:
         "Different audiences need different hooks. Generic creative averages everything down. Coaches who run 5-10 angle-specific tracks (instead of one 'general' track) consistently see $8-$22 versus the $60-$180 they were getting before. Batch is engineered around angle-testing — every batch ships with multiple distinct hook tracks ready to A/B at the ad-set level.",
     },
@@ -66,17 +67,20 @@ export const batchVideoAdsForCoaches: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Coaches'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Coaches'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, Coaches consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },

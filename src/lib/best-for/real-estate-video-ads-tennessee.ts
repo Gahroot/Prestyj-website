@@ -10,7 +10,7 @@ export const realEstateVideoAdsTennessee: BestForPageContent = {
       "Tennessee agents using batch vertical video ad creative to convert Nashville CA/NY relocation, Memphis FedEx/investor, Knoxville / Chattanooga family markets across RealTracs, MAAR, and regional TN MLS territory under TREC compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Tennessee | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Tennessee | 300–1,000 Scripted Ads",
     description:
       "TN agents: 300–1,000 vertical video ads in 24 hours. Tuned for RealTracs, MAAR, TN TREC compliance, Nashville relos, and Memphis investors. From $1,497.",
     keywords: [

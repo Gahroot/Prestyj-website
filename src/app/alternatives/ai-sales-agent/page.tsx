@@ -24,7 +24,7 @@ import { Footer } from "@/components/layout/footer";
 import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata: Metadata = {
-  title: "AI Sales Agent Alternatives | Compare Top Solutions | Prestyj",
+  title: "AI Sales Agent Alternatives | Compare Top Solutions",
   description:
     "Compare Prestyj to top AI sales agent alternatives. See how we stack up against Conversica, Drift, Structurely, Retell AI, and more for lead response and qualification.",
   keywords: [
@@ -555,7 +555,9 @@ export default function AISalesAgentAlternativesPage() {
               evaluating.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
-              <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <p className="text-muted-foreground mt-6 text-sm">

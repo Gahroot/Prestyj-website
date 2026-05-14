@@ -11,7 +11,7 @@ export const aiVoiceQualification: BestForPageContent = createBestForPage({
       "Sales teams needing to qualify high volumes of leads by phone without expanding staff",
   },
   meta: {
-    title: "Best AI for Lead Qualification | Voice Agents That Qualify 24/7 | Prestyj",
+    title: "Best AI for Lead Qualification | Voice Agents That Qualify 24/7",
     description:
       "AI voice agents qualify every lead by phone in real-time. Ask custom questions, assess budget and timeline, route hot leads instantly. Stop wasting sales time on unqualified prospects.",
     keywords: [

@@ -11,7 +11,7 @@ export const lasVegas: LocationPageContent = {
       "Las Vegas is one of the most extreme — and most profitable — home services markets in the United States. Summer temperatures regularly exceed 115°F, making functional AC a literal life-safety issue. The valley is also one of the fastest-growing new-construction markets in the country, with master-planned communities like Summerlin, Inspirada, and Lake Las Vegas pulling in cash buyers and entertainment-industry money. Contractors who can show up on Facebook the moment a system fails or a luxury upgrade gets greenlit are seeing some of the highest ticket values in the Southwest.",
   },
   meta: {
-    title: "Facebook Ads for Las Vegas Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Las Vegas Home Service Contractors",
     description:
       "Grow your Las Vegas HVAC, roofing, plumbing, solar, or contracting business with Facebook ads built for the Mojave Desert's extreme heat and luxury new-construction market.",
     keywords: [
@@ -34,8 +34,7 @@ export const lasVegas: LocationPageContent = {
   marketStats: {
     households: "880K+",
     avgHomeValue: "$415K",
-    keyInsight:
-      "Las Vegas summers hit 115°F — emergency AC repair is a 24/7 industry",
+    keyInsight: "Las Vegas summers hit 115°F — emergency AC repair is a 24/7 industry",
   },
   services: [
     {
@@ -110,8 +109,7 @@ export const lasVegas: LocationPageContent = {
         "It creates massive opportunity if you target it right. New-build communities have predictable upgrade cycles — 2-3 year mark for landscape and shade structures, 5-7 year mark for exterior paint and roof maintenance, 10+ year mark for major remodels. We build Facebook custom audiences around specific master-planned communities and time creative to those upgrade windows instead of broadcasting to everyone in Clark County.",
     },
     {
-      question:
-        "Which Las Vegas areas deliver the best ROI for home service Facebook ads?",
+      question: "Which Las Vegas areas deliver the best ROI for home service Facebook ads?",
       answer:
         "It varies by service. Summerlin, Lake Las Vegas, and MacDonald Highlands deliver premium ticket values for roofing, remodels, and luxury HVAC. Henderson, Inspirada, and Cadence are strong newer-home territory for solar, smart-home upgrades, and outdoor living. Older central-valley ZIPs and parts of Henderson's Green Valley are repipe, water-heater-replacement, and full-system AC swap goldmines. We geo-target at the neighborhood level instead of blasting the whole metro.",
     },

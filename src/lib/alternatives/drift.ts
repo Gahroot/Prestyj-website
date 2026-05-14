@@ -16,7 +16,7 @@ export const drift: AlternativePageContent = createAlternativePage({
     description: "Enterprise conversational AI platform for B2B sales teams, now part of Salesloft",
   },
   meta: {
-    title: "Drift Alternative for Real Estate Enterprise | Prestyj",
+    title: "Drift Alternative for Real Estate Enterprise",
     description:
       "Looking for a Drift alternative for real estate? Compare Prestyj vs Drift: built for RE workflows, faster implementation, no 12-week deployment timeline.",
     keywords: [
@@ -116,8 +116,9 @@ export const drift: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "Scaled for real estate operations",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Built specifically for real estate",
         "Deploys in days, not months",

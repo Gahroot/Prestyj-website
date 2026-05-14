@@ -16,7 +16,7 @@ export const leadtruffle: AlternativePageContent = createAlternativePage({
     description: "Missed call text-back automation for home service contractors",
   },
   meta: {
-    title: "Best LeadTruffle Alternative | Full-Solution AI Reception | Prestyj",
+    title: "Best LeadTruffle Alternative | Full-Solution AI Reception",
     description:
       "Looking for a LeadTruffle alternative? Compare Prestyj vs LeadTruffle: missed call text-back plus AI voice agents, appointment booking, and full lead nurturing. More features, competitive pricing.",
     keywords: [

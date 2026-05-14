@@ -8,11 +8,10 @@ export const humanIsa: AlternativePageContent = createAlternativePage({
     name: "Human ISA",
     shortName: "ISA",
     pricing: "$4,000+/mo + 15-25% commission",
-    description:
-      "Traditional inside sales agents for lead qualification and follow-up",
+    description: "Traditional inside sales agents for lead qualification and follow-up",
   },
   meta: {
-    title: "Best Human ISA Alternative | AI Sales Agent | Prestyj",
+    title: "Best Human ISA Alternative | AI Sales Agent",
     description:
       "Looking for a Human ISA alternative? Compare AI sales agents vs human ISAs: 24/7 availability, no commission splits, instant response. See why agents are switching.",
     keywords: [
@@ -95,8 +94,9 @@ export const humanIsa: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Custom pricing",
-      note: "No commission splits ever",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "24/7/365 availability",
         "Under 60-second response time",
@@ -115,8 +115,7 @@ export const humanIsa: AlternativePageContent = createAlternativePage({
     {
       icon: "DollarSign",
       title: "Eliminate Commission Splits",
-      description:
-        "Keep 100% of your commission. No 15-25% going to an ISA on every deal.",
+      description: "Keep 100% of your commission. No 15-25% going to an ISA on every deal.",
     },
     {
       icon: "Zap",

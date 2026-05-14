@@ -11,7 +11,7 @@ export const charlotte: LocationPageContent = {
       "Charlotte is the quiet powerhouse of the Southeast — a banking-fueled, rapidly growing metro where new construction permits, corporate relocations, and high-income transplants have created relentless demand for home services. From the Lake Norman luxury market to the explosive growth in Ballantyne and South End, contractors who know how to capture homeowner attention on Facebook are building waitlists their competitors only dream about.",
   },
   meta: {
-    title: "Facebook Ads for Charlotte Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Charlotte Home Service Contractors",
     description:
       "Grow your Charlotte HVAC, roofing, plumbing, or contracting business with Facebook ads built for the Queen City's banking-driven growth market. Real strategy, real leads.",
     keywords: [
@@ -86,8 +86,7 @@ export const charlotte: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "How do I get my Charlotte contracting business in front of corporate relocators?",
+      question: "How do I get my Charlotte contracting business in front of corporate relocators?",
       answer:
         "Facebook lets us target recent movers, household income brackets, and even job titles tied to the major Charlotte employers — Bank of America, Wells Fargo, Truist, Honeywell, Lowe's. We build campaigns that meet those buyers in their first 90 days, when they're choosing every home service provider for the first time. Win them early and you typically win them for the long haul.",
     },
@@ -104,14 +103,12 @@ export const charlotte: LocationPageContent = {
         "Because being 'booked' and being 'profitable' aren't the same thing. The contractors winning long-term are using their backlog to raise prices, filter for higher-margin work, and stop chasing every $5K bathroom job. We build campaigns that bring in the right kind of leads — bigger projects, better-fit customers — so your pipeline gets stronger, not just longer.",
     },
     {
-      question:
-        "Which Charlotte-area neighborhoods deliver the best ROI for home service ads?",
+      question: "Which Charlotte-area neighborhoods deliver the best ROI for home service ads?",
       answer:
         "Myers Park, Eastover, and Lake Norman are top-tier for premium remodels, custom HVAC, and luxury roofing. Ballantyne, SouthPark, and Waxhaw are gold for high-end replacement and new-construction-adjacent services. Plaza Midwood, NoDa, and Dilworth are repipe and renovation territory. Concord, Huntersville, and Fort Mill are strong for newer-home services. We build hyper-targeted geo campaigns rather than blasting the whole region.",
     },
     {
-      question:
-        "How quickly can I expect to see real leads from a Charlotte Facebook ad campaign?",
+      question: "How quickly can I expect to see real leads from a Charlotte Facebook ad campaign?",
       answer:
         "If creative and offer are dialed, most Charlotte contractors see qualified leads within the first 7-14 days. The first 30 days are typically about learning — Facebook's algorithm is identifying which homeowners in your service area actually convert. By day 60-90, campaigns are usually in their efficient zone with predictable cost per booked job. We don't promise overnight magic, but we don't waste months either.",
     },

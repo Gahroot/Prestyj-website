@@ -10,7 +10,7 @@ export const insuranceAgencies: BestForPageContent = createBestForPage({
     description: "Independent insurance agents and agencies looking for AI-powered lead response",
   },
   meta: {
-    title: "AI Agents for Insurance Agencies | 24/7 Lead Response | Prestyj",
+    title: "AI Agents for Insurance Agencies | 24/7 Lead Response",
     description:
       "AI voice and text agents for insurance agencies. Respond to quote requests in under 60 seconds, qualify prospects 24/7, and book more appointments. Save 13+ hours/week.",
     keywords: [

@@ -10,7 +10,7 @@ export const realEstateVideoAdsFlorida: BestForPageContent = {
       "Florida agents using batch vertical video ad creative to convert Northeast relocation, 55+ retirement pipelines, and insurance-aware buyers across Stellar MLS, MIAMI MLS, NEFAR, and statewide Florida markets under FREC compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Florida | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Florida | 300–1,000 Scripted Ads",
     description:
       "Florida agents: 300–1,000 vertical video ads in 24 hours. Tuned for Stellar MLS, MIAMI MLS, FREC compliance, insurance reality, and 55+ buyers. From $1,497.",
     keywords: [
@@ -78,7 +78,8 @@ export const realEstateVideoAdsFlorida: BestForPageContent = {
         "We script Northeast-to-Florida comparison creative: 'if you're selling $1.2M in Westchester with $18K property tax, here's the real Tampa/Orlando/Jacksonville math in 2026.'",
     },
     {
-      problem: "You work Florida secondary markets (Pensacola, Gainesville, Sarasota, Naples) and your statewide creative doesn't fit",
+      problem:
+        "You work Florida secondary markets (Pensacola, Gainesville, Sarasota, Naples) and your statewide creative doesn't fit",
       solution:
         "We script secondary-market creative: Naples/Marco Island luxury, Sarasota coastal, Pensacola military PCS, Gainesville university — each gets its own sub-market creative in your batch.",
     },

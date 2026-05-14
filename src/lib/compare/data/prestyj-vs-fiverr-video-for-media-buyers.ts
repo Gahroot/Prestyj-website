@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,9 @@ export const mediaBuyersVsFiverrVideoCompareData: ComparePageData = createCompar
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · Media Buyers-researched",
+      price: "$1,997",
+      priceSubtext:
+        "/mo Starter · ad budget + batch video ads + AI agents · tuned for Media Buyers",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,10 +52,19 @@ export const mediaBuyersVsFiverrVideoCompareData: ComparePageData = createCompar
     },
   },
   features: [
-    { feature: "Scripts researched for Media Buyers pain points", prestyj: true, competitor: false, note: "Fiverr Video Editors does not research your vertical by default" },
+    {
+      feature: "Scripts researched for Media Buyers pain points",
+      prestyj: true,
+      competitor: false,
+      note: "Fiverr Video Editors does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual brand", prestyj: true, competitor: "Sometimes" },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "1-5 per gig" },
-    { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "3-14 days, often slipped" },
+    {
+      feature: "Turnaround SLA",
+      prestyj: "24 hrs guaranteed",
+      competitor: "3-14 days, often slipped",
+    },
     { feature: "Pricing model", prestyj: "One-time flat", competitor: "Per video / per gig" },
     { feature: "Cost per ad (at 500 ads)", prestyj: "≈$5", competitor: "$25-$500 each" },
     { feature: "Cost per fully tested angle", prestyj: "≈$500", competitor: "$9K-$15K" },
@@ -63,7 +73,8 @@ export const mediaBuyersVsFiverrVideoCompareData: ComparePageData = createCompar
   ],
   whySwitch: {
     title: "Why Media Buyers Pick Batch Over Fiverr Video Editors",
-    description: "Fiverr is fine for a logo. It is not a creative testing engine for a $200K/month account.",
+    description:
+      "Fiverr is fine for a logo. It is not a creative testing engine for a $200K/month account.",
     reasons: [
       {
         icon: "Zap",
@@ -98,10 +109,30 @@ export const mediaBuyersVsFiverrVideoCompareData: ComparePageData = createCompar
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Media Buyers", description: "Media Buyers-specific use case", href: "/best-for/batch-video-ads-for-media-buyers", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for Media Buyers", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-media-buyers", linkText: "See the math" },
-    { title: "Media Buyers Video Production Alternative", description: "Alternative to traditional media buyers video production", href: "/alternatives/media-buyers-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Media Buyers",
+      description: "Media Buyers-specific use case",
+      href: "/best-for/batch-video-ads-for-media-buyers",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for Media Buyers",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-media-buyers",
+      linkText: "See the math",
+    },
+    {
+      title: "Media Buyers Video Production Alternative",
+      description: "Alternative to traditional media buyers video production",
+      href: "/alternatives/media-buyers-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Media Buyers Pick Batch Over Fiverr Video Editors.",
@@ -116,7 +147,7 @@ export const mediaBuyersVsFiverrVideoCompareData: ComparePageData = createCompar
 export const mediaBuyersVsFiverrVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-fiverr-video-for-media-buyers",
   competitorName: "Fiverr Video Editors (for Media Buyers)",
-  title: "PRESTYJ vs Fiverr Video Editors for Media Buyers (2026 Pricing Math)",
+  title: "Prestyj vs Fiverr Video Editors for Media Buyers (2026 Pricing Math)",
   description:
     "Fiverr is fine for a logo. It is not a creative testing engine for a $200K/month account. See full per-angle pricing math and why media buyers pick batch from $1,497 over $25-$500per gig.",
   keywords: [

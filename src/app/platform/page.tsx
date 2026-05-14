@@ -26,7 +26,7 @@ import { PlatformFAQSection } from "@/components/sections/platform/platform-faq"
 import { platformFaqs } from "@/lib/platform-data";
 
 export const metadata: Metadata = {
-  title: "Platform | Custom AI Sales Agents & Automation Workflows | Prestyj",
+  title: "Platform | Custom AI Sales Agents & Automation Workflows",
   description:
     "Build custom AI sales agents with Prestyj's platform. Multi-agent workflows, CRM integrations, custom voice agents, and enterprise-grade automation for high-growth service businesses.",
   keywords: [
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "enterprise sales automation",
   ],
   openGraph: {
-    title: "Platform | Custom AI Sales Agents & Automation Workflows | Prestyj",
+    title: "Platform | Custom AI Sales Agents & Automation Workflows",
     description:
       "Build custom AI sales agents with multi-agent workflows, CRM integrations, and enterprise-grade automation.",
     type: "website",
@@ -164,7 +164,7 @@ export default function PlatformPage() {
       "Platform for building purpose-built AI sales agents with custom workflows, deep integrations, and enterprise-grade reliability for service businesses.",
     provider: {
       "@type": "Organization",
-      name: "PRESTYJ",
+      name: "Prestyj",
       url: "https://prestyj.com",
     },
     serviceType: [

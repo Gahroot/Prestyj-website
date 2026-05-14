@@ -10,7 +10,7 @@ export const realEstateVideoAdsWashington: BestForPageContent = {
       "Washington agents using batch vertical video ad creative to convert Amazon RTO families, Microsoft Eastside buyers, Spokane inland markets, and Tacoma South Sound families across NWMLS territory under WA DOL compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Washington | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Washington | 300–1,000 Scripted Ads",
     description:
       "WA agents: 300–1,000 vertical video ads in 24 hours. Tuned for NWMLS, WA DOL compliance, Amazon RTO, and Eastside. From $1,497.",
     keywords: [
@@ -63,7 +63,8 @@ export const realEstateVideoAdsWashington: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your Amazon RTO buyers don't find creative that acknowledges their specific situation",
+      problem:
+        "Your Amazon RTO buyers don't find creative that acknowledges their specific situation",
       solution:
         "We script Amazon-RTO creative: 'if Amazon pulled you back and your Spokane home is closing in 60 days, here's the Seattle vs Eastside vs Tacoma math in 2026,' 'RTO families — the commute reality nobody at Amazon explains.'",
     },

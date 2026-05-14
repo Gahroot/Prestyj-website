@@ -7,10 +7,11 @@ export const aiSalesAgent: BestForPageContent = createBestForPage({
   niche: {
     name: "AI Sales Agent",
     shortName: "AI Sales Agent",
-    description: "Service businesses needing an AI-powered sales agent that qualifies leads and books appointments 24/7",
+    description:
+      "Service businesses needing an AI-powered sales agent that qualifies leads and books appointments 24/7",
   },
   meta: {
-    title: "AI Sales Agent | Voice AI That Qualifies Leads & Books Appointments | Prestyj",
+    title: "AI Sales Agent | Voice AI That Qualifies Leads & Books Appointments",
     description:
       "AI sales agents for service businesses: voice AI that calls leads instantly, qualifies them with natural conversation, and books appointments around the clock. 78% of leads go with the first responder—be first every time.",
     keywords: [

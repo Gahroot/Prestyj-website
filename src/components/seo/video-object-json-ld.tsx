@@ -20,15 +20,14 @@ export function VideoObjectJsonLd({ videos }: VideoObjectJsonLdProps) {
       "@type": "VideoObject",
       name: video.name,
       description: video.description,
-      thumbnailUrl:
-        video.thumbnailUrl ?? `https://vumbnail.com/${video.vimeoId}.jpg`,
+      thumbnailUrl: video.thumbnailUrl ?? `https://vumbnail.com/${video.vimeoId}.jpg`,
       uploadDate: video.uploadDate ?? "2026-01-01",
       contentUrl: `https://player.vimeo.com/video/${video.vimeoId}`,
       embedUrl: `https://player.vimeo.com/video/${video.vimeoId}`,
       ...(video.duration ? { duration: video.duration } : {}),
       publisher: {
         "@type": "Organization",
-        name: "PRESTYJ",
+        name: "Prestyj",
         logo: {
           "@type": "ImageObject",
           url: "https://prestyj.com/icon-512.png",

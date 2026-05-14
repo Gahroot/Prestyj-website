@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const aiAvatarAdsCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -160,9 +160,9 @@ export const aiAvatarAdsCompareData: ComparePageData = createComparePage({
 export const aiAvatarAdsMetadata: CompareMetadata = {
   slug: "prestyj-vs-ai-avatar-ads",
   competitorName: "AI Avatar Ads",
-  title: "Real Faces Beat AI Avatars in Service Ads | PRESTYJ vs AI",
+  title: "Real Faces Beat AI Avatars in Service Ads",
   description:
-    "AI avatar ads feel fake. PRESTYJ produces 300-1,000 scripted video ads with your real face in 24 hours - for $1,497, not $5K+ monthly subscriptions.",
+    "AI avatar ads feel fake. Prestyj produces 300-1,000 scripted video ads with your real face in 24 hours - for $1,497, not $5K+ monthly subscriptions.",
   keywords: [
     "ai avatar ads alternative",
     "real face ugc",

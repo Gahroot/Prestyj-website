@@ -11,7 +11,7 @@ export const aiCustomerEngagement: BestForPageContent = createBestForPage({
       "Service businesses needing unified omnichannel AI engagement across voice, SMS, email, and web chat",
   },
   meta: {
-    title: "AI Customer Engagement | Omnichannel AI for Service Businesses | Prestyj",
+    title: "AI Customer Engagement | Omnichannel AI for Service Businesses",
     description:
       "Unify customer engagement across voice, SMS, email, and web chat with omnichannel AI. 89% customer retention boost. Consistent messaging on every channel, 24/7.",
     keywords: [

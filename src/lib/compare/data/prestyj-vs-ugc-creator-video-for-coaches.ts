@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,8 @@ export const coachesVsUgcCreatorVideoCompareData: ComparePageData = createCompar
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · Coaches-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · ad budget + batch video ads + AI agents · tuned for Coaches",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,7 +51,12 @@ export const coachesVsUgcCreatorVideoCompareData: ComparePageData = createCompar
     },
   },
   features: [
-    { feature: "Scripts researched for Coaches pain points", prestyj: true, competitor: false, note: "UGC Creators does not research your vertical by default" },
+    {
+      feature: "Scripts researched for Coaches pain points",
+      prestyj: true,
+      competitor: false,
+      note: "UGC Creators does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual brand", prestyj: true, competitor: false },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "1-3 per creator" },
     { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "14-45 days" },
@@ -63,7 +68,8 @@ export const coachesVsUgcCreatorVideoCompareData: ComparePageData = createCompar
   ],
   whySwitch: {
     title: "Why Coaches Pick Batch Over UGC Creators",
-    description: "A UGC creator pretending to be your student is not your offer. You are the offer.",
+    description:
+      "A UGC creator pretending to be your student is not your offer. You are the offer.",
     reasons: [
       {
         icon: "Zap",
@@ -98,10 +104,30 @@ export const coachesVsUgcCreatorVideoCompareData: ComparePageData = createCompar
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Coaches", description: "Coaches-specific use case", href: "/best-for/batch-video-ads-for-coaches", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for Coaches", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-coaches", linkText: "See the math" },
-    { title: "Coaches Video Production Alternative", description: "Alternative to traditional coaches video production", href: "/alternatives/coaches-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Coaches",
+      description: "Coaches-specific use case",
+      href: "/best-for/batch-video-ads-for-coaches",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for Coaches",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-coaches",
+      linkText: "See the math",
+    },
+    {
+      title: "Coaches Video Production Alternative",
+      description: "Alternative to traditional coaches video production",
+      href: "/alternatives/coaches-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Coaches Pick Batch Over UGC Creators.",
@@ -116,7 +142,7 @@ export const coachesVsUgcCreatorVideoCompareData: ComparePageData = createCompar
 export const coachesVsUgcCreatorVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-ugc-creator-video-for-coaches",
   competitorName: "UGC Creators (for Coaches)",
-  title: "PRESTYJ vs UGC Creators for Coaches (2026 Pricing Math)",
+  title: "Prestyj vs UGC Creators for Coaches (2026 Pricing Math)",
   description:
     "A UGC creator pretending to be your student is not your offer. You are the offer. See full per-angle pricing math and why coaches pick batch from $1,497 over $150-$400per video.",
   keywords: [

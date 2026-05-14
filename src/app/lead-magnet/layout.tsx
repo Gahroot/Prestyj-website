@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Playbooks & Guides for Marketing & Sales | PRESTYJ",
+  title: "Free Playbooks & Guides for Marketing & Sales",
   description:
     "Free playbooks for real estate teams, brokerages, roofing contractors, and content operators. Pick the guide that matches your business and download instantly.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "lead reactivation playbook",
   ],
   openGraph: {
-    title: "Free Playbooks & Guides for Marketing & Sales | PRESTYJ",
+    title: "Free Playbooks & Guides for Marketing & Sales",
     description:
       "Pick your playbook: brokerage, lead reactivation, QualVol content, or roofing lead response. Free instant download.",
     type: "website",

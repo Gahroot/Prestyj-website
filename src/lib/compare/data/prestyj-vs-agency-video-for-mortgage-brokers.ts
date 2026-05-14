@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,9 @@ export const mortgageBrokersVsAgencyVideoCompareData: ComparePageData = createCo
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · Mortgage Brokers-researched",
+      price: "$1,997",
+      priceSubtext:
+        "/mo Starter · ad budget + batch video ads + AI agents · tuned for Mortgage Brokers",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,7 +52,12 @@ export const mortgageBrokersVsAgencyVideoCompareData: ComparePageData = createCo
     },
   },
   features: [
-    { feature: "Scripts researched for Mortgage Brokers pain points", prestyj: true, competitor: false, note: "Mortgage Marketing Agencies does not research your vertical by default" },
+    {
+      feature: "Scripts researched for Mortgage Brokers pain points",
+      prestyj: true,
+      competitor: false,
+      note: "Mortgage Marketing Agencies does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual brand", prestyj: true, competitor: "Sometimes" },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "2-6 per month" },
     { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "14-45 days" },
@@ -63,11 +69,13 @@ export const mortgageBrokersVsAgencyVideoCompareData: ComparePageData = createCo
   ],
   whySwitch: {
     title: "Why Mortgage Brokers Pick Batch Over Mortgage Marketing Agencies",
-    description: "Mortgage marketing agencies bill $4K/month and ship 6 videos a year. Batch ships 500 in 24 hours for less than a single month of retainer.",
+    description:
+      "Mortgage marketing agencies bill $4K/month and ship 6 videos a year. Batch ships 500 in 24 hours for less than a single month of retainer.",
     reasons: [
       {
         icon: "Zap",
-        title: "Rate-quote ads, refi ads, first-time-buyer ads, and HELOC ads are four creative tracks and you have one",
+        title:
+          "Rate-quote ads, refi ads, first-time-buyer ads, and HELOC ads are four creative tracks and you have one",
         description:
           "Mortgage Marketing Agencies cannot fix this. The unit they ship (per-video, per-gig, per-month) is fundamentally incompatible with the cadence paid social actually requires (50+ creatives per ad set to exit learning).",
       },
@@ -98,10 +106,30 @@ export const mortgageBrokersVsAgencyVideoCompareData: ComparePageData = createCo
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Mortgage Brokers", description: "Mortgage Brokers-specific use case", href: "/best-for/batch-video-ads-for-mortgage-brokers", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for Mortgage Brokers", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-mortgage-brokers", linkText: "See the math" },
-    { title: "Mortgage Brokers Video Production Alternative", description: "Alternative to traditional mortgage brokers video production", href: "/alternatives/mortgage-brokers-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Mortgage Brokers",
+      description: "Mortgage Brokers-specific use case",
+      href: "/best-for/batch-video-ads-for-mortgage-brokers",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for Mortgage Brokers",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-mortgage-brokers",
+      linkText: "See the math",
+    },
+    {
+      title: "Mortgage Brokers Video Production Alternative",
+      description: "Alternative to traditional mortgage brokers video production",
+      href: "/alternatives/mortgage-brokers-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Mortgage Brokers Pick Batch Over Mortgage Marketing Agencies.",
@@ -116,7 +144,7 @@ export const mortgageBrokersVsAgencyVideoCompareData: ComparePageData = createCo
 export const mortgageBrokersVsAgencyVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-agency-video-for-mortgage-brokers",
   competitorName: "Mortgage Marketing Agencies (for Mortgage Brokers)",
-  title: "PRESTYJ vs Mortgage Marketing Agencies for Mortgage Brokers (2026 Pricing Math)",
+  title: "Prestyj vs Mortgage Marketing Agencies for Mortgage Brokers (2026 Pricing Math)",
   description:
     "Mortgage marketing agencies bill $4K/month and ship 6 videos a year. Batch ships 500 in 24 hours for less than a single month of retainer. See full per-angle pricing math and why mortgage brokers pick batch from $1,497 over $2,500-$6,500/month retainer.",
   keywords: [

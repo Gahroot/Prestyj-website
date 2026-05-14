@@ -11,7 +11,7 @@ export const tampa: LocationPageContent = {
       "Tampa Bay is the most volatile — and most lucrative — home services market in the Southeast. Hurricane prep, brutal humidity, an avalanche of out-of-state relocations, and Florida's recent insurance reforms have created a perfect storm of demand. Contractors who can capture homeowner attention quickly during storm season and roof-replacement cycles are pulling in numbers that simply aren't possible in slower markets.",
   },
   meta: {
-    title: "Facebook Ads for Tampa Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Tampa Home Service Contractors",
     description:
       "Grow your Tampa Bay HVAC, roofing, plumbing, or contracting business with Facebook ads built for Florida's hurricane and insurance-driven market. Real strategy, real leads.",
     keywords: [
@@ -34,8 +34,7 @@ export const tampa: LocationPageContent = {
   marketStats: {
     households: "1.3M+",
     avgHomeValue: "$385K",
-    keyInsight:
-      "Florida's insurance reforms are driving record roof replacements across Tampa Bay",
+    keyInsight: "Florida's insurance reforms are driving record roof replacements across Tampa Bay",
   },
   services: [
     {
@@ -86,8 +85,7 @@ export const tampa: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "How should I time my Facebook ad spend around Tampa's hurricane season?",
+      question: "How should I time my Facebook ad spend around Tampa's hurricane season?",
       answer:
         "Strategically — not reactively. Most contractors blow their entire ad budget after a hurricane hits, when CPMs spike and every competitor is bidding on the same keywords. We pre-build storm-prep campaigns that run May through July, capture intent ahead of the season, and then pivot to insurance-claim and damage-assessment messaging the moment a system makes landfall. That timing edge is worth tens of thousands in leads.",
     },
@@ -98,8 +96,7 @@ export const tampa: LocationPageContent = {
         "Most roofers run open-ended 'free roof inspection' offers that attract anyone with a leaky ceiling. We build qualifying funnels around the specific Tampa pain — insurance non-renewals, four-point inspections, age-based replacement requirements — so by the time a lead reaches your CRM, they already understand they likely need a full replacement, not a $300 patch.",
     },
     {
-      question:
-        "How are Florida's insurance reforms actually changing the Tampa roofing market?",
+      question: "How are Florida's insurance reforms actually changing the Tampa roofing market?",
       answer:
         "Carriers are dropping policies on homes with roofs older than 15-20 years and refusing to write new policies until replacements happen. That's pulled forward years of demand into the present. Homeowners are suddenly motivated, urgent, and pre-qualified — which is exactly the audience Facebook ads can reach with surgical precision if your creative speaks to that specific situation.",
     },
@@ -110,8 +107,7 @@ export const tampa: LocationPageContent = {
         "They work extremely well — but the creative has to match the audience. Generic 'lowest price guaranteed' ads bomb in those ZIPs. Premium-positioned campaigns featuring craftsmanship, design, warranty, and concierge-style service convert at multiples of what they would in cookie-cutter markets. We dial in audience targeting and creative tone to the specific neighborhood.",
     },
     {
-      question:
-        "Which Tampa Bay areas deliver the best ROI for home service Facebook ads?",
+      question: "Which Tampa Bay areas deliver the best ROI for home service Facebook ads?",
       answer:
         "It depends on the service. South Tampa, Carrollwood, and St. Petersburg deliver strong returns for premium HVAC, remodels, and high-end roofing. Wesley Chapel, Riverview, and Brandon are gold for newer-home services and solar. Coastal Pinellas County is repipe and AC replacement territory thanks to salt-air corrosion. We build geo-targeted campaigns at the ZIP and neighborhood level instead of blasting the entire metro.",
     },

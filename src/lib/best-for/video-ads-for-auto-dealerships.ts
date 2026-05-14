@@ -9,7 +9,7 @@ export const videoAdsForAutoDealerships: BestForPageContent = {
       "Auto dealerships using batch video ad creative testing to drive test drives and showroom traffic — covering new inventory, used deals, financing, and service department angles.",
   },
   meta: {
-    title: "500 Auto Dealership Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Auto Dealership Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of dealership-specific video ads with your real team in 24 hours. New inventory, used deals, financing, and service ads. From $1,497.",
     keywords: [

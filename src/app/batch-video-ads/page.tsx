@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 export const metadata: Metadata = {
-  title: "Batch Video Ads | 300–1000 Scripted Ads in 24 Hours | PRESTYJ",
+  title: "Batch Video Ads | 300–1000 Scripted Ads in 24 Hours",
   description:
     "Send us 15–20 minutes of casual selfie footage. Get back hundreds of scripted ad variations that look like content, not ads. Find winning hooks in days — not six months of one-a-day posting.",
   openGraph: {

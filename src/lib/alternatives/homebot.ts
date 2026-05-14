@@ -16,7 +16,7 @@ export const homebot: AlternativePageContent = createAlternativePage({
     description: "AI-powered seller lead nurturing and homeowner engagement platform",
   },
   meta: {
-    title: "Homebot Alternatives for Real Estate | Prestyj",
+    title: "Homebot Alternatives for Real Estate",
     description:
       "Looking for Homebot alternatives? Compare Prestyj vs Homebot for lead response. Instant voice AI that engages buyer and seller leads in real-time conversations.",
     keywords: [
@@ -64,7 +64,11 @@ export const homebot: AlternativePageContent = createAlternativePage({
       price: "$199-399",
       period: "/month",
       note: "+ per-user fees at scale",
-      pros: ["Excellent for long-term homeowner nurturing", "Equity dashboards", "Seller lead focus"],
+      pros: [
+        "Excellent for long-term homeowner nurturing",
+        "Equity dashboards",
+        "Seller lead focus",
+      ],
       cons: [
         "Limited buyer lead capabilities",
         "No voice-first engagement",

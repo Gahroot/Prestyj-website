@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const ugcCreatorsCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -154,9 +154,9 @@ export const ugcCreatorsCompareData: ComparePageData = createComparePage({
 export const ugcCreatorsMetadata: CompareMetadata = {
   slug: "prestyj-vs-ugc-creators",
   competitorName: "UGC Creators",
-  title: "PRESTYJ vs UGC Creators: Your Face Sells, Theirs Doesn't",
+  title: "Prestyj vs UGC Creators: Your Face Sells, Theirs Doesn't",
   description:
-    "A stranger can't pitch your $400K listing or mortgage rate. PRESTYJ films the real you in 300-1,000 scripted ads in 24 hours. $1,497 flat, not $50K+.",
+    "A stranger can't pitch your $400K listing or mortgage rate. Prestyj films the real you in 300-1,000 scripted ads in 24 hours. $1,497 flat, not $50K+.",
   keywords: [
     "ugc creator alternative",
     "hire ugc creator vs",

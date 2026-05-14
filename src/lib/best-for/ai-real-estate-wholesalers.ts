@@ -11,7 +11,7 @@ export const aiRealEstateWholesalers: BestForPageContent = createBestForPage({
       "Real estate wholesalers finding distressed properties and assigning contracts for profit",
   },
   meta: {
-    title: "Best AI for Real Estate Wholesalers | Prestyj",
+    title: "Best AI for Real Estate Wholesalers",
     description:
       "The best AI platform for real estate wholesalers. Automate lead qualification, skip tracing, deal analysis, and disposition. Close more wholesale deals with AI-powered workflows.",
     keywords: [

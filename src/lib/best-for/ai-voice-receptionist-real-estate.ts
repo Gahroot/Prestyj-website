@@ -11,7 +11,7 @@ export const aiVoiceReceptionistRealEstate: BestForPageContent = createBestForPa
       "Real estate teams needing intelligent call handling for lead response, showing scheduling, and 24/7 buyer and seller lead qualification",
   },
   meta: {
-    title: "AI Voice Receptionist for Real Estate | Lead Response & Showings 24/7 | Prestyj",
+    title: "AI Voice Receptionist for Real Estate | Lead Response & Showings 24/7",
     description:
       "AI voice receptionist built for real estate teams. Respond to leads in under 60 seconds, schedule showings automatically, qualify buyers and sellers, and integrate with Follow Up Boss, kvCORE, and Sierra Interactive. Be the first agent to respond, every time.",
     keywords: [

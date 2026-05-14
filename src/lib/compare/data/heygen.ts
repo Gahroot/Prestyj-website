@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const heygenCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -166,9 +166,9 @@ export const heygenCompareData: ComparePageData = createComparePage({
 export const heygenMetadata: CompareMetadata = {
   slug: "prestyj-vs-heygen",
   competitorName: "HeyGen",
-  title: "PRESTYJ vs HeyGen: Your Real Face or an AI Clone? (2026)",
+  title: "Prestyj vs HeyGen: Your Real Face or an AI Clone? (2026)",
   description:
-    "HeyGen's avatar of you still looks AI. PRESTYJ films the actual you - 300-1,000 scripted ads in 24 hours for $1,497 one-time, not $89/mo forever.",
+    "HeyGen's avatar of you still looks AI. Prestyj films the actual you - 300-1,000 scripted ads in 24 hours for $1,497 one-time, not $89/mo forever.",
   keywords: [
     "heygen alternative",
     "heygen vs prestyj",

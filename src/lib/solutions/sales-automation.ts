@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const salesAutomation: SolutionPageContent = {
   slug: "sales-automation",
   meta: {
-    title: "Sales Automation | AI-Powered Pipeline Automation for Service Businesses | Prestyj",
+    title: "Sales Automation | AI-Powered Pipeline Automation for Service Businesses",
     description:
       "Transform your sales process with AI-powered automation. From lead capture to booking, our automated sales pipeline eliminates manual follow-up and ensures no lead falls through the cracks.",
     keywords: [

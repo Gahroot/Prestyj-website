@@ -11,7 +11,7 @@ export const phoenix: LocationPageContent = {
       "The Valley of the Sun is one of the most demanding home services markets in the country. Triple-digit heat, explosive population growth, and the multi-billion-dollar TSMC semiconductor build-out have turned Phoenix into a goldmine for contractors who know how to capture homeowner attention before their competitors do.",
   },
   meta: {
-    title: "Facebook Ads for Phoenix Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Phoenix Home Service Contractors",
     description:
       "Grow your Phoenix HVAC, roofing, solar, or contracting business with Facebook ads built for the Valley's heat-driven market. Local strategy, real leads, no fluff.",
     keywords: [
@@ -86,8 +86,7 @@ export const phoenix: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "When is the best time of year to advertise my Phoenix HVAC business on Facebook?",
+      question: "When is the best time of year to advertise my Phoenix HVAC business on Facebook?",
       answer:
         "Honestly? Year-round — but with very different angles. Pre-summer (March–May) is gold for tune-ups and replacements before peak heat. June through September is emergency-call territory with the highest intent and best margins. Even winter has demand for heat pump service and indoor air quality. We build campaigns that shift messaging with the season instead of running the same tired ad all year.",
     },
@@ -109,8 +108,7 @@ export const phoenix: LocationPageContent = {
         "Yes — but not the way most solar companies run them. The market is saturated with cold, salesy lead-gen forms. We build educational, trust-first campaigns that pre-qualify homeowners on roof condition, ownership status, and bill size before they ever talk to a rep. The result is fewer junk leads and dramatically better close rates for your sales team.",
     },
     {
-      question:
-        "Which Phoenix-area neighborhoods deliver the best ROI for home service ads?",
+      question: "Which Phoenix-area neighborhoods deliver the best ROI for home service ads?",
       answer:
         "It depends on the service, but generally: Scottsdale, Paradise Valley, Arcadia, and Ahwatukee for high-ticket remodels and premium HVAC. Gilbert, Chandler, and Queen Creek for newer-home replacement and solar. Surprise, Buckeye, and the TSMC corridor for new-construction-adjacent services. We dial in geo-targeting at the ZIP and even neighborhood level rather than blasting the whole metro.",
     },

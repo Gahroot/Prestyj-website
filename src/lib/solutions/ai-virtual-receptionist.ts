@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const aiVirtualReceptionist: SolutionPageContent = {
   slug: "ai-virtual-receptionist",
   meta: {
-    title: "AI Virtual Receptionist | 24/7 Front Desk Coverage | Prestyj",
+    title: "AI Virtual Receptionist | 24/7 Front Desk Coverage",
     description:
       "Replace your front desk with an AI virtual receptionist that greets callers, answers questions, routes calls intelligently, and books appointments 24/7. Built for medical offices, law firms, real estate brokerages, and professional services.",
     keywords: [

@@ -19,7 +19,7 @@ import { faqs } from "@/lib/faq-data";
 const siteUrl = "https://prestyj.com";
 
 export const metadata: Metadata = {
-  title: "FAQ | AI Agents for Marketing & Sales | Prestyj",
+  title: "FAQ | AI Agents for Marketing & Sales",
   description:
     "Common questions about Prestyj — what you get, pricing, onboarding, integrations, and how our AI agents for marketing and sales actually work.",
   keywords: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "Prestyj FAQ",
   ],
   openGraph: {
-    title: "FAQ | AI Agents for Marketing & Sales | Prestyj",
+    title: "FAQ | AI Agents for Marketing & Sales",
     description:
       "Common questions about Prestyj — what you get, pricing, onboarding, integrations, and how our AI agents for marketing and sales actually work.",
     type: "website",
@@ -62,8 +62,8 @@ export default function FAQPage() {
                 Questions? Answers.
               </h1>
               <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
-                Everything you need to know about Prestyj — what we build, how it works, what
-                it costs, and what happens after you book a demo.
+                Everything you need to know about Prestyj — what we build, how it works, what it
+                costs, and what happens after you book a demo.
               </p>
             </AnimateOnScroll>
           </div>
@@ -99,11 +99,13 @@ export default function FAQPage() {
                 Still have questions?
               </h2>
               <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
-                Book a free demo and we&apos;ll walk you through exactly how AI agents would
-                work in your marketing and sales funnel.
+                Book a free demo and we&apos;ll walk you through exactly how AI agents would work in
+                your marketing and sales funnel.
               </p>
               <Button size="lg" className="px-10 py-6 text-lg" asChild>
-                <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
+                <Link href="/book-demo">
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <p className="text-muted-foreground mt-6 text-sm">

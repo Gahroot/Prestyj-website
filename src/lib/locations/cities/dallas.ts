@@ -11,7 +11,7 @@ export const dallas: LocationPageContent = {
       "DFW is the fastest-growing major metro in America, and home service contractors here are either riding the wave or getting buried by it. Between the relocation boom, runaway suburban construction, and Texas-sized weather swings, the homeowners are out there — the only question is whether your Facebook ads are reaching them before someone else's do.",
   },
   meta: {
-    title: "Facebook Ads for Dallas-Fort Worth Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Dallas-Fort Worth Home Service Contractors",
     description:
       "Win more jobs in Dallas, Fort Worth, Frisco, Plano, and McKinney with Facebook ads built for DFW's relocation-fueled growth market. Real leads. Real results.",
     keywords: [
@@ -110,8 +110,7 @@ export const dallas: LocationPageContent = {
         "Yes, and this is where most DIY ad accounts fail. We build campaigns at the ZIP and radius level so your spend never bleeds into areas you don't service. If you only work north of 635, we make sure not a dollar gets shown to someone in DeSoto. Precision targeting is non-negotiable in a metro this big.",
     },
     {
-      question:
-        "What's a realistic cost-per-lead for home services in the Dallas market?",
+      question: "What's a realistic cost-per-lead for home services in the Dallas market?",
       answer:
         "It varies wildly by service, but well-run Facebook campaigns in DFW typically deliver HVAC and roofing leads in the $25–$60 range, plumbing in the $30–$70 range, and solar (which is more involved) anywhere from $50–$150 for pre-qualified appointments. The contractors paying $200+ per lead are usually running poorly structured campaigns or relying on third-party lead resellers.",
     },

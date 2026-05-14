@@ -10,7 +10,7 @@ export const realEstateVideoAdsOhio: BestForPageContent = {
       "Ohio agents using batch vertical video ad creative to convert Intel Columbus semiconductor, Cleveland Clinic medical, Cincinnati corporate, and Ohio out-of-state cost-of-living relocators across Columbus REALTORS, NEOHREX, CABR, and Dayton MLS territory under OH Division of Real Estate compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Ohio | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Ohio | 300–1,000 Scripted Ads",
     description:
       "Ohio agents: 300–1,000 vertical video ads in 24 hours. Tuned for Columbus MLS, NEOHREX, CABR, OH compliance, Intel, and Cleveland Clinic. From $1,497.",
     keywords: [

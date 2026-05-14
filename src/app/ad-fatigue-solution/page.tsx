@@ -10,11 +10,11 @@ import { FAQJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
-  title: "Ad Fatigue Solution: It's a Supply Problem, Not a Strategy Problem | PRESTYJ",
+  title: "Ad Fatigue Solution",
   description:
     "Ad fatigue isn't fixed by 'rotate your creative' advice. It's a creative supply problem. Here's the math on how many ads you actually need per month — and how to produce them.",
   openGraph: {
-    title: "Ad Fatigue Solution: It's a Supply Problem | PRESTYJ",
+    title: "Ad Fatigue Solution",
     description:
       "Fatigue means your creative library is too small relative to spend. Here's the real fix.",
     type: "website",

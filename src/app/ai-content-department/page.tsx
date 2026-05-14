@@ -177,7 +177,7 @@ const serviceJsonLd = {
     "AI Content Department \u2014 the AI agent for social media inside Prestyj's marketing & sales AI agent suite. Multi-account swarm (brand, personal, niche) across Instagram, Facebook, TikTok, YouTube, LinkedIn, Threads, X. 270\u20132,700+ posts/month. Live in 24 hours. From $1,997/mo.",
   provider: {
     "@type": "Organization",
-    name: "PRESTYJ",
+    name: "Prestyj",
     url: "https://prestyj.com",
     logo: "https://prestyj.com/icon-512.png",
   },

@@ -12,7 +12,7 @@ export const socialMediaAgencies: AlternativePageContent = createAlternativePage
       "Traditional social media agencies, fractional marketers, junior in-house hires, and Fiverr/Upwork freelancers — the human-labor model for managing posting, content, and ad creative across platforms.",
   },
   meta: {
-    title: "Social Media Agency Alternative | Prestyj — 1,500+ Posts/Month, No Retainer",
+    title: "Social Media Agency Alternative — 1,500+ Posts/Month, No Retainer",
     description:
       "Looking for a social media agency alternative? Prestyj replaces the $5K–$15K/month agency retainer with an AI content engine: 1,500+ posts/month across 7 platforms, no account managers, no long-term contracts.",
     keywords: [
@@ -141,9 +141,9 @@ export const socialMediaAgencies: AlternativePageContent = createAlternativePage
       ],
     },
     prestyjPricingOverrides: {
-      price: "$3,000",
-      period: "/month",
-      note: "All-in. 1,500+ posts/month across 7 platforms. No contract, no account manager, no platform upcharges.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "1,500+ posts/month across 7 platforms — flat fee",
         "Daily auto-publish with industry-specific scripts and captions",

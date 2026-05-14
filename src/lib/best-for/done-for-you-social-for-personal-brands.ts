@@ -11,7 +11,7 @@ export const doneForYouSocialForPersonalBrands: BestForPageContent = {
       "Done-for-you social media content service for solopreneur thought leaders, course creators, and authors monetizing through audience. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for Personal Brands | Prestyj",
+    title: "Done-For-You Social Media for Personal Brands",
     description:
       "Done-for-you social media content for personal brands. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for solopreneur thought leaders, course creators, and authors monetizing through audience.",
     keywords: [
@@ -37,7 +37,8 @@ export const doneForYouSocialForPersonalBrands: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "Personal brands at 50K+ followers generate $500K–$5M annually from course sales, sponsorships, and speaking",
+      title:
+        "Personal brands at 50K+ followers generate $500K–$5M annually from course sales, sponsorships, and speaking",
       description:
         "Personal brands at 50K+ followers generate $500K–$5M annually from course sales, sponsorships, and speaking — and the differentiator isn't talent, it's posting cadence over 24+ months",
     },
@@ -62,22 +63,26 @@ export const doneForYouSocialForPersonalBrands: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You post for two weeks, get busy with clients, and disappear for a month — and your audience growth resets",
+      problem:
+        "You post for two weeks, get busy with clients, and disappear for a month — and your audience growth resets",
       solution:
         "Prestyj produces 30–50 posts per day across LinkedIn, X, Instagram, YouTube and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "Writing the same idea four different ways for LinkedIn, X, Instagram, and YouTube is unsustainable",
+      problem:
+        "Writing the same idea four different ways for LinkedIn, X, Instagram, and YouTube is unsustainable",
       solution:
         "Prestyj's content engine is trained on personal brands-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "Hiring a social media manager costs $3K–$5K/month and they can't capture your voice",
+      problem:
+        "Hiring a social media manager costs $3K–$5K/month and they can't capture your voice",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for solopreneur thought leaders, course creators, and authors monetizing through audience.",
     },
     {
-      problem: "Your audience plateaued at the volume you can personally sustain — growth requires content velocity you don't have",
+      problem:
+        "Your audience plateaued at the volume you can personally sustain — growth requires content velocity you don't have",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },
@@ -129,7 +134,8 @@ export const doneForYouSocialForPersonalBrands: BestForPageContent = {
         "The honest answer is more than you think. The algorithms on LinkedIn + X + Instagram + YouTube — multi-platform repurposing is the strategy, Instagram, and TikTok reward accounts that post 3–5× daily across formats — short-form video, carousels, single posts, and stories. For solopreneur thought leaders, course creators, and authors monetizing through audience, the right baseline is 1,500+ per month across multiple platforms. Personal brands compound through consistency, not virality — the audience that follows you in year 3 is the one that buys your course, books, and keynotes in year 5. Daily multi-platform posting is the single durable strategy.",
     },
     {
-      question: "Will the content actually sound like a personal brand — or like generic AI content?",
+      question:
+        "Will the content actually sound like a personal brand — or like generic AI content?",
       answer:
         "Personal-brand voice is unmistakable, opinionated, and frameworked — generic 'thought leadership' content reads as commoditized. Your unique frameworks, contrarian takes, and lived experiences are the entire moat. During onboarding, you provide samples of your existing content, frameworks, and communication style. The output mirrors how you actually speak and write — not generic templates. You review every piece before it ships, and the model improves from your feedback over time.",
     },

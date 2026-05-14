@@ -8,7 +8,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -30,8 +30,8 @@ export const adcreativeAiCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -159,9 +159,9 @@ export const adcreativeAiCompareData: ComparePageData = createComparePage({
 export const adcreativeAiMetadata: CompareMetadata = {
   slug: "prestyj-vs-adcreative-ai",
   competitorName: "AdCreative.ai",
-  title: "PRESTYJ vs AdCreative.ai: Static Images or Real-Face Video Ads? (2026)",
+  title: "Prestyj vs AdCreative.ai: Static Images or Real-Face Video Ads? (2026)",
   description:
-    "AdCreative.ai makes static image ads for $29-$209/mo. PRESTYJ ships 300-1,000 vertical video ads with your real face in 24 hours for $1,497 one-time.",
+    "AdCreative.ai makes static image ads for $29-$209/mo. Prestyj ships 300-1,000 vertical video ads with your real face in 24 hours for $1,497 one-time.",
   keywords: [
     "adcreative.ai alternative",
     "adcreative ai vs prestyj",

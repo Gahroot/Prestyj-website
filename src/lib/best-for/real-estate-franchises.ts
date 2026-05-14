@@ -11,7 +11,7 @@ export const realEstateFranchises: BestForPageContent = createBestForPage({
       "Multi-location franchise operations requiring standardized lead response across 50+ offices",
   },
   meta: {
-    title: "Best AI Lead Response for Real Estate Franchises | Prestyj",
+    title: "Best AI Lead Response for Real Estate Franchises",
     description:
       "Discover why 50+ office franchise operations choose Prestyj for standardized lead response. Consistent SLAs, portfolio visibility, and multi-location coordination built in.",
     keywords: [

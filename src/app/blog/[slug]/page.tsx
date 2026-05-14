@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   if (!page) {
     return {
-      title: "Post Not Found - PRESTYJ",
+      title: "Post Not Found",
     };
   }
 
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const ogImage = image || "/og-image.jpg";
 
   return {
-    title: `${title} | PRESTYJ Blog`,
+    title: title,
     description,
     keywords: keywords?.length ? keywords : undefined,
     authors: author ? [{ name: author }] : undefined,
@@ -52,7 +52,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       url: postUrl,
       title,
       description,
-      siteName: "PRESTYJ",
+      siteName: "Prestyj",
       publishedTime: date,
       authors: author ? [author] : undefined,
       images: [
@@ -193,7 +193,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     publisher: {
       "@type": "Organization",
-      name: "PRESTYJ",
+      name: "Prestyj",
       url: siteUrl,
       logo: {
         "@type": "ImageObject",

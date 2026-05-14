@@ -9,7 +9,7 @@ export const videoAdsForSeniorCare: BestForPageContent = {
       "Senior care providers, home health agencies, and assisted living facilities using batch video ad creative testing to generate family decision-maker leads — covering in-home care, assisted living, and memory care angles.",
   },
   meta: {
-    title: "500 Senior Care Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Senior Care Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of senior-care-specific video ads with your real face in 24 hours. In-home care, assisted living, and memory care angles targeting family decision-makers. From $1,497.",
     keywords: [

@@ -10,7 +10,7 @@ export const facebookAdsRealEstate: BestForPageContent = createBestForPage({
     description: "Real estate teams converting Facebook ad leads with AI-powered instant response",
   },
   meta: {
-    title: "AI Follow-Up for Real Estate Facebook Ad Leads | Prestyj",
+    title: "AI Follow-Up for Real Estate Facebook Ad Leads",
     description:
       "Stop letting Facebook ad leads go cold. Prestyj responds to every real estate Facebook lead in under 60 seconds, qualifies buyers and sellers, and books appointments automatically.",
     keywords: [

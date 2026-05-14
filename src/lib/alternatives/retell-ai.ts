@@ -17,7 +17,7 @@ export const retellAi: AlternativePageContent = createAlternativePage({
       "Developer platform for building AI voice agents with API-first architecture and drag-and-drop workflow builder",
   },
   meta: {
-    title: "Retell AI Alternative: Done-For-You vs DIY | Prestyj",
+    title: "Retell AI Alternative: Done-For-You vs DIY",
     description:
       "Looking for a Retell AI alternative? Compare Prestyj vs Retell AI: done-for-you implementation vs DIY platform, predictable pricing vs per-minute billing, white-glove setup vs self-managed development.",
     keywords: [
@@ -127,8 +127,9 @@ export const retellAi: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Predictable monthly",
-      note: "Based on your call volume and needs—all-inclusive pricing",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Zero technical setup required",
         "Done-for-you implementation",

@@ -11,7 +11,7 @@ export const aiVoiceReceptionist: BestForPageContent = createBestForPage({
       "Small businesses and professional services replacing human receptionists with AI-powered voice answering and scheduling",
   },
   meta: {
-    title: "AI Voice Receptionist | Replace Your Front Desk | Save 60-80% | Prestyj",
+    title: "AI Voice Receptionist | Replace Your Front Desk | Save 60-80%",
     description:
       "AI voice receptionist answers calls 24/7, books appointments, qualifies leads, and transfers to humans—at a fraction of receptionist cost. Perfect for dental, medical, legal, HVAC, and home services.",
     keywords: [

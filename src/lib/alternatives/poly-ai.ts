@@ -17,7 +17,7 @@ export const polyAi: AlternativePageContent = createAlternativePage({
       "Enterprise voice AI platform specializing in customer service automation for large-scale call centers",
   },
   meta: {
-    title: "Best PolyAI Alternative | Prestyj AI Voice Receptionist",
+    title: "Best PolyAI Alternative | AI Voice Receptionist",
     description:
       "Looking for a PolyAI alternative? Compare Prestyj vs PolyAI: fast SMB implementation vs months-long enterprise deployment, transparent pricing vs custom contracts, industry-specialized vs one-size-fits-all.",
     keywords: [
@@ -153,8 +153,9 @@ export const polyAi: AlternativePageContent = createAlternativePage({
       ],
     },
     prestyjPricingOverrides: {
-      price: "Transparent, predictable",
-      note: "No enterprise contracts or minimum commitments. Start immediately.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "Live in 15 minutes, not months",
         "Industry-specific templates included",

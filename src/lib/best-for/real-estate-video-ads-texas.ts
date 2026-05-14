@@ -10,7 +10,7 @@ export const realEstateVideoAdsTexas: BestForPageContent = {
       "Texas agents using batch vertical video ad creative across Austin ACTRIS, Dallas/Fort Worth NTREIS, Houston HAR, and San Antonio SABOR markets — handling TREC compliance, out-of-state relocation, and Texas's four-major-metro buyer dynamics.",
   },
   meta: {
-    title: "Real Estate Video Ads for Texas | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Texas | 300–1,000 Scripted Ads",
     description:
       "Texas agents: 300–1,000 vertical video ads in 24 hours. Tuned for ACTRIS, NTREIS, HAR, SABOR, TREC compliance, and out-of-state relocation. From $1,497.",
     keywords: [

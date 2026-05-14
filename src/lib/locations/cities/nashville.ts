@@ -11,7 +11,7 @@ export const nashville: LocationPageContent = {
       "Nashville isn't a market — it's a gold rush. Relocations from California, New York, and Chicago haven't slowed in a decade. New construction is nonstop, short-term rental conversions are reshaping entire neighborhoods, and bachelorette tourism has turned Music City into a 24/7 hospitality economy. For home service contractors who know how to capture homeowner attention on Facebook, this is one of the most lucrative markets in the country.",
   },
   meta: {
-    title: "Facebook Ads for Nashville Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Nashville Home Service Contractors",
     description:
       "Grow your Nashville HVAC, roofing, plumbing, or contracting business with Facebook ads built for Music City's relocation and new-construction boom. Real strategy, real leads.",
     keywords: [
@@ -34,8 +34,7 @@ export const nashville: LocationPageContent = {
   marketStats: {
     households: "800K+",
     avgHomeValue: "$430K",
-    keyInsight:
-      "Nashville's population grew 15% in the last decade — new construction is nonstop",
+    keyInsight: "Nashville's population grew 15% in the last decade — new construction is nonstop",
   },
   services: [
     {
@@ -104,14 +103,12 @@ export const nashville: LocationPageContent = {
         "Because most contractors are running ads written for a slower, more traditional Southern audience — and Nashville isn't that anymore. Half the market is transplants from major metros who expect modern, image-driven creative, fast online booking, and clear pricing. We build campaigns that match how this new Nashville actually behaves online instead of how it looked ten years ago.",
     },
     {
-      question:
-        "Which Nashville neighborhoods deliver the best ROI for home service ads?",
+      question: "Which Nashville neighborhoods deliver the best ROI for home service ads?",
       answer:
         "Franklin, Brentwood, and Forest Hills are top-tier for high-ticket remodels, premium HVAC, and luxury roofing. East Nashville, Sylvan Park, and Germantown are gold for plumbing repipes and STR-focused renovations. Mt. Juliet, Hendersonville, and Spring Hill are strong for newer-home services and replacement work. We build hyper-targeted campaigns by ZIP rather than blasting the whole metro.",
     },
     {
-      question:
-        "Should I be running ads year-round or only during peak season in Tennessee?",
+      question: "Should I be running ads year-round or only during peak season in Tennessee?",
       answer:
         "Year-round, with seasonal angle shifts. Spring storms drive roofing and tree-damage repairs. Summer is peak HVAC and outdoor living. Fall is remodel-planning season ahead of holiday hosting. Winter brings frozen pipes, water heater failures, and pre-spring renovation pipeline-building. Going dark for any quarter means handing your competitors a head start they don't deserve.",
     },

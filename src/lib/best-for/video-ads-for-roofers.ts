@@ -9,7 +9,7 @@ export const videoAdsForRoofers: BestForPageContent = {
       "Roofing contractors using batch video ad creative testing to dominate storm-chasing windows, insurance claim leads, and retail roof replacement demand on Facebook and Instagram.",
   },
   meta: {
-    title: "500 Roofing Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Roofing Video Ads in 24 Hours (From $1,497)",
     description:
       "Storm hit Tuesday? Your ads ship Wednesday. 300-1,000 scripted hail, wind, and retail reroof video ads with your real face, in 24 hours. From $1,497.",
     keywords: [

@@ -11,7 +11,7 @@ export const peBackedPlatforms: BestForPageContent = createBestForPage({
       "Private equity-backed real estate platforms requiring standardization across acquisitions",
   },
   meta: {
-    title: "Best AI Lead Response for PE-Backed Real Estate Platforms | Prestyj",
+    title: "Best AI Lead Response for PE-Backed Real Estate Platforms",
     description:
       "Discover why PE-backed real estate platforms choose Prestyj. Standardize lead response across acquisitions, unified reporting for investors, and rapid portfolio integration.",
     keywords: [

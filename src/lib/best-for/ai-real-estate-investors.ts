@@ -11,7 +11,7 @@ export const aiRealEstateInvestors: BestForPageContent = createBestForPage({
       "Real estate investors analyzing, acquiring, and managing residential and commercial properties for profit",
   },
   meta: {
-    title: "Best AI for Real Estate Investors | Prestyj",
+    title: "Best AI for Real Estate Investors",
     description:
       "The best AI platform for real estate investors. AI-powered deal analysis, property valuation, tenant screening, and portfolio management. Make data-driven investment decisions.",
     keywords: [

@@ -12,11 +12,10 @@ export const ylopo: AlternativePageContent = createAlternativePage({
     name: "Ylopo",
     pricing: "$600-1,200/mo + ad spend",
     website: "https://ylopo.com",
-    description:
-      "AI-powered lead generation and nurturing platform for real estate teams",
+    description: "AI-powered lead generation and nurturing platform for real estate teams",
   },
   meta: {
-    title: "Best Ylopo Alternative for Real Estate Agents | Prestyj",
+    title: "Best Ylopo Alternative for Real Estate Agents",
     description:
       "Looking for a Ylopo alternative? Compare Prestyj vs Ylopo: simpler pricing, built-in CRM, no required ad spend. See why agents are switching.",
     keywords: [
@@ -41,7 +40,7 @@ export const ylopo: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Ylopo requires separate CRM integration"
+        "Ylopo requires separate CRM integration",
       ),
       buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
       buildAlternativeFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),

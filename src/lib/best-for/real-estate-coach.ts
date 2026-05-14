@@ -10,7 +10,7 @@ export const realEstateCoach: BestForPageContent = createBestForPage({
     description: "Real estate coaches, trainers, and consultants needing AI lead response",
   },
   meta: {
-    title: "AI Receptionist for Real Estate Coaches | Prestyj",
+    title: "AI Receptionist for Real Estate Coaches",
     description:
       "Done-for-you AI response for real estate coaches and consultants. Capture coaching inquiries 24/7, qualify prospects, and book discovery calls. Never miss a potential client again.",
     keywords: [

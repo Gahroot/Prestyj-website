@@ -11,7 +11,7 @@ export const customAiDevelopment: BestForPageContent = createBestForPage({
       "Companies needing custom AI agents built for their specific use case and industry",
   },
   meta: {
-    title: "Best Company for Custom AI Agent Development | Voice & Text Agents | Prestyj",
+    title: "Best Company for Custom AI Agent Development | Voice & Text Agents",
     description:
       "Expert custom AI agent development for sales, customer service, and lead management. We build, deploy, and optimize voice and text AI agents tailored to your business. Done-for-you implementation in weeks, not months.",
     keywords: [

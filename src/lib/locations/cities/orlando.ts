@@ -11,7 +11,7 @@ export const orlando: LocationPageContent = {
       "Orlando isn't just Central Florida's tourist capital — it's one of the most contractor-friendly home services markets in the country. A flood of vacation rental investors, snowbird relocations, and theme-park-adjacent flips keeps demand elevated 12 months a year. Add brutal humidity, year-round AC loads, and a builder boom in suburbs like Lake Nona, Winter Garden, and Horizon West, and you've got a market where the right Facebook ads can put a contractor on the map almost overnight.",
   },
   meta: {
-    title: "Facebook Ads for Orlando Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Orlando Home Service Contractors",
     description:
       "Grow your Orlando HVAC, roofing, plumbing, solar, or contracting business with Facebook ads built for Central Florida's vacation rental, tourism-driven economy.",
     keywords: [

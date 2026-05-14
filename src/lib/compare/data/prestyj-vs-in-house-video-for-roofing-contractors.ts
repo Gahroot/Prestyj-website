@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,8 @@ export const roofingContractorsVsInHouseVideoCompareData: ComparePageData = crea
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · Roofing-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · ad budget + batch video ads + AI agents · tuned for Roofing",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,7 +51,12 @@ export const roofingContractorsVsInHouseVideoCompareData: ComparePageData = crea
     },
   },
   features: [
-    { feature: "Scripts researched for Roofing pain points", prestyj: true, competitor: false, note: "In-House Marketing Hire does not research your vertical by default" },
+    {
+      feature: "Scripts researched for Roofing pain points",
+      prestyj: true,
+      competitor: false,
+      note: "In-House Marketing Hire does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual company", prestyj: true, competitor: "Sometimes" },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "1-8 per quarter" },
     { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "2-6 weeks" },
@@ -63,7 +68,8 @@ export const roofingContractorsVsInHouseVideoCompareData: ComparePageData = crea
   ],
   whySwitch: {
     title: "Why Roofing Pick Batch Over In-House Marketing Hire",
-    description: "An in-house marketing manager ships 8 videos a quarter and costs you $90K. A Prestyj batch ships 500 in 24 hours for $3,997.",
+    description:
+      "An in-house marketing manager ships 8 videos a quarter and costs you $90K. A Prestyj batch ships 500 in 24 hours for $3,997.",
     reasons: [
       {
         icon: "Zap",
@@ -98,10 +104,30 @@ export const roofingContractorsVsInHouseVideoCompareData: ComparePageData = crea
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Roofing Contractors", description: "Roofing-specific use case", href: "/best-for/batch-video-ads-for-roofing-contractors", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for Roofing", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-roofing-contractors", linkText: "See the math" },
-    { title: "Roofing Contractors Video Production Alternative", description: "Alternative to traditional roofing video production", href: "/alternatives/roofing-contractors-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Roofing Contractors",
+      description: "Roofing-specific use case",
+      href: "/best-for/batch-video-ads-for-roofing-contractors",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for Roofing",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-roofing-contractors",
+      linkText: "See the math",
+    },
+    {
+      title: "Roofing Contractors Video Production Alternative",
+      description: "Alternative to traditional roofing video production",
+      href: "/alternatives/roofing-contractors-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Roofing Pick Batch Over In-House Marketing Hire.",
@@ -116,7 +142,7 @@ export const roofingContractorsVsInHouseVideoCompareData: ComparePageData = crea
 export const roofingContractorsVsInHouseVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-in-house-video-for-roofing-contractors",
   competitorName: "In-House Marketing Hire (for Roofing)",
-  title: "PRESTYJ vs In-House Marketing Hire for Roofing (2026 Pricing Math)",
+  title: "Prestyj vs In-House Marketing Hire for Roofing (2026 Pricing Math)",
   description:
     "An in-house marketing manager ships 8 videos a quarter and costs you $90K. A Prestyj batch ships 500 in 24 hours for $3,997. See full per-angle pricing math and why roofing pick batch from $1,497 over $72K-$110Kfully loaded annual salary.",
   keywords: [

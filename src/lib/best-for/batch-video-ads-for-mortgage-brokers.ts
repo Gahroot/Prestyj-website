@@ -11,7 +11,7 @@ export const batchVideoAdsForMortgageBrokers: BestForPageContent = {
       "independent mortgage brokers and small mortgage shops competing against retail lenders and rocket-style direct-to-consumer brands using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for Mortgage Brokers: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for Mortgage Brokers: 500 Ads in 24 Hours (From $1,497)",
     description:
       "Mortgage Brokers ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -35,19 +35,22 @@ export const batchVideoAdsForMortgageBrokers: BestForPageContent = {
   whyBestFor: [
     {
       icon: "Zap",
-      title: "Rate-quote ads, refi ads, first-time-buyer ads, and HELOC ads are four creative tracks and you have one",
+      title:
+        "Rate-quote ads, refi ads, first-time-buyer ads, and HELOC ads are four creative tracks and you have one",
       description:
         "This is the #1 silent killer for Mortgage Brokers on paid social. The platforms reward creative diversity and punish repetition. When you ship 4 ads, you live in the learning phase forever — your CPL never compresses, the algorithm never finds your buyer cluster, and you blame the channel when the real bottleneck is creative volume. Batch fixes the volume problem in one delivery.",
     },
     {
       icon: "Target",
-      title: "When the 10-year yield moves, your competition has an ad in market in 24 hours and you do not",
+      title:
+        "When the 10-year yield moves, your competition has an ad in market in 24 hours and you do not",
       description:
         "Different audiences need different hooks. Generic creative averages everything down. Mortgage Brokers who run 5-10 angle-specific tracks (instead of one 'general' track) consistently see $22-$60 per pre-qualified borrower lead versus the $120-$320 per shared lead from Zillow/LendingTree they were getting before. Batch is engineered around angle-testing — every batch ships with multiple distinct hook tracks ready to A/B at the ad-set level.",
     },
     {
       icon: "DollarSign",
-      title: "Realtor-partnership ads (recruiting referral partners) are a separate ad track and you've never shipped one",
+      title:
+        "Realtor-partnership ads (recruiting referral partners) are a separate ad track and you've never shipped one",
       description:
         "When the unit economics are this big — $2,800-$9,500 commission per funded loan — you cannot afford to be creative-starved. A single additional booked deal pays for the entire batch many times over. The math for Mortgage Brokers is some of the most favorable in the entire batch-creative space.",
     },
@@ -66,17 +69,20 @@ export const batchVideoAdsForMortgageBrokers: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Mortgage Brokers'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Mortgage Brokers'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, Mortgage Brokers consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },

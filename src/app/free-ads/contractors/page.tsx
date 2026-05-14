@@ -36,11 +36,11 @@ const CONTRACTOR_PAIN_POINTS = [
 ];
 
 export const metadata: Metadata = {
-  title: "300 Free Video Ads for Contractors | PRESTYJ",
+  title: "300 Free Video Ads for Contractors",
   description:
     "What if you had 300 video ads running by next week? We'll create them for free. You just send the footage. 24-hour turnaround. For general contractors.",
   openGraph: {
-    title: "300 Free Video Ads for Contractors | PRESTYJ",
+    title: "300 Free Video Ads for Contractors",
     description: "What if you had 300 video ads running by next week? We'll create them for free.",
     type: "website",
   },
@@ -64,7 +64,7 @@ export default function ContractorsFreeAdsPage() {
           name: "Free Batch Video Ads for Contractors",
           description:
             "300 free scripted video ads for general contractors. 24-hour turnaround from your footage. Includes ad setup, landing page, and AI lead response.",
-          provider: { "@type": "Organization", name: "PRESTYJ", url: "https://prestyj.com" },
+          provider: { "@type": "Organization", name: "Prestyj", url: "https://prestyj.com" },
           serviceType: "Video Ad Production",
           areaServed: "United States",
         }}

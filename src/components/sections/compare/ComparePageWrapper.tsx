@@ -47,23 +47,26 @@ export function ComparePageWrapper({ data }: ComparePageWrapperProps) {
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "PRESTYJ AI Sales Agent",
-    description: hero.subtitle || `Compare Prestyj AI Sales Agent vs ${competitorName}. ${hero.description}`,
-    brand: { "@type": "Brand", name: "PRESTYJ" },
+    name: "Prestyj AI Sales Agent",
+    description:
+      hero.subtitle || `Compare Prestyj AI Sales Agent vs ${competitorName}. ${hero.description}`,
+    brand: { "@type": "Brand", name: "Prestyj" },
     url: pageUrl,
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
       price: pricing.prestyj.price.replace(/[^0-9]/g, "") || "1997",
       availability: "https://schema.org/InStock",
-      seller: { "@type": "Organization", name: "PRESTYJ" },
+      seller: { "@type": "Organization", name: "Prestyj" },
     },
   };
 
   // FAQPage schema derived from hero key stats and feature comparisons
   const faqItems = features.slice(0, 5).map((f) => ({
     question: `How does Prestyj compare to ${competitorName} for ${f.feature}?`,
-    answer: f.note || `Prestyj offers ${typeof f.prestyj === "boolean" ? (f.prestyj ? "full support" : "no support") : f.prestyj} for ${f.feature}, while ${competitorName} offers ${typeof f.competitor === "boolean" ? (f.competitor ? "support" : "no support") : f.competitor}.`,
+    answer:
+      f.note ||
+      `Prestyj offers ${typeof f.prestyj === "boolean" ? (f.prestyj ? "full support" : "no support") : f.prestyj} for ${f.feature}, while ${competitorName} offers ${typeof f.competitor === "boolean" ? (f.competitor ? "support" : "no support") : f.competitor}.`,
   }));
 
   const faqSchema = {

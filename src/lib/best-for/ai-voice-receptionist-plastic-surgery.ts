@@ -12,7 +12,7 @@ export const aiVoiceReceptionistPlasticSurgery: BestForPageContent = createBestF
   },
   meta: {
     title:
-      "AI Voice Receptionist for Plastic Surgery & MedSpas | Capture High-Value Cosmetic Leads | Prestyj",
+      "AI Voice Receptionist for Plastic Surgery & MedSpas | Capture High-Value Cosmetic Leads",
     description:
       "AI voice receptionist built for plastic surgery and medspa practices. Capture consultation bookings 24/7, handle discreet patient communication, support multilingual inquiries, and never miss a high-value cosmetic lead. HIPAA-compliant.",
     keywords: [

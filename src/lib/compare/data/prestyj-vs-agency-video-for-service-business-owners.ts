@@ -11,7 +11,7 @@ const PRESTYJ_PRICING_FEATURES = [
   { text: "24-hour turnaround", included: true },
   { text: "Hook + body + CTA variations", included: true },
   { text: "Your real face — not AI", included: true },
-  { text: "No monthly subscription", included: true },
+  { text: "Month-to-month, no long-term contract", included: true },
   { text: "Error revisions included", included: true },
 ];
 
@@ -33,8 +33,9 @@ export const serviceBusinessOwnersVsAgencyVideoCompareData: ComparePageData = cr
   },
   pricing: {
     prestyj: {
-      price: "$1,497 – $3,997",
-      priceSubtext: "One-time · 300-1,000 ads · Service Business Owners-researched",
+      price: "$1,997",
+      priceSubtext:
+        "/mo Starter · ad budget + batch video ads + AI agents · tuned for Service Business Owners",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -51,19 +52,29 @@ export const serviceBusinessOwnersVsAgencyVideoCompareData: ComparePageData = cr
     },
   },
   features: [
-    { feature: "Scripts researched for Service Business Owners pain points", prestyj: true, competitor: false, note: "Marketing Agencies does not research your vertical by default" },
+    {
+      feature: "Scripts researched for Service Business Owners pain points",
+      prestyj: true,
+      competitor: false,
+      note: "Marketing Agencies does not research your vertical by default",
+    },
     { feature: "Uses your real face / actual brand", prestyj: true, competitor: "Sometimes" },
     { feature: "Variations per engagement", prestyj: "300-1,000", competitor: "2-6 per month" },
     { feature: "Turnaround SLA", prestyj: "24 hrs guaranteed", competitor: "14-45 days" },
     { feature: "Pricing model", prestyj: "One-time flat", competitor: "Per video / per gig" },
     { feature: "Cost per ad (at 500 ads)", prestyj: "≈$5", competitor: "$500-$2,500 each" },
     { feature: "Cost per fully tested angle", prestyj: "≈$500", competitor: "$4K-$15K" },
-    { feature: "Built for Service Business Owners ad fatigue cycles", prestyj: true, competitor: false },
+    {
+      feature: "Built for Service Business Owners ad fatigue cycles",
+      prestyj: true,
+      competitor: false,
+    },
     { feature: "Vertical research bundled", prestyj: true, competitor: false },
   ],
   whySwitch: {
     title: "Why Service Business Owners Pick Batch Over Marketing Agencies",
-    description: "Agencies bill you for 'creative production' as a line item and ship 3 videos a quarter. Batch ships 500 for less than your first month's retainer.",
+    description:
+      "Agencies bill you for 'creative production' as a line item and ship 3 videos a quarter. Batch ships 500 for less than your first month's retainer.",
     reasons: [
       {
         icon: "Zap",
@@ -98,10 +109,30 @@ export const serviceBusinessOwnersVsAgencyVideoCompareData: ComparePageData = cr
     ],
   },
   relatedResources: [
-    { title: "Batch Video Ads — the Service", description: "See the Prestyj batch product", href: "/batch-video-ads", linkText: "Learn more" },
-    { title: "Batch Video Ads for Service Business Owners", description: "Service Business Owners-specific use case", href: "/best-for/batch-video-ads-for-service-business-owners", linkText: "Read use case" },
-    { title: "Cost Per Tested Ad Angle for Service Business Owners", description: "Full pricing math breakdown", href: "/best-for/cost-per-tested-ad-angle-for-service-business-owners", linkText: "See the math" },
-    { title: "Service Business Owners Video Production Alternative", description: "Alternative to traditional service business owners video production", href: "/alternatives/service-business-owners-video-production-alternative", linkText: "Compare" },
+    {
+      title: "Batch Video Ads — the Service",
+      description: "See the Prestyj batch product",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
+    {
+      title: "Batch Video Ads for Service Business Owners",
+      description: "Service Business Owners-specific use case",
+      href: "/best-for/batch-video-ads-for-service-business-owners",
+      linkText: "Read use case",
+    },
+    {
+      title: "Cost Per Tested Ad Angle for Service Business Owners",
+      description: "Full pricing math breakdown",
+      href: "/best-for/cost-per-tested-ad-angle-for-service-business-owners",
+      linkText: "See the math",
+    },
+    {
+      title: "Service Business Owners Video Production Alternative",
+      description: "Alternative to traditional service business owners video production",
+      href: "/alternatives/service-business-owners-video-production-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Service Business Owners Pick Batch Over Marketing Agencies.",
@@ -116,7 +147,7 @@ export const serviceBusinessOwnersVsAgencyVideoCompareData: ComparePageData = cr
 export const serviceBusinessOwnersVsAgencyVideoMetadata: CompareMetadata = {
   slug: "prestyj-vs-agency-video-for-service-business-owners",
   competitorName: "Marketing Agencies (for Service Business Owners)",
-  title: "PRESTYJ vs Marketing Agencies for Service Business Owners (2026 Pricing Math)",
+  title: "Prestyj vs Marketing Agencies for Service Business Owners (2026 Pricing Math)",
   description:
     "Agencies bill you for 'creative production' as a line item and ship 3 videos a quarter. Batch ships 500 for less than your first month's retainer. See full per-angle pricing math and why service business owners pick batch from $1,497 over $3,500-$8,000/month retainer.",
   keywords: [

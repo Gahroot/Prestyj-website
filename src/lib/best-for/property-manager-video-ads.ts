@@ -9,7 +9,7 @@ export const propertyManagerVideoAds: BestForPageContent = {
       "Property management companies using batch video ad creative testing to acquire new owner clients — not tenant leads — through Facebook and Instagram.",
   },
   meta: {
-    title: "Batch Video Ads for Property Managers | Owner Acquisition | Prestyj",
+    title: "Batch Video Ads for Property Managers | Owner Acquisition",
     description:
       "Turn 20 minutes of footage into 300–1,000 video ads testing every landlord pain point — 3am calls, bad tenants, vacancies. Find what converts owners, fast.",
     keywords: [
@@ -57,7 +57,8 @@ export const propertyManagerVideoAds: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You're running Facebook ads but don't know if you should lead with vacancies, bad tenants, or time savings",
+      problem:
+        "You're running Facebook ads but don't know if you should lead with vacancies, bad tenants, or time savings",
       solution:
         "We build your batch around 3, 5, or 10 specific landlord pain points — 3am maintenance calls, eviction cost math, vacancy drag, out-of-state stress, time cost of self-management — so your ad spend generates real signal on which message acquires owners in your market.",
     },
@@ -77,7 +78,8 @@ export const propertyManagerVideoAds: BestForPageContent = {
         "One 20-minute footage session is all we need. We turn that single recording into your full batch — 300, 500, or 1,000 unique ad variations formatted for Facebook, Instagram, and TikTok. No production crew, no ongoing shoots.",
     },
     {
-      problem: "Out-of-state investor campaigns need different messaging than local landlord campaigns",
+      problem:
+        "Out-of-state investor campaigns need different messaging than local landlord campaigns",
       solution:
         "Your batch can be segmented by audience — out-of-state investors get trust and visibility messaging, accidental landlords get reassurance-first hooks, burned self-managers get social proof of what professional management actually delivers. Each segment gets its own creative set within the same batch.",
     },

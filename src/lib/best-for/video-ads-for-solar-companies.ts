@@ -9,7 +9,7 @@ export const videoAdsForSolarCompanies: BestForPageContent = {
       "Solar installation companies using batch video ad creative testing to dominate lead generation on Facebook, Instagram, and TikTok — covering residential, commercial, and solar financing angles.",
   },
   meta: {
-    title: "500 Solar Company Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Solar Company Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of solar-specific video ads with your real face in 24 hours. Residential, commercial, and financing angles. From $1,497.",
     keywords: [

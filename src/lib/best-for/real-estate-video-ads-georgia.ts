@@ -10,7 +10,7 @@ export const realEstateVideoAdsGeorgia: BestForPageContent = {
       "Georgia agents using batch vertical video ad creative to convert Atlanta ITP / OTP sub-markets, out-of-state relocation, and Savannah / coastal markets across FMLS, GAMLS, and regional Georgia MLS territory under GREC compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Georgia | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Georgia | 300–1,000 Scripted Ads",
     description:
       "Georgia agents: 300–1,000 vertical video ads in 24 hours. Tuned for FMLS, GAMLS, GREC compliance, ITP/OTP, and out-of-state relocation. From $1,497.",
     keywords: [
@@ -114,7 +114,8 @@ export const realEstateVideoAdsGeorgia: BestForPageContent = {
         "Yes. Savannah and coastal Georgia have completely different buyer profiles from Atlanta — second-home, luxury retirement, historic-home, and hurricane-aware pools. Coastal-specific creative with insurance and lifestyle-authentic scripts converts where Atlanta-focused creative misses entirely.",
     },
     {
-      question: "Can batch handle small-metro Georgia (Athens, Augusta, Columbus, Macon, Warner Robins)?",
+      question:
+        "Can batch handle small-metro Georgia (Athens, Augusta, Columbus, Macon, Warner Robins)?",
       answer:
         "Yes. Each secondary metro has its own drivers (university, military, manufacturing, healthcare). Multi-market batch covers them with sub-market-specific creative.",
     },

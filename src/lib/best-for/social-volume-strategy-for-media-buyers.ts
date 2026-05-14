@@ -11,7 +11,7 @@ export const socialVolumeStrategyForMediaBuyers: BestForPageContent = {
       "The 2026 social media volume strategy for in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend — why 1,500+ posts per month across 7 platforms is the cadence the algorithms now reward, and how to execute it without a 5-person content team.",
   },
   meta: {
-    title: "Social Media Volume Strategy for Media Buyers (2026 Cadence) | Prestyj",
+    title: "Social Media Volume Strategy for Media Buyers (2026 Cadence)",
     description:
       "How many posts per month should a media buyer publish in 2026? The data-driven volume strategy for in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend: platform priorities, cadence math, and the content engine that makes it executable.",
     keywords: [
@@ -43,7 +43,8 @@ export const socialVolumeStrategyForMediaBuyers: BestForPageContent = {
     },
     {
       icon: "Target",
-      title: "Platform priority stack: LinkedIn (primary for personal brand), X + Threads (industry conversation)",
+      title:
+        "Platform priority stack: LinkedIn (primary for personal brand), X + Threads (industry conversation)",
       description:
         "Not every platform is equal weight for in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend. The priority stack: LinkedIn (primary for personal brand), X + Threads (industry conversation). LinkedIn and X carry the highest leverage — the others matter for distribution but yield decays without daily input on the primary platforms.",
     },
@@ -62,7 +63,8 @@ export const socialVolumeStrategyForMediaBuyers: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "The agency or in-house team shipping 20–30 posts/month is losing you reach every quarter",
+      problem:
+        "The agency or in-house team shipping 20–30 posts/month is losing you reach every quarter",
       solution:
         "Platform algorithms in 2026 demote low-cadence accounts — they read sparse posting as low-quality signal and reduce distribution. Media Buyers who scale to 1,500+ posts/month see 3–7× reach improvement within 60 days, not because individual posts are better but because algorithmic surface area expanded.",
     },

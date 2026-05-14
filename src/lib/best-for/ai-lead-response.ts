@@ -10,7 +10,7 @@ export const aiLeadResponse: BestForPageContent = createBestForPage({
     description: "Businesses needing instant, 24/7 lead response to capture every opportunity",
   },
   meta: {
-    title: "Best AI for Lead Response | Instant Voice & Text Follow-Up 24/7 | Prestyj",
+    title: "Best AI for Lead Response | Instant Voice & Text Follow-Up 24/7",
     description:
       "Respond to every lead in under 60 seconds with AI voice and text agents. Never lose another lead to slow response times. 78% of buyers work with the first responder.",
     keywords: [

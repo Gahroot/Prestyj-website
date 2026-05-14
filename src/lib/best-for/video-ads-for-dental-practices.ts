@@ -9,7 +9,7 @@ export const videoAdsForDentalPractices: BestForPageContent = {
       "Dental practices using batch video ad creative testing to generate new patient leads — covering cosmetic dentistry, implants, Invisalign, emergency dental, and routine cleaning angles.",
   },
   meta: {
-    title: "500 Dental Practice Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Dental Practice Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of dental-specific video ads with your real face in 24 hours. Cosmetic, implants, Invisalign, emergency, and new patient angles. From $1,497.",
     keywords: [

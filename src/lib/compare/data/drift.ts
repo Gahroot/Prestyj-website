@@ -32,8 +32,8 @@ export const driftCompareData: ComparePageData = createComparePage({
   ],
   pricing: {
     prestyj: {
-      price: "Custom pricing",
-      priceSubtext: "",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: [
         { text: "Built specifically for real estate", included: true },
         { text: "Deploys in days, not months", included: true },

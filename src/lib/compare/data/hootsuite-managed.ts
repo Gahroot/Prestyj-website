@@ -33,8 +33,8 @@ export const hootsuiteManagedCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$3,000/mo",
-      priceSubtext: "All-in · 1,500+ posts/mo · 7 platforms · Month-to-month",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -176,9 +176,9 @@ export const hootsuiteManagedCompareData: ComparePageData = createComparePage({
 export const hootsuiteManagedMetadata: CompareMetadata = {
   slug: "prestyj-vs-hootsuite-managed",
   competitorName: "Hootsuite Managed Services",
-  title: "PRESTYJ vs Hootsuite Managed Services: $3K All-In or $20K Agency Retainer? (2026)",
+  title: "Prestyj vs Hootsuite Managed Services: $3K All-In or $20K Agency Retainer? (2026)",
   description:
-    "Hootsuite Managed Services (agency tier) runs $7K-$20K+/month with annual contracts for 20-60 posts. PRESTYJ ships 1,500+ posts/month across 7 platforms for $3,000 — month-to-month.",
+    "Hootsuite Managed Services (agency tier) runs $7K-$20K+/month with annual contracts for 20-60 posts. Prestyj ships 1,500+ posts/month across 7 platforms for $3,000 — month-to-month.",
   keywords: [
     "hootsuite managed services alternative",
     "hootsuite agency tier pricing",

@@ -26,7 +26,10 @@ export const agencyOwnersVsVaPlusTemplatesForCompareData: ComparePageData = crea
       "founders of $30K–$300K/month marketing, creative, and growth agencies keep defaulting to va + canva templates stack for social — and watching them ship 40–80 posts/month at 40–80 templated posts/month, formulaic output. Prestyj is the AI content engine alternative: 1,500+ posts/month across 7 platforms, Agency Owners-researched, voice-trained, month-to-month from $3,000/mo flat.",
     description: "",
     keyStats: [
-      { value: "$3K/mo vs $800–$2,500/month (VA salary + Canva Pro)", label: "AI engine vs va + templates" },
+      {
+        value: "$3K/mo vs $800–$2,500/month (VA salary + Canva Pro)",
+        label: "AI engine vs va + templates",
+      },
       { value: "1,500+ vs 40–80", label: "Posts/month — Prestyj vs va + templates" },
       { value: "7 vs 1–3", label: "Platforms covered" },
       { value: "Days vs 4–8 wks", label: "Onboarding time" },
@@ -34,8 +37,8 @@ export const agencyOwnersVsVaPlusTemplatesForCompareData: ComparePageData = crea
   },
   pricing: {
     prestyj: {
-      price: "$3,000",
-      priceSubtext: "/month · 1,500+ posts · Agency Owners-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · AI agents + content engine · tuned for Agency Owners",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -53,18 +56,40 @@ export const agencyOwnersVsVaPlusTemplatesForCompareData: ComparePageData = crea
     },
   },
   features: [
-    { feature: "Agency Owners-specific vertical research", prestyj: true, competitor: false, note: "VA + Canva Templates Stack does not research agency owners pain points by default" },
+    {
+      feature: "Agency Owners-specific vertical research",
+      prestyj: true,
+      competitor: false,
+      note: "VA + Canva Templates Stack does not research agency owners pain points by default",
+    },
     { feature: "Posts per month", prestyj: "1,500+", competitor: "40–80" },
-    { feature: "Platforms covered", prestyj: "7 (LinkedIn, Instagram, X, Threads, +)", competitor: "1–3 typical" },
-    { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$800–$2,500/month (VA salary + Canva Pro)" },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (LinkedIn, Instagram, X, Threads, +)",
+      competitor: "1–3 typical",
+    },
+    {
+      feature: "Monthly cost",
+      prestyj: "$3,000 flat",
+      competitor: "$800–$2,500/month (VA salary + Canva Pro)",
+    },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$50–$750" },
     { feature: "Voice training on your existing content", prestyj: true, competitor: false },
     { feature: "Daily auto-publish", prestyj: true, competitor: false },
-    { feature: "Long-term contract required", prestyj: false, competitor: false, note: "Per-gig or per-month — but you replace the cost monthly" },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: false,
+      note: "Per-gig or per-month — but you replace the cost monthly",
+    },
     { feature: "Onboarding time", prestyj: "Days", competitor: "2–6 weeks (training)" },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "VA timezone + hours" },
     { feature: "Performance learning loop", prestyj: true, competitor: false },
-    { feature: "Risk of voice drift", prestyj: "Low — trained on your existing content", competitor: "High — templates flatten voice" },
+    {
+      feature: "Risk of voice drift",
+      prestyj: "Low — trained on your existing content",
+      competitor: "High — templates flatten voice",
+    },
   ],
   whySwitch: {
     title: "Why Agency Owners Pick the AI Content Engine Over VA + Canva Templates Stack",
@@ -104,10 +129,30 @@ export const agencyOwnersVsVaPlusTemplatesForCompareData: ComparePageData = crea
     ],
   },
   relatedResources: [
-    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
-    { title: "Done-For-You Social Media for Agency Owners", description: "Agency Owners-specific offer page", href: "/best-for/done-for-you-social-for-agency-owners", linkText: "Read use case" },
-    { title: "Social Volume Strategy for Agency Owners", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-agency-owners", linkText: "See the strategy" },
-    { title: "Agency Owners Social Media Agency Alternative", description: "Alternative to traditional agency owners social media agencies", href: "/alternatives/agency-owners-social-media-agency-alternative", linkText: "Compare" },
+    {
+      title: "AI Content Department — the AI agent for social media",
+      description: "See the Prestyj AI Content Department product",
+      href: "/ai-content-department",
+      linkText: "Learn more",
+    },
+    {
+      title: "Done-For-You Social Media for Agency Owners",
+      description: "Agency Owners-specific offer page",
+      href: "/best-for/done-for-you-social-for-agency-owners",
+      linkText: "Read use case",
+    },
+    {
+      title: "Social Volume Strategy for Agency Owners",
+      description: "Cadence math and 2026 platform priorities",
+      href: "/best-for/social-volume-strategy-for-agency-owners",
+      linkText: "See the strategy",
+    },
+    {
+      title: "Agency Owners Social Media Agency Alternative",
+      description: "Alternative to traditional agency owners social media agencies",
+      href: "/alternatives/agency-owners-social-media-agency-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Agency Owners Pick the AI Content Engine Over VA + Canva Templates Stack.",
@@ -122,7 +167,7 @@ export const agencyOwnersVsVaPlusTemplatesForCompareData: ComparePageData = crea
 export const agencyOwnersVsVaPlusTemplatesForCompareDataMetadata: CompareMetadata = {
   slug: "prestyj-vs-va-plus-templates-for-agency-owners",
   competitorName: "VA + Canva Templates Stack (for Agency Owners)",
-  title: "PRESTYJ vs VA + Canva Templates Stack for Agency Owners (2026 Cadence Math)",
+  title: "Prestyj vs VA + Canva Templates Stack for Agency Owners (2026 Cadence Math)",
   description:
     "An offshore or part-time VA running a Canva template library and a scheduling tool — the duct-tape stack many solo operators reach for before hiring a real team. See full posts-per-month math and why founders of $30K–$300K/month marketing, creative, and growth agencies pick the AI content engine from $3,000/mo over $800–$2,500/month (VA salary + Canva Pro).",
   keywords: [

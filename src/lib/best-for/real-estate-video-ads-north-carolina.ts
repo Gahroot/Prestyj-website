@@ -10,7 +10,7 @@ export const realEstateVideoAdsNorthCarolina: BestForPageContent = {
       "North Carolina agents using batch vertical video ad creative to convert Charlotte banking, Raleigh RTP tech, coastal Wilmington/OBX, and Asheville mountain markets across Canopy MLS, Triangle MLS, and NC regional MLS territory under NCREC compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for North Carolina | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for North Carolina | 300–1,000 Scripted Ads",
     description:
       "NC agents: 300–1,000 vertical video ads in 24 hours. Tuned for Canopy, Triangle MLS, NCREC compliance, banking, and RTP tech. From $1,497.",
     keywords: [
@@ -114,7 +114,8 @@ export const realEstateVideoAdsNorthCarolina: BestForPageContent = {
         "Yes. Post-Helene (2024) and ongoing Atlantic hurricane activity have made NC coastal insurance a live buyer issue. Creative that addresses this directly builds trust and converts. Evasive creative loses leads at insurance-quote stage.",
     },
     {
-      question: "Can batch handle NC secondary markets (Greensboro / Triad, Fayetteville, Greenville)?",
+      question:
+        "Can batch handle NC secondary markets (Greensboro / Triad, Fayetteville, Greenville)?",
       answer:
         "Yes. Triad (Greensboro, Winston-Salem, High Point — TRIAD MLS), Fayetteville (Fort Liberty military), and Greenville (ECU) each have their own dynamics. Multi-market batch covers them.",
     },

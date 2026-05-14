@@ -10,7 +10,7 @@ export const realEstateVideoAdsNevada: BestForPageContent = {
       "Nevada agents using batch vertical video ad creative to convert Las Vegas CA relocation, Reno Bay Area spillover, and Henderson / Summerlin luxury across GLVAR and NNRMLS territory under NRED compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Nevada | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Nevada | 300–1,000 Scripted Ads",
     description:
       "Nevada agents: 300–1,000 vertical video ads in 24 hours. Tuned for GLVAR, NNRMLS, NRED compliance, CA relocation, and Summerlin. From $1,497.",
     keywords: [

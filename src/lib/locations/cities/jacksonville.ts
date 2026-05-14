@@ -11,7 +11,7 @@ export const jacksonville: LocationPageContent = {
       "Jacksonville is the biggest city by land area in the lower 48 — and one of the fastest-growing, most underrated home services markets in Florida. Naval Station Mayport, NAS Jacksonville, and a heavy military and veteran population create a stable, service-loyal customer base. Hurricane and tropical storm exposure along the St. Johns River and Atlantic coast drives constant roofing, water-mitigation, and structural work. Affordable housing relative to South Florida is pulling tens of thousands of new residents in every year, and contractors who plant their Facebook flag now are going to ride that demographic wave for the next decade.",
   },
   meta: {
-    title: "Facebook Ads for Jacksonville Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Jacksonville Home Service Contractors",
     description:
       "Grow your Jacksonville HVAC, roofing, plumbing, solar, or contracting business with Facebook ads built for North Florida's hurricane-driven, military-heavy, fast-growing market.",
     keywords: [
@@ -86,8 +86,7 @@ export const jacksonville: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "Should I run storm-response Facebook ads, or is that ambulance-chasing?",
+      question: "Should I run storm-response Facebook ads, or is that ambulance-chasing?",
       answer:
         "It's ambulance-chasing if your only presence is post-storm. It's responsible service if you're already advertising year-round and surge with helpful, ethical creative when a storm hits — free inspections, insurance-claim guidance, real-photo damage education. We build always-on Facebook campaigns with pre-built storm-response creative ready to deploy the moment a system enters the cone, so you're the trusted local face homeowners already know — not a stranger knocking on doors.",
     },

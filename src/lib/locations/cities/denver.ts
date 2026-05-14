@@ -11,7 +11,7 @@ export const denver: LocationPageContent = {
       "The Mile High City is one of the most unique home services markets in America. Thin air, dramatic temperature swings, hard mountain water, and a steady influx of high-income transplants from California and Texas have created a homeowner base that's discerning, well-funded, and actively looking for contractors who actually understand altitude. The contractors who lean into Denver's specifics on Facebook win — the rest blend in with national franchises.",
   },
   meta: {
-    title: "Facebook Ads for Denver Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Denver Home Service Contractors",
     description:
       "Altitude-aware Facebook ad strategies for Denver HVAC, plumbing, roofing, and contracting businesses. Built for the Front Range market.",
     keywords: [
@@ -86,14 +86,12 @@ export const denver: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "How does high altitude actually change HVAC marketing in Denver?",
+      question: "How does high altitude actually change HVAC marketing in Denver?",
       answer:
         "Massively — and it's an angle most contractors completely waste. At 5,280 feet, air is roughly 15% less dense, which means furnace and AC systems have to be sized differently than at sea level. Most homeowners don't know this, but they DO know their last system 'never quite kept up.' Facebook ads that explain why their old contractor got it wrong instantly establish you as the expert. We've seen this single angle double conversion rates.",
     },
     {
-      question:
-        "Denver hail can be brutal. How fast can you stand up storm response Facebook ads?",
+      question: "Denver hail can be brutal. How fast can you stand up storm response Facebook ads?",
       answer:
         "Within hours. We monitor NOAA and local weather data, and the moment a significant hail event hits the Front Range, we activate ZIP-targeted campaigns for our roofing clients with messaging around inspection, claims help, and 'beware of storm chasers.' Local trust is your biggest asset against out-of-state crews — Facebook is the fastest way to lean on it.",
     },
@@ -110,8 +108,7 @@ export const denver: LocationPageContent = {
         "Yes, but with very different creative than the Denver core. Mountain homeowners are dealing with septic, well water, propane heating, wildfire prep, and snow load roofing — totally different pain points than someone in LoDo. We build separate ad sets for foothills and mountain ZIPs that speak directly to those issues. Generic 'Denver metro' campaigns leave a ton of money on the table here.",
     },
     {
-      question:
-        "What's a realistic Facebook ad budget to get started in the Denver market?",
+      question: "What's a realistic Facebook ad budget to get started in the Denver market?",
       answer:
         "For a single home service vertical in the Denver metro, most of our clients see strong results starting around $2,500–$4,000/month in ad spend, plus management. That's enough to test creative properly, run dayparting, and build retargeting audiences. Smaller budgets can work for niche services or tight geographic radii — we'll be honest with you about whether your goals match your spend before you ever sign anything.",
     },

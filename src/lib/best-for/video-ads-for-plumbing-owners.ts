@@ -9,7 +9,7 @@ export const videoAdsForPlumbingOwners: BestForPageContent = {
       "Plumbing companies using batch video ad creative testing to dominate residential and commercial lead generation — covering emergency service, water heaters, drain cleaning, and repiping angles.",
   },
   meta: {
-    title: "500 Plumber Video Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "500 Plumber Video Ads in 24 Hours (From $1,497)",
     description:
       "Generate hundreds of plumber-specific video ads with your real face in 24 hours. Emergency service, water heaters, drain cleaning, and repiping angles. From $1,497.",
     keywords: [

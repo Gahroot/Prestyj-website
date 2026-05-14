@@ -15,8 +15,8 @@ export const ylopoCompareData: ComparePageData = createComparePage({
   stats: "standard",
   pricing: {
     prestyj: {
-      price: "Custom pricing",
-      priceSubtext: "Tailored to your needs",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: [
         { text: "No required ad spend", included: true },
         { text: "Built-in CRM included", included: true },

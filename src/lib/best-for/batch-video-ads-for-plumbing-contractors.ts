@@ -11,7 +11,7 @@ export const batchVideoAdsForPlumbingContractors: BestForPageContent = {
       "residential and commercial plumbing contractors running $1M-$15M/year with 3-30 trucks using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for Plumbing Contractors: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for Plumbing Contractors: 500 Ads in 24 Hours (From $1,497)",
     description:
       "Plumbing Contractors ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -35,19 +35,22 @@ export const batchVideoAdsForPlumbingContractors: BestForPageContent = {
   whyBestFor: [
     {
       icon: "Zap",
-      title: "Sewer-line jobs and water-heater jobs are different audiences — and your one ad treats them as one",
+      title:
+        "Sewer-line jobs and water-heater jobs are different audiences — and your one ad treats them as one",
       description:
         "This is the #1 silent killer for Plumbing on paid social. The platforms reward creative diversity and punish repetition. When you ship 4 ads, you live in the learning phase forever — your CPL never compresses, the algorithm never finds your buyer cluster, and you blame the channel when the real bottleneck is creative volume. Batch fixes the volume problem in one delivery.",
     },
     {
       icon: "Target",
-      title: "Emergency leak ads vs preventive repipe ads need different creative — you ship one generic 'we do plumbing' video",
+      title:
+        "Emergency leak ads vs preventive repipe ads need different creative — you ship one generic 'we do plumbing' video",
       description:
         "Different audiences need different hooks. Generic creative averages everything down. Plumbing who run 5-10 angle-specific tracks (instead of one 'general' track) consistently see $18-$44 per booked appointment versus the $95-$210 per aggregator lead (sold to 3 competitors) they were getting before. Batch is engineered around angle-testing — every batch ships with multiple distinct hook tracks ready to A/B at the ad-set level.",
     },
     {
       icon: "DollarSign",
-      title: "Your warranty pitch and your financing pitch never appear in the same ad rotation because you only have 2 ads",
+      title:
+        "Your warranty pitch and your financing pitch never appear in the same ad rotation because you only have 2 ads",
       description:
         "When the unit economics are this big — $220 service call → $4,500-$28,000 repipe / sewer / water-heater install — you cannot afford to be creative-starved. A single additional booked deal pays for the entire batch many times over. The math for Plumbing is some of the most favorable in the entire batch-creative space.",
     },
@@ -66,17 +69,20 @@ export const batchVideoAdsForPlumbingContractors: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Plumbing'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Plumbing'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, Plumbing consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },

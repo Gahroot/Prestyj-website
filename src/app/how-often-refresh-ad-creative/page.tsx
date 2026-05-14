@@ -4,11 +4,11 @@ import { FAQJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
-  title: "How Often Should You Refresh Ad Creative? [Free Calculator] | PRESTYJ",
+  title: "How Often Should You Refresh Ad Creative? [Free Calculator]",
   description:
     "Enter your ad spend and active creative count to see how many days until fatigue — plus how many new ads per week you need to produce. Spend drives cadence, not the calendar.",
   openGraph: {
-    title: "How Often to Refresh Ad Creative? | PRESTYJ",
+    title: "How Often to Refresh Ad Creative?",
     description:
       "Free calculator: find your real refresh cadence based on spend and creative volume.",
     type: "website",

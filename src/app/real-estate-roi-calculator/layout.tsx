@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Real Estate AI ROI Calculator | How Much Revenue Are You Losing? | Prestyj",
+  title: "Real Estate AI ROI Calculator | How Much Revenue Are You Losing?",
   description:
     "Calculate exactly how much additional commission revenue AI lead response would generate for your real estate team. Enter your ad spend, cost per lead, and conversion rate to see your ROI.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "real estate lead conversion calculator",
   ],
   openGraph: {
-    title: "Real Estate AI ROI Calculator | Prestyj",
+    title: "Real Estate AI ROI Calculator",
     description:
       "See exactly how much additional revenue AI lead response would generate for your real estate team. Free calculator.",
     type: "website",
@@ -24,10 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RealEstateROICalculatorLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RealEstateROICalculatorLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

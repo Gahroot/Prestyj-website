@@ -3,9 +3,9 @@ import { Footer } from "@/components/layout/footer";
 import BorderGlow from "@/components/ui/border-glow";
 
 export const metadata = {
-  title: "Privacy Policy - PRESTYJ",
+  title: "Privacy Policy",
   description:
-    "Privacy Policy for PRESTYJ AI Sales Agents. Learn how we collect, use, and protect your information.",
+    "Privacy Policy for Prestyj AI Sales Agents. Learn how we collect, use, and protect your information.",
 };
 
 export default function PrivacyPage() {
@@ -25,10 +25,10 @@ export default function PrivacyPage() {
                 Introduction
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                PRESTYJ (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to
+                Prestyj (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to
                 protecting your privacy. This Privacy Policy explains how we collect, use, disclose,
-                and safeguard your information when you use our AI agents and automation services
-                — including AI sales agents, AI marketing agents, AI lead response, AI appointment
+                and safeguard your information when you use our AI agents and automation services —
+                including AI sales agents, AI marketing agents, AI lead response, AI appointment
                 booking, and related communication and content services — as well as our SMS/text
                 messaging services.
               </p>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
                   When you provide your phone number and consent to receive text messages from
-                  PRESTYJ or our clients:
+                  Prestyj or our clients:
                 </p>
                 <ul className="text-muted-foreground mb-4 list-inside list-disc space-y-2">
                   <li>
@@ -229,23 +229,23 @@ export default function PrivacyPage() {
                   <strong className="text-foreground">Local Storage:</strong> All app data —
                   including API keys, uploaded images, offer and character configurations, generated
                   content, and publishing history — is stored locally on your device. No user
-                  content is sent to PRESTYJ servers.
+                  content is sent to Prestyj servers.
                 </li>
                 <li>
                   <strong className="text-foreground">API Keys:</strong> Your fal.ai API key is
                   stored locally and used only to communicate directly with fal.ai for image
-                  generation. PRESTYJ does not access or transmit your API key.
+                  generation. Prestyj does not access or transmit your API key.
                 </li>
                 <li>
                   <strong className="text-foreground">Social Media Connections:</strong> OAuth
                   tokens for connected social platforms (Facebook, Instagram, TikTok, LinkedIn, X,
                   YouTube, Threads, Pinterest, Reddit) are stored locally on your device. You
-                  control what gets published and to which platforms. PRESTYJ does not access your
+                  control what gets published and to which platforms. Prestyj does not access your
                   social media accounts.
                 </li>
                 <li>
                   <strong className="text-foreground">Waitlist Signups:</strong> When you join the
-                  Media Master waitlist, your name and email address are sent to PRESTYJ&apos;s CRM
+                  Media Master waitlist, your name and email address are sent to Prestyj&apos;s CRM
                   for communication purposes.
                 </li>
               </ul>
@@ -291,7 +291,7 @@ export default function PrivacyPage() {
                 <li>
                   <strong className="text-foreground">Published Content:</strong> Content already
                   published to social media platforms must be deleted directly on those platforms.
-                  PRESTYJ cannot remove content from third-party services on your behalf.
+                  Prestyj cannot remove content from third-party services on your behalf.
                 </li>
               </ul>
             </section>
@@ -306,7 +306,7 @@ export default function PrivacyPage() {
               </p>
               <div className="text-muted-foreground mt-4">
                 <p>
-                  <strong className="text-foreground">PRESTYJ</strong>
+                  <strong className="text-foreground">Prestyj</strong>
                 </p>
                 <p>Email: privacy@prestyj.com</p>
               </div>

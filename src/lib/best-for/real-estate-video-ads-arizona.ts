@@ -10,7 +10,7 @@ export const realEstateVideoAdsArizona: BestForPageContent = {
       "Arizona agents using batch vertical video ad creative to convert CA out-migration, TSMC semiconductor relocations, and 55+ winter-visitor conversions across ARMLS Phoenix and MLSSAZ Tucson territory under ADRE compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Arizona | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Arizona | 300–1,000 Scripted Ads",
     description:
       "Arizona agents: 300–1,000 vertical video ads in 24 hours. Tuned for ARMLS, MLSSAZ, ADRE compliance, CA relocation, and 55+ buyers. From $1,497.",
     keywords: [

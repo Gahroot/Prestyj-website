@@ -11,7 +11,7 @@ export const wealthManagementFirms: BestForPageContent = createBestForPage({
       "Enterprise wealth management needing compliant, done-for-you AI for high-net-worth prospect engagement",
   },
   meta: {
-    title: "Done-For-You AI Agents for Wealth Management Firms | Prestyj",
+    title: "Done-For-You AI Agents for Wealth Management Firms",
     description:
       "Enterprise wealth management firms get production-ready AI that qualifies HNW prospects, books consultations, and integrates with Salesforce FSC—in weeks, not months. Zero technical complexity.",
     keywords: [

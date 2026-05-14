@@ -34,8 +34,8 @@ export const juniorSocialHireCompareData: ComparePageData = createComparePage({
   },
   pricing: {
     prestyj: {
-      price: "$3,000/mo",
-      priceSubtext: "All-in AI content department · live in 24 hours",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · $3,997 setup · ad budget + AI agents included",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {

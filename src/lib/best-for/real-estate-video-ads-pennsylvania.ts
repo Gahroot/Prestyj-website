@@ -10,7 +10,7 @@ export const realEstateVideoAdsPennsylvania: BestForPageContent = {
       "Pennsylvania agents using batch vertical video ad creative to convert Main Line luxury, CMU / UPMC Pittsburgh pipelines, and Lehigh Valley / Central PA family markets across Bright MLS, West Penn MLS, and regional PA MLS territory under PA REC compliance.",
   },
   meta: {
-    title: "Real Estate Video Ads for Pennsylvania | 300–1,000 Scripted Ads | Prestyj",
+    title: "Real Estate Video Ads for Pennsylvania | 300–1,000 Scripted Ads",
     description:
       "PA agents: 300–1,000 vertical video ads in 24 hours. Tuned for Bright MLS, West Penn MLS, PA REC compliance, Main Line, and CMU/UPMC. From $1,497.",
     keywords: [
@@ -68,7 +68,8 @@ export const realEstateVideoAdsPennsylvania: BestForPageContent = {
         "We script Main Line creative: 'Lower Merion vs Tredyffrin-Easttown — the district tradeoff for an elementary-age family,' 'Radnor vs Harriton feeder patterns.'",
     },
     {
-      problem: "Your Pittsburgh tech / academic buyers default to the relo-provider's assigned agent",
+      problem:
+        "Your Pittsburgh tech / academic buyers default to the relo-provider's assigned agent",
       solution:
         "We script Pittsburgh-specific creative: 'CMU faculty — Squirrel Hill vs Shadyside vs Point Breeze,' 'UPMC physician relo — the three neighborhoods medical families buy in,' 'Google / Uber tech — the sub-market tradeoff.'",
     },

@@ -11,7 +11,7 @@ export const doneForYouSocialForEcommerceBrands: BestForPageContent = {
       "Done-for-you social media content service for DTC and ecommerce operators doing $1M–$50M in annual GMV. Daily multi-platform publishing, vertical-specific scripts, and voice-trained content — 1,500+ posts per month across 7 platforms, with no retainer, no contract, and no account-manager overhead.",
   },
   meta: {
-    title: "Done-For-You Social Media for Ecommerce Brands | Prestyj",
+    title: "Done-For-You Social Media for Ecommerce Brands",
     description:
       "Done-for-you social media content for ecommerce brands. 1,500+ posts per month across 7 platforms, vertical-researched scripts, voice-trained captions — no agency retainer, no in-house hire, no contract. Built for DTC and ecommerce operators doing $1M–$50M in annual GMV.",
     keywords: [
@@ -62,22 +62,26 @@ export const doneForYouSocialForEcommerceBrands: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You launch 4–8 SKUs a quarter and your organic content can't keep up with the product velocity",
+      problem:
+        "You launch 4–8 SKUs a quarter and your organic content can't keep up with the product velocity",
       solution:
         "Prestyj produces 30–50 posts per day across Instagram, Facebook, TikTok, Pinterest and more. Your social presence stays active even during your busiest weeks. Prospects see consistent authority — not a ghost town that makes them question whether you're still in business.",
     },
     {
-      problem: "Your UGC backlog is 200+ clips deep and nothing is getting stitched, captioned, or shipped",
+      problem:
+        "Your UGC backlog is 200+ clips deep and nothing is getting stitched, captioned, or shipped",
       solution:
         "Prestyj's content engine is trained on ecommerce brands-specific pain points, frameworks, and conversation patterns. Every post is ready to publish — you review and approve. The creative heavy lifting is done for you, with vertical research baked into every batch.",
     },
     {
-      problem: "Seasonal and launch spikes need 3× content volume — and your team can barely hit baseline",
+      problem:
+        "Seasonal and launch spikes need 3× content volume — and your team can barely hit baseline",
       solution:
         "Vanity metrics don't move your business. Prestyj's content is engineered for conversion — strategic CTAs, authority-building frameworks, and nurture sequences that move followers from passive viewer to qualified inbound. Built for DTC and ecommerce operators doing $1M–$50M in annual GMV.",
     },
     {
-      problem: "Your organic IG/TikTok performance is flat and it's quietly tanking your paid creative cost-per-acquisition",
+      problem:
+        "Your organic IG/TikTok performance is flat and it's quietly tanking your paid creative cost-per-acquisition",
       solution:
         "Prestyj learns your voice during onboarding from existing posts, podcast clips, presentations, or client communications. Every piece of content sounds like you wrote it — because it's trained on how you actually communicate. No generic templated voice. Just your authentic perspective at scale.",
     },
@@ -129,7 +133,8 @@ export const doneForYouSocialForEcommerceBrands: BestForPageContent = {
         "The honest answer is more than you think. The algorithms on Meta (Instagram + Facebook) + TikTok primary, Instagram, and TikTok reward accounts that post 3–5× daily across formats — short-form video, carousels, single posts, and stories. For DTC and ecommerce operators doing $1M–$50M in annual GMV, the right baseline is 1,500+ per month across multiple platforms. Organic content feeds your paid-social testing pool — TikTok and Instagram reward the brands that post 3–5× daily across formats, and that's also where your highest-ROAS UGC ads get sourced.",
     },
     {
-      question: "Will the content actually sound like a ecommerce brand — or like generic AI content?",
+      question:
+        "Will the content actually sound like a ecommerce brand — or like generic AI content?",
       answer:
         "Ecommerce brand voice is product-led and customer-first — generic 'shop now' content gets demoted. Your real voice (UGC, customer stories, product use-case posts, founder POV) is what platforms actually surface. During onboarding, you provide samples of your existing content, frameworks, and communication style. The output mirrors how you actually speak and write — not generic templates. You review every piece before it ships, and the model improves from your feedback over time.",
     },

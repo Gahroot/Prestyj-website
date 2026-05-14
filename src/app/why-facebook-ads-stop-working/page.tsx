@@ -18,11 +18,11 @@ import { FAQJsonLd } from "@/components/seo/json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 
 export const metadata: Metadata = {
-  title: "Why Facebook Ads Stop Working (It's Not What You Think) | PRESTYJ",
+  title: "Why Facebook Ads Stop Working (It's Not What You Think)",
   description:
     "Your ads didn't break — your creative expired. A diagnostic guide to the 5 real reasons Facebook ads stop working, and why creative fatigue is the culprit in 80% of accounts.",
   openGraph: {
-    title: "Why Facebook Ads Stop Working | PRESTYJ",
+    title: "Why Facebook Ads Stop Working",
     description:
       "Diagnostic guide + checklist. It's almost always creative fatigue, not a broken account.",
     type: "website",
@@ -126,7 +126,7 @@ export default function WhyFacebookAdsStopWorkingPage() {
           </p>
           <Button size="lg" className="font-bold" asChild>
             <Link href="/book-demo">
-                Book a Demo
+              Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

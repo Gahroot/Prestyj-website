@@ -16,7 +16,7 @@ export const betterbot: AlternativePageContent = createAlternativePage({
     description: "AI leasing assistant and chatbot for multifamily properties",
   },
   meta: {
-    title: "BetterBot Alternatives for Multifamily AI Leasing | Prestyj",
+    title: "BetterBot Alternatives for Multifamily AI Leasing",
     description:
       "Looking for BetterBot alternatives? Compare Prestyj vs BetterBot for multifamily AI lead response. Voice AI that handles phone leads, not just chat.",
     keywords: [

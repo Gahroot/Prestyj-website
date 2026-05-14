@@ -3,7 +3,7 @@ import type { SolutionPageContent } from "./types";
 export const aiVoiceAgentPricing: SolutionPageContent = {
   slug: "ai-voice-agent-pricing",
   meta: {
-    title: "AI Voice Agent Pricing & Cost Breakdown | Transparent Per-Minute Rates | Prestyj",
+    title: "AI Voice Agent Pricing & Cost Breakdown | Transparent Per-Minute Rates",
     description:
       "Complete AI voice agent pricing guide. Compare per-minute vs flat-rate models, understand setup costs, and see total cost of ownership. AI voice agents start at a fraction of human receptionist costs with 24/7 coverage.",
     keywords: [

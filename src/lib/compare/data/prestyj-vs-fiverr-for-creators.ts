@@ -27,15 +27,18 @@ export const creatorsVsFiverrForCompareData: ComparePageData = createComparePage
     description: "",
     keyStats: [
       { value: "$3K/mo vs $25–$500per gig", label: "AI engine vs fiverr" },
-      { value: "1,500+ vs Variable, 20–80 with heavy management", label: "Posts/month — Prestyj vs fiverr" },
+      {
+        value: "1,500+ vs Variable, 20–80 with heavy management",
+        label: "Posts/month — Prestyj vs fiverr",
+      },
       { value: "7 vs 1–3", label: "Platforms covered" },
       { value: "Days vs 4–8 wks", label: "Onboarding time" },
     ],
   },
   pricing: {
     prestyj: {
-      price: "$3,000",
-      priceSubtext: "/month · 1,500+ posts · Creators-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · AI agents + content engine · tuned for Creators",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -53,18 +56,40 @@ export const creatorsVsFiverrForCompareData: ComparePageData = createComparePage
     },
   },
   features: [
-    { feature: "Creators-specific vertical research", prestyj: true, competitor: false, note: "Fiverr Freelancers does not research creators pain points by default" },
-    { feature: "Posts per month", prestyj: "1,500+", competitor: "Variable, 20–80 with heavy management" },
-    { feature: "Platforms covered", prestyj: "7 (TikTok, Instagram, YouTube, X, +)", competitor: "1–3 typical" },
+    {
+      feature: "Creators-specific vertical research",
+      prestyj: true,
+      competitor: false,
+      note: "Fiverr Freelancers does not research creators pain points by default",
+    },
+    {
+      feature: "Posts per month",
+      prestyj: "1,500+",
+      competitor: "Variable, 20–80 with heavy management",
+    },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (TikTok, Instagram, YouTube, X, +)",
+      competitor: "1–3 typical",
+    },
     { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$25–$500per gig" },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$50–$750" },
     { feature: "Voice training on your existing content", prestyj: true, competitor: false },
     { feature: "Daily auto-publish", prestyj: true, competitor: false },
-    { feature: "Long-term contract required", prestyj: false, competitor: false, note: "Per-gig or per-month — but you replace the cost monthly" },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: false,
+      note: "Per-gig or per-month — but you replace the cost monthly",
+    },
     { feature: "Onboarding time", prestyj: "Days", competitor: "Per-gig, per-seller, every time" },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "Per-gig availability" },
     { feature: "Performance learning loop", prestyj: true, competitor: false },
-    { feature: "Risk of voice drift", prestyj: "Low — trained on your existing content", competitor: "High — every gig is a new seller" },
+    {
+      feature: "Risk of voice drift",
+      prestyj: "Low — trained on your existing content",
+      competitor: "High — every gig is a new seller",
+    },
   ],
   whySwitch: {
     title: "Why Creators Pick the AI Content Engine Over Fiverr Freelancers",
@@ -104,10 +129,30 @@ export const creatorsVsFiverrForCompareData: ComparePageData = createComparePage
     ],
   },
   relatedResources: [
-    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
-    { title: "Done-For-You Social Media for Creators", description: "Creators-specific offer page", href: "/best-for/done-for-you-social-for-creators", linkText: "Read use case" },
-    { title: "Social Volume Strategy for Creators", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-creators", linkText: "See the strategy" },
-    { title: "Creators Social Media Agency Alternative", description: "Alternative to traditional creators social media agencies", href: "/alternatives/creators-social-media-agency-alternative", linkText: "Compare" },
+    {
+      title: "AI Content Department — the AI agent for social media",
+      description: "See the Prestyj AI Content Department product",
+      href: "/ai-content-department",
+      linkText: "Learn more",
+    },
+    {
+      title: "Done-For-You Social Media for Creators",
+      description: "Creators-specific offer page",
+      href: "/best-for/done-for-you-social-for-creators",
+      linkText: "Read use case",
+    },
+    {
+      title: "Social Volume Strategy for Creators",
+      description: "Cadence math and 2026 platform priorities",
+      href: "/best-for/social-volume-strategy-for-creators",
+      linkText: "See the strategy",
+    },
+    {
+      title: "Creators Social Media Agency Alternative",
+      description: "Alternative to traditional creators social media agencies",
+      href: "/alternatives/creators-social-media-agency-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Creators Pick the AI Content Engine Over Fiverr Freelancers.",
@@ -122,7 +167,7 @@ export const creatorsVsFiverrForCompareData: ComparePageData = createComparePage
 export const creatorsVsFiverrForCompareDataMetadata: CompareMetadata = {
   slug: "prestyj-vs-fiverr-for-creators",
   competitorName: "Fiverr Freelancers (for Creators)",
-  title: "PRESTYJ vs Fiverr Freelancers for Creators (2026 Cadence Math)",
+  title: "Prestyj vs Fiverr Freelancers for Creators (2026 Cadence Math)",
   description:
     "A patchwork of Fiverr / Upwork gig workers handling individual deliverables (posts, captions, carousel design) — cheap per piece, expensive in management overhead. See full posts-per-month math and why full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product pick the AI content engine from $3,000/mo over $25–$500per gig.",
   keywords: [

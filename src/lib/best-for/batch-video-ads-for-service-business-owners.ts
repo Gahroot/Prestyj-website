@@ -11,7 +11,7 @@ export const batchVideoAdsForServiceBusinessOwners: BestForPageContent = {
       "service business owners running $500K-$10M/year operations across home services, professional services, and local trades using batch video ad creative testing to compress 6 weeks of production into 24 hours and finally feed the algorithm enough creative volume to exit learning.",
   },
   meta: {
-    title: "Batch Video Ads for Service Business Owners: 500 Ads in 24 Hours (From $1,497) | PRESTYJ",
+    title: "Batch Video Ads for Service Business Owners: 500 Ads in 24 Hours (From $1,497)",
     description:
       "Service Business Owners ship 8 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-minute recording — flat fee, scripts written for you, your real face. From $1,497.",
     keywords: [
@@ -41,13 +41,15 @@ export const batchVideoAdsForServiceBusinessOwners: BestForPageContent = {
     },
     {
       icon: "Target",
-      title: "You tried Facebook ads, spent $3K, got 4 leads, and your agency blamed 'the algorithm'",
+      title:
+        "You tried Facebook ads, spent $3K, got 4 leads, and your agency blamed 'the algorithm'",
       description:
         "Different audiences need different hooks. Generic creative averages everything down. Service Business Owners who run 5-10 angle-specific tracks (instead of one 'general' track) consistently see $18-$45 per booked appointment versus the $80-$220 per appointment via Yelp/Angi/Thumbtack they were getting before. Batch is engineered around angle-testing — every batch ships with multiple distinct hook tracks ready to A/B at the ad-set level.",
     },
     {
       icon: "DollarSign",
-      title: "Every truck on the road is a billboard you already paid for — and zero of it is in any ad",
+      title:
+        "Every truck on the road is a billboard you already paid for — and zero of it is in any ad",
       description:
         "When the unit economics are this big — $800-$20,000 per closed job depending on trade — you cannot afford to be creative-starved. A single additional booked deal pays for the entire batch many times over. The math for Service Business Owners is some of the most favorable in the entire batch-creative space.",
     },
@@ -66,22 +68,26 @@ export const batchVideoAdsForServiceBusinessOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Service Business Owners'",
+      problem:
+        "You spent $5K-$50K on Facebook ads, got disappointing CPL, and concluded 'paid social doesn't work for Service Business Owners'",
       solution:
         "It's almost never the channel — it's almost always the creative volume. Meta needs roughly 30-50 fresh creatives per ad set to exit learning. If you tested 3 ads, you never left learning. After a single batch delivery, Service Business Owners consistently see CPL drop 40-70% in the first 30 days because the algorithm finally has enough fuel to optimize.",
     },
     {
-      problem: "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
+      problem:
+        "Your in-house team / freelancer / agency ships 2-8 video ads per month — far below what the platforms need",
       solution:
         "This is the bottleneck the entire industry is hitting. Production capacity has not scaled with platform demand. A Prestyj batch ships in one day what your current pipeline ships in two quarters — without you firing anyone or restructuring your team.",
     },
     {
-      problem: "You don't have time to write scripts, pick angles, or manage a video production process",
+      problem:
+        "You don't have time to write scripts, pick angles, or manage a video production process",
       solution:
         "You don't have to. Send us a creative brief (we have a 5-question form) and 15-20 minutes of selfie footage. We write every script, mix every variation, and deliver. Your only job is recording the footage and approving the final batch.",
     },
     {
-      problem: "Your creative looks identical to every other service business owners in your market",
+      problem:
+        "Your creative looks identical to every other service business owners in your market",
       solution:
         "Generic creative is what happens when production is scarce. When production is abundant, you can finally afford to ship specific creative — specific to your market, specific to your offer, specific to a sub-audience. Batch makes specific cheap.",
     },
@@ -138,7 +144,8 @@ export const batchVideoAdsForServiceBusinessOwners: BestForPageContent = {
         "Generic 'video ads for service-business-owners' usually means a retainer agency producing 4-8 videos a month at $4K-$15K/month. Batch is a fundamentally different unit: 300-1,000 scripted variations from one recording, delivered in 24 hours, flat fee. It exists because the platforms changed — Meta and TikTok now require creative volume to exit the learning phase, and the old monthly-retainer model cannot supply that volume.",
     },
     {
-      question: "What does cost per tested ad angle actually look like for Service Business Owners?",
+      question:
+        "What does cost per tested ad angle actually look like for Service Business Owners?",
       answer:
         "At the 500-ad tier ($2,497), if we ship 5 distinct hook angles you get roughly 100 variations per angle — meaning your effective cost per fully tested angle is around $500. Compare that to a retainer agency where one new angle costs you a full month of fees ($4K-$15K) and ships 1-2 videos. The cost-per-tested-angle math is what makes batch viable for Service Business Owners who need to test many positions before committing budget.",
     },

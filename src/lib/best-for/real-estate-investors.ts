@@ -11,7 +11,7 @@ export const realEstateInvestors: BestForPageContent = createBestForPage({
       "Real estate investors focused on wholesaling, fix-and-flip, rental acquisitions, and buying from motivated sellers",
   },
   meta: {
-    title: "Best AI for Real Estate Investors | Prestyj",
+    title: "Best AI for Real Estate Investors",
     description:
       "Discover why real estate investors choose Prestyj to qualify motivated seller leads instantly. Handle high-volume PPC and direct mail leads, book property walkthroughs, and close more wholesale deals.",
     keywords: [

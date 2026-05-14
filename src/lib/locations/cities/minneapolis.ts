@@ -11,7 +11,7 @@ export const minneapolis: LocationPageContent = {
       "Minneapolis–St. Paul is one of the most resilient — and weather-driven — home services markets in the country. Wind chills routinely hit -30°F, ice dams are a January line item in every roofer's calendar, and frozen pipes turn into burst-water-line emergencies overnight. Beneath the weather: a strong, diversified economy anchored by Target, UnitedHealth, 3M, Best Buy, U.S. Bank, and a deep Fortune 500 bench that produces a high-income, owner-occupied homeowner base. Add an aging housing stock — much of it pre-1970 — and you've got a market where furnace replacements, repipes, and full-system upgrades aren't optional, they're survival.",
   },
   meta: {
-    title: "Facebook Ads for Minneapolis Home Service Contractors | Prestyj",
+    title: "Facebook Ads for Minneapolis Home Service Contractors",
     description:
       "Grow your Minneapolis HVAC, plumbing, roofing, solar, or contracting business with Facebook ads built for the Twin Cities' extreme-cold, aging-housing, Fortune-500-driven market.",
     keywords: [
@@ -34,8 +34,7 @@ export const minneapolis: LocationPageContent = {
   marketStats: {
     households: "1.4M+",
     avgHomeValue: "$370K",
-    keyInsight:
-      "Minneapolis wind chills hit -30°F — heating failures are genuine emergencies",
+    keyInsight: "Minneapolis wind chills hit -30°F — heating failures are genuine emergencies",
   },
   services: [
     {
@@ -86,8 +85,7 @@ export const minneapolis: LocationPageContent = {
   ],
   faq: [
     {
-      question:
-        "Does Facebook ad performance really collapse in the Twin Cities during winter?",
+      question: "Does Facebook ad performance really collapse in the Twin Cities during winter?",
       answer:
         "It's the opposite — winter is peak season if you're set up right. HVAC, plumbing, and roofing demand surges from November through March, and ad costs often drop because seasonal contractors pull their budgets. We build Facebook campaigns that lean into winter rather than away from it, with cold-snap-triggered creative, freeze-warning messaging, and emergency-service positioning that converts at industry-best rates while competitors are running maintenance specials nobody needs.",
     },
@@ -104,8 +102,7 @@ export const minneapolis: LocationPageContent = {
         "Absolutely — and most roofers don't, which leaves the entire category open. Ice dam emergencies generate 5-figure repair invoices on damaged interiors, attic insulation, and ventilation upgrades. We build Facebook campaigns that pre-position your brand as the ice-dam expert in October and November with educational content, then convert intensely from December through March when leaks start showing up on ceilings. It's one of the most predictable seasonal funnels in the entire country.",
     },
     {
-      question:
-        "Are Facebook ads worth running for solar in a state with this much winter?",
+      question: "Are Facebook ads worth running for solar in a state with this much winter?",
       answer:
         "More than you'd expect. Long Minnesota summer days produce strong solar yields, and the Xcel rebate combined with the federal ITC makes payback periods competitive with sunnier markets. The catch is that 'save on your bill' creative gets ignored when homeowners are mentally pricing winter electricity. We build Facebook campaigns that lead with documented local production, real customer case studies, and battery-backup angles — which converts a skeptical Minnesota audience far better than generic solar messaging.",
     },

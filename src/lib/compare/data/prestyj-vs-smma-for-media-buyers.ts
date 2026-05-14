@@ -34,8 +34,8 @@ export const mediaBuyersVsSmmaForCompareData: ComparePageData = createComparePag
   },
   pricing: {
     prestyj: {
-      price: "$3,000",
-      priceSubtext: "/month · 1,500+ posts · Media Buyers-researched",
+      price: "$1,997",
+      priceSubtext: "/mo Starter · AI agents + content engine · tuned for Media Buyers",
       features: PRESTYJ_PRICING_FEATURES,
     },
     competitor: {
@@ -53,18 +53,36 @@ export const mediaBuyersVsSmmaForCompareData: ComparePageData = createComparePag
     },
   },
   features: [
-    { feature: "Media Buyers-specific vertical research", prestyj: true, competitor: false, note: "SMMA / Social Media Marketing Agency does not research media buyers pain points by default" },
+    {
+      feature: "Media Buyers-specific vertical research",
+      prestyj: true,
+      competitor: false,
+      note: "SMMA / Social Media Marketing Agency does not research media buyers pain points by default",
+    },
     { feature: "Posts per month", prestyj: "1,500+", competitor: "20–30" },
-    { feature: "Platforms covered", prestyj: "7 (LinkedIn, X, Threads, Facebook, +)", competitor: "1–3 typical" },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (LinkedIn, X, Threads, Facebook, +)",
+      competitor: "1–3 typical",
+    },
     { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$3K–$15K/month retainer" },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$50–$750" },
     { feature: "Voice training on your existing content", prestyj: true, competitor: false },
     { feature: "Daily auto-publish", prestyj: true, competitor: false },
-    { feature: "Long-term contract required", prestyj: false, competitor: true, note: "3–12 month agency contracts typical" },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: true,
+      note: "3–12 month agency contracts typical",
+    },
     { feature: "Onboarding time", prestyj: "Days", competitor: "4–8 weeks" },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "Account manager hours" },
     { feature: "Performance learning loop", prestyj: true, competitor: false },
-    { feature: "Risk of voice drift", prestyj: "Low — trained on your existing content", competitor: "Medium — depends on team turnover" },
+    {
+      feature: "Risk of voice drift",
+      prestyj: "Low — trained on your existing content",
+      competitor: "Medium — depends on team turnover",
+    },
   ],
   whySwitch: {
     title: "Why Media Buyers Pick the AI Content Engine Over SMMA / Social Media Marketing Agency",
@@ -104,10 +122,30 @@ export const mediaBuyersVsSmmaForCompareData: ComparePageData = createComparePag
     ],
   },
   relatedResources: [
-    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
-    { title: "Done-For-You Social Media for Media Buyers", description: "Media Buyers-specific offer page", href: "/best-for/done-for-you-social-for-media-buyers", linkText: "Read use case" },
-    { title: "Social Volume Strategy for Media Buyers", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-media-buyers", linkText: "See the strategy" },
-    { title: "Media Buyers Social Media Agency Alternative", description: "Alternative to traditional media buyers social media agencies", href: "/alternatives/media-buyers-social-media-agency-alternative", linkText: "Compare" },
+    {
+      title: "AI Content Department — the AI agent for social media",
+      description: "See the Prestyj AI Content Department product",
+      href: "/ai-content-department",
+      linkText: "Learn more",
+    },
+    {
+      title: "Done-For-You Social Media for Media Buyers",
+      description: "Media Buyers-specific offer page",
+      href: "/best-for/done-for-you-social-for-media-buyers",
+      linkText: "Read use case",
+    },
+    {
+      title: "Social Volume Strategy for Media Buyers",
+      description: "Cadence math and 2026 platform priorities",
+      href: "/best-for/social-volume-strategy-for-media-buyers",
+      linkText: "See the strategy",
+    },
+    {
+      title: "Media Buyers Social Media Agency Alternative",
+      description: "Alternative to traditional media buyers social media agencies",
+      href: "/alternatives/media-buyers-social-media-agency-alternative",
+      linkText: "Compare",
+    },
   ],
   cta: {
     title: "Media Buyers Pick the AI Content Engine Over SMMA / Social Media Marketing Agency.",
@@ -122,7 +160,7 @@ export const mediaBuyersVsSmmaForCompareData: ComparePageData = createComparePag
 export const mediaBuyersVsSmmaForCompareDataMetadata: CompareMetadata = {
   slug: "prestyj-vs-smma-for-media-buyers",
   competitorName: "SMMA / Social Media Marketing Agency (for Media Buyers)",
-  title: "PRESTYJ vs SMMA / Social Media Marketing Agency for Media Buyers (2026 Cadence Math)",
+  title: "Prestyj vs SMMA / Social Media Marketing Agency for Media Buyers (2026 Cadence Math)",
   description:
     "A traditional social media marketing agency selling retainer-based posting, strategy decks, and account management — typically $3K–$15K/month for 20–30 posts. See full posts-per-month math and why in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend pick the AI content engine from $3,000/mo over $3K–$15K/month retainer.",
   keywords: [

@@ -10,7 +10,7 @@ export const realEstateWholesalers: BestForPageContent = createBestForPage({
     description: "Wholesalers who need fast response to motivated seller leads",
   },
   meta: {
-    title: "AI Voice for Real Estate Wholesalers | Prestyj",
+    title: "AI Voice for Real Estate Wholesalers",
     description:
       "Done-for-you AI response for wholesaling. Motivated sellers call, AI answers instantly. Qualify deals, gather property details, and contract appointments—24/7.",
     keywords: [

@@ -13,7 +13,8 @@ export const roofingContractorsVideoProductionAlternative: AlternativePageConten
       "The legacy way residential roofing contractors with 3-100 crews chasing storm and retail-reroof demand buy video creative — typically a in-house marketing hire engagement that ships 1-8 videos per cycle at high per-unit cost.",
   },
   meta: {
-    title: "Roofing Contractors Video Production Alternative — Batch Creative That Ships in 24 Hours | PRESTYJ",
+    title:
+      "Roofing Contractors Video Production Alternative — Batch Creative That Ships in 24 Hours",
     description:
       "Traditional roofing video production ships 4 ads a quarter. Batch ships 300-1,000 in 24 hours from one 20-min recording. Same real face. ≈$5/ad. From $1,497 flat.",
     keywords: [
@@ -36,15 +37,18 @@ export const roofingContractorsVideoProductionAlternative: AlternativePageConten
   industryStats: [
     {
       stat: "300-1,000",
-      description: "ad variations per roofing batch — versus 1-8 from a typical production engagement",
+      description:
+        "ad variations per roofing batch — versus 1-8 from a typical production engagement",
     },
     {
       stat: "≈$5",
-      description: "cost per ad at the 500-ad tier — versus $72K-$110Kfully loaded annual salary for in-house marketing hire",
+      description:
+        "cost per ad at the 500-ad tier — versus $72K-$110Kfully loaded annual salary for in-house marketing hire",
     },
     {
       stat: "24 hrs",
-      description: "turnaround from footage delivery — versus 14-45 days through traditional production",
+      description:
+        "turnaround from footage delivery — versus 14-45 days through traditional production",
     },
     {
       stat: "0",
@@ -114,8 +118,9 @@ export const roofingContractorsVideoProductionAlternative: AlternativePageConten
       ],
     },
     prestyjPricing: {
-      price: "$1,497 – $3,997",
-      note: "Flat fee. 300 ads / 3 angles at $1,497. 500 ads / 5 angles at $2,497. 1,000 ads / 10 angles at $3,997.",
+      price: "$1,997",
+      period: "/mo",
+      note: "$1,997/mo Starter · $3,997 setup · ad budget + AI agents included",
       pros: [
         "300-1,000 ad variations per batch",
         "Roofing-researched scripts written for you",
@@ -169,7 +174,8 @@ export const roofingContractorsVideoProductionAlternative: AlternativePageConten
     {
       href: "/batch-video-ads",
       title: "Batch Video Ads — the Service",
-      description: "How Prestyj turns 20 minutes of footage into 300-1,000 vertical ads in 24 hours.",
+      description:
+        "How Prestyj turns 20 minutes of footage into 300-1,000 vertical ads in 24 hours.",
     },
     {
       href: "/best-for/batch-video-ads-for-roofing-contractors",
@@ -179,7 +185,8 @@ export const roofingContractorsVideoProductionAlternative: AlternativePageConten
     {
       href: "/best-for/cost-per-tested-ad-angle-for-roofing-contractors",
       title: "Cost Per Tested Ad Angle for Roofing",
-      description: "Full pricing breakdown across batch, agency, freelancer, and in-house production paths.",
+      description:
+        "Full pricing breakdown across batch, agency, freelancer, and in-house production paths.",
     },
     {
       href: "/compare/prestyj-vs-in-house-video-for-roofing-contractors",

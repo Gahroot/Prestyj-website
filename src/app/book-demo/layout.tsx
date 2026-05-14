@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book Your AI Sales Agent Demo | Prestyj",
+  title: "Book Your AI Sales Agent Demo",
   description:
     "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under 30 seconds. Close 30-50% more deals from your existing ad spend. No credit card required.",
   keywords: [
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "automated lead response",
   ],
   openGraph: {
-    title: "Book Your AI Sales Agent Demo | Prestyj",
+    title: "Book Your AI Sales Agent Demo",
     description:
       "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under 30 seconds. Close 30-50% more deals from your existing ad spend. No credit card required.",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Book Your AI Sales Agent Demo | Prestyj",
+    title: "Book Your AI Sales Agent Demo",
     description:
       "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under 30 seconds. Close 30-50% more deals from your existing ad spend. No credit card required.",
     images: ["https://prestyj.com/og-image.jpg"],
@@ -40,10 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BookDemoLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function BookDemoLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
