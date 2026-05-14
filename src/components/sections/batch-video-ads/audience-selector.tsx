@@ -104,8 +104,9 @@ export function BatchAudienceSelector({
   subhead = "Same engine. Different angles. The system bends to your category — we don't make you bend to it.",
   audiences = DEFAULT_AUDIENCES,
 }: AudienceSelectorProps) {
-  const [active, setActive] = useState(audiences[0].id);
-  const current = audiences.find((a) => a.id === active) ?? audiences[0];
+  const fallback = audiences[0] ?? DEFAULT_AUDIENCES[0]!;
+  const [active, setActive] = useState(fallback.id);
+  const current = audiences.find((a) => a.id === active) ?? fallback;
 
   return (
     <section className="bg-muted/10 px-4 py-24">

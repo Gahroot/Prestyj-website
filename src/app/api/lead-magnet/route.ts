@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
         magnetType: "roofing-playbook" | "qualvol-playbook" | "brokerage-playbook";
       };
       leadPayload = {
-        first_name: data.name.split(" ")[0], // Use first name only
+        first_name: data.name.split(" ")[0] ?? data.name, // Use first name only
         email: data.email,
         notes: `Lead Magnet: ${data.magnetType}${data.company ? `\nCompany: ${data.company}` : ""}`,
         source: `lead-magnet-${data.magnetType}`,

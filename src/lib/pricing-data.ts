@@ -289,9 +289,9 @@ export const pricingFaqs: PricingFAQ[] = [
       "Batch video ads are professionally produced short-form video ads we create for your business. Each batch includes multiple ad variations optimized for different platforms and audiences. More ads means more creative variety, which improves ad performance over time.",
   },
   {
-    question: "How does Prestyj compare to hiring an ISA?",
+    question: "How does Prestyj compare to hiring a dedicated sales rep?",
     answer:
-      "A good ISA costs $4,000–$6,000/month, works 9-to-5, takes vacations, and eventually quits. The Prestyj Starter plan starts at $1,997/month and provides 24/7 AI lead response, appointment setting, 300 batch video ads, ad management, and a landing page — all done for you. You get the output of a full team for a fraction of the cost of one hire.",
+      "A good inside sales rep costs $4,000–$6,000/month, works 9-to-5, takes vacations, and eventually quits. The Prestyj Starter plan starts at $1,997/month and provides 24/7 AI lead response, appointment setting, 300 batch video ads, ad management, and a landing page — all done for you. You get the output of a full team for a fraction of the cost of one hire.",
   },
   {
     question: "What's the ROI on the Pro plan?",

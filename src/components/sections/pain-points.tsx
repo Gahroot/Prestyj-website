@@ -19,9 +19,9 @@ const painPoints = [
   },
   {
     icon: DollarSign,
-    title: "A good sales rep (or ISA) costs $4K–$6K a month — and still clocks out",
+    title: "A good sales rep costs $4K–$6K a month — and still clocks out",
     description:
-      "And then they call in sick. Take vacations. Quit. Your AI team member never does any of that. Same quality follow-up. A fraction of the cost. Every single day.",
+      "And then they call in sick. Take vacations. Quit. Your AI agent never does any of that. Same quality follow-up. A fraction of the cost. Every single day.",
     color: "text-primary",
   },
 ];

@@ -36,22 +36,22 @@ interface Competitor {
 
 interface Vertical {
   slug: string;
-  varBase: string;     // camelCase
-  name: string;        // "Coaches"
+  varBase: string; // camelCase
+  name: string; // "Coaches"
   audience: string;
   jobValue: string;
-  platforms: string;        // "LinkedIn + Instagram"
-  platformList: string;     // "LinkedIn, Instagram, X, YouTube Shorts"
-  postsPerMonth: string;    // "1,500+"
-  postsPerDay: string;      // "30-50"
-  cadenceNote: string;      // "what the algorithm rewards in 2026 for {vertical}"
+  platforms: string; // "LinkedIn + Instagram"
+  platformList: string; // "LinkedIn, Instagram, X, YouTube Shorts"
+  postsPerMonth: string; // "1,500+"
+  postsPerDay: string; // "30-50"
+  cadenceNote: string; // "what the algorithm rewards in 2026 for {vertical}"
   painA: string;
   painB: string;
   painC: string;
   painD: string;
   hiddenCost: string;
-  authorityHook: string;    // why volume = authority for this vertical
-  voiceNote: string;        // voice-protection note specific to vertical
+  authorityHook: string; // why volume = authority for this vertical
+  voiceNote: string; // voice-protection note specific to vertical
   competitorKey: Competitor["slug"];
   faqSeed: { q: string; a: string }[];
 }
@@ -163,51 +163,77 @@ const VERTICALS: Vertical[] = [
     slug: "coaches",
     varBase: "coaches",
     name: "Coaches",
-    audience: "business, executive, and life coaches selling $2K–$25K coaching programs and group offers",
+    audience:
+      "business, executive, and life coaches selling $2K–$25K coaching programs and group offers",
     jobValue: "$2,000–$25,000 per client",
     platforms: "LinkedIn + Instagram (primary), YouTube Shorts + X (secondary)",
     platformList: "LinkedIn, Instagram, YouTube Shorts, X, Threads, Facebook, TikTok",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "Coaches who post daily land 3–5× more discovery calls — but coaching delivery makes daily posting impossible without a content engine.",
+    cadenceNote:
+      "Coaches who post daily land 3–5× more discovery calls — but coaching delivery makes daily posting impossible without a content engine.",
     painA: "Your social media goes quiet for weeks when you're back-to-back in client sessions",
-    painB: "You stare at a blank screen for 30 minutes before every post — writer's block is killing your pipeline",
+    painB:
+      "You stare at a blank screen for 30 minutes before every post — writer's block is killing your pipeline",
     painC: "Your content gets likes but doesn't convert followers into discovery calls",
-    painD: "Hiring a social media manager costs $3K–$5K/month and they still can't capture your coaching voice",
-    hiddenCost: "the hidden cost of coaching is that every hour spent writing posts is an hour you're not delivering transformation — and one high-ticket client pays for an entire year of content",
-    authorityHook: "Authority compounds — every post you ship today is a discovery call you book next quarter, and consistency over 6–12 months is what separates the booked-out coaches from the ones perpetually launching",
-    voiceNote: "Coaches live or die by voice — generic guru-bot content actively repels the high-ticket clients you actually want. Voice training on your existing posts, podcast clips, and program transcripts is non-negotiable.",
+    painD:
+      "Hiring a social media manager costs $3K–$5K/month and they still can't capture your coaching voice",
+    hiddenCost:
+      "the hidden cost of coaching is that every hour spent writing posts is an hour you're not delivering transformation — and one high-ticket client pays for an entire year of content",
+    authorityHook:
+      "Authority compounds — every post you ship today is a discovery call you book next quarter, and consistency over 6–12 months is what separates the booked-out coaches from the ones perpetually launching",
+    voiceNote:
+      "Coaches live or die by voice — generic guru-bot content actively repels the high-ticket clients you actually want. Voice training on your existing posts, podcast clips, and program transcripts is non-negotiable.",
     competitorKey: "in-house-hire",
     faqSeed: [
       { q: "How many posts per month does a coach actually need to fill a calendar?", a: "" },
-      { q: "Will the content sound like a real coach — or like a generic motivational quote account?", a: "" },
+      {
+        q: "Will the content sound like a real coach — or like a generic motivational quote account?",
+        a: "",
+      },
       { q: "What platforms matter most for coaches — LinkedIn, Instagram, or YouTube?", a: "" },
       { q: "How quickly will I see discovery calls from this?", a: "" },
-      { q: "What about executive coaches with C-suite audiences — is the content professional enough?", a: "" },
+      {
+        q: "What about executive coaches with C-suite audiences — is the content professional enough?",
+        a: "",
+      },
     ],
   },
   {
     slug: "media-buyers",
     varBase: "mediaBuyers",
     name: "Media Buyers",
-    audience: "in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend",
-    jobValue: "every 1-point CPA improvement on a $200K/month account = $20K–$60K saved per quarter",
+    audience:
+      "in-house media buyers and performance marketers managing $50K–$2M/month in paid social spend",
+    jobValue:
+      "every 1-point CPA improvement on a $200K/month account = $20K–$60K saved per quarter",
     platforms: "LinkedIn (primary for personal brand), X + Threads (industry conversation)",
     platformList: "LinkedIn, X, Threads, Facebook, Instagram, YouTube",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "The same algorithm that demands 50 fresh creatives per ad set to exit learning is the one that rewards daily organic posting — your organic and paid are the same audience, just different surfaces.",
-    painA: "You can ship 50 ad sets a week — but your creative team can ship 4 videos, and your organic social is even slower",
-    painB: "Organic posts that contradict your paid creative angles confuse the algorithm and tank your CPA",
-    painC: "Your personal LinkedIn is the strongest media-buyer brand asset you own — and it's been silent for 3 months",
-    painD: "You're testing 50 ad creatives a week and posting 2 LinkedIn updates a month — the math is broken",
-    hiddenCost: "the hidden cost is the 'organic-paid asymmetry tax' — your paid testing pool is fed by organic signal, and starving organic starves paid performance",
-    authorityHook: "Media buyers with active LinkedIn presence command 2–3× higher freelance/in-house rates — your organic content is the highest-leverage compensation lever you control, and it's almost always being ignored",
-    voiceNote: "Media buyer voice is data-forward and pattern-driven — generic 'tips and tricks' content reads as junior. Your real voice — the screenshots, the CPA breakdowns, the contrarian takes — has to come through.",
+    cadenceNote:
+      "The same algorithm that demands 50 fresh creatives per ad set to exit learning is the one that rewards daily organic posting — your organic and paid are the same audience, just different surfaces.",
+    painA:
+      "You can ship 50 ad sets a week — but your creative team can ship 4 videos, and your organic social is even slower",
+    painB:
+      "Organic posts that contradict your paid creative angles confuse the algorithm and tank your CPA",
+    painC:
+      "Your personal LinkedIn is the strongest media-buyer brand asset you own — and it's been silent for 3 months",
+    painD:
+      "You're testing 50 ad creatives a week and posting 2 LinkedIn updates a month — the math is broken",
+    hiddenCost:
+      "the hidden cost is the 'organic-paid asymmetry tax' — your paid testing pool is fed by organic signal, and starving organic starves paid performance",
+    authorityHook:
+      "Media buyers with active LinkedIn presence command 2–3× higher freelance/in-house rates — your organic content is the highest-leverage compensation lever you control, and it's almost always being ignored",
+    voiceNote:
+      "Media buyer voice is data-forward and pattern-driven — generic 'tips and tricks' content reads as junior. Your real voice — the screenshots, the CPA breakdowns, the contrarian takes — has to come through.",
     competitorKey: "smma",
     faqSeed: [
       { q: "How does this not contradict the paid creative angles I'm testing?", a: "" },
-      { q: "Can the content keep up with current-quarter ad library trends and platform shifts?", a: "" },
+      {
+        q: "Can the content keep up with current-quarter ad library trends and platform shifts?",
+        a: "",
+      },
       { q: "Will it sound like a real media buyer or like a marketing blog?", a: "" },
       { q: "How does organic posting actually feed paid performance?", a: "" },
       { q: "Is this useful for in-house buyers or only freelancers?", a: "" },
@@ -217,20 +243,29 @@ const VERTICALS: Vertical[] = [
     slug: "cmos",
     varBase: "cmos",
     name: "CMOs",
-    audience: "B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel",
+    audience:
+      "B2B and DTC CMOs at $10M–$200M revenue companies driving paid social as a primary channel",
     jobValue: "$100K–$500K MQL pipeline lift per quarter from creative volume and brand presence",
     platforms: "LinkedIn (executive brand + company), brand Instagram, X",
     platformList: "LinkedIn, Instagram, X, YouTube, Facebook, Threads, TikTok",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "The board wants pipeline numbers monthly — but the brand-content cadence that produces those numbers operates on a daily clock the agency retainer model can't sustain.",
-    painA: "Your agency ships 20–30 posts/month and the board is asking why the brand presence is invisible",
-    painB: "Brand consistency across 5+ markets and 3+ product lines is impossible with the agency's manual cycle",
-    painC: "Legal/compliance review on every post is slowing your team to a 2-week turnaround per asset",
-    painD: "Quarterly reporting decks measure activity, not learning velocity — and your CEO can tell",
-    hiddenCost: "the hidden cost of the agency retainer model is the 'agency-review tax' — every post requires an account manager call, a strategist review, a CMO sign-off, and 2–4 weeks of cycle time before it ships",
-    authorityHook: "CMOs with personal LinkedIn presence command board-level compensation and recruiter inbound — your executive brand is the strongest career asset you own, yet 90% of CMOs are dark on social",
-    voiceNote: "CMO voice is strategic, data-grounded, and brand-safe — generic 'leadership' content reads as ghost-written. Compliance guardrails and brand-voice training have to be baked in, not bolted on.",
+    cadenceNote:
+      "The board wants pipeline numbers monthly — but the brand-content cadence that produces those numbers operates on a daily clock the agency retainer model can't sustain.",
+    painA:
+      "Your agency ships 20–30 posts/month and the board is asking why the brand presence is invisible",
+    painB:
+      "Brand consistency across 5+ markets and 3+ product lines is impossible with the agency's manual cycle",
+    painC:
+      "Legal/compliance review on every post is slowing your team to a 2-week turnaround per asset",
+    painD:
+      "Quarterly reporting decks measure activity, not learning velocity — and your CEO can tell",
+    hiddenCost:
+      "the hidden cost of the agency retainer model is the 'agency-review tax' — every post requires an account manager call, a strategist review, a CMO sign-off, and 2–4 weeks of cycle time before it ships",
+    authorityHook:
+      "CMOs with personal LinkedIn presence command board-level compensation and recruiter inbound — your executive brand is the strongest career asset you own, yet 90% of CMOs are dark on social",
+    voiceNote:
+      "CMO voice is strategic, data-grounded, and brand-safe — generic 'leadership' content reads as ghost-written. Compliance guardrails and brand-voice training have to be baked in, not bolted on.",
     competitorKey: "in-house-hire",
     faqSeed: [
       { q: "How do you handle legal and compliance review on regulated content?", a: "" },
@@ -250,18 +285,28 @@ const VERTICALS: Vertical[] = [
     platformList: "LinkedIn, Instagram, X, Threads, YouTube, Facebook, TikTok",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "The cobbler's kids have no shoes — you ship daily creative for clients but your own feeds have been dark for months, and your last 3 inbound leads came from referrals because no one can find you organically.",
-    painA: "You ship pitch-deck-grade content for clients and post nothing for yourself — every quarter",
+    cadenceNote:
+      "The cobbler's kids have no shoes — you ship daily creative for clients but your own feeds have been dark for months, and your last 3 inbound leads came from referrals because no one can find you organically.",
+    painA:
+      "You ship pitch-deck-grade content for clients and post nothing for yourself — every quarter",
     painB: "Your case studies are gold and they live in a Notion doc no prospect will ever see",
-    painC: "One client churn becomes a survival event because you never built creative volume to backfill pipeline",
-    painD: "Your team has the skills to do your social — but billable hours always win the priority fight",
-    hiddenCost: "the hidden cost of skipping your own marketing is concentration risk — one client churn becomes a survival event because you never built creative volume to backfill",
-    authorityHook: "Agency owners with active personal brands close 30–50% higher retainers and shorten sales cycles by 2–3 weeks — your founder brand is the highest-leverage growth channel your agency owns and the one you're most likely to ignore",
-    voiceNote: "Agency-owner voice is opinionated, case-study-driven, and pattern-recognized — generic 'agency tips' content reads as commoditized. Your real voice (the contrarian takes, the client teardowns, the unit-economics breakdowns) is what wins pitches.",
+    painC:
+      "One client churn becomes a survival event because you never built creative volume to backfill pipeline",
+    painD:
+      "Your team has the skills to do your social — but billable hours always win the priority fight",
+    hiddenCost:
+      "the hidden cost of skipping your own marketing is concentration risk — one client churn becomes a survival event because you never built creative volume to backfill",
+    authorityHook:
+      "Agency owners with active personal brands close 30–50% higher retainers and shorten sales cycles by 2–3 weeks — your founder brand is the highest-leverage growth channel your agency owns and the one you're most likely to ignore",
+    voiceNote:
+      "Agency-owner voice is opinionated, case-study-driven, and pattern-recognized — generic 'agency tips' content reads as commoditized. Your real voice (the contrarian takes, the client teardowns, the unit-economics breakdowns) is what wins pitches.",
     competitorKey: "va-plus-templates",
     faqSeed: [
       { q: "How does this work when my whole agency does this for a living?", a: "" },
-      { q: "Will the content sound like a real agency owner or like generic marketing advice?", a: "" },
+      {
+        q: "Will the content sound like a real agency owner or like generic marketing advice?",
+        a: "",
+      },
       { q: "Can it ship case-study content without exposing client details?", a: "" },
       { q: "How does this feed actual inbound retainer pipeline?", a: "" },
       { q: "Can my team take this over once we're stable?", a: "" },
@@ -271,24 +316,39 @@ const VERTICALS: Vertical[] = [
     slug: "service-business-owners",
     varBase: "serviceBusinessOwners",
     name: "Service Business Owners",
-    audience: "owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops",
+    audience:
+      "owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops",
     jobValue: "$3,000–$25,000 average ticket on installs and major service jobs",
-    platforms: "Facebook (primary for local trust), Instagram + YouTube Shorts, TikTok for younger demos",
+    platforms:
+      "Facebook (primary for local trust), Instagram + YouTube Shorts, TikTok for younger demos",
     platformList: "Facebook, Instagram, YouTube Shorts, TikTok, Nextdoor, Google Business Profile",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "Your before/after photos, 5-star reviews, and field tech footage are the highest-converting social content in your category — and 95% of it is rotting on your team's phones because no one has time to post it.",
+    cadenceNote:
+      "Your before/after photos, 5-star reviews, and field tech footage are the highest-converting social content in your category — and 95% of it is rotting on your team's phones because no one has time to post it.",
     painA: "You run jobs by day and try to write captions at midnight — both halves suffer",
-    painB: "Before/after photos, technician footage, and 5-star reviews are rotting in a shared Google Drive",
-    painC: "Your local competitors with worse work are out-posting you and winning Google Business reviews",
-    painD: "You tried hiring an in-house person and they ghost-posted stock photos until you fired them",
-    hiddenCost: "the hidden cost of being dark on social is local trust erosion — when prospects Google your company name, an inactive feed signals 'out of business' and pushes them to the louder competitor",
-    authorityHook: "Service businesses with daily multi-platform presence command 15–25% higher close rates on quoted jobs — local trust signals (review counts, post recency, photo volume) directly drive in-home conversion",
-    voiceNote: "Service-business voice is plainspoken, local, and trades-grounded — generic 'home services tips' content reads as imported. Your real voice (the tech's perspective, the customer testimonial, the field photo) is what builds local trust.",
+    painB:
+      "Before/after photos, technician footage, and 5-star reviews are rotting in a shared Google Drive",
+    painC:
+      "Your local competitors with worse work are out-posting you and winning Google Business reviews",
+    painD:
+      "You tried hiring an in-house person and they ghost-posted stock photos until you fired them",
+    hiddenCost:
+      "the hidden cost of being dark on social is local trust erosion — when prospects Google your company name, an inactive feed signals 'out of business' and pushes them to the louder competitor",
+    authorityHook:
+      "Service businesses with daily multi-platform presence command 15–25% higher close rates on quoted jobs — local trust signals (review counts, post recency, photo volume) directly drive in-home conversion",
+    voiceNote:
+      "Service-business voice is plainspoken, local, and trades-grounded — generic 'home services tips' content reads as imported. Your real voice (the tech's perspective, the customer testimonial, the field photo) is what builds local trust.",
     competitorKey: "smma",
     faqSeed: [
-      { q: "How many posts per month should an HVAC, plumbing, or roofing shop actually publish?", a: "" },
-      { q: "Will the content sound like a real trades operator or like a marketing agency?", a: "" },
+      {
+        q: "How many posts per month should an HVAC, plumbing, or roofing shop actually publish?",
+        a: "",
+      },
+      {
+        q: "Will the content sound like a real trades operator or like a marketing agency?",
+        a: "",
+      },
       { q: "How do you handle before/after photos and field tech footage from my team?", a: "" },
       { q: "Does this help with Google Business Profile and local SEO?", a: "" },
       { q: "Can this replace the SMMA I'm paying $5K/month for 20 posts?", a: "" },
@@ -304,17 +364,28 @@ const VERTICALS: Vertical[] = [
     platformList: "Instagram, Facebook, TikTok, Pinterest, YouTube, X, Threads",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "Organic content feeds your paid-social testing pool — TikTok and Instagram reward the brands that post 3–5× daily across formats, and that's also where your highest-ROAS UGC ads get sourced.",
-    painA: "You launch 4–8 SKUs a quarter and your organic content can't keep up with the product velocity",
-    painB: "Your UGC backlog is 200+ clips deep and nothing is getting stitched, captioned, or shipped",
-    painC: "Seasonal and launch spikes need 3× content volume — and your team can barely hit baseline",
-    painD: "Your organic IG/TikTok performance is flat and it's quietly tanking your paid creative cost-per-acquisition",
-    hiddenCost: "the hidden cost of low organic cadence is that your paid social CAC rises 15–30% — Meta and TikTok algorithmically reward brands with active organic, and starving organic raises paid bid costs",
-    authorityHook: "Brands with daily organic + UGC content compound — every post adds to your retargetable audience, your customer-LTV signal, and your UGC ad pipeline. Quiet brands pay 2–3× more per acquired customer over time.",
-    voiceNote: "Ecommerce brand voice is product-led and customer-first — generic 'shop now' content gets demoted. Your real voice (UGC, customer stories, product use-case posts, founder POV) is what platforms actually surface.",
+    cadenceNote:
+      "Organic content feeds your paid-social testing pool — TikTok and Instagram reward the brands that post 3–5× daily across formats, and that's also where your highest-ROAS UGC ads get sourced.",
+    painA:
+      "You launch 4–8 SKUs a quarter and your organic content can't keep up with the product velocity",
+    painB:
+      "Your UGC backlog is 200+ clips deep and nothing is getting stitched, captioned, or shipped",
+    painC:
+      "Seasonal and launch spikes need 3× content volume — and your team can barely hit baseline",
+    painD:
+      "Your organic IG/TikTok performance is flat and it's quietly tanking your paid creative cost-per-acquisition",
+    hiddenCost:
+      "the hidden cost of low organic cadence is that your paid social CAC rises 15–30% — Meta and TikTok algorithmically reward brands with active organic, and starving organic raises paid bid costs",
+    authorityHook:
+      "Brands with daily organic + UGC content compound — every post adds to your retargetable audience, your customer-LTV signal, and your UGC ad pipeline. Quiet brands pay 2–3× more per acquired customer over time.",
+    voiceNote:
+      "Ecommerce brand voice is product-led and customer-first — generic 'shop now' content gets demoted. Your real voice (UGC, customer stories, product use-case posts, founder POV) is what platforms actually surface.",
     competitorKey: "fiverr",
     faqSeed: [
-      { q: "How do you keep up with our SKU launch cadence — 4–8 new products per quarter?", a: "" },
+      {
+        q: "How do you keep up with our SKU launch cadence — 4–8 new products per quarter?",
+        a: "",
+      },
       { q: "Can you stitch and caption our existing UGC backlog?", a: "" },
       { q: "Does this feed our paid social creative testing or stay separate?", a: "" },
       { q: "How does this perform for TikTok vs Instagram vs Pinterest?", a: "" },
@@ -331,19 +402,30 @@ const VERTICALS: Vertical[] = [
     platformList: "LinkedIn, X, YouTube, Threads, Facebook, Instagram",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "For B2B SaaS at $1M–$20M ARR, founder-led LinkedIn distribution outperforms paid acquisition on payback period by 3–5× — and almost every founder under-indexes on it because shipping product feels more urgent than shipping posts.",
-    painA: "Founder-led brand is your #1 distribution channel and you've posted 4 times this quarter",
-    painB: "Your ICP-specific use-case stories are in customer Slack threads, not on LinkedIn where prospects can find them",
-    painC: "Build-in-public cadence requires daily posting — and you're shipping product 60+ hours a week",
-    painD: "Your competitors with worse product are outranking you on LinkedIn because they're posting and you aren't",
-    hiddenCost: "the hidden cost of founder silence is that your acquisition becomes 100% paid — and paid B2B SaaS CAC has doubled in 3 years while founder-led organic compounds for free",
-    authorityHook: "Founder-led LinkedIn at $5M ARR generates more qualified pipeline than $20K/month in paid LinkedIn ads — the founder voice is the single highest-leverage GTM asset a SaaS company owns",
-    voiceNote: "SaaS founder voice is technical, specific, and customer-pattern-driven — generic 'founder tips' content reads as ghost-written. Real voice (the technical post-mortem, the customer screenshot, the unit-economics teardown) is what technical buyers actually trust.",
+    cadenceNote:
+      "For B2B SaaS at $1M–$20M ARR, founder-led LinkedIn distribution outperforms paid acquisition on payback period by 3–5× — and almost every founder under-indexes on it because shipping product feels more urgent than shipping posts.",
+    painA:
+      "Founder-led brand is your #1 distribution channel and you've posted 4 times this quarter",
+    painB:
+      "Your ICP-specific use-case stories are in customer Slack threads, not on LinkedIn where prospects can find them",
+    painC:
+      "Build-in-public cadence requires daily posting — and you're shipping product 60+ hours a week",
+    painD:
+      "Your competitors with worse product are outranking you on LinkedIn because they're posting and you aren't",
+    hiddenCost:
+      "the hidden cost of founder silence is that your acquisition becomes 100% paid — and paid B2B SaaS CAC has doubled in 3 years while founder-led organic compounds for free",
+    authorityHook:
+      "Founder-led LinkedIn at $5M ARR generates more qualified pipeline than $20K/month in paid LinkedIn ads — the founder voice is the single highest-leverage GTM asset a SaaS company owns",
+    voiceNote:
+      "SaaS founder voice is technical, specific, and customer-pattern-driven — generic 'founder tips' content reads as ghost-written. Real voice (the technical post-mortem, the customer screenshot, the unit-economics teardown) is what technical buyers actually trust.",
     competitorKey: "in-house-hire",
     faqSeed: [
       { q: "How much pipeline does founder-led LinkedIn actually generate at $5M ARR?", a: "" },
       { q: "Will the content sound like a real technical founder or like marketing copy?", a: "" },
-      { q: "Can you handle build-in-public posts, customer screenshots, and product launches?", a: "" },
+      {
+        q: "Can you handle build-in-public posts, customer screenshots, and product launches?",
+        a: "",
+      },
       { q: "How does this work alongside our content marketing or DevRel team?", a: "" },
       { q: "What about X — is it still worth posting there for B2B SaaS in 2026?", a: "" },
     ],
@@ -352,20 +434,28 @@ const VERTICALS: Vertical[] = [
     slug: "personal-brands",
     varBase: "personalBrands",
     name: "Personal Brands",
-    audience: "solopreneur thought leaders, course creators, and authors monetizing through audience",
+    audience:
+      "solopreneur thought leaders, course creators, and authors monetizing through audience",
     jobValue: "$1,000–$10,000 per course/program sale, $50K–$500K per book/keynote cycle",
     platforms: "LinkedIn + X + Instagram + YouTube — multi-platform repurposing is the strategy",
     platformList: "LinkedIn, X, Instagram, YouTube, Threads, Facebook, TikTok",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "Personal brands compound through consistency, not virality — the audience that follows you in year 3 is the one that buys your course, books, and keynotes in year 5. Daily multi-platform posting is the single durable strategy.",
-    painA: "You post for two weeks, get busy with clients, and disappear for a month — and your audience growth resets",
-    painB: "Writing the same idea four different ways for LinkedIn, X, Instagram, and YouTube is unsustainable",
+    cadenceNote:
+      "Personal brands compound through consistency, not virality — the audience that follows you in year 3 is the one that buys your course, books, and keynotes in year 5. Daily multi-platform posting is the single durable strategy.",
+    painA:
+      "You post for two weeks, get busy with clients, and disappear for a month — and your audience growth resets",
+    painB:
+      "Writing the same idea four different ways for LinkedIn, X, Instagram, and YouTube is unsustainable",
     painC: "Hiring a social media manager costs $3K–$5K/month and they can't capture your voice",
-    painD: "Your audience plateaued at the volume you can personally sustain — growth requires content velocity you don't have",
-    hiddenCost: "the hidden cost of inconsistency is that personal-brand audiences shrink without daily input — every dark month costs you 6 months of compounded growth",
-    authorityHook: "Personal brands at 50K+ followers generate $500K–$5M annually from course sales, sponsorships, and speaking — and the differentiator isn't talent, it's posting cadence over 24+ months",
-    voiceNote: "Personal-brand voice is unmistakable, opinionated, and frameworked — generic 'thought leadership' content reads as commoditized. Your unique frameworks, contrarian takes, and lived experiences are the entire moat.",
+    painD:
+      "Your audience plateaued at the volume you can personally sustain — growth requires content velocity you don't have",
+    hiddenCost:
+      "the hidden cost of inconsistency is that personal-brand audiences shrink without daily input — every dark month costs you 6 months of compounded growth",
+    authorityHook:
+      "Personal brands at 50K+ followers generate $500K–$5M annually from course sales, sponsorships, and speaking — and the differentiator isn't talent, it's posting cadence over 24+ months",
+    voiceNote:
+      "Personal-brand voice is unmistakable, opinionated, and frameworked — generic 'thought leadership' content reads as commoditized. Your unique frameworks, contrarian takes, and lived experiences are the entire moat.",
     competitorKey: "va-plus-templates",
     faqSeed: [
       { q: "How does this protect my voice across LinkedIn, X, Instagram, and YouTube?", a: "" },
@@ -379,24 +469,35 @@ const VERTICALS: Vertical[] = [
     slug: "creators",
     varBase: "creators",
     name: "Creators",
-    audience: "full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product",
+    audience:
+      "full-time content creators monetizing $100K–$5M/year through ads, sponsorships, and product",
     jobValue: "$2,000–$50,000 per sponsorship deal, $20K–$300K per product/course launch",
     platforms: "TikTok + Instagram + YouTube (Shorts and long-form) primary",
     platformList: "TikTok, Instagram, YouTube, X, Threads, Facebook",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "The algorithm rewards creators who post 3–5× daily across short-form platforms — and brand-deal contracts increasingly require minimum posting cadence as a deliverable, not a suggestion.",
-    painA: "Sponsorship contracts require X posts per week and you're scrambling to hit baseline organic cadence",
-    painB: "Your sponsored content and organic creator content compete for the same slots and you can't ship both",
+    cadenceNote:
+      "The algorithm rewards creators who post 3–5× daily across short-form platforms — and brand-deal contracts increasingly require minimum posting cadence as a deliverable, not a suggestion.",
+    painA:
+      "Sponsorship contracts require X posts per week and you're scrambling to hit baseline organic cadence",
+    painB:
+      "Your sponsored content and organic creator content compete for the same slots and you can't ship both",
     painC: "Burnout is real — daily content for 3+ platforms for 5+ years isn't sustainable solo",
-    painD: "You hired an editor and a VA and you're still the bottleneck on scripting, captions, and ideation",
-    hiddenCost: "the hidden cost of creator solo-mode is platform risk — when one algorithm change tanks your reach, you have no audience reserve on other platforms because you've been single-platform for years",
-    authorityHook: "Creators with active multi-platform presence command 2–3× higher sponsorship rates and have 4× lower platform-risk — your distribution moat is the number of platforms you reliably show up on",
-    voiceNote: "Creator voice IS the product — generic 'creator tips' content erases what makes your audience watch. Voice training, format consistency, and on-brand caption patterns are the entire game.",
+    painD:
+      "You hired an editor and a VA and you're still the bottleneck on scripting, captions, and ideation",
+    hiddenCost:
+      "the hidden cost of creator solo-mode is platform risk — when one algorithm change tanks your reach, you have no audience reserve on other platforms because you've been single-platform for years",
+    authorityHook:
+      "Creators with active multi-platform presence command 2–3× higher sponsorship rates and have 4× lower platform-risk — your distribution moat is the number of platforms you reliably show up on",
+    voiceNote:
+      "Creator voice IS the product — generic 'creator tips' content erases what makes your audience watch. Voice training, format consistency, and on-brand caption patterns are the entire game.",
     competitorKey: "fiverr",
     faqSeed: [
       { q: "How does this handle the daily multi-platform cadence creators actually need?", a: "" },
-      { q: "Will my audience notice the difference between my posts and AI-assisted posts?", a: "" },
+      {
+        q: "Will my audience notice the difference between my posts and AI-assisted posts?",
+        a: "",
+      },
       { q: "Can this handle sponsored content compliance and brand-deal deliverables?", a: "" },
       { q: "How is this different from hiring Fiverr editors for individual posts?", a: "" },
       { q: "What about TikTok — can it actually rank in 2026?", a: "" },
@@ -412,17 +513,27 @@ const VERTICALS: Vertical[] = [
     platformList: "LinkedIn, X, Substack, YouTube, Threads, Facebook",
     postsPerMonth: "1,500+",
     postsPerDay: "30–50",
-    cadenceNote: "For boutique consulting, LinkedIn thought leadership is the entire sales funnel — daily authority content drives the inbound that fills your pipeline, and the consultants who skip it pay 10× more per acquired engagement through outbound.",
+    cadenceNote:
+      "For boutique consulting, LinkedIn thought leadership is the entire sales funnel — daily authority content drives the inbound that fills your pipeline, and the consultants who skip it pay 10× more per acquired engagement through outbound.",
     painA: "Your IP frameworks are scattered across client decks and your LinkedIn looks empty",
-    painB: "Every inbound lead asks 'what have you written about this?' and you have nothing to point to",
-    painC: "Client confidentiality means you can't post the case studies that would actually sell the next engagement",
-    painD: "Speaking and book opportunities require an audience — and yours has been stuck at 5K followers for two years",
-    hiddenCost: "the hidden cost of consultant silence is that you compete on price instead of authority — and authority is built post by post over years, not pitches",
-    authorityHook: "Consultants with active LinkedIn presence command 30–60% higher engagement fees and book speaking/board roles 3–4× more frequently — authority compounds, and authority is built on the public record",
-    voiceNote: "Consultant voice is framework-driven, opinionated, and IP-specific — generic 'business strategy' content reads as recycled MBA. Your real voice (the proprietary framework, the contrarian client outcome, the industry-pattern teardown) is the entire moat.",
+    painB:
+      "Every inbound lead asks 'what have you written about this?' and you have nothing to point to",
+    painC:
+      "Client confidentiality means you can't post the case studies that would actually sell the next engagement",
+    painD:
+      "Speaking and book opportunities require an audience — and yours has been stuck at 5K followers for two years",
+    hiddenCost:
+      "the hidden cost of consultant silence is that you compete on price instead of authority — and authority is built post by post over years, not pitches",
+    authorityHook:
+      "Consultants with active LinkedIn presence command 30–60% higher engagement fees and book speaking/board roles 3–4× more frequently — authority compounds, and authority is built on the public record",
+    voiceNote:
+      "Consultant voice is framework-driven, opinionated, and IP-specific — generic 'business strategy' content reads as recycled MBA. Your real voice (the proprietary framework, the contrarian client outcome, the industry-pattern teardown) is the entire moat.",
     competitorKey: "smma",
     faqSeed: [
-      { q: "How do you protect client confidentiality while still shipping case-study content?", a: "" },
+      {
+        q: "How do you protect client confidentiality while still shipping case-study content?",
+        a: "",
+      },
       { q: "Will the content sound like a real consultant or like a McKinsey blog post?", a: "" },
       { q: "How does this drive inbound engagement pipeline?", a: "" },
       { q: "Can it help me land speaking gigs and book deals?", a: "" },
@@ -452,7 +563,7 @@ function patchBetweenMarkers(
   startMarker: string,
   endMarker: string,
   newBlock: string,
-  insertBeforeIfMissing?: string
+  insertBeforeIfMissing?: string,
 ) {
   const src = readFileSync(filePath, "utf8");
   const startIdx = src.indexOf(startMarker);
@@ -463,13 +574,10 @@ function patchBetweenMarkers(
     const after = src.slice(endIdx);
     next = before + "\n" + newBlock + "\n  " + after;
   } else if (insertBeforeIfMissing && src.includes(insertBeforeIfMissing)) {
-    const wrapped =
-      startMarker + "\n" + newBlock + "\n  " + endMarker + "\n  ";
+    const wrapped = startMarker + "\n" + newBlock + "\n  " + endMarker + "\n  ";
     next = src.replace(insertBeforeIfMissing, wrapped + insertBeforeIfMissing);
   } else {
-    throw new Error(
-      `patchBetweenMarkers: cannot find markers and no anchor in ${filePath}`
-    );
+    throw new Error(`patchBetweenMarkers: cannot find markers and no anchor in ${filePath}`);
   }
   writeFileSync(filePath, next, "utf8");
   console.log("  patched", filePath.replace(ROOT + "/", ""));
@@ -535,7 +643,7 @@ export const ${exportName}: BestForPageContent = {
   whyBestFor: [
     {
       icon: "TrendingUp",
-      title: "${v.authorityHook.split("\u2014")[0].trim() || `Why ${v.name} need daily content volume`}",
+      title: "${v.authorityHook.split("\u2014")[0]?.trim() || `Why ${v.name} need daily content volume`}",
       description:
         "${v.authorityHook}",
     },
@@ -1207,9 +1315,17 @@ export const ${exportName}Metadata: CompareMetadata = {
 function renderCompareRoute(v: Vertical): string {
   const c = COMPETITORS[v.competitorKey];
   const dataVar = compareVarName(v);
-  const compName = v.varBase.split("-").map((s, i) => (i === 0 ? cap(s) : cap(s))).join("");
+  const compName = v.varBase
+    .split("-")
+    .map((s, i) => (i === 0 ? cap(s) : cap(s)))
+    .join("");
   const slugForFn = `${v.slug}-${c.slug}`.split("-").map(cap).join("");
-  const fnName = `PrestyjVs${cap(c.slug.split("-").map((s, i) => (i === 0 ? s : cap(s))).join(""))}For${compName}Page`;
+  const fnName = `PrestyjVs${cap(
+    c.slug
+      .split("-")
+      .map((s, i) => (i === 0 ? s : cap(s)))
+      .join(""),
+  )}For${compName}Page`;
   return `"use client";
 
 // AUTO-GENERATED by scripts/generate-social-vertical-matrix.ts
@@ -1240,7 +1356,10 @@ function run() {
 
     writeFile(join(bestForDir, `done-for-you-social-for-${v.slug}.ts`), renderAngleA(v));
     writeFile(join(bestForDir, `social-volume-strategy-for-${v.slug}.ts`), renderAngleD(v));
-    writeFile(join(alternativesDir, `${v.slug}-social-media-agency-alternative.ts`), renderAngleB(v));
+    writeFile(
+      join(alternativesDir, `${v.slug}-social-media-agency-alternative.ts`),
+      renderAngleB(v),
+    );
 
     const compareSlug = `prestyj-vs-${c.slug}-for-${v.slug}`;
     writeFile(join(compareDataDir, `${compareSlug}.ts`), renderAngleC(v));
@@ -1265,14 +1384,14 @@ function run() {
       "// SOCIAL-VERTICAL-MATRIX-IMPORTS-START",
       "// SOCIAL-VERTICAL-MATRIX-IMPORTS-END",
       imports,
-      "// BATCH-MATRIX-IMPORTS-END"
+      "// BATCH-MATRIX-IMPORTS-END",
     );
     patchBetweenMarkers(
       filePath,
       "// SOCIAL-VERTICAL-MATRIX-REGISTER-START",
       "// SOCIAL-VERTICAL-MATRIX-REGISTER-END",
       records,
-      "// BATCH-MATRIX-REGISTER-END"
+      "// BATCH-MATRIX-REGISTER-END",
     );
   }
 
@@ -1280,26 +1399,26 @@ function run() {
   console.log("\nPatching src/lib/alternatives/index.ts");
   {
     const filePath = join(alternativesDir, "index.ts");
-    const imports = VERTICALS
-      .map((v) => `import { ${altVarName(v)} } from "./${v.slug}-social-media-agency-alternative";`)
-      .join("\n");
-    const records = VERTICALS
-      .map((v) => `  "${v.slug}-social-media-agency-alternative": ${altVarName(v)},`)
-      .join("\n");
+    const imports = VERTICALS.map(
+      (v) => `import { ${altVarName(v)} } from "./${v.slug}-social-media-agency-alternative";`,
+    ).join("\n");
+    const records = VERTICALS.map(
+      (v) => `  "${v.slug}-social-media-agency-alternative": ${altVarName(v)},`,
+    ).join("\n");
 
     patchBetweenMarkers(
       filePath,
       "// SOCIAL-VERTICAL-MATRIX-IMPORTS-START",
       "// SOCIAL-VERTICAL-MATRIX-IMPORTS-END",
       imports,
-      "// BATCH-MATRIX-IMPORTS-END"
+      "// BATCH-MATRIX-IMPORTS-END",
     );
     patchBetweenMarkers(
       filePath,
       "// SOCIAL-VERTICAL-MATRIX-REGISTER-START",
       "// SOCIAL-VERTICAL-MATRIX-REGISTER-END",
       records,
-      "// BATCH-MATRIX-REGISTER-END"
+      "// BATCH-MATRIX-REGISTER-END",
     );
   }
 
@@ -1322,7 +1441,7 @@ function run() {
       "// SOCIAL-VERTICAL-MATRIX-COMPARE-START",
       "// SOCIAL-VERTICAL-MATRIX-COMPARE-END",
       entries,
-      "// BATCH-MATRIX-COMPARE-END"
+      "// BATCH-MATRIX-COMPARE-END",
     );
   }
 
@@ -1332,7 +1451,7 @@ function run() {
     const filePath = join(SRC, "lib", "nav-data.ts");
     const src = readFileSync(filePath, "utf8");
     const navEntries = [
-      `  { href: "/best-for/done-for-you-social-for-coaches", label: "Social for Coaches", description: "${VERTICALS[0].postsPerMonth} posts/mo for coaches.", icon: Share2 },`,
+      `  { href: "/best-for/done-for-you-social-for-coaches", label: "Social for Coaches", description: "${VERTICALS[0]?.postsPerMonth ?? ""} posts/mo for coaches.", icon: Share2 },`,
       `  { href: "/best-for/done-for-you-social-for-agency-owners", label: "Social for Agency Owners", description: "Founder brand at scale.", icon: Share2 },`,
       `  { href: "/best-for/done-for-you-social-for-saas-founders", label: "Social for SaaS Founders", description: "Founder-led LinkedIn distribution.", icon: Share2 },`,
     ].join("\n");

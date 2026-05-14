@@ -3,25 +3,30 @@ import { HeroDemoForm } from "@/components/sections/hero-demo-form";
 
 export function HeroDemoSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
       <div
-        className="relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-20 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8"
         style={{ animation: "fade-up 0.6s ease-out forwards" }}
       >
         {/* Left side - Headline */}
-        <div className="space-y-6 text-center lg:text-left" style={{ animation: "fade-up 0.5s ease-out 0.15s both" }}>
+        <div
+          className="space-y-6 text-center lg:text-left"
+          style={{ animation: "fade-up 0.5s ease-out 0.15s both" }}
+        >
           <div className="flex justify-center lg:justify-start">
             <Badge variant="outline" className="border-primary/50 text-primary">
-              AI Team Member for Real Estate Teams & Brokerages
+              AI Agents for Marketing & Sales
             </Badge>
           </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground leading-[1.1]">
+          <h1 className="font-heading text-foreground text-4xl leading-[1.1] font-bold md:text-5xl lg:text-6xl">
             Your Leads Deserve a Response.
             <br />
             <span className="text-primary">Not Tomorrow. Right Now.</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0">
-            Prestyj gives your team a dedicated AI member that responds to every lead in under 60 seconds — day, night, weekends. Like having your best assistant working around the clock, without the salary, the overhead, or the sick days.
+          <p className="text-muted-foreground mx-auto max-w-md text-lg lg:mx-0">
+            Prestyj builds AI agents that respond to every lead in under 60 seconds — day, night,
+            weekends. Capture leads, qualify them, and book meetings 24/7 without the salary or
+            overhead of a full-time team.
           </p>
         </div>
 

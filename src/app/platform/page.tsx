@@ -136,14 +136,14 @@ export default function PlatformPage() {
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: String(pricingTiers[0].monthlyPrice),
-      highPrice: String(pricingTiers[pricingTiers.length - 1].monthlyPrice),
+      lowPrice: String(pricingTiers[0]?.monthlyPrice ?? 0),
+      highPrice: String(pricingTiers[pricingTiers.length - 1]?.monthlyPrice ?? 0),
       offerCount: pricingTiers.length,
       availability: "https://schema.org/InStock",
     },
   };
 
-  const startingPrice = pricingTiers[0].monthlyPrice;
+  const startingPrice = pricingTiers[0]?.monthlyPrice ?? 0;
 
   const serviceSchema = {
     "@context": "https://schema.org",

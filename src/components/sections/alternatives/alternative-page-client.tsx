@@ -301,7 +301,7 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               {isIntegration
                 ? "Key benefits of combining the platforms"
-                : "Key reasons real estate professionals choose Prestyj"}
+                : "Key reasons marketing and sales teams choose Prestyj"}
             </p>
           </motion.div>
 

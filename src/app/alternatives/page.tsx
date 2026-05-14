@@ -87,11 +87,11 @@ export default function AlternativesHubPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
               <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
-                AI Platforms & ISA Alternatives
+                AI Platforms & Human Sales Rep Alternatives
               </h2>
               <p className="text-muted-foreground">
-                Looking to switch from another AI platform or replace your human ISA? See how
-                Prestyj compares.
+                Looking to switch from another AI platform or replace a human inside sales rep? See
+                how Prestyj compares.
               </p>
             </div>
 
@@ -170,7 +170,9 @@ export default function AlternativesHubPage() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <p className="text-foreground mb-2 font-medium">Built for marketing &amp; sales</p>
+                  <p className="text-foreground mb-2 font-medium">
+                    Built for marketing &amp; sales
+                  </p>
                   <p className="text-muted-foreground text-sm">
                     AI agents that capture, qualify, and follow up with leads across every channel
                     you already run.
@@ -182,8 +184,8 @@ export default function AlternativesHubPage() {
                 <CardContent className="pt-6 text-center">
                   <p className="text-foreground mb-2 font-medium">Works with your stack</p>
                   <p className="text-muted-foreground text-sm">
-                    Plug into your CRM, ad platforms, and inbox — no rip-and-replace, no
-                    long migrations.
+                    Plug into your CRM, ad platforms, and inbox — no rip-and-replace, no long
+                    migrations.
                   </p>
                 </CardContent>
               </Card>
@@ -192,8 +194,8 @@ export default function AlternativesHubPage() {
                 <CardContent className="pt-6 text-center">
                   <p className="text-foreground mb-2 font-medium">Outcome-focused pricing</p>
                   <p className="text-muted-foreground text-sm">
-                    Flat, predictable cost — no per-seat fees, no commission splits, no
-                    surprise overages.
+                    Flat, predictable cost — no per-seat fees, no commission splits, no surprise
+                    overages.
                   </p>
                 </CardContent>
               </Card>
@@ -212,7 +214,9 @@ export default function AlternativesHubPage() {
               We&apos;ll show you exactly how it compares to your current setup.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
-              <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <p className="text-muted-foreground mt-6 text-sm">

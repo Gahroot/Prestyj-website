@@ -132,7 +132,7 @@ export function FoundingCohortApplicationForm() {
     },
   });
 
-  const step = STEPS[stepIndex];
+  const step = STEPS[stepIndex] ?? STEPS[0]!;
   const isLastStep = stepIndex === STEPS.length - 1;
   const progress = Math.round(((stepIndex + 1) / STEPS.length) * 100);
 
