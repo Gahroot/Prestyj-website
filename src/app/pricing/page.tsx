@@ -15,22 +15,22 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pricingFaqs, pricingTiers } from "@/lib/pricing-data";
 
 export const metadata: Metadata = {
-  title: "Pricing | AI Lead Response & Batch Video Ads for Service Businesses | Prestyj",
+  title: "Pricing | AI Agents for Marketing & Sales | Prestyj",
   description:
-    "Transparent pricing for Prestyj's AI lead response, appointment setting, and batch video ad platform. Plans from $1,997/mo. No contracts.",
+    "Transparent pricing for Prestyj's AI agents for marketing and sales. Lead response, appointment setting, and batch video ads for businesses. Plans from $1,997/mo. No contracts.",
   keywords: [
     "AI lead response pricing",
     "batch video ads pricing",
     "AI sales agent cost",
     "real estate AI pricing",
-    "service business advertising cost",
+    "business advertising cost",
     "AI appointment setting pricing",
     "video ad production pricing",
   ],
   openGraph: {
-    title: "Pricing | AI Lead Response & Batch Video Ads for Service Businesses | Prestyj",
+    title: "Pricing | AI Agents for Marketing & Sales | Prestyj",
     description:
-      "Transparent pricing for Prestyj's AI lead response, appointment setting, and batch video ad platform. Plans from $1,997/mo.",
+      "Transparent pricing for Prestyj's AI agents for marketing and sales. Plans from $1,997/mo.",
     type: "website",
     url: "https://prestyj.com/pricing",
   },
@@ -58,7 +58,7 @@ export default function PricingPage() {
     "@type": "Product",
     name: "PRESTYJ AI Sales & Marketing Platform",
     description:
-      "AI-powered lead response, appointment setting, batch video ads, and marketing automation platform for service businesses and real estate teams.",
+      "AI agents for marketing and sales: lead response, appointment setting, batch video ads, and marketing automation for businesses.",
     brand: { "@type": "Brand", name: "PRESTYJ" },
     url: pricingPageUrl,
     offers: {
@@ -88,7 +88,7 @@ export default function PricingPage() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "All-in-one AI sales and marketing platform with lead response, appointment setting, batch video ads, and marketing automation.",
+      "AI agents for marketing and sales: lead response, appointment setting, batch video ads, and marketing automation for businesses.",
     url: pricingPageUrl,
     offers: {
       "@type": "AggregateOffer",
@@ -113,11 +113,11 @@ export default function PricingPage() {
       <Navbar />
       <main>
         <PricingHero />
-        <BatchVideoAdsCrossSellSection />
         <PricingTiersSection />
         <PricingComparisonSection />
         <PricingStoriesSection />
         <PricingROISection />
+        <BatchVideoAdsCrossSellSection />
         <PricingFAQSection />
         <CTASection />
       </main>
