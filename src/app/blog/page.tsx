@@ -1,41 +1,40 @@
-import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { blogSource } from "@/lib/source";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { BlogList, type BlogListPost } from "@/components/blog/blog-list";
+import { categorizeSlug, slugFromUrl } from "@/lib/blog/categories";
 
 const siteUrl = "https://prestyj.com";
 
 export const metadata: Metadata = {
-  title: "AI Lead Generation & Sales Automation Blog | Prestyj",
+  title: "Prestyj Blog — AI Agents for Marketing & Sales",
   description:
-    "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more deals for service businesses. Free strategies from Prestyj.",
+    "Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.",
   keywords: [
-    "lead generation blog",
+    "AI agents for marketing",
+    "AI agents for sales",
     "AI sales agents",
-    "speed to lead",
-    "service business marketing",
-    "lead conversion strategies",
-    "sales automation",
+    "AI marketing agents",
+    "lead response",
+    "marketing and sales automation",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: `${siteUrl}/blog`,
-    title: "AI Lead Generation & Sales Automation Blog | Prestyj",
+    title: "Prestyj Blog — AI Agents for Marketing & Sales",
     description:
-      "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more deals for service businesses.",
+      "Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.",
     siteName: "PRESTYJ",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Lead Generation & Sales Automation Blog | Prestyj",
+    title: "Prestyj Blog — AI Agents for Marketing & Sales",
     description:
-      "Expert tips on speed-to-lead response, AI sales agents, and closing more deals for service businesses.",
+      "Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.",
     creator: "@prestyj_",
   },
   alternates: {
@@ -43,15 +42,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage() {
+export default function BlogPage(): React.ReactElement {
   const posts = blogSource.getPages();
 
-  // Sort posts by date (newest first)
-  const sortedPosts = [...posts].sort((a, b) => {
-    const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
-    const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
-    return dateB - dateA;
-  });
+  // Sort posts by date (newest first), then map to a serializable shape
+  // and infer category from slug.
+  const sortedPosts: ReadonlyArray<BlogListPost> = [...posts]
+    .sort((a, b) => {
+      const dateA = a.data.date ? new Date(a.data.date).getTime() : 0;
+      const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
+      return dateB - dateA;
+    })
+    .map((post) => ({
+      url: post.url,
+      title: post.data.title,
+      description: post.data.description ?? "",
+      date: post.data.date,
+      image: post.data.image,
+      category: categorizeSlug(slugFromUrl(post.url)),
+    }));
 
   // JSON-LD for Blog listing
   const jsonLd = {
@@ -59,7 +68,7 @@ export default function BlogPage() {
     "@type": "Blog",
     name: "PRESTYJ Blog",
     description:
-      "Expert tips on speed-to-lead response, AI sales agents, lead qualification, and closing more deals for service businesses.",
+      "Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.",
     url: `${siteUrl}/blog`,
     publisher: {
       "@type": "Organization",
@@ -68,10 +77,10 @@ export default function BlogPage() {
     },
     blogPost: sortedPosts.map((post) => ({
       "@type": "BlogPosting",
-      headline: post.data.title,
-      description: post.data.description,
+      headline: post.title,
+      description: post.description,
       url: `${siteUrl}${post.url}`,
-      datePublished: post.data.date,
+      datePublished: post.date,
     })),
   };
 
@@ -86,10 +95,10 @@ export default function BlogPage() {
               Resources
             </Badge>
             <h1 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-              AI Sales & Lead Generation Blog
+              AI Agents for Marketing & Sales — Blog
             </h1>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              Speed-to-lead strategies, AI insights, and tactics to close more deals.
+              Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales automation.
             </p>
           </div>
 
@@ -98,45 +107,7 @@ export default function BlogPage() {
               <p className="text-muted-foreground">No posts yet. Check back soon!</p>
             </div>
           ) : (
-            <div className="grid gap-6">
-              {sortedPosts.map((post) => (
-                <Link key={post.url} href={post.url}>
-                  <Card className="bg-card border-border hover:border-primary/50 overflow-hidden transition-colors">
-                    {post.data.image && (
-                      <div className="relative h-48 w-full">
-                        <Image
-                          src={post.data.image}
-                          alt={`${post.data.title} — Prestyj`}
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 768px"
-                        />
-                      </div>
-                    )}
-                    <CardHeader>
-                      {post.data.date && (
-                        <time
-                          dateTime={post.data.date}
-                          className="text-muted-foreground mb-1 block text-sm"
-                        >
-                          {new Date(post.data.date).toLocaleDateString("en-US", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                          })}
-                        </time>
-                      )}
-                      <CardTitle className="font-heading text-foreground">
-                        {post.data.title}
-                      </CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-muted-foreground">{post.data.description}</p>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
+            <BlogList posts={sortedPosts} />
           )}
         </div>
       </main>
