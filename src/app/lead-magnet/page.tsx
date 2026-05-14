@@ -341,13 +341,15 @@ export default function LeadMagnetPage() {
                       </motion.div>
 
                       {/* Success Message */}
-                      <h2 className="font-heading mb-3 text-2xl font-bold">Check Your Inbox!</h2>
+                      <h2 className="font-heading mb-3 text-2xl font-bold">
+                        Your Playbook Is Ready
+                      </h2>
                       <p className="text-muted-foreground mb-6">
-                        Your copy of{" "}
                         <span className="font-semibold">
                           The Roofer&apos;s 24/7 Lead Response Playbook
                         </span>{" "}
-                        is on its way to <span className="font-medium">{formData.email}</span>.
+                        is ready to download. We&apos;ve also saved a copy to{" "}
+                        <span className="font-medium">{formData.email}</span>.
                       </p>
                       {downloadUrl && (
                         <button

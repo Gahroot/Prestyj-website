@@ -355,14 +355,13 @@ export default function BrokeragePlaybookPage() {
                     </motion.div>
 
                     <h2 className="text-2xl font-heading font-bold mb-3">
-                      Check Your Inbox!
+                      Your Playbook Is Ready
                     </h2>
                     <p className="text-muted-foreground mb-6">
-                      Your copy of{" "}
                       <span className="font-semibold">
                         The $20M+ Brokerage Playbook
                       </span>{" "}
-                      is on its way to{" "}
+                      is ready to download. We&apos;ve also saved a copy to{" "}
                       <span className="font-medium">{formData.email}</span>.
                     </p>
                     {downloadUrl && (

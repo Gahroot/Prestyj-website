@@ -17,13 +17,14 @@ const leadMagnetSchema = z.object({
   name: z.string().min(1, "Name is required"),
   email: z.string().refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Valid email is required"),
   company: z.string().optional(),
-  magnetType: z.enum(["roofing-playbook", "qualvol-playbook"]),
+  magnetType: z.enum(["roofing-playbook", "qualvol-playbook", "brokerage-playbook"]),
 });
 
 // Map magnet types to download URLs
 const MAGNET_DOWNLOAD_URLS: Record<string, string> = {
   "roofing-playbook": "/content/lead-magnet/roofers-24-7-lead-response-playbook.md",
   "qualvol-playbook": "/content/lead-magnet/qualvol-content-playbook.md",
+  "brokerage-playbook": "/content/lead-magnet/brokerage-playbook.md",
 };
 
 export async function POST(request: NextRequest) {
@@ -57,7 +58,7 @@ export async function POST(request: NextRequest) {
 
     if (isLeadMagnet) {
       // Lead magnet form submission
-      const data = validation.data as { name: string; email: string; company?: string; magnetType: "roofing-playbook" | "qualvol-playbook" };
+      const data = validation.data as { name: string; email: string; company?: string; magnetType: "roofing-playbook" | "qualvol-playbook" | "brokerage-playbook" };
       leadPayload = {
         first_name: data.name.split(" ")[0], // Use first name only
         email: data.email,
@@ -118,7 +119,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       message: isLeadMagnet
-        ? "Playbook sent to your email! Check your inbox."
+        ? "Your playbook is ready — check your downloads."
         : "Lead captured successfully",
       contactId: responseData.contact_id,
       downloadUrl,
