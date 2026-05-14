@@ -16,7 +16,7 @@ import {
   ClipboardList,
 } from "lucide-react";
 
-export type TierId = "minimum" | "pro" | "max";
+export type TierId = "starter" | "pro" | "scale";
 
 export interface PricingTier {
   id: TierId;
@@ -52,18 +52,18 @@ export const featureCategories = {
 
 export const pricingTiers: PricingTier[] = [
   {
-    id: "minimum",
-    name: "Minimum",
-    tagline: "Done-for-you ads and lead generation",
+    id: "starter",
+    name: "Starter",
+    tagline: "AI agents for getting your first steady stream of leads",
     setupFee: 3997,
     monthlyPrice: 1997,
     adBudget: "$1,000/mo included",
     batchAds: "300/mo",
     highlights: [
-      "$1,000/mo ad budget included",
-      "300 batch video ads/mo",
-      "AI appointment agent + calendar",
-      "Landing page + CRM Sync",
+      "$1,000/mo in ad spend managed for you",
+      "300 short-form video ads delivered monthly",
+      "Books meetings directly on your calendar (24/7)",
+      "Custom landing page that syncs every lead into your CRM",
     ],
     features: {
       AD_MANAGEMENT: true,
@@ -82,23 +82,23 @@ export const pricingTiers: PricingTier[] = [
       AI_RECEPTIONIST: false,
     },
     story:
-      "You're a growing real estate team running Facebook ads. Leads come in but half go cold because nobody responds fast enough. The Minimum plan gives you done-for-you ad management, 300 batch video ads a month, a conversion-optimized landing page, and an AI appointment agent that instantly responds to every lead in under 60 seconds, reminds prospects of their appointments, and follows up on no-shows automatically.",
+      "You're handling under 50 leads a month, but half go cold because nobody responds fast enough. The Starter plan runs your ads for you, ships 300 short-form video ads a month, gives you a conversion-optimized landing page, and puts an AI agent on every new lead that replies in under 60 seconds, books the meeting on your calendar, and chases no-shows automatically.",
     bestFor:
-      "Small real estate teams and solo team leaders getting started with paid advertising and AI-powered lead follow-up.",
+      "Businesses doing under 50 leads/month who need a reliable top of funnel and instant lead follow-up without hiring.",
   },
   {
     id: "pro",
     name: "Pro",
-    tagline: "Full AI workforce for serious growth",
+    tagline: "AI agents for scaling marketing and sales across every channel",
     setupFee: 6997,
     monthlyPrice: 3497,
     adBudget: "$1,500/mo included",
     batchAds: "500/mo",
     highlights: [
-      "$1,500/mo ad budget included",
-      "500 batch video ads/mo",
-      "AI chatbot + texting agent",
-      "Lead reactivation + full website",
+      "$1,500/mo in ad spend managed for you",
+      "500 short-form video ads delivered monthly",
+      "AI agents that chat on your website and text leads back instantly",
+      "Wakes up cold leads in your database and routes them to your team",
     ],
     features: {
       AD_MANAGEMENT: true,
@@ -117,23 +117,23 @@ export const pricingTiers: PricingTier[] = [
       AI_RECEPTIONIST: false,
     },
     story:
-      "You're a 10–20 agent brokerage running $3K–$5K/month in Facebook and YouTube ads. Leads pour in from multiple sources but half go cold before anyone follows up. The Pro plan adds an AI chatbot for your website, an AI texting agent that engages leads via SMS, a multi-step qualification form that routes buyers vs. sellers, and lead reactivation to re-engage your cold database automatically.",
+      "You're handling 50–250 leads a month from ads, your website, and your existing database. The volume is real, but follow-up is uneven and your team can't keep up. The Pro plan adds AI agents that chat on your website, text every new lead back in seconds, qualify buyers from tire-kickers with a multi-step form, and reactivate cold leads in your CRM so nothing gets left on the table.",
     bestFor:
-      "Mid-size real estate teams and brokerages running paid ads who need full AI-powered lead management across every channel.",
+      "Growing businesses doing 50–250 leads/month who need AI agents covering every channel — web, SMS, and database — at once.",
   },
   {
-    id: "max",
-    name: "Max",
-    tagline: "Enterprise-grade AI marketing machine",
+    id: "scale",
+    name: "Scale",
+    tagline: "AI agents for running marketing and sales at full volume",
     setupFee: 9997,
     monthlyPrice: 5997,
     adBudget: "$2,000/mo included",
     batchAds: "1,000/mo",
     highlights: [
-      "$2,000/mo ad budget included",
-      "1,000 batch video ads/mo",
-      "AI voice agent + receptionist",
-      "Complete AI automation suite",
+      "$2,000/mo in ad spend managed for you",
+      "1,000 short-form video ads delivered monthly",
+      "AI voice agent that calls every new lead and books the meeting",
+      "AI receptionist that answers your inbound calls around the clock",
     ],
     features: {
       AD_MANAGEMENT: true,
@@ -152,9 +152,9 @@ export const pricingTiers: PricingTier[] = [
       AI_RECEPTIONIST: true,
     },
     story:
-      "You're a multi-office brokerage or franchise operation doing $50M+. You need AI handling inbound lead response across all offices, an AI voice agent making outbound follow-ups to every new lead, lead reactivation across your entire database, and maximum ad volume across your markets. The Max plan is your complete AI marketing and lead conversion department.",
+      "You're handling 250+ leads a month, or running multiple locations, and a single team can't reasonably cover every channel anymore. The Scale plan runs your full marketing and sales motion with AI agents — inbound chat and text on every lead, an AI voice agent calling every new lead within minutes, an AI receptionist answering every inbound call, and ad volume tuned for multi-market reach.",
     bestFor:
-      "Large brokerages, franchise operations, and PE-backed real estate platforms wanting enterprise-grade AI automation and maximum lead flow.",
+      "High-volume or multi-location businesses doing 250+ leads/month who want AI agents running marketing and sales end-to-end.",
   },
 ];
 
@@ -165,10 +165,20 @@ export const pricingFeatures: PricingFeature[] = [
   { key: "BATCH_ADS", label: "Batch Video Ads", icon: LayoutGrid, category: "marketing" },
   // Platform
   { key: "LANDING_PAGE", label: "Landing Page", icon: FileText, category: "platform" },
-  { key: "QUALIFICATION_FORM", label: "Multi-Step Qualification Form", icon: ClipboardList, category: "platform" },
+  {
+    key: "QUALIFICATION_FORM",
+    label: "Multi-Step Qualification Form",
+    icon: ClipboardList,
+    category: "platform",
+  },
   { key: "FULL_WEBSITE", label: "Full Website", icon: Globe, category: "platform" },
   { key: "CRM_SYNC", label: "CRM Sync", icon: Database, category: "platform" },
-  { key: "CALENDAR_INTEGRATION", label: "Calendar Integration", icon: Calendar, category: "platform" },
+  {
+    key: "CALENDAR_INTEGRATION",
+    label: "Calendar Integration",
+    icon: Calendar,
+    category: "platform",
+  },
   // AI Agents
   { key: "AI_APPOINTMENT_AGENT", label: "AI Appointment Agent", icon: Bell, category: "ai" },
   { key: "AI_CHATBOT", label: "AI Chatbot", icon: Bot, category: "ai" },
@@ -187,7 +197,7 @@ export const pricingFaqs: PricingFAQ[] = [
   {
     question: "Can I upgrade my plan later?",
     answer:
-      "Absolutely. You can upgrade at any time. We'll prorate your setup fee difference and switch you over seamlessly. Most clients who start on Minimum upgrade to Pro within 60 days once they see the ROI.",
+      "Absolutely. You can upgrade at any time. We'll prorate your setup fee difference and switch you over seamlessly. Most clients who start on Starter upgrade to Pro within 60 days once they see the ROI.",
   },
   {
     question: "What does the included ad budget cover?",
@@ -222,7 +232,7 @@ export const pricingFaqs: PricingFAQ[] = [
   {
     question: "How does Prestyj compare to hiring an ISA?",
     answer:
-      "A good ISA costs $4,000–$6,000/month, works 9-to-5, takes vacations, and eventually quits. The Prestyj Minimum plan starts at $1,997/month and provides 24/7 AI lead response, appointment setting, 300 batch video ads, ad management, and a landing page — all done for you. You get the output of a full team for a fraction of the cost of one hire.",
+      "A good ISA costs $4,000–$6,000/month, works 9-to-5, takes vacations, and eventually quits. The Prestyj Starter plan starts at $1,997/month and provides 24/7 AI lead response, appointment setting, 300 batch video ads, ad management, and a landing page — all done for you. You get the output of a full team for a fraction of the cost of one hire.",
   },
   {
     question: "What's the ROI on the Pro plan?",
