@@ -4,8 +4,16 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { pricingTiers } from "@/lib/pricing-data";
 
 const VIMEO_VIDEO_ID = "1169158190";
+
+const starterTier = pricingTiers.find((t) => t.id === "starter");
+if (!starterTier) {
+  throw new Error("Starter tier not found in pricing-data.ts");
+}
+const STARTER_MONTHLY = `$${starterTier.monthlyPrice.toLocaleString("en-US")}`;
+const STARTER_SETUP = `$${starterTier.setupFee.toLocaleString("en-US")}`;
 
 export function HeroVideo() {
   const [isMuted, setIsMuted] = useState(true);
@@ -21,29 +29,30 @@ export function HeroVideo() {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-start px-4 pt-8 md:pt-12 pb-6 overflow-hidden">
-      <div className="max-w-5xl mx-auto w-full flex flex-col items-center gap-3 md:gap-4 text-center">
+    <section className="relative flex flex-col items-center justify-start overflow-hidden px-4 pt-8 pb-6 md:pt-12">
+      <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-3 text-center md:gap-4">
         <motion.h1
-          className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-heading font-bold leading-[1.1] tracking-tight text-foreground"
+          className="font-heading text-foreground text-3xl leading-[1.1] font-bold tracking-tight md:text-4xl lg:text-5xl xl:text-6xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          What If You Had 300 Video Ads Running By Next Week?
+          Get 300 free video ads when you start a Prestyj plan from {STARTER_MONTHLY}/mo.
         </motion.h1>
 
         <motion.p
-          className="text-base md:text-lg lg:text-xl text-muted-foreground max-w-3xl"
+          className="text-muted-foreground max-w-3xl text-base md:text-lg lg:text-xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Free video ads for service businesses — we send you the scripts and help you film. Just stand in front of the camera and read.
+          Setup fee applies (from {STARTER_SETUP}). We send you the scripts and help you film — just
+          stand in front of the camera and read. 300 ads delivered in 24 hours.
         </motion.p>
 
         {/* Stats row */}
         <motion.div
-          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2 text-sm text-muted-foreground"
+          className="text-muted-foreground flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-2 text-sm"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.35 }}
@@ -51,25 +60,25 @@ export function HeroVideo() {
           <span>
             <span className="text-foreground font-semibold">300+</span> unique ad variations
           </span>
-          <span className="hidden sm:inline text-border">·</span>
+          <span className="text-border hidden sm:inline">·</span>
           <span>
             <span className="text-foreground font-semibold">24hr</span> turnaround
           </span>
-          <span className="hidden sm:inline text-border">·</span>
+          <span className="text-border hidden sm:inline">·</span>
           <span>
             <span className="text-foreground font-semibold">1</span> recording session
           </span>
         </motion.div>
 
         <motion.div
-          className="relative w-full max-w-3xl aspect-video rounded-lg overflow-hidden shadow-2xl"
+          className="relative aspect-video w-full max-w-3xl overflow-hidden rounded-lg shadow-2xl"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <iframe
             src={`https://player.vimeo.com/video/${VIMEO_VIDEO_ID}?autoplay=1&muted=${isMuted ? "1" : "0"}&loop=0&background=0`}
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0 h-full w-full"
             frameBorder="0"
             allow="autoplay; fullscreen"
             allowFullScreen
@@ -79,30 +88,31 @@ export function HeroVideo() {
           {showOverlay && (
             <div
               onClick={handleUnmute}
-              className="absolute inset-0 bg-black/40 backdrop-blur-[2px] flex items-center justify-center cursor-pointer transition-all hover:bg-black/30 z-10"
+              className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/40 backdrop-blur-[2px] transition-all hover:bg-black/30"
             >
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 md:p-6 flex flex-col items-center gap-2 shadow-2xl">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
-                  <VolumeX className="w-6 h-6 text-primary" />
+              <div className="flex flex-col items-center gap-2 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-md md:p-6">
+                <div className="bg-primary/20 flex h-12 w-12 items-center justify-center rounded-full">
+                  <VolumeX className="text-primary h-6 w-6" />
                 </div>
-                <p className="text-foreground font-heading font-semibold text-base">
+                <p className="text-foreground font-heading text-base font-semibold">
                   Your Video Is Playing
                 </p>
-                <p className="text-muted-foreground text-sm">
-                  Click To Unmute
-                </p>
+                <p className="text-muted-foreground text-sm">Click To Unmute</p>
               </div>
             </div>
           )}
         </motion.div>
 
         <motion.p
-          className="text-sm md:text-base text-muted-foreground max-w-2xl leading-relaxed"
+          className="text-muted-foreground max-w-2xl text-sm leading-relaxed md:text-base"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          I&apos;ll give you 300 video ads for free. In exchange, I want to run them for you — I&apos;ll set up the ads, build the landing page, and have AI respond to every lead. You pay the ad spend ($1k/mo minimum) and a setup fee. If it doesn&apos;t work, you keep the ads and we part ways.
+          Here&apos;s the deal: start a Prestyj plan ({STARTER_SETUP} setup + {STARTER_MONTHLY}/mo,
+          plus $1k/mo minimum ad spend paid to Meta) and the first 300 video ads are on us.
+          We&apos;ll set up the ads, build the landing page, and have AI respond to every lead. If
+          it doesn&apos;t work, you keep the ads and we part ways.
         </motion.p>
 
         <motion.div
@@ -114,7 +124,7 @@ export function HeroVideo() {
           <Button
             size="lg"
             onClick={scrollToForm}
-            className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+            className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
           >
             Get My FREE Ads
           </Button>

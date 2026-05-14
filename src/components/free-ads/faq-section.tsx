@@ -10,6 +10,16 @@ import {
 } from "@/components/ui/accordion";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
+import { pricingTiers } from "@/lib/pricing-data";
+import { bulkAdPricingTiers } from "@/lib/bulk-ad-pricing-data";
+
+const starterTier = pricingTiers.find((t) => t.id === "starter");
+if (!starterTier) {
+  throw new Error("Starter tier not found in pricing-data.ts");
+}
+const formatPrice = (n: number): string => `$${n.toLocaleString("en-US")}`;
+const STARTER_SETUP = formatPrice(starterTier.setupFee);
+const STARTER_MONTHLY = formatPrice(starterTier.monthlyPrice);
 
 const faqs: { question: string; answer: ReactNode }[] = [
   {
@@ -26,11 +36,10 @@ const faqs: { question: string; answer: ReactNode }[] = [
     question: "What happens after I get my 300 ads?",
     answer: (
       <>
-        We hope you give us the opportunity to run those ads for you and set up
-        our full{" "}
+        We hope you give us the opportunity to run those ads for you and set up our full{" "}
         <Link
           href="/platform"
-          className="text-primary underline underline-offset-2 hover:text-primary/80"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
         >
           AI platform
         </Link>
@@ -43,17 +52,16 @@ const faqs: { question: string; answer: ReactNode }[] = [
     answer: (
       <div className="space-y-2">
         <p>
-          <span className="font-semibold text-foreground">$5K</span> setup fee
+          <span className="text-foreground font-semibold">{STARTER_SETUP}</span> setup fee
         </p>
         <p>
-          <span className="font-semibold text-foreground">$2K</span> / month
+          <span className="text-foreground font-semibold">{STARTER_MONTHLY}</span> / month
         </p>
         <p className="pt-1">
-          You&apos;ll also need a minimum of $1,000/month in ad spend paid
-          directly to Meta.{" "}
+          You&apos;ll also need a minimum of $1,000/month in ad spend paid directly to Meta.{" "}
           <Link
             href="/pricing"
-            className="text-primary underline underline-offset-2 hover:text-primary/80"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
           >
             See full pricing details →
           </Link>
@@ -65,41 +73,38 @@ const faqs: { question: string; answer: ReactNode }[] = [
     question: "Can I buy more ads?",
     answer: (
       <div className="space-y-3">
-        <p>Yes, we have different packages.</p>
+        <p>Yes, we have different one-time packages.</p>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-border">
-                <th className="text-left py-2 pr-4 font-semibold text-foreground">
-                  Package
-                </th>
-                <th className="text-left py-2 pr-4 font-semibold text-foreground">
-                  Regular
-                </th>
-                <th className="text-left py-2 font-semibold text-foreground">
-                  Subscriber Price
-                </th>
+              <tr className="border-border border-b">
+                <th className="text-foreground py-2 pr-4 text-left font-semibold">Package</th>
+                <th className="text-foreground py-2 text-left font-semibold">Price</th>
               </tr>
             </thead>
             <tbody>
-              <tr className="border-b border-border/50">
-                <td className="py-2 pr-4">300 ads</td>
-                <td className="py-2 pr-4">$3,000</td>
-                <td className="py-2 font-semibold text-success">$1,500</td>
-              </tr>
-              <tr className="border-b border-border/50">
-                <td className="py-2 pr-4">500 ads</td>
-                <td className="py-2 pr-4">$4,000</td>
-                <td className="py-2 font-semibold text-success">$2,000</td>
-              </tr>
-              <tr>
-                <td className="py-2 pr-4">1000 ads</td>
-                <td className="py-2 pr-4">$5,000</td>
-                <td className="py-2 font-semibold text-success">$2,500</td>
-              </tr>
+              {bulkAdPricingTiers.map((tier, i) => (
+                <tr
+                  key={tier.name}
+                  className={
+                    i < bulkAdPricingTiers.length - 1 ? "border-border/50 border-b" : undefined
+                  }
+                >
+                  <td className="py-2 pr-4">{tier.name}</td>
+                  <td className="text-foreground py-2 font-semibold">{tier.price}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
+        <p className="pt-1">
+          <Link
+            href="/bulk-video-ad-pricing"
+            className="text-primary hover:text-primary/80 underline underline-offset-2"
+          >
+            See full batch ad pricing →
+          </Link>
+        </p>
       </div>
     ),
   },
@@ -107,12 +112,12 @@ const faqs: { question: string; answer: ReactNode }[] = [
     question: "Can I see samples before committing?",
     answer: (
       <>
-        You already are. The ad you clicked, this landing page you&apos;re
-        reading, and the AI that will follow up with you after you submit —
-        that&apos;s the exact system we build for your business. You can also{" "}
+        You already are. The ad you clicked, this landing page you&apos;re reading, and the AI that
+        will follow up with you after you submit — that&apos;s the exact system we build for your
+        business. You can also{" "}
         <Link
           href="/samples"
-          className="text-primary underline underline-offset-2 hover:text-primary/80"
+          className="text-primary hover:text-primary/80 underline underline-offset-2"
         >
           see more video ad samples →
         </Link>
@@ -139,16 +144,14 @@ const faqs: { question: string; answer: ReactNode }[] = [
 
 export function FreeAdsFAQ() {
   const scrollToForm = () => {
-    document
-      .getElementById("lead-form")
-      ?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <section className="py-12 md:py-16">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-12 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             Questions? Answers.
           </h2>
         </AnimateOnScroll>
@@ -159,24 +162,22 @@ export function FreeAdsFAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6"
+                className="bg-card border-border rounded-lg border px-6"
               >
-                <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
+                <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
+                <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
         </AnimateOnScroll>
 
-        <AnimateOnScroll delay={0.3} className="flex justify-center mt-12">
+        <AnimateOnScroll delay={0.3} className="mt-12 flex justify-center">
           <Button
             size="lg"
             onClick={scrollToForm}
-            className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+            className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
           >
             Get My FREE Ads
           </Button>

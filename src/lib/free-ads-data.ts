@@ -3,10 +3,24 @@
  * statistics for the proof-points section, and comparison data.
  */
 
+import { pricingTiers } from "./pricing-data";
+import { bulkAdPricingTiers } from "./bulk-ad-pricing-data";
+
 export interface FreeAdsFAQ {
   question: string;
   answer: string;
 }
+
+const starterTier = pricingTiers.find((t) => t.id === "starter");
+if (!starterTier) {
+  throw new Error("Starter tier not found in pricing-data.ts");
+}
+const formatPrice = (n: number): string => `$${n.toLocaleString("en-US")}`;
+const STARTER_SETUP = formatPrice(starterTier.setupFee);
+const STARTER_MONTHLY = formatPrice(starterTier.monthlyPrice);
+const bulkSummary = bulkAdPricingTiers
+  .map((t) => `${t.name.replace(" Ads", " ads")} are ${t.price}`)
+  .join(", ");
 
 export const freeAdsFaqs: FreeAdsFAQ[] = [
   {
@@ -26,13 +40,11 @@ export const freeAdsFaqs: FreeAdsFAQ[] = [
   },
   {
     question: "How much does the full system cost?",
-    answer:
-      "$5K setup fee, $2K/month, plus a minimum of $1,000/month in ad spend paid directly to Meta. See full pricing details at prestyj.com/pricing.",
+    answer: `${STARTER_SETUP} setup fee, ${STARTER_MONTHLY}/month, plus a minimum of $1,000/month in ad spend paid directly to Meta. See full pricing details at prestyj.com/pricing.`,
   },
   {
     question: "Can I buy more ads?",
-    answer:
-      "Yes. 300 ads are $3,000 regular ($1,500 for subscribers), 500 ads are $4,000 ($2,000 for subscribers), and 1,000 ads are $5,000 ($2,500 for subscribers).",
+    answer: `Yes, we have one-time batch packages: ${bulkSummary}. See full batch ad pricing at prestyj.com/bulk-video-ad-pricing.`,
   },
   {
     question: "Can I see samples before committing?",

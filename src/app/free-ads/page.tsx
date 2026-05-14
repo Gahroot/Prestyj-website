@@ -13,9 +13,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { freeAdsFaqs } from "@/lib/free-ads-data";
 
 export const metadata: Metadata = {
-  title: "Get 300 Free Video Ads for Your Service Business | PRESTYJ",
+  title: "Get 300 Free Video Ads with a Prestyj Plan | PRESTYJ",
   description:
-    "What if you had 300 video ads running by next week? We'll create them for free — tailored for contractors, real estate, and home service businesses. 24-hour turnaround from a single recording session.",
+    "Get 300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). 24-hour turnaround from a single recording session — for contractors, real estate, and home service businesses.",
   keywords: [
     "free video ads",
     "free video ads for service businesses",
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     "ad creative testing",
   ],
   openGraph: {
-    title: "Get 300 Free Video Ads for Your Service Business | PRESTYJ",
+    title: "Get 300 Free Video Ads with a Prestyj Plan | PRESTYJ",
     description:
-      "300 video ads from one 15-minute recording. Free. 24-hour turnaround. Built for contractors, real estate, and home services.",
+      "300 free video ads when you start a Prestyj plan from $1,997/mo. Setup fee applies. 24-hour turnaround. Built for contractors, real estate, and home services.",
     type: "website",
     url: "https://prestyj.com/free-ads",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get 300 Free Video Ads for Your Service Business | PRESTYJ",
+    title: "Get 300 Free Video Ads with a Prestyj Plan | PRESTYJ",
     description:
-      "300 video ads from one 15-minute recording. Free. 24-hour turnaround. Built for service businesses.",
+      "300 free video ads when you start a Prestyj plan from $1,997/mo. Setup fee applies. 24-hour turnaround.",
   },
   alternates: {
     canonical: "https://prestyj.com/free-ads",
@@ -50,21 +50,16 @@ export default function FreeAdsPage() {
   const freeAdsServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Free Batch Video Ads for Service Businesses",
+    name: "Free Batch Video Ads with a Prestyj Plan",
     description:
-      "300 free video ads created from a single 15-minute recording session. Optimized for Meta, TikTok, and YouTube Shorts. 24-hour turnaround.",
+      "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Created from a single 15-minute recording session. Optimized for Meta, TikTok, and YouTube Shorts. 24-hour turnaround.",
     provider: {
       "@type": "Organization",
       name: "PRESTYJ",
       url: "https://prestyj.com",
     },
-    serviceType: [
-      "Video Ad Production",
-      "Batch Video Ads",
-      "Ad Creative Testing",
-    ],
+    serviceType: ["Video Ad Production", "Batch Video Ads", "Ad Creative Testing"],
     areaServed: "United States",
-    isAccessibleForFree: true,
   };
 
   const breadcrumbs = [

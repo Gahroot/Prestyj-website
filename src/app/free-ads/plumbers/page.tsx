@@ -12,22 +12,26 @@ const PLUMBER_PAIN_POINTS = [
   {
     icon: "PhoneOff" as const,
     title: "Missed Emergency Calls = Lost Money",
-    description: "A burst pipe at 2 AM doesn't wait. Every missed call is hundreds of dollars going to a competitor who answered.",
+    description:
+      "A burst pipe at 2 AM doesn't wait. Every missed call is hundreds of dollars going to a competitor who answered.",
   },
   {
     icon: "TrendingDown" as const,
     title: "Ad Fatigue Kills Your Leads",
-    description: "Running the same 3 ads? Your audience stopped clicking weeks ago. You need fresh creative to stay top-of-mind.",
+    description:
+      "Running the same 3 ads? Your audience stopped clicking weeks ago. You need fresh creative to stay top-of-mind.",
   },
   {
     icon: "AlertTriangle" as const,
     title: "One Bad Review Can Ruin Months of Work",
-    description: "Plumbing relies on trust. One negative review from a slow response can cost you thousands in future jobs.",
+    description:
+      "Plumbing relies on trust. One negative review from a slow response can cost you thousands in future jobs.",
   },
   {
     icon: "Users" as const,
     title: "Can't Scale Beyond Word-of-Mouth",
-    description: "You're great at what you do, but marketing feels like a second job. You need a system that brings jobs to you.",
+    description:
+      "You're great at what you do, but marketing feels like a second job. You need a system that brings jobs to you.",
   },
 ];
 
@@ -67,18 +71,12 @@ export default function PlumbersFreeAdsPage() {
         }}
       />
       <main className="min-h-screen">
-      <IndustryHero
-        industry="Plumbing"
-        headline="What If You Had 300 Video Ads Running By Next Week?"
-        subheadline="We send you the scripts and help you film. Just stand in front of the camera and read."
-        description="I'll give you 300 video ads for free. In exchange, I want to run them for you — I'll set up the ads, build the landing page, and have AI respond to every lead in seconds. You pay the ad spend ($1k/mo minimum) and a setup fee. If it doesn't work, you keep the ads and we part ways."
-        ctaText="Get My FREE Plumbing Ads"
-      />
-      <IndustryPainPoints painPoints={PLUMBER_PAIN_POINTS} ctaText="Get My FREE Plumbing Ads" />
-      <SocialProof />
-      <OfferBreakdown />
-      <LeadForm />
-      <FreeAdsFAQ />
+        <IndustryHero industry="Plumbing" ctaText="Get My FREE Plumbing Ads" />
+        <IndustryPainPoints painPoints={PLUMBER_PAIN_POINTS} ctaText="Get My FREE Plumbing Ads" />
+        <SocialProof />
+        <OfferBreakdown />
+        <LeadForm />
+        <FreeAdsFAQ />
       </main>
     </>
   );

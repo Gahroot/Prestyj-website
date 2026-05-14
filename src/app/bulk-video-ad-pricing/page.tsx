@@ -4,6 +4,7 @@ import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import BorderGlow from "@/components/ui/border-glow";
+import { bulkAdPricingTiers } from "@/lib/bulk-ad-pricing-data";
 
 export const metadata: Metadata = {
   title: "Batch Video Ad Pricing | 300, 500, or 1,000 Ads | PRESTYJ",
@@ -11,56 +12,10 @@ export const metadata: Metadata = {
     "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 scripted ads. Pick how many customer problems you want each ad to speak to. 1–2 business day turnaround.",
   openGraph: {
     title: "Batch Video Ad Pricing | PRESTYJ",
-    description:
-      "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 ads.",
+    description: "Transparent pricing for batch video ad creative testing. 300, 500, or 1,000 ads.",
     type: "website",
   },
 };
-
-const TIERS = [
-  {
-    name: "300 Ads",
-    price: "$1,497",
-    tagline: "Test your first angles",
-    popular: false,
-    features: [
-      "300 unique vertical video ads",
-      "3 customer problems each ad speaks to (e.g., price, speed, trust)",
-      "Hook, body & CTA variations",
-      "1–2 business day turnaround",
-      "Error revisions included",
-    ],
-  },
-  {
-    name: "500 Ads",
-    price: "$2,497",
-    tagline: "The sweet spot",
-    popular: true,
-    features: [
-      "500 unique vertical video ads",
-      "5 customer problems each ad speaks to (e.g., price, speed, trust)",
-      "Hook, body & CTA variations",
-      "1–2 business day turnaround",
-      "Error revisions included",
-      "Priority queue",
-    ],
-  },
-  {
-    name: "1,000 Ads",
-    price: "$3,997",
-    tagline: "Go wide, find winners fast",
-    popular: false,
-    features: [
-      "1,000 unique vertical video ads",
-      "10 customer problems each ad speaks to (e.g., price, speed, trust)",
-      "Hook, body & CTA variations",
-      "1–2 business day turnaround",
-      "Error revisions included",
-      "Priority queue",
-      "Full-spectrum angle coverage",
-    ],
-  },
-];
 
 export default function BulkVideoAdPricingPage() {
   return (
@@ -93,7 +48,7 @@ export default function BulkVideoAdPricingPage() {
           </AnimateOnScroll>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {TIERS.map((tier, index) => (
+            {bulkAdPricingTiers.map((tier, index) => (
               <AnimateOnScroll key={tier.name} delay={index * 0.1}>
                 <BorderGlow
                   borderRadius={18}
