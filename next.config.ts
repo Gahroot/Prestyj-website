@@ -145,6 +145,14 @@ const nextConfig: NextConfig = {
         destination: "/best-for",
         permanent: true,
       },
+      // 51 metro-level `video-ads-for-realtors-[city]` pages were programmatic-SEO
+      // geo-spam pitching batch video ads at $1,497 — conflicts with the AI
+      // marketing & sales core positioning. 301 to /pricing.
+      {
+        source: "/best-for/video-ads-for-realtors-:city",
+        destination: "/pricing",
+        permanent: true,
+      },
     ];
   },
 };
