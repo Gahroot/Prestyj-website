@@ -6,9 +6,9 @@ const steps = [
   {
     number: "01",
     icon: Zap,
-    title: "Speed-to-Lead",
+    title: "Instant Lead Response",
     description:
-      "A buyer fills out your form at 9pm on a Saturday. Your AI team member texts them back in under 60 seconds — from your brand, in your voice. Your competitors haven't even seen the notification yet.",
+      "A lead fills out your form at 9pm on a Saturday. Your AI agent texts them back in under 60 seconds — from your brand, in your voice. Your competitors haven't even seen the notification yet.",
     highlight: "47 second average response",
   },
   {
@@ -16,8 +16,8 @@ const steps = [
     icon: MessageSquare,
     title: "Smart Qualification",
     description:
-      "The conversation flows naturally. Timeline, motivation, budget, pre-approval status. Your AI team member asks the right questions without sounding like a script. You only talk to the leads worth your time.",
-    highlight: "Buyers, sellers & investors qualified",
+      "The conversation flows naturally. Timeline, motivation, budget, fit. Your AI agent asks the right questions without sounding like a script. You only talk to the leads worth your time.",
+    highlight: "Leads qualified by our AI in plain conversation.",
   },
   {
     number: "03",
@@ -32,21 +32,21 @@ const steps = [
     icon: RotateCcw,
     title: "Lead Recovery",
     description:
-      "That database of leads from last year? Most teams leave them for dead. Your AI team member re-engages them with personalized follow-ups that actually get responses. Turn sunk ad spend into new business.",
-    highlight: "Resurrect your cold database",
+      "That database of leads from last year? Most teams leave them for dead. Your AI agent re-engages them with personalized follow-ups that actually get responses. Turn sunk ad spend into new business.",
+    highlight: "Reactivate cold leads in your CRM.",
   },
 ];
 
 export function HowItWorksSection() {
   return (
     <section id="how-it-works" className="py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-            How Your AI Team Member Works
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-16 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
+            How Our AI Agents Work
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            From new lead to booked appointment — fully automated, fully on-brand.
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            From lead capture to booked meeting — fully automated.
           </p>
         </AnimateOnScroll>
 
@@ -55,20 +55,20 @@ export function HowItWorksSection() {
             <AnimateOnScroll
               key={step.number}
               delay={index * 0.1}
-              className="flex flex-col md:flex-row items-start gap-8"
+              className="flex flex-col items-start gap-8 md:flex-row"
             >
-              <div className="flex items-center gap-4 md:pt-1 shrink-0">
-                <span className="text-5xl font-heading font-bold text-primary/20 leading-none">
+              <div className="flex shrink-0 items-center gap-4 md:pt-1">
+                <span className="font-heading text-primary/20 text-5xl leading-none font-bold">
                   {step.number}
                 </span>
-                <step.icon className="h-8 w-8 text-primary shrink-0" />
+                <step.icon className="text-primary h-8 w-8 shrink-0" />
               </div>
               <div>
-                <h3 className="text-2xl font-heading font-semibold text-foreground mb-3">
+                <h3 className="font-heading text-foreground mb-3 text-2xl font-semibold">
                   {step.title}
                 </h3>
                 <p className="text-muted-foreground mb-4">{step.description}</p>
-                <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm rounded-full">
+                <span className="bg-primary/10 text-primary inline-block rounded-full px-3 py-1 text-sm">
                   {step.highlight}
                 </span>
               </div>
