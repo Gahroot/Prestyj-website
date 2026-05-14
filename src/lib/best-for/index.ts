@@ -29,7 +29,6 @@ import { aiVoiceReceptionistRealEstate } from "./ai-voice-receptionist-real-esta
 import { realEstateWholesalers } from "./real-estate-wholesalers";
 import { realEstateCoach } from "./real-estate-coach";
 import { fintech } from "./fintech";
-import { followUpBossUsers } from "./follow-up-boss-users";
 import { conversionRateOptimization } from "./conversion-rate-optimization";
 import { aiCustomerEngagement } from "./ai-customer-engagement";
 import { aiSalesAgent } from "./ai-sales-agent";
@@ -37,21 +36,6 @@ import { realEstateBrokerages } from "./real-estate-brokerages";
 import { facebookAdsRealEstate } from "./facebook-ads-real-estate";
 import { youtubeAdsRealEstate } from "./youtube-ads-real-estate";
 import { realEstateTeamLeaders } from "./real-estate-team-leaders";
-import { kvcoreUsers } from "./kvcore-users";
-import { sierraInteractiveUsers } from "./sierra-interactive-users";
-import { cincUsers } from "./cinc-users";
-import { realGeeksUsers } from "./real-geeks-users";
-import { housecallProUsers } from "./housecall-pro-users";
-import { fieldedgeUsers } from "./fieldedge-users";
-import { workizUsers } from "./workiz-users";
-import { gorilladeskUsers } from "./gorilladesk-users";
-import { boomtownUsers } from "./boomtown-users";
-import { chimeUsers } from "./chime-users";
-import { salesforceUsers } from "./salesforce-users";
-import { hubspotUsers } from "./hubspot-users";
-import { pipedriveUsers } from "./pipedrive-users";
-import { closeUsers } from "./close-users";
-import { calendlyUsers } from "./calendly-users";
 import { newConstructionBuilders } from "./new-construction-builders";
 import { propertyManagerVideoAds } from "./property-manager-video-ads";
 import { mortgageBrokerVideoAds } from "./mortgage-broker-video-ads";
@@ -75,24 +59,6 @@ import { videoAdsForMedSpas } from "./video-ads-for-med-spas";
 import { videoAdsForInsuranceAgents } from "./video-ads-for-insurance-agents";
 import { videoAdsForAutoDealerships } from "./video-ads-for-auto-dealerships";
 import { videoAdsForSeniorCare } from "./video-ads-for-senior-care";
-import { socialContentForContractors } from "./social-content-for-contractors";
-import { socialContentForRealEstateTeams } from "./social-content-for-real-estate-teams";
-import { socialContentForAgencies } from "./social-content-for-agencies";
-import { socialContentForCoaches } from "./social-content-for-coaches";
-import { socialContentForEcommerceBrands } from "./social-content-for-ecommerce-brands";
-import { socialContentForSaasFounders } from "./social-content-for-saas-founders";
-import { socialContentForLawFirms } from "./social-content-for-law-firms";
-import { socialContentForDentists } from "./social-content-for-dentists";
-import { socialContentForMedSpas } from "./social-content-for-med-spas";
-import { socialContentForFinancialAdvisors } from "./social-content-for-financial-advisors";
-import { socialContentForRestaurants } from "./social-content-for-restaurants";
-import { socialContentForGymsFitness } from "./social-content-for-gyms-fitness";
-import { socialContentForPersonalBrands } from "./social-content-for-personal-brands";
-import { socialContentForCreators } from "./social-content-for-creators";
-import { socialContentForConsultants } from "./social-content-for-consultants";
-import { socialContentForMortgageBrokers } from "./social-content-for-mortgage-brokers";
-import { socialContentForInsuranceAgents } from "./social-content-for-insurance-agents";
-
 // Geo: 15 state-specific real estate video ad pages.
 // Note: 51 metro-level `video-ads-for-realtors-[city]` pages were removed —
 // they pitched batch video ads which conflicts with the AI marketing & sales
@@ -192,7 +158,6 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "real-estate-wholesalers": realEstateWholesalers,
   "real-estate-coach": realEstateCoach,
   fintech: fintech,
-  "follow-up-boss-users": followUpBossUsers,
   "conversion-rate-optimization": conversionRateOptimization,
   "ai-customer-engagement": aiCustomerEngagement,
   "ai-sales-agent": aiSalesAgent,
@@ -200,21 +165,6 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "facebook-ads-real-estate": facebookAdsRealEstate,
   "youtube-ads-real-estate": youtubeAdsRealEstate,
   "real-estate-team-leaders": realEstateTeamLeaders,
-  "kvcore-users": kvcoreUsers,
-  "sierra-interactive-users": sierraInteractiveUsers,
-  "cinc-users": cincUsers,
-  "real-geeks-users": realGeeksUsers,
-  "housecall-pro-users": housecallProUsers,
-  "fieldedge-users": fieldedgeUsers,
-  "workiz-users": workizUsers,
-  "gorilladesk-users": gorilladeskUsers,
-  "boomtown-users": boomtownUsers,
-  "chime-users": chimeUsers,
-  "salesforce-users": salesforceUsers,
-  "hubspot-users": hubspotUsers,
-  "pipedrive-users": pipedriveUsers,
-  "close-users": closeUsers,
-  "calendly-users": calendlyUsers,
   "new-construction-builders": newConstructionBuilders,
   "property-manager-video-ads": propertyManagerVideoAds,
   "mortgage-broker-video-ads": mortgageBrokerVideoAds,
@@ -238,23 +188,6 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "video-ads-for-insurance-agents": videoAdsForInsuranceAgents,
   "video-ads-for-auto-dealerships": videoAdsForAutoDealerships,
   "video-ads-for-senior-care": videoAdsForSeniorCare,
-  "social-content-for-contractors": socialContentForContractors,
-  "social-content-for-real-estate-teams": socialContentForRealEstateTeams,
-  "social-content-for-agencies": socialContentForAgencies,
-  "social-content-for-coaches": socialContentForCoaches,
-  "social-content-for-ecommerce-brands": socialContentForEcommerceBrands,
-  "social-content-for-saas-founders": socialContentForSaasFounders,
-  "social-content-for-law-firms": socialContentForLawFirms,
-  "social-content-for-dentists": socialContentForDentists,
-  "social-content-for-med-spas": socialContentForMedSpas,
-  "social-content-for-financial-advisors": socialContentForFinancialAdvisors,
-  "social-content-for-restaurants": socialContentForRestaurants,
-  "social-content-for-gyms-fitness": socialContentForGymsFitness,
-  "social-content-for-personal-brands": socialContentForPersonalBrands,
-  "social-content-for-consultants": socialContentForConsultants,
-  "social-content-for-creators": socialContentForCreators,
-  "social-content-for-mortgage-brokers": socialContentForMortgageBrokers,
-  "social-content-for-insurance-agents": socialContentForInsuranceAgents,
 
   // Geo: 15 state-level real estate video ad pages.
   // (51 metro `video-ads-for-realtors-[city]` entries removed — redirected to /pricing.)

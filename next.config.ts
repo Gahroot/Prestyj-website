@@ -153,6 +153,81 @@ const nextConfig: NextConfig = {
         destination: "/pricing",
         permanent: true,
       },
+      // 17 `social-content-for-*` persona pages were re-branding Prestyj as a
+      // content service, diluting the AI marketing & sales core positioning.
+      // 301 to /best-for hub.
+      { source: "/best-for/social-content-for-agencies", destination: "/best-for", permanent: true },
+      { source: "/best-for/social-content-for-coaches", destination: "/best-for", permanent: true },
+      { source: "/best-for/social-content-for-consultants", destination: "/best-for", permanent: true },
+      { source: "/best-for/social-content-for-contractors", destination: "/best-for", permanent: true },
+      { source: "/best-for/social-content-for-creators", destination: "/best-for", permanent: true },
+      { source: "/best-for/social-content-for-dentists", destination: "/best-for", permanent: true },
+      {
+        source: "/best-for/social-content-for-ecommerce-brands",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-financial-advisors",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-gyms-fitness",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-insurance-agents",
+        destination: "/best-for",
+        permanent: true,
+      },
+      { source: "/best-for/social-content-for-law-firms", destination: "/best-for", permanent: true },
+      { source: "/best-for/social-content-for-med-spas", destination: "/best-for", permanent: true },
+      {
+        source: "/best-for/social-content-for-mortgage-brokers",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-personal-brands",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-real-estate-teams",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-restaurants",
+        destination: "/best-for",
+        permanent: true,
+      },
+      {
+        source: "/best-for/social-content-for-saas-founders",
+        destination: "/best-for",
+        permanent: true,
+      },
+      // 16 CRM/SaaS `*-users` persona pages targeted the wrong ICP and most were
+      // already noindexed — an admission of failure. 301 to /best-for hub.
+      // (servicetitan-users + jobber-users already redirected above.)
+      { source: "/best-for/fieldedge-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/gorilladesk-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/workiz-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/housecall-pro-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/kvcore-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/follow-up-boss-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/real-geeks-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/cinc-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/sierra-interactive-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/boomtown-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/chime-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/hubspot-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/salesforce-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/pipedrive-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/close-users", destination: "/best-for", permanent: true },
+      { source: "/best-for/calendly-users", destination: "/best-for", permanent: true },
     ];
   },
 };

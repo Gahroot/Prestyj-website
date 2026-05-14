@@ -2,13 +2,10 @@
 /**
  * One-off batch submission for newly added pages:
  *  - 6 content engine variant landing pages
- *  - 17 social-content avatar (best-for) pages
  *  - All new compare pages not yet present in the canonical IndexNow list
  *
  * Reads INDEXNOW_API_KEY from env (.env.local is loaded via `tsx --env-file`).
  */
-
-import { socialAvatars } from "../src/lib/content-engine/social-avatars";
 
 const BASE_URL = "https://prestyj.com";
 
@@ -42,13 +39,9 @@ const newCompareRoutes = [
   "/compare/structurely-vs-prestyj",
 ];
 
-const avatarRoutes = socialAvatars.map((a) => `/best-for/${a.slug}`);
-
-const urlList = [
-  ...contentEngineVariants,
-  ...avatarRoutes,
-  ...newCompareRoutes,
-].map((path) => `${BASE_URL}${path}`);
+const urlList = [...contentEngineVariants, ...newCompareRoutes].map(
+  (path) => `${BASE_URL}${path}`,
+);
 
 async function main() {
   const key = process.env.INDEXNOW_API_KEY;

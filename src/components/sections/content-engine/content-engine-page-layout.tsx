@@ -13,7 +13,6 @@ import { ContentEngineHowItWorks } from "@/components/sections/content-engine/ho
 import { ContentEnginePricing } from "@/components/sections/content-engine/pricing";
 import { ContentEngineComparison } from "@/components/sections/content-engine/comparison";
 import { ContentEngineFAQ } from "@/components/sections/content-engine/faq";
-import { ContentEngineAvatarGrid } from "@/components/sections/content-engine/avatar-grid";
 import { ContentEngineCTA } from "@/components/sections/content-engine/cta";
 import { ContentEngineVisitorPixel } from "@/components/seo/content-engine-visitor-pixel";
 
@@ -55,7 +54,6 @@ export function ContentEnginePageLayout({
         <ContentEnginePricing config={config.pricing} />
         <ContentEngineComparison config={config.comparison} />
         {afterComparison}
-        <ContentEngineAvatarGrid />
         <ContentEngineFAQ config={config.faq} />
         <ContentEngineCTA config={config.cta} />
         {afterCta}

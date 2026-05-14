@@ -31,9 +31,3 @@ export type {
 } from "./page-config";
 
 export { defaultContentEngineConfig } from "./defaults";
-export {
-  socialAvatars,
-  socialAvatarSlugSet,
-  isSocialAvatarSlug,
-  type SocialAvatar,
-} from "./social-avatars";

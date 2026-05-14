@@ -166,22 +166,22 @@ export const diyAiCompareData: ComparePageData = createComparePage({
   },
   relatedResources: [
     {
-      title: "Best for ServiceTitan Users",
-      description: "Deep integration with ServiceTitan for seamless job booking.",
-      href: "/best-for/servicetitan-users",
-      linkText: "Learn more",
-    },
-    {
-      title: "Best for HVAC Companies",
+      title: "AI Voice Receptionist for HVAC",
       description: "Built for high call volume during peak heating and cooling seasons.",
-      href: "/best-for/hvac",
+      href: "/best-for/ai-voice-receptionist-hvac",
       linkText: "Explore HVAC solution",
     },
     {
-      title: "Best for Plumbing Contractors",
+      title: "AI Voice Receptionist for Plumbing",
       description: "Emergency triage and immediate dispatch for plumbing emergencies.",
-      href: "/best-for/plumbing",
+      href: "/best-for/ai-voice-receptionist-plumbing",
       linkText: "Explore plumbing solution",
+    },
+    {
+      title: "AI Appointment Setting",
+      description: "Done-for-you AI that books qualified appointments straight onto your calendar.",
+      href: "/best-for/ai-appointment-setting",
+      linkText: "Learn more",
     },
     {
       title: "Home Services Solution",
