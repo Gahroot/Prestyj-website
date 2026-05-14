@@ -12,7 +12,8 @@ export const alannaAi: AlternativePageContent = createAlternativePage({
     name: "Alanna.ai",
     pricing: "Custom pricing",
     website: "https://alanna.ai",
-    description: "AI assistant for title companies — text-based communication & document processing",
+    description:
+      "AI assistant for title companies — text-based communication & document processing",
   },
   meta: {
     title: "Alanna.ai Alternatives | Better AI for Title Companies",
@@ -34,35 +35,27 @@ export const alannaAi: AlternativePageContent = createAlternativePage({
   industryStats: "standard",
   comparison: {
     features: [
-      buildAlternativeFeature(
-        STANDARD_FEATURES.AI_TEXT,
-        true,
-        "Alanna.ai is text-only"
-      ),
-      buildAlternativeFeature(
-        STANDARD_FEATURES.AI_VOICE,
-        false,
-        "No voice AI capabilities"
-      ),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true, "Alanna.ai is text-only"),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, false, "No voice AI capabilities"),
       buildAlternativeFeature(
         STANDARD_FEATURES.RESPONSE_24_7,
         true,
-        "Limited to text channel only"
+        "Limited to text channel only",
       ),
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Alanna.ai integrates with title production systems, not a true CRM"
+        "Alanna.ai integrates with title production systems, not a true CRM",
       ),
       buildAlternativeFeature(
         STANDARD_FEATURES.APPOINTMENT_BOOKING,
         false,
-        "No appointment scheduling"
+        "No appointment scheduling",
       ),
       buildAlternativeFeature(
         STANDARD_FEATURES.LEAD_QUALIFICATION,
         false,
-        "Focused on order updates, not lead conversion"
+        "Focused on order updates, not lead conversion",
       ),
       {
         feature: "Document Generation",
@@ -148,8 +141,8 @@ export const alannaAi: AlternativePageContent = createAlternativePage({
       description: "How Prestyj serves title and escrow businesses",
     },
     {
-      href: "/solutions/pipeline-automation",
-      title: "Pipeline Automation",
+      href: "/solutions/sales-automation",
+      title: "Sales Automation",
       description: "See how Prestyj automates your entire workflow",
     },
     {

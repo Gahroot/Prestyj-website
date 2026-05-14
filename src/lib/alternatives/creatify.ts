@@ -38,7 +38,8 @@ export const creatify: AlternativePageContent = {
     },
     {
       stat: "$4",
-      description: "cost per variation with Prestyj's 1,000-ad batch vs. $11+ per video on Creatify",
+      description:
+        "cost per variation with Prestyj's 1,000-ad batch vs. $11+ per video on Creatify",
     },
     {
       stat: "20 min",
@@ -46,7 +47,8 @@ export const creatify: AlternativePageContent = {
     },
     {
       stat: "10",
-      description: "pain points testable in a single 1,000-ad batch — organized and ready to deploy",
+      description:
+        "pain points testable in a single 1,000-ad batch — organized and ready to deploy",
     },
   ],
   comparison: {
@@ -170,9 +172,10 @@ export const creatify: AlternativePageContent = {
   ],
   relatedResources: [
     {
-      href: "/solutions/batch-video-ads-real-estate",
+      href: "/solutions/batch-video-ads-for-lead-generation",
       title: "Batch Video Ads for Real Estate",
-      description: "See exactly how Prestyj turns 20 minutes of footage into 300–1,000 ad variations.",
+      description:
+        "See exactly how Prestyj turns 20 minutes of footage into 300–1,000 ad variations.",
     },
     {
       href: "/blog/creative-testing-framework-real-estate-2026",
@@ -180,7 +183,7 @@ export const creatify: AlternativePageContent = {
       description: "How many video ads you actually need to test to find winning pain points.",
     },
     {
-      href: "/solutions/facebook-ad-leads",
+      href: "/solutions/ai-lead-generation",
       title: "Convert More Facebook Ad Leads",
       description: "Pair batch creative with AI-powered lead response to close the loop.",
     },

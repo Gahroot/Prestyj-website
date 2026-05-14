@@ -36,11 +36,15 @@ export const followUpBoss: AlternativePageContent = createAlternativePage({
   comparison: {
     features: [
       buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, false, "Requires third-party integration"),
-      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, false, "Requires third-party integration"),
+      buildAlternativeFeature(
+        STANDARD_FEATURES.AI_VOICE,
+        false,
+        "Requires third-party integration",
+      ),
       buildAlternativeFeature(
         STANDARD_FEATURES.RESPONSE_24_7,
         false,
-        "Only with added AI integration"
+        "Only with added AI integration",
       ),
       buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
       buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
@@ -129,8 +133,8 @@ export const followUpBoss: AlternativePageContent = createAlternativePage({
       description: "How Prestyj scales with teams of any size",
     },
     {
-      href: "/solutions/pipeline-automation",
-      title: "Pipeline Automation",
+      href: "/solutions/sales-automation",
+      title: "Sales Automation",
       description: "See how Prestyj automates your entire sales pipeline",
     },
     {

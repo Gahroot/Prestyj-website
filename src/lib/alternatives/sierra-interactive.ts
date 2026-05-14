@@ -37,28 +37,24 @@ export const sierraInteractive: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.AI_TEXT,
         false,
-        "Sierra has basic auto-responders only"
+        "Sierra has basic auto-responders only",
       ),
-      buildAlternativeFeature(
-        STANDARD_FEATURES.AI_VOICE,
-        false,
-        "No voice AI capabilities"
-      ),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, false, "No voice AI capabilities"),
       buildAlternativeFeature(
         STANDARD_FEATURES.RESPONSE_24_7,
         false,
-        "Limited to scheduled drip campaigns"
+        "Limited to scheduled drip campaigns",
       ),
       buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
       buildAlternativeFeature(
         STANDARD_FEATURES.APPOINTMENT_BOOKING,
         false,
-        "No AI-powered appointment scheduling"
+        "No AI-powered appointment scheduling",
       ),
       buildAlternativeFeature(
         STANDARD_FEATURES.LEAD_QUALIFICATION,
         false,
-        "Basic lead scoring, no AI qualification"
+        "Basic lead scoring, no AI qualification",
       ),
       {
         feature: "Team Management Tools",
@@ -144,7 +140,7 @@ export const sierraInteractive: AlternativePageContent = createAlternativePage({
       description: "How Prestyj scales with teams of any size",
     },
     {
-      href: "/solutions/lead-conversion",
+      href: "/solutions/lead-reactivation",
       title: "Lead Conversion Solutions",
       description: "See how Prestyj converts more leads into appointments",
     },

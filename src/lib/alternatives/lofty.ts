@@ -38,7 +38,7 @@ export const lofty: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.AI_VOICE,
         false,
-        "Lofty's AI assistant is text-based only"
+        "Lofty's AI assistant is text-based only",
       ),
       buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
@@ -46,7 +46,7 @@ export const lofty: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.LEAD_QUALIFICATION,
         true,
-        "Lofty's AI qualification is basic"
+        "Lofty's AI qualification is basic",
       ),
       {
         feature: "Marketing Automation",
@@ -132,7 +132,7 @@ export const lofty: AlternativePageContent = createAlternativePage({
       description: "How Prestyj serves agents and growing teams",
     },
     {
-      href: "/solutions/lead-conversion",
+      href: "/solutions/lead-reactivation",
       title: "Lead Conversion Solutions",
       description: "See how Prestyj converts more leads into appointments",
     },

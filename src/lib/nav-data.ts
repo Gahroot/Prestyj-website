@@ -1,10 +1,4 @@
-import {
-  Bot,
-  Megaphone,
-  Zap,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react";
+import { Bot, Megaphone, Zap, Phone, type LucideIcon } from "lucide-react";
 
 export type DropdownLink = {
   href: string;
@@ -35,15 +29,17 @@ export const primaryCta: CtaLink = {
 
 export const ctaLinks: readonly CtaLink[] = [primaryCta];
 
+// Solution dropdown — references only canonical surviving solution slugs that
+// align with the "AI agents for marketing & sales" core positioning.
 export const solutionLinks: DropdownLink[] = [
   {
-    href: "/solutions/ai-sales-agents",
+    href: "/solutions/sales-automation",
     label: "AI Sales Agents",
     description: "Autonomous agents that qualify, follow up, and close.",
     icon: Bot,
   },
   {
-    href: "/solutions/ai-marketing-agents",
+    href: "/solutions/marketing-automation",
     label: "AI Marketing Agents",
     description: "Agents that run campaigns, content, and outreach 24/7.",
     icon: Megaphone,
@@ -55,9 +51,9 @@ export const solutionLinks: DropdownLink[] = [
     icon: Zap,
   },
   {
-    href: "/solutions/custom-ai-builds",
-    label: "Custom AI Builds",
-    description: "Bespoke AI agents tailored to your sales and marketing stack.",
-    icon: Wrench,
+    href: "/solutions/ai-virtual-receptionist",
+    label: "AI Voice Receptionist",
+    description: "24/7 AI voice agent that answers, qualifies, and books.",
+    icon: Phone,
   },
 ];

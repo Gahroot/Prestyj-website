@@ -40,12 +40,9 @@ export const structurely: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Structurely requires a separate CRM like Follow Up Boss"
+        "Structurely requires a separate CRM like Follow Up Boss",
       ),
-      buildAlternativeFeature(
-        STANDARD_FEATURES.APPOINTMENT_BOOKING,
-        true
-      ),
+      buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
       buildAlternativeFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
       {
         feature: "Marketing Automation",
@@ -131,7 +128,7 @@ export const structurely: AlternativePageContent = createAlternativePage({
       description: "How Prestyj serves solo agents and growing teams",
     },
     {
-      href: "/solutions/lead-conversion",
+      href: "/solutions/lead-reactivation",
       title: "Lead Conversion Solutions",
       description: "See how Prestyj converts more leads into appointments",
     },

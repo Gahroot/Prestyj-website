@@ -37,24 +37,20 @@ export const kvcore: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.AI_TEXT,
         false,
-        "kvCORE AI is basic and rules-based"
+        "kvCORE AI is basic and rules-based",
       ),
-      buildAlternativeFeature(
-        STANDARD_FEATURES.AI_VOICE,
-        false,
-        "No native voice AI capabilities"
-      ),
+      buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, false, "No native voice AI capabilities"),
       buildAlternativeFeature(
         STANDARD_FEATURES.RESPONSE_24_7,
         false,
-        "Limited to basic auto-responders"
+        "Limited to basic auto-responders",
       ),
       buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
       buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
       buildAlternativeFeature(
         STANDARD_FEATURES.LEAD_QUALIFICATION,
         false,
-        "Basic lead scoring only"
+        "Basic lead scoring only",
       ),
       {
         feature: "IDX Website",
@@ -141,7 +137,7 @@ export const kvcore: AlternativePageContent = createAlternativePage({
       description: "How Prestyj scales with teams of any size",
     },
     {
-      href: "/solutions/lead-conversion",
+      href: "/solutions/lead-reactivation",
       title: "Lead Conversion Solutions",
       description: "See how Prestyj converts more leads into appointments",
     },

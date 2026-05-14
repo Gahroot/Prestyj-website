@@ -169,19 +169,22 @@ export const arcads: AlternativePageContent = {
   ],
   relatedResources: [
     {
-      href: "/solutions/batch-video-ads-real-estate",
+      href: "/solutions/batch-video-ads-for-lead-generation",
       title: "Batch Video Ads for Real Estate",
-      description: "How Prestyj turns 20 minutes of real footage into 300–1,000 ready-to-test ad variations.",
+      description:
+        "How Prestyj turns 20 minutes of real footage into 300–1,000 ready-to-test ad variations.",
     },
     {
       href: "/blog/creative-testing-framework-real-estate-2026",
       title: "The Real Estate Creative Testing Framework",
-      description: "How many video ads you actually need to test to find your best-converting pain point.",
+      description:
+        "How many video ads you actually need to test to find your best-converting pain point.",
     },
     {
       href: "/best-for/real-estate-teams",
       title: "Batch Video Ads for Real Estate Teams",
-      description: "How teams and brokerages use batch creative to scale ad campaigns across agents.",
+      description:
+        "How teams and brokerages use batch creative to scale ad campaigns across agents.",
     },
   ],
   cta: {

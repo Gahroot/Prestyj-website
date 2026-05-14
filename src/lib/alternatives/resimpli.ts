@@ -37,24 +37,20 @@ export const resimpli: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.AI_TEXT,
         false,
-        "REsimpli has basic auto-responders only"
+        "REsimpli has basic auto-responders only",
       ),
       buildAlternativeFeature(
         STANDARD_FEATURES.AI_VOICE,
         false,
-        "Dialer is manual, not AI-powered"
+        "Dialer is manual, not AI-powered",
       ),
-      buildAlternativeFeature(
-        STANDARD_FEATURES.RESPONSE_24_7,
-        false,
-        "No autonomous AI response"
-      ),
+      buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, false, "No autonomous AI response"),
       buildAlternativeFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
       buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, false),
       buildAlternativeFeature(
         STANDARD_FEATURES.LEAD_QUALIFICATION,
         false,
-        "Basic lead tracking only"
+        "Basic lead tracking only",
       ),
       {
         feature: "Skip Tracing",
@@ -140,7 +136,7 @@ export const resimpli: AlternativePageContent = createAlternativePage({
       description: "How Prestyj serves investors and wholesalers",
     },
     {
-      href: "/solutions/lead-conversion",
+      href: "/solutions/lead-reactivation",
       title: "Lead Conversion Solutions",
       description: "See how Prestyj converts more leads into deals",
     },

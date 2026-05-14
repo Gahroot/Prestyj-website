@@ -226,10 +226,10 @@ export default function PlatformPage() {
                 Batch ad production →
               </Link>
               <Link
-                href="/solutions/home-services"
+                href="/solutions/speed-to-lead"
                 className="text-primary hover:text-primary/80 underline underline-offset-2"
               >
-                Home services solutions →
+                Speed-to-lead solutions →
               </Link>
             </div>
           </div>

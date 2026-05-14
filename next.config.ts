@@ -421,6 +421,402 @@ const nextConfig: NextConfig = {
       { source: "/best-for/pipedrive-users", destination: "/best-for", permanent: true },
       { source: "/best-for/close-users", destination: "/best-for", permanent: true },
       { source: "/best-for/calendly-users", destination: "/best-for", permanent: true },
+      // ---------------------------------------------------------------------
+      // Solutions consolidation: 78 near-duplicate "AI for X" /solutions/* pages
+      // were diluting the core "AI agents for marketing & sales" positioning.
+      // Collapsed to 12 canonical solutions; rest 301 to the absorbing canonical.
+      // ---------------------------------------------------------------------
+      // → ai-virtual-receptionist (canonical inbound voice / answering)
+      {
+        source: "/solutions/ai-answering-service",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-answering-service-hvac",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-answering-service-plumbing",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-phone-answering",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-inbound-call-handling",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-receptionist-cost",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-receptionist-real-estate",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-missed-call-text-back",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-text-back-service",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-web-chat-widget",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-conversation-platform",
+        destination: "/solutions/ai-virtual-receptionist",
+        permanent: true,
+      },
+      // → ai-voice-agent-pricing (canonical voice agent + outbound)
+      {
+        source: "/solutions/ai-voice-assistant-business",
+        destination: "/solutions/ai-voice-agent-pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-calling-service",
+        destination: "/solutions/ai-voice-agent-pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-outbound-calls",
+        destination: "/solutions/ai-voice-agent-pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-cold-calling",
+        destination: "/solutions/ai-voice-agent-pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-dialer",
+        destination: "/solutions/ai-voice-agent-pricing",
+        permanent: true,
+      },
+      // → ai-appointment-setter (canonical appointment / show-rate page)
+      {
+        source: "/solutions/ai-appointment-scheduling",
+        destination: "/solutions/ai-appointment-setter",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-show-rate-optimization",
+        destination: "/solutions/ai-appointment-setter",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-no-show-reduction",
+        destination: "/solutions/ai-appointment-setter",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-closing-assistant",
+        destination: "/solutions/ai-appointment-setter",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-objection-handling",
+        destination: "/solutions/ai-appointment-setter",
+        permanent: true,
+      },
+      // → ai-lead-response (canonical follow-up / nurture umbrella)
+      {
+        source: "/solutions/ai-follow-up-system",
+        destination: "/solutions/ai-lead-response",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-lead-nurturing",
+        destination: "/solutions/ai-lead-response",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-email-follow-up",
+        destination: "/solutions/ai-lead-response",
+        permanent: true,
+      },
+      // → sales-automation (canonical pipeline / CRM automation)
+      {
+        source: "/solutions/ai-pipeline-automation",
+        destination: "/solutions/sales-automation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-crm-automation",
+        destination: "/solutions/sales-automation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/business-automation",
+        destination: "/solutions/sales-automation",
+        permanent: true,
+      },
+      // → lead-reactivation (canonical absorbs all real-estate vertical pages)
+      {
+        source: "/solutions/agentic-ai-real-estate",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/real-estate",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/real-estate-lead-conversion",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/lead-reactivation-real-estate",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-for-real-estate-investors",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-for-real-estate-wholesalers",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-for-home-builders",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-for-title-companies",
+        destination: "/solutions/lead-reactivation",
+        permanent: true,
+      },
+      // → speed-to-lead (absorbs home-services / roofing vertical pages)
+      {
+        source: "/solutions/home-services",
+        destination: "/solutions/speed-to-lead",
+        permanent: true,
+      },
+      {
+        source: "/solutions/roofing",
+        destination: "/solutions/speed-to-lead",
+        permanent: true,
+      },
+      // → ai-lead-generation (paid-ad lead-gen umbrella)
+      {
+        source: "/solutions/facebook-ad-leads",
+        destination: "/solutions/ai-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/youtube-ad-leads",
+        destination: "/solutions/ai-lead-generation",
+        permanent: true,
+      },
+      // → batch-video-ads-for-lead-generation (canonical video ad service)
+      {
+        source: "/solutions/batch-video-ads-real-estate",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-meta",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-tiktok",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-youtube-shorts",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-personal-brand",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-contractors",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-hvac-companies",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-mortgage-brokers",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-roofers",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/batch-video-ads-for-agency-owners",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ad-creative-testing-service",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ad-creative-testing-agency",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/facebook-ad-creative-testing-agency",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/facebook-ad-creative-volume",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/tiktok-ad-creative-testing",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/youtube-shorts-ad-production",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/video-ad-production-volume",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/video-ad-script-writing-service",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/video-ad-testing-framework",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ad-hook-testing-service",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/winning-ad-angle-finder",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ad-fatigue-management",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/creative-refresh-service",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ugc-style-ad-production",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-ad-creative-generator",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-image-generation-for-business",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-creative-studio-service-businesses",
+        destination: "/solutions/batch-video-ads-for-lead-generation",
+        permanent: true,
+      },
+      // → /ai-content-department (top-level page absorbs all social-media
+      // product variants from earlier consolidation task).
+      {
+        source: "/solutions/social-media-content-service",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/social-media-posting-service",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/automated-social-media-posts",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-social-media-manager",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-social-media-content-generator",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-instagram-posts-service",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/instagram-carousel-content-service",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-content-calendar-service",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/multi-platform-content-creation",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/solutions/multi-platform-publishing-tool",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
     ];
   },
 };
