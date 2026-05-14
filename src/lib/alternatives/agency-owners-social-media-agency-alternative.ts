@@ -199,9 +199,9 @@ export const agencyOwnersSocialMediaAgencyAlternative: AlternativePageContent = 
   ],
   relatedResources: [
     {
-      href: "/done-for-you-social-media",
-      title: "Done-For-You Social Media — the Service",
-      description: "How Prestyj's content engine replaces your agency, freelancer, and in-house stack.",
+      href: "/ai-content-department",
+      title: "AI Content Department — the AI agent for social media",
+      description: "How Prestyj.s AI Content Department replaces your agency, freelancer, and in-house stack.",
     },
     {
       href: "/best-for/done-for-you-social-for-agency-owners",

@@ -104,7 +104,7 @@ export const creatorsVsFiverrForCompareData: ComparePageData = createComparePage
     ],
   },
   relatedResources: [
-    { title: "Done-For-You Social Media — the Service", description: "See the Prestyj content engine product", href: "/done-for-you-social-media", linkText: "Learn more" },
+    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
     { title: "Done-For-You Social Media for Creators", description: "Creators-specific offer page", href: "/best-for/done-for-you-social-for-creators", linkText: "Read use case" },
     { title: "Social Volume Strategy for Creators", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-creators", linkText: "See the strategy" },
     { title: "Creators Social Media Agency Alternative", description: "Alternative to traditional creators social media agencies", href: "/alternatives/creators-social-media-agency-alternative", linkText: "Compare" },

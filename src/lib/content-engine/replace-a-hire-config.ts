@@ -32,10 +32,10 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
       icon: Bot,
       text: "AI Content Department \u00B7 From $1,997/mo",
     },
-    headline: "Replace Your Junior Social Media Hire",
-    headlineAccent: "With an AI Content Department.",
+    headline: "AI Content Department",
+    headlineAccent: "\u2014 your AI agent for social media.",
     subhead:
-      "A full content department \u2014 strategists, designers, copywriters, schedulers \u2014 for less than one junior hire\u2019s salary. 7 platforms, 1,000+ posts/month, live in 24 hours.",
+      "One of the AI agents in Prestyj\u2019s marketing & sales suite. A full content department \u2014 strategists, designers, copywriters, schedulers \u2014 for less than one junior hire\u2019s salary. 7 platforms, 1,000+ posts/month, live in 24 hours.",
     subheadAccent: "for less than one junior hire\u2019s salary.",
     ctas: [
       {

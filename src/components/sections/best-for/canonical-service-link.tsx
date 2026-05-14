@@ -18,39 +18,39 @@ interface CanonicalServiceLinkProps {
 
 /**
  * Reusable cross-link callout that points an avatar/best-for page UP to
- * the canonical service page (Done-For-You Social Media). Renders inside
- * the BestForPageClient so every social-content-for-* avatar links to
- * the same parent service.
+ * the canonical AI Content Department service page (the AI agent for
+ * social media inside Prestyj's marketing & sales AI agent suite).
+ * Renders inside the BestForPageClient so every social-content-for-*
+ * avatar links to the same parent service.
  */
 export function CanonicalServiceLink({
   nicheLabel,
-  href = "/done-for-you-social-media",
-  serviceLabel = "Done-For-You Social Media",
+  href = "/ai-content-department",
+  serviceLabel = "AI Content Department",
 }: CanonicalServiceLinkProps) {
   return (
     <section className="py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
-          <Card className="border-primary/30 bg-gradient-to-br from-primary/5 via-background to-success/5">
+          <Card className="border-primary/30 from-primary/5 via-background to-success/5 bg-gradient-to-br">
             <CardContent className="p-8 sm:p-10">
-              <div className="flex flex-col sm:flex-row sm:items-center gap-6">
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
                 <div className="shrink-0">
-                  <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <Layers className="w-7 h-7 text-primary" />
+                  <div className="bg-primary/10 flex h-14 w-14 items-center justify-center rounded-xl">
+                    <Layers className="text-primary h-7 w-7" />
                   </div>
                 </div>
 
                 <div className="flex-1">
-                  <Badge variant="outline" className="mb-3 border-primary/50 text-primary">
+                  <Badge variant="outline" className="border-primary/50 text-primary mb-3">
                     Part of the Prestyj Content Swarm
                   </Badge>
-                  <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
+                  <h2 className="font-heading text-foreground mb-2 text-2xl font-bold sm:text-3xl">
                     The same engine that powers {nicheLabel} runs every avatar.
                   </h2>
                   <p className="text-muted-foreground">
-                    See the full {serviceLabel} service — pricing, the live
-                    swarm, and how we ship 30–50 posts per day across every
-                    major platform.
+                    See the full {serviceLabel} service — pricing, the live swarm, and how we ship
+                    30–50 posts per day across every major platform.
                   </p>
                 </div>
 

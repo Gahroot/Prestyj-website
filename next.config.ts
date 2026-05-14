@@ -55,6 +55,39 @@ const nextConfig: NextConfig = {
         destination: "/free-ads/contractors",
         permanent: true,
       },
+      // Consolidate 5 near-duplicate social-media product pages → single canonical
+      // /ai-content-department (positioned as the AI agent for social media inside
+      // Prestyj's marketing & sales AI agent suite).
+      {
+        source: "/done-for-you-social-media",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/done-for-you-social-media/intake",
+        destination: "/ai-content-department/intake",
+        permanent: true,
+      },
+      {
+        source: "/1000-posts-per-month",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/social-media-on-autopilot",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/ai-social-media-management",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
+      {
+        source: "/managed-social-media-service",
+        destination: "/ai-content-department",
+        permanent: true,
+      },
     ];
   },
 };

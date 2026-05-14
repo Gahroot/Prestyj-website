@@ -211,14 +211,12 @@ export const socialMediaAgencies: AlternativePageContent = createAlternativePage
     {
       href: "/compare/prestyj-vs-social-media-agency",
       title: "Prestyj vs Social Media Agencies",
-      description:
-        "Side-by-side breakdown of the agency retainer model vs. an AI content engine.",
+      description: "Side-by-side breakdown of the agency retainer model vs. an AI content engine.",
     },
     {
       href: "/compare/prestyj-vs-junior-social-hire",
       title: "Prestyj vs Junior In-House Hire",
-      description:
-        "Why a $50K–$80K junior social hire ships less than a $3K/month AI engine.",
+      description: "Why a $50K–$80K junior social hire ships less than a $3K/month AI engine.",
     },
     {
       href: "/compare/prestyj-vs-fiverr-social-media",
@@ -235,8 +233,7 @@ export const socialMediaAgencies: AlternativePageContent = createAlternativePage
     {
       href: "/compare/prestyj-vs-hootsuite",
       title: "Prestyj vs Hootsuite",
-      description:
-        "Scheduling tools vs. a full content engine that creates and publishes for you.",
+      description: "Scheduling tools vs. a full content engine that creates and publishes for you.",
     },
     {
       href: "/compare/prestyj-vs-buffer",
@@ -247,8 +244,7 @@ export const socialMediaAgencies: AlternativePageContent = createAlternativePage
     {
       href: "/compare/prestyj-vs-later",
       title: "Prestyj vs Later",
-      description:
-        "Visual planning tool vs. a daily multi-platform publishing engine.",
+      description: "Visual planning tool vs. a daily multi-platform publishing engine.",
     },
     {
       href: "/compare/prestyj-vs-sprout-social",
@@ -257,10 +253,10 @@ export const socialMediaAgencies: AlternativePageContent = createAlternativePage
         "Enterprise SMM suite vs. an AI content engine built for lead-driven businesses.",
     },
     {
-      href: "/done-for-you-social-media",
+      href: "/ai-content-department",
       title: "Done-for-You Social Media",
       description:
-        "How Prestyj's content engine replaces your agency, freelancer, and in-house stack.",
+        "How Prestyj.s AI Content Department replaces your agency, freelancer, and in-house stack.",
     },
     {
       href: "/batch-video-ads",

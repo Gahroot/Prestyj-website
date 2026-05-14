@@ -172,14 +172,8 @@ export const juniorSocialHireCompareData: ComparePageData = createComparePage({
       linkText: "Read comparison",
     },
     {
-      title: "Done-For-You Social Media",
-      description: "How the Prestyj content engine works",
-      href: "/done-for-you-social-media",
-      linkText: "Learn more",
-    },
-    {
       title: "AI Content Department",
-      description: "What replaces a 3-person content team",
+      description: "The AI agent for social media \u2014 replaces a junior hire",
       href: "/ai-content-department",
       linkText: "See the platform",
     },

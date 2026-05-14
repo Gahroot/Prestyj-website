@@ -183,9 +183,9 @@ export const fiverrSocialMediaCompareData: ComparePageData = createComparePage({
       linkText: "Read comparison",
     },
     {
-      title: "Done-For-You Social Media",
-      description: "See Prestyj's content engine",
-      href: "/done-for-you-social-media",
+      title: "AI Content Department",
+      description: "The AI agent for social media \u2014 see how it works",
+      href: "/ai-content-department",
       linkText: "Learn more",
     },
   ],

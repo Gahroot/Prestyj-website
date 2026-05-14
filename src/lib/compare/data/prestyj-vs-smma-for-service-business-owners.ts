@@ -104,7 +104,7 @@ export const serviceBusinessOwnersVsSmmaForCompareData: ComparePageData = create
     ],
   },
   relatedResources: [
-    { title: "Done-For-You Social Media — the Service", description: "See the Prestyj content engine product", href: "/done-for-you-social-media", linkText: "Learn more" },
+    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
     { title: "Done-For-You Social Media for Service Business Owners", description: "Service Business Owners-specific offer page", href: "/best-for/done-for-you-social-for-service-business-owners", linkText: "Read use case" },
     { title: "Social Volume Strategy for Service Business Owners", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-service-business-owners", linkText: "See the strategy" },
     { title: "Service Business Owners Social Media Agency Alternative", description: "Alternative to traditional service business owners social media agencies", href: "/alternatives/service-business-owners-social-media-agency-alternative", linkText: "Compare" },

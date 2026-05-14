@@ -3,48 +3,49 @@ import type { Metadata } from "next";
 const PAGE_URL = "https://prestyj.com/ai-content-department";
 
 export const metadata: Metadata = {
-  title:
-    "Replace Your Junior Social Media Hire With an AI Content Department — Prestyj",
+  title: "AI Content Department — Your AI Agent for Social Media | Prestyj",
   description:
-    "Stop paying $55K–$75K/year for one junior hire who posts 30 times/month. Prestyj's AI content department ships 1,000+ posts across 7 platforms for $2K–$5K/mo. Live in 24 hours.",
+    "AI Content Department — the AI agent for social media inside Prestyj's marketing & sales AI agent suite. 1,000+ posts/month across 7 platforms, live in 24 hours. From $1,997/mo.",
   keywords: [
     "AI content department",
-    "replace social media hire",
+    "AI agent for social media",
+    "AI social media agent",
+    "AI agents for marketing",
+    "AI agents for sales",
+    "AI social media management",
     "AI social media manager",
-    "replace junior social media hire",
-    "social media automation",
-    "AI content generation",
-    "social media cost savings",
     "done for you social media",
+    "managed social media service",
+    "social media on autopilot",
+    "1000 posts per month",
+    "high volume social media",
+    "multi-account social media",
+    "content swarm",
     "AI content engine",
-    "content department as a service",
+    "AI content generation",
+    "social media automation",
+    "replace social media hire",
     "social media hiring cost",
     "cost per post social media",
   ],
   openGraph: {
-    title:
-      "Replace Your Junior Social Media Hire With an AI Content Department — Prestyj",
+    title: "AI Content Department — Your AI Agent for Social Media | Prestyj",
     description:
-      "A full content department — strategists, designers, copywriters, schedulers — for less than one junior hire's salary. 1,000+ posts/month across 7 platforms.",
+      "An AI agent that runs your social media. 1,000+ posts/month across 7 platforms, live in 24 hours. Part of Prestyj's marketing & sales AI agent suite. From $1,997/mo.",
     type: "website",
     url: PAGE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Replace Your Junior Social Media Hire With an AI Content Department",
+    title: "AI Content Department — Your AI Agent for Social Media",
     description:
-      "Stop paying $55K–$75K/yr for one hire who posts 30x/month. Prestyj ships 1,000+ posts across 7 platforms for $2K–$5K/mo.",
+      "An AI agent that runs your social media. 1,000+ posts/month across 7 platforms. From $1,997/mo.",
   },
   alternates: {
     canonical: PAGE_URL,
   },
 };
 
-export default function AIContentDepartmentLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AIContentDepartmentLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

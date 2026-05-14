@@ -104,7 +104,7 @@ export const personalBrandsVsVaPlusTemplatesForCompareData: ComparePageData = cr
     ],
   },
   relatedResources: [
-    { title: "Done-For-You Social Media — the Service", description: "See the Prestyj content engine product", href: "/done-for-you-social-media", linkText: "Learn more" },
+    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
     { title: "Done-For-You Social Media for Personal Brands", description: "Personal Brands-specific offer page", href: "/best-for/done-for-you-social-for-personal-brands", linkText: "Read use case" },
     { title: "Social Volume Strategy for Personal Brands", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-personal-brands", linkText: "See the strategy" },
     { title: "Personal Brands Social Media Agency Alternative", description: "Alternative to traditional personal brands social media agencies", href: "/alternatives/personal-brands-social-media-agency-alternative", linkText: "Compare" },

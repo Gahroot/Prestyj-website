@@ -31,9 +31,9 @@ export interface SocialAvatar {
 
 /**
  * Canonical list of every "Social Content for ___" avatar page in /best-for/.
- * Used to render the avatar grid on the canonical /done-for-you-social-media
- * page and its variants, and to cross-link from each avatar page back up
- * to the canonical service page.
+ * Used to render the avatar grid on the canonical /ai-content-department
+ * page, and to cross-link from each avatar page back up to the canonical
+ * service page (the AI agent for social media).
  */
 export const socialAvatars: SocialAvatar[] = [
   {

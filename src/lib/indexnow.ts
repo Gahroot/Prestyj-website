@@ -40,13 +40,8 @@ export function getAllUrls(): string[] {
     `${BASE_URL}/ai-call-handling-calculator`,
     `${BASE_URL}/team-commission-calculator`,
     `${BASE_URL}/platform`,
-    // Content engine variants
-    `${BASE_URL}/done-for-you-social-media`,
-    `${BASE_URL}/1000-posts-per-month`,
+    // AI Content Department — the AI agent for social media
     `${BASE_URL}/ai-content-department`,
-    `${BASE_URL}/social-media-on-autopilot`,
-    `${BASE_URL}/ai-social-media-management`,
-    `${BASE_URL}/managed-social-media-service`
   );
 
   // Blog posts - dynamically from content source
@@ -70,9 +65,7 @@ export function getAllUrls(): string[] {
   // Best-for pages (excluding noindex pages)
   const bestForSlugs = getAllBestForSlugs();
   const noindexSlugs: string[] = ["solo-agents", "new-agents"];
-  const filteredBestForSlugs = bestForSlugs.filter(
-    (slug) => !noindexSlugs.includes(slug)
-  );
+  const filteredBestForSlugs = bestForSlugs.filter((slug) => !noindexSlugs.includes(slug));
 
   for (const slug of filteredBestForSlugs) {
     urls.push(`${BASE_URL}/best-for/${slug}`);

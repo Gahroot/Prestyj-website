@@ -104,7 +104,7 @@ export const ecommerceBrandsVsFiverrForCompareData: ComparePageData = createComp
     ],
   },
   relatedResources: [
-    { title: "Done-For-You Social Media — the Service", description: "See the Prestyj content engine product", href: "/done-for-you-social-media", linkText: "Learn more" },
+    { title: "AI Content Department — the AI agent for social media", description: "See the Prestyj AI Content Department product", href: "/ai-content-department", linkText: "Learn more" },
     { title: "Done-For-You Social Media for Ecommerce Brands", description: "Ecommerce Brands-specific offer page", href: "/best-for/done-for-you-social-for-ecommerce-brands", linkText: "Read use case" },
     { title: "Social Volume Strategy for Ecommerce Brands", description: "Cadence math and 2026 platform priorities", href: "/best-for/social-volume-strategy-for-ecommerce-brands", linkText: "See the strategy" },
     { title: "Ecommerce Brands Social Media Agency Alternative", description: "Alternative to traditional ecommerce brands social media agencies", href: "/alternatives/ecommerce-brands-social-media-agency-alternative", linkText: "Compare" },
