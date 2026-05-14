@@ -35,14 +35,16 @@ const PLUMBER_PAIN_POINTS = [
   },
 ];
 
+const PAGE_TITLE = "Free Video Ads for Plumbers";
+const PAGE_DESCRIPTION =
+  "Get 300 free video ads when you start a Prestyj plan from $1,997/mo. We set up the campaigns and our AI agents respond to every lead. Built for plumbers.";
+
 export const metadata: Metadata = {
-  title: "300 Free Video Ads for Plumbers",
-  description:
-    "300 free video ads for plumbing companies when you start a Prestyj plan. Part of our AI agents for marketing & sales — 24-hour turnaround from one recording session.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   openGraph: {
-    title: "300 Free Video Ads for Plumbers",
-    description:
-      "300 free video ads for plumbing companies when you start a Prestyj plan. Part of our AI agents for marketing & sales.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     type: "website",
   },
 };
@@ -71,7 +73,11 @@ export default function PlumbersFreeAdsPage() {
         }}
       />
       <main className="min-h-screen">
-        <IndustryHero industry="Plumbing" ctaText="Get My FREE Plumbing Ads" />
+        <IndustryHero
+          industry="Plumbing"
+          headline={PAGE_TITLE}
+          ctaText="Get My FREE Plumbing Ads"
+        />
         <IndustryPainPoints painPoints={PLUMBER_PAIN_POINTS} ctaText="Get My FREE Plumbing Ads" />
         <SocialProof />
         <OfferBreakdown />

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { IndustryHero } from "@/components/free-ads/industry-hero";
-import { pricingTiers } from "@/lib/pricing-data";
 import { SocialProof } from "@/components/free-ads/social-proof";
 import { OfferBreakdown } from "@/components/free-ads/offer-breakdown";
 import { IndustryPainPoints } from "@/components/free-ads/industry-pain-points";
@@ -36,14 +35,16 @@ const ROOFER_PAIN_POINTS = [
   },
 ];
 
+const PAGE_TITLE = "Free Video Ads for Roofers";
+const PAGE_DESCRIPTION =
+  "Get 300 free video ads when you start a Prestyj plan from $1,997/mo. We set up the campaigns and our AI agents respond to every lead. Built for roofers.";
+
 export const metadata: Metadata = {
-  title: "300 Free Video Ads for Roofing Companies",
-  description:
-    "300 free video ads for roofing companies when you start a Prestyj plan. Part of our AI agents for marketing & sales — 24-hour turnaround from one recording session.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   openGraph: {
-    title: "300 Free Video Ads for Roofing Companies",
-    description:
-      "300 free video ads for roofing companies when you start a Prestyj plan. Part of our AI agents for marketing & sales.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     type: "website",
   },
 };
@@ -74,7 +75,7 @@ export default function RoofersFreeAdsPage() {
       <main className="min-h-screen">
         <IndustryHero
           industry="Roofing"
-          headline={`300 Free Storm-Ready Video Ads When You Start a Prestyj Plan from $${pricingTiers.find((t) => t.id === "starter")?.monthlyPrice.toLocaleString("en-US")}/mo.`}
+          headline={PAGE_TITLE}
           ctaText="Get My FREE Roofing Ads"
         />
         <IndustryPainPoints painPoints={ROOFER_PAIN_POINTS} ctaText="Get My FREE Roofing Ads" />

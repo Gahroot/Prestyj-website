@@ -35,14 +35,16 @@ const CONTRACTOR_PAIN_POINTS = [
   },
 ];
 
+const PAGE_TITLE = "Free Video Ads for Contractors";
+const PAGE_DESCRIPTION =
+  "Get 300 free video ads when you start a Prestyj plan from $1,997/mo. We set up the campaigns and our AI agents respond to every lead. Built for contractors.";
+
 export const metadata: Metadata = {
-  title: "300 Free Video Ads for Contractors",
-  description:
-    "300 free video ads for contractors when you start a Prestyj plan. Part of our AI agents for marketing & sales — 24-hour turnaround from one recording session.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   openGraph: {
-    title: "300 Free Video Ads for Contractors",
-    description:
-      "300 free video ads for contractors when you start a Prestyj plan. Part of our AI agents for marketing & sales.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     type: "website",
   },
 };
@@ -71,7 +73,11 @@ export default function ContractorsFreeAdsPage() {
         }}
       />
       <main className="min-h-screen">
-        <IndustryHero industry="Contracting" ctaText="Get My FREE Contractor Ads" />
+        <IndustryHero
+          industry="Contracting"
+          headline={PAGE_TITLE}
+          ctaText="Get My FREE Contractor Ads"
+        />
         <IndustryPainPoints
           painPoints={CONTRACTOR_PAIN_POINTS}
           ctaText="Get My FREE Contractor Ads"
