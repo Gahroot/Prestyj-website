@@ -19,10 +19,6 @@ const HowItWorksSection = dynamic(
   () => import("@/components/sections/how-it-works").then((m) => m.HowItWorksSection),
   { ssr: true },
 );
-const TestimonialsSection = dynamic(
-  () => import("@/components/sections/testimonials").then((m) => m.TestimonialsSection),
-  { ssr: true },
-);
 const PricingSection = dynamic(
   () => import("@/components/sections/pricing").then((m) => m.PricingSection),
   { ssr: true },
@@ -95,7 +91,6 @@ export default function Home() {
         <SolutionSection />
         <HowItWorksSection />
         <StatisticsSection />
-        <TestimonialsSection />
         <PricingSection />
         <FAQSection />
         <CTASection />

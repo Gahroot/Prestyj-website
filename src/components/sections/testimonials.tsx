@@ -32,21 +32,24 @@ const testimonials = [
 export function TestimonialsSection() {
   return (
     <section className="py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-            Team Leaders Who Run Like a Business
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-16 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
+            What Our Customers Say
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            What happens when you stop relying on manual follow-up and start running your leads like a system.
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            How businesses use Prestyj to respond, qualify, and book leads automatically.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid gap-8 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={testimonial.name} delay={index * 0.15}>
-              <SpotlightCard spotlightColor="rgba(94, 229, 179, 0.15)" className="border border-border bg-card rounded-xl h-full">
-                <div className="p-6 relative">
+              <SpotlightCard
+                spotlightColor="rgba(94, 229, 179, 0.15)"
+                className="border-border bg-card h-full rounded-xl border"
+              >
+                <div className="relative p-6">
                   <p className="text-foreground mb-6 italic">&ldquo;{testimonial.quote}&rdquo;</p>
                   <div className="flex items-center gap-3">
                     <Avatar>
@@ -56,8 +59,8 @@ export function TestimonialsSection() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="font-semibold text-foreground">{testimonial.name}</p>
-                      <p className="text-sm text-muted-foreground">{testimonial.role}</p>
+                      <p className="text-foreground font-semibold">{testimonial.name}</p>
+                      <p className="text-muted-foreground text-sm">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
