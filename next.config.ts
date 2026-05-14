@@ -28,6 +28,33 @@ const nextConfig: NextConfig = {
         destination: "/alternatives/human-isa",
         permanent: true,
       },
+      // Consolidate duplicate /get-ads/* → /free-ads/* (identical metadata caused
+      // Google to canonicalize one; 301 the rest to preserve link equity).
+      {
+        source: "/get-ads",
+        destination: "/free-ads",
+        permanent: true,
+      },
+      {
+        source: "/get-ads/plumbers",
+        destination: "/free-ads/plumbers",
+        permanent: true,
+      },
+      {
+        source: "/get-ads/hvac",
+        destination: "/free-ads/hvac",
+        permanent: true,
+      },
+      {
+        source: "/get-ads/roofers",
+        destination: "/free-ads/roofers",
+        permanent: true,
+      },
+      {
+        source: "/get-ads/contractors",
+        destination: "/free-ads/contractors",
+        permanent: true,
+      },
     ];
   },
 };
