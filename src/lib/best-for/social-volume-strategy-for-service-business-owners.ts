@@ -148,8 +148,8 @@ export const socialVolumeStrategyForServiceBusinessOwners: BestForPageContent = 
     headline: "Stop Posting What You Have Time For. Start Posting What the Algorithm Rewards.",
     subheadline:
       "Prestyj is the content engine that lets owners of $1M–$10M revenue HVAC, plumbing, roofing, electrical, and home-service shops execute a Tier 4 cadence — 1,500+ posts/month across 7 platforms — with 15–30 minutes of weekly review. No 5-person team. No retainer. No contract.",
-    buttonText: "Get My Service Business Owners Volume Plan",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Tier 4 cadence · 7 platforms · 15 min/wk to review · No contract",
   },
 };

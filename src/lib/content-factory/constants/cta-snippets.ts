@@ -1,10 +1,10 @@
 export const CTA_SNIPPETS = {
   BOOK_FREE_DEMO: {
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
   },
   BOOK_TEAM_DEMO: {
-    buttonText: "Book a Team Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
   },
   NO_CREDIT_CARD: "No credit card required. See results in minutes.",

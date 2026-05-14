@@ -31,7 +31,8 @@ export const aiWorkflowAutomationConsulting: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Your Team Is Drowning in Repetitive Work",
-    subheadline: "The tasks that consume the most time are the easiest to automate — but identifying them requires a process audit.",
+    subheadline:
+      "The tasks that consume the most time are the easiest to automate — but identifying them requires a process audit.",
     points: [
       {
         icon: "Clock",
@@ -161,7 +162,7 @@ export const aiWorkflowAutomationConsulting: SolutionPageContent = {
     headline: "Free Your Team from Repetitive Work.",
     subheadline:
       "AI workflow automation consulting that identifies, prioritizes, and implements automations saving 10–30 hours per week. From audit to automated workflows in 4 weeks.",
-    buttonText: "Get Process Audit",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "10–30 hrs/week saved · Tool-agnostic · 4-week implementation timeline",
   },

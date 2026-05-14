@@ -153,7 +153,7 @@ export const roofing: SolutionPageContent = {
     headline: "Ready for Your Best Storm Season Ever?",
     subheadline:
       "Every storm lead you capture is $15,000-25,000 in revenue. Stop missing calls and start booking inspections automatically.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No commitment required. See how AI responds to storm leads in under 60 seconds.",
   },

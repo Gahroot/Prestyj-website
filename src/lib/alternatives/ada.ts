@@ -63,8 +63,7 @@ export const ada: AlternativePageContent = createAlternativePage({
         feature: "Built for Lead Response",
         prestyj: true,
         competitor: false,
-        note:
-          "Ada automates customer support (issues, returns, FAQs), not lead generation and qualification",
+        note: "Ada automates customer support (issues, returns, FAQs), not lead generation and qualification",
       },
       {
         feature: "Voice Calling Capabilities",
@@ -82,50 +81,43 @@ export const ada: AlternativePageContent = createAlternativePage({
         feature: "Real Estate Workflows",
         prestyj: true,
         competitor: false,
-        note:
-          "No pre-built flows for buyer/seller qualification, showing requests, portal leads",
+        note: "No pre-built flows for buyer/seller qualification, showing requests, portal leads",
       },
       {
         feature: "Home Services Optimization",
         prestyj: true,
         competitor: false,
-        note:
-          "Lacks emergency dispatch, technician scheduling, service-specific routing",
+        note: "Lacks emergency dispatch, technician scheduling, service-specific routing",
       },
       {
         feature: "Multi-Agent Architecture",
         prestyj: true,
         competitor: false,
-        note:
-          "Ada uses single-agent model; Prestyny deploys specialized agents per sales stage",
+        note: "Ada uses single-agent model; Prestyny deploys specialized agents per sales stage",
       },
       {
         feature: "Speed-to-Lead Optimization",
         prestyj: true,
         competitor: false,
-        note:
-          "Ada focuses on resolution time, not first-response speed critical for leads",
+        note: "Ada focuses on resolution time, not first-response speed critical for leads",
       },
       {
         feature: "Appointment Booking",
         prestyj: true,
         competitor: "Basic",
-        note:
-          "Ada supports simple booking but lacks complex scheduling, technician routing, calendar integration",
+        note: "Ada supports simple booking but lacks complex scheduling, technician routing, calendar integration",
       },
       {
         feature: "Industry Compliance",
         prestyj: true,
         competitor: "Generic",
-        note:
-          "Ada has general compliance but lacks industry-specific (fair housing, insurance licensing)",
+        note: "Ada has general compliance but lacks industry-specific (fair housing, insurance licensing)",
       },
       {
         feature: "CRM Integrations",
         prestyj: true,
         competitor: true,
-        note:
-          "Both integrate with major CRMs, but Prestyj has native industry CRM support",
+        note: "Both integrate with major CRMs, but Prestyj has native industry CRM support",
       },
       {
         feature: "Implementation Time",
@@ -198,7 +190,7 @@ export const ada: AlternativePageContent = createAlternativePage({
       icon: "Clock",
       title: "Deploy in Days, Not Quarters",
       description:
-      "Ada enterprise deployments take 12+ weeks with extensive configuration. Prestyj deploys in days with industry-tuned workflows out of the box. Faster value, lower implementation cost, quicker ROI.",
+        "Ada enterprise deployments take 12+ weeks with extensive configuration. Prestyj deploys in days with industry-tuned workflows out of the box. Faster value, lower implementation cost, quicker ROI.",
     },
   ],
   whenCompetitorFits: [
@@ -248,7 +240,7 @@ export const ada: AlternativePageContent = createAlternativePage({
     headline: "Need Lead Response, Not Customer Support Chatbots?",
     subheadline:
       "See why real estate, home services, and insurance businesses choose Prestyj's voice-first lead response over chat-only customer support platforms. Industry-tuned workflows, multi-agent performance, and proven 4.8% conversion rates.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Voice + SMS. Industry-specific. Deploy in days.",
   },

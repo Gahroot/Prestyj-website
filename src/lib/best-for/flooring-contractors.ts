@@ -7,7 +7,8 @@ export const flooringContractors: BestForPageContent = createBestForPage({
   niche: {
     name: "Flooring Contractors",
     shortName: "Flooring Contractors",
-    description: "Flooring contractors and installers seeking AI-powered lead response and consultation scheduling",
+    description:
+      "Flooring contractors and installers seeking AI-powered lead response and consultation scheduling",
   },
   meta: {
     title: "AI Voice Agents for Flooring Contractors | Prestyj",
@@ -208,7 +209,8 @@ export const flooringContractors: BestForPageContent = createBestForPage({
     headline: "Stop Losing $3K-15K Flooring Jobs to Slow Response",
     subheadline:
       "Homeowners contact 3-5 flooring contractors. The first to respond usually gets the job. AI captures every lead in under 60 seconds, qualifies the project, and books consultations before your competition even returns the call.",
-    buttonText: "Book Your Demo",
-    footnote: "No credit card required. Live in 1-2 weeks. Perfect for flooring contractors of all sizes.",
+    buttonText: "Book a Demo",
+    footnote:
+      "No credit card required. Live in 1-2 weeks. Perfect for flooring contractors of all sizes.",
   },
 });

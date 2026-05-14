@@ -177,7 +177,7 @@ export const realGeeks: AlternativePageContent = createAlternativePage({
     headline: "Ready to Maximize Your Real Geeks Investment?",
     subheadline:
       "You paid for those leads. Make sure they all get instant, professional follow-up. See how Prestyj enhances Real Geeks.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Works alongside Real Geeks. No migration needed.",
   },

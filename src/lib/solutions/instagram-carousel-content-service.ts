@@ -29,7 +29,8 @@ export const instagramCarouselContentService: SolutionPageContent = {
   },
   painPoints: {
     headline: "Instagram Carousels Are High-Performing — and Time-Consuming",
-    subheadline: "Every carousel requires a designer, a copywriter, and a scheduler. You're one person.",
+    subheadline:
+      "Every carousel requires a designer, a copywriter, and a scheduler. You're one person.",
     points: [
       {
         icon: "Clock",
@@ -56,8 +57,7 @@ export const instagramCarouselContentService: SolutionPageContent = {
   },
   benefits: {
     headline: "Instagram Carousels at Scale — Without a Design Team",
-    subheadline:
-      "Branded, platform-optimized carousel content generated and published daily.",
+    subheadline: "Branded, platform-optimized carousel content generated and published daily.",
     benefits: [
       {
         icon: "Sparkles",
@@ -149,7 +149,7 @@ export const instagramCarouselContentService: SolutionPageContent = {
     headline: "Your Instagram Should Be Your Best Marketing Channel.",
     subheadline:
       "Branded carousels, image posts, and reels — 30-50 per day, auto-published. Instagram growth without the design bottleneck.",
-    buttonText: "Start Your Instagram Service",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Branded carousels · Auto-published · $497/month",
   },

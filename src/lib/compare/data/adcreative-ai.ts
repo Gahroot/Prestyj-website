@@ -48,20 +48,51 @@ export const adcreativeAiCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Output format", prestyj: "Vertical video (9:16)", competitor: "Static images & banners" },
+    {
+      feature: "Output format",
+      prestyj: "Vertical video (9:16)",
+      competitor: "Static images & banners",
+    },
     { feature: "Includes your real face", prestyj: true, competitor: false },
-    { feature: "Spoken scripts written for you", prestyj: true, competitor: false, note: "AdCreative.ai writes short headline copy, not video scripts" },
-    { feature: "Ads per batch", prestyj: "300-1,000 video ads", competitor: "Limited by monthly download credits" },
-    { feature: "Built for Reels / TikTok / Shorts", prestyj: true, competitor: false, note: "Static images underperform vs video on vertical-feed placements" },
-    { feature: "Turnaround", prestyj: "24 hrs, done-for-you", competitor: "Seconds per image — but it's still a static image" },
+    {
+      feature: "Spoken scripts written for you",
+      prestyj: true,
+      competitor: false,
+      note: "AdCreative.ai writes short headline copy, not video scripts",
+    },
+    {
+      feature: "Ads per batch",
+      prestyj: "300-1,000 video ads",
+      competitor: "Limited by monthly download credits",
+    },
+    {
+      feature: "Built for Reels / TikTok / Shorts",
+      prestyj: true,
+      competitor: false,
+      note: "Static images underperform vs video on vertical-feed placements",
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, done-for-you",
+      competitor: "Seconds per image — but it's still a static image",
+    },
     { feature: "Monthly subscription required", prestyj: false, competitor: true },
-    { feature: "Cost over 12 months (Premium tier)", prestyj: "$1,497 once", competitor: "$2,500+ for a year of static creative" },
-    { feature: "Vertical-specific scripts (real estate, home services)", prestyj: true, competitor: false },
+    {
+      feature: "Cost over 12 months (Premium tier)",
+      prestyj: "$1,497 once",
+      competitor: "$2,500+ for a year of static creative",
+    },
+    {
+      feature: "Vertical-specific scripts (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
     { feature: "Owner-led trust signal", prestyj: true, competitor: false },
   ],
   whySwitch: {
     title: "Why Static Image Ads Are Losing in 2026",
-    description: "AdCreative.ai is a great tool for what it does — banner and image ads. The problem is that vertical video with a real human face has eaten the feed.",
+    description:
+      "AdCreative.ai is a great tool for what it does — banner and image ads. The problem is that vertical video with a real human face has eaten the feed.",
     reasons: [
       {
         icon: "TrendingUp",
@@ -96,16 +127,31 @@ export const adcreativeAiCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs HeyGen", description: "AI avatars vs real face", href: "/compare/prestyj-vs-heygen", linkText: "Read comparison" },
-    { title: "vs Pencil", description: "AI ad creative platform compared", href: "/compare/prestyj-vs-pencil", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs HeyGen",
+      description: "AI avatars vs real face",
+      href: "/compare/prestyj-vs-heygen",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Pencil",
+      description: "AI ad creative platform compared",
+      href: "/compare/prestyj-vs-pencil",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Static Loses. Video With a Real Face Wins.",
     description:
       "AdCreative.ai will keep cranking out static banners. Prestyj ships 300-1,000 vertical video ads with your real face in 24 hours, for a one-time price.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +162,11 @@ export const adcreativeAiMetadata: CompareMetadata = {
   title: "PRESTYJ vs AdCreative.ai: Static Images or Real-Face Video Ads? (2026)",
   description:
     "AdCreative.ai makes static image ads for $29-$209/mo. PRESTYJ ships 300-1,000 vertical video ads with your real face in 24 hours for $1,497 one-time.",
-  keywords: ["adcreative.ai alternative", "adcreative ai vs prestyj", "ai ad creative alternative", "video ads vs static ads", "batch video ads"],
+  keywords: [
+    "adcreative.ai alternative",
+    "adcreative ai vs prestyj",
+    "ai ad creative alternative",
+    "video ads vs static ads",
+    "batch video ads",
+  ],
 };

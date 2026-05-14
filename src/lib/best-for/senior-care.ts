@@ -7,7 +7,8 @@ export const seniorCare: BestForPageContent = createBestForPage({
   niche: {
     name: "Senior Care Facilities",
     shortName: "Senior Care",
-    description: "Senior care facilities and assisted living communities looking for AI-powered family communication and tour scheduling",
+    description:
+      "Senior care facilities and assisted living communities looking for AI-powered family communication and tour scheduling",
   },
   meta: {
     title: "AI Communication for Senior Care Facilities | Family Support | Prestyj",
@@ -44,7 +45,7 @@ export const seniorCare: BestForPageContent = createBestForPage({
       icon: "Calendar" as IconName,
       title: "Schedule Tours Automatically",
       description:
-      "Prospective resident families call to schedule visits. AI handles tour scheduling 24/7, checks availability, sends confirmations, and ensures your sales team never misses a qualified lead.",
+        "Prospective resident families call to schedule visits. AI handles tour scheduling 24/7, checks availability, sends confirmations, and ensures your sales team never misses a qualified lead.",
     },
     {
       icon: "Heart" as IconName,
@@ -173,7 +174,7 @@ export const seniorCare: BestForPageContent = createBestForPage({
     headline: "Improve Family Communication, Reduce Staff Workload",
     subheadline:
       "Answer every call 24/7, capture every tour request, and free your staff to focus on resident care. Book a demo to see AI handling senior care communications.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Designed for senior care sensitivity. No credit card required.",
   },
 });

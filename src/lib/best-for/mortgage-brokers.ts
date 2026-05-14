@@ -154,7 +154,7 @@ export const mortgageBrokers: BestForPageContent = createBestForPage({
     headline: "Stop Losing Rate Shoppers to Faster Competitors",
     subheadline:
       "The first broker to respond professionally wins the loan. Book a demo to see how AI puts you first in line.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "No credit card required. Built for mortgage professionals.",
   },
 });

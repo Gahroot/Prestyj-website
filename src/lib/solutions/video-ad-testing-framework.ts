@@ -101,7 +101,8 @@ export const videoAdTestingFramework: SolutionPageContent = {
   },
   objections: {
     headline: "What Growth Leaders Ask About Testing Frameworks",
-    subheadline: "Questions from CMOs, growth leads, and media buyers evaluating creative testing methodology.",
+    subheadline:
+      "Questions from CMOs, growth leads, and media buyers evaluating creative testing methodology.",
     objections: [
       {
         objection: "Can't we just build this testing framework ourselves?",
@@ -161,8 +162,8 @@ export const videoAdTestingFramework: SolutionPageContent = {
     headline: "Stop Guessing. Start Testing — Systematically.",
     subheadline:
       "Video ad testing framework with 50+ hook categories, 300+ tagged variations, and compounding creative intelligence. Learn what works — not just what won.",
-    buttonText: "Start Testing Framework",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "50+ hook categories · 300+ tagged variations · Compounding insights",
   },
 };

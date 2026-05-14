@@ -81,7 +81,7 @@ export const vapi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Vapi is infrastructure; you build integrations yourself"
+        "Vapi is infrastructure; you build integrations yourself",
       ),
       {
         feature: "Pricing Transparency",
@@ -220,7 +220,7 @@ export const vapi: AlternativePageContent = createAlternativePage({
     headline: "Skip the Build. Hire Your AI Receptionist Today.",
     subheadline:
       "Vapi is powerful infrastructure for developers. But if you just need a receptionist that works, Prestyj is ready to answer your calls.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card. No developers. No infrastructure knowledge needed.",
   },

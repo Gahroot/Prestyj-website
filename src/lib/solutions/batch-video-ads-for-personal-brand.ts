@@ -161,8 +161,8 @@ export const batchVideoAdsForPersonalBrand: SolutionPageContent = {
     headline: "Scale You — Not an Actor, Not an Avatar.",
     subheadline:
       "One 15–20 minute session. 300–1,000 scripted variations with the real you. Build the owner-operator authority your prospects are actually buying.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing starts at $1,497 · One recording session · 24-hour turnaround",
   },
 };

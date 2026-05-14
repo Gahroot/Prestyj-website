@@ -132,7 +132,7 @@ export const socialContentForMortgageBrokers: BestForPageContent = {
     headline: "Your Referral Pipeline Starts With Consistent Content.",
     subheadline:
       "Compliance-aware social media content for independent mortgage brokers and small brokerages. Rate updates, buyer education, and realtor partnership posts — 30–50 per day at $47/month.",
-    buttonText: "Get Started With Prestyj",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Compliance-aware · Realtor partnerships · $47/month",
   },

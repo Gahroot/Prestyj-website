@@ -1,9 +1,5 @@
 import type { ComparePageData, CompareMetadata } from "../types";
-import {
-  createComparePage,
-  buildCompareFeature,
-  STANDARD_FEATURES,
-} from "@/lib/content-factory";
+import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const followUpBossCompareData: ComparePageData = createComparePage({
   slug: "follow-up-boss-vs-prestyj",
@@ -57,12 +53,36 @@ export const followUpBossCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    buildCompareFeature(STANDARD_FEATURES.AI_TEXT, false, "Requires 3rd party integration like Structurely or Ylopo"),
-    buildCompareFeature(STANDARD_FEATURES.AI_VOICE, false, "Requires separate AI voice tool like Air.ai or similar"),
-    buildCompareFeature(STANDARD_FEATURES.RESPONSE_24_7, false, "Only with additional AI tool integrations"),
-    buildCompareFeature(STANDARD_FEATURES.BUILT_IN_CRM, true, "FUB has excellent CRM; Prestyj also has built-in CRM"),
-    buildCompareFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, false, "Requires calendar + AI tool stack"),
-    buildCompareFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, false, "Must integrate with external AI qualification tool"),
+    buildCompareFeature(
+      STANDARD_FEATURES.AI_TEXT,
+      false,
+      "Requires 3rd party integration like Structurely or Ylopo",
+    ),
+    buildCompareFeature(
+      STANDARD_FEATURES.AI_VOICE,
+      false,
+      "Requires separate AI voice tool like Air.ai or similar",
+    ),
+    buildCompareFeature(
+      STANDARD_FEATURES.RESPONSE_24_7,
+      false,
+      "Only with additional AI tool integrations",
+    ),
+    buildCompareFeature(
+      STANDARD_FEATURES.BUILT_IN_CRM,
+      true,
+      "FUB has excellent CRM; Prestyj also has built-in CRM",
+    ),
+    buildCompareFeature(
+      STANDARD_FEATURES.APPOINTMENT_BOOKING,
+      false,
+      "Requires calendar + AI tool stack",
+    ),
+    buildCompareFeature(
+      STANDARD_FEATURES.LEAD_QUALIFICATION,
+      false,
+      "Must integrate with external AI qualification tool",
+    ),
     {
       feature: "Native AI Agents",
       prestyj: true,
@@ -131,7 +151,7 @@ export const followUpBossCompareData: ComparePageData = createComparePage({
     title: "Ready to See Prestyj in Action?",
     description:
       "Book a personalized demo to see how Prestyj's native AI agents can replace your entire CRM + AI tool stack.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     disclaimer: "No credit card required. See results in minutes.",
   },
 });

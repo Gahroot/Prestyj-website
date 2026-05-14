@@ -142,7 +142,7 @@ export const socialContentForInsuranceAgents: BestForPageContent = {
     headline: "Your Community Already Needs Insurance. Be the Agent They See.",
     subheadline:
       "Educational content, life-event triggers, and compliance-aware copy — 30–50 posts per day that keep you top-of-mind in your market.",
-    buttonText: "Start Your Content Engine",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Compliance-aware · Life-event triggers · Local market focus",
   },

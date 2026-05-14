@@ -7,7 +7,8 @@ export const salonsAndSpas: BestForPageContent = createBestForPage({
   niche: {
     name: "Salons and Spas",
     shortName: "Salons & Spas",
-    description: "Salons and spas looking for AI-powered appointment booking, client communication, and no-show reduction",
+    description:
+      "Salons and spas looking for AI-powered appointment booking, client communication, and no-show reduction",
   },
   meta: {
     title: "AI Receptionist for Salons & Spas | Reduce No-Shows | Prestyj",
@@ -173,7 +174,7 @@ export const salonsAndSpas: BestForPageContent = createBestForPage({
     headline: "Stop Losing $75-$200 Per No-Show Appointment",
     subheadline:
       "Reduce no-shows by 70%, capture every new client call, and give your front desk 20 hours back every week. Book a demo to see the impact on your salon or spa.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with all major salon software. No credit card required.",
   },
 });

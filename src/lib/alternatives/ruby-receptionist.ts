@@ -13,8 +13,7 @@ export const rubyReceptionist: AlternativePageContent = createAlternativePage({
     shortName: "Ruby",
     pricing: "$249-589/mo + setup fees",
     website: "https://ruby.com",
-    description:
-      "Premium live virtual receptionist service for small businesses and law firms",
+    description: "Premium live virtual receptionist service for small businesses and law firms",
   },
   meta: {
     title: "Ruby Receptionist Alternative: AI Receptionist at 85% Less | Prestyj",
@@ -59,8 +58,7 @@ export const rubyReceptionist: AlternativePageContent = createAlternativePage({
         feature: "Monthly Cost",
         prestyj: "$500-2,000/mo for 24/7",
         competitor: "$249-589/mo (business hours)",
-        note:
-          "Ruby's lower tiers cover limited minutes; higher tiers needed for meaningful volume",
+        note: "Ruby's lower tiers cover limited minutes; higher tiers needed for meaningful volume",
       },
       {
         feature: "Availability Hours",
@@ -176,7 +174,7 @@ export const rubyReceptionist: AlternativePageContent = createAlternativePage({
     headline: "Ready for 24/7 AI Receptionist at 85% Less?",
     subheadline:
       "Stop paying premium rates for business-hours coverage. Get 24/7 AI voice agents with consistent quality—no sick days, no turnover, no voicemail.",
-    buttonText: "Start Your Free Trial",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "24/7 coverage included. No tier limits. Cancel anytime.",
   },

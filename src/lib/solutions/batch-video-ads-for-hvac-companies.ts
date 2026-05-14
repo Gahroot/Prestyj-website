@@ -101,7 +101,8 @@ export const batchVideoAdsForHvacCompanies: SolutionPageContent = {
   },
   objections: {
     headline: "HVAC Owners Ask These Questions",
-    subheadline: "If you've managed your own ad spend or worked with an agency, these will sound familiar.",
+    subheadline:
+      "If you've managed your own ad spend or worked with an agency, these will sound familiar.",
     objections: [
       {
         objection: "I get most of my calls from Google — why invest in video creative?",
@@ -156,8 +157,9 @@ export const batchVideoAdsForHvacCompanies: SolutionPageContent = {
     headline: "Don't Let Creative Fatigue Kill Your HVAC Season.",
     subheadline:
       "Record for 15 minutes. Get 300–1,000 HVAC-specific video ads in 24 hours. Emergency hooks, seasonal scripts, and service-line variations — all from one take.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
-    footnote: "One-time pricing starts at $1,497 · 24-hour turnaround · Works across Meta, TikTok, YouTube, Google",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
+    footnote:
+      "One-time pricing starts at $1,497 · 24-hour turnaround · Works across Meta, TikTok, YouTube, Google",
   },
 };

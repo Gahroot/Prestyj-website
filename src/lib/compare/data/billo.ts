@@ -48,16 +48,50 @@ export const billoCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Uses your real face and voice", prestyj: true, competitor: false, note: "Billo creators are strangers holding your product" },
-    { feature: "Works for owner-brand service businesses", prestyj: true, competitor: false, note: "Billo is optimized for physical-product ecom" },
-    { feature: "Scripts written for you", prestyj: true, competitor: "Partial (briefs, not finished scripts)" },
-    { feature: "Volume per engagement", prestyj: "300-1,000 ads", competitor: "1 creator = 1-3 deliverables" },
+    {
+      feature: "Uses your real face and voice",
+      prestyj: true,
+      competitor: false,
+      note: "Billo creators are strangers holding your product",
+    },
+    {
+      feature: "Works for owner-brand service businesses",
+      prestyj: true,
+      competitor: false,
+      note: "Billo is optimized for physical-product ecom",
+    },
+    {
+      feature: "Scripts written for you",
+      prestyj: true,
+      competitor: "Partial (briefs, not finished scripts)",
+    },
+    {
+      feature: "Volume per engagement",
+      prestyj: "300-1,000 ads",
+      competitor: "1 creator = 1-3 deliverables",
+    },
     { feature: "Turnaround", prestyj: "24 hrs", competitor: "7-21 days per creator round" },
-    { feature: "Cost for 500 ads", prestyj: "$1,497-$3,997 (flat)", competitor: "$50,000+ (500 × $99+)" },
-    { feature: "Consistency across all ads", prestyj: "Same owner, same brand", competitor: "Every creator looks different" },
+    {
+      feature: "Cost for 500 ads",
+      prestyj: "$1,497-$3,997 (flat)",
+      competitor: "$50,000+ (500 × $99+)",
+    },
+    {
+      feature: "Consistency across all ads",
+      prestyj: "Same owner, same brand",
+      competitor: "Every creator looks different",
+    },
     { feature: "Need to ship product to creator", prestyj: false, competitor: true },
-    { feature: "Creator quality variance", prestyj: "N/A", competitor: "High — you gamble every brief" },
-    { feature: "Real estate / financial / legal fit", prestyj: true, competitor: "Poor — UGC creators can't represent licensed services" },
+    {
+      feature: "Creator quality variance",
+      prestyj: "N/A",
+      competitor: "High — you gamble every brief",
+    },
+    {
+      feature: "Real estate / financial / legal fit",
+      prestyj: true,
+      competitor: "Poor — UGC creators can't represent licensed services",
+    },
   ],
   whySwitch: {
     title: "Why a UGC Marketplace Breaks for Service Businesses",
@@ -96,16 +130,31 @@ export const billoCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs UGC Creators (category)", description: "All UGC routes compared", href: "/compare/prestyj-vs-ugc-creators", linkText: "Read comparison" },
-    { title: "vs Fiverr Video Ads", description: "Freelance video sellers compared", href: "/compare/prestyj-vs-fiverr-video-ads", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs UGC Creators (category)",
+      description: "All UGC routes compared",
+      href: "/compare/prestyj-vs-ugc-creators",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Fiverr Video Ads",
+      description: "Freelance video sellers compared",
+      href: "/compare/prestyj-vs-fiverr-video-ads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Your Product Is You. Act Like It.",
     description:
       "Billo makes sense for supplement ecom. Prestyj makes sense when your face closes the deal.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +165,11 @@ export const billoMetadata: CompareMetadata = {
   title: "PRESTYJ vs Billo: Your Face or a Stranger's? (2026)",
   description:
     "Billo hires strangers to hold your product. PRESTYJ films you - the owner - in 300-1,000 scripted ads in 24 hours. $1,497 flat vs $50K+ for UGC.",
-  keywords: ["billo alternative", "billo vs prestyj", "ugc marketplace alternative", "owner ugc", "service business video ads"],
+  keywords: [
+    "billo alternative",
+    "billo vs prestyj",
+    "ugc marketplace alternative",
+    "owner ugc",
+    "service business video ads",
+  ],
 };

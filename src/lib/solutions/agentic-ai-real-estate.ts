@@ -29,7 +29,8 @@ export const agenticAiRealEstate: SolutionPageContent = {
   },
   painPoints: {
     headline: "Your Current AI Tools Aren't Working Hard Enough",
-    subheadline: "Chatbots and basic automation create more work, not less. It's time for AI that actually gets things done.",
+    subheadline:
+      "Chatbots and basic automation create more work, not less. It's time for AI that actually gets things done.",
     points: [
       {
         icon: "Bot",
@@ -77,7 +78,8 @@ export const agenticAiRealEstate: SolutionPageContent = {
   },
   benefits: {
     headline: "Autonomous AI Agents That Execute End-to-End",
-    subheadline: "Agentic AI doesn't just respond—it acts, coordinates, and completes multi-step workflows on your behalf.",
+    subheadline:
+      "Agentic AI doesn't just respond—it acts, coordinates, and completes multi-step workflows on your behalf.",
     benefits: [
       {
         icon: "Workflow",
@@ -119,7 +121,8 @@ export const agenticAiRealEstate: SolutionPageContent = {
   },
   objections: {
     headline: "Concerns About Agentic AI",
-    subheadline: "Autonomous AI is new territory. Here's what forward-thinking leaders ask—and the answers.",
+    subheadline:
+      "Autonomous AI is new territory. Here's what forward-thinking leaders ask—and the answers.",
     objections: [
       {
         objection: "Autonomous AI sounds risky.",
@@ -145,7 +148,8 @@ export const agenticAiRealEstate: SolutionPageContent = {
   },
   calculator: {
     headline: "Calculate Your Agentic AI Impact",
-    subheadline: "See how autonomous AI agents transform your real estate operation's efficiency and revenue.",
+    subheadline:
+      "See how autonomous AI agents transform your real estate operation's efficiency and revenue.",
     inputs: {
       leads: {
         label: "Team size",
@@ -166,7 +170,7 @@ export const agenticAiRealEstate: SolutionPageContent = {
     headline: "Deploy Your AI Workforce Today",
     subheadline:
       "Stop managing chatbots and start deploying autonomous AI agents that execute complete workflows. Lead response, qualification, scheduling, follow-up, and transaction coordination—handled intelligently, 24/7.",
-    buttonText: "Book an Agentic AI Strategy Call",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "See autonomous workflow execution in action. No commitment required.",
   },

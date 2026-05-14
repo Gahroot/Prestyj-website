@@ -56,7 +56,8 @@ export const salesAutomation: SolutionPageContent = {
   },
   benefits: {
     headline: "Automate Your Way to More Closed Deals",
-    subheadline: "Our AI-powered sales automation handles the entire pipeline—from first touch to booked appointment.",
+    subheadline:
+      "Our AI-powered sales automation handles the entire pipeline—from first touch to booked appointment.",
     benefits: [
       {
         icon: "RefreshCw",
@@ -182,7 +183,7 @@ export const salesAutomation: SolutionPageContent = {
     headline: "Ready to Put Your Sales Pipeline on Autopilot?",
     subheadline:
       "Stop losing leads to manual processes. See how AI-powered sales automation can transform your revenue.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No commitment required. See the automation in action with your own leads.",
   },

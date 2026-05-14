@@ -133,7 +133,7 @@ export const socialContentForCoaches: BestForPageContent = {
     headline: "Your Pipeline Shouldn't Depend on Your Free Time.",
     subheadline:
       "Done-for-you social media content for coaches. 30–50 authority-building posts per day that fill your calendar with high-ticket discovery calls.",
-    buttonText: "Get Content That Books Calls",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Your voice · Your methodology · Fully booked calendar",
   },

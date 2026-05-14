@@ -191,8 +191,8 @@ export const hvacCompaniesVideoProductionAlternative: AlternativePageContent = {
     headline: "HVAC Video Production, Re-Engineered for Paid Social.",
     subheadline:
       "Send us 20 minutes of footage and we'll deliver a complete batch of hvac-specific video ads organized by angle — ready to test on Meta and TikTok within days.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Packages from $1,497 · 24-hour delivery · No retainer",
   },
 };

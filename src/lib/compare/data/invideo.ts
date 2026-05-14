@@ -48,20 +48,55 @@ export const invideoCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Uses your real face and voice", prestyj: true, competitor: false, note: "InVideo is stock footage + AI voiceover by default" },
+    {
+      feature: "Uses your real face and voice",
+      prestyj: true,
+      competitor: false,
+      note: "InVideo is stock footage + AI voiceover by default",
+    },
     { feature: "Scripts written for you", prestyj: true, competitor: false },
-    { feature: "Ads per batch", prestyj: "300-1,000", competitor: "Limited by export minutes per plan" },
-    { feature: "Turnaround", prestyj: "24 hrs, done-for-you", competitor: "Per-render minutes — but you build every video" },
+    {
+      feature: "Ads per batch",
+      prestyj: "300-1,000",
+      competitor: "Limited by export minutes per plan",
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, done-for-you",
+      competitor: "Per-render minutes — but you build every video",
+    },
     { feature: "Monthly subscription required", prestyj: false, competitor: true },
-    { feature: "Cost per ad at 500 ads", prestyj: "~$3-5", competitor: "Subscription + dozens of hours of editing labor" },
-    { feature: "Vertical-specific ad scripts (real estate, home services)", prestyj: true, competitor: false },
-    { feature: "Generic stock footage risk (looks like everyone else)", prestyj: false, competitor: true },
-    { feature: "AI content disclosure / policy risk", prestyj: false, competitor: true, note: "Meta and TikTok increasingly flag AI-voiced content" },
-    { feature: "One-take recording", prestyj: "15-20 min", competitor: "N/A — you assemble in the editor" },
+    {
+      feature: "Cost per ad at 500 ads",
+      prestyj: "~$3-5",
+      competitor: "Subscription + dozens of hours of editing labor",
+    },
+    {
+      feature: "Vertical-specific ad scripts (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
+    {
+      feature: "Generic stock footage risk (looks like everyone else)",
+      prestyj: false,
+      competitor: true,
+    },
+    {
+      feature: "AI content disclosure / policy risk",
+      prestyj: false,
+      competitor: true,
+      note: "Meta and TikTok increasingly flag AI-voiced content",
+    },
+    {
+      feature: "One-take recording",
+      prestyj: "15-20 min",
+      competitor: "N/A — you assemble in the editor",
+    },
   ],
   whySwitch: {
     title: "Why InVideo Falls Short for Service-Business Ads",
-    description: "InVideo is a flexible video editor with AI assist. It's not a batch ad system that puts the actual owner on camera.",
+    description:
+      "InVideo is a flexible video editor with AI assist. It's not a batch ad system that puts the actual owner on camera.",
     reasons: [
       {
         icon: "Users",
@@ -96,16 +131,31 @@ export const invideoCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs HeyGen", description: "AI avatars vs your real face", href: "/compare/prestyj-vs-heygen", linkText: "Read comparison" },
-    { title: "vs Synthesia", description: "Avatar video vs UGC video", href: "/compare/prestyj-vs-synthesia", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs HeyGen",
+      description: "AI avatars vs your real face",
+      href: "/compare/prestyj-vs-heygen",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Synthesia",
+      description: "Avatar video vs UGC video",
+      href: "/compare/prestyj-vs-synthesia",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Skip the Stock Footage. Be the Ad.",
     description:
       "InVideo gives you a powerful editor and a stack of templates. Prestyj gives you 300-1,000 finished ads with your real face in 24 hours.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +166,11 @@ export const invideoMetadata: CompareMetadata = {
   title: "PRESTYJ vs InVideo: Stock Footage AI vs Your Real Face (2026)",
   description:
     "InVideo stitches stock footage with AI voiceover for $25-$60/mo. PRESTYJ films the real you for 300-1,000 vertical ads in 24 hours, $1,497 one-time.",
-  keywords: ["invideo alternative", "invideo vs prestyj", "ai video creation alternative", "real face ugc ads", "batch video ads"],
+  keywords: [
+    "invideo alternative",
+    "invideo vs prestyj",
+    "ai video creation alternative",
+    "real face ugc ads",
+    "batch video ads",
+  ],
 };

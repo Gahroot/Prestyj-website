@@ -149,8 +149,8 @@ export const adHookTestingService: SolutionPageContent = {
     headline: "Stop Guessing Which Hook Works. Test 300+ and Let Data Decide.",
     subheadline:
       "Systematic hook testing at scale. 300+ variations per batch, delivered in 24 hours. From $1,497.",
-    buttonText: "Start Hook Testing",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "300+ hooks per batch · Data-driven · 24-hour delivery",
   },
 };

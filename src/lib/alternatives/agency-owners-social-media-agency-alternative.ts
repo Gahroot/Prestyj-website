@@ -223,8 +223,8 @@ export const agencyOwnersSocialMediaAgencyAlternative: AlternativePageContent = 
     headline: "Replace the Agency Owners Agency Retainer with an AI Content Engine",
     subheadline:
       "See how Prestyj ships 1,500+ posts/month across 7 platforms for founders of $30K–$300K/month marketing, creative, and growth agencies — for less than half the cost of a traditional social media agency. No retainer. No contract. No account manager.",
-    buttonText: "See How It Works for Agency Owners",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "$3,000/mo flat · 1,500+ posts/mo · 7 platforms · No contract",
   },
 });

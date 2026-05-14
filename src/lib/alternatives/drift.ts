@@ -13,8 +13,7 @@ export const drift: AlternativePageContent = createAlternativePage({
     shortName: "Drift",
     pricing: "$60K+/year + seat costs",
     website: "https://drift.com",
-    description:
-      "Enterprise conversational AI platform for B2B sales teams, now part of Salesloft",
+    description: "Enterprise conversational AI platform for B2B sales teams, now part of Salesloft",
   },
   meta: {
     title: "Drift Alternative for Real Estate Enterprise | Prestyj",
@@ -59,8 +58,7 @@ export const drift: AlternativePageContent = createAlternativePage({
         feature: "Built for Real Estate",
         prestyj: true,
         competitor: false,
-        note:
-          "Drift is built for generic B2B sales, requires customization for RE workflows",
+        note: "Drift is built for generic B2B sales, requires customization for RE workflows",
       },
       buildAlternativeFeature(STANDARD_FEATURES.AI_TEXT, true),
       {
@@ -79,8 +77,7 @@ export const drift: AlternativePageContent = createAlternativePage({
         feature: "Real Estate CRM Integrations",
         prestyj: true,
         competitor: false,
-        note:
-          "No native Follow Up Boss, BoomTown, kvCORE, or Sierra integration",
+        note: "No native Follow Up Boss, BoomTown, kvCORE, or Sierra integration",
       },
       {
         feature: "Multi-Office Management",
@@ -191,7 +188,7 @@ export const drift: AlternativePageContent = createAlternativePage({
     headline: "Ready for a Real Estate-First Platform?",
     subheadline:
       "See how enterprise real estate operations are choosing purpose-built solutions over generic B2B platforms. Faster deployment, predictable pricing, and RE-native integrations.",
-    buttonText: "Book Your Enterprise Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Deploy in days, not months. No per-seat add-ons.",
   },

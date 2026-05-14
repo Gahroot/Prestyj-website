@@ -7,7 +7,8 @@ export const autoRepairShops: BestForPageContent = createBestForPage({
   niche: {
     name: "Auto Repair Shops",
     shortName: "Auto Repair",
-    description: "Auto repair shops looking for AI-powered call handling, service scheduling, and customer communication",
+    description:
+      "Auto repair shops looking for AI-powered call handling, service scheduling, and customer communication",
   },
   meta: {
     title: "AI Phone Answering for Auto Repair Shops | Service Scheduling | Prestyj",
@@ -173,7 +174,7 @@ export const autoRepairShops: BestForPageContent = createBestForPage({
     headline: "Never Miss Another Service Call Again",
     subheadline:
       "Capture every repair job, schedule appointments 24/7, and keep your bays full. Book a demo to see AI handling auto repair shop calls.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with all major shop management systems. No credit card required.",
   },
 });

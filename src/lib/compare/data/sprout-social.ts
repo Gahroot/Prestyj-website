@@ -48,20 +48,52 @@ export const sproutSocialCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Creates finished ads for you", prestyj: true, competitor: false, note: "Sprout schedules content you've already made — it doesn't make any" },
+    {
+      feature: "Creates finished ads for you",
+      prestyj: true,
+      competitor: false,
+      note: "Sprout schedules content you've already made — it doesn't make any",
+    },
     { feature: "Scripts written for you", prestyj: true, competitor: false },
     { feature: "Includes your real face on camera", prestyj: true, competitor: false },
-    { feature: "Ads per batch", prestyj: "300-1,000", competitor: "0 — you bring your own creative" },
-    { feature: "Turnaround", prestyj: "24 hrs, done-for-you", competitor: "N/A — content production not included" },
-    { feature: "Monthly per-seat subscription", prestyj: false, competitor: true, note: "Sprout charges per user, so a 5-person team can run $1,200-$2,500/mo" },
-    { feature: "Cost over 12 months (single seat)", prestyj: "$1,497 once", competitor: "$2,988 – $5,988+" },
-    { feature: "Vertical-specific ad scripts (real estate, home services)", prestyj: true, competitor: false },
-    { feature: "Reporting & social listening", prestyj: false, competitor: true, note: "If you need listening, keep Sprout — but pair it with Prestyj for the actual ads" },
+    {
+      feature: "Ads per batch",
+      prestyj: "300-1,000",
+      competitor: "0 — you bring your own creative",
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, done-for-you",
+      competitor: "N/A — content production not included",
+    },
+    {
+      feature: "Monthly per-seat subscription",
+      prestyj: false,
+      competitor: true,
+      note: "Sprout charges per user, so a 5-person team can run $1,200-$2,500/mo",
+    },
+    {
+      feature: "Cost over 12 months (single seat)",
+      prestyj: "$1,497 once",
+      competitor: "$2,988 – $5,988+",
+    },
+    {
+      feature: "Vertical-specific ad scripts (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
+    {
+      feature: "Reporting & social listening",
+      prestyj: false,
+      competitor: true,
+      note: "If you need listening, keep Sprout — but pair it with Prestyj for the actual ads",
+    },
     { feature: "One-take recording", prestyj: "15-20 min", competitor: "N/A" },
   ],
   whySwitch: {
     title: "Why Sprout Social Isn't Solving Your Real Problem",
-    description: "Sprout is excellent at managing posts you already have. The hard part — creating 500 scroll-stopping ads with your face — isn't on its menu.",
+    description:
+      "Sprout is excellent at managing posts you already have. The hard part — creating 500 scroll-stopping ads with your face — isn't on its menu.",
     reasons: [
       {
         icon: "FileText",
@@ -96,16 +128,31 @@ export const sproutSocialCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs HeyGen", description: "AI avatars vs your real face", href: "/compare/prestyj-vs-heygen", linkText: "Read comparison" },
-    { title: "vs AI Agency", description: "Done-for-you ads vs retainer agencies", href: "/compare/prestyj-vs-ai-agency", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs HeyGen",
+      description: "AI avatars vs your real face",
+      href: "/compare/prestyj-vs-heygen",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs AI Agency",
+      description: "Done-for-you ads vs retainer agencies",
+      href: "/compare/prestyj-vs-ai-agency",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Stop Paying to Schedule. Start Paying for Ads That Convert.",
     description:
       "Keep Sprout if you love the dashboard. But the ads you publish through it? Prestyj ships 300-1,000 of them in 24 hours, for a one-time price.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +163,11 @@ export const sproutSocialMetadata: CompareMetadata = {
   title: "PRESTYJ vs Sprout Social: A Scheduler Won't Create Your Ads (2026)",
   description:
     "Sprout Social is $249-$499/seat/mo and creates zero ads. PRESTYJ ships 300-1,000 vertical video ads with your real face in 24 hours for $1,497 one-time.",
-  keywords: ["sprout social alternative", "sprout social vs prestyj", "social media management alternative", "batch video ads", "owner-operator marketing"],
+  keywords: [
+    "sprout social alternative",
+    "sprout social vs prestyj",
+    "social media management alternative",
+    "batch video ads",
+    "owner-operator marketing",
+  ],
 };

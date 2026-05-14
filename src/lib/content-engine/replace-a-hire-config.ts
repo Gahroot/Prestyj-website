@@ -55,17 +55,8 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
     ],
     videoSrc: "/videos/dfy-vsl.mp4",
     videoPoster: "/images/content-engine/vsl-poster.jpg",
-    videoAriaLabel:
-      "AI content department replacing a junior social media hire \u2014 demo video",
-    platforms: [
-      "Instagram",
-      "Facebook",
-      "TikTok",
-      "YouTube",
-      "LinkedIn",
-      "Threads",
-      "X",
-    ],
+    videoAriaLabel: "AI content department replacing a junior social media hire \u2014 demo video",
+    platforms: ["Instagram", "Facebook", "TikTok", "YouTube", "LinkedIn", "Threads", "X"],
   },
 
   problem: {
@@ -172,8 +163,7 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
 
   proofScreenshots: {
     headline: "The AI Department \u2014 Running Right Now.",
-    subhead:
-      "The same content engine shipping for Prestyj, every single day. No humans needed.",
+    subhead: "The same content engine shipping for Prestyj, every single day. No humans needed.",
     shots: [
       {
         src: "/images/content-engine/proof-1.webp",
@@ -297,8 +287,7 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
 
   comparison: {
     headline: "Cost-Per-Hire vs. Cost-Per-Engine",
-    subhead:
-      "One junior hire costs more and does less. The math speaks for itself.",
+    subhead: "One junior hire costs more and does less. The math speaks for itself.",
     rows: [
       {
         feature: "Annual cost (loaded)",
@@ -375,8 +364,7 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
 
   faq: {
     headline: "Replace-a-Hire Questions, Answered.",
-    subhead:
-      "Everything you need to know before firing your posting schedule (not your person).",
+    subhead: "Everything you need to know before firing your posting schedule (not your person).",
     faqs: [
       {
         question: "How much does a junior social media hire really cost?",
@@ -435,12 +423,11 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
     headline: "Stop Paying for a Hire. Start Paying for Output.",
     subhead:
       "An entire content department for less than one junior hire\u2019s salary. Live in 24 hours. Cancel anytime.",
-    buttonLabel: "Book Your Demo",
+    buttonLabel: "Book a Demo",
     buttonHref: "/book-demo",
     eventName: "ReplaceAHireLeadIntent",
     eventLabel: "final-cta",
-    footnote:
-      "See the AI content department running live before you commit.",
+    footnote: "See the AI content department running live before you commit.",
     sparkColor: "#7058e3",
   },
 
@@ -451,8 +438,7 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
       {
         id: "minimum",
         name: "Minimum Plan",
-        tagline:
-          "270 posts/month \u2014 replaces the output of one junior hire for 60% less.",
+        tagline: "270 posts/month \u2014 replaces the output of one junior hire for 60% less.",
         setupFee: 1500,
         monthlyPrice: 1997,
         accounts: "1 account (brand OR personal)",
@@ -472,8 +458,7 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
       {
         id: "pro",
         name: "Pro Plan",
-        tagline:
-          "900 posts/month \u2014 replaces a 3-person content team. Most popular.",
+        tagline: "900 posts/month \u2014 replaces a 3-person content team. Most popular.",
         setupFee: 2500,
         monthlyPrice: 2997,
         accounts: "2 accounts (brand + personal)",
@@ -494,8 +479,7 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
       {
         id: "max",
         name: "Max Plan",
-        tagline:
-          "2,700 posts/month \u2014 replaces an entire content department.",
+        tagline: "2,700 posts/month \u2014 replaces an entire content department.",
         setupFee: 4500,
         monthlyPrice: 4997,
         accounts: "3 accounts (brand + personal + niche)",
@@ -514,11 +498,10 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
       },
     ],
     customCta: {
-      headline:
-        "Running an agency or multi-brand operation? Need 5,000+ posts/month?",
+      headline: "Running an agency or multi-brand operation? Need 5,000+ posts/month?",
       description:
         "We\u2019ll build something custom \u2014 your account count, your platforms, your volume target.",
-      buttonLabel: "Talk to Us",
+      buttonLabel: "Book a Demo",
       href: "/book-demo",
       eventName: "ReplaceAHireLeadIntent",
       eventLabel: "pricing-custom",
@@ -549,8 +532,7 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
       {
         icon: ShieldCheck,
         title: "Volume guarantee",
-        description:
-          "We hit your post count in 30 days, or we credit the shortfall to next month.",
+        description: "We hit your post count in 30 days, or we credit the shortfall to next month.",
       },
       {
         icon: Ban,
@@ -567,7 +549,6 @@ export const replaceAHireConfig: ContentEnginePageConfig = {
     subhead:
       "Walk through the engine end-to-end \u2014 from brief to published post across every platform.",
     embedUrl: "https://www.loom.com/embed/PLACEHOLDER",
-    iframeTitle:
-      "AI content department walkthrough \u2014 see the engine running live",
+    iframeTitle: "AI content department walkthrough \u2014 see the engine running live",
   },
 };

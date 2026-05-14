@@ -7,10 +7,12 @@ export const aiVoiceReceptionistPlasticSurgery: BestForPageContent = createBestF
   niche: {
     name: "AI Voice Receptionist for Plastic Surgery & Medical Spas",
     shortName: "Plastic Surgery Voice AI",
-    description: "Plastic surgery centers and medical spas needing discreet patient communication, consultation bookings, and high-touch lead handling for aesthetic procedures",
+    description:
+      "Plastic surgery centers and medical spas needing discreet patient communication, consultation bookings, and high-touch lead handling for aesthetic procedures",
   },
   meta: {
-    title: "AI Voice Receptionist for Plastic Surgery & MedSpas | Capture High-Value Cosmetic Leads | Prestyj",
+    title:
+      "AI Voice Receptionist for Plastic Surgery & MedSpas | Capture High-Value Cosmetic Leads | Prestyj",
     description:
       "AI voice receptionist built for plastic surgery and medspa practices. Capture consultation bookings 24/7, handle discreet patient communication, support multilingual inquiries, and never miss a high-value cosmetic lead. HIPAA-compliant.",
     keywords: [
@@ -56,7 +58,7 @@ export const aiVoiceReceptionistPlasticSurgery: BestForPageContent = createBestF
       icon: "Calendar" as IconName,
       title: "Consultation Booking That Converts",
       description:
-      "AI understands your consultation process, gathers relevant details (procedure interest, medical history, timeline), and books qualified consultations. Your surgeons spend less time on unqualified leads and more time with serious patients.",
+        "AI understands your consultation process, gathers relevant details (procedure interest, medical history, timeline), and books qualified consultations. Your surgeons spend less time on unqualified leads and more time with serious patients.",
     },
     {
       icon: "Heart" as IconName,
@@ -235,7 +237,8 @@ export const aiVoiceReceptionistPlasticSurgery: BestForPageContent = createBestF
     headline: "Never Miss Another High-Value Cosmetic Lead",
     subheadline:
       "Capture every consultation booking, handle multilingual patients, and provide discreet 24/7 service. See how AI voice receptionist can help you book more procedures and give your team 20+ hours back every week. Schedule a demo tailored to your practice.",
-    buttonText: "Book Your Demo",
-    footnote: "HIPAA-compliant. Multilingual support included. Works with all major practice management systems.",
+    buttonText: "Book a Demo",
+    footnote:
+      "HIPAA-compliant. Multilingual support included. Works with all major practice management systems.",
   },
 });

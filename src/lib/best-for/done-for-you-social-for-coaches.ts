@@ -153,8 +153,8 @@ export const doneForYouSocialForCoaches: BestForPageContent = {
     headline: "Your Coaches Brand Shouldn't Depend on Your Free Time.",
     subheadline:
       "Done-for-you social media content for business, executive, and life coaches selling $2K–$25K coaching programs and group offers. 1,500+ posts per month across 7 platforms. Vertical-researched scripts. Voice-trained captions. No retainer, no contract, no account managers.",
-    buttonText: "See How It Works for Coaches",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Your voice · 7 platforms · 1,500+ posts/mo · No contract",
   },
 };

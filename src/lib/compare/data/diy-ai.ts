@@ -46,8 +46,7 @@ export const diyAiCompareData: ComparePageData = createComparePage({
     {
       value: "Days",
       label: "Prestyj implementation",
-      description:
-        "We handle everything: setup, integration, training, and ongoing optimization",
+      description: "We handle everything: setup, integration, training, and ongoing optimization",
     },
   ],
   pricing: {
@@ -137,8 +136,7 @@ export const diyAiCompareData: ComparePageData = createComparePage({
   ],
   whySwitch: {
     title: "Why Service Businesses Choose Done-for-You Over DIY",
-    description:
-      "The math looks attractive on the homepage. The bill tells a different story.",
+    description: "The math looks attractive on the homepage. The bill tells a different story.",
     reasons: [
       {
         icon: "DollarSign",
@@ -169,29 +167,25 @@ export const diyAiCompareData: ComparePageData = createComparePage({
   relatedResources: [
     {
       title: "Best for ServiceTitan Users",
-      description:
-        "Deep integration with ServiceTitan for seamless job booking.",
+      description: "Deep integration with ServiceTitan for seamless job booking.",
       href: "/best-for/servicetitan-users",
       linkText: "Learn more",
     },
     {
       title: "Best for HVAC Companies",
-      description:
-        "Built for high call volume during peak heating and cooling seasons.",
+      description: "Built for high call volume during peak heating and cooling seasons.",
       href: "/best-for/hvac",
       linkText: "Explore HVAC solution",
     },
     {
       title: "Best for Plumbing Contractors",
-      description:
-        "Emergency triage and immediate dispatch for plumbing emergencies.",
+      description: "Emergency triage and immediate dispatch for plumbing emergencies.",
       href: "/best-for/plumbing",
       linkText: "Explore plumbing solution",
     },
     {
       title: "Home Services Solution",
-      description:
-        "Complete AI workforce for contractors and home service businesses.",
+      description: "Complete AI workforce for contractors and home service businesses.",
       href: "/solutions/home-services",
       linkText: "View the solution",
     },
@@ -201,18 +195,16 @@ export const diyAiCompareData: ComparePageData = createComparePage({
     titleAccent: "Done-for-You",
     description:
       "Stop worrying about per-minute fees, API integrations, and prompt engineering. Get a production-ready AI workforce in days—not months.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
-    disclaimer:
-      "No commitment required. See your implementation timeline and flat-rate pricing.",
+    disclaimer: "No commitment required. See your implementation timeline and flat-rate pricing.",
   },
 });
 
 export const diyAiMetadata: CompareMetadata = {
   slug: "ai-consultant-vs-diy-ai",
   competitorName: "DIY AI Platforms",
-  title:
-    "Done-for-You AI vs DIY Platforms: True Cost Comparison for Service Businesses | 2026",
+  title: "Done-for-You AI vs DIY Platforms: True Cost Comparison for Service Businesses | 2026",
   description:
     "Compare done-for-you AI implementation vs DIY developer platforms. See the hidden costs of per-minute pricing during storm season and why service businesses choose Prestyj.",
   keywords: [

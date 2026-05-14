@@ -108,7 +108,7 @@ export const aiProofOfConcept: SolutionPageContent = {
   cta: {
     headline: "Got an AI Idea? Validate It Fast.",
     subheadline: "2-4 week proof of concept projects that answer the key question: Will this work?",
-    buttonText: "Discuss Your POC",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
   },
 };

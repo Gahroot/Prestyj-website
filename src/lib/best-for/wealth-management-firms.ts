@@ -7,7 +7,8 @@ export const wealthManagementFirms: BestForPageContent = createBestForPage({
   niche: {
     name: "Wealth Management Firms & Private Banks",
     shortName: "Wealth Management",
-    description: "Enterprise wealth management needing compliant, done-for-you AI for high-net-worth prospect engagement",
+    description:
+      "Enterprise wealth management needing compliant, done-for-you AI for high-net-worth prospect engagement",
   },
   meta: {
     title: "Done-For-You AI Agents for Wealth Management Firms | Prestyj",
@@ -63,7 +64,8 @@ export const wealthManagementFirms: BestForPageContent = createBestForPage({
         "AI engages prospects in under 60 seconds, 24/7. When a $10M prospect submits a form Saturday afternoon, they get immediate engagement and book a consultation before competitors reply Monday morning.",
     },
     {
-      problem: "Junior staff can't qualify complex HNW prospects (trusts, alternatives, concentrated stock)",
+      problem:
+        "Junior staff can't qualify complex HNW prospects (trusts, alternatives, concentrated stock)",
       solution:
         "AI asks sophisticated qualifying questions: current AUM, investment complexity, planning needs, dissatisfaction with current advisor. Surfaces high-value opportunities without requiring senior advisor time upfront.",
     },
@@ -73,7 +75,8 @@ export const wealthManagementFirms: BestForPageContent = createBestForPage({
         "Done-for-you eliminates build risk. We've deployed AI for firms managing $10B+ AUM. You get proven methodologies, not 18 months of trial and error. Live in 3 weeks with guaranteed production deployment.",
     },
     {
-      problem: "DIY platforms require technical expertise you don't have (APIs, webhooks, CRM mapping)",
+      problem:
+        "DIY platforms require technical expertise you don't have (APIs, webhooks, CRM mapping)",
       solution:
         "Zero technical work on your end. We handle Salesforce FSC integration, advisor routing, phone system setup, compliance workflows. You approve the strategy, we execute everything.",
     },
@@ -155,7 +158,7 @@ export const wealthManagementFirms: BestForPageContent = createBestForPage({
     headline: "Engage HNW Prospects in Seconds, Not Days",
     subheadline:
       "See how enterprise wealth management firms use done-for-you AI to qualify $5M+ prospects, route intelligently, and book more consultations. Schedule a demo to see your AI in action.",
-    buttonText: "Book Enterprise Demo",
+    buttonText: "Book a Demo",
     footnote: "Salesforce FSC integrated. FINRA-aware. Production-ready in 3 weeks.",
   },
 });

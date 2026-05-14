@@ -156,7 +156,7 @@ export const aiLeadResponse: BestForPageContent = createBestForPage({
     headline: "Never Lose Another Lead to Slow Response",
     subheadline:
       "See how AI lead response captures 3-4x more opportunities from the same traffic. Book a demo to see instant response in action.",
-    buttonText: "See AI Lead Response Live",
+    buttonText: "Book a Demo",
     footnote: "Most demos complete in 15 minutes. See your exact use case in action.",
   },
 });

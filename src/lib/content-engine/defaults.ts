@@ -50,15 +50,7 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
     videoSrc: "/videos/dfy-vsl.mp4",
     videoPoster: "/images/content-engine/vsl-poster.jpg",
     videoAriaLabel: "Done-for-you social media swarm demo video",
-    platforms: [
-      "Instagram",
-      "Facebook",
-      "TikTok",
-      "YouTube",
-      "LinkedIn",
-      "Threads",
-      "X",
-    ],
+    platforms: ["Instagram", "Facebook", "TikTok", "YouTube", "LinkedIn", "Threads", "X"],
   },
 
   problem: {
@@ -79,14 +71,16 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
       },
       {
         title: "One account isn\u2019t enough anymore.",
-        detail: "Your buyers live across 7 platforms and 3 personas. You\u2019re showing up on one.",
+        detail:
+          "Your buyers live across 7 platforms and 3 personas. You\u2019re showing up on one.",
       },
     ],
   },
 
   solution: {
     headline: "The Content Is the Targeting.",
-    subhead: "Every audience sees content built for them \u2014 because we run every account that matters.",
+    subhead:
+      "Every audience sees content built for them \u2014 because we run every account that matters.",
     pillars: [
       {
         icon: Users,
@@ -132,8 +126,7 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
         number: "03",
         icon: Rocket,
         title: "Posts Start Shipping",
-        description:
-          "Multiple accounts, 7 platforms, every single day. Algorithm-safe volume.",
+        description: "Multiple accounts, 7 platforms, every single day. Algorithm-safe volume.",
         highlight: "Day 1 onward",
       },
       {
@@ -183,7 +176,8 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
   liveAccounts: {
     headline: "See Us Posting",
     headlineAccent: "Right Now",
-    subhead: "These aren\u2019t mockups. Every account is live, posting daily, powered by the same engine you\u2019ll get.",
+    subhead:
+      "These aren\u2019t mockups. Every account is live, posting daily, powered by the same engine you\u2019ll get.",
     accounts: [
       {
         platform: "Instagram",
@@ -242,7 +236,8 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
     badgeText: "Live Feed",
     headline: "Fresh Off the",
     headlineAccent: "Content Engine",
-    subhead: "Real posts, real engagement. Here\u2019s what the engine published this week across Instagram and TikTok.",
+    subhead:
+      "Real posts, real engagement. Here\u2019s what the engine published this week across Instagram and TikTok.",
     instagramPosts: [
       {
         embedUrl: "https://www.instagram.com/p/DIMpFIhymQC/embed/",
@@ -392,8 +387,7 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
       },
       {
         question: "Do you actually post for me, or do I have to?",
-        answer:
-          "We post. Native publishing across all 7 platforms. You don\u2019t open the apps.",
+        answer: "We post. Native publishing across all 7 platforms. You don\u2019t open the apps.",
       },
       {
         question: "Won\u2019t this many posts get me shadowbanned?",
@@ -407,13 +401,11 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
       },
       {
         question: "Do I have to approve every post?",
-        answer:
-          "Optional. Most clients let it run. You get a weekly digest of what shipped.",
+        answer: "Optional. Most clients let it run. You get a weekly digest of what shipped.",
       },
       {
         question: "How is this different from Buffer/Hootsuite/Later?",
-        answer:
-          "Those schedule. We make the content AND post it. Tool vs. department.",
+        answer: "Those schedule. We make the content AND post it. Tool vs. department.",
       },
       {
         question: "Can I cancel?",
@@ -435,7 +427,7 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
   cta: {
     headline: "See 50 Posts Shipped In Your First 24 Hours.",
     subhead: "Live in 24h or setup fee refunded. Cancel anytime. Talk to us before you renew with your agency.",
-    buttonLabel: "Start My Swarm \u2014 Live in 24h",
+    buttonLabel: "Book a Demo",
     buttonHref: "/book-demo",
     eventName: "ContentEngineLeadIntent",
     eventLabel: "final-cta",
@@ -511,8 +503,9 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
     ],
     customCta: {
       headline: "Running 4+ accounts? Agency reselling? Multi-brand operator?",
-      description: "We\u2019ll build something custom \u2014 your account count, your platforms, your stack.",
-      buttonLabel: "Talk to Us",
+      description:
+        "We\u2019ll build something custom \u2014 your account count, your platforms, your stack.",
+      buttonLabel: "Book a Demo",
       href: "/book-demo",
       eventName: "ContentEngineLeadIntent",
       eventLabel: "pricing-custom",
@@ -520,8 +513,7 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
     addons: [
       {
         title: "AI Creator / Branded Persona",
-        description:
-          "We build and run a faceless or AI-persona account on top of your plan.",
+        description: "We build and run a faceless or AI-persona account on top of your plan.",
       },
       {
         title: "Engagement Layer",
@@ -536,14 +528,12 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
       {
         icon: Clock,
         title: "Live in 24 hours",
-        description:
-          "From the moment you grant account access, or your setup fee is refunded.",
+        description: "From the moment you grant account access, or your setup fee is refunded.",
       },
       {
         icon: ShieldCheck,
         title: "Volume guarantee",
-        description:
-          "We hit your post count in 30 days, or we credit the shortfall to next month.",
+        description: "We hit your post count in 30 days, or we credit the shortfall to next month.",
       },
       {
         icon: Ban,
@@ -557,7 +547,8 @@ export const defaultContentEngineConfig: ContentEnginePageConfig = {
     badgeIcon: Play,
     badgeText: "Watch the Engine Run",
     headline: "See It in Action",
-    subhead: "Walk through the content engine end-to-end \u2014 from brief to published post across every platform.",
+    subhead:
+      "Walk through the content engine end-to-end \u2014 from brief to published post across every platform.",
     embedUrl: "https://www.loom.com/embed/PLACEHOLDER",
     iframeTitle: "Content engine walkthrough \u2014 see the engine running live",
   },

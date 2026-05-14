@@ -167,7 +167,7 @@ export const aiHomeBuilders: BestForPageContent = createBestForPage({
     headline: "Build Smarter with AI",
     subheadline:
       "See how Prestyj helps home builders capture more leads, keep buyers informed, and scale without adding staff. Book a demo tailored to new construction.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. See results in minutes.",
   },

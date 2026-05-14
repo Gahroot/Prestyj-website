@@ -29,7 +29,8 @@ export const youtubeShortsAdProduction: SolutionPageContent = {
   },
   painPoints: {
     headline: "YouTube Shorts Is the Cheapest Video Ad Placement — and You're Not Using It",
-    subheadline: "Shorts CPVs are 50–80% cheaper than in-stream ads. Most advertisers have zero Shorts creative.",
+    subheadline:
+      "Shorts CPVs are 50–80% cheaper than in-stream ads. Most advertisers have zero Shorts creative.",
     points: [
       {
         icon: "DollarSign",
@@ -149,8 +150,8 @@ export const youtubeShortsAdProduction: SolutionPageContent = {
     headline: "The Cheapest Video Ad Placement — and You're Not Using It.",
     subheadline:
       "300–1,000 YouTube Shorts ad variations per batch. Vertical, fast-paced, hook-first creative. From $1,497.",
-    buttonText: "Get Your Shorts Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "YouTube Shorts optimized · 24-hour delivery · Cross-platform ready",
   },
 };

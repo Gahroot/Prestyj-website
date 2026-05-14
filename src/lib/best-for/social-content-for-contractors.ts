@@ -132,7 +132,7 @@ export const socialContentForContractors: BestForPageContent = {
     headline: "Your Projects Deserve More Than a Phone Camera Roll.",
     subheadline:
       "Upload your project photos. Get 30–50 branded posts per day. Auto-published to every platform. $497/month.",
-    buttonText: "Start Your Contractor Content Service",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Upload photos · Auto-published · $497/month",
   },

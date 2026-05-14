@@ -139,7 +139,7 @@ export const socialContentForGymsFitness: BestForPageContent = {
     headline: "Your Classes Should Be Full. Your Feed Should Be, Too.",
     subheadline:
       "30–50 branded posts per day for your gym — transformation content, class promos, member spotlights, and local lead-gen. All on autopilot for $47/month.",
-    buttonText: "Start Filling Your Classes",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No contracts · Fitness-specific AI · $47/month",
   },

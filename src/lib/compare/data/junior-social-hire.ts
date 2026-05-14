@@ -4,7 +4,10 @@ import { createComparePage } from "@/lib/content-factory";
 const PRESTYJ_PRICING_FEATURES = [
   { text: "1,500+ posts/month across 7 platforms", included: true },
   { text: "Runs 24/7/365 — no PTO, no sick days, no Slack-DM excuses", included: true },
-  { text: "Daily publishing — Instagram, FB, TikTok, LinkedIn, X, Threads, YouTube", included: true },
+  {
+    text: "Daily publishing — Instagram, FB, TikTok, LinkedIn, X, Threads, YouTube",
+    included: true,
+  },
   { text: "Industry-trained scripts, captions, hooks, carousels", included: true },
   { text: "Weekly content calendar — approve in 30 minutes", included: true },
   { text: "Analytics + performance learning loop built in", included: true },
@@ -39,10 +42,18 @@ export const juniorSocialHireCompareData: ComparePageData = createComparePage({
       price: "~$75K all-in/yr",
       priceSubtext: "$55K salary + benefits, payroll tax, software, equipment",
       features: [
-        { text: "$55,000 base salary", included: true, note: "BLS median for junior social media coordinator" },
+        {
+          text: "$55,000 base salary",
+          included: true,
+          note: "BLS median for junior social media coordinator",
+        },
         { text: "+$12K–$20K benefits, payroll tax, 401k", included: true },
         { text: "+$3K–$5K software (Canva, scheduler, stock, AI tools)", included: true },
-        { text: "Ships 20–40 posts/month across 1–2 platforms", included: true, note: "Realistic junior output" },
+        {
+          text: "Ships 20–40 posts/month across 1–2 platforms",
+          included: true,
+          note: "Realistic junior output",
+        },
         { text: "Out 15–25 days/yr (PTO, sick, holidays)", included: false },
         { text: "Median tenure under 18 months — often quits at 6", included: false },
         { text: "6-week ramp before producing usable content", included: false },
@@ -51,19 +62,58 @@ export const juniorSocialHireCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Annual cost (fully loaded)", prestyj: "$36,000", competitor: "$70,000–$80,000", note: "Salary + benefits + payroll tax + software + equipment" },
-    { feature: "Posts per month", prestyj: "1,500+", competitor: "20–40", note: "Junior coordinators average 1–2 posts per business day across 1–2 platforms" },
+    {
+      feature: "Annual cost (fully loaded)",
+      prestyj: "$36,000",
+      competitor: "$70,000–$80,000",
+      note: "Salary + benefits + payroll tax + software + equipment",
+    },
+    {
+      feature: "Posts per month",
+      prestyj: "1,500+",
+      competitor: "20–40",
+      note: "Junior coordinators average 1–2 posts per business day across 1–2 platforms",
+    },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$150–$300" },
-    { feature: "Platforms covered", prestyj: "7 (IG, FB, TikTok, LinkedIn, X, Threads, YouTube)", competitor: "1–2 they're comfortable with" },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (IG, FB, TikTok, LinkedIn, X, Threads, YouTube)",
+      competitor: "1–2 they're comfortable with",
+    },
     { feature: "Coverage", prestyj: "24/7/365", competitor: "Mon–Fri, 9–5, minus PTO" },
-    { feature: "Time to first post", prestyj: "24 hours", competitor: "4–6 weeks (recruit + onboard + ramp)" },
+    {
+      feature: "Time to first post",
+      prestyj: "24 hours",
+      competitor: "4–6 weeks (recruit + onboard + ramp)",
+    },
     { feature: "Sick days, PTO, holidays", prestyj: "None", competitor: "15–25 days/yr" },
-    { feature: "Turnover risk", prestyj: "Zero", competitor: "Quits in ~6 months on average", note: "Junior marketing roles have the highest turnover in the org chart" },
+    {
+      feature: "Turnover risk",
+      prestyj: "Zero",
+      competitor: "Quits in ~6 months on average",
+      note: "Junior marketing roles have the highest turnover in the org chart",
+    },
     { feature: "Recruiting + severance cost", prestyj: "$0", competitor: "$8K–$15K per cycle" },
-    { feature: "Management overhead", prestyj: "Approve calendar in 30 min/wk", competitor: "Hiring, 1:1s, reviews, performance plans, rehiring" },
-    { feature: "Performance learning loop", prestyj: true, competitor: "Manual — if they know how" },
-    { feature: "Industry-specific scripts (real estate / home services)", prestyj: true, competitor: "Generic until trained — by you" },
-    { feature: "Scales with your business", prestyj: "Same price, more output", competitor: "Need a second hire" },
+    {
+      feature: "Management overhead",
+      prestyj: "Approve calendar in 30 min/wk",
+      competitor: "Hiring, 1:1s, reviews, performance plans, rehiring",
+    },
+    {
+      feature: "Performance learning loop",
+      prestyj: true,
+      competitor: "Manual — if they know how",
+    },
+    {
+      feature: "Industry-specific scripts (real estate / home services)",
+      prestyj: true,
+      competitor: "Generic until trained — by you",
+    },
+    {
+      feature: "Scales with your business",
+      prestyj: "Same price, more output",
+      competitor: "Need a second hire",
+    },
   ],
   whySwitch: {
     title: "Why Founders Are Skipping the Junior Hire Entirely",
@@ -109,17 +159,37 @@ export const juniorSocialHireCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Social Media Agency", description: "Agency retainer vs AI content engine", href: "/compare/prestyj-vs-social-media-agency", linkText: "Read comparison" },
-    { title: "vs Hootsuite", description: "Scheduler vs full content department", href: "/compare/prestyj-vs-hootsuite", linkText: "Read comparison" },
-    { title: "Done-For-You Social Media", description: "How the Prestyj content engine works", href: "/done-for-you-social-media", linkText: "Learn more" },
-    { title: "AI Content Department", description: "What replaces a 3-person content team", href: "/ai-content-department", linkText: "See the platform" },
+    {
+      title: "vs Social Media Agency",
+      description: "Agency retainer vs AI content engine",
+      href: "/compare/prestyj-vs-social-media-agency",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Hootsuite",
+      description: "Scheduler vs full content department",
+      href: "/compare/prestyj-vs-hootsuite",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Done-For-You Social Media",
+      description: "How the Prestyj content engine works",
+      href: "/done-for-you-social-media",
+      linkText: "Learn more",
+    },
+    {
+      title: "AI Content Department",
+      description: "What replaces a 3-person content team",
+      href: "/ai-content-department",
+      linkText: "See the platform",
+    },
   ],
   cta: {
     title: "Skip the $55K Hire. Get a Content Department for $3K/mo.",
     description:
       "Prestyj ships 1,500+ posts/month across 7 platforms — 24/7, month-to-month, live in 24 hours. No PTO, no severance, no 6-month exit. Just calendar approvals and outcomes.",
-    buttonText: "See How It Works",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "Month-to-month. Live in 24 hours. Cancel anytime — no severance.",
   },
 });
@@ -127,7 +197,8 @@ export const juniorSocialHireCompareData: ComparePageData = createComparePage({
 export const juniorSocialHireMetadata: CompareMetadata = {
   slug: "prestyj-vs-junior-social-hire",
   competitorName: "Junior Social Media Manager",
-  title: "Prestyj vs Hiring a Junior Social Media Manager: $3K/mo AI Department vs $55K/yr Hire (2026)",
+  title:
+    "Prestyj vs Hiring a Junior Social Media Manager: $3K/mo AI Department vs $55K/yr Hire (2026)",
   description:
     "Hiring a junior social media manager costs $70K–$80K all-in for 20–40 posts/month — and they quit in 6 months. Prestyj is a $3K/mo AI content department: 1,500+ posts, 7 platforms, 24/7, live in 24 hours.",
   keywords: [

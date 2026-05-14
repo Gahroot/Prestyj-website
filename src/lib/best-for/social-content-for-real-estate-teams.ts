@@ -132,7 +132,7 @@ export const socialContentForRealEstateTeams: BestForPageContent = {
     headline: "Every Listing. Every Agent. Every Platform. Automatically.",
     subheadline:
       "Done-for-you social content for real estate teams. Listing showcases, agent branding, and market expertise — 30–50 posts per day. $497/month.",
-    buttonText: "Start Your Team's Content Service",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Multi-agent · Listing-specific · Auto-published · $497/month",
   },

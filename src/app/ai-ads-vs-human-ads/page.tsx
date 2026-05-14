@@ -53,11 +53,19 @@ const COMPARE_ROWS = [
   { feature: "Production speed", prestyj: "24 hours from footage", ai: "Minutes" },
   { feature: "Volume per batch", prestyj: "300-1000 unique ads", ai: "Unlimited" },
   { feature: "Trust signal", prestyj: "Real owner on camera", ai: "Synthetic avatar" },
-  { feature: "Authenticity detection", prestyj: "Passes — looks like content", ai: "Detected by audience in 2-3 sec" },
+  {
+    feature: "Authenticity detection",
+    prestyj: "Passes — looks like content",
+    ai: "Detected by audience in 2-3 sec",
+  },
   { feature: "Service business fit", prestyj: "Strong", ai: "Weak" },
   { feature: "Ecommerce / product fit", prestyj: "Good", ai: "Strong" },
   { feature: "Client effort", prestyj: "One 15-20 min recording", ai: "Type a prompt" },
-  { feature: "Scripted hook/body/CTA variants", prestyj: "Yes — written for you", ai: "Template-based" },
+  {
+    feature: "Scripted hook/body/CTA variants",
+    prestyj: "Yes — written for you",
+    ai: "Template-based",
+  },
 ];
 
 export default function AiAdsVsHumanAdsPage() {
@@ -75,26 +83,23 @@ export default function AiAdsVsHumanAdsPage() {
       />
 
       {/* HERO */}
-      <section className="pt-24 pb-16 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+      <section className="px-4 pt-24 pb-16">
+        <div className="mx-auto max-w-5xl text-center">
+          <Badge variant="outline" className="border-primary/50 text-primary mb-6">
             THE 2026 DEBATE
           </Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-6">
+          <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
             AI Ads vs Human Ads:
-            <span className="block text-primary mt-2">
-              Which Actually Converts in 2026?
-            </span>
+            <span className="text-primary mt-2 block">Which Actually Converts in 2026?</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Short answer: depends on what you&apos;re selling. For ecommerce,
-            AI-generated creative can win on speed and cost. For service businesses
-            where trust is the purchase decision, a real owner on camera still
-            outperforms AI avatars — even when CTR looks similar.
+          <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg md:text-xl">
+            Short answer: depends on what you&apos;re selling. For ecommerce, AI-generated creative
+            can win on speed and cost. For service businesses where trust is the purchase decision,
+            a real owner on camera still outperforms AI avatars — even when CTR looks similar.
           </p>
           <Button size="lg" className="font-bold" asChild>
-            <Link href="/batch-video-ads#pricing">
-              Pick My Batch
+            <Link href="/book-demo">
+                Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -102,29 +107,30 @@ export default function AiAdsVsHumanAdsPage() {
       </section>
 
       {/* STATS */}
-      <section className="py-12 px-4 bg-muted/20 border-y border-border/50">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <section className="bg-muted/20 border-border/50 border-y px-4 py-12">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 text-center md:grid-cols-3">
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-primary">
-              <CountUp to={2} duration={1.5} />-3s
+            <div className="text-primary text-5xl font-bold md:text-6xl">
+              <CountUp to={2} duration={1.5} />
+              -3s
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               time to detect an AI avatar on video
             </p>
           </div>
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-warning">
+            <div className="text-warning text-5xl font-bold md:text-6xl">
               <CountUp to={300} duration={1.5} />+
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               real-face ads producible in 24 hours with Prestyj
             </p>
           </div>
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-success">
+            <div className="text-success text-5xl font-bold md:text-6xl">
               <CountUp to={15} duration={1.5} /> min
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               of recording = hundreds of scripted ads
             </p>
           </div>
@@ -132,38 +138,38 @@ export default function AiAdsVsHumanAdsPage() {
       </section>
 
       {/* WHAT AI IS GOOD AT */}
-      <section className="py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-5xl">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <AnimateOnScroll>
               <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-success/10 text-success flex items-center justify-center">
-                    <Bot className="w-6 h-6" />
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="bg-success/10 text-success flex h-12 w-12 items-center justify-center rounded-full">
+                    <Bot className="h-6 w-6" />
                   </div>
-                  <h2 className="text-2xl font-heading font-bold text-foreground">
+                  <h2 className="font-heading text-foreground text-2xl font-bold">
                     What AI Ads Are Good At
                   </h2>
                 </div>
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="text-muted-foreground space-y-3">
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Speed — minutes from prompt to output</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Cost — near-zero marginal cost per variation</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Product-forward ecom where the object is the hero</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Faceless brands and category products</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                    <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Rapid variant generation for A/B testing visuals</span>
                   </li>
                 </ul>
@@ -172,34 +178,36 @@ export default function AiAdsVsHumanAdsPage() {
 
             <AnimateOnScroll delay={0.1}>
               <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-destructive/10 text-destructive flex items-center justify-center">
-                    <X className="w-6 h-6" />
+                <div className="mb-4 flex items-center gap-3">
+                  <div className="bg-destructive/10 text-destructive flex h-12 w-12 items-center justify-center rounded-full">
+                    <X className="h-6 w-6" />
                   </div>
-                  <h2 className="text-2xl font-heading font-bold text-foreground">
+                  <h2 className="font-heading text-foreground text-2xl font-bold">
                     What AI Ads Are Bad At
                   </h2>
                 </div>
-                <ul className="space-y-3 text-muted-foreground">
+                <ul className="text-muted-foreground space-y-3">
                   <li className="flex items-start gap-3">
-                    <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <X className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Building trust in a person or brand founder</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <X className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Service businesses where you&apos;ll meet the buyer later</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <X className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Authenticity detection — audiences pattern-match fast</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
+                    <X className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>Local businesses relying on personal reputation</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <X className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                    <span>Anything where &ldquo;who&rdquo; matters more than &ldquo;what&rdquo;</span>
+                    <X className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
+                    <span>
+                      Anything where &ldquo;who&rdquo; matters more than &ldquo;what&rdquo;
+                    </span>
                   </li>
                 </ul>
               </BorderGlow>
@@ -209,30 +217,28 @@ export default function AiAdsVsHumanAdsPage() {
       </section>
 
       {/* THE REAL FACE WEDGE */}
-      <section className="py-20 px-4 bg-muted/20">
-        <div className="max-w-4xl mx-auto">
+      <section className="bg-muted/20 px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll>
-            <Badge variant="outline" className="mb-4 border-primary/50 text-primary">
+            <Badge variant="outline" className="border-primary/50 text-primary mb-4">
               THE WEDGE
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold md:text-4xl">
               The &ldquo;Real Face&rdquo; Wedge
             </h2>
-            <p className="text-muted-foreground text-lg mb-4">
-              Personal-brand businesses — real estate agents, coaches, fitness
-              trainers, financial advisors, local service founders — lose when they
-              switch to AI avatars. Not because the creative is visually bad, but
-              because the whole purchase is a trust decision, and trust can&apos;t be
-              synthesized. Prospects are effectively asking &ldquo;should I let this
-              person into my life / money / home?&rdquo; An AI avatar answers that
-              question with a shrug.
+            <p className="text-muted-foreground mb-4 text-lg">
+              Personal-brand businesses — real estate agents, coaches, fitness trainers, financial
+              advisors, local service founders — lose when they switch to AI avatars. Not because
+              the creative is visually bad, but because the whole purchase is a trust decision, and
+              trust can&apos;t be synthesized. Prospects are effectively asking &ldquo;should I let
+              this person into my life / money / home?&rdquo; An AI avatar answers that question
+              with a shrug.
             </p>
-            <p className="text-muted-foreground text-lg mb-4">
-              The paradox: for these businesses, the bottleneck was never creative
-              quality. It was <em>volume</em> of real-face creative. They all
-              intuitively knew real faces win, but couldn&apos;t produce enough to
-              keep their ad accounts fed. AI avatars became the compromise — and it
-              showed in the conversion data.
+            <p className="text-muted-foreground mb-4 text-lg">
+              The paradox: for these businesses, the bottleneck was never creative quality. It was{" "}
+              <em>volume</em> of real-face creative. They all intuitively knew real faces win, but
+              couldn&apos;t produce enough to keep their ad accounts fed. AI avatars became the
+              compromise — and it showed in the conversion data.
             </p>
             <p className="text-muted-foreground text-lg">
               That compromise is what{" "}
@@ -246,42 +252,39 @@ export default function AiAdsVsHumanAdsPage() {
       </section>
 
       {/* HYBRID */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold md:text-4xl">
               Hybrid: Real Face + Scripted Volume
             </h2>
-            <p className="text-muted-foreground text-lg mb-4">
-              The right answer for most service businesses isn&apos;t pure AI or
-              pure artisanal production. It&apos;s a hybrid that steals the best of
-              both: the authenticity of real human presence, with the volume economics
-              that AI made standard.
+            <p className="text-muted-foreground mb-4 text-lg">
+              The right answer for most service businesses isn&apos;t pure AI or pure artisanal
+              production. It&apos;s a hybrid that steals the best of both: the authenticity of real
+              human presence, with the volume economics that AI made standard.
             </p>
-            <p className="text-muted-foreground text-lg mb-6">
-              Our model: you record once, we script everything, we produce hundreds of
-              unique variations. One real human face. Hundreds of angles tested in
-              parallel. Same speed and volume as AI — without the conversion penalty.
+            <p className="text-muted-foreground mb-6 text-lg">
+              Our model: you record once, we script everything, we produce hundreds of unique
+              variations. One real human face. Hundreds of angles tested in parallel. Same speed and
+              volume as AI — without the conversion penalty.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div className="bg-card border border-border rounded-xl p-5 text-center">
-                <User className="w-8 h-8 text-primary mx-auto mb-2" />
-                <p className="font-heading font-bold text-foreground">Real face</p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  You, on camera, selfie style
-                </p>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="bg-card border-border rounded-xl border p-5 text-center">
+                <User className="text-primary mx-auto mb-2 h-8 w-8" />
+                <p className="font-heading text-foreground font-bold">Real face</p>
+                <p className="text-muted-foreground mt-1 text-sm">You, on camera, selfie style</p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-5 text-center">
-                <Zap className="w-8 h-8 text-warning mx-auto mb-2" />
-                <p className="font-heading font-bold text-foreground">AI-level speed</p>
-                <p className="text-sm text-muted-foreground mt-1">
+              <div className="bg-card border-border rounded-xl border p-5 text-center">
+                <Zap className="text-warning mx-auto mb-2 h-8 w-8" />
+                <p className="font-heading text-foreground font-bold">AI-level speed</p>
+                <p className="text-muted-foreground mt-1 text-sm">
                   300-1000 variations in 24 hours
                 </p>
               </div>
-              <div className="bg-card border border-border rounded-xl p-5 text-center">
-                <Bot className="w-8 h-8 text-success mx-auto mb-2" />
-                <p className="font-heading font-bold text-foreground">Script engine</p>
-                <p className="text-sm text-muted-foreground mt-1">
+              <div className="bg-card border-border rounded-xl border p-5 text-center">
+                <Bot className="text-success mx-auto mb-2 h-8 w-8" />
+                <p className="font-heading text-foreground font-bold">Script engine</p>
+                <p className="text-muted-foreground mt-1 text-sm">
                   Every hook, body, CTA permutation
                 </p>
               </div>
@@ -291,15 +294,14 @@ export default function AiAdsVsHumanAdsPage() {
       </section>
 
       {/* COMPARISON TABLE */}
-      <section className="py-20 px-4 bg-muted/20">
-        <div className="max-w-5xl mx-auto">
+      <section className="bg-muted/20 px-4 py-20">
+        <div className="mx-auto max-w-5xl">
           <AnimateOnScroll className="mb-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
               Prestyj vs AI Ad Tools
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              Side-by-side on the variables that actually matter for service-business
-              conversion.
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
+              Side-by-side on the variables that actually matter for service-business conversion.
             </p>
           </AnimateOnScroll>
 
@@ -307,13 +309,13 @@ export default function AiAdsVsHumanAdsPage() {
             <BorderGlow borderRadius={18} innerClassName="p-2 md:p-4">
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
-                  <thead className="border-b border-border">
+                  <thead className="border-border border-b">
                     <tr>
-                      <th className="p-4 font-heading font-bold text-foreground">Feature</th>
-                      <th className="p-4 font-heading font-bold text-primary">
+                      <th className="font-heading text-foreground p-4 font-bold">Feature</th>
+                      <th className="font-heading text-primary p-4 font-bold">
                         Prestyj Batch Video Ads
                       </th>
-                      <th className="p-4 font-heading font-bold text-muted-foreground">
+                      <th className="font-heading text-muted-foreground p-4 font-bold">
                         Generic AI Ad Tools
                       </th>
                     </tr>
@@ -322,13 +324,11 @@ export default function AiAdsVsHumanAdsPage() {
                     {COMPARE_ROWS.map((row, i) => (
                       <tr
                         key={row.feature}
-                        className={
-                          i < COMPARE_ROWS.length - 1 ? "border-b border-border/50" : ""
-                        }
+                        className={i < COMPARE_ROWS.length - 1 ? "border-border/50 border-b" : ""}
                       >
-                        <td className="p-4 text-foreground font-semibold">{row.feature}</td>
-                        <td className="p-4 text-foreground">{row.prestyj}</td>
-                        <td className="p-4 text-muted-foreground">{row.ai}</td>
+                        <td className="text-foreground p-4 font-semibold">{row.feature}</td>
+                        <td className="text-foreground p-4">{row.prestyj}</td>
+                        <td className="text-muted-foreground p-4">{row.ai}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -340,24 +340,22 @@ export default function AiAdsVsHumanAdsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <AnimateOnScroll className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-3xl">
+          <AnimateOnScroll className="mb-10 text-center">
+            <h2 className="font-heading text-foreground text-3xl font-bold md:text-4xl">
               Questions
             </h2>
           </AnimateOnScroll>
           <div className="space-y-4">
             {FAQS.map((item, i) => (
               <AnimateOnScroll key={item.q} delay={i * 0.05}>
-                <details className="group bg-card border border-border rounded-xl">
-                  <summary className="cursor-pointer p-6 font-heading font-semibold text-foreground flex items-center justify-between gap-4">
+                <details className="group bg-card border-border rounded-xl border">
+                  <summary className="font-heading text-foreground flex cursor-pointer items-center justify-between gap-4 p-6 font-semibold">
                     <span>{item.q}</span>
-                    <span className="transition group-open:rotate-180 text-primary">▼</span>
+                    <span className="text-primary transition group-open:rotate-180">▼</span>
                   </summary>
-                  <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
-                    {item.a}
-                  </div>
+                  <div className="text-muted-foreground px-6 pb-6 leading-relaxed">{item.a}</div>
                 </details>
               </AnimateOnScroll>
             ))}
@@ -366,20 +364,20 @@ export default function AiAdsVsHumanAdsPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 px-4 bg-primary/5">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="bg-primary/5 px-4 py-20">
+        <div className="mx-auto max-w-3xl text-center">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               Real Face. AI-Level Volume.
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              One recording. 300-1000 scripted variations. Same speed as AI without
-              the trust penalty.
+            <p className="text-muted-foreground mb-8 text-lg md:text-xl">
+              One recording. 300-1000 scripted variations. Same speed as AI without the trust
+              penalty.
             </p>
-            <Button size="lg" className="font-bold text-lg px-10 py-6" asChild>
-              <Link href="/batch-video-ads#pricing">
-                Pick My Batch
-                <ArrowRight className="w-5 h-5 ml-2" />
+            <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
+              <Link href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </AnimateOnScroll>

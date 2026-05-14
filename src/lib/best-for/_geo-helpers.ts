@@ -1,8 +1,8 @@
 import type { ComparisonRow } from "./types";
 
 export const GEO_CTA_BUTTON = {
-  buttonText: "Pick My Batch",
-  buttonHref: "/batch-video-ads#pricing",
+  buttonText: "Book a Demo",
+  buttonHref: "/book-demo",
   footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
 };
 

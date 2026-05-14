@@ -113,8 +113,8 @@ export const ecommerceBrandsVsFiverrForCompareData: ComparePageData = createComp
     title: "Ecommerce Brands Pick the AI Content Engine Over Fiverr Freelancers.",
     description:
       "1,500+ ecommerce brands-researched posts a month across 7 platforms. One flat fee of $3,000/mo. Voice-trained. No contract. Live in days.",
-    buttonText: "See How It Works for Ecommerce Brands",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "Month-to-month · No contract · 1,500+ posts/month",
   },
 });

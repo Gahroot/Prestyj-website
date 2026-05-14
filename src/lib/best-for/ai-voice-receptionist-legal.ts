@@ -7,7 +7,8 @@ export const aiVoiceReceptionistLegal: BestForPageContent = createBestForPage({
   niche: {
     name: "AI Voice Receptionist for Law Firms",
     shortName: "Legal Receptionist AI",
-    description: "Solo practitioners, small partnerships, and specialized legal firms needing 24/7 client intake with case-type routing and confidentiality handling",
+    description:
+      "Solo practitioners, small partnerships, and specialized legal firms needing 24/7 client intake with case-type routing and confidentiality handling",
   },
   meta: {
     title: "AI Voice Receptionist for Law Firms | 24/7 Client Intake & Case Routing | Prestyj",
@@ -92,7 +93,11 @@ export const aiVoiceReceptionistLegal: BestForPageContent = createBestForPage({
     },
   ],
   comparison: {
-    headers: ["Approach", "Prestyj AI Receptionist", "Traditional Receptionist or Answering Service"],
+    headers: [
+      "Approach",
+      "Prestyj AI Receptionist",
+      "Traditional Receptionist or Answering Service",
+    ],
     rows: [
       {
         feature: "24/7 Availability",
@@ -188,7 +193,7 @@ export const aiVoiceReceptionistLegal: BestForPageContent = createBestForPage({
     headline: "Never Miss Another Client Call. Ever.",
     subheadline:
       "See how legal firms use AI voice receptionist to capture every client intake, route intelligently, and handle confidential calls 24/7. Book a demo to see legal-specific intake in action.",
-    buttonText: "See Legal Intake in Action",
+    buttonText: "Book a Demo",
     footnote: "Confidential, HIPAA-aware, practice-management integrated.",
   },
 });

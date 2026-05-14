@@ -45,7 +45,8 @@ export const videoAdsForHvacOwners: BestForPageContent = {
     },
     {
       icon: "Zap",
-      title: "Your service tech is not your install closer — and your ads shouldn't treat them the same",
+      title:
+        "Your service tech is not your install closer — and your ads shouldn't treat them the same",
       description:
         "Service calls convert to installs at 10–25% depending on how the tech presents it. Install leads generated directly from video ads convert at 40–60% because they arrived intending to replace. A direct-to-install creative track ('if your system is over 12 years old and you're paying $300+ summer electric bills, here's what a new high-SEER install actually costs') skips the repair-first funnel entirely.",
     },
@@ -64,12 +65,14 @@ export const videoAdsForHvacOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Summer peak hits and your ad account can't handle the volume because you're running 4 tired creatives",
+      problem:
+        "Summer peak hits and your ad account can't handle the volume because you're running 4 tired creatives",
       solution:
         "When your call center is flooded in July, the bottleneck shouldn't be your creative. A batch of 300–1,000 fresh variations lets your media buyer scale spend aggressively during peak weeks without tanking CPL from fatigue. You can 5x your budget in a heat wave and the algorithm has enough creative to absorb it without degrading.",
     },
     {
-      problem: "You know maintenance clubs are your highest-margin product but you can't crack selling them on paid social",
+      problem:
+        "You know maintenance clubs are your highest-margin product but you can't crack selling them on paid social",
       solution:
         "Maintenance club ads need to quantify risk, not urgency — and that's a specific creative style most HVAC owners have never seen modeled. We build 2–3 dedicated club tracks testing different pain angles: 'the $89 service call that becomes a $4,800 replacement,' 'if you haven't had a tune-up in 18 months your warranty might already be void,' 'here's what our techs find on 14-year-old units in July.' Members come in pre-sold.",
     },
@@ -84,7 +87,8 @@ export const videoAdsForHvacOwners: BestForPageContent = {
         "The tune-up lead is the lowest-quality lead you can buy — price-shoppers, one-and-done, 5% conversion to club or install. We write ads that lead with diagnostic value, not price: 'our tech found $2,200 worth of hidden issues on the last 10 systems we inspected — here's what they were.' Higher intent, higher average ticket, better long-term customers.",
     },
     {
-      problem: "Your existing creatives work in spring but die as soon as the heat wave hits and every competitor ramps spend",
+      problem:
+        "Your existing creatives work in spring but die as soon as the heat wave hits and every competitor ramps spend",
       solution:
         "July CPM can triple overnight when every HVAC company in your metro piles into Facebook. The winning company is the one with the most creative diversity — because that's what lets the algorithm keep finding cheap impressions when the auction gets brutal. 300–1,000 variations is the moat.",
     },
@@ -141,7 +145,8 @@ export const videoAdsForHvacOwners: BestForPageContent = {
         "Saturation is a creative problem, not an audience problem. In a saturated market, homeowners have ad-blindness to the generic '$59 tune-up' and 'family owned since 1987' templates everyone runs. Specific, pain-based creative — 'if your electric bill jumped 40% this summer it might not be the utility company' — cuts through because it reads as non-ad content. Batch scale is what gives you enough creative diversity to stand out at every scroll.",
     },
     {
-      question: "We run ServiceTitan and our call center is maxed out. Why would I drive more leads?",
+      question:
+        "We run ServiceTitan and our call center is maxed out. Why would I drive more leads?",
       answer:
         "Most HVAC call centers are maxed on low-quality lead volume, not high-quality demand. Swapping $59 tune-up leads (10% convert to install over 18 months) for voluntary-replacement leads (40%+ convert inside 30 days) means your CSRs make more revenue per booked call while handling fewer total calls. The batch lets you specifically target high-intent traffic types and deprioritize the low ones.",
     },
@@ -160,8 +165,8 @@ export const videoAdsForHvacOwners: BestForPageContent = {
     headline: "One Shoot, Every HVAC Revenue Track, 24-Hour Delivery.",
     subheadline:
       "Emergency service, maintenance clubs, voluntary replacements, heat pump rebates, IAQ upsells — 300–1,000 scripted vertical video ads testing every angle that makes your year. One-time price. No retainer.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

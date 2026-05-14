@@ -134,7 +134,7 @@ export const socialContentForEcommerceBrands: BestForPageContent = {
     headline: "Stop Paying for Every Click. Start Owning Your Audience.",
     subheadline:
       "Done-for-you social media content for DTC e-commerce brands. 30–50 posts/day — product launches, UGC at scale, and multi-channel presence without the overhead.",
-    buttonText: "Scale Your Content Engine",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Product launches · UGC at scale · Channel diversification",
   },

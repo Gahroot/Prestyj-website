@@ -7,7 +7,8 @@ export const aiVoiceReceptionistPlumbing: BestForPageContent = createBestForPage
   niche: {
     name: "AI Voice Receptionist for Plumbing",
     shortName: "Plumbing Voice AI",
-    description: "Plumbing companies needing intelligent call handling for emergency dispatch, after-hours coverage, and multi-truck scheduling operations",
+    description:
+      "Plumbing companies needing intelligent call handling for emergency dispatch, after-hours coverage, and multi-truck scheduling operations",
   },
   meta: {
     title: "AI Voice Receptionist for Plumbing | Emergency Dispatch & After-Hours 24/7 | Prestyj",
@@ -203,7 +204,8 @@ export const aiVoiceReceptionistPlumbing: BestForPageContent = createBestForPage
     headline: "Stop Losing Emergency Plumbing Jobs to Voicemail",
     subheadline:
       "See how AI voice receptionist handles emergency triage, dispatches on-call techs, and captures every call 24/7. Your competitors answer the calls you miss—let's fix that.",
-    buttonText: "Book Your Plumbing Demo",
-    footnote: "ServiceTitan & Jobber integration included. Live in 5–7 business days. No annual contract.",
+    buttonText: "Book a Demo",
+    footnote:
+      "ServiceTitan & Jobber integration included. Live in 5–7 business days. No annual contract.",
   },
 });

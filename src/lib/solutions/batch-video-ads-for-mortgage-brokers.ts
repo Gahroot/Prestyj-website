@@ -161,8 +161,9 @@ export const batchVideoAdsForMortgageBrokers: SolutionPageContent = {
     headline: "Be the Loan Officer Borrowers Remember.",
     subheadline:
       "Record for 15 minutes. Get 300–1,000 mortgage-specific video ads in 24 hours. First-time buyers, refinancers, rate-watchers — a hook for every borrower, tested in days instead of months.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
-    footnote: "One-time pricing starts at $1,497 · 24-hour turnaround · Compliance-friendly scripts included",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
+    footnote:
+      "One-time pricing starts at $1,497 · 24-hour turnaround · Compliance-friendly scripts included",
   },
 };

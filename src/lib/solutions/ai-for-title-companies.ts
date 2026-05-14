@@ -29,7 +29,8 @@ export const aiForTitleCompanies: SolutionPageContent = {
   },
   painPoints: {
     headline: "Title Production Is Still Stuck in the Past",
-    subheadline: "Manual processes, fragmented systems, and escalating fraud threats are holding title companies back.",
+    subheadline:
+      "Manual processes, fragmented systems, and escalating fraud threats are holding title companies back.",
     points: [
       {
         icon: "Clock",
@@ -77,7 +78,8 @@ export const aiForTitleCompanies: SolutionPageContent = {
   },
   benefits: {
     headline: "AI-Powered Title Production at Scale",
-    subheadline: "Close more files, reduce errors, and protect against fraud—with the team you already have.",
+    subheadline:
+      "Close more files, reduce errors, and protect against fraud—with the team you already have.",
     benefits: [
       {
         icon: "Search",
@@ -166,7 +168,7 @@ export const aiForTitleCompanies: SolutionPageContent = {
     headline: "Modernize Your Title Operations with AI",
     subheadline:
       "Join title companies that are replacing manual processes with AI-powered automation. Close more files, reduce errors, prevent fraud, and deliver the fast, accurate service your clients expect.",
-    buttonText: "Book a Title Company Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "See AI title search, order entry, and wire fraud detection in action.",
   },

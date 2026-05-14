@@ -7,7 +7,8 @@ export const contractors: BestForPageContent = createBestForPage({
   niche: {
     name: "Contractors & Home Service Professionals",
     shortName: "Contractors",
-    description: "General contractors, roofers, plumbers, electricians, and home service pros needing AI lead response",
+    description:
+      "General contractors, roofers, plumbers, electricians, and home service pros needing AI lead response",
   },
   meta: {
     title: "AI Receptionist for Contractors | Prestyj",
@@ -145,7 +146,7 @@ export const contractors: BestForPageContent = createBestForPage({
     headline: "Capture Every Home Service Lead—24/7",
     subheadline:
       "See how contractors use AI to respond instantly, qualify projects, and book more estimates. Schedule a demo to see AI trained for your trade.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Trade-trained. Service area aware. Live in 1-2 weeks.",
   },
 });

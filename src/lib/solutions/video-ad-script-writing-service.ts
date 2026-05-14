@@ -29,7 +29,8 @@ export const videoAdScriptWritingService: SolutionPageContent = {
   },
   painPoints: {
     headline: "You Know Your Business. You Don't Know Ad Copy.",
-    subheadline: "Converting expertise into high-performing ad scripts requires a different skill set.",
+    subheadline:
+      "Converting expertise into high-performing ad scripts requires a different skill set.",
     points: [
       {
         icon: "AlertCircle",
@@ -149,8 +150,8 @@ export const videoAdScriptWritingService: SolutionPageContent = {
     headline: "300+ Professionally Written Ad Scripts — Ready to Record.",
     subheadline:
       "Direct-response scripts for service businesses. Hooks, bodies, and CTAs — organized for systematic testing. From $1,497.",
-    buttonText: "Get Your Scripts",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "300+ scripts · Direct-response structure · 24-hour delivery",
   },
 };

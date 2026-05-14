@@ -149,8 +149,8 @@ export const ugcStyleAdProduction: SolutionPageContent = {
     headline: "Record Once. Test 300+ Ad Variations Tomorrow.",
     subheadline:
       "UGC-style ads using your real face. 300–1,000 scripted variations in 24 hours. From $1,497.",
-    buttonText: "Start Batch Production",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Your real face · 24-hour delivery · No creators needed",
   },
 };

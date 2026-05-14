@@ -68,12 +68,28 @@ export const fullTimeEmployeeCompareData: ComparePageData = createComparePage({
       price: "$150K-250K+/year",
       priceSubtext: "Fully loaded cost for senior AI engineer",
       features: [
-        { text: "Dedicated full-time attention", included: true, note: "If you have enough work to fill 40+ hours/week" },
+        {
+          text: "Dedicated full-time attention",
+          included: true,
+          note: "If you have enough work to fill 40+ hours/week",
+        },
         { text: "Deep company knowledge", included: true, note: "Develops over time" },
         { text: "Complete control over priorities", included: true },
-        { text: "Recruitment costs", included: true, note: "$15K-30K in recruiter fees or 3-6 months internal sourcing" },
-        { text: "Benefits administration", included: true, note: "Healthcare, 401k, payroll taxes" },
-        { text: "Equipment and software", included: true, note: "Laptop, monitors, API credits, development tools" },
+        {
+          text: "Recruitment costs",
+          included: true,
+          note: "$15K-30K in recruiter fees or 3-6 months internal sourcing",
+        },
+        {
+          text: "Benefits administration",
+          included: true,
+          note: "Healthcare, 401k, payroll taxes",
+        },
+        {
+          text: "Equipment and software",
+          included: true,
+          note: "Laptop, monitors, API credits, development tools",
+        },
         { text: "Risk of turnover", included: true, note: "AI talent has high job-hopping rates" },
       ],
     },
@@ -174,8 +190,7 @@ export const fullTimeEmployeeCompareData: ComparePageData = createComparePage({
   relatedResources: [
     {
       title: "AI Consultant Pricing Guide 2026",
-      description:
-        "Complete breakdown of fractional consultant costs vs. full-time hiring.",
+      description: "Complete breakdown of fractional consultant costs vs. full-time hiring.",
       href: "/blog/ai-consultant-pricing-guide-2026",
       linkText: "See the full analysis",
     },
@@ -188,15 +203,13 @@ export const fullTimeEmployeeCompareData: ComparePageData = createComparePage({
     },
     {
       title: "AI Consultant vs. AI Agency",
-      description:
-      "Specialized consultant vs. full agency team—which delivers better ROI?",
+      description: "Specialized consultant vs. full agency team—which delivers better ROI?",
       href: "/compare/ai-consultant-vs-ai-agency",
       linkText: "Compare consultants to agencies",
     },
     {
       title: "Is AI Consulting Worth It?",
-      description:
-        "Calculate the ROI of fractional AI expertise for your service business.",
+      description: "Calculate the ROI of fractional AI expertise for your service business.",
       href: "/blog/is-ai-consulting-worth-it-2026",
       linkText: "Calculate your ROI",
     },
@@ -206,7 +219,7 @@ export const fullTimeEmployeeCompareData: ComparePageData = createComparePage({
     titleAccent: "Without the Full-Time Cost",
     description:
       "Get fractional AI consultants with senior-level expertise, industry specialization, and done-for-you implementation at 60-80% less than hiring full-time.",
-    buttonText: "See Fractional Pricing",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     disclaimer:
       "No commitment required. We'll compare fractional consultant costs to full-time hiring for your specific use case.",
@@ -216,8 +229,7 @@ export const fullTimeEmployeeCompareData: ComparePageData = createComparePage({
 export const fullTimeEmployeeMetadata: CompareMetadata = {
   slug: "fractional-ai-consultant-vs-full-time-employee",
   competitorName: "Full-Time AI Employee",
-  title:
-    "Fractional AI Consultant vs. Full-Time Employee: True Cost Comparison | 2026",
+  title: "Fractional AI Consultant vs. Full-Time Employee: True Cost Comparison | 2026",
   description:
     "Compare fractional AI consultants ($36K-60K/year) vs. full-time AI engineers ($150K-250K+/year). Learn why fractional saves 60-80% with faster implementation for service businesses.",
   keywords: [

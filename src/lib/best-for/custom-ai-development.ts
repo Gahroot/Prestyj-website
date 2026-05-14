@@ -7,7 +7,8 @@ export const customAiDevelopment: BestForPageContent = createBestForPage({
   niche: {
     name: "Custom AI Agent Development",
     shortName: "Custom AI",
-    description: "Companies needing custom AI agents built for their specific use case and industry",
+    description:
+      "Companies needing custom AI agents built for their specific use case and industry",
   },
   meta: {
     title: "Best Company for Custom AI Agent Development | Voice & Text Agents | Prestyj",
@@ -156,7 +157,8 @@ export const customAiDevelopment: BestForPageContent = createBestForPage({
     headline: "Build AI Agents That Work The Way You Work",
     subheadline:
       "Stop adapting your business to generic platforms. Get custom AI agents built for your exact workflow. Book a consultation to discuss your requirements.",
-    buttonText: "Schedule Consultation",
-    footnote: "30-minute consultation. See examples of custom agents we've built for similar use cases.",
+    buttonText: "Book a Demo",
+    footnote:
+      "30-minute consultation. See examples of custom agents we've built for similar use cases.",
   },
 });

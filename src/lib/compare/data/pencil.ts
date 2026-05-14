@@ -49,15 +49,48 @@ export const pencilCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Scripts researched and written for you", prestyj: true, competitor: false, note: "Pencil remixes assets you provide — you create the originals" },
+    {
+      feature: "Scripts researched and written for you",
+      prestyj: true,
+      competitor: false,
+      note: "Pencil remixes assets you provide — you create the originals",
+    },
     { feature: "Uses your real face and voice", prestyj: true, competitor: false },
-    { feature: "Creative output volume", prestyj: "300-1,000 ads per batch", competitor: "Varies by plan, asset-dependent" },
-    { feature: "Industry-specific research (HVAC, real estate, home services)", prestyj: true, competitor: false },
-    { feature: "Turnaround time", prestyj: "24 hours from recording", competitor: "Minutes per variation — but you build the source" },
-    { feature: "Pricing model", prestyj: "One-time $1,497-$3,997", competitor: "Recurring $49-$499/mo" },
-    { feature: "Original creative development", prestyj: "Full service", competitor: "Self-service" },
-    { feature: "Hook strategy and testing framework", prestyj: true, competitor: "You design it yourself" },
-    { feature: "Cost per ad at 500 ads", prestyj: "~$3-5", competitor: "Platform cost + your creative labor" },
+    {
+      feature: "Creative output volume",
+      prestyj: "300-1,000 ads per batch",
+      competitor: "Varies by plan, asset-dependent",
+    },
+    {
+      feature: "Industry-specific research (HVAC, real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
+    {
+      feature: "Turnaround time",
+      prestyj: "24 hours from recording",
+      competitor: "Minutes per variation — but you build the source",
+    },
+    {
+      feature: "Pricing model",
+      prestyj: "One-time $1,497-$3,997",
+      competitor: "Recurring $49-$499/mo",
+    },
+    {
+      feature: "Original creative development",
+      prestyj: "Full service",
+      competitor: "Self-service",
+    },
+    {
+      feature: "Hook strategy and testing framework",
+      prestyj: true,
+      competitor: "You design it yourself",
+    },
+    {
+      feature: "Cost per ad at 500 ads",
+      prestyj: "~$3-5",
+      competitor: "Platform cost + your creative labor",
+    },
     { feature: "Brand trust from real owner on camera", prestyj: true, competitor: false },
   ],
   whySwitch: {
@@ -97,16 +130,31 @@ export const pencilCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Creatify", description: "Another AI creative tool compared", href: "/compare/prestyj-vs-creatify", linkText: "Read comparison" },
-    { title: "vs Arcads", description: "AI UGC platform compared", href: "/compare/prestyj-vs-arcads", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's core service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Creatify",
+      description: "Another AI creative tool compared",
+      href: "/compare/prestyj-vs-creatify",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Arcads",
+      description: "AI UGC platform compared",
+      href: "/compare/prestyj-vs-arcads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's core service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Skip the DIY Creative. Get It Done for You.",
     description:
       "Pencil remixed what you make. Prestyj makes everything — research, scripts, recording, production. 300-1,000 ads in 24 hours for one flat fee.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });

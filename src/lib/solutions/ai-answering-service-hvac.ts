@@ -31,7 +31,8 @@ export const aiAnsweringServiceHvac: SolutionPageContent = {
   },
   painPoints: {
     headline: "HVAC Call Volume Kills Revenue",
-    subheadline: "Seasonal spikes and after-hours emergencies are your biggest revenue opportunities—and biggest blind spots.",
+    subheadline:
+      "Seasonal spikes and after-hours emergencies are your biggest revenue opportunities—and biggest blind spots.",
     points: [
       {
         icon: "PhoneMissed",
@@ -58,7 +59,8 @@ export const aiAnsweringServiceHvac: SolutionPageContent = {
   },
   benefits: {
     headline: "AI That Understands HVAC Workflows",
-    subheadline: "Not a generic answering service—an AI trained on HVAC dispatch and service calls.",
+    subheadline:
+      "Not a generic answering service—an AI trained on HVAC dispatch and service calls.",
     benefits: [
       {
         icon: "Zap",
@@ -194,7 +196,7 @@ export const aiAnsweringServiceHvac: SolutionPageContent = {
     headline: "Stop Losing HVAC Jobs to Voicemail",
     subheadline:
       "Your competitors answer the calls you miss. Let's fix that—capture every emergency, book every job, and keep your technicians busy year-round.",
-    buttonText: "Get Started with HVAC AI Answering",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "ServiceTitan integration included. Live in 5–7 business days. No annual contract.",
   },

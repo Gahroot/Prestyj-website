@@ -7,7 +7,8 @@ export const garageDoor: BestForPageContent = createBestForPage({
   niche: {
     name: "Garage Door Companies",
     shortName: "Garage Door",
-    description: "Garage door service providers and installers seeking AI-powered phone answering and dispatch",
+    description:
+      "Garage door service providers and installers seeking AI-powered phone answering and dispatch",
   },
   meta: {
     title: "AI Voice Agents for Garage Door Companies | Prestyj",
@@ -207,7 +208,7 @@ export const garageDoor: BestForPageContent = createBestForPage({
     headline: "Stop Losing $800-3,000 Garage Door Jobs to Voicemail",
     subheadline:
       "AI answers every emergency call 24/7, qualifies the job, verifies service area, and dispatches technicians. Capture every emergency repair while scheduling replacements and installations automatically.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "24/7 emergency dispatch. Service area verification. Live in 1-2 weeks.",
   },
 });

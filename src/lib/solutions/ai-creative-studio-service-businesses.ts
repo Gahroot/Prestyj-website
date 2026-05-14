@@ -101,7 +101,8 @@ export const aiCreativeStudioServiceBusinesses: SolutionPageContent = {
   },
   objections: {
     headline: "What Service Business Owners Ask",
-    subheadline: "These are the practical concerns from owners who've tried (and abandoned) social media marketing.",
+    subheadline:
+      "These are the practical concerns from owners who've tried (and abandoned) social media marketing.",
     objections: [
       {
         objection: "Won't AI-generated content look generic and fake?",
@@ -161,7 +162,7 @@ export const aiCreativeStudioServiceBusinesses: SolutionPageContent = {
     headline: "Your Competitors Post Daily. Now You Can Too — Without Lifting a Finger.",
     subheadline:
       "AI-generated branded content for your service business. Auto-published across every platform. Consistent, professional, and affordable.",
-    buttonText: "See the AI Studio",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No design skills needed · 7+ platforms · Content calendar included",
   },

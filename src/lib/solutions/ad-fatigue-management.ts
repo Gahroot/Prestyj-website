@@ -24,7 +24,11 @@ export const adFatigueManagement: SolutionPageContent = {
     subheadline:
       "Ad fatigue isn't inevitable — it's a production problem. Your creative fatigues because you don't have enough fresh variations to rotate in. Prestyj's ad fatigue management delivers 300–1,000 fresh video ads per engagement — so your campaigns always have fresh creative that performs.",
     stats: [
-      { value: "10–14 days", label: "before creative performance drops 30–50%", color: "destructive" },
+      {
+        value: "10–14 days",
+        label: "before creative performance drops 30–50%",
+        color: "destructive",
+      },
       { value: "300+", label: "fresh creatives to rotate in", color: "success" },
       { value: "20–35%", label: "ROAS improvement with continuous refresh", color: "primary" },
     ],
@@ -101,7 +105,8 @@ export const adFatigueManagement: SolutionPageContent = {
   },
   objections: {
     headline: "What Performance Marketers Ask About Fatigue Management",
-    subheadline: "Questions from media buyers and growth leads dealing with creative fatigue daily.",
+    subheadline:
+      "Questions from media buyers and growth leads dealing with creative fatigue daily.",
     objections: [
       {
         objection: "Can't we just refresh our existing ads with new text or music?",
@@ -161,8 +166,8 @@ export const adFatigueManagement: SolutionPageContent = {
     headline: "Stop Running Dead Ads.",
     subheadline:
       "Ad fatigue management that keeps your campaigns fresh: 300–1,000 video ads per batch, 24-hour delivery, at $1.50–$5 per ad. Never run stale creative again.",
-    buttonText: "Get Fresh Creative",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "300+ ads per batch · 10-day fatigue cycle covered · 24-hour turnaround",
   },
 };

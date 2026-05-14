@@ -3,7 +3,10 @@ import { createComparePage } from "@/lib/content-factory";
 
 const PRESTYJ_PRICING_FEATURES = [
   { text: "1,500+ posts/month across 7 platforms", included: true },
-  { text: "Daily publishing — Instagram, FB, TikTok, LinkedIn, X, Threads, YouTube", included: true },
+  {
+    text: "Daily publishing — Instagram, FB, TikTok, LinkedIn, X, Threads, YouTube",
+    included: true,
+  },
   { text: "Industry-specific scripts + captions written for you", included: true },
   { text: "Weekly content calendar — approve in minutes", included: true },
   { text: "Hooks, carousels, short-form video, image posts", included: true },
@@ -40,7 +43,11 @@ export const socialMediaAgencyCompareData: ComparePageData = createComparePage({
       features: [
         { text: "Account manager + strategist on calls", included: true },
         { text: "Brand voice workshop + content pillars", included: true },
-        { text: "20–30 posts per month (1 per business day)", included: true, note: "Industry standard agency output" },
+        {
+          text: "20–30 posts per month (1 per business day)",
+          included: true,
+          note: "Industry standard agency output",
+        },
         { text: "1,500+ posts/month at scale", included: false },
         { text: "Daily multi-platform publishing", included: false },
         { text: "Pricing scales with platforms added", included: false },
@@ -49,16 +56,51 @@ export const socialMediaAgencyCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Posts per month", prestyj: "1,500+", competitor: "20–30", note: "Agencies bill creative hours; Prestyj bills outcomes" },
-    { feature: "Platforms covered", prestyj: "7 (IG, FB, TikTok, LinkedIn, X, Threads, YouTube)", competitor: "Usually 2–3 — extra platforms cost extra" },
+    {
+      feature: "Posts per month",
+      prestyj: "1,500+",
+      competitor: "20–30",
+      note: "Agencies bill creative hours; Prestyj bills outcomes",
+    },
+    {
+      feature: "Platforms covered",
+      prestyj: "7 (IG, FB, TikTok, LinkedIn, X, Threads, YouTube)",
+      competitor: "Usually 2–3 — extra platforms cost extra",
+    },
     { feature: "Monthly cost", prestyj: "$3,000 flat", competitor: "$5,000 – $15,000+" },
     { feature: "Cost per post", prestyj: "~$2", competitor: "$166 – $750" },
-    { feature: "Turnaround for new content", prestyj: "Daily auto-publish", competitor: "2–4 week creative cycles" },
-    { feature: "Account managers + status calls", prestyj: false, competitor: true, note: "You're paying for the meeting, not the post" },
-    { feature: "Long-term contract required", prestyj: false, competitor: true, note: "Most agencies require 3–12 month commitment" },
-    { feature: "Industry-specific content (real estate, home services)", prestyj: true, competitor: "Depends on agency niche" },
-    { feature: "Performance learning loop", prestyj: true, competitor: "Manual reporting, quarterly optimization" },
-    { feature: "Best-fit user", prestyj: "Owner-operators + lean teams that need volume", competitor: "Brands with $60K+/yr social budget and approval committees" },
+    {
+      feature: "Turnaround for new content",
+      prestyj: "Daily auto-publish",
+      competitor: "2–4 week creative cycles",
+    },
+    {
+      feature: "Account managers + status calls",
+      prestyj: false,
+      competitor: true,
+      note: "You're paying for the meeting, not the post",
+    },
+    {
+      feature: "Long-term contract required",
+      prestyj: false,
+      competitor: true,
+      note: "Most agencies require 3–12 month commitment",
+    },
+    {
+      feature: "Industry-specific content (real estate, home services)",
+      prestyj: true,
+      competitor: "Depends on agency niche",
+    },
+    {
+      feature: "Performance learning loop",
+      prestyj: true,
+      competitor: "Manual reporting, quarterly optimization",
+    },
+    {
+      feature: "Best-fit user",
+      prestyj: "Owner-operators + lean teams that need volume",
+      competitor: "Brands with $60K+/yr social budget and approval committees",
+    },
     { feature: "You stay in control of approvals", prestyj: true, competitor: true },
   ],
   whySwitch: {
@@ -99,16 +141,31 @@ export const socialMediaAgencyCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Hootsuite", description: "Enterprise scheduler compared", href: "/compare/prestyj-vs-hootsuite", linkText: "Read comparison" },
-    { title: "vs Sprout Social", description: "Per-seat scheduler compared", href: "/compare/prestyj-vs-sprout-social", linkText: "Read comparison" },
-    { title: "Done-For-You Social Media", description: "See Prestyj's content engine", href: "/done-for-you-social-media", linkText: "Learn more" },
+    {
+      title: "vs Hootsuite",
+      description: "Enterprise scheduler compared",
+      href: "/compare/prestyj-vs-hootsuite",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Sprout Social",
+      description: "Per-seat scheduler compared",
+      href: "/compare/prestyj-vs-sprout-social",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Done-For-You Social Media",
+      description: "See Prestyj's content engine",
+      href: "/done-for-you-social-media",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Get an Agency's Calendar at 1/5 the Cost — and 50× the Volume.",
     description:
       "Skip the retainer, the account manager, and the 12-month contract. Prestyj ships 1,500+ posts/mo across 7 platforms for $3,000 — month-to-month, live in 24 hours.",
-    buttonText: "See How It Works",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "Month-to-month. No long-term contract. Live in 24 hours.",
   },
 });

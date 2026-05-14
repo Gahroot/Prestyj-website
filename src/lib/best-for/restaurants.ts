@@ -7,7 +7,8 @@ export const restaurants: BestForPageContent = createBestForPage({
   niche: {
     name: "Restaurants",
     shortName: "Restaurants",
-    description: "Restaurants looking for AI-powered phone answering, order taking, and reservation management",
+    description:
+      "Restaurants looking for AI-powered phone answering, order taking, and reservation management",
   },
   meta: {
     title: "AI Phone Answering for Restaurants | Never Miss an Order | Prestyj",
@@ -178,7 +179,7 @@ export const restaurants: BestForPageContent = createBestForPage({
     headline: "Stop Losing Orders to Busy Signals",
     subheadline:
       "Every missed call is $15-$100+ in lost revenue. Capture every order, reduce hold times, and give your staff time to focus on guests. Book a demo to see AI handling restaurant calls.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with all major POS systems. No credit card required.",
   },
 });

@@ -35,8 +35,7 @@ export const blandAiAlt: AlternativePageContent = createAlternativePage({
     },
     {
       stat: "21x",
-      description:
-        "more likely to convert when responding within 5 minutes vs 30 minutes",
+      description: "more likely to convert when responding within 5 minutes vs 30 minutes",
     },
     {
       stat: "40%",
@@ -187,7 +186,7 @@ export const blandAiAlt: AlternativePageContent = createAlternativePage({
     headline: "Get AI Voice Agents Without the Development Work",
     subheadline:
       "Same capabilities as Bland.ai, with done-for-you setup and flat pricing. See it in action.",
-    buttonText: "Book Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
   },
 });

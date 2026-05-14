@@ -11,8 +11,7 @@ export const aiVoiceReceptionistMedical: BestForPageContent = createBestForPage(
       "Medical offices seeking HIPAA-compliant AI voice receptionist for patient triage, appointment management, and 24/7 call coverage",
   },
   meta: {
-    title:
-      "AI Voice Receptionist for Medical Practices | HIPAA-Compliant | Prestyj",
+    title: "AI Voice Receptionist for Medical Practices | HIPAA-Compliant | Prestyj",
     description:
       "HIPAA-compliant AI voice receptionist for healthcare practices. Triage patient calls, schedule appointments 24/7, handle prescription refill requests, and reduce call overflow. Built for solo practices, clinics, and specialty offices.",
     keywords: [
@@ -202,11 +201,10 @@ export const aiVoiceReceptionistMedical: BestForPageContent = createBestForPage(
     },
   ],
   cta: {
-    headline:
-      "Reduce Call Overhead & Emergency Wait Times With HIPAA-Compliant AI",
+    headline: "Reduce Call Overhead & Emergency Wait Times With HIPAA-Compliant AI",
     subheadline:
       "Stop drowning in phone calls. AI handles patient triage, scheduling, and intake 24/7 while maintaining full HIPAA compliance. Free up 12-18 staff hours per week for clinical care. Book a demo to see patient triage in action.",
-    buttonText: "Schedule Your Demo",
+    buttonText: "Book a Demo",
     footnote:
       "HIPAA-compliant. Business Associate Agreement included. Integrates with all major EHR systems.",
   },

@@ -61,7 +61,8 @@ export const videoAdsForPestControl: BestForPageContent = {
         "Ship season-specific ads the morning after a weather event, temperature spike, or seasonal trigger. Record a 15-minute 'mosquito season is here' video and have 300 variations ready to deploy the next morning. Your competition is still waiting for their agency to send a brief.",
     },
     {
-      problem: "Your ads look like every other pest control company — generic bug photos and 'call now' CTAs",
+      problem:
+        "Your ads look like every other pest control company — generic bug photos and 'call now' CTAs",
       solution:
         "We write scripts around specific scenarios homeowners actually experience: 'ants in your bathroom every spring? here's why they come back,' 'you see one roach — there are 200 more you don't see.' Scenario-based ads outperform generic 'we kill bugs' messaging because they feel personal.",
     },
@@ -132,8 +133,8 @@ export const videoAdsForPestControl: BestForPageContent = {
     headline: "Season Starts Tomorrow. Your Ads Should Be Live Today.",
     subheadline:
       "300–1,000 pest control ad variations. Termite, mosquito, rodent, and general — seasonal, urgent, geo-specific. From $1,497.",
-    buttonText: "Pick My Pest Control Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · Seasonal-ready",
   },
 };

@@ -13,8 +13,7 @@ export const cinc: AlternativePageContent = createAlternativePage({
     shortName: "CINC",
     pricing: "$1,500+/mo",
     website: "https://cincpro.com",
-    description:
-      "All-in-one real estate platform with lead generation, CRM, and AI",
+    description: "All-in-one real estate platform with lead generation, CRM, and AI",
   },
   meta: {
     title: "Best CINC Alternative for Real Estate | Prestyj",
@@ -91,11 +90,7 @@ export const cinc: AlternativePageContent = createAlternativePage({
       price: "$1,500+",
       period: "/month",
       note: "Enterprise-tier pricing",
-      pros: [
-        "All-in-one platform with lead gen",
-        "IDX website included",
-        "Robust team management",
-      ],
+      pros: ["All-in-one platform with lead gen", "IDX website included", "Robust team management"],
       cons: [
         "Complex setup and learning curve",
         "Enterprise-focused, overkill for small teams",
@@ -174,7 +169,7 @@ export const cinc: AlternativePageContent = createAlternativePage({
     headline: "Want Results Without the Complexity?",
     subheadline:
       "See how Prestyj delivers instant lead response and database reactivation without enterprise overhead.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. Simple setup, immediate results.",
   },

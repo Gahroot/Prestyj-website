@@ -184,7 +184,7 @@ export const aiLeadGeneration: SolutionPageContent = {
     headline: "Stop Losing Leads. Start Capturing Them 24/7.",
     subheadline:
       "Every day without AI lead capture is money left on the table. Let's plug the leak in your funnel.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote:
       "See exactly how AI lead generation would work for your business—no commitment required.",

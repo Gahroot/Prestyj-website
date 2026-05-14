@@ -203,7 +203,7 @@ export const aiVoiceReceptionistInsurance: BestForPageContent = createBestForPag
     headline: "Stop Losing Calls. Start Saving $10K+/Month.",
     subheadline:
       "See how AI voice receptionist transforms your insurance operation: 24/7 availability, never miss a lead, handle 10x more calls, reduce costs. Book a demo to see real insurance workflows in action.",
-    buttonText: "See AI Receptionist Demo",
+    buttonText: "Book a Demo",
     footnote:
       "Watch real insurance scenarios: policy inquiry, claims intake, quote routing. No credit card required.",
   },

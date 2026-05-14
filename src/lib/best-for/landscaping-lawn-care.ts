@@ -195,7 +195,7 @@ export const landscapingLawnCare: BestForPageContent = {
     headline: "Capture Every Spring and Fall Lead Before Your Competition Does",
     subheadline:
       "AI handles seasonal call spikes, qualifies job size, books appointments 24/7, and fills your route-efficient schedule. Book a demo to see AI handling landscaping calls.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Works with all major landscaping software. Live in 1-2 weeks.",
   },

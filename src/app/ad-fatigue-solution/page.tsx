@@ -69,60 +69,58 @@ export default function AdFatigueSolutionPage() {
       />
 
       {/* HERO */}
-      <section className="relative pt-24 pb-16 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+      <section className="relative px-4 pt-24 pb-16">
+        <div className="mx-auto max-w-5xl text-center">
+          <Badge variant="outline" className="border-primary/50 text-primary mb-6">
             AD FATIGUE · DIAGNOSED
           </Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-6">
+          <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
             Ad Fatigue Isn&apos;t a Strategy Problem.
-            <span className="block text-primary mt-2">It&apos;s a Supply Problem.</span>
+            <span className="text-primary mt-2 block">It&apos;s a Supply Problem.</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg md:text-xl">
             Every blog post tells you to &ldquo;rotate your creative.&rdquo; None of them tell you
-            how to produce the replacement volume. That&apos;s because the real answer
-            isn&apos;t a strategy — it&apos;s a factory.
+            how to produce the replacement volume. That&apos;s because the real answer isn&apos;t a
+            strategy — it&apos;s a factory.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" className="font-bold" asChild>
-              <Link href="/batch-video-ads#pricing">
-                Pick My Batch
+              <Link href="/book-demo">
+                Book a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <Link href="/how-often-refresh-ad-creative">
-                Calculate my refresh cadence
-              </Link>
+              <Link href="/how-often-refresh-ad-creative">Calculate my refresh cadence</Link>
             </Button>
           </div>
         </div>
       </section>
 
       {/* STATS CALLOUT */}
-      <section className="py-12 px-4 bg-muted/20 border-y border-border/50">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <section className="bg-muted/20 border-border/50 border-y px-4 py-12">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 text-center md:grid-cols-3">
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-primary">
+            <div className="text-primary text-5xl font-bold md:text-6xl">
               <CountUp to={80} duration={1.5} />%
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               of underperforming ad accounts are fatigued, not broken
             </p>
           </div>
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-warning">
+            <div className="text-warning text-5xl font-bold md:text-6xl">
               <CountUp to={50} duration={1.5} />+
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               hook variations needed to find one that converts
             </p>
           </div>
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-success">
+            <div className="text-success text-5xl font-bold md:text-6xl">
               <CountUp to={3} duration={1.5} />×
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               frequency cap where CTR decay usually begins
             </p>
           </div>
@@ -130,86 +128,100 @@ export default function AdFatigueSolutionPage() {
       </section>
 
       {/* WHY YOUR ADS STOP WORKING */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll className="mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold md:text-4xl">
               Why Your Ads Stop Working
             </h2>
-            <p className="text-muted-foreground text-lg mb-4">
-              Ad fatigue is not mysterious. It&apos;s mechanical. You pick an audience.
-              You run the same few ads at it. Frequency climbs. CTR drops. CPMs inflate
-              because the algorithm has to reach deeper into the audience to find
-              someone who hasn&apos;t seen your ad four times already.
+            <p className="text-muted-foreground mb-4 text-lg">
+              Ad fatigue is not mysterious. It&apos;s mechanical. You pick an audience. You run the
+              same few ads at it. Frequency climbs. CTR drops. CPMs inflate because the algorithm
+              has to reach deeper into the audience to find someone who hasn&apos;t seen your ad
+              four times already.
             </p>
-            <p className="text-muted-foreground text-lg mb-4">
-              The math is brutal: <span className="text-foreground font-semibold">same audience × same hooks × repeated exposure = fatigue</span>.
-              There is no strategy, bid cap, or optimization lever that defeats this
-              equation. Only fresh creative resets it.
+            <p className="text-muted-foreground mb-4 text-lg">
+              The math is brutal:{" "}
+              <span className="text-foreground font-semibold">
+                same audience × same hooks × repeated exposure = fatigue
+              </span>
+              . There is no strategy, bid cap, or optimization lever that defeats this equation.
+              Only fresh creative resets it.
             </p>
             <p className="text-muted-foreground text-lg">
-              So when a guru says &ldquo;refresh your creative every 7-14 days,&rdquo;
-              they&apos;re technically correct and practically useless. That&apos;s like
-              telling a starving person to eat more food. The question isn&apos;t
-              <em> whether</em> to refresh — it&apos;s <em>how</em> you produce the
-              replacement volume on a schedule your business can actually sustain.
+              So when a guru says &ldquo;refresh your creative every 7-14 days,&rdquo; they&apos;re
+              technically correct and practically useless. That&apos;s like telling a starving
+              person to eat more food. The question isn&apos;t
+              <em> whether</em> to refresh — it&apos;s <em>how</em> you produce the replacement
+              volume on a schedule your business can actually sustain.
             </p>
           </AnimateOnScroll>
         </div>
       </section>
 
       {/* WHAT THE GURUS MISS */}
-      <section className="py-20 px-4 bg-muted/20">
-        <div className="max-w-4xl mx-auto">
+      <section className="bg-muted/20 px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll>
-            <Badge variant="outline" className="mb-4 border-destructive/40 text-destructive">
+            <Badge variant="outline" className="border-destructive/40 text-destructive mb-4">
               THE BLIND SPOT
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold md:text-4xl">
               What the Gurus Miss
             </h2>
-            <p className="text-muted-foreground text-lg mb-4">
-              The standard advice — &ldquo;rotate your creative,&rdquo; &ldquo;refresh
-              your hooks,&rdquo; &ldquo;test new angles&rdquo; — assumes you have a
-              production pipeline capable of feeding 15, 30, or 50 new ads into the
-              account every week. Almost nobody does. The advice is given by people
-              whose business is coaching, not actually producing volume.
+            <p className="text-muted-foreground mb-4 text-lg">
+              The standard advice — &ldquo;rotate your creative,&rdquo; &ldquo;refresh your
+              hooks,&rdquo; &ldquo;test new angles&rdquo; — assumes you have a production pipeline
+              capable of feeding 15, 30, or 50 new ads into the account every week. Almost nobody
+              does. The advice is given by people whose business is coaching, not actually producing
+              volume.
             </p>
             <p className="text-muted-foreground text-lg">
-              A $10k/month spend account needs roughly 20-40 fresh creatives per month
-              to keep frequency capped below fatigue thresholds. At the industry
-              average of 1-2 ads produced per week per in-house team, that account
-              will be perpetually fatigued. It&apos;s not a tactics problem. It&apos;s a
-              capacity problem — and no amount of &ldquo;rotate your hooks&rdquo;
-              advice creates capacity.
+              A $10k/month spend account needs roughly 20-40 fresh creatives per month to keep
+              frequency capped below fatigue thresholds. At the industry average of 1-2 ads produced
+              per week per in-house team, that account will be perpetually fatigued. It&apos;s not a
+              tactics problem. It&apos;s a capacity problem — and no amount of &ldquo;rotate your
+              hooks&rdquo; advice creates capacity.
             </p>
           </AnimateOnScroll>
         </div>
       </section>
 
       {/* THE REAL FIX */}
-      <section className="py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <AnimateOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-5xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
               The Real Fix: Creative Supply at Cadence
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-              You don&apos;t solve fatigue with a better strategy. You solve it by
-              building a creative supply chain that matches your spend.
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
+              You don&apos;t solve fatigue with a better strategy. You solve it by building a
+              creative supply chain that matches your spend.
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
-              { num: "01", title: "Record once", body: "One 15-20 minute selfie session. No studio. No crew. Just you reading scripts we wrote for you." },
-              { num: "02", title: "Get 300-1000 variations", body: "Every hook, body, and CTA permutation cut into unique ads — delivered in 24 hours." },
-              { num: "03", title: "Feed the algorithm", body: "Drip new variations weekly. Frequency stays capped. Fatigue never arrives." },
+              {
+                num: "01",
+                title: "Record once",
+                body: "One 15-20 minute selfie session. No studio. No crew. Just you reading scripts we wrote for you.",
+              },
+              {
+                num: "02",
+                title: "Get 300-1000 variations",
+                body: "Every hook, body, and CTA permutation cut into unique ads — delivered in 24 hours.",
+              },
+              {
+                num: "03",
+                title: "Feed the algorithm",
+                body: "Drip new variations weekly. Frequency stays capped. Fatigue never arrives.",
+              },
             ].map((step, i) => (
               <AnimateOnScroll key={step.num} delay={i * 0.1}>
                 <BorderGlow borderRadius={18} innerClassName="p-8 h-full">
-                  <span className="text-xs font-mono text-primary">{step.num}</span>
-                  <h3 className="text-xl font-heading font-bold text-foreground mt-3 mb-3">
+                  <span className="text-primary font-mono text-xs">{step.num}</span>
+                  <h3 className="font-heading text-foreground mt-3 mb-3 text-xl font-bold">
                     {step.title}
                   </h3>
                   <p className="text-muted-foreground">{step.body}</p>
@@ -221,13 +233,13 @@ export default function AdFatigueSolutionPage() {
       </section>
 
       {/* REFRESH CADENCE MATH */}
-      <section className="py-20 px-4 bg-muted/20">
-        <div className="max-w-5xl mx-auto">
+      <section className="bg-muted/20 px-4 py-20">
+        <div className="mx-auto max-w-5xl">
           <AnimateOnScroll className="mb-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
               The Math of Refresh Cadence
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
               How many fresh ads you actually need per month, by spend tier.
             </p>
           </AnimateOnScroll>
@@ -236,19 +248,24 @@ export default function AdFatigueSolutionPage() {
             <BorderGlow borderRadius={18} innerClassName="p-2 md:p-4">
               <div className="overflow-x-auto">
                 <table className="w-full text-left">
-                  <thead className="border-b border-border">
+                  <thead className="border-border border-b">
                     <tr>
-                      <th className="p-4 font-heading font-bold text-foreground">Monthly Spend</th>
-                      <th className="p-4 font-heading font-bold text-foreground">Fresh Ads / Month</th>
-                      <th className="p-4 font-heading font-bold text-foreground">Drop Cadence</th>
+                      <th className="font-heading text-foreground p-4 font-bold">Monthly Spend</th>
+                      <th className="font-heading text-foreground p-4 font-bold">
+                        Fresh Ads / Month
+                      </th>
+                      <th className="font-heading text-foreground p-4 font-bold">Drop Cadence</th>
                     </tr>
                   </thead>
                   <tbody>
                     {REFRESH_TABLE.map((row, i) => (
-                      <tr key={row.spend} className={i < REFRESH_TABLE.length - 1 ? "border-b border-border/50" : ""}>
-                        <td className="p-4 text-foreground font-semibold">{row.spend}</td>
-                        <td className="p-4 text-primary font-semibold">{row.fresh}</td>
-                        <td className="p-4 text-muted-foreground">{row.frequency}</td>
+                      <tr
+                        key={row.spend}
+                        className={i < REFRESH_TABLE.length - 1 ? "border-border/50 border-b" : ""}
+                      >
+                        <td className="text-foreground p-4 font-semibold">{row.spend}</td>
+                        <td className="text-primary p-4 font-semibold">{row.fresh}</td>
+                        <td className="text-muted-foreground p-4">{row.frequency}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -259,13 +276,12 @@ export default function AdFatigueSolutionPage() {
 
           <AnimateOnScroll className="mt-8 text-center">
             <p className="text-muted-foreground mb-6">
-              Compare to your current output. If you&apos;re producing 2-4 ads a month
-              and spending $5k+, you&apos;re structurally fatigued — and no
-              optimization will change that.
+              Compare to your current output. If you&apos;re producing 2-4 ads a month and spending
+              $5k+, you&apos;re structurally fatigued — and no optimization will change that.
             </p>
             <Button size="lg" className="font-bold" asChild>
-              <Link href="/batch-video-ads#pricing">
-                Pick My Batch
+              <Link href="/book-demo">
+                Book a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -274,10 +290,10 @@ export default function AdFatigueSolutionPage() {
       </section>
 
       {/* SIGNS YOU ARE FATIGUED */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold md:text-4xl">
               Five Signs You&apos;re Already Fatigued
             </h2>
             <ol className="space-y-4">
@@ -289,10 +305,13 @@ export default function AdFatigueSolutionPage() {
                 "You have 3-5 active creatives and they&apos;ve been running more than 2 weeks.",
               ].map((sign, i) => (
                 <li key={i} className="flex items-start gap-4">
-                  <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold flex-shrink-0">
+                  <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full font-bold">
                     {i + 1}
                   </div>
-                  <span className="text-foreground text-lg pt-1" dangerouslySetInnerHTML={{ __html: sign }} />
+                  <span
+                    className="text-foreground pt-1 text-lg"
+                    dangerouslySetInnerHTML={{ __html: sign }}
+                  />
                 </li>
               ))}
             </ol>
@@ -301,24 +320,22 @@ export default function AdFatigueSolutionPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4 bg-muted/20">
-        <div className="max-w-3xl mx-auto">
-          <AnimateOnScroll className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+      <section className="bg-muted/20 px-4 py-20">
+        <div className="mx-auto max-w-3xl">
+          <AnimateOnScroll className="mb-10 text-center">
+            <h2 className="font-heading text-foreground text-3xl font-bold md:text-4xl">
               Questions
             </h2>
           </AnimateOnScroll>
           <div className="space-y-4">
             {FAQS.map((item, i) => (
               <AnimateOnScroll key={item.q} delay={i * 0.05}>
-                <details className="group bg-card border border-border rounded-xl">
-                  <summary className="cursor-pointer p-6 font-heading font-semibold text-foreground flex items-center justify-between gap-4">
+                <details className="group bg-card border-border rounded-xl border">
+                  <summary className="font-heading text-foreground flex cursor-pointer items-center justify-between gap-4 p-6 font-semibold">
                     <span>{item.q}</span>
-                    <span className="transition group-open:rotate-180 text-primary">▼</span>
+                    <span className="text-primary transition group-open:rotate-180">▼</span>
                   </summary>
-                  <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
-                    {item.a}
-                  </div>
+                  <div className="text-muted-foreground px-6 pb-6 leading-relaxed">{item.a}</div>
                 </details>
               </AnimateOnScroll>
             ))}
@@ -327,20 +344,20 @@ export default function AdFatigueSolutionPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 px-4 bg-primary/5">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="bg-primary/5 px-4 py-20">
+        <div className="mx-auto max-w-3xl text-center">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               Solve Fatigue at the Source
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              One recording. 300-1000 scripted ad variations. Your creative library
-              finally big enough to match your spend.
+            <p className="text-muted-foreground mb-8 text-lg md:text-xl">
+              One recording. 300-1000 scripted ad variations. Your creative library finally big
+              enough to match your spend.
             </p>
-            <Button size="lg" className="font-bold text-lg px-10 py-6" asChild>
-              <Link href="/batch-video-ads#pricing">
-                Pick My Batch
-                <ArrowRight className="w-5 h-5 ml-2" />
+            <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
+              <Link href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </AnimateOnScroll>

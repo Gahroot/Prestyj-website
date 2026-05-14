@@ -148,8 +148,8 @@ export const socialVolumeStrategyForSaasFounders: BestForPageContent = {
     headline: "Stop Posting What You Have Time For. Start Posting What the Algorithm Rewards.",
     subheadline:
       "Prestyj is the content engine that lets founders and CEOs of B2B SaaS companies at $1M–$20M ARR execute a Tier 4 cadence — 1,500+ posts/month across 7 platforms — with 15–30 minutes of weekly review. No 5-person team. No retainer. No contract.",
-    buttonText: "Get My SaaS Founders Volume Plan",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Tier 4 cadence · 7 platforms · 15 min/wk to review · No contract",
   },
 };

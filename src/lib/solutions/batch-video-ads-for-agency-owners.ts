@@ -31,7 +31,8 @@ export const batchVideoAdsForAgencyOwners: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Agency Creative Teams Can't Keep Up",
-    subheadline: "Client demands for creative velocity are growing faster than your team's capacity.",
+    subheadline:
+      "Client demands for creative velocity are growing faster than your team's capacity.",
     points: [
       {
         icon: "Users",
@@ -101,7 +102,8 @@ export const batchVideoAdsForAgencyOwners: SolutionPageContent = {
   },
   objections: {
     headline: "What Agency Owners Ask Before Starting",
-    subheadline: "These are the exact questions we hear from agency owners evaluating batch creative.",
+    subheadline:
+      "These are the exact questions we hear from agency owners evaluating batch creative.",
     objections: [
       {
         objection: "I already have editors — won't this replace them?",
@@ -161,7 +163,7 @@ export const batchVideoAdsForAgencyOwners: SolutionPageContent = {
     headline: "Scale Your Creative Output Without Scaling Your Team.",
     subheadline:
       "Deliver 300–1,000 video ads per client in 24 hours. White-label ready, industry-specific, and priced for agency margins.",
-    buttonText: "Get Agency Pricing",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Volume pricing for 5+ clients · White-label delivery · 24-hour turnaround per batch",
   },

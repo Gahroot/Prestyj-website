@@ -166,8 +166,9 @@ export const aiForRealEstateWholesalers: SolutionPageContent = {
     headline: "Ready to Automate Your Wholesaling Pipeline?",
     subheadline:
       "Join wholesalers who are replacing manual grunt work with AI-powered pipeline automation. Close more deals, work fewer hours, and scale your operation without adding headcount.",
-    buttonText: "Book Your Wholesaling Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
-    footnote: "See AI skip tracing, deal analysis, and buyer matching in action. No commitment required.",
+    footnote:
+      "See AI skip tracing, deal analysis, and buyer matching in action. No commitment required.",
   },
 };

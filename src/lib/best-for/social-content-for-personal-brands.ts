@@ -138,7 +138,7 @@ export const socialContentForPersonalBrands: BestForPageContent = {
     headline: "Your Audience Is Waiting. Start Showing Up Every Day.",
     subheadline:
       "AI-powered content production for personal brands. 30–50 posts/day across every platform. Your voice, your authority, your pipeline — on autopilot.",
-    buttonText: "Start Building Your Brand",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Voice-trained · Multi-platform · Authority-focused",
   },

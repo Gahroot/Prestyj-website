@@ -50,20 +50,46 @@ export const hootsuiteCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Creates the actual content", prestyj: true, competitor: false, note: "Hootsuite is enterprise scheduling + analytics — not production" },
+    {
+      feature: "Creates the actual content",
+      prestyj: true,
+      competitor: false,
+      note: "Hootsuite is enterprise scheduling + analytics — not production",
+    },
     { feature: "Scripts written for you", prestyj: true, competitor: false },
-    { feature: "Vertical video ads delivered", prestyj: "300-1,000", competitor: "0 — you upload your own" },
-    { feature: "Entry price", prestyj: "$1,497 one-time", competitor: "$99/mo = $1,188/yr just to start" },
-    { feature: "Annual cost (Team plan)", prestyj: "$1,497 one-time", competitor: "~$2,988/yr — and still no content" },
-    { feature: "Best-fit user", prestyj: "Owner-operators + lean teams", competitor: "10+ person marketing teams with content already produced" },
+    {
+      feature: "Vertical video ads delivered",
+      prestyj: "300-1,000",
+      competitor: "0 — you upload your own",
+    },
+    {
+      feature: "Entry price",
+      prestyj: "$1,497 one-time",
+      competitor: "$99/mo = $1,188/yr just to start",
+    },
+    {
+      feature: "Annual cost (Team plan)",
+      prestyj: "$1,497 one-time",
+      competitor: "~$2,988/yr — and still no content",
+    },
+    {
+      feature: "Best-fit user",
+      prestyj: "Owner-operators + lean teams",
+      competitor: "10+ person marketing teams with content already produced",
+    },
     { feature: "Hook + CTA variation engineering", prestyj: true, competitor: false },
     { feature: "Approvals + team workflows", prestyj: "N/A — solo-friendly", competitor: true },
     { feature: "Subscription required", prestyj: false, competitor: true },
-    { feature: "Solves the actual bottleneck", prestyj: "Yes — production", competitor: "No — assumes content already exists" },
+    {
+      feature: "Solves the actual bottleneck",
+      prestyj: "Yes — production",
+      competitor: "No — assumes content already exists",
+    },
   ],
   whySwitch: {
     title: "Why Hootsuite Is Overkill — and Underpowered — for Owner-Operators",
-    description: "Hootsuite is built for large teams that already produce content at scale. If you're a solo realtor, contractor, or advisor, you're paying enterprise pricing to schedule a queue you can't fill.",
+    description:
+      "Hootsuite is built for large teams that already produce content at scale. If you're a solo realtor, contractor, or advisor, you're paying enterprise pricing to schedule a queue you can't fill.",
     reasons: [
       {
         icon: "DollarSign",
@@ -98,16 +124,31 @@ export const hootsuiteCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Later", description: "Lower-priced scheduler", href: "/compare/prestyj-vs-later", linkText: "Read comparison" },
-    { title: "vs Buffer", description: "Simpler scheduler option", href: "/compare/prestyj-vs-buffer", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Later",
+      description: "Lower-priced scheduler",
+      href: "/compare/prestyj-vs-later",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Buffer",
+      description: "Simpler scheduler option",
+      href: "/compare/prestyj-vs-buffer",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Stop Paying Enterprise Prices for an Empty Queue.",
     description:
       "Hootsuite is great if you already have a content team. If you don't, Prestyj ships 300-1,000 finished vertical ads in 24 hours — for less than a year of Hootsuite Team.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -118,5 +159,11 @@ export const hootsuiteMetadata: CompareMetadata = {
   title: "PRESTYJ vs Hootsuite: $739/mo Scheduler or 500 Finished Ads? (2026)",
   description:
     "Hootsuite costs $99-$739/mo and still doesn't create your content. PRESTYJ ships 300-1,000 vertical video ads in 24 hours for $1,497 one-time — less than a year of Hootsuite.",
-  keywords: ["hootsuite alternative", "hootsuite vs prestyj", "enterprise social scheduler alternative", "content creation service", "batch video ads"],
+  keywords: [
+    "hootsuite alternative",
+    "hootsuite vs prestyj",
+    "enterprise social scheduler alternative",
+    "content creation service",
+    "batch video ads",
+  ],
 };

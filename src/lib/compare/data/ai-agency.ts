@@ -67,12 +67,24 @@ export const aiAgencyCompareData: ComparePageData = createComparePage({
       price: "$8,000-25,000+/month",
       priceSubtext: "Retainer pricing for AI agency services",
       features: [
-        { text: "Full agency team access", included: true, note: "Project managers, designers, developers" },
+        {
+          text: "Full agency team access",
+          included: true,
+          note: "Project managers, designers, developers",
+        },
         { text: "Strategic consulting", included: true },
         { text: "Custom development", included: true, note: "Slower, more expensive" },
-        { text: "Account management", included: true, note: "Extra layer between you and implementers" },
+        {
+          text: "Account management",
+          included: true,
+          note: "Extra layer between you and implementers",
+        },
         { text: "Long-term contracts", included: true, note: "6-12 month commitments typical" },
-        { text: "Change orders for scope changes", included: true, note: "Additional fees for modifications" },
+        {
+          text: "Change orders for scope changes",
+          included: true,
+          note: "Additional fees for modifications",
+        },
       ],
     },
   },
@@ -186,15 +198,13 @@ export const aiAgencyCompareData: ComparePageData = createComparePage({
     },
     {
       title: "Fractional AI Consultant vs Full-Time Employee",
-      description:
-        "Compare fractional AI expertise to hiring in-house AI engineers.",
+      description: "Compare fractional AI expertise to hiring in-house AI engineers.",
       href: "/compare/fractional-ai-consultant-vs-full-time-employee",
       linkText: "Compare engagement models",
     },
     {
       title: "AI Consultant Deliverables: What to Expect",
-      description:
-        "Scope, timeline, and outcomes—what AI consultants should actually deliver.",
+      description: "Scope, timeline, and outcomes—what AI consultants should actually deliver.",
       href: "/blog/ai-consultant-deliverables-2026",
       linkText: "Understand deliverables",
     },
@@ -204,7 +214,7 @@ export const aiAgencyCompareData: ComparePageData = createComparePage({
     titleAccent: "Without Agency Overhead",
     description:
       "Get industry-specialized AI expertise, done-for-you implementation, and ongoing optimization at 30-50% less than traditional AI agencies.",
-    buttonText: "See Your Custom Pricing",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     disclaimer:
       "No commitment required. We'll show you exact pricing, timeline, and ROI projections for your specific use case.",
@@ -214,8 +224,7 @@ export const aiAgencyCompareData: ComparePageData = createComparePage({
 export const aiAgencyMetadata: CompareMetadata = {
   slug: "ai-consultant-vs-ai-agency",
   competitorName: "AI Agencies",
-  title:
-    "AI Consultant vs. AI Agency: Cost, Speed & ROI Comparison for Service Businesses | 2026",
+  title: "AI Consultant vs. AI Agency: Cost, Speed & ROI Comparison for Service Businesses | 2026",
   description:
     "Compare AI consultants vs. AI agencies on cost, implementation speed, and ROI. Learn why specialized AI consultants cost 30-50% less than agencies with faster delivery for service businesses.",
   keywords: [

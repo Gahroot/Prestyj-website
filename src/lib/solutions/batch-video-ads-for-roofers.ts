@@ -156,8 +156,8 @@ export const batchVideoAdsForRoofers: SolutionPageContent = {
     headline: "Be the Roofer Homeowners Call First — After Every Storm.",
     subheadline:
       "Record for 15 minutes. Get 300–1,000 roofing-specific video ads in 24 hours. Storm hooks, insurance scripts, and neighborhood proof — all from one take.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing starts at $1,497 · 24-hour turnaround · Storm-ready hooks included",
   },
 };

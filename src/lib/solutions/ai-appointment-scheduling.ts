@@ -189,7 +189,7 @@ export const aiAppointmentScheduling: SolutionPageContent = {
     headline: "Start Booking Appointments 24/7",
     subheadline:
       "Stop losing bookings to voicemail and phone tag. AI captures every appointment request, confirms instantly, and fills your calendar while you focus on delivering great service.",
-    buttonText: "Set Up AI Scheduling",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Works with Google Calendar, Outlook, Calendly, and more. Live in 5–7 days.",
   },

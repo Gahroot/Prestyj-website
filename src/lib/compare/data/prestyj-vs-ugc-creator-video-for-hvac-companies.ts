@@ -107,8 +107,8 @@ export const hvacCompaniesVsUgcCreatorVideoCompareData: ComparePageData = create
     title: "HVAC Pick Batch Over Home Services UGC Creators.",
     description:
       "300-1,000 hvac-researched ads in 24 hours. One flat fee from $1,497. Your real face. No retainer.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment · No subscription · 24-hour turnaround",
   },
 });

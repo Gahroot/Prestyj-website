@@ -107,8 +107,8 @@ export const plumbingContractorsVsFiverrVideoCompareData: ComparePageData = crea
     title: "Plumbing Pick Batch Over Fiverr Video Editors.",
     description:
       "300-1,000 plumbing-researched ads in 24 hours. One flat fee from $1,497. Your real face. No retainer.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment · No subscription · 24-hour turnaround",
   },
 });

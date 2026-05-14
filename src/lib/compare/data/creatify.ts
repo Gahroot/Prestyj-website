@@ -48,15 +48,44 @@ export const creatifyCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Scripts researched and written for you", prestyj: true, competitor: false, note: "Creatify generates visuals from scripts YOU provide" },
+    {
+      feature: "Scripts researched and written for you",
+      prestyj: true,
+      competitor: false,
+      note: "Creatify generates visuals from scripts YOU provide",
+    },
     { feature: "Uses your real face and voice", prestyj: true, competitor: false },
-    { feature: "Batch output", prestyj: "300-1,000 ads", competitor: "Credit-capped (~100s/mo depending on tier)" },
-    { feature: "Vertical-specific pain points (real estate, home services)", prestyj: true, competitor: false },
-    { feature: "Turnaround", prestyj: "24 hrs, hands-off", competitor: "Minutes per ad — but script labor is yours" },
-    { feature: "Pricing model", prestyj: "One-time $1,497-$3,997", competitor: "Recurring $19-$49+/mo" },
+    {
+      feature: "Batch output",
+      prestyj: "300-1,000 ads",
+      competitor: "Credit-capped (~100s/mo depending on tier)",
+    },
+    {
+      feature: "Vertical-specific pain points (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, hands-off",
+      competitor: "Minutes per ad — but script labor is yours",
+    },
+    {
+      feature: "Pricing model",
+      prestyj: "One-time $1,497-$3,997",
+      competitor: "Recurring $19-$49+/mo",
+    },
     { feature: "One-take recording session", prestyj: "15-20 min", competitor: "N/A" },
-    { feature: "Hook + body + CTA variation engineering", prestyj: true, competitor: "You design it yourself" },
-    { feature: "Cost per ad at 500 ads", prestyj: "~$3-5", competitor: "Lower per render, higher when you price your script time" },
+    {
+      feature: "Hook + body + CTA variation engineering",
+      prestyj: true,
+      competitor: "You design it yourself",
+    },
+    {
+      feature: "Cost per ad at 500 ads",
+      prestyj: "~$3-5",
+      competitor: "Lower per render, higher when you price your script time",
+    },
     { feature: "Brand trust from real owner on camera", prestyj: true, competitor: false },
   ],
   whySwitch: {
@@ -96,16 +125,31 @@ export const creatifyCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Arcads", description: "Another AI UGC tool", href: "/compare/prestyj-vs-arcads", linkText: "Read comparison" },
-    { title: "vs HeyGen", description: "AI avatar platform compared", href: "/compare/prestyj-vs-heygen", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Arcads",
+      description: "Another AI UGC tool",
+      href: "/compare/prestyj-vs-arcads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs HeyGen",
+      description: "AI avatar platform compared",
+      href: "/compare/prestyj-vs-heygen",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Skip the Script-Writing. Just Record.",
     description:
       "Creatify renders. Prestyj researches, scripts, films, and edits. 300-1,000 ads in 24 hours for one flat fee.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +160,11 @@ export const creatifyMetadata: CompareMetadata = {
   title: "PRESTYJ vs Creatify: Done-For-You or DIY Scripts? (2026)",
   description:
     "Creatify renders AI avatars from scripts you write. PRESTYJ writes scripts AND films your real face. 300-1,000 ads in 24 hours, from $1,497 one-time.",
-  keywords: ["creatify alternative", "creatify vs prestyj", "ai ad generator alternative", "batch video ads", "ai ugc alternative"],
+  keywords: [
+    "creatify alternative",
+    "creatify vs prestyj",
+    "ai ad generator alternative",
+    "batch video ads",
+    "ai ugc alternative",
+  ],
 };

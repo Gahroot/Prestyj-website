@@ -167,7 +167,7 @@ export const aiRealEstateInvestors: BestForPageContent = createBestForPage({
     headline: "Invest Smarter with AI",
     subheadline:
       "See how Prestyj's AI analyzes deals, predicts markets, and manages your portfolio. Book a demo and start making data-driven investment decisions today.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. See results in minutes.",
   },

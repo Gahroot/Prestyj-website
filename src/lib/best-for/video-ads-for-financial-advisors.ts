@@ -74,12 +74,14 @@ export const videoAdsForFinancialAdvisors: BestForPageContent = {
         "We write every script with the specific Marketing Rule risk matrix in mind — no performance numbers without required disclosures, no implied guarantees, testimonials only with the adopted compliance framework, no cherry-picking, and specific language around hypothetical results where applicable. Your CCO signs off on the final batch before anything goes live. If you're at a RIA aggregator or BD, we'll format for their specific ad review system.",
     },
     {
-      problem: "Your typical client is 55+ and you don't know how to reach them on Instagram or TikTok",
+      problem:
+        "Your typical client is 55+ and you don't know how to reach them on Instagram or TikTok",
       solution:
         "The 55+ demographic is now Facebook-native. Meta's own data shows the 55–70 demographic spends more time on Facebook than 25–35-year-olds. Instagram Reels adoption in the 55+ bracket has tripled since 2023. YouTube in-stream continues to be the premium channel for this demographic. Your batch ships in formats for all three. The 'older clients aren't on social' conventional wisdom is 5 years out of date.",
     },
     {
-      problem: "You tried a webinar funnel and the leads were all retirees looking for free advice, not clients",
+      problem:
+        "You tried a webinar funnel and the leads were all retirees looking for free advice, not clients",
       solution:
         "Free-webinar funnels optimize for the cheapest form of opt-in, which selects for the lowest-intent prospect. Direct-to-consult video ads with budget-and-asset-self-qualification in the hook ('if you have $500K+ in investable assets and you've never had a fee-only advisor review your plan') filter for real prospects before the consult. CPL goes up; show-rate and close-rate go up dramatically more.",
     },
@@ -141,7 +143,8 @@ export const videoAdsForFinancialAdvisors: BestForPageContent = {
         "Yes — the 2022 SEC Marketing Rule amendments made testimonials permissible for RIAs for the first time, provided certain conditions are met: the disclosure whether the person is a client, whether they received compensation, and any material conflicts of interest, among others. We'll only include testimonials if you have a written release and the specific Rule-compliant disclosures included in the ad itself. If you're FINRA-regulated rather than SEC-regulated, the analysis is different and we'll coordinate with your BD's advertising review team.",
     },
     {
-      question: "My CCO needs to review everything before it runs. How does that fit your workflow?",
+      question:
+        "My CCO needs to review everything before it runs. How does that fit your workflow?",
       answer:
         "Standard for us. After we write the scripts, you get a CCO review pass before we shoot or edit. After we deliver the rendered batch, you get a final CCO sign-off pass. Most advisor batches go through 1–2 rounds of CCO revisions (typically small language tweaks — 'help you plan' → 'assist you in developing a plan,' etc.). No variant is final until your compliance team has approved it. If you're at an aggregator like Creative Planning, Mariner, or an independent BD, we format deliverables for their specific ad-approval system.",
     },
@@ -160,8 +163,8 @@ export const videoAdsForFinancialAdvisors: BestForPageContent = {
     headline: "Build a Compliant Cold-Marketing Channel That Doesn't Depend on Referrals.",
     subheadline:
       "One 20-minute recording. 300–1,000 SEC Marketing Rule-compliant, CCO-reviewable video ads in 24 hours. Retirement, business-owner, fee-only — every segment tested in parallel.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · CCO review included · No retainer",
   },
 };

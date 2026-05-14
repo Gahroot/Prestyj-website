@@ -167,7 +167,7 @@ export const aiRealEstateWholesalers: BestForPageContent = createBestForPage({
     headline: "Ready to Wholesale Smarter with AI?",
     subheadline:
       "See how Prestyj automates your entire wholesale pipeline — from motivated seller to cash buyer assignment. Book a demo and watch AI close deals in real-time.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. See results in minutes.",
   },

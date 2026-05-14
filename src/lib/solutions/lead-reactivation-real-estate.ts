@@ -31,7 +31,8 @@ export const leadReactivationRealEstate: SolutionPageContent = {
   },
   painPoints: {
     headline: "Your Dead Leads Are Your Most Expensive Leads",
-    subheadline: "You paid for them. Your team stopped following up. Now they're rotting in your CRM.",
+    subheadline:
+      "You paid for them. Your team stopped following up. Now they're rotting in your CRM.",
     points: [
       {
         icon: "Database",
@@ -58,7 +59,8 @@ export const leadReactivationRealEstate: SolutionPageContent = {
   },
   benefits: {
     headline: "AI Reactivation Built for Real Estate Teams",
-    subheadline: "Personalized outreach at scale that turns dead CRM leads into booked appointments.",
+    subheadline:
+      "Personalized outreach at scale that turns dead CRM leads into booked appointments.",
     benefits: [
       {
         icon: "RefreshCw",
@@ -121,8 +123,8 @@ export const leadReactivationRealEstate: SolutionPageContent = {
     },
     {
       question: "Won't reactivation outreach annoy old leads?",
-        answer:
-          "AI monitors sentiment in real-time. Negative responses ('stop calling,' 'not interested') trigger automatic suppression—no further outreach. Leads who don't respond after the full sequence are also suppressed. We protect your reputation while maximizing reactivation of genuinely interested leads.",
+      answer:
+        "AI monitors sentiment in real-time. Negative responses ('stop calling,' 'not interested') trigger automatic suppression—no further outreach. Leads who don't respond after the full sequence are also suppressed. We protect your reputation while maximizing reactivation of genuinely interested leads.",
     },
     {
       question: "What's the 90-day guarantee?",
@@ -194,7 +196,7 @@ export const leadReactivationRealEstate: SolutionPageContent = {
     headline: "Turn Your Dead CRM Into a Revenue Machine",
     subheadline:
       "Your dormant leads are paid-for opportunities waiting to be unlocked. Let's reactivate them with AI and turn your CRM into your best lead source.",
-    buttonText: "Start Your Reactivation Campaign",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "90-Day Guarantee: Measurable increase in appointments or we keep working for free.",
   },

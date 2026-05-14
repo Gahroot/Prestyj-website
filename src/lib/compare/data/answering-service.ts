@@ -112,8 +112,7 @@ export const answeringServiceCompareData: ComparePageData = createComparePage({
   ],
   whySwitch: {
     title: "Why Businesses Switch from Answering Services to AI",
-    description:
-      "The gap between taking a message and booking a job is where revenue dies.",
+    description: "The gap between taking a message and booking a job is where revenue dies.",
     reasons: [
       {
         icon: "Zap",
@@ -144,15 +143,13 @@ export const answeringServiceCompareData: ComparePageData = createComparePage({
   relatedResources: [
     {
       title: "AI Receptionist ROI by Industry",
-      description:
-        "See the revenue impact across HVAC, plumbing, legal, and more.",
+      description: "See the revenue impact across HVAC, plumbing, legal, and more.",
       href: "/blog/ai-receptionist-roi-by-industry",
       linkText: "Read the analysis",
     },
     {
       title: "Home Services Solution",
-      description:
-        "Built specifically for contractors and home service businesses.",
+      description: "Built specifically for contractors and home service businesses.",
       href: "/solutions/home-services",
       linkText: "Explore the solution",
     },
@@ -168,7 +165,7 @@ export const answeringServiceCompareData: ComparePageData = createComparePage({
     titleAccent: "Replace",
     description:
       "See how AI qualifies leads and books appointments in real-time—instead of taking messages.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     disclaimer:
       "No commitment required. Compare AI side-by-side with your current answering service.",
@@ -178,8 +175,7 @@ export const answeringServiceCompareData: ComparePageData = createComparePage({
 export const answeringServiceMetadata: CompareMetadata = {
   slug: "prestyj-vs-answering-service",
   competitorName: "Traditional Answering Service",
-  title:
-    "Prestyj vs Answering Service: AI Lead Qualification vs Message Taking | 2026 Comparison",
+  title: "Prestyj vs Answering Service: AI Lead Qualification vs Message Taking | 2026 Comparison",
   description:
     "Compare AI sales agents to traditional answering services. See why businesses switch from message-taking to automated lead qualification and appointment booking.",
   keywords: [

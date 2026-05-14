@@ -7,7 +7,8 @@ export const doneForYouAi: BestForPageContent = createBestForPage({
   niche: {
     name: "Done-For-You AI Solutions",
     shortName: "Done-For-You AI",
-    description: "Businesses looking for turnkey AI agent implementation without technical complexity",
+    description:
+      "Businesses looking for turnkey AI agent implementation without technical complexity",
   },
   meta: {
     title: "Done-For-You AI Agents | Turnkey Solutions with Zero Technical Complexity | Prestyj",
@@ -161,7 +162,8 @@ export const doneForYouAi: BestForPageContent = createBestForPage({
     headline: "Stop Building. Start Converting.",
     subheadline:
       "See how done-for-you AI eliminates technical complexity and delivers results in days, not months. Book a demo to see the difference between tools and turnkey solutions.",
-    buttonText: "Book Your Demo",
-    footnote: "No credit card required. No technical expertise needed. See your solution in action.",
+    buttonText: "Book a Demo",
+    footnote:
+      "No credit card required. No technical expertise needed. See your solution in action.",
   },
 });

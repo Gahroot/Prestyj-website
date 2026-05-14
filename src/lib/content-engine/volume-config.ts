@@ -51,15 +51,7 @@ export const volumeContentEngineConfig: ContentEnginePageConfig = {
     videoSrc: "/videos/dfy-vsl.mp4",
     videoPoster: "/images/content-engine/vsl-poster.jpg",
     videoAriaLabel: "1,000 posts per month content engine demo video",
-    platforms: [
-      "Instagram",
-      "Facebook",
-      "TikTok",
-      "YouTube",
-      "LinkedIn",
-      "Threads",
-      "X",
-    ],
+    platforms: ["Instagram", "Facebook", "TikTok", "YouTube", "LinkedIn", "Threads", "X"],
   },
 
   problem: {
@@ -411,7 +403,7 @@ export const volumeContentEngineConfig: ContentEnginePageConfig = {
     headline: "Ready to Hit 1,000+ Posts Per Month?",
     subhead:
       "Live in 24 hours. Volume guaranteed. Cancel anytime. See the engine running before you commit.",
-    buttonLabel: "Book Your Demo",
+    buttonLabel: "Book a Demo",
     buttonHref: "/book-demo",
     eventName: "1000PostsLeadIntent",
     eventLabel: "final-cta",
@@ -486,11 +478,10 @@ export const volumeContentEngineConfig: ContentEnginePageConfig = {
       },
     ],
     customCta: {
-      headline:
-        "Need 5,000+ posts/month? Running an agency or multi-brand operation?",
+      headline: "Need 5,000+ posts/month? Running an agency or multi-brand operation?",
       description:
         "We\u2019ll build something custom \u2014 your account count, your platforms, your volume target.",
-      buttonLabel: "Talk to Us",
+      buttonLabel: "Book a Demo",
       href: "/book-demo",
       eventName: "1000PostsLeadIntent",
       eventLabel: "pricing-custom",
@@ -503,8 +494,7 @@ export const volumeContentEngineConfig: ContentEnginePageConfig = {
       },
       {
         title: "Engagement Layer",
-        description:
-          "DMs, comments, replies handled by us. Volume meets interaction.",
+        description: "DMs, comments, replies handled by us. Volume meets interaction.",
       },
       {
         title: "Ad-Ready Repurposing",
@@ -515,14 +505,12 @@ export const volumeContentEngineConfig: ContentEnginePageConfig = {
       {
         icon: Clock,
         title: "Live in 24 hours",
-        description:
-          "From the moment you grant account access, or your setup fee is refunded.",
+        description: "From the moment you grant account access, or your setup fee is refunded.",
       },
       {
         icon: ShieldCheck,
         title: "Volume guarantee",
-        description:
-          "We hit your post count in 30 days, or we credit the shortfall to next month.",
+        description: "We hit your post count in 30 days, or we credit the shortfall to next month.",
       },
       {
         icon: Ban,

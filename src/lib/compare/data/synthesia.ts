@@ -48,20 +48,60 @@ export const synthesiaCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Uses your real face and voice", prestyj: true, competitor: "Optional custom avatar (still AI)", note: "Even Synthesia's Personal Avatar has visible AI lip-sync and gesture artifacts" },
-    { feature: "Scripts written for you", prestyj: true, competitor: false, note: "Synthesia is BYO-script" },
-    { feature: "Ads per batch", prestyj: "300-1,000", competitor: "Limited by minutes/credits per plan" },
-    { feature: "Turnaround", prestyj: "24 hrs, done-for-you", competitor: "Minutes per render — but script + direction is yours" },
+    {
+      feature: "Uses your real face and voice",
+      prestyj: true,
+      competitor: "Optional custom avatar (still AI)",
+      note: "Even Synthesia's Personal Avatar has visible AI lip-sync and gesture artifacts",
+    },
+    {
+      feature: "Scripts written for you",
+      prestyj: true,
+      competitor: false,
+      note: "Synthesia is BYO-script",
+    },
+    {
+      feature: "Ads per batch",
+      prestyj: "300-1,000",
+      competitor: "Limited by minutes/credits per plan",
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, done-for-you",
+      competitor: "Minutes per render — but script + direction is yours",
+    },
     { feature: "Monthly subscription required", prestyj: false, competitor: true },
-    { feature: "Built for paid social ads", prestyj: true, competitor: false, note: "Synthesia is positioned for L&D, training, and corporate comms" },
-    { feature: "Vertical-specific ad scripts (real estate, home services)", prestyj: true, competitor: false },
-    { feature: "AI content disclosure / policy risk on Meta & TikTok", prestyj: "None", competitor: "Rising — AI avatar disclosure rules tightening in 2026" },
-    { feature: "Cost per ad at 500 ads", prestyj: "~$3-5", competitor: "Variable — plus your script labor and avatar setup" },
-    { feature: "One-take recording", prestyj: "15-20 min", competitor: "N/A (or short avatar training clip)" },
+    {
+      feature: "Built for paid social ads",
+      prestyj: true,
+      competitor: false,
+      note: "Synthesia is positioned for L&D, training, and corporate comms",
+    },
+    {
+      feature: "Vertical-specific ad scripts (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
+    {
+      feature: "AI content disclosure / policy risk on Meta & TikTok",
+      prestyj: "None",
+      competitor: "Rising — AI avatar disclosure rules tightening in 2026",
+    },
+    {
+      feature: "Cost per ad at 500 ads",
+      prestyj: "~$3-5",
+      competitor: "Variable — plus your script labor and avatar setup",
+    },
+    {
+      feature: "One-take recording",
+      prestyj: "15-20 min",
+      competitor: "N/A (or short avatar training clip)",
+    },
   ],
   whySwitch: {
     title: "Why Synthesia Isn't Built for Your Paid Ads",
-    description: "Synthesia is the right tool for enterprise training videos. It's the wrong tool for owner-operator paid social ads.",
+    description:
+      "Synthesia is the right tool for enterprise training videos. It's the wrong tool for owner-operator paid social ads.",
     reasons: [
       {
         icon: "Users",
@@ -96,16 +136,31 @@ export const synthesiaCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs HeyGen", description: "Another AI avatar platform compared", href: "/compare/prestyj-vs-heygen", linkText: "Read comparison" },
-    { title: "vs AI Avatar Ads (category)", description: "All AI avatar tools compared", href: "/compare/prestyj-vs-ai-avatar-ads", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs HeyGen",
+      description: "Another AI avatar platform compared",
+      href: "/compare/prestyj-vs-heygen",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs AI Avatar Ads (category)",
+      description: "All AI avatar tools compared",
+      href: "/compare/prestyj-vs-ai-avatar-ads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Skip the Avatar. Be the Ad.",
     description:
       "Synthesia is great for training videos. Prestyj ships 300-1,000 finished ads starring the real you in 24 hours — for a one-time price.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +171,11 @@ export const synthesiaMetadata: CompareMetadata = {
   title: "PRESTYJ vs Synthesia: AI Avatar or Real Owner Face? (2026)",
   description:
     "Synthesia's AI avatars are built for training, not paid ads. PRESTYJ films the real you — 300-1,000 vertical ads in 24 hours for $1,497 one-time, no subscription.",
-  keywords: ["synthesia alternative", "synthesia vs prestyj", "ai avatar video alternative", "real face ugc ads", "batch video ads"],
+  keywords: [
+    "synthesia alternative",
+    "synthesia vs prestyj",
+    "ai avatar video alternative",
+    "real face ugc ads",
+    "batch video ads",
+  ],
 };

@@ -7,7 +7,8 @@ export const solar: BestForPageContent = createBestForPage({
   niche: {
     name: "Solar Companies",
     shortName: "Solar",
-    description: "Solar installation companies and renewable energy providers looking for AI-powered lead qualification and appointment setting",
+    description:
+      "Solar installation companies and renewable energy providers looking for AI-powered lead qualification and appointment setting",
   },
   meta: {
     title: "AI Agents for Solar Companies | Lead Qualification & Appointment Setting | Prestyj",
@@ -154,7 +155,7 @@ export const solar: BestForPageContent = createBestForPage({
     headline: "Stop Losing Solar Leads to Slow Response Times",
     subheadline:
       "Every lead that waits 24 hours is talking to your competitor. Book a demo to see how AI qualifies, books, and converts more solar prospects.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "No credit card required. Built for solar installers of all sizes.",
   },
 });

@@ -101,7 +101,8 @@ export const aiStrategyConsulting: SolutionPageContent = {
   },
   objections: {
     headline: "What Executives Ask About AI Strategy",
-    subheadline: "Questions from CEOs, founders, and business owners considering strategic AI adoption.",
+    subheadline:
+      "Questions from CEOs, founders, and business owners considering strategic AI adoption.",
     objections: [
       {
         objection: "Can't we just figure out AI as we go?",
@@ -161,7 +162,7 @@ export const aiStrategyConsulting: SolutionPageContent = {
     headline: "Build an AI Strategy Before Your Competitors Do.",
     subheadline:
       "AI strategy consulting that delivers a prioritized roadmap, ROI models, and implementation plan — aligned with your business goals and budget.",
-    buttonText: "Get Your AI Strategy Assessment",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "4-week engagement · 3–5 prioritized use cases · ROI framework included",
   },

@@ -29,7 +29,8 @@ export const multiPlatformContentCreation: SolutionPageContent = {
   },
   painPoints: {
     headline: "Every Platform Needs Different Content — And Different Formats",
-    subheadline: "Cross-posting the same content everywhere doesn't work. Each platform has its own rules.",
+    subheadline:
+      "Cross-posting the same content everywhere doesn't work. Each platform has its own rules.",
     points: [
       {
         icon: "AlertCircle",
@@ -149,7 +150,7 @@ export const multiPlatformContentCreation: SolutionPageContent = {
     headline: "One Content Engine. Every Platform. Zero Daily Effort.",
     subheadline:
       "Multi-platform content creation and publishing. 30–50 posts per day across Instagram, Facebook, LinkedIn, TikTok, X, and Google Business Profile.",
-    buttonText: "Get Multi-Platform Content",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "6+ platforms · Platform-native formatting · Weekly approval",
   },

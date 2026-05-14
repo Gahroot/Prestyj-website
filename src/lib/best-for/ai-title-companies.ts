@@ -167,7 +167,7 @@ export const aiTitleCompanies: BestForPageContent = createBestForPage({
     headline: "Modernize Your Title Operations",
     subheadline:
       "See how Prestyj automates order entry, assists with title examination, and protects against wire fraud. Book a demo designed for title companies.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. See results in minutes.",
   },

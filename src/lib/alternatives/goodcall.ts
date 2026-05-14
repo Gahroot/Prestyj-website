@@ -41,7 +41,8 @@ export const goodcall: AlternativePageContent = createAlternativePage({
   industryStats: [
     {
       stat: "67%",
-      description: "of small businesses miss calls after hours—Goodcall answers some, Prestyj answers all with lead capture",
+      description:
+        "of small businesses miss calls after hours—Goodcall answers some, Prestyj answers all with lead capture",
     },
     {
       stat: "$59-$199",
@@ -87,7 +88,7 @@ export const goodcall: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Goodcall requires external CRM for lead management"
+        "Goodcall requires external CRM for lead management",
       ),
       {
         feature: "Appointment Scheduling",
@@ -230,7 +231,7 @@ export const goodcall: AlternativePageContent = createAlternativePage({
     headline: "Stop Missing Calls. Start Converting Leads.",
     subheadline:
       "Goodcall handles calls. Prestyj handles calls AND converts leads. Book your demo to see the difference complete lead management makes.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. Done-for-you setup included.",
   },

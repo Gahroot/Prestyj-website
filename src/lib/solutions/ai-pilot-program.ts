@@ -108,7 +108,7 @@ export const aiPilotProgram: SolutionPageContent = {
   cta: {
     headline: "Ready to Launch Your AI Pilot?",
     subheadline: "Prove ROI in 4-8 weeks before scaling.",
-    buttonText: "Plan Your Pilot Program",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
   },
 };

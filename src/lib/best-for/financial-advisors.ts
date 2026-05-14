@@ -7,7 +7,8 @@ export const financialAdvisors: BestForPageContent = createBestForPage({
   niche: {
     name: "Financial Advisors & Wealth Management Firms",
     shortName: "Financial Advisors",
-    description: "RIAs, wealth managers, and financial advisory firms needing compliant, done-for-you AI lead response",
+    description:
+      "RIAs, wealth managers, and financial advisory firms needing compliant, done-for-you AI lead response",
   },
   meta: {
     title: "Done-For-You AI Agents for Financial Advisors | Prestyj",
@@ -155,7 +156,7 @@ export const financialAdvisors: BestForPageContent = createBestForPage({
     headline: "Never Lose a Prospect to Slow Response Again",
     subheadline:
       "See how wealth management firms use done-for-you AI to respond in seconds, qualify intelligently, and book more consultations. Schedule a demo to see your AI agent in action.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "FINRA-aware. CRM-integrated. Production-ready in weeks.",
   },
 });

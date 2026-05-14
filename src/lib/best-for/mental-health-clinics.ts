@@ -7,7 +7,8 @@ export const mentalHealthClinics: BestForPageContent = createBestForPage({
   niche: {
     name: "Mental Health Clinics",
     shortName: "Mental Health",
-    description: "Mental health practices looking for HIPAA-compliant AI intake, appointment scheduling, and patient communication",
+    description:
+      "Mental health practices looking for HIPAA-compliant AI intake, appointment scheduling, and patient communication",
   },
   meta: {
     title: "HIPAA-Compliant AI for Mental Health Clinics | Intake & Scheduling | Prestyj",
@@ -178,7 +179,7 @@ export const mentalHealthClinics: BestForPageContent = createBestForPage({
     headline: "Reduce Administrative Burden, Protect Patient Care",
     subheadline:
       "Save 10-15 hours weekly on intake and scheduling, reduce no-shows by 65%, and ensure every crisis call gets immediate attention. Book a demo to see HIPAA-compliant AI for mental health practices.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "HIPAA-compliant with BAA. Works with major EHR systems. No credit card required.",
   },
 });

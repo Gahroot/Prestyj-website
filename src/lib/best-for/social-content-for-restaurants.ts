@@ -60,7 +60,8 @@ export const socialContentForRestaurants: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You're running a kitchen, not a content studio — posts happen when someone remembers",
+      problem:
+        "You're running a kitchen, not a content studio — posts happen when someone remembers",
       solution:
         "Restaurant owners and chefs didn't sign up to be content creators. Prestyj handles daily content production so you stay focused on food and service. You snap photos of your dishes — we turn them into 30–50 formatted posts per day across every platform. No more blank days on your social feed.",
     },
@@ -161,7 +162,7 @@ export const socialContentForRestaurants: BestForPageContent = {
     headline: "Your Best Dishes Should Be Filling Every Table.",
     subheadline:
       "Social content for independent restaurants and small chains. 30–50 posts/day with food photography showcases, daily specials, and local discovery campaigns optimized for IG and TikTok. Turn scrollers into diners.",
-    buttonText: "Start Filling Tables",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Food photography · Daily specials · Local discovery · IG & TikTok heavy",
   },

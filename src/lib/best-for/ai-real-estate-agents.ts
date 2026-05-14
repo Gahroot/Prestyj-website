@@ -167,7 +167,7 @@ export const aiRealEstateAgents: BestForPageContent = createBestForPage({
     headline: "Close More Deals with AI",
     subheadline:
       "See how Prestyj helps real estate agents follow up faster, nurture smarter, and close more deals. Book your personalized demo today.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. See results in minutes.",
   },

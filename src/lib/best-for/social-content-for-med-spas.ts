@@ -61,7 +61,8 @@ export const socialContentForMedSpas: BestForPageContent = {
         "Prestyj handles the entire content production pipeline — from treatment breakdowns and patient education to seasonal promotions and trending audio formats. You run your clinic. Prestyj runs your social media. Your feed stays active with professional, on-brand content every single day.",
     },
     {
-      problem: "Your Instagram hasn't been updated in weeks and competitors are stealing your patients",
+      problem:
+        "Your Instagram hasn't been updated in weeks and competitors are stealing your patients",
       solution:
         "An inactive feed signals an inactive clinic. Meanwhile, the med spa down the street posts 3x daily and books out weeks in advance. Prestyj fills your feed immediately — 30–50 posts per day from day one — so your social presence matches the quality of your treatments.",
     },
@@ -71,7 +72,8 @@ export const socialContentForMedSpas: BestForPageContent = {
         "You capture amazing results but they never see the light of day. Prestyj transforms your before-and-after library into a steady stream of compliant, properly disclaimed content — scheduled at optimal times for maximum engagement. Every great result becomes a marketing asset.",
     },
     {
-      problem: "Hiring a social media manager is expensive and they still can't produce enough content",
+      problem:
+        "Hiring a social media manager is expensive and they still can't produce enough content",
       solution:
         "A dedicated social media manager costs $3,000–$5,000/month and produces 15–25 posts per week. Prestyj produces 210–350 posts per week at a fraction of the cost. The math is simple — more content, more visibility, more bookings, less overhead.",
     },
@@ -132,7 +134,7 @@ export const socialContentForMedSpas: BestForPageContent = {
     headline: "Your Treatments Deserve a Bigger Audience.",
     subheadline:
       "Social media content for med spas. 30–50 posts/day on Instagram & TikTok. Treatment showcases, before-and-afters, patient education — all on-brand and automated.",
-    buttonText: "Get Started with Prestyj",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Instagram & TikTok optimized · Before-and-after at scale · $497/month",
   },

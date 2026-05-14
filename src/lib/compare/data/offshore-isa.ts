@@ -197,7 +197,7 @@ export const offshoreIsaCompareData: ComparePageData = createComparePage({
     title: "Ready for Compliant, Consistent Lead Response?",
     description:
       "See how enterprise operations are replacing offshore provider risk with AI-powered consistency. TCPA compliance, brand voice control, and real-time visibility included.",
-    buttonText: "Book Your Enterprise Demo",
+    buttonText: "Book a Demo",
     disclaimer: "See compliance features. Evaluate quality consistency.",
   },
 });

@@ -1,6 +1,15 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowRight, Bot, Phone, MessageSquare, Zap, Clock, DollarSign, CheckCircle2 } from "lucide-react";
+import {
+  ArrowRight,
+  Bot,
+  Phone,
+  MessageSquare,
+  Zap,
+  Clock,
+  DollarSign,
+  CheckCircle2,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -196,41 +205,42 @@ export default function AISalesAgentAlternativesPage() {
       <Navbar />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-success/5" />
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden py-20">
+          <div className="from-primary/10 via-background to-success/5 absolute inset-0 bg-gradient-to-br" />
+          <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
-                <Bot className="w-3.5 h-3.5 mr-1.5" />
+              <Badge variant="outline" className="border-primary/50 text-primary mb-6">
+                <Bot className="mr-1.5 h-3.5 w-3.5" />
                 AI Sales Agent Hub
               </Badge>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-6">
+              <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
                 Compare Top
                 <br />
                 <span className="text-primary">AI Sales Agent Solutions</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-                An AI sales agent responds to leads instantly, qualifies prospects, and books appointments 24/7. 
-                Compare the leading platforms to find the right fit for your business.
+              <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg sm:text-xl">
+                An AI sales agent responds to leads instantly, qualifies prospects, and books
+                appointments 24/7. Compare the leading platforms to find the right fit for your
+                business.
               </p>
 
-              <div className="flex flex-wrap justify-center gap-6 mb-8">
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Phone className="h-5 w-5 text-primary" />
+              <div className="mb-8 flex flex-wrap justify-center gap-6">
+                <div className="text-muted-foreground flex items-center gap-2">
+                  <Phone className="text-primary h-5 w-5" />
                   <span>Voice AI</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <MessageSquare className="h-5 w-5 text-primary" />
+                <div className="text-muted-foreground flex items-center gap-2">
+                  <MessageSquare className="text-primary h-5 w-5" />
                   <span>Text & Chat</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Zap className="h-5 w-5 text-primary" />
+                <div className="text-muted-foreground flex items-center gap-2">
+                  <Zap className="text-primary h-5 w-5" />
                   <span>Instant Response</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <Clock className="h-5 w-5 text-primary" />
+                <div className="text-muted-foreground flex items-center gap-2">
+                  <Clock className="text-primary h-5 w-5" />
                   <span>24/7 Availability</span>
                 </div>
               </div>
@@ -239,86 +249,101 @@ export default function AISalesAgentAlternativesPage() {
         </section>
 
         {/* What is an AI Sales Agent */}
-        <section className="py-16 bg-muted/30">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+        <section className="bg-muted/30 py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="grid items-center gap-12 md:grid-cols-2">
               <div>
-                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-4">
+                <h2 className="font-heading text-foreground mb-4 text-2xl font-bold sm:text-3xl">
                   What is an AI Sales Agent?
                 </h2>
                 <p className="text-muted-foreground mb-4">
-                  An AI Sales Agent is software that uses artificial intelligence to handle initial lead conversations 
-                  automatically. It responds to inquiries via phone, text, or chat—qualifying prospects, answering 
-                  questions, and booking appointments without human intervention.
+                  An AI Sales Agent is software that uses artificial intelligence to handle initial
+                  lead conversations automatically. It responds to inquiries via phone, text, or
+                  chat—qualifying prospects, answering questions, and booking appointments without
+                  human intervention.
                 </p>
                 <p className="text-muted-foreground mb-6">
-                  Unlike chatbots of the past, modern AI sales agents use natural language processing to have 
-                  fluid, human-like conversations. They understand context, remember previous interactions, 
-                  and can handle complex multi-turn conversations.
+                  Unlike chatbots of the past, modern AI sales agents use natural language
+                  processing to have fluid, human-like conversations. They understand context,
+                  remember previous interactions, and can handle complex multi-turn conversations.
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-success mt-0.5" />
+                    <CheckCircle2 className="text-success mt-0.5 h-5 w-5" />
                     <div>
-                      <p className="font-medium text-foreground">Instant Lead Response</p>
-                      <p className="text-sm text-muted-foreground">Respond in seconds, not hours. 78% of buyers choose the first responder.</p>
+                      <p className="text-foreground font-medium">Instant Lead Response</p>
+                      <p className="text-muted-foreground text-sm">
+                        Respond in seconds, not hours. 78% of buyers choose the first responder.
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-success mt-0.5" />
+                    <CheckCircle2 className="text-success mt-0.5 h-5 w-5" />
                     <div>
-                      <p className="font-medium text-foreground">24/7/365 Coverage</p>
-                      <p className="text-sm text-muted-foreground">Never miss a lead at 3am on a Sunday or during peak business hours.</p>
+                      <p className="text-foreground font-medium">24/7/365 Coverage</p>
+                      <p className="text-muted-foreground text-sm">
+                        Never miss a lead at 3am on a Sunday or during peak business hours.
+                      </p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle2 className="h-5 w-5 text-success mt-0.5" />
+                    <CheckCircle2 className="text-success mt-0.5 h-5 w-5" />
                     <div>
-                      <p className="font-medium text-foreground">Consistent Qualification</p>
-                      <p className="text-sm text-muted-foreground">Every lead gets the same thorough qualification—no variation, no bad days.</p>
+                      <p className="text-foreground font-medium">Consistent Qualification</p>
+                      <p className="text-muted-foreground text-sm">
+                        Every lead gets the same thorough qualification—no variation, no bad days.
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <BorderGlow borderRadius={14} innerClassName="p-6">
-                <h3 className="font-heading font-semibold text-foreground mb-4">
+                <h3 className="font-heading text-foreground mb-4 font-semibold">
                   Key Capabilities
                 </h3>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4 p-3 bg-muted/50 rounded-lg">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Phone className="h-5 w-5 text-primary" />
+                  <div className="bg-muted/50 flex items-center gap-4 rounded-lg p-3">
+                    <div className="bg-primary/10 rounded-lg p-2">
+                      <Phone className="text-primary h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Voice Calls</p>
-                      <p className="text-sm text-muted-foreground">Answer calls, qualify leads, book appointments</p>
+                      <p className="text-foreground font-medium">Voice Calls</p>
+                      <p className="text-muted-foreground text-sm">
+                        Answer calls, qualify leads, book appointments
+                      </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 p-3 bg-muted/50 rounded-lg">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <MessageSquare className="h-5 w-5 text-primary" />
+                  <div className="bg-muted/50 flex items-center gap-4 rounded-lg p-3">
+                    <div className="bg-primary/10 rounded-lg p-2">
+                      <MessageSquare className="text-primary h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Text Messaging</p>
-                      <p className="text-sm text-muted-foreground">Two-way SMS conversations with leads</p>
+                      <p className="text-foreground font-medium">Text Messaging</p>
+                      <p className="text-muted-foreground text-sm">
+                        Two-way SMS conversations with leads
+                      </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 p-3 bg-muted/50 rounded-lg">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Bot className="h-5 w-5 text-primary" />
+                  <div className="bg-muted/50 flex items-center gap-4 rounded-lg p-3">
+                    <div className="bg-primary/10 rounded-lg p-2">
+                      <Bot className="text-primary h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">Lead Qualification</p>
-                      <p className="text-sm text-muted-foreground">Ask the right questions, score leads</p>
+                      <p className="text-foreground font-medium">Lead Qualification</p>
+                      <p className="text-muted-foreground text-sm">
+                        Ask the right questions, score leads
+                      </p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4 p-3 bg-muted/50 rounded-lg">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Zap className="h-5 w-5 text-primary" />
+                  <div className="bg-muted/50 flex items-center gap-4 rounded-lg p-3">
+                    <div className="bg-primary/10 rounded-lg p-2">
+                      <Zap className="text-primary h-5 w-5" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">CRM Integration</p>
-                      <p className="text-sm text-muted-foreground">Sync data automatically to your systems</p>
+                      <p className="text-foreground font-medium">CRM Integration</p>
+                      <p className="text-muted-foreground text-sm">
+                        Sync data automatically to your systems
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -329,27 +354,24 @@ export default function AISalesAgentAlternativesPage() {
 
         {/* Quick Comparison Grid */}
         <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 text-center">
+              <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
                 Quick Comparison: AI Sales Agent Platforms
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                See how the top AI sales agent solutions compare at a glance. Click any platform for a detailed comparison with Prestyj.
+              <p className="text-muted-foreground mx-auto max-w-2xl">
+                See how the top AI sales agent solutions compare at a glance. Click any platform for
+                a detailed comparison with Prestyj.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {aiSalesAgentAlternatives.map((alt) => (
-                <Link
-                  key={alt.slug}
-                  href={`/alternatives/${alt.slug}`}
-                  className="group"
-                >
-                  <Card className="h-full hover:border-primary/50 transition-all hover:shadow-md cursor-pointer">
+                <Link key={alt.slug} href={`/alternatives/${alt.slug}`} className="group">
+                  <Card className="hover:border-primary/50 h-full cursor-pointer transition-all hover:shadow-md">
                     <CardContent className="p-4">
-                      <div className="flex items-center justify-between mb-3">
-                        <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                      <div className="mb-3 flex items-center justify-between">
+                        <h3 className="text-foreground group-hover:text-primary font-semibold transition-colors">
                           {alt.name}
                         </h3>
                         <Badge variant="secondary" className="text-xs">
@@ -359,17 +381,17 @@ export default function AISalesAgentAlternativesPage() {
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
                           <span className="text-muted-foreground">Pricing:</span>
-                          <span className="font-medium text-foreground">{alt.pricing}</span>
+                          <span className="text-foreground font-medium">{alt.pricing}</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-muted-foreground">Best for:</span>
                           <span className="text-foreground">{alt.bestFor}</span>
                         </div>
                       </div>
-                      <div className="mt-3 pt-3 border-t border-border">
-                        <span className="text-primary text-sm font-medium inline-flex items-center group-hover:underline">
+                      <div className="border-border mt-3 border-t pt-3">
+                        <span className="text-primary inline-flex items-center text-sm font-medium group-hover:underline">
                           Compare vs Prestyj
-                          <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                          <ArrowRight className="ml-1 h-3 w-3 transition-transform group-hover:translate-x-1" />
                         </span>
                       </div>
                     </CardContent>
@@ -381,10 +403,10 @@ export default function AISalesAgentAlternativesPage() {
         </section>
 
         {/* Platform Cards */}
-        <section className="py-16 bg-muted/30">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="bg-muted/30 py-16">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+              <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
                 Detailed Comparisons
               </h2>
               <p className="text-muted-foreground">
@@ -392,25 +414,23 @@ export default function AISalesAgentAlternativesPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {aiSalesAgentAlternatives.slice(0, 9).map((alt) => (
                 <Link key={alt.slug} href={`/alternatives/${alt.slug}`}>
-                  <Card className="h-full hover:border-primary/50 transition-colors cursor-pointer">
+                  <Card className="hover:border-primary/50 h-full cursor-pointer transition-colors">
                     <CardHeader>
                       <div className="flex items-center justify-between">
-                        <CardTitle className="text-lg">
-                          Prestyj vs {alt.name}
-                        </CardTitle>
+                        <CardTitle className="text-lg">Prestyj vs {alt.name}</CardTitle>
                         <Badge variant="outline" className="text-xs">
                           {alt.category}
                         </Badge>
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-muted-foreground mb-3">
+                      <p className="text-muted-foreground mb-3 text-sm">
                         <strong>Prestyj advantage:</strong> {alt.prestyjAdvantage}
                       </p>
-                      <div className="flex items-center text-primary font-medium text-sm">
+                      <div className="text-primary flex items-center text-sm font-medium">
                         View full comparison <ArrowRight className="ml-2 h-4 w-4" />
                       </div>
                     </CardContent>
@@ -432,24 +452,27 @@ export default function AISalesAgentAlternativesPage() {
 
         {/* Why Prestyj for AI Sales */}
         <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
                 Why Choose Prestyj as Your AI Sales Agent?
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Compare the key advantages that set Prestyj apart from other AI sales agent platforms.
+              <p className="text-muted-foreground mx-auto max-w-2xl">
+                Compare the key advantages that set Prestyj apart from other AI sales agent
+                platforms.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="p-3 bg-primary/10 rounded-full w-fit mx-auto mb-4">
-                    <Clock className="h-6 w-6 text-primary" />
+                  <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
+                    <Clock className="text-primary h-6 w-6" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">47-Second Response</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <h3 className="font-heading text-foreground mb-2 font-semibold">
+                    47-Second Response
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
                     Average response time. Most platforms take minutes to hours.
                   </p>
                 </CardContent>
@@ -457,11 +480,13 @@ export default function AISalesAgentAlternativesPage() {
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="p-3 bg-primary/10 rounded-full w-fit mx-auto mb-4">
-                    <Zap className="h-6 w-6 text-primary" />
+                  <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
+                    <Zap className="text-primary h-6 w-6" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Same-Day Setup</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <h3 className="font-heading text-foreground mb-2 font-semibold">
+                    Same-Day Setup
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
                     Done-for-you deployment. No developers, no weeks of configuration.
                   </p>
                 </CardContent>
@@ -469,11 +494,13 @@ export default function AISalesAgentAlternativesPage() {
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="p-3 bg-primary/10 rounded-full w-fit mx-auto mb-4">
-                    <DollarSign className="h-6 w-6 text-primary" />
+                  <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
+                    <DollarSign className="text-primary h-6 w-6" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">No Hidden Costs</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <h3 className="font-heading text-foreground mb-2 font-semibold">
+                    No Hidden Costs
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
                     Transparent pricing. No per-minute surprises or seat-based add-ons.
                   </p>
                 </CardContent>
@@ -481,11 +508,13 @@ export default function AISalesAgentAlternativesPage() {
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="p-3 bg-primary/10 rounded-full w-fit mx-auto mb-4">
-                    <Bot className="h-6 w-6 text-primary" />
+                  <div className="bg-primary/10 mx-auto mb-4 w-fit rounded-full p-3">
+                    <Bot className="text-primary h-6 w-6" />
                   </div>
-                  <h3 className="font-heading font-semibold text-foreground mb-2">Industry-Optimized</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <h3 className="font-heading text-foreground mb-2 font-semibold">
+                    Industry-Optimized
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
                     Pre-built for real estate and home services. Not a generic chatbot.
                   </p>
                 </CardContent>
@@ -495,10 +524,10 @@ export default function AISalesAgentAlternativesPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 bg-muted/30">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+        <section className="bg-muted/30 py-16">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
                 Frequently Asked Questions
               </h2>
               <p className="text-muted-foreground">
@@ -509,17 +538,14 @@ export default function AISalesAgentAlternativesPage() {
             <Accordion type="single" collapsible className="space-y-4">
               {faqs.map((faq, index) => (
                 <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
-                <AccordionItem
-                  value={`item-${index}`}
-                  className="border-none"
-                >
-                  <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
+                  <AccordionItem value={`item-${index}`} className="border-none">
+                    <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
                 </BorderGlow>
               ))}
             </Accordion>
@@ -527,22 +553,21 @@ export default function AISalesAgentAlternativesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+        <section className="relative overflow-hidden py-24">
+          <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
               Ready to See Prestyj in Action?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book a personalized demo to see how Prestyj handles lead response and qualification. 
-              Compare it side-by-side with your current solution or other platforms you&apos;re evaluating.
+            <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
+              Book a personalized demo to see how Prestyj handles lead response and qualification.
+              Compare it side-by-side with your current solution or other platforms you&apos;re
+              evaluating.
             </p>
-            <Button size="lg" className="text-lg px-10 py-6" asChild>
-              <Link href="/book-demo">
-                Book Your Free Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="px-10 py-6 text-lg" asChild>
+              <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <p className="text-sm text-muted-foreground mt-6">
+            <p className="text-muted-foreground mt-6 text-sm">
               No credit card required. See results in minutes.
             </p>
           </div>

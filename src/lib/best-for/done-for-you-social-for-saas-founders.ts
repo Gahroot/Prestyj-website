@@ -153,8 +153,8 @@ export const doneForYouSocialForSaasFounders: BestForPageContent = {
     headline: "Your SaaS Founders Brand Shouldn't Depend on Your Free Time.",
     subheadline:
       "Done-for-you social media content for founders and CEOs of B2B SaaS companies at $1M–$20M ARR. 1,500+ posts per month across 7 platforms. Vertical-researched scripts. Voice-trained captions. No retainer, no contract, no account managers.",
-    buttonText: "See How It Works for SaaS Founders",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Your voice · 7 platforms · 1,500+ posts/mo · No contract",
   },
 };

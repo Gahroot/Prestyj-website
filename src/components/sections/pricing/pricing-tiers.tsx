@@ -87,7 +87,7 @@ export function PricingTiersSection() {
                       asChild
                     >
                       <Link href="/book-demo">
-                        Get Started
+                        Book a Demo
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>

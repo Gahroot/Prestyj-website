@@ -7,7 +7,8 @@ export const conversionRateOptimization: BestForPageContent = createBestForPage(
   niche: {
     name: "Conversion Rate Optimization",
     shortName: "CRO",
-    description: "Businesses seeking AI-powered conversion rate optimization to turn more leads into customers",
+    description:
+      "Businesses seeking AI-powered conversion rate optimization to turn more leads into customers",
   },
   meta: {
     title: "AI Conversion Rate Optimization | Increase Lead Conversion 3-5x | Prestyj",
@@ -158,7 +159,7 @@ export const conversionRateOptimization: BestForPageContent = createBestForPage(
     headline: "Stop Wasting Leads. Start Converting 3-5x More.",
     subheadline:
       "See how AI-powered conversion optimization transforms your lead funnel. Book a demo to calculate your potential conversion improvement and see the system in action.",
-    buttonText: "See AI CRO in Action",
+    buttonText: "Book a Demo",
     footnote: "Most demos complete in 15 minutes. See your exact conversion potential.",
   },
 });

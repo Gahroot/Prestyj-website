@@ -101,7 +101,8 @@ export const adCreativeTestingService: SolutionPageContent = {
   },
   objections: {
     headline: "What Performance Marketers Ask Before Starting",
-    subheadline: "These are the questions from media buyers and growth leads who've been burned by slow creative.",
+    subheadline:
+      "These are the questions from media buyers and growth leads who've been burned by slow creative.",
     objections: [
       {
         objection: "I already have a designer making ads — isn't this redundant?",
@@ -161,8 +162,9 @@ export const adCreativeTestingService: SolutionPageContent = {
     headline: "Stop Guessing. Start Testing at Scale.",
     subheadline:
       "Record for 15 minutes. Get 300–1,000 ad variations in 24 hours. Test 50+ hooks simultaneously and find your winning creative in 10–14 days instead of 6 months.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
-    footnote: "One-time pricing starts at $1,497 · 24-hour turnaround · Hook-tagged for performance analysis",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
+    footnote:
+      "One-time pricing starts at $1,497 · 24-hour turnaround · Hook-tagged for performance analysis",
   },
 };

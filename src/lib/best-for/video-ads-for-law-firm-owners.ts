@@ -64,27 +64,32 @@ export const videoAdsForLawFirmOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your PI competition is a firm with a TV budget that has saturated Facebook too, and you can't match their spend",
+      problem:
+        "Your PI competition is a firm with a TV budget that has saturated Facebook too, and you can't match their spend",
       solution:
         "You can't outspend the billboard firm — but you can out-creative them. Big TV-style firms run 2–4 ad variations through their agencies. Against 500 unique hook-driven creatives speaking to specific PI scenarios (rideshare crashes, rear-end with 'you feel fine but,' commercial vehicle, slip-and-fall intake), their polished generic ads lose the algorithmic auction. Volume beats polish at the creative-optimization layer.",
     },
     {
-      problem: "You spent $6,000 with a 'lawyer marketing' agency and got 14 leads, 2 of which were qualified",
+      problem:
+        "You spent $6,000 with a 'lawyer marketing' agency and got 14 leads, 2 of which were qualified",
       solution:
         "The problem was creative singularity: one 'were you in an accident' ad attracts every tire-kicker in the metro. We build your batch around pre-qualifying hooks: 'if you were rear-ended in the last 30 days and you're still having headaches,' 'if your doctor recommended an MRI after your accident,' 'if you've been talking to an insurance adjuster and they're pressuring you.' The intent is baked into the hook.",
     },
     {
-      problem: "You handle family law but your intake is all 'just exploring options' with no retainer budget",
+      problem:
+        "You handle family law but your intake is all 'just exploring options' with no retainer budget",
       solution:
         "Family law lead quality is directly tied to how the hook frames the moment. 'If you've been served with divorce papers,' 'if you need to file an emergency custody motion this week,' 'if your spouse has hired an attorney and you haven't' — these hooks self-qualify for urgency AND retainer budget. Exploration-stage seekers click elsewhere. The batch includes 2–3 urgency-gated tracks specifically to filter for retainer-ready clients.",
     },
     {
-      problem: "You're in criminal defense but you can't figure out how to advertise in a way that doesn't feel predatory",
+      problem:
+        "You're in criminal defense but you can't figure out how to advertise in a way that doesn't feel predatory",
       solution:
         "Criminal defense creative is about calm and competence, not urgency or fear. We write scripts that lead with 'what happens next if you've been arrested,' 'your first 48 hours matter — here's why,' 'if this is your first offense, here's what a plea deal actually looks like.' Educational, non-sleazy, and bar-compliant. It's the opposite of the 'AGGRESSIVE DEFENSE' billboard voice.",
     },
     {
-      problem: "You want to add estate planning as a vertical but you don't have the creative budget to test it",
+      problem:
+        "You want to add estate planning as a vertical but you don't have the creative budget to test it",
       solution:
         "A 1,000-ad batch ($3,997) can dedicate 2–3 pain point tracks to estate planning in parallel with your core vertical — 'if you have kids under 18 and no will,' 'if you inherited property and don't know what to do next,' 'if your parents still have their estate plan from 1998.' You discover whether it's a viable practice area for your firm at a fraction of the cost of dedicating a new agency engagement.",
     },
@@ -160,8 +165,8 @@ export const videoAdsForLawFirmOwners: BestForPageContent = {
     headline: "Fill Your Intake Pipeline With Qualified Calls — Not Tire-Kickers.",
     subheadline:
       "Record yourself once. Get 300–1,000 bar-compliant, pain-specific, conversion-focused video ads in 24 hours. One-time price. Multi-practice in one engagement.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · State bar compliance applied",
   },
 };

@@ -33,21 +33,21 @@ export default function BestForHubPage() {
       <Navbar />
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-success/5" />
-          <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden py-20">
+          <div className="from-primary/10 via-background to-success/5 absolute inset-0 bg-gradient-to-br" />
+          <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+              <Badge variant="outline" className="border-primary/50 text-primary mb-6">
                 Best For Your Niche
               </Badge>
 
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-6">
+              <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
                 Find the Perfect AI Solution
                 <br />
                 <span className="text-primary">For Your Business</span>
               </h1>
 
-              <p className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+              <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg sm:text-xl">
                 Every real estate professional has unique needs. Explore how Prestyj adapts to your
                 specific niche, whether you&apos;re a solo agent, leading a team, or specializing in
                 luxury properties.
@@ -58,9 +58,9 @@ export default function BestForHubPage() {
 
         {/* Best For Grid */}
         <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-10">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+              <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
                 Solutions by Niche
               </h2>
               <p className="text-muted-foreground">
@@ -70,16 +70,16 @@ export default function BestForHubPage() {
             </div>
 
             {bestForPages.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {bestForPages.map((page) => (
                   <Link key={page.slug} href={`/best-for/${page.slug}`}>
-                    <Card className="h-full hover:border-primary/50 transition-colors cursor-pointer">
+                    <Card className="hover:border-primary/50 h-full cursor-pointer transition-colors">
                       <CardHeader>
                         <CardTitle className="text-xl">{page.niche.name}</CardTitle>
                       </CardHeader>
                       <CardContent>
                         <p className="text-muted-foreground mb-4">{page.niche.description}</p>
-                        <div className="flex items-center text-primary font-medium">
+                        <div className="text-primary flex items-center font-medium">
                           Learn more <ArrowRight className="ml-2 h-4 w-4" />
                         </div>
                       </CardContent>
@@ -88,7 +88,7 @@ export default function BestForHubPage() {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12">
+              <div className="py-12 text-center">
                 <p className="text-muted-foreground mb-6">
                   We&apos;re building out detailed guides for each niche. Check back soon!
                 </p>
@@ -105,23 +105,23 @@ export default function BestForHubPage() {
 
         {/* Why Prestyj Section */}
         <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-12 text-center">
+              <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
                 Why Agents Choose Prestyj
               </h2>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-muted-foreground mx-auto max-w-2xl">
                 Regardless of your niche, Prestyj delivers consistent results that help you close
                 more deals.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">47 sec</div>
-                  <p className="font-medium text-foreground mb-1">Average Response Time</p>
-                  <p className="text-sm text-muted-foreground">
+                  <div className="text-primary mb-2 text-4xl font-bold">47 sec</div>
+                  <p className="text-foreground mb-1 font-medium">Average Response Time</p>
+                  <p className="text-muted-foreground text-sm">
                     AI responds to every lead instantly, 24/7/365
                   </p>
                 </CardContent>
@@ -129,9 +129,9 @@ export default function BestForHubPage() {
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">23%</div>
-                  <p className="font-medium text-foreground mb-1">Dead Leads Reactivated</p>
-                  <p className="text-sm text-muted-foreground">
+                  <div className="text-primary mb-2 text-4xl font-bold">23%</div>
+                  <p className="text-foreground mb-1 font-medium">Dead Leads Reactivated</p>
+                  <p className="text-muted-foreground text-sm">
                     Revive the leads you already paid for
                   </p>
                 </CardContent>
@@ -139,9 +139,9 @@ export default function BestForHubPage() {
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">0%</div>
-                  <p className="font-medium text-foreground mb-1">Commission Split</p>
-                  <p className="text-sm text-muted-foreground">
+                  <div className="text-primary mb-2 text-4xl font-bold">0%</div>
+                  <p className="text-foreground mb-1 font-medium">Commission Split</p>
+                  <p className="text-muted-foreground text-sm">
                     Keep 100% of your commission, unlike human ISAs
                   </p>
                 </CardContent>
@@ -151,22 +151,20 @@ export default function BestForHubPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+        <section className="relative overflow-hidden py-24">
+          <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
               Ready to See Prestyj in Action?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
               Book a personalized demo tailored to your specific niche. We&apos;ll show you exactly
               how Prestyj can transform your lead management and help you close more deals.
             </p>
-            <Button size="lg" className="text-lg px-10 py-6" asChild>
-              <Link href="/book-demo">
-                Book Your Free Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="px-10 py-6 text-lg" asChild>
+              <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
-            <p className="text-sm text-muted-foreground mt-6">
+            <p className="text-muted-foreground mt-6 text-sm">
               No credit card required. See results in minutes.
             </p>
           </div>

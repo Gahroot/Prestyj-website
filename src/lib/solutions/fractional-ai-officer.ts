@@ -161,7 +161,7 @@ export const fractionalAiOfficer: SolutionPageContent = {
     headline: "Get AI Leadership Without the Full-Time Price Tag.",
     subheadline:
       "Fractional AI officer: executive-level AI strategy, vendor management, and team guidance — 10–20 hours per month at 80% less than a full-time CAIO.",
-    buttonText: "Explore Fractional AI Leadership",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "10–20 hrs/month · 3-month minimum · Executive-level AI expertise",
   },

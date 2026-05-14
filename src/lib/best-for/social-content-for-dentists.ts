@@ -161,7 +161,7 @@ export const socialContentForDentists: BestForPageContent = {
     headline: "Your Best Smile Transformations Should Be Filling Your Schedule.",
     subheadline:
       "Social content for dental practices and dental groups. 30–50 posts/day with before/after showcases, patient testimonials, and local awareness campaigns. Turn followers into booked patients.",
-    buttonText: "Start Attracting Patients",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Before/after showcases · Patient testimonials · Local awareness · HIPAA-conscious",
   },

@@ -7,7 +7,8 @@ export const aiVoiceReceptionistRealEstate: BestForPageContent = createBestForPa
   niche: {
     name: "AI Voice Receptionist for Real Estate",
     shortName: "Real Estate Voice AI",
-    description: "Real estate teams needing intelligent call handling for lead response, showing scheduling, and 24/7 buyer and seller lead qualification",
+    description:
+      "Real estate teams needing intelligent call handling for lead response, showing scheduling, and 24/7 buyer and seller lead qualification",
   },
   meta: {
     title: "AI Voice Receptionist for Real Estate | Lead Response & Showings 24/7 | Prestyj",
@@ -208,7 +209,8 @@ export const aiVoiceReceptionistRealEstate: BestForPageContent = createBestForPa
     headline: "Be the First Agent to Respond, Every Time",
     subheadline:
       "78% of buyers choose the first responder. AI ensures that's always you—24/7. Respond in 60 seconds, qualify leads automatically, and book showings while your competition is still checking voicemail.",
-    buttonText: "Set Up Your Real Estate AI",
-    footnote: "Integrates with Follow Up Boss, kvCORE, Sierra Interactive. Live in 5–7 days. No contracts.",
+    buttonText: "Book a Demo",
+    footnote:
+      "Integrates with Follow Up Boss, kvCORE, Sierra Interactive. Live in 5–7 days. No contracts.",
   },
 });

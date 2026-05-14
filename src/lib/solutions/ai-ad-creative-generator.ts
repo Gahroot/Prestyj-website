@@ -161,8 +161,8 @@ export const aiAdCreativeGenerator: SolutionPageContent = {
     headline: "Don't Just Generate Ads. Generate a Testing Strategy.",
     subheadline:
       "300–1,000 researched, scripted, and produced video ads from one 15-minute recording. Find your winning hook in 10–14 days instead of 6 months.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing starts at $1,497 · Scripts written for you · 24-hour turnaround",
   },
 };

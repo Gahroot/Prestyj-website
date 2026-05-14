@@ -7,7 +7,8 @@ export const electricians: BestForPageContent = createBestForPage({
   niche: {
     name: "Electricians",
     shortName: "Electricians",
-    description: "Electrical contractors looking for AI-powered call handling, emergency dispatch, and job scheduling",
+    description:
+      "Electrical contractors looking for AI-powered call handling, emergency dispatch, and job scheduling",
   },
   meta: {
     title: "AI Phone Answering for Electricians | Emergency Dispatch | Prestyj",
@@ -44,7 +45,7 @@ export const electricians: BestForPageContent = createBestForPage({
       icon: "Calendar" as IconName,
       title: "Schedule Service Calls 24/7",
       description:
-      "Customers call evenings, weekends, and early mornings. AI books appointments, checks your availability, and confirms service calls—filling your schedule while you're off the clock.",
+        "Customers call evenings, weekends, and early mornings. AI books appointments, checks your availability, and confirms service calls—filling your schedule while you're off the clock.",
     },
     {
       icon: "Filter" as IconName,
@@ -178,7 +179,7 @@ export const electricians: BestForPageContent = createBestForPage({
     headline: "Never Miss Another Emergency Service Call",
     subheadline:
       "Capture every call, qualify emergencies, fill your schedule automatically, and maintain a professional image. Book a demo to see AI handling electrical contractor calls.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with all major contractor software. No credit card required.",
   },
 });

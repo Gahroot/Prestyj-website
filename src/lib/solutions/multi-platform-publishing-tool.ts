@@ -31,7 +31,8 @@ export const multiPlatformPublishingTool: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Multi-Platform Publishing Is Broken",
-    subheadline: "Every platform wants different sizes, different formats, different posting times — and you're supposed to manage all of them.",
+    subheadline:
+      "Every platform wants different sizes, different formats, different posting times — and you're supposed to manage all of them.",
     points: [
       {
         icon: "Clock",
@@ -101,7 +102,8 @@ export const multiPlatformPublishingTool: SolutionPageContent = {
   },
   objections: {
     headline: "How This Compares to Other Publishing Tools",
-    subheadline: "If you've used Hootsuite, Buffer, or Later, these are the differences that matter.",
+    subheadline:
+      "If you've used Hootsuite, Buffer, or Later, these are the differences that matter.",
     objections: [
       {
         objection: "I already use Buffer/Later/Hootsuite for scheduling.",
@@ -161,7 +163,7 @@ export const multiPlatformPublishingTool: SolutionPageContent = {
     headline: "Post to Every Platform. Spend 5 Minutes a Week Doing It.",
     subheadline:
       "AI-generated content, auto-formatted for each platform, and published simultaneously. One calendar to rule them all.",
-    buttonText: "See the Publishing Tool",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "7+ platforms · AI content generation included · Unified analytics dashboard",
   },

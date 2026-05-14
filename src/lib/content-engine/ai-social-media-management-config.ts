@@ -52,15 +52,7 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
     videoPoster: "/images/content-engine/vsl-poster.jpg",
     videoAriaLabel:
       "AI social media management engine demo \u2014 fully autonomous content across 7 platforms",
-    platforms: [
-      "Instagram",
-      "Facebook",
-      "TikTok",
-      "YouTube",
-      "LinkedIn",
-      "Threads",
-      "X",
-    ],
+    platforms: ["Instagram", "Facebook", "TikTok", "YouTube", "LinkedIn", "Threads", "X"],
   },
 
   problem: {
@@ -69,26 +61,22 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
       "Every AI social media tool promises automation. Most just give you a faster way to do the work yourself.",
     pains: [
       {
-        title:
-          "Your \u201CAI social media tool\u201D still requires you to write the content.",
+        title: "Your \u201CAI social media tool\u201D still requires you to write the content.",
         detail:
           "Hootsuite, Buffer, Sprout Social \u2014 they\u2019re schedulers, not managers. You still write captions, design graphics, pick hashtags, and plan content. The \u201CAI\u201D is a text suggestion box you have to babysit.",
       },
       {
-        title:
-          "You\u2019re spending $3K\u2013$10K/mo on social media \u2014 and getting 30 posts.",
+        title: "You\u2019re spending $3K\u2013$10K/mo on social media \u2014 and getting 30 posts.",
         detail:
           "Between the agency retainer, the Canva subscription, the scheduling tool, and the freelancer who ghosted last week \u2014 you\u2019re paying content-department prices for a trickle of posts that barely move the needle.",
       },
       {
-        title:
-          "Three different AI tools, and your social media still isn\u2019t automated.",
+        title: "Three different AI tools, and your social media still isn\u2019t automated.",
         detail:
           "One for copywriting. One for images. One for scheduling. You stitched together an \u201CAI workflow\u201D that still takes hours per week and breaks every time a platform changes its API.",
       },
       {
-        title:
-          "The moment you stop feeding the machine, everything grinds to a halt.",
+        title: "The moment you stop feeding the machine, everything grinds to a halt.",
         detail:
           "Skip a week of content and your reach drops 40%. Miss a few days of engagement and the algorithm buries you. Social media only works with consistency \u2014 but AI social media tools don\u2019t solve the consistency problem, they solve the scheduling problem.",
       },
@@ -433,12 +421,11 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
     headline: "Stop Managing Social Media. Let AI Manage It Instead.",
     subhead:
       "Live in 24 hours. Fully autonomous. Cancel anytime. Your AI social media management engine runs itself from day one.",
-    buttonLabel: "Book Your Demo",
+    buttonLabel: "Book a Demo",
     buttonHref: "/book-demo",
     eventName: "AISocialMediaManagementLeadIntent",
     eventLabel: "final-cta",
-    footnote:
-      "See the AI management engine running live before you commit.",
+    footnote: "See the AI management engine running live before you commit.",
     sparkColor: "#7058e3",
   },
 
@@ -449,8 +436,7 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
       {
         id: "minimum",
         name: "Minimum Plan",
-        tagline:
-          "1 account managed by AI \u2014 more than most agencies ship manually.",
+        tagline: "1 account managed by AI \u2014 more than most agencies ship manually.",
         setupFee: 1500,
         monthlyPrice: 1997,
         accounts: "1 account (brand OR personal)",
@@ -470,8 +456,7 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
       {
         id: "pro",
         name: "Pro Plan",
-        tagline:
-          "Brand + personal brand on full AI management.",
+        tagline: "Brand + personal brand on full AI management.",
         setupFee: 2500,
         monthlyPrice: 2997,
         accounts: "2 accounts (brand + personal)",
@@ -492,8 +477,7 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
       {
         id: "max",
         name: "Max Plan",
-        tagline:
-          "3 accounts. Full AI management across every platform.",
+        tagline: "3 accounts. Full AI management across every platform.",
         setupFee: 4500,
         monthlyPrice: 4997,
         accounts: "3 accounts (brand + personal + niche)",
@@ -512,11 +496,10 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
       },
     ],
     customCta: {
-      headline:
-        "Running 4+ accounts? Agency reselling? Multi-brand operator?",
+      headline: "Running 4+ accounts? Agency reselling? Multi-brand operator?",
       description:
         "We\u2019ll build something custom \u2014 your account count, your platforms, all managed by AI.",
-      buttonLabel: "Talk to Us",
+      buttonLabel: "Book a Demo",
       href: "/book-demo",
       eventName: "AISocialMediaManagementLeadIntent",
       eventLabel: "pricing-custom",
@@ -542,20 +525,17 @@ export const aiSocialMediaManagementConfig: ContentEnginePageConfig = {
       {
         icon: Clock,
         title: "Live in 24 hours",
-        description:
-          "From the moment you grant account access, or your setup fee is refunded.",
+        description: "From the moment you grant account access, or your setup fee is refunded.",
       },
       {
         icon: ShieldCheck,
         title: "Volume guarantee",
-        description:
-          "We hit your post count in 30 days, or we credit the shortfall to next month.",
+        description: "We hit your post count in 30 days, or we credit the shortfall to next month.",
       },
       {
         icon: Ban,
         title: "Cancel anytime",
-        description:
-          "Month-to-month after setup. No long contracts.",
+        description: "Month-to-month after setup. No long contracts.",
       },
     ],
   },

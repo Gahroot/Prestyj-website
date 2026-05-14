@@ -42,7 +42,7 @@ export const movers: BestForPageContent = createBestForPage({
       icon: "Calendar" as IconName,
       title: "Instant Estimate Booking",
       description:
-      "AI books moving estimates directly into your calendar. Captures move details: origin, destination, move size, special items, preferred dates. You show up prepared with qualified prospects ready to book.",
+        "AI books moving estimates directly into your calendar. Captures move details: origin, destination, move size, special items, preferred dates. You show up prepared with qualified prospects ready to book.",
     },
     {
       icon: "MapPin" as IconName,
@@ -218,7 +218,7 @@ export const movers: BestForPageContent = createBestForPage({
     headline: "Capture Every Moving Lead Instantly",
     subheadline:
       "Moving customers choose the first responder. AI answers every call in under 60 seconds, qualifies the move, and books estimates 24/7. Win more jobs without adding staff.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with local, long-distance, and commercial moving companies.",
   },
 });

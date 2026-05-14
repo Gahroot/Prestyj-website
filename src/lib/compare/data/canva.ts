@@ -50,19 +50,41 @@ export const canvaCompareData: ComparePageData = createComparePage({
   },
   features: [
     { feature: "Scripts written for you", prestyj: true, competitor: false },
-    { feature: "Filmed video ads delivered", prestyj: "300-1,000", competitor: false, note: "Canva is design-first, not video-first" },
-    { feature: "Templates available", prestyj: "N/A — finished assets", competitor: "Hundreds of thousands" },
+    {
+      feature: "Filmed video ads delivered",
+      prestyj: "300-1,000",
+      competitor: false,
+      note: "Canva is design-first, not video-first",
+    },
+    {
+      feature: "Templates available",
+      prestyj: "N/A — finished assets",
+      competitor: "Hundreds of thousands",
+    },
     { feature: "Native scheduling", prestyj: "Optional", competitor: "Yes (Content Planner)" },
     { feature: "Hook + CTA variation engineering", prestyj: true, competitor: false },
     { feature: "Vertical-specific (real estate, home services)", prestyj: true, competitor: false },
-    { feature: "Time per 500 ads", prestyj: "15-20 min recording", competitor: "Hundreds of hours of design + filming" },
-    { feature: "Best-fit user", prestyj: "Owner-operators wanting finished ads", competitor: "Designers + marketers wanting tools" },
+    {
+      feature: "Time per 500 ads",
+      prestyj: "15-20 min recording",
+      competitor: "Hundreds of hours of design + filming",
+    },
+    {
+      feature: "Best-fit user",
+      prestyj: "Owner-operators wanting finished ads",
+      competitor: "Designers + marketers wanting tools",
+    },
     { feature: "Subscription required", prestyj: false, competitor: true },
-    { feature: "Output format", prestyj: "Ready-to-run vertical MP4 ads", competitor: "Editable design files" },
+    {
+      feature: "Output format",
+      prestyj: "Ready-to-run vertical MP4 ads",
+      competitor: "Editable design files",
+    },
   ],
   whySwitch: {
     title: "Why Canva Isn't a Content Engine for Owner-Operators",
-    description: "Canva is the best design tool ever made. It's still a tool — and tools require an operator with hours to spare.",
+    description:
+      "Canva is the best design tool ever made. It's still a tool — and tools require an operator with hours to spare.",
     reasons: [
       {
         icon: "Sparkles",
@@ -97,16 +119,31 @@ export const canvaCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Later", description: "Pure social scheduler", href: "/compare/prestyj-vs-later", linkText: "Read comparison" },
-    { title: "vs Buffer", description: "Another social scheduler", href: "/compare/prestyj-vs-buffer", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Later",
+      description: "Pure social scheduler",
+      href: "/compare/prestyj-vs-later",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Buffer",
+      description: "Another social scheduler",
+      href: "/compare/prestyj-vs-buffer",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Skip the Templates. Get the Ads.",
     description:
       "Canva gives you a blank canvas. Prestyj gives you 300-1,000 finished, scripted, filmed, edited vertical ads in 24 hours.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -117,5 +154,11 @@ export const canvaMetadata: CompareMetadata = {
   title: "PRESTYJ vs Canva: Finished Ads or Just Templates? (2026)",
   description:
     "Canva gives you templates and a scheduler — you still design every post. PRESTYJ ships 300-1,000 finished vertical video ads in 24 hours, one-time price.",
-  keywords: ["canva alternative", "canva vs prestyj", "social media content tool", "done for you ads", "batch video ads"],
+  keywords: [
+    "canva alternative",
+    "canva vs prestyj",
+    "social media content tool",
+    "done for you ads",
+    "batch video ads",
+  ],
 };

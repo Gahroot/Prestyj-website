@@ -13,8 +13,7 @@ export const boomtown: AlternativePageContent = createAlternativePage({
     shortName: "BoomTown",
     pricing: "$1,000+/mo",
     website: "https://boomtownroi.com",
-    description:
-      "Enterprise real estate platform with CRM, lead generation, and AI texting",
+    description: "Enterprise real estate platform with CRM, lead generation, and AI texting",
   },
   meta: {
     title: "BoomTown Alternative | Add AI Speed to Your CRM | Prestyj",
@@ -82,7 +81,7 @@ export const boomtown: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.APPOINTMENT_BOOKING,
         false,
-        "Automatically books qualified leads to your calendar"
+        "Automatically books qualified leads to your calendar",
       ),
       {
         feature: "24/7 Lead Engagement",
@@ -187,9 +186,8 @@ export const boomtown: AlternativePageContent = createAlternativePage({
     headline: "Ready to Simplify Your Lead Response?",
     subheadline:
       "Keep BoomTown's CRM and lead gen. Add instant AI response and database reactivation without the complexity.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
-    footnote:
-      "Works alongside your existing BoomTown setup. No migration required.",
+    footnote: "Works alongside your existing BoomTown setup. No migration required.",
   },
 });

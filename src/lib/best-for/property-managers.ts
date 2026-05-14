@@ -7,7 +7,8 @@ export const propertyManagers: BestForPageContent = createBestForPage({
   niche: {
     name: "Property Managers",
     shortName: "Property Management",
-    description: "Property management companies handling tenant calls, maintenance requests, and showings 24/7",
+    description:
+      "Property management companies handling tenant calls, maintenance requests, and showings 24/7",
   },
   meta: {
     title: "AI Agents for Property Managers | 24/7 Tenant & Maintenance Support | Prestyj",
@@ -154,7 +155,7 @@ export const propertyManagers: BestForPageContent = createBestForPage({
     headline: "Stop Letting After-Hours Calls Control Your Life",
     subheadline:
       "Property management doesn't have to mean 24/7 personal availability. Book a demo to see how AI handles tenant calls while you focus on growing your portfolio.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "No credit card required. See your call volume transformation in minutes.",
   },
 });

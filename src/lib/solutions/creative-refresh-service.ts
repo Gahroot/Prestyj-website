@@ -31,7 +31,8 @@ export const creativeRefreshService: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Most Creative Refreshes Don't Work",
-    subheadline: "Changing the background color on a tired ad doesn't fool anyone — especially the algorithm.",
+    subheadline:
+      "Changing the background color on a tired ad doesn't fool anyone — especially the algorithm.",
     points: [
       {
         icon: "TrendingDown",
@@ -101,7 +102,8 @@ export const creativeRefreshService: SolutionPageContent = {
   },
   objections: {
     headline: "What Brand Managers Ask About Creative Refresh",
-    subheadline: "Questions from brand managers, CMOs, and creative directors evaluating refresh options.",
+    subheadline:
+      "Questions from brand managers, CMOs, and creative directors evaluating refresh options.",
     objections: [
       {
         objection: "Won't 300 variations look repetitive?",
@@ -161,8 +163,8 @@ export const creativeRefreshService: SolutionPageContent = {
     headline: "Refresh Your Creative Without Starting Over.",
     subheadline:
       "Creative refresh service: 300+ fresh video ads with 50+ new hooks, built from your existing assets, delivered in 24 hours. Keep campaigns performing without blowing the budget.",
-    buttonText: "Get Creative Refresh",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "300+ variations · 50+ new hooks · Built from your existing assets",
   },
 };

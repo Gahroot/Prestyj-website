@@ -107,8 +107,8 @@ export const realEstateTeamsVsAiAvatarToolVideoCompareData: ComparePageData = cr
     title: "RE Teams Pick Batch Over AI Avatar Tools.",
     description:
       "300-1,000 re teams-researched ads in 24 hours. One flat fee from $1,497. Your real face. No retainer.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment · No subscription · 24-hour turnaround",
   },
 });

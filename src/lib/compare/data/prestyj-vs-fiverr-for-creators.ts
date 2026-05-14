@@ -113,8 +113,8 @@ export const creatorsVsFiverrForCompareData: ComparePageData = createComparePage
     title: "Creators Pick the AI Content Engine Over Fiverr Freelancers.",
     description:
       "1,500+ creators-researched posts a month across 7 platforms. One flat fee of $3,000/mo. Voice-trained. No contract. Live in days.",
-    buttonText: "See How It Works for Creators",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "Month-to-month · No contract · 1,500+ posts/month",
   },
 });

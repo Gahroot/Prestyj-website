@@ -61,7 +61,8 @@ export const videoAdsForPlumbingOwners: BestForPageContent = {
         "Paid social with emergency-specific creative delivers plumbing leads at $15–$35 CPL. Batch production creates urgency-driven emergency ads that pre-qualify by situation — only people with actual emergencies click, and your cost per lead drops 60–75%.",
     },
     {
-      problem: "You can't get new creative fast enough when demand spikes after a freeze or heat wave",
+      problem:
+        "You can't get new creative fast enough when demand spikes after a freeze or heat wave",
       solution:
         "Record a 15-minute 'freeze damage' or 'water heater failure season' video and have 300+ variations ready within 24 hours. Batch production matches your creative output to demand spikes — not your agency's timeline.",
     },
@@ -132,8 +133,8 @@ export const videoAdsForPlumbingOwners: BestForPageContent = {
     headline: "300+ Plumber Ads — Emergency, Water Heater, Drain, and Repiping Tracks.",
     subheadline:
       "One recording. 300–1,000 plumber-specific ad variations in 24 hours. Urgency-driven messaging that converts emergencies into jobs.",
-    buttonText: "Pick My Plumbing Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

@@ -7,7 +7,8 @@ export const retailStores: BestForPageContent = createBestForPage({
   niche: {
     name: "Retail Stores",
     shortName: "Retail",
-    description: "Retail stores looking for AI-powered phone answering, inventory inquiries, and customer service",
+    description:
+      "Retail stores looking for AI-powered phone answering, inventory inquiries, and customer service",
   },
   meta: {
     title: "AI Phone Answering for Retail Stores | Never Miss a Sale | Prestyj",
@@ -173,7 +174,7 @@ export const retailStores: BestForPageContent = createBestForPage({
     headline: "Stop Losing Sales to Unanswered Phones",
     subheadline:
       "Every missed call is a customer calling your competitor. Capture every inquiry, reduce hold times, and free your staff to focus on in-store sales. Book a demo to see AI handling retail calls.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with all major retail POS systems. No credit card required.",
   },
 });

@@ -31,7 +31,8 @@ export const aiIntegrationService: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why AI Tools Sit Unused",
-    subheadline: "The #1 reason businesses abandon AI tools: they don't fit into the existing workflow.",
+    subheadline:
+      "The #1 reason businesses abandon AI tools: they don't fit into the existing workflow.",
     points: [
       {
         icon: "Target",
@@ -101,7 +102,8 @@ export const aiIntegrationService: SolutionPageContent = {
   },
   objections: {
     headline: "What Operations Leaders Ask",
-    subheadline: "These questions come from COOs, operations managers, and IT directors evaluating AI integration.",
+    subheadline:
+      "These questions come from COOs, operations managers, and IT directors evaluating AI integration.",
     objections: [
       {
         objection: "We have a custom/legacy system — can you integrate with it?",
@@ -161,7 +163,7 @@ export const aiIntegrationService: SolutionPageContent = {
     headline: "Make Your AI Tools Actually Work Together.",
     subheadline:
       "AI integration service that connects your AI capabilities to your CRM, phone, calendar, and communication tools. Automated data flows, zero manual work.",
-    buttonText: "Get Integration Assessment",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "50+ tool integrations · 2-week standard timeline · Ongoing maintenance included",
   },

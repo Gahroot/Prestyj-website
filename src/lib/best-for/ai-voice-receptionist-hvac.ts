@@ -7,7 +7,8 @@ export const aiVoiceReceptionistHvac: BestForPageContent = createBestForPage({
   niche: {
     name: "AI Voice Receptionist for HVAC",
     shortName: "HVAC Voice AI",
-    description: "HVAC companies needing intelligent call handling for emergency dispatch, seasonal overflow, and 24/7 service call management",
+    description:
+      "HVAC companies needing intelligent call handling for emergency dispatch, seasonal overflow, and 24/7 service call management",
   },
   meta: {
     title: "AI Voice Receptionist for HVAC | Emergency Dispatch & Seasonal Overflow 24/7 | Prestyj",
@@ -203,7 +204,7 @@ export const aiVoiceReceptionistHvac: BestForPageContent = createBestForPage({
     headline: "Never Miss an Emergency HVAC Call Again",
     subheadline:
       "See how AI voice receptionist handles emergency triage, seasonal overflow, and after-hours dispatch 24/7. Capture every call, dispatch emergencies instantly, and keep your trucks busy year-round.",
-    buttonText: "Book Your HVAC Demo",
+    buttonText: "Book a Demo",
     footnote: "ServiceTitan integration included. Live in 5–7 business days. No annual contract.",
   },
 });

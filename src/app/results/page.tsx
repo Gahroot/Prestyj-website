@@ -469,9 +469,7 @@ export default function ResultsPage() {
               No problem. Book a demo to see how PRESTYJ can transform your lead response.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
-              <Link href="/book-demo">
-                Book Your Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <p className="text-muted-foreground mt-4 text-sm">

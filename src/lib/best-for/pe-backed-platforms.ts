@@ -7,7 +7,8 @@ export const peBackedPlatforms: BestForPageContent = createBestForPage({
   niche: {
     name: "PE-Backed Real Estate Platforms",
     shortName: "PE-Backed",
-    description: "Private equity-backed real estate platforms requiring standardization across acquisitions",
+    description:
+      "Private equity-backed real estate platforms requiring standardization across acquisitions",
   },
   meta: {
     title: "Best AI Lead Response for PE-Backed Real Estate Platforms | Prestyj",
@@ -155,7 +156,7 @@ export const peBackedPlatforms: BestForPageContent = createBestForPage({
     headline: "Standardize Lead Response Across Your Portfolio",
     subheadline:
       "See how PE-backed real estate platforms use Prestyj to unify operations across acquisitions. Rapid integration, investor-ready reporting, and measurable value creation.",
-    buttonText: "Book a Portfolio Demo",
+    buttonText: "Book a Demo",
     footnote: "Enterprise deployment. Portfolio-level pricing available.",
   },
 });

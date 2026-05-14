@@ -58,8 +58,7 @@ export const videoAdProductionVolume: SolutionPageContent = {
   },
   benefits: {
     headline: "Production at the Speed of Fatigue",
-    subheadline:
-      "High-volume video ad production that matches the pace of modern ad platforms.",
+    subheadline: "High-volume video ad production that matches the pace of modern ad platforms.",
     benefits: [
       {
         icon: "Zap",
@@ -101,7 +100,8 @@ export const videoAdProductionVolume: SolutionPageContent = {
   },
   objections: {
     headline: "What Performance-Focused Teams Ask",
-    subheadline: "These questions come from media buyers, growth leads, and CMOs evaluating batch production.",
+    subheadline:
+      "These questions come from media buyers, growth leads, and CMOs evaluating batch production.",
     objections: [
       {
         objection: "How can 1,000 ads from one recording look different?",
@@ -161,8 +161,9 @@ export const videoAdProductionVolume: SolutionPageContent = {
     headline: "Ship 300–1,000 Video Ads by Tomorrow.",
     subheadline:
       "Record for 15 minutes. Receive a complete, ready-to-deploy video ad library in 24 hours. At $1.50–$5 per ad, high-volume creative testing is finally affordable.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
-    footnote: "One-time pricing starts at $1,497 · 24-hour turnaround · All platform formats included",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
+    footnote:
+      "One-time pricing starts at $1,497 · 24-hour turnaround · All platform formats included",
   },
 };

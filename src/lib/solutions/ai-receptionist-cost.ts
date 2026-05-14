@@ -26,7 +26,11 @@ export const aiReceptionistCost: SolutionPageContent = {
     stats: [
       { value: "$45–65K", label: "true cost of a human receptionist/year", color: "destructive" },
       { value: "24%", label: "of calls missed during business hours", color: "warning" },
-      { value: "$3.6–9.6K", label: "AI receptionist cost for 24/7 coverage/year", color: "success" },
+      {
+        value: "$3.6–9.6K",
+        label: "AI receptionist cost for 24/7 coverage/year",
+        color: "success",
+      },
     ],
   },
   painPoints: {
@@ -58,7 +62,8 @@ export const aiReceptionistCost: SolutionPageContent = {
   },
   benefits: {
     headline: "AI Receptionist: Full Coverage at a Fraction of the Cost",
-    subheadline: "168 hours/week of consistent coverage for less than one month's receptionist salary.",
+    subheadline:
+      "168 hours/week of consistent coverage for less than one month's receptionist salary.",
     benefits: [
       {
         icon: "Clock",
@@ -82,7 +87,7 @@ export const aiReceptionistCost: SolutionPageContent = {
         icon: "Bot",
         title: "Consistent Quality, Every Call",
         description:
-          "No bad days, no attitude, no \"I'm new and still learning.\" Every caller gets the same professional, helpful experience on call #1 or call #10,000.",
+          'No bad days, no attitude, no "I\'m new and still learning." Every caller gets the same professional, helpful experience on call #1 or call #10,000.',
       },
       {
         icon: "BarChart3",
@@ -189,7 +194,7 @@ export const aiReceptionistCost: SolutionPageContent = {
     headline: "See Exactly What You'd Save with AI Receptionist",
     subheadline:
       "Get a custom cost comparison based on your actual call volume and current staffing costs. No pressure, no obligation—just the numbers.",
-    buttonText: "Get Your Cost Analysis",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No setup fees. No contracts. Full 24/7 coverage included.",
   },

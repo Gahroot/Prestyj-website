@@ -236,7 +236,7 @@ export const veterinaryClinics: BestForPageContent = createBestForPage({
     headline: "Never Miss an Emergency Call Again With Veterinary AI Receptionist",
     subheadline:
       "Pet emergencies don't follow business hours. AI handles every call 24/7, triages symptoms to detect true emergencies, schedules appointments, and supports pet owners in multiple languages. Reduce overhead while providing better care. Book a demo to see veterinary triage in action.",
-    buttonText: "Schedule Your Demo",
+    buttonText: "Book a Demo",
     footnote:
       "Integrates with all major PMS systems. Multi-lingual support included. Setup takes less than 24 hours.",
   },

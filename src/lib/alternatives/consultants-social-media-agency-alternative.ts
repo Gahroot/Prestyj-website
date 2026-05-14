@@ -223,8 +223,8 @@ export const consultantsSocialMediaAgencyAlternative: AlternativePageContent = c
     headline: "Replace the Consultants Agency Retainer with an AI Content Engine",
     subheadline:
       "See how Prestyj ships 1,500+ posts/month across 7 platforms for boutique consultants and independent advisors selling $10K–$250K engagements — for less than half the cost of a traditional social media agency. No retainer. No contract. No account manager.",
-    buttonText: "See How It Works for Consultants",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "$3,000/mo flat · 1,500+ posts/mo · 7 platforms · No contract",
   },
 });

@@ -107,8 +107,8 @@ export const coachesVsUgcCreatorVideoCompareData: ComparePageData = createCompar
     title: "Coaches Pick Batch Over UGC Creators.",
     description:
       "300-1,000 coaches-researched ads in 24 hours. One flat fee from $1,497. Your real face. No retainer.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment · No subscription · 24-hour turnaround",
   },
 });

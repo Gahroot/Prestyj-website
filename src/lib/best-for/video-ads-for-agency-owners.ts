@@ -64,7 +64,8 @@ export const videoAdsForAgencyOwners: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You've been meaning to niche your agency for 18 months and you still haven't because testing is scary",
+      problem:
+        "You've been meaning to niche your agency for 18 months and you still haven't because testing is scary",
       solution:
         "Niche commitment feels risky because you're betting the whole agency on a vertical. Batch lets you test 3–5 niche positionings in parallel with real ad spend (not a survey, not a guess) before you commit public positioning. You'll know within 30 days of ad spend which niche converts best for you — then you reposition the whole agency with data, not vibes.",
     },
@@ -74,17 +75,20 @@ export const videoAdsForAgencyOwners: BestForPageContent = {
         "Referrals are lumpy. Cold outbound has a hard ceiling defined by how many SDRs you can manage. Paid social with strong founder-led creative is the third channel most agencies never crack — not because it doesn't work, but because making 50+ variations of founder content requires a system they don't have internally. Batch is that system.",
     },
     {
-      problem: "Every agency owner in your feed runs the same 'book a strategy call' ad with the same face-on-zoom thumbnail",
+      problem:
+        "Every agency owner in your feed runs the same 'book a strategy call' ad with the same face-on-zoom thumbnail",
       solution:
         "We write hook-driven scripts that specifically avoid the agency-owner-template aesthetic: 'here's why most agencies lie about their case studies,' 'the pricing model I tried that almost killed my agency,' 'what clients won't tell you in the quarterly review.' Contrarian, founder-voice, anti-template. It stops the scroll because it reads as content, not a pitch.",
     },
     {
-      problem: "You don't know whether to pitch the $3K/month starter offer or the $15K/month full retainer",
+      problem:
+        "You don't know whether to pitch the $3K/month starter offer or the $15K/month full retainer",
       solution:
         "Your batch can test multiple offer structures against the same audience: starter-audit offer, performance-contingent pricing, fractional team model, full retainer. You'll see which offer structure books discovery calls with prospects at your target price point — then lead with the winner in sales conversations. Most agencies discover their best-pitching offer is not the one they were leading with.",
     },
     {
-      problem: "You can't write case studies because you're under NDA with most of your best clients",
+      problem:
+        "You can't write case studies because you're under NDA with most of your best clients",
       solution:
         "Founder-led educational creative — 'here's what we learned helping a DTC brand scale,' 'here's a mistake we fixed for a SaaS client this quarter' — works without naming clients because the insight is the value, not the logo. We write 30+ NDA-friendly educational hooks into every batch that let you show competence without breaking confidentiality.",
     },
@@ -160,8 +164,8 @@ export const videoAdsForAgencyOwners: BestForPageContent = {
     headline: "Stop Being the Cobbler With No Shoes.",
     subheadline:
       "Record yourself once. Ship 300–1,000 scripted founder-led video ads testing your positioning, niche, and offer in 24 hours. One-time price. No ongoing creative production burden on your team.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

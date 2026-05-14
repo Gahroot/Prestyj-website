@@ -43,7 +43,8 @@ export const videoAdsForDentalPractices: BestForPageContent = {
     },
     {
       icon: "Target",
-      title: "Cosmetic, restorative, and emergency are three completely different patient motivations",
+      title:
+        "Cosmetic, restorative, and emergency are three completely different patient motivations",
       description:
         "Cosmetic (Invisalign, veneers, whitening) = appearance and confidence. Restorative (crowns, bridges, implants) = function and pain relief. Emergency (toothache, broken tooth, abscess) = urgent need. Each needs different hooks, different urgency levels, and different CTAs.",
     },
@@ -61,12 +62,14 @@ export const videoAdsForDentalPractices: BestForPageContent = {
         "Batch production creates a predictable new patient pipeline independent of referrals. When you have 300+ ads running across platforms, new patients find you through content — not just word of mouth. Referrals become a bonus, not your only lead source.",
     },
     {
-      problem: "Invisalign and cosmetic patients are Googling and choosing the first practice that looks trustworthy",
+      problem:
+        "Invisalign and cosmetic patients are Googling and choosing the first practice that looks trustworthy",
       solution:
         "When someone searches 'Invisalign near me,' they visit 3–4 practice websites and choose based on trust signals. Video ads that feature your face, your results, and your team build familiarity before they search. By the time they Google, they already trust you.",
     },
     {
-      problem: "Your social media posts are team selfies and tooth memes — not patient-generating content",
+      problem:
+        "Your social media posts are team selfies and tooth memes — not patient-generating content",
       solution:
         "Replace filler content with conversion-focused ads: smile transformation stories, '5 things Invisalign won't tell you,' 'why your crown keeps falling off,' 'the real cost of waiting on that implant.' Educational, trust-building content that positions you as the expert.",
     },
@@ -132,8 +135,8 @@ export const videoAdsForDentalPractices: BestForPageContent = {
     headline: "300+ Dental Ads — Cosmetic, Implant, Invisalign, and Emergency Tracks.",
     subheadline:
       "Your face in 300+ patient-generating ads. Trust-building content that turns scrollers into appointments. From $1,497.",
-    buttonText: "Pick My Dental Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · HIPAA-conscious",
   },
 };

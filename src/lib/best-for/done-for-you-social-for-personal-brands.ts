@@ -153,8 +153,8 @@ export const doneForYouSocialForPersonalBrands: BestForPageContent = {
     headline: "Your Personal Brands Brand Shouldn't Depend on Your Free Time.",
     subheadline:
       "Done-for-you social media content for solopreneur thought leaders, course creators, and authors monetizing through audience. 1,500+ posts per month across 7 platforms. Vertical-researched scripts. Voice-trained captions. No retainer, no contract, no account managers.",
-    buttonText: "See How It Works for Personal Brands",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Your voice · 7 platforms · 1,500+ posts/mo · No contract",
   },
 };

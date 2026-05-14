@@ -50,20 +50,46 @@ export const bufferCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Creates the actual content", prestyj: true, competitor: false, note: "Buffer's AI rewrites captions — it doesn't make video" },
+    {
+      feature: "Creates the actual content",
+      prestyj: true,
+      competitor: false,
+      note: "Buffer's AI rewrites captions — it doesn't make video",
+    },
     { feature: "Scripts written for you", prestyj: true, competitor: false },
-    { feature: "Vertical video ads delivered", prestyj: "300-1,000", competitor: "0 — you upload your own" },
+    {
+      feature: "Vertical video ads delivered",
+      prestyj: "300-1,000",
+      competitor: "0 — you upload your own",
+    },
     { feature: "Native scheduling/auto-publish", prestyj: "Optional", competitor: true },
-    { feature: "Pricing structure", prestyj: "One-time, flat", competitor: "Per channel, per month — adds up" },
-    { feature: "Time saved per week", prestyj: "4-6 hrs (creation + posting)", competitor: "~30 min (posting only)" },
+    {
+      feature: "Pricing structure",
+      prestyj: "One-time, flat",
+      competitor: "Per channel, per month — adds up",
+    },
+    {
+      feature: "Time saved per week",
+      prestyj: "4-6 hrs (creation + posting)",
+      competitor: "~30 min (posting only)",
+    },
     { feature: "Hook + CTA variation engineering", prestyj: true, competitor: false },
-    { feature: "Best-fit user", prestyj: "Owner with no content backlog", competitor: "Owner with content already made" },
+    {
+      feature: "Best-fit user",
+      prestyj: "Owner with no content backlog",
+      competitor: "Owner with content already made",
+    },
     { feature: "Subscription required", prestyj: false, competitor: true },
-    { feature: "Solves the actual bottleneck", prestyj: "Yes — production", competitor: "No — only the publish step" },
+    {
+      feature: "Solves the actual bottleneck",
+      prestyj: "Yes — production",
+      competitor: "No — only the publish step",
+    },
   ],
   whySwitch: {
     title: "Why Buffer Can't Replace a Content Team",
-    description: "Buffer is a beautifully simple scheduler. But schedulers don't write hooks, hold a camera, or cut 500 vertical ads.",
+    description:
+      "Buffer is a beautifully simple scheduler. But schedulers don't write hooks, hold a camera, or cut 500 vertical ads.",
     reasons: [
       {
         icon: "Calendar",
@@ -98,16 +124,31 @@ export const bufferCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Later", description: "Similar scheduler, different pricing", href: "/compare/prestyj-vs-later", linkText: "Read comparison" },
-    { title: "vs Hootsuite", description: "Enterprise scheduler", href: "/compare/prestyj-vs-hootsuite", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Later",
+      description: "Similar scheduler, different pricing",
+      href: "/compare/prestyj-vs-later",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Hootsuite",
+      description: "Enterprise scheduler",
+      href: "/compare/prestyj-vs-hootsuite",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Fill the Queue Before You Schedule It.",
     description:
       "Buffer is a great scheduler — for content that already exists. Prestyj delivers 300-1,000 finished vertical ads in 24 hours so your queue is never empty.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -118,5 +159,11 @@ export const bufferMetadata: CompareMetadata = {
   title: "PRESTYJ vs Buffer: Empty Queue or 500 Finished Ads? (2026)",
   description:
     "Buffer schedules posts you still have to create. PRESTYJ ships 300-1,000 vertical ads in 24 hours for one flat price — then schedule them anywhere.",
-  keywords: ["buffer alternative", "buffer vs prestyj", "social scheduler alternative", "content creation service", "batch video ads"],
+  keywords: [
+    "buffer alternative",
+    "buffer vs prestyj",
+    "social scheduler alternative",
+    "content creation service",
+    "batch video ads",
+  ],
 };

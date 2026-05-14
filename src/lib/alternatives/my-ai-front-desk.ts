@@ -125,10 +125,7 @@ export const myAiFrontDesk: AlternativePageContent = createAlternativePage({
         "Comprehensive analytics",
         "Done-for-you setup",
       ],
-      cons: [
-        "May be more than very small businesses need",
-        "Enterprise focus over simplicity",
-      ],
+      cons: ["May be more than very small businesses need", "Enterprise focus over simplicity"],
     },
   },
   whySwitch: [
@@ -193,7 +190,7 @@ export const myAiFrontDesk: AlternativePageContent = createAlternativePage({
     headline: "Ready for Enterprise-Grade AI Reception?",
     subheadline:
       "Get advanced lead qualification, deep CRM integration, and scalable AI voice agents that grow with your business.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Scalable for growing businesses. No credit card required.",
   },

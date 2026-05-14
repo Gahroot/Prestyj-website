@@ -29,7 +29,8 @@ export const tiktokAdCreativeTesting: SolutionPageContent = {
   },
   painPoints: {
     headline: "TikTok's Algorithm Devours Creative — and Starves Without It",
-    subheadline: "TikTok ads work best with high creative volume. Most advertisers provide the opposite.",
+    subheadline:
+      "TikTok ads work best with high creative volume. Most advertisers provide the opposite.",
     points: [
       {
         icon: "Target",
@@ -56,8 +57,7 @@ export const tiktokAdCreativeTesting: SolutionPageContent = {
   },
   benefits: {
     headline: "Feed TikTok's Algorithm What It Craves",
-    subheadline:
-      "TikTok-native ad variations with the raw, fast-paced feel the platform rewards.",
+    subheadline: "TikTok-native ad variations with the raw, fast-paced feel the platform rewards.",
     benefits: [
       {
         icon: "Sparkles",
@@ -149,8 +149,8 @@ export const tiktokAdCreativeTesting: SolutionPageContent = {
     headline: "Stop Running the Same 3 TikTok Ads Until They Die.",
     subheadline:
       "300–1,000 TikTok-native ad variations per batch. Fresh creative every 3–5 days. From $1,497.",
-    buttonText: "Get Your TikTok Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "TikTok-native format · 24-hour delivery · Spark Ads + In-Feed",
   },
 };

@@ -149,6 +149,6 @@ export const newAgents: BestForPageContent = createBestForPage({
     headline: "Start Your Career With an Unfair Advantage",
     subheadline:
       "Don't wait until you can afford an ISA to compete with top producers. Book a demo and see how new agents are using AI to build their pipeline fast.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
   },
 });

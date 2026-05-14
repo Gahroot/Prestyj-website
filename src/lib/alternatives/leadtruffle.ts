@@ -13,8 +13,7 @@ export const leadtruffle: AlternativePageContent = createAlternativePage({
     shortName: "LeadTruffle",
     pricing: "$229/mo",
     website: "https://www.leadtruffle.co",
-    description:
-      "Missed call text-back automation for home service contractors",
+    description: "Missed call text-back automation for home service contractors",
   },
   meta: {
     title: "Best LeadTruffle Alternative | Full-Solution AI Reception | Prestyj",
@@ -191,7 +190,7 @@ export const leadtruffle: AlternativePageContent = createAlternativePage({
     headline: "Need More Than Missed Call Text-Back?",
     subheadline:
       "Stop losing leads to missed calls. Prestyj answers every call with AI, books appointments, and nurtures leads—all at competitive pricing. See it in action.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. See results in minutes.",
   },

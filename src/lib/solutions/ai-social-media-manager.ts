@@ -29,7 +29,8 @@ export const aiSocialMediaManager: SolutionPageContent = {
   },
   painPoints: {
     headline: "Social Media Management Is Expensive and Inconsistent",
-    subheadline: "Hiring, training, and managing a social media manager is a part-time job in itself.",
+    subheadline:
+      "Hiring, training, and managing a social media manager is a part-time job in itself.",
     points: [
       {
         icon: "DollarSign",
@@ -149,7 +150,7 @@ export const aiSocialMediaManager: SolutionPageContent = {
     headline: "Get 10x the Content Output at 1/10th the Cost.",
     subheadline:
       "AI social media management for $497/month. 30–50 posts per day, published to every platform.",
-    buttonText: "Get Started",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No hiring · No training · Weekly approval · Cancel anytime",
   },

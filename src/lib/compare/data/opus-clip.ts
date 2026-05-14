@@ -48,20 +48,51 @@ export const opusClipCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Works without existing long-form footage", prestyj: true, competitor: false, note: "Opus Clip is a repurposer — no source video, no clips" },
-    { feature: "Scripts written for you", prestyj: true, competitor: false, note: "Opus uses whatever you said in the original video" },
+    {
+      feature: "Works without existing long-form footage",
+      prestyj: true,
+      competitor: false,
+      note: "Opus Clip is a repurposer — no source video, no clips",
+    },
+    {
+      feature: "Scripts written for you",
+      prestyj: true,
+      competitor: false,
+      note: "Opus uses whatever you said in the original video",
+    },
     { feature: "Ads per batch", prestyj: "300-1,000", competitor: "Limited by minutes you upload" },
-    { feature: "Recording required", prestyj: "15-20 min one-take", competitor: "Hours of pre-existing podcasts/streams/webinars" },
-    { feature: "Hook + CTA variations engineered", prestyj: true, competitor: "Whatever was in your original — no rewrites" },
-    { feature: "Turnaround", prestyj: "24 hrs, done-for-you", competitor: "Minutes per render — but you supply the source" },
+    {
+      feature: "Recording required",
+      prestyj: "15-20 min one-take",
+      competitor: "Hours of pre-existing podcasts/streams/webinars",
+    },
+    {
+      feature: "Hook + CTA variations engineered",
+      prestyj: true,
+      competitor: "Whatever was in your original — no rewrites",
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, done-for-you",
+      competitor: "Minutes per render — but you supply the source",
+    },
     { feature: "Monthly subscription required", prestyj: false, competitor: true },
-    { feature: "Vertical-specific ad scripts (real estate, home services)", prestyj: true, competitor: false },
-    { feature: "Cost per ad at 500 ads", prestyj: "~$3-5", competitor: "Subscription + the cost of producing source footage" },
+    {
+      feature: "Vertical-specific ad scripts (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
+    {
+      feature: "Cost per ad at 500 ads",
+      prestyj: "~$3-5",
+      competitor: "Subscription + the cost of producing source footage",
+    },
     { feature: "Done-for-you service", prestyj: true, competitor: false },
   ],
   whySwitch: {
     title: "Why Opus Clip Doesn't Solve the Owner-Operator Ad Problem",
-    description: "Opus Clip is brilliant for podcasters and streamers. It is not a creative engine for service businesses with no long-form library.",
+    description:
+      "Opus Clip is brilliant for podcasters and streamers. It is not a creative engine for service businesses with no long-form library.",
     reasons: [
       {
         icon: "FileText",
@@ -96,16 +127,31 @@ export const opusClipCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs HeyGen", description: "AI avatars vs your real face", href: "/compare/prestyj-vs-heygen", linkText: "Read comparison" },
-    { title: "vs UGC Creators", description: "Hired creators vs the actual owner", href: "/compare/prestyj-vs-ugc-creators", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs HeyGen",
+      description: "AI avatars vs your real face",
+      href: "/compare/prestyj-vs-heygen",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs UGC Creators",
+      description: "Hired creators vs the actual owner",
+      href: "/compare/prestyj-vs-ugc-creators",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "No Podcast Required. Just 15 Minutes on Camera.",
     description:
       "Opus Clip needs hours of footage you don't have. Prestyj needs one short recording session — and ships 300-1,000 finished ads in 24 hours.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +162,11 @@ export const opusClipMetadata: CompareMetadata = {
   title: "PRESTYJ vs Opus Clip: Repurpose vs Create From Scratch (2026)",
   description:
     "Opus Clip needs hours of long-form footage to slice. PRESTYJ creates 300-1,000 net-new vertical ads from one 15-minute recording session — no podcast required.",
-  keywords: ["opus clip alternative", "opus clip vs prestyj", "video repurposing alternative", "batch video ads", "vertical video ads"],
+  keywords: [
+    "opus clip alternative",
+    "opus clip vs prestyj",
+    "video repurposing alternative",
+    "batch video ads",
+    "vertical video ads",
+  ],
 };

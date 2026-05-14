@@ -13,8 +13,7 @@ export const smithAi: AlternativePageContent = createAlternativePage({
     shortName: "Smith.ai",
     pricing: "$100-285/mo + $2.75-6/min",
     website: "https://smith.ai",
-    description:
-      "Hybrid AI + human receptionist service for small businesses and law firms",
+    description: "Hybrid AI + human receptionist service for small businesses and law firms",
   },
   meta: {
     title: "Smith.ai Alternative: Pure AI Receptionist | Prestyj",
@@ -59,15 +58,13 @@ export const smithAi: AlternativePageContent = createAlternativePage({
         feature: "Pricing Model",
         prestyj: "Flat monthly rate",
         competitor: "$100-285/mo + $2.75-6/min",
-        note:
-          "Smith.ai's per-minute fees make costs unpredictable and expensive for high call volumes",
+        note: "Smith.ai's per-minute fees make costs unpredictable and expensive for high call volumes",
       },
       {
         feature: "Pure AI vs Hybrid",
         prestyj: "Pure AI (always learning)",
         competitor: "AI + human handoff",
-        note:
-          "Smith.ai falls back to human agents—adding cost and delay",
+        note: "Smith.ai falls back to human agents—adding cost and delay",
       },
       buildAlternativeFeature(STANDARD_FEATURES.AI_VOICE, true),
       buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
@@ -75,8 +72,7 @@ export const smithAi: AlternativePageContent = createAlternativePage({
         feature: "True 24/7 Availability",
         prestyj: true,
         competitor: "Business hours only",
-        note:
-          "Smith.ai's human agents work business hours; after-hours calls go to voicemail or pay premium rates",
+        note: "Smith.ai's human agents work business hours; after-hours calls go to voicemail or pay premium rates",
       },
       buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
       {
@@ -178,7 +174,7 @@ export const smithAi: AlternativePageContent = createAlternativePage({
     headline: "Ready for Predictable AI Receptionist Pricing?",
     subheadline:
       "Stop paying per-minute fees and worrying about after-hours coverage. Get 24/7 AI voice agents with one flat rate.",
-    buttonText: "Start Your Free Trial",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No per-minute fees. No hidden costs. Cancel anytime.",
   },

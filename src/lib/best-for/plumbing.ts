@@ -208,7 +208,7 @@ export const plumbing: BestForPageContent = createBestForPage({
     headline: "Stop Losing $400-2,000 Emergency Plumbing Jobs to Voicemail",
     subheadline:
       "AI answers every emergency call 24/7, qualifies the job, verifies service area, and dispatches technicians. Capture every emergency job while scheduling routine work automatically.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "24/7 emergency dispatch. Service area verification. Live in 1-2 weeks.",
   },
 });

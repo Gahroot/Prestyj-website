@@ -7,7 +7,8 @@ export const roofing: BestForPageContent = createBestForPage({
   niche: {
     name: "Roofing Contractors",
     shortName: "Roofing",
-    description: "Roofing contractors and home service businesses looking for AI-powered customer response",
+    description:
+      "Roofing contractors and home service businesses looking for AI-powered customer response",
   },
   meta: {
     title: "AI Agents for Roofing Contractors | 24/7 Emergency Response | Prestyj",
@@ -154,7 +155,7 @@ export const roofing: BestForPageContent = createBestForPage({
     headline: "Stop Losing Storm Damage Leads to Voicemail",
     subheadline:
       "Every missed call during storm season is a $15,000 roof job to your competitor. Book a demo to see how AI captures every opportunity.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "No credit card required. Perfect for roofing contractors of all sizes.",
   },
 });

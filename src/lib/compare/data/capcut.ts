@@ -48,20 +48,51 @@ export const capcutCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Scripts written for you", prestyj: true, competitor: false, note: "CapCut has zero scriptwriting — it's an editor" },
+    {
+      feature: "Scripts written for you",
+      prestyj: true,
+      competitor: false,
+      note: "CapCut has zero scriptwriting — it's an editor",
+    },
     { feature: "Filming + directing handled", prestyj: true, competitor: false },
     { feature: "Editing + captions + exports", prestyj: true, competitor: "You do all of it" },
-    { feature: "Ads delivered per batch", prestyj: "300-1,000", competitor: "However many you have time to make" },
-    { feature: "Time investment per 500 ads", prestyj: "15-20 min recording", competitor: "200+ hours of editing" },
+    {
+      feature: "Ads delivered per batch",
+      prestyj: "300-1,000",
+      competitor: "However many you have time to make",
+    },
+    {
+      feature: "Time investment per 500 ads",
+      prestyj: "15-20 min recording",
+      competitor: "200+ hours of editing",
+    },
     { feature: "Hook + CTA variation engineering", prestyj: true, competitor: false },
-    { feature: "Vertical-specific ad strategy", prestyj: true, competitor: false, note: "CapCut is platform-agnostic — no real estate / home services lens" },
-    { feature: "Best-fit user", prestyj: "Owner-operators with no time", competitor: "Solo creators editing their own content" },
-    { feature: "Subscription required", prestyj: false, competitor: "Pro is $19.99/mo if you want premium assets" },
-    { feature: "Turnaround on a 500-ad batch", prestyj: "24 hours", competitor: "Weeks of nights and weekends" },
+    {
+      feature: "Vertical-specific ad strategy",
+      prestyj: true,
+      competitor: false,
+      note: "CapCut is platform-agnostic — no real estate / home services lens",
+    },
+    {
+      feature: "Best-fit user",
+      prestyj: "Owner-operators with no time",
+      competitor: "Solo creators editing their own content",
+    },
+    {
+      feature: "Subscription required",
+      prestyj: false,
+      competitor: "Pro is $19.99/mo if you want premium assets",
+    },
+    {
+      feature: "Turnaround on a 500-ad batch",
+      prestyj: "24 hours",
+      competitor: "Weeks of nights and weekends",
+    },
   ],
   whySwitch: {
     title: "Why CapCut Isn't a Real Ad System for Business Owners",
-    description: "CapCut is incredible software. It is not a content team. If you don't have hours to script, film, and edit, the editor doesn't matter.",
+    description:
+      "CapCut is incredible software. It is not a content team. If you don't have hours to script, film, and edit, the editor doesn't matter.",
     reasons: [
       {
         icon: "Clock",
@@ -96,16 +127,31 @@ export const capcutCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Canva", description: "Design tool with scheduling", href: "/compare/prestyj-vs-canva", linkText: "Read comparison" },
-    { title: "vs Fiverr Video Ads", description: "Freelance ad gigs", href: "/compare/prestyj-vs-fiverr-video-ads", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Canva",
+      description: "Design tool with scheduling",
+      href: "/compare/prestyj-vs-canva",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Fiverr Video Ads",
+      description: "Freelance ad gigs",
+      href: "/compare/prestyj-vs-fiverr-video-ads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Stop Editing. Start Shipping.",
     description:
       "CapCut is free, but your time isn't. Prestyj delivers 300-1,000 finished vertical ads in 24 hours so you can run ads — not edit them.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +162,11 @@ export const capcutMetadata: CompareMetadata = {
   title: "PRESTYJ vs CapCut: Done-For-You Ads vs DIY Editor (2026)",
   description:
     "CapCut is a free editor — you still write, film, and cut every ad. PRESTYJ ships 300-1,000 finished vertical ads in 24 hours from one 15-min recording.",
-  keywords: ["capcut alternative", "capcut vs prestyj", "video editor alternative", "done for you video ads", "batch video ads"],
+  keywords: [
+    "capcut alternative",
+    "capcut vs prestyj",
+    "video editor alternative",
+    "done for you video ads",
+    "batch video ads",
+  ],
 };

@@ -145,7 +145,7 @@ export const lawFirms: BestForPageContent = createBestForPage({
     headline: "Never Miss a Potential Client Call Again",
     subheadline:
       "See how law firms use AI to capture more intakes, qualify better cases, and keep attorneys focused on billable work. Schedule a demo to see AI intake tailored to your practice.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Bar-compliant. Practice-integrated. Live in 1-2 weeks.",
   },
 });

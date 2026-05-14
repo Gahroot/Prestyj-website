@@ -145,7 +145,7 @@ export const realEstateCoach: BestForPageContent = createBestForPage({
     headline: "Capture Every Coaching Inquiry—24/7",
     subheadline:
       "See how real estate coaches use AI to respond instantly, qualify serious prospects, and book more discovery calls. Schedule a demo to see AI trained for coaching businesses.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Prospect-qualified. Calendar-integrated. Live in 1-2 weeks.",
   },
 });

@@ -48,15 +48,37 @@ export const fiverrVideoAdsCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Scripts researched for YOUR pain points", prestyj: true, competitor: false, note: "Fiverr sellers don't research your vertical — you hand them copy" },
+    {
+      feature: "Scripts researched for YOUR pain points",
+      prestyj: true,
+      competitor: false,
+      note: "Fiverr sellers don't research your vertical — you hand them copy",
+    },
     { feature: "Uses your real face", prestyj: true, competitor: "Depends on gig type" },
     { feature: "Ads per engagement", prestyj: "300-1,000", competitor: "1-5 per gig, typically" },
-    { feature: "Turnaround SLA", prestyj: "24 hrs, guaranteed", competitor: "3-14 days, often slipped" },
+    {
+      feature: "Turnaround SLA",
+      prestyj: "24 hrs, guaranteed",
+      competitor: "3-14 days, often slipped",
+    },
     { feature: "Consistent quality across deliverables", prestyj: true, competitor: false },
-    { feature: "Cost for 500 ads", prestyj: "$1,497-$3,997", competitor: "$12,500-$250,000 depending on sellers" },
+    {
+      feature: "Cost for 500 ads",
+      prestyj: "$1,497-$3,997",
+      competitor: "$12,500-$250,000 depending on sellers",
+    },
     { feature: "Hook + body + CTA variation system", prestyj: true, competitor: false },
-    { feature: "Single point of accountability", prestyj: true, competitor: false, note: "Fiverr disputes vs. one dedicated Prestyj production team" },
-    { feature: "Revision policy", prestyj: "Error revisions included", competitor: "Varies per seller, often capped at 1-3" },
+    {
+      feature: "Single point of accountability",
+      prestyj: true,
+      competitor: false,
+      note: "Fiverr disputes vs. one dedicated Prestyj production team",
+    },
+    {
+      feature: "Revision policy",
+      prestyj: "Error revisions included",
+      competitor: "Varies per seller, often capped at 1-3",
+    },
     { feature: "Built for real estate / home services", prestyj: true, competitor: false },
   ],
   whySwitch: {
@@ -96,16 +118,30 @@ export const fiverrVideoAdsCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Production Agencies", description: "Traditional agencies compared", href: "/compare/prestyj-vs-production-agencies", linkText: "Read comparison" },
-    { title: "vs UGC Creators", description: "UGC marketplaces compared", href: "/compare/prestyj-vs-ugc-creators", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Production Agencies",
+      description: "Traditional agencies compared",
+      href: "/compare/prestyj-vs-production-agencies",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs UGC Creators",
+      description: "UGC marketplaces compared",
+      href: "/compare/prestyj-vs-ugc-creators",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Stop Rolling the Fiverr Dice.",
-    description:
-      "One team. 300-1,000 scripted ads. 24-hour turnaround. One flat price.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    description: "One team. 300-1,000 scripted ads. 24-hour turnaround. One flat price.",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +152,11 @@ export const fiverrVideoAdsMetadata: CompareMetadata = {
   title: "PRESTYJ vs Fiverr Video Ads: Why the Gig Lottery Fails",
   description:
     "Fiverr is a coin flip - one great gig, ten template mills. PRESTYJ ships 300-1,000 scripted ads with your real face in 24 hours. $1,497 flat, one team.",
-  keywords: ["fiverr video ads alternative", "fiverr vs prestyj", "freelance video ad alternative", "batch video ads", "scripted video ads"],
+  keywords: [
+    "fiverr video ads alternative",
+    "fiverr vs prestyj",
+    "freelance video ad alternative",
+    "batch video ads",
+    "scripted video ads",
+  ],
 };

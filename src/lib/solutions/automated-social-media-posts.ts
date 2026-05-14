@@ -29,7 +29,8 @@ export const automatedSocialMediaPosts: SolutionPageContent = {
   },
   painPoints: {
     headline: "Social Media Falls Off Your Priority List — Every Week",
-    subheadline: "Contractors and service businesses don't have time to post. But their competitors do.",
+    subheadline:
+      "Contractors and service businesses don't have time to post. But their competitors do.",
     points: [
       {
         icon: "Clock",
@@ -149,7 +150,7 @@ export const automatedSocialMediaPosts: SolutionPageContent = {
     headline: "Automate Your Social Media in 30 Minutes. Never Think About It Again.",
     subheadline:
       "30–50 branded posts per day, auto-published to every platform. Set it up once, approve weekly, forget about it.",
-    buttonText: "Start Automating",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "30-minute setup · Weekly approval · Cancel anytime",
   },

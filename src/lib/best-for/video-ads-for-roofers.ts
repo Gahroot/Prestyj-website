@@ -45,7 +45,8 @@ export const videoAdsForRoofers: BestForPageContent = {
     },
     {
       icon: "Home",
-      title: "'Your neighbor just got a new roof' is the highest-converting local hook in home services",
+      title:
+        "'Your neighbor just got a new roof' is the highest-converting local hook in home services",
       description:
         "Neighborhood proof beats every other angle in roofing. Drone shots of recent installs, 'we did 7 roofs on this street last month,' 'three houses on [cross-street] filed claims this week' — these hooks convert because roofing is a social proof decision. Batch production lets you ship zip-code-specific variations at scale instead of one generic 'serving [metro]' ad.",
     },
@@ -74,12 +75,14 @@ export const videoAdsForRoofers: BestForPageContent = {
         "We write direct-response scripts that name specific local details — 'if you live in [neighborhood] and your roof is more than 12 years old, here's what adjusters are finding on shingles like yours,' 'drone footage from a house on [street] last week showed damage the homeowner never would have seen.' Specific always beats generic in home services. Retainer agencies write generic because specific doesn't scale across their client roster. Batch makes specific cheap.",
     },
     {
-      problem: "Insurance adjusters are denying claims and homeowners are getting discouraged before you can help",
+      problem:
+        "Insurance adjusters are denying claims and homeowners are getting discouraged before you can help",
       solution:
         "We build a dedicated track around adjuster-denial reversals: 'if your claim got denied and you were told there's no damage, here's what to ask for in a re-inspection.' These ads pull high-intent homeowners who are stuck in the claim process and bypass the 'tire kicker' top-of-funnel phase entirely. The people clicking already have damage and a claim open.",
     },
     {
-      problem: "Your season is seasonal — you need leads in spring and fall and you get crickets in January",
+      problem:
+        "Your season is seasonal — you need leads in spring and fall and you get crickets in January",
       solution:
         "Off-season shouldn't be dead. A dedicated retail-reroof track in your batch ('is your roof over 15 years old? here's what insurance won't pay for — but a voluntary replacement now saves you $X') keeps leads flowing during wind-down months. We script both storm-chasing AND retail angles into the same batch so one purchase covers the full calendar year.",
     },
@@ -90,7 +93,11 @@ export const videoAdsForRoofers: BestForPageContent = {
     },
   ],
   comparison: {
-    headers: ["Feature", "Prestyj Batch Video Ads", "Doing It Yourself or Hiring a Canvassing Team"],
+    headers: [
+      "Feature",
+      "Prestyj Batch Video Ads",
+      "Doing It Yourself or Hiring a Canvassing Team",
+    ],
     rows: [
       {
         feature: "Homes reached in a storm-hit zip code in 48 hours",
@@ -160,8 +167,8 @@ export const videoAdsForRoofers: BestForPageContent = {
     headline: "Own the Storm Window. Run 500 Ads Before Your Competition Ships One.",
     subheadline:
       "One 20-minute recording. 300–1,000 scripted storm, claim, and retail reroof ads in 24 hours. Ship the morning after any event in your market — while the gold rush is still open.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

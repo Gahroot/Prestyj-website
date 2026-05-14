@@ -45,7 +45,8 @@ export const videoAdsForContractors: BestForPageContent = {
     },
     {
       icon: "Users",
-      title: "The showroom visit is the real conversion event — ads should drive that, not 'call now'",
+      title:
+        "The showroom visit is the real conversion event — ads should drive that, not 'call now'",
       description:
         "High-ticket remodel leads convert dramatically better after a showroom visit than after a phone call. But almost every contractor ad says 'call for a free quote.' A showroom-visit-optimized ad track ('book a 30-minute showroom visit — see the exact tile, cabinetry, and finishes we install, no pushy sales') changes the entire funnel economics and lifts close rate on every subsequent step.",
     },
@@ -64,17 +65,20 @@ export const videoAdsForContractors: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "You're booked for 4 months but your pipeline goes dry as soon as you close those projects",
+      problem:
+        "You're booked for 4 months but your pipeline goes dry as soon as you close those projects",
       solution:
         "Contractor pipeline cycles kill cash flow. The solution isn't more leads — it's consistent leads flowing independent of your current job load. A batch of 300–1,000 ads running year-round keeps your showroom calendar filled 4–6 months out, which means your next crew crew isn't idle the week your current job finishes. Consistency beats burst marketing every year.",
     },
     {
-      problem: "You give free estimates, spend 4 hours on the proposal, and the homeowner picks the cheaper guy",
+      problem:
+        "You give free estimates, spend 4 hours on the proposal, and the homeowner picks the cheaper guy",
       solution:
         "Losing on price after a detailed estimate is a pre-qualification problem. We write ads that self-qualify budget awareness into the hook: 'if you're ready to invest $60K+ in a kitchen that lasts 20 years,' 'our whole-home renos start at $250K — here's what you get at that price,' 'if you've gotten a bid under $X and wondered why ours would be different.' Tire-kickers self-select out before they book the consult.",
     },
     {
-      problem: "You want ADU and accessory-dwelling leads but most homeowners don't even know they qualify",
+      problem:
+        "You want ADU and accessory-dwelling leads but most homeowners don't even know they qualify",
       solution:
         "ADU demand is booming (California, Oregon, Washington, and now many Northeast states have passed by-right ADU laws), but homeowner awareness lags. A dedicated ADU track — 'if your lot is over 5,000 sq ft in [state], here's what you can now build without going to the planning commission,' 'ADU rentals are pulling $2,400/month in [metro]' — captures a niche most contractors are ignoring.",
     },
@@ -84,7 +88,8 @@ export const videoAdsForContractors: BestForPageContent = {
         "Organic Instagram is a dead channel for contractors at current algorithm dynamics. Paid distribution of those same photos — paired with scripted hook voiceover and specific CTAs — turns the same assets into lead-generating machines. We take the project footage you already have and script it into 100+ ad variants with actual conversion mechanics.",
     },
     {
-      problem: "You tried Google LSAs and Facebook and the Facebook leads were all price-shoppers while LSAs were expensive",
+      problem:
+        "You tried Google LSAs and Facebook and the Facebook leads were all price-shoppers while LSAs were expensive",
       solution:
         "Facebook remodeling leads get a bad reputation because most contractors run price-led creative that attracts price-led buyers. Design-led, trust-building creative attracts a completely different buyer — one who's willing to pay for quality because they've already been pre-sold on your craft by the ads. Same channel, entirely different lead quality, based on creative strategy.",
     },
@@ -136,7 +141,8 @@ export const videoAdsForContractors: BestForPageContent = {
         "They will if your creative pre-qualifies budget and intent. The reason most contractors think 'Facebook leads are junk' is that they ran offer-led creative ('$50 off kitchen remodel') which attracts price-shoppers. Trust-led, design-led, budget-self-qualified creative ('whole-home renovations starting at $250K — here's what you get at that price') attracts the homeowners who close. Several contractors we've worked with now close 35–50% of Facebook leads into signed projects averaging $80K+ specifically because the creative filters so hard up front.",
     },
     {
-      question: "I have drone footage and finished-project videos — can you work them into the ads?",
+      question:
+        "I have drone footage and finished-project videos — can you work them into the ads?",
       answer:
         "Yes — and this is actually the unlock for contractors. Your existing project library (drone shots, time-lapses, before/afters, finished tours) is premium creative material most contractors never monetize. We work with your footage in the edit, pairing it with scripted voiceover and hook text. If you have 20+ hours of project footage, we can often produce a stronger batch than contractors starting from zero because we're building on real social proof.",
     },
@@ -151,7 +157,8 @@ export const videoAdsForContractors: BestForPageContent = {
         "Every script includes your state contractor license number in on-screen text where required (California CSLB, Texas TRCC, Florida CILB all have specific requirements). If your state restricts certain claims — 'best in [metro],' guaranteed pricing, financing language that implies lender status — we apply those exclusions before delivery. Send us your state license and any local advertising rules during onboarding and we handle the rest.",
     },
     {
-      question: "Can I split the batch across different service areas (kitchen vs whole-home vs ADU)?",
+      question:
+        "Can I split the batch across different service areas (kitchen vs whole-home vs ADU)?",
       answer:
         "That's actually the recommended approach for contractors. A 500-ad batch splits cleanly into 3 kitchen tracks, 1 whole-home track, and 1 ADU track — letting you see which service line has the lowest CPL and highest close rate. Most contractors discover one service line dramatically outperforms the others in their specific market (different in every metro), and they then weight ad spend accordingly. The batch is also your market research.",
     },
@@ -160,8 +167,8 @@ export const videoAdsForContractors: BestForPageContent = {
     headline: "Fill Your Bid Calendar Six Months Out With Qualified Homeowners.",
     subheadline:
       "One 20-minute recording. 300–1,000 design-led, budget-qualified video ads in 24 hours. Kitchen, whole-home, ADU — every service line you offer, tested in parallel.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

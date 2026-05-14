@@ -145,7 +145,7 @@ export const realEstateWholesalers: BestForPageContent = createBestForPage({
     headline: "Never Lose a Wholesale Deal to Speed Again",
     subheadline:
       "See how wholesalers use AI to respond instantly, qualify motivated sellers, and lock down more contracts. Schedule a demo to see AI trained for wholesaling.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Motivated seller-focused. Deal qualification built-in. Live in 1-2 weeks.",
   },
 });

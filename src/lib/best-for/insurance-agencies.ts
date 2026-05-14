@@ -154,7 +154,7 @@ export const insuranceAgencies: BestForPageContent = createBestForPage({
     headline: "Stop Losing Quote Requests to Slow Response",
     subheadline:
       "The first agent to respond wins the policy. Book a demo to see how AI can put you first in line for every lead.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "No credit card required. See your lead response transformation in minutes.",
   },
 });

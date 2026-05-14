@@ -189,7 +189,7 @@ export const aiReceptionistRealEstate: SolutionPageContent = {
     headline: "Stop Losing Deals to Slow Lead Response",
     subheadline:
       "Your competitors respond in 60 seconds. Can you? AI ensures every lead gets an instant, professional response—24/7. Book more showings, close more deals.",
-    buttonText: "Set Up Your AI Receptionist",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Integrates with Follow Up Boss, kvCORE, Sierra Interactive. Live in 5–7 days.",
   },

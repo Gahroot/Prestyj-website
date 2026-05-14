@@ -101,7 +101,8 @@ export const batchVideoAdsForContractors: SolutionPageContent = {
   },
   objections: {
     headline: "What Contractors Ask Before Starting",
-    subheadline: "If you've run ads for your contracting business, you've had these exact thoughts.",
+    subheadline:
+      "If you've run ads for your contracting business, you've had these exact thoughts.",
     objections: [
       {
         objection: "I already have an agency making my ads — why do I need this?",
@@ -161,8 +162,8 @@ export const batchVideoAdsForContractors: SolutionPageContent = {
     headline: "Stop Running Stale Ads. Your Competitors Already Have 50 New Ones.",
     subheadline:
       "Record for 15 minutes. Get 300–1,000 contractor-specific video ads in 24 hours. Test every angle, every pain point, every season — and never worry about creative fatigue again.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing starts at $1,497 · 24-hour turnaround · No subscription required",
   },
 };

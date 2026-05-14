@@ -49,19 +49,45 @@ export const ugcCreatorsCompareData: ComparePageData = createComparePage({
   },
   features: [
     { feature: "Uses YOUR face (owner / founder)", prestyj: true, competitor: false },
-    { feature: "Scripts researched and written", prestyj: true, competitor: "You brief; they improv" },
+    {
+      feature: "Scripts researched and written",
+      prestyj: true,
+      competitor: "You brief; they improv",
+    },
     { feature: "Volume per engagement", prestyj: "300-1,000", competitor: "1-3 per creator" },
     { feature: "Cost for 500 ads", prestyj: "$1,497-$3,997 flat", competitor: "$37,500-$250,000+" },
     { feature: "Turnaround", prestyj: "24 hrs", competitor: "2-4 weeks per creator round" },
-    { feature: "Sourcing / vetting time", prestyj: "None", competitor: "Significant — shortlists, calls, contracts" },
-    { feature: "Works for licensed services (realty, finance, legal)", prestyj: true, competitor: false, note: "Creators can't make expertise claims on your behalf" },
-    { feature: "Consistency across ads", prestyj: "Same owner, same brand", competitor: "Every creator looks and sounds different" },
-    { feature: "Usage rights cost", prestyj: "Included, perpetual", competitor: "Often time-limited, extra fees to extend" },
-    { feature: "Platform trust signal", prestyj: "Strong — real owner", competitor: "Mixed — prospects notice paid creator vibe" },
+    {
+      feature: "Sourcing / vetting time",
+      prestyj: "None",
+      competitor: "Significant — shortlists, calls, contracts",
+    },
+    {
+      feature: "Works for licensed services (realty, finance, legal)",
+      prestyj: true,
+      competitor: false,
+      note: "Creators can't make expertise claims on your behalf",
+    },
+    {
+      feature: "Consistency across ads",
+      prestyj: "Same owner, same brand",
+      competitor: "Every creator looks and sounds different",
+    },
+    {
+      feature: "Usage rights cost",
+      prestyj: "Included, perpetual",
+      competitor: "Often time-limited, extra fees to extend",
+    },
+    {
+      feature: "Platform trust signal",
+      prestyj: "Strong — real owner",
+      competitor: "Mixed — prospects notice paid creator vibe",
+    },
   ],
   whySwitch: {
     title: "Why Hiring UGC Creators Fails for Owner Brands",
-    description: "Creators are great for ecom products. They're the wrong lever for service businesses.",
+    description:
+      "Creators are great for ecom products. They're the wrong lever for service businesses.",
     reasons: [
       {
         icon: "Users",
@@ -96,16 +122,31 @@ export const ugcCreatorsCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Billo", description: "Specific UGC marketplace", href: "/compare/prestyj-vs-billo", linkText: "Read comparison" },
-    { title: "vs Fiverr Video Ads", description: "Freelance video compared", href: "/compare/prestyj-vs-fiverr-video-ads", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Billo",
+      description: "Specific UGC marketplace",
+      href: "/compare/prestyj-vs-billo",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Fiverr Video Ads",
+      description: "Freelance video compared",
+      href: "/compare/prestyj-vs-fiverr-video-ads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "You Are the Offer.",
     description:
       "Stop paying strangers to pretend they care about your business. 300-1,000 ads starring you, shipped in 24 hours.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +157,11 @@ export const ugcCreatorsMetadata: CompareMetadata = {
   title: "PRESTYJ vs UGC Creators: Your Face Sells, Theirs Doesn't",
   description:
     "A stranger can't pitch your $400K listing or mortgage rate. PRESTYJ films the real you in 300-1,000 scripted ads in 24 hours. $1,497 flat, not $50K+.",
-  keywords: ["ugc creator alternative", "hire ugc creator vs", "owner led ads", "batch video ads", "service business ugc"],
+  keywords: [
+    "ugc creator alternative",
+    "hire ugc creator vs",
+    "owner led ads",
+    "batch video ads",
+    "service business ugc",
+  ],
 };

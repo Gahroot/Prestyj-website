@@ -50,20 +50,46 @@ export const laterCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Creates the actual content", prestyj: true, competitor: false, note: "Later is post-only — you must already have the asset" },
+    {
+      feature: "Creates the actual content",
+      prestyj: true,
+      competitor: false,
+      note: "Later is post-only — you must already have the asset",
+    },
     { feature: "Scripts written for you", prestyj: true, competitor: false },
-    { feature: "Vertical video ads delivered", prestyj: "300-1,000", competitor: "0 — you upload your own" },
+    {
+      feature: "Vertical video ads delivered",
+      prestyj: "300-1,000",
+      competitor: "0 — you upload your own",
+    },
     { feature: "Native scheduling/auto-publish", prestyj: "Optional", competitor: true },
-    { feature: "Time saved per week", prestyj: "4-6 hrs (creation + posting)", competitor: "~30 min (posting only)" },
+    {
+      feature: "Time saved per week",
+      prestyj: "4-6 hrs (creation + posting)",
+      competitor: "~30 min (posting only)",
+    },
     { feature: "Hook + CTA variation engineering", prestyj: true, competitor: false },
-    { feature: "Best-fit user", prestyj: "Owner who has no content yet", competitor: "Owner with backlog ready to schedule" },
+    {
+      feature: "Best-fit user",
+      prestyj: "Owner who has no content yet",
+      competitor: "Owner with backlog ready to schedule",
+    },
     { feature: "Subscription required", prestyj: false, competitor: true },
-    { feature: "Cost over 12 months (Growth plan)", prestyj: "$1,497 one-time", competitor: "$540 — and zero content created" },
-    { feature: "Solves the actual bottleneck", prestyj: "Yes — content production", competitor: "No — only the last 5%" },
+    {
+      feature: "Cost over 12 months (Growth plan)",
+      prestyj: "$1,497 one-time",
+      competitor: "$540 — and zero content created",
+    },
+    {
+      feature: "Solves the actual bottleneck",
+      prestyj: "Yes — content production",
+      competitor: "No — only the last 5%",
+    },
   ],
   whySwitch: {
     title: "Why Later Doesn't Solve the Real Problem",
-    description: "Later is a great scheduler. But owner-operators don't fail because posts go out at the wrong time. They fail because nothing got made.",
+    description:
+      "Later is a great scheduler. But owner-operators don't fail because posts go out at the wrong time. They fail because nothing got made.",
     reasons: [
       {
         icon: "Calendar",
@@ -98,16 +124,31 @@ export const laterCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Buffer", description: "Another social scheduler", href: "/compare/prestyj-vs-buffer", linkText: "Read comparison" },
-    { title: "vs Hootsuite", description: "Enterprise scheduler", href: "/compare/prestyj-vs-hootsuite", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Buffer",
+      description: "Another social scheduler",
+      href: "/compare/prestyj-vs-buffer",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Hootsuite",
+      description: "Enterprise scheduler",
+      href: "/compare/prestyj-vs-hootsuite",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Make the Content First.",
     description:
       "A scheduler can't post what doesn't exist. Prestyj ships 300-1,000 finished vertical ads in 24 hours — then schedule them with whatever tool you like.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -118,5 +159,11 @@ export const laterMetadata: CompareMetadata = {
   title: "PRESTYJ vs Later: Schedule Empty or Schedule 500 Ads? (2026)",
   description:
     "Later schedules content you have to create yourself. PRESTYJ creates 300-1,000 vertical ads in 24 hours, then you schedule them. Saves 4-6 hours/week, not 30 min.",
-  keywords: ["later alternative", "later vs prestyj", "social scheduler alternative", "content creation service", "batch video ads"],
+  keywords: [
+    "later alternative",
+    "later vs prestyj",
+    "social scheduler alternative",
+    "content creation service",
+    "batch video ads",
+  ],
 };

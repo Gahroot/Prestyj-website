@@ -50,14 +50,39 @@ export const productionAgenciesCompareData: ComparePageData = createComparePage(
   features: [
     { feature: "Ads per engagement", prestyj: "300-1,000", competitor: "1-5 hero spots" },
     { feature: "Turnaround", prestyj: "24 hrs", competitor: "4-12 weeks" },
-    { feature: "Native selfie / UGC aesthetic", prestyj: true, competitor: false, note: "Agencies optimize for polish — which tanks performance on TikTok/Reels" },
+    {
+      feature: "Native selfie / UGC aesthetic",
+      prestyj: true,
+      competitor: false,
+      note: "Agencies optimize for polish — which tanks performance on TikTok/Reels",
+    },
     { feature: "Cost per ad", prestyj: "$2-$5", competitor: "$1,000-$10,000+" },
-    { feature: "Hook / CTA variation engineering", prestyj: true, competitor: "Usually 1 creative direction per spot" },
+    {
+      feature: "Hook / CTA variation engineering",
+      prestyj: true,
+      competitor: "Usually 1 creative direction per spot",
+    },
     { feature: "On-location crew required", prestyj: false, competitor: true },
-    { feature: "Scripts researched for paid-social hooks", prestyj: true, competitor: "Scripts written for brand, not ad-account performance" },
-    { feature: "Testable ad volume for media buying", prestyj: "High", competitor: "Low — not enough creative to iterate" },
-    { feature: "Remote / no travel", prestyj: true, competitor: "Often requires travel + shoot days" },
-    { feature: "Fits performance marketing workflow", prestyj: true, competitor: "Built for brand TV spots, not feed ads" },
+    {
+      feature: "Scripts researched for paid-social hooks",
+      prestyj: true,
+      competitor: "Scripts written for brand, not ad-account performance",
+    },
+    {
+      feature: "Testable ad volume for media buying",
+      prestyj: "High",
+      competitor: "Low — not enough creative to iterate",
+    },
+    {
+      feature: "Remote / no travel",
+      prestyj: true,
+      competitor: "Often requires travel + shoot days",
+    },
+    {
+      feature: "Fits performance marketing workflow",
+      prestyj: true,
+      competitor: "Built for brand TV spots, not feed ads",
+    },
   ],
   whySwitch: {
     title: "Why Production Agencies Are the Wrong Tool for Paid Social",
@@ -96,16 +121,31 @@ export const productionAgenciesCompareData: ComparePageData = createComparePage(
     ],
   },
   relatedResources: [
-    { title: "vs Fiverr Video Ads", description: "Freelance video compared", href: "/compare/prestyj-vs-fiverr-video-ads", linkText: "Read comparison" },
-    { title: "vs UGC Creators", description: "Hiring creators compared", href: "/compare/prestyj-vs-ugc-creators", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Fiverr Video Ads",
+      description: "Freelance video compared",
+      href: "/compare/prestyj-vs-fiverr-video-ads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs UGC Creators",
+      description: "Hiring creators compared",
+      href: "/compare/prestyj-vs-ugc-creators",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Native Beats Polished. Every Time.",
     description:
       "Skip the 12-week shoot cycle. Record once, get 300-1,000 ads in 24 hours for the cost of a single agency spot.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +156,11 @@ export const productionAgenciesMetadata: CompareMetadata = {
   title: "PRESTYJ vs Production Agencies: 1,000 Ads or 2 Polished Spots?",
   description:
     "Agencies ship 1-5 polished spots in 12 weeks for $20K+. PRESTYJ ships 300-1,000 native real-face ads in 24 hours for $1,497. Polished ads get scrolled.",
-  keywords: ["video production agency alternative", "ad agency alternative", "batch video ads", "paid social creative volume", "ugc style batch ads"],
+  keywords: [
+    "video production agency alternative",
+    "ad agency alternative",
+    "batch video ads",
+    "paid social creative volume",
+    "ugc style batch ads",
+  ],
 };

@@ -149,7 +149,7 @@ export const aiContentCalendarService: SolutionPageContent = {
     headline: "Never Stare at a Blank Content Calendar Again.",
     subheadline:
       "AI-planned, AI-created, auto-published content calendars. 5 minutes per week to approve. Your social media runs itself.",
-    buttonText: "Get Your Content Calendar",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Weekly calendar · Auto-published · $497/month",
   },

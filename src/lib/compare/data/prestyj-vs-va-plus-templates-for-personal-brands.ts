@@ -113,8 +113,8 @@ export const personalBrandsVsVaPlusTemplatesForCompareData: ComparePageData = cr
     title: "Personal Brands Pick the AI Content Engine Over VA + Canva Templates Stack.",
     description:
       "1,500+ personal brands-researched posts a month across 7 platforms. One flat fee of $3,000/mo. Voice-trained. No contract. Live in days.",
-    buttonText: "See How It Works for Personal Brands",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "Month-to-month · No contract · 1,500+ posts/month",
   },
 });

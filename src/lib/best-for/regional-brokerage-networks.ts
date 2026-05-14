@@ -7,7 +7,8 @@ export const regionalBrokerageNetworks: BestForPageContent = createBestForPage({
   niche: {
     name: "Regional Brokerage Networks",
     shortName: "Regional Networks",
-    description: "Multi-office regional operations with portfolio management and centralized reporting needs",
+    description:
+      "Multi-office regional operations with portfolio management and centralized reporting needs",
   },
   meta: {
     title: "Best AI Lead Response for Regional Brokerage Networks | Prestyj",
@@ -155,7 +156,7 @@ export const regionalBrokerageNetworks: BestForPageContent = createBestForPage({
     headline: "Coordinate Lead Response Across Your Network",
     subheadline:
       "See how regional brokerage networks use Prestyj for portfolio-level visibility, consistent execution, and the ROI metrics leadership requires.",
-    buttonText: "Book a Network Demo",
+    buttonText: "Book a Demo",
     footnote: "Enterprise deployment. Portfolio management included.",
   },
 });

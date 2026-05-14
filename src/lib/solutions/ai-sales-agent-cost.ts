@@ -189,8 +189,9 @@ export const aiSalesAgentCost: SolutionPageContent = {
     headline: "Cut Your Cost Per Meeting by 80%",
     subheadline:
       "See exactly how much you'd save by adding AI sales agents to your team. Get a custom cost comparison based on your actual pipeline and lead volume.",
-    buttonText: "Get Your Cost Comparison",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
-    footnote: "2-week pilot program available. No contracts. Salesforce & HubSpot integration included.",
+    footnote:
+      "2-week pilot program available. No contracts. Salesforce & HubSpot integration included.",
   },
 };

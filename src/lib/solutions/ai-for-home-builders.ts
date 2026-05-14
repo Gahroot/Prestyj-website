@@ -29,7 +29,8 @@ export const aiForHomeBuilders: SolutionPageContent = {
   },
   painPoints: {
     headline: "Home Building Has Too Many Moving Parts",
-    subheadline: "Every manual process in your operation is a delay, a cost overrun, or a dissatisfied buyer.",
+    subheadline:
+      "Every manual process in your operation is a delay, a cost overrun, or a dissatisfied buyer.",
     points: [
       {
         icon: "PhoneMissed",
@@ -77,7 +78,8 @@ export const aiForHomeBuilders: SolutionPageContent = {
   },
   benefits: {
     headline: "AI-Powered Building From Blueprint to Keys",
-    subheadline: "Automate sales, construction coordination, and compliance so you build better homes, faster.",
+    subheadline:
+      "Automate sales, construction coordination, and compliance so you build better homes, faster.",
     benefits: [
       {
         icon: "Zap",
@@ -166,7 +168,7 @@ export const aiForHomeBuilders: SolutionPageContent = {
     headline: "Build Smarter with AI-Powered Automation",
     subheadline:
       "Transform your home building operation with AI that handles sales follow-up, construction coordination, and buyer communication—so you build more homes with fewer headaches.",
-    buttonText: "Book a Builder Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "See AI scheduling, permit tracking, and buyer communication in action.",
   },

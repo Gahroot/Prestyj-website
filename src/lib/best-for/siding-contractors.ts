@@ -7,7 +7,8 @@ export const sidingContractors: BestForPageContent = createBestForPage({
   niche: {
     name: "Siding Contractors",
     shortName: "Siding Contractors",
-    description: "Siding contractors and home exterior professionals seeking AI-powered lead response",
+    description:
+      "Siding contractors and home exterior professionals seeking AI-powered lead response",
   },
   meta: {
     title: "AI Voice Agents for Siding Contractors | Prestyj",
@@ -202,7 +203,8 @@ export const sidingContractors: BestForPageContent = createBestForPage({
     headline: "Stop Losing $8K-30K Siding Jobs to Slow Response Times",
     subheadline:
       "Homeowners contact 3-5 contractors. The first to respond wins. AI captures every lead in under 60 seconds, qualifies the project, and books consultations before your competition even returns the call.",
-    buttonText: "Book Your Demo",
-    footnote: "No credit card required. Live in 1-2 weeks. Perfect for siding contractors of all sizes.",
+    buttonText: "Book a Demo",
+    footnote:
+      "No credit card required. Live in 1-2 weeks. Perfect for siding contractors of all sizes.",
   },
 });

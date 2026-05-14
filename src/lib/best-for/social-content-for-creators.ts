@@ -133,7 +133,7 @@ export const socialContentForCreators: BestForPageContent = {
     headline: "Grow Faster. Earn More. Post Less.",
     subheadline:
       "Done-for-you social media content for creators. 30–50 platform-native posts per day that grow your audience, land bigger brand deals, and free up your time.",
-    buttonText: "Scale Your Content",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Your voice · Every platform · 30–50 posts/day",
   },

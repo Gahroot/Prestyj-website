@@ -113,8 +113,8 @@ export const mediaBuyersVsSmmaForCompareData: ComparePageData = createComparePag
     title: "Media Buyers Pick the AI Content Engine Over SMMA / Social Media Marketing Agency.",
     description:
       "1,500+ media buyers-researched posts a month across 7 platforms. One flat fee of $3,000/mo. Voice-trained. No contract. Live in days.",
-    buttonText: "See How It Works for Media Buyers",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "Month-to-month · No contract · 1,500+ posts/month",
   },
 });

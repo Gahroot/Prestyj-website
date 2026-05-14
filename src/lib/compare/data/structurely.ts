@@ -1,9 +1,5 @@
 import type { ComparePageData, CompareMetadata } from "../types";
-import {
-  createComparePage,
-  buildCompareFeature,
-  STANDARD_FEATURES,
-} from "@/lib/content-factory";
+import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const structurelyCompareData: ComparePageData = createComparePage({
   slug: "structurely-vs-prestyj",
@@ -63,7 +59,7 @@ export const structurelyCompareData: ComparePageData = createComparePage({
     buildCompareFeature(
       STANDARD_FEATURES.BUILT_IN_CRM,
       false,
-      "Structurely requires separate CRM integration"
+      "Structurely requires separate CRM integration",
     ),
     buildCompareFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, false),
     buildCompareFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
@@ -141,7 +137,7 @@ export const structurelyCompareData: ComparePageData = createComparePage({
     title: "Ready to See Prestyj in Action?",
     description:
       "Book a personalized demo to see how Prestyj can transform your lead management and help you close more deals.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     disclaimer: "No credit card required. See results in minutes.",
   },
 });

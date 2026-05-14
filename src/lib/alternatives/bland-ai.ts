@@ -86,7 +86,7 @@ export const blandAi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Bland: you manage integrations and data pipelines"
+        "Bland: you manage integrations and data pipelines",
       ),
       {
         feature: "Ready-Made Workflows",
@@ -103,7 +103,7 @@ export const blandAi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.RESPONSE_24_7,
         true,
-        "Prestyj configured for receptionist tasks out-of-box"
+        "Prestyj configured for receptionist tasks out-of-box",
       ),
       {
         feature: "Onboarding & Support",
@@ -217,7 +217,7 @@ export const blandAi: AlternativePageContent = createAlternativePage({
     headline: "Ready to Answer Calls Today?",
     subheadline:
       "Stop waiting for developers to build your receptionist. Prestyj is live in 15 minutes with transparent, all-in pricing that won't surprise you.",
-    buttonText: "Book Your Free 15-Minute Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote:
       "See your AI receptionist live with your real phone number. No credit card, no development time, no surprises.",

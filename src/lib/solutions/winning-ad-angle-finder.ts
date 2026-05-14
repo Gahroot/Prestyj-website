@@ -29,7 +29,8 @@ export const winningAdAngleFinder: SolutionPageContent = {
   },
   painPoints: {
     headline: "You Don't Have a Targeting Problem — You Have a Messaging Problem",
-    subheadline: "Most ad accounts fail because the message doesn't match the audience's real motivation.",
+    subheadline:
+      "Most ad accounts fail because the message doesn't match the audience's real motivation.",
     points: [
       {
         icon: "Target",
@@ -149,8 +150,8 @@ export const winningAdAngleFinder: SolutionPageContent = {
     headline: "Stop Guessing Which Message Converts. Test 5 Angles and Let Data Decide.",
     subheadline:
       "5 angles, 300+ variations, delivered in 24 hours. Find your winning ad message through systematic testing.",
-    buttonText: "Start Angle Testing",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "5 angles per batch · Data-driven · 24-hour delivery",
   },
 };

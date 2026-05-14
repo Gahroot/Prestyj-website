@@ -42,7 +42,7 @@ export const paintingContractors: BestForPageContent = createBestForPage({
       icon: "Calendar" as IconName,
       title: "Estimate Booking 24/7",
       description:
-      "AI books painting estimates directly into your calendar. Captures project details: interior/exterior, square footage, timeline, special requirements. You show up to prepared appointments with qualified leads.",
+        "AI books painting estimates directly into your calendar. Captures project details: interior/exterior, square footage, timeline, special requirements. You show up to prepared appointments with qualified leads.",
     },
     {
       icon: "Phone" as IconName,
@@ -213,7 +213,7 @@ export const paintingContractors: BestForPageContent = createBestForPage({
     headline: "Stop Losing $3K-12K Painting Jobs to Slow Response",
     subheadline:
       "Homeowners request multiple quotes. The first responder wins. AI captures every lead instantly, qualifies projects, books estimates 24/7. Win more bids without adding staff.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with interior, exterior, residential, and commercial painting.",
   },
 });

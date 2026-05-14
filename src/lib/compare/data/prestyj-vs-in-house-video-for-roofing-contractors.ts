@@ -107,8 +107,8 @@ export const roofingContractorsVsInHouseVideoCompareData: ComparePageData = crea
     title: "Roofing Pick Batch Over In-House Marketing Hire.",
     description:
       "300-1,000 roofing-researched ads in 24 hours. One flat fee from $1,497. Your real face. No retainer.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment · No subscription · 24-hour turnaround",
   },
 });

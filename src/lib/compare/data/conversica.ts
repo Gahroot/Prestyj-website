@@ -1,9 +1,5 @@
 import type { ComparePageData, CompareMetadata } from "../types";
-import {
-  createComparePage,
-  buildCompareFeature,
-  STANDARD_FEATURES,
-} from "@/lib/content-factory";
+import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const conversicaCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-conversica",
@@ -100,8 +96,7 @@ export const conversicaCompareData: ComparePageData = createComparePage({
   ],
   whySwitch: {
     title: "Why Enterprise Operations Choose Prestyj",
-    description:
-      "Key reasons VPs and Directors at 50+ office operations make the switch",
+    description: "Key reasons VPs and Directors at 50+ office operations make the switch",
     reasons: [
       {
         icon: "Building2",
@@ -153,7 +148,7 @@ export const conversicaCompareData: ComparePageData = createComparePage({
     title: "Ready for a Real Estate-First Solution?",
     description:
       "Book a demo to see how Prestyj handles lead response across your entire operation—no lengthy implementation required.",
-    buttonText: "Book Your Enterprise Demo",
+    buttonText: "Book a Demo",
     disclaimer: "See multi-office capabilities. No commitment required.",
   },
 });
@@ -161,8 +156,7 @@ export const conversicaCompareData: ComparePageData = createComparePage({
 export const conversicaMetadata: CompareMetadata = {
   slug: "prestyj-vs-conversica",
   competitorName: "Conversica",
-  title:
-    "Prestyj vs Conversica: Enterprise Real Estate Lead Response Compared",
+  title: "Prestyj vs Conversica: Enterprise Real Estate Lead Response Compared",
   description:
     "Compare Prestyj and Conversica for 50+ office operations. Conversica costs $2,999+/month with complex setup. See pricing, features, and which is best for your brokerage network.",
   keywords: [

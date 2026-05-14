@@ -85,9 +85,8 @@ export const speedToLead: SolutionPageContent = {
   },
   cta: {
     headline: "Stop Losing the Speed Game",
-    subheadline:
-      "Your next client is filling out a form right now. Will you be first to respond?",
-    buttonText: "Book Your Demo",
+    subheadline: "Your next client is filling out a form right now. Will you be first to respond?",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "See your AI agent in action. No commitment required.",
   },

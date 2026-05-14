@@ -164,6 +164,6 @@ export const isaReplacement: BestForPageContent = createBestForPage({
     headline: "Stop Overpaying for Lead Response",
     subheadline:
       "Calculate your savings: $4,000+/month salary + 15-25% commission splits. Book a demo to see how Prestyj delivers better results at a fraction of the cost.",
-    buttonText: "See Your Potential Savings",
+    buttonText: "Book a Demo",
   },
 });

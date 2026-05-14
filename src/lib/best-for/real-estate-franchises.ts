@@ -7,7 +7,8 @@ export const realEstateFranchises: BestForPageContent = createBestForPage({
   niche: {
     name: "Real Estate Franchises",
     shortName: "Franchises",
-    description: "Multi-location franchise operations requiring standardized lead response across 50+ offices",
+    description:
+      "Multi-location franchise operations requiring standardized lead response across 50+ offices",
   },
   meta: {
     title: "Best AI Lead Response for Real Estate Franchises | Prestyj",
@@ -155,7 +156,7 @@ export const realEstateFranchises: BestForPageContent = createBestForPage({
     headline: "Standardize Lead Response Across Your Franchise",
     subheadline:
       "See how leading franchise operations use Prestyj to ensure consistent lead response across 50+ offices. Portfolio visibility, SLA compliance, and zero turnover risk.",
-    buttonText: "Book a Franchise Demo",
+    buttonText: "Book a Demo",
     footnote: "Enterprise deployment. Multi-location management included.",
   },
 });

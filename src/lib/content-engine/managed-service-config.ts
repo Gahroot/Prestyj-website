@@ -49,17 +49,8 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
     ],
     videoSrc: "/videos/dfy-vsl.mp4",
     videoPoster: "/images/content-engine/vsl-poster.jpg",
-    videoAriaLabel:
-      "Managed social media service demo — fully managed content across 7 platforms",
-    platforms: [
-      "Instagram",
-      "Facebook",
-      "TikTok",
-      "YouTube",
-      "LinkedIn",
-      "Threads",
-      "X",
-    ],
+    videoAriaLabel: "Managed social media service demo — fully managed content across 7 platforms",
+    platforms: ["Instagram", "Facebook", "TikTok", "YouTube", "LinkedIn", "Threads", "X"],
   },
 
   problem: {
@@ -413,12 +404,11 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
     headline: "Stop Managing Social Media. Get a Managed Service.",
     subhead:
       "Live in 24 hours. Fully managed. Cancel anytime. Your social media runs itself from day one.",
-    buttonLabel: "Book Your Demo",
+    buttonLabel: "Book a Demo",
     buttonHref: "/book-demo",
     eventName: "ManagedServiceLeadIntent",
     eventLabel: "final-cta",
-    footnote:
-      "See the managed service running live before you commit.",
+    footnote: "See the managed service running live before you commit.",
     sparkColor: "#7058e3",
   },
 
@@ -429,8 +419,7 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
       {
         id: "minimum",
         name: "Minimum Plan",
-        tagline:
-          "1 managed account — more than most agencies ship manually.",
+        tagline: "1 managed account — more than most agencies ship manually.",
         setupFee: 1500,
         monthlyPrice: 1997,
         accounts: "1 account (brand OR personal)",
@@ -450,8 +439,7 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
       {
         id: "pro",
         name: "Pro Plan",
-        tagline:
-          "Brand + personal brand, fully managed.",
+        tagline: "Brand + personal brand, fully managed.",
         setupFee: 2500,
         monthlyPrice: 2997,
         accounts: "2 accounts (brand + personal)",
@@ -472,8 +460,7 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
       {
         id: "max",
         name: "Max Plan",
-        tagline:
-          "3 accounts. Full managed service across every platform.",
+        tagline: "3 accounts. Full managed service across every platform.",
         setupFee: 4500,
         monthlyPrice: 4997,
         accounts: "3 accounts (brand + personal + niche)",
@@ -492,11 +479,10 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
       },
     ],
     customCta: {
-      headline:
-        "Running 4+ accounts? Agency reselling? Multi-brand operator?",
+      headline: "Running 4+ accounts? Agency reselling? Multi-brand operator?",
       description:
         "We'll build a custom managed service — your account count, your platforms, your volume target.",
-      buttonLabel: "Talk to Us",
+      buttonLabel: "Book a Demo",
       href: "/book-demo",
       eventName: "ManagedServiceLeadIntent",
       eventLabel: "pricing-custom",
@@ -522,20 +508,17 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
       {
         icon: Clock,
         title: "Live in 24 hours",
-        description:
-          "From the moment you grant account access, or your setup fee is refunded.",
+        description: "From the moment you grant account access, or your setup fee is refunded.",
       },
       {
         icon: ShieldCheck,
         title: "Volume guarantee",
-        description:
-          "We hit your post count in 30 days, or we credit the shortfall to next month.",
+        description: "We hit your post count in 30 days, or we credit the shortfall to next month.",
       },
       {
         icon: Ban,
         title: "Cancel anytime",
-        description:
-          "Month-to-month after setup. No long contracts.",
+        description: "Month-to-month after setup. No long contracts.",
       },
     ],
   },
@@ -547,7 +530,6 @@ export const managedSocialMediaServiceConfig: ContentEnginePageConfig = {
     subhead:
       "Walk through the managed service end-to-end — from setup to published posts across every platform.",
     embedUrl: "https://www.loom.com/embed/PLACEHOLDER",
-    iframeTitle:
-      "Managed social media service walkthrough — see the engine running live",
+    iframeTitle: "Managed social media service walkthrough — see the engine running live",
   },
 };

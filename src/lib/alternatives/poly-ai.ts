@@ -87,7 +87,7 @@ export const polyAi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.AI_VOICE,
         true,
-        "Both support voice AI, but Prestyj is optimized for receptionist workflows"
+        "Both support voice AI, but Prestyj is optimized for receptionist workflows",
       ),
       {
         feature: "SMB-Friendly",
@@ -98,7 +98,7 @@ export const polyAi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.APPOINTMENT_BOOKING,
         true,
-        "Prestyj has pre-built booking flows; PolyAI requires custom configuration"
+        "Prestyj has pre-built booking flows; PolyAI requires custom configuration",
       ),
       {
         feature: "24/7 Phone Coverage",
@@ -240,7 +240,7 @@ export const polyAi: AlternativePageContent = createAlternativePage({
     headline: "Ready to Answer Calls Today?",
     subheadline:
       "Skip the enterprise sales cycle and months-long implementation. Prestyj is live in 15 minutes with transparent pricing and industry-specific templates.",
-    buttonText: "Book Your Free 15-Minute Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote:
       "See your AI receptionist live with your real phone number. No enterprise contract, no implementation project, no obligation.",

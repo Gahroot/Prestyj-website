@@ -132,8 +132,8 @@ export const videoAdsForElectricians: BestForPageContent = {
     headline: "300+ Electrician Ads — Panel, EV, Generator, and Emergency Tracks.",
     subheadline:
       "One recording, 300–1,000 ad variations in 24 hours. Scenario-based messaging that sounds like you, not every other electrician.",
-    buttonText: "Pick My Electrical Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

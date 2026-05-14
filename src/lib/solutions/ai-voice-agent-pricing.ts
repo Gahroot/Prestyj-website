@@ -194,7 +194,7 @@ export const aiVoiceAgentPricing: SolutionPageContent = {
     headline: "Get a Custom Pricing Estimate for Your Business",
     subheadline:
       "Tell us your call volume and we'll show you exactly what AI voice agent coverage costs—with no hidden fees and no surprises.",
-    buttonText: "Get Your Custom Quote",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No setup fees. No contracts. Cancel anytime.",
   },

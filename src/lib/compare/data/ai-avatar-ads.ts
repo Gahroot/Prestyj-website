@@ -52,12 +52,32 @@ export const aiAvatarAdsCompareData: ComparePageData = createComparePage({
     { feature: "Scripts written and researched for you", prestyj: true, competitor: false },
     { feature: "Ads per batch", prestyj: "300-1,000", competitor: "Credit / minute capped" },
     { feature: "Pricing model", prestyj: "One-time", competitor: "Recurring SaaS" },
-    { feature: "Trust signal to prospects", prestyj: "Strong — real owner", competitor: "Eroding — prospects spot AI" },
-    { feature: "Platform AI disclosure risk", prestyj: "None", competitor: "Rising — Meta / TikTok / LinkedIn" },
-    { feature: "Turnaround", prestyj: "24 hrs, done-for-you", competitor: "Minutes per render, but script labor is yours" },
-    { feature: "Vertical-specific research (real estate, home services)", prestyj: true, competitor: false },
+    {
+      feature: "Trust signal to prospects",
+      prestyj: "Strong — real owner",
+      competitor: "Eroding — prospects spot AI",
+    },
+    {
+      feature: "Platform AI disclosure risk",
+      prestyj: "None",
+      competitor: "Rising — Meta / TikTok / LinkedIn",
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, done-for-you",
+      competitor: "Minutes per render, but script labor is yours",
+    },
+    {
+      feature: "Vertical-specific research (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
     { feature: "One-take recording session", prestyj: "15-20 min", competitor: "N/A" },
-    { feature: "Cost for 500 finished ads", prestyj: "$1,497-$3,997 flat", competitor: "SaaS + your time scripting 500 ads" },
+    {
+      feature: "Cost for 500 finished ads",
+      prestyj: "$1,497-$3,997 flat",
+      competitor: "SaaS + your time scripting 500 ads",
+    },
   ],
   whySwitch: {
     title: "Why Real-Face Ads Beat AI Avatars in 2026",
@@ -102,17 +122,37 @@ export const aiAvatarAdsCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Arcads", description: "Single-tool comparison", href: "/compare/prestyj-vs-arcads", linkText: "Read comparison" },
-    { title: "vs HeyGen", description: "Single-tool comparison", href: "/compare/prestyj-vs-heygen", linkText: "Read comparison" },
-    { title: "vs Creatify", description: "Single-tool comparison", href: "/compare/prestyj-vs-creatify", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Arcads",
+      description: "Single-tool comparison",
+      href: "/compare/prestyj-vs-arcads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs HeyGen",
+      description: "Single-tool comparison",
+      href: "/compare/prestyj-vs-heygen",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs Creatify",
+      description: "Single-tool comparison",
+      href: "/compare/prestyj-vs-creatify",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Real Beats Synthetic. Every Time.",
     description:
       "Stop renting an AI actor. Show up as yourself in 300-1,000 scripted ads for one flat fee.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -123,5 +163,11 @@ export const aiAvatarAdsMetadata: CompareMetadata = {
   title: "Real Faces Beat AI Avatars in Service Ads | PRESTYJ vs AI",
   description:
     "AI avatar ads feel fake. PRESTYJ produces 300-1,000 scripted video ads with your real face in 24 hours - for $1,497, not $5K+ monthly subscriptions.",
-  keywords: ["ai avatar ads alternative", "real face ugc", "anti-ai ugc", "batch video ads", "owner-led ads"],
+  keywords: [
+    "ai avatar ads alternative",
+    "real face ugc",
+    "anti-ai ugc",
+    "batch video ads",
+    "owner-led ads",
+  ],
 };

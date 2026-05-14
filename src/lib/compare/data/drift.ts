@@ -1,9 +1,5 @@
 import type { ComparePageData, CompareMetadata } from "../types";
-import {
-  createComparePage,
-  buildCompareFeature,
-  STANDARD_FEATURES,
-} from "@/lib/content-factory";
+import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const driftCompareData: ComparePageData = createComparePage({
   slug: "prestyj-vs-drift",
@@ -73,7 +69,7 @@ export const driftCompareData: ComparePageData = createComparePage({
     buildCompareFeature(
       STANDARD_FEATURES.AI_VOICE,
       "Limited",
-      "Drift focuses on chat-first; voice is secondary"
+      "Drift focuses on chat-first; voice is secondary",
     ),
     {
       feature: "Implementation Time",
@@ -173,7 +169,7 @@ export const driftCompareData: ComparePageData = createComparePage({
     title: "Ready for a Real Estate-First Platform?",
     description:
       "See how enterprise real estate operations are choosing purpose-built solutions over generic B2B platforms. Deploy in days, not months.",
-    buttonText: "Book Your Enterprise Demo",
+    buttonText: "Book a Demo",
     disclaimer: "See multi-office capabilities. No 12-week implementation.",
   },
 });

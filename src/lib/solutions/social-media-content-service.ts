@@ -143,7 +143,7 @@ export const socialMediaContentService: SolutionPageContent = {
     {
       question: "Can I mix in my own photos and videos?",
       answer:
-          "Yes — upload your project photos, team shots, and job site images and we'll build content around them. The best social media content combines real business imagery with professional graphics and captions. We handle both.",
+        "Yes — upload your project photos, team shots, and job site images and we'll build content around them. The best social media content combines real business imagery with professional graphics and captions. We handle both.",
     },
     {
       question: "What if I don't like the content direction?",
@@ -155,7 +155,7 @@ export const socialMediaContentService: SolutionPageContent = {
     headline: "Stop Posting When You Have Time. Start Posting on Purpose.",
     subheadline:
       "30–50 branded posts per day, auto-published to every platform. Your weekly time investment: under 30 minutes.",
-    buttonText: "Start Your Content Service",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No design skills needed · 5+ platforms · Weekly approval · Cancel anytime",
   },

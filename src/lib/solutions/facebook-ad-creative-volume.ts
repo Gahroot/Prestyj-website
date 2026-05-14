@@ -99,7 +99,8 @@ export const facebookAdCreativeVolume: SolutionPageContent = {
   },
   objections: {
     headline: "Questions About Facebook Ad Creative Volume",
-    subheadline: "Real concerns from advertisers who've been burning budget on under-optimized campaigns.",
+    subheadline:
+      "Real concerns from advertisers who've been burning budget on under-optimized campaigns.",
     objections: [
       {
         objection: "50 ads per ad set sounds like a lot of budget.",
@@ -149,8 +150,8 @@ export const facebookAdCreativeVolume: SolutionPageContent = {
     headline: "Give the Algorithm 300 Creatives. Watch Your CPL Drop.",
     subheadline:
       "300–1,000 Facebook ad creatives per batch. Enough to exit the learning phase, test systematically, and scale winners. From $1,497.",
-    buttonText: "Get Your Creative Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "300–1,000 creatives · 24-hour delivery · Meta-optimized formats",
   },
 };

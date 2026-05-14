@@ -7,7 +7,8 @@ export const realEstateInvestors: BestForPageContent = createBestForPage({
   niche: {
     name: "Real Estate Investors",
     shortName: "Investors",
-    description: "Real estate investors focused on wholesaling, fix-and-flip, rental acquisitions, and buying from motivated sellers",
+    description:
+      "Real estate investors focused on wholesaling, fix-and-flip, rental acquisitions, and buying from motivated sellers",
   },
   meta: {
     title: "Best AI for Real Estate Investors | Prestyj",
@@ -150,6 +151,6 @@ export const realEstateInvestors: BestForPageContent = createBestForPage({
     headline: "Stop Wasting Time on Unmotivated Sellers",
     subheadline:
       "See how Prestyj qualifies motivated sellers, collects property details, and books walkthroughs automatically. Book a demo and watch AI handle investor leads in real-time.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
   },
 });

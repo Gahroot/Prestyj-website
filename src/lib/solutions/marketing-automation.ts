@@ -58,7 +58,8 @@ export const marketingAutomation: SolutionPageContent = {
   },
   benefits: {
     headline: "Automate Your Way to Better Marketing ROI",
-    subheadline: "Our AI-powered marketing automation handles optimization so you can focus on growth.",
+    subheadline:
+      "Our AI-powered marketing automation handles optimization so you can focus on growth.",
     benefits: [
       {
         icon: "RefreshCw",
@@ -189,7 +190,7 @@ export const marketingAutomation: SolutionPageContent = {
     headline: "Ready to Automate Your Marketing ROI?",
     subheadline:
       "Stop wasting budget on unoptimized campaigns. See how AI-powered marketing automation can transform your results.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No commitment required. See the automation in action with your own campaigns.",
   },

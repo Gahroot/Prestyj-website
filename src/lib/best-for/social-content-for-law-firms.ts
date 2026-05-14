@@ -161,7 +161,7 @@ export const socialContentForLawFirms: BestForPageContent = {
     headline: "Your Competitors Are Posting Right Now. Are You?",
     subheadline:
       "Compliance-ready social content for law firms. 30–50 posts/day, bar-compliant, local SEO-optimized, and practice-area specific. Build authority and attract high-value clients.",
-    buttonText: "Start Building Authority",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Bar-compliant · Local SEO optimized · Practice-area specific",
   },

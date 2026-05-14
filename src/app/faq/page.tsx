@@ -103,9 +103,7 @@ export default function FAQPage() {
                 work in your marketing and sales funnel.
               </p>
               <Button size="lg" className="px-10 py-6 text-lg" asChild>
-                <Link href="/book-demo">
-                  Book Your Free Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
+                <Link href="/book-demo">Book a Demo<ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <p className="text-muted-foreground mt-6 text-sm">

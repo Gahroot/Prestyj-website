@@ -139,6 +139,6 @@ export const soloAgents: BestForPageContent = createBestForPage({
     headline: "Stop Missing Leads While You're Busy Selling",
     subheadline:
       "See how Prestyj gives you the lead response of a full team without the overhead. Book a free demo and watch AI engage your leads in real-time.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
   },
 });

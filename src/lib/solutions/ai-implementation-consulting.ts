@@ -101,7 +101,8 @@ export const aiImplementationConsulting: SolutionPageContent = {
   },
   objections: {
     headline: "What Business Leaders Ask About AI Consulting",
-    subheadline: "Questions from CEOs, COOs, and operations leaders evaluating AI for their business.",
+    subheadline:
+      "Questions from CEOs, COOs, and operations leaders evaluating AI for their business.",
     objections: [
       {
         objection: "Can't I just figure this out myself with ChatGPT?",
@@ -161,7 +162,7 @@ export const aiImplementationConsulting: SolutionPageContent = {
     headline: "Stop Guessing at AI. Start With a Plan That Works.",
     subheadline:
       "AI implementation consulting that identifies the right use cases, designs the rollout, and ensures measurable ROI — before you spend a dollar on the wrong tool.",
-    buttonText: "Get Your AI Assessment",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Businesses with 5–500 employees · 4–6 week engagement · ROI framework included",
   },

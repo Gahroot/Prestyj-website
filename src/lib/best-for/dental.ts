@@ -7,7 +7,8 @@ export const dental: BestForPageContent = createBestForPage({
   niche: {
     name: "Dental Offices",
     shortName: "Dental",
-    description: "Dental practices looking for AI-powered patient communication and appointment management",
+    description:
+      "Dental practices looking for AI-powered patient communication and appointment management",
   },
   meta: {
     title: "AI Agents for Dental Offices | Reduce No-Shows & Automate Scheduling | Prestyj",
@@ -171,7 +172,7 @@ export const dental: BestForPageContent = createBestForPage({
     headline: "Stop Losing $150-$300 Per No-Show Appointment",
     subheadline:
       "Reduce no-shows by 60%, capture every new patient call, and give your front desk 15 hours back every week. Book a demo to see the impact on your practice.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "HIPAA-compliant. No credit card required. Works with all major dental software.",
   },
 });

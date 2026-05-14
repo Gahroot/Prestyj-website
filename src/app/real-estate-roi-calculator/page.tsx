@@ -85,50 +85,49 @@ export default function RealEstateROICalculatorPage() {
     };
   }, [inputs]);
 
-  const handleInputChange = (field: keyof CalculatorInputs) => (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const value = parseFloat(e.target.value) || 0;
-    setInputs((prev) => ({ ...prev, [field]: value }));
-  };
+  const handleInputChange =
+    (field: keyof CalculatorInputs) => (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = parseFloat(e.target.value) || 0;
+      setInputs((prev) => ({ ...prev, [field]: value }));
+    };
 
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-background to-muted/20 pt-16">
+      <main className="from-background to-muted/20 min-h-screen bg-gradient-to-b pt-16">
         {/* Hero */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              <Calculator className="w-4 h-4" />
+        <section className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="bg-primary/10 text-primary mb-6 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
+              <Calculator className="h-4 w-4" />
               Real Estate AI ROI Calculator
             </div>
-            <h1 className="text-4xl sm:text-5xl font-heading font-bold tracking-tighter mb-6">
+            <h1 className="font-heading mb-6 text-4xl font-bold tracking-tighter sm:text-5xl">
               How Much Revenue Is Slow Lead Response{" "}
               <span className="text-primary">Costing Your Team?</span>
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Enter your team&apos;s numbers below. See exactly how many additional closings AI
-              lead response would generate — and what that means in commission revenue.
+            <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
+              Enter your team&apos;s numbers below. See exactly how many additional closings AI lead
+              response would generate — and what that means in commission revenue.
             </p>
           </div>
         </section>
 
         {/* Calculator */}
-        <section className="pb-24 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-8">
+        <section className="px-4 pb-24 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-5xl">
+            <div className="grid gap-8 lg:grid-cols-2">
               {/* Inputs */}
               <BorderGlow borderRadius={18} innerClassName="p-8 space-y-6">
-                <h2 className="text-xl font-heading font-bold">Your Team&apos;s Numbers</h2>
+                <h2 className="font-heading text-xl font-bold">Your Team&apos;s Numbers</h2>
 
                 <div className="space-y-5">
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="mb-2 block text-sm font-medium">
                       Monthly Ad Spend (Facebook + YouTube)
                     </label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
+                      <span className="text-muted-foreground absolute top-1/2 left-4 -translate-y-1/2">
                         $
                       </span>
                       <input
@@ -136,17 +135,15 @@ export default function RealEstateROICalculatorPage() {
                         value={inputs.monthlyAdSpend}
                         onChange={handleInputChange("monthlyAdSpend")}
                         min="0"
-                        className="w-full pl-8 pr-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        className="border-border bg-background focus:ring-primary w-full rounded-lg border py-3 pr-4 pl-8 transition-all focus:ring-2 focus:outline-none"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">
-                      Average Cost Per Lead
-                    </label>
+                    <label className="mb-2 block text-sm font-medium">Average Cost Per Lead</label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
+                      <span className="text-muted-foreground absolute top-1/2 left-4 -translate-y-1/2">
                         $
                       </span>
                       <input
@@ -154,16 +151,16 @@ export default function RealEstateROICalculatorPage() {
                         value={inputs.costPerLead}
                         onChange={handleInputChange("costPerLead")}
                         min="0"
-                        className="w-full pl-8 pr-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        className="border-border bg-background focus:ring-primary w-full rounded-lg border py-3 pr-4 pl-8 transition-all focus:ring-2 focus:outline-none"
                       />
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1">
+                    <p className="text-muted-foreground mt-1 text-xs">
                       Facebook RE leads average $25–$60. YouTube $40–$120.
                     </p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="mb-2 block text-sm font-medium">
                       Current Lead-to-Appointment Rate (%)
                     </label>
                     <div className="relative">
@@ -174,23 +171,23 @@ export default function RealEstateROICalculatorPage() {
                         min="0"
                         max="100"
                         step="0.5"
-                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:ring-2 focus:outline-none"
                       />
-                      <span className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground">
+                      <span className="text-muted-foreground absolute top-1/2 right-4 -translate-y-1/2">
                         %
                       </span>
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1">
+                    <p className="text-muted-foreground mt-1 text-xs">
                       Industry average without AI: 1–3%. With AI: 5–10%.
                     </p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="mb-2 block text-sm font-medium">
                       Average Commission Per Closing
                     </label>
                     <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground">
+                      <span className="text-muted-foreground absolute top-1/2 left-4 -translate-y-1/2">
                         $
                       </span>
                       <input
@@ -199,16 +196,16 @@ export default function RealEstateROICalculatorPage() {
                         onChange={handleInputChange("averageCommission")}
                         min="0"
                         step="500"
-                        className="w-full pl-8 pr-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                        className="border-border bg-background focus:ring-primary w-full rounded-lg border py-3 pr-4 pl-8 transition-all focus:ring-2 focus:outline-none"
                       />
                     </div>
-                    <p className="text-xs text-muted-foreground mt-1">
+                    <p className="text-muted-foreground mt-1 text-xs">
                       Total brokerage commission (both sides) per deal.
                     </p>
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="mb-2 block text-sm font-medium">
                       Team Size (Number of Agents)
                     </label>
                     <input
@@ -216,12 +213,12 @@ export default function RealEstateROICalculatorPage() {
                       value={inputs.teamSize}
                       onChange={handleInputChange("teamSize")}
                       min="1"
-                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary transition-all"
+                      className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:ring-2 focus:outline-none"
                     />
                   </div>
                 </div>
 
-                <div className="bg-muted/50 rounded-lg p-4 text-sm text-muted-foreground">
+                <div className="bg-muted/50 text-muted-foreground rounded-lg p-4 text-sm">
                   <p>
                     <strong>Assumptions:</strong> AI conversion rate of {AI_CONVERSION_RATE}%
                     (conservative estimate based on client data), 25% appointment-to-closing rate,
@@ -234,87 +231,89 @@ export default function RealEstateROICalculatorPage() {
               <div className="space-y-4">
                 {/* Monthly Lead Volume */}
                 <BorderGlow borderRadius={18} innerClassName="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <Users className="h-5 w-5 text-primary" />
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="bg-primary/10 rounded-lg p-2">
+                      <Users className="text-primary h-5 w-5" />
                     </div>
                     <h3 className="font-heading font-semibold">Monthly Lead Volume</h3>
                   </div>
-                  <div className="text-4xl font-heading font-bold text-foreground mb-1">
+                  <div className="font-heading text-foreground mb-1 text-4xl font-bold">
                     {results.monthlyLeads}
                   </div>
-                  <p className="text-sm text-muted-foreground">leads per month from your ad spend</p>
+                  <p className="text-muted-foreground text-sm">
+                    leads per month from your ad spend
+                  </p>
                 </BorderGlow>
 
                 {/* Appointments Comparison */}
                 <BorderGlow borderRadius={18} innerClassName="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <TrendingUp className="h-5 w-5 text-primary" />
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="bg-primary/10 rounded-lg p-2">
+                      <TrendingUp className="text-primary h-5 w-5" />
                     </div>
                     <h3 className="font-heading font-semibold">Monthly Appointments</h3>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">Without AI</p>
-                      <div className="text-3xl font-heading font-bold text-muted-foreground">
+                      <p className="text-muted-foreground mb-1 text-sm">Without AI</p>
+                      <div className="font-heading text-muted-foreground text-3xl font-bold">
                         {formatNumber(results.currentAppointments)}
                       </div>
                     </div>
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">With AI</p>
-                      <div className="text-3xl font-heading font-bold text-primary">
+                      <p className="text-muted-foreground mb-1 text-sm">With AI</p>
+                      <div className="font-heading text-primary text-3xl font-bold">
                         {formatNumber(results.aiAppointments)}
                       </div>
                     </div>
                   </div>
-                  <div className="mt-3 pt-3 border-t border-border">
-                    <p className="text-sm text-muted-foreground">
+                  <div className="border-border mt-3 border-t pt-3">
+                    <p className="text-muted-foreground text-sm">
                       +{formatNumber(results.additionalAppointments)} additional appointments/month
                     </p>
                   </div>
                 </BorderGlow>
 
                 {/* Revenue Impact */}
-                <div className="bg-primary/5 rounded-2xl border border-primary/20 p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-primary/10 rounded-lg">
-                      <DollarSign className="h-5 w-5 text-primary" />
+                <div className="bg-primary/5 border-primary/20 rounded-2xl border p-6">
+                  <div className="mb-4 flex items-center gap-3">
+                    <div className="bg-primary/10 rounded-lg p-2">
+                      <DollarSign className="text-primary h-5 w-5" />
                     </div>
                     <h3 className="font-heading font-semibold">Revenue Impact</h3>
                   </div>
 
                   <div className="space-y-4">
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">
+                      <p className="text-muted-foreground mb-1 text-sm">
                         Additional Monthly Revenue
                       </p>
-                      <div className="text-3xl font-heading font-bold text-primary">
+                      <div className="font-heading text-primary text-3xl font-bold">
                         {formatCurrency(results.additionalMonthlyRevenue)}
                       </div>
                     </div>
 
                     <div>
-                      <p className="text-sm text-muted-foreground mb-1">
+                      <p className="text-muted-foreground mb-1 text-sm">
                         Additional Annual Revenue
                       </p>
-                      <div className="text-4xl font-heading font-bold text-primary">
+                      <div className="font-heading text-primary text-4xl font-bold">
                         {formatCurrency(results.additionalAnnualRevenue)}
                       </div>
                     </div>
 
-                    <div className="border-t border-primary/20 pt-4">
-                      <p className="text-sm text-muted-foreground mb-1">
+                    <div className="border-primary/20 border-t pt-4">
+                      <p className="text-muted-foreground mb-1 text-sm">
                         Annual AI Cost (Prestyj Pro)
                       </p>
-                      <div className="text-xl font-heading font-semibold text-muted-foreground">
+                      <div className="font-heading text-muted-foreground text-xl font-semibold">
                         -{formatCurrency(results.aiCost * 12)}
                       </div>
                     </div>
 
                     <div className="bg-primary/10 rounded-lg p-4">
-                      <p className="text-sm font-medium text-primary mb-1">Net Annual ROI</p>
-                      <div className="text-3xl font-heading font-bold text-primary">
+                      <p className="text-primary mb-1 text-sm font-medium">Net Annual ROI</p>
+                      <div className="font-heading text-primary text-3xl font-bold">
                         {formatCurrency(results.netAnnualROI)}
                       </div>
                     </div>
@@ -323,21 +322,19 @@ export default function RealEstateROICalculatorPage() {
 
                 {/* CTA */}
                 <BorderGlow borderRadius={18} innerClassName="p-6 text-center">
-                  <h3 className="font-heading font-bold text-lg mb-2">
+                  <h3 className="font-heading mb-2 text-lg font-bold">
                     Ready to Unlock This Revenue?
                   </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Book a strategy call. We&apos;ll show you exactly how AI lead response works
-                    for your team&apos;s specific setup.
+                  <p className="text-muted-foreground mb-4 text-sm">
+                    Book a strategy call. We&apos;ll show you exactly how AI lead response works for
+                    your team&apos;s specific setup.
                   </p>
                   <Link
                     href="/book-demo"
-                    className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-colors"
-                  >
-                    Book Your Free Demo
-                    <ArrowRight className="w-4 h-4" />
+                    className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium transition-colors"
+                  >Book a Demo<ArrowRight className="h-4 w-4" />
                   </Link>
-                  <p className="text-xs text-muted-foreground mt-3">
+                  <p className="text-muted-foreground mt-3 text-xs">
                     No credit card required. 30-minute call.
                   </p>
                 </BorderGlow>
@@ -345,9 +342,9 @@ export default function RealEstateROICalculatorPage() {
             </div>
 
             {/* Methodology Note */}
-            <div className="mt-8 p-6 bg-muted/30 rounded-xl border border-border">
-              <h3 className="font-heading font-semibold mb-2">How We Calculate This</h3>
-              <p className="text-sm text-muted-foreground">
+            <div className="bg-muted/30 border-border mt-8 rounded-xl border p-6">
+              <h3 className="font-heading mb-2 font-semibold">How We Calculate This</h3>
+              <p className="text-muted-foreground text-sm">
                 Monthly leads = Monthly ad spend ÷ Cost per lead. Current appointments = Leads ×
                 your current conversion rate. AI appointments = Leads × 7% (conservative AI
                 conversion rate based on client data; some teams see 10%+). Closings = Appointments

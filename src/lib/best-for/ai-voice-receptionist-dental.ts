@@ -7,7 +7,8 @@ export const aiVoiceReceptionistDental: BestForPageContent = createBestForPage({
   niche: {
     name: "AI Voice Receptionist for Dental",
     shortName: "Dental Voice AI",
-    description: "Dental practices needing intelligent call handling that manages appointment routing, emergency triage, and high-volume patient communication",
+    description:
+      "Dental practices needing intelligent call handling that manages appointment routing, emergency triage, and high-volume patient communication",
   },
   meta: {
     title: "AI Voice Receptionist for Dental | Handle Emergencies & Calls 24/7 | Prestyj",
@@ -82,7 +83,8 @@ export const aiVoiceReceptionistDental: BestForPageContent = createBestForPage({
         "AI identifies consultation type during the call, asks cosmetic-specific questions (smile goals, timeline, budget awareness), and routes to cosmetic specialist or schedules dedicated consultation. Higher close rate, better patient experience.",
     },
     {
-      problem: "Multi-location dental groups lose appointment opportunities when calls go to wrong office",
+      problem:
+        "Multi-location dental groups lose appointment opportunities when calls go to wrong office",
       solution:
         "AI understands your group structure and specialties at each location. Patient calls with implant questions? Routes to implant specialist location. Orthodontic follow-up? Routes to ortho office. Balanced scheduling across all locations.",
     },
@@ -92,18 +94,24 @@ export const aiVoiceReceptionistDental: BestForPageContent = createBestForPage({
         "AI triages after-hours emergency calls and notifies on-call dentist within 30 seconds. Routine calls get logged for morning callback. Critical emergencies never rely on voicemail alone.",
     },
     {
-      problem: "Insurance pre-auth and complex cases take 30+ minutes to schedule because AI can't handle nuance",
+      problem:
+        "Insurance pre-auth and complex cases take 30+ minutes to schedule because AI can't handle nuance",
       solution:
         "AI gathers detailed case information (crown work, extractions, implants, pre-existing conditions), identifies insurance pre-auth needs, and flags complex cases for your scheduler to handle with all context provided. Speeds up complex scheduling.",
     },
     {
-      problem: "Anxious patients or patients with special needs get standard treatment—poor experience",
+      problem:
+        "Anxious patients or patients with special needs get standard treatment—poor experience",
       solution:
-        "AI learns from notes in your system: \"Claustrophobic,\" \"IV sedation required,\" \"pediatric patient.\" Acknowledges special needs during call, schedules appropriately, and gives your team advance warning for proper setup.",
+        'AI learns from notes in your system: "Claustrophobic," "IV sedation required," "pediatric patient." Acknowledges special needs during call, schedules appropriately, and gives your team advance warning for proper setup.',
     },
   ],
   comparison: {
-    headers: ["Factor", "Prestyj AI Voice Receptionist", "Human Receptionist + Traditional Phone System"],
+    headers: [
+      "Factor",
+      "Prestyj AI Voice Receptionist",
+      "Human Receptionist + Traditional Phone System",
+    ],
     rows: [
       {
         feature: "Emergency Response Time",
@@ -209,7 +217,7 @@ export const aiVoiceReceptionistDental: BestForPageContent = createBestForPage({
     headline: "Never Miss an Emergency Call Again",
     subheadline:
       "See how AI voice receptionist handles complex routing, emergency triage, and call volume 24/7. Reduce missed calls by 50%, free up 20+ hours per week, and give your team back their sanity. Schedule a demo tailored to your dental practice.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "HIPAA-compliant. Works with all major dental software. No credit card required.",
   },
 });

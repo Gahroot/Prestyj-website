@@ -149,7 +149,7 @@ export const socialMediaPostingService: SolutionPageContent = {
     headline: "Your Social Media, Fully Managed. $497/Month.",
     subheadline:
       "30–50 branded posts per day, auto-published to every platform. 5 minutes per week to approve. Cancel anytime.",
-    buttonText: "Start Done-For-You Posting",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No contracts · No design skills needed · Cancel anytime",
   },

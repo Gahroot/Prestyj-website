@@ -31,7 +31,8 @@ export const adCreativeTestingAgency: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Traditional Creative Agencies Can't Test Properly",
-    subheadline: "Their production capacity is fundamentally too low for systematic creative testing.",
+    subheadline:
+      "Their production capacity is fundamentally too low for systematic creative testing.",
     points: [
       {
         icon: "TrendingDown",
@@ -101,7 +102,8 @@ export const adCreativeTestingAgency: SolutionPageContent = {
   },
   objections: {
     headline: "What Performance Marketers Ask",
-    subheadline: "Questions from media buyers, growth leads, and CMOs comparing creative solutions.",
+    subheadline:
+      "Questions from media buyers, growth leads, and CMOs comparing creative solutions.",
     objections: [
       {
         objection: "We already have an agency — why add another creative partner?",
@@ -161,8 +163,8 @@ export const adCreativeTestingAgency: SolutionPageContent = {
     headline: "Get 300+ Ads for Less Than Your Agency Charges for 5.",
     subheadline:
       "Ad creative testing at scale: 300–1,000 variations from one recording, delivered in 24 hours, at $1.50–$5 per ad. Find your winning creative in days, not months.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing · No retainers · Works with your existing agency",
   },
 };

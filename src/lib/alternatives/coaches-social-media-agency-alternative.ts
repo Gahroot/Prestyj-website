@@ -223,8 +223,8 @@ export const coachesSocialMediaAgencyAlternative: AlternativePageContent = creat
     headline: "Replace the Coaches Agency Retainer with an AI Content Engine",
     subheadline:
       "See how Prestyj ships 1,500+ posts/month across 7 platforms for business, executive, and life coaches selling $2K–$25K coaching programs and group offers — for less than half the cost of a traditional social media agency. No retainer. No contract. No account manager.",
-    buttonText: "See How It Works for Coaches",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "$3,000/mo flat · 1,500+ posts/mo · 7 platforms · No contract",
   },
 });

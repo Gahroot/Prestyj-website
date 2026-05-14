@@ -149,7 +149,7 @@ export const aiInstagramPostsService: SolutionPageContent = {
     headline: "Instagram Growth Without the Daily Content Grind.",
     subheadline:
       "AI Instagram posts — carousels, reels, stories, and image posts. Branded, designed, and auto-published daily.",
-    buttonText: "Start Your Instagram Service",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Carousels · Reels · Stories · Auto-published · $497/month",
   },

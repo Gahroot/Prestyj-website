@@ -7,7 +7,8 @@ export const hvac: BestForPageContent = createBestForPage({
   niche: {
     name: "HVAC Companies",
     shortName: "HVAC",
-    description: "HVAC contractors and home service businesses looking for AI-powered customer response",
+    description:
+      "HVAC contractors and home service businesses looking for AI-powered customer response",
   },
   meta: {
     title: "AI Agents for HVAC Companies | 24/7 Service Calls | Prestyj",
@@ -154,7 +155,7 @@ export const hvac: BestForPageContent = createBestForPage({
     headline: "Stop Losing Emergency Calls to Voicemail",
     subheadline:
       "Every missed call is revenue to your competitor. Book a demo to see how AI keeps you first in line for every service request.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "No credit card required. Perfect for HVAC contractors of all sizes.",
   },
 });

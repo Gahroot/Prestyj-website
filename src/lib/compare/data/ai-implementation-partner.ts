@@ -46,8 +46,7 @@ export const aiImplementationPartnerCompareData: ComparePageData = createCompare
     {
       value: "40-60%",
       label: "Cost savings with specialized consultants",
-      description:
-        "Implementation partners have higher overhead and longer project cycles",
+      description: "Implementation partners have higher overhead and longer project cycles",
     },
   ],
   pricing: {
@@ -67,11 +66,19 @@ export const aiImplementationPartnerCompareData: ComparePageData = createCompare
       price: "$15,000-50,000+ per project",
       priceSubtext: "Implementation fees, plus separate strategy fees",
       features: [
-        { text: "Technical execution only", included: true, note: "Strategy is separate or missing" },
+        {
+          text: "Technical execution only",
+          included: true,
+          note: "Strategy is separate or missing",
+        },
         { text: "Custom build from scratch", included: true, note: "Slower, more expensive" },
         { text: "Generalist (non-industry specific)", included: true },
         { text: "Separate strategy consulting", included: true, note: "Additional $5K-20K" },
-        { text: "Maintenance and optimization separate", included: true, note: "Extra $3K-10K/month" },
+        {
+          text: "Maintenance and optimization separate",
+          included: true,
+          note: "Extra $3K-10K/month",
+        },
         { text: "Long implementation cycles", included: true, note: "3-6 months typical" },
       ],
     },
@@ -172,29 +179,25 @@ export const aiImplementationPartnerCompareData: ComparePageData = createCompare
   relatedResources: [
     {
       title: "AI Consulting Engagement Models Explained",
-      description:
-        "Retainers, project-based, hourly, outcome-based—what each model means.",
+      description: "Retainers, project-based, hourly, outcome-based—what each model means.",
       href: "/blog/ai-consulting-engagement-models-explained-2026",
       linkText: "Compare engagement models",
     },
     {
       title: "AI Consultant vs. AI Agency",
-      description:
-        "Specialized consultant vs. full agency team—which delivers better ROI?",
+      description: "Specialized consultant vs. full agency team—which delivers better ROI?",
       href: "/compare/ai-consultant-vs-ai-agency",
       linkText: "Compare consultants to agencies",
     },
     {
       title: "AI Consultant Deliverables: What to Expect",
-      description:
-        "Scope, timeline, outcomes—what AI consultants should actually deliver.",
+      description: "Scope, timeline, outcomes—what AI consultants should actually deliver.",
       href: "/blog/ai-consultant-deliverables-2026",
       linkText: "Understand deliverables",
     },
     {
       title: "AI Pilot Program Consulting",
-      description:
-        "Test before committing to full implementation with a controlled pilot.",
+      description: "Test before committing to full implementation with a controlled pilot.",
       href: "/solutions/ai-pilot-program-consulting",
       linkText: "Explore pilot programs",
     },
@@ -203,7 +206,7 @@ export const aiImplementationPartnerCompareData: ComparePageData = createCompare
     title: "Need Strategy AND Execution?",
     description:
       "Get the strategic guidance of a consultant plus the hands-on execution of an implementation partner—all in one, at 40-60% less than traditional implementation partners.",
-    buttonText: "See Your Custom Approach",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     disclaimer:
       "No commitment required. We'll show you how we combine strategy and execution for your specific use case.",
@@ -213,8 +216,7 @@ export const aiImplementationPartnerCompareData: ComparePageData = createCompare
 export const aiImplementationPartnerMetadata: CompareMetadata = {
   slug: "ai-implementation-partner-vs-consultant",
   competitorName: "AI Implementation Partners",
-  title:
-    "AI Implementation Partner vs. Consultant: Strategy + Execution | 2026",
+  title: "AI Implementation Partner vs. Consultant: Strategy + Execution | 2026",
   description:
     "Compare AI implementation partners (technical execution) vs. AI consultants (strategy + execution). Learn why specialized consultants deliver 70%+ success rates vs. 30% for partners.",
   keywords: [

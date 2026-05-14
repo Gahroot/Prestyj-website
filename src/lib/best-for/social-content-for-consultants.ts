@@ -57,7 +57,8 @@ export const socialContentForConsultants: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your LinkedIn goes silent during client engagements — exactly when prospects are checking you out",
+      problem:
+        "Your LinkedIn goes silent during client engagements — exactly when prospects are checking you out",
       solution:
         "Prestyj produces content 7 days a week, 365 days a year. Your LinkedIn stays active during your heaviest delivery sprints. Prospects see a consistent thought leader — not someone who posts three times between engagements and disappears when things get busy.",
     },
@@ -133,7 +134,7 @@ export const socialContentForConsultants: BestForPageContent = {
     headline: "Your Next Six-Figure Engagement Starts on LinkedIn.",
     subheadline:
       "Done-for-you social media content for B2B consultants. 30–50 authority-building posts per day — case studies, frameworks, and thought leadership that fills your pipeline with qualified buyers.",
-    buttonText: "Build Your LinkedIn Authority",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Your frameworks · Your voice · $25K+ buyers in your DMs",
   },

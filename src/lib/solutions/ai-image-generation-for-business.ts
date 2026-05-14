@@ -31,7 +31,8 @@ export const aiImageGenerationForBusiness: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Businesses Settle for Bad Visual Content",
-    subheadline: "The choice has always been: spend hours making images or use stock photos that look like everyone else's.",
+    subheadline:
+      "The choice has always been: spend hours making images or use stock photos that look like everyone else's.",
     points: [
       {
         icon: "Clock",
@@ -161,7 +162,7 @@ export const aiImageGenerationForBusiness: SolutionPageContent = {
     headline: "Replace Stock Photos With Branded AI Images.",
     subheadline:
       "Generate 100+ on-brand, industry-specific images per month — for social media, ads, email, and your website. No designer, no stock subscriptions, no time investment.",
-    buttonText: "See the Image Studio",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Commercial license included · Platform-optimized sizes · On-brand guaranteed",
   },

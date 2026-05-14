@@ -8,12 +8,10 @@ export const internalIsa: AlternativePageContent = createAlternativePage({
     name: "Internal ISA Teams",
     shortName: "Internal ISA",
     pricing: "$57K-$69K/year per ISA + benefits",
-    description:
-      "In-house Inside Sales Agents hired, trained, and managed by your brokerage",
+    description: "In-house Inside Sales Agents hired, trained, and managed by your brokerage",
   },
   meta: {
-    title:
-      "Internal ISA Team Alternative for Enterprise Real Estate | Prestyj",
+    title: "Internal ISA Team Alternative for Enterprise Real Estate | Prestyj",
     description:
       "Compare AI lead response vs. internal ISA teams for 50+ office operations. See the real costs: 30% annual turnover, 4-5 month ramp time, and management overhead.",
     keywords: [
@@ -67,15 +65,13 @@ export const internalIsa: AlternativePageContent = createAlternativePage({
         feature: "Multi-Office Scalability",
         prestyj: true,
         competitor: "Difficult",
-        note:
-          "Scaling ISA teams across 50+ offices requires significant hiring and management overhead",
+        note: "Scaling ISA teams across 50+ offices requires significant hiring and management overhead",
       },
       {
         feature: "No Turnover Risk",
         prestyj: true,
         competitor: false,
-        note:
-          "30% annual turnover means constant recruitment and retraining cycles",
+        note: "30% annual turnover means constant recruitment and retraining cycles",
       },
       {
         feature: "Instant Ramp-Up",
@@ -194,7 +190,7 @@ export const internalIsa: AlternativePageContent = createAlternativePage({
     headline: "Ready to Move Beyond ISA Team Challenges?",
     subheadline:
       "See how enterprise brokerages are replacing unpredictable ISA teams with consistent AI lead response. Portfolio visibility, zero turnover, and 24/7 coverage included.",
-    buttonText: "Book Your Enterprise Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "See multi-office deployment. Calculate your ISA cost savings.",
   },

@@ -162,7 +162,7 @@ export const internalIsaTeamCompareData: ComparePageData = createComparePage({
     title: "Ready to Move Beyond ISA Challenges?",
     description:
       "See how enterprise brokerages are replacing unpredictable ISA teams with consistent AI lead response. Calculate your potential savings.",
-    buttonText: "Book Your Enterprise Demo",
+    buttonText: "Book a Demo",
     disclaimer: "See multi-office deployment. Calculate your ISA cost savings.",
   },
 });

@@ -138,7 +138,7 @@ export const socialContentForSaasFounders: BestForPageContent = {
     headline: "Stop Being the Best-Kept Secret in SaaS.",
     subheadline:
       "Build-in-public content engine for SaaS founders. 30–50 posts/day on LinkedIn and X. Founder-led marketing that drives trial signups, not just likes.",
-    buttonText: "Start Building in Public",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No marketing hire needed · LinkedIn + X optimized · Founder voice preserved",
   },

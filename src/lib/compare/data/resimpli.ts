@@ -1,9 +1,5 @@
 import type { ComparePageData, CompareMetadata } from "../types";
-import {
-  createComparePage,
-  buildCompareFeature,
-  STANDARD_FEATURES,
-} from "@/lib/content-factory";
+import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const resimpliCompareData: ComparePageData = createComparePage({
   slug: "resimpli-vs-prestyj",
@@ -57,12 +53,24 @@ export const resimpliCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    buildCompareFeature(STANDARD_FEATURES.AI_TEXT, false, "REsimpli has basic SMS, not conversational AI"),
-    buildCompareFeature(STANDARD_FEATURES.AI_VOICE, false, "Dialer is manual/auto-dial, not AI voice agent"),
+    buildCompareFeature(
+      STANDARD_FEATURES.AI_TEXT,
+      false,
+      "REsimpli has basic SMS, not conversational AI",
+    ),
+    buildCompareFeature(
+      STANDARD_FEATURES.AI_VOICE,
+      false,
+      "Dialer is manual/auto-dial, not AI voice agent",
+    ),
     buildCompareFeature(STANDARD_FEATURES.RESPONSE_24_7, false),
     buildCompareFeature(STANDARD_FEATURES.BUILT_IN_CRM, true),
     buildCompareFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, false),
-    buildCompareFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, false, "Basic list filtering, not AI qualification"),
+    buildCompareFeature(
+      STANDARD_FEATURES.LEAD_QUALIFICATION,
+      false,
+      "Basic list filtering, not AI qualification",
+    ),
     {
       feature: "Skip Tracing",
       prestyj: false,
@@ -131,7 +139,7 @@ export const resimpliCompareData: ComparePageData = createComparePage({
     title: "Ready to See Prestyj in Action?",
     description:
       "Book a personalized demo to see how Prestyj's advanced AI agents can convert more leads across your real estate vertical.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     disclaimer: "No credit card required. See results in minutes.",
   },
 });

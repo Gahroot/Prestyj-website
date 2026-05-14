@@ -13,8 +13,7 @@ export const lindy: AlternativePageContent = createAlternativePage({
     shortName: "Lindy",
     pricing: "Starting at $299/month",
     website: "https://lindy.ai",
-    description:
-      "End-to-end AI agent platform for lead generation and business automation",
+    description: "End-to-end AI agent platform for lead generation and business automation",
   },
   meta: {
     title: "Best Lindy AI Alternative for Real Estate | Prestyj",
@@ -188,7 +187,7 @@ export const lindy: AlternativePageContent = createAlternativePage({
     headline: "Choose Voice Expertise Over Generic Automation",
     subheadline:
       "Lindy is great for general business automation. But for real estate voice calling that actually converts, Prestyj is the specialist you need.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. No setup complexity.",
   },

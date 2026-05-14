@@ -56,7 +56,8 @@ export const videoAdsForAutoDealerships: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your dealership spends $20K+/month on radio, TV, and digital — and can't measure what works",
+      problem:
+        "Your dealership spends $20K+/month on radio, TV, and digital — and can't measure what works",
       solution:
         "Paid social with batch creative is measurable from click to sale. Every lead is trackable, every ad variation is measurable, and you know exactly which creative drives showroom traffic. No more guessing if the radio spot worked.",
     },
@@ -132,8 +133,8 @@ export const videoAdsForAutoDealerships: BestForPageContent = {
     headline: "300+ Dealership Ads — Inventory, Financing, Service, and Team Personality.",
     subheadline:
       "One recording. 300–1,000 dealership-specific ad variations in 24 hours. Match your ads to your actual inventory.",
-    buttonText: "Pick My Dealership Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · Inventory-specific",
   },
 };

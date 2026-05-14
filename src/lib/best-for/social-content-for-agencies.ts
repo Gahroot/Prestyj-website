@@ -66,7 +66,8 @@ export const socialContentForAgencies: BestForPageContent = {
         "Content creator salaries are $40K–$55K. Average tenure is 12–18 months. Training time is 2–3 months. Prestyj eliminates the hiring, training, and replacement cycle with consistent, on-demand content production that never quits, never needs training, and costs a fraction of a salary.",
     },
     {
-      problem: "Your margins shrink with every new client because content production doesn't scale linearly",
+      problem:
+        "Your margins shrink with every new client because content production doesn't scale linearly",
       solution:
         "Prestyj's per-client cost is $47/month regardless of content volume. If you charge $1,500/month per client, your content production cost is 3% — leaving 97% margin on the production portion. More clients = more profit, not more overhead.",
     },
@@ -131,8 +132,8 @@ export const socialContentForAgencies: BestForPageContent = {
   cta: {
     headline: "Your Production Bottleneck Is Solved. Now Scale.",
     subheadline:
-        "White-label content production for agencies. 30–50 posts/day per client at $47/client/month. Take on more clients at higher margins.",
-    buttonText: "Partner With Prestyj",
+      "White-label content production for agencies. 30–50 posts/day per client at $47/client/month. Take on more clients at higher margins.",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "White-label · Unlimited scalability · $47/client/month",
   },

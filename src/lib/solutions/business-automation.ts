@@ -58,7 +58,8 @@ export const businessAutomation: SolutionPageContent = {
   },
   benefits: {
     headline: "Automate Your Way to Operational Excellence",
-    subheadline: "Our AI-powered business automation handles the repetitive work so your team can focus on growth.",
+    subheadline:
+      "Our AI-powered business automation handles the repetitive work so your team can focus on growth.",
     benefits: [
       {
         icon: "RefreshCw",
@@ -189,7 +190,7 @@ export const businessAutomation: SolutionPageContent = {
     headline: "Ready to Eliminate Manual Busywork?",
     subheadline:
       "Stop wasting hours on repetitive tasks. See how AI-powered business automation can transform your operations.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No commitment required. See the automation in action with your own workflows.",
   },

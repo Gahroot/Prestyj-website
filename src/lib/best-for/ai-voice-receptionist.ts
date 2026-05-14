@@ -7,7 +7,8 @@ export const aiVoiceReceptionist: BestForPageContent = createBestForPage({
   niche: {
     name: "AI Voice Receptionist",
     shortName: "Voice Receptionist",
-    description: "Small businesses and professional services replacing human receptionists with AI-powered voice answering and scheduling",
+    description:
+      "Small businesses and professional services replacing human receptionists with AI-powered voice answering and scheduling",
   },
   meta: {
     title: "AI Voice Receptionist | Replace Your Front Desk | Save 60-80% | Prestyj",
@@ -226,7 +227,7 @@ export const aiVoiceReceptionist: BestForPageContent = createBestForPage({
     headline: "Replace Your Receptionist. Keep the Professionalism.",
     subheadline:
       "Stop losing leads to voicemail. AI answers every call 24/7, books appointments instantly, and costs a fraction of a full-time receptionist. Book a demo to see how it works for your business.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "HIPAA-compliant. Works with all calendar systems. No credit card required.",
   },
 });

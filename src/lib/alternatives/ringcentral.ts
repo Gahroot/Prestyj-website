@@ -91,7 +91,7 @@ export const ringCentral: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.LEAD_QUALIFICATION,
         "Manual or limited",
-        "RingCentral relies on human agents or basic AI screening"
+        "RingCentral relies on human agents or basic AI screening",
       ),
       {
         feature: "Inbound Lead Focus",
@@ -102,7 +102,7 @@ export const ringCentral: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.APPOINTMENT_BOOKING,
         "Requires integration",
-        "RingCentral needs external calendar integrations"
+        "RingCentral needs external calendar integrations",
       ),
       {
         feature: "Follow-up Automation",
@@ -113,7 +113,7 @@ export const ringCentral: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         "Integrations available",
-        "RingCentral connects to CRMs but isn't a CRM itself"
+        "RingCentral connects to CRMs but isn't a CRM itself",
       ),
       {
         feature: "24/7 Availability",
@@ -239,7 +239,7 @@ export const ringCentral: AlternativePageContent = createAlternativePage({
     headline: "Skip the Phone System Complexity. Get AI Voice Agents.",
     subheadline:
       "RingCentral is powerful for business communications. If you just need AI voice agents that respond to leads instantly and book appointments automatically—without the complexity and per-user pricing—Prestyj is built for you.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No per-user fees. No AI add-ons. No complex configuration.",
   },

@@ -227,9 +227,7 @@ export default function CalculatorResultsPage() {
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button size="lg" className="flex-1" asChild>
                   <Link href="/book-demo">
-                    <Calendar className="mr-2 h-5 w-5" />
-                    Book Your Free Demo
-                  </Link>
+                    <Calendar className="mr-2 h-5 w-5" />Book a Demo</Link>
                 </Button>
                 <Button size="lg" variant="outline" className="flex-1" asChild>
                   <Link href="/contact">

@@ -1,9 +1,5 @@
 import type { ComparePageData, CompareMetadata } from "../types";
-import {
-  createComparePage,
-  buildCompareFeature,
-  STANDARD_FEATURES,
-} from "@/lib/content-factory";
+import { createComparePage, buildCompareFeature, STANDARD_FEATURES } from "@/lib/content-factory";
 
 export const alannaAiCompareData: ComparePageData = createComparePage({
   slug: "alanna-ai-vs-prestyj",
@@ -60,7 +56,11 @@ export const alannaAiCompareData: ComparePageData = createComparePage({
     buildCompareFeature(STANDARD_FEATURES.AI_TEXT, true),
     buildCompareFeature(STANDARD_FEATURES.AI_VOICE, false, "Alanna.ai is text-only"),
     buildCompareFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
-    buildCompareFeature(STANDARD_FEATURES.BUILT_IN_CRM, false, "Alanna.ai is a conversational layer, not a CRM"),
+    buildCompareFeature(
+      STANDARD_FEATURES.BUILT_IN_CRM,
+      false,
+      "Alanna.ai is a conversational layer, not a CRM",
+    ),
     buildCompareFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, false),
     buildCompareFeature(STANDARD_FEATURES.LEAD_QUALIFICATION, true),
     {
@@ -131,7 +131,7 @@ export const alannaAiCompareData: ComparePageData = createComparePage({
     title: "Ready to See Prestyj in Action?",
     description:
       "Book a personalized demo to see how Prestyj's multi-channel AI can serve your title business and beyond.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     disclaimer: "No credit card required. See results in minutes.",
   },
 });

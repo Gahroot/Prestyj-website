@@ -156,7 +156,7 @@ export const aiAppointmentSetting: BestForPageContent = createBestForPage({
     headline: "Fill Your Calendar With Qualified Appointments",
     subheadline:
       "See how AI appointment setting books 2-3x more demos without adding staff. Book a demo to see intelligent scheduling in action.",
-    buttonText: "See AI Book an Appointment",
+    buttonText: "Book a Demo",
     footnote: "Watch AI handle scheduling, qualification, and confirmation in real-time.",
   },
 });

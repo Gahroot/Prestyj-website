@@ -162,8 +162,8 @@ export const costPerTestedAdAngleForCoaches: BestForPageContent = {
     headline: "Run the Math for Coaches: ≈$500 Per Tested Angle.",
     subheadline:
       "300-1,000 scripted ads, vertical-researched for coaches, your real face, 24-hour delivery. Flat fee from $1,497 — the only pricing model where per-tested-angle math actually works.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · No retainer · Flat fee. 300 ads / 3 angles at $1,497. 500 ads / 5 angles at $2,497. 1,000 ads / 10 angles at $3,997.",
   },
 };

@@ -7,7 +7,8 @@ export const fintech: BestForPageContent = createBestForPage({
   niche: {
     name: "Fintech Companies & Financial Technology",
     shortName: "Fintech",
-    description: "Fintech companies, neobanks, and financial technology firms needing AI customer response",
+    description:
+      "Fintech companies, neobanks, and financial technology firms needing AI customer response",
   },
   meta: {
     title: "AI Voice for Fintech Companies | Prestyj",
@@ -145,7 +146,7 @@ export const fintech: BestForPageContent = createBestForPage({
     headline: "Give Customers the Instant Experience They Expect",
     subheadline:
       "See how fintech companies use AI to respond instantly, route intelligently, and scale support without proportional hiring. Schedule a demo to see AI for fintech.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Compliance-aware. CRM-integrated. Live in 1-2 weeks.",
   },
 });

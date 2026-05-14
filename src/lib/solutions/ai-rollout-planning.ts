@@ -24,7 +24,11 @@ export const aiRolloutPlanning: SolutionPageContent = {
     subheadline:
       "Rolling out AI without change management, training, and phased deployment creates chaos. Employees resist. Processes break. Customers notice the rough edges. Prestyj designs AI rollout plans that ensure smooth adoption, team buy-in, and measurable results — from pilot to full deployment.",
     stats: [
-      { value: "85%", label: "of AI rollouts fail without change management", color: "destructive" },
+      {
+        value: "85%",
+        label: "of AI rollouts fail without change management",
+        color: "destructive",
+      },
       { value: "3–6 weeks", label: "to a complete rollout plan", color: "primary" },
       { value: "90%+", label: "adoption rate with structured rollout", color: "success" },
     ],
@@ -161,7 +165,7 @@ export const aiRolloutPlanning: SolutionPageContent = {
     headline: "Plan Your AI Rollout Before You Launch.",
     subheadline:
       "AI rollout planning that ensures smooth adoption, team buy-in, and measurable results. From pilot to full deployment — structured, measured, and optimized.",
-    buttonText: "Plan Your Rollout",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "3–6 week planning engagement · Change management included · 90%+ adoption target",
   },

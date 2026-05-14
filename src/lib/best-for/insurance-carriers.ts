@@ -7,7 +7,8 @@ export const insuranceCarriers: BestForPageContent = createBestForPage({
   niche: {
     name: "Insurance Carriers & Underwriters",
     shortName: "Insurance Carriers",
-    description: "Insurance carriers and TPAs needing enterprise done-for-you AI for claims processing and policy servicing at scale",
+    description:
+      "Insurance carriers and TPAs needing enterprise done-for-you AI for claims processing and policy servicing at scale",
   },
   meta: {
     title: "Done-For-You AI Agents for Insurance Carriers | Prestyj",
@@ -58,7 +59,8 @@ export const insuranceCarriers: BestForPageContent = createBestForPage({
   ],
   painPoints: [
     {
-      problem: "91% of carriers expected to adopt AI by 2026 but internal builds fail 95% of the time",
+      problem:
+        "91% of carriers expected to adopt AI by 2026 but internal builds fail 95% of the time",
       solution:
         "Done-for-you eliminates build risk. We've deployed AI for carriers processing $1B+ in annual premiums. You get proven methodologies from day one, not 18 months of trial and error ending in pilot purgatory.",
     },
@@ -73,12 +75,14 @@ export const insuranceCarriers: BestForPageContent = createBestForPage({
         "Done-for-you gets you to production in 4-6 weeks with guaranteed deployment. No pilot purgatory, no 18-month engineering projects. We handle Guidewire, Duck Creek, or custom system integration—fully managed.",
     },
     {
-      problem: "NAIC enforcement starting 2026-2027 adds regulatory pressure and compliance complexity",
+      problem:
+        "NAIC enforcement starting 2026-2027 adds regulatory pressure and compliance complexity",
       solution:
         "Our AI is built for insurance regulatory requirements. Proper disclosures, no unauthorized recommendations, audit trails for regulatory review. State-specific playbooks for multi-jurisdiction carriers.",
     },
     {
-      problem: "Claims adjusters spend 60% of time on routine FNOL and status inquiries, not complex cases",
+      problem:
+        "Claims adjusters spend 60% of time on routine FNOL and status inquiries, not complex cases",
       solution:
         "AI handles routine FNOL (loss details, injured parties, property damage), policy lookups, and status inquiries. Adjusters focus on complex claims, fraud investigation, and high-value negotiations. 3-5X efficiency gains.",
     },
@@ -155,7 +159,7 @@ export const insuranceCarriers: BestForPageContent = createBestForPage({
     headline: "Stop Pilot Purgatory. Get to Production in Weeks.",
     subheadline:
       "See how insurance carriers use done-for-you AI to automate FNOL, reduce processing time 60%, and free adjusters for complex claims. Schedule an enterprise demo to see results.",
-    buttonText: "Book Enterprise Demo",
+    buttonText: "Book a Demo",
     footnote: "Guidewire integrated. NAIC-compliant. Production-ready in 4-6 weeks.",
   },
 });

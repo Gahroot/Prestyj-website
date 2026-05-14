@@ -55,7 +55,7 @@ export const plasticSurgery: BestForPageContent = createBestForPage({
       icon: "Calendar" as IconName,
       title: "Consultation Scheduling & Reminders",
       description:
-      "AI books consultations directly into your calendar, sends multi-touch reminders to reduce no-shows, and handles rescheduling requests. Reminder calls and texts reduce no-show rates by 60%—critical for high-value appointment slots.",
+        "AI books consultations directly into your calendar, sends multi-touch reminders to reduce no-shows, and handles rescheduling requests. Reminder calls and texts reduce no-show rates by 60%—critical for high-value appointment slots.",
     },
     {
       icon: "Phone" as IconName,
@@ -209,7 +209,8 @@ export const plasticSurgery: BestForPageContent = createBestForPage({
     headline: "Never Miss a $5,000-50,000 Consultation Opportunity Again",
     subheadline:
       "AI captures every aesthetic patient inquiry 24/7, books consultations, handles procedure questions with discretion, and reduces no-shows. High-value practice growth with professional communication.",
-    buttonText: "Book Your Demo",
-    footnote: "Discreet, professional communication. Multi-lingual support included. Live in 1-2 weeks.",
+    buttonText: "Book a Demo",
+    footnote:
+      "Discreet, professional communication. Multi-lingual support included. Live in 1-2 weeks.",
   },
 });

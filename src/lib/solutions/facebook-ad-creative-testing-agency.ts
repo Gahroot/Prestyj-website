@@ -31,7 +31,8 @@ export const facebookAdCreativeTesting: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Facebook Creative Fatigue Kills Your ROAS",
-    subheadline: "Facebook's algorithm is designed to burn through creative faster than you can produce it.",
+    subheadline:
+      "Facebook's algorithm is designed to burn through creative faster than you can produce it.",
     points: [
       {
         icon: "TrendingDown",
@@ -101,7 +102,8 @@ export const facebookAdCreativeTesting: SolutionPageContent = {
   },
   objections: {
     headline: "What Facebook Advertisers Ask",
-    subheadline: "Questions from media buyers, growth marketers, and brand managers running Meta ads.",
+    subheadline:
+      "Questions from media buyers, growth marketers, and brand managers running Meta ads.",
     objections: [
       {
         objection: "Does Facebook really need that many creative variations?",
@@ -161,8 +163,8 @@ export const facebookAdCreativeTesting: SolutionPageContent = {
     headline: "Your Facebook Ads Are Dying Faster Than You Can Replace Them.",
     subheadline:
       "300–1,000 Facebook-ready video ads from one recording. Every format, every placement, always fresh. Deploy new creative the day your old ads fatigue.",
-    buttonText: "Get Facebook Creative Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "300+ ads per batch · 9:16, 1:1, 16:9 formats · 24-hour delivery",
   },
 };

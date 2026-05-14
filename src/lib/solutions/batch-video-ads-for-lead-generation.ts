@@ -101,7 +101,8 @@ export const batchVideoAdsForLeadGeneration: SolutionPageContent = {
   },
   objections: {
     headline: "What Lead-Gen Operators Usually Push Back On",
-    subheadline: "If you've run paid lead gen for more than a quarter, you've had all these thoughts.",
+    subheadline:
+      "If you've run paid lead gen for more than a quarter, you've had all these thoughts.",
     objections: [
       {
         objection: "My CPL is fine — why do I need this?",
@@ -119,7 +120,8 @@ export const batchVideoAdsForLeadGeneration: SolutionPageContent = {
           "Maybe 60–70% will underperform — and that's exactly the point. Lead gen at scale is a 'find the 10% that win, kill the 90% that don't' game. You can't find the 10% winners without running the 90% losers. The batch structure makes that affordable for the first time.",
       },
       {
-        objection: "Do my leads actually care about ad creative? Aren't they searching intent-first?",
+        objection:
+          "Do my leads actually care about ad creative? Aren't they searching intent-first?",
         response:
           "Even high-intent traffic sees multiple ads before converting. The hook that attracts a qualified lead — someone with real budget, timeline, and fit — versus a tire-kicker is almost entirely a creative-script decision. Lower CPL from a bad hook means worse leads, not better business. Batch testing finds the hook that pre-qualifies.",
       },
@@ -161,8 +163,9 @@ export const batchVideoAdsForLeadGeneration: SolutionPageContent = {
     headline: "Stop Guessing Which Hook Will Convert.",
     subheadline:
       "Record once. Test 50+ hooks at once. Find your winning CPL and qualified lead rate in 10–14 days instead of 6 months.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
-    footnote: "One-time pricing starts at $1,497 · Delivered in 24 hours · Works across Meta, TikTok, YouTube, Google",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
+    footnote:
+      "One-time pricing starts at $1,497 · Delivered in 24 hours · Works across Meta, TikTok, YouTube, Google",
   },
 };

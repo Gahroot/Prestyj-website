@@ -97,7 +97,7 @@ export const sierraAi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Sierra: you manage integrations and data pipelines"
+        "Sierra: you manage integrations and data pipelines",
       ),
       {
         feature: "Ready-Made Workflows",
@@ -114,7 +114,7 @@ export const sierraAi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.RESPONSE_24_7,
         true,
-        "Prestyj configured for receptionist tasks out-of-box"
+        "Prestyj configured for receptionist tasks out-of-box",
       ),
       {
         feature: "Support Model",
@@ -239,7 +239,7 @@ export const sierraAi: AlternativePageContent = createAlternativePage({
     headline: "Ready to Answer Calls Today?",
     subheadline:
       "Stop waiting for enterprise implementation. Prestyj is live in 15 minutes with transparent pricing and proven results from 200+ businesses.",
-    buttonText: "Book Your Free 15-Minute Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote:
       "See your AI receptionist live with your real phone number. No credit card, no implementation team, no enterprise contracts.",

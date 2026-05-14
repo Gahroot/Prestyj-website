@@ -64,7 +64,8 @@ export const videoAdsForChiropractors: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your new-patient intake is inconsistent — some months are strong, some months are empty",
+      problem:
+        "Your new-patient intake is inconsistent — some months are strong, some months are empty",
       solution:
         "Intake inconsistency is almost always creative fatigue or seasonality in the one angle you're running. 300–1,000 variations across 5+ conditions means different hooks perform in different months, and your pipeline stabilizes because something is always working. You stop the 'one great month, one dead month' whiplash.",
     },
@@ -74,12 +75,14 @@ export const videoAdsForChiropractors: BestForPageContent = {
         "Price-led creative attracts price-shoppers. We build your batch around condition-specific hooks that self-qualify intent: 'if you've had lower back pain for more than 6 weeks and nothing is helping,' 'if your sciatica wakes you up at night,' 'if you've been in an auto accident in the last 30 days.' Patients who click those hooks arrive expecting care, not a coupon.",
     },
     {
-      problem: "You offer spinal decompression but nobody knows it's available — they think you 'just crack backs'",
+      problem:
+        "You offer spinal decompression but nobody knows it's available — they think you 'just crack backs'",
       solution:
         "A dedicated decompression track in your batch addresses the specific patient (disc issues, radiating leg pain, failed PT) with education-first creative: 'if you were told you need surgery and you haven't had decompression yet, here's what most spine surgeons won't tell you.' Decompression leads are among the highest-ticket conversions in chiropractic — and they need education-first ads, not adjustment-demo ads.",
     },
     {
-      problem: "You want more post-MVA (auto accident) patients but you can't compete with PI law firm referral networks",
+      problem:
+        "You want more post-MVA (auto accident) patients but you can't compete with PI law firm referral networks",
       solution:
         "A dedicated MVA track with creative aimed at the 30-day post-accident window — 'if you were in an accident and you feel fine now, here's why that might be the problem' — pulls patients who haven't yet been funneled through a PI attorney. These are some of the highest-value cases in practice because they blend insurance billing with clear soft-tissue treatment plans.",
     },
@@ -160,8 +163,8 @@ export const videoAdsForChiropractors: BestForPageContent = {
     headline: "Fill Your New Patient Schedule With the Conditions You Actually Want to Treat.",
     subheadline:
       "Record yourself once. Get 300–1,000 condition-specific, cash-pay-aware, compliance-clean video ads in 24 hours. One-time price. No agency retainer.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

@@ -132,7 +132,7 @@ export const socialContentForFinancialAdvisors: BestForPageContent = {
     headline: "Your LinkedIn Authority Starts This Week.",
     subheadline:
       "Compliance-friendly social media content for independent RIAs, wealth advisors, and fee-only planners. 30–50 posts per day at $47/month. No writing required.",
-    buttonText: "Get Started With Prestyj",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Compliance-friendly · LinkedIn authority · $47/month",
   },

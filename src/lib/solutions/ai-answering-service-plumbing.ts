@@ -189,7 +189,7 @@ export const aiAnsweringServicePlumbing: SolutionPageContent = {
     headline: "Stop Losing Emergency Plumbing Jobs to Voicemail",
     subheadline:
       "Every unanswered emergency call goes to your competitor. Capture 100% of calls, dispatch emergencies instantly, and keep your trucks busy 24/7.",
-    buttonText: "Start Capturing Plumbing Calls",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "ServiceTitan & Jobber integration included. Live in 5–7 business days.",
   },

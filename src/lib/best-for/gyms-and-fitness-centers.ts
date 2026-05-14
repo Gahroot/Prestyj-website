@@ -7,7 +7,8 @@ export const gymsAndFitnessCenters: BestForPageContent = createBestForPage({
   niche: {
     name: "Gyms and Fitness Centers",
     shortName: "Gyms & Fitness",
-    description: "Gyms and fitness centers looking for AI-powered membership intake, class booking, and member support",
+    description:
+      "Gyms and fitness centers looking for AI-powered membership intake, class booking, and member support",
   },
   meta: {
     title: "AI Phone Answering for Gyms & Fitness Centers | Boost Signups | Prestyj",
@@ -173,7 +174,7 @@ export const gymsAndFitnessCenters: BestForPageContent = createBestForPage({
     headline: "Stop Losing $500-$1,500+ Per Missed Membership Inquiry",
     subheadline:
       "Capture every prospect, book more tours, and give your staff time to focus on member experience. Book a demo to see AI handling gym calls.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with all major gym management systems. No credit card required.",
   },
 });

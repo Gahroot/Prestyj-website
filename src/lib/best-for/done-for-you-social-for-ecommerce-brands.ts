@@ -153,8 +153,8 @@ export const doneForYouSocialForEcommerceBrands: BestForPageContent = {
     headline: "Your Ecommerce Brands Brand Shouldn't Depend on Your Free Time.",
     subheadline:
       "Done-for-you social media content for DTC and ecommerce operators doing $1M–$50M in annual GMV. 1,500+ posts per month across 7 platforms. Vertical-researched scripts. Voice-trained captions. No retainer, no contract, no account managers.",
-    buttonText: "See How It Works for Ecommerce Brands",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "Your voice · 7 platforms · 1,500+ posts/mo · No contract",
   },
 };

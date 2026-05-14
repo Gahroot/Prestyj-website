@@ -162,8 +162,8 @@ export const batchVideoAdsForRealEstateTeams: BestForPageContent = {
     headline: "Real Estate Teams: 500 Real Video Ads in 24 Hours.",
     subheadline:
       "One 20-minute recording. RE Teams-specific scripts. 300-1,000 ready-to-test ads. Flat fee from $1,497. No retainer, no subscription.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

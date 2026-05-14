@@ -7,7 +7,8 @@ export const aiVoiceQualification: BestForPageContent = createBestForPage({
   niche: {
     name: "AI Voice Lead Qualification",
     shortName: "Voice Qualification",
-    description: "Sales teams needing to qualify high volumes of leads by phone without expanding staff",
+    description:
+      "Sales teams needing to qualify high volumes of leads by phone without expanding staff",
   },
   meta: {
     title: "Best AI for Lead Qualification | Voice Agents That Qualify 24/7 | Prestyj",
@@ -156,7 +157,7 @@ export const aiVoiceQualification: BestForPageContent = createBestForPage({
     headline: "Qualify Every Lead. Waste Zero Sales Time.",
     subheadline:
       "See how AI voice qualification delivers 3x more qualified conversations to your sales team. Book a demo to hear AI qualification in action.",
-    buttonText: "Hear AI Qualify a Lead Live",
+    buttonText: "Book a Demo",
     footnote: "See your exact qualification criteria in a working demo.",
   },
 });

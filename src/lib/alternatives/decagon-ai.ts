@@ -13,8 +13,7 @@ export const decagonAi: AlternativePageContent = createAlternativePage({
     shortName: "Decagon",
     pricing: "$2,000-10,000/month + usage",
     website: "https://decagon.ai",
-    description:
-      "AI-powered customer service automation platform for e-commerce and D2C brands",
+    description: "AI-powered customer service automation platform for e-commerce and D2C brands",
   },
   meta: {
     title: "Decagon AI Alternative for Home Services & Real Estate | Prestyj",
@@ -61,8 +60,7 @@ export const decagonAi: AlternativePageContent = createAlternativePage({
         feature: "Built for Lead-Driven Businesses",
         prestyj: true,
         competitor: false,
-        note:
-          "Decagon serves e-commerce customer service, not lead generation and qualification",
+        note: "Decagon serves e-commerce customer service, not lead generation and qualification",
       },
       {
         feature: "Voice-First Architecture",
@@ -74,29 +72,25 @@ export const decagonAi: AlternativePageContent = createAlternativePage({
         feature: "Real Estate Workflows",
         prestyj: true,
         competitor: false,
-        note:
-          "No pre-built flows for buyer/seller qualification, showing scheduling, portal lead response",
+        note: "No pre-built flows for buyer/seller qualification, showing scheduling, portal lead response",
       },
       {
         feature: "Home Services Optimization",
         prestyj: true,
         competitor: false,
-        note:
-          "Lacks emergency vs. replacement routing, technician dispatch integration, job-specific qualification",
+        note: "Lacks emergency vs. replacement routing, technician dispatch integration, job-specific qualification",
       },
       {
         feature: "Multi-Agent System",
         prestyj: true,
         competitor: false,
-        note:
-          "Decagon uses single-agent model; Prestyj deploys specialized agents for response, qualification, and scheduling",
+        note: "Decagon uses single-agent model; Prestyj deploys specialized agents for response, qualification, and scheduling",
       },
       {
         feature: "Industry-Specific Integrations",
         prestyj: true,
         competitor: false,
-        note:
-          "No native integrations with Follow Up Boss, kvCORE, BoomTown, ServiceTitan, or industry CRMs",
+        note: "No native integrations with Follow Up Boss, kvCORE, BoomTown, ServiceTitan, or industry CRMs",
       },
       {
         feature: "Appointment Booking",
@@ -108,22 +102,19 @@ export const decagonAi: AlternativePageContent = createAlternativePage({
         feature: "Compliance Handling",
         prestyj: true,
         competitor: "Limited",
-        note:
-          "Decagon lacks industry-specific compliance (fair housing, insurance licensing, recording disclosures)",
+        note: "Decagon lacks industry-specific compliance (fair housing, insurance licensing, recording disclosures)",
       },
       {
         feature: "Speed-to-Lead Focus",
         prestyj: true,
         competitor: false,
-        note:
-          "Decagon optimizes for resolution time, not first-response speed critical for lead conversion",
+        note: "Decagon optimizes for resolution time, not first-response speed critical for lead conversion",
       },
       {
         feature: "Lead Qualification",
         prestyj: true,
         competitor: "Basic",
-        note:
-          "Generic bot qualification vs. industry-specific criteria (pre-approval, timeline, budget)",
+        note: "Generic bot qualification vs. industry-specific criteria (pre-approval, timeline, budget)",
       },
     ],
     competitorPricing: {
@@ -237,7 +228,7 @@ export const decagonAi: AlternativePageContent = createAlternativePage({
     headline: "Ready for Lead-Response AI, Not E-Commerce Chatbots?",
     subheadline:
       "See why real estate, home services, and insurance businesses choose Prestyj's voice-first, multi-agent systems over e-commerce-focused platforms. Industry-tuned workflows, native integrations, and proven 4.8% conversion rates.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "Deploy in days, not months. Built for your industry.",
   },

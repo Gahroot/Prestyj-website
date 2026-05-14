@@ -113,8 +113,8 @@ export const coachesVsInHouseHireForCompareData: ComparePageData = createCompare
     title: "Coaches Pick the AI Content Engine Over In-House Social Media Hire.",
     description:
       "1,500+ coaches-researched posts a month across 7 platforms. One flat fee of $3,000/mo. Voice-trained. No contract. Live in days.",
-    buttonText: "See How It Works for Coaches",
-    buttonHref: "/done-for-you-social-media",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "Month-to-month · No contract · 1,500+ posts/month",
   },
 });

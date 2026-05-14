@@ -7,7 +7,8 @@ export const aiCustomerEngagement: BestForPageContent = createBestForPage({
   niche: {
     name: "AI Customer Engagement",
     shortName: "Customer Engagement",
-    description: "Service businesses needing unified omnichannel AI engagement across voice, SMS, email, and web chat",
+    description:
+      "Service businesses needing unified omnichannel AI engagement across voice, SMS, email, and web chat",
   },
   meta: {
     title: "AI Customer Engagement | Omnichannel AI for Service Businesses | Prestyj",
@@ -156,7 +157,7 @@ export const aiCustomerEngagement: BestForPageContent = createBestForPage({
     headline: "Unify Your Customer Engagement",
     subheadline:
       "See how omnichannel AI delivers consistent, seamless experiences across voice, SMS, email, and chat. Book a demo to see unified engagement in action.",
-    buttonText: "See Omnichannel AI Live",
+    buttonText: "Book a Demo",
     footnote: "Most demos complete in 15 minutes. See your exact use case in action.",
   },
 });

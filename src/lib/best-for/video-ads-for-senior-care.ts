@@ -66,7 +66,8 @@ export const videoAdsForSeniorCare: BestForPageContent = {
         "Video ads do what websites can't: show real people, real care, and real compassion. Batch production creates emotional, trust-building content that makes families feel comfortable before they ever visit your facility or meet your team.",
     },
     {
-      problem: "Families research for weeks before contacting anyone — and you're invisible during research",
+      problem:
+        "Families research for weeks before contacting anyone — and you're invisible during research",
       solution:
         "Retargeting video ads keep your face and facility in front of researching families throughout their decision process. Batch production creates enough creative volume for sustained retargeting campaigns that stay fresh over weeks of research.",
     },
@@ -132,8 +133,8 @@ export const videoAdsForSeniorCare: BestForPageContent = {
     headline: "300+ Senior Care Ads — In-Home, Assisted Living, and Memory Care Tracks.",
     subheadline:
       "Trust-building video ads that help families choose you with confidence. Your face, your team, your care philosophy. From $1,497.",
-    buttonText: "Pick My Senior Care Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · Family decision-maker focused",
   },
 };

@@ -101,7 +101,8 @@ export const batchVideoAdsForYoutubeShorts: SolutionPageContent = {
   },
   objections: {
     headline: "What YouTube Advertisers Typically Ask",
-    subheadline: "YouTube Shorts is still new enough that most advertisers have specific, reasonable questions.",
+    subheadline:
+      "YouTube Shorts is still new enough that most advertisers have specific, reasonable questions.",
     objections: [
       {
         objection: "Can't I just reuse my TikTok ads?",
@@ -161,8 +162,8 @@ export const batchVideoAdsForYoutubeShorts: SolutionPageContent = {
     headline: "Feed YouTube Shorts What It Actually Wants.",
     subheadline:
       "Record once. Get 300–1,000 vertical Shorts-native variations — in three length cuts each — back in 24 hours.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing starts at $1,497 · Every ad delivered in 6/15/30-second cuts",
   },
 };

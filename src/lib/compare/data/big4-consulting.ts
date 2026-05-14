@@ -40,14 +40,12 @@ export const big4ConsultingCompareData: ComparePageData = createComparePage({
     {
       value: "4-8 months",
       label: "Typical Big 4 AI project timeline",
-      description:
-        "Layers of review, approval, and coordination slow everything down",
+      description: "Layers of review, approval, and coordination slow everything down",
     },
     {
       value: "60-80%",
       label: "Cost savings with specialized consultants",
-      description:
-        "Same (often better) results without the Big 4 overhead and hierarchy",
+      description: "Same (often better) results without the Big 4 overhead and hierarchy",
     },
   ],
   pricing: {
@@ -68,9 +66,21 @@ export const big4ConsultingCompareData: ComparePageData = createComparePage({
       priceSubtext: "Plus separate strategy, implementation, and maintenance fees",
       features: [
         { text: "Prestigious brand name", included: true, note: "But at significant cost" },
-        { text: "Large teams", included: true, note: "Partners + managers + associates = overhead" },
-        { text: "Enterprise methodology", included: true, note: "Proven but slow and bureaucratic" },
-        { text: "Multiple service layers", included: true, note: "You pay for partner, manager, associate time" },
+        {
+          text: "Large teams",
+          included: true,
+          note: "Partners + managers + associates = overhead",
+        },
+        {
+          text: "Enterprise methodology",
+          included: true,
+          note: "Proven but slow and bureaucratic",
+        },
+        {
+          text: "Multiple service layers",
+          included: true,
+          note: "You pay for partner, manager, associate time",
+        },
         { text: "Long-term contracts", included: true, note: "6-12 month commitments typical" },
         { text: "Change orders common", included: true, note: "Scope changes = extra fees" },
       ],
@@ -172,29 +182,25 @@ export const big4ConsultingCompareData: ComparePageData = createComparePage({
   relatedResources: [
     {
       title: "AI Consulting Engagement Models Explained",
-      description:
-        "Retainers, project-based, hourly, outcome-based—what each model means.",
+      description: "Retainers, project-based, hourly, outcome-based—what each model means.",
       href: "/blog/ai-consulting-engagement-models-explained-2026",
       linkText: "Compare engagement models",
     },
     {
       title: "AI Consultant vs. AI Agency",
-      description:
-        "Specialized consultant vs. full agency team vs. Big 4—which delivers?",
+      description: "Specialized consultant vs. full agency team vs. Big 4—which delivers?",
       href: "/compare/ai-consultant-vs-ai-agency",
       linkText: "Compare all options",
     },
     {
       title: "Fractional AI Consultant vs. Full-Time Employee",
-      description:
-        "Compare specialized consultants to hiring in-house or Big 4 teams.",
+      description: "Compare specialized consultants to hiring in-house or Big 4 teams.",
       href: "/compare/fractional-ai-consultant-vs-full-time-employee",
       linkText: "Compare engagement models",
     },
     {
       title: "AI Pilot Program Consulting",
-      description:
-        "Test AI with a small investment before committing to Big 4 pricing.",
+      description: "Test AI with a small investment before committing to Big 4 pricing.",
       href: "/solutions/ai-pilot-program-consulting",
       linkText: "Explore pilot programs",
     },
@@ -203,7 +209,7 @@ export const big4ConsultingCompareData: ComparePageData = createComparePage({
     title: "Need Big 4 Results at 60-80% Less Cost?",
     description:
       "Get the expertise and methodology of Big 4 firms without the overhead, junior staff, and slow processes. Senior practitioners, industry specialization, and fast execution.",
-    buttonText: "Compare Your Options",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     disclaimer:
       "No commitment required. We'll compare Big 4 vs. specialized consultant approaches for your specific use case.",
@@ -213,8 +219,7 @@ export const big4ConsultingCompareData: ComparePageData = createComparePage({
 export const big4ConsultingMetadata: CompareMetadata = {
   slug: "ai-consultant-vs-big4-consulting",
   competitorName: "Big 4 Consulting Firms",
-  title:
-    "AI Consultant vs. Big 4 Firms: Cost, Speed, and ROI Comparison | 2026",
+  title: "AI Consultant vs. Big 4 Firms: Cost, Speed, and ROI Comparison | 2026",
   description:
     "Compare AI consultants to Big 4 consulting firms (Deloitte, PwC, EY, KPMG). Learn why specialized consultants deliver 60-80% cost savings with faster implementation for service businesses.",
   keywords: [

@@ -101,7 +101,8 @@ export const batchVideoAdsForTiktok: SolutionPageContent = {
   },
   objections: {
     headline: "What TikTok Advertisers Worry About",
-    subheadline: "The platform is different enough that most concerns come from Meta-land muscle memory.",
+    subheadline:
+      "The platform is different enough that most concerns come from Meta-land muscle memory.",
     objections: [
       {
         objection: "Shouldn't I just hire UGC creators?",
@@ -156,8 +157,8 @@ export const batchVideoAdsForTiktok: SolutionPageContent = {
     headline: "Stop Trying to Make Polished Work on TikTok.",
     subheadline:
       "Record yourself once, native-style. Get 300–1,000 TikTok-native scripted variations in 24 hours. Watch hook rate climb.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing starts at $1,497 · 24-hour turnaround · Spark Ads ready",
   },
 };

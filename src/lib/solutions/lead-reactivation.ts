@@ -73,20 +73,17 @@ export const leadReactivation: SolutionPageContent = {
       {
         icon: "MessageSquare",
         title: "Multi-Touch Sequences",
-        description:
-          "Automated email, text, and voicemail drops that feel personal—not robotic.",
+        description: "Automated email, text, and voicemail drops that feel personal—not robotic.",
       },
       {
         icon: "Target",
         title: "Intent Detection",
-        description:
-          "AI identifies buying signals and prioritizes leads showing renewed interest.",
+        description: "AI identifies buying signals and prioritizes leads showing renewed interest.",
       },
       {
         icon: "Calendar",
         title: "Direct-to-Calendar Booking",
-        description:
-          "Warm leads book appointments directly into your calendar. No back-and-forth.",
+        description: "Warm leads book appointments directly into your calendar. No back-and-forth.",
       },
       {
         icon: "BarChart3",
@@ -148,9 +145,8 @@ export const leadReactivation: SolutionPageContent = {
   },
   cta: {
     headline: "Stop Buying New Leads. Start Working the Ones You Own.",
-    subheadline:
-      "Your database has untapped potential worth tens of thousands. Let's prove it.",
-    buttonText: "Book Your Free Analysis",
+    subheadline: "Your database has untapped potential worth tens of thousands. Let's prove it.",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote:
       "90-Day Guarantee: Measurable increase in booked appointments or we keep working for free.",

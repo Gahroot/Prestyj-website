@@ -101,7 +101,8 @@ export const customAiAgentImplementation: SolutionPageContent = {
   },
   objections: {
     headline: "What Business Owners Ask About Custom AI",
-    subheadline: "Questions from founders and operators considering custom AI agents for their business.",
+    subheadline:
+      "Questions from founders and operators considering custom AI agents for their business.",
     objections: [
       {
         objection: "How much does a custom AI agent cost?",
@@ -161,7 +162,7 @@ export const customAiAgentImplementation: SolutionPageContent = {
     headline: "Build an AI Agent That Actually Knows Your Business.",
     subheadline:
       "Custom AI agents — voice, chat, or workflow — trained on your data, integrated with your systems, and deployed in 2–4 weeks.",
-    buttonText: "Get Custom AI Quote",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "2–4 week deployment · Trained on your data · CRM and phone integration included",
   },

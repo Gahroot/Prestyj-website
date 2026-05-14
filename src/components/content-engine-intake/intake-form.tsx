@@ -138,7 +138,8 @@ export function ContentEngineIntakeForm() {
     },
   });
 
-  const step = STEPS[stepIndex];
+  const step = STEPS[stepIndex] ?? STEPS[0];
+  if (!step) throw new Error("STEPS must contain at least one step");
   const isLastStep = stepIndex === STEPS.length - 1;
   const progress = Math.round(((stepIndex + 1) / STEPS.length) * 100);
 
@@ -162,18 +163,15 @@ export function ContentEngineIntakeForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) {
-        const json = (await res.json().catch(() => null)) as
-          | { error?: string; message?: string }
-          | null;
-        throw new Error(
-          json?.message ?? json?.error ?? "Something went wrong. Try again."
-        );
+        const json = (await res.json().catch(() => null)) as {
+          error?: string;
+          message?: string;
+        } | null;
+        throw new Error(json?.message ?? json?.error ?? "Something went wrong. Try again.");
       }
       router.push("/book-demo?intake=success");
     } catch (err) {
-      setSubmitError(
-        err instanceof Error ? err.message : "Something went wrong. Try again."
-      );
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Try again.");
     }
   };
 
@@ -200,7 +198,7 @@ export function ContentEngineIntakeForm() {
   const togglePlatform = (
     value: PlatformValue,
     current: PlatformValue[],
-    onChange: (next: PlatformValue[]) => void
+    onChange: (next: PlatformValue[]) => void,
   ) => {
     if (current.includes(value)) {
       onChange(current.filter((v) => v !== value));
@@ -216,7 +214,7 @@ export function ContentEngineIntakeForm() {
       <CardContent className="p-6 sm:p-8 lg:p-10">
         {/* Step header */}
         <div className="mb-8 space-y-4">
-          <div className="flex items-center justify-between text-sm text-muted-foreground">
+          <div className="text-muted-foreground flex items-center justify-between text-sm">
             <span>
               Step {stepIndex + 1} of {STEPS.length}
             </span>
@@ -224,39 +222,29 @@ export function ContentEngineIntakeForm() {
           </div>
           <Progress value={progress} />
           <div className="flex items-start gap-4 pt-2">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary">
+            <div className="bg-primary/10 text-primary flex h-12 w-12 shrink-0 items-center justify-center rounded-xl">
               <StepIcon className="h-6 w-6" />
             </div>
             <div>
-              <h2 className="font-heading text-2xl font-bold tracking-tight">
-                {step.title}
-              </h2>
+              <h2 className="font-heading text-2xl font-bold tracking-tight">{step.title}</h2>
               <p className="text-muted-foreground">{step.description}</p>
             </div>
           </div>
         </div>
 
         <Form {...form}>
-          <form
-            onSubmit={form.handleSubmit(onSubmit)}
-            className="space-y-6"
-            noValidate
-          >
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate>
             {step.key === "basics" && <BasicsStep form={form} />}
             {step.key === "audience" && <AudienceStep form={form} />}
             {step.key === "platforms" && (
               <PlatformsStep form={form} togglePlatform={togglePlatform} />
             )}
             {step.key === "brand" && (
-              <BrandStep
-                form={form}
-                logoPreview={logoPreview}
-                onLogoChange={handleLogoChange}
-              />
+              <BrandStep form={form} logoPreview={logoPreview} onLogoChange={handleLogoChange} />
             )}
 
             {submitError && (
-              <p className="rounded-md border border-destructive/40 bg-destructive/5 p-3 text-sm text-destructive">
+              <p className="border-destructive/40 bg-destructive/5 text-destructive rounded-md border p-3 text-sm">
                 {submitError}
               </p>
             )}
@@ -274,12 +262,7 @@ export function ContentEngineIntakeForm() {
               </Button>
 
               {!isLastStep ? (
-                <Button
-                  type="button"
-                  onClick={handleNext}
-                  size="lg"
-                  className="sm:min-w-40"
-                >
+                <Button type="button" onClick={handleNext} size="lg" className="sm:min-w-40">
                   Continue
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -297,9 +280,7 @@ export function ContentEngineIntakeForm() {
                     </>
                   ) : (
                     <>
-                      <Send className="mr-2 h-4 w-4" />
-                      Submit & Book Demo
-                    </>
+                      <Send className="mr-2 h-4 w-4" />Submit & Book a Demo</>
                   )}
                 </Button>
               )}
@@ -341,10 +322,7 @@ function BasicsStep({ form }: { form: FormType }) {
         render={({ field }) => (
           <FormItem>
             <FormLabel>Industry</FormLabel>
-            <Select
-              onValueChange={field.onChange}
-              value={field.value ?? ""}
-            >
+            <Select onValueChange={field.onChange} value={field.value ?? ""}>
               <FormControl>
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select your industry" />
@@ -369,11 +347,7 @@ function BasicsStep({ form }: { form: FormType }) {
           <FormItem>
             <FormLabel>Website (optional)</FormLabel>
             <FormControl>
-              <Input
-                placeholder="https://acme.com"
-                {...field}
-                value={field.value ?? ""}
-              />
+              <Input placeholder="https://acme.com" {...field} value={field.value ?? ""} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -399,11 +373,7 @@ function BasicsStep({ form }: { form: FormType }) {
           <FormItem>
             <FormLabel>Email</FormLabel>
             <FormControl>
-              <Input
-                type="email"
-                placeholder="jordan@acme.com"
-                {...field}
-              />
+              <Input type="email" placeholder="jordan@acme.com" {...field} />
             </FormControl>
             <FormMessage />
           </FormItem>
@@ -429,9 +399,7 @@ function AudienceStep({ form }: { form: FormType }) {
                 {...field}
               />
             </FormControl>
-            <FormDescription>
-              Who buys from you? Demographics, pain points, dreams.
-            </FormDescription>
+            <FormDescription>Who buys from you? Demographics, pain points, dreams.</FormDescription>
             <FormMessage />
           </FormItem>
         )}
@@ -449,9 +417,7 @@ function AudienceStep({ form }: { form: FormType }) {
                 {...field}
               />
             </FormControl>
-            <FormDescription>
-              Tone, words to use/avoid, vibes, examples.
-            </FormDescription>
+            <FormDescription>Tone, words to use/avoid, vibes, examples.</FormDescription>
             <FormMessage />
           </FormItem>
         )}
@@ -469,9 +435,7 @@ function AudienceStep({ form }: { form: FormType }) {
                 {...field}
               />
             </FormControl>
-            <FormDescription>
-              The offers we&apos;ll drive traffic and CTAs toward.
-            </FormDescription>
+            <FormDescription>The offers we&apos;ll drive traffic and CTAs toward.</FormDescription>
             <FormMessage />
           </FormItem>
         )}
@@ -488,7 +452,7 @@ function PlatformsStep({
   togglePlatform: (
     value: PlatformValue,
     current: PlatformValue[],
-    onChange: (next: PlatformValue[]) => void
+    onChange: (next: PlatformValue[]) => void,
   ) => void;
 }) {
   return (
@@ -514,19 +478,17 @@ function PlatformsStep({
                         togglePlatform(
                           opt.value,
                           (field.value ?? []) as PlatformValue[],
-                          field.onChange
+                          field.onChange,
                         )
                       }
-                      className="focus:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 rounded-full"
+                      className="focus-visible:ring-ring/50 rounded-full focus:outline-none focus-visible:ring-[3px]"
                       aria-pressed={selected}
                     >
                       <Badge
                         variant={selected ? "default" : "outline"}
                         className="cursor-pointer px-3 py-1.5 text-sm"
                       >
-                        {selected && (
-                          <CheckCircle2 className="mr-1 h-3.5 w-3.5" />
-                        )}
+                        {selected && <CheckCircle2 className="mr-1 h-3.5 w-3.5" />}
                         {opt.label}
                       </Badge>
                     </button>
@@ -552,7 +514,7 @@ function PlatformsStep({
               name={`socialHandles.${opt.value}` as Path<ContentEngineIntakeInput>}
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-normal text-muted-foreground">
+                  <FormLabel className="text-muted-foreground text-sm font-normal">
                     {opt.label}
                   </FormLabel>
                   <FormControl>
@@ -585,22 +547,9 @@ function BrandStep({
   return (
     <div className="space-y-6">
       <div className="grid gap-5 sm:grid-cols-3">
-        <ColorField
-          form={form}
-          name="primaryColor"
-          label="Primary color"
-          required
-        />
-        <ColorField
-          form={form}
-          name="secondaryColor"
-          label="Secondary (optional)"
-        />
-        <ColorField
-          form={form}
-          name="accentColor"
-          label="Accent (optional)"
-        />
+        <ColorField form={form} name="primaryColor" label="Primary color" required />
+        <ColorField form={form} name="secondaryColor" label="Secondary (optional)" />
+        <ColorField form={form} name="accentColor" label="Accent (optional)" />
       </div>
 
       <FormField
@@ -615,18 +564,18 @@ function BrandStep({
             <FormControl>
               <div>
                 {logoPreview ? (
-                  <div className="flex items-center gap-4 rounded-lg border border-border bg-muted/40 p-4">
+                  <div className="border-border bg-muted/40 flex items-center gap-4 rounded-lg border p-4">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={logoPreview}
                       alt="Logo preview"
-                      className="h-16 w-16 rounded-md border border-border bg-background object-contain p-1"
+                      className="border-border bg-background h-16 w-16 rounded-md border object-contain p-1"
                     />
                     <div className="flex-1 text-sm">
-                      <p className="font-medium text-foreground">
+                      <p className="text-foreground font-medium">
                         {form.getValues("logoFileName") || "Logo uploaded"}
                       </p>
-                      <p className="text-xs text-muted-foreground">
+                      <p className="text-muted-foreground text-xs">
                         Looks great. We&apos;ll use this on every post.
                       </p>
                     </div>
@@ -643,23 +592,17 @@ function BrandStep({
                 ) : (
                   <label
                     htmlFor="logo-upload"
-                    className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-border bg-muted/30 px-6 py-8 text-center transition-colors hover:border-primary/50 hover:bg-muted/50"
+                    className="border-border bg-muted/30 hover:border-primary/50 hover:bg-muted/50 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-6 py-8 text-center transition-colors"
                   >
-                    <Upload className="h-6 w-6 text-muted-foreground" />
-                    <p className="text-sm font-medium text-foreground">
-                      Click to upload your logo
-                    </p>
-                    <p className="text-xs text-muted-foreground">
-                      PNG, JPG, or SVG · max 3MB
-                    </p>
+                    <Upload className="text-muted-foreground h-6 w-6" />
+                    <p className="text-foreground text-sm font-medium">Click to upload your logo</p>
+                    <p className="text-muted-foreground text-xs">PNG, JPG, or SVG · max 3MB</p>
                     <input
                       id="logo-upload"
                       type="file"
                       accept="image/png,image/jpeg,image/svg+xml,image/webp"
                       className="hidden"
-                      onChange={(e) =>
-                        onLogoChange(e.target.files?.[0] ?? null)
-                      }
+                      onChange={(e) => onLogoChange(e.target.files?.[0] ?? null)}
                     />
                   </label>
                 )}
@@ -710,11 +653,7 @@ function ColorField({
       render={({ field }) => {
         const value = (field.value as string | undefined) ?? "";
         const isValidHex = /^#?([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(value);
-        const swatch = isValidHex
-          ? value.startsWith("#")
-            ? value
-            : `#${value}`
-          : "transparent";
+        const swatch = isValidHex ? (value.startsWith("#") ? value : `#${value}`) : "transparent";
         return (
           <FormItem>
             <FormLabel>
@@ -729,7 +668,7 @@ function ColorField({
                     aria-label={`${label} color picker`}
                     value={isValidHex ? swatch : "#000000"}
                     onChange={(e) => field.onChange(e.target.value)}
-                    className="h-9 w-9 cursor-pointer rounded-md border border-input bg-transparent p-1"
+                    className="border-input h-9 w-9 cursor-pointer rounded-md border bg-transparent p-1"
                   />
                 </div>
                 <Input

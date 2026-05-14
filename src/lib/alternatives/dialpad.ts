@@ -91,7 +91,7 @@ export const dialpad: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.LEAD_QUALIFICATION,
         "Manual or limited",
-        "Dialpad relies on human agents or basic AI screening"
+        "Dialpad relies on human agents or basic AI screening",
       ),
       {
         feature: "Inbound Lead Focus",
@@ -102,7 +102,7 @@ export const dialpad: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.APPOINTMENT_BOOKING,
         "Requires integration",
-        "Dialpad needs external calendar integrations"
+        "Dialpad needs external calendar integrations",
       ),
       {
         feature: "Follow-up Automation",
@@ -113,7 +113,7 @@ export const dialpad: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         "Integrations available",
-        "Dialpad connects to CRMs but isn't a CRM itself"
+        "Dialpad connects to CRMs but isn't a CRM itself",
       ),
       {
         feature: "24/7 Availability",
@@ -239,7 +239,7 @@ export const dialpad: AlternativePageContent = createAlternativePage({
     headline: "Skip the VoIP Complexity. Get an AI Receptionist.",
     subheadline:
       "Dialpad is powerful for business phone systems. If you just need an AI receptionist that answers calls, qualifies leads, and manages follow-up—without the complexity and per-user pricing—Prestyj is built for you.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No per-user fees. No AI add-ons. No complex configuration.",
   },

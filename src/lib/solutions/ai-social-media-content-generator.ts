@@ -161,7 +161,7 @@ export const aiSocialMediaContentGenerator: SolutionPageContent = {
     headline: "Generate a Month of Social Content in 5 Minutes.",
     subheadline:
       "Branded posts, captions, and images — auto-published to every platform. Consistent social media presence without the time investment.",
-    buttonText: "Try the AI Generator",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No design skills needed · 7+ platforms · Review and approve before posting",
   },

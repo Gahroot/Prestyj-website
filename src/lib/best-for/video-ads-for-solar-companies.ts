@@ -56,7 +56,8 @@ export const videoAdsForSolarCompanies: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Your solar ads look like every other solar company — panels, inverters, and generic promises",
+      problem:
+        "Your solar ads look like every other solar company — panels, inverters, and generic promises",
       solution:
         "We write scripts that name specific savings scenarios: 'if your electric bill is over $200/month, here's what your neighbor saved on solar,' 'the tax credit expires [date] — here's what that means for your out-of-pocket cost.' Specific, scenario-based ads outperform generic brand messaging every time.",
     },
@@ -137,8 +138,8 @@ export const videoAdsForSolarCompanies: BestForPageContent = {
     headline: "300+ Solar Ads Testing Savings, Financing, and Urgency Angles.",
     subheadline:
       "One 20-minute recording. 300–1,000 solar-specific ad variations in 24 hours. Find the message that converts in your market.",
-    buttonText: "Pick My Solar Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

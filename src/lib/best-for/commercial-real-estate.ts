@@ -7,7 +7,8 @@ export const commercialRealEstate: BestForPageContent = createBestForPage({
   niche: {
     name: "Commercial Real Estate",
     shortName: "CRE",
-    description: "Commercial real estate brokerages with longer sales cycles and multi-stakeholder deals",
+    description:
+      "Commercial real estate brokerages with longer sales cycles and multi-stakeholder deals",
   },
   meta: {
     title: "Best AI Lead Response for Commercial Real Estate | Prestyj",
@@ -155,7 +156,7 @@ export const commercialRealEstate: BestForPageContent = createBestForPage({
     headline: "Handle CRE Complexity at Scale",
     subheadline:
       "See how commercial real estate brokerages use Prestyj to qualify complex deals, nurture long sales cycles, and engage multiple stakeholders—all with AI built for CRE.",
-    buttonText: "Book a CRE Demo",
+    buttonText: "Book a Demo",
     footnote: "See property-type specific qualification in action.",
   },
 });

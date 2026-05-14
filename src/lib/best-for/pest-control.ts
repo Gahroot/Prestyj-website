@@ -7,7 +7,8 @@ export const pestControl: BestForPageContent = createBestForPage({
   niche: {
     name: "Pest Control Companies",
     shortName: "Pest Control",
-    description: "Pest control companies looking for AI-powered call handling, emergency dispatch, and service scheduling",
+    description:
+      "Pest control companies looking for AI-powered call handling, emergency dispatch, and service scheduling",
   },
   meta: {
     title: "AI Phone Answering for Pest Control | Emergency Dispatch | Prestyj",
@@ -44,7 +45,7 @@ export const pestControl: BestForPageContent = createBestForPage({
       icon: "Calendar" as IconName,
       title: "Schedule Service 24/7",
       description:
-      "Customers call evenings and weekends with pest problems. AI books appointments, checks technician availability, and confirms service times—filling your schedule while you're off the clock.",
+        "Customers call evenings and weekends with pest problems. AI books appointments, checks technician availability, and confirms service times—filling your schedule while you're off the clock.",
     },
     {
       icon: "Bug" as IconName,
@@ -173,7 +174,7 @@ export const pestControl: BestForPageContent = createBestForPage({
     headline: "Never Miss Another Emergency Pest Control Call",
     subheadline:
       "Capture every urgent job, schedule appointments 24/7, and keep your technicians fully booked. Book a demo to see AI handling pest control calls.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Works with all major pest control software. No credit card required.",
   },
 });

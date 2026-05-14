@@ -43,7 +43,8 @@ export const videoAdsForMedSpas: BestForPageContent = {
     },
     {
       icon: "Target",
-      title: "Anti-aging, body contouring, and skin treatments are three different buying motivations",
+      title:
+        "Anti-aging, body contouring, and skin treatments are three different buying motivations",
       description:
         "Anti-aging (Botox, fillers, facelift alternatives) = appearance anxiety. Body contouring (CoolSculpting, laser lipo) = body image. Skin treatments (lasers, microneedling, chemical peels) = skin health and confidence. Each needs different emotional hooks.",
     },
@@ -71,7 +72,8 @@ export const videoAdsForMedSpas: BestForPageContent = {
         "A dead social media feed signals an inactive or unprofessional practice. 300+ posts across Instagram, TikTok, and Facebook immediately signal an active, established practice. First impressions happen online.",
     },
     {
-      problem: "You don't have time to create treatment-specific content for every service you offer",
+      problem:
+        "You don't have time to create treatment-specific content for every service you offer",
       solution:
         "Each treatment gets its own ad track: Botox, fillers, body contouring, laser, microneedling, chemical peels, PRP, and more. One recording, all services covered. You don't need to create separate content for each treatment.",
     },
@@ -132,8 +134,8 @@ export const videoAdsForMedSpas: BestForPageContent = {
     headline: "300+ Med Spa Ads — Botox, Fillers, Body Contouring, and Laser Tracks.",
     subheadline:
       "Your face, your expertise, your results — in 300+ treatment-specific ads. From $1,497.",
-    buttonText: "Pick My Med Spa Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · Compliance-ready",
   },
 };

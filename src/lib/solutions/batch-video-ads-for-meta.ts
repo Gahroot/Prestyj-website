@@ -31,7 +31,8 @@ export const batchVideoAdsForMeta: SolutionPageContent = {
   },
   painPoints: {
     headline: "Why Meta Campaigns Stop Scaling",
-    subheadline: "It's almost never the targeting. Advantage+ already handles that. It's the creative library.",
+    subheadline:
+      "It's almost never the targeting. Advantage+ already handles that. It's the creative library.",
     points: [
       {
         icon: "TrendingDown",
@@ -101,7 +102,8 @@ export const batchVideoAdsForMeta: SolutionPageContent = {
   },
   objections: {
     headline: "What Meta Advertisers Usually Push Back On",
-    subheadline: "If you've been buying Meta ads for more than a year, you've thought all of these.",
+    subheadline:
+      "If you've been buying Meta ads for more than a year, you've thought all of these.",
     objections: [
       {
         objection: "What if my hook isn't actually any good?",
@@ -161,8 +163,8 @@ export const batchVideoAdsForMeta: SolutionPageContent = {
     headline: "Stop Testing Meta Creative One Ad at a Time.",
     subheadline:
       "Record once. Get 300–1,000 scripted ad variations back in 24 hours. Feed Advantage+ what it actually needs and watch CPAs respond.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing starts at $1,497 · 24-hour turnaround",
   },
 };

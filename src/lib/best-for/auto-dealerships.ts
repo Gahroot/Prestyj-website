@@ -145,7 +145,7 @@ export const autoDealerships: BestForPageContent = createBestForPage({
     headline: "Capture Every Car Buyer Call—24/7",
     subheadline:
       "See how dealerships use AI to respond instantly, qualify buyers, and book more test drives. Schedule a demo to see AI trained for automotive sales.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "CRM-integrated. Inventory-aware. Live in 1-2 weeks.",
   },
 });

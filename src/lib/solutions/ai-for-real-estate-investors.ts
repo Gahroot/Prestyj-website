@@ -29,7 +29,8 @@ export const aiForRealEstateInvestors: SolutionPageContent = {
   },
   painPoints: {
     headline: "Manual Processes Are Costing You Returns",
-    subheadline: "Real estate investors spend too much time on analysis and not enough on acquisition.",
+    subheadline:
+      "Real estate investors spend too much time on analysis and not enough on acquisition.",
     points: [
       {
         icon: "Clock",
@@ -77,7 +78,8 @@ export const aiForRealEstateInvestors: SolutionPageContent = {
   },
   benefits: {
     headline: "AI-Powered Investment Intelligence",
-    subheadline: "From deal analysis to portfolio optimization, AI gives institutional-grade tools to every investor.",
+    subheadline:
+      "From deal analysis to portfolio optimization, AI gives institutional-grade tools to every investor.",
     benefits: [
       {
         icon: "Calculator",
@@ -166,7 +168,7 @@ export const aiForRealEstateInvestors: SolutionPageContent = {
     headline: "Make Smarter Investment Decisions with AI",
     subheadline:
       "Stop spending hours on spreadsheets and start closing more deals with data-driven confidence. AI gives you institutional-grade analysis at indie-investor prices.",
-    buttonText: "Book an Investor Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "See AI deal analysis, tenant screening, and portfolio tracking in action.",
   },

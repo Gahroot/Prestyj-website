@@ -64,7 +64,8 @@ export const videoAdsForRealtors: BestForPageContent = {
   ],
   painPoints: [
     {
-      problem: "Every realtor in your MLS is running 'Just Listed — 4 bed, 3 bath, $625K' carousel ads",
+      problem:
+        "Every realtor in your MLS is running 'Just Listed — 4 bed, 3 bath, $625K' carousel ads",
       solution:
         "We write hook-driven scripts that lead with the buyer's actual reason to click — 'three houses in [neighborhood] came back on the market this week and here's why that matters if you've been waiting,' 'the one thing every buyer in [market] misses before making an offer,' 'I sold this house in 6 days — here's what the listing photos didn't show.' Your 500-ad batch ships 50+ of these hooks. Theirs ships one listing.",
     },
@@ -165,8 +166,8 @@ export const videoAdsForRealtors: BestForPageContent = {
     headline: "Stop Posting One Reel a Month. Ship 500 in a Week.",
     subheadline:
       "Record yourself once. We turn it into hundreds of scripted vertical video ads in 24 hours — so you can find out which buyer and seller hooks actually work in your market instead of guessing for another year.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · No retainer",
   },
 };

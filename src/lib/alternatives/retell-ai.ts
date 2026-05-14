@@ -79,7 +79,7 @@ export const retellAi: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Retell requires external CRM integration and data management"
+        "Retell requires external CRM integration and data management",
       ),
       buildAlternativeFeature(STANDARD_FEATURES.APPOINTMENT_BOOKING, true),
       {
@@ -213,7 +213,7 @@ export const retellAi: AlternativePageContent = createAlternativePage({
     headline: "Skip the Build. Get Results.",
     subheadline:
       "Retell AI is powerful if you want to build it yourself. But if you want a done-for-you receptionist that just works—without developers, APIs, or months of setup—talk to us.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No developers required. No credit card needed. See it live with your phone number.",
   },

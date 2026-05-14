@@ -61,31 +61,31 @@ const FAQS = [
 
 const CAUSES = [
   {
-    icon: <CreditCard className="w-6 h-6" />,
+    icon: <CreditCard className="h-6 w-6" />,
     title: "Account issues",
     pct: 5,
     diag: "Check Business Manager for policy strikes or billing failures. If clean, it's not this.",
   },
   {
-    icon: <Users className="w-6 h-6" />,
+    icon: <Users className="h-6 w-6" />,
     title: "Audience saturation",
     pct: 10,
     diag: "You've served to the full audience. Check reach vs. audience size — if reach is 60%+ of the pool, you're saturated.",
   },
   {
-    icon: <Target className="w-6 h-6" />,
+    icon: <Target className="h-6 w-6" />,
     title: "Bidding / budget shifts",
     pct: 5,
     diag: "Did you change from lowest cost to cost cap? Cut budget below learning phase? These disrupt the algorithm.",
   },
   {
-    icon: <MousePointerClick className="w-6 h-6" />,
+    icon: <MousePointerClick className="h-6 w-6" />,
     title: "Landing page regression",
     pct: 10,
     diag: "Compare LP conversion rate now vs. 30 days ago on identical traffic. If it dropped, fix the page.",
   },
   {
-    icon: <Film className="w-6 h-6" />,
+    icon: <Film className="h-6 w-6" />,
     title: "Creative fatigue",
     pct: 70,
     diag: "Same 3-5 ads running >2 weeks, frequency climbing, CTR decay. The #1 cause, by a wide margin.",
@@ -108,25 +108,25 @@ export default function WhyFacebookAdsStopWorkingPage() {
       />
 
       {/* HERO */}
-      <section className="pt-24 pb-16 px-4">
-        <div className="max-w-5xl mx-auto text-center">
-          <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+      <section className="px-4 pt-24 pb-16">
+        <div className="mx-auto max-w-5xl text-center">
+          <Badge variant="outline" className="border-primary/50 text-primary mb-6">
             DIAGNOSTIC GUIDE
           </Badge>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-6">
+          <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
             Why Facebook Ads Stop Working
-            <span className="block text-primary mt-2 text-3xl md:text-4xl">
+            <span className="text-primary mt-2 block text-3xl md:text-4xl">
               (And It&apos;s Probably Not What You Think)
             </span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Usually your ads didn&apos;t break. Your creative expired. Here&apos;s a
-            diagnostic that walks through the five possible causes — and why 80% of
-            the time it&apos;s the one nobody wants to hear.
+          <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg md:text-xl">
+            Usually your ads didn&apos;t break. Your creative expired. Here&apos;s a diagnostic that
+            walks through the five possible causes — and why 80% of the time it&apos;s the one
+            nobody wants to hear.
           </p>
           <Button size="lg" className="font-bold" asChild>
-            <Link href="/batch-video-ads#pricing">
-              Pick My Batch
+            <Link href="/book-demo">
+                Book a Demo
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -134,29 +134,29 @@ export default function WhyFacebookAdsStopWorkingPage() {
       </section>
 
       {/* STATS CALLOUT */}
-      <section className="py-12 px-4 bg-muted/20 border-y border-border/50">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <section className="bg-muted/20 border-border/50 border-y px-4 py-12">
+        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 text-center md:grid-cols-3">
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-primary">
+            <div className="text-primary text-5xl font-bold md:text-6xl">
               <CountUp to={70} duration={1.5} />%
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               of stalled accounts: creative fatigue
             </p>
           </div>
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-warning">
+            <div className="text-warning text-5xl font-bold md:text-6xl">
               <CountUp to={14} duration={1.5} />d
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               average creative lifespan at $5k+/mo spend
             </p>
           </div>
           <div>
-            <div className="text-5xl md:text-6xl font-bold text-success">
+            <div className="text-success text-5xl font-bold md:text-6xl">
               <CountUp to={3} duration={1.5} />×
             </div>
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-muted-foreground mt-2 text-sm">
               frequency where fatigue typically begins
             </p>
           </div>
@@ -164,13 +164,13 @@ export default function WhyFacebookAdsStopWorkingPage() {
       </section>
 
       {/* THE 5 THINGS */}
-      <section className="py-20 px-4">
-        <div className="max-w-5xl mx-auto">
-          <AnimateOnScroll className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-5xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
               The Five Things It Might Be
             </h2>
-            <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
               Ranked by how often each actually causes the problem.
             </p>
           </AnimateOnScroll>
@@ -181,11 +181,11 @@ export default function WhyFacebookAdsStopWorkingPage() {
                 <BorderGlow
                   borderRadius={18}
                   innerClassName="p-6"
-                  className={cause.highlight ? "shadow-lg shadow-primary/20" : ""}
+                  className={cause.highlight ? "shadow-primary/20 shadow-lg" : ""}
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={`w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0 ${
+                      className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${
                         cause.highlight
                           ? "bg-primary/20 text-primary"
                           : "bg-muted/50 text-muted-foreground"
@@ -194,8 +194,8 @@ export default function WhyFacebookAdsStopWorkingPage() {
                       {cause.icon}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h3 className="font-heading font-bold text-xl text-foreground">
+                      <div className="mb-2 flex flex-wrap items-center gap-3">
+                        <h3 className="font-heading text-foreground text-xl font-bold">
                           {cause.title}
                         </h3>
                         <Badge
@@ -223,53 +223,50 @@ export default function WhyFacebookAdsStopWorkingPage() {
       </section>
 
       {/* DEEPER DIVE */}
-      <section className="py-20 px-4 bg-muted/20">
-        <div className="max-w-4xl mx-auto">
+      <section className="bg-muted/20 px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold md:text-4xl">
               Why Creative Fatigue Is the #1 Cause for 80% of Accounts
             </h2>
-            <p className="text-muted-foreground text-lg mb-4">
-              Media buyers who run real accounts know this: the platform almost never
-              just &ldquo;stops working.&rdquo; Accounts don&apos;t silently break.
-              Creative does. The reason it feels like the platform broke is that
-              creative fatigue looks like a platform problem — your CTR drops, CPMs
-              rise, cost per lead creeps up — but the root cause is that your
-              audience has seen your 3-5 ads too many times.
+            <p className="text-muted-foreground mb-4 text-lg">
+              Media buyers who run real accounts know this: the platform almost never just
+              &ldquo;stops working.&rdquo; Accounts don&apos;t silently break. Creative does. The
+              reason it feels like the platform broke is that creative fatigue looks like a platform
+              problem — your CTR drops, CPMs rise, cost per lead creeps up — but the root cause is
+              that your audience has seen your 3-5 ads too many times.
             </p>
-            <p className="text-muted-foreground text-lg mb-4">
-              The second reason it&apos;s the #1 cause: every other cause on the list
-              is relatively rare. Account restrictions are detectable in Business
-              Manager. Saturation requires you to have burned through your full
-              audience, which takes sustained spend. Bidding and landing page issues
-              show up in specific metrics you can isolate. Creative fatigue is the
-              default explanation — everything else has a signature that rules it in
-              or out quickly.
+            <p className="text-muted-foreground mb-4 text-lg">
+              The second reason it&apos;s the #1 cause: every other cause on the list is relatively
+              rare. Account restrictions are detectable in Business Manager. Saturation requires you
+              to have burned through your full audience, which takes sustained spend. Bidding and
+              landing page issues show up in specific metrics you can isolate. Creative fatigue is
+              the default explanation — everything else has a signature that rules it in or out
+              quickly.
             </p>
             <p className="text-muted-foreground text-lg">
-              So if you diagnosed the other four and came up empty, you&apos;re looking
-              at fatigue. The{" "}
+              So if you diagnosed the other four and came up empty, you&apos;re looking at fatigue.
+              The{" "}
               <Link href="/ad-fatigue-solution" className="text-primary hover:underline">
                 real fix
               </Link>{" "}
-              is creative supply — enough new variations, delivered at the right
-              cadence, to keep your audience from ever seeing the same ad five times
-              in two weeks.
+              is creative supply — enough new variations, delivered at the right cadence, to keep
+              your audience from ever seeing the same ad five times in two weeks.
             </p>
           </AnimateOnScroll>
         </div>
       </section>
 
       {/* DIAGNOSTIC CHECKLIST */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
               Diagnostic: Is It Your Creative?
             </h2>
             <p className="text-muted-foreground text-lg">
-              Answer yes/no to each. Four or more &ldquo;yes&rdquo; answers = creative
-              fatigue, almost certainly.
+              Answer yes/no to each. Four or more &ldquo;yes&rdquo; answers = creative fatigue,
+              almost certainly.
             </p>
           </AnimateOnScroll>
 
@@ -288,19 +285,19 @@ export default function WhyFacebookAdsStopWorkingPage() {
                 ].map((q, i) => (
                   <li
                     key={i}
-                    className="flex items-start gap-4 pb-4 border-b border-border/50 last:border-0 last:pb-0"
+                    className="border-border/50 flex items-start gap-4 border-b pb-4 last:border-0 last:pb-0"
                   >
-                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
+                    <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold">
                       {i + 1}
                     </div>
                     <div className="flex-1">
                       <p className="text-foreground">{q}</p>
                     </div>
                     <div className="flex gap-2 text-sm">
-                      <span className="px-3 py-1 rounded border border-border text-muted-foreground">
+                      <span className="border-border text-muted-foreground rounded border px-3 py-1">
                         Yes
                       </span>
-                      <span className="px-3 py-1 rounded border border-border text-muted-foreground">
+                      <span className="border-border text-muted-foreground rounded border px-3 py-1">
                         No
                       </span>
                     </div>
@@ -313,39 +310,39 @@ export default function WhyFacebookAdsStopWorkingPage() {
       </section>
 
       {/* FIX YOU CAN EXECUTE */}
-      <section className="py-20 px-4 bg-muted/20">
-        <div className="max-w-4xl mx-auto">
+      <section className="bg-muted/20 px-4 py-20">
+        <div className="mx-auto max-w-4xl">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold md:text-4xl">
               The Fix You Can Actually Execute
             </h2>
-            <p className="text-muted-foreground text-lg mb-4">
-              Knowing the problem is creative fatigue doesn&apos;t help unless you can
-              produce enough creative to fix it. The entire reason most accounts stay
-              fatigued is that producing 20-50+ new ads per month is impossible
-              in-house and painful through agencies.
+            <p className="text-muted-foreground mb-4 text-lg">
+              Knowing the problem is creative fatigue doesn&apos;t help unless you can produce
+              enough creative to fix it. The entire reason most accounts stay fatigued is that
+              producing 20-50+ new ads per month is impossible in-house and painful through
+              agencies.
             </p>
-            <p className="text-muted-foreground text-lg mb-6">
-              That&apos;s the gap we fill. One 15-20 minute selfie recording session
-              turned into 300-1000 unique scripted ad variations in 24 hours. Enough
-              to feed your refresh pipeline for weeks off a single recording.
+            <p className="text-muted-foreground mb-6 text-lg">
+              That&apos;s the gap we fill. One 15-20 minute selfie recording session turned into
+              300-1000 unique scripted ad variations in 24 hours. Enough to feed your refresh
+              pipeline for weeks off a single recording.
             </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div className="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {[
                 "Every hook, body, and CTA tested in parallel",
                 "Native selfie format that outperforms polished production",
                 "24-hour turnaround — not weeks",
                 "One recording, months of creative supply",
               ].map((benefit) => (
-                <div key={benefit} className="flex items-start gap-2 text-foreground">
-                  <Check className="w-5 h-5 text-success flex-shrink-0 mt-0.5" />
+                <div key={benefit} className="text-foreground flex items-start gap-2">
+                  <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                   <span>{benefit}</span>
                 </div>
               ))}
             </div>
             <Button size="lg" className="font-bold" asChild>
-              <Link href="/batch-video-ads#pricing">
-                Pick My Batch
+              <Link href="/book-demo">
+                Book a Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -354,24 +351,22 @@ export default function WhyFacebookAdsStopWorkingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 px-4">
-        <div className="max-w-3xl mx-auto">
-          <AnimateOnScroll className="text-center mb-10">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+      <section className="px-4 py-20">
+        <div className="mx-auto max-w-3xl">
+          <AnimateOnScroll className="mb-10 text-center">
+            <h2 className="font-heading text-foreground text-3xl font-bold md:text-4xl">
               Questions
             </h2>
           </AnimateOnScroll>
           <div className="space-y-4">
             {FAQS.map((item, i) => (
               <AnimateOnScroll key={item.q} delay={i * 0.05}>
-                <details className="group bg-card border border-border rounded-xl">
-                  <summary className="cursor-pointer p-6 font-heading font-semibold text-foreground flex items-center justify-between gap-4">
+                <details className="group bg-card border-border rounded-xl border">
+                  <summary className="font-heading text-foreground flex cursor-pointer items-center justify-between gap-4 p-6 font-semibold">
                     <span>{item.q}</span>
-                    <span className="transition group-open:rotate-180 text-primary">▼</span>
+                    <span className="text-primary transition group-open:rotate-180">▼</span>
                   </summary>
-                  <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
-                    {item.a}
-                  </div>
+                  <div className="text-muted-foreground px-6 pb-6 leading-relaxed">{item.a}</div>
                 </details>
               </AnimateOnScroll>
             ))}
@@ -380,20 +375,19 @@ export default function WhyFacebookAdsStopWorkingPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="py-20 px-4 bg-primary/5">
-        <div className="max-w-3xl mx-auto text-center">
+      <section className="bg-primary/5 px-4 py-20">
+        <div className="mx-auto max-w-3xl text-center">
           <AnimateOnScroll>
-            <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
               Stop Diagnosing. Start Shipping.
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8">
-              One recording. 300-1000 ad variations. Your account alive again in 24
-              hours.
+            <p className="text-muted-foreground mb-8 text-lg md:text-xl">
+              One recording. 300-1000 ad variations. Your account alive again in 24 hours.
             </p>
-            <Button size="lg" className="font-bold text-lg px-10 py-6" asChild>
-              <Link href="/batch-video-ads#pricing">
-                Pick My Batch
-                <ArrowRight className="w-5 h-5 ml-2" />
+            <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
+              <Link href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
           </AnimateOnScroll>

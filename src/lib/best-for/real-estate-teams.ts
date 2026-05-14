@@ -154,6 +154,6 @@ export const realEstateTeams: BestForPageContent = createBestForPage({
     headline: "Give Your Team 24/7 Lead Coverage",
     subheadline:
       "See how top real estate teams use Prestyj to respond to every lead instantly, route opportunities intelligently, and scale without hiring. Book a team demo today.",
-    buttonText: "Book a Team Demo",
+    buttonText: "Book a Demo",
   },
 });

@@ -48,16 +48,54 @@ export const heygenCompareData: ComparePageData = createComparePage({
     },
   },
   features: [
-    { feature: "Uses your real face and voice", prestyj: true, competitor: "Optional avatar clone (awkward)", note: "HeyGen's 'Instant Avatar' of you still has AI lip-sync artifacts" },
-    { feature: "Scripts written for you", prestyj: true, competitor: false, note: "HeyGen is BYO-script — every single one" },
-    { feature: "Ads per batch", prestyj: "300-1,000", competitor: "Limited by credits/minutes per plan" },
-    { feature: "Turnaround", prestyj: "24 hrs, done-for-you", competitor: "Minutes per render — but script + direction is yours" },
+    {
+      feature: "Uses your real face and voice",
+      prestyj: true,
+      competitor: "Optional avatar clone (awkward)",
+      note: "HeyGen's 'Instant Avatar' of you still has AI lip-sync artifacts",
+    },
+    {
+      feature: "Scripts written for you",
+      prestyj: true,
+      competitor: false,
+      note: "HeyGen is BYO-script — every single one",
+    },
+    {
+      feature: "Ads per batch",
+      prestyj: "300-1,000",
+      competitor: "Limited by credits/minutes per plan",
+    },
+    {
+      feature: "Turnaround",
+      prestyj: "24 hrs, done-for-you",
+      competitor: "Minutes per render — but script + direction is yours",
+    },
     { feature: "Monthly subscription required", prestyj: false, competitor: true },
-    { feature: "Cost per ad at 500 ads", prestyj: "~$3-5", competitor: "Variable — plus your script-writing labor" },
-    { feature: "Vertical-specific scripts (real estate, home services)", prestyj: true, competitor: false },
-    { feature: "Platform policy risk (AI disclosure)", prestyj: "None", competitor: "Rising — Meta / TikTok AI content rules" },
-    { feature: "One-take recording", prestyj: "15-20 min", competitor: "N/A (or 2-min avatar training clip)" },
-    { feature: "Variation engineering (hooks, CTAs)", prestyj: true, competitor: "You build every variation" },
+    {
+      feature: "Cost per ad at 500 ads",
+      prestyj: "~$3-5",
+      competitor: "Variable — plus your script-writing labor",
+    },
+    {
+      feature: "Vertical-specific scripts (real estate, home services)",
+      prestyj: true,
+      competitor: false,
+    },
+    {
+      feature: "Platform policy risk (AI disclosure)",
+      prestyj: "None",
+      competitor: "Rising — Meta / TikTok AI content rules",
+    },
+    {
+      feature: "One-take recording",
+      prestyj: "15-20 min",
+      competitor: "N/A (or 2-min avatar training clip)",
+    },
+    {
+      feature: "Variation engineering (hooks, CTAs)",
+      prestyj: true,
+      competitor: "You build every variation",
+    },
   ],
   whySwitch: {
     title: "Why HeyGen Falls Short for Owner-Operator Brands",
@@ -96,16 +134,31 @@ export const heygenCompareData: ComparePageData = createComparePage({
     ],
   },
   relatedResources: [
-    { title: "vs Arcads", description: "Another AI avatar tool", href: "/compare/prestyj-vs-arcads", linkText: "Read comparison" },
-    { title: "vs AI Avatar Ads (category)", description: "All AI avatar tools compared", href: "/compare/prestyj-vs-ai-avatar-ads", linkText: "Read comparison" },
-    { title: "Batch Video Ads", description: "See Prestyj's service", href: "/batch-video-ads", linkText: "Learn more" },
+    {
+      title: "vs Arcads",
+      description: "Another AI avatar tool",
+      href: "/compare/prestyj-vs-arcads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "vs AI Avatar Ads (category)",
+      description: "All AI avatar tools compared",
+      href: "/compare/prestyj-vs-ai-avatar-ads",
+      linkText: "Read comparison",
+    },
+    {
+      title: "Batch Video Ads",
+      description: "See Prestyj's service",
+      href: "/batch-video-ads",
+      linkText: "Learn more",
+    },
   ],
   cta: {
     title: "Skip the Avatar. Be the Ad.",
     description:
       "HeyGen ships software. Prestyj ships 300-1,000 finished ads starring you in 24 hours — for a one-time price.",
-    buttonText: "Pick My Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     disclaimer: "One-time payment. No subscription. 24-hour turnaround.",
   },
 });
@@ -116,5 +169,11 @@ export const heygenMetadata: CompareMetadata = {
   title: "PRESTYJ vs HeyGen: Your Real Face or an AI Clone? (2026)",
   description:
     "HeyGen's avatar of you still looks AI. PRESTYJ films the actual you - 300-1,000 scripted ads in 24 hours for $1,497 one-time, not $89/mo forever.",
-  keywords: ["heygen alternative", "heygen vs prestyj", "ai avatar ad alternative", "real owner ugc", "batch video ads"],
+  keywords: [
+    "heygen alternative",
+    "heygen vs prestyj",
+    "ai avatar ad alternative",
+    "real owner ugc",
+    "batch video ads",
+  ],
 };

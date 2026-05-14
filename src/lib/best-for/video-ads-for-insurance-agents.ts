@@ -31,13 +31,15 @@ export const videoAdsForInsuranceAgents: BestForPageContent = {
   whyBestFor: [
     {
       icon: "Shield",
-      title: "Insurance is a trust-based purchase — video builds trust faster than any other medium",
+      title:
+        "Insurance is a trust-based purchase — video builds trust faster than any other medium",
       description:
         "Customers choose insurance agents they trust. Video ads featuring your face, your expertise, and your local presence build familiarity and trust at scale. By the time they need insurance, they've seen you 20+ times across platforms.",
     },
     {
       icon: "DollarSign",
-      title: "One bundled policy (home + auto + life) generates $3,000–$8,000 in first-year commissions",
+      title:
+        "One bundled policy (home + auto + life) generates $3,000–$8,000 in first-year commissions",
       description:
         "Average home + auto bundle generates $1,500–$3,000 in annual premium with $300–$600 agent commission. Adding life insurance and umbrella policies pushes the first-year relationship value to $3,000–$8,000+. A single new client pays for hundreds of batches.",
     },
@@ -77,7 +79,11 @@ export const videoAdsForInsuranceAgents: BestForPageContent = {
     },
   ],
   comparison: {
-    headers: ["Feature", "Prestyj Batch Video Ads", "Lead Generation Services (SmartFinancial, etc.)"],
+    headers: [
+      "Feature",
+      "Prestyj Batch Video Ads",
+      "Lead Generation Services (SmartFinancial, etc.)",
+    ],
     rows: [
       {
         feature: "Lead cost",
@@ -132,8 +138,8 @@ export const videoAdsForInsuranceAgents: BestForPageContent = {
     headline: "300+ Insurance Ads — Auto, Home, Life, and Commercial Tracks.",
     subheadline:
       "Your face in 300+ trust-building ads. Local expert positioning that converts browsers into clients. From $1,497.",
-    buttonText: "Pick My Insurance Batch",
-    buttonHref: "/batch-video-ads#pricing",
+    buttonText: "Book a Demo",
+    buttonHref: "/book-demo",
     footnote: "One-time pricing from $1,497 · 24-hour delivery · Compliance-ready",
   },
 };

@@ -7,7 +7,8 @@ export const accountingFirms: BestForPageContent = createBestForPage({
   niche: {
     name: "Accounting Firms & Tax Preparers",
     shortName: "Accounting Firms",
-    description: "CPA firms, tax preparers, and accounting practices needing AI receptionist and lead response",
+    description:
+      "CPA firms, tax preparers, and accounting practices needing AI receptionist and lead response",
   },
   meta: {
     title: "Accounting AI Receptionist & Tax Preparer Answering Service | Prestyj",
@@ -160,7 +161,7 @@ export const accountingFirms: BestForPageContent = createBestForPage({
     headline: "Never Miss a Tax Season Call Again",
     subheadline:
       "See how accounting firms use AI to handle unlimited simultaneous calls, recover missed clients, and scale through tax season without seasonal hiring. One recovered client typically pays for your entire year of service.",
-    buttonText: "Book Your Demo",
+    buttonText: "Book a Demo",
     footnote: "Unlimited simultaneous calls. 24/7 coverage. Live in 1-2 weeks.",
   },
 });

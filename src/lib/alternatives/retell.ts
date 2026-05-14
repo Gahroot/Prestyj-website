@@ -13,8 +13,7 @@ export const retell: AlternativePageContent = createAlternativePage({
     shortName: "Retell",
     pricing: "$0.07-0.31/min (after add-ons)",
     website: "https://retellai.com",
-    description:
-      "Developer platform for building AI voice agents with drag-and-drop builder",
+    description: "Developer platform for building AI voice agents with drag-and-drop builder",
   },
   meta: {
     title: "Best Retell AI Alternative for Real Estate | Prestyj",
@@ -77,7 +76,7 @@ export const retell: AlternativePageContent = createAlternativePage({
       buildAlternativeFeature(
         STANDARD_FEATURES.BUILT_IN_CRM,
         false,
-        "Retell requires external CRM integration"
+        "Retell requires external CRM integration",
       ),
       buildAlternativeFeature(STANDARD_FEATURES.RESPONSE_24_7, true),
       {
@@ -183,7 +182,7 @@ export const retell: AlternativePageContent = createAlternativePage({
     headline: "Skip the Build. Start Converting.",
     subheadline:
       "Why spend months building when you can start converting leads today? Book a demo to see Prestyj in action.",
-    buttonText: "Book Your Free Demo",
+    buttonText: "Book a Demo",
     buttonHref: "/book-demo",
     footnote: "No credit card required. No technical setup needed.",
   },
