@@ -20,18 +20,17 @@ function IntakeSuccessBanner() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="mb-8 flex items-start gap-3 rounded-xl border border-success/30 bg-success/5 p-4 sm:p-5"
+      className="border-success/30 bg-success/5 mb-8 flex items-start gap-3 rounded-xl border p-4 sm:p-5"
     >
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-success/15">
-        <Sparkles className="h-5 w-5 text-success" />
+      <div className="bg-success/15 flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
+        <Sparkles className="text-success h-5 w-5" />
       </div>
       <div>
-        <p className="font-heading text-base font-bold text-foreground sm:text-lg">
+        <p className="font-heading text-foreground text-base font-bold sm:text-lg">
           Brand kit received — thank you!
         </p>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Our team is already prepping your content swarm. Pick a time below
-          for your strategy call so we can walk you through the plan and get
+        <p className="text-muted-foreground mt-1 text-sm">
+          Pick a time below for your strategy call so we can walk you through the plan and get
           you live in 24 hours.
         </p>
       </div>
@@ -79,7 +78,7 @@ export default function BookDemoPage() {
       />
       <Navbar />
       <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <Suspense fallback={null}>
             <IntakeSuccessBanner />
           </Suspense>
@@ -93,22 +92,68 @@ export default function BookDemoPage() {
                 transition={{ duration: 0.4 }}
               >
                 {/* Hero Section */}
-                <div className="space-y-4 mb-12 text-center">
+                <div className="mb-10 space-y-4 text-center">
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.1 }}
-                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium"
+                    className="bg-primary/10 text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium"
                   >
-                    <Calendar className="w-4 h-4" />
-                    Book a 30-Minute Strategy Call
+                    <Calendar className="h-4 w-4" />
+                    AI agents for marketing &amp; sales
                   </motion.div>
-                  <h1 className="text-4xl sm:text-5xl font-heading font-bold tracking-tighter">
-                    Let&apos;s See If We&apos;re a <span className="text-primary">Good Fit</span>
+                  <h1 className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl">
+                    Book your <span className="text-primary">30-minute demo</span>
                   </h1>
-                  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Answer a few quick questions so we can prepare for a productive conversation.
+                  <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
+                    See how our AI agents respond, qualify, and book leads for your team.
                   </p>
+                </div>
+
+                {/* What to Expect / Length / Timezone / Ideal For — above the form */}
+                <div className="mb-10 grid gap-8 sm:grid-cols-2">
+                  <div className="space-y-4">
+                    <h3 className="font-heading text-lg font-bold">What to Expect</h3>
+                    <ul className="text-muted-foreground space-y-3">
+                      <li className="flex gap-3">
+                        <span className="text-primary shrink-0 font-bold">1</span>
+                        <span>See the AI agents live, handling real lead scenarios</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary shrink-0 font-bold">2</span>
+                        <span>Diagnose your lead response &amp; qualification gaps</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary shrink-0 font-bold">3</span>
+                        <span>Map the agent to your CRM, calendar, and tools</span>
+                      </li>
+                      <li className="flex gap-3">
+                        <span className="text-primary shrink-0 font-bold">4</span>
+                        <span>Custom rollout plan for your business</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="font-heading text-lg font-bold">About This Call</h3>
+                    <div className="text-muted-foreground space-y-4 text-sm">
+                      <div>
+                        <p className="text-foreground mb-1 font-semibold">Length</p>
+                        <p>30 minutes — focused, no fluff.</p>
+                      </div>
+                      <div>
+                        <p className="text-foreground mb-1 font-semibold">Ideal For</p>
+                        <p>
+                          Marketing &amp; sales leaders losing leads to slow response or manual
+                          follow-up.
+                        </p>
+                      </div>
+                      <div>
+                        <p className="text-foreground mb-1 font-semibold">Timezone</p>
+                        <p>Automatically detects and adjusts to your timezone.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Qualification Form */}
@@ -117,27 +162,27 @@ export default function BookDemoPage() {
                 </BorderGlow>
 
                 {/* Trust signals below form */}
-                <div className="mt-12 grid sm:grid-cols-3 gap-6 text-center">
+                <div className="mt-12 grid gap-6 text-center sm:grid-cols-3">
                   <div className="flex flex-col items-center gap-2">
-                    <div className="p-3 rounded-full bg-primary/10">
-                      <Clock className="w-5 h-5 text-primary" />
+                    <div className="bg-primary/10 rounded-full p-3">
+                      <Clock className="text-primary h-5 w-5" />
                     </div>
                     <p className="font-medium">30 Minutes</p>
-                    <p className="text-sm text-muted-foreground">Quick, focused conversation</p>
+                    <p className="text-muted-foreground text-sm">Quick, focused conversation</p>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <div className="p-3 rounded-full bg-primary/10">
-                      <CheckCircle className="w-5 h-5 text-primary" />
+                    <div className="bg-primary/10 rounded-full p-3">
+                      <CheckCircle className="text-primary h-5 w-5" />
                     </div>
                     <p className="font-medium">No Fluff</p>
-                    <p className="text-sm text-muted-foreground">Actionable insights & strategy</p>
+                    <p className="text-muted-foreground text-sm">Actionable insights &amp; strategy</p>
                   </div>
                   <div className="flex flex-col items-center gap-2">
-                    <div className="p-3 rounded-full bg-primary/10">
-                      <Zap className="w-5 h-5 text-primary" />
+                    <div className="bg-primary/10 rounded-full p-3">
+                      <Zap className="text-primary h-5 w-5" />
                     </div>
                     <p className="font-medium">Direct Access</p>
-                    <p className="text-sm text-muted-foreground">1-on-1 with our team directly</p>
+                    <p className="text-muted-foreground text-sm">1-on-1 with our team directly</p>
                   </div>
                 </div>
               </motion.div>
@@ -149,16 +194,17 @@ export default function BookDemoPage() {
                 transition={{ duration: 0.4 }}
               >
                 {/* Qualified Lead Header */}
-                <div className="space-y-4 mb-8 text-center">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-success/10 text-success text-sm font-medium">
-                    <CheckCircle className="w-4 h-4" />
-                    You&apos;re qualified! Pick a time below
+                <div className="mb-8 space-y-4 text-center">
+                  <div className="bg-success/10 text-success inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
+                    <CheckCircle className="h-4 w-4" />
+                    Pick a time below
                   </div>
-                  <h1 className="text-4xl sm:text-5xl font-heading font-bold tracking-tighter">
-                    Schedule Your <span className="text-primary">30-Min Call</span>
+                  <h1 className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl">
+                    Schedule Your <span className="text-primary">30-Min Demo</span>
                   </h1>
-                  <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                    Thanks{qualificationData?.firstName ? `, ${qualificationData.firstName}` : ""}! Select a time that works for you.
+                  <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
+                    Thanks{qualificationData?.firstName ? `, ${qualificationData.firstName}` : ""}!
+                    Select a time that works for you.
                   </p>
                 </div>
 
@@ -168,102 +214,54 @@ export default function BookDemoPage() {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="mb-8 p-4 rounded-xl bg-muted/50 border border-border"
+                    className="bg-muted/50 border-border mb-8 rounded-xl border p-4"
                   >
                     <div className="flex flex-wrap items-center gap-4 text-sm">
                       <div className="flex items-center gap-2">
-                        <User className="w-4 h-4 text-muted-foreground" />
-                        <span>
-                          {qualificationData.firstName} {qualificationData.lastName}
-                        </span>
+                        <User className="text-muted-foreground h-4 w-4" />
+                        <span>{qualificationData.firstName}</span>
                       </div>
                       {qualificationData.companyName && (
                         <div className="flex items-center gap-2">
-                          <Building2 className="w-4 h-4 text-muted-foreground" />
+                          <Building2 className="text-muted-foreground h-4 w-4" />
                           <span>{qualificationData.companyName}</span>
                         </div>
                       )}
-                      <div className="flex items-center gap-2 px-2 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium">
-                        {qualificationData.projectType.replace("-", " ")}
-                      </div>
                     </div>
                   </motion.div>
                 )}
 
                 {/* Cal.com Embed */}
                 <div ref={calendarRef}>
-                <BorderGlow
-                  borderRadius={14}
-                  innerStyle={{ overflow: 'hidden', borderRadius: 'inherit' }}
-                  className="shadow-sm"
-                >
-                  <CalcomInlineEmbed />
-                </BorderGlow>
-                </div>
-
-                {/* What to Expect Section */}
-                <div className="mt-12 grid sm:grid-cols-2 gap-8">
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-heading font-bold">What to Expect</h3>
-                    <ul className="space-y-3 text-muted-foreground">
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold shrink-0">1</span>
-                        <span>Diagnose your automation gaps</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold shrink-0">2</span>
-                        <span>Identify quick wins for your business</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold shrink-0">3</span>
-                        <span>Discuss your tech stack & integration needs</span>
-                      </li>
-                      <li className="flex gap-3">
-                        <span className="text-primary font-bold shrink-0">4</span>
-                        <span>Custom roadmap for your business</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-heading font-bold">About This Call</h3>
-                    <div className="space-y-4 text-sm text-muted-foreground">
-                      <div>
-                        <p className="font-semibold text-foreground mb-1">Ideal For</p>
-                        <p>Founders, agencies, and teams struggling with manual processes.</p>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground mb-1">Come Prepared</p>
-                        <p>List any tools you currently use. (CRM, email, forms, etc.)</p>
-                      </div>
-                      <div>
-                        <p className="font-semibold text-foreground mb-1">Timezone</p>
-                        <p>Automatically detects and adjusts to your timezone.</p>
-                      </div>
-                    </div>
-                  </div>
+                  <BorderGlow
+                    borderRadius={14}
+                    innerStyle={{ overflow: "hidden", borderRadius: "inherit" }}
+                    className="shadow-sm"
+                  >
+                    <CalcomInlineEmbed />
+                  </BorderGlow>
                 </div>
 
                 {/* Benefits Grid */}
-                <div className="mt-12 pt-8 border-t border-border">
-                  <h3 className="text-lg font-heading font-bold mb-6">Why Book Now?</h3>
-                  <div className="grid sm:grid-cols-3 gap-4">
+                <div className="border-border mt-12 border-t pt-8">
+                  <h3 className="font-heading mb-6 text-lg font-bold">Why Book Now?</h3>
+                  <div className="grid gap-4 sm:grid-cols-3">
                     <div className="flex gap-3">
-                      <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <Clock className="text-primary mt-0.5 h-5 w-5 shrink-0" />
                       <div className="text-sm">
                         <p className="font-semibold">30 Minutes</p>
                         <p className="text-muted-foreground">Quick, focused conversation</p>
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <CheckCircle className="text-primary mt-0.5 h-5 w-5 shrink-0" />
                       <div className="text-sm">
                         <p className="font-semibold">No Fluff</p>
-                        <p className="text-muted-foreground">Actionable insights & strategy</p>
+                        <p className="text-muted-foreground">Actionable insights &amp; strategy</p>
                       </div>
                     </div>
                     <div className="flex gap-3">
-                      <Zap className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <Zap className="text-primary mt-0.5 h-5 w-5 shrink-0" />
                       <div className="text-sm">
                         <p className="font-semibold">Direct</p>
                         <p className="text-muted-foreground">1-on-1 with our team</p>

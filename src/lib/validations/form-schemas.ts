@@ -5,20 +5,13 @@ import z from "zod";
  * Provides type-safe, robust validation for all form fields
  */
 export const qualificationFormSchema = z.object({
-  businessType: z.string().min(1, "Please select a business type"),
-  revenue: z.string().min(1, "Please select a revenue range"),
-  projectType: z.string().min(1, "Please select a project type"),
-  timeline: z.string().min(1, "Please select a timeline"),
-  budget: z.string().min(1, "Please select a budget range"),
-  firstName: z.string().min(1, "First name is required").trim(),
-  lastName: z.string().min(1, "Last name is required").trim(),
+  firstName: z.string().min(1, "Name is required").trim(),
   email: z
     .string()
-    .min(1, "Email is required")
-    .refine(
-      (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
-      { message: "Please enter a valid email address" }
-    )
+    .min(1, "Work email is required")
+    .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+      message: "Please enter a valid work email address",
+    })
     .trim()
     .toLowerCase(),
   phone: z
@@ -30,10 +23,9 @@ export const qualificationFormSchema = z.object({
         const digits = val.replace(/\D/g, "");
         return digits.length === 10;
       },
-      { message: "Please enter a valid 10-digit US phone number" }
+      { message: "Please enter a valid 10-digit US phone number" },
     ),
-  companyName: z.string().trim().optional(),
-  projectDetails: z.string().trim().optional(),
+  companyName: z.string().min(1, "Company is required").trim(),
 });
 
 export type QualificationFormData = z.infer<typeof qualificationFormSchema>;
@@ -46,10 +38,10 @@ export const leadPayloadSchema = z.object({
   first_name: z.string().min(1),
   last_name: z.string().optional(),
   phone_number: z.string().length(10),
-  email: z.string().refine(
-    (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val),
-    { message: "Invalid email" }
-  ).optional(),
+  email: z
+    .string()
+    .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), { message: "Invalid email" })
+    .optional(),
   company_name: z.string().optional(),
   notes: z.string().optional(),
   source: z.string(),
