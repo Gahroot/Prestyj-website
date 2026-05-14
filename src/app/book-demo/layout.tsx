@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Book Your AI Sales Agent Demo",
   description:
-    "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under 30 seconds. Close 30-50% more deals from your existing ad spend. No credit card required.",
+    "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under a minute. Close more deals from your existing ad spend. No credit card required.",
   keywords: [
     "book demo",
     "AI sales agent demo",
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Book Your AI Sales Agent Demo",
     description:
-      "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under 30 seconds. Close 30-50% more deals from your existing ad spend. No credit card required.",
+      "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under a minute. Close more deals from your existing ad spend. No credit card required.",
     type: "website",
     url: "https://prestyj.com/book-demo",
     siteName: "Prestyj",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Book Your AI Sales Agent Demo",
     description:
-      "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under 30 seconds. Close 30-50% more deals from your existing ad spend. No credit card required.",
+      "Schedule a personalized demo to see how Prestyj AI agents respond to leads in under a minute. Close more deals from your existing ad spend. No credit card required.",
     images: ["https://prestyj.com/og-image.jpg"],
   },
   alternates: {

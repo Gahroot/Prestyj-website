@@ -178,7 +178,7 @@ export const marketingAutomation: SolutionPageContent = {
     {
       question: "What kind of results can I expect?",
       answer:
-        "Most clients see 30-50% improvement in cost per lead within the first 90 days, with conversion rates improving 2-3x over time. The exact results depend on your starting point, but continuous optimization compounds gains over time.",
+        "Most clients see meaningful improvement in cost per lead within the first 90 days, with conversion rates improving over time. The exact results depend on your starting point, but continuous optimization compounds gains over time.",
     },
     {
       question: "Do I need technical skills to use this?",

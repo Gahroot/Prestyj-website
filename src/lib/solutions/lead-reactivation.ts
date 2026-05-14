@@ -22,7 +22,7 @@ export const leadReactivation: SolutionPageContent = {
     subheadline:
       "Guaranteed measurable increase in booked appointments within 90 days—or we keep working for free. Your CRM is a goldmine. Let's unlock it.",
     stats: [
-      { value: "$47K", label: "avg. recovered revenue", color: "success" },
+      { value: "5-figure", label: "avg. recovered revenue", color: "success" },
       { value: "23%", label: "reactivation rate", color: "primary" },
       { value: "14 days", label: "to first booking", color: "warning" },
     ],

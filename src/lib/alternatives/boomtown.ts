@@ -35,7 +35,7 @@ export const boomtown: AlternativePageContent = createAlternativePage({
   },
   industryStats: [
     {
-      stat: "47 sec",
+      stat: "< 60s",
       description: "average AI response time",
     },
     {
@@ -43,7 +43,7 @@ export const boomtown: AlternativePageContent = createAlternativePage({
       description: "of buyers choose first responder",
     },
     {
-      stat: "$47K",
+      stat: "5-figure",
       description: "avg. recovered revenue from dead leads",
     },
   ],

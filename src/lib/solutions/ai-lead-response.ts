@@ -77,7 +77,7 @@ export const aiLeadResponse: SolutionPageContent = {
         icon: "Zap",
         title: "Sub-60 Second Response, Always",
         description:
-          "Web form submitted at 2am? Lead replies in 47 seconds. Missed call on Sunday? Text goes out instantly. AI never sleeps, never takes lunch, and never lets a lead go cold.",
+          "Web form submitted at 2am? Lead replies in under a minute. Missed call on Sunday? Text goes out instantly. AI never sleeps, never takes lunch, and never lets a lead go cold.",
       },
       {
         icon: "Workflow",

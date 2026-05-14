@@ -20,7 +20,7 @@ export const INDUSTRY_STATS = {
     description: "of dead leads reactivate with proper outreach",
   },
   PRESTYJ_RESPONSE_TIME: {
-    stat: "47 sec",
+    stat: "< 60s",
     description: "average Prestyj response time",
   },
 } as const;

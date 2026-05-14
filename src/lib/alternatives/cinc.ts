@@ -38,11 +38,11 @@ export const cinc: AlternativePageContent = createAlternativePage({
       description: "CINC monthly cost",
     },
     {
-      stat: "47 sec",
+      stat: "< 60s",
       description: "average Prestyj response time",
     },
     {
-      stat: "$47K",
+      stat: "5-figure",
       description: "avg. recovered revenue from lead reactivation",
     },
   ],

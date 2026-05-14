@@ -15,7 +15,7 @@ export const speedToLead: SolutionPageContent = {
     subheadline:
       "78% of buyers choose the first agent who responds. Your AI agent answers every lead in under 60 seconds—while your competition is still checking their phone.",
     stats: [
-      { value: "47s", label: "avg. response time", color: "success" },
+      { value: "< 60s", label: "avg. response time", color: "success" },
       { value: "78%", label: "choose first responder", color: "primary" },
       { value: "3x", label: "more conversions", color: "warning" },
     ],

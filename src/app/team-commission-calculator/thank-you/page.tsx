@@ -43,9 +43,9 @@ function ThankYouContent() {
         {/* Success Message */}
         <div className="mb-12 text-center">
           <div className="mb-6 flex justify-center">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+            <div className="bg-primary/10 flex h-16 w-16 items-center justify-center rounded-full">
               <svg
-                className="h-8 w-8 text-primary"
+                className="text-primary h-8 w-8"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -63,7 +63,7 @@ function ThankYouContent() {
             Your Commission Loss Report Is Ready!
           </h1>
           {email && (
-            <p className="text-lg text-muted-foreground">
+            <p className="text-muted-foreground text-lg">
               We&apos;ve sent it to <span className="font-semibold">{email}</span>
             </p>
           )}
@@ -74,53 +74,51 @@ function ThankYouContent() {
           <h2 className="mb-6 text-2xl font-bold">Your Team&apos;s Results</h2>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="rounded-lg border bg-background p-4">
-              <p className="mb-2 text-sm text-muted-foreground">Monthly Loss</p>
-              <p className="text-2xl font-bold text-destructive md:text-3xl">
+            <div className="bg-background rounded-lg border p-4">
+              <p className="text-muted-foreground mb-2 text-sm">Monthly Loss</p>
+              <p className="text-destructive text-2xl font-bold md:text-3xl">
                 {formatCurrency(results.lostCommissionPerMonth)}
               </p>
             </div>
 
-            <div className="rounded-lg border bg-background p-4">
-              <p className="mb-2 text-sm text-muted-foreground">Annual Loss</p>
-              <p className="text-2xl font-bold text-destructive md:text-3xl">
+            <div className="bg-background rounded-lg border p-4">
+              <p className="text-muted-foreground mb-2 text-sm">Annual Loss</p>
+              <p className="text-destructive text-2xl font-bold md:text-3xl">
                 {formatCurrency(results.lostCommissionPerYear)}
               </p>
             </div>
 
-            <div className="rounded-lg border bg-background p-4">
-              <p className="mb-2 text-sm text-muted-foreground">Lost Deals/Month</p>
+            <div className="bg-background rounded-lg border p-4">
+              <p className="text-muted-foreground mb-2 text-sm">Lost Deals/Month</p>
               <p className="text-2xl font-bold md:text-3xl">
                 {formatNumber(results.lostDealsPerMonth)}
               </p>
             </div>
 
-            <div className="rounded-lg border bg-background p-4">
-              <p className="mb-2 text-sm text-muted-foreground">Per Agent/Month</p>
+            <div className="bg-background rounded-lg border p-4">
+              <p className="text-muted-foreground mb-2 text-sm">Per Agent/Month</p>
               <p className="text-2xl font-bold md:text-3xl">
                 {formatCurrency(results.perAgentLossPerMonth)}
               </p>
             </div>
 
-            <div className="rounded-lg border bg-background p-4">
-              <p className="mb-2 text-sm text-muted-foreground">Efficiency Score</p>
-              <p className="text-2xl font-bold md:text-3xl">
-                {results.teamEfficiencyScore}/100
-              </p>
+            <div className="bg-background rounded-lg border p-4">
+              <p className="text-muted-foreground mb-2 text-sm">Efficiency Score</p>
+              <p className="text-2xl font-bold md:text-3xl">{results.teamEfficiencyScore}/100</p>
             </div>
 
-            <div className="rounded-lg border bg-background p-4">
-              <p className="mb-2 text-sm text-muted-foreground">Potential Recovery</p>
-              <p className="text-2xl font-bold text-primary md:text-3xl">
+            <div className="bg-background rounded-lg border p-4">
+              <p className="text-muted-foreground mb-2 text-sm">Potential Recovery</p>
+              <p className="text-primary text-2xl font-bold md:text-3xl">
                 {formatCurrency(results.benchmarkComparison.potentialRecovery)}/mo
               </p>
             </div>
           </div>
 
-          <div className="mt-6 rounded-lg bg-primary/5 p-4">
+          <div className="bg-primary/5 mt-6 rounded-lg p-4">
             <p className="text-center text-sm font-semibold md:text-base">
               That&apos;s{" "}
-              <span className="text-lg text-primary md:text-xl">
+              <span className="text-primary text-lg md:text-xl">
                 {formatCurrency(results.lostCommissionPerYear)}
               </span>{" "}
               in missed commissions per year across your team
@@ -131,7 +129,7 @@ function ThankYouContent() {
         {/* Download Section */}
         <BorderGlow borderRadius={10} innerClassName="p-6 text-center md:p-8" className="mb-12">
           <h2 className="mb-4 text-2xl font-bold">Get Your Full Report</h2>
-          <p className="mb-6 text-muted-foreground">
+          <p className="text-muted-foreground mb-6">
             Download the complete PDF with ROI analysis, benchmarks, and actionable next steps
           </p>
           <Button asChild size="lg" className="w-full sm:w-auto">
@@ -146,11 +144,11 @@ function ThankYouContent() {
           <h2 className="mb-4 text-2xl font-bold">Recovery Opportunity</h2>
           <div className="grid gap-6 md:grid-cols-2">
             <div>
-              <p className="mb-2 text-sm text-muted-foreground">Estimated AI Investment</p>
+              <p className="text-muted-foreground mb-2 text-sm">Estimated AI Investment</p>
               <p className="mb-4 text-3xl font-bold">
                 {formatCurrency(results.roiAnalysis.estimatedAICost)}/mo
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 Break-even in{" "}
                 <span className="font-semibold">
                   {Math.ceil(results.roiAnalysis.breakEvenMonths)} months
@@ -158,13 +156,13 @@ function ThankYouContent() {
               </p>
             </div>
             <div>
-              <p className="mb-2 text-sm text-muted-foreground">Annual Commission Recovery</p>
-              <p className="mb-4 text-3xl font-bold text-primary">
+              <p className="text-muted-foreground mb-2 text-sm">Annual Commission Recovery</p>
+              <p className="text-primary mb-4 text-3xl font-bold">
                 {formatCurrency(results.roiAnalysis.annualRecovery)}
               </p>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 ROI:{" "}
-                <span className="font-semibold text-primary">
+                <span className="text-primary font-semibold">
                   {formatNumber(results.roiAnalysis.roi)}%
                 </span>
               </p>
@@ -173,10 +171,11 @@ function ThankYouContent() {
         </BorderGlow>
 
         {/* Next Steps CTA */}
-        <div className="rounded-lg border bg-gradient-to-br from-primary/10 to-primary/5 p-6 text-center md:p-8">
+        <div className="from-primary/10 to-primary/5 rounded-lg border bg-gradient-to-br p-6 text-center md:p-8">
           <h2 className="mb-4 text-2xl font-bold">Want to Recover This Lost Commission?</h2>
-          <p className="mb-6 text-lg text-muted-foreground">
-            See how Prestyj helps teams like yours respond in 47 seconds with AI voice and text agents
+          <p className="text-muted-foreground mb-6 text-lg">
+            See how Prestyj helps teams like yours respond in under a minute with AI voice and
+            text agents
           </p>
           <Button asChild size="lg">
             <Link href="/book-demo">Book a 30-Minute Strategy Call</Link>
@@ -185,10 +184,10 @@ function ThankYouContent() {
 
         {/* Email Instructions */}
         <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Check your inbox for the full report.{" "}
-            <span className="font-semibold">Add team@prestyj.com to your contacts</span>{" "}
-            to ensure delivery.
+            <span className="font-semibold">Add team@prestyj.com to your contacts</span> to ensure
+            delivery.
           </p>
         </div>
       </div>
@@ -198,13 +197,15 @@ function ThankYouContent() {
 
 export default function ThankYouPage() {
   return (
-    <Suspense fallback={
-      <main className="container mx-auto flex min-h-screen items-center justify-center px-4">
-        <div className="text-center">
-          <h1 className="mb-4 text-2xl font-bold">Loading your results...</h1>
-        </div>
-      </main>
-    }>
+    <Suspense
+      fallback={
+        <main className="container mx-auto flex min-h-screen items-center justify-center px-4">
+          <div className="text-center">
+            <h1 className="mb-4 text-2xl font-bold">Loading your results...</h1>
+          </div>
+        </main>
+      }
+    >
       <ThankYouContent />
     </Suspense>
   );

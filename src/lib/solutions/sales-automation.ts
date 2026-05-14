@@ -176,7 +176,7 @@ export const salesAutomation: SolutionPageContent = {
     {
       question: "What's the typical ROI for sales automation?",
       answer:
-        "Most clients see a 3-5x increase in lead engagement and 30-50% faster sales cycles. In dollar terms, businesses typically recover the cost of automation within the first 60 days through increased conversions.",
+        "Most clients see a meaningful lift in lead engagement and noticeably faster sales cycles. In dollar terms, businesses typically recover the cost of automation within the first 60 days through increased conversions.",
     },
   ],
   cta: {

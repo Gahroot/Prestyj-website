@@ -1,0 +1,54 @@
+# Data Sources & Stat Audit
+
+This file documents every numeric claim that ships in Prestyj's marketing surfaces (pages, sections, and structured data) so claims stay defensible. **Do not add a specific number to a marketing page without a verifiable source noted here.**
+
+## Audit history
+
+### 2026-05 — Unsourced-stat cleanup
+
+A suspicious cluster of unverifiable, suspiciously round-numbered claims was discovered across pages and shared component data. The reuse of "47" as both a response time ("47 sec") AND a dollar amount ("$47K") strongly suggested placeholder values rather than measured data. All UI-rendered instances were replaced with hedged language. Blog content (`content/blog/**`) was intentionally left untouched in this pass — see "Blog content" section below.
+
+#### Replaced claims (UI / page-level)
+
+| Old claim | New claim | Files touched |
+| --- | --- | --- |
+| `47 sec` / `47s` / "47 second average response" | `< 60s` / "sub-60-second" / "under a minute" | `src/app/team-commission-calculator/page.tsx`, `src/app/team-commission-calculator/thank-you/page.tsx`, `src/components/sections/speed-to-lead.tsx`, `src/components/sections/how-it-works.tsx`, `src/lib/content-factory/constants/industry-stats.ts`, `src/lib/solutions/speed-to-lead.ts`, `src/lib/solutions/ai-lead-response.ts`, `src/lib/alternatives/retell.ts`, `src/lib/alternatives/real-geeks.ts`, `src/lib/alternatives/cinc.ts`, `src/lib/alternatives/boomtown.ts` |
+| `$47K avg. recovered revenue` | `5-figure avg. recovered revenue` | `src/lib/solutions/lead-reactivation.ts`, `src/lib/alternatives/cinc.ts`, `src/lib/alternatives/boomtown.ts` |
+| "Real estate teams lose an average of $180K annually due to 4-hour response times" | "Real estate teams can lose six figures annually to slow lead response" | `src/app/team-commission-calculator/page.tsx` |
+| "30-50% improvement in cost per lead" (marketing automation FAQ) | "meaningful improvement in cost per lead" | `src/lib/solutions/marketing-automation.ts` |
+| "3-5x increase in lead engagement and 30-50% faster sales cycles" (sales automation FAQ) | "meaningful lift in lead engagement and noticeably faster sales cycles" | `src/lib/solutions/sales-automation.ts` |
+| "Close 30-50% more deals" / "respond to leads in under 30 seconds" (book-demo metadata) | "Close more deals" / "respond to leads in under a minute" | `src/app/book-demo/layout.tsx` |
+
+The "respond in under 60 seconds" claim is retained because it matches the operational design target of our AI agents (instant outbound on inbound event) rather than being a measured average across customer data. Replace it with a specific number once we have audited customer data.
+
+## Claims currently shipping in the UI
+
+Each of these still appears in marketing surfaces and needs a source the moment a regulator, reporter, or sophisticated prospect asks. Owner: fill in the **Source** column.
+
+| Claim | Where it appears | Source |
+| --- | --- | --- |
+| "78% of buyers choose the first agent who responds" / "first responder wins" | `team-commission-calculator/page.tsx`, multiple alternative pages, `INDUSTRY_STATS.FIRST_RESPONDER_WINS` | _NEEDS SOURCE_ — likely traceable to the National Association of Realtors or InsideSales / Velocify lead-response studies. Confirm and cite. |
+| "80% of leads go cold due to slow response times" | `INDUSTRY_STATS.LEADS_GO_COLD` and alternatives | _NEEDS SOURCE_ — commonly attributed to Harvard Business Review / MIT lead-response study (Oldroyd, 2011). Confirm exact figure. |
+| "$4k+/mo average loaded cost of a single inside sales rep" | `INDUSTRY_STATS.HUMAN_REP_COST_MONTHLY` | _NEEDS SOURCE_ — Glassdoor / BLS / Bridge Group SDR comp report. |
+| "23% of dead leads reactivate with proper outreach" | `INDUSTRY_STATS.DEAD_LEAD_REACTIVATION` | _NEEDS SOURCE_ — internal Prestyj reactivation campaign data? If so, attach a CSV / dashboard screenshot to this doc. |
+| "4-hour industry average response time" / "4+ hours" | `team-commission-calculator/page.tsx`, `how-it-works.tsx` | _NEEDS SOURCE_ — Drift / Chili Piper / InsideSales studies. Cite specific source and year. |
+| "3x more booked appointments" (with asterisk + footnote "results vary by industry") | `speed-to-lead.tsx` | Asterisked as variable. Footnote currently reads "Average results based on client data" — replace with actual N (number of clients) and date range once available. |
+| "Guaranteed measurable increase in booked appointments within 90 days—or we keep working for free" | `lead-reactivation.ts` | This is a service guarantee, not a stat. Make sure ToS and the sales contract actually reflect this commitment. |
+
+## Blog content (`content/blog/**`)
+
+Blog posts were **not** updated in this audit. They use the same "47 second" and "30-50%" numbers in many places. Treat each blog post as a dated artifact: when refreshing or republishing, replace these with measured numbers + citations, or hedge them. Specifically flagged for review:
+
+- `content/blog/sales-ai-agent-vs-human-cost-comparison-2026.mdx` — multiple "47 second" / "47 hour" / "47 scenarios" instances that look schematic, not measured.
+- `content/blog/ai-sales-agents-explained.mdx` — "47-second response times" appears in several spots.
+- `content/blog/ai-marketing-agents-2026.mdx` — "Phoenix brokerage: 47-second response time, 4.8% conversion, $432K annual revenue increase" — if this is a real case study, link the case study; if not, replace.
+- Any `30-50%` figure in industry-specific posts (`ai-consultant-*.mdx`, `missed-call-text-back-roofers-2026.mdx`, etc.) — cite the third-party study or hedge.
+
+## Adding a new claim — required checklist
+
+Before merging a number into a marketing surface:
+
+1. The number must come from one of: (a) **Prestyj internal data** with a dashboard / CSV link saved in this doc, (b) a **named third-party study** with year, or (c) a customer case study with their permission to cite.
+2. Round numbers ending in `0` or `5` are red flags — be suspicious of yourself.
+3. Add the claim, source, and last-verified date to the "Claims currently shipping" table above.
+4. If the number changes meaningfully, update **everywhere** it appears (grep the codebase) in the same PR — divergent numbers across pages destroy credibility faster than the absence of a number.

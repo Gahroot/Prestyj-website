@@ -9,7 +9,7 @@ const steps = [
     title: "Instant Lead Response",
     description:
       "A lead fills out your form at 9pm on a Saturday. Your AI agent texts them back in under 60 seconds — from your brand, in your voice. Your competitors haven't even seen the notification yet.",
-    highlight: "47 second average response",
+    highlight: "Sub-60-second average response",
   },
   {
     number: "02",

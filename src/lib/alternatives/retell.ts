@@ -43,7 +43,7 @@ export const retell: AlternativePageContent = createAlternativePage({
       description: "Retell cost for 10,000 minutes/month (with add-ons)",
     },
     {
-      stat: "47 sec",
+      stat: "< 60s",
       description: "average Prestyj response time",
     },
   ],

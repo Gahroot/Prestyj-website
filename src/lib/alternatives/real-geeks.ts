@@ -29,7 +29,7 @@ export const realGeeks: AlternativePageContent = createAlternativePage({
   },
   industryStats: [
     {
-      stat: "47 sec",
+      stat: "< 60s",
       description: "average AI response time",
     },
     {
