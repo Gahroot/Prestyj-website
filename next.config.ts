@@ -28,6 +28,96 @@ const nextConfig: NextConfig = {
         destination: "/alternatives/human-isa",
         permanent: true,
       },
+      // AI-consultant / fractional-CAIO positioning pages were diluting the
+      // core "AI agents for marketing & sales" product positioning by
+      // competing with Deloitte/PwC/EY/KPMG. 301 to /pricing.
+      {
+        source: "/compare/ai-consultant-vs-big4-consulting",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/compare/ai-consultant-vs-ai-agency",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/compare/ai-consultant-vs-diy-ai",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/compare/ai-consultant-vs-freelancer",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/compare/ai-consultant-vs-ai-implementation-partner",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/compare/ai-implementation-partner-vs-consultant",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/compare/fractional-ai-consultant-vs-full-time-employee",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/compare/ai-consultant-roi-calculator",
+        destination: "/pricing",
+        permanent: true,
+      },
+      // Consulting-positioned solutions pages (fractional CAIO / AI strategy
+      // consulting). 301 to /pricing.
+      {
+        source: "/solutions/fractional-ai-officer",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-strategy-consulting",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-implementation-consulting",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-pilot-program-consulting",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-proof-of-concept-consulting",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-rollout-planning",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-integration-service",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/ai-workflow-automation-consulting",
+        destination: "/pricing",
+        permanent: true,
+      },
+      {
+        source: "/solutions/custom-ai-agent-implementation",
+        destination: "/pricing",
+        permanent: true,
+      },
       // Consolidate duplicate /get-ads/* → /free-ads/* (identical metadata caused
       // Google to canonicalize one; 301 the rest to preserve link equity).
       {

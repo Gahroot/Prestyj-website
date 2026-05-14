@@ -80,14 +80,6 @@ export function getAllUrls(): string[] {
     "/compare/prestyj-vs-offshore-isa",
     "/compare/prestyj-vs-answering-service",
     "/compare/prestyj-vs-junior-social-hire",
-    "/compare/ai-consultant-vs-diy-ai",
-    // AI consulting comparison pages
-    "/compare/ai-consultant-vs-ai-agency",
-    "/compare/fractional-ai-consultant-vs-full-time-employee",
-    "/compare/ai-implementation-partner-vs-consultant",
-    "/compare/ai-consultant-vs-freelancer",
-    "/compare/ai-consultant-vs-big4-consulting",
-    "/compare/ai-consultant-roi-calculator",
     // Social media / content competitors
     "/compare/alanna-ai-vs-prestyj",
     "/compare/follow-up-boss-vs-prestyj",

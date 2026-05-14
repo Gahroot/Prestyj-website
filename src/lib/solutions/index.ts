@@ -3,8 +3,6 @@ import { speedToLead } from "./speed-to-lead";
 import { leadReactivation } from "./lead-reactivation";
 import { roofing } from "./roofing";
 import { homeServices } from "./home-services";
-import { aiPilotProgram } from "./ai-pilot-program";
-import { aiProofOfConcept } from "./ai-proof-of-concept";
 import { aiLeadGeneration } from "./ai-lead-generation";
 import { salesAutomation } from "./sales-automation";
 import { marketingAutomation } from "./marketing-automation";
@@ -39,13 +37,6 @@ import { aiSocialMediaContentGenerator } from "./ai-social-media-content-generat
 import { aiAdCreativeGenerator } from "./ai-ad-creative-generator";
 import { aiImageGenerationForBusiness } from "./ai-image-generation-for-business";
 import { multiPlatformPublishingTool } from "./multi-platform-publishing-tool";
-import { aiImplementationConsulting } from "./ai-implementation-consulting";
-import { aiIntegrationService } from "./ai-integration-service";
-import { customAiAgentImplementation } from "./custom-ai-agent-implementation";
-import { aiStrategyConsulting } from "./ai-strategy-consulting";
-import { aiRolloutPlanning } from "./ai-rollout-planning";
-import { fractionalAiOfficer } from "./fractional-ai-officer";
-import { aiWorkflowAutomationConsulting } from "./ai-workflow-automation-consulting";
 import { adCreativeTestingAgency } from "./ad-creative-testing-agency";
 import { facebookAdCreativeTesting } from "./facebook-ad-creative-testing-agency";
 import { videoAdTestingFramework } from "./video-ad-testing-framework";
@@ -100,10 +91,8 @@ import { aiCrmAutomation } from "./ai-crm-automation";
 export const solutions: Record<string, SolutionPageContent> = {
   "speed-to-lead": speedToLead,
   "lead-reactivation": leadReactivation,
-  "roofing": roofing,
+  roofing: roofing,
   "home-services": homeServices,
-  "ai-pilot-program-consulting": aiPilotProgram,
-  "ai-proof-of-concept-consulting": aiProofOfConcept,
   "ai-lead-generation": aiLeadGeneration,
   "sales-automation": salesAutomation,
   "marketing-automation": marketingAutomation,
@@ -138,13 +127,6 @@ export const solutions: Record<string, SolutionPageContent> = {
   "ai-ad-creative-generator": aiAdCreativeGenerator,
   "ai-image-generation-for-business": aiImageGenerationForBusiness,
   "multi-platform-publishing-tool": multiPlatformPublishingTool,
-  "ai-implementation-consulting": aiImplementationConsulting,
-  "ai-integration-service": aiIntegrationService,
-  "custom-ai-agent-implementation": customAiAgentImplementation,
-  "ai-strategy-consulting": aiStrategyConsulting,
-  "ai-rollout-planning": aiRolloutPlanning,
-  "fractional-ai-officer": fractionalAiOfficer,
-  "ai-workflow-automation-consulting": aiWorkflowAutomationConsulting,
   "ad-creative-testing-agency": adCreativeTestingAgency,
   "facebook-ad-creative-testing-agency": facebookAdCreativeTesting,
   "video-ad-testing-framework": videoAdTestingFramework,
