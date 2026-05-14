@@ -24,25 +24,26 @@ import { PlatformStatsSection } from "@/components/sections/platform/platform-st
 import { PlatformComparisonSection } from "@/components/sections/platform/platform-comparison";
 import { PlatformFAQSection } from "@/components/sections/platform/platform-faq";
 import { platformFaqs } from "@/lib/platform-data";
+import { pricingTiers } from "@/lib/pricing-data";
 
 export const metadata: Metadata = {
-  title: "Platform | Custom AI Sales Agents & Automation Workflows",
+  title: "Platform | The AI Agent Platform That Runs Your Marketing & Sales",
   description:
-    "Build custom AI sales agents with Prestyj's platform. Multi-agent workflows, CRM integrations, custom voice agents, and enterprise-grade automation for high-growth service businesses.",
+    "See how Prestyj works under the hood. The AI agent platform that powers every plan — voice, chat, SMS, and CRM agents that run your marketing and sales 24/7.",
   keywords: [
-    "custom sales automation workflows",
-    "multi-agent sales outreach systems",
-    "headless AI sales rep",
-    "AI sales implementation",
-    "business automation platform",
-    "custom AI voice agent",
+    "AI agents for marketing and sales",
+    "AI sales agent platform",
+    "AI voice agent",
+    "AI chatbot",
+    "AI texting agent",
     "CRM AI integration",
-    "enterprise sales automation",
+    "lead reactivation AI",
+    "AI receptionist",
   ],
   openGraph: {
-    title: "Platform | Custom AI Sales Agents & Automation Workflows",
+    title: "Platform | The AI Agent Platform That Runs Your Marketing & Sales",
     description:
-      "Build custom AI sales agents with multi-agent workflows, CRM integrations, and enterprise-grade automation.",
+      "The AI agent platform under the hood of every Prestyj plan. Voice, chat, SMS, and CRM agents working together to run your marketing and sales.",
     type: "website",
     url: "https://prestyj.com/platform",
   },
@@ -84,28 +85,40 @@ const capabilities = [
   },
   {
     icon: Shield,
-    title: "Enterprise Security & Compliance",
+    title: "Secure & Compliant",
     description:
-      "SOC 2 compliant infrastructure, HIPAA-ready configurations, call recording with consent management, and role-based access controls for multi-location businesses.",
+      "Encrypted infrastructure, call recording with consent management, and role-based access controls — the same platform protecting every Prestyj customer.",
   },
 ];
 
-const integrations = [
-  "ServiceTitan",
-  "Jobber",
-  "Housecall Pro",
-  "Follow Up Boss",
-  "kvCORE",
-  "HubSpot",
-  "Salesforce",
-  "Pipedrive",
-  "Google Calendar",
-  "Outlook",
-  "Twilio",
-  "RingCentral",
-  "Zapier",
-  "Make",
-  "Slack",
+const integrationGroups: { category: string; description: string; tools: string[] }[] = [
+  {
+    category: "CRM Sync",
+    description:
+      "Bi-directional sync so every lead, note, and booking lands where your team already works.",
+    tools: ["HubSpot", "Salesforce", "Follow Up Boss", "kvCORE", "Pipedrive"],
+  },
+  {
+    category: "Field Service & Operations",
+    description: "Jobs, dispatch, and customer history flow straight into your AI agents' context.",
+    tools: ["ServiceTitan", "Jobber", "Housecall Pro"],
+  },
+  {
+    category: "Calendar & Scheduling",
+    description: "AI agents book real availability — never double-book, never overbook.",
+    tools: ["Google Calendar", "Outlook"],
+  },
+  {
+    category: "Phone & Messaging",
+    description:
+      "Power voice agents, SMS agents, and inbound receptionists on numbers you control.",
+    tools: ["Twilio", "RingCentral"],
+  },
+  {
+    category: "Automation & Workflow",
+    description: "Trigger and extend agent workflows across the rest of your stack.",
+    tools: ["Zapier", "Make", "Slack"],
+  },
 ];
 
 const useCases = [
@@ -143,35 +156,38 @@ export default function PlatformPage() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "Build custom AI sales agents with multi-agent workflows, CRM integrations, custom voice agents, and enterprise-grade automation for high-growth service businesses.",
+      "The AI agent platform that powers every Prestyj plan — voice, chat, SMS, and CRM agents that run your marketing and sales 24/7.",
     url: "https://prestyj.com/platform",
+    featureList: capabilities.map((cap) => cap.title),
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "USD",
-      lowPrice: "1997",
-      highPrice: "5997",
-      offerCount: 3,
+      lowPrice: String(pricingTiers[0].monthlyPrice),
+      highPrice: String(pricingTiers[pricingTiers.length - 1].monthlyPrice),
+      offerCount: pricingTiers.length,
       availability: "https://schema.org/InStock",
     },
-    featureList: capabilities.map((cap) => cap.title),
   };
+
+  const startingPrice = pricingTiers[0].monthlyPrice;
 
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Custom AI Sales Agent Development",
+    name: "Prestyj AI Agent Platform",
     description:
-      "Platform for building purpose-built AI sales agents with custom workflows, deep integrations, and enterprise-grade reliability for service businesses.",
+      "The AI agent platform under the hood of every Prestyj plan. Voice, chat, SMS, and CRM agents working together to run your marketing and sales.",
     provider: {
       "@type": "Organization",
       name: "Prestyj",
       url: "https://prestyj.com",
     },
     serviceType: [
-      "AI Sales Agent Development",
-      "Custom AI Workflows",
-      "Multi-Agent Architecture",
-      "AI Voice Agent Development",
+      "AI Agents for Marketing",
+      "AI Agents for Sales",
+      "AI Voice Agent",
+      "AI Chatbot",
+      "AI Texting Agent",
       "CRM Integration",
     ],
     areaServed: "United States",
@@ -197,12 +213,16 @@ export default function PlatformPage() {
               Platform & Technology
             </Badge>
             <h1 className="font-heading text-foreground mb-6 text-4xl leading-[1.1] font-bold md:text-5xl lg:text-6xl">
-              Build Your <span className="text-primary">Custom AI Workforce</span>
+              How Prestyj&rsquo;s AI agents work —{" "}
+              <span className="text-primary">the platform under the hood.</span>
             </h1>
-            <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
-              Not a one-size-fits-all chatbot. Prestyj is a platform for building purpose-built AI
-              sales agents with custom workflows, deep integrations, and enterprise-grade
-              reliability.
+            <p className="text-muted-foreground mx-auto mb-4 max-w-2xl text-lg">
+              Voice, chat, SMS, and CRM agents working together to answer every lead, book every
+              meeting, and reactivate every cold contact in your database — 24/7.
+            </p>
+            <p className="text-foreground mx-auto mb-8 max-w-2xl text-base font-medium">
+              All Prestyj plans are powered by our AI agent platform. Here&rsquo;s what&rsquo;s
+              inside.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button size="lg" asChild>
@@ -212,26 +232,19 @@ export default function PlatformPage() {
                 <Link href="/pricing">See Pricing</Link>
               </Button>
             </div>
-            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+            <p className="text-muted-foreground mt-6 text-sm">
+              Plans start at{" "}
+              <span className="text-foreground font-semibold">
+                ${startingPrice.toLocaleString()}/mo
+              </span>
+              .{" "}
               <Link
-                href="/free-ads"
+                href="/pricing"
                 className="text-primary hover:text-primary/80 underline underline-offset-2"
               >
-                Free batch video ads →
+                Compare plans
               </Link>
-              <Link
-                href="/batch-video-ads"
-                className="text-primary hover:text-primary/80 underline underline-offset-2"
-              >
-                Batch ad production →
-              </Link>
-              <Link
-                href="/solutions/speed-to-lead"
-                className="text-primary hover:text-primary/80 underline underline-offset-2"
-              >
-                Speed-to-lead solutions →
-              </Link>
-            </div>
+            </p>
           </div>
         </section>
 
@@ -243,11 +256,11 @@ export default function PlatformPage() {
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
               <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
-                Enterprise Capabilities, Startup Speed
+                What&rsquo;s inside every Prestyj plan
               </h2>
               <p className="text-muted-foreground mx-auto max-w-2xl">
-                Everything you need to deploy AI agents that actually drive revenue—not just answer
-                questions.
+                The same AI agent platform powers Starter, Pro, and Scale — each plan just turns on
+                more of it.
               </p>
             </div>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -300,21 +313,33 @@ export default function PlatformPage() {
 
         {/* Integrations */}
         <section className="px-4 py-20 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl text-center">
-            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
-              Connects to Your Existing Stack
-            </h2>
-            <p className="text-muted-foreground mx-auto mb-10 max-w-2xl">
-              Native integrations with the tools you already use. No rip-and-replace required.
-            </p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {integrations.map((name) => (
-                <span
-                  key={name}
-                  className="bg-card border-border text-foreground rounded-full border px-4 py-2 text-sm"
-                >
-                  {name}
-                </span>
+          <div className="mx-auto max-w-5xl">
+            <div className="mb-12 text-center">
+              <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
+                Connects to Your Existing Stack
+              </h2>
+              <p className="text-muted-foreground mx-auto max-w-2xl">
+                Native integrations with the tools you already use. No rip-and-replace required.
+              </p>
+            </div>
+            <div className="grid gap-6 md:grid-cols-2">
+              {integrationGroups.map((group) => (
+                <div key={group.category} className="bg-card border-border rounded-xl border p-6">
+                  <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
+                    {group.category}
+                  </h3>
+                  <p className="text-muted-foreground mb-4 text-sm">{group.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {group.tools.map((name) => (
+                      <span
+                        key={name}
+                        className="bg-background border-border text-foreground rounded-full border px-3 py-1 text-sm"
+                      >
+                        {name}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -327,36 +352,26 @@ export default function PlatformPage() {
         <section className="bg-card/50 px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
-              Ready to Build Your AI Workforce?
+              See the platform in action.
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-xl">
-              Whether you need a single AI receptionist or a full multi-agent sales system, we build
-              it custom for your business.
+              Book a 30-minute demo and we&rsquo;ll show you the AI agents running live on a
+              business like yours — then walk you through which plan fits.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button size="lg" asChild>
                 <Link href="/book-demo">Book a Demo</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/pricing">View Pricing</Link>
+                <Link href="/pricing">See Pricing</Link>
               </Button>
             </div>
-            <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
-              <Link
-                href="/free-ads"
-                className="text-primary hover:text-primary/80 underline underline-offset-2"
-              >
-                Try free batch video ads →
-              </Link>
-              <Link
-                href="/batch-video-ads"
-                className="text-primary hover:text-primary/80 underline underline-offset-2"
-              >
-                Learn about batch ads →
-              </Link>
-            </div>
-            <p className="text-muted-foreground mt-4 text-xs">
-              No commitment required. See a live demo customized to your industry.
+            <p className="text-muted-foreground mt-6 text-sm">
+              Plans start at{" "}
+              <span className="text-foreground font-semibold">
+                ${startingPrice.toLocaleString()}/mo
+              </span>
+              . No long-term contracts.
             </p>
           </div>
         </section>
