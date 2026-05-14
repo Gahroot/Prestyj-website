@@ -134,9 +134,9 @@ export const adcreativeAiCompareData: ComparePageData = createComparePage({
       linkText: "Read comparison",
     },
     {
-      title: "vs Pencil",
-      description: "AI ad creative platform compared",
-      href: "/compare/prestyj-vs-pencil",
+      title: "vs Production Agencies",
+      description: "Traditional video production compared",
+      href: "/compare/prestyj-vs-production-agencies",
       linkText: "Read comparison",
     },
     {

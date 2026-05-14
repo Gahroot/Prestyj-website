@@ -12,7 +12,6 @@ import { retell } from "./retell";
 import { vapi } from "./vapi";
 import { boomtown } from "./boomtown";
 import { blandAi } from "./bland-ai";
-import { lindy } from "./lindy";
 import { lofty } from "./lofty";
 import { kvcore } from "./kvcore";
 import { sierraInteractive } from "./sierra-interactive";
@@ -27,18 +26,11 @@ import { smithAi } from "./smith-ai";
 import { rubyReceptionist } from "./ruby-receptionist";
 import { goodcall } from "./goodcall";
 import { polyAi } from "./poly-ai";
-import { cloudtalk } from "./cloudtalk";
 import { answerConnect } from "./answer-connect";
-import { voiceflow } from "./voiceflow";
 import { myAiFrontDesk } from "./my-ai-front-desk";
 import { blandAiAlt } from "./bland-ai-alt";
-import { dialpad } from "./dialpad";
-import { ringCentral } from "./ringcentral";
 import { leadtruffle } from "./leadtruffle";
 import { retellAi } from "./retell-ai";
-import { sierraAi } from "./sierra-ai";
-import { decagonAi } from "./decagon-ai";
-import { ada } from "./ada";
 import { creatify } from "./creatify";
 import { arcads } from "./arcads";
 import { resimpli } from "./resimpli";
@@ -84,7 +76,6 @@ export const alternatives: Record<string, AlternativePageContent> = {
   vapi,
   boomtown,
   "bland-ai": blandAi,
-  lindy,
   lofty,
   kvcore,
   "sierra-interactive": sierraInteractive,
@@ -99,18 +90,11 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "ruby-receptionist": rubyReceptionist,
   goodcall,
   "poly-ai": polyAi,
-  cloudtalk,
   "answer-connect": answerConnect,
-  voiceflow,
   "my-ai-front-desk": myAiFrontDesk,
   "bland-ai-alt": blandAiAlt,
-  dialpad,
-  "ring-central": ringCentral,
   leadtruffle,
   "retell-ai": retellAi,
-  "sierra-ai": sierraAi,
-  "decagon-ai": decagonAi,
-  ada,
   creatify,
   arcads,
   resimpli,
@@ -151,7 +135,9 @@ export function getAllAlternativeSlugs(): string[] {
   return Object.keys(alternatives);
 }
 
-export function getAlternativesByType(type: "direct-competitor" | "integration-partner"): AlternativePageContent[] {
+export function getAlternativesByType(
+  type: "direct-competitor" | "integration-partner",
+): AlternativePageContent[] {
   return Object.values(alternatives).filter((alt) => alt.type === type);
 }
 

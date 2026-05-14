@@ -274,24 +274,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/compare/prestyj-vs-billo`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-fiverr-video-ads`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-fiverr-social-media`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/compare/prestyj-vs-ai-avatar-ads`,
       lastModified: now,
       changeFrequency: "monthly" as const,
@@ -310,42 +292,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/compare/prestyj-vs-pencil`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-capcut`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-canva`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-later`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-buffer`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-hootsuite`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/compare/prestyj-vs-sprout-social`,
       lastModified: now,
       changeFrequency: "monthly" as const,
@@ -359,18 +305,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/compare/prestyj-vs-junior-social-hire`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-opus-clip`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-invideo`,
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,

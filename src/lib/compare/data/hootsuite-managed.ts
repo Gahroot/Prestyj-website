@@ -151,12 +151,6 @@ export const hootsuiteManagedCompareData: ComparePageData = createComparePage({
   },
   relatedResources: [
     {
-      title: "vs Hootsuite (software tiers)",
-      description: "Hootsuite Pro/Team/Business compared",
-      href: "/compare/prestyj-vs-hootsuite",
-      linkText: "Read comparison",
-    },
-    {
       title: "vs Social Media Agency",
       description: "Traditional agency retainers compared",
       href: "/compare/prestyj-vs-social-media-agency",

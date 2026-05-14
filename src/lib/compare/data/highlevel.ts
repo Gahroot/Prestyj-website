@@ -156,9 +156,9 @@ export const highlevelCompareData: ComparePageData = createComparePage({
       linkText: "Read comparison",
     },
     {
-      title: "vs Hootsuite",
-      description: "Enterprise scheduler compared",
-      href: "/compare/prestyj-vs-hootsuite",
+      title: "vs Sprout Social",
+      description: "Per-seat scheduler compared",
+      href: "/compare/prestyj-vs-sprout-social",
       linkText: "Read comparison",
     },
     {

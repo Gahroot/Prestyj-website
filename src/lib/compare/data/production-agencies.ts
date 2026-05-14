@@ -122,12 +122,6 @@ export const productionAgenciesCompareData: ComparePageData = createComparePage(
   },
   relatedResources: [
     {
-      title: "vs Fiverr Video Ads",
-      description: "Freelance video compared",
-      href: "/compare/prestyj-vs-fiverr-video-ads",
-      linkText: "Read comparison",
-    },
-    {
       title: "vs UGC Creators",
       description: "Hiring creators compared",
       href: "/compare/prestyj-vs-ugc-creators",

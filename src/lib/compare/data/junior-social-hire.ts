@@ -166,9 +166,9 @@ export const juniorSocialHireCompareData: ComparePageData = createComparePage({
       linkText: "Read comparison",
     },
     {
-      title: "vs Hootsuite",
+      title: "vs Sprout Social",
       description: "Scheduler vs full content department",
-      href: "/compare/prestyj-vs-hootsuite",
+      href: "/compare/prestyj-vs-sprout-social",
       linkText: "Read comparison",
     },
     {

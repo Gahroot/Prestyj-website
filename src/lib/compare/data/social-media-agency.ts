@@ -142,12 +142,6 @@ export const socialMediaAgencyCompareData: ComparePageData = createComparePage({
   },
   relatedResources: [
     {
-      title: "vs Hootsuite",
-      description: "Enterprise scheduler compared",
-      href: "/compare/prestyj-vs-hootsuite",
-      linkText: "Read comparison",
-    },
-    {
       title: "vs Sprout Social",
       description: "Per-seat scheduler compared",
       href: "/compare/prestyj-vs-sprout-social",

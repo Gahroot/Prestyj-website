@@ -23,6 +23,31 @@ const nextConfig: NextConfig = {
         destination: "/alternatives/ylopo",
         permanent: true,
       },
+      // Off-positioning compare pages (video editors, generic social schedulers).
+      // These products don't actually compete with Prestyj's AI marketing & sales
+      // agents — they were SEO orphan content diluting positioning. 301 to /compare.
+      { source: "/compare/prestyj-vs-capcut", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-opus-clip", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-pencil", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-invideo", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-billo", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-fiverr-video-ads", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-fiverr-social-media", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-buffer", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-later", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-hootsuite", destination: "/compare", permanent: true },
+      { source: "/compare/prestyj-vs-canva", destination: "/compare", permanent: true },
+      // Enterprise CX / telephony alternatives pages targeting the wrong segment
+      // (Voiceflow, Lindy, Ada, Decagon, Sierra AI — enterprise dev/CX platforms;
+      // Dialpad, RingCentral, CloudTalk — telephony platforms). 301 to /.
+      { source: "/alternatives/voiceflow", destination: "/", permanent: true },
+      { source: "/alternatives/lindy", destination: "/", permanent: true },
+      { source: "/alternatives/ada", destination: "/", permanent: true },
+      { source: "/alternatives/decagon-ai", destination: "/", permanent: true },
+      { source: "/alternatives/sierra-ai", destination: "/", permanent: true },
+      { source: "/alternatives/dialpad", destination: "/", permanent: true },
+      { source: "/alternatives/ring-central", destination: "/", permanent: true },
+      { source: "/alternatives/cloudtalk", destination: "/", permanent: true },
       {
         source: "/compare/prestyj-vs-isa",
         destination: "/alternatives/human-isa",

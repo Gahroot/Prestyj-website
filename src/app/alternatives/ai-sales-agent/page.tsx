@@ -119,15 +119,6 @@ const aiSalesAgentAlternatives = [
     prestyjAdvantage: "Managed service, RE-optimized",
   },
   {
-    slug: "lindy",
-    name: "Lindy",
-    category: "AI Assistant",
-    pricing: "Subscription",
-    bestFor: "General automation",
-    keyDifferentiator: "Multi-purpose AI assistant",
-    prestyjAdvantage: "Sales-focused, industry-optimized",
-  },
-  {
     slug: "eliseai",
     name: "EliseAI",
     category: "Property AI",

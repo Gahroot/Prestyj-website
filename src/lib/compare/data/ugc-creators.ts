@@ -123,15 +123,15 @@ export const ugcCreatorsCompareData: ComparePageData = createComparePage({
   },
   relatedResources: [
     {
-      title: "vs Billo",
-      description: "Specific UGC marketplace",
-      href: "/compare/prestyj-vs-billo",
+      title: "vs UGC Marketplaces",
+      description: "All UGC marketplaces compared",
+      href: "/compare/prestyj-vs-ugc-marketplaces",
       linkText: "Read comparison",
     },
     {
-      title: "vs Fiverr Video Ads",
-      description: "Freelance video compared",
-      href: "/compare/prestyj-vs-fiverr-video-ads",
+      title: "vs Production Agencies",
+      description: "Traditional video production compared",
+      href: "/compare/prestyj-vs-production-agencies",
       linkText: "Read comparison",
     },
     {
