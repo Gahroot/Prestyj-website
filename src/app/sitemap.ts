@@ -209,52 +209,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Best-for pages - exclude noindex pages (non-RE niches, wrong ICP)
-  const noindexBestForSlugs = [
-    "solo-agents",
-    "new-agents",
-    "hvac",
-    "roofing",
-    "plumbing",
-    "solar",
-    "contractors",
-    "electricians",
-    "landscaping-lawn-care",
-    "painting-contractors",
-    "window-and-door-manufacturers",
-    "siding-contractors",
-    "garage-door",
-    "flooring-contractors",
-    "pest-control",
-    "movers",
-    "dental",
-    "law-firms",
-    "plastic-surgery",
-    "mental-health-clinics",
-    "veterinary-clinics",
-    "accounting-firms",
-    "auto-dealerships",
-    "auto-repair-shops",
-    "senior-care",
-    "retail-stores",
-    "restaurants",
-    "salons-and-spas",
-    "gyms-and-fitness-centers",
-    "servicetitan-users",
-    "jobber-users",
-    "ai-voice-receptionist-dental",
-    "ai-voice-receptionist-legal",
-    "ai-voice-receptionist-medical",
-    "ai-voice-receptionist-insurance",
-  ];
-  const bestForRoutes: MetadataRoute.Sitemap = getAllBestForSlugs()
-    .filter((slug) => !noindexBestForSlugs.includes(slug))
-    .map((slug) => ({
-      url: `${baseUrl}/best-for/${slug}`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
+  // Best-for pages
+  const bestForRoutes: MetadataRoute.Sitemap = getAllBestForSlugs().map((slug) => ({
+    url: `${baseUrl}/best-for/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
   // Compare pages (excluding redirected ones: ylopo → /alternatives/ylopo, isa → /alternatives/human-isa)
   const compareRoutes: MetadataRoute.Sitemap = [
@@ -456,89 +417,55 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
-<<<<<<< Updated upstream
     // BATCH-MATRIX-COMPARE-START
     {
       url: `${baseUrl}/compare/prestyj-vs-ugc-creator-video-for-coaches`,
-=======
-    {
-      url: `${baseUrl}/compare/prestyj-vs-bland-ai`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-<<<<<<< Updated upstream
       url: `${baseUrl}/compare/prestyj-vs-fiverr-video-for-media-buyers`,
-=======
-      url: `${baseUrl}/compare/prestyj-vs-vapi`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-<<<<<<< Updated upstream
       url: `${baseUrl}/compare/prestyj-vs-in-house-video-for-cmos`,
-=======
-      url: `${baseUrl}/compare/prestyj-vs-retell-ai`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-<<<<<<< Updated upstream
       url: `${baseUrl}/compare/prestyj-vs-ai-avatar-tool-video-for-agency-owners`,
-=======
-      url: `${baseUrl}/compare/prestyj-vs-synthflow`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-<<<<<<< Updated upstream
       url: `${baseUrl}/compare/prestyj-vs-agency-video-for-service-business-owners`,
-=======
-      url: `${baseUrl}/compare/prestyj-vs-air-ai`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-<<<<<<< Updated upstream
       url: `${baseUrl}/compare/prestyj-vs-ugc-creator-video-for-hvac-companies`,
-=======
-      url: `${baseUrl}/compare/prestyj-vs-goodcall`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-<<<<<<< Updated upstream
       url: `${baseUrl}/compare/prestyj-vs-fiverr-video-for-plumbing-contractors`,
-=======
-      url: `${baseUrl}/compare/prestyj-vs-smith-ai`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
     {
-<<<<<<< Updated upstream
       url: `${baseUrl}/compare/prestyj-vs-in-house-video-for-roofing-contractors`,
-=======
-      url: `${baseUrl}/compare/prestyj-vs-ruby-receptionists`,
->>>>>>> Stashed changes
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
-<<<<<<< Updated upstream
     {
       url: `${baseUrl}/compare/prestyj-vs-ai-avatar-tool-video-for-real-estate-teams`,
       lastModified: now,
@@ -612,11 +539,56 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     },
-  // SOCIAL-VERTICAL-MATRIX-COMPARE-END
-  // BATCH-MATRIX-COMPARE-END
-
-=======
->>>>>>> Stashed changes
+    // SOCIAL-VERTICAL-MATRIX-COMPARE-END
+    // BATCH-MATRIX-COMPARE-END
+    {
+      url: `${baseUrl}/compare/prestyj-vs-bland-ai`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-vapi`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-retell-ai`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-synthflow`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-air-ai`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-goodcall`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-smith-ai`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/compare/prestyj-vs-ruby-receptionists`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
   ];
 
   // Location pages
