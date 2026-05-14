@@ -2,85 +2,114 @@ import Link from "next/link";
 import { Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
+// Keep in sync with src/app/contact/page.tsx
+const SUPPORT_EMAIL = "hello@prestyj.com";
+const SUPPORT_PHONE_DISPLAY = "TBD — real number coming soon";
+const SUPPORT_PHONE_HREF: string | null = null;
+
+type FooterLink = { href: string; label: string; highlight?: boolean };
+
 const socialLinks = [
   { href: "https://www.instagram.com/prestyj_/", label: "Instagram", icon: Instagram },
   { href: "https://www.linkedin.com/company/prestyj/", label: "LinkedIn", icon: Linkedin },
-  { href: "https://www.facebook.com/profile.php?id=61582824703610", label: "Facebook", icon: Facebook },
+  {
+    href: "https://www.facebook.com/profile.php?id=61582824703610",
+    label: "Facebook",
+    icon: Facebook,
+  },
   { href: "https://x.com/prestyj_", label: "X", icon: Twitter },
 ];
 
 const footerLinks = {
   product: [
-    { href: "#how-it-works", label: "How It Works" },
-    { href: "/results", label: "Results" },
+    { href: "/platform", label: "Platform" },
+    { href: "/#how-it-works", label: "How It Works" },
     { href: "/pricing", label: "Pricing" },
-    { href: "#faq", label: "FAQ" },
+    { href: "/results", label: "Results" },
+    { href: "/#faq", label: "FAQ" },
   ],
-  bestFor: [
-    { href: "/best-for", label: "All Use Cases" },
-    { href: "/best-for/real-estate-teams", label: "Real Estate Teams" },
-    { href: "/best-for/real-estate-franchises", label: "Real Estate Franchises" },
-    { href: "/best-for/regional-brokerage-networks", label: "Regional Brokerages" },
-    { href: "/best-for/isa-replacement", label: "ISA Replacement" },
-    { href: "/best-for/follow-up-boss-users", label: "Follow Up Boss Users" },
-    { href: "/best-for/commercial-real-estate", label: "Commercial Real Estate" },
-    { href: "/best-for/property-managers", label: "Property Managers" },
-  ],
-  alternatives: [
-    { href: "/alternatives", label: "All Alternatives" },
-    { href: "/alternatives/ylopo", label: "Prestyj vs Ylopo" },
-    { href: "/alternatives/human-isa", label: "Prestyj vs Human ISA" },
-    { href: "/alternatives/internal-isa", label: "Prestyj vs Internal ISA" },
-    { href: "/alternatives/retell", label: "Prestyj vs Retell AI" },
-    { href: "/alternatives/vapi", label: "Prestyj vs Vapi" },
-    { href: "/alternatives/structurely", label: "Prestyj vs Structurely" },
-    { href: "/alternatives/conversica", label: "Prestyj vs Conversica" },
+  company: [
+    { href: "/results", label: "Customers" },
+    { href: "/contact", label: "Contact" },
+    { href: "/book-demo", label: "Book a Demo" },
   ],
   resources: [
     { href: "/blog", label: "Blog" },
     { href: "/statistics", label: "Statistics", highlight: true },
-    { href: "/compare/prestyj-vs-answering-service", label: "AI vs Answering Service" },
-    { href: "/compare/prestyj-vs-internal-isa-team", label: "AI vs Internal ISA" },
-    { href: "/compare/prestyj-vs-offshore-isa", label: "AI vs Offshore ISA" },
-    { href: "/compare/prestyj-vs-conversica", label: "Prestyj vs Conversica" },
-    { href: "/compare/prestyj-vs-structurely", label: "Prestyj vs Structurely" },
-  ],
-  solutions: [
-    { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
-    { href: "/solutions/speed-to-lead", label: "Speed to Lead" },
-    { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
-    { href: "/solutions/ai-lead-generation", label: "AI Lead Generation" },
-    { href: "/solutions/sales-automation", label: "Sales Automation" },
-    { href: "/solutions/marketing-automation", label: "Marketing Automation" },
-    { href: "/solutions/business-automation", label: "Business Automation" },
-    { href: "/platform", label: "Platform" },
-  ],
-  aiSolutions: [
-    { href: "/best-for/ai-lead-response", label: "AI Lead Response" },
-    { href: "/best-for/ai-sales-agent", label: "AI Sales Agent" },
-    { href: "/best-for/ai-voice-receptionist", label: "AI Receptionist" },
-    { href: "/best-for/conversion-rate-optimization", label: "Conversion Optimization" },
-    { href: "/best-for/ai-customer-engagement", label: "Customer Engagement" },
+    { href: "/samples", label: "Samples" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
   ],
-};
+} satisfies Record<string, ReadonlyArray<FooterLink>>;
+
+function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<FooterLink> }) {
+  return (
+    <div>
+      <h3 className="font-heading text-foreground mb-4 font-semibold">{title}</h3>
+      <ul className="space-y-3">
+        {links.map((link) => (
+          <li key={link.href}>
+            <Link
+              href={link.href}
+              className={
+                link.highlight
+                  ? "text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
+                  : "text-muted-foreground hover:text-foreground text-sm transition-colors"
+              }
+            >
+              {link.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function Footer() {
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-8 gap-8">
+    <footer className="bg-card border-border border-t">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
+          <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold font-heading text-primary">PRESTYJ</span>
+              <span className="font-heading text-primary text-xl font-bold">PRESTYJ</span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
-              AI lead response and appointment setting for real estate teams and brokerages. Respond, qualify, and book 24/7.
+            <p className="text-muted-foreground mt-4 max-w-sm text-sm">
+              We build AI agents for marketing and sales. AI agents and automations that capture
+              leads, respond instantly, qualify, and book meetings 24/7.
             </p>
+            <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
+              <div className="flex flex-wrap gap-x-2">
+                <dt className="text-foreground font-medium">Email:</dt>
+                <dd>
+                  <a
+                    href={`mailto:${SUPPORT_EMAIL}`}
+                    className="hover:text-foreground transition-colors"
+                  >
+                    {SUPPORT_EMAIL}
+                  </a>
+                </dd>
+              </div>
+              <div className="flex flex-wrap gap-x-2">
+                <dt className="text-foreground font-medium">Phone:</dt>
+                <dd>
+                  {SUPPORT_PHONE_HREF !== null ? (
+                    <a
+                      href={SUPPORT_PHONE_HREF}
+                      className="hover:text-foreground transition-colors"
+                    >
+                      {SUPPORT_PHONE_DISPLAY}
+                    </a>
+                  ) : (
+                    <span>{SUPPORT_PHONE_DISPLAY}</span>
+                  )}
+                </dd>
+              </div>
+            </dl>
             <div className="mt-4 flex items-center gap-3">
               {socialLinks.map((link) => (
                 <a
@@ -97,134 +126,16 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Product */}
-          <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Product</h3>
-            <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Solutions */}
-          <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Solutions</h3>
-            <ul className="space-y-3">
-              {footerLinks.solutions.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={
-                      "highlight" in link && link.highlight
-                        ? "text-sm text-primary font-semibold hover:text-primary/80 transition-colors"
-                        : "text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Best For */}
-          <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Best For</h3>
-            <ul className="space-y-3">
-              {footerLinks.bestFor.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* AI Solutions */}
-          <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">AI Solutions</h3>
-            <ul className="space-y-3">
-              {footerLinks.aiSolutions.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Alternatives */}
-          <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Alternatives</h3>
-            <ul className="space-y-3">
-              {footerLinks.alternatives.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Resources</h3>
-            <ul className="space-y-3">
-              {footerLinks.resources.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-heading font-semibold text-foreground mb-4">Legal</h3>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FooterColumn title="Product" links={footerLinks.product} />
+          <FooterColumn title="Company" links={footerLinks.company} />
+          <FooterColumn title="Resources" links={footerLinks.resources} />
+          <FooterColumn title="Legal" links={footerLinks.legal} />
         </div>
 
         <Separator className="my-8" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-muted-foreground">
+        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+          <p className="text-muted-foreground text-sm">
             &copy; {new Date().getFullYear()} PRESTYJ. All rights reserved.
           </p>
         </div>
