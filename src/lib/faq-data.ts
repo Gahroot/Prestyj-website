@@ -1,42 +1,64 @@
-export const faqs = [
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+/**
+ * Canonical FAQ list for Prestyj.
+ *
+ * Positioning: "We build AI agents for marketing & sales."
+ * Industry-neutral. Used on the home page, /ai-sales-assistant, /faq, and
+ * anywhere else FAQs ship. Keep this list tight — it's a single source of truth.
+ */
+export const faqs: FAQItem[] = [
+  {
+    question: "What exactly do I get?",
+    answer:
+      "An AI agent (or set of agents) built for your marketing and sales workflows — engaging inbound leads, qualifying them, booking meetings, and following up — plus the integrations into your CRM, calendar, and ad platforms to make it run. We design, build, deploy, and maintain it. You get a working system, not a tool you have to figure out.",
+  },
+  {
+    question: "Who is this for — and who isn't it for?",
+    answer:
+      "It's a fit if you already have lead flow (paid ads, website, inbound calls, or a database) and the bottleneck is response time, follow-up, or qualification — not lack of leads. It's not a fit if you're pre-revenue with no traffic, or if you're looking for a self-serve chatbot you'll configure yourself. We build done-for-you AI agents, not DIY software.",
+  },
+  {
+    question: "How much does it cost?",
+    answer:
+      "Pricing depends on scope — how many agents, which channels (chat, SMS, email, voice), and the integrations involved. We publish current plans and starting prices at prestyj.com/pricing. On a demo we'll scope your use case and give you an exact number before you commit to anything.",
+  },
+  {
+    question: "How do I get started — what happens after I book a demo?",
+    answer:
+      "You pick a time at prestyj.com/book-demo. On the call we walk through your funnel, identify where AI agents will move the needle, and show you exactly what we'd build. If it's a fit, we scope and quote on the call. If you move forward, onboarding starts immediately and most clients are live within 7–10 business days. If it's not a fit, we'll tell you.",
+  },
+  {
+    question: "What if it doesn't work?",
+    answer:
+      "We run on month-to-month agreements after onboarding — no long-term lock-in. If the agent isn't performing, we iterate on it; if we can't make it work for your business, you can cancel. We'd rather lose a client than trap one in a contract. Specific guarantees (where offered) are spelled out in your signed agreement.",
+  },
   {
     question: "Will my leads know they're talking to AI?",
     answer:
-      "No — and that's intentional. Your AI team member replies as a named person on your team (\"Hey, it's Alex from [Your Brokerage]\"). The conversation is natural, contextual, and on-brand. Leads engage just as well as with a human assistant — often better, because they hear back in under 60 seconds.",
+      "The agent replies as a named person on your team and the conversation feels natural and on-brand. Most leads don't ask; the ones who do are told honestly. Disclosure rules vary by jurisdiction and channel (notably for SMS and AI voice in some U.S. states and the EU), and we configure your agent to comply with whatever applies to you.",
   },
   {
-    question: "How is this different from hiring an ISA?",
+    question: "How is this different from hiring a sales or marketing rep?",
     answer:
-      "A good ISA costs $4,000–$6,000/month, works 9-to-5, takes vacations, and eventually quits. Your AI team member works 24/7, never calls in sick, doesn't need HR management, and costs a fraction of that. It handles the front-end qualification so your ISA — if you keep one — only touches the hot leads.",
+      "A rep works business hours, takes vacation, eventually leaves, and costs thousands per month in salary and management overhead. An AI agent works 24/7, responds in seconds, handles unlimited volume in parallel, and costs a fraction of a full-time hire. Most teams keep their humans for closing and relationship work — the AI handles the front-end repetition.",
   },
   {
-    question: "Does it work with our CRM?",
+    question: "Does it work with our CRM and other tools?",
     answer:
-      "Yes. Prestyj integrates with Follow Up Boss, Sierra Interactive, kvCORE, HubSpot, Salesforce, and more. Leads flow in, get worked, and qualified contacts sync back to your CRM with full conversation history. Setup is typically under 30 minutes.",
+      "Yes. We integrate with the major CRMs (HubSpot, Salesforce, Pipedrive, and most industry-specific platforms), calendars (Google, Outlook), ad platforms (Google, Meta, TikTok), and communication channels (SMS, email, web chat, voice). If your tool has an API or webhook, we can connect to it.",
   },
   {
-    question: "What kind of leads does it handle?",
+    question: "What happens when a lead asks something the agent can't answer?",
     answer:
-      "Buyers, sellers, investors — any inbound lead from your paid ads, website, or organic sources. It also re-engages old leads sitting in your database. If you've got a list of leads you've given up on, your AI team member can work those too.",
-  },
-  {
-    question: "What happens when a lead asks something it can't answer?",
-    answer:
-      "It hands off cleanly. You get notified immediately with full conversation context so you can jump in without the lead ever feeling dropped. It's designed to handle qualification, not replace your expertise on the complex stuff.",
+      "It hands off cleanly. Your team gets notified with the full conversation context so a human can step in without the lead feeling dropped. The agent is designed to handle qualification and routine questions, not replace your team's expertise on the complex stuff.",
   },
   {
     question: "Is there a long-term contract?",
     answer:
-      "No. Month-to-month. We earn your business because the results speak — most team leaders see ROI in the first week. We don't need contracts to keep clients.",
-  },
-  {
-    question: "What are batch video ads?",
-    answer:
-      "Batch video ads are hundreds of unique short-form video ad variations created from a single 15-minute recording session. We use combinatorial creative testing — mixing different hooks, angles, scripts, and CTAs — to produce 300+ ads optimized for Meta, TikTok, and YouTube Shorts. This lets you test every variation at scale and find your winning ad in a week instead of six months. Learn more at prestyj.com/batch-video-ads.",
-  },
-  {
-    question: "How fast can I start running ads?",
-    answer:
-      "Most clients are live within 7–10 business days of signing up. We handle everything — AI agent training, landing page build, ad campaign creation, and CRM setup. You just need a 30-minute kickoff call and a 15-minute recording session. See plan details and timelines at prestyj.com/pricing.",
+      "No. Month-to-month after onboarding. We earn the renewal each month on results, not contracts.",
   },
 ];
