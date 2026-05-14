@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { blogSource } from "@/lib/source";
+import { categorizeSlug, fallbackImageForCategory } from "@/lib/blog/categories";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
@@ -39,7 +40,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   const { title, description, keywords, author, image, date, noindex } = page.data;
   const postUrl = `${siteUrl}/blog/${slug}`;
-  const ogImage = image || "/og-image.jpg";
+  const ogImage = image || fallbackImageForCategory(categorizeSlug(slug));
 
   return {
     title: title,
@@ -185,7 +186,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "@type": "Article",
     headline: title,
     description,
-    image: image ? `${siteUrl}${image}` : `${siteUrl}/og-image.jpg`,
+    image: `${siteUrl}${image ?? fallbackImageForCategory(categorizeSlug(slug))}`,
     author: {
       "@type": "Organization",
       name: author || "Prestyj Team",

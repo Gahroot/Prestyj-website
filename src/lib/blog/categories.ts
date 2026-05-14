@@ -10,6 +10,28 @@ export const BLOG_CATEGORIES = [
 export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
 
 /**
+ * Per-category fallback image used when a post has no `image` in frontmatter.
+ * Files live at `public/images/blog/fallback-<category-slug>.jpg`.
+ */
+const CATEGORY_FALLBACK_IMAGE: Readonly<Record<BlogCategory, string>> = {
+  "AI Sales Agents": "/images/blog/fallback-ai-sales-agents.jpg",
+  "AI Marketing": "/images/blog/fallback-ai-marketing.jpg",
+  "Lead Response": "/images/blog/fallback-lead-response.jpg",
+  "Video Ads": "/images/blog/fallback-video-ads.jpg",
+  "Social Content": "/images/blog/fallback-social-content.jpg",
+  "Case Studies": "/images/blog/fallback-case-studies.jpg",
+};
+
+/**
+ * Returns the per-category fallback image path for a post.
+ * Use when a post has no frontmatter `image` so JSON-LD / OG images stay
+ * topically relevant instead of falling back to a single generic asset.
+ */
+export function fallbackImageForCategory(category: BlogCategory): string {
+  return CATEGORY_FALLBACK_IMAGE[category];
+}
+
+/**
  * Infer a blog post's category from its slug.
  *
  * Order matters: more specific patterns are matched first so a post like
