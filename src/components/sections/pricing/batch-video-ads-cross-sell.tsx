@@ -12,16 +12,18 @@ const tiers = [
 export function BatchVideoAdsCrossSellSection() {
   return (
     <section className="py-12">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll>
-          <div className="rounded-2xl border border-primary/30 bg-card p-8 sm:p-10">
-            <div className="grid md:grid-cols-[1fr_auto] gap-8 items-center">
+          <div className="border-primary/30 bg-card rounded-2xl border p-8 sm:p-10">
+            <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
               <div className="space-y-3">
-                <h3 className="text-2xl sm:text-3xl font-heading font-bold text-foreground">
-                  Looking for one-time batch video ads instead?
+                <h3 className="font-heading text-foreground text-2xl font-bold sm:text-3xl">
+                  Need more video ads? Add a Batch Video Ad pack to your plan.
                 </h3>
                 <p className="text-muted-foreground">
-                  300–1,000 scripted vertical video ads shipped in 24 hours. Real faces, combinatorial creative, ready to run on Meta, TikTok, and YouTube Shorts.
+                  An AI-produced add-on for clients already on an AI marketing agent plan. 300+
+                  scripted vertical video ads from a single recording session, delivered in 1–2
+                  business days — ready to run on Meta, TikTok, and YouTube Shorts.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-1">
                   {tiers.map((tier) => (
@@ -29,23 +31,19 @@ export function BatchVideoAdsCrossSellSection() {
                       key={tier.price}
                       className={
                         tier.featured
-                          ? "rounded-lg border-2 border-primary px-4 py-2"
-                          : "rounded-lg border border-border px-4 py-2"
+                          ? "border-primary rounded-lg border-2 px-4 py-2"
+                          : "border-border rounded-lg border px-4 py-2"
                       }
                     >
-                      <span className="font-heading font-bold text-foreground">
-                        {tier.price}
-                      </span>
-                      <span className="text-sm text-muted-foreground ml-2">
-                        {tier.label}
-                      </span>
+                      <span className="font-heading text-foreground font-bold">{tier.price}</span>
+                      <span className="text-muted-foreground ml-2 text-sm">{tier.label}</span>
                     </div>
                   ))}
                 </div>
               </div>
               <Button size="lg" asChild>
-                <Link href="/batch-video-ads#pricing">
-                  See Batch Pricing
+                <Link href="/book-demo">
+                  Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

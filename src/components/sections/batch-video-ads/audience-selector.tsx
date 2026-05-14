@@ -2,14 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Briefcase,
-  Building2,
-  Megaphone,
-  Mic,
-  Wrench,
-  type LucideIcon,
-} from "lucide-react";
+import { Briefcase, Building2, Megaphone, Mic, Wrench, type LucideIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
@@ -37,9 +30,10 @@ const DEFAULT_AUDIENCES: AudienceProfile[] = [
     id: "coaches",
     label: "Coaches & Course Creators",
     icon: Mic,
-    headline: "Your one hero ad died with Andromeda.",
-    pain: "The 6-month winning ad is dead — Meta evaluates 10,000× more candidates per impression now. One ad can't compete.",
-    outcome: "300–1,000 founder-on-camera angles in a sprint. Test your whole offer in week one.",
+    headline: "One hero ad isn't enough anymore.",
+    pain: "Ad platforms evaluate thousands of creative options per impression now. One ad can't keep up.",
+    outcome:
+      "300–1,000 founder-on-camera angles in one pack. Test your whole offer in days, not months.",
     bullets: [
       "Founder-on-camera (2–4× CTR vs stock)",
       "Belief, mechanism, identity, transformation angles",
@@ -51,10 +45,11 @@ const DEFAULT_AUDIENCES: AudienceProfile[] = [
     label: "Media Buyers",
     icon: Megaphone,
     headline: "Stop sitting on dead Asana cards waiting for creative.",
-    pain: "Your launch is bottlenecked on a creator who ships 4 ads a week. You can't feed Andromeda what it wants.",
-    outcome: "300+ ad variations in 24 hours. Hook, body, CTA, angle. All ready to slot into ad sets.",
+    pain: "Your launch is bottlenecked on a creator who ships 4 ads a week. You can't feed the platform what it wants.",
+    outcome:
+      "300+ ads in 1–2 business days. Hook, body, CTA, angle. All ready to slot into ad sets.",
     bullets: [
-      "Scripted hook/body/CTA matrix per pain point",
+      "Scripted hooks, bodies, and CTAs for every customer problem",
       "Vertical 9:16, native UGC look",
       "One source clip → unlimited fresh variations",
     ],
@@ -65,7 +60,8 @@ const DEFAULT_AUDIENCES: AudienceProfile[] = [
     icon: Briefcase,
     headline: "Your $5K/month agency ships 4 ads. We ship 300 in a day.",
     pain: "Creative is the #1 line-item bottleneck on every paid channel — and the slowest function on your team.",
-    outcome: "Predictable creative supply. Test 10 pain points in parallel instead of arguing about which to try first.",
+    outcome:
+      "Predictable creative supply. Test 10 customer problems in parallel instead of arguing about which to try first.",
     bullets: [
       "Volume that matches your media spend",
       "Reports show which angles win, not opinions",
@@ -78,9 +74,10 @@ const DEFAULT_AUDIENCES: AudienceProfile[] = [
     icon: Building2,
     headline: "White-label volume your creative team can't ship.",
     pain: "You're paying editors $5K–$10K/month and still telling clients 'creative is coming' on every weekly call.",
-    outcome: "Per-client batches at our cost, billed to your client at your margin. Stop losing accounts over creative supply.",
+    outcome:
+      "Per-client batches at our cost, billed to your client at your margin. Stop losing accounts over creative supply.",
     bullets: [
-      "Per-brand pain point intake",
+      "Per-brand customer problem intake",
       "Your brand stamp on the delivery",
       "Volume your editors physically can't match",
     ],
@@ -91,10 +88,11 @@ const DEFAULT_AUDIENCES: AudienceProfile[] = [
     icon: Wrench,
     headline: "Sound like a neighbor, not an ad agency.",
     pain: "Polished production ads scream 'advertisement' — homeowners scroll. Your offer never gets heard.",
-    outcome: "Selfie-style ads that look like another contractor on the feed. People stop, watch, and call.",
+    outcome:
+      "Selfie-style ads that look like another contractor on the feed. People stop, watch, and call.",
     bullets: [
       "Native UGC format (no 'ad look')",
-      "Pain points: price, trust, no-shows, warranty",
+      "Customer problems: price, trust, no-shows, warranty",
       "Local-feel scripts in your voice",
     ],
   },
@@ -110,22 +108,20 @@ export function BatchAudienceSelector({
   const current = audiences.find((a) => a.id === active) ?? audiences[0];
 
   return (
-    <section className="py-24 px-4 bg-muted/10">
-      <div className="max-w-6xl mx-auto">
-        <AnimateOnScroll className="text-center mb-10">
-          <Badge variant="outline" className="mb-3 border-primary/50 text-primary">
+    <section className="bg-muted/10 px-4 py-24">
+      <div className="mx-auto max-w-6xl">
+        <AnimateOnScroll className="mb-10 text-center">
+          <Badge variant="outline" className="border-primary/50 text-primary mb-3">
             {eyebrow}
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
             {headline}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {subhead}
-          </p>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{subhead}</p>
         </AnimateOnScroll>
 
         <AnimateOnScroll>
-          <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-8">
+          <div className="mb-8 flex flex-wrap justify-center gap-2 md:gap-3">
             {audiences.map((a) => {
               const Icon = a.icon;
               const isActive = a.id === active;
@@ -134,14 +130,14 @@ export function BatchAudienceSelector({
                   key={a.id}
                   onClick={() => setActive(a.id)}
                   className={cn(
-                    "inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-sm font-semibold border transition-all",
+                    "inline-flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-semibold transition-all",
                     isActive
-                      ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/20"
-                      : "bg-card text-muted-foreground border-border hover:border-primary/50 hover:text-foreground"
+                      ? "bg-primary text-primary-foreground border-primary shadow-primary/20 shadow-md"
+                      : "bg-card text-muted-foreground border-border hover:border-primary/50 hover:text-foreground",
                   )}
                   aria-pressed={isActive}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className="h-4 w-4" />
                   {a.label}
                 </button>
               );
@@ -158,17 +154,17 @@ export function BatchAudienceSelector({
             transition={{ duration: 0.25 }}
           >
             <BorderGlow borderRadius={20} innerClassName="p-8 md:p-10">
-              <div className="grid md:grid-cols-3 gap-8 items-start">
+              <div className="grid items-start gap-8 md:grid-cols-3">
                 <div className="md:col-span-2">
-                  <h3 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
+                  <h3 className="font-heading text-foreground mb-3 text-2xl font-bold md:text-3xl">
                     {current.headline}
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    <span className="font-semibold text-destructive/90">The problem: </span>
+                    <span className="text-destructive/90 font-semibold">The problem: </span>
                     {current.pain}
                   </p>
                   <p className="text-foreground">
-                    <span className="font-semibold text-success">What you get: </span>
+                    <span className="text-success font-semibold">What you get: </span>
                     {current.outcome}
                   </p>
                 </div>
@@ -176,7 +172,7 @@ export function BatchAudienceSelector({
                   {current.bullets.map((b) => (
                     <li
                       key={b}
-                      className="text-sm text-foreground/90 bg-muted/30 border border-border rounded-lg px-3 py-2"
+                      className="text-foreground/90 bg-muted/30 border-border rounded-lg border px-3 py-2 text-sm"
                     >
                       {b}
                     </li>

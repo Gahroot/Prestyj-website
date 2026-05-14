@@ -25,38 +25,35 @@ const PILLARS = [
 
 export function AndromedaPOV() {
   return (
-    <section className="py-24 px-4 bg-muted/20 border-y border-border">
-      <div className="max-w-6xl mx-auto">
-        <AnimateOnScroll className="text-center mb-12">
-          <Badge variant="outline" className="mb-3 border-primary/50 text-primary">
-            <Sparkles className="w-3.5 h-3.5 mr-1.5" />
+    <section className="bg-muted/20 border-border border-y px-4 py-24">
+      <div className="mx-auto max-w-6xl">
+        <AnimateOnScroll className="mb-12 text-center">
+          <Badge variant="outline" className="border-primary/50 text-primary mb-3">
+            <Sparkles className="mr-1.5 h-3.5 w-3.5" />
             The Andromeda Reality
           </Badge>
-          <h2 className="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
             Volume Isn&apos;t a Preference. It&apos;s the Algorithm&apos;s Input.
           </h2>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Meta&apos;s Andromeda update broke the old playbook of one hero ad + narrow
-            lookalike + interest stack. The new floor is volume — and creative-as-targeting
-            is how you compete.
+          <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
+            Meta&apos;s Andromeda update broke the old playbook of one hero ad + narrow lookalike +
+            interest stack. The new floor is volume — and creative-as-targeting is how you compete.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {PILLARS.map((p, i) => {
             const Icon = p.icon;
             return (
               <AnimateOnScroll key={p.title} delay={i * 0.1}>
                 <BorderGlow borderRadius={18} innerClassName="p-7 h-full">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
-                    <Icon className="w-6 h-6" />
+                  <div className="bg-primary/10 text-primary mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full">
+                    <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="font-heading font-bold text-lg text-foreground mb-3 leading-snug">
+                  <h3 className="font-heading text-foreground mb-3 text-lg leading-snug font-bold">
                     {p.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {p.body}
-                  </p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{p.body}</p>
                 </BorderGlow>
               </AnimateOnScroll>
             );
@@ -65,19 +62,19 @@ export function AndromedaPOV() {
 
         <AnimateOnScroll delay={0.3}>
           <BorderGlow borderRadius={20} innerClassName="p-8 md:p-10 text-center">
-            <p className="text-lg md:text-xl text-foreground font-heading font-semibold mb-3">
+            <p className="text-foreground font-heading mb-3 text-lg font-semibold md:text-xl">
               The old way: argue about <em>which</em> hook to test next.
             </p>
-            <p className="text-lg md:text-xl text-primary font-heading font-bold mb-6">
-              The new way: ship every hook, every angle, every pain point — and let the
+            <p className="text-primary font-heading mb-6 text-lg font-bold md:text-xl">
+              The new way: ship every hook, every angle, every customer problem — and let the
               algorithm tell you what won.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button size="lg" className="font-bold" asChild>
-                <a href="#pricing">
-                  Get 100+ Angles in My Next Sprint
+                <Link href="/book-demo">
+                  Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
               <Button size="lg" variant="outline" className="font-bold" asChild>
                 <Link href="/blog/andromeda-impact-on-coaches-creators-ads-2026">

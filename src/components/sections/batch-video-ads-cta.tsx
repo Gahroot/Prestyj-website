@@ -11,26 +11,26 @@ export function BatchVideoAdsCTASection() {
         <AnimateOnScroll className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="space-y-6">
             <Badge variant="outline" className="border-primary/50 text-primary">
-              Featured Offer
+              Add-on to AI Marketing Agent Plans
             </Badge>
 
             <h2 className="font-heading text-foreground text-3xl font-bold sm:text-4xl md:text-5xl">
-              Need 300–1,000 scripted vertical video ads?
+              Need 300+ scripted vertical video ads?
               <br />
-              <span className="text-primary">Done in 24 hours.</span>
+              <span className="text-primary">Delivered in 1–2 business days.</span>
             </h2>
 
             <p className="text-muted-foreground max-w-lg text-lg">
-              Real faces beat AI avatars on Meta, TikTok, and YouTube Shorts — and winning at scale
-              means testing at scale. We ship combinatorial creative (hooks x bodies x CTAs) so you
-              can find the handful of ads that actually convert, instead of burning budget on one
-              tired concept.
+              An AI-produced video ad pack you can add to your AI marketing agent plan. We mix
+              different hooks, scripts, and calls to action so you get hundreds of unique ads from
+              one short recording session — then run them on Meta, TikTok, and YouTube Shorts to see
+              which ones actually convert.
             </p>
 
             <div className="flex flex-col items-start gap-4 pt-2 sm:flex-row">
               <Button size="lg" className="px-8 text-lg" asChild>
-                <Link href="/batch-video-ads#pricing">
-                  See Pricing
+                <Link href="/book-demo">
+                  Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

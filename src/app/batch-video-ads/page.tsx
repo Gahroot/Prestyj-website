@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 export const metadata: Metadata = {
-  title: "Batch Video Ads",
+  title: "Batch Video Ads — Add-on to Your AI Marketing Agent Plan",
   description:
-    "Batch Video Ads — part of our AI agents for marketing & sales. Generate 300–1,000 scripted video ad variations from a single recording session, delivered in 24 hours.",
+    "AI-produced video ads as an add-on to your AI marketing agent plan. 300+ scripted video ads from a single recording session, delivered in 1–2 business days.",
   openGraph: {
-    title: "Batch Video Ads",
+    title: "Batch Video Ads — Add-on to Your AI Marketing Agent Plan",
     description:
-      "Batch Video Ads — part of our AI agents for marketing & sales. 300–1,000 scripted video ad variations from one recording session.",
+      "AI-produced video ads as an add-on to your AI marketing agent plan. 300+ scripted video ads from a single recording session, delivered in 1–2 business days.",
     type: "website",
   },
 };

@@ -29,7 +29,10 @@ import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { VideoCarousel } from "@/components/sections/video-carousel";
 import { BatchAudienceSelector } from "@/components/sections/batch-video-ads/audience-selector";
-import { HiddenCostTable, type HiddenCostRow } from "@/components/sections/batch-video-ads/hidden-cost-table";
+import {
+  HiddenCostTable,
+  type HiddenCostRow,
+} from "@/components/sections/batch-video-ads/hidden-cost-table";
 import { AndromedaPOV } from "@/components/sections/batch-video-ads/andromeda-pov";
 import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 import { cn } from "@/lib/utils";
@@ -96,9 +99,9 @@ const TIERS: UITier[] = [
     icon: <Zap className="h-5 w-5" />,
     highlights: [
       "300 unique vertical video ads",
-      "3 pain points tested",
-      "Hook, body & CTA variations",
-      "24-hour turnaround*",
+      "3 customer problems covered",
+      "Multiple hooks, scripts & CTAs per problem",
+      "1–2 business days",
       "Error revisions included",
     ],
   },
@@ -113,9 +116,9 @@ const TIERS: UITier[] = [
     icon: <Flame className="h-5 w-5" />,
     highlights: [
       "500 unique vertical video ads",
-      "5 pain points tested",
-      "Hook, body & CTA variations",
-      "24-hour turnaround*",
+      "5 customer problems covered",
+      "Multiple hooks, scripts & CTAs per problem",
+      "1–2 business days",
       "Error revisions included",
       "Priority queue",
     ],
@@ -130,12 +133,12 @@ const TIERS: UITier[] = [
     icon: <Rocket className="h-5 w-5" />,
     highlights: [
       "1000 unique vertical video ads",
-      "10 pain points tested",
-      "Hook, body & CTA variations",
-      "24-hour turnaround*",
+      "10 customer problems covered",
+      "Multiple hooks, scripts & CTAs per problem",
+      "1–2 business days",
       "Error revisions included",
       "Priority queue",
-      "Full-spectrum angle coverage",
+      "Every angle covered",
     ],
   },
 ];
@@ -157,20 +160,20 @@ const HIDDEN_COST_ROWS: HiddenCostRow[] = [
   },
   {
     feature: "Monthly all-in cost",
-    prestyj: "$1,497–$3,997 per sprint",
+    prestyj: "$1,497–$3,997 per pack",
     agency: "$5K–$25K retainer",
     ugc: "$3K–$8K + product",
     inHouse: "$6K–$10K salary + benefits",
   },
   {
     feature: "Turnaround: footage → 300 ads",
-    prestyj: "24 hours*",
+    prestyj: "1–2 business days",
     agency: "4–8 weeks",
     ugc: "3–6 weeks",
     inHouse: "6–12 weeks",
   },
   {
-    feature: "Pain points tested in parallel",
+    feature: "Customer problems covered in parallel",
     prestyj: "3–10",
     agency: "1–2",
     ugc: "1",
@@ -205,7 +208,7 @@ const HIDDEN_COST_ROWS: HiddenCostRow[] = [
     inHouse: true,
   },
   {
-    feature: "Feeds Andromeda volume floor",
+    feature: "Built for modern ad platform volume",
     prestyj: true,
     agency: false,
     ugc: false,
@@ -213,7 +216,7 @@ const HIDDEN_COST_ROWS: HiddenCostRow[] = [
   },
   {
     feature: "Contract length",
-    prestyj: "One sprint, no renewal",
+    prestyj: "One-time pack, no renewal",
     agency: "3–12 mo retainer",
     ugc: "Per-creator deals",
     inHouse: "W2 / 6-mo ramp",
@@ -231,23 +234,23 @@ const FAQS = [
   },
   {
     q: "How does pricing actually work? Any hidden fees?",
-    a: "Three tiers, one-time payment per sprint: $1,497 (300 ads / 3 pain points), $2,497 (500 ads / 5 pain points), $3,997 (1,000 ads / 10 pain points). That's the entire invoice. No platform fees, no usage fees, no per-edit fees, no rush fees, no monthly retainer. Pay once per sprint, get the files, done. If you want another sprint next month, you pay again. We don't lock you in.",
+    a: "Batch Video Ads is an add-on to your AI marketing agent plan. Three pack sizes, one-time payment per pack: $1,497 (300 ads / 3 customer problems), $2,497 (500 ads / 5 customer problems), $3,997 (1,000 ads / 10 customer problems). That's the entire invoice. No platform fees, no usage fees, no per-edit fees, no rush fees. Pay once per pack, get the files, done.",
   },
   {
     q: "How is this different from hiring a UGC creator?",
-    a: "A UGC creator films themselves saying your script — usually 3–6 ads for $500–$1,500 each, 2–4 weeks later. We use YOUR face (or your founder's), write every script for you, and deliver 300–1,000 variations in 24 hours. UGC is a person. We're a creative system. UGC is great if you want a few polished pieces. We're built for the volume Andromeda actually requires.",
+    a: "A UGC creator films themselves saying your script — usually 3–6 ads for $500–$1,500 each, 2–4 weeks later. We use YOUR face (or your founder's), write every script for you, and deliver 300–1,000 ads in 1–2 business days. UGC is a person. We're a creative system. UGC is great if you want a few polished pieces. We're built for the volume modern ad platforms now require.",
   },
   {
     q: "How is this different from a creative agency?",
-    a: "Agencies bill $5K–$25K/month and ship 4–10 ads in that window. Math: $500–$2,000 per ad. We charge $4–$5 per ad and ship in 24 hours. The agency model is built for a pre-Andromeda world where one polished hero ad ran for 6 months. That ad's half-life is now 5–14 days. The economics broke. We're what replaced it.",
+    a: "Agencies bill $5K–$25K/month and ship 4–10 ads in that window. Math: $500–$2,000 per ad. We charge $4–$5 per ad and ship in 1–2 business days. The agency model was built for a world where one polished hero ad ran for 6 months. Today most ads burn out in 5–14 days. The economics broke. We're what replaced it.",
   },
   {
     q: "What if I mess up mid-recording?",
     a: "Don't stop. Just take a breath, say the line number again, and re-read it. We edit around the fumbles — that's part of the system. The whole point is that you don't have to be perfect, you just have to get through the script in one take.",
   },
   {
-    q: "How fast is 24 hours really?",
-    a: "24 hours from when we receive your footage. Weekends count as Monday — so if you send footage Sunday, it's considered delivered Monday and due by end of day Tuesday. We're fast because the whole system is built for volume, not boutique hand-crafting.",
+    q: "How fast is delivery, really?",
+    a: "1–2 business days from when we receive your footage. Send footage Sunday and it's treated as a Monday start, delivered by end of day Tuesday. We're fast because the whole system is built for volume, not boutique hand-crafting.",
   },
   {
     q: "Why not just pay for polished production ads?",
@@ -255,7 +258,7 @@ const FAQS = [
   },
   {
     q: "Why do I need this many variations?",
-    a: "Hook testing alone needs 50+ variations to find what actually works. At 1 ad a day (what most teams manage) that's two months before you even know what hook lands. And if nobody gets past the hook, nobody ever hears your solution to their pain points — no matter how good your offer is. Batch testing runs every angle in parallel so you find your winners in the first week of spend instead of the sixth month.",
+    a: "Hook testing alone needs 50+ variations to find what actually works. At 1 ad a day (what most teams manage) that's two months before you even know what hook lands. And if nobody gets past the hook, nobody ever hears your solution to their problems — no matter how good your offer is. Running every angle in parallel means you find what works in days, not months.",
   },
   {
     q: "Do you revise ads if I don't like them?",
@@ -263,10 +266,10 @@ const FAQS = [
   },
   {
     q: "What results should I expect?",
-    a: "Data. You'll get hundreds of angles running so you can see — not guess — which pain points convert, which hooks hold attention, and which CTAs close. We don't promise CTRs, appointments, or ROAS. Those depend on your offer, audience, and spend. We promise you'll stop flying blind.",
+    a: "Data. You'll get hundreds of angles running so you can see — not guess — which customer problems convert, which hooks hold attention, and which CTAs close. We don't promise CTRs, appointments, or ROAS. Those depend on your offer, audience, and spend. We promise you'll stop flying blind.",
   },
   {
-    q: "What if I don't know all my pain points yet?",
+    q: "What if I don't know what problems to focus on yet?",
     a: "The form walks you through it step by step. If you have a business, you already know what your customers complain about — we just help you structure it.",
   },
 ];
@@ -315,19 +318,24 @@ export function BatchVideoAdsClient() {
             transition={{ duration: 0.5 }}
           >
             <Badge variant="outline" className="border-primary/50 text-primary mb-3">
-              <ShinyText text="BATCH VIDEO ADS" speed={3} color="#b0b0b0" shineColor="#7058e3" />
+              <ShinyText
+                text="ADD-ON TO AI MARKETING AGENT PLANS"
+                speed={3}
+                color="#b0b0b0"
+                shineColor="#7058e3"
+              />
             </Badge>
           </motion.div>
 
           <h1 className="font-heading text-foreground mb-4 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
             <BlurText
-              text="300–1,000 Scripted Ads."
+              text="AI-produced video ads — 300+ ads in 24 hours,"
               delay={60}
               animateBy="words"
               className="justify-center"
             />
             <BlurText
-              text="$4 per Variation. 24 Hours.*"
+              text="as an add-on to your AI marketing agent plan."
               delay={60}
               animateBy="words"
               className="text-primary justify-center"
@@ -373,23 +381,14 @@ export function BatchVideoAdsClient() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-muted-foreground mx-auto mb-3 max-w-3xl text-sm sm:text-base"
           >
-            Send 15–20 minutes of casual selfie footage. Get back{" "}
+            Add a Batch Video Ad pack to your AI marketing agent plan. Send 15–20 minutes of casual
+            selfie footage and get back{" "}
             <span className="text-foreground font-semibold">
-              300–1,000 scripted ad variations that look like content, not ads
-            </span>{" "}
-            — for the volume Andromeda now requires. From{" "}
-            <span className="text-foreground font-semibold">$1,497 per sprint</span>{" "}
-            (~$4/variation) vs $500–$2K/ad at an agency.
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="text-muted-foreground/70 mx-auto mb-5 max-w-2xl text-xs"
-          >
-            *24 hours from when we receive your footage. Footage received Sunday counts as Monday —
-            delivered by end of day Tuesday.
+              300+ scripted ads that look like content, not ads
+            </span>
+            , delivered in <span className="text-foreground font-semibold">1–2 business days</span>.
+            Packs start at <span className="text-foreground font-semibold">$1,497</span> (~$4 per
+            ad) vs $500–$2K per ad at an agency.
           </motion.p>
 
           <motion.div
@@ -400,27 +399,16 @@ export function BatchVideoAdsClient() {
           >
             <ClickSpark sparkColor="#7058e3" sparkCount={12} sparkRadius={28}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <a href="#pricing">
-                  Get 100 Ad Angles in 1 Sprint
+                <Link href="/book-demo">
+                  Book a Demo
                   <Rocket className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
             </ClickSpark>
             <ClickSpark sparkColor="#5ee5b3" sparkCount={10} sparkRadius={25}>
-<<<<<<< Updated upstream
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-lg px-8 font-bold"
-                asChild
-              >
-                <a href="#hidden-cost">
-                  See What Agencies Charge
-=======
               <Button size="lg" variant="outline" className="px-8 text-lg font-bold" asChild>
                 <a href="#pricing">
-                  See Pricing
->>>>>>> Stashed changes
+                  See Pack Pricing
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
@@ -440,9 +428,8 @@ export function BatchVideoAdsClient() {
             </div>
             <div className="bg-border hidden h-8 w-px sm:block" />
             <div className="flex items-center gap-2">
-              <CountUp to={24} duration={1.5} className="text-success text-2xl font-bold" />
-              <span className="text-success text-2xl font-bold">hr</span>
-              <span className="text-sm">turnaround*</span>
+              <span className="text-success text-2xl font-bold">1–2</span>
+              <span className="text-sm">business days</span>
             </div>
             <div className="bg-border hidden h-8 w-px sm:block" />
             <div className="flex items-center gap-2">
@@ -498,7 +485,7 @@ export function BatchVideoAdsClient() {
               {
                 step: "01",
                 title: "Tell us about your business",
-                body: "Fill out the form on this page. Business name, audience, pain points, offer. Takes a few minutes.",
+                body: "Fill out the form on this page. Business name, audience, customer problems, offer. Takes a few minutes.",
                 icon: <Target className="h-7 w-7" />,
               },
               {
@@ -515,8 +502,8 @@ export function BatchVideoAdsClient() {
               },
               {
                 step: "04",
-                title: "Hundreds of ads, 24 hours later",
-                body: "Send us the raw footage. We turn it into your full batch of ads — ready to launch and test every angle in parallel.",
+                title: "Hundreds of ads, 1–2 days later",
+                body: "Send us the raw footage. We turn it into your full pack of ads — ready to launch and test every angle in parallel.",
                 icon: <Rocket className="h-7 w-7" />,
               },
             ].map((item, i) => (
@@ -540,10 +527,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <a href="#pricing">
-                  Get My 300-Ad Sprint Started
+                <Link href="/book-demo">
+                  Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -555,10 +542,10 @@ export function BatchVideoAdsClient() {
         <div className="mx-auto max-w-5xl">
           <AnimateOnScroll className="mb-12 text-center">
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
-              The Math of Finding a Winning Ad
+              The Math of Finding Ads That Convert
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
-              Most businesses never find their winning ad — because the traditional way takes longer
+              Most businesses never find ads that convert — because the traditional way takes longer
               than the business can survive.
             </p>
           </AnimateOnScroll>
@@ -601,7 +588,8 @@ export function BatchVideoAdsClient() {
                   <li className="flex items-start gap-3">
                     <TrendingDown className="text-destructive mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
-                      And nobody hears your pain points or offer if they scroll past the hook.
+                      And nobody hears the problems you solve, let alone your offer, if they scroll
+                      past the hook.
                     </span>
                   </li>
                 </ul>
@@ -622,7 +610,7 @@ export function BatchVideoAdsClient() {
                   <li className="flex items-start gap-3">
                     <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
-                      Every hook, every pain point, every angle tested{" "}
+                      Every hook, every customer problem, every angle tested{" "}
                       <span className="text-foreground font-semibold">in one go</span>.
                     </span>
                   </li>
@@ -636,15 +624,15 @@ export function BatchVideoAdsClient() {
                   <li className="flex items-start gap-3">
                     <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
-                      Find your winning hooks in the{" "}
-                      <span className="text-foreground font-semibold">first week of spend</span>,
-                      not the sixth month.
+                      Find hooks that hold attention in{" "}
+                      <span className="text-foreground font-semibold">days, not months</span>.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Check className="text-success mt-0.5 h-5 w-5 flex-shrink-0" />
                     <span>
-                      Know exactly which pain points convert — because you actually tested them.
+                      Know exactly which customer problems convert — because you actually tested
+                      them.
                     </span>
                   </li>
                 </ul>
@@ -655,10 +643,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <a href="#pricing">
-                  Test 10 Angles in 24 Hours
+                <Link href="/book-demo">
+                  Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -811,10 +799,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <a href="#pricing">
-                  Ship 500 Native-Look Ads This Week
+                <Link href="/book-demo">
+                  Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -835,7 +823,7 @@ export function BatchVideoAdsClient() {
               {
                 icon: <Target className="h-6 w-6" />,
                 title: "Every angle in one shot",
-                body: "Test every hook, body, and pain point at the same time instead of guessing which to try first.",
+                body: "Test every hook, body, and customer problem at the same time instead of guessing which to try first.",
               },
               {
                 icon: <Zap className="h-6 w-6" />,
@@ -854,13 +842,13 @@ export function BatchVideoAdsClient() {
               },
               {
                 icon: <Sparkles className="h-6 w-6" />,
-                title: "Pain points that convert",
+                title: "Customer problems that convert",
                 body: "Find out which problems your audience actually cares about — without burning months on the wrong one.",
               },
               {
                 icon: <Clock className="h-6 w-6" />,
-                title: "24-hour turnaround*",
-                body: "Footage in, scripts out in a day. No production bottleneck, no editing delays.",
+                title: "1–2 business days",
+                body: "Footage in, hundreds of finished ads out. No production bottleneck, no editing delays.",
               },
             ].map((benefit, i) => (
               <AnimateOnScroll key={benefit.title} delay={i * 0.05}>
@@ -880,10 +868,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <a href="#pricing">
-                  Get My Batch Pricing
+                <Link href="/book-demo">
+                  Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </Link>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -916,8 +904,8 @@ export function BatchVideoAdsClient() {
               Pick Your Batch
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              Pick how many pain points you want to test. The more angles you run, the faster you
-              find what wins.
+              Pick how many customer problems you want to test. The more angles you run, the faster
+              you find what wins.
             </p>
           </AnimateOnScroll>
 
@@ -952,7 +940,7 @@ export function BatchVideoAdsClient() {
                       <span className="text-muted-foreground text-sm">one-time</span>
                     </div>
                     <p className="text-primary mt-2 text-sm font-semibold">
-                      {tier.adCount} ads · {tier.painPoints} pain points
+                      {tier.adCount} ads · {tier.painPoints} customer problems
                     </p>
                   </div>
 
@@ -998,10 +986,9 @@ export function BatchVideoAdsClient() {
           )}
 
           <p className="text-muted-foreground mx-auto mt-10 max-w-2xl text-center text-xs">
-            Secure checkout via Stripe. *24-hour turnaround guaranteed from the moment we receive
-            your footage. Weekends: footage received Sunday counts as Monday — delivered by end of
-            day Tuesday. Revisions for errors only — this is ad creative testing, not boutique edit
-            work.
+            Secure checkout via Stripe. Batch Video Ads is an add-on to your AI marketing agent
+            plan. Delivery in 1–2 business days from the moment we receive your footage. Revisions
+            for errors only — this is ad creative testing, not boutique edit work.
           </p>
         </div>
       </section>
@@ -1047,14 +1034,9 @@ export function BatchVideoAdsClient() {
                 className="shadow-primary/25 rounded-lg px-12 py-7 text-lg font-bold shadow-lg"
                 asChild
               >
-                <Link href="#pricing">
-<<<<<<< Updated upstream
-                  Get 300 Ads Shipped in 24h
-                  <ArrowRight className="w-5 h-5 ml-2" />
-=======
+                <Link href="/book-demo">
                   Book a Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
->>>>>>> Stashed changes
                 </Link>
               </Button>
             </ClickSpark>
