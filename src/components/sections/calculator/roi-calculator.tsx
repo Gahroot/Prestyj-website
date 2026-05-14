@@ -93,10 +93,10 @@ export function RoiCalculator() {
     const netAnnualBenefit = potentialRecoveredRevenue - estimatedAICost;
 
     // ROI percentage
-    const roi = ((netAnnualBenefit / estimatedAICost) * 100);
+    const roi = (netAnnualBenefit / estimatedAICost) * 100;
 
     // Additional jobs per month
-    const additionalJobsPerMonth = (missedCallsPerMonth * aiRecoveryRate * conversionRate);
+    const additionalJobsPerMonth = missedCallsPerMonth * aiRecoveryRate * conversionRate;
 
     // Payback period in months
     const paybackPeriod = estimatedAICost / (netAnnualBenefit / 12);
@@ -184,7 +184,7 @@ export function RoiCalculator() {
       <Card className="border-2">
         <CardHeader>
           <div className="flex items-center gap-2">
-            <Calculator className="h-6 w-6 text-primary" />
+            <Calculator className="text-primary h-6 w-6" />
             <CardTitle>Your Business Information</CardTitle>
           </div>
           <CardDescription>
@@ -198,9 +198,7 @@ export function RoiCalculator() {
               <Label htmlFor="businessType">Business Type</Label>
               <Select
                 value={inputs.businessType}
-                onValueChange={(value) =>
-                  handleInputChange("businessType", value)
-                }
+                onValueChange={(value) => handleInputChange("businessType", value)}
               >
                 <SelectTrigger id="businessType">
                   <SelectValue placeholder="Select your industry" />
@@ -213,49 +211,39 @@ export function RoiCalculator() {
                   <SelectItem value="landscaping">Landscaping</SelectItem>
                   <SelectItem value="cleaning">Cleaning Services</SelectItem>
                   <SelectItem value="pest-control">Pest Control</SelectItem>
-                  <SelectItem value="general-contractor">
-                    General Contractor
-                  </SelectItem>
+                  <SelectItem value="general-contractor">General Contractor</SelectItem>
                   <SelectItem value="other">Other Home Services</SelectItem>
                 </SelectContent>
               </Select>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="monthlyCallVolume">
-                Monthly Call Volume
-              </Label>
+              <Label htmlFor="monthlyCallVolume">Monthly Call Volume</Label>
               <Input
                 id="monthlyCallVolume"
                 type="number"
                 placeholder="e.g., 200"
                 value={inputs.monthlyCallVolume}
-                onChange={(e) =>
-                  handleInputChange("monthlyCallVolume", e.target.value)
-                }
+                onChange={(e) => handleInputChange("monthlyCallVolume", e.target.value)}
                 min="0"
               />
-              <p className="text-xs text-muted-foreground">
+              <p className="text-muted-foreground text-xs">
                 Approximate number of calls you receive per month
               </p>
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="currentAnswerRate">
-                Current Answer Rate (%)
-              </Label>
+              <Label htmlFor="currentAnswerRate">Current Answer Rate (%)</Label>
               <Input
                 id="currentAnswerRate"
                 type="number"
                 placeholder="e.g., 65"
                 value={inputs.currentAnswerRate}
-                onChange={(e) =>
-                  handleInputChange("currentAnswerRate", e.target.value)
-                }
+                onChange={(e) => handleInputChange("currentAnswerRate", e.target.value)}
                 min="0"
                 max="100"
               />
-              <p className="text-xs text-muted-foreground">
+              <p className="text-muted-foreground text-xs">
                 Percentage of calls you currently answer (0-100)
               </p>
             </div>
@@ -267,23 +255,14 @@ export function RoiCalculator() {
                 type="number"
                 placeholder="e.g., 2500"
                 value={inputs.averageJobValue}
-                onChange={(e) =>
-                  handleInputChange("averageJobValue", e.target.value)
-                }
+                onChange={(e) => handleInputChange("averageJobValue", e.target.value)}
                 min="0"
               />
-              <p className="text-xs text-muted-foreground">
-                Average revenue per completed job
-              </p>
+              <p className="text-muted-foreground text-xs">Average revenue per completed job</p>
             </div>
           </div>
 
-          <Button
-            onClick={calculateROI}
-            disabled={!isFormValid}
-            size="lg"
-            className="w-full"
-          >
+          <Button onClick={calculateROI} disabled={!isFormValid} size="lg" className="w-full">
             <Calculator className="mr-2 h-5 w-5" />
             Calculate My ROI
           </Button>
@@ -296,25 +275,23 @@ export function RoiCalculator() {
               <div className="space-y-6">
                 <div className="text-center">
                   <h3 className="text-2xl font-bold">Your Personalized ROI Report</h3>
-                  <p className="text-muted-foreground mt-2">
-                    Based on your business data
-                  </p>
+                  <p className="text-muted-foreground mt-2">Based on your business data</p>
                 </div>
 
                 {/* Key Metrics Grid */}
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                   <Card className="bg-destructive/5 border-destructive/20">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm font-medium flex items-center gap-2">
-                        <Phone className="h-4 w-4 text-destructive" />
+                      <CardTitle className="flex items-center gap-2 text-sm font-medium">
+                        <Phone className="text-destructive h-4 w-4" />
                         Missed Calls
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-destructive">
+                      <div className="text-destructive text-3xl font-bold">
                         {results.missedCallsPerMonth}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="text-muted-foreground mt-1 text-xs">
                         per month ({results.missedCallsPerYear}/year)
                       </p>
                     </CardContent>
@@ -322,16 +299,16 @@ export function RoiCalculator() {
 
                   <Card className="bg-destructive/5 border-destructive/20">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm font-medium flex items-center gap-2">
-                        <DollarSign className="h-4 w-4 text-destructive" />
+                      <CardTitle className="flex items-center gap-2 text-sm font-medium">
+                        <DollarSign className="text-destructive h-4 w-4" />
                         Revenue Lost
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-destructive">
+                      <div className="text-destructive text-3xl font-bold">
                         {formatCurrency(results.annualRevenueLost)}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">
+                      <p className="text-muted-foreground mt-1 text-xs">
                         annually from missed calls
                       </p>
                     </CardContent>
@@ -339,80 +316,68 @@ export function RoiCalculator() {
 
                   <Card className="bg-primary/5 border-primary/20">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm font-medium flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4 text-primary" />
+                      <CardTitle className="flex items-center gap-2 text-sm font-medium">
+                        <TrendingUp className="text-primary h-4 w-4" />
                         Potential Recovery
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-primary">
+                      <div className="text-primary text-3xl font-bold">
                         {formatCurrency(results.potentialRecoveredRevenue)}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        with AI voice agents
-                      </p>
+                      <p className="text-muted-foreground mt-1 text-xs">with AI voice agents</p>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-primary/5 border-primary/20">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm font-medium flex items-center gap-2">
-                        <Award className="h-4 w-4 text-primary" />
+                      <CardTitle className="flex items-center gap-2 text-sm font-medium">
+                        <Award className="text-primary h-4 w-4" />
                         Net Annual Benefit
                       </CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-primary">
+                      <div className="text-primary text-3xl font-bold">
                         {formatCurrency(results.netAnnualBenefit)}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        after AI service costs
-                      </p>
+                      <p className="text-muted-foreground mt-1 text-xs">after AI service costs</p>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-primary/5 border-primary/20">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm font-medium">
-                        ROI
-                      </CardTitle>
+                      <CardTitle className="text-sm font-medium">ROI</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-primary">
-                        {results.roi}%
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        return on investment
-                      </p>
+                      <div className="text-primary text-3xl font-bold">{results.roi}%</div>
+                      <p className="text-muted-foreground mt-1 text-xs">return on investment</p>
                     </CardContent>
                   </Card>
 
                   <Card className="bg-primary/5 border-primary/20">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-sm font-medium">
-                        Additional Jobs
-                      </CardTitle>
+                      <CardTitle className="text-sm font-medium">Additional Jobs</CardTitle>
                     </CardHeader>
                     <CardContent>
-                      <div className="text-3xl font-bold text-primary">
+                      <div className="text-primary text-3xl font-bold">
                         {results.additionalJobsPerMonth}
                       </div>
-                      <p className="text-xs text-muted-foreground mt-1">
-                        per month with AI
-                      </p>
+                      <p className="text-muted-foreground mt-1 text-xs">per month with AI</p>
                     </CardContent>
                   </Card>
                 </div>
 
                 {/* Summary Card */}
-                <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary">
+                <Card className="from-primary/10 to-primary/5 border-primary bg-gradient-to-br">
                   <CardContent className="pt-6">
-                    <div className="text-center space-y-4">
+                    <div className="space-y-4 text-center">
                       <h4 className="text-xl font-semibold">
-                        Bottom Line: You could add {formatCurrency(results.netAnnualBenefit)} to your bottom line this year
+                        Bottom Line: You could add {formatCurrency(results.netAnnualBenefit)} to
+                        your bottom line this year
                       </h4>
                       <p className="text-muted-foreground">
-                        That&apos;s {results.additionalJobsPerMonth} more jobs per month, with a payback period of just {results.paybackPeriod} months.
+                        That&apos;s {results.additionalJobsPerMonth} more jobs per month, with a
+                        payback period of just {results.paybackPeriod} months.
                       </p>
                     </div>
                   </CardContent>
@@ -420,8 +385,8 @@ export function RoiCalculator() {
 
                 {/* Lead Capture Form */}
                 {!showLeadForm && !submitted && (
-                  <div className="text-center space-y-4">
-                    <p className="text-sm text-muted-foreground">
+                  <div className="space-y-4 text-center">
+                    <p className="text-muted-foreground text-sm">
                       Want a detailed PDF report with personalized recommendations?
                     </p>
                     <Button
@@ -476,17 +441,10 @@ export function RoiCalculator() {
                             required
                           />
                         </div>
-                        <Button
-                          type="submit"
-                          disabled={isSubmitting}
-                          size="lg"
-                          className="w-full"
-                        >
-                          {isSubmitting
-                            ? "Sending..."
-                            : "Get My Free Report"}
+                        <Button type="submit" disabled={isSubmitting} size="lg" className="w-full">
+                          {isSubmitting ? "Sending..." : "Get My Free Report"}
                         </Button>
-                        <p className="text-xs text-center text-muted-foreground">
+                        <p className="text-muted-foreground text-center text-xs">
                           We respect your privacy. Unsubscribe anytime.
                         </p>
                       </form>
@@ -496,12 +454,12 @@ export function RoiCalculator() {
 
                 {submitted && (
                   <Card className="bg-primary/5 border-primary">
-                    <CardContent className="pt-6 text-center space-y-2">
+                    <CardContent className="space-y-2 pt-6 text-center">
                       <h3 className="text-xl font-semibold">Check Your Email!</h3>
                       <p className="text-muted-foreground">
                         We&apos;ve sent your detailed ROI report to {leadFormData.email}
                       </p>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-muted-foreground text-sm">
                         Redirecting you to your results page...
                       </p>
                     </CardContent>
@@ -514,11 +472,11 @@ export function RoiCalculator() {
       </Card>
 
       {/* Trust Indicators */}
-      <div className="mt-8 text-center space-y-4">
-        <p className="text-sm text-muted-foreground">
-          Join 500+ home service businesses using AI to never miss a call
+      <div className="mt-8 space-y-4 text-center">
+        <p className="text-muted-foreground text-sm">
+          See exactly what missed calls are costing you — and what you could recover.
         </p>
-        <div className="flex flex-wrap justify-center gap-4 text-xs text-muted-foreground">
+        <div className="text-muted-foreground flex flex-wrap justify-center gap-4 text-xs">
           <span className="flex items-center gap-1">
             <Award className="h-3 w-3" /> No credit card required
           </span>

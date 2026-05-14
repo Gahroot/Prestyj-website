@@ -231,6 +231,46 @@ export default function TermsPage() {
 
             <section>
               <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
+                Cancellation &amp; Refunds
+              </h2>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                After onboarding is complete, PRESTYJ service plans run month-to-month with no
+                long-term commitment. You may cancel at any time by emailing{" "}
+                <a
+                  href="mailto:support@prestyj.com"
+                  className="text-primary hover:underline"
+                >
+                  support@prestyj.com
+                </a>{" "}
+                with at least <strong className="text-foreground">14 days&apos; notice</strong> before
+                your next monthly billing date. Cancellation stops future monthly charges; fees
+                already paid for the current billing period are non-refundable, and you retain
+                access through the end of the period you paid for.
+              </p>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                <strong className="text-foreground">Setup fees</strong> are charged once at the
+                start of onboarding and are generally non-refundable, except where a specific
+                written guarantee (for example, a documented go-live SLA in your signed
+                agreement) entitles you to a setup-fee refund. The applicable terms of any such
+                guarantee are governed by your signed order form or service agreement, which
+                controls in the event of any conflict with these Terms.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                PRESTYJ does not offer a general money-back guarantee on monthly subscription
+                fees. Any refund outside of a written guarantee is granted at PRESTYJ&apos;s sole
+                discretion. To request a refund or raise a billing dispute, contact{" "}
+                <a
+                  href="mailto:support@prestyj.com"
+                  className="text-primary hover:underline"
+                >
+                  support@prestyj.com
+                </a>{" "}
+                within 30 days of the charge in question.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
                 Termination
               </h2>
               <p className="text-muted-foreground leading-relaxed">
