@@ -40,7 +40,7 @@ export const leadPayloadSchema = z.object({
   phone_number: z.string().length(10),
   email: z
     .string()
-    .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), { message: "Invalid email" })
+    .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), { message: "Enter your work email" })
     .optional(),
   company_name: z.string().optional(),
   notes: z.string().optional(),

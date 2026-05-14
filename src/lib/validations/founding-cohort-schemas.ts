@@ -20,8 +20,7 @@ export const MONTHLY_AD_SPEND_OPTIONS = [
   { value: "not-yet", label: "Not running paid ads yet", qualifies: false },
 ] as const;
 
-export type MonthlyAdSpendValue =
-  (typeof MONTHLY_AD_SPEND_OPTIONS)[number]["value"];
+export type MonthlyAdSpendValue = (typeof MONTHLY_AD_SPEND_OPTIONS)[number]["value"];
 
 export const PLATFORM_OPTIONS = [
   { value: "meta", label: "Meta (Facebook / Instagram)" },
@@ -57,70 +56,46 @@ export const CREATIVE_SITUATION_OPTIONS = [
   },
 ] as const;
 
-export type CreativeSituationValue =
-  (typeof CREATIVE_SITUATION_OPTIONS)[number]["value"];
+export type CreativeSituationValue = (typeof CREATIVE_SITUATION_OPTIONS)[number]["value"];
 
 export const foundingCohortSchema = z.object({
   // Step 1 — Basics
   contactName: z.string().min(2, "Your name is required"),
   contactEmail: z
     .string()
-    .refine(
-      (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
-      "Valid email is required",
-    ),
+    .refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Enter your work email"),
   businessName: z.string().min(1, "Business name is required"),
   website: z
     .string()
     .optional()
     .refine(
-      (v) =>
-        !v ||
-        v.length === 0 ||
-        /^(https?:\/\/)?[^\s.]+\.[^\s]{2,}$/.test(v.trim()),
+      (v) => !v || v.length === 0 || /^(https?:\/\/)?[^\s.]+\.[^\s]{2,}$/.test(v.trim()),
       "Enter a valid website URL",
     ),
 
   // Step 2 — Qualification
-  monthlyAdSpend: z.enum([
-    "under-1k",
-    "1k-3k",
-    "3k-10k",
-    "10k-25k",
-    "25k-plus",
-    "not-yet",
-  ]),
+  monthlyAdSpend: z.enum(["under-1k", "1k-3k", "3k-10k", "10k-25k", "25k-plus", "not-yet"]),
   platforms: z
     .array(z.enum(["meta", "tiktok", "youtube", "google", "linkedin", "other"]))
     .min(1, "Pick at least one platform"),
-  creativeSituation: z.enum([
-    "agency",
-    "ugc",
-    "in-house",
-    "self",
-    "none",
-  ]),
+  creativeSituation: z.enum(["agency", "ugc", "in-house", "self", "none"]),
 
   // Step 3 — Fit
-  offer: z
-    .string()
-    .min(20, "Tell us a sentence or two about your offer (min 20 chars)"),
-  whyYou: z
-    .string()
-    .min(30, "Tell us why you're a fit (min 30 chars)"),
+  offer: z.string().min(20, "Tell us a sentence or two about your offer (min 20 chars)"),
+  whyYou: z.string().min(30, "Tell us why you're a fit (min 30 chars)"),
 
   // Step 4 — Commitment (all required to submit)
   agreeTestimonial: z.literal(true, {
-    error: "Required to receive a founding spot",
+    error: "Please confirm to claim your founding spot",
   }),
   agreeReview: z.literal(true, {
-    error: "Required to receive a founding spot",
+    error: "Please confirm to claim your founding spot",
   }),
   agreeRun14Days: z.literal(true, {
-    error: "Required to receive a founding spot",
+    error: "Please confirm to claim your founding spot",
   }),
   agreeResultsRights: z.literal(true, {
-    error: "Required to receive a founding spot",
+    error: "Please confirm to claim your founding spot",
   }),
 });
 
@@ -132,8 +107,6 @@ export type FoundingCohortOutput = z.output<typeof foundingCohortSchema>;
  * tampered submissions still get rejected.
  */
 export function isQualified(input: FoundingCohortOutput): boolean {
-  const option = MONTHLY_AD_SPEND_OPTIONS.find(
-    (o) => o.value === input.monthlyAdSpend,
-  );
+  const option = MONTHLY_AD_SPEND_OPTIONS.find((o) => o.value === input.monthlyAdSpend);
   return Boolean(option?.qualifies);
 }

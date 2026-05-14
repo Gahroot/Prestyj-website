@@ -10,34 +10,31 @@ import z from "zod";
  */
 export const teamCalculatorSchema = z.object({
   // Team metrics
-  teamSize: z.number()
+  teamSize: z
+    .number()
     .min(2, "Team size must be at least 2 agents")
     .max(1000, "Please contact us for enterprise teams (1000+ agents)"),
 
-  monthlyLeads: z.number()
+  monthlyLeads: z
+    .number()
     .min(10, "Minimum 10 leads per month")
     .max(100000, "Please enter a realistic lead volume"),
 
-  avgCommission: z.number()
-    .min(1000, "Average commission seems low")
+  avgCommission: z
+    .number()
+    .min(1000, "Average commission seems low (min $1,000)")
     .max(1000000, "Please enter realistic commission amount"),
 
-  closeRate: z.number()
+  closeRate: z
+    .number()
     .min(0.1, "Close rate must be at least 0.1%")
     .max(100, "Close rate cannot exceed 100%"),
 
-  responseTime: z.enum([
-    "under-1-min",
-    "5-min",
-    "30-min",
-    "1-hour",
-    "4-hour",
-    "24-hour",
-  ]),
+  responseTime: z.enum(["under-1-min", "5-min", "30-min", "1-hour", "4-hour", "24-hour"]),
 
   // Contact info
   name: z.string().min(2, "Name is required"),
-  email: z.string().refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Valid email required"),
+  email: z.string().refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Enter your work email"),
   companyName: z.string().optional(),
   role: z.enum(["team-lead", "broker", "isa-manager", "other"]),
 });

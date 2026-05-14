@@ -12,7 +12,7 @@ export const contactSchema = z.object({
   email: z
     .string()
     .trim()
-    .refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Valid email is required"),
+    .refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Enter your work email"),
   // Phone is optional — submitter may prefer email-only contact.
   phone: z.string().trim().max(32, "Phone number is too long").optional().or(z.literal("")),
   message: z
