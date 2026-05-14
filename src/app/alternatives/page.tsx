@@ -11,17 +11,16 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 export const metadata: Metadata = {
-  title: "Real Estate AI Alternatives | Compare Prestyj to Top Platforms",
+  title: "Prestyj Alternatives — AI Agents for Marketing & Sales",
   description:
-    "Compare Prestyj to top real estate AI platforms, CRMs, and ISA services. Find the best alternative for your lead response and reactivation needs.",
+    "Compare Prestyj to other AI sales agents, marketing automation tools, and lead-response platforms.",
   keywords: [
-    "ylopo alternative",
-    "structurely alternative",
-    "CINC alternative",
-    "human ISA alternative",
-    "real estate AI comparison",
-    "follow up boss AI",
-    "real geeks AI",
+    "AI sales agent alternative",
+    "AI marketing agent alternative",
+    "lead response platform comparison",
+    "marketing automation alternative",
+    "AI agent comparison",
+    "sales automation alternative",
   ],
   alternates: {
     canonical: "https://prestyj.com/alternatives",
@@ -42,8 +41,9 @@ export default function AlternativesHubPage() {
   const itemListSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: "Prestyj Alternatives — AI Sales Agent Comparisons",
-    description: "Compare Prestyj to top real estate AI platforms, CRMs, and ISA services.",
+    name: "Prestyj Alternatives — AI Agents for Marketing & Sales",
+    description:
+      "Compare Prestyj to other AI sales agents, marketing automation tools, and lead-response platforms.",
     numberOfItems: allAlternatives.length,
     itemListElement: allAlternatives.map((alt, index) => ({
       "@type": "ListItem",
@@ -69,14 +69,14 @@ export default function AlternativesHubPage() {
               </Badge>
 
               <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl">
-                Find Your Perfect
+                Prestyj Alternatives —
                 <br />
-                <span className="text-primary">AI Sales Agent Solution</span>
+                <span className="text-primary">AI Agents for Marketing &amp; Sales</span>
               </h1>
 
               <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg sm:text-xl">
-                Honest comparisons to help you choose the right platform. Whether you&apos;re
-                looking to switch or enhance your existing tools, we&apos;ll help you decide.
+                Compare Prestyj to other AI sales agents, marketing automation tools, and
+                lead-response platforms. Honest, side-by-side breakdowns to help you choose.
               </p>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default function AlternativesHubPage() {
           <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="mb-12 text-center">
               <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
-                Why Agents Choose Prestyj
+                Why Teams Choose Prestyj
               </h2>
               <p className="text-muted-foreground mx-auto max-w-2xl">
                 Whether you&apos;re switching platforms or adding to your stack, here&apos;s what
@@ -170,30 +170,30 @@ export default function AlternativesHubPage() {
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-primary mb-2 text-4xl font-bold">47 sec</div>
-                  <p className="text-foreground mb-1 font-medium">Average Response Time</p>
+                  <p className="text-foreground mb-2 font-medium">Built for marketing &amp; sales</p>
                   <p className="text-muted-foreground text-sm">
-                    AI responds to every lead instantly, 24/7/365
+                    AI agents that capture, qualify, and follow up with leads across every channel
+                    you already run.
                   </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-primary mb-2 text-4xl font-bold">23%</div>
-                  <p className="text-foreground mb-1 font-medium">Dead Leads Reactivated</p>
+                  <p className="text-foreground mb-2 font-medium">Works with your stack</p>
                   <p className="text-muted-foreground text-sm">
-                    Revive the leads you already paid for
+                    Plug into your CRM, ad platforms, and inbox — no rip-and-replace, no
+                    long migrations.
                   </p>
                 </CardContent>
               </Card>
 
               <Card>
                 <CardContent className="pt-6 text-center">
-                  <div className="text-primary mb-2 text-4xl font-bold">0%</div>
-                  <p className="text-foreground mb-1 font-medium">Commission Split</p>
+                  <p className="text-foreground mb-2 font-medium">Outcome-focused pricing</p>
                   <p className="text-muted-foreground text-sm">
-                    Keep 100% of your commission, unlike human ISAs
+                    Flat, predictable cost — no per-seat fees, no commission splits, no
+                    surprise overages.
                   </p>
                 </CardContent>
               </Card>
