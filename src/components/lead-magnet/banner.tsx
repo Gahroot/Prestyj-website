@@ -29,7 +29,7 @@ export function LeadMagnetBanner({ variant = "default" }: LeadMagnetBannerProps)
               </div>
             </div>
             <Button variant="outline" size="sm" asChild className="shrink-0">
-              <Link href="/lead-magnet">
+              <Link href="/lead-magnet/roofing-playbook">
                 Download <ArrowRight className="ml-1 h-3 w-3" />
               </Link>
             </Button>
@@ -75,7 +75,7 @@ export function LeadMagnetBanner({ variant = "default" }: LeadMagnetBannerProps)
             </div>
             <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button size="lg" variant="secondary" className="px-8 text-lg" asChild>
-                <Link href="/lead-magnet">
+                <Link href="/lead-magnet/roofing-playbook">
                   <Download className="mr-2 h-5 w-5" />
                   Download Free Playbook
                 </Link>
@@ -120,7 +120,7 @@ export function LeadMagnetBanner({ variant = "default" }: LeadMagnetBannerProps)
             storm surge handling.
           </p>
           <Button size="lg" asChild>
-            <Link href="/lead-magnet">
+            <Link href="/lead-magnet/roofing-playbook">
               <Download className="mr-2 h-4 w-4" />
               Download Free Playbook
             </Link>

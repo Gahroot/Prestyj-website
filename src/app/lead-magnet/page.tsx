@@ -1,402 +1,171 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
+import {
+  ArrowRight,
+  Building2,
+  FileText,
+  Layers,
+  PhoneCall,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { Download, Mail, Building2, FileText, CheckCircle, Loader2 } from "lucide-react";
 import BorderGlow from "@/components/ui/border-glow";
 
-interface FormData {
-  name: string;
-  email: string;
-  company: string;
-  magnetType: string;
-}
+type Playbook = {
+  href: string;
+  icon: LucideIcon;
+  eyebrow: string;
+  title: string;
+  description: string;
+  audience: string;
+  ctaLabel: string;
+};
 
-interface ApiResponse {
-  success: boolean;
-  message: string;
-  downloadUrl: string;
-}
+const PLAYBOOKS: readonly Playbook[] = [
+  {
+    href: "/lead-magnet/brokerage-playbook",
+    icon: Building2,
+    eyebrow: "Real Estate",
+    title: "The $20M+ Brokerage Playbook",
+    description:
+      "How top teams convert 3x more Facebook and YouTube ad leads with AI — speed-to-lead data, AI vs. ISA cost breakdown, and the exact follow-up sequence.",
+    audience: "Team leaders, broker-owners, ad-buying brokerages",
+    ctaLabel: "Get the Brokerage Playbook",
+  },
+  {
+    href: "/lead-magnet/reactivate-leads",
+    icon: PhoneCall,
+    eyebrow: "Live AI Demo",
+    title: "Reactivate Dead Leads With AI",
+    description:
+      "Skip the PDF. Submit your number and an AI agent calls you in under 60 seconds — exactly how it would re-engage one of your dormant leads.",
+    audience: "Anyone with a database of unworked or aged-out leads",
+    ctaLabel: "Experience the Live Demo",
+  },
+  {
+    href: "/lead-magnet/qualvol-playbook",
+    icon: Layers,
+    eyebrow: "Content Strategy",
+    title: "The QualVol Content Playbook",
+    description:
+      "The swarm model, scoring rubrics, and platform-specific cadence math behind shipping 1,000+ on-brand posts per month without burning out a team.",
+    audience: "Owners, CMOs, agency leaders, coaches",
+    ctaLabel: "Get the QualVol Playbook",
+  },
+  {
+    href: "/lead-magnet/roofing-playbook",
+    icon: Wrench,
+    eyebrow: "Roofing",
+    title: "The Roofer's 24/7 Lead Response Playbook",
+    description:
+      "The 60-second standard, emergency triage protocols, after-hours strategy, and the storm-surge playbook to capture every call without hiring more staff.",
+    audience: "Roofing contractors, storm response teams",
+    ctaLabel: "Get the Roofing Playbook",
+  },
+];
 
-export default function LeadMagnetPage() {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
-  const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    company: "",
-    magnetType: "roofing-playbook",
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-
-    try {
-      // Call the API endpoint
-      const response = await fetch("/api/lead-magnet", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data: ApiResponse = await response.json();
-
-      if (data.success) {
-        setSubmitted(true);
-        setDownloadUrl(data.downloadUrl || null);
-      } else {
-        setError(data.message || "Failed to submit form");
-      }
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to submit form");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleDownloadClick = () => {
-    if (downloadUrl) {
-      window.open(downloadUrl, "_blank");
-    }
-  };
-
-  const handleInputChange =
-    (field: keyof Omit<FormData, "magnetType">) => (e: React.ChangeEvent<HTMLInputElement>) => {
-      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
-    };
-
+export default function LeadMagnetIndexPage() {
   return (
     <>
       <Navbar />
       <main className="from-background to-muted/20 min-h-screen bg-gradient-to-b">
-        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:grid-cols-2">
-            {/* Left Column - Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-8"
-            >
-              {/* Badge */}
-              <div className="bg-primary/10 text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
-                <FileText className="h-4 w-4" />
-                Free Guide
-              </div>
+        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto max-w-3xl space-y-6 text-center"
+          >
+            <div className="bg-primary/10 text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
+              <FileText className="h-4 w-4" />
+              Free Playbooks
+            </div>
+            <h1 className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl">
+              Pick the <span className="text-primary">playbook</span> that matches your business
+            </h1>
+            <p className="text-muted-foreground text-lg sm:text-xl">
+              We build AI agents for marketing &amp; sales. Each guide is a focused, no-fluff
+              breakdown for a specific operator — instant download, no sales pitch.
+            </p>
+          </motion.div>
 
-              {/* Headline */}
-              <h1 className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl">
-                The Roofer&apos;s 24/7 <span className="text-primary">Lead Response Playbook</span>
-              </h1>
-
-              {/* Subheadline */}
-              <p className="text-muted-foreground text-xl">
-                Stop missing storm calls. Capture every lead with AI-powered instant response.
-              </p>
-
-              {/* What You Get */}
-              <BorderGlow borderRadius={14} innerClassName="p-6 space-y-4">
-                <h2 className="font-heading mb-4 text-lg font-bold">What&apos;s Inside</h2>
-
-                <div className="space-y-4">
-                  <div className="flex gap-3">
-                    <CheckCircle className="text-primary h-5 w-5 shrink-0" />
-                    <div>
-                      <p className="font-medium">The 60-Second Standard</p>
-                      <p className="text-muted-foreground text-sm">
-                        Why speed wins every roofing job
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <CheckCircle className="text-primary h-5 w-5 shrink-0" />
-                    <div>
-                      <p className="font-medium">Emergency Triage Protocols</p>
-                      <p className="text-muted-foreground text-sm">
-                        Prioritize active leaks vs. cosmetic damage
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <CheckCircle className="text-primary h-5 w-5 shrink-0" />
-                    <div>
-                      <p className="font-medium">After-Hours Response Strategy</p>
-                      <p className="text-muted-foreground text-sm">
-                        Capture 40% of calls that come evenings/weekends
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <CheckCircle className="text-primary h-5 w-5 shrink-0" />
-                    <div>
-                      <p className="font-medium">Storm Surge Playbook</p>
-                      <p className="text-muted-foreground text-sm">
-                        Handle 500+ calls without hiring more staff
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <CheckCircle className="text-primary h-5 w-5 shrink-0" />
-                    <div>
-                      <p className="font-medium">ROI Calculator</p>
-                      <p className="text-muted-foreground text-sm">
-                        Calculate your revenue potential from faster response
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-3">
-                    <CheckCircle className="text-primary h-5 w-5 shrink-0" />
-                    <div>
-                      <p className="font-medium">Implementation Checklist</p>
-                      <p className="text-muted-foreground text-sm">
-                        Step-by-step guide to deploying AI response
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </BorderGlow>
-
-              {/* Who This Is For */}
-              <div className="bg-primary/5 border-primary/20 rounded-xl border p-6">
-                <div className="mb-4 flex gap-3">
-                  <Building2 className="text-primary h-6 w-6" />
-                  <h2 className="font-heading text-lg font-bold">Made For Roofing Contractors</h2>
-                </div>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex gap-2">
-                    <span className="text-primary">→</span>
-                    <span>Contractors missing 30%+ of calls</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">→</span>
-                    <span>Teams overwhelmed during storm surge</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">→</span>
-                    <span>Business owners tired of leaving money on table</span>
-                  </li>
-                  <li className="flex gap-2">
-                    <span className="text-primary">→</span>
-                    <span>Anyone wanting 24/7 response without staffing costs</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Social Proof placeholder — early customer results coming soon */}
-              <div className="border-border border-t pt-6">
-                <p className="text-muted-foreground text-sm">
-                  Early customer results coming soon.
-                </p>
-              </div>
-            </motion.div>
-
-            {/* Right Column - Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <AnimatePresence mode="wait">
-                {!submitted ? (
-                  <motion.div
-                    key="form"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.3 }}
+          {/* Playbook Grid */}
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {PLAYBOOKS.map((playbook, index) => {
+              const Icon = playbook.icon;
+              return (
+                <motion.div
+                  key={playbook.href}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.05 * index }}
+                >
+                  <Link
+                    href={playbook.href}
+                    className="group block h-full focus:outline-none"
+                    aria-label={playbook.ctaLabel}
                   >
                     <BorderGlow
                       borderRadius={18}
-                      innerClassName="p-8 sm:p-10"
-                      className="shadow-xl"
+                      innerClassName="flex h-full flex-col gap-5 p-6 sm:p-8"
+                      className="h-full transition-transform duration-300 group-hover:-translate-y-1 group-focus-visible:-translate-y-1"
                     >
-                      {/* Form Header */}
-                      <div className="mb-8 text-center">
-                        <div className="bg-primary/10 text-primary mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
-                          <Download className="h-4 w-4" />
-                          Instant Download
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="bg-primary/10 text-primary inline-flex h-11 w-11 items-center justify-center rounded-xl">
+                          <Icon className="h-5 w-5" />
                         </div>
-                        <h2 className="font-heading text-2xl font-bold">Get Your Free Playbook</h2>
-                        <p className="text-muted-foreground">
-                          Enter your details and we&apos;ll send the guide immediately.
+                        <span className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
+                          {playbook.eyebrow}
+                        </span>
+                      </div>
+
+                      <div className="space-y-3">
+                        <h2 className="font-heading text-2xl font-bold tracking-tight">
+                          {playbook.title}
+                        </h2>
+                        <p className="text-muted-foreground">{playbook.description}</p>
+                      </div>
+
+                      <div className="border-border mt-auto space-y-4 border-t pt-4">
+                        <p className="text-muted-foreground text-sm">
+                          <span className="text-foreground font-medium">For:</span>{" "}
+                          {playbook.audience}
                         </p>
-                      </div>
-
-                      {/* Form */}
-                      <form onSubmit={handleSubmit} className="space-y-5">
-                        {error && (
-                          <div className="bg-destructive/10 text-destructive mb-4 rounded-lg p-3 text-sm">
-                            {error}
-                          </div>
-                        )}
-
-                        {/* Name Field */}
-                        <div>
-                          <label htmlFor="name" className="mb-2 block text-sm font-medium">
-                            Full Name <span className="text-destructive">*</span>
-                          </label>
-                          <input
-                            type="text"
-                            id="name"
-                            required
-                            placeholder="John Smith"
-                            value={formData.name}
-                            onChange={handleInputChange("name")}
-                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
-                          />
-                        </div>
-
-                        {/* Email Field */}
-                        <div>
-                          <label htmlFor="email" className="mb-2 block text-sm font-medium">
-                            Work Email <span className="text-destructive">*</span>
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            required
-                            placeholder="john@apexroofing.com"
-                            value={formData.email}
-                            onChange={handleInputChange("email")}
-                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
-                          />
-                        </div>
-
-                        {/* Company Field */}
-                        <div>
-                          <label htmlFor="company" className="mb-2 block text-sm font-medium">
-                            Company Name
-                          </label>
-                          <input
-                            type="text"
-                            id="company"
-                            placeholder="Apex Roofing"
-                            value={formData.company}
-                            onChange={handleInputChange("company")}
-                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
-                          />
-                        </div>
-
-                        {/* Submit Button */}
-                        <button
-                          type="submit"
-                          disabled={loading}
-                          className="bg-primary text-primary-foreground hover:bg-primary/90 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50"
-                        >
-                          {loading ? (
-                            <>
-                              <Loader2 className="h-4 w-4 animate-spin" />
-                              Sending...
-                            </>
-                          ) : (
-                            <>
-                              <Download className="h-4 w-4" />
-                              Get Your Free Playbook
-                            </>
-                          )}
-                        </button>
-                      </form>
-
-                      {/* Trust Signals */}
-                      <div className="border-border mt-6 border-t pt-6">
-                        <div className="text-muted-foreground flex items-center gap-2 text-xs">
-                          <Mail className="h-3 w-3" />
-                          <span>No spam, ever. Unsubscribe anytime.</span>
+                        <div className="text-primary inline-flex items-center gap-2 text-sm font-semibold">
+                          {playbook.ctaLabel}
+                          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 group-focus-visible:translate-x-1" />
                         </div>
                       </div>
                     </BorderGlow>
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="success"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <BorderGlow
-                      borderRadius={18}
-                      innerClassName="p-8 sm:p-10 text-center"
-                      className="shadow-xl"
-                    >
-                      {/* Success Icon */}
-                      <motion.div
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: 0.2, type: "spring" }}
-                        className="bg-primary/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
-                      >
-                        <CheckCircle className="text-primary h-8 w-8" />
-                      </motion.div>
-
-                      {/* Success Message */}
-                      <h2 className="font-heading mb-3 text-2xl font-bold">
-                        Your Playbook Is Ready
-                      </h2>
-                      <p className="text-muted-foreground mb-6">
-                        <span className="font-semibold">
-                          The Roofer&apos;s 24/7 Lead Response Playbook
-                        </span>{" "}
-                        is ready to download. We&apos;ve also saved a copy to{" "}
-                        <span className="font-medium">{formData.email}</span>.
-                      </p>
-                      {downloadUrl && (
-                        <button
-                          onClick={handleDownloadClick}
-                          className="bg-primary text-primary-foreground hover:bg-primary/90 mb-6 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-medium transition-colors"
-                        >
-                          <Download className="h-4 w-4" />
-                          Download Your Playbook Now
-                        </button>
-                      )}
-
-                      {/* What's Next */}
-                      <div className="bg-primary/5 space-y-3 rounded-lg p-4 text-left">
-                        <p className="font-medium">What&apos;s Next:</p>
-                        <ol className="text-muted-foreground space-y-2 text-sm">
-                          <li className="flex gap-2">
-                            <span className="text-primary font-bold">1.</span>
-                            <span>Download and read the playbook</span>
-                          </li>
-                          <li className="flex gap-2">
-                            <span className="text-primary font-bold">2.</span>
-                            <span>Implement the 60-second response standard</span>
-                          </li>
-                          <li className="flex gap-2">
-                            <span className="text-primary font-bold">3.</span>
-                            <span>Start capturing every storm lead</span>
-                          </li>
-                        </ol>
-                      </div>
-
-                      {/* Secondary CTA — demoted to subtle link */}
-                      <p className="text-muted-foreground mt-6 text-sm">
-                        Want to see AI response in action?{" "}
-                        <Link
-                          href="/book-demo"
-                          className="text-primary font-medium underline-offset-4 hover:underline"
-                        >
-                          Book a 15-min demo →
-                        </Link>
-                      </p>
-                    </BorderGlow>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
+
+          {/* Footer note */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="mt-14 text-center"
+          >
+            <p className="text-muted-foreground text-sm">
+              Don&apos;t see your use case?{" "}
+              <Link
+                href="/book-demo"
+                className="text-primary font-medium underline-offset-4 hover:underline"
+              >
+                Book a 15-min demo
+              </Link>{" "}
+              and we&apos;ll build the playbook with you.
+            </p>
+          </motion.div>
         </div>
       </main>
       <Footer />

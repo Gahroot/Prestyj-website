@@ -24,10 +24,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ReactivateLeadsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ReactivateLeadsLayout({ children }: { children: React.ReactNode }) {
   return children;
 }
