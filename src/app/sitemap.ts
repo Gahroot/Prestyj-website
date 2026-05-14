@@ -10,7 +10,11 @@ const baseUrl = "https://prestyj.com";
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Static routes
+  // Static routes — buyer-intent pages and key product/positioning pages aligned
+  // with the core "AI agents for marketing & sales" positioning. Every URL here
+  // MUST have a backing page in src/app/. Off-positioning / orphan / utility
+  // pages (e.g. /free-ads/*, /demo, /intake, /admin, /affiliate, /r, /media-master)
+  // are intentionally excluded.
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -19,19 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/batch-video-ads`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.95,
-    },
-    {
-      url: `${baseUrl}/founding-cohort`,
-      lastModified: now,
-      changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/ai-content-department`,
+      url: `${baseUrl}/pricing`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.95,
@@ -46,13 +38,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.7,
+      priority: 0.8,
     },
     {
-      url: `${baseUrl}/bulk-video-ad-pricing`,
+      url: `${baseUrl}/platform`,
       lastModified: now,
-      changeFrequency: "weekly",
+      changeFrequency: "monthly",
       priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/results`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/faq`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/blog`,
@@ -60,12 +64,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.8,
     },
+    // Product/positioning landing pages
     {
-      url: `${baseUrl}/results`,
+      url: `${baseUrl}/batch-video-ads`,
       lastModified: now,
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ai-content-department`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/founding-cohort`,
+      lastModified: now,
+      changeFrequency: "daily",
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/bulk-video-ad-pricing`,
+      lastModified: now,
+      changeFrequency: "weekly",
       priority: 0.8,
     },
+    // Hub indexes for dynamic page collections
     {
       url: `${baseUrl}/alternatives`,
       lastModified: now,
@@ -78,12 +102,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    // Lead magnets
     {
       url: `${baseUrl}/lead-magnet`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${baseUrl}/lead-magnet/brokerage-playbook`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/lead-magnet/roofing-playbook`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/lead-magnet/qualvol-playbook`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/lead-magnet/reactivate-leads`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.65,
+    },
+    // Calculators
     {
       url: `${baseUrl}/ai-call-handling-calculator`,
       lastModified: now,
@@ -100,74 +150,46 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/real-estate-roi-calculator`,
       lastModified: now,
       changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/lead-magnet/brokerage-playbook`,
-      lastModified: now,
-      changeFrequency: "monthly",
       priority: 0.7,
     },
-    {
-      url: `${baseUrl}/lead-magnet/roofing-playbook`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/lead-magnet/qualvol-playbook`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/lead-magnet/reactivate-leads`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/platform`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
+    // Thought leadership / topical authority pages
     {
       url: `${baseUrl}/statistics`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.8,
+      priority: 0.75,
     },
     {
       url: `${baseUrl}/ad-fatigue-solution`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.75,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/how-many-ad-creatives-to-test`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.75,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/how-often-refresh-ad-creative`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.75,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/why-facebook-ads-stop-working`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.75,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/ai-ads-vs-human-ads`,
       lastModified: now,
       changeFrequency: "weekly",
-      priority: 0.75,
+      priority: 0.7,
     },
+    // Legal
     {
       url: `${baseUrl}/privacy`,
       lastModified: now,
@@ -182,7 +204,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Blog posts - use actual post dates for lastModified; exclude noindexed posts
+  // Blog posts — use actual post dates for lastModified; exclude noindexed posts.
   const blogPages = blogSource.getPages();
   const blogRoutes: MetadataRoute.Sitemap = blogPages
     .filter((page) => !page.data.noindex)
@@ -193,23 +215,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }));
 
-  // Alternative pages
+  // Dynamic routes driven by registries — every slug here corresponds to a
+  // generated page via [slug]/page.tsx + generateStaticParams.
   const alternativeRoutes: MetadataRoute.Sitemap = getAllAlternativeSlugs().map((slug) => ({
     url: `${baseUrl}/alternatives/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.75,
   }));
 
-  // Solution pages
   const solutionRoutes: MetadataRoute.Sitemap = getAllSolutionSlugs().map((slug) => ({
     url: `${baseUrl}/solutions/${slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
-    priority: 0.7,
+    priority: 0.8,
   }));
 
-  // Best-for pages
   const bestForRoutes: MetadataRoute.Sitemap = getAllBestForSlugs().map((slug) => ({
     url: `${baseUrl}/best-for/${slug}`,
     lastModified: now,
@@ -217,305 +238,98 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Compare pages (excluding redirected ones: ylopo → /alternatives/ylopo;
-  // isa/internal-isa-team/offshore-isa/answering-service → /alternatives/human-isa;
-  // reverse-orientation X-vs-prestyj URLs → canonical prestyj-vs-X)
-  const compareRoutes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}/compare/prestyj-vs-conversica`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-structurely`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-drift`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-arcads`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-creatify`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-heygen`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ai-avatar-ads`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ugc-creators`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-production-agencies`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-sprout-social`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-social-media-agency`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-junior-social-hire`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-synthesia`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-adcreative-ai`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-follow-up-boss`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-lofty`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-resimpli`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-alanna-ai`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    // BATCH-MATRIX-COMPARE-START
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ugc-creator-video-for-coaches`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-fiverr-video-for-media-buyers`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-in-house-video-for-cmos`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ai-avatar-tool-video-for-agency-owners`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-agency-video-for-service-business-owners`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ugc-creator-video-for-hvac-companies`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-fiverr-video-for-plumbing-contractors`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-in-house-video-for-roofing-contractors`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ai-avatar-tool-video-for-real-estate-teams`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-agency-video-for-mortgage-brokers`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    // SOCIAL-VERTICAL-MATRIX-COMPARE-START
-    {
-      url: `${baseUrl}/compare/prestyj-vs-in-house-hire-for-coaches`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-smma-for-media-buyers`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-in-house-hire-for-cmos`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-va-plus-templates-for-agency-owners`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-smma-for-service-business-owners`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-fiverr-for-ecommerce-brands`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-in-house-hire-for-saas-founders`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-va-plus-templates-for-personal-brands`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-fiverr-for-creators`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-smma-for-consultants`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    // SOCIAL-VERTICAL-MATRIX-COMPARE-END
-    // BATCH-MATRIX-COMPARE-END
-    {
-      url: `${baseUrl}/compare/prestyj-vs-bland-ai`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-vapi`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-retell-ai`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-synthflow`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-air-ai`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-goodcall`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-smith-ai`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/compare/prestyj-vs-ruby-receptionists`,
-      lastModified: now,
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
+  // Compare pages — hardcoded list. Every URL MUST have a backing
+  // src/app/compare/<slug>/page.tsx and MUST NOT be 301-redirected in
+  // next.config.ts.
+  // Excluded (redirected — see next.config.ts):
+  //   - prestyj-vs-ylopo → /alternatives/ylopo
+  //   - prestyj-vs-{isa,internal-isa-team,offshore-isa,answering-service}
+  //     → /alternatives/human-isa
+  //   - {structurely,alanna-ai,follow-up-boss,lofty,resimpli}-vs-prestyj
+  //     → canonical prestyj-vs-X orientation
+  //   - off-positioning compares (capcut, opus-clip, pencil, invideo, billo,
+  //     fiverr-video-ads, fiverr-social-media, buffer, later, hootsuite, canva)
+  //     → /compare
+  //   - ai-consultant-* pages → /pricing
+  const compareSlugs = [
+    // AI sales / lead-conversion agents (core positioning)
+    "prestyj-vs-conversica",
+    "prestyj-vs-structurely",
+    "prestyj-vs-drift",
+    "prestyj-vs-alanna-ai",
+    "prestyj-vs-follow-up-boss",
+    "prestyj-vs-lofty",
+    "prestyj-vs-resimpli",
+    // AI voice agents
+    "prestyj-vs-bland-ai",
+    "prestyj-vs-vapi",
+    "prestyj-vs-retell-ai",
+    "prestyj-vs-synthflow",
+    "prestyj-vs-air-ai",
+    "prestyj-vs-goodcall",
+    "prestyj-vs-smith-ai",
+    "prestyj-vs-ruby-receptionists",
+    // AI video / ad creative
+    "prestyj-vs-arcads",
+    "prestyj-vs-creatify",
+    "prestyj-vs-heygen",
+    "prestyj-vs-synthesia",
+    "prestyj-vs-ai-avatar-ads",
+    "prestyj-vs-ugc-creators",
+    "prestyj-vs-ugc-marketplaces",
+    "prestyj-vs-production-agencies",
+    "prestyj-vs-adcreative-ai",
+    // Marketing platforms (managed alternatives)
+    "prestyj-vs-highlevel",
+    "prestyj-vs-hootsuite-managed",
+    "prestyj-vs-sprout-social",
+    "prestyj-vs-social-media-agency",
+    "prestyj-vs-junior-social-hire",
+    // Vertical video-production matrix
+    "prestyj-vs-ugc-creator-video-for-coaches",
+    "prestyj-vs-fiverr-video-for-media-buyers",
+    "prestyj-vs-in-house-video-for-cmos",
+    "prestyj-vs-ai-avatar-tool-video-for-agency-owners",
+    "prestyj-vs-agency-video-for-service-business-owners",
+    "prestyj-vs-ugc-creator-video-for-hvac-companies",
+    "prestyj-vs-fiverr-video-for-plumbing-contractors",
+    "prestyj-vs-in-house-video-for-roofing-contractors",
+    "prestyj-vs-ai-avatar-tool-video-for-real-estate-teams",
+    "prestyj-vs-agency-video-for-mortgage-brokers",
+    // Vertical social matrix
+    "prestyj-vs-in-house-hire-for-coaches",
+    "prestyj-vs-smma-for-media-buyers",
+    "prestyj-vs-in-house-hire-for-cmos",
+    "prestyj-vs-va-plus-templates-for-agency-owners",
+    "prestyj-vs-smma-for-service-business-owners",
+    "prestyj-vs-fiverr-for-ecommerce-brands",
+    "prestyj-vs-in-house-hire-for-saas-founders",
+    "prestyj-vs-va-plus-templates-for-personal-brands",
+    "prestyj-vs-fiverr-for-creators",
+    "prestyj-vs-smma-for-consultants",
+    // Generic positioning compare
+    "ai-lead-generation-vs-traditional",
   ];
+  const compareRoutes: MetadataRoute.Sitemap = compareSlugs.map((slug) => ({
+    url: `${baseUrl}/compare/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
-  // Location pages
+  // Location pages — registry-driven.
   const locationRoutes: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/locations`,
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.7,
     },
     ...getAllLocationSlugs().map((slug) => ({
       url: `${baseUrl}/locations/${slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
-      priority: 0.7,
+      priority: 0.6,
     })),
   ];
 
