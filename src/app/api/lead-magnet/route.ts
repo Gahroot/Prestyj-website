@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     if (!validation.success) {
       return NextResponse.json(
         { error: "Invalid input", details: validation.error.issues },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -58,7 +58,12 @@ export async function POST(request: NextRequest) {
 
     if (isLeadMagnet) {
       // Lead magnet form submission
-      const data = validation.data as { name: string; email: string; company?: string; magnetType: "roofing-playbook" | "qualvol-playbook" | "brokerage-playbook" };
+      const data = validation.data as {
+        name: string;
+        email: string;
+        company?: string;
+        magnetType: "roofing-playbook" | "qualvol-playbook" | "brokerage-playbook";
+      };
       leadPayload = {
         first_name: data.name.split(" ")[0], // Use first name only
         email: data.email,
@@ -69,7 +74,13 @@ export async function POST(request: NextRequest) {
       };
     } else {
       // ROI calculator submission
-      const data = validation.data as { firstName: string; email: string; resourceId: string; businessType?: string; metadata?: Record<string, unknown> };
+      const data = validation.data as {
+        firstName: string;
+        email: string;
+        resourceId: string;
+        businessType?: string;
+        metadata?: Record<string, unknown>;
+      };
 
       // Prepare notes with calculator data
       let notes = `Lead Magnet: ${data.resourceId}`;
@@ -108,12 +119,11 @@ export async function POST(request: NextRequest) {
     const responseData = await response.json();
 
     // Resolve download URL based on magnet type
-    const magnetType = isLeadMagnet
-      ? (validation.data as { magnetType: string }).magnetType
-      : null;
-    const downloadUrl = isLeadMagnet && magnetType
-      ? MAGNET_DOWNLOAD_URLS[magnetType] ?? MAGNET_DOWNLOAD_URLS["roofing-playbook"]
-      : `/ai-calculator-results`;
+    const magnetType = isLeadMagnet ? (validation.data as { magnetType: string }).magnetType : null;
+    const downloadUrl =
+      isLeadMagnet && magnetType
+        ? (MAGNET_DOWNLOAD_URLS[magnetType] ?? MAGNET_DOWNLOAD_URLS["roofing-playbook"])
+        : `/ai-calculator-results`;
 
     // Return success with download URL for lead magnets
     return NextResponse.json({
@@ -128,10 +138,11 @@ export async function POST(request: NextRequest) {
     console.error("Lead magnet submission error:", error);
     return NextResponse.json(
       {
-        error: "Failed to process request",
-        message: error instanceof Error ? error.message : "Unknown error occurred",
+        error:
+          "Something went wrong on our end. Email hello@prestyj.com and we'll send the playbook manually.",
+        debug: error instanceof Error ? error.message : "Failed to process request",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

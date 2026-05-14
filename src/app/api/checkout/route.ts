@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
-import {
-  BATCH_TIERS,
-  getBatchTierPriceId,
-  isBatchTierId,
-} from "@/lib/batch-tiers";
+import { BATCH_TIERS, getBatchTierPriceId, isBatchTierId } from "@/lib/batch-tiers";
 
 export const runtime = "nodejs";
 
@@ -18,22 +14,30 @@ export async function POST(request: NextRequest) {
 
   const tierId = (body as { tier?: unknown })?.tier;
   if (!isBatchTierId(tierId)) {
-    return NextResponse.json({ error: "Unknown tier" }, { status: 400 });
+    console.error("[checkout] Unknown tier requested:", { tier: tierId });
+    return NextResponse.json(
+      {
+        error: "That plan isn't available — please pick another or contact us.",
+        debug: "Unknown tier",
+      },
+      { status: 400 },
+    );
   }
 
   const priceId = getBatchTierPriceId(tierId);
   if (!priceId) {
+    console.error("[checkout] Tier is not configured for checkout:", { tier: tierId });
     return NextResponse.json(
-      { error: "Tier is not configured for checkout" },
-      { status: 500 }
+      {
+        error: "This plan requires a sales call — please book a demo.",
+        debug: "Tier is not configured for checkout",
+      },
+      { status: 500 },
     );
   }
 
   const tier = BATCH_TIERS[tierId];
-  const origin =
-    request.headers.get("origin") ??
-    request.nextUrl.origin ??
-    "https://prestyj.com";
+  const origin = request.headers.get("origin") ?? request.nextUrl.origin ?? "https://prestyj.com";
 
   const affiliateRef = request.cookies.get("affiliate_ref")?.value;
 
@@ -47,7 +51,7 @@ export async function POST(request: NextRequest) {
       phone_number_collection: { enabled: true },
       allow_promotion_codes: true,
       success_url: `${origin}/intake?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/batch-video-ads#pricing`,
+      cancel_url: `${origin}/pricing`,
       metadata: {
         tier: tier.id,
         ad_count: String(tier.adCount),
@@ -65,9 +69,17 @@ export async function POST(request: NextRequest) {
     });
 
     if (!session.url) {
+      console.error("[checkout] Stripe did not return a checkout URL:", {
+        tier: tier.id,
+        sessionId: session.id,
+      });
       return NextResponse.json(
-        { error: "Stripe did not return a checkout URL" },
-        { status: 500 }
+        {
+          error:
+            "We couldn't start checkout. Please try again or contact us at hello@prestyj.com.",
+          debug: "Stripe did not return a checkout URL",
+        },
+        { status: 500 },
       );
     }
 
@@ -75,8 +87,12 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error("[checkout] Stripe error:", error);
     return NextResponse.json(
-      { error: "Failed to create checkout session" },
-      { status: 500 }
+      {
+        error:
+          "We couldn't start checkout. Please try again or contact us at hello@prestyj.com.",
+        debug: error instanceof Error ? error.message : "Failed to create checkout session",
+      },
+      { status: 500 },
     );
   }
 }
