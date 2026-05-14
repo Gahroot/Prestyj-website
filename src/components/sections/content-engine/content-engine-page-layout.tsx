@@ -6,7 +6,6 @@ import { ContentEngineProblem } from "@/components/sections/content-engine/probl
 import { ContentEngineSolution } from "@/components/sections/content-engine/solution";
 import { ContentEngineVideoWalkthrough } from "@/components/sections/content-engine/video-walkthrough";
 import { ContentEngineProofScreenshots } from "@/components/sections/content-engine/proof-screenshots";
-import { ContentEngineCaseStudy } from "@/components/sections/content-engine/case-study";
 import { ContentEngineLiveAccounts } from "@/components/sections/content-engine/live-accounts";
 import { ContentEngineLiveFeed } from "@/components/sections/content-engine/live-feed";
 import { ContentEngineHowItWorks } from "@/components/sections/content-engine/how-it-works";
@@ -47,7 +46,6 @@ export function ContentEnginePageLayout({
         {afterSolution}
         <ContentEngineVideoWalkthrough config={config.videoWalkthrough} />
         <ContentEngineProofScreenshots config={config.proofScreenshots} />
-        <ContentEngineCaseStudy />
         <ContentEngineLiveAccounts config={config.liveAccounts} />
         <ContentEngineLiveFeed config={config.liveFeed} />
         <ContentEngineHowItWorks config={config.howItWorks} />

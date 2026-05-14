@@ -48,6 +48,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://prestyj.com/media-master",
   },
+  robots: { index: false, follow: false },
 };
 
 const features = [
@@ -279,11 +280,10 @@ export default function MediaMasterPage() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
-                Media Master Is Coming Soon
+                Join the Media Master Waitlist
               </h2>
               <p className="text-muted-foreground max-w-xl mx-auto">
-                Join the waitlist and be the first to know when the desktop app is
-                available for download — free.
+                Be the first to know when the desktop app is available for download — free.
               </p>
             </div>
 
