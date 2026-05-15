@@ -27,13 +27,13 @@ Prestyj = **"The AI Workforce for Service Businesses"**
 
 ### Content Types Available
 
-| Type | Location | When to Use |
-|------|----------|-------------|
-| Blog Post | `content/blog/[slug].mdx` | Keyword-targeted articles, thought leadership, how-to guides |
-| Solution Page | `src/lib/solutions/[slug].ts` | Industry vertical landing pages (home-services, insurance) |
-| Best-For Page | `src/lib/best-for/[slug].ts` | Niche-specific targeting (AI for plumbers, AI for dentists) |
-| Alternative Page | `src/lib/alternatives/[slug].ts` | Competitor alternative pages |
-| Compare Page | `src/app/compare/[slug]/page.tsx` | VS pages (Prestyj vs X, AI vs Human) |
+| Type             | Location                          | When to Use                                                  |
+| ---------------- | --------------------------------- | ------------------------------------------------------------ |
+| Blog Post        | `content/blog/[slug].mdx`         | Keyword-targeted articles, thought leadership, how-to guides |
+| Solution Page    | `src/lib/solutions/[slug].ts`     | Industry vertical landing pages (home-services, insurance)   |
+| Best-For Page    | `src/lib/best-for/[slug].ts`      | Niche-specific targeting (AI for plumbers, AI for dentists)  |
+| Alternative Page | `src/lib/alternatives/[slug].ts`  | Competitor alternative pages                                 |
+| Compare Page     | `src/app/compare/[slug]/page.tsx` | VS pages (Prestyj vs X, AI vs Human)                         |
 
 ---
 
@@ -48,6 +48,7 @@ Do live web searches for high-intent keywords across the strategy clusters. Focu
 **Search Pattern — Rotate through these:**
 
 Home Services (search 5-8 of these):
+
 - "AI receptionist for [plumbers/HVAC/electricians/roofers/contractors]"
 - "after hours answering service for [industry]"
 - "missed call text back [industry]"
@@ -57,6 +58,7 @@ Home Services (search 5-8 of these):
 - "automated dispatch [HVAC/plumbing]"
 
 Functional Automation (search 3-5 of these):
+
 - "AI automation for ServiceTitan"
 - "AI for Jobber users"
 - "AI lead response for Follow Up Boss"
@@ -65,6 +67,7 @@ Functional Automation (search 3-5 of these):
 - "custom AI sales workflows"
 
 VS/Comparison (search 3-5 of these):
+
 - "AI receptionist vs human receptionist"
 - "AI receptionist vs answering service"
 - "AI answering service cost comparison"
@@ -72,12 +75,14 @@ VS/Comparison (search 3-5 of these):
 - "best AI phone answering 2026"
 
 Authority/Dream (search 2-3 of these):
+
 - "business automation agency"
 - "replace receptionist with AI"
 - "AI employee cost vs human"
 - "book appointments while sleeping"
 
 **For each search, report:**
+
 ```
 KEYWORD: [exact term]
 SERP STRENGTH: [1-10, where 1 = empty/thin, 10 = dominated by authorities]
@@ -92,6 +97,7 @@ RECOMMENDED CONTENT TYPE: [Blog/Solution/Best-For/VS/Programmatic]
 Do a FAST scan of existing content to avoid creating duplicates. This should take < 2 minutes.
 
 **Read these files only:**
+
 - `src/lib/best-for/index.ts` — get the list of existing slugs
 - `src/lib/alternatives/index.ts` — get the list of existing slugs
 - `src/lib/solutions/` — list solution slugs
@@ -99,6 +105,7 @@ Do a FAST scan of existing content to avoid creating duplicates. This should tak
 - List routes in `src/app/compare/`
 
 **Output a compact dedup reference:**
+
 ```
 EXISTING SLUGS:
 Best-For: [list]
@@ -113,6 +120,7 @@ Compare: [list]
 Research 2-3 competitors to find content gaps and positioning angles:
 
 **Search for:**
+
 - "AI receptionist software 2026"
 - "best AI voice agent for business"
 - "AI answering service for small business"
@@ -120,6 +128,7 @@ Research 2-3 competitors to find content gaps and positioning angles:
 - "[top competitor name] pricing"
 
 **Find:**
+
 - What content types are competitors creating?
 - What keywords are they targeting that we're NOT?
 - Where is their content weak/thin/outdated?
@@ -127,6 +136,7 @@ Research 2-3 competitors to find content gaps and positioning angles:
 - What positioning angles are they using?
 
 **Output:**
+
 ```
 COMPETITOR: [Name]
 HAVE ALT PAGE: [Yes/No]
@@ -155,6 +165,7 @@ Time to Rank        (0-10): How quickly will this index and rank?
 For each top opportunity, answer: **"Why will OUR content beat what's currently ranking?"**
 
 Must have at least ONE:
+
 - [ ] **More specific** — We target exact industry/use-case, they're generic
 - [ ] **More practical** — We show real implementation, costs, ROI numbers
 - [ ] **More current** — Their content is outdated, ours has 2026 data/trends
@@ -212,6 +223,7 @@ Reply: "approve all" or "approve 1,3" or "reject" or "more options"
 For each approved item, create the content. Launch parallel agents for independent items.
 
 **CRITICAL RULE**: Every piece of content must be DIFFERENT from what's currently ranking. Before writing, re-read the top 2-3 SERP results and ensure our content:
+
 - Takes a different angle
 - Provides unique value (specific numbers, real scenarios, practical steps)
 - Speaks to a more specific audience
@@ -220,6 +232,7 @@ For each approved item, create the content. Launch parallel agents for independe
 ### For Blog Posts (`content/blog/[slug].mdx`)
 
 **Create MDX file with frontmatter:**
+
 ```mdx
 ---
 title: "[Title — include primary keyword naturally]"
@@ -228,6 +241,7 @@ date: [YYYY-MM-DD]
 ---
 
 [Content following these rules:]
+
 - Open with a specific, relatable scenario (not generic "in today's world")
 - Include real numbers: costs, ROI, time savings, response times
 - Reference specific industries/tools/CRMs by name
@@ -240,6 +254,7 @@ date: [YYYY-MM-DD]
 ```
 
 **Differentiation checklist before saving:**
+
 - [ ] Would a reader learn something they can't get from the top 3 SERP results?
 - [ ] Does this include specific numbers, scenarios, or examples?
 - [ ] Is the angle unique to Prestyj's positioning?
@@ -248,6 +263,7 @@ date: [YYYY-MM-DD]
 ### For Solution Pages (`src/lib/solutions/[slug].ts`)
 
 Read the existing solution page types and data structure first:
+
 - Read `src/lib/solutions/types.ts` for the interface
 - Read one existing solution (e.g., `src/lib/solutions/roofing.ts`) as a template
 
@@ -384,6 +400,7 @@ export const [camelCaseName]: AlternativePageContent = {
 ### For VS / Compare Pages
 
 Read an existing compare page first to match the pattern:
+
 - Check `src/app/compare/` for existing page structure
 - Match the component usage and layout
 
@@ -392,6 +409,7 @@ Create the page at `src/app/compare/[slug]/page.tsx`.
 ### Icon Reference
 
 Use Lucide React icons. Common icons:
+
 - Building2, Building, Home, Wrench, Hammer
 - Phone, PhoneIncoming, PhoneMissed, MessageSquare
 - Clock, Timer, Zap, AlertTriangle
@@ -416,12 +434,14 @@ npm run build
 **Fix ALL errors. Do not proceed with errors or warnings (except pre-existing ones).**
 
 Pre-existing warnings to ignore:
+
 - `src/app/ai-calculator-results/page.tsx`: unused `setResults`, `setInputs`
 - `src/lib/compare/types.ts`: unused `ReactNode` import
 
 ### Step 2: Verify Content Quality
 
 Before committing, re-read the created content and check:
+
 - [ ] Title includes primary keyword naturally
 - [ ] Meta description is compelling and 150-155 chars
 - [ ] Content is specific (mentions real industries, tools, numbers)
@@ -486,11 +506,13 @@ NEXT OPPORTUNITY:
 ## Usage Examples
 
 **Default run (full research + create top opportunity):**
+
 ```
 /rank-me
 ```
 
 **Focus on a specific cluster:**
+
 ```
 /rank-me home services
 /rank-me CRM integrations
@@ -498,11 +520,13 @@ NEXT OPPORTUNITY:
 ```
 
 **Focus on specific keyword:**
+
 ```
 /rank-me "AI receptionist for plumbers"
 ```
 
 **Create a specific page type:**
+
 ```
 /rank-me new solution page for home services
 /rank-me vs page: AI vs answering service
@@ -527,14 +551,14 @@ NEXT OPPORTUNITY:
 
 ## Files Modified By This Command
 
-| File | When Modified |
-|------|---------------|
-| `content/blog/[slug].mdx` | New blog posts |
-| `src/lib/best-for/[slug].ts` | New best-for pages |
-| `src/lib/best-for/index.ts` | When adding best-for pages |
-| `src/lib/alternatives/[slug].ts` | New alternative pages |
-| `src/lib/alternatives/index.ts` | When adding alternative pages |
-| `src/lib/solutions/[slug].ts` | New solution pages |
-| `src/lib/solutions/index.ts` | When adding solution pages |
-| `src/app/compare/[slug]/page.tsx` | New VS/compare pages |
-| `src/app/sitemap.ts` | If new route types added |
+| File                              | When Modified                 |
+| --------------------------------- | ----------------------------- |
+| `content/blog/[slug].mdx`         | New blog posts                |
+| `src/lib/best-for/[slug].ts`      | New best-for pages            |
+| `src/lib/best-for/index.ts`       | When adding best-for pages    |
+| `src/lib/alternatives/[slug].ts`  | New alternative pages         |
+| `src/lib/alternatives/index.ts`   | When adding alternative pages |
+| `src/lib/solutions/[slug].ts`     | New solution pages            |
+| `src/lib/solutions/index.ts`      | When adding solution pages    |
+| `src/app/compare/[slug]/page.tsx` | New VS/compare pages          |
+| `src/app/sitemap.ts`              | If new route types added      |

@@ -4,11 +4,13 @@ description: Run checks, commit with AI message, and push
 ---
 
 1. Run quality checks:
+
    ```bash
    npm run typecheck
    npm run lint
    npm run build
    ```
+
    Fix ALL errors before continuing.
 
 2. Review changes: `git status` and `git diff`

@@ -16,12 +16,14 @@ This command finds the highest-leverage SEO opportunities aligned with Prestyj's
 Prestyj is pivoting from "Real Estate AI" to **"The AI Workforce for Service Businesses"** using a hub & spoke model.
 
 ### The Hub
+
 Homepage positions Prestyj as AI employees for high-growth service businesses — covering Real Estate, Home Services, and High-Ticket Sales.
 
 ### The Spokes (Content Clusters)
 
 **Cluster 1: Home Services (HIGHEST PRIORITY — "Low Hanging Fruit")**
 High pain point (emergency calls missed = lost money), high-intent searchers with credit cards.
+
 - AI receptionist for plumbers / HVAC / electricians / roofers / contractors
 - After-hours appointment booking for contractors
 - Automated dispatch systems
@@ -29,18 +31,21 @@ High pain point (emergency calls missed = lost money), high-intent searchers wit
 - Storm damage lead qualification (roofing)
 
 **Cluster 2: Real Estate (Existing Base — Defend & Expand)**
+
 - AI Inside Sales Agent (ISA)
 - Automated open house follow-up
 - Reactivate cold real estate leads
 - Real estate team scaling
 
 **Cluster 3: High-Ticket Service Businesses**
+
 - Insurance agencies, mortgage brokers, solar installers
 - Auto dealerships, law firms, dental/medical practices
 - Financial advisors, wealth management
 
 **Cluster 4: Functional Automation (Tech Angle for Power Users)**
 Target $1M+ profit business owners who want custom solutions.
+
 - Custom sales automation workflows
 - Automate inbound lead qualification
 - Multi-agent sales outreach systems
@@ -49,6 +54,7 @@ Target $1M+ profit business owners who want custom solutions.
 
 **Cluster 5: Authority Building (Long-Term Dream Keywords)**
 Blog content to build topical authority over time.
+
 - Business automation agency
 - Sales AI implementation
 - Fully autonomous sales team
@@ -73,6 +79,7 @@ Launch 1 agent to build a quick reference list. This should take under 2 minutes
 ### Inventory Agent
 
 Scan these locations and output a simple list of what exists:
+
 - `src/lib/best-for/index.ts` — read the export list (don't read individual files)
 - `src/lib/alternatives/index.ts` — read the export list
 - `src/lib/solutions/` — list solution slugs
@@ -80,6 +87,7 @@ Scan these locations and output a simple list of what exists:
 - `src/app/compare/` — list comparison routes
 
 **Output a compact reference:**
+
 ```
 EXISTING CONTENT (for dedup only)
 Solutions: [slug1, slug2, ...]
@@ -103,6 +111,7 @@ Each agent targets a specific cluster from the strategy. They do LIVE web search
 Research these specific keyword patterns and find what's rankable:
 
 **Search these terms (and variations):**
+
 - "AI receptionist for [plumbers/HVAC/electricians/roofers/contractors/landscapers/painters]"
 - "after hours answering service [industry]"
 - "missed call text back [industry]"
@@ -112,6 +121,7 @@ Research these specific keyword patterns and find what's rankable:
 - "virtual receptionist for [industry]"
 
 **For each search:**
+
 - Who's ranking? (competitors, directories, nobody?)
 - Is the SERP thin/weak? (opportunity indicator)
 - What content type is winning? (blog, landing page, SaaS page)
@@ -121,6 +131,7 @@ Research these specific keyword patterns and find what's rankable:
 **Cross-reference against Phase 1 inventory.** Skip anything already covered.
 
 **Output format for each opportunity:**
+
 ```
 KEYWORD: [exact search term]
 SERP QUALITY: [Empty/Thin/Weak/Moderate/Strong]
@@ -137,6 +148,7 @@ ALREADY COVERED: [No — checked against inventory]
 Research the "power user" and "tech angle" keywords:
 
 **Search these terms:**
+
 - "AI automation for ServiceTitan"
 - "AI automation for Jobber"
 - "AI automation for Follow Up Boss"
@@ -149,6 +161,7 @@ Research the "power user" and "tech angle" keywords:
 - "AI lead response integration [CRM]"
 
 **Also search for programmatic SEO opportunities:**
+
 - What CRM/software platforms do home service businesses use?
 - What integrations are people searching for?
 - Are there "[Software] + AI" combination searches with no good results?
@@ -160,6 +173,7 @@ Research the "power user" and "tech angle" keywords:
 Research comparison and alternative searches that Prestyj can win:
 
 **Search these terms:**
+
 - "AI receptionist vs human receptionist"
 - "AI receptionist vs answering service"
 - "AI vs human ISA real estate"
@@ -170,6 +184,7 @@ Research comparison and alternative searches that Prestyj can win:
 - "virtual receptionist vs AI receptionist"
 
 **Discover NEW competitors** by searching:
+
 - "AI receptionist software 2026"
 - "AI voice agent companies"
 - "AI sales calling platforms"
@@ -178,6 +193,7 @@ Research comparison and alternative searches that Prestyj can win:
 **Cross-reference against existing /alternatives/ and /compare/ pages.** Only surface NEW competitors or angles.
 
 **Output same format as Agent 1, plus:**
+
 ```
 COMPETITOR: [Name]
 ALREADY HAVE ALTERNATIVE PAGE: [Yes/No]
@@ -189,6 +205,7 @@ ALREADY HAVE VS PAGE: [Yes/No]
 Research long-term blog content opportunities:
 
 **Search these terms:**
+
 - "business automation agency"
 - "sales AI implementation"
 - "fully autonomous sales team"
@@ -204,6 +221,7 @@ Research long-term blog content opportunities:
 **Find "People Also Ask" and related searches** for each to discover adjacent opportunities.
 
 **Focus on keywords where:**
+
 - Current SERP is thin, outdated, or low-quality
 - Content is generic and Prestyj can bring specific, practical experience
 - Blog post could naturally lead to product consideration
@@ -215,6 +233,7 @@ Research long-term blog content opportunities:
 Research which high-ticket service industries have demand but weak AI coverage:
 
 **Search these patterns across industries NOT yet well-covered:**
+
 - "[industry] AI receptionist"
 - "[industry] AI lead response"
 - "[industry] missed call solution"
@@ -222,6 +241,7 @@ Research which high-ticket service industries have demand but weak AI coverage:
 - "[industry] AI appointment booking"
 
 **Industries to investigate (check if we already have best-for pages):**
+
 - Chiropractors
 - Physical therapy clinics
 - Home inspectors
@@ -235,6 +255,7 @@ Research which high-ticket service industries have demand but weak AI coverage:
 - Wedding venues / event planning
 
 **For each industry with demand:**
+
 - Is anyone ranking with AI solutions for this industry?
 - What's the pain point? (missed calls, after-hours, qualification)
 - Does this industry have high enough ticket value to justify AI?
@@ -271,6 +292,7 @@ After all Phase 2 agents complete, score every opportunity.
 Every piece of content MUST have a clear answer to: **"Why would someone read THIS instead of what's already ranking?"**
 
 Valid differentiators:
+
 - **Specificity**: We target a specific industry/use-case, they're generic
 - **Practicality**: We show real implementation, they show theory
 - **Freshness**: Their content is outdated, ours has 2026 data

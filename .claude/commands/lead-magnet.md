@@ -29,6 +29,7 @@ Launch ALL 5 agents simultaneously using the Task tool.
    - Buying cycle characteristics (impulse vs. long consideration)
 
 **Output Format:**
+
 ```
 SERVICE: [One-sentence description]
 AUDIENCE: [Role/title, industry, company size]
@@ -50,6 +51,7 @@ AVG DEAL SIZE: [Estimate from pricing if available]
 **Find what lead magnets work best for this audience and industry:**
 
 **Research Patterns:**
+
 - "[industry] lead magnet examples"
 - "best lead magnets for [role]"
 - "[competitor] free resources"
@@ -58,6 +60,7 @@ AVG DEAL SIZE: [Estimate from pricing if available]
 - "what [role] wants to learn about [problem]"
 
 **Analyze:**
+
 - What formats work best for this audience (PDF guide, checklist, calculator, template, video series, email course)
 - What competitors offer as lead magnets
 - What pain points generate most engagement
@@ -65,6 +68,7 @@ AVG DEAL SIZE: [Estimate from pricing if available]
 - What content types get shared most in this industry
 
 **Output Format:**
+
 ```
 TOP PERFORMING FORMATS:
 1. [Format] - Why: [Reason]
@@ -85,6 +89,7 @@ UNTAPPED TOPICS:
 **Research what makes lead magnets convert:**
 
 **Find Examples Of:**
+
 - High-converting lead magnet landing pages
 - Headlines that drive downloads
 - Form field optimization (how many fields, which ones)
@@ -93,12 +98,14 @@ UNTAPPED TOPICS:
 - Follow-up sequence examples
 
 **Analyze:**
+
 - Landing page structure (above fold elements, social proof, urgency)
 - CTA copy patterns that work
 - Trust indicators (privacy statements, social proof)
 - Mobile optimization considerations
 
 **Output Format:**
+
 ```
 HIGH-CONVERTING ELEMENTS:
 Headline Patterns:
@@ -124,6 +131,7 @@ Post-Download Experience:
 **Research what "good enough to gate" looks like:**
 
 **Analyze:**
+
 - Length/depth expectations for this audience
 - Design quality standards (professional vs. simple)
 - Data/research requirements
@@ -131,11 +139,13 @@ Post-Download Experience:
 - Brand consistency needs
 
 **Research:**
+
 - "[industry] resource guide examples"
 - "[role] downloadable checklist"
 - "[problem] framework PDF"
 
 **Output Format:**
+
 ```
 QUALITY BENCHMARKS:
 Content Length: [X pages/sections]
@@ -153,6 +163,7 @@ EXAMPLES OF "GOOD ENOUGH":
 **Audit current tech stack for lead magnet delivery:**
 
 **Check For:**
+
 - Existing form infrastructure
 - Email delivery capabilities
 - PDF generation options (if needed)
@@ -161,12 +172,14 @@ EXAMPLES OF "GOOD ENOUGH":
 - Analytics tracking setup
 
 **Scan Files:**
+
 - `src/app/book-demo/` or similar form pages
 - `src/components/booking/` or form components
 - `package.json` for form libraries
 - Any existing lead capture mechanisms
 
 **Output Format:**
+
 ```
 CURRENT CAPABILITIES:
 Form Library: [React Hook Form/Formspree/Custom/None]
@@ -187,6 +200,7 @@ Estimated Setup: [Quick/Moderate/Extensive]
 Before proposing ANY lead magnet, it MUST pass ALL THREE gates.
 
 ### Gate 1: Value Alignment
+
 - [ ] Provides immediate, actionable value related to core pain points
 - [ ] Audience would naturally want this even without knowing our product
 - [ ] Content quality justifies asking for email address
@@ -195,6 +209,7 @@ Before proposing ANY lead magnet, it MUST pass ALL THREE gates.
 **If ANY fail → REJECT**
 
 ### Gate 2: Qualification Power
+
 - [ ] Attracting the right audience (decision-makers, not tire-kickers)
 - [ ] Topic naturally leads to product consideration
 - [ ] Can segment/score leads based on download behavior
@@ -203,6 +218,7 @@ Before proposing ANY lead magnet, it MUST pass ALL THREE gates.
 **If ANY fail → REJECT**
 
 ### Gate 3: Feasibility
+
 - [ ] Can be created with high quality in reasonable time
 - [ ] Fits within current tech stack or requires minimal additions
 - [ ] Team can maintain/update over time
@@ -254,12 +270,14 @@ LEVERAGE SCORE =
 ```
 
 **Conversion Potential (0-30):**
+
 - 30: Solves urgent, painful problem for exact target audience
 - 20: Addresses important challenge for target audience
 - 10: Interesting but not critical
 - 0: Nice to have, no urgency
 
 **Qualification Power (0-25):**
+
 - 25: Only our ICP would want this (perfect filtering)
 - 20: Strongly appeals to ICP, some noise
 - 15: Moderate qualification (attracts broader audience)
@@ -267,6 +285,7 @@ LEVERAGE SCORE =
 - 0: Attracts completely wrong audience
 
 **Ease of Creation (0-20):**
+
 - 20: Can create in < 2 hours with existing knowledge
 - 15: 2-4 hours, minimal research needed
 - 10: 4-8 hours, moderate research
@@ -274,6 +293,7 @@ LEVERAGE SCORE =
 - 0: Requires expert consultation or unrealistic effort
 
 **Differentiation (0-15):**
+
 - 15: Completely unique angle/format/data
 - 12: Familiar format but unique perspective
 - 8: Standard format, better execution
@@ -281,6 +301,7 @@ LEVERAGE SCORE =
 - 0: Commodity content
 
 **Longevity (0-10):**
+
 - 10: Evergreen, minimal updates needed
 - 7: Annual refresh sufficient
 - 4: Quarterly updates needed
@@ -289,6 +310,7 @@ LEVERAGE SCORE =
 ### Generate Top 3 Ideas
 
 Present top 3 scored ideas with:
+
 - Lead magnet title
 - Format (PDF guide, calculator, checklist, etc.)
 - Core value proposition
@@ -357,6 +379,7 @@ Once user approves an option, execute creation in parallel where possible.
 #### For PDF Guides/Checklists:
 
 **Content Structure:**
+
 ```
 COVER PAGE
 - Title
@@ -385,6 +408,7 @@ FOOTER (all pages)
 ```
 
 **Output Format Options:**
+
 1. **Markdown → PDF**: Create detailed markdown that can be converted to PDF
 2. **Canva Template**: Provide text content + design specifications for Canva
 3. **Google Docs**: Create in structured Google Doc format
@@ -393,6 +417,7 @@ FOOTER (all pages)
 #### For Calculators/Interactive Tools:
 
 **Create:**
+
 1. React component for calculator UI
 2. Calculation logic
 3. Results interpretation
@@ -402,6 +427,7 @@ FOOTER (all pages)
 #### For Templates/Swipe Files:
 
 **Create:**
+
 1. Template content (spreadsheet, doc, code, etc.)
 2. Instructions for use
 3. Example/sample implementations
@@ -410,6 +436,7 @@ FOOTER (all pages)
 #### For Email Courses:
 
 **Create:**
+
 1. 5-7 email sequence
 2. Each email: teaching + CTA
 3. Autoresponder sequence specs
@@ -472,6 +499,7 @@ export default function LeadMagnetPage() {
 ```
 
 **Design Principles:**
+
 - Above-fold form (don't make them scroll)
 - Clear headline with benefit
 - 2-5 bullet points of what they'll get
@@ -575,10 +603,7 @@ export async function POST(request: NextRequest) {
 
     // Validate inputs
     if (!email || !resourceId) {
-      return NextResponse.json(
-        { error: "Missing required fields" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
     // TODO: Add to email list / CRM
@@ -600,10 +625,7 @@ export async function POST(request: NextRequest) {
     });
   } catch (error) {
     console.error("Lead magnet error:", error);
-    return NextResponse.json(
-      { error: "Failed to process request" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "Failed to process request" }, { status: 500 });
   }
 }
 ```
@@ -648,6 +670,7 @@ export default function ThankYouPage({
    - Consider adding download tracking
 
 2. **Vercel Blob Storage** (for larger files)
+
    ```typescript
    import { put } from "@vercel/blob";
    const blob = await put("lead-magnet.pdf", file, {
@@ -669,6 +692,7 @@ export default function ThankYouPage({
 ### Option 1: Manual Email (Quick Start)
 
 **Instructions to provide user:**
+
 ```
 MANUAL SETUP:
 1. When form submitted, receive notification
@@ -708,6 +732,7 @@ await resend.emails.send({
 **If existing CRM detected, provide integration code:**
 
 Example for common platforms:
+
 - HubSpot
 - Mailchimp
 - ConvertKit
@@ -730,6 +755,7 @@ npm run build
 ### Step 2: Test Flow
 
 **Manual Test Checklist:**
+
 - [ ] Landing page loads correctly
 - [ ] Form submits successfully
 - [ ] Validation works (try invalid email)
@@ -741,12 +767,14 @@ npm run build
 ### Step 3: Analytics Setup
 
 **Add tracking:**
+
 - Form views (pageview)
 - Form submissions (event)
 - Download clicks (event)
 - Thank you page visits (pageview)
 
 **Example with Google Analytics:**
+
 ```typescript
 // In form component
 gtag("event", "lead_magnet_submit", {
@@ -788,6 +816,7 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
 ### Promotion Tactics (Provide to User)
 
 **On-Site Promotion:**
+
 ```
 1. Add to navigation (if high-value)
 2. Homepage CTA section
@@ -797,6 +826,7 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
 ```
 
 **Off-Site Promotion:**
+
 ```
 1. Social media posts (LinkedIn, Twitter, Facebook)
 2. Email to existing list
@@ -806,6 +836,7 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
 ```
 
 **Example Social Post:**
+
 ```
 [Pain point hook]
 
@@ -870,16 +901,19 @@ PROMOTION IDEAS:
 ## Usage Examples
 
 **Default run (full research + creation):**
+
 ```
 User: /lead-magnet
 ```
 
 **Quick create with specific idea:**
+
 ```
 User: /lead-magnet --idea "ROI Calculator"
 ```
 
 **Specific format:**
+
 ```
 User: /lead-magnet --format "PDF checklist"
 ```
@@ -901,30 +935,33 @@ User: /lead-magnet --format "PDF checklist"
 
 ## Files Created By This Command
 
-| File | Purpose |
-|------|---------|
-| `src/app/[slug]/page.tsx` | Landing page for lead magnet |
-| `src/components/lead-magnet/form.tsx` | Lead capture form component |
-| `src/app/api/lead-magnet/route.ts` | API route for form submission |
-| `src/app/thank-you/page.tsx` | Thank you page (optional) |
-| `/public/downloads/[slug].pdf` | Downloadable resource file |
-| `content/lead-magnet/[slug].md` | Lead magnet content (markdown) |
+| File                                  | Purpose                        |
+| ------------------------------------- | ------------------------------ |
+| `src/app/[slug]/page.tsx`             | Landing page for lead magnet   |
+| `src/components/lead-magnet/form.tsx` | Lead capture form component    |
+| `src/app/api/lead-magnet/route.ts`    | API route for form submission  |
+| `src/app/thank-you/page.tsx`          | Thank you page (optional)      |
+| `/public/downloads/[slug].pdf`        | Downloadable resource file     |
+| `content/lead-magnet/[slug].md`       | Lead magnet content (markdown) |
 
 ---
 
 ## Success Metrics
 
 **Immediate (Week 1):**
+
 - Landing page conversion rate: 20-40% target
 - Download completion rate: 80%+ target
 - Email deliverability: 95%+ target
 
 **Short-term (Month 1):**
+
 - Lead quality score (fit for ICP): Track manually
 - Email engagement rate: 30%+ open rate target
 - Demo booking rate from leads: 5-10% target
 
 **Long-term (Quarter 1):**
+
 - Lead-to-customer conversion rate
 - ROI of promotion efforts
 - Organic search traffic to landing page

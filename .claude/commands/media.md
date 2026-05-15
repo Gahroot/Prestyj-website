@@ -35,15 +35,18 @@ Launch 3 parallel agents to audit the current state of media assets.
 Scan the `public/` directory for all image assets (png, jpg, jpeg, webp, svg, gif, ico, avif).
 
 For each image found:
+
 - File path and size
 - Whether it's referenced by any component or page (search for the filename in `src/`)
 - Category it belongs to (match against `public/images/` subdirectories)
 
 Also check:
+
 - Are there any orphaned images (files not referenced anywhere)?
 - What image directories exist vs. what categories define?
 
 **Output format:**
+
 ```
 EXISTING IMAGES
 Path                                    | Size    | Referenced | Category
@@ -61,6 +64,7 @@ MISSING DIRECTORIES (defined in categories but don't exist yet)
 ### Agent 2: Component Placeholder Scan
 
 Scan all components in `src/components/` and pages in `src/app/` for:
+
 - `<Image` or `next/image` usage (what images are actually rendered?)
 - Avatar components using fallback initials instead of images
 - Placeholder `div` elements that could hold images (look for empty boxes, background placeholders)
@@ -68,6 +72,7 @@ Scan all components in `src/components/` and pages in `src/app/` for:
 - Icon-only sections that would benefit from photography
 
 **Key sections to check:**
+
 - `src/components/sections/testimonials.tsx` — avatar fallbacks
 - `src/components/sections/how-it-works.tsx` — placeholder boxes
 - `src/components/sections/hero.tsx` or equivalent — hero imagery
@@ -78,6 +83,7 @@ Scan all components in `src/components/` and pages in `src/app/` for:
 - `src/components/layout/` — navbar logo, footer
 
 **Output format:**
+
 ```
 PLACEHOLDER GAPS
 Component                              | Type              | Description
@@ -94,11 +100,13 @@ layout/navbar.tsx                      | /logo.svg         | Site logo
 ### Agent 3: Blog Thumbnail Coverage
 
 Scan all blog posts in `content/blog/*.mdx` for:
+
 - Posts with `image` in frontmatter (has a thumbnail)
 - Posts missing `image` in frontmatter (needs a thumbnail)
 - Whether referenced thumbnail files actually exist in `public/`
 
 **Output format:**
+
 ```
 BLOG THUMBNAIL COVERAGE
 Post                                    | Has Image Field | File Exists | Image Path
@@ -180,6 +188,7 @@ For each approved image:
    - Or use `generateAndDownload()` for the full pipeline
 3. **Respect rate limits** — The token-bucket limiter handles this automatically
 4. **Report progress** — After each batch, report:
+
    ```
    GENERATION PROGRESS
    ✓ testimonial-portrait-sarah-mitchell.png (245KB) — Success
@@ -188,6 +197,7 @@ For each approved image:
 
    Progress: 5/12 complete (2 failed)
    ```
+
 5. **Retry failures** — Offer to retry any failed generations
 
 **Important**: Since this runs in a Claude Code session (not a Next.js runtime), import and call the Z-Image functions directly. The API key should be loaded from the environment.
@@ -199,25 +209,30 @@ For each approved image:
 After generation completes, suggest code changes to integrate the new images.
 
 ### Testimonial Portraits
+
 - Add `image` field to testimonial data in `src/components/sections/testimonials.tsx`
 - Use `AvatarImage` from shadcn/ui Avatar with `AvatarFallback` as backup
 - Example: `<AvatarImage src="/images/testimonials/sarah-mitchell.png" alt="Sarah Mitchell" />`
 
 ### How-It-Works Illustrations
+
 - Add `image` field to step data in `src/components/sections/how-it-works.tsx`
 - Replace placeholder `div` with `next/image` component
 - Keep icon as a small overlay or remove if image is sufficient
 
 ### Blog Thumbnails
+
 - Add `image:` field to MDX frontmatter for posts missing it
 - Ensure blog listing page renders the thumbnail
 
 ### Other Integrations
+
 - Hero images: Add as background or `next/image` in hero sections
 - OG images: Update `metadata` in layout.tsx or page-specific metadata
 - Trust badges: Add to pricing or CTA sections
 
 ### User options for integration:
+
 - **Apply all** — Make all suggested code changes
 - **Apply specific** — User picks which integrations to apply
 - **Skip integration** — Keep images in `public/` but don't modify components yet
@@ -238,6 +253,7 @@ npm run build
 Fix ALL errors before continuing.
 
 ### Verification checklist:
+
 - [ ] All generated images exist at their expected paths
 - [ ] All modified components compile without errors
 - [ ] `next/image` components have proper `width`, `height`, and `alt` attributes
@@ -254,6 +270,7 @@ Stage and commit all changes:
 1. `git add` all generated images in `public/images/`
 2. `git add` any modified component files
 3. Commit with a descriptive message:
+
    ```
    Media: Generate [N] brand-aligned images for [categories]
 

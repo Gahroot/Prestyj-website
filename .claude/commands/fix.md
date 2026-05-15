@@ -19,6 +19,7 @@ npm run lint 2>&1
 ## Step 2: Collect and Parse Errors
 
 Parse the output from both commands. Group errors by domain:
+
 - **Type errors**: Issues from TypeScript (`tsc --noEmit`)
 - **Lint errors**: Issues from ESLint
 
@@ -34,6 +35,7 @@ For each domain that has issues, spawn an agent in parallel using the Task tool:
 - Spawn a "lint-fixer" agent for ESLint errors
 
 Each agent should:
+
 1. Receive the list of files and specific errors in their domain
 2. Fix all errors in their domain
 3. Run the relevant check command to verify fixes

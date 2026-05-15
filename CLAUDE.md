@@ -82,6 +82,7 @@ public/images/                  # Assets: badges, brand, blog, hero, industry, e
 ## Organization Rules
 
 **Keep code organized and modularized:**
+
 - Pages → `src/app/` (one folder per route)
 - UI primitives → `src/components/ui/` (one component per file)
 - Page sections → `src/components/sections/`
@@ -92,6 +93,7 @@ public/images/                  # Assets: badges, brand, blog, hero, industry, e
 - Data files → `src/lib/<domain>/` (compare, calculator, etc.)
 
 **Modularity principles:**
+
 - Single responsibility per file
 - Clear, descriptive file names
 - Group related functionality together
@@ -109,11 +111,13 @@ npm run build
 Fix ALL errors/warnings before continuing.
 
 For development:
+
 ```bash
 npm run dev
 ```
 
 If changes require server restart (not hot-reloadable):
+
 1. Restart server: `npm run dev`
 2. Read server output/logs
 3. Fix ALL warnings/errors before continuing

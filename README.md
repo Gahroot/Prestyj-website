@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Prestyj
 
-## Getting Started
+AI-powered lead conversion platform for home services and real estate. Next.js marketing site with blog, competitor comparison pages, ROI calculators, lead magnets, and programmatic landing pages.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router) + React 19
+- TypeScript (strict)
+- Tailwind CSS v4 + shadcn/ui (Radix)
+- Fumadocs MDX for the blog
+- Prisma (Postgres) for persisted intake data
+- Resend, Stripe, Meta Pixel / CAPI, Cal.com embed
+- Vitest for tests, ESLint + Prettier for code quality
+
+## Requirements
+
+- Node `>=22` (see `.nvmrc`)
+- npm 10+
+- A database URL for Prisma (any Postgres; see `prisma/schema.prisma`)
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+nvm use                 # picks up .nvmrc
+npm install             # also runs `prisma generate` via postinstall
+cp .env.example .env.local
+# fill in values in .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run dev             # next dev — http://localhost:3000
+npm run build           # prisma generate + next build
+npm run start           # production server (after build)
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Verify
 
-## Learn More
+Run before committing:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run lint            # ESLint (eslint-config-next, flat config)
+npm run typecheck       # tsc --noEmit (strict)
+npm run format:check    # Prettier
+npm run test            # Vitest
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Fix formatting in place with `npm run format`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+| Script                    | What it does                                           |
+| ------------------------- | ------------------------------------------------------ |
+| `dev`                     | Start the Next.js dev server                           |
+| `build`                   | `prisma generate` + `next build`                       |
+| `start`                   | Start the production server                            |
+| `lint` / `typecheck`      | ESLint / `tsc --noEmit`                                |
+| `format` / `format:check` | Prettier write / check                                 |
+| `test` / `test:watch`     | Vitest one-shot / watch mode                           |
+| `indexnow`                | Submit URLs to IndexNow (`scripts/submit-indexnow.ts`) |
+| `indexnow:dry`            | Dry-run of the IndexNow submission                     |
+| `gen-scripts`             | Generate Prestyj promo scripts                         |
+| `seo-bot`                 | SEO content automation CLI (`scripts/seo-bot/cli.ts`)  |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Environment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `.env.example` for the full list. Highlights:
+
+- `INDEXNOW_API_KEY` — search-engine indexing pings
+- `ZIMAGE_API_KEY` — Z-Image media generation (kie.ai)
+- `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `DEEPSEEK_API_KEY`, `DASHSCOPE_API_KEY`, `MOONSHOT_API_KEY`, `GROQ_API_KEY`, `OPENROUTER_API_KEY` — SEO-bot providers; any subset; unset providers are skipped
+
+Database, Stripe, Resend, and Meta CAPI keys are also required for the corresponding features — add them to `.env.local`.
+
+## Project layout
+
+See [`CLAUDE.md`](./CLAUDE.md) for the full directory map and conventions. Quick orientation:
+
+- `src/app/` — App Router pages, API routes, sitemap
+- `src/components/` — `ui/` primitives, `sections/` page sections, `layout/`, `seo/`
+- `src/lib/` — data, validations, integrations (compare, calculator, content-factory, media)
+- `content/blog/` — MDX blog posts (Fumadocs)
+- `scripts/` — IndexNow, SEO bot, media generation
+- `docs/` — internal playbooks (SEO, retargeting, content factory)
+- `prisma/` — schema and migrations
+
+## Deployment
+
+Deployed on Vercel. The production build runs `prisma generate && next build`; ensure `DATABASE_URL` and all required keys are configured in the Vercel project.
+
+## Security
+
+Vulnerability reporting policy in [`SECURITY.md`](./SECURITY.md).

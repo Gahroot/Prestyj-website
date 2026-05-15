@@ -7,6 +7,7 @@
 **IMPORTANT**: Never commit `.env.local` or any `.env*` files to version control.
 
 The `.gitignore` file is configured to exclude these files:
+
 ```
 .env*
 .env.local
@@ -36,6 +37,7 @@ The `.gitignore` file is configured to exclude these files:
 ### Setting Up Local Environment
 
 1. Copy the example file:
+
    ```bash
    cp .env.example .env.local
    ```
@@ -47,6 +49,7 @@ The `.gitignore` file is configured to exclude these files:
 ### Production Deployment
 
 **Vercel:**
+
 ```bash
 # Add secrets via CLI
 vercel env add INDEXNOW_API_KEY production
