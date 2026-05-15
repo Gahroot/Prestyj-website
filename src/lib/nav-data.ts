@@ -22,12 +22,18 @@ export type CtaLink = {
 };
 
 export const primaryCta: CtaLink = {
-  href: "/book-demo",
-  label: "Book a Demo",
+  href: "/batch-video-ads",
+  label: "Get 100 ads — $497",
   variant: "primary",
 };
 
-export const ctaLinks: readonly CtaLink[] = [primaryCta];
+export const secondaryCta: CtaLink = {
+  href: "/book-demo",
+  label: "Book a Demo",
+  variant: "secondary",
+};
+
+export const ctaLinks: readonly CtaLink[] = [primaryCta, secondaryCta];
 
 // Solution dropdown — references only canonical surviving solution slugs that
 // align with the "AI agents for marketing & sales" core positioning.
