@@ -28,7 +28,13 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
   }
 
-  const payload = body as { tier?: unknown; plan?: unknown; name?: unknown; email?: unknown };
+  const payload = body as {
+    tier?: unknown;
+    plan?: unknown;
+    name?: unknown;
+    email?: unknown;
+    bump?: unknown;
+  };
 
   // Subscription plan checkout (Starter / Pro / Scale where enabled).
   if (payload.plan !== undefined) {
@@ -36,10 +42,10 @@ export async function POST(request: NextRequest) {
   }
 
   // Existing batch video ad checkout.
-  return handleBatchCheckout(request, payload.tier);
+  return handleBatchCheckout(request, payload.tier, payload.bump === true);
 }
 
-async function handleBatchCheckout(request: NextRequest, tierId: unknown) {
+async function handleBatchCheckout(request: NextRequest, tierId: unknown, bump: boolean) {
   if (!isBatchTierId(tierId)) {
     console.error("[checkout] Unknown tier requested:", { tier: tierId });
     return NextResponse.json(
@@ -67,30 +73,53 @@ async function handleBatchCheckout(request: NextRequest, tierId: unknown) {
   const origin = request.headers.get("origin") ?? request.nextUrl.origin ?? "https://prestyj.com";
   const affiliateRef = request.cookies.get("affiliate_ref")?.value;
 
+  // Order bump: starter buyers can upgrade 100 → 300 ads for +$1,000.
+  // Only valid on the starter tier.
+  const bumpApplied = bump && tier.id === "starter";
+  const bumpPriceId = process.env.STRIPE_PRICE_STARTER_BUMP_TO_300;
+  if (bumpApplied && !bumpPriceId) {
+    console.error("[checkout] Bump requested but STRIPE_PRICE_STARTER_BUMP_TO_300 is unset", {
+      tier: tier.id,
+    });
+    return NextResponse.json(
+      {
+        error:
+          "We couldn't apply the upgrade. Please try again or contact us at hello@prestyj.com.",
+        debug: "STRIPE_PRICE_STARTER_BUMP_TO_300 is not configured",
+      },
+      { status: 500 },
+    );
+  }
+
+  const lineItems: { price: string; quantity: number }[] = [{ price: priceId, quantity: 1 }];
+  if (bumpApplied && bumpPriceId) {
+    lineItems.push({ price: bumpPriceId, quantity: 1 });
+  }
+
+  const adCount = bumpApplied ? "300" : String(tier.adCount);
+  const painPoints = bumpApplied ? "3" : String(tier.painPoints);
+  const checkoutMetadata = {
+    tier: tier.id,
+    ad_count: adCount,
+    pain_points: painPoints,
+    ...(bumpApplied ? { bump_applied: "true" } : {}),
+    ...(affiliateRef ? { affiliate_ref: affiliateRef } : {}),
+  };
+
   try {
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
-      line_items: [{ price: priceId, quantity: 1 }],
+      line_items: lineItems,
       automatic_tax: { enabled: true },
       billing_address_collection: "required",
       phone_number_collection: { enabled: true },
       allow_promotion_codes: true,
       success_url: `${origin}/intake?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/pricing`,
-      metadata: {
-        tier: tier.id,
-        ad_count: String(tier.adCount),
-        pain_points: String(tier.painPoints),
-        ...(affiliateRef ? { affiliate_ref: affiliateRef } : {}),
-      },
+      metadata: checkoutMetadata,
       payment_intent_data: {
-        metadata: {
-          tier: tier.id,
-          ad_count: String(tier.adCount),
-          pain_points: String(tier.painPoints),
-          ...(affiliateRef ? { affiliate_ref: affiliateRef } : {}),
-        },
+        metadata: checkoutMetadata,
       },
     });
 
