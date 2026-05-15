@@ -246,7 +246,7 @@ const FAQS = [
   },
   {
     q: "How does pricing actually work? Any hidden fees?",
-    a: "Batch Video Ads is an add-on to your AI marketing agent plan. Three pack sizes, one-time payment per pack: $1,497 (300 ads / 3 customer problems), $2,497 (500 ads / 5 customer problems), $3,997 (1,000 ads / 10 customer problems). That's the entire invoice. No platform fees, no usage fees, no per-edit fees, no rush fees. Pay once per pack, get the files, done.",
+    a: "Four pack sizes, one-time payment per pack: $497 (100 ads / 1 customer problem), $1,497 (300 ads / 3 customer problems), $2,497 (500 ads / 5 customer problems), $3,997 (1,000 ads / 10 customer problems). That's the entire invoice. No platform fees, no usage fees, no per-edit fees, no rush fees. Pay once per pack, get the files, done.",
   },
   {
     q: "How is this different from hiring a UGC creator?",

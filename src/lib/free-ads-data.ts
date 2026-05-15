@@ -24,6 +24,16 @@ const bulkSummary = bulkAdPricingTiers
 
 export const freeAdsFaqs: FreeAdsFAQ[] = [
   {
+    question: "How much does it cost?",
+    answer:
+      "100 ads is $497. 300 is $1,497. 500 is $2,497. 1,000 is $3,997. All include 24-hour turnaround and error revisions.",
+  },
+  {
+    question: "Who is this for?",
+    answer:
+      "Anyone running paid video ads on Meta, TikTok, or YouTube Shorts. We've shipped batches for coaches, agencies, real-estate teams, contractors, e-commerce brands, and SaaS founders. If you need vertical video ads at volume, this works.",
+  },
+  {
     question: "Are the 300 video ads really free?",
     answer:
       "Yes, 100% free. You send us your raw footage, and within 24 hours we deliver 300 unique video ads ready to run. No catch, no credit card, no commitment. We do this because we know once you see the quality, you'll want the full system.",
@@ -44,7 +54,7 @@ export const freeAdsFaqs: FreeAdsFAQ[] = [
   },
   {
     question: "Can I buy more ads?",
-    answer: `Yes, we have one-time batch packages: ${bulkSummary}. See full batch ad pricing at prestyj.com/bulk-video-ad-pricing.`,
+    answer: `Yes. Four one-time batch packages: ${bulkSummary}. All include 24-hour turnaround and error revisions. See full batch ad pricing at prestyj.com/bulk-video-ad-pricing.`,
   },
   {
     question: "Can I see samples before committing?",
@@ -59,7 +69,7 @@ export const freeAdsFaqs: FreeAdsFAQ[] = [
   {
     question: "What industries do you create video ads for?",
     answer:
-      "We create video ads for service businesses including real estate teams, HVAC contractors, plumbers, roofers, landscapers, and home service companies. Our scripts and ad strategies are tailored to each industry's buyer psychology and seasonal patterns.",
+      "Anyone running paid video ads — e.g., real estate teams, contractors, coaches, agencies, e-commerce brands, SaaS founders, and home service companies. Scripts and ad angles are tailored to your specific offer and audience, not a generic industry template.",
   },
   {
     question: "What platforms do the video ads work on?",
