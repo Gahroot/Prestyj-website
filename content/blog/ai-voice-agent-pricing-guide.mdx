@@ -34,13 +34,14 @@ There are three main pricing approaches in the market:
 
 Developer platforms like Vapi, Retell, and Bland charge based on usage:
 
-| Platform | Base Rate | Notes |
-|----------|-----------|-------|
-| Vapi | $0.05/min | + LLM, STT, TTS, telephony costs |
-| Retell | $0.07-0.11/min | + additional provider costs |
-| Bland | $0.09/min | + additional costs at scale |
+| Platform | Base Rate      | Notes                            |
+| -------- | -------------- | -------------------------------- |
+| Vapi     | $0.05/min      | + LLM, STT, TTS, telephony costs |
+| Retell   | $0.07-0.11/min | + additional provider costs      |
+| Bland    | $0.09/min      | + additional costs at scale      |
 
 **The catch:** These rates are just the platform fee. You'll also pay for:
+
 - **LLM (GPT-4, Claude, etc.):** $0.02-0.10+ per minute of conversation
 - **Speech-to-Text:** $0.01-0.03 per minute
 - **Text-to-Speech:** $0.01-0.05 per minute
@@ -52,12 +53,12 @@ Developer platforms like Vapi, Retell, and Bland charge based on usage:
 
 Platforms like Synthflow, Aircall, and various industry-specific solutions charge monthly:
 
-| Tier | Typical Range | What You Get |
-|------|---------------|--------------|
-| Starter | $30-100/month | Limited minutes, basic features |
-| Professional | $200-500/month | More minutes, integrations |
-| Business | $500-1,500/month | Higher limits, advanced features |
-| Enterprise | $2,000+/month | Custom, unlimited, SLA |
+| Tier         | Typical Range    | What You Get                     |
+| ------------ | ---------------- | -------------------------------- |
+| Starter      | $30-100/month    | Limited minutes, basic features  |
+| Professional | $200-500/month   | More minutes, integrations       |
+| Business     | $500-1,500/month | Higher limits, advanced features |
+| Enterprise   | $2,000+/month    | Custom, unlimited, SLA           |
 
 **Advantage:** Predictable costs, easier budgeting
 **Disadvantage:** May pay for capacity you don't use
@@ -81,11 +82,11 @@ Industry-specific platforms (like Prestyj for real estate) charge for outcomes, 
 
 Most platforms require you to bring your own LLM or pay for theirs:
 
-| Model | Approximate Cost |
-|-------|-----------------|
-| GPT-4 | $0.03-0.06 per 1K tokens |
+| Model   | Approximate Cost           |
+| ------- | -------------------------- |
+| GPT-4   | $0.03-0.06 per 1K tokens   |
 | GPT-3.5 | $0.001-0.002 per 1K tokens |
-| Claude | $0.008-0.024 per 1K tokens |
+| Claude  | $0.008-0.024 per 1K tokens |
 
 A typical voice conversation uses 500-2,000 tokens. At scale, this adds up.
 
@@ -93,31 +94,31 @@ A typical voice conversation uses 500-2,000 tokens. At scale, this adds up.
 
 Inbound and outbound calling has separate costs:
 
-| Cost Type | Range |
-|-----------|-------|
-| Inbound calls | $0.01-0.02/min |
-| Outbound calls | $0.01-0.03/min |
-| Phone numbers | $1-5/month each |
-| SMS | $0.01-0.03/message |
+| Cost Type      | Range              |
+| -------------- | ------------------ |
+| Inbound calls  | $0.01-0.02/min     |
+| Outbound calls | $0.01-0.03/min     |
+| Phone numbers  | $1-5/month each    |
+| SMS            | $0.01-0.03/message |
 
 ### 3. Transcription Costs
 
 If you want call transcripts (and you should for quality control):
 
-| Service | Cost |
-|---------|------|
-| Basic transcription | $0.01-0.02/min |
+| Service                    | Cost           |
+| -------------------------- | -------------- |
+| Basic transcription        | $0.01-0.02/min |
 | Premium (speaker ID, etc.) | $0.02-0.04/min |
 
 ### 4. Engineering and Maintenance
 
 For DIY platforms, don't forget the cost of your time:
 
-| Task | Time Investment |
-|------|-----------------|
-| Initial setup | 20-100+ hours |
-| Prompt engineering | 10-40 hours |
-| Testing and QA | 10-20 hours |
+| Task                | Time Investment  |
+| ------------------- | ---------------- |
+| Initial setup       | 20-100+ hours    |
+| Prompt engineering  | 10-40 hours      |
+| Testing and QA      | 10-20 hours      |
 | Ongoing maintenance | 5-10 hours/month |
 
 At $50-150/hour for engineering time, the "cheap" platform can get expensive.
@@ -130,30 +131,30 @@ Let's compare real costs for a business using 10,000 minutes per month:
 
 ### Option A: Per-Minute Platform (DIY)
 
-| Cost Category | Monthly Cost |
-|---------------|-------------|
-| Platform fee ($0.08/min) | $800 |
-| LLM costs | $200-400 |
-| Telephony | $100-200 |
-| Transcription | $100-200 |
-| Engineering (10 hrs @ $100/hr) | $1,000 |
-| **Total** | **$2,200-2,600** |
+| Cost Category                  | Monthly Cost     |
+| ------------------------------ | ---------------- |
+| Platform fee ($0.08/min)       | $800             |
+| LLM costs                      | $200-400         |
+| Telephony                      | $100-200         |
+| Transcription                  | $100-200         |
+| Engineering (10 hrs @ $100/hr) | $1,000           |
+| **Total**                      | **$2,200-2,600** |
 
 ### Option B: Subscription Platform
 
-| Cost Category | Monthly Cost |
-|---------------|-------------|
-| Business plan | $800-1,200 |
-| Overage fees | $0-300 |
-| **Total** | **$800-1,500** |
+| Cost Category | Monthly Cost   |
+| ------------- | -------------- |
+| Business plan | $800-1,200     |
+| Overage fees  | $0-300         |
+| **Total**     | **$800-1,500** |
 
 ### Option C: Done-For-You Solution
 
-| Cost Category | Monthly Cost |
-|---------------|-------------|
-| Platform + service | $1,500-3,000 |
-| Engineering | $0 |
-| **Total** | **$1,500-3,000** |
+| Cost Category      | Monthly Cost     |
+| ------------------ | ---------------- |
+| Platform + service | $1,500-3,000     |
+| Engineering        | $0               |
+| **Total**          | **$1,500-3,000** |
 
 **The insight:** The "cheapest" per-minute option often costs more than subscription or done-for-you solutions when you factor in all costs.
 
@@ -165,20 +166,22 @@ Let's compare real costs for a business using 10,000 minutes per month:
 
 How many minutes of AI voice interaction do you expect per month?
 
-| Business Size | Typical Range |
-|--------------|---------------|
-| Small (1-5 users) | 500-2,000 min/month |
-| Medium (5-20 users) | 2,000-10,000 min/month |
-| Large (20+ users) | 10,000-50,000+ min/month |
+| Business Size       | Typical Range            |
+| ------------------- | ------------------------ |
+| Small (1-5 users)   | 500-2,000 min/month      |
+| Medium (5-20 users) | 2,000-10,000 min/month   |
+| Large (20+ users)   | 10,000-50,000+ min/month |
 
 ### Step 2: Add Up All Costs
 
 For per-minute platforms:
+
 ```
 Total = (Minutes × Base Rate) + LLM Costs + Telephony + Transcription + Engineering Time
 ```
 
 For subscription platforms:
+
 ```
 Total = Monthly Fee + Overage Fees (if any)
 ```
@@ -194,6 +197,7 @@ What's your time worth? If you spend 20 hours setting up and maintaining a DIY s
 ### Per-Minute DIY Platforms
 
 Best for:
+
 - Developers building AI voice into their own product
 - Teams with engineering resources to build and maintain
 - Highly custom use cases that need flexibility
@@ -202,6 +206,7 @@ Best for:
 ### Subscription Platforms
 
 Best for:
+
 - Predictable budgeting needs
 - Moderate, consistent volume
 - Teams without heavy engineering resources
@@ -210,6 +215,7 @@ Best for:
 ### Done-For-You Solutions
 
 Best for:
+
 - Industry-specific needs (real estate, insurance, HVAC, etc.)
 - Teams that want results without building
 - Situations where engineering time is better spent elsewhere
@@ -247,4 +253,4 @@ Buy if: you want to focus on your business, need industry-specific solutions, an
 
 ---
 
-*Want predictable pricing without the complexity? [Book a demo](/book-demo) to learn about Prestyj's done-for-you approach.*
+_Want predictable pricing without the complexity? [Book a demo](/book-demo) to learn about Prestyj's done-for-you approach._

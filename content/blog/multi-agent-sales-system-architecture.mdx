@@ -47,6 +47,7 @@ image: /images/blog/multi-agent-sales-system-architecture.jpg
 A **multi-agent sales system** deploys multiple specialized AI agents, each optimized for a specific sales function, working collaboratively through a shared orchestration layer.
 
 **Contrast with single-agent systems:**
+
 - **Single-agent:** One AI handles everything — response, qualification, nurturing, scheduling, closing support
 - **Multi-agent:** Multiple specialized agents, each excelling at one function, coordinated through an orchestrator
 
@@ -57,6 +58,7 @@ A **multi-agent sales system** deploys multiple specialized AI agents, each opti
 **Multi-agent system:** A complete team with specialists — quarterback (leadership), receivers (scoring), linemen (protection), kicker (scoring), coaches (strategy). Each role optimized, coordinated for team victory.
 
 **In sales:**
+
 - Response Agent = Lineman (first contact, protection)
 - Qualification Agent = Quarterback (decision making, routing)
 - Nurture Agent = Running back (consistent advancement)
@@ -66,27 +68,32 @@ A **multi-agent sales system** deploys multiple specialized AI agents, each opti
 ### Why Multi-Agent Wins
 
 **1. Specialization → Performance**
+
 - Agents trained on narrow tasks outperform generalists
 - Response Agent optimized for latency (12 seconds)
 - Qualification Agent optimized for accuracy (87%)
 - Each agent uses optimized prompts, tools, and data
 
 **2. Parallelization → Speed**
+
 - Single-agent: Sequential processing (respond → qualify → nurture → schedule)
 - Multi-agent: Parallel processing (Respond Agent + Qualify Agent + Schedule Agent run simultaneously)
 - Result: 6x faster lead progression
 
 **3. Resilience → Reliability**
+
 - Single-agent failure: System down, all leads unhandled
 - Multi-agent failure: One agent fails, others continue, fallback activated
 - Result: 99.9% uptime vs. 97.3% for single-agent
 
 **4. Scalability → Growth**
+
 - Single-agent: Scale by upgrading hardware (vertical scaling, expensive, limited)
 - Multi-agent: Scale by adding agent instances (horizontal scaling, cheap, unlimited)
 - Result: Handle 10x lead volume with linear cost increase
 
 **5. Modularity → Flexibility**
+
 - Single-agent: Change one function, retrain entire model, risk regression
 - Multi-agent: Update one agent, others unchanged, test in isolation
 - Result: Faster innovation, lower risk
@@ -104,17 +111,20 @@ Every multi-agent sales system includes a subset of these agent types. Not all b
 **Optimization metric:** Latency (time to first contact)
 
 **Key capabilities:**
+
 - Webhook monitoring for new lead events
 - Multi-channel outreach (voice, SMS, email)
 - Context-aware opening messages (lead source, inquiry type)
 - Graceful failure (retry logic, fallback channels)
 
 **Performance benchmarks:**
+
 - **Median latency:** 12 seconds (lead creation to first contact attempt)
 - **Contact rate:** 94% (reached live or left message)
 - **Lead engagement:** 67% respond to first outreach
 
 **Technology stack:**
+
 - **LLM:** GPT-4o-mini or Claude Haiku (speed prioritized)
 - **Telephony:** Twilio, SignalWire
 - **SMS:** Twilio, ClickSend
@@ -122,11 +132,13 @@ Every multi-agent sales system includes a subset of these agent types. Not all b
 - **Webhooks:** Custom webhook server with retry logic
 
 **Conversation flow:**
+
 ```
 LEAD WEBHOOK → Response Agent → Channel Selection → Message Generation → Send → Log to State
 ```
 
 **Example prompt:**
+
 ```
 You are a Response Agent for {company}. Your job: Respond to new leads instantly via {channel}.
 
@@ -152,6 +164,7 @@ Length: Under 150 characters for SMS, under 100 words for email.
 **Optimization metric:** Accuracy (correct categorization)
 
 **Key capabilities:**
+
 - Natural conversation (not form-based)
 - Multi-turn dialogue (ask follow-up questions)
 - Objection handling ("just browsing," "not ready yet")
@@ -159,12 +172,14 @@ Length: Under 150 characters for SMS, under 100 words for email.
 - Handoff triggers (when to escalate to human)
 
 **Performance benchmarks:**
+
 - **Qualification accuracy:** 87% (correct category vs. human review)
 - **Conversation length:** 3-7 turns avg
 - **Lead engagement:** 81% complete qualification
 - **Hot lead identification:** 92% recall (catches real hot leads)
 
 **Technology stack:**
+
 - **LLM:** GPT-4o or Claude Sonnet (quality prioritized)
 - **Conversation memory:** Redis with conversation history
 - **Scoring logic:** Custom rules + LLM classification
@@ -173,6 +188,7 @@ Length: Under 150 characters for SMS, under 100 words for email.
 **Qualification criteria by industry:**
 
 **Real Estate:**
+
 ```yaml
 qualification_questions:
   - Timeline: "When are you looking to buy/sell?"
@@ -188,6 +204,7 @@ scoring:
 ```
 
 **Solar:**
+
 ```yaml
 qualification_questions:
   - Homeownership: "Do you own your home?"
@@ -203,6 +220,7 @@ scoring:
 ```
 
 **Conversation flow:**
+
 ```
 LEAD RESPONDS → Qualification Agent → Ask Q1 → Lead Answers → Update State → Ask Q2 → ... → Score Lead → Update CRM → Trigger Next Agent
 ```
@@ -214,6 +232,7 @@ LEAD RESPONDS → Qualification Agent → Ask Q1 → Lead Answers → Update Sta
 **Optimization metric:** Re-engagement rate (dormant leads who respond)
 
 **Key capabilities:**
+
 - Multi-channel sequences (email → SMS → call)
 - Personalization (lead name, inquiry, history)
 - Timing optimization (best send times)
@@ -221,17 +240,20 @@ LEAD RESPONDS → Qualification Agent → Ask Q1 → Lead Answers → Update Sta
 - Automated pause on engagement
 
 **Performance benchmarks:**
+
 - **Re-engagement rate:** 34% (vs. 19% for generic drip campaigns)
 - **Unsubscribe rate:** 2.1% (vs. 4.7% for generic campaigns)
 - **Conversion from nurture:** 1.8% (vs. 0.9% for single-agent)
 
 **Technology stack:**
+
 - **LLM:** GPT-4o or Claude Sonnet (content generation)
 - **Scheduling:** Cron-like scheduler with send-time optimization
 - **Templates:** Mix of pre-written and LLM-generated content
 - **Analytics:** Open/click tracking, engagement scoring
 
 **Nurture sequence example (real estate, warm leads):**
+
 ```
 Day 0 (SMS): "Hi {name}, noticed you were looking at homes in {area}. Any questions?"
 Day 3 (Email): Market update for {area} with new listings
@@ -243,6 +265,7 @@ Day 45 (SMS): Personal check-in + incentive (home warranty offer)
 ```
 
 **Dynamic adjustment rules:**
+
 - If lead engages: Pause sequence, trigger Qualification Agent
 - If lead unsubscribes: Mark as do-not-contact
 - If lead becomes hot: Escalate to human immediately
@@ -254,6 +277,7 @@ Day 45 (SMS): Personal check-in + incentive (home warranty offer)
 **Optimization metric:** Show rate (appointment kept)
 
 **Key capabilities:**
+
 - Calendar integration (Google, Outlook, Calendly)
 - Smart time slot suggestions (based on agent availability)
 - Multi-touch confirmation (SMS + email)
@@ -261,23 +285,27 @@ Day 45 (SMS): Personal check-in + incentive (home warranty offer)
 - Reminder sequences (day-before, day-of)
 
 **Performance benchmarks:**
+
 - **Booking rate:** 68% of qualified leads book
 - **Show rate:** 92% (vs. 67% without AI confirmation)
 - **Rescheduling:** 89% rescheduled vs. cancelled
 - **Agent satisfaction:** 94% prefer AI scheduling
 
 **Technology stack:**
+
 - **Calendaring:** Google Calendar API, Microsoft Graph API
 - **Scheduling logic:** Custom availability matching algorithm
 - **Communication:** SMS (primary), email (confirmation)
 - **Time zone handling:** Automatic detection and conversion
 
 **Scheduling conversation flow:**
+
 ```
 LEAD QUALIFIED → Appointment Agent → "When works for a call?" → Lead Provides Time → Check Calendar → Confirm or Suggest Alternatives → Book → Send Confirmation → Add Reminder Sequence
 ```
 
 **Example conversation:**
+
 ```
 Appointment Agent: "Great! Would Tuesday at 3pm or Thursday at 10am work better for a call with Sarah?"
 
@@ -292,6 +320,7 @@ You'll get a confirmation email and a reminder beforehand. Anything else I can h
 ```
 
 **Show rate optimization tactics:**
+
 1. **Double confirmation:** Book → SMS confirm → Email confirm
 2. **Day-before reminder:** "Still on for tomorrow at 3pm?"
 3. **Day-of reminder:** "Seeing Sarah at 3pm today!"
@@ -305,6 +334,7 @@ You'll get a confirmation email and a reminder beforehand. Anything else I can h
 **Optimization metric:** Deal closing rate
 
 **Key capabilities:**
+
 - Objection handling scripts (price, timing, competition)
 - Document preparation (contracts, proposals)
 - Follow-up reminders (stalled deals)
@@ -312,12 +342,14 @@ You'll get a confirmation email and a reminder beforehand. Anything else I can h
 - Cross-sell/upsell identification
 
 **Performance benchmarks:**
+
 - **Closing rate increase:** +19% (vs. no AI support)
 - **Deal velocity:** 23% faster from proposal to close
 - **Objection handling:** 94% of common objections addressed
 - **Follow-up compliance:** 100% (never misses a touchpoint)
 
 **Technology stack:**
+
 - **LLM:** GPT-4o or Claude Sonnet (complex reasoning)
 - **Document generation:** Documint, PandaDoc, Google Docs
 - **CRM data:** Real-time deal stage and history access
@@ -326,6 +358,7 @@ You'll get a confirmation email and a reminder beforehand. Anything else I can h
 **Closing support scenarios:**
 
 **Scenario 1: Objection handling**
+
 ```
 Human Salesperson: "They're saying our price is too high."
 
@@ -348,6 +381,7 @@ Which approach feels right for this prospect?"
 ```
 
 **Scenario 2: Follow-up reminder**
+
 ```
 [Deal stalled for 5 days]
 
@@ -359,6 +393,7 @@ Want me to send this or would you prefer to reach out personally?"
 ```
 
 **Scenario 3: Competitive analysis**
+
 ```
 Human Salesperson: "They're comparing us to CompetitorX."
 
@@ -387,6 +422,7 @@ Plus, you'll get [additional benefit] they can't offer.'
 **Optimization metric:** Retention rate and expansion revenue
 
 **Key capabilities:**
+
 - Onboarding sequence delivery
 - Check-in scheduling
 - Success milestone tracking
@@ -394,12 +430,14 @@ Plus, you'll get [additional benefit] they can't offer.'
 - Churn risk detection
 
 **Performance benchmarks:**
+
 - **Onboarding completion:** 94% (vs. 71% without AI)
 - **Time to first value:** 18 days (vs. 34 days)
 - **Expansion revenue:** 23% of customers expand within 6 months
 - **Churn reduction:** 41% less churn
 
 **Technology stack:**
+
 - **LLM:** GPT-4o or Claude Sonnet
 - **Onboarding platform:** Customer success tools
 - **Analytics:** Usage tracking, engagement scoring
@@ -470,6 +508,7 @@ Plus, you'll get [additional benefit] they can't offer.'
 **Purpose:** Route leads through optimal agent sequences based on lead state, behavior, and business rules.
 
 **Key responsibilities:**
+
 1. **Lead routing:** Determine which agent(s) should handle each lead
 2. **Agent coordination:** Ensure agents collaborate without conflicts
 3. **State management:** Track lead state and agent assignments
@@ -477,11 +516,13 @@ Plus, you'll get [additional benefit] they can't offer.'
 5. **Performance monitoring:** Track agent metrics, optimize routes
 
 **Technology options:**
+
 - **LangGraph:** Purpose-built for multi-agent orchestration
 - **BeeAI:** Emerging framework for agent swarms
 - **Custom:** Build orchestrator using message queues + state machine
 
 **Orchestrator logic (pseudocode):**
+
 ```python
 def orchestrator(lead_event):
     # 1. Retrieve or create lead state
@@ -517,33 +558,34 @@ def orchestrator(lead_event):
 ```
 
 **Routing rules (example):**
+
 ```yaml
 routes:
   new_lead:
     agents:
-      - response_agent  # Runs first, immediate
-      - qualification_agent  # Runs if lead responds
-    parallel: false  # Sequential
+      - response_agent # Runs first, immediate
+      - qualification_agent # Runs if lead responds
+    parallel: false # Sequential
     timeout: 5 minutes
 
   qualified_hot:
     agents:
-      - appointment_agent  # Runs immediately
-      - closing_agent  # Runs after appointment books
+      - appointment_agent # Runs immediately
+      - closing_agent # Runs after appointment books
     parallel: false
     timeout: 24 hours
 
   qualified_warm:
     agents:
-      - nurture_agent  # Runs on schedule
+      - nurture_agent # Runs on schedule
     parallel: false
     timeout: 30 days
 
   stalled:
     agents:
-      - nurture_agent  # Re-engagement attempt
-      - qualification_agent  # Re-qualify
-    parallel: true  # Try both
+      - nurture_agent # Re-engagement attempt
+      - qualification_agent # Re-qualify
+    parallel: true # Try both
     timeout: 7 days
 ```
 
@@ -552,12 +594,14 @@ routes:
 **Purpose:** Maintain consistent lead data across all agents.
 
 **Storage options:**
+
 - **Redis:** Fast in-memory, ideal for real-time data
 - **PostgreSQL:** Persistent, queryable, good for analytics
 - **MongoDB:** Flexible schema, good for conversation history
 - **Vector DB (Pinecone, Weaviate):** For semantic search of conversations
 
 **State schema (example):**
+
 ```typescript
 interface LeadState {
   lead_id: string;
@@ -610,6 +654,7 @@ interface LeadState {
 ```
 
 **State access patterns:**
+
 ```python
 # Agent reads state
 state = state_store.get(lead_id)
@@ -628,12 +673,14 @@ state_store.subscribe(lead_id, callback_function)
 **Purpose:** Enable agents to communicate without direct dependencies.
 
 **Technology options:**
+
 - **RabbitMQ:** Feature-rich, reliable, routing capabilities
 - **Kafka:** High throughput, stream processing
 - **Redis Streams:** Lightweight, simple
 - **AWS SQS/SNS:** Cloud-native, scalable
 
 **Message types:**
+
 ```yaml
 lead_events:
   - lead.created
@@ -657,6 +704,7 @@ system_events:
 ```
 
 **Message flow example:**
+
 ```python
 # Response Agent completes
 publish({
@@ -675,21 +723,25 @@ qualification_agent.start(lead_id="123")
 ### Integration Layer
 
 **CRM Integrations:**
+
 - **Real estate:** Follow Up Boss, BoomTown, kvCORE, Sierra Interactive
 - **General:** Salesforce, HubSpot, Zoho, Pipedrive
 - **Integration pattern:** Webhooks + API sync
 
 **Calendar Integrations:**
+
 - **Google Calendar API:** OAuth2, real-time sync
 - **Microsoft Graph API:** Outlook calendar access
 - **Calendly:** Embeddable scheduling widget
 
 **Communication Integrations:**
+
 - **Twilio:** Voice calls, SMS, WhatsApp
 - **SendGrid/Postmark:** Transactional email
 - **SignalWire:** Alternative telephony
 
 **Data Source Integrations:**
+
 - **Real estate portals:** Zillow, Realtor.com, Redfin
 - **Home services:** Thumbtack, HomeAdvisor, Angi
 - **Lead providers:** Custom webhooks, batch uploads
@@ -701,16 +753,19 @@ qualification_agent.start(lead_id="123")
 ### Agent-to-Agent Communication
 
 **Pattern 1: Shared State (Preferred)**
+
 - Agents read/write to shared state store
 - No direct agent-to-agent dependencies
 - Orchestrator coordinates state transitions
 
 **Pattern 2: Message Passing**
+
 - Agents publish messages to bus
 - Other agents subscribe to relevant messages
 - Event-driven architecture
 
 **Pattern 3: Direct Invocation (Not Recommended)**
+
 - Agent A calls Agent B directly
 - Tightly coupled, hard to scale
 - Avoid in production systems
@@ -718,6 +773,7 @@ qualification_agent.start(lead_id="123")
 ### Example: Handoff from Response to Qualification
 
 **Shared State Approach:**
+
 ```python
 # Response Agent completes
 state = state_store.get(lead_id)
@@ -731,6 +787,7 @@ qualification_agent.start(lead_id)
 ```
 
 **Message Passing Approach:**
+
 ```python
 # Response Agent completes
 publish({
@@ -748,6 +805,7 @@ def start_qualification(message):
 ### Human Escalation Protocol
 
 **When agents escalate to humans:**
+
 1. Agent detects escalation trigger (complex question, angry customer, high value)
 2. Agent updates state: `escalation_request = {reason, priority, context}`
 3. Orchestrator publishes: `agent.escalated` event
@@ -757,6 +815,7 @@ def start_qualification(message):
 7. Agent provides context summary to human
 
 **Escalation triggers:**
+
 ```yaml
 response_agent:
   - Angry customer sentiment detected
@@ -790,21 +849,25 @@ closing_agent:
 **Best for:** Standardized sales processes with clear stages.
 
 **Example flow:**
+
 ```
 New Lead → Response Agent → Qualification Agent → Appointment Agent → Closing Agent → Close
 ```
 
 **Pros:**
+
 - Simple to understand and debug
 - Clear stage progression
 - Easy to measure funnel metrics
 
 **Cons:**
+
 - Inflexible (all leads follow same path)
 - Bottlenecks if one agent slow
 - Doesn't handle parallel well
 
 **Implementation:**
+
 ```python
 pipeline = Pipeline([
     ResponseAgent(),
@@ -823,21 +886,25 @@ result = pipeline.run(lead)
 **Best for:** Complex qualification, multiple lead types.
 
 **Example flow:**
+
 ```
 New Lead → Router → {Hot, Warm, Cold} → Different agent sequences
 ```
 
 **Pros:**
+
 - Flexible routing
 - Optimized for lead type
 - Parallel processing possible
 
 **Cons:**
+
 - Complex routing logic
 - Harder to debug
 - More moving parts
 
 **Implementation:**
+
 ```python
 router = Router(rules={
     "hot": [ResponseAgent(), AppointmentAgent(), ClosingAgent()],
@@ -856,21 +923,25 @@ result = router.route(lead, lead_score)
 **Best for:** Complex sales requiring multiple perspectives.
 
 **Example flow:**
+
 ```
 New Lead → {Response Agent + Qualification Agent} → Collaborate → Handoff to Appointment
 ```
 
 **Pros:**
+
 - Parallel processing
 - Agents learn from each other
 - Resilient (if one fails, others continue)
 
 **Cons:**
+
 - Complex coordination
 - Risk of conflicting actions
 - Higher cost (more agents running)
 
 **Implementation:**
+
 ```python
 swarm = Swarm([
     ResponseAgent(),
@@ -890,6 +961,7 @@ result = swarm.collaborate(lead)
 **Best for:** Real-world production systems.
 
 **Example:**
+
 ```
 New Lead → Router
   ├─ Hot → Pipeline: Response → Appointment → Closing
@@ -898,11 +970,13 @@ New Lead → Router
 ```
 
 **Pros:**
+
 - Flexibility to optimize per segment
 - Best of all patterns
 - Resilient and scalable
 
 **Cons:**
+
 - Most complex to implement
 - Requires mature orchestration
 - Higher development cost
@@ -914,6 +988,7 @@ New Lead → Router
 ### Real Estate: 5-Agent System
 
 **Agents:**
+
 1. **Portal Response Agent** (specialized for Zillow, Realtor.com, Redfin)
 2. **Buyer Qualification Agent** (pre-approval, timeline, location)
 3. **Seller Qualification Agent** (motivation, timeline, home condition)
@@ -921,16 +996,19 @@ New Lead → Router
 5. **Closing Support Agent** (offer preparation, negotiation support)
 
 **Architecture:**
+
 - Router detects buyer vs. seller vs. rental
 - Parallel Response + Qualification agents
 - Handoff to Appointment or Nurture based on score
 
 **Performance:**
+
 - **Conversion:** 4.8% (vs. 1.2% single-agent)
 - **Response time:** 12 seconds (portal leads)
 - **Show rate:** 94% (AI-confirmed appointments)
 
 **Lead flow:**
+
 ```
 Portal Lead → Portal Response Agent → Buyer/Seller Router
   ├─ Buyer → Buyer Qualification → Appointment → Closing
@@ -941,6 +1019,7 @@ Portal Lead → Portal Response Agent → Buyer/Seller Router
 ### Solar: 6-Agent System
 
 **Agents:**
+
 1. **Response Agent** (instant SMS + voice callback)
 2. **Pre-Qualification Agent** (homeowner, roof type, electric bill)
 3. **Site Survey Scheduling Agent** (book technician visit)
@@ -949,16 +1028,19 @@ Portal Lead → Portal Response Agent → Buyer/Seller Router
 6. **Installation Coordinator Agent** (schedule installation, paperwork)
 
 **Architecture:**
+
 - Complex qualification (technical + financial)
 - Long sales cycle (multiple touches over weeks)
 - High ticket ($15-40K)
 
 **Performance:**
+
 - **Conversion:** 7.2% (vs. 2.8% human)
 - **Lead-to-appointment:** 34%
 - **Show rate:** 91% (site surveys)
 
 **Lead flow:**
+
 ```
 Lead → Response → Pre-Qualification
   ├─ Qualified → Site Survey Agent → Proposal Agent → Closing
@@ -968,22 +1050,26 @@ Lead → Response → Pre-Qualification
 ### HVAC: 4-Agent System
 
 **Agents:**
+
 1. **Emergency Response Agent** (24/7 instant dispatch)
 2. **Replacement Lead Agent** (system replacement qualification)
 3. **Maintenance Scheduling Agent** (routine service booking)
 4. **Follow-up Agent** (estimate follow-up, review requests)
 
 **Architecture:**
+
 - Router detects emergency vs. replacement vs. maintenance
 - Emergency gets priority routing
 - Seasonal scaling (summer volume spikes)
 
 **Performance:**
+
 - **Conversion:** 8.1% (vs. 3.2% single-agent)
 - **Emergency response:** 2 minutes (vs. 4 hours human average)
 - **Booking rate:** 67%
 
 **Lead flow:**
+
 ```
 Call/Form → Emergency Detection
   ├─ Emergency → Emergency Response → Dispatch → Follow-up
@@ -994,6 +1080,7 @@ Call/Form → Emergency Detection
 ### Insurance: 7-Agent System
 
 **Agents:**
+
 1. **Response Agent** (multi-channel)
 2. **Auto Insurance Agent** (vehicle, driver, coverage needs)
 3. **Home Insurance Agent** (property, location, coverage needs)
@@ -1003,16 +1090,19 @@ Call/Form → Emergency Detection
 7. **Cross-Sell Agent** (identify bundle opportunities)
 
 **Architecture:**
+
 - Product-specific agents
 - Complex compliance requirements
 - Multi-line sales opportunities
 
 **Performance:**
+
 - **Conversion:** 9.7% (vs. 4.1% single-agent)
 - **Quote accuracy:** 94%
 - **Cross-sell success:** 23%
 
 **Lead flow:**
+
 ```
 Lead → Response → Product Detection
   ├─ Auto → Auto Agent → Quote Agent → Appointment
@@ -1029,6 +1119,7 @@ Lead → Response → Product Detection
 ### Orchestration Frameworks
 
 **LangGraph (Recommended):**
+
 - Purpose-built for multi-agent orchestration
 - Stateful agent workflows
 - Built-in error handling
@@ -1054,26 +1145,29 @@ app = workflow.compile()
 ```
 
 **BeeAI:**
+
 - Emerging framework for agent swarms
 - Built-in collaboration patterns
 - Lightweight, fast
 
 **Custom (Python/Node):**
+
 - Build orchestrator using message queues + state machine
 - Maximum flexibility
 - Higher development cost
 
 ### LLM Choices by Agent Type
 
-| Agent Type | Recommended LLM | Why |
-|------------|----------------|-----|
-| **Response Agent** | GPT-4o-mini, Claude Haiku | Speed prioritized, simple tasks |
-| **Qualification Agent** | GPT-4o, Claude Sonnet | Accuracy needed, multi-turn dialogue |
-| **Nurture Agent** | GPT-4o, Claude Sonnet | Content generation quality |
-| **Appointment Agent** | GPT-4o-mini, Claude Haiku | Simple scheduling, speed |
-| **Closing Agent** | GPT-4o, Claude Sonnet | Complex reasoning, objection handling |
+| Agent Type              | Recommended LLM           | Why                                   |
+| ----------------------- | ------------------------- | ------------------------------------- |
+| **Response Agent**      | GPT-4o-mini, Claude Haiku | Speed prioritized, simple tasks       |
+| **Qualification Agent** | GPT-4o, Claude Sonnet     | Accuracy needed, multi-turn dialogue  |
+| **Nurture Agent**       | GPT-4o, Claude Sonnet     | Content generation quality            |
+| **Appointment Agent**   | GPT-4o-mini, Claude Haiku | Simple scheduling, speed              |
+| **Closing Agent**       | GPT-4o, Claude Sonnet     | Complex reasoning, objection handling |
 
 **Cost optimization:**
+
 - Use faster/cheaper models for simple agents (Response, Appointment)
 - Use capable models for complex agents (Qualification, Closing)
 - Result: 60% lower LLM costs vs. using GPT-4o for all agents
@@ -1081,6 +1175,7 @@ app = workflow.compile()
 ### State Storage
 
 **Redis (Recommended for real-time):**
+
 ```python
 import redis
 
@@ -1094,6 +1189,7 @@ state = json.loads(r.get(f"lead:{lead_id}"))
 ```
 
 **PostgreSQL (Recommended for persistence):**
+
 ```sql
 CREATE TABLE lead_state (
     lead_id VARCHAR(255) PRIMARY KEY,
@@ -1110,6 +1206,7 @@ ON CONFLICT (lead_id) DO UPDATE SET state = $2, updated_at = NOW();
 ### Message Bus
 
 **RabbitMQ (Recommended):**
+
 ```python
 import pika
 
@@ -1133,6 +1230,7 @@ channel.start_consuming()
 ```
 
 **Kafka (High volume):**
+
 ```python
 from kafka import KafkaProducer
 
@@ -1153,6 +1251,7 @@ producer.send('lead_events', value=message)
 **Purpose:** Prevent cascading failures when a service is down.
 
 **Implementation:**
+
 ```python
 from circuitbreaker import circuit
 
@@ -1175,6 +1274,7 @@ def call_qualification_agent(lead_id):
 **Purpose:** Primary agent fails → fallback agent → human
 
 **Implementation:**
+
 ```python
 def qualify_lead(lead_id):
     # Try AI agent
@@ -1200,6 +1300,7 @@ def qualify_lead(lead_id):
 **Purpose:** Isolate failed messages for analysis and retry.
 
 **Implementation:**
+
 ```python
 # Failed messages go to DLQ
 channel.queue_declare(queue='lead_events_dlq')
@@ -1227,6 +1328,7 @@ def process_dlq():
 ### Monitoring & Alerting
 
 **Metrics to track:**
+
 - Agent latency (p50, p95, p99)
 - Agent success rate
 - Lead stage progression
@@ -1234,6 +1336,7 @@ def process_dlq():
 - Queue depths (if backing up)
 
 **Alerting thresholds:**
+
 - Agent error rate > 5% → Alert engineering
 - Queue depth > 1000 → Alert operations
 - Response time > 60 seconds → Alert management
@@ -1246,12 +1349,14 @@ def process_dlq():
 ### Phase 1: Foundation (Weeks 1-2)
 
 **Deliverables:**
+
 - Architecture diagram approved
 - Technology stack selected
 - Development environment set up
 - Base infrastructure deployed (Redis, message bus, state storage)
 
 **Key decisions:**
+
 - Orchestration framework (LangGraph vs. custom)
 - LLM selection for each agent type
 - State storage backend (Redis vs. PostgreSQL)
@@ -1260,6 +1365,7 @@ def process_dlq():
 ### Phase 2: Single-Agent Prototype (Weeks 3-4)
 
 **Deliverables:**
+
 - Response Agent built and tested
 - Basic state management
 - Simple CRM integration
@@ -1270,6 +1376,7 @@ def process_dlq():
 ### Phase 3: Add Agents (Weeks 5-8)
 
 **Deliverables:**
+
 - Qualification Agent added
 - Appointment Agent added
 - Orchestrator routing logic
@@ -1280,6 +1387,7 @@ def process_dlq():
 ### Phase 4: Integration & Testing (Weeks 9-10)
 
 **Deliverables:**
+
 - All integrations complete (CRM, calendar, communication)
 - End-to-end testing
 - Error handling and fallbacks
@@ -1290,6 +1398,7 @@ def process_dlq():
 ### Phase 5: Pilot & Optimization (Weeks 11-12)
 
 **Deliverables:**
+
 - Pilot with 10-20% of leads
 - Monitor all conversations
 - Tune prompts and routing
@@ -1300,6 +1409,7 @@ def process_dlq():
 ### Phase 6: Full Rollout (Week 13+)
 
 **Deliverables:**
+
 - Scale to 100% of leads
 - Continuous optimization
 - Add additional agents as needed
@@ -1314,6 +1424,7 @@ def process_dlq():
 ### Implementation Cost
 
 **One-time costs:**
+
 - Architecture design: $5,000
 - Development (12 weeks @ $200/hour): $96,000
 - Testing & QA: $15,000
@@ -1321,6 +1432,7 @@ def process_dlq():
 - **Total Year 1: $124,400**
 
 **Ongoing costs:**
+
 - Platform maintenance: $2,000/month
 - LLM usage: $1,500/month
 - Infrastructure: $800/month
@@ -1330,21 +1442,25 @@ def process_dlq():
 ### Performance Improvement
 
 **Single-agent baseline:**
+
 - Conversion rate: 1.2%
 - Response time: 45 seconds
 - Annual cost: $28,000
 
 **Multi-agent performance:**
+
 - Conversion rate: 4.8% (4x improvement)
 - Response time: 12 seconds (3.75x faster)
 - Annual cost: $99,600
 
 **Revenue impact (200 leads/month, $12,000 average sale):**
+
 - Single-agent: 58 closings = $696,000 revenue
 - Multi-agent: 230 closings = $2,760,000 revenue
 - **Incremental revenue: $2,064,000/year**
 
 **ROI calculation:**
+
 - Investment: $99,600/year
 - Return: $2,064,000 incremental revenue
 - **ROI: 1,972%** (20x return)
@@ -1352,6 +1468,7 @@ def process_dlq():
 ### Break-Even Timeline
 
 **Month-by-month:**
+
 - Month 1-3: Development phase, $0 revenue, $31,000/month investment
 - Month 4: Pilot launch, $173,000 revenue
 - Month 5: Full rollout, $433,000 revenue
@@ -1406,4 +1523,4 @@ Choose multi-agent if: lead volume 200+/month, complex sales cycle (multiple sta
 
 ---
 
-*Ready to implement a multi-agent sales system that converts 4x more leads? [Book a demo to see Prestyj's architecture in action.](/book-demo)*
+_Ready to implement a multi-agent sales system that converts 4x more leads? [Book a demo to see Prestyj's architecture in action.](/book-demo)_

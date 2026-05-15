@@ -25,7 +25,7 @@ This is written for media buyers, CMOs, and performance leaders who already unde
 ## TL;DR
 
 - **Andromeda evaluates ~10,000x more candidates per impression** than Meta's previous retrieval stack. Diversity scoring is how the system avoids redundant exploration.
-- **The diversity score appears to be a multi-signal estimate** of how *different* your candidate ads are from each other and from your historical winners.
+- **The diversity score appears to be a multi-signal estimate** of how _different_ your candidate ads are from each other and from your historical winners.
 - **Five observable axes:** hook variation, visual variation, voice variation, format variation, and audience-fit signal. Each contributes independently.
 - **High diversity correlates with lower CPMs and faster learning phase exits.** Low diversity correlates with stalled delivery even at strong CTR.
 - **Diversity score is per-ad-set and per-account.** A high-diversity ad set in a low-diversity account still pays a partial penalty.
@@ -116,11 +116,11 @@ Since you can't see the score directly, you have to read its shadow. These are t
 ### Observable 1: Learning phase exit time vs spend tier
 
 | Monthly Spend Tier | Healthy Learning Phase Exit | Low-Diversity Account |
-|---|---|---|
-| $1K–$5K | 10–14 days | 18–28 days |
-| $5K–$25K | 7–10 days | 14–21 days |
-| $25K–$100K | 4–7 days | 10–14 days |
-| $100K+ | 3–5 days | 7–10 days |
+| ------------------ | --------------------------- | --------------------- |
+| $1K–$5K            | 10–14 days                  | 18–28 days            |
+| $5K–$25K           | 7–10 days                   | 14–21 days            |
+| $25K–$100K         | 4–7 days                    | 10–14 days            |
+| $100K+             | 3–5 days                    | 7–10 days             |
 
 If your campaigns consistently take 1.5–2x longer than the healthy benchmark to exit learning at your spend level, diversity is a likely cause.
 
@@ -128,12 +128,12 @@ If your campaigns consistently take 1.5–2x longer than the healthy benchmark t
 
 Pull a 30-day report. Look at the top 3 ads' share of total impressions vs the rest of the active creative pool.
 
-| Top 3 Impression Share | Diversity Score Estimate |
-|---|---|
-| 30–45% | High diversity, healthy delivery spread |
-| 45–60% | Moderate diversity |
-| 60–75% | Low diversity, delivery starvation on most ads |
-| 75%+ | Very low diversity, creative pool functionally redundant |
+| Top 3 Impression Share | Diversity Score Estimate                                 |
+| ---------------------- | -------------------------------------------------------- |
+| 30–45%                 | High diversity, healthy delivery spread                  |
+| 45–60%                 | Moderate diversity                                       |
+| 60–75%                 | Low diversity, delivery starvation on most ads           |
+| 75%+                   | Very low diversity, creative pool functionally redundant |
 
 ### Observable 3: CPM trajectory across the month
 
@@ -191,15 +191,15 @@ Start with 30–60 distinct positioning angles, each with a one-line spec (buyer
 
 Plan the batch against a format matrix before producing anything:
 
-| Format | Length | Aspect Ratio | Target % Of Batch |
-|---|---|---|---|
-| Vertical video | 15s | 9:16 | 25% |
-| Vertical video | 30s | 9:16 | 25% |
-| Square video | 30s | 1:1 | 15% |
-| Vertical video | 60s | 9:16 | 15% |
-| Static image | – | 1:1, 4:5 | 10% |
-| Carousel | – | 1:1 | 5% |
-| Cinemagraph / GIF | 6–15s | 9:16, 1:1 | 5% |
+| Format            | Length | Aspect Ratio | Target % Of Batch |
+| ----------------- | ------ | ------------ | ----------------- |
+| Vertical video    | 15s    | 9:16         | 25%               |
+| Vertical video    | 30s    | 9:16         | 25%               |
+| Square video      | 30s    | 1:1          | 15%               |
+| Vertical video    | 60s    | 9:16         | 15%               |
+| Static image      | –      | 1:1, 4:5     | 10%               |
+| Carousel          | –      | 1:1          | 5%                |
+| Cinemagraph / GIF | 6–15s  | 9:16, 1:1    | 5%                |
 
 This locks in axis 4 (format variation).
 
@@ -264,9 +264,9 @@ Observable results after 30 days: learning phase exits in 6–8 days (vs 14–18
 
 ## Why High CTR Alone Doesn't Save You
 
-The most common confusion: "My CTR is great. Why isn't this scaling?" High CTR on a low-diversity pool generates strong *exploitation* signal but weak *exploration* signal. Andromeda delivers more impressions to your top ad but can't expand the audience because the rest of the pool isn't differentiated enough to credibly serve other pockets. You hit a ceiling determined by your top ad's saturated native audience, and CTR holds while CPL rises (frequency rises, incremental impressions reach colder buyers).
+The most common confusion: "My CTR is great. Why isn't this scaling?" High CTR on a low-diversity pool generates strong _exploitation_ signal but weak _exploration_ signal. Andromeda delivers more impressions to your top ad but can't expand the audience because the rest of the pool isn't differentiated enough to credibly serve other pockets. You hit a ceiling determined by your top ad's saturated native audience, and CTR holds while CPL rises (frequency rises, incremental impressions reach colder buyers).
 
-The fix isn't better CTR — it's more diversity in the candidate pool so Andromeda has somewhere to expand into when the top ad saturates. This is also why "kill everything except the winner and scale spend" — a tactic that worked under the old stack — actively destroys performance under Andromeda. You're killing the diversity signal the system needs to find adjacent pockets. The right tactic now is "scale spend on the winner *and* refresh the diversity pool with new angles every 2–4 weeks."
+The fix isn't better CTR — it's more diversity in the candidate pool so Andromeda has somewhere to expand into when the top ad saturates. This is also why "kill everything except the winner and scale spend" — a tactic that worked under the old stack — actively destroys performance under Andromeda. You're killing the diversity signal the system needs to find adjacent pockets. The right tactic now is "scale spend on the winner _and_ refresh the diversity pool with new angles every 2–4 weeks."
 
 ---
 
@@ -274,13 +274,13 @@ The fix isn't better CTR — it's more diversity in the candidate pool so Androm
 
 The old model — ship a winner, exploit until it fatigues, then start a new production cycle — worked when the algorithm could lean on targeting to find new audiences. The Andromeda model: ship a diverse batch on a monthly cadence, keep proven angles fed with new executions, let the algorithm continuously rebalance between exploitation and exploration. This is the [batch video ads](/batch-video-ads) model in operational form.
 
-The footprint: one 60–90 minute capture session per month scoped against the angle inventory and format matrix; AI-assisted variation producing 200–500 executions per batch; weekly shipping cadence; compliance pipeline running in parallel with variation; daily review loop killing bottom-decile ads. That footprint isn't realistically run by a part-time social hire or a traditional agency on retainer. It's either an internal 4–6 FTE team or a managed [done-for-you social media](/done-for-you-social-media) service that's built the pipeline.
+The footprint: one 60–90 minute capture session per month scoped against the angle inventory and format matrix; AI-assisted variation producing 200–500 executions per batch; weekly shipping cadence; compliance pipeline running in parallel with variation; daily review loop killing bottom-decile ads. That footprint isn't realistically run by a part-time social hire or a traditional agency on retainer. It's either an internal 4–6 FTE team or a managed [done-for-you social media](/ai-content-department) service that's built the pipeline.
 
 ---
 
 ## Where The Score Probably Isn't Going
 
-Diversity score is not replacing CTR, ThruPlay, link CTR, or CPA in the auction. It's an upstream signal influencing candidate retrieval and audience expansion. It's also not a substitute for compliance, brand voice, or strategic positioning — a maximally diverse pool of off-brand ads will score well and lose every customer that sees them. Diversity engineering operates *within* brand guardrails. And it's not a metric to obsess over directly. It's a constraint your production model shouldn't violate. As long as you produce 200+ executions per month against 30+ angles across mixed formats with mixed presenters and visual contexts, you land in the high-diversity zone by default.
+Diversity score is not replacing CTR, ThruPlay, link CTR, or CPA in the auction. It's an upstream signal influencing candidate retrieval and audience expansion. It's also not a substitute for compliance, brand voice, or strategic positioning — a maximally diverse pool of off-brand ads will score well and lose every customer that sees them. Diversity engineering operates _within_ brand guardrails. And it's not a metric to obsess over directly. It's a constraint your production model shouldn't violate. As long as you produce 200+ executions per month against 30+ angles across mixed formats with mixed presenters and visual contexts, you land in the high-diversity zone by default.
 
 ---
 
@@ -290,7 +290,7 @@ The diversity score is the most consequential ranking signal under Andromeda tha
 
 You can't read the score in Ads Manager. You can read its shadow in learning phase exits, impression concentration, CPM trajectory, and frequency-to-reach ratios. And you can engineer your production process so the score lands in the high zone by default — by varying hook, visual, voice, format, and angle on purpose rather than leaving it to chance.
 
-If you want the diversity-engineered production model running on your account — 30+ angles, 200+ executions per batch, full axis variation, live in 24 hours from capture — start with [batch video ads](/batch-video-ads) for the production pipeline, or [done-for-you social media](/done-for-you-social-media) for the full creative + distribution swarm.
+If you want the diversity-engineered production model running on your account — 30+ angles, 200+ executions per batch, full axis variation, live in 24 hours from capture — start with [batch video ads](/batch-video-ads) for the production pipeline, or [done-for-you social media](/ai-content-department) for the full creative + distribution swarm.
 
 ---
 
@@ -314,7 +314,7 @@ Not always. Diversity is a delivery and exploration signal; CPL is a downstream 
 
 ### How often should I refresh for diversity?
 
-The active pool needs new entries every 2–4 weeks for most accounts. Old executions don't have to be killed — winners can run for 60–120 days — but the *new entries* feed the exploration signal. A monthly batch cadence is the operating point most accounts settle into.
+The active pool needs new entries every 2–4 weeks for most accounts. Old executions don't have to be killed — winners can run for 60–120 days — but the _new entries_ feed the exploration signal. A monthly batch cadence is the operating point most accounts settle into.
 
 ### Can Advantage+ Creative Optimization handle diversity for me?
 
@@ -326,4 +326,4 @@ We've seen accounts at the $3K–$5K monthly spend tier score well on a 60–80 
 
 ---
 
-Ready to engineer diversity into your batch on purpose? Start with [batch video ads](/batch-video-ads) for the production pipeline built around the diversity axes, or [done-for-you social media](/done-for-you-social-media) for the full creative + distribution swarm. Live in 24 hours from account access.
+Ready to engineer diversity into your batch on purpose? Start with [batch video ads](/batch-video-ads) for the production pipeline built around the diversity axes, or [done-for-you social media](/ai-content-department) for the full creative + distribution swarm. Live in 24 hours from account access.

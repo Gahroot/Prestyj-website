@@ -29,7 +29,7 @@ This is the framework post for media buyers, CMOs, and agency owners who need to
 
 ## TL;DR
 
-- **Andromeda is a retrieval revolution, not a targeting one.** It changed *how Meta selects which ads to even consider* per impression — opening the candidate pool from ~thousands to ~tens of millions. Your old audience inputs are largely redundant with what Andromeda already infers.
+- **Andromeda is a retrieval revolution, not a targeting one.** It changed _how Meta selects which ads to even consider_ per impression — opening the candidate pool from ~thousands to ~tens of millions. Your old audience inputs are largely redundant with what Andromeda already infers.
 - **Creative diversity is the new targeting lever** because retrieval can only retrieve creatives that exist in your account. Every distinct hook/format/angle is effectively a "targeting slot" the algorithm can use.
 - **The 50/20/30 angle split** — 50% proven-winner derivatives, 20% adjacent angle exploration, 30% wildcard hypotheses — is the production allocation we use to keep creative supply both diverse and grounded.
 - **The machine-readable creative brief** is structured to feed retrieval signals (hook category, claim type, format, talent, intent stage) rather than the brand-deck-style narrative briefs that still dominate agency workflows.
@@ -64,11 +64,11 @@ If you're briefing creative against a 2019 mental model — "we need ads for the
 
 A few years ago, the highest-leverage skill in performance media was audience research — finding the interest stack, the lookalike layer, the layered exclusion that unlocked a 30% CPA drop. That skill has decayed in value, fast.
 
-The reason is structural: every audience signal an advertiser can construct manually is a *coarse approximation* of a feature set Meta already has natively. When you build a lookalike of your purchaser file, you're handing Meta a noisy projection of a customer pattern Meta has already vectorized in dozens of latent dimensions. Andromeda's retrieval model has access to those latent dimensions directly. Your projection adds noise.
+The reason is structural: every audience signal an advertiser can construct manually is a _coarse approximation_ of a feature set Meta already has natively. When you build a lookalike of your purchaser file, you're handing Meta a noisy projection of a customer pattern Meta has already vectorized in dozens of latent dimensions. Andromeda's retrieval model has access to those latent dimensions directly. Your projection adds noise.
 
 This is why broad-audience Advantage+ campaigns have been quietly outperforming carefully-targeted manual campaigns since late 2024. It isn't that "targeting doesn't matter." It's that the targeting has moved inside the model, on signal the model has and you don't. Your job is no longer to describe the audience. Your job is to **give the model the creative variety it needs to discover audience pockets the bid is profitable in.**
 
-Specifically, the signals that *do* still matter from advertisers:
+Specifically, the signals that _do_ still matter from advertisers:
 
 - **Conversion event quality.** Andromeda's ranking phase relies heavily on downstream conversion signal. A clean Conversions API setup with deduped events and accurate values is now worth more than any audience stack.
 - **Event volume.** Below ~50 conversions/week per ad set, ranking is on modeled data with high variance. Above ~50, signal stabilizes. Below 15/week, the ad set is functionally in cold-start indefinitely.
@@ -102,7 +102,9 @@ The cluster post [Creative Diversity Score: What Meta Rewards In 2026](/blog/cre
   <Alert>
     <AlertTitle>Operational consequence</AlertTitle>
     <AlertDescription>
-      Plan creative ops as a matrix, not a list. Each ad lives in a cell of (layout × hook × format × length × talent × stage). Aim for coverage across cells, not raw count of ads. A media buyer who can read a creative library as a matrix is doing 80% of the new job correctly.
+      Plan creative ops as a matrix, not a list. Each ad lives in a cell of (layout × hook × format
+      × length × talent × stage). Aim for coverage across cells, not raw count of ads. A media buyer
+      who can read a creative library as a matrix is doing 80% of the new job correctly.
     </AlertDescription>
   </Alert>
 </div>
@@ -113,11 +115,11 @@ The cluster post [Creative Diversity Score: What Meta Rewards In 2026](/blog/cre
 
 The hardest planning question after "how many ads" is "what angles." Without a framework, you over-index on whatever worked last quarter and starve the system of the variety it needs to find the next winner. We use a fixed split on every account, recalibrated monthly:
 
-| Bucket | % Of Production | What It Is | Why It Exists |
-|---|---|---|---|
-| Proven-winner derivatives | 50% | Variations on hooks/angles/formats that have already won in this account in the last 60 days | Compound the known winners; harvest the audience pocket they unlocked before fatigue |
-| Adjacent exploration | 20% | Angles one step away from winners (same pain, different framing; same offer, different proof; same talent, different format) | Find the second-best version of what's working and the bridge to the next winner |
-| Wildcard hypotheses | 30% | Angles with no current evidence — contrarian, niche, untested talent, new format | Statistical room for the breakout. Without this bucket, you converge on local maxima and CPLs creep up over time |
+| Bucket                    | % Of Production | What It Is                                                                                                                   | Why It Exists                                                                                                    |
+| ------------------------- | --------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Proven-winner derivatives | 50%             | Variations on hooks/angles/formats that have already won in this account in the last 60 days                                 | Compound the known winners; harvest the audience pocket they unlocked before fatigue                             |
+| Adjacent exploration      | 20%             | Angles one step away from winners (same pain, different framing; same offer, different proof; same talent, different format) | Find the second-best version of what's working and the bridge to the next winner                                 |
+| Wildcard hypotheses       | 30%             | Angles with no current evidence — contrarian, niche, untested talent, new format                                             | Statistical room for the breakout. Without this bucket, you converge on local maxima and CPLs creep up over time |
 
 Three notes from running this in real accounts:
 
@@ -203,17 +205,17 @@ Reporting frameworks haven't caught up to the operating model. Most CMO-level da
 
 The Andromeda-era CMO dashboard:
 
-| Metric | What It Tells You | Healthy Range (Lead-Gen) |
-|---|---|---|
-| Active creatives | Whether you're feeding the retrieval engine | ≥30 for $5k+/mo accounts; ≥75 for $10k+/mo |
-| Distinct hook categories | Coverage across audience pockets | ≥5 active at any time |
-| Distinct visual layouts | Diversity-score coverage | ≥4 active at any time |
-| % spend on top-1 ad | Concentration risk | ≤25%; &gt;50% is a thin-library warning |
-| Weekly creative refresh rate | Fatigue management | ≥20% of library refreshed weekly |
-| Conversion event volume | Ranking signal quality | ≥50/week per ad set, ≥200/week per campaign |
-| Conversions API event quality score | Ranking signal cleanliness | ≥8/10 in Events Manager |
-| % of ads spending >$50 before kill decision | Discipline on giving the system room | ≥80% |
-| Creative production unit cost | Whether your supply chain can sustain the model | ≤$50/ad blended |
+| Metric                                      | What It Tells You                               | Healthy Range (Lead-Gen)                    |
+| ------------------------------------------- | ----------------------------------------------- | ------------------------------------------- |
+| Active creatives                            | Whether you're feeding the retrieval engine     | ≥30 for $5k+/mo accounts; ≥75 for $10k+/mo  |
+| Distinct hook categories                    | Coverage across audience pockets                | ≥5 active at any time                       |
+| Distinct visual layouts                     | Diversity-score coverage                        | ≥4 active at any time                       |
+| % spend on top-1 ad                         | Concentration risk                              | ≤25%; &gt;50% is a thin-library warning     |
+| Weekly creative refresh rate                | Fatigue management                              | ≥20% of library refreshed weekly            |
+| Conversion event volume                     | Ranking signal quality                          | ≥50/week per ad set, ≥200/week per campaign |
+| Conversions API event quality score         | Ranking signal cleanliness                      | ≥8/10 in Events Manager                     |
+| % of ads spending >$50 before kill decision | Discipline on giving the system room            | ≥80%                                        |
+| Creative production unit cost               | Whether your supply chain can sustain the model | ≤$50/ad blended                             |
 
 We have not seen a single 2026 account with healthy unit economics that scored poorly on more than two of those metrics. We have seen many accounts with poor unit economics that scored well on the old CPL/ROAS dashboard while quietly failing five of the metrics above.
 
@@ -227,7 +229,7 @@ Structural moves we've seen work inside brands and agencies:
 
 - **Merge "creative strategy" and "media buying" into one pod.** Same job now. Owns angle library, brief schema, matrix coverage, and launching.
 - **Externalize batch production.** Internal teams almost never hit the per-ad unit cost needed to make the 55% production allocation work. Use a [batch video ads](/batch-video-ads) provider or build a dedicated batch pod.
-- **Pair every pod with a [done-for-you social media](/done-for-you-social-media) operator** running organic off the same pillar captures. Organic and paid share 70–80% of production cost when batched.
+- **Pair every pod with a [done-for-you social media](/ai-content-department) operator** running organic off the same pillar captures. Organic and paid share 70–80% of production cost when batched.
 - **Move analytics from monthly to weekly cadence** — daily above $20k/mo. Andromeda's signal cycles in 3–7 days; monthly reviews lag the model.
 - **Shrink the audience-research function dramatically.** A full-time audience strategist on a 2026 media team is mostly org-chart inertia.
 
@@ -269,7 +271,7 @@ The exact retrieval architecture is Meta-specific (Andromeda is a Meta system on
 
 ### How does this affect lookalike audiences and custom audiences?
 
-Lookalikes below 5% are mostly redundant with Advantage+ Audience under Andromeda. Lookalikes 5–10% can still provide a useful "starting point" signal on cold accounts. Custom audiences (engagement, video viewers, customer file) remain valuable for *retargeting* and *exclusions* but are decreasingly useful as primary prospecting layers. Plan for them to drift toward exclusion-and-retargeting use only over the next 12–18 months.
+Lookalikes below 5% are mostly redundant with Advantage+ Audience under Andromeda. Lookalikes 5–10% can still provide a useful "starting point" signal on cold accounts. Custom audiences (engagement, video viewers, customer file) remain valuable for _retargeting_ and _exclusions_ but are decreasingly useful as primary prospecting layers. Plan for them to drift toward exclusion-and-retargeting use only over the next 12–18 months.
 
 ### What's the right team size for the creative production function on a $50k/month account?
 
@@ -277,7 +279,7 @@ Roughly one creative ops lead (matrix planning, brief schema, analytics) + one p
 
 ### How do I evaluate a [batch video ads](/batch-video-ads) provider through this lens?
 
-Five questions. (1) Can they brief and ship against an explicit diversity matrix, or is everything "30 variations of a hook"? (2) Per-ad unit cost at 100/month? At 300/month? (3) Do they distinguish proven-winner derivatives from wildcard exploration in production allocation? (4) Can they reformat across aspect ratios and lengths natively? (5) Do they integrate with [done-for-you social media](/done-for-you-social-media) production so organic and paid share pillar source material? Vague answers on (1) and (3) signal a hook-permutation shop, not an Andromeda-aligned partner.
+Five questions. (1) Can they brief and ship against an explicit diversity matrix, or is everything "30 variations of a hook"? (2) Per-ad unit cost at 100/month? At 300/month? (3) Do they distinguish proven-winner derivatives from wildcard exploration in production allocation? (4) Can they reformat across aspect ratios and lengths natively? (5) Do they integrate with [done-for-you social media](/ai-content-department) production so organic and paid share pillar source material? Vague answers on (1) and (3) signal a hook-permutation shop, not an Andromeda-aligned partner.
 
 ### Will generative video tools change this in 12 months?
 
@@ -289,4 +291,4 @@ They'll push production costs down another 2–5x and expand the wildcard bucket
 
 The phrase "creative is the new targeting" is doing real work, not slogan work. Andromeda moved the audience inference into the retrieval model, leaving advertisers with one lever they can actually move at scale: the variety and volume of creative supply they feed into the system. The operating model that wins in 2026 is built around that one lever — diversity matrix, 50/20/30 angle split, machine-readable briefs, batch production economics, and feature-level measurement.
 
-If you want a partner that ships this operating model live in days rather than quarters, that's what [batch video ads](/batch-video-ads) and [done-for-you social media](/done-for-you-social-media) at Prestyj are built to deliver — same framework, your brand, your account, your retention of all owned IP.
+If you want a partner that ships this operating model live in days rather than quarters, that's what [batch video ads](/batch-video-ads) and [done-for-you social media](/ai-content-department) at Prestyj are built to deliver — same framework, your brand, your account, your retention of all owned IP.

@@ -27,6 +27,7 @@ Meanwhile, your best customers—the ones who pay $3,000-15,000 for emergency jo
 Most AI voice platforms pitch generic "conversational AI" that works for any business. But ServiceTitan users have specific workflows that generic AI doesn't understand out of the box:
 
 **ServiceTitan-Specific Requirements:**
+
 - **Price book intelligence:** AI needs to quote from your actual price book, not generic ranges
 - **Territory enforcement:** Your technicians have zones—AI must verify addresses before dispatching
 - **Technician skill matching:** Not every tech handles every job type—AI routes accordingly
@@ -46,12 +47,13 @@ Here's the pricing breakdown that most ServiceTitan users don't see until they'r
 Let's say you're a mid-sized HVAC company with 30,000 minutes of calls per month (about 1,000 calls at 3 minutes each, realistic during peak season):
 
 | Platform | Advertised Rate | Real Cost at 30K Min/Month |
-|----------|----------------|---------------------------|
-| Bland AI | $0.09/min | **$2,700/month** |
-| Vapi | $0.05/min base | **$1,500 + add-ons** |
-| Retell | $0.07-0.11/min | **$2,100-3,300/month** |
+| -------- | --------------- | -------------------------- |
+| Bland AI | $0.09/min       | **$2,700/month**           |
+| Vapi     | $0.05/min base  | **$1,500 + add-ons**       |
+| Retell   | $0.07-0.11/min  | **$2,100-3,300/month**     |
 
 **Here's what they don't advertise:**
+
 - **LLM costs:** GPT-4/Claude API fees add $0.02-0.10/min
 - **Telephony:** Inbound/outbound calling fees add $0.01-0.03/min
 - **Phone numbers:** $15-50/month per number
@@ -65,6 +67,7 @@ Let's say you're a mid-sized HVAC company with 30,000 minutes of calls per month
 Here's what DIY platforms don't tell you about ServiceTitan integration:
 
 **You'll need to build:**
+
 - ServiceTitan API authentication and connection handling
 - Customer record lookup by phone number and address
 - Price book retrieval and quote logic
@@ -76,6 +79,7 @@ Here's what DIY platforms don't tell you about ServiceTitan integration:
 - Callback scheduling for non-emergency calls
 
 **Timeline for DIY implementation:**
+
 - **Week 1-2:** API integration and testing
 - **Week 3-4:** Conversation flow design and prompt engineering
 - **Week 5-6:** Price book and territory logic integration
@@ -94,12 +98,14 @@ Prestyj approaches AI for ServiceTitan differently. Instead of giving you a deve
 ### What Prestyj Handles for ServiceTitan Users
 
 **Week 1: Discovery and Workflow Design**
+
 - We learn your ServiceTitan configuration: price books, job types, territories, technician skills
 - Document your emergency dispatch protocols: what warrants immediate dispatch vs. scheduled appointment
 - Map your club membership tiers and pricing rules
 - Identify after-hours vs. daytime call handling differences
 
 **Week 2: Integration and Build**
+
 - Connect to your ServiceTitan instance via API
 - Build AI agents that understand your specific workflows
 - Configure customer record recognition and job creation
@@ -107,6 +113,7 @@ Prestyj approaches AI for ServiceTitan differently. Instead of giving you a deve
 - Validate territory enforcement and technician routing
 
 **Week 3: Testing and Refinement**
+
 - Internal testing with emergency scenarios
 - Verify job creation appears correctly on your dispatch board
 - Test customer record updates for existing customers
@@ -114,6 +121,7 @@ Prestyj approaches AI for ServiceTitan differently. Instead of giving you a deve
 - Load testing for call surges (especially important for storm response)
 
 **Week 4: Launch and Optimization**
+
 - Gradual rollout—after-hours first, then daytime
 - Real call monitoring and rapid iteration
 - Weekly performance reviews and optimization
@@ -132,6 +140,7 @@ Let's look at how ServiceTitan-specific AI actually handles calls:
 **Generic AI response:** "I can help with that. What's your address? Someone will call you back." (Takes message, no action.)
 
 **ServiceTitan-specific AI response:**
+
 1. **Urgency assessment:** "Is anyone at home? Is the temperature below 50 degrees?"
 2. **Customer lookup:** Recognizes phone number, pulls ServiceTitan record—existing customer, club member, system installed in 2019
 3. **Territory check:** Verifies address is within primary service area
@@ -147,6 +156,7 @@ Let's look at how ServiceTitan-specific AI actually handles calls:
 **Caller (3 AM):** "Water is pouring from my water heater. There's already two inches on the floor."
 
 **ServiceTitan-specific AI response:**
+
 1. **Emergency classification:** "Is this an active leak right now?" (Yes)
 2. **Property verification:** Confirms residential property, verifies territory
 3. **Technician skills:** Identifies plumbers with water heater emergency experience
@@ -164,6 +174,7 @@ Let's look at how ServiceTitan-specific AI actually handles calls:
 **Human capacity:** Your 2 CSRs handle 20 calls, leave 130 customers to voicemail. Competitors get the jobs.
 
 **ServiceTitan-specific AI:**
+
 - **Unlimited concurrent calls:** Handles all 150 calls simultaneously
 - **Insurance capture:** Asks about insurance carrier, claim number, adjuster contact
 - **Damage triage:** Prioritizes active leaks over cosmetic damage
@@ -179,27 +190,27 @@ Let's compare real total costs for a ServiceTitan user processing 30,000 minutes
 
 ### Option A: DIY Platform (Bland/Vapi/Retell)
 
-| Cost Category | One-Time | Monthly |
-|---------------|----------|---------|
-| Platform fees | - | $2,100-3,300 |
-| LLM API costs | - | $600-1,500 |
-| Telephony | - | $300-900 |
-| Phone numbers | - | $50-100 |
-| Engineering (200 hrs @ $150) | $30,000 | - |
-| Ongoing maintenance (10 hrs/mo) | - | $1,500 |
-| **Total Year 1** | **$30,000** | **$4,550-6,300** |
-| **Total Year 1 Cost** | **$84,600-105,600** | |
+| Cost Category                   | One-Time            | Monthly          |
+| ------------------------------- | ------------------- | ---------------- |
+| Platform fees                   | -                   | $2,100-3,300     |
+| LLM API costs                   | -                   | $600-1,500       |
+| Telephony                       | -                   | $300-900         |
+| Phone numbers                   | -                   | $50-100          |
+| Engineering (200 hrs @ $150)    | $30,000             | -                |
+| Ongoing maintenance (10 hrs/mo) | -                   | $1,500           |
+| **Total Year 1**                | **$30,000**         | **$4,550-6,300** |
+| **Total Year 1 Cost**           | **$84,600-105,600** |                  |
 
 ### Option B: Done-For-You (Prestyj)
 
-| Cost Category | One-Time | Monthly |
-|---------------|----------|---------|
-| Implementation | $5,000-15,000 | - |
-| Platform + service | - | $2,500-4,500 |
-| Engineering | $0 | $0 |
-| Ongoing optimization | Included | Included |
-| **Total Year 1** | **$5,000-15,000** | **$2,500-4,500** |
-| **Total Year 1 Cost** | **$35,000-69,000** | |
+| Cost Category         | One-Time           | Monthly          |
+| --------------------- | ------------------ | ---------------- |
+| Implementation        | $5,000-15,000      | -                |
+| Platform + service    | -                  | $2,500-4,500     |
+| Engineering           | $0                 | $0               |
+| Ongoing optimization  | Included           | Included         |
+| **Total Year 1**      | **$5,000-15,000**  | **$2,500-4,500** |
+| **Total Year 1 Cost** | **$35,000-69,000** |                  |
 
 **The insight:** DIY platforms cost 2-3x more in Year 1 when you factor in engineering time, and they leave you with ongoing maintenance costs and a system you built yourself (and must maintain yourself).
 
@@ -208,23 +219,27 @@ Let's compare real total costs for a ServiceTitan user processing 30,000 minutes
 Here's what realistic ROI looks like for ServiceTitan users:
 
 ### Month 1: Implementation
+
 - Cost: $5,000-15,000 setup + $2,500-4,500 monthly
 - Revenue impact: Minimal yet (testing, refinement)
 - **Net:** -$7,500-19,500
 
 ### Month 2: Go-Live
+
 - Cost: $2,500-4,500 monthly
 - Revenue: Beginning to capture after-hours emergencies
 - **Typical results:** 10-20 additional jobs/month, $12,000-24,000 revenue (assuming $1,200 avg emergency job)
 - **Net:** Break-even approaching
 
 ### Month 3: Optimization
+
 - Cost: $2,500-4,500 monthly
 - Revenue: AI optimized, capturing consistently
 - **Typical results:** 20-30 additional jobs/month, $24,000-36,000 revenue
 - **Net:** +$19,500-31,500/month positive ROI
 
 ### Months 4-12: Scaled Performance
+
 - Cost: $2,500-4,500 monthly
 - Revenue: Full capture, referrals increasing from fast response
 - **Typical results:** 25-40 additional jobs/month, $30,000-48,000 revenue
@@ -316,6 +331,7 @@ After analyzing dozens of AI implementations for ServiceTitan users, here are wa
 If you're exploring AI automation for your ServiceTitan workflow, here's a practical path forward:
 
 ### Step 1: Document Your Current State
+
 - How many after-hours calls do you miss per week? (Check ServiceTitan call logs)
 - What's your average job value for emergency vs. routine work?
 - How many technicians do you have, and how are territories/zones configured?
@@ -323,24 +339,28 @@ If you're exploring AI automation for your ServiceTitan workflow, here's a pract
 - What's your club membership structure and pricing tiers?
 
 ### Step 2: Define Success Metrics
+
 - "Answer 100% of after-hours calls within 60 seconds"
 - "Reduce missed emergency jobs by 75%"
 - "Recover $25,000/month in lost revenue"
 - "Increase membership renewal rate by 20%"
 
 ### Step 3: Research ServiceTitan-Specific Vendors
+
 - Ask about ServiceTitan implementation experience
 - Request sample ServiceTitan integrations and job creation examples
 - Get specific pricing in writing—not "starting at"
 - Ask about emergency dispatch handling and territory enforcement
 
 ### Step 4: Plan Implementation Timeline
+
 - Block 4-6 weeks for full implementation
 - Allocate 4-8 hours of your time across the process
 - Identify 2-3 team members who'll provide feedback during testing
 - Set realistic expectations—no miracles in month 1, optimization through month 3
 
 ### Step 5: Launch and Monitor
+
 - Go live with gradual rollout if possible (after-hours first, then daytime)
 - Review ServiceTitan job creation weekly for the first month
 - Track metrics: response time, lead capture rate, emergency dispatch accuracy
@@ -360,4 +380,4 @@ The question isn't whether you can afford AI automation for ServiceTitan. It's w
 
 ---
 
-*Compare done-for-you AI vs. DIY platforms in our complete [AI implementation guide](/blog/done-for-you-ai-agents-guide).*
+_Compare done-for-you AI vs. DIY platforms in our complete [AI implementation guide](/blog/done-for-you-ai-agents-guide)._

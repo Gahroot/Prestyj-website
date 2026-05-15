@@ -25,8 +25,8 @@ This post is the long version of that argument, written for media buyers and CMO
 
 - **Signal loss has been the dominant story in paid social since 2021.** iOS 14.5 ATT, SKAdNetwork's blunt aggregation, browser-level tracking restrictions, state privacy laws — each one stripped a layer of post-click identity Meta used to rely on.
 - **Andromeda is Meta's structural response.** The 10,000x retrieval engine on GH200 GPUs replaced lost user-level signal with on-platform behavioral signal evaluated at massive scale. It isn't coincidence that Andromeda matured during the same window ATT broke pixel-based attribution.
-- **CAPI, server-side, and first-party data are half the answer.** They restore *measurement*, but they don't restore *delivery*. Andromeda needs creative variety to optimize delivery, not better tracking.
-- **Each ad variant is its own audience probe.** Creative *is* the signal Meta now reads — completion, dwell, replays, profile clicks — to figure out who you should be served to. Thin creative libraries starve that signal layer just as much as iOS stripped the pixel one.
+- **CAPI, server-side, and first-party data are half the answer.** They restore _measurement_, but they don't restore _delivery_. Andromeda needs creative variety to optimize delivery, not better tracking.
+- **Each ad variant is its own audience probe.** Creative _is_ the signal Meta now reads — completion, dwell, replays, profile clicks — to figure out who you should be served to. Thin creative libraries starve that signal layer just as much as iOS stripped the pixel one.
 - **Google's environment is different**, which is why this argument applies more sharply to Meta and TikTok than to Search.
 - **Three-year outlook:** more privacy laws, more ATT-like prompts on Android, more ML compensation by platforms. Every step makes creative volume more valuable, not less.
 
@@ -46,7 +46,7 @@ Apple's SKAdNetwork (SKAN) is supposed to give advertisers conversion data witho
 
 **2022–2023 — CAPI becomes table-stakes.**
 
-Meta pushes hard on the Conversions API (server-side conversion forwarding). Advertisers that integrate CAPI restore *measurement* signal but not the *delivery-side* signal Meta uses to decide who to show your ad to. Most implementations are imperfect (event dedup issues, match quality below 7, missing hashed customer info), and even a perfect one only patches the conversion event, not the upstream behavior signal.
+Meta pushes hard on the Conversions API (server-side conversion forwarding). Advertisers that integrate CAPI restore _measurement_ signal but not the _delivery-side_ signal Meta uses to decide who to show your ad to. Most implementations are imperfect (event dedup issues, match quality below 7, missing hashed customer info), and even a perfect one only patches the conversion event, not the upstream behavior signal.
 
 **2023 — Modeled conversions become default.** Meta starts reporting modeled conversions as standard, actively guessing at missing iOS data using on-platform behavior and downstream conversion proxies.
 
@@ -70,9 +70,9 @@ Andromeda is not a separate product release that happened to land in the same de
 
 When Meta lost two-thirds of its iOS deterministic signal in 2021, its optimization engine had two options. Option A: report degraded performance honestly and live with smaller, lower-margin ad businesses. Option B: rebuild the optimization stack to compensate using on-platform behavioral signal at massively greater scale. They picked B. Andromeda is what B looks like, four years and a multi-billion-dollar GPU buildout later.
 
-What Andromeda replaced isn't a pixel. It replaced *deterministic certainty about who a user is* with *probabilistic inference based on what they engage with on Meta surfaces.* And the input that engine consumes — the only one the advertiser controls — is creative.
+What Andromeda replaced isn't a pixel. It replaced _deterministic certainty about who a user is_ with _probabilistic inference based on what they engage with on Meta surfaces._ And the input that engine consumes — the only one the advertiser controls — is creative.
 
-The 10,000x candidate evaluation number is not puffery. In a world without deterministic identity, the model can't say "this user is the 'home improvement intent' segment, show them ad A." It has to evaluate a much wider pool of possible ads against a much fuzzier user representation, and let real-time engagement signals (first 0.5 seconds, dwell, completion, replay, save, tap) feed back into delivery within minutes. That requires both vastly more compute *and* vastly more candidate ads to test against. From the platform's side, an advertiser running 5 ads is starving the new system. From the advertiser's side, the same account is "running normally." Both are accurate.
+The 10,000x candidate evaluation number is not puffery. In a world without deterministic identity, the model can't say "this user is the 'home improvement intent' segment, show them ad A." It has to evaluate a much wider pool of possible ads against a much fuzzier user representation, and let real-time engagement signals (first 0.5 seconds, dwell, completion, replay, save, tap) feed back into delivery within minutes. That requires both vastly more compute _and_ vastly more candidate ads to test against. From the platform's side, an advertiser running 5 ads is starving the new system. From the advertiser's side, the same account is "running normally." Both are accurate.
 
 ---
 
@@ -86,11 +86,11 @@ To unpack: paid social optimization has two distinct functions Meta has to perfo
 
 **Function 1 — Measurement.** Did this impression / click / video view eventually become a conversion? CAPI, server-side event forwarding, and a clean CRM-to-Meta event match restore most of this. With a well-implemented stack, you can know your CPA on a Meta campaign within a reasonable confidence interval.
 
-**Function 2 — Delivery optimization.** Of all the people in the auction right now, which one should we serve which of your ads to? This is where Andromeda lives. The signals that drive delivery optimization are mostly *upstream* of the conversion: 0.5-second skip vs. continue, 3-second view, dwell, comment, share, profile visit, follow-up search. Those are on-platform behavioral signals that have nothing to do with whether your CAPI integration is firing properly.
+**Function 2 — Delivery optimization.** Of all the people in the auction right now, which one should we serve which of your ads to? This is where Andromeda lives. The signals that drive delivery optimization are mostly _upstream_ of the conversion: 0.5-second skip vs. continue, 3-second view, dwell, comment, share, profile visit, follow-up search. Those are on-platform behavioral signals that have nothing to do with whether your CAPI integration is firing properly.
 
 CAPI fixes the report. Andromeda runs the delivery. The two systems consume mostly different inputs.
 
-This is why CMOs who invest hard in measurement infrastructure but don't change creative volume often see a strange pattern: their reports look much cleaner, their attribution arguments with the CFO get easier, *and* their actual CPLs keep drifting up. Better measurement of a delivery problem doesn't fix the delivery problem. It just lets you watch it more accurately.
+This is why CMOs who invest hard in measurement infrastructure but don't change creative volume often see a strange pattern: their reports look much cleaner, their attribution arguments with the CFO get easier, _and_ their actual CPLs keep drifting up. Better measurement of a delivery problem doesn't fix the delivery problem. It just lets you watch it more accurately.
 
 For the delivery side, the lever Meta has handed you is volume and diversity of creative. Everything else — audiences, placements, bidding — Meta is progressively taking off your plate. You don't get to control delivery anymore. You get to control what's eligible for delivery.
 
@@ -114,7 +114,7 @@ This is also why the old "test one variable at a time" approach doesn't work the
 
 We covered the angle math in [How Many Ad Angles Do You Need Post-Andromeda](/blog/how-many-ad-angles-do-you-need-post-andromeda), and the scoring side in [Creative Diversity Score: What Meta Rewards In 2026](/blog/creative-diversity-score-what-meta-rewards-2026).
 
-The takeaway: creative volume is no longer just a *fatigue* answer. It's a *signal generation* answer. Two reasons to do the same thing, compounding into the same conclusion.
+The takeaway: creative volume is no longer just a _fatigue_ answer. It's a _signal generation_ answer. Two reasons to do the same thing, compounding into the same conclusion.
 
 ---
 
@@ -154,13 +154,13 @@ This is where the post lives. Treat paid social production as a pipeline, not a 
 
 **5. Invest in creative-as-data infrastructure.**
 
-Tag each ad with angle, hook, format, talent, length, and offer. Build a dashboard that lets you see performance at the *category* level, not the individual-ad level. The creative library itself becomes a proprietary asset over 12–24 months — a documented map of what works for your audience that competitors can't shortcut.
+Tag each ad with angle, hook, format, talent, length, and offer. Build a dashboard that lets you see performance at the _category_ level, not the individual-ad level. The creative library itself becomes a proprietary asset over 12–24 months — a documented map of what works for your audience that competitors can't shortcut.
 
 **6. Decouple paid social from precision-targeting muscle memory.**
 
 The team skill that used to win on Meta — building exquisite audience structures — has been deprecated. The team skill that wins now is creative ideation throughput and pipeline operations. Hiring, training, and incentive structures should reflect that. A media buyer evaluated on "how clean is the audience" in 2026 is being evaluated on the wrong axis.
 
-For clients on the volume execution side, the production engine behind [batch video ads](/batch-video-ads) and the organic distribution layer in [done-for-you social media](/done-for-you-social-media) implement (5) and (3) together, which is how we've seen the highest CPL drops in our managed accounts.
+For clients on the volume execution side, the production engine behind [batch video ads](/batch-video-ads) and the organic distribution layer in [done-for-you social media](/ai-content-department) implement (5) and (3) together, which is how we've seen the highest CPL drops in our managed accounts.
 
 ---
 
@@ -174,7 +174,7 @@ A few directional predictions, made narrowly enough to be fairly assessed two ye
 
 **Platforms will absorb more of the funnel.** Lead forms, on-platform checkout, in-app destinations. Each one trades less off-platform signal for more on-platform engagement. Marketers will love it (better conversion rates) and hate it (less data ownership). The privacy-durable answer is to keep the owned channel collection layer strong while accepting that the discovery layer increasingly lives inside the platforms.
 
-**Generative ad assembly will land in production accounts.** AI-assembled creative variants are already running at scale in 2026; the next 24 months will see them become more native to ad platforms (Meta has been telegraphing this since 2024). Volume gets cheaper on the production side, which means the volume floor moves *up* for everyone, because everyone has access to the same tooling. Diversity score discipline becomes the differentiator, not raw production capacity.
+**Generative ad assembly will land in production accounts.** AI-assembled creative variants are already running at scale in 2026; the next 24 months will see them become more native to ad platforms (Meta has been telegraphing this since 2024). Volume gets cheaper on the production side, which means the volume floor moves _up_ for everyone, because everyone has access to the same tooling. Diversity score discipline becomes the differentiator, not raw production capacity.
 
 **ROAS-from-precision strategies will keep losing ground.** Every quarter, the gap between the precision-clinger accounts and the volume-first accounts will widen. By late 2027, we expect the precision strategy to be functionally extinct in paid social for accounts below $50k/month in spend. Above that, more sophisticated incrementality testing will keep some manual control alive, but the creative volume requirement applies regardless.
 
@@ -204,7 +204,7 @@ Total visible cost of these hidden costs, in aggregate, on a typical $10k/month 
 
 ### Does this mean CAPI and server-side tracking aren't worth doing?
 
-No — they're table-stakes. They restore *measurement*, which you need to make any decision honestly. The argument is that measurement infrastructure alone doesn't fix delivery, because Meta's delivery engine consumes mostly different signals. Do both.
+No — they're table-stakes. They restore _measurement_, which you need to make any decision honestly. The argument is that measurement infrastructure alone doesn't fix delivery, because Meta's delivery engine consumes mostly different signals. Do both.
 
 ### What about iOS users who opt into tracking?
 
@@ -230,8 +230,8 @@ Frame it as a two-stack model: a measurement stack (CAPI, server-side, GA4, ware
 
 ## The Bottom Line
 
-The privacy story and the Andromeda story are the same story. Apple, regulators, and browser makers stripped a layer of identity signal the platforms used to rely on. The platforms — Meta first and most aggressively — responded by building bigger on-platform inference engines and consuming a different input to compensate: creative variety. CAPI, server-side, and first-party data restore your ability to *see* what's happening. Creative volume is what changes what's happening.
+The privacy story and the Andromeda story are the same story. Apple, regulators, and browser makers stripped a layer of identity signal the platforms used to rely on. The platforms — Meta first and most aggressively — responded by building bigger on-platform inference engines and consuming a different input to compensate: creative variety. CAPI, server-side, and first-party data restore your ability to _see_ what's happening. Creative volume is what changes what's happening.
 
 The hidden cost of clinging to a precision-targeting playbook isn't just inflated CPMs. It's an entire operating model — audience builders, narrow ad sets, polished hero ads, monthly refresh cycles — running against a platform that has moved structurally past all of it. The privacy-durable strategy in 2026 looks less like "rebuild audiences with better tracking" and more like "feed the inference engine with creative variety, own your channels, treat measurement and delivery as separate stacks."
 
-The execution side of that argument — high-volume production paired with an organic engine that compounds first-party engagement — is what [batch video ads](/batch-video-ads) and [done-for-you social media](/done-for-you-social-media) are built to operate. Whether you build it in-house, hire a volume-first agency, or partner with us, the structural answer is the same. The signal environment is not coming back. Volume is the next-best lever you have, and it's the one the platform is actively rewarding right now.
+The execution side of that argument — high-volume production paired with an organic engine that compounds first-party engagement — is what [batch video ads](/batch-video-ads) and [done-for-you social media](/ai-content-department) are built to operate. Whether you build it in-house, hire a volume-first agency, or partner with us, the structural answer is the same. The signal environment is not coming back. Volume is the next-best lever you have, and it's the one the platform is actively rewarding right now.

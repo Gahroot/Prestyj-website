@@ -59,19 +59,19 @@ The compound effect: home services accounts that ran the same playbook from 2019
 Most home-services buyers we audit still flinch at Advantage+ Audience. The fear is reasonable: "If I let Meta target broadly, I'll get clicks from people 200 miles outside my service area." That fear is dated. Here's what Advantage+ Audience actually does in 2026:
 
 - **You set the geo and minimum age constraints** as hard floors. Meta won't deliver outside them.
-- **You provide a "suggested audience" hint** (interests, behaviors, demographics) that Andromeda uses as a *starting* prior, not a hard filter.
+- **You provide a "suggested audience" hint** (interests, behaviors, demographics) that Andromeda uses as a _starting_ prior, not a hard filter.
 - **Andromeda then expands the audience dynamically per impression**, using the creative as the matching signal. A roof storm-damage creative gets pitched to homeowners in storm-affected zips; a financing-led creative gets pitched to homeowners with longer-tenured homes and renovation history.
 
-The shift: you're no longer telling Meta who to target. You're telling it where to deliver (geo) and giving it enough creative variety that *it* figures out who to target. That's the entire Andromeda mental model in one sentence, and it's the inverse of how home services accounts were built.
+The shift: you're no longer telling Meta who to target. You're telling it where to deliver (geo) and giving it enough creative variety that _it_ figures out who to target. That's the entire Andromeda mental model in one sentence, and it's the inverse of how home services accounts were built.
 
 For a roofing/HVAC/plumbing account, the practical change:
 
-| Old setup | New setup (Andromeda-aligned) |
-|---|---|
+| Old setup                                    | New setup (Andromeda-aligned)                                   |
+| -------------------------------------------- | --------------------------------------------------------------- |
 | 3 zips + age 35–65 + homeowner + 6 interests | Service-area radius + age 28+ + homeowner + Advantage+ Audience |
-| 1 ad set per geo | 1–2 ad sets per region (multi-geo) |
-| 3–5 creatives per ad set | 30–80+ creatives per ad set |
-| Manually exclude prior leads | Use CAPI to feed conversion events; let Andromeda re-exclude |
+| 1 ad set per geo                             | 1–2 ad sets per region (multi-geo)                              |
+| 3–5 creatives per ad set                     | 30–80+ creatives per ad set                                     |
+| Manually exclude prior leads                 | Use CAPI to feed conversion events; let Andromeda re-exclude    |
 
 Buyers worry this means losing control. In practice, it means relocating control from the audience layer (which Andromeda overrides anyway) to the creative layer (where Andromeda actually pays attention).
 
@@ -115,7 +115,7 @@ The general framework for picking the right volume — across verticals — live
 
 The biggest production mistake home-services accounts make is running 30 variants of the same angle. Andromeda doesn't reward 30 hooks for "we're the best roofer in town." It rewards 7 fundamentally different reasons a homeowner would care, with 4–10 variants each.
 
-Below is the angle inventory we use for HVAC, plumbing, and roofing campaigns. Read the headings as *families*, not as individual ads — each family produces 4–10 distinct creative variants.
+Below is the angle inventory we use for HVAC, plumbing, and roofing campaigns. Read the headings as _families_, not as individual ads — each family produces 4–10 distinct creative variants.
 
 ### Family 1: Problem-aware hooks
 
@@ -129,7 +129,7 @@ These work best for high-intent retargeting and broad prospecting against homeow
 
 ### Family 2: Storm response / weather event
 
-Vertical-specific but extremely high-performing during the relevant window. Storm response creatives outperform every other family by 2–4x during the 14 days after a regional event. We've covered this in depth in our roofing-specific operational playbooks, but the production rule is: have storm-response creative *ready before the storm*, not produced after.
+Vertical-specific but extremely high-performing during the relevant window. Storm response creatives outperform every other family by 2–4x during the 14 days after a regional event. We've covered this in depth in our roofing-specific operational playbooks, but the production rule is: have storm-response creative _ready before the storm_, not produced after.
 
 - Drone footage of the affected neighborhood
 - Technician explaining what insurance covers vs. doesn't
@@ -162,7 +162,7 @@ Your installer or technician on camera, explaining what's actually happening on 
 
 ### Family 6: Neighborhood-led / hyperlocal
 
-This is the angle most accounts under-use. You don't need to *target* a specific neighborhood through ad set settings; you put the neighborhood name on the screen in the first 2 seconds of the ad, and Andromeda matches it to nearby users.
+This is the angle most accounts under-use. You don't need to _target_ a specific neighborhood through ad set settings; you put the neighborhood name on the screen in the first 2 seconds of the ad, and Andromeda matches it to nearby users.
 
 - "Just finished a job in [Neighborhood] — here's what they got"
 - "Why so many homes in [Subdivision] need this repair" with footage from the area
@@ -196,14 +196,14 @@ The biggest setup-level change for HVAC/plumbing/roofing accounts in 2026 is how
 
 What this looks like in practice for a roofer covering 12 zips across 2 regions:
 
-| Setup | Old playbook | Andromeda-aligned |
-|---|---|---|
-| Number of ad sets | 12 (one per zip) | 2 (one per region) |
-| Targeting per ad set | Tight detailed | Advantage+ Audience |
-| Creatives per ad set | 4–6 | 40–60 |
-| Geo signal | Ad-set level | Creative-level (on-screen text) |
-| CPM trend | Up 40–80% YoY | Down 15–30% YoY |
-| CPL | $80–$120 | $35–$55 |
+| Setup                | Old playbook     | Andromeda-aligned               |
+| -------------------- | ---------------- | ------------------------------- |
+| Number of ad sets    | 12 (one per zip) | 2 (one per region)              |
+| Targeting per ad set | Tight detailed   | Advantage+ Audience             |
+| Creatives per ad set | 4–6              | 40–60                           |
+| Geo signal           | Ad-set level     | Creative-level (on-screen text) |
+| CPM trend            | Up 40–80% YoY    | Down 15–30% YoY                 |
+| CPL                  | $80–$120         | $35–$55                         |
 
 The wins come from two compounding effects: Andromeda has a bigger pool to retrieve from (because the ad sets aren't artificially narrowed), and the creative-level geo signal lets it match users more precisely than the old zip-level targeting could.
 
@@ -238,13 +238,13 @@ These low-friction captures cover the angle families the monthly shoot underweig
 
 ### Production cost benchmarks (US, 2026)
 
-| Tier | Monthly production budget | Creative variants/month | Approach |
-|---|---|---|---|
-| Lean | $400–$800 | 30–40 | Owner self-records + AI batch pipeline |
-| Standard | $1,200–$2,500 | 50–80 | Operator-led monthly shoot + batch pipeline |
-| Premium | $3,000–$5,000 | 80–150 | Operator + editor + batch pipeline + 1–2 hero spots |
+| Tier     | Monthly production budget | Creative variants/month | Approach                                            |
+| -------- | ------------------------- | ----------------------- | --------------------------------------------------- |
+| Lean     | $400–$800                 | 30–40                   | Owner self-records + AI batch pipeline              |
+| Standard | $1,200–$2,500             | 50–80                   | Operator-led monthly shoot + batch pipeline         |
+| Premium  | $3,000–$5,000             | 80–150                  | Operator + editor + batch pipeline + 1–2 hero spots |
 
-Most home services accounts spend the right *total* on creative — they just allocate 100% of it to 4–6 polished spots and 0% to volume. The right allocation is roughly 80% volume / 20% polish, and the cost-per-variant economics only work with a batch pipeline.
+Most home services accounts spend the right _total_ on creative — they just allocate 100% of it to 4–6 polished spots and 0% to volume. The right allocation is roughly 80% volume / 20% polish, and the cost-per-variant economics only work with a batch pipeline.
 
 ---
 
@@ -258,7 +258,7 @@ The same shoot that produces 40–80 ad variants also produces organic content f
 - 5–10 Google Business Profile updates with photos and short videos
 - 3–5 written blog posts using the transcripts as raw material
 
-This is what running [done-for-you social media](/done-for-you-social-media) on top of [batch video ads](/batch-video-ads) actually buys you — one production day, every output channel. Most contractors run two separate vendors (an ad agency and a social agency) and pay twice for the same footage. The Andromeda-era operational model collapses both into one.
+This is what running [done-for-you social media](/ai-content-department) on top of [batch video ads](/batch-video-ads) actually buys you — one production day, every output channel. Most contractors run two separate vendors (an ad agency and a social agency) and pay twice for the same footage. The Andromeda-era operational model collapses both into one.
 
 ---
 
@@ -268,7 +268,7 @@ If you're running an HVAC, plumbing, or roofing Meta account, three things to st
 
 1. **Stop using detailed targeting on ad sets.** Detailed interest stacks ("homeowner + interested in home improvement + home renovation") are now a CPM tax, not a precision benefit. Move to Advantage+ Audience.
 2. **Stop running fewer than 30 creatives at any spend level.** Even at $2K/month, the volume floor matters — under it, your CPL is being capped by Andromeda's hedging.
-3. **Stop refilming the same hero ad every quarter.** Refilm the *angle inventory* (the 7 families above), not a single hero. Volume across families beats polish within one family every time.
+3. **Stop refilming the same hero ad every quarter.** Refilm the _angle inventory_ (the 7 families above), not a single hero. Volume across families beats polish within one family every time.
 
 ---
 
@@ -296,14 +296,14 @@ Yes, with two adjustments: angle inventory shifts (less storm-response, more dow
 
 ### How does this interact with seasonal demand?
 
-Build seasonal angle modules 30–45 days *before* the season — pre-cooling HVAC creatives in late Q1, pre-heating in late Q3, pre-storm-window in early Q2 for roofing. Andromeda's prediction model takes 5–10 days of consistent delivery to stabilize on a new creative, so the accounts that launch seasonal creative on Day 1 of the season are already 1–2 weeks behind. We get into the broader seasonal/CPM dynamic in [why CPMs are rising and creative volume fixes it](/blog/why-cpm-is-rising-and-creative-volume-fixes-it-2026).
+Build seasonal angle modules 30–45 days _before_ the season — pre-cooling HVAC creatives in late Q1, pre-heating in late Q3, pre-storm-window in early Q2 for roofing. Andromeda's prediction model takes 5–10 days of consistent delivery to stabilize on a new creative, so the accounts that launch seasonal creative on Day 1 of the season are already 1–2 weeks behind. We get into the broader seasonal/CPM dynamic in [why CPMs are rising and creative volume fixes it](/blog/why-cpm-is-rising-and-creative-volume-fixes-it-2026).
 
 ---
 
 ## The Bottom Line
 
-Andromeda didn't change what good advertising is. It changed what *the auction* rewards. For HVAC, plumbing, and roofing accounts specifically, that change is bigger than for any other vertical we work in — because the legacy playbook (tight geos, detailed interests, hero creatives, seasonal refresh) is the precise input pattern Andromeda treats most harshly.
+Andromeda didn't change what good advertising is. It changed what _the auction_ rewards. For HVAC, plumbing, and roofing accounts specifically, that change is bigger than for any other vertical we work in — because the legacy playbook (tight geos, detailed interests, hero creatives, seasonal refresh) is the precise input pattern Andromeda treats most harshly.
 
 The fix is mechanical, not philosophical: broader audience setup, deeper creative inventory across 7 angle families, one monthly on-site shoot run through a batch pipeline, and a willingness to let go of the "perfect ad" muscle memory. Accounts that make this shift in 2026 typically see CPLs fall 30–50% within 60 days, with the production cost paying for itself 3–5x over.
 
-If you want this running on your account — the shoot, the batch pipeline, the organic compound — start with [batch video ads](/batch-video-ads) for the paid creative engine, and layer in [done-for-you social media](/done-for-you-social-media) if you want the same footage doing double duty across organic. Two vendors collapse into one, and the production line item finally earns its keep.
+If you want this running on your account — the shoot, the batch pipeline, the organic compound — start with [batch video ads](/batch-video-ads) for the paid creative engine, and layer in [done-for-you social media](/ai-content-department) if you want the same footage doing double duty across organic. Two vendors collapse into one, and the production line item finally earns its keep.

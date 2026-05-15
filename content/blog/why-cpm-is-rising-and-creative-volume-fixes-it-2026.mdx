@@ -40,8 +40,8 @@ Most CPM analysis written before late 2024 is now stale. Meta's Andromeda retrie
 
 Here's why it matters for your CPM specifically:
 
-1. **The auction is no longer about which ad is "right" for the user.** It's about which ad, out of an enormous candidate pool, has the highest predicted value (predicted CTR × predicted conversion × bid). The retrieval layer can now consider so many candidates that the marginal cost of being one of them is functionally zero — but the marginal cost of *winning* against them has climbed sharply.
-2. **Predicted conversion weight has gone up.** Andromeda doesn't just predict "will this user click." It predicts "will this user click *and* convert." Advertisers with thin creative libraries produce thin prediction signals, which means Meta can't confidently slot them into cheap inventory.
+1. **The auction is no longer about which ad is "right" for the user.** It's about which ad, out of an enormous candidate pool, has the highest predicted value (predicted CTR × predicted conversion × bid). The retrieval layer can now consider so many candidates that the marginal cost of being one of them is functionally zero — but the marginal cost of _winning_ against them has climbed sharply.
+2. **Predicted conversion weight has gone up.** Andromeda doesn't just predict "will this user click." It predicts "will this user click _and_ convert." Advertisers with thin creative libraries produce thin prediction signals, which means Meta can't confidently slot them into cheap inventory.
 3. **Advantage+ is now default.** Both Advantage+ Audience and Advantage+ Placements are the path of least resistance, and they're the surfaces Andromeda is optimized for. Detailed-targeting accounts effectively pay a tax to run against the grain.
 
 The practical implication: the auction is more competitive at the high end (predicted high-value users) and more lenient at the low end (predicted low-value impressions), but you only get access to the lenient end if you have enough creative variants for Meta to test against the entire distribution.
@@ -56,7 +56,7 @@ This is the boring one, so we'll get it out of the way first.
 
 Meta added roughly 1.4 million new active advertisers in the last 24 months, with the steepest growth in small business and local services. Inventory — the number of impressions a user can see in a day — is essentially fixed by user behavior, not by Meta. More demand against fixed supply produces higher clearing prices. Econ 101.
 
-What's less obvious: the new entrants are *worse* bidders on average. They run Advantage+ campaigns with one or two creatives, no objective discipline, and bid caps set by intuition. Andromeda still has to evaluate them in every auction. The collective effect is a lot of low-quality bids that nonetheless drag up the floor — because Andromeda is willing to deliver them at low predicted-value impressions to keep the auction efficient overall.
+What's less obvious: the new entrants are _worse_ bidders on average. They run Advantage+ campaigns with one or two creatives, no objective discipline, and bid caps set by intuition. Andromeda still has to evaluate them in every auction. The collective effect is a lot of low-quality bids that nonetheless drag up the floor — because Andromeda is willing to deliver them at low predicted-value impressions to keep the auction efficient overall.
 
 If you used to run a $4K/month CPM-15 account in a quiet vertical, you're now sharing impressions with 40 new local competitors who didn't exist in 2023. You can't audience-target your way out of that. They're all targeting the same broad pool, because that's what Advantage+ wants.
 
@@ -72,11 +72,11 @@ What that means for your CPM:
 
 - **Accounts with strong post-click signal (high conversion rate, fast page load, clean event setup) get rewarded with lower CPMs** because Andromeda is confident they'll convert.
 - **Accounts with weak post-click signal pay a CPM premium** even if their CTR looks fine, because Andromeda is hedging against wasted impressions.
-- **Accounts with low creative volume can't train the model on themselves.** Andromeda doesn't know what *your* converting user looks like because you've shown it 5 creative samples. It defaults to category averages, which are usually unflattering.
+- **Accounts with low creative volume can't train the model on themselves.** Andromeda doesn't know what _your_ converting user looks like because you've shown it 5 creative samples. It defaults to category averages, which are usually unflattering.
 
 The third bullet is where most rising-CPM diagnoses go wrong. Buyers blame the audience, the offer, the placement — but the actual issue is that the algorithm doesn't have enough creative variants from you to build a confident prediction model. So it prices your inventory conservatively, which means expensively.
 
-This is the core thesis of our [creative-is-the-new-targeting explainer](/blog/creative-is-the-new-targeting-andromeda-explained-2026): creative diversity is now the input variable that lets the algorithm target *for* you. Without it, you're running blind and being charged the blindness tax.
+This is the core thesis of our [creative-is-the-new-targeting explainer](/blog/creative-is-the-new-targeting-andromeda-explained-2026): creative diversity is now the input variable that lets the algorithm target _for_ you. Without it, you're running blind and being charged the blindness tax.
 
 ---
 
@@ -101,13 +101,13 @@ We've covered this dynamic in detail in [Andromeda plus iOS privacy: why volume 
 
 This is the section that will save you the most money if you internalize it. The instinct, when CPMs rise, is to mess with bidding — switch to bid cap, lower cost cap, change from highest-volume to highest-value, etc. We've audited hundreds of these. Almost none of them work in 2026. Here's why.
 
-**Lowering your bid:** You stop winning auctions. Delivery collapses. Your account goes into the under-delivery state, which Meta interprets as a low-quality signal, and your CPMs *rise further* when you try to come back. Net effect: less spend, higher CPM, worse CPA.
+**Lowering your bid:** You stop winning auctions. Delivery collapses. Your account goes into the under-delivery state, which Meta interprets as a low-quality signal, and your CPMs _rise further_ when you try to come back. Net effect: less spend, higher CPM, worse CPA.
 
 **Switching to bid cap or cost cap:** These are useful only if you actually know the marginal value of a conversion to your business with high confidence. Most lead-gen accounts don't. The cap gets set too low, delivery starves, the account never escapes learning. You end up running 30% of your intended budget on creative the algorithm couldn't optimize. CPM-on-spent-budget looks fine; CPM-on-needed-budget is much higher because you have to make up the gap with worse-targeted retargeting.
 
 **Manual bidding:** Andromeda's whole design is to outperform manual bidders by evaluating 10,000x more candidates than a human can mentally model. Manually bidding against it is like manually trading against a high-frequency trading desk. You will lose on average, and you'll pay a CPM premium for the privilege.
 
-**Audience narrowing:** Narrowing the audience reduces the candidate pool Andromeda can retrieve against. The auction becomes a smaller, hotter version of itself. CPMs go *up*, not down, on narrow audiences in 2026 — the opposite of the 2018 playbook. Detailed targeting is dead, and the proof is in the CPM tab.
+**Audience narrowing:** Narrowing the audience reduces the candidate pool Andromeda can retrieve against. The auction becomes a smaller, hotter version of itself. CPMs go _up_, not down, on narrow audiences in 2026 — the opposite of the 2018 playbook. Detailed targeting is dead, and the proof is in the CPM tab.
 
 **Placement carve-outs:** Removing placements (e.g., turning off Audience Network) used to lower CPM modestly because you were trading volume for quality. Post-Andromeda, placement decisions are made dynamically per impression, and your carve-out forces the auction into a smaller subset of inventory, which raises CPMs in that subset.
 
@@ -117,15 +117,15 @@ The pattern: every classic CPM-reduction tactic from 2018–2022 either does not
 
 ## The Volume Math: Why More Creatives = Cheaper Impressions
 
-Here's the part most buyers haven't fully internalized. CPM is not one number. It's a *blended* number across all the impression slots Meta delivers you to. Each slot has its own clearing price.
+Here's the part most buyers haven't fully internalized. CPM is not one number. It's a _blended_ number across all the impression slots Meta delivers you to. Each slot has its own clearing price.
 
 Imagine the impression universe sorted by clearing price, cheapest to most expensive:
 
-- **The cheapest 30% of impressions** are users who match many advertisers' predicted-conversion profiles. They get filled at low CPMs. To get into these slots, your ad needs to be at least a *plausible* match for that user.
+- **The cheapest 30% of impressions** are users who match many advertisers' predicted-conversion profiles. They get filled at low CPMs. To get into these slots, your ad needs to be at least a _plausible_ match for that user.
 - **The middle 50% of impressions** are users with mixed signals. CPM is moderate. Getting in requires a stronger predicted-value pitch from your ad.
 - **The most expensive 20% of impressions** are high-intent, high-signal users — small audience, lots of advertisers fighting for them. Premium CPMs.
 
-When you run 5 creatives, Meta can only pitch you into the slots where one of those 5 happens to be the best match. That's almost always the *middle* of the distribution — because your 5 hand-crafted ads are written to broad mid-funnel positioning. You get almost no exposure to the cheap 30%, because you don't have a creative variant that fits those niche moments.
+When you run 5 creatives, Meta can only pitch you into the slots where one of those 5 happens to be the best match. That's almost always the _middle_ of the distribution — because your 5 hand-crafted ads are written to broad mid-funnel positioning. You get almost no exposure to the cheap 30%, because you don't have a creative variant that fits those niche moments.
 
 When you run 60 creatives — different hooks, different angles, different visual styles, different formats — Meta has 60 chances per impression to find a fit. Now you start winning slots in the cheap 30% because one of your 60 is, by chance, a good fit for a weird sub-pocket of users at 2am on a Tuesday. The cheap 30% pulls your blended CPM down.
 
@@ -140,39 +140,41 @@ This is also why filming one perfect hero ad is dead as a strategy. We've writte
 Let's make this concrete with a worked example from a real account profile (anonymized, but the numbers are representative of dozens we've audited).
 
 **Setup:**
+
 - $10,000/month Meta ad budget
 - Lead-gen objective, home services vertical
 - US-only, 4 metro areas
 
 **Before — 6 active creatives, traditional production:**
 
-| Metric | Value |
-|---|---|
-| Active creatives | 6 |
-| Average CPM | $42 |
-| Impressions delivered | ~238,000 |
-| CTR (link) | 1.1% |
-| Clicks | ~2,620 |
-| LP conversion rate | 6.5% |
-| Leads | ~170 |
-| CPL | $58.80 |
-| Frequency at month end | 4.3 |
+| Metric                 | Value    |
+| ---------------------- | -------- |
+| Active creatives       | 6        |
+| Average CPM            | $42      |
+| Impressions delivered  | ~238,000 |
+| CTR (link)             | 1.1%     |
+| Clicks                 | ~2,620   |
+| LP conversion rate     | 6.5%     |
+| Leads                  | ~170     |
+| CPL                    | $58.80   |
+| Frequency at month end | 4.3      |
 
 **After — 60 active creatives, batch production via [batch video ads](/batch-video-ads):**
 
-| Metric | Value |
-|---|---|
-| Active creatives | 60 |
-| Average CPM | $29 |
-| Impressions delivered | ~345,000 |
-| CTR (link) | 1.4% |
-| Clicks | ~4,830 |
-| LP conversion rate | 6.5% (LP unchanged) |
-| Leads | ~314 |
-| CPL | $31.85 |
-| Frequency at month end | 2.1 |
+| Metric                 | Value               |
+| ---------------------- | ------------------- |
+| Active creatives       | 60                  |
+| Average CPM            | $29                 |
+| Impressions delivered  | ~345,000            |
+| CTR (link)             | 1.4%                |
+| Clicks                 | ~4,830              |
+| LP conversion rate     | 6.5% (LP unchanged) |
+| Leads                  | ~314                |
+| CPL                    | $31.85              |
+| Frequency at month end | 2.1                 |
 
 **Deltas:**
+
 - Blended CPM down 31%
 - Impressions up 45%
 - CTR up 27% (Andromeda matching better creative to each impression)
@@ -180,9 +182,9 @@ Let's make this concrete with a worked example from a real account profile (anon
 - CPL down 46%
 - Frequency dropped from 4.3 to 2.1 — meaning the account is no longer fatiguing
 
-The offer didn't change. The landing page didn't change. The audience setting didn't change (still Advantage+ broad). The *only* thing that changed was creative volume. The CPL improvement is what's funding the production cost, plus a substantial margin.
+The offer didn't change. The landing page didn't change. The audience setting didn't change (still Advantage+ broad). The _only_ thing that changed was creative volume. The CPL improvement is what's funding the production cost, plus a substantial margin.
 
-This is not a cherry-picked case. It's a representative case. The variance is in *how much* improvement, not whether improvement happens — and the dominant driver of that variance is how creative the new ads actually are vs. variations of the same script.
+This is not a cherry-picked case. It's a representative case. The variance is in _how much_ improvement, not whether improvement happens — and the dominant driver of that variance is how creative the new ads actually are vs. variations of the same script.
 
 ---
 
@@ -192,14 +194,14 @@ Here's the honest objection: "60 creatives a month is impossible at our producti
 
 True, if you're using a traditional production agency. A polished 30-second spot at agency rates is $1,500–$5,000. Sixty of those is $90K–$300K. Not happening.
 
-But the unit you need is not a polished 30-second spot. The unit you need is a *testable creative variant* — a distinct hook, angle, or visual treatment that gives Andromeda something new to evaluate. Those can be produced for $5–$50 each through batch AI production pipelines. We covered the full economics in our [batch video ads complete guide](/blog/batch-video-ads-complete-guide-2026), but the short version: 60 batch creatives costs $300–$3,000, fits well inside the CPL savings, and ships in 24–72 hours instead of 4–8 weeks.
+But the unit you need is not a polished 30-second spot. The unit you need is a _testable creative variant_ — a distinct hook, angle, or visual treatment that gives Andromeda something new to evaluate. Those can be produced for $5–$50 each through batch AI production pipelines. We covered the full economics in our [batch video ads complete guide](/blog/batch-video-ads-complete-guide-2026), but the short version: 60 batch creatives costs $300–$3,000, fits well inside the CPL savings, and ships in 24–72 hours instead of 4–8 weeks.
 
 The two-tier production strategy that works:
 
 1. **80% of your creative volume is batch-produced** — AI scripting, modular templates, hook variations, fast turnaround. These are your "fill the impression distribution" creatives.
 2. **20% of your creative volume is hero-produced** — higher craft, human-led, derived from the top performers identified by the batch tier. These are your scaling creatives.
 
-You can also fold this into a broader content engine if you're already running [done-for-you social media](/done-for-you-social-media) — much of the organic pillar capture footage is usable as ad raw material with minor reformatting, which drops your effective per-ad production cost further.
+You can also fold this into a broader content engine if you're already running [done-for-you social media](/ai-content-department) — much of the organic pillar capture footage is usable as ad raw material with minor reformatting, which drops your effective per-ad production cost further.
 
 ---
 
@@ -279,4 +281,4 @@ Rising Meta CPMs in 2026 aren't a glitch or a temporary inflation spike. They're
 
 The single intervention that consistently moves blended CPMs down is more distinct creative, fed in at a cadence that keeps Andromeda's prediction model fresh. The production cost of that volume is well inside the savings on CPL, and the operational shift — from filming hero ads to running a batch creative pipeline — is the difference between a 2026 ad account that compounds and one that bleeds.
 
-If you want to see the production side running on your account, start with [batch video ads](/batch-video-ads) for the creative engine, or layer in [done-for-you social media](/done-for-you-social-media) if you want the organic distribution to compound alongside the paid side. Either way: stop optimizing bids. Start optimizing creative density.
+If you want to see the production side running on your account, start with [batch video ads](/batch-video-ads) for the creative engine, or layer in [done-for-you social media](/ai-content-department) if you want the organic distribution to compound alongside the paid side. Either way: stop optimizing bids. Start optimizing creative density.

@@ -1,4 +1,5 @@
 # The Roofer's 24/7 Lead Response Playbook
+
 ## How to Capture Every Storm Lead Without Hiring More Staff
 
 ---
@@ -8,6 +9,7 @@
 Storm season creates the biggest opportunity and biggest challenge for roofing contractors. Call volumes surge 10-100x, creating thousands in potential daily revenue—but only contractors who answer first capture the jobs.
 
 This playbook shows you how to implement 24/7 lead response that:
+
 - Answers every call in under 60 seconds
 - Qualifies leads automatically
 - Prioritizes emergencies
@@ -40,12 +42,12 @@ This playbook shows you how to implement 24/7 lead response that:
 
 The numbers are clear: first responder wins the job.
 
-| Response Time | Lead Capture Rate | Description |
-|--------------|-------------------|-------------|
-| Under 60 seconds | 85%+ | Gold standard |
-| 1-5 minutes | 60-70% | Good but losing ground |
-| 5-15 minutes | 30-50% | Marginal |
-| 15+ minutes | 10-25% | Poor |
+| Response Time    | Lead Capture Rate | Description            |
+| ---------------- | ----------------- | ---------------------- |
+| Under 60 seconds | 85%+              | Gold standard          |
+| 1-5 minutes      | 60-70%            | Good but losing ground |
+| 5-15 minutes     | 30-50%            | Marginal               |
+| 15+ minutes      | 10-25%            | Poor                   |
 
 ### The Cost of One Missed Storm Call
 
@@ -58,6 +60,7 @@ The numbers are clear: first responder wins the job.
 ### The Multiplier Effect
 
 Storm leads multiply:
+
 - One hail event = 300-500 calls
 - 3-5 major storms per season in hail-prone areas
 - Contractors who respond best capture disproportionate market share
@@ -78,16 +81,19 @@ Being the first responder isn't nice-to-have—it's survival.
 ### The Call Pattern
 
 **Hour 1 post-storm:**
+
 - Volume: Highest
 - Urgency: Highest
 - Patience: Lowest (call first available)
 
 **Hours 2-24:**
+
 - Volume: High
 - Urgency: Still high
 - Patience: Growing (checking multiple contractors)
 
 **Days 2-7:**
+
 - Volume: Moderate
 - Urgency: Medium
 - Patience: Selective (comparing quotes)
@@ -107,6 +113,7 @@ Being the first responder isn't nice-to-have—it's survival.
 ### Why Under 60 Seconds?
 
 Research shows:
+
 - After 5 minutes, qualification drops by **80%**
 - 78% of buyers choose **first responder**
 - Sub-60-second response captures **3-5x more jobs**
@@ -116,11 +123,13 @@ Research shows:
 **Caller:** "Hi, I think we have hail damage from the storm last night."
 
 **AI Response (37 seconds later):**
+
 > "Thanks for calling Apex Roofing. I'm sorry to hear you may have damage—those storms were pretty intense. Are you seeing any active leaks inside the house, or is it mainly exterior damage you've noticed so far?"
 
 **Caller:** "No leaks inside, but shingles are all over the yard."
 
 **AI:**
+
 > "Got it. That definitely needs attention soon before we get more weather. I have tomorrow morning at 8am or afternoon at 2pm available for a free inspection. Which works better for your schedule?"
 
 **Result:** Lead captured, appointment booked, human crew preserved for actual work.
@@ -128,6 +137,7 @@ Research shows:
 ### Implementing the 60-Second Standard
 
 **Technical Requirements:**
+
 - Webhook integration from lead sources
 - Sub-5-second initiation latency
 - Natural language conversation engine
@@ -135,6 +145,7 @@ Research shows:
 - CRM sync for handoff
 
 **Process Requirements:**
+
 - Immediate answer (no rings wasted)
 - Conversational qualification
 - Appointment booking capability
@@ -150,12 +161,14 @@ Research shows:
 #### TIER 1: Immediate Emergency (Dispatch Within 1 Hour)
 
 **Triggers:**
+
 - Active water intrusion
 - Structural failure (partial collapse)
 - Tree on roof
 - Roof deck exposed to weather
 
 **Response:**
+
 - AI flags for immediate human dispatch
 - SMS notification to on-call crew
 - "How soon can someone be there?" booking
@@ -164,11 +177,13 @@ Research shows:
 #### TIER 2: Priority (Same-Day Inspection)
 
 **Triggers:**
+
 - Significant storm damage (hail, wind)
 - Older customers with history
 - Insurance claim already filed
 
 **Response:**
+
 - Priority booking slots (early morning, late afternoon)
 - Same-day confirmation
 - Preparation checklist sent to homeowner
@@ -176,11 +191,13 @@ Research shows:
 #### TIER 3: Standard (Next-Available Inspection)
 
 **Triggers:**
+
 - Cosmetic damage only
 - Informational calls
 - New construction estimates
 
 **Response:**
+
 - Standard scheduling
 - Full qualification process
 - Normal confirmation sequence
@@ -215,16 +232,19 @@ Smart contractor: AI answers 24/7, captures lead, books appointment for first th
 ### After-Hours Protocol
 
 **Evening (5 PM - 10 PM):**
+
 - Answer and qualify
 - Offer next-day morning appointments
 - Send confirmation with photos request
 
 **Overnight (10 PM - 6 AM):**
+
 - Answer and qualify
 - Flag for morning team review
 - Send immediate confirmation
 
 **Weekends:**
+
 - Full qualification and booking
 - Monday appointments if preferred
 - Emergency dispatch if urgent
@@ -234,9 +254,11 @@ Smart contractor: AI answers 24/7, captures lead, books appointment for first th
 > "Thanks for calling Apex Roofing. I know it's after hours, but storm damage doesn't wait—let me help you right now. Are you calling about damage from today's weather?"
 
 **If emergency:**
+
 > "I understand water is coming in—I'm going to text our on-call crew member right now and he'll call you within 10 minutes to get details and head over."
 
 **If not emergency:**
+
 > "I'd like to get you scheduled for an inspection first thing tomorrow morning. I have 8am or 10am available—what works for you?"
 
 ---
@@ -246,6 +268,7 @@ Smart contractor: AI answers 24/7, captures lead, books appointment for first th
 ### Why Multi-Channel Matters
 
 Homeowners have preferences:
+
 - **Phone:** For emergencies and detailed questions
 - **SMS:** For quick confirmations and updates
 - **Email:** For documentation and record-keeping
@@ -255,26 +278,32 @@ The best response systems coordinate across all three.
 ### The Follow-Up Sequence
 
 **Immediate (0-5 minutes):**
+
 - Phone call answered by AI
 - Qualification conversation
 - Appointment booked or follow-up set
 
 **Confirmation (5-15 minutes):**
+
 - SMS: "Your inspection is confirmed for Tuesday at 10am at 123 Main St."
 - Email: Full details with map, what to expect, contact info
 
 **Reminder (24 hours before):**
+
 - SMS: "Quick reminder—inspection tomorrow at 10am. Still good?"
 - Email: Preparation checklist (insurance documents, photos needed)
 
 **Day-of (morning of):**
+
 - SMS: "Crew en route, ETA 20 minutes"
 - SMS: "Running 15 min behind, still on for today?"
 
 **Post-appointment (4 hours after):**
+
 - Email: "How did inspection go? Ready to move forward?"
 
 **Post-appointment (24 hours later):**
+
 - If no response: Follow-up sequence
 - If disinterested: Remove from active pipeline
 - If interested: Proposal workflow
@@ -290,6 +319,7 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 ### Required Data Fields
 
 **Every lead should include:**
+
 - Name and phone
 - Damage type and urgency tier
 - Insurance status (claim filed? carrier?)
@@ -308,13 +338,13 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 
 ### Common CRM Systems for Roofers
 
-| CRM | Integration Method | Key Features |
-|-------|------------------|---------------|
-| JobNimbus | API / Webhook | Storm workflows, insurance fields |
-| AccuLynx | Native integration | Photo management, materials tracking |
-| Roofr | API | Speed-to-lead focus, CRM built-in |
-| ServiceTitan | API / Marketplace | Full business management, dispatch |
-| Housecall Pro | Native | Scheduling, invoicing |
+| CRM           | Integration Method | Key Features                         |
+| ------------- | ------------------ | ------------------------------------ |
+| JobNimbus     | API / Webhook      | Storm workflows, insurance fields    |
+| AccuLynx      | Native integration | Photo management, materials tracking |
+| Roofr         | API                | Speed-to-lead focus, CRM built-in    |
+| ServiceTitan  | API / Marketplace  | Full business management, dispatch   |
+| Housecall Pro | Native             | Scheduling, invoicing                |
 
 ---
 
@@ -323,6 +353,7 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 ### Phase 1: Planning (Week 1-2)
 
 **Business Requirements:**
+
 - [ ] Define emergency tiers (Immediate, Priority, Standard)
 - [ ] Document qualification criteria
 - [ ] Map service area zip codes
@@ -330,12 +361,14 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 - [ ] Define escalation protocols
 
 **Technical Requirements:**
+
 - [ ] Audit lead sources (website, forms, phone)
 - [ ] Review current CRM and capabilities
 - [ ] Document calendar system and availability
 - [ ] Test phone system for webhook capabilities
 
 **Vendor Selection:**
+
 - [ ] Review AI response vendors
 - [ ] Request demos with roofing scenarios
 - [ ] Verify CRM integration capability
@@ -345,6 +378,7 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 ### Phase 2: Setup (Week 3-4)
 
 **System Configuration:**
+
 - [ ] Configure conversation flows for each lead type
 - [ ] Program emergency triage questions
 - [ ] Set up qualification scripts
@@ -353,6 +387,7 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 - [ ] Test end-to-end with sample leads
 
 **Team Preparation:**
+
 - [ ] Train staff on AI handoff process
 - [ ] Set up notification preferences (SMS, email, Slack)
 - [ ] Document AI capabilities and limitations
@@ -361,12 +396,14 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 ### Phase 3: Pilot (Week 5-6)
 
 **Testing:**
+
 - [ ] Run pilot with 20-30% of leads
 - [ ] Monitor every conversation for quality
 - [ ] Gather feedback from team
 - [ ] Track metrics (response time, conversion)
 
 **Iteration:**
+
 - [ ] Adjust scripts based on real interactions
 - [ ] Refine emergency detection accuracy
 - [ ] Optimize appointment booking flow
@@ -375,12 +412,14 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 ### Phase 4: Full Rollout (Week 7-8)
 
 **Launch:**
+
 - [ ] Enable for 50% of leads
 - [ ] Monitor for issues
 - [ ] Scale to 100% when stable
 - [ ] Remove or reduce legacy systems
 
 **Optimization:**
+
 - [ ] Weekly conversation review
 - [ ] Monthly performance analysis
 - [ ] Quarterly process updates
@@ -392,13 +431,13 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 
 ### Fill in Your Numbers
 
-| Metric | Your Number |
-|---------|--------------|
-| Average monthly leads | ______ |
-| Storm lead percentage | ______ % |
-| Current response time | ______ minutes |
-| Current capture rate | ______ % |
-| Average job value | $_______ |
+| Metric                | Your Number      |
+| --------------------- | ---------------- |
+| Average monthly leads | **\_\_**         |
+| Storm lead percentage | **\_\_** %       |
+| Current response time | **\_\_** minutes |
+| Current capture rate  | **\_\_** %       |
+| Average job value     | $**\_\_\_**      |
 
 ### Calculate Your Current Performance
 
@@ -408,6 +447,7 @@ Data silos kill efficiency. Every piece of information captured during AI conver
 ### Calculate AI Performance Improvement
 
 **With AI (typical improvements):**
+
 - Response time: Under 60 seconds
 - Capture rate: 70% (vs. your current rate above)
 
