@@ -1,3 +1,10 @@
+/**
+ * Batch tier definitions.
+ *
+ * WARNING: The ids `"minimum" | "pro" | "max"` are load-bearing — they are
+ * referenced by the Stripe `FREE300` cohort promo and must NOT be renamed.
+ * `"starter"` is a newer, safe-to-add id with no external dependencies.
+ */
 export type BatchTierId = "starter" | "minimum" | "pro" | "max";
 
 export type BatchTier = {
@@ -21,11 +28,12 @@ export const BATCH_TIERS: Record<BatchTierId, BatchTier> = {
     priceCents: 49700,
     adCount: 100,
     painPoints: 1,
+    popular: false,
     highlights: [
       "100 unique vertical video ads",
       "1 customer problem tested",
       "Hook, body & CTA variations",
-      "1–2 business day turnaround",
+      "24-hour turnaround*",
       "Error revisions included",
     ],
   },
