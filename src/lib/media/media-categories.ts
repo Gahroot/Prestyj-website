@@ -60,7 +60,7 @@ export const CATEGORIES: Record<MediaCategory, CategoryConfig> = {
 export function generateFilename(
   category: MediaCategory,
   subject: string,
-  extension = "png"
+  extension = "png",
 ): string {
   const slug = subject
     .toLowerCase()
@@ -74,20 +74,14 @@ export function generateFilename(
 /**
  * Returns the full output path for a media asset.
  */
-export function getOutputPath(
-  category: MediaCategory,
-  filename: string
-): string {
+export function getOutputPath(category: MediaCategory, filename: string): string {
   return `${CATEGORIES[category].outputDir}/${filename}`;
 }
 
 /**
  * Returns the public URL path (relative to site root) for a media asset.
  */
-export function getPublicPath(
-  category: MediaCategory,
-  filename: string
-): string {
+export function getPublicPath(category: MediaCategory, filename: string): string {
   // Strip the leading "public" from outputDir
   const dir = CATEGORIES[category].outputDir.replace(/^public/, "");
   return `${dir}/${filename}`;

@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
   if (approved.length === 0) {
     return NextResponse.json(
       { error: "No approved conversions for this affiliate" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -48,8 +48,8 @@ export async function POST(request: NextRequest) {
     data: {
       affiliateId,
       amountCents,
-      method: typeof method === "string" ? method : undefined,
-      reference: typeof reference === "string" ? reference : undefined,
+      ...(typeof method === "string" && { method }),
+      ...(typeof reference === "string" && { reference }),
       status: "PENDING",
     },
   });

@@ -1,7 +1,7 @@
 import type { Industry, MediaCategory, Mood } from "./types";
 
 /**
- * PRESTYJ Brand Visual Identity
+ * Prestyj Brand Visual Identity
  *
  * Brand positioning: "20 qualified appointments in 30 days or we work for free"
  * Target: $1M+ businesses (roofing, windows, real estate, mortgage) with closers looking to scale.
@@ -13,7 +13,7 @@ import type { Industry, MediaCategory, Mood } from "./types";
 // ---------------------------------------------------------------------------
 
 export const BRAND_PERSONA = {
-  name: "PRESTYJ",
+  name: "Prestyj",
   tagline: "20 qualified appointments in 30 days or we work for free",
   voice: "confident, results-driven, human-first",
   audience: "$1M+ businesses with closers who want to scale revenue",
@@ -35,8 +35,7 @@ export const PHOTOGRAPHY_STYLE = {
   aesthetic: "Shot on iPhone",
   lighting: "natural, warm, golden-hour preferred",
   feel: "candid not posed, real environments, genuine expressions",
-  subjects:
-    "business owners, roofers on jobsites, agents at closings, loan officers with clients",
+  subjects: "business owners, roofers on jobsites, agents at closings, loan officers with clients",
   technicalNotes: [
     "Shallow depth of field when appropriate",
     "Warm color temperature (5500-6500K feel)",
@@ -114,31 +113,20 @@ export const NEGATIVE_CONSTRAINTS = [
 // ---------------------------------------------------------------------------
 
 export const INDUSTRY_SUBJECTS: Record<Industry, string> = {
-  roofing:
-    "roofer on a jobsite, hard hat, ladder, residential roof, suburban neighborhood",
-  windows:
-    "window installer measuring a window frame, residential home, tools in hand",
-  "real-estate":
-    "real estate agent shaking hands with homebuyer, front porch of a home, sold sign",
-  mortgage:
-    "loan officer at a desk reviewing documents with a couple, warm office setting",
-  solar:
-    "solar panel installer on a rooftop, bright sunny day, safety harness",
+  roofing: "roofer on a jobsite, hard hat, ladder, residential roof, suburban neighborhood",
+  windows: "window installer measuring a window frame, residential home, tools in hand",
+  "real-estate": "real estate agent shaking hands with homebuyer, front porch of a home, sold sign",
+  mortgage: "loan officer at a desk reviewing documents with a couple, warm office setting",
+  solar: "solar panel installer on a rooftop, bright sunny day, safety harness",
   hvac: "HVAC technician working on an air conditioning unit, residential exterior",
-  plumbing:
-    "plumber under a kitchen sink with wrench, homeowner watching nearby",
-  dental:
-    "dentist in modern practice speaking with a patient, clean clinical setting",
+  plumbing: "plumber under a kitchen sink with wrench, homeowner watching nearby",
+  dental: "dentist in modern practice speaking with a patient, clean clinical setting",
   medical:
     "medical professional in a clinic speaking with a patient, clean modern healthcare setting",
-  legal:
-    "attorney in an office meeting with a client, bookshelves, professional attire",
-  insurance:
-    "insurance agent reviewing policy with a family at their kitchen table",
-  "home-services":
-    "home services professional arriving at a front door, branded van in driveway",
-  general:
-    "business owner at their desk, confident smile, modern office environment",
+  legal: "attorney in an office meeting with a client, bookshelves, professional attire",
+  insurance: "insurance agent reviewing policy with a family at their kitchen table",
+  "home-services": "home services professional arriving at a front door, branded van in driveway",
+  general: "business owner at their desk, confident smile, modern office environment",
 };
 
 // ---------------------------------------------------------------------------
@@ -151,10 +139,8 @@ export const MOOD_MODIFIERS: Record<Mood, string> = {
   candid: "natural moment, unposed, authentic interaction, real emotion",
   dynamic: "movement, action, energy, momentum",
   warm: "welcoming, approachable, friendly, trustworthy",
-  confident:
-    "self-assured posture, direct eye contact, commanding presence",
-  professional:
-    "polished appearance, organized workspace, business attire",
+  confident: "self-assured posture, direct eye contact, commanding presence",
+  professional: "polished appearance, organized workspace, business attire",
 };
 
 // ---------------------------------------------------------------------------

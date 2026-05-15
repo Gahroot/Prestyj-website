@@ -1,3 +1,5 @@
+import type { BatchTierId } from "@/lib/batch-tiers";
+
 declare global {
   interface Window {
     fbq: ((...args: unknown[]) => void) & { queue?: unknown[] };
@@ -120,6 +122,54 @@ export function trackContentEngineVisitor(variant: string) {
       conversion_id: Number(LINKEDIN_CONTENT_ENGINE_CONVERSION_ID),
     });
   }
+}
+
+/**
+ * Fire a standard `Purchase` event tagged with the batch-video-ads tier id.
+ * Lets Ads Manager treat each tier (starter / minimum / pro / max) as a
+ * distinct, optimizable conversion via the `content_name` parameter, while
+ * still rolling up under the single `Purchase` standard event for reporting.
+ *
+ * Mirrored to CAPI for iOS / ad-blocker resilience using the same shared
+ * eventId so Meta can dedupe browser + server hits.
+ */
+export function trackBatchTierPurchase(
+  tierId: BatchTierId,
+  value: number,
+  currency: string,
+  userData?: UserData,
+): void {
+  const eventId = crypto.randomUUID();
+  const customData = {
+    content_name: tierId,
+    content_category: "batch-video-ads",
+    value,
+    currency,
+  };
+
+  // Client-side pixel fire
+  if (typeof window !== "undefined" && window.fbq) {
+    window.fbq("track", "Purchase", customData, { eventID: eventId });
+  }
+
+  // Server-side CAPI fire (fire-and-forget, keepalive survives page navigation)
+  fetch("/api/meta-capi", {
+    method: "POST",
+    keepalive: true,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      eventName: "Purchase",
+      eventId,
+      sourceUrl: typeof window !== "undefined" ? window.location.href : undefined,
+      email: userData?.email,
+      phone: userData?.phone,
+      firstName: userData?.firstName,
+      lastName: userData?.lastName,
+      customData,
+    }),
+  }).catch(() => {
+    // Never break UX for tracking
+  });
 }
 
 export { PIXEL_ID, LINKEDIN_PARTNER_ID };

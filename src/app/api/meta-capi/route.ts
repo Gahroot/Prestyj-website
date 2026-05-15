@@ -19,25 +19,17 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const {
-      eventName,
-      eventId,
-      email,
-      phone,
-      firstName,
-      lastName,
-      sourceUrl,
-      customData,
-    } = body as {
-      eventName: string;
-      eventId: string;
-      email?: string;
-      phone?: string;
-      firstName?: string;
-      lastName?: string;
-      sourceUrl?: string;
-      customData?: Record<string, unknown>;
-    };
+    const { eventName, eventId, email, phone, firstName, lastName, sourceUrl, customData } =
+      body as {
+        eventName: string;
+        eventId: string;
+        email?: string;
+        phone?: string;
+        firstName?: string;
+        lastName?: string;
+        sourceUrl?: string;
+        customData?: Record<string, unknown>;
+      };
 
     // Build user_data with hashed PII
     const userData: Record<string, string> = {};
@@ -76,7 +68,7 @@ export async function POST(request: NextRequest) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ data: [event] }),
-      }
+      },
     );
 
     const capiBody = await capiResponse.json();

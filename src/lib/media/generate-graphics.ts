@@ -15,7 +15,8 @@ const categories = {
         filename: "mascot-p-1.png",
         prompt: buildPrompt({
           category: "mascot",
-          subject: 'Abstract geometric "P" letterform with crystalline facets, glowing purple gradient',
+          subject:
+            'Abstract geometric "P" letterform with crystalline facets, glowing purple gradient',
           mood: "confident",
         }),
         aspectRatio: "1:1" as const,
@@ -24,7 +25,8 @@ const categories = {
         filename: "mascot-p-2.png",
         prompt: buildPrompt({
           category: "mascot",
-          subject: 'Abstract geometric "P" letterform, sharp crystalline edges, purple to amber gradient glow',
+          subject:
+            'Abstract geometric "P" letterform, sharp crystalline edges, purple to amber gradient glow',
           mood: "confident",
         }),
         aspectRatio: "1:1" as const,
@@ -33,7 +35,8 @@ const categories = {
         filename: "mascot-p-3.png",
         prompt: buildPrompt({
           category: "mascot",
-          subject: 'Abstract geometric "P" letterform, hexagonal facets, purple glow against dark background',
+          subject:
+            'Abstract geometric "P" letterform, hexagonal facets, purple glow against dark background',
           mood: "confident",
         }),
         aspectRatio: "1:1" as const,
@@ -42,7 +45,8 @@ const categories = {
         filename: "mascot-p-4.png",
         prompt: buildPrompt({
           category: "mascot",
-          subject: 'Abstract geometric "P" letterform, crystal shard aesthetic, purple and gold highlights',
+          subject:
+            'Abstract geometric "P" letterform, crystal shard aesthetic, purple and gold highlights',
           mood: "confident",
         }),
         aspectRatio: "1:1" as const,
@@ -51,7 +55,8 @@ const categories = {
         filename: "mascot-p-5.png",
         prompt: buildPrompt({
           category: "mascot",
-          subject: 'Abstract geometric "P" letterform, prismatic facets, deep purple glow, dark charcoal background',
+          subject:
+            'Abstract geometric "P" letterform, prismatic facets, deep purple glow, dark charcoal background',
           mood: "confident",
         }),
         aspectRatio: "1:1" as const,
@@ -65,7 +70,8 @@ const categories = {
         filename: "badge-24-7-response.png",
         prompt: buildPrompt({
           category: "icon-badge",
-          subject: "24/7 always on response icon, clock symbol, shield badge shape, purple gradient",
+          subject:
+            "24/7 always on response icon, clock symbol, shield badge shape, purple gradient",
           mood: "professional",
         }),
         aspectRatio: "1:1" as const,
@@ -74,7 +80,8 @@ const categories = {
         filename: "badge-under-60s.png",
         prompt: buildPrompt({
           category: "icon-badge",
-          subject: "Under 60 seconds speed icon, stopwatch or lightning bolt, shield badge shape, purple gradient",
+          subject:
+            "Under 60 seconds speed icon, stopwatch or lightning bolt, shield badge shape, purple gradient",
           mood: "professional",
         }),
         aspectRatio: "1:1" as const,
@@ -83,7 +90,8 @@ const categories = {
         filename: "badge-3x-appointments.png",
         prompt: buildPrompt({
           category: "icon-badge",
-          subject: "3x more appointments growth icon, upward trending arrow, shield badge shape, purple gradient",
+          subject:
+            "3x more appointments growth icon, upward trending arrow, shield badge shape, purple gradient",
           mood: "professional",
         }),
         aspectRatio: "1:1" as const,
@@ -92,7 +100,8 @@ const categories = {
         filename: "badge-enterprise.png",
         prompt: buildPrompt({
           category: "icon-badge",
-          subject: "Enterprise ready badge, building or columns icon, shield badge shape, purple gradient",
+          subject:
+            "Enterprise ready badge, building or columns icon, shield badge shape, purple gradient",
           mood: "professional",
         }),
         aspectRatio: "1:1" as const,
@@ -101,7 +110,8 @@ const categories = {
         filename: "badge-hipaa.png",
         prompt: buildPrompt({
           category: "icon-badge",
-          subject: "HIPAA compliant badge, medical cross or shield, secure lock icon, purple gradient",
+          subject:
+            "HIPAA compliant badge, medical cross or shield, secure lock icon, purple gradient",
           mood: "professional",
         }),
         aspectRatio: "1:1" as const,
@@ -142,7 +152,8 @@ const categories = {
         filename: "result-3x-appointments.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: 3x More Appointments, upward growth chart visualization, dark background with purple accents",
+          subject:
+            "Bold statistic: 3x More Appointments, upward growth chart visualization, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -151,7 +162,8 @@ const categories = {
         filename: "result-20-leads.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: 20 Qualified Leads, counter graphic showing 20, dark background with purple accents",
+          subject:
+            "Bold statistic: 20 Qualified Leads, counter graphic showing 20, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -160,7 +172,8 @@ const categories = {
         filename: "result-24-7-response.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: 24/7 Response, clock with always-on indicator, dark background with purple accents",
+          subject:
+            "Bold statistic: 24/7 Response, clock with always-on indicator, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -169,7 +182,8 @@ const categories = {
         filename: "result-under-60s.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: Under 60 Seconds, stopwatch or speedometer graphic, dark background with purple accents",
+          subject:
+            "Bold statistic: Under 60 Seconds, stopwatch or speedometer graphic, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -178,7 +192,8 @@ const categories = {
         filename: "result-50k-revenue.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: $50k Revenue Increase, upward money growth chart, dark background with purple accents",
+          subject:
+            "Bold statistic: $50k Revenue Increase, upward money growth chart, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -187,7 +202,8 @@ const categories = {
         filename: "result-30-days.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: In 30 Days, calendar timeline graphic, dark background with purple accents",
+          subject:
+            "Bold statistic: In 30 Days, calendar timeline graphic, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -196,7 +212,8 @@ const categories = {
         filename: "result-qualified-not-just-leads.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: Qualified Not Just Leads, quality filter visualization, dark background with purple accents",
+          subject:
+            "Bold statistic: Qualified Not Just Leads, quality filter visualization, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -205,7 +222,8 @@ const categories = {
         filename: "result-speed-to-lead.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold headline: Speed To Lead Wins, racing or speed visualization, dark background with purple accents",
+          subject:
+            "Bold headline: Speed To Lead Wins, racing or speed visualization, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -214,7 +232,8 @@ const categories = {
         filename: "result-no-show-reduction.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold statistic: Reduced No-Shows by 80%, calendar with checkmarks, dark background with purple accents",
+          subject:
+            "Bold statistic: Reduced No-Shows by 80%, calendar with checkmarks, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -223,7 +242,8 @@ const categories = {
         filename: "result-roi-graphic.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold headline: Positive ROI in Month 1, profit growth chart, dark background with purple accents",
+          subject:
+            "Bold headline: Positive ROI in Month 1, profit growth chart, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -232,7 +252,8 @@ const categories = {
         filename: "result-guarantee-badge.png",
         prompt: buildPrompt({
           category: "result-graphic",
-          subject: "Bold headline: Or We Work For Free, guarantee seal design, dark background with purple accents",
+          subject:
+            "Bold headline: Or We Work For Free, guarantee seal design, dark background with purple accents",
           mood: "confident",
         }),
         aspectRatio: "16:9" as const,
@@ -309,7 +330,9 @@ async function main() {
     totalFailed += report.failed;
   }
 
-  console.log(`\nTotal: ${totalSucceeded}/${totalSucceeded + totalFailed} images generated successfully`);
+  console.log(
+    `\nTotal: ${totalSucceeded}/${totalSucceeded + totalFailed} images generated successfully`,
+  );
 
   if (totalFailed > 0) {
     process.exit(1);

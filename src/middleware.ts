@@ -34,13 +34,7 @@ export function middleware() {
     },
     {
       name: "img-src",
-      values: [
-        "'self'",
-        "data:",
-        "blob:",
-        "https:",
-        "https://prestyj.com",
-      ],
+      values: ["'self'", "data:", "blob:", "https:", "https://prestyj.com"],
     },
     {
       name: "font-src",
@@ -119,7 +113,7 @@ export function middleware() {
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set(
     "Permissions-Policy",
-    "geolocation=(), microphone=(self \"https://frontend-navy-five-92.vercel.app\" \"https://backend-api-production-b536.up.railway.app\"), camera=()"
+    'geolocation=(), microphone=(self "https://frontend-navy-five-92.vercel.app" "https://backend-api-production-b536.up.railway.app"), camera=()',
   );
 
   return response;
@@ -136,7 +130,8 @@ export const config = {
      * - public folder
      */
     {
-      source: "/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)).*)",
+      source:
+        "/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|.*\\.(?:svg|png|jpg|jpeg|gif|webp|ico)).*)",
       missing: [
         { type: "header", key: "next-router-prefetch" },
         { type: "header", key: "purpose", value: "prefetch" },

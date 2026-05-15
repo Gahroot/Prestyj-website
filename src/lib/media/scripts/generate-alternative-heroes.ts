@@ -14,9 +14,7 @@ const match = envContent.match(/ZIMAGE_API_KEY="([^"]+)"/);
 if (match) {
   process.env.ZIMAGE_API_KEY = match[1];
 }
-import {
-  buildPrompt,
-} from "@/lib/media/prompt-builder";
+import { buildPrompt } from "@/lib/media/prompt-builder";
 import type { PromptRequest } from "@/lib/media/types";
 import { generateBatchParallel } from "@/lib/media/batch-generator";
 import type { BatchItem } from "@/lib/media/batch-generator";
@@ -104,10 +102,7 @@ function categorizeCompetitor(slug: string, alt: AlternativePageContent): Compet
 // Prompt generation by competitor type
 // ---------------------------------------------------------------------------
 
-function getAlternativeHeroPrompt(
-  slug: string,
-  alt: AlternativePageContent
-): string {
+function getAlternativeHeroPrompt(slug: string, alt: AlternativePageContent): string {
   const category = categorizeCompetitor(slug, alt);
   const competitorName = alt.competitor.name;
 
@@ -165,7 +160,11 @@ const comparePages: ComparePageInfo[] = [
   { slug: "conversica", competitorName: "Conversica", category: "text-only-chatbot" },
   { slug: "structurely", competitorName: "Structurely", category: "text-only-chatbot" },
   { slug: "isa", competitorName: "Human ISA", category: "isa-human-receptionist" },
-  { slug: "internal-isa-team", competitorName: "Internal ISA Team", category: "isa-human-receptionist" },
+  {
+    slug: "internal-isa-team",
+    competitorName: "Internal ISA Team",
+    category: "isa-human-receptionist",
+  },
   { slug: "offshore-isa", competitorName: "Offshore ISA", category: "isa-human-receptionist" },
 ];
 
@@ -262,7 +261,7 @@ async function main() {
         console.log(`[${completed}/${total}] ${current}`);
       },
     },
-    2
+    2,
   );
 
   // Final report

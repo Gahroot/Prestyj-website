@@ -1,11 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import {
-  submitUrl,
-  submitUrls,
-  submitAllUrls,
-  getAllUrls,
-  getIndexNowKey,
-} from "@/lib/indexnow";
+import { submitUrl, submitUrls, submitAllUrls, getAllUrls, getIndexNowKey } from "@/lib/indexnow";
 
 /**
  * POST /api/indexnow
@@ -28,7 +22,7 @@ export async function POST(request: NextRequest) {
   if (!apiKey) {
     return NextResponse.json(
       { error: "IndexNow API key not configured on server" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -66,13 +60,10 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { error: "Invalid request body. Use { all: true }, { url: string }, or { urls: string[] }" },
-      { status: 400 }
+      { status: 400 },
     );
   } catch {
-    return NextResponse.json(
-      { error: "Invalid JSON body" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Invalid JSON body" }, { status: 400 });
   }
 }
 
@@ -88,7 +79,7 @@ export async function GET(request: NextRequest) {
   if (!apiKey) {
     return NextResponse.json(
       { error: "IndexNow API key not configured on server" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 

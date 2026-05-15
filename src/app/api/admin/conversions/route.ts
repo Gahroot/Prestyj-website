@@ -40,10 +40,7 @@ export async function PATCH(request: NextRequest) {
 
   const allowed = ["APPROVED", "REFUNDED"];
   if (!allowed.includes(status)) {
-    return NextResponse.json(
-      { error: "status must be APPROVED or REFUNDED" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "status must be APPROVED or REFUNDED" }, { status: 400 });
   }
 
   const conversion = await prisma.conversion.update({

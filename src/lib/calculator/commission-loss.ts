@@ -29,12 +29,12 @@ export interface CalculatorResults {
  * 78% of buyers work with first responder
  */
 const RESPONSE_TIME_DECAY_CURVE: Record<string, number> = {
-  "under-1-min": 1.0,    // No penalty
-  "5-min": 0.9,          // 10% penalty
-  "30-min": 0.7,         // 30% penalty
-  "1-hour": 0.5,         // 50% penalty
-  "4-hour": 0.2,         // 80% penalty (industry avg)
-  "24-hour": 0.05,       // 95% penalty
+  "under-1-min": 1.0, // No penalty
+  "5-min": 0.9, // 10% penalty
+  "30-min": 0.7, // 30% penalty
+  "1-hour": 0.5, // 50% penalty
+  "4-hour": 0.2, // 80% penalty (industry avg)
+  "24-hour": 0.05, // 95% penalty
 };
 
 /**
@@ -68,20 +68,14 @@ function estimateAICost(teamSize: number, monthlyLeads: number): number {
   // But cap at team size (won't need more AI agents than human agents)
   const effectiveAgents = Math.min(agentsNeeded, Math.ceil(teamSize / 2));
 
-  return baseAgentCost + ((effectiveAgents - 1) * additionalAgentCost);
+  return baseAgentCost + (effectiveAgents - 1) * additionalAgentCost;
 }
 
 /**
  * Main calculation function
  */
 export function calculateCommissionLoss(input: TeamCalculatorInput): CalculatorResults {
-  const {
-    teamSize,
-    monthlyLeads,
-    avgCommission,
-    closeRate,
-    responseTime,
-  } = input;
+  const { teamSize, monthlyLeads, avgCommission, closeRate, responseTime } = input;
 
   // Convert close rate from percentage to decimal
   const closeRateDecimal = closeRate / 100;

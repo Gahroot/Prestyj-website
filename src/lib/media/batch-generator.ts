@@ -33,6 +33,7 @@ export async function generateBatch(config: BatchConfig): Promise<BatchReport> {
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i];
+    if (!item) continue;
     const outputPath = `public/images/${category}/${item.filename}`;
 
     // Update progress callback
@@ -40,11 +41,7 @@ export async function generateBatch(config: BatchConfig): Promise<BatchReport> {
       onProgress(i, items.length, item.filename);
     }
 
-    const result = await generateAndDownload(
-      item.prompt,
-      item.aspectRatio || "16:9",
-      outputPath
-    );
+    const result = await generateAndDownload(item.prompt, item.aspectRatio || "16:9", outputPath);
 
     results.push(result);
 
@@ -69,7 +66,7 @@ export async function generateBatch(config: BatchConfig): Promise<BatchReport> {
  */
 export async function generateBatchParallel(
   config: BatchConfig,
-  concurrency = 3
+  concurrency = 3,
 ): Promise<BatchReport> {
   const { category, items, onProgress } = config;
   const results: GenerationResult[] = [];
@@ -86,14 +83,14 @@ export async function generateBatchParallel(
         const result = await generateAndDownload(
           item.prompt,
           item.aspectRatio || "16:9",
-          outputPath
+          outputPath,
         );
         completed++;
         if (onProgress) {
           onProgress(completed, items.length, item.filename);
         }
         return result;
-      })
+      }),
     );
 
     results.push(...chunkResults);

@@ -45,8 +45,7 @@ export async function GET() {
     },
     stats: {
       clicks30d,
-      totalConversions: conversions.filter((c) => c.status !== "REFUNDED")
-        .length,
+      totalConversions: conversions.filter((c) => c.status !== "REFUNDED").length,
       pendingCents,
       paidCents,
     },

@@ -23,9 +23,7 @@ export function buildPrompt(request: PromptRequest): string {
   } = request;
 
   const isGraphic =
-    category === "result-graphic" ||
-    category === "icon-badge" ||
-    category === "mascot";
+    category === "result-graphic" || category === "icon-badge" || category === "mascot";
 
   const parts: string[] = [];
 
@@ -39,9 +37,7 @@ export function buildPrompt(request: PromptRequest): string {
 
   // Photography style (skip for graphics)
   if (!isGraphic) {
-    parts.push(
-      `${PHOTOGRAPHY_STYLE.aesthetic} aesthetic, ${PHOTOGRAPHY_STYLE.lighting}`
-    );
+    parts.push(`${PHOTOGRAPHY_STYLE.aesthetic} aesthetic, ${PHOTOGRAPHY_STYLE.lighting}`);
   }
 
   // Category-specific composition
@@ -70,7 +66,7 @@ export function buildPrompt(request: PromptRequest): string {
 export function buildTestimonialPrompt(
   name: string,
   role: string,
-  industry: PromptRequest["industry"] = "general"
+  industry: PromptRequest["industry"] = "general",
 ): string {
   return buildPrompt({
     category: "testimonial-portrait",
@@ -83,10 +79,7 @@ export function buildTestimonialPrompt(
 /**
  * Builds a prompt for how-it-works step illustrations.
  */
-export function buildHowItWorksPrompt(
-  stepTitle: string,
-  stepDescription: string
-): string {
+export function buildHowItWorksPrompt(stepTitle: string, stepDescription: string): string {
   return buildPrompt({
     category: "industry-shot",
     subject: `${stepTitle}: ${stepDescription}`,
@@ -100,7 +93,7 @@ export function buildHowItWorksPrompt(
  */
 export function buildBlogThumbnailPrompt(
   title: string,
-  industry: PromptRequest["industry"] = "general"
+  industry: PromptRequest["industry"] = "general",
 ): string {
   return buildPrompt({
     category: "blog-thumbnail",

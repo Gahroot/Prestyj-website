@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import {
-  foundingCohortSchema,
-  isQualified,
-} from "@/lib/validations/founding-cohort-schemas";
+import { foundingCohortSchema, isQualified } from "@/lib/validations/founding-cohort-schemas";
 import { FOUNDING_COHORT, isCohortOpen } from "@/lib/founding-cohort";
 
 const API_BASE_URL = "https://backend-api-production-b536.up.railway.app";
@@ -33,8 +30,7 @@ export async function POST(request: NextRequest) {
       {
         approved: false,
         reason: "cohort_full",
-        message:
-          "All founding cohort spots are filled. You can join the regular pricing below.",
+        message: "All founding cohort spots are filled. You can join the regular pricing below.",
       },
       { status: 200 },
     );

@@ -11,8 +11,7 @@ import {
 export const runtime = "nodejs";
 export const maxDuration = 30;
 
-const RESEND_FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
 const INTAKE_NOTIFICATION_TO =
   process.env.INTAKE_NOTIFICATION_EMAIL ??
   process.env.RESEND_NOTIFICATION_EMAIL ??
@@ -22,7 +21,7 @@ const INTAKE_STORAGE_DIR =
 
 function labelFor<T extends string>(
   value: T,
-  options: ReadonlyArray<{ value: string; label: string }>
+  options: ReadonlyArray<{ value: string; label: string }>,
 ): string {
   return options.find((o) => o.value === value)?.label ?? value;
 }
@@ -47,7 +46,7 @@ function row(label: string, value: string | undefined | null): string {
 
 async function persistSubmission(
   id: string,
-  data: Record<string, unknown>
+  data: Record<string, unknown>,
 ): Promise<string | null> {
   // Best-effort write to disk for local/self-hosted environments.
   // On read-only serverless filesystems this will fail silently — the
@@ -81,19 +80,15 @@ export async function POST(request: NextRequest) {
           message: i.message,
         })),
       },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
   const data = parsed.data;
   const submittedAt = new Date().toISOString();
-  const submissionId = `intake_${Date.now()}_${Math.random()
-    .toString(36)
-    .slice(2, 8)}`;
+  const submissionId = `intake_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 
-  const platformsLabel = data.currentPlatforms
-    .map((p) => labelFor(p, PLATFORM_OPTIONS))
-    .join(", ");
+  const platformsLabel = data.currentPlatforms.map((p) => labelFor(p, PLATFORM_OPTIONS)).join(", ");
   const industryLabel = labelFor(data.industry, INDUSTRY_OPTIONS);
 
   const handles = Object.entries(data.socialHandles)
@@ -159,18 +154,19 @@ export async function POST(request: NextRequest) {
       replyTo: data.contactEmail,
       subject,
       html,
-      attachments,
+      ...(attachments !== undefined && { attachments }),
     });
 
+    const firstNameForSubject = data.contactName.split(" ")[0] ?? data.contactName;
     // Confirmation to the submitter.
     await getResend().emails.send({
       from: RESEND_FROM_EMAIL,
       to: data.contactEmail,
-      subject: `We got your brand kit, ${data.contactName.split(" ")[0]} — what happens next`,
+      subject: `We got your brand kit, ${firstNameForSubject} — what happens next`,
       html: `
         <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:520px;margin:0 auto;padding:24px;color:#111;">
           <h2 style="margin:0 0 12px;">Your brand kit is in 🎉</h2>
-          <p>Hey ${escapeHtml(data.contactName.split(" ")[0])}, thanks for sending over the details for <strong>${escapeHtml(data.businessName)}</strong>. Our team will review your brand kit before our call so we can hit the ground running.</p>
+          <p>Hey ${escapeHtml(firstNameForSubject)}, thanks for sending over the details for <strong>${escapeHtml(data.businessName)}</strong>. Our team will review your brand kit before our call so we can hit the ground running.</p>
           <p><strong>Next step:</strong> book a 30-minute strategy call so we can walk you through your custom plan and get you live in 24 hours.</p>
           <p style="margin:24px 0;">
             <a href="https://prestyj.com/book-demo?intake=success" style="display:inline-block;background:#7058e3;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:600;">Book your strategy call</a>
@@ -187,12 +183,12 @@ export async function POST(request: NextRequest) {
         message: err instanceof Error ? err.message : "Unknown error",
         submissionId,
       },
-      { status: 502 }
+      { status: 502 },
     );
   }
 
   console.log(
-    `[content-engine-intake] received submission ${submissionId} for ${data.businessName}`
+    `[content-engine-intake] received submission ${submissionId} for ${data.businessName}`,
   );
 
   return NextResponse.json({

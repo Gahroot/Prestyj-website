@@ -5,8 +5,7 @@ import crypto from "crypto";
 
 export const runtime = "nodejs";
 
-const RESEND_FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://prestyj.com";
 
 export async function POST(request: NextRequest) {

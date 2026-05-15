@@ -40,21 +40,14 @@ export async function POST(request: NextRequest) {
     payoutNotes,
   } = body as Record<string, unknown>;
 
-  if (
-    typeof name !== "string" ||
-    typeof email !== "string" ||
-    typeof slug !== "string"
-  ) {
-    return NextResponse.json(
-      { error: "name, email, and slug are required" },
-      { status: 400 }
-    );
+  if (typeof name !== "string" || typeof email !== "string" || typeof slug !== "string") {
+    return NextResponse.json({ error: "name, email, and slug are required" }, { status: 400 });
   }
 
   if (!/^[a-z0-9-]+$/.test(slug)) {
     return NextResponse.json(
       { error: "slug must be lowercase alphanumeric with hyphens only" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 
@@ -65,20 +58,15 @@ export async function POST(request: NextRequest) {
         email: email.trim().toLowerCase(),
         slug: slug.trim().toLowerCase(),
         commissionRate: typeof commissionRate === "number" ? commissionRate : 0.2,
-        payoutEmail:
-          typeof payoutEmail === "string" ? payoutEmail.trim() : undefined,
-        payoutNotes:
-          typeof payoutNotes === "string" ? payoutNotes.trim() : undefined,
+        ...(typeof payoutEmail === "string" && { payoutEmail: payoutEmail.trim() }),
+        ...(typeof payoutNotes === "string" && { payoutNotes: payoutNotes.trim() }),
       },
     });
     return NextResponse.json({ affiliate }, { status: 201 });
   } catch (err: unknown) {
     const msg = err instanceof Error ? err.message : String(err);
     if (msg.includes("Unique constraint")) {
-      return NextResponse.json(
-        { error: "Email or slug already in use" },
-        { status: 409 }
-      );
+      return NextResponse.json({ error: "Email or slug already in use" }, { status: 409 });
     }
     throw err;
   }
@@ -98,16 +86,10 @@ export async function PATCH(request: NextRequest) {
     where: { id },
     data: {
       ...(typeof data.name === "string" ? { name: data.name } : {}),
-      ...(typeof data.commissionRate === "number"
-        ? { commissionRate: data.commissionRate }
-        : {}),
+      ...(typeof data.commissionRate === "number" ? { commissionRate: data.commissionRate } : {}),
       ...(typeof data.active === "boolean" ? { active: data.active } : {}),
-      ...(typeof data.payoutEmail === "string"
-        ? { payoutEmail: data.payoutEmail }
-        : {}),
-      ...(typeof data.payoutNotes === "string"
-        ? { payoutNotes: data.payoutNotes }
-        : {}),
+      ...(typeof data.payoutEmail === "string" ? { payoutEmail: data.payoutEmail } : {}),
+      ...(typeof data.payoutNotes === "string" ? { payoutNotes: data.payoutNotes } : {}),
     },
   });
 

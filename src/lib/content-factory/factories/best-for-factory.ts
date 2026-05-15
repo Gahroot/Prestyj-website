@@ -39,15 +39,13 @@ interface BestForFactoryInput {
   cta?: Partial<BestForPageContent["cta"]>;
 }
 
-export function createBestForPage(
-  input: BestForFactoryInput
-): BestForPageContent {
+export function createBestForPage(input: BestForFactoryInput): BestForPageContent {
   const heroPattern = input.hero.pattern || "AI_AGENTS_BUILT_FOR";
   const heroSection = buildHeroWithPattern(
     heroPattern,
     input.hero.headlineAccent,
     input.hero.badge,
-    input.hero.subheadline
+    input.hero.subheadline,
   );
 
   const comparisonSection = {

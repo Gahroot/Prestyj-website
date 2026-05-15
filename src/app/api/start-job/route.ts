@@ -4,10 +4,8 @@ import { getBatchTierByPriceId } from "@/lib/batch-tiers";
 
 export const runtime = "nodejs";
 
-const SCRIPT_GEN_URL =
-  "https://script-gen-production-5b56.up.railway.app/generate";
-const LEADS_URL =
-  "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD";
+const SCRIPT_GEN_URL = "https://script-gen-production-5b56.up.railway.app/generate";
+const LEADS_URL = "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD";
 
 type ScriptPayload = {
   business_name: string;
@@ -43,26 +41,17 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing session_id" }, { status: 400 });
   }
   if (!scriptPayload || typeof scriptPayload !== "object") {
-    return NextResponse.json(
-      { error: "Missing script_payload" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Missing script_payload" }, { status: 400 });
   }
 
   const session = await getPaidSession(sessionId);
   if (!session) {
-    return NextResponse.json(
-      { error: "Session not found or not paid" },
-      { status: 402 }
-    );
+    return NextResponse.json({ error: "Session not found or not paid" }, { status: 402 });
   }
 
   const tier = getBatchTierByPriceId(session.priceId);
   if (!tier) {
-    return NextResponse.json(
-      { error: "Session does not match a known tier" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Session does not match a known tier" }, { status: 400 });
   }
 
   // Fire lead capture to CRM (non-blocking)
@@ -70,9 +59,7 @@ export async function POST(request: NextRequest) {
     `[PAID — ${tier.name} — Stripe session ${session.sessionId}]`,
     `Business: ${scriptPayload.business_name}`,
     scriptPayload.city ? `City: ${scriptPayload.city}` : null,
-    scriptPayload.service_area
-      ? `Service Area: ${scriptPayload.service_area}`
-      : null,
+    scriptPayload.service_area ? `Service Area: ${scriptPayload.service_area}` : null,
     "",
     "--- PAIN POINTS & SOLUTIONS ---",
     scriptPayload.pain_points_solutions
@@ -93,16 +80,12 @@ export async function POST(request: NextRequest) {
     "",
     "--- URLS ---",
     `Website: ${scriptPayload.website_url}`,
-    scriptPayload.landing_page_url
-      ? `Landing Page: ${scriptPayload.landing_page_url}`
-      : null,
+    scriptPayload.landing_page_url ? `Landing Page: ${scriptPayload.landing_page_url}` : null,
   ]
     .filter((line): line is string => line !== null)
     .join("\n");
 
-  const [firstName = "", ...rest] = scriptPayload.contact_name
-    .trim()
-    .split(/\s+/);
+  const [firstName = "", ...rest] = scriptPayload.contact_name.trim().split(/\s+/);
   const lastName = rest.join(" ");
 
   fetch(LEADS_URL, {
@@ -133,18 +116,12 @@ export async function POST(request: NextRequest) {
 
     if (scriptRes.status !== 202) {
       console.error("[start-job] script-gen non-202:", scriptRes.status, scriptBody);
-      return NextResponse.json(
-        { error: "Script generation did not start" },
-        { status: 502 }
-      );
+      return NextResponse.json({ error: "Script generation did not start" }, { status: 502 });
     }
 
     return NextResponse.json(scriptBody, { status: 202 });
   } catch (error) {
     console.error("[start-job] script-gen error:", error);
-    return NextResponse.json(
-      { error: "Script generation is unavailable" },
-      { status: 502 }
-    );
+    return NextResponse.json({ error: "Script generation is unavailable" }, { status: 502 });
   }
 }

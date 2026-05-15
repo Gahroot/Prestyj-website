@@ -40,7 +40,7 @@ export const businessBasicsSchema = z.object({
       "restaurant",
       "other",
     ],
-    { message: "Please select your industry" }
+    { message: "Please select your industry" },
   ),
   website: z
     .string()
@@ -51,17 +51,14 @@ export const businessBasicsSchema = z.object({
     .transform((v) => (v ? v : undefined))
     .refine(
       (v) => v === undefined || /^https?:\/\/[^\s]+\.[^\s]+/.test(v),
-      "Please enter a valid URL (https://…)"
+      "Please enter a valid URL (https://…)",
     ),
   contactName: z.string().trim().min(2, "Your name is required").max(80),
   contactEmail: z
     .string()
     .trim()
     .toLowerCase()
-    .refine(
-      (v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
-      "Please enter a valid email"
-    ),
+    .refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Please enter a valid email"),
 });
 
 /* -------------------------------------------------------------------------- */
@@ -105,11 +102,7 @@ export type PlatformValue = (typeof PLATFORM_OPTIONS)[number]["value"];
 
 export const platformsSocialSchema = z.object({
   currentPlatforms: z
-    .array(
-      z.enum(
-        PLATFORM_OPTIONS.map((p) => p.value) as [PlatformValue, ...PlatformValue[]]
-      )
-    )
+    .array(z.enum(PLATFORM_OPTIONS.map((p) => p.value) as [PlatformValue, ...PlatformValue[]]))
     .min(1, "Select at least one platform you currently use"),
   socialHandles: z
     .object({
@@ -122,13 +115,9 @@ export const platformsSocialSchema = z.object({
       x: optionalTrimmed(120),
       pinterest: optionalTrimmed(120),
     })
-    .refine(
-      (handles) =>
-        Object.values(handles).every(
-          (v) => !v || URL_OR_HANDLE.test(v)
-        ),
-      { message: "Handles can include letters, numbers, and . _ - / : @ #" }
-    ),
+    .refine((handles) => Object.values(handles).every((v) => !v || URL_OR_HANDLE.test(v)), {
+      message: "Handles can include letters, numbers, and . _ - / : @ #",
+    }),
 });
 
 /* -------------------------------------------------------------------------- */
@@ -159,13 +148,10 @@ export const brandKitSchema = z.object({
   logoDataUrl: z
     .string()
     .optional()
-    .refine(
-      (v) => !v || v.startsWith("data:image/"),
-      "Logo must be an image file"
-    )
+    .refine((v) => !v || v.startsWith("data:image/"), "Logo must be an image file")
     .refine(
       (v) => !v || v.length < 4 * 1024 * 1024 * 1.4, // ~4MB after base64 expansion
-      "Logo file is too large (max 3MB)"
+      "Logo file is too large (max 3MB)",
     ),
   logoFileName: optionalTrimmed(200),
   logoNotes: optionalTrimmed(500),
@@ -180,13 +166,9 @@ export const contentEngineIntakeSchema = businessBasicsSchema
   .extend(platformsSocialSchema.shape)
   .extend(brandKitSchema.shape);
 
-export type ContentEngineIntakeInput = z.input<
-  typeof contentEngineIntakeSchema
->;
+export type ContentEngineIntakeInput = z.input<typeof contentEngineIntakeSchema>;
 
-export type ContentEngineIntakeOutput = z.output<
-  typeof contentEngineIntakeSchema
->;
+export type ContentEngineIntakeOutput = z.output<typeof contentEngineIntakeSchema>;
 
 export const INDUSTRY_OPTIONS = [
   { value: "real-estate", label: "Real Estate" },

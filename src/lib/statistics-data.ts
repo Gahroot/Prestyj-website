@@ -57,8 +57,7 @@ const speedToLeadStats: Statistic[] = [
   {
     id: "stl-78pct",
     value: "78%",
-    description:
-      "78% of B2B customers buy from the vendor that responds first.",
+    description: "78% of B2B customers buy from the vendor that responds first.",
     source: {
       name: "LeadConnect / Chili Piper",
       year: "2025",
@@ -77,8 +76,7 @@ const speedToLeadStats: Statistic[] = [
   {
     id: "stl-8x-drop",
     value: "8×",
-    description:
-      "Conversion rates drop 8× after just 5 minutes of delay in lead response.",
+    description: "Conversion rates drop 8× after just 5 minutes of delay in lead response.",
     source: {
       name: "InsideSales (55M activities, 5.7M leads, 400+ companies)",
       year: "2021, re-cited 2024–2026",
@@ -127,8 +125,7 @@ const speedToLeadStats: Statistic[] = [
   {
     id: "stl-82pct-10min",
     value: "82%",
-    description:
-      "82% of consumers expect a response within 10 minutes of submitting an inquiry.",
+    description: "82% of consumers expect a response within 10 minutes of submitting an inquiry.",
     source: {
       name: "HubSpot",
       year: "2024–2025",
@@ -137,8 +134,7 @@ const speedToLeadStats: Statistic[] = [
   {
     id: "stl-1pct-b2b",
     value: "1%",
-    description:
-      "Only 1% of B2B companies respond to leads in under 5 minutes.",
+    description: "Only 1% of B2B companies respond to leads in under 5 minutes.",
     source: {
       name: "Amplemarket",
       year: "2024",
@@ -182,8 +178,7 @@ const videoAdStats: Statistic[] = [
   {
     id: "vid-89pct",
     value: "89%",
-    description:
-      "89% of businesses now use video as a marketing tool, up from 63% five years ago.",
+    description: "89% of businesses now use video as a marketing tool, up from 63% five years ago.",
     source: {
       name: "Wyzowl Video Marketing Statistics",
       year: "2025",
@@ -193,8 +188,7 @@ const videoAdStats: Statistic[] = [
   {
     id: "vid-93pct-roi",
     value: "93%",
-    description:
-      "93% of marketers report a strong ROI from video marketing content.",
+    description: "93% of marketers report a strong ROI from video marketing content.",
     source: {
       name: "Wyzowl",
       year: "2025",
@@ -213,8 +207,7 @@ const videoAdStats: Statistic[] = [
   {
     id: "vid-64pct-purchase",
     value: "64%",
-    description:
-      "64% of consumers make a purchase after watching branded social media videos.",
+    description: "64% of consumers make a purchase after watching branded social media videos.",
     source: {
       name: "WordStream",
       year: "2024",
@@ -223,8 +216,7 @@ const videoAdStats: Statistic[] = [
   {
     id: "vid-300pct-email",
     value: "+300%",
-    description:
-      "Including video in email campaigns increases click-through rates by 300%.",
+    description: "Including video in email campaigns increases click-through rates by 300%.",
     source: {
       name: "WordStream / Single Grain",
       year: "2024",
@@ -253,8 +245,7 @@ const videoAdStats: Statistic[] = [
   {
     id: "vid-mobile-28pct",
     value: "+28%",
-    description:
-      "Mobile video ads generate 28% higher engagement than desktop video ads.",
+    description: "Mobile video ads generate 28% higher engagement than desktop video ads.",
     source: {
       name: "Zebracat",
       year: "2025",
@@ -328,8 +319,7 @@ const aiAdoptionStats: Statistic[] = [
   {
     id: "ai-37x-quota",
     value: "3.7×",
-    description:
-      "Sellers who partner with AI are 3.7× more likely to meet their sales quota.",
+    description: "Sellers who partner with AI are 3.7× more likely to meet their sales quota.",
     source: {
       name: "Gartner",
       year: "2025",
@@ -443,8 +433,7 @@ const leadConversionStats: Statistic[] = [
   {
     id: "lc-60x-1hr",
     value: "60×",
-    description:
-      "You are 60× more likely to qualify a lead within 1 hour vs. waiting 24 hours.",
+    description: "You are 60× more likely to qualify a lead within 1 hour vs. waiting 24 hours.",
     source: {
       name: "Teamgate (citing HBR)",
       year: "2025",
@@ -483,8 +472,7 @@ const leadConversionStats: Statistic[] = [
   {
     id: "lc-57pct-week",
     value: "57%",
-    description:
-      "57% of companies take a full week or more to respond to inbound leads.",
+    description: "57% of companies take a full week or more to respond to inbound leads.",
     source: {
       name: "InsideSales (via Verse.ai)",
       year: "2025",
@@ -493,8 +481,7 @@ const leadConversionStats: Statistic[] = [
   {
     id: "lc-37pct-1hr",
     value: "37%",
-    description:
-      "Only 37% of businesses respond to leads within the first hour.",
+    description: "Only 37% of businesses respond to leads within the first hour.",
     source: {
       name: "Harvard Business Review",
       year: "2011, re-cited 2024–2025",
@@ -578,8 +565,7 @@ const industryStats: Statistic[] = [
   {
     id: "ind-ctr-66",
     value: "6.66%",
-    description:
-      "The average click-through rate across all Google Ads industries in 2025.",
+    description: "The average click-through rate across all Google Ads industries in 2025.",
     source: {
       name: "WordStream/LocaliQ",
       year: "2025",
@@ -588,8 +574,7 @@ const industryStats: Statistic[] = [
   {
     id: "ind-cvr-752",
     value: "7.52%",
-    description:
-      "The average conversion rate across all Google Ads industries in 2025.",
+    description: "The average conversion rate across all Google Ads industries in 2025.",
     source: {
       name: "WordStream/LocaliQ",
       year: "2025",
@@ -598,8 +583,7 @@ const industryStats: Statistic[] = [
   {
     id: "ind-cpc-526",
     value: "$5.26",
-    description:
-      "The average cost per click in Google Ads across all industries in 2025.",
+    description: "The average cost per click in Google Ads across all industries in 2025.",
     source: {
       name: "WordStream/LocaliQ",
       year: "2025",
@@ -684,10 +668,7 @@ export const statCategories: StatCategory[] = [
 
 // ─── Total stat count for hero display ────────────────────────────────────────
 
-export const totalStatCount = statCategories.reduce(
-  (sum, cat) => sum + cat.statistics.length,
-  0,
-);
+export const totalStatCount = statCategories.reduce((sum, cat) => sum + cat.statistics.length, 0);
 
 // ─── FAQs ─────────────────────────────────────────────────────────────────────
 

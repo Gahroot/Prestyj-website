@@ -57,9 +57,7 @@ const rateLimiter = new RateLimiter();
 function getApiKey(): string {
   const key = process.env.ZIMAGE_API_KEY;
   if (!key) {
-    throw new Error(
-      "ZIMAGE_API_KEY is not set. Add it to .env.local"
-    );
+    throw new Error("ZIMAGE_API_KEY is not set. Add it to .env.local");
   }
   return key;
 }
@@ -82,10 +80,7 @@ function mapAspectRatio(ratio: AspectRatio): string {
  * Creates an image generation task via Z-Image API.
  * Returns the taskId for polling.
  */
-export async function generateImage(
-  prompt: string,
-  aspectRatio: AspectRatio
-): Promise<string> {
+export async function generateImage(prompt: string, aspectRatio: AspectRatio): Promise<string> {
   await rateLimiter.acquire();
 
   const response = await fetch(`${BASE_URL}/createTask`, {
@@ -104,9 +99,7 @@ export async function generateImage(
   });
 
   if (!response.ok) {
-    throw new Error(
-      `Z-Image API error: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Z-Image API error: ${response.status} ${response.statusText}`);
   }
 
   const result = (await response.json()) as ZImageCreateResponse;
@@ -129,19 +122,14 @@ export async function waitForCompletion(taskId: string): Promise<string> {
     await new Promise((resolve) => setTimeout(resolve, delayMs));
     await rateLimiter.acquire();
 
-    const response = await fetch(
-      `${BASE_URL}/recordInfo?taskId=${encodeURIComponent(taskId)}`,
-      {
-        headers: {
-          Authorization: `Bearer ${getApiKey()}`,
-        },
-      }
-    );
+    const response = await fetch(`${BASE_URL}/recordInfo?taskId=${encodeURIComponent(taskId)}`, {
+      headers: {
+        Authorization: `Bearer ${getApiKey()}`,
+      },
+    });
 
     if (!response.ok) {
-      throw new Error(
-        `Z-Image poll error: ${response.status} ${response.statusText}`
-      );
+      throw new Error(`Z-Image poll error: ${response.status} ${response.statusText}`);
     }
 
     const result = (await response.json()) as ZImageDetailResponse;
@@ -153,7 +141,11 @@ export async function waitForCompletion(taskId: string): Promise<string> {
         const parsed = JSON.parse(result.data.resultJson) as {
           resultUrls: string[];
         };
-        return parsed.resultUrls[0];
+        const firstUrl = parsed.resultUrls[0];
+        if (!firstUrl) {
+          throw new Error(`Z-Image success but empty resultUrls for task ${taskId}`);
+        }
+        return firstUrl;
       }
       if (result.data.imageUrl) {
         return result.data.imageUrl;
@@ -169,23 +161,16 @@ export async function waitForCompletion(taskId: string): Promise<string> {
     delayMs = Math.min(delayMs * 1.5, maxDelayMs);
   }
 
-  throw new Error(
-    `Z-Image generation timed out after ${maxAttempts} attempts for task ${taskId}`
-  );
+  throw new Error(`Z-Image generation timed out after ${maxAttempts} attempts for task ${taskId}`);
 }
 
 /**
  * Downloads an image from a URL and saves it to the specified path.
  */
-export async function downloadImage(
-  imageUrl: string,
-  outputPath: string
-): Promise<void> {
+export async function downloadImage(imageUrl: string, outputPath: string): Promise<void> {
   const response = await fetch(imageUrl);
   if (!response.ok) {
-    throw new Error(
-      `Failed to download image: ${response.status} ${response.statusText}`
-    );
+    throw new Error(`Failed to download image: ${response.status} ${response.statusText}`);
   }
 
   const buffer = Buffer.from(await response.arrayBuffer());
@@ -202,7 +187,7 @@ export async function downloadImage(
 export async function generateAndDownload(
   prompt: string,
   aspectRatio: AspectRatio,
-  outputPath: string
+  outputPath: string,
 ): Promise<GenerationResult> {
   try {
     const taskId = await generateImage(prompt, aspectRatio);

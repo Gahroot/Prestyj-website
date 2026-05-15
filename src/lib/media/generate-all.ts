@@ -21,18 +21,30 @@ import { existsSync } from "node:fs";
 // Configuration
 // ---------------------------------------------------------------------------
 
-const INDUSTRY_MAP: Record<string, "roofing" | "hvac" | "plumbing" | "solar" | "real-estate" | "mortgage" | "dental" | "legal" | "insurance" | "general"> = {
-  "roofing": "roofing",
-  "hvac": "hvac",
-  "plumbing": "plumbing",
-  "solar": "solar",
+const INDUSTRY_MAP: Record<
+  string,
+  | "roofing"
+  | "hvac"
+  | "plumbing"
+  | "solar"
+  | "real-estate"
+  | "mortgage"
+  | "dental"
+  | "legal"
+  | "insurance"
+  | "general"
+> = {
+  roofing: "roofing",
+  hvac: "hvac",
+  plumbing: "plumbing",
+  solar: "solar",
   "solar-lead-response": "solar",
   "real-estate-teams": "real-estate",
   "real-estate-franchises": "real-estate",
   "real-estate-investors": "real-estate",
   "real-estate-wholesalers": "real-estate",
   "mortgage-brokers": "mortgage",
-  "dental": "dental",
+  dental: "dental",
   "ai-voice-receptionist-dental": "dental",
   "law-firms": "legal",
   "ai-voice-receptionist-legal": "legal",
@@ -42,7 +54,19 @@ const INDUSTRY_MAP: Record<string, "roofing" | "hvac" | "plumbing" | "solar" | "
   "ai-voice-receptionist-medical": "dental",
 };
 
-function mapIndustry(slug: string): "roofing" | "hvac" | "plumbing" | "solar" | "real-estate" | "mortgage" | "dental" | "legal" | "insurance" | "general" {
+function mapIndustry(
+  slug: string,
+):
+  | "roofing"
+  | "hvac"
+  | "plumbing"
+  | "solar"
+  | "real-estate"
+  | "mortgage"
+  | "dental"
+  | "legal"
+  | "insurance"
+  | "general" {
   return INDUSTRY_MAP[slug] || "general";
 }
 
@@ -51,22 +75,61 @@ function mapIndustry(slug: string): "roofing" | "hvac" | "plumbing" | "solar" | 
 // ---------------------------------------------------------------------------
 
 const BEST_FOR_SLUGS = [
-  "solo-agents", "real-estate-teams", "isa-replacement", "new-agents",
-  "real-estate-franchises", "regional-brokerage-networks", "pe-backed-platforms",
-  "commercial-real-estate", "real-estate-investors", "insurance-agencies",
-  "insurance-carriers", "hvac", "mortgage-brokers", "financial-advisors",
-  "wealth-management-firms", "roofing", "property-managers", "solar",
-  "dental", "done-for-you-ai", "ai-lead-response", "ai-voice-qualification",
-  "ai-appointment-setting", "custom-ai-development", "ai-voice-receptionist",
-  "ai-voice-receptionist-dental", "ai-voice-receptionist-legal",
-  "ai-voice-receptionist-medical", "ai-voice-receptionist-insurance",
-  "law-firms", "plastic-surgery", "plumbing", "auto-dealerships",
-  "real-estate-wholesalers", "contractors", "real-estate-coach", "fintech",
-  "accounting-firms", "veterinary-clinics", "restaurants", "salons-and-spas",
-  "gyms-and-fitness-centers", "retail-stores", "mental-health-clinics",
-  "electricians", "auto-repair-shops", "pest-control", "senior-care",
-  "window-and-door-manufacturers", "landscaping-lawn-care", "painting-contractors",
-  "movers", "siding-contractors", "garage-door", "flooring-contractors",
+  "solo-agents",
+  "real-estate-teams",
+  "isa-replacement",
+  "new-agents",
+  "real-estate-franchises",
+  "regional-brokerage-networks",
+  "pe-backed-platforms",
+  "commercial-real-estate",
+  "real-estate-investors",
+  "insurance-agencies",
+  "insurance-carriers",
+  "hvac",
+  "mortgage-brokers",
+  "financial-advisors",
+  "wealth-management-firms",
+  "roofing",
+  "property-managers",
+  "solar",
+  "dental",
+  "done-for-you-ai",
+  "ai-lead-response",
+  "ai-voice-qualification",
+  "ai-appointment-setting",
+  "custom-ai-development",
+  "ai-voice-receptionist",
+  "ai-voice-receptionist-dental",
+  "ai-voice-receptionist-legal",
+  "ai-voice-receptionist-medical",
+  "ai-voice-receptionist-insurance",
+  "law-firms",
+  "plastic-surgery",
+  "plumbing",
+  "auto-dealerships",
+  "real-estate-wholesalers",
+  "contractors",
+  "real-estate-coach",
+  "fintech",
+  "accounting-firms",
+  "veterinary-clinics",
+  "restaurants",
+  "salons-and-spas",
+  "gyms-and-fitness-centers",
+  "retail-stores",
+  "mental-health-clinics",
+  "electricians",
+  "auto-repair-shops",
+  "pest-control",
+  "senior-care",
+  "window-and-door-manufacturers",
+  "landscaping-lawn-care",
+  "painting-contractors",
+  "movers",
+  "siding-contractors",
+  "garage-door",
+  "flooring-contractors",
 ];
 
 async function generateBestForHeroes(): Promise<void> {
@@ -74,6 +137,7 @@ async function generateBestForHeroes(): Promise<void> {
 
   for (let i = 0; i < BEST_FOR_SLUGS.length; i++) {
     const slug = BEST_FOR_SLUGS[i];
+    if (!slug) continue;
     const industry = mapIndustry(slug);
     const filename = `hero-best-for-${slug}.png`;
     const outputPath = `public/images/hero/${filename}`;
@@ -105,18 +169,26 @@ async function generateBestForHeroes(): Promise<void> {
 
 function getIndustrySubject(slug: string): string {
   const subjects: Record<string, string> = {
-    "roofing": "Roofer on residential jobsite during golden hour, examining storm damage, hard hat visible, suburban neighborhood background",
-    "hvac": "HVAC technician working on air conditioning unit, residential exterior, tools visible",
-    "plumbing": "Plumber under sink with wrench, professional appearance, residential bathroom",
-    "solar": "Solar panel installer on rooftop, bright sunny day, safety harness, modern home",
-    "solo-agents": "Real estate agent making calls from home office, laptop open, motivated expression",
-    "real-estate-teams": "Real estate team huddling before open house, diverse group, front of property",
-    "mortgage-brokers": "Loan officer reviewing documents with client at desk, warm office lighting",
-    "dental": "Dentist consulting with patient in modern clinic, friendly professional manner",
-    "law-firms": "Attorney meeting with client in office, bookshelves background, professional attire",
+    roofing:
+      "Roofer on residential jobsite during golden hour, examining storm damage, hard hat visible, suburban neighborhood background",
+    hvac: "HVAC technician working on air conditioning unit, residential exterior, tools visible",
+    plumbing: "Plumber under sink with wrench, professional appearance, residential bathroom",
+    solar: "Solar panel installer on rooftop, bright sunny day, safety harness, modern home",
+    "solo-agents":
+      "Real estate agent making calls from home office, laptop open, motivated expression",
+    "real-estate-teams":
+      "Real estate team huddling before open house, diverse group, front of property",
+    "mortgage-brokers":
+      "Loan officer reviewing documents with client at desk, warm office lighting",
+    dental: "Dentist consulting with patient in modern clinic, friendly professional manner",
+    "law-firms":
+      "Attorney meeting with client in office, bookshelves background, professional attire",
     "insurance-agencies": "Insurance agent reviewing policy documents with family at kitchen table",
   };
-  return subjects[slug] || "Business owner in their element, confident and professional, natural work environment";
+  return (
+    subjects[slug] ||
+    "Business owner in their element, confident and professional, natural work environment"
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -135,6 +207,7 @@ async function generateBlogThumbnails(): Promise<void> {
 
   for (let i = 0; i < BLOG_POSTS.length; i++) {
     const post = BLOG_POSTS[i];
+    if (!post) continue;
     const filename = `${post.slug}.jpg`;
     const outputPath = `public/images/blog/${filename}`;
 
@@ -143,7 +216,7 @@ async function generateBlogThumbnails(): Promise<void> {
       continue;
     }
 
-    const title = post.slug.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase());
+    const title = post.slug.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
     const prompt = buildPrompt({
       category: "blog-thumbnail",
       subject: `Editorial image representing: ${title}`,
@@ -188,7 +261,7 @@ async function generateMascot(): Promise<void> {
     const result = await generateAndDownload(
       prompts[i] + ". NOT: robot, face, eyes, humanoid, cartoon, character",
       "1:1",
-      outputPath
+      outputPath,
     );
 
     if (result.success) {
@@ -217,6 +290,7 @@ async function generateBadges(): Promise<void> {
 
   for (let i = 0; i < badges.length; i++) {
     const badge = badges[i];
+    if (!badge) continue;
     const filename = `badge-${badge.slug}.png`;
     const outputPath = `public/images/badges/${filename}`;
 
@@ -255,6 +329,7 @@ async function generateResults(): Promise<void> {
 
   for (let i = 0; i < results.length; i++) {
     const result = results[i];
+    if (!result) continue;
     const filename = `result-${result.slug}.png`;
     const outputPath = `public/images/results/${filename}`;
 
@@ -312,7 +387,9 @@ async function main(): Promise<void> {
       break;
     default:
       console.log(`Unknown category: ${category}`);
-      console.log("Usage: npx tsx src/lib/media/generate-all.ts [best-for|blog|mascot|badges|results|all]");
+      console.log(
+        "Usage: npx tsx src/lib/media/generate-all.ts [best-for|blog|mascot|badges|results|all]",
+      );
   }
 
   console.log("\n✨ Generation complete!\n");

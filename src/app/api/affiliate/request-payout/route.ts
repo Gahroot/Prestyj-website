@@ -6,8 +6,7 @@ import { prisma } from "@/lib/prisma";
 export const runtime = "nodejs";
 
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? "ngrout70@gmail.com";
-const RESEND_FROM_EMAIL =
-  process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
+const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://prestyj.com";
 
 export async function POST() {
@@ -23,7 +22,7 @@ export async function POST() {
   if (approved.length === 0) {
     return NextResponse.json(
       { error: "No approved conversions available for payout" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 

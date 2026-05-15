@@ -1,8 +1,6 @@
-export const DEMO_API_BASE =
-  "https://backend-api-production-b536.up.railway.app/api/v1/p/demo";
+export const DEMO_API_BASE = "https://backend-api-production-b536.up.railway.app/api/v1/p/demo";
 
-export const EMBED_API_BASE =
-  "https://backend-api-production-b536.up.railway.app/api/v1/p/embed";
+export const EMBED_API_BASE = "https://backend-api-production-b536.up.railway.app/api/v1/p/embed";
 
 export interface DemoResponse {
   success: boolean;
@@ -11,7 +9,7 @@ export interface DemoResponse {
 
 export async function triggerDemo(
   type: "call" | "text",
-  phoneNumber: string
+  phoneNumber: string,
 ): Promise<DemoResponse> {
   const response = await fetch(`${DEMO_API_BASE}/${type}`, {
     method: "POST",
