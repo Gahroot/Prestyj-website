@@ -36,7 +36,7 @@ import {
 import { AndromedaPOV } from "@/components/sections/batch-video-ads/andromeda-pov";
 import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 import { cn } from "@/lib/utils";
-import type { BatchTierId } from "@/lib/batch-tiers";
+import { BATCH_TIERS, type BatchTierId } from "@/lib/batch-tiers";
 
 const GMB_REVIEWS_URL = "https://share.google/NDBtHySNKzPF0mTvG";
 const VSL_VIMEO_ID = "1185604057";
@@ -86,9 +86,21 @@ type UITier = {
   highlights: string[];
   icon: React.ReactNode;
   popular?: boolean;
+  sample?: boolean;
 };
 
 const TIERS: UITier[] = [
+  {
+    id: BATCH_TIERS.starter.id,
+    name: BATCH_TIERS.starter.name,
+    price: BATCH_TIERS.starter.priceLabel,
+    adCount: BATCH_TIERS.starter.adCount,
+    painPoints: BATCH_TIERS.starter.painPoints,
+    tagline: BATCH_TIERS.starter.tagline,
+    highlights: BATCH_TIERS.starter.highlights,
+    icon: <Sparkles className="h-5 w-5" />,
+    sample: true,
+  },
   {
     id: "minimum",
     name: "Minimum",
@@ -909,7 +921,7 @@ export function BatchVideoAdsClient() {
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4">
             {TIERS.map((tier, index) => (
               <AnimateOnScroll key={tier.id} delay={index * 0.1}>
                 <BorderGlow
@@ -918,11 +930,17 @@ export function BatchVideoAdsClient() {
                   className={cn(
                     "h-full",
                     tier.popular && "shadow-primary/20 shadow-xl md:scale-105",
+                    tier.sample && "border-border/60",
                   )}
                 >
                   {tier.popular && (
                     <span className="bg-primary text-primary-foreground absolute top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-xs font-bold tracking-wide whitespace-nowrap uppercase">
                       Most Popular
+                    </span>
+                  )}
+                  {tier.sample && (
+                    <span className="bg-muted text-muted-foreground border-border absolute top-3 left-1/2 -translate-x-1/2 rounded-full border px-2.5 py-0.5 text-[10px] font-semibold tracking-wide whitespace-nowrap uppercase">
+                      Sample
                     </span>
                   )}
 
