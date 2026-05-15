@@ -13,10 +13,5 @@ export function SafeJsonLd({ data }: { data: unknown }) {
     .replace(/>/g, "\\u003e")
     .replace(/&/g, "\\u0026");
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: jsonString }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonString }} />;
 }

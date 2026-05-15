@@ -8,10 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import BorderGlow from "@/components/ui/border-glow";
-import {
-  defaultContentEngineConfig,
-  type FaqConfig,
-} from "@/lib/content-engine";
+import { defaultContentEngineConfig, type FaqConfig } from "@/lib/content-engine";
 
 interface ContentEngineFAQProps {
   config?: FaqConfig;
@@ -23,15 +20,13 @@ export function ContentEngineFAQ({
   const { headline, subhead, faqs } = config;
 
   return (
-    <section id="faq" className="py-24 bg-muted/20">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+    <section id="faq" className="bg-muted/20 py-24">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-12 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             {headline}
           </h2>
-          <p className="text-muted-foreground text-lg">
-            {subhead}
-          </p>
+          <p className="text-muted-foreground text-lg">{subhead}</p>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.15}>
@@ -39,7 +34,7 @@ export function ContentEngineFAQ({
             {faqs.map((faq, index) => (
               <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
                 <AccordionItem value={`item-${index}`} className="border-none">
-                  <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
+                  <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">

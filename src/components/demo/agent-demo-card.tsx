@@ -1,13 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import {
-  Loader2,
-  CheckCircle,
-  AlertCircle,
-  ArrowLeft,
-  ArrowRight,
-} from "lucide-react";
+import { Loader2, CheckCircle, AlertCircle, ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -113,9 +107,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
       );
       setIsSuccess(true);
     } catch (err) {
-      setError(
-        (err as Error)?.message || "Something went wrong. Please try again.",
-      );
+      setError((err as Error)?.message || "Something went wrong. Please try again.");
     } finally {
       setIsPending(false);
     }
@@ -127,12 +119,9 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
   const progress = ((step + 1) / totalSteps) * 100;
 
   return (
-    <BorderGlow
-      borderRadius={18}
-      innerStyle={{ overflow: 'hidden', borderRadius: 'inherit' }}
-    >
+    <BorderGlow borderRadius={18} innerStyle={{ overflow: "hidden", borderRadius: "inherit" }}>
       {/* Progress bar */}
-      <div className="h-1 bg-muted">
+      <div className="bg-muted h-1">
         <motion.div
           className="h-full rounded-r-full"
           style={{ backgroundColor: agent.color }}
@@ -144,19 +133,15 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
 
       <div className="p-6 sm:p-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{agent.icon}</span>
             <div>
-              <h3 className="font-heading font-bold text-foreground">
-                {agent.company}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {agent.description}
-              </p>
+              <h3 className="font-heading text-foreground font-bold">{agent.company}</h3>
+              <p className="text-muted-foreground text-sm">{agent.description}</p>
             </div>
           </div>
-          <span className="text-xs text-muted-foreground font-medium tabular-nums">
+          <span className="text-muted-foreground text-xs font-medium tabular-nums">
             {step + 1} / {totalSteps}
           </span>
         </div>
@@ -166,30 +151,25 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.4 }}
-            className="py-8 space-y-3 text-center"
+            className="space-y-3 py-8 text-center"
           >
             <div
-              className="inline-flex items-center justify-center p-3 rounded-full"
+              className="inline-flex items-center justify-center rounded-full p-3"
               style={{ backgroundColor: `${agent.color}15` }}
             >
-              <CheckCircle
-                className="size-8"
-                style={{ color: agent.color }}
-              />
+              <CheckCircle className="size-8" style={{ color: agent.color }} />
             </div>
-            <p className="font-heading font-bold text-lg text-foreground">
-              {agent.successMessage}
-            </p>
+            <p className="font-heading text-foreground text-lg font-bold">{agent.successMessage}</p>
           </motion.div>
         ) : (
-          <div className="min-h-[280px] flex flex-col">
+          <div className="flex min-h-[280px] flex-col">
             {/* Back button */}
-            <div className="h-8 flex items-center mb-2">
+            <div className="mb-2 flex h-8 items-center">
               {step > 0 && (
                 <button
                   type="button"
                   onClick={goBack}
-                  className="flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-foreground flex items-center gap-1.5 text-sm transition-colors"
                 >
                   <ArrowLeft className="size-4" />
                   Back
@@ -198,7 +178,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
             </div>
 
             {/* Step content */}
-            <div className="flex-1 relative overflow-hidden">
+            <div className="relative flex-1 overflow-hidden">
               <AnimatePresence mode="wait" custom={direction}>
                 {currentFormStep ? (
                   <motion.div
@@ -211,52 +191,46 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="space-y-4"
                   >
-                    <p className="text-lg font-heading font-semibold text-foreground">
+                    <p className="font-heading text-foreground text-lg font-semibold">
                       {currentFormStep.question}
                     </p>
 
-                    {currentFormStep.type === "select" &&
-                      currentFormStep.options && (
-                        <motion.div
-                          variants={containerVariants}
-                          initial="hidden"
-                          animate="visible"
-                          className="grid grid-cols-2 gap-3"
-                        >
-                          {currentFormStep.options.map((opt) => {
-                            const isSelected =
-                              answers[currentFormStep.id] === opt.value;
-                            return (
-                              <motion.button
-                                key={opt.value}
-                                variants={itemVariants}
-                                type="button"
-                                onClick={() =>
-                                  handleSelect(currentFormStep, opt.value)
-                                }
-                                className={cn(
-                                  "px-4 py-3 rounded-xl text-sm font-medium text-left transition-all duration-200 border-2",
-                                  "hover:border-primary hover:bg-primary/5",
-                                  isSelected
-                                    ? "border-primary bg-primary/10 ring-2 ring-primary/20 text-foreground"
-                                    : "border-border bg-card text-foreground",
-                                )}
-                                style={
-                                  isSelected
-                                    ? {
-                                        borderColor: agent.color,
-                                        backgroundColor: `${agent.color}10`,
-                                        boxShadow: `0 0 0 2px ${agent.color}25`,
-                                      }
-                                    : undefined
-                                }
-                              >
-                                {opt.label}
-                              </motion.button>
-                            );
-                          })}
-                        </motion.div>
-                      )}
+                    {currentFormStep.type === "select" && currentFormStep.options && (
+                      <motion.div
+                        variants={containerVariants}
+                        initial="hidden"
+                        animate="visible"
+                        className="grid grid-cols-2 gap-3"
+                      >
+                        {currentFormStep.options.map((opt) => {
+                          const isSelected = answers[currentFormStep.id] === opt.value;
+                          return (
+                            <motion.button
+                              key={opt.value}
+                              variants={itemVariants}
+                              type="button"
+                              onClick={() => handleSelect(currentFormStep, opt.value)}
+                              className={cn(
+                                "rounded-xl border-2 px-4 py-3 text-left text-sm font-medium transition-all duration-200",
+                                "hover:border-primary hover:bg-primary/5",
+                                isSelected
+                                  ? "border-primary bg-primary/10 ring-primary/20 text-foreground ring-2"
+                                  : "border-border bg-card text-foreground",
+                              )}
+                              {...(isSelected && {
+                                style: {
+                                  borderColor: agent.color,
+                                  backgroundColor: `${agent.color}10`,
+                                  boxShadow: `0 0 0 2px ${agent.color}25`,
+                                },
+                              })}
+                            >
+                              {opt.label}
+                            </motion.button>
+                          );
+                        })}
+                      </motion.div>
+                    )}
 
                     {currentFormStep.type === "text" && (
                       <TextStepInput
@@ -278,7 +252,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                     transition={{ duration: 0.25, ease: "easeInOut" }}
                     className="space-y-4"
                   >
-                    <p className="text-lg font-heading font-semibold text-foreground">
+                    <p className="font-heading text-foreground text-lg font-semibold">
                       {agent.contactPrompt}
                     </p>
 
@@ -289,10 +263,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                       className="space-y-3"
                     >
                       <motion.div variants={itemVariants}>
-                        <Label
-                          htmlFor={`name-${agent.publicId}`}
-                          className="mb-1.5 block"
-                        >
+                        <Label htmlFor={`name-${agent.publicId}`} className="mb-1.5 block">
                           Your name
                         </Label>
                         <Input
@@ -302,15 +273,12 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                           value={name}
                           onChange={(e) => setName(e.target.value)}
                           disabled={isPending}
-                          className="h-12 rounded-xl border-2 border-border focus-visible:border-primary"
+                          className="border-border focus-visible:border-primary h-12 rounded-xl border-2"
                         />
                       </motion.div>
 
                       <motion.div variants={itemVariants}>
-                        <Label
-                          htmlFor={`agent-phone-${agent.publicId}`}
-                          className="mb-1.5 block"
-                        >
+                        <Label htmlFor={`agent-phone-${agent.publicId}`} className="mb-1.5 block">
                           Phone number
                         </Label>
                         <PhoneInput
@@ -319,7 +287,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                           onChange={setPhone}
                           disabled={isPending}
                           aria-invalid={!!error}
-                          className="h-12 rounded-xl border-2 border-border text-sm"
+                          className="border-border h-12 rounded-xl border-2 text-sm"
                         />
                       </motion.div>
 
@@ -327,9 +295,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                         <motion.div variants={itemVariants}>
                           <Alert variant="destructive" role="alert">
                             <AlertCircle className="size-4" />
-                            <AlertDescription className="text-xs">
-                              {error}
-                            </AlertDescription>
+                            <AlertDescription className="text-xs">{error}</AlertDescription>
                           </Alert>
                         </motion.div>
                       )}
@@ -337,7 +303,7 @@ export function AgentDemoCard({ agent }: AgentDemoCardProps) {
                       <motion.div variants={itemVariants}>
                         <Button
                           type="button"
-                          className="w-full h-12 font-semibold text-sm text-white rounded-xl"
+                          className="h-12 w-full rounded-xl text-sm font-semibold text-white"
                           style={{ backgroundColor: agent.color }}
                           disabled={!isPhoneValid || isPending}
                           onClick={handleSubmit}
@@ -396,13 +362,13 @@ function TextStepInput({
           onKeyDown={(e) => {
             if (e.key === "Enter" && text.trim()) onNext(text.trim());
           }}
-          className="h-12 rounded-xl border-2 border-border focus-visible:border-primary"
+          className="border-border focus-visible:border-primary h-12 rounded-xl border-2"
         />
       </motion.div>
       <motion.div variants={itemVariants}>
         <Button
           type="button"
-          className="w-full h-11 font-semibold text-sm text-white rounded-xl"
+          className="h-11 w-full rounded-xl text-sm font-semibold text-white"
           style={{ backgroundColor: agentColor }}
           disabled={!text.trim()}
           onClick={() => onNext(text.trim())}

@@ -44,11 +44,11 @@ export function PhoneDemo({ mode }: PhoneDemoProps) {
   const pendingLabel = isCall ? "Calling..." : "Sending...";
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-2xl max-w-md">
+    <div className="max-w-md rounded-2xl border border-zinc-800 bg-zinc-900 p-8 shadow-2xl">
       {isSuccess ? (
-        <div className="py-6 space-y-3 text-center" aria-live="polite">
-          <CheckCircle2 className="size-14 text-emerald-400 mx-auto" />
-          <p className="text-emerald-400 font-medium text-lg">{successMessage}</p>
+        <div className="space-y-3 py-6 text-center" aria-live="polite">
+          <CheckCircle2 className="mx-auto size-14 text-emerald-400" />
+          <p className="text-lg font-medium text-emerald-400">{successMessage}</p>
         </div>
       ) : (
         <div className="space-y-5">
@@ -59,7 +59,7 @@ export function PhoneDemo({ mode }: PhoneDemoProps) {
             disabled={isPending}
             aria-describedby={error ? `phone-error-${mode}` : undefined}
             aria-invalid={!!error}
-            className="h-14 text-lg bg-zinc-800 border-zinc-700 text-white placeholder:text-zinc-500"
+            className="h-14 border-zinc-700 bg-zinc-800 text-lg text-white placeholder:text-zinc-500"
           />
 
           {error && (
@@ -72,7 +72,7 @@ export function PhoneDemo({ mode }: PhoneDemoProps) {
           <Button
             type="button"
             size="lg"
-            className="w-full h-14 font-semibold text-lg bg-[#7058e3] hover:bg-[#5d48c7] text-white"
+            className="h-14 w-full bg-[#7058e3] text-lg font-semibold text-white hover:bg-[#5d48c7]"
             disabled={!isPhoneValid || isPending}
             onClick={handleSubmit}
           >

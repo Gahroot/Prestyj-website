@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { coachesVsUgcCreatorVideoCompareData } from "@/lib/compare/data/prestyj-vs-ugc-creator-video-for-coaches";
 
-export default function PrestyJVsUgcCreatorForCoachesPage() {
+export default function PrestyjVsUgcCreatorForCoachesPage() {
   return <ComparePageWrapper data={coachesVsUgcCreatorVideoCompareData} />;
 }

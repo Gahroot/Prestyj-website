@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { mediaBuyersVsFiverrVideoCompareData } from "@/lib/compare/data/prestyj-vs-fiverr-video-for-media-buyers";
 
-export default function PrestyJVsFiverrForMediaBuyersPage() {
+export default function PrestyjVsFiverrForMediaBuyersPage() {
   return <ComparePageWrapper data={mediaBuyersVsFiverrVideoCompareData} />;
 }

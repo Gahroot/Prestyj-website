@@ -98,9 +98,7 @@ export function AffiliateDashboardClient({
   hasApproved,
 }: Props) {
   const [copied, setCopied] = useState(false);
-  const [requestStatus, setRequestStatus] = useState<
-    "idle" | "loading" | "sent" | "error"
-  >("idle");
+  const [requestStatus, setRequestStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
 
   function copyLink() {
     navigator.clipboard.writeText(affiliateLink);
@@ -121,34 +119,28 @@ export function AffiliateDashboardClient({
   }
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="max-w-5xl mx-auto px-4 py-10 space-y-8">
+    <main className="bg-background min-h-screen">
+      <div className="mx-auto max-w-5xl space-y-8 px-4 py-10">
         {/* Header */}
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-1">
+            <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-widest uppercase">
               Prestyj
             </p>
-            <h1 className="text-2xl font-bold">
-              Hey {affiliate.name.split(" ")[0]}
-            </h1>
+            <h1 className="text-2xl font-bold">Hey {affiliate.name.split(" ")[0]}</h1>
           </div>
-          <div className="text-right text-sm text-muted-foreground">
+          <div className="text-muted-foreground text-right text-sm">
             <p>{Math.round(affiliate.commissionRate * 100)}% commission</p>
-            {affiliate.payoutEmail && (
-              <p className="text-xs">{affiliate.payoutEmail}</p>
-            )}
+            {affiliate.payoutEmail && <p className="text-xs">{affiliate.payoutEmail}</p>}
           </div>
         </div>
 
         {/* Affiliate link */}
         <Card>
           <CardContent className="pt-5 pb-4">
-            <p className="text-sm text-muted-foreground mb-2 font-medium">
-              Your referral link
-            </p>
+            <p className="text-muted-foreground mb-2 text-sm font-medium">Your referral link</p>
             <div className="flex items-center gap-3">
-              <code className="flex-1 bg-muted rounded-md px-3 py-2 text-sm truncate">
+              <code className="bg-muted flex-1 truncate rounded-md px-3 py-2 text-sm">
                 {affiliateLink}
               </code>
               <Button variant="outline" size="sm" onClick={copyLink}>
@@ -159,10 +151,10 @@ export function AffiliateDashboardClient({
         </Card>
 
         {/* Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
+              <CardTitle className="text-muted-foreground text-sm font-medium">
                 Clicks (30d)
               </CardTitle>
             </CardHeader>
@@ -172,20 +164,18 @@ export function AffiliateDashboardClient({
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
+              <CardTitle className="text-muted-foreground text-sm font-medium">
                 Pending balance
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">{cents(stats.pendingCents)}</p>
-              <p className="text-xs text-muted-foreground mt-1">
-                30-day hold on new sales
-              </p>
+              <p className="text-muted-foreground mt-1 text-xs">30-day hold on new sales</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-sm font-medium text-muted-foreground">
+              <CardTitle className="text-muted-foreground text-sm font-medium">
                 Total paid out
               </CardTitle>
             </CardHeader>
@@ -198,19 +188,16 @@ export function AffiliateDashboardClient({
         {/* Request payout */}
         {hasApproved && (
           <Card className="border-emerald-500/30 bg-emerald-500/5">
-            <CardContent className="pt-5 flex items-center justify-between gap-4">
+            <CardContent className="flex items-center justify-between gap-4 pt-5">
               <div>
                 <p className="font-medium">You have approved earnings ready</p>
-                <p className="text-sm text-muted-foreground">
-                  Request a payout and we&apos;ll process it within 3 business
-                  days.
+                <p className="text-muted-foreground text-sm">
+                  Request a payout and we&apos;ll process it within 3 business days.
                 </p>
               </div>
               <Button
                 onClick={requestPayout}
-                disabled={
-                  requestStatus === "loading" || requestStatus === "sent"
-                }
+                disabled={requestStatus === "loading" || requestStatus === "sent"}
               >
                 {requestStatus === "sent"
                   ? "Requested!"
@@ -222,16 +209,14 @@ export function AffiliateDashboardClient({
           </Card>
         )}
         {requestStatus === "error" && (
-          <p className="text-sm text-destructive">
-            Something went wrong requesting the payout.
-          </p>
+          <p className="text-destructive text-sm">Something went wrong requesting the payout.</p>
         )}
 
         {/* Conversions table */}
         <div>
-          <h2 className="text-lg font-semibold mb-3">Conversions</h2>
+          <h2 className="mb-3 text-lg font-semibold">Conversions</h2>
           {conversions.length === 0 ? (
-            <p className="text-sm text-muted-foreground">No conversions yet.</p>
+            <p className="text-muted-foreground text-sm">No conversions yet.</p>
           ) : (
             <Card>
               <Table>
@@ -252,9 +237,7 @@ export function AffiliateDashboardClient({
                       </TableCell>
                       <TableCell className="capitalize">{c.tier}</TableCell>
                       <TableCell>{cents(c.amountCents)}</TableCell>
-                      <TableCell className="font-medium">
-                        {cents(c.commissionCents)}
-                      </TableCell>
+                      <TableCell className="font-medium">{cents(c.commissionCents)}</TableCell>
                       <TableCell>{conversionBadge(c.status)}</TableCell>
                     </TableRow>
                   ))}
@@ -267,7 +250,7 @@ export function AffiliateDashboardClient({
         {/* Payouts table */}
         {payouts.length > 0 && (
           <div>
-            <h2 className="text-lg font-semibold mb-3">Payout history</h2>
+            <h2 className="mb-3 text-lg font-semibold">Payout history</h2>
             <Card>
               <Table>
                 <TableHeader>
@@ -285,9 +268,7 @@ export function AffiliateDashboardClient({
                       <TableCell className="text-muted-foreground text-sm">
                         {formatDate(p.createdAt)}
                       </TableCell>
-                      <TableCell className="font-medium">
-                        {cents(p.amountCents)}
-                      </TableCell>
+                      <TableCell className="font-medium">{cents(p.amountCents)}</TableCell>
                       <TableCell className="text-muted-foreground capitalize">
                         {p.method ?? "—"}
                       </TableCell>

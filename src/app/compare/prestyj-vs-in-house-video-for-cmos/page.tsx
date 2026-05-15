@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { cmosVsInHouseVideoCompareData } from "@/lib/compare/data/prestyj-vs-in-house-video-for-cmos";
 
-export default function PrestyJVsInHouseForCmosPage() {
+export default function PrestyjVsInHouseForCmosPage() {
   return <ComparePageWrapper data={cmosVsInHouseVideoCompareData} />;
 }

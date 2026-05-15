@@ -9,9 +9,7 @@ import { Input } from "@/components/ui/input";
 function AnimatedNumber({ value }: { value: number }) {
   const isFirstRender = useRef(true);
   const spring = useSpring(value, { stiffness: 100, damping: 30 });
-  const display = useTransform(spring, (current) =>
-    Math.round(current).toLocaleString("en-US")
-  );
+  const display = useTransform(spring, (current) => Math.round(current).toLocaleString("en-US"));
 
   useEffect(() => {
     if (isFirstRender.current) {
@@ -34,29 +32,20 @@ export function CostCalculator() {
   const [leads, setLeads] = useState(100);
   const [avgCommission, setAvgCommission] = useState(8000);
 
-  const handleMonthsChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = parseInt(e.target.value) || 0;
-      setMonths(Math.max(1, Math.min(60, value)));
-    },
-    []
-  );
+  const handleMonthsChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value) || 0;
+    setMonths(Math.max(1, Math.min(60, value)));
+  }, []);
 
-  const handleLeadsChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = parseInt(e.target.value) || 0;
-      setLeads(Math.max(0, value));
-    },
-    []
-  );
+  const handleLeadsChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value) || 0;
+    setLeads(Math.max(0, value));
+  }, []);
 
-  const handleCommissionChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = parseInt(e.target.value) || 0;
-      setAvgCommission(Math.max(0, value));
-    },
-    []
-  );
+  const handleCommissionChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = parseInt(e.target.value) || 0;
+    setAvgCommission(Math.max(0, value));
+  }, []);
 
   // Human ISA costs (verified industry data)
   const humanBaseSalary = 4000; // Monthly base
@@ -98,7 +87,7 @@ export function CostCalculator() {
             >
               Cost Comparison Calculator
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               See how much a human ISA costs over time based on verified industry data.
             </p>
           </motion.div>
@@ -109,11 +98,11 @@ export function CostCalculator() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Card className="border bg-card shadow-lg">
+            <Card className="bg-card border shadow-lg">
               <CardHeader className="border-b">
                 <CardTitle className="flex items-center gap-3 text-xl">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
-                    <Calculator className="h-5 w-5 text-primary" aria-hidden="true" />
+                  <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">
+                    <Calculator className="text-primary h-5 w-5" aria-hidden="true" />
                   </div>
                   <span>Human ISA Cost Calculator</span>
                 </CardTitle>
@@ -121,10 +110,7 @@ export function CostCalculator() {
               <CardContent className="p-6 sm:p-8">
                 <div className="mb-8 grid gap-6 sm:grid-cols-3">
                   <div className="space-y-2">
-                    <label
-                      htmlFor={monthsId}
-                      className="block text-sm font-medium"
-                    >
+                    <label htmlFor={monthsId} className="block text-sm font-medium">
                       Time Period (months)
                     </label>
                     <Input
@@ -137,15 +123,12 @@ export function CostCalculator() {
                       className="h-12 text-lg"
                       aria-describedby={`${monthsId}-hint`}
                     />
-                    <p id={`${monthsId}-hint`} className="text-xs text-muted-foreground">
+                    <p id={`${monthsId}-hint`} className="text-muted-foreground text-xs">
                       How long do you need ISA coverage?
                     </p>
                   </div>
                   <div className="space-y-2">
-                    <label
-                      htmlFor={leadsId}
-                      className="block text-sm font-medium"
-                    >
+                    <label htmlFor={leadsId} className="block text-sm font-medium">
                       Monthly Leads
                     </label>
                     <Input
@@ -157,15 +140,12 @@ export function CostCalculator() {
                       className="h-12 text-lg"
                       aria-describedby={`${leadsId}-hint`}
                     />
-                    <p id={`${leadsId}-hint`} className="text-xs text-muted-foreground">
+                    <p id={`${leadsId}-hint`} className="text-muted-foreground text-xs">
                       Average leads per month
                     </p>
                   </div>
                   <div className="space-y-2">
-                    <label
-                      htmlFor={commissionId}
-                      className="block text-sm font-medium"
-                    >
+                    <label htmlFor={commissionId} className="block text-sm font-medium">
                       Avg Commission ($)
                     </label>
                     <Input
@@ -177,24 +157,24 @@ export function CostCalculator() {
                       className="h-12 text-lg"
                       aria-describedby={`${commissionId}-hint`}
                     />
-                    <p id={`${commissionId}-hint`} className="text-xs text-muted-foreground">
+                    <p id={`${commissionId}-hint`} className="text-muted-foreground text-xs">
                       Your average commission per deal
                     </p>
                   </div>
                 </div>
 
                 <div
-                  className="rounded-xl border border-destructive/20 bg-gradient-to-br from-destructive/10 via-background to-warning/10 p-6 sm:p-8"
+                  className="border-destructive/20 from-destructive/10 via-background to-warning/10 rounded-xl border bg-gradient-to-br p-6 sm:p-8"
                   role="region"
                   aria-labelledby={resultId}
                   aria-live="polite"
                   aria-atomic="true"
                 >
                   <div className="mb-4 flex items-center gap-3">
-                    <DollarSign className="h-6 w-6 text-destructive" aria-hidden="true" />
+                    <DollarSign className="text-destructive h-6 w-6" aria-hidden="true" />
                     <span
                       id={resultId}
-                      className="text-sm font-medium uppercase tracking-wide text-muted-foreground"
+                      className="text-muted-foreground text-sm font-medium tracking-wide uppercase"
                     >
                       Total Human ISA Cost
                     </span>
@@ -202,35 +182,31 @@ export function CostCalculator() {
                   <div className="text-4xl font-bold sm:text-5xl">
                     $<AnimatedNumber value={humanTotalCost} />
                   </div>
-                  <div className="mt-6 grid grid-cols-2 gap-4 border-t border-border/50 pt-4 sm:grid-cols-4">
+                  <div className="border-border/50 mt-6 grid grid-cols-2 gap-4 border-t pt-4 sm:grid-cols-4">
                     <div>
-                      <p className="text-xl font-semibold">
-                        ${humanSalaryCost.toLocaleString()}
-                      </p>
-                      <p className="text-xs text-muted-foreground">base salary</p>
+                      <p className="text-xl font-semibold">${humanSalaryCost.toLocaleString()}</p>
+                      <p className="text-muted-foreground text-xs">base salary</p>
                     </div>
                     <div>
                       <p className="text-xl font-semibold">
                         ${Math.round(humanCommissionCost).toLocaleString()}
                       </p>
-                      <p className="text-xs text-muted-foreground">commission splits (20%)</p>
+                      <p className="text-muted-foreground text-xs">commission splits (20%)</p>
                     </div>
                     <div>
-                      <p className="text-xl font-semibold">
-                        ${humanTurnoverCost.toLocaleString()}
-                      </p>
-                      <p className="text-xs text-muted-foreground">turnover costs</p>
+                      <p className="text-xl font-semibold">${humanTurnoverCost.toLocaleString()}</p>
+                      <p className="text-muted-foreground text-xs">turnover costs</p>
                     </div>
                     <div>
-                      <p className="text-xl font-semibold text-success">
+                      <p className="text-success text-xl font-semibold">
                         {Math.round(totalDeals)} deals
                       </p>
-                      <p className="text-xs text-muted-foreground">estimated closed</p>
+                      <p className="text-muted-foreground text-xs">estimated closed</p>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-6 rounded-lg border border-success/20 bg-success/10 p-4">
+                <div className="border-success/20 bg-success/10 mt-6 rounded-lg border p-4">
                   <p className="text-sm">
                     <strong className="text-success">Potential commission savings with AI:</strong>{" "}
                     ${Math.round(potentialSavings).toLocaleString()} over {months} months by
@@ -238,10 +214,10 @@ export function CostCalculator() {
                   </p>
                 </div>
 
-                <p className="mt-6 text-center text-xs text-muted-foreground">
+                <p className="text-muted-foreground mt-6 text-center text-xs">
                   Based on verified industry data: $4,000/month base salary, 15-25% commission
-                  splits, 2-4 week training period, and high ISA turnover rates. Your actual
-                  costs may vary.
+                  splits, 2-4 week training period, and high ISA turnover rates. Your actual costs
+                  may vary.
                 </p>
               </CardContent>
             </Card>

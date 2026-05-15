@@ -174,8 +174,8 @@ function ThankYouContent() {
         <div className="from-primary/10 to-primary/5 rounded-lg border bg-gradient-to-br p-6 text-center md:p-8">
           <h2 className="mb-4 text-2xl font-bold">Want to Recover This Lost Commission?</h2>
           <p className="text-muted-foreground mb-6 text-lg">
-            See how Prestyj helps teams like yours respond in under a minute with AI voice and
-            text agents
+            See how Prestyj helps teams like yours respond in under a minute with AI voice and text
+            agents
           </p>
           <Button asChild size="lg">
             <Link href="/book-demo">Book a 30-Minute Strategy Call</Link>

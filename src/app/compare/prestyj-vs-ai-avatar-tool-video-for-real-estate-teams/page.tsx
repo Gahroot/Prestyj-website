@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { realEstateTeamsVsAiAvatarToolVideoCompareData } from "@/lib/compare/data/prestyj-vs-ai-avatar-tool-video-for-real-estate-teams";
 
-export default function PrestyJVsAiAvatarToolForRealEstateTeamsPage() {
+export default function PrestyjVsAiAvatarToolForRealEstateTeamsPage() {
   return <ComparePageWrapper data={realEstateTeamsVsAiAvatarToolVideoCompareData} />;
 }

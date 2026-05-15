@@ -6,10 +6,7 @@ export const runtime = "nodejs";
 const COOKIE_NAME = "affiliate_ref";
 const COOKIE_MAX_AGE = 30 * 24 * 60 * 60; // 30 days in seconds
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ slug: string }> }
-) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const destination = new URL("/batch-video-ads", request.nextUrl.origin).toString();
 
@@ -22,15 +19,22 @@ export async function GET(
   }
 
   const ip =
-    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    request.headers.get("x-real-ip") ??
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    request.headers.get("x-real-ip") ||
     undefined;
   const userAgent = request.headers.get("user-agent") ?? undefined;
   const referer = request.headers.get("referer") ?? undefined;
 
   // Track click without blocking the redirect
   prisma.click
-    .create({ data: { affiliateId: affiliate.id, ip, userAgent, referer } })
+    .create({
+      data: {
+        affiliateId: affiliate.id,
+        ...(ip !== undefined && { ip }),
+        ...(userAgent !== undefined && { userAgent }),
+        ...(referer !== undefined && { referer }),
+      },
+    })
     .catch((err) => console.error("[affiliate-click] db error:", err));
 
   const response = NextResponse.redirect(destination);

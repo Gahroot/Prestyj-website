@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { hvacCompaniesVsUgcCreatorVideoCompareData } from "@/lib/compare/data/prestyj-vs-ugc-creator-video-for-hvac-companies";
 
-export default function PrestyJVsUgcCreatorForHvacCompaniesPage() {
+export default function PrestyjVsUgcCreatorForHvacCompaniesPage() {
   return <ComparePageWrapper data={hvacCompaniesVsUgcCreatorVideoCompareData} />;
 }

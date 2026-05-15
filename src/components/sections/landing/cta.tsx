@@ -12,29 +12,28 @@ interface LandingCTAProps {
 
 export function LandingCTA({ content }: LandingCTAProps) {
   return (
-    <section className="py-24 relative overflow-hidden">
-
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <section className="relative overflow-hidden py-24">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+          <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
             {content.headline}
           </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
             {content.subheadline}
           </p>
-          <Button size="lg" className="text-lg px-10 py-6" asChild>
+          <Button size="lg" className="px-10 py-6 text-lg" asChild>
             <Link href={content.buttonHref}>
               {content.buttonText}
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
           {content.footnote && (
-            <p className="text-sm text-muted-foreground mt-6">{content.footnote}</p>
+            <p className="text-muted-foreground mt-6 text-sm">{content.footnote}</p>
           )}
         </motion.div>
       </div>

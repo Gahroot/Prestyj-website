@@ -38,15 +38,11 @@ export function CopyButton({ text, className = "", size = "icon-sm" }: CopyButto
       variant="ghost"
       size={size}
       onClick={handleCopy}
-      className={`h-7 w-7 p-0 text-muted-foreground hover:text-foreground ${className}`}
+      className={`text-muted-foreground hover:text-foreground h-7 w-7 p-0 ${className}`}
       aria-label={copied ? "Copied" : "Copy statistic"}
       title={copied ? "Copied!" : "Copy to clipboard"}
     >
-      {copied ? (
-        <Check className="h-3.5 w-3.5 text-primary" />
-      ) : (
-        <Copy className="h-3.5 w-3.5" />
-      )}
+      {copied ? <Check className="text-primary h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
     </Button>
   );
 }

@@ -31,20 +31,18 @@ interface LandingBenefitsProps {
 export function LandingBenefits({ content }: LandingBenefitsProps) {
   return (
     <section id="benefits" className="py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             {content.headline}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {content.subheadline}
-          </p>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{content.subheadline}</p>
         </motion.div>
 
         <motion.div
@@ -52,18 +50,18 @@ export function LandingBenefits({ content }: LandingBenefitsProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
         >
           {content.benefits.map((benefit) => {
             const Icon = getIcon(benefit.icon);
             return (
               <motion.div key={benefit.title} variants={itemVariants}>
-                <Card className="bg-card border-border h-full hover:border-primary/50 transition-colors">
+                <Card className="bg-card border-border hover:border-primary/50 h-full transition-colors">
                   <CardContent className="p-6">
-                    <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
-                      <Icon className="h-6 w-6 text-primary" />
+                    <div className="bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-lg">
+                      <Icon className="text-primary h-6 w-6" />
                     </div>
-                    <h3 className="text-lg font-heading font-semibold text-foreground mb-2">
+                    <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
                       {benefit.title}
                     </h3>
                     <p className="text-muted-foreground text-sm">{benefit.description}</p>

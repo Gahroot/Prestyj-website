@@ -60,9 +60,9 @@ export default function MarketingAutomationPage() {
         )}
         {marketingAutomation.faqs && (
           <section className="py-24">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-              <AnimateOnScroll className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+              <AnimateOnScroll className="mb-12 text-center">
+                <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
                   Marketing Automation FAQ
                 </h2>
                 <p className="text-muted-foreground text-lg">
@@ -74,17 +74,14 @@ export default function MarketingAutomationPage() {
                 <Accordion type="single" collapsible className="space-y-4">
                   {marketingAutomation.faqs.map((faq, index) => (
                     <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
-                    <AccordionItem
-                      value={`item-${index}`}
-                      className="border-none"
-                    >
-                      <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
+                      <AccordionItem value={`item-${index}`} className="border-none">
+                        <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">
+                          {faq.question}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-muted-foreground">
+                          {faq.answer}
+                        </AccordionContent>
+                      </AccordionItem>
                     </BorderGlow>
                   ))}
                 </Accordion>

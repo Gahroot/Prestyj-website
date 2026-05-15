@@ -280,7 +280,9 @@ export function ContentEngineIntakeForm() {
                     </>
                   ) : (
                     <>
-                      <Send className="mr-2 h-4 w-4" />Submit & Book a Demo</>
+                      <Send className="mr-2 h-4 w-4" />
+                      Submit & Book a Demo
+                    </>
                   )}
                 </Button>
               )}

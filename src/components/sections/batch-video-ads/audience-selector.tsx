@@ -2,7 +2,15 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, Building2, Megaphone, Mic, Target, Wrench, type LucideIcon } from "lucide-react";
+import {
+  Briefcase,
+  Building2,
+  Megaphone,
+  Mic,
+  Target,
+  Wrench,
+  type LucideIcon,
+} from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";

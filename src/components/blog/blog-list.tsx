@@ -103,17 +103,11 @@ export function BlogList({ posts }: Props): React.ReactElement {
                 )}
                 <CardHeader>
                   <div className="mb-2 flex flex-wrap items-center gap-2">
-                    <Badge
-                      variant="outline"
-                      className="border-primary/40 text-primary text-xs"
-                    >
+                    <Badge variant="outline" className="border-primary/40 text-primary text-xs">
                       {post.category}
                     </Badge>
                     {post.date && (
-                      <time
-                        dateTime={post.date}
-                        className="text-muted-foreground text-sm"
-                      >
+                      <time dateTime={post.date} className="text-muted-foreground text-sm">
                         {new Date(post.date).toLocaleDateString("en-US", {
                           year: "numeric",
                           month: "long",
@@ -122,9 +116,7 @@ export function BlogList({ posts }: Props): React.ReactElement {
                       </time>
                     )}
                   </div>
-                  <CardTitle className="font-heading text-foreground">
-                    {post.title}
-                  </CardTitle>
+                  <CardTitle className="font-heading text-foreground">{post.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{post.description}</p>

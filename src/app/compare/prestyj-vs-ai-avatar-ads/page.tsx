@@ -3,6 +3,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { aiAvatarAdsCompareData } from "@/lib/compare/data/ai-avatar-ads";
 
-export default function PrestyJVsAiAvatarAdsPage() {
+export default function PrestyjVsAiAvatarAdsPage() {
   return <ComparePageWrapper data={aiAvatarAdsCompareData} />;
 }

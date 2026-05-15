@@ -48,9 +48,9 @@ export function WaitlistForm() {
 
   if (submitted) {
     return (
-      <div className="text-center py-8">
-        <CheckCircle className="h-14 w-14 text-success mx-auto mb-4" />
-        <h3 className="text-xl font-heading font-semibold text-foreground mb-2">
+      <div className="py-8 text-center">
+        <CheckCircle className="text-success mx-auto mb-4 h-14 w-14" />
+        <h3 className="font-heading text-foreground mb-2 text-xl font-semibold">
           You&apos;re on the list!
         </h3>
         <p className="text-muted-foreground">
@@ -61,7 +61,7 @@ export function WaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="mx-auto max-w-md space-y-4">
       <div>
         <Input
           type="text"
@@ -82,7 +82,7 @@ export function WaitlistForm() {
           disabled={loading}
         />
       </div>
-      {error && <p className="text-sm text-destructive text-center">{error}</p>}
+      {error && <p className="text-destructive text-center text-sm">{error}</p>}
       <Button
         type="submit"
         size="lg"

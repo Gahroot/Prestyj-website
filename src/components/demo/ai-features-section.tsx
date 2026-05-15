@@ -68,17 +68,20 @@ const features: Feature[] = [
   {
     icon: RotateCcw,
     title: "Dead Lead Reactivation",
-    description: "Re-engages cold leads from your database with personalized outreach that actually gets replies.",
+    description:
+      "Re-engages cold leads from your database with personalized outreach that actually gets replies.",
   },
   {
     icon: GitBranch,
     title: "Drip Campaigns",
-    description: "Runs long-term nurture sequences that keep your brand top of mind until they're ready.",
+    description:
+      "Runs long-term nurture sequences that keep your brand top of mind until they're ready.",
   },
   {
     icon: ClipboardList,
     title: "CRM Updates",
-    description: "Logs every call, saves notes, and keeps your CRM clean without anyone touching it.",
+    description:
+      "Logs every call, saves notes, and keeps your CRM clean without anyone touching it.",
   },
 ];
 
@@ -114,38 +117,40 @@ function FeatureItem({ feature, index }: { feature: Feature; index: number }) {
       transition={{ duration: 0.4, delay: index * 0.05 }}
       className="flex items-start gap-4"
     >
-      <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-        <feature.icon className="h-4 w-4 text-primary" />
+      <div className="bg-primary/10 mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg">
+        <feature.icon className="text-primary h-4 w-4" />
       </div>
       <div>
-        <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-sm">{feature.title}</p>
-        <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm mt-0.5 leading-relaxed">{feature.description}</p>
+        <p className="font-heading text-sm font-semibold text-white group-data-[demo-light]:text-zinc-900">
+          {feature.title}
+        </p>
+        <p className="mt-0.5 text-sm leading-relaxed text-zinc-400 group-data-[demo-light]:text-zinc-600">
+          {feature.description}
+        </p>
       </div>
     </motion.div>
   );
 }
 
-function DifferentiatorItem({
-  item,
-  index,
-}: {
-  item: Differentiator;
-  index: number;
-}) {
+function DifferentiatorItem({ item, index }: { item: Differentiator; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="flex flex-col gap-4 p-6 rounded-xl border border-primary/20 bg-primary/5"
+      className="border-primary/20 bg-primary/5 flex flex-col gap-4 rounded-xl border p-6"
     >
-      <div className="h-10 w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-        <item.icon className="h-5 w-5 text-primary" />
+      <div className="bg-primary/10 flex h-10 w-10 items-center justify-center rounded-lg">
+        <item.icon className="text-primary h-5 w-5" />
       </div>
       <div>
-        <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-lg mb-2">{item.title}</p>
-        <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">{item.description}</p>
+        <p className="font-heading mb-2 text-lg font-semibold text-white group-data-[demo-light]:text-zinc-900">
+          {item.title}
+        </p>
+        <p className="text-sm leading-relaxed text-zinc-400 group-data-[demo-light]:text-zinc-600">
+          {item.description}
+        </p>
       </div>
     </motion.div>
   );
@@ -155,36 +160,35 @@ function DifferentiatorItem({
 
 export function AiFeaturesSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
+    <section className="border-t border-zinc-800/50 py-24 group-data-[demo-light]:border-gray-200/50">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+          <span className="bg-primary/10 text-primary mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium">
             Everything It Can Do
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
+          <h2 className="font-heading mb-4 text-3xl font-bold text-white group-data-[demo-light]:text-zinc-900 sm:text-4xl">
             One AI. Every Touchpoint.
           </h2>
-          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-zinc-400 group-data-[demo-light]:text-zinc-600">
             From the first reply to the closed deal — every step of the follow-up process, handled.
           </p>
         </motion.div>
 
         {/* Part 1 — Feature list */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8 mb-16">
+        <div className="mb-16 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, i) => (
             <FeatureItem key={feature.title} feature={feature} index={i} />
           ))}
         </div>
 
-        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 mb-16" />
+        <Separator className="mb-16 bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50" />
 
         {/* Part 2 — Differentiators */}
         <motion.div
@@ -192,20 +196,21 @@ export function AiFeaturesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="mb-10 text-center"
         >
-          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+          <span className="bg-primary/10 text-primary mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium">
             What Makes It Different
           </span>
-          <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-3">
+          <h3 className="font-heading mb-3 text-2xl font-bold text-white group-data-[demo-light]:text-zinc-900 sm:text-3xl">
             Built for the Way Real Teams Actually Work
           </h3>
-          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 max-w-2xl mx-auto">
-            These aren&apos;t features you&apos;ll find in off-the-shelf tools. They&apos;re the reason clients don&apos;t leave.
+          <p className="mx-auto max-w-2xl text-zinc-400 group-data-[demo-light]:text-zinc-600">
+            These aren&apos;t features you&apos;ll find in off-the-shelf tools. They&apos;re the
+            reason clients don&apos;t leave.
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="mb-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {differentiators.map((item, i) => (
             <DifferentiatorItem key={item.title} item={item} index={i} />
           ))}
@@ -219,13 +224,14 @@ export function AiFeaturesSection() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <p className="text-zinc-500 text-sm">
+          <p className="text-sm text-zinc-500">
             Don&apos;t see what you need?{" "}
-            <span className="text-zinc-300 group-data-[demo-light]:text-zinc-700 font-medium">It can probably do that too.</span>{" "}
+            <span className="font-medium text-zinc-300 group-data-[demo-light]:text-zinc-700">
+              It can probably do that too.
+            </span>{" "}
             The system is built to be extended — if your workflow needs it, we can add it.
           </p>
         </motion.div>
-
       </div>
     </section>
   );

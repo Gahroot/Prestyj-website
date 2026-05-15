@@ -41,8 +41,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-const SCRIPT_GEN_URL =
-  "https://script-gen-production-5b56.up.railway.app/generate";
+const SCRIPT_GEN_URL = "https://script-gen-production-5b56.up.railway.app/generate";
 
 type PainPointEntry = {
   painPoint: string;
@@ -95,66 +94,63 @@ const STEPS: Step[] = [
     id: "name",
     title: "What's your name?",
     subtitle: "So we know who we're creating ads for",
-    icon: <User className="w-6 h-6" />,
+    icon: <User className="h-6 w-6" />,
   },
   {
     id: "email",
     title: "What's your email?",
     subtitle: "We'll send your ad previews here",
-    icon: <Mail className="w-6 h-6" />,
+    icon: <Mail className="h-6 w-6" />,
   },
   {
     id: "phone",
     title: "What's your phone number?",
     subtitle: "For quick updates on your ads",
-    icon: <Phone className="w-6 h-6" />,
+    icon: <Phone className="h-6 w-6" />,
   },
   {
     id: "business",
     title: "Tell us about your business",
     subtitle: "Your business name and where you operate",
-    icon: <Building2 className="w-6 h-6" />,
+    icon: <Building2 className="h-6 w-6" />,
   },
   {
     id: "painPoints",
     title: "Your Pain Points & Solutions",
-    subtitle:
-      "What problems does your audience face — and how do you solve them?",
-    icon: <AlertTriangle className="w-6 h-6" />,
+    subtitle: "What problems does your audience face — and how do you solve them?",
+    icon: <AlertTriangle className="h-6 w-6" />,
   },
   {
     id: "targetAudience",
     title: "Who's your target audience?",
-    subtitle:
-      "Describe your ideal customer — demographics, location, situation, etc.",
-    icon: <Target className="w-6 h-6" />,
+    subtitle: "Describe your ideal customer — demographics, location, situation, etc.",
+    icon: <Target className="h-6 w-6" />,
   },
   {
     id: "offer",
     title: "What's your offer?",
     subtitle:
       "Describe the core offer you want to promote (e.g. free inspection, discounted first service)",
-    icon: <Gift className="w-6 h-6" />,
+    icon: <Gift className="h-6 w-6" />,
   },
   {
     id: "leadMagnet",
     title: "Lead Magnet Name",
     subtitle:
-      "What free resource pairs with the offer? (e.g. \"The Homeowner's HVAC Savings Guide\")",
-    icon: <BookOpen className="w-6 h-6" />,
+      'What free resource pairs with the offer? (e.g. "The Homeowner\'s HVAC Savings Guide")',
+    icon: <BookOpen className="h-6 w-6" />,
   },
   {
     id: "credibility",
     title: "Your Credibility & Stats",
-    subtitle:
-      "Numbers that build trust — sales volume, clients helped, years in business, etc.",
-    icon: <Award className="w-6 h-6" />,
+    subtitle: "Numbers that build trust — sales volume, clients helped, years in business, etc.",
+    icon: <Award className="h-6 w-6" />,
   },
   {
     id: "urls",
     title: "Your Website & Landing Page",
     subtitle: "Where can we see your brand and where do leads go?",
-    icon: <Globe className="w-6 h-6" />,
+    icon: <Globe className="h-6 w-6" />,
   },
 ];
 
@@ -190,7 +186,7 @@ const inputClasses = (hasError: boolean) =>
     "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
     "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
     "placeholder:text-muted-foreground",
-    hasError ? "border-destructive" : "border-border"
+    hasError ? "border-destructive" : "border-border",
   );
 
 const buildGeneratingMessages = (adCount: number) => [
@@ -237,9 +233,7 @@ export function GetAdsLeadForm({
   // In the paid flow, skip identity steps — we already have email/name/phone from Stripe.
   const VISIBLE_STEPS = useMemo(() => {
     if (isPaidFlow) {
-      return STEPS.filter(
-        (s) => s.id !== "name" && s.id !== "email" && s.id !== "phone"
-      );
+      return STEPS.filter((s) => s.id !== "name" && s.id !== "email" && s.id !== "phone");
     }
     return STEPS;
   }, [isPaidFlow]);
@@ -274,13 +268,10 @@ export function GetAdsLeadForm({
   const [generatingMessage, setGeneratingMessage] = useState(0);
   const [scriptMarkdown, setScriptMarkdown] = useState("");
   const [copied, setCopied] = useState(false);
-  const [painPointCarouselApi, setPainPointCarouselApi] =
-    useState<CarouselApi | null>(null);
+  const [painPointCarouselApi, setPainPointCarouselApi] = useState<CarouselApi | null>(null);
   const [currentPainPointIndex, setCurrentPainPointIndex] = useState(0);
   const stepInputRef = useRef<HTMLInputElement | HTMLTextAreaElement>(null);
-  const messageIntervalRef = useRef<ReturnType<typeof setInterval> | null>(
-    null
-  );
+  const messageIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const focusStepInput = useCallback(() => {
     stepInputRef.current?.focus({ preventScroll: true });
@@ -288,8 +279,7 @@ export function GetAdsLeadForm({
 
   useEffect(() => {
     if (!painPointCarouselApi) return;
-    const sync = () =>
-      setCurrentPainPointIndex(painPointCarouselApi.selectedScrollSnap());
+    const sync = () => setCurrentPainPointIndex(painPointCarouselApi.selectedScrollSnap());
     sync();
     painPointCarouselApi.on("select", sync);
     painPointCarouselApi.on("reInit", sync);
@@ -301,14 +291,13 @@ export function GetAdsLeadForm({
 
   const validateCurrentStep = (): boolean => {
     const step = VISIBLE_STEPS[currentStep];
+    if (!step) return true;
     const newErrors: Record<string, string> = {};
 
     switch (step.id) {
       case "name":
-        if (!formData.firstName.trim())
-          newErrors.firstName = "First name is required";
-        if (!formData.lastName.trim())
-          newErrors.lastName = "Last name is required";
+        if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
+        if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
         break;
       case "email":
         if (!formData.email.trim()) newErrors.email = "Email is required";
@@ -316,25 +305,21 @@ export function GetAdsLeadForm({
           newErrors.email = "Enter a valid email";
         break;
       case "phone":
-        if (!formData.phone.trim())
-          newErrors.phone = "Phone number is required";
+        if (!formData.phone.trim()) newErrors.phone = "Phone number is required";
         else if (formData.phone.replace(/\D/g, "").length < 10)
           newErrors.phone = "Enter a valid phone number";
         break;
       case "business":
-        if (!formData.businessName.trim())
-          newErrors.businessName = "Business name is required";
+        if (!formData.businessName.trim()) newErrors.businessName = "Business name is required";
         break;
       case "painPoints": {
         const filled = formData.painPoints.filter(
-          (pp) => pp.painPoint.trim() || pp.solution.trim()
+          (pp) => pp.painPoint.trim() || pp.solution.trim(),
         );
-        if (filled.length < 1)
-          newErrors.painPoints = "Add at least one pain point";
+        if (filled.length < 1) newErrors.painPoints = "Add at least one pain point";
         formData.painPoints.forEach((pp, i) => {
           if (pp.painPoint.trim() && !pp.solution.trim())
-            newErrors[`solution_${i}`] =
-              "Add the solution for this pain point";
+            newErrors[`solution_${i}`] = "Add the solution for this pain point";
           if (!pp.painPoint.trim() && pp.solution.trim())
             newErrors[`painPoint_${i}`] = "Add the pain point";
         });
@@ -348,20 +333,16 @@ export function GetAdsLeadForm({
         if (!formData.offer.trim()) newErrors.offer = "Describe your offer";
         break;
       case "leadMagnet":
-        if (!formData.leadMagnetName.trim())
-          newErrors.leadMagnetName = "Name your lead magnet";
+        if (!formData.leadMagnetName.trim()) newErrors.leadMagnetName = "Name your lead magnet";
         break;
       case "credibility": {
-        const filledClaims = formData.credibilityClaims.filter(
-          (c) => c.value.trim()
-        );
+        const filledClaims = formData.credibilityClaims.filter((c) => c.value.trim());
         if (filledClaims.length < 1)
           newErrors.credibility = "Fill in at least one credibility stat";
         break;
       }
       case "urls":
-        if (!formData.websiteUrl.trim())
-          newErrors.websiteUrl = "Website URL is required";
+        if (!formData.websiteUrl.trim()) newErrors.websiteUrl = "Website URL is required";
         break;
     }
 
@@ -376,9 +357,7 @@ export function GetAdsLeadForm({
 
     // Rotate status messages while generating
     messageIntervalRef.current = setInterval(() => {
-      setGeneratingMessage((prev) =>
-        prev < GENERATING_MESSAGES.length - 1 ? prev + 1 : prev
-      );
+      setGeneratingMessage((prev) => (prev < GENERATING_MESSAGES.length - 1 ? prev + 1 : prev));
     }, 25000);
 
     const topStats = formData.credibilityClaims
@@ -415,20 +394,17 @@ export function GetAdsLeadForm({
     // Free flow: fire lead capture to the CRM in parallel. Paid flow: /api/start-job handles it.
     const leadPromise = isPaidFlow
       ? Promise.resolve()
-      : fetch(
-          "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              first_name: formData.firstName.trim(),
-              last_name: formData.lastName.trim(),
-              phone_number: formatPhoneNumber(formData.phone),
-              email: formData.email.trim(),
-              notes: `Business: ${formData.businessName}\nCity: ${formData.city}\nService Area: ${formData.serviceArea}\n\n--- PAIN POINTS & SOLUTIONS ---\n${painPointsSolutions.map((pp, i) => `${i + 1}. ${pp.pain_point} → ${pp.solution}`).join("\n")}\n\n--- TARGET AUDIENCE ---\n${formData.targetAudience}\n\n--- OFFER ---\n${formData.offer}\n\n--- LEAD MAGNET ---\n${formData.leadMagnetName}\n\n--- CREDIBILITY ---\n${topStats.join("\n")}\n\n--- URLS ---\nWebsite: ${formData.websiteUrl}${formData.landingPageUrl ? `\nLanding Page: ${formData.landingPageUrl}` : ""}`,
-            }),
-          }
-        ).catch(() => {});
+      : fetch("https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            first_name: formData.firstName.trim(),
+            last_name: formData.lastName.trim(),
+            phone_number: formatPhoneNumber(formData.phone),
+            email: formData.email.trim(),
+            notes: `Business: ${formData.businessName}\nCity: ${formData.city}\nService Area: ${formData.serviceArea}\n\n--- PAIN POINTS & SOLUTIONS ---\n${painPointsSolutions.map((pp, i) => `${i + 1}. ${pp.pain_point} → ${pp.solution}`).join("\n")}\n\n--- TARGET AUDIENCE ---\n${formData.targetAudience}\n\n--- OFFER ---\n${formData.offer}\n\n--- LEAD MAGNET ---\n${formData.leadMagnetName}\n\n--- CREDIBILITY ---\n${topStats.join("\n")}\n\n--- URLS ---\nWebsite: ${formData.websiteUrl}${formData.landingPageUrl ? `\nLanding Page: ${formData.landingPageUrl}` : ""}`,
+          }),
+        }).catch(() => {});
 
     const scriptPromise = isPaidFlow
       ? fetch("/api/start-job", {
@@ -520,10 +496,7 @@ export function GetAdsLeadForm({
     }
   };
 
-  const updateField = <K extends keyof FormData>(
-    field: K,
-    value: FormData[K]
-  ) => {
+  const updateField = <K extends keyof FormData>(field: K, value: FormData[K]) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
     setErrors((prev) => {
       const next = { ...prev };
@@ -532,13 +505,10 @@ export function GetAdsLeadForm({
     });
   };
 
-  const updatePainPoint = (
-    index: number,
-    key: "painPoint" | "solution",
-    value: string
-  ) => {
+  const updatePainPoint = (index: number, key: "painPoint" | "solution", value: string) => {
     const updated = [...formData.painPoints];
-    updated[index] = { ...updated[index], [key]: value };
+    const current = updated[index] ?? { painPoint: "", solution: "" };
+    updated[index] = { ...current, [key]: value };
     updateField("painPoints", updated);
     setErrors((prev) => {
       const next = { ...prev };
@@ -551,10 +521,7 @@ export function GetAdsLeadForm({
   const addPainPoint = () => {
     if (formData.painPoints.length < MAX_PAIN_POINTS) {
       const nextIndex = formData.painPoints.length;
-      updateField("painPoints", [
-        ...formData.painPoints,
-        { painPoint: "", solution: "" },
-      ]);
+      updateField("painPoints", [...formData.painPoints, { painPoint: "", solution: "" }]);
       requestAnimationFrame(() => {
         painPointCarouselApi?.reInit();
         painPointCarouselApi?.scrollTo(nextIndex);
@@ -566,7 +533,7 @@ export function GetAdsLeadForm({
     if (formData.painPoints.length > 1) {
       updateField(
         "painPoints",
-        formData.painPoints.filter((_, i) => i !== index)
+        formData.painPoints.filter((_, i) => i !== index),
       );
       requestAnimationFrame(() => {
         painPointCarouselApi?.reInit();
@@ -577,7 +544,8 @@ export function GetAdsLeadForm({
 
   const updateCredibility = (index: number, value: string) => {
     const updated = [...formData.credibilityClaims];
-    updated[index] = { ...updated[index], value };
+    const current = updated[index] ?? { label: "", value: "" };
+    updated[index] = { ...current, value };
     updateField("credibilityClaims", updated);
     setErrors((prev) => {
       const next = { ...prev };
@@ -596,21 +564,21 @@ export function GetAdsLeadForm({
   if (submitState === "generating") {
     return (
       <section id="lead-form" className="py-12 md:py-16">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
           <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
-            <div className="text-center space-y-6">
+            <div className="space-y-6 text-center">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10"
+                className="bg-primary/10 inline-flex h-16 w-16 items-center justify-center rounded-full"
               >
-                <Loader2 className="w-8 h-8 text-primary" />
+                <Loader2 className="text-primary h-8 w-8" />
               </motion.div>
               <div>
-                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-3">
+                <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
                   Generating Your {adCount} Ad Scripts
                 </h2>
-                <p className="text-muted-foreground text-lg mb-2">
+                <p className="text-muted-foreground mb-2 text-lg">
                   This takes 2–5 minutes. Don&apos;t close this page.
                 </p>
               </div>
@@ -620,15 +588,15 @@ export function GetAdsLeadForm({
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -10 }}
-                  className="flex items-center justify-center gap-2 text-primary font-medium"
+                  className="text-primary flex items-center justify-center gap-2 font-medium"
                 >
-                  <FileText className="w-4 h-4" />
+                  <FileText className="h-4 w-4" />
                   {GENERATING_MESSAGES[generatingMessage]}
                 </motion.div>
               </AnimatePresence>
-              <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
+              <div className="bg-muted h-2 w-full overflow-hidden rounded-full">
                 <motion.div
-                  className="h-full bg-primary rounded-full"
+                  className="bg-primary h-full rounded-full"
                   initial={{ width: "5%" }}
                   animate={{ width: "90%" }}
                   transition={{ duration: 240, ease: "linear" }}
@@ -645,16 +613,16 @@ export function GetAdsLeadForm({
   if (submitState === "complete") {
     return (
       <section id="lead-form" className="py-12 md:py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="mx-auto max-w-4xl space-y-8 px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             className="text-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 mb-6">
-              <CheckCircle className="w-8 h-8 text-success" />
+            <div className="bg-success/10 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+              <CheckCircle className="text-success h-8 w-8" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
+            <h2 className="font-heading text-foreground mb-3 text-3xl font-bold sm:text-4xl">
               Your {adCount} Ad Scripts Are Ready!
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -671,31 +639,24 @@ export function GetAdsLeadForm({
             transition={{ delay: 0.2 }}
           >
             <BorderGlow borderRadius={18} innerClassName="p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="font-heading font-bold text-foreground text-lg">
-                  Ad Scripts
-                </h3>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={handleCopyScripts}
-                  className="gap-2"
-                >
+              <div className="mb-4 flex items-center justify-between">
+                <h3 className="font-heading text-foreground text-lg font-bold">Ad Scripts</h3>
+                <Button variant="outline" size="sm" onClick={handleCopyScripts} className="gap-2">
                   {copied ? (
                     <>
-                      <Check className="w-4 h-4" />
+                      <Check className="h-4 w-4" />
                       Copied!
                     </>
                   ) : (
                     <>
-                      <Copy className="w-4 h-4" />
+                      <Copy className="h-4 w-4" />
                       Copy All
                     </>
                   )}
                 </Button>
               </div>
-              <div className="max-h-[500px] overflow-y-auto rounded-lg bg-muted/50 p-4 border border-border">
-                <pre className="whitespace-pre-wrap text-sm text-foreground font-mono leading-relaxed">
+              <div className="bg-muted/50 border-border max-h-[500px] overflow-y-auto rounded-lg border p-4">
+                <pre className="text-foreground font-mono text-sm leading-relaxed whitespace-pre-wrap">
                   {scriptMarkdown}
                 </pre>
               </div>
@@ -710,36 +671,31 @@ export function GetAdsLeadForm({
               transition={{ delay: 0.4 }}
             >
               <BorderGlow borderRadius={18} innerClassName="p-6 md:p-8">
-                <h3 className="text-2xl font-heading font-bold text-foreground mb-4">
+                <h3 className="font-heading text-foreground mb-4 text-2xl font-bold">
                   Next: record and send your footage
                 </h3>
-                <ol className="space-y-4 text-muted-foreground">
+                <ol className="text-muted-foreground space-y-4">
                   <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
+                    <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold">
                       1
                     </div>
                     <span>
-                      Prop your phone up selfie-style, read the whole script
-                      start-to-finish in one take. ~15–20 minutes. Fumbles are
-                      fine — we edit around them.
+                      Prop your phone up selfie-style, read the whole script start-to-finish in one
+                      take. ~15–20 minutes. Fumbles are fine — we edit around them.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
-                      <Film className="w-4 h-4" />
+                    <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold">
+                      <Film className="h-4 w-4" />
                     </div>
-                    <span>
-                      Upload the raw file to Google Drive, Dropbox, or
-                      WeTransfer.
-                    </span>
+                    <span>Upload the raw file to Google Drive, Dropbox, or WeTransfer.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-sm flex-shrink-0">
-                      <Send className="w-4 h-4" />
+                    <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold">
+                      <Send className="h-4 w-4" />
                     </div>
                     <span>
-                      Reply to your confirmation email with the link. Your
-                      batch ships within{" "}
+                      Reply to your confirmation email with the link. Your batch ships within{" "}
                       <span className="text-foreground font-semibold">
                         24 hours of receiving footage
                       </span>
@@ -755,13 +711,12 @@ export function GetAdsLeadForm({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
             >
-              <div className="text-center mb-4">
-                <h3 className="text-2xl font-heading font-bold text-foreground">
+              <div className="mb-4 text-center">
+                <h3 className="font-heading text-foreground text-2xl font-bold">
                   Now Book Your Strategy Call
                 </h3>
                 <p className="text-muted-foreground">
-                  We&apos;ll map out your ad campaign and get these scripts
-                  running.
+                  We&apos;ll map out your ad campaign and get these scripts running.
                 </p>
               </div>
               <Cal
@@ -781,19 +736,18 @@ export function GetAdsLeadForm({
     if (isPaidFlow) {
       return (
         <section id="lead-form" className="py-12 md:py-16">
-          <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
             <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
-              <div className="text-center space-y-5">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-destructive/10 text-destructive">
-                  <AlertTriangle className="w-8 h-8" />
+              <div className="space-y-5 text-center">
+                <div className="bg-destructive/10 text-destructive inline-flex h-16 w-16 items-center justify-center rounded-full">
+                  <AlertTriangle className="h-8 w-8" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground">
+                <h2 className="font-heading text-foreground text-2xl font-bold sm:text-3xl">
                   Script generation hit a snag
                 </h2>
                 <p className="text-muted-foreground">
-                  Your payment is safe. Please try again — or reply to your
-                  Stripe receipt and we&apos;ll generate your scripts manually
-                  within the hour.
+                  Your payment is safe. Please try again — or reply to your Stripe receipt and
+                  we&apos;ll generate your scripts manually within the hour.
                 </p>
                 <Button
                   size="lg"
@@ -813,21 +767,21 @@ export function GetAdsLeadForm({
     }
     return (
       <section id="lead-form" className="py-12 md:py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center mb-8"
+            className="mb-8 text-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 mb-6">
-              <CheckCircle className="w-8 h-8 text-success" />
+            <div className="bg-success/10 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+              <CheckCircle className="text-success h-8 w-8" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
+            <h2 className="font-heading text-foreground mb-3 text-3xl font-bold sm:text-4xl">
               You&apos;re All Set!
             </h2>
             <p className="text-muted-foreground text-lg">
-              Book your strategy call below and we&apos;ll map out your ad
-              campaign and deliver your scripts.
+              Book your strategy call below and we&apos;ll map out your ad campaign and deliver your
+              scripts.
             </p>
           </motion.div>
           <motion.div
@@ -848,6 +802,7 @@ export function GetAdsLeadForm({
 
   const renderStepContent = () => {
     const step = VISIBLE_STEPS[currentStep];
+    if (!step) return null;
 
     switch (step.id) {
       case "name":
@@ -859,7 +814,7 @@ export function GetAdsLeadForm({
           >
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
+                <label className="text-foreground mb-1.5 block text-sm font-medium">
                   First Name
                 </label>
                 <input
@@ -870,13 +825,11 @@ export function GetAdsLeadForm({
                   placeholder="John"
                 />
                 {errors.firstName && (
-                  <p className="text-sm text-destructive mt-1">
-                    {errors.firstName}
-                  </p>
+                  <p className="text-destructive mt-1 text-sm">{errors.firstName}</p>
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
+                <label className="text-foreground mb-1.5 block text-sm font-medium">
                   Last Name
                 </label>
                 <input
@@ -887,9 +840,7 @@ export function GetAdsLeadForm({
                   placeholder="Smith"
                 />
                 {errors.lastName && (
-                  <p className="text-sm text-destructive mt-1">
-                    {errors.lastName}
-                  </p>
+                  <p className="text-destructive mt-1 text-sm">{errors.lastName}</p>
                 )}
               </div>
             </div>
@@ -898,11 +849,8 @@ export function GetAdsLeadForm({
 
       case "email":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <label className="block text-sm font-medium text-foreground mb-1.5">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <label className="text-foreground mb-1.5 block text-sm font-medium">
               Email Address
             </label>
             <input
@@ -913,21 +861,14 @@ export function GetAdsLeadForm({
               className={inputClasses(!!errors.email)}
               placeholder="john@company.com"
             />
-            {errors.email && (
-              <p className="text-sm text-destructive mt-1">{errors.email}</p>
-            )}
+            {errors.email && <p className="text-destructive mt-1 text-sm">{errors.email}</p>}
           </motion.div>
         );
 
       case "phone":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <label className="block text-sm font-medium text-foreground mb-1.5">
-              Phone Number
-            </label>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <label className="text-foreground mb-1.5 block text-sm font-medium">Phone Number</label>
             <input
               ref={stepInputRef as React.RefObject<HTMLInputElement>}
               type="tel"
@@ -936,9 +877,7 @@ export function GetAdsLeadForm({
               className={inputClasses(!!errors.phone)}
               placeholder="(555) 123-4567"
             />
-            {errors.phone && (
-              <p className="text-sm text-destructive mt-1">{errors.phone}</p>
-            )}
+            {errors.phone && <p className="text-destructive mt-1 text-sm">{errors.phone}</p>}
           </motion.div>
         );
 
@@ -950,7 +889,7 @@ export function GetAdsLeadForm({
             className="space-y-4"
           >
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1.5">
+              <label className="text-foreground mb-1.5 block text-sm font-medium">
                 Business Name
               </label>
               <input
@@ -962,18 +901,13 @@ export function GetAdsLeadForm({
                 placeholder="e.g. Smith Roofing Co."
               />
               {errors.businessName && (
-                <p className="text-sm text-destructive mt-1">
-                  {errors.businessName}
-                </p>
+                <p className="text-destructive mt-1 text-sm">{errors.businessName}</p>
               )}
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
-                  City{" "}
-                  <span className="text-muted-foreground font-normal">
-                    (optional)
-                  </span>
+                <label className="text-foreground mb-1.5 block text-sm font-medium">
+                  City <span className="text-muted-foreground font-normal">(optional)</span>
                 </label>
                 <input
                   type="text"
@@ -984,11 +918,8 @@ export function GetAdsLeadForm({
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
-                  Service Area{" "}
-                  <span className="text-muted-foreground font-normal">
-                    (optional)
-                  </span>
+                <label className="text-foreground mb-1.5 block text-sm font-medium">
+                  Service Area <span className="text-muted-foreground font-normal">(optional)</span>
                 </label>
                 <input
                   type="text"
@@ -1003,11 +934,8 @@ export function GetAdsLeadForm({
         );
 
       case "painPoints": {
-        const canAdd =
-          !lockedPainPointCount &&
-          formData.painPoints.length < MAX_PAIN_POINTS;
-        const canRemove =
-          !lockedPainPointCount && formData.painPoints.length > 1;
+        const canAdd = !lockedPainPointCount && formData.painPoints.length < MAX_PAIN_POINTS;
+        const canRemove = !lockedPainPointCount && formData.painPoints.length > 1;
         return (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
@@ -1015,12 +943,11 @@ export function GetAdsLeadForm({
             className="space-y-4"
           >
             <div className="flex items-center justify-between px-1">
-              <span className="text-sm font-medium text-muted-foreground">
-                Pain point {currentPainPointIndex + 1} of{" "}
-                {formData.painPoints.length}
+              <span className="text-muted-foreground text-sm font-medium">
+                Pain point {currentPainPointIndex + 1} of {formData.painPoints.length}
                 {!lockedPainPointCount && ` (max ${MAX_PAIN_POINTS})`}
               </span>
-              <span className="text-xs text-muted-foreground hidden sm:block">
+              <span className="text-muted-foreground hidden text-xs sm:block">
                 Swipe or drag to navigate
               </span>
             </div>
@@ -1032,12 +959,10 @@ export function GetAdsLeadForm({
             >
               <CarouselContent className="-ml-4">
                 {formData.painPoints.map((pp, i) => (
-                  <CarouselItem key={i} className="pl-4 basis-full">
-                    <div className="rounded-xl border-2 border-border bg-card/50 p-4 space-y-3 h-full">
+                  <CarouselItem key={i} className="basis-full pl-4">
+                    <div className="border-border bg-card/50 h-full space-y-3 rounded-xl border-2 p-4">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-semibold text-primary">
-                          #{i + 1}
-                        </span>
+                        <span className="text-primary text-sm font-semibold">#{i + 1}</span>
                         {canRemove && (
                           <button
                             type="button"
@@ -1045,58 +970,48 @@ export function GetAdsLeadForm({
                             className="text-muted-foreground hover:text-destructive transition-colors"
                             aria-label={`Remove pain point ${i + 1}`}
                           >
-                            <Trash2 className="w-4 h-4" />
+                            <Trash2 className="h-4 w-4" />
                           </button>
                         )}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-foreground mb-1">
-                          <AlertTriangle className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
+                        <label className="text-foreground mb-1 block text-sm font-medium">
+                          <AlertTriangle className="text-muted-foreground mr-1 inline h-3.5 w-3.5" />
                           Pain Point
                         </label>
                         <Textarea
                           value={pp.painPoint}
-                          onChange={(e) =>
-                            updatePainPoint(i, "painPoint", e.target.value)
-                          }
+                          onChange={(e) => updatePainPoint(i, "painPoint", e.target.value)}
                           className={cn(
-                            "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
-                            "focus:border-primary focus:ring-2 focus:ring-primary/20",
-                            errors[`painPoint_${i}`]
-                              ? "border-destructive"
-                              : "border-border"
+                            "bg-card min-h-[80px] resize-none rounded-xl border-2 text-sm",
+                            "focus:border-primary focus:ring-primary/20 focus:ring-2",
+                            errors[`painPoint_${i}`] ? "border-destructive" : "border-border",
                           )}
                           placeholder="e.g. Leads go cold because nobody follows up fast enough"
                         />
                         {errors[`painPoint_${i}`] && (
-                          <p className="text-sm text-destructive mt-1">
+                          <p className="text-destructive mt-1 text-sm">
                             {errors[`painPoint_${i}`]}
                           </p>
                         )}
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-foreground mb-1">
-                          <Lightbulb className="w-3.5 h-3.5 inline mr-1 text-muted-foreground" />
+                        <label className="text-foreground mb-1 block text-sm font-medium">
+                          <Lightbulb className="text-muted-foreground mr-1 inline h-3.5 w-3.5" />
                           Your Solution
                         </label>
                         <Textarea
                           value={pp.solution}
-                          onChange={(e) =>
-                            updatePainPoint(i, "solution", e.target.value)
-                          }
+                          onChange={(e) => updatePainPoint(i, "solution", e.target.value)}
                           className={cn(
-                            "rounded-xl border-2 bg-card min-h-[80px] resize-none text-sm",
-                            "focus:border-primary focus:ring-2 focus:ring-primary/20",
-                            errors[`solution_${i}`]
-                              ? "border-destructive"
-                              : "border-border"
+                            "bg-card min-h-[80px] resize-none rounded-xl border-2 text-sm",
+                            "focus:border-primary focus:ring-primary/20 focus:ring-2",
+                            errors[`solution_${i}`] ? "border-destructive" : "border-border",
                           )}
                           placeholder="e.g. AI responds to every lead in under 60 seconds"
                         />
                         {errors[`solution_${i}`] && (
-                          <p className="text-sm text-destructive mt-1">
-                            {errors[`solution_${i}`]}
-                          </p>
+                          <p className="text-destructive mt-1 text-sm">{errors[`solution_${i}`]}</p>
                         )}
                       </div>
                     </div>
@@ -1115,8 +1030,8 @@ export function GetAdsLeadForm({
                   className={cn(
                     "h-2 rounded-full transition-all",
                     i === currentPainPointIndex
-                      ? "w-6 bg-primary"
-                      : "w-2 bg-muted hover:bg-muted-foreground/40"
+                      ? "bg-primary w-6"
+                      : "bg-muted hover:bg-muted-foreground/40 w-2",
                   )}
                 />
               ))}
@@ -1128,13 +1043,11 @@ export function GetAdsLeadForm({
                 variant="outline"
                 size="sm"
                 onClick={() =>
-                  painPointCarouselApi?.scrollTo(
-                    Math.max(0, currentPainPointIndex - 1)
-                  )
+                  painPointCarouselApi?.scrollTo(Math.max(0, currentPainPointIndex - 1))
                 }
                 disabled={currentPainPointIndex === 0}
               >
-                <ArrowLeft className="w-4 h-4 mr-1" />
+                <ArrowLeft className="mr-1 h-4 w-4" />
                 Prev
               </Button>
 
@@ -1146,11 +1059,11 @@ export function GetAdsLeadForm({
                   onClick={addPainPoint}
                   className="gap-1.5"
                 >
-                  <Plus className="w-4 h-4" />
+                  <Plus className="h-4 w-4" />
                   Add pain point
                 </Button>
               ) : (
-                <span className="text-xs text-muted-foreground">
+                <span className="text-muted-foreground text-xs">
                   {lockedPainPointCount
                     ? `${formData.painPoints.length} locked for this tier`
                     : `Max ${MAX_PAIN_POINTS} reached`}
@@ -1163,25 +1076,18 @@ export function GetAdsLeadForm({
                 size="sm"
                 onClick={() =>
                   painPointCarouselApi?.scrollTo(
-                    Math.min(
-                      formData.painPoints.length - 1,
-                      currentPainPointIndex + 1
-                    )
+                    Math.min(formData.painPoints.length - 1, currentPainPointIndex + 1),
                   )
                 }
-                disabled={
-                  currentPainPointIndex === formData.painPoints.length - 1
-                }
+                disabled={currentPainPointIndex === formData.painPoints.length - 1}
               >
                 Next
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="ml-1 h-4 w-4" />
               </Button>
             </div>
 
             {errors.painPoints && (
-              <p className="text-sm text-destructive text-center">
-                {errors.painPoints}
-              </p>
+              <p className="text-destructive text-center text-sm">{errors.painPoints}</p>
             )}
           </motion.div>
         );
@@ -1189,11 +1095,8 @@ export function GetAdsLeadForm({
 
       case "targetAudience":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <label className="block text-sm font-medium text-foreground mb-1.5">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <label className="text-foreground mb-1.5 block text-sm font-medium">
               Target Audience
             </label>
             <Textarea
@@ -1201,53 +1104,41 @@ export function GetAdsLeadForm({
               value={formData.targetAudience}
               onChange={(e) => updateField("targetAudience", e.target.value)}
               className={cn(
-                "rounded-xl border-2 bg-card min-h-[120px] resize-none",
-                "focus:border-primary focus:ring-2 focus:ring-primary/20",
-                errors.targetAudience ? "border-destructive" : "border-border"
+                "bg-card min-h-[120px] resize-none rounded-xl border-2",
+                "focus:border-primary focus:ring-primary/20 focus:ring-2",
+                errors.targetAudience ? "border-destructive" : "border-border",
               )}
               placeholder="e.g. Homeowners aged 35-65 in the Dallas–Fort Worth area who recently experienced storm damage and need roof repairs or replacements"
             />
             {errors.targetAudience && (
-              <p className="text-sm text-destructive mt-1">
-                {errors.targetAudience}
-              </p>
+              <p className="text-destructive mt-1 text-sm">{errors.targetAudience}</p>
             )}
           </motion.div>
         );
 
       case "offer":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <label className="block text-sm font-medium text-foreground mb-1.5">
-              Your Offer
-            </label>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <label className="text-foreground mb-1.5 block text-sm font-medium">Your Offer</label>
             <Textarea
               ref={stepInputRef as React.RefObject<HTMLTextAreaElement>}
               value={formData.offer}
               onChange={(e) => updateField("offer", e.target.value)}
               className={cn(
-                "rounded-xl border-2 bg-card min-h-[120px] resize-none",
-                "focus:border-primary focus:ring-2 focus:ring-primary/20",
-                errors.offer ? "border-destructive" : "border-border"
+                "bg-card min-h-[120px] resize-none rounded-xl border-2",
+                "focus:border-primary focus:ring-primary/20 focus:ring-2",
+                errors.offer ? "border-destructive" : "border-border",
               )}
               placeholder="e.g. Free roof inspection + $500 off any full replacement booked this month. Includes 10-year warranty."
             />
-            {errors.offer && (
-              <p className="text-sm text-destructive mt-1">{errors.offer}</p>
-            )}
+            {errors.offer && <p className="text-destructive mt-1 text-sm">{errors.offer}</p>}
           </motion.div>
         );
 
       case "leadMagnet":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <label className="block text-sm font-medium text-foreground mb-1.5">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <label className="text-foreground mb-1.5 block text-sm font-medium">
               Lead Magnet Name
             </label>
             <input
@@ -1259,13 +1150,10 @@ export function GetAdsLeadForm({
               placeholder='e.g. "The 5-Point Home Inspection Checklist Every Buyer Needs"'
             />
             {errors.leadMagnetName && (
-              <p className="text-sm text-destructive mt-1">
-                {errors.leadMagnetName}
-              </p>
+              <p className="text-destructive mt-1 text-sm">{errors.leadMagnetName}</p>
             )}
-            <p className="text-xs text-muted-foreground mt-2">
-              This is the free resource your audience gets in exchange for their
-              contact info.
+            <p className="text-muted-foreground mt-2 text-xs">
+              This is the free resource your audience gets in exchange for their contact info.
             </p>
           </motion.div>
         );
@@ -1279,7 +1167,7 @@ export function GetAdsLeadForm({
           >
             {formData.credibilityClaims.map((claim, i) => (
               <div key={claim.label}>
-                <label className="block text-sm font-medium text-foreground mb-1">
+                <label className="text-foreground mb-1 block text-sm font-medium">
                   {claim.label}
                 </label>
                 <input
@@ -1292,11 +1180,9 @@ export function GetAdsLeadForm({
               </div>
             ))}
             {errors.credibility && (
-              <p className="text-sm text-destructive text-center">
-                {errors.credibility}
-              </p>
+              <p className="text-destructive text-center text-sm">{errors.credibility}</p>
             )}
-            <p className="text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-xs">
               Fill in at least one. Leave others blank if they don&apos;t apply.
             </p>
           </motion.div>
@@ -1310,7 +1196,7 @@ export function GetAdsLeadForm({
             className="space-y-4"
           >
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1.5">
+              <label className="text-foreground mb-1.5 block text-sm font-medium">
                 Website URL
               </label>
               <input
@@ -1322,17 +1208,13 @@ export function GetAdsLeadForm({
                 placeholder="https://yourcompany.com"
               />
               {errors.websiteUrl && (
-                <p className="text-sm text-destructive mt-1">
-                  {errors.websiteUrl}
-                </p>
+                <p className="text-destructive mt-1 text-sm">{errors.websiteUrl}</p>
               )}
             </div>
             <div>
-              <label className="block text-sm font-medium text-foreground mb-1.5">
+              <label className="text-foreground mb-1.5 block text-sm font-medium">
                 Landing Page URL{" "}
-                <span className="text-muted-foreground font-normal">
-                  (optional)
-                </span>
+                <span className="text-muted-foreground font-normal">(optional)</span>
               </label>
               <input
                 type="url"
@@ -1341,9 +1223,8 @@ export function GetAdsLeadForm({
                 className={inputClasses(false)}
                 placeholder="https://yourcompany.com/offer"
               />
-              <p className="text-xs text-muted-foreground mt-1.5">
-                Where do your ad leads currently go? Leave blank if you
-                don&apos;t have one yet.
+              <p className="text-muted-foreground mt-1.5 text-xs">
+                Where do your ad leads currently go? Leave blank if you don&apos;t have one yet.
               </p>
             </div>
           </motion.div>
@@ -1356,7 +1237,7 @@ export function GetAdsLeadForm({
 
   return (
     <section id="lead-form" className="py-12 md:py-16">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-xl">
+      <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
         <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
           <form
             onSubmit={(e) => {
@@ -1365,31 +1246,31 @@ export function GetAdsLeadForm({
             }}
           >
             {/* Progress dots */}
-            <div className="flex justify-center gap-2 mb-8">
+            <div className="mb-8 flex justify-center gap-2">
               {VISIBLE_STEPS.map((_, index) => (
                 <div
                   key={index}
                   className={cn(
                     "h-2 rounded-full transition-all duration-300",
                     index === currentStep
-                      ? "w-8 bg-primary"
+                      ? "bg-primary w-8"
                       : index < currentStep
-                        ? "w-2 bg-primary"
-                        : "w-2 bg-muted"
+                        ? "bg-primary w-2"
+                        : "bg-muted w-2",
                   )}
                 />
               ))}
             </div>
 
             {/* Step header */}
-            <div className="text-center mb-8">
+            <div className="mb-8 text-center">
               <motion.div
                 key={`icon-${currentStep}`}
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
-                className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-4"
+                className="bg-primary/10 text-primary mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full"
               >
-                {VISIBLE_STEPS[currentStep].icon}
+                {VISIBLE_STEPS[currentStep]?.icon}
               </motion.div>
               <AnimatePresence mode="wait">
                 <motion.div
@@ -1399,18 +1280,16 @@ export function GetAdsLeadForm({
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
-                    {VISIBLE_STEPS[currentStep].title}
+                  <h2 className="font-heading text-foreground mb-2 text-2xl font-bold sm:text-3xl">
+                    {VISIBLE_STEPS[currentStep]?.title}
                   </h2>
-                  <p className="text-muted-foreground">
-                    {VISIBLE_STEPS[currentStep].subtitle}
-                  </p>
+                  <p className="text-muted-foreground">{VISIBLE_STEPS[currentStep]?.subtitle}</p>
                 </motion.div>
               </AnimatePresence>
             </div>
 
             {/* Step content */}
-            <div className="min-h-[200px] relative overflow-hidden">
+            <div className="relative min-h-[200px] overflow-hidden">
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={currentStep}
@@ -1430,7 +1309,7 @@ export function GetAdsLeadForm({
             </div>
 
             {/* Navigation */}
-            <div className="flex justify-between items-center mt-8 pt-6 border-t border-border">
+            <div className="border-border mt-8 flex items-center justify-between border-t pt-6">
               <Button
                 type="button"
                 variant="ghost"
@@ -1438,12 +1317,12 @@ export function GetAdsLeadForm({
                 disabled={currentStep === 0}
                 className={cn(currentStep === 0 && "invisible")}
               >
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeft className="mr-2 h-4 w-4" />
                 Back
               </Button>
 
               <div className="flex items-center gap-3">
-                <span className="text-xs text-muted-foreground hidden sm:block">
+                <span className="text-muted-foreground hidden text-xs sm:block">
                   Step {currentStep + 1} of {VISIBLE_STEPS.length}
                 </span>
                 <Button
@@ -1454,32 +1333,32 @@ export function GetAdsLeadForm({
                 >
                   {isSubmitting ? (
                     <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                       Submitting...
                     </>
                   ) : currentStep === VISIBLE_STEPS.length - 1 ? (
                     <>
                       Generate My Ads
-                      <CheckCircle className="w-4 h-4 ml-2" />
+                      <CheckCircle className="ml-2 h-4 w-4" />
                     </>
                   ) : (
                     <>
                       Continue
-                      <ArrowRight className="w-4 h-4 ml-2" />
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </>
                   )}
                 </Button>
               </div>
             </div>
 
-            <p className="text-center text-xs text-muted-foreground mt-6">
-              By submitting, you consent to receive marketing communications via
-              email, phone, and SMS. You can unsubscribe at any time. See our{" "}
+            <p className="text-muted-foreground mt-6 text-center text-xs">
+              By submitting, you consent to receive marketing communications via email, phone, and
+              SMS. You can unsubscribe at any time. See our{" "}
               <a
                 href="/terms"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-foreground"
+                className="hover:text-foreground underline"
               >
                 Terms
               </a>{" "}
@@ -1488,7 +1367,7 @@ export function GetAdsLeadForm({
                 href="/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline hover:text-foreground"
+                className="hover:text-foreground underline"
               >
                 Privacy Policy
               </a>

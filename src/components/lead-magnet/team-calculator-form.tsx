@@ -12,10 +12,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { teamCalculatorSchema, responseTimeOptions, roleOptions } from "@/lib/validations/lead-magnet-schemas";
+import {
+  teamCalculatorSchema,
+  responseTimeOptions,
+  roleOptions,
+} from "@/lib/validations/lead-magnet-schemas";
 import BorderGlow from "@/components/ui/border-glow";
 import type { TeamCalculatorInput } from "@/lib/validations/lead-magnet-schemas";
-import { calculateCommissionLoss, formatCurrency, formatNumber } from "@/lib/calculator/commission-loss";
+import {
+  calculateCommissionLoss,
+  formatCurrency,
+  formatNumber,
+} from "@/lib/calculator/commission-loss";
 import type { CalculatorResults } from "@/lib/calculator/commission-loss";
 
 const TOTAL_STEPS = 3;
@@ -26,15 +34,10 @@ export function TeamCalculatorForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const [formData, setFormData] = useState<Partial<TeamCalculatorInput>>({
-    teamSize: undefined,
-    monthlyLeads: undefined,
-    avgCommission: undefined,
-    closeRate: undefined,
     responseTime: "4-hour",
     name: "",
     email: "",
     companyName: "",
-    role: undefined,
   });
 
   const [calculationResults, setCalculationResults] = useState<CalculatorResults | null>(null);
@@ -143,13 +146,15 @@ export function TeamCalculatorForm() {
     <div className="mx-auto w-full max-w-2xl">
       {/* Progress Indicator */}
       <div className="mb-8">
-        <div className="flex items-center justify-between text-sm text-muted-foreground">
-          <span>Step {step} of {TOTAL_STEPS}</span>
+        <div className="text-muted-foreground flex items-center justify-between text-sm">
+          <span>
+            Step {step} of {TOTAL_STEPS}
+          </span>
           <span>{Math.round((step / TOTAL_STEPS) * 100)}% Complete</span>
         </div>
-        <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-muted">
+        <div className="bg-muted mt-2 h-2 w-full overflow-hidden rounded-full">
           <motion.div
-            className="h-full bg-primary"
+            className="bg-primary h-full"
             initial={{ width: "0%" }}
             animate={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
             transition={{ duration: 0.3 }}
@@ -187,7 +192,7 @@ export function TeamCalculatorForm() {
                   onChange={(e) => updateField("teamSize", parseInt(e.target.value) || undefined)}
                 />
                 {errors.teamSize && (
-                  <p className="mt-1 text-sm text-destructive">{errors.teamSize}</p>
+                  <p className="text-destructive mt-1 text-sm">{errors.teamSize}</p>
                 )}
               </div>
 
@@ -199,10 +204,12 @@ export function TeamCalculatorForm() {
                   min="10"
                   placeholder="e.g., 500"
                   value={formData.monthlyLeads ?? ""}
-                  onChange={(e) => updateField("monthlyLeads", parseInt(e.target.value) || undefined)}
+                  onChange={(e) =>
+                    updateField("monthlyLeads", parseInt(e.target.value) || undefined)
+                  }
                 />
                 {errors.monthlyLeads && (
-                  <p className="mt-1 text-sm text-destructive">{errors.monthlyLeads}</p>
+                  <p className="text-destructive mt-1 text-sm">{errors.monthlyLeads}</p>
                 )}
               </div>
             </div>
@@ -217,16 +224,16 @@ export function TeamCalculatorForm() {
           <div className="space-y-6">
             <div>
               <h2 className="mb-2 text-2xl font-bold">Team economics</h2>
-              <p className="text-muted-foreground">
-                Help us calculate your potential losses
-              </p>
+              <p className="text-muted-foreground">Help us calculate your potential losses</p>
             </div>
 
             <div className="space-y-4">
               <div>
                 <Label htmlFor="avgCommission">Average commission per closed deal</Label>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground">$</span>
+                  <span className="text-muted-foreground absolute top-1/2 left-3 -translate-y-1/2">
+                    $
+                  </span>
                   <Input
                     id="avgCommission"
                     type="number"
@@ -234,11 +241,13 @@ export function TeamCalculatorForm() {
                     placeholder="e.g., 8000"
                     className="pl-6"
                     value={formData.avgCommission ?? ""}
-                    onChange={(e) => updateField("avgCommission", parseInt(e.target.value) || undefined)}
+                    onChange={(e) =>
+                      updateField("avgCommission", parseInt(e.target.value) || undefined)
+                    }
                   />
                 </div>
                 {errors.avgCommission && (
-                  <p className="mt-1 text-sm text-destructive">{errors.avgCommission}</p>
+                  <p className="text-destructive mt-1 text-sm">{errors.avgCommission}</p>
                 )}
               </div>
 
@@ -254,19 +263,23 @@ export function TeamCalculatorForm() {
                     placeholder="e.g., 30"
                     className="pr-6"
                     value={formData.closeRate ?? ""}
-                    onChange={(e) => updateField("closeRate", parseFloat(e.target.value) || undefined)}
+                    onChange={(e) =>
+                      updateField("closeRate", parseFloat(e.target.value) || undefined)
+                    }
                   />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground">%</span>
+                  <span className="text-muted-foreground absolute top-1/2 right-3 -translate-y-1/2">
+                    %
+                  </span>
                 </div>
                 {errors.closeRate && (
-                  <p className="mt-1 text-sm text-destructive">{errors.closeRate}</p>
+                  <p className="text-destructive mt-1 text-sm">{errors.closeRate}</p>
                 )}
               </div>
 
               <div>
                 <Label htmlFor="responseTime">Current average response time</Label>
                 <Select
-                  value={formData.responseTime}
+                  {...(formData.responseTime !== undefined && { value: formData.responseTime })}
                   onValueChange={(value: string) => updateField("responseTime", value)}
                 >
                   <SelectTrigger id="responseTime">
@@ -281,7 +294,7 @@ export function TeamCalculatorForm() {
                   </SelectContent>
                 </Select>
                 {errors.responseTime && (
-                  <p className="mt-1 text-sm text-destructive">{errors.responseTime}</p>
+                  <p className="text-destructive mt-1 text-sm">{errors.responseTime}</p>
                 )}
               </div>
             </div>
@@ -310,23 +323,25 @@ export function TeamCalculatorForm() {
             <BorderGlow borderRadius={10} innerClassName="p-6" className="space-y-4">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
-                  <p className="text-sm text-muted-foreground">Monthly Loss</p>
-                  <p className="text-2xl font-bold text-destructive">
+                  <p className="text-muted-foreground text-sm">Monthly Loss</p>
+                  <p className="text-destructive text-2xl font-bold">
                     {formatCurrency(calculationResults.lostCommissionPerMonth)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Annual Loss</p>
-                  <p className="text-2xl font-bold text-destructive">
+                  <p className="text-muted-foreground text-sm">Annual Loss</p>
+                  <p className="text-destructive text-2xl font-bold">
                     {formatCurrency(calculationResults.lostCommissionPerYear)}
                   </p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Lost Deals/Month</p>
-                  <p className="text-2xl font-bold">{formatNumber(calculationResults.lostDealsPerMonth)}</p>
+                  <p className="text-muted-foreground text-sm">Lost Deals/Month</p>
+                  <p className="text-2xl font-bold">
+                    {formatNumber(calculationResults.lostDealsPerMonth)}
+                  </p>
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Per Agent/Month</p>
+                  <p className="text-muted-foreground text-sm">Per Agent/Month</p>
                   <p className="text-2xl font-bold">
                     {formatCurrency(calculationResults.perAgentLossPerMonth)}
                   </p>
@@ -334,17 +349,19 @@ export function TeamCalculatorForm() {
               </div>
 
               <div className="border-t pt-4">
-                <p className="text-sm text-muted-foreground">Team Efficiency Score</p>
+                <p className="text-muted-foreground text-sm">Team Efficiency Score</p>
                 <div className="mt-2 flex items-center gap-4">
-                  <div className="h-2 flex-1 overflow-hidden rounded-full bg-muted">
+                  <div className="bg-muted h-2 flex-1 overflow-hidden rounded-full">
                     <motion.div
-                      className="h-full bg-primary"
+                      className="bg-primary h-full"
                       initial={{ width: "0%" }}
                       animate={{ width: `${calculationResults.teamEfficiencyScore}%` }}
                       transition={{ duration: 0.5, delay: 0.2 }}
                     />
                   </div>
-                  <span className="text-xl font-bold">{calculationResults.teamEfficiencyScore}/100</span>
+                  <span className="text-xl font-bold">
+                    {calculationResults.teamEfficiencyScore}/100
+                  </span>
                 </div>
               </div>
             </BorderGlow>
@@ -353,7 +370,7 @@ export function TeamCalculatorForm() {
             <div className="space-y-4">
               <div>
                 <p className="font-semibold">Get your full report via email</p>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm">
                   We&apos;ll send you a detailed PDF with ROI analysis and next steps
                 </p>
               </div>
@@ -367,9 +384,7 @@ export function TeamCalculatorForm() {
                   value={formData.name}
                   onChange={(e) => updateField("name", e.target.value)}
                 />
-                {errors.name && (
-                  <p className="mt-1 text-sm text-destructive">{errors.name}</p>
-                )}
+                {errors.name && <p className="text-destructive mt-1 text-sm">{errors.name}</p>}
               </div>
 
               <div>
@@ -381,9 +396,7 @@ export function TeamCalculatorForm() {
                   value={formData.email}
                   onChange={(e) => updateField("email", e.target.value)}
                 />
-                {errors.email && (
-                  <p className="mt-1 text-sm text-destructive">{errors.email}</p>
-                )}
+                {errors.email && <p className="text-destructive mt-1 text-sm">{errors.email}</p>}
               </div>
 
               <div>
@@ -400,7 +413,7 @@ export function TeamCalculatorForm() {
               <div>
                 <Label htmlFor="role">Your Role</Label>
                 <Select
-                  value={formData.role}
+                  {...(formData.role !== undefined && { value: formData.role })}
                   onValueChange={(value: string) => updateField("role", value)}
                 >
                   <SelectTrigger id="role">
@@ -414,31 +427,22 @@ export function TeamCalculatorForm() {
                     ))}
                   </SelectContent>
                 </Select>
-                {errors.role && (
-                  <p className="mt-1 text-sm text-destructive">{errors.role}</p>
-                )}
+                {errors.role && <p className="text-destructive mt-1 text-sm">{errors.role}</p>}
               </div>
             </div>
 
-            {errors.general && (
-              <p className="text-sm text-destructive">{errors.general}</p>
-            )}
+            {errors.general && <p className="text-destructive text-sm">{errors.general}</p>}
 
             <div className="flex gap-4">
               <Button onClick={handleBack} variant="outline" className="w-full" size="lg">
                 Back
               </Button>
-              <Button
-                onClick={handleSubmit}
-                className="w-full"
-                size="lg"
-                disabled={isSubmitting}
-              >
+              <Button onClick={handleSubmit} className="w-full" size="lg" disabled={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Email My Report"}
               </Button>
             </div>
 
-            <p className="text-center text-xs text-muted-foreground">
+            <p className="text-muted-foreground text-center text-xs">
               We respect your privacy. No spam, unsubscribe anytime.
             </p>
           </div>

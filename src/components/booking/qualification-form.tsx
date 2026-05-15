@@ -121,9 +121,7 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
             )}
             placeholder="Jane Smith"
           />
-          {errors.firstName && (
-            <p className="text-destructive mt-1 text-sm">{errors.firstName}</p>
-          )}
+          {errors.firstName && <p className="text-destructive mt-1 text-sm">{errors.firstName}</p>}
         </motion.div>
 
         <motion.div variants={itemVariants}>

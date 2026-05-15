@@ -131,9 +131,7 @@ export function DemoPageClient() {
                 key={step.n}
                 className={cn(
                   "flex items-center gap-3 rounded-lg border px-4 py-3 transition-colors duration-300",
-                  isLight
-                    ? "border-gray-200 bg-white"
-                    : "border-zinc-800 bg-zinc-900/40",
+                  isLight ? "border-gray-200 bg-white" : "border-zinc-800 bg-zinc-900/40",
                 )}
               >
                 <span
@@ -191,8 +189,7 @@ export function DemoPageClient() {
               isLight ? "text-zinc-400" : "text-zinc-500",
             )}
           >
-            Demo runs in real-time. By interacting, you agree to receive a single follow-up
-            message.
+            Demo runs in real-time. By interacting, you agree to receive a single follow-up message.
           </p>
         </motion.div>
       </section>

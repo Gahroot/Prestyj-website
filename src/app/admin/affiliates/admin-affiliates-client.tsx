@@ -123,9 +123,7 @@ export function AdminAffiliatesClient({
       headers,
       body: JSON.stringify({ id, active: !active }),
     });
-    setAffiliates((prev) =>
-      prev.map((a) => (a.id === id ? { ...a, active: !active } : a))
-    );
+    setAffiliates((prev) => prev.map((a) => (a.id === id ? { ...a, active: !active } : a)));
   }
 
   async function approveConversion(id: string) {
@@ -136,7 +134,7 @@ export function AdminAffiliatesClient({
     });
     if (res.ok) {
       setConversions((prev) =>
-        prev.map((c) => (c.id === id ? { ...c, status: "APPROVED" as ConversionStatus } : c))
+        prev.map((c) => (c.id === id ? { ...c, status: "APPROVED" as ConversionStatus } : c)),
       );
     }
   }
@@ -167,11 +165,11 @@ export function AdminAffiliatesClient({
   const approvedConversions = conversions.filter((c) => c.status === "APPROVED");
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="max-w-6xl mx-auto px-4 py-10 space-y-10">
+    <main className="bg-background min-h-screen">
+      <div className="mx-auto max-w-6xl space-y-10 px-4 py-10">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-1">
+            <p className="text-muted-foreground mb-1 text-xs font-semibold tracking-widest uppercase">
               Prestyj
             </p>
             <h1 className="text-2xl font-bold">Affiliate admin</h1>
@@ -179,49 +177,49 @@ export function AdminAffiliatesClient({
         </div>
 
         {/* Summary cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+              <CardTitle className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
                 Affiliates
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">{affiliates.filter((a) => a.active).length}</p>
-              <p className="text-xs text-muted-foreground">active</p>
+              <p className="text-muted-foreground text-xs">active</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+              <CardTitle className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
                 Pending review
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">{pendingConversions.length}</p>
-              <p className="text-xs text-muted-foreground">conversions</p>
+              <p className="text-muted-foreground text-xs">conversions</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+              <CardTitle className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
                 Approved
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">{approvedConversions.length}</p>
-              <p className="text-xs text-muted-foreground">ready to pay</p>
+              <p className="text-muted-foreground text-xs">ready to pay</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="pb-2">
-              <CardTitle className="text-xs text-muted-foreground font-medium uppercase tracking-wide">
+              <CardTitle className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
                 Pending payouts
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-3xl font-bold">{pendingPayouts.length}</p>
-              <p className="text-xs text-muted-foreground">to process</p>
+              <p className="text-muted-foreground text-xs">to process</p>
             </CardContent>
           </Card>
         </div>
@@ -232,7 +230,7 @@ export function AdminAffiliatesClient({
             <CardTitle className="text-base">Add affiliate</CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={createAffiliate} className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <form onSubmit={createAffiliate} className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               <div className="space-y-1">
                 <Label>Name</Label>
                 <Input
@@ -293,7 +291,7 @@ export function AdminAffiliatesClient({
                 </Button>
               </div>
               {createStatus === "error" && (
-                <p className="text-sm text-destructive col-span-full">
+                <p className="text-destructive col-span-full text-sm">
                   Failed — email or slug may already be in use.
                 </p>
               )}
@@ -303,7 +301,7 @@ export function AdminAffiliatesClient({
 
         {/* Affiliates table */}
         <div>
-          <h2 className="text-lg font-semibold mb-3">Affiliates</h2>
+          <h2 className="mb-3 text-lg font-semibold">Affiliates</h2>
           <Card>
             <Table>
               <TableHeader>
@@ -324,11 +322,11 @@ export function AdminAffiliatesClient({
                     <TableCell>
                       <div>
                         <p className="font-medium">{a.name}</p>
-                        <p className="text-xs text-muted-foreground">{a.email}</p>
+                        <p className="text-muted-foreground text-xs">{a.email}</p>
                       </div>
                     </TableCell>
                     <TableCell>
-                      <code className="text-xs text-muted-foreground">
+                      <code className="text-muted-foreground text-xs">
                         {siteUrl}/r/{a.slug}
                       </code>
                     </TableCell>
@@ -362,8 +360,8 @@ export function AdminAffiliatesClient({
         {/* Conversions pending approval */}
         {pendingConversions.length > 0 && (
           <div>
-            <h2 className="text-lg font-semibold mb-1">Pending conversions</h2>
-            <p className="text-sm text-muted-foreground mb-3">
+            <h2 className="mb-1 text-lg font-semibold">Pending conversions</h2>
+            <p className="text-muted-foreground mb-3 text-sm">
               Approve after the 30-day refund window has passed.
             </p>
             <Card>
@@ -393,11 +391,7 @@ export function AdminAffiliatesClient({
                         {c.customerEmail ?? "—"}
                       </TableCell>
                       <TableCell>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => approveConversion(c.id)}
-                        >
+                        <Button size="sm" variant="outline" onClick={() => approveConversion(c.id)}>
                           Approve
                         </Button>
                       </TableCell>
@@ -420,10 +414,7 @@ export function AdminAffiliatesClient({
 
         {/* Pending payouts */}
         {pendingPayouts.length > 0 && (
-          <PendingPayoutsSection
-            payouts={pendingPayouts}
-            onMarkPaid={markPayoutPaid}
-          />
+          <PendingPayoutsSection payouts={pendingPayouts} onMarkPaid={markPayoutPaid} />
         )}
       </div>
     </main>
@@ -441,19 +432,17 @@ function ApprovedSection({
 }) {
   const [method, setMethod] = useState("wise");
 
-  const byAffiliate = conversions.reduce<Record<string, ConversionRow[]>>(
-    (acc, c) => {
-      if (!acc[c.affiliateName]) acc[c.affiliateName] = [];
-      acc[c.affiliateName].push(c);
-      return acc;
-    },
-    {}
-  );
+  const byAffiliate = conversions.reduce<Record<string, ConversionRow[]>>((acc, c) => {
+    const bucket = acc[c.affiliateName] ?? [];
+    bucket.push(c);
+    acc[c.affiliateName] = bucket;
+    return acc;
+  }, {});
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-1">Approved — ready to pay</h2>
-      <p className="text-sm text-muted-foreground mb-3">
+      <h2 className="mb-1 text-lg font-semibold">Approved — ready to pay</h2>
+      <p className="text-muted-foreground mb-3 text-sm">
         These commissions have cleared the 30-day window.
       </p>
       <div className="space-y-4">
@@ -462,18 +451,18 @@ function ApprovedSection({
           const affiliate = affiliates.find((a) => a.name === name);
           return (
             <Card key={name}>
-              <CardContent className="pt-5 space-y-3">
+              <CardContent className="space-y-3 pt-5">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-semibold">{name}</p>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm">
                       {rows.length} conversion{rows.length !== 1 ? "s" : ""} ·{" "}
-                      <span className="font-medium text-foreground">
+                      <span className="text-foreground font-medium">
                         {`$${(total / 100).toFixed(2)}`} due
                       </span>
                     </p>
                     {affiliate?.payoutEmail && (
-                      <p className="text-xs text-muted-foreground mt-0.5">
+                      <p className="text-muted-foreground mt-0.5 text-xs">
                         Send to: {affiliate.payoutEmail}
                       </p>
                     )}
@@ -487,9 +476,7 @@ function ApprovedSection({
                     />
                     <Button
                       size="sm"
-                      onClick={() =>
-                        affiliate && onCreatePayout(affiliate.id, method)
-                      }
+                      onClick={() => affiliate && onCreatePayout(affiliate.id, method)}
                     >
                       Create payout
                     </Button>
@@ -515,7 +502,7 @@ function PendingPayoutsSection({
 
   return (
     <div>
-      <h2 className="text-lg font-semibold mb-3">Payouts to confirm</h2>
+      <h2 className="mb-3 text-lg font-semibold">Payouts to confirm</h2>
       <Card>
         <Table>
           <TableHeader>
@@ -537,7 +524,7 @@ function PendingPayoutsSection({
                 <TableCell>
                   <div>
                     <p className="font-medium">{p.affiliateName}</p>
-                    <p className="text-xs text-muted-foreground">{p.affiliateEmail}</p>
+                    <p className="text-muted-foreground text-xs">{p.affiliateEmail}</p>
                   </div>
                 </TableCell>
                 <TableCell className="font-medium">{cents(p.amountCents)}</TableCell>
@@ -549,16 +536,11 @@ function PendingPayoutsSection({
                     className="w-40 text-sm"
                     placeholder="txn ID / ref"
                     value={refs[p.id] ?? ""}
-                    onChange={(e) =>
-                      setRefs((r) => ({ ...r, [p.id]: e.target.value }))
-                    }
+                    onChange={(e) => setRefs((r) => ({ ...r, [p.id]: e.target.value }))}
                   />
                 </TableCell>
                 <TableCell>
-                  <Button
-                    size="sm"
-                    onClick={() => onMarkPaid(p.id, refs[p.id] ?? "")}
-                  >
+                  <Button size="sm" onClick={() => onMarkPaid(p.id, refs[p.id] ?? "")}>
                     Mark paid
                   </Button>
                 </TableCell>

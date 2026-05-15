@@ -20,8 +20,7 @@ const steps = [
   {
     icon: Bot,
     label: "AI Will Follow Up",
-    description:
-      "After you submit, AI responds instantly via call and text. 24/7.",
+    description: "After you submit, AI responds instantly via call and text. 24/7.",
   },
   {
     icon: CheckCircle,
@@ -37,49 +36,51 @@ export function LiveProof({ ctaHref }: { ctaHref?: string }) {
 
   return (
     <section className="py-12 md:py-16">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-10">
-          <p className="text-sm font-bold uppercase tracking-widest text-primary mb-3">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-10 text-center">
+          <p className="text-primary mb-3 text-sm font-bold tracking-widest uppercase">
             Want to see a sample?
           </p>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             You&apos;re Looking At It Right Now
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            The ad you clicked, this landing page, and the AI that&apos;ll text
-            you next — that&apos;s exactly what we build for your business.
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            The ad you clicked, this landing page, and the AI that&apos;ll text you next —
+            that&apos;s exactly what we build for your business.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <AnimateOnScroll key={index} delay={index * 0.1}>
-              <BorderGlow borderRadius={14} innerClassName="p-5 text-center" className="relative h-full">
+              <BorderGlow
+                borderRadius={14}
+                innerClassName="p-5 text-center"
+                className="relative h-full"
+              >
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-2.5 -translate-y-1/2 text-muted-foreground/40 text-xl font-bold">
+                  <div className="text-muted-foreground/40 absolute top-1/2 -right-2.5 hidden -translate-y-1/2 text-xl font-bold lg:block">
                     &rarr;
                   </div>
                 )}
-                <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary mb-3">
-                  <step.icon className="w-5 h-5" />
+                <div className="bg-primary/10 text-primary mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full">
+                  <step.icon className="h-5 w-5" />
                 </div>
-                <p className="font-heading font-semibold text-foreground text-sm mb-1">
+                <p className="font-heading text-foreground mb-1 text-sm font-semibold">
                   {step.label}
                 </p>
-                <p className="text-muted-foreground text-xs leading-relaxed">
-                  {step.description}
-                </p>
+                <p className="text-muted-foreground text-xs leading-relaxed">{step.description}</p>
               </BorderGlow>
             </AnimateOnScroll>
           ))}
         </div>
 
-        <AnimateOnScroll className="flex justify-center mt-10">
+        <AnimateOnScroll className="mt-10 flex justify-center">
           {ctaHref ? (
             <Button
               size="lg"
               asChild
-              className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+              className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
             >
               <Link href={ctaHref}>Get My FREE Ads</Link>
             </Button>
@@ -87,7 +88,7 @@ export function LiveProof({ ctaHref }: { ctaHref?: string }) {
             <Button
               size="lg"
               onClick={scrollToForm}
-              className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+              className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
             >
               Get My FREE Ads
             </Button>

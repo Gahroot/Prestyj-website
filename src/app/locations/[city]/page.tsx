@@ -18,9 +18,7 @@ export async function generateStaticParams() {
 
 const siteUrl = "https://prestyj.com";
 
-export async function generateMetadata({
-  params,
-}: LocationPageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: LocationPageProps): Promise<Metadata> {
   const { city } = await params;
   const location = getLocation(city);
 

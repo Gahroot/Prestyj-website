@@ -71,12 +71,9 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
   return (
     <>
       {/* Breadcrumb */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
-        <nav className="flex text-sm text-muted-foreground">
-          <Link
-            href="/locations"
-            className="hover:text-foreground transition-colors"
-          >
+      <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6 lg:px-8">
+        <nav className="text-muted-foreground flex text-sm">
+          <Link href="/locations" className="hover:text-foreground transition-colors">
             Locations
           </Link>
           <span className="mx-2">/</span>
@@ -85,19 +82,16 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
       </div>
 
       {/* Hero Section */}
-      <section className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-success/5" />
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden py-16">
+        <div className="from-primary/10 via-background to-success/5 absolute inset-0 bg-gradient-to-br" />
+        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <Badge
-                variant="outline"
-                className="mb-6 border-primary/50 text-primary"
-              >
+              <Badge variant="outline" className="border-primary/50 text-primary mb-6">
                 {location.hero.badge}
               </Badge>
             </motion.div>
@@ -106,20 +100,18 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-4xl sm:text-5xl md:text-6xl font-heading font-bold text-foreground mb-6"
+              className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl"
             >
               {location.hero.headline}
               <br />
-              <span className="text-primary">
-                {location.hero.headlineAccent}
-              </span>
+              <span className="text-primary">{location.hero.headlineAccent}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-lg sm:text-xl text-muted-foreground max-w-3xl mx-auto mb-8"
+              className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg sm:text-xl"
             >
               {location.hero.subheadline}
             </motion.p>
@@ -129,7 +121,7 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <Button size="lg" className="text-lg px-10 py-6" asChild>
+              <Button size="lg" className="px-10 py-6 text-lg" asChild>
                 <Link href={location.cta.buttonHref}>
                   {location.cta.buttonText}
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -141,24 +133,24 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
       </section>
 
       {/* Market Stats */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-muted/30 py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               The {location.city.displayName} Market
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               {location.city.description}
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {[
               {
                 label: "Households",
@@ -182,10 +174,10 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
               >
                 <Card className="h-full text-center">
                   <CardContent className="pt-8 pb-8">
-                    <p className="text-sm text-muted-foreground mb-2 uppercase tracking-wider">
+                    <p className="text-muted-foreground mb-2 text-sm tracking-wider uppercase">
                       {stat.label}
                     </p>
-                    <p className="text-2xl sm:text-3xl font-heading font-bold text-foreground">
+                    <p className="font-heading text-foreground text-2xl font-bold sm:text-3xl">
                       {stat.value}
                     </p>
                   </CardContent>
@@ -198,24 +190,23 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
 
       {/* Services Grid */}
       <section className="py-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               Home Services We Serve in {location.city.displayName}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Prestyj creates high-converting Facebook ad campaigns for every
-              home service vertical
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+              Prestyj creates high-converting Facebook ad campaigns for every home service vertical
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {location.services.map((service, index) => {
               const Icon = getIcon(service.icon);
               return (
@@ -228,21 +219,19 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
                 >
                   <Card className="h-full">
                     <CardContent className="pt-6">
-                      <div className="flex items-center gap-3 mb-4">
-                        <div className="p-3 bg-primary/10 rounded-lg">
-                          <Icon className="h-6 w-6 text-primary" />
+                      <div className="mb-4 flex items-center gap-3">
+                        <div className="bg-primary/10 rounded-lg p-3">
+                          <Icon className="text-primary h-6 w-6" />
                         </div>
-                        <h3 className="text-xl font-heading font-semibold text-foreground">
+                        <h3 className="font-heading text-foreground text-xl font-semibold">
                           {service.name}
                         </h3>
                       </div>
-                      <p className="text-muted-foreground mb-6">
-                        {service.citySpecificHook}
-                      </p>
+                      <p className="text-muted-foreground mb-6">{service.citySpecificHook}</p>
                       <div className="flex flex-col gap-2">
                         <Link
                           href={service.bestForHref}
-                          className="text-sm text-primary hover:underline flex items-center gap-1"
+                          className="text-primary flex items-center gap-1 text-sm hover:underline"
                         >
                           <Check className="h-4 w-4" />
                           Best for {service.name} ads
@@ -250,7 +239,7 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
                         </Link>
                         <Link
                           href={service.freeAdsHref}
-                          className="text-sm text-primary hover:underline flex items-center gap-1"
+                          className="text-primary flex items-center gap-1 text-sm hover:underline"
                         >
                           <Check className="h-4 w-4" />
                           Free {service.name.toLowerCase()} ads
@@ -267,24 +256,24 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 bg-muted/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="bg-muted/30 py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               How Prestyj Works for {location.city.displayName} Contractors
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               From setup to leads in three simple steps
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {howItWorks.map((step, index) => (
               <motion.div
                 key={index}
@@ -295,10 +284,10 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
               >
                 <Card className="h-full text-center">
                   <CardContent className="pt-8 pb-8">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary text-primary-foreground font-heading font-bold text-xl mb-4">
+                    <div className="bg-primary text-primary-foreground font-heading mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full text-xl font-bold">
                       {step.step}
                     </div>
-                    <h3 className="text-lg font-heading font-semibold text-foreground mb-2">
+                    <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
                       {step.title}
                     </h3>
                     <p className="text-muted-foreground">{step.description}</p>
@@ -312,18 +301,18 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
 
       {/* FAQ Section */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="mb-12 text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               Frequently Asked Questions
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               Common questions about using Prestyj for home service ads in{" "}
               {location.city.displayName}
             </p>
@@ -338,7 +327,7 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
             <Accordion type="single" collapsible className="w-full">
               {location.faq.map((item, index) => (
                 <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger className="text-left font-heading font-semibold">
+                  <AccordionTrigger className="font-heading text-left font-semibold">
                     {item.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">
@@ -352,21 +341,21 @@ export function LocationPageClient({ location }: LocationPageClientProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
-        <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="relative overflow-hidden py-24">
+        <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-foreground mb-6">
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
               {location.cta.headline}
             </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+            <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
               {location.cta.subheadline}
             </p>
-            <Button size="lg" className="text-lg px-10 py-6" asChild>
+            <Button size="lg" className="px-10 py-6 text-lg" asChild>
               <Link href={location.cta.buttonHref}>
                 {location.cta.buttonText}
                 <ArrowRight className="ml-2 h-5 w-5" />

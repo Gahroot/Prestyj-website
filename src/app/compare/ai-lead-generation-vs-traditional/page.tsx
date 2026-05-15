@@ -135,7 +135,9 @@ export default function AILeadGenerationVsTraditionalPage() {
               <a
                 href="/book-demo"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-lg px-8 py-3 text-sm font-semibold transition-colors"
-              >Book a Demo</a>
+              >
+                Book a Demo
+              </a>
               <p className="text-muted-foreground mt-4 text-sm">
                 No credit card required. See it work with your leads.
               </p>

@@ -1,7 +1,9 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import type { BatchTierId } from "@/lib/batch-tiers";
 import { getGoogleAdsPurchaseSendTo } from "@/lib/google-ads";
+import { trackBatchTierPurchase } from "@/lib/meta-pixel";
 
 export type PurchaseUserData = {
   email?: string;
@@ -16,15 +18,20 @@ export type PurchaseUserData = {
 };
 
 type Props = {
+  /**
+   * Batch-video-ads tier id. When present, fires a tier-tagged Meta Pixel +
+   * CAPI `Purchase` event so Ads Manager can optimize each tier as a distinct
+   * conversion. Omit for non-batch-video-ads purchase flows (e.g. plan
+   * onboarding), which only need Google Ads conversion tracking here.
+   */
+  tierId?: BatchTierId;
   value: number;
   currency: string;
   transactionId: string;
   userData?: PurchaseUserData;
 };
 
-function buildGtagUserData(
-  u: PurchaseUserData | undefined
-): Record<string, unknown> | null {
+function buildGtagUserData(u: PurchaseUserData | undefined): Record<string, unknown> | null {
   if (!u) return null;
   const payload: Record<string, unknown> = {};
   if (u.email) payload.email = u.email.trim().toLowerCase();
@@ -43,28 +50,35 @@ function buildGtagUserData(
   return Object.keys(payload).length > 0 ? payload : null;
 }
 
-export function PurchaseConversion({
-  value,
-  currency,
-  transactionId,
-  userData,
-}: Props) {
+export function PurchaseConversion({ tierId, value, currency, transactionId, userData }: Props) {
   const fired = useRef(false);
 
   useEffect(() => {
     if (fired.current) return;
-    const sendTo = getGoogleAdsPurchaseSendTo();
-    if (!sendTo) return;
+    fired.current = true;
 
+    const sendTo = getGoogleAdsPurchaseSendTo();
     const gtagUserData = buildGtagUserData(userData);
+
+    // Meta Pixel + CAPI — tier-specific content_name so Ads Manager can
+    // optimize each batch-video-ads tier (starter / minimum / pro / max) as
+    // a distinct conversion. Skipped for non-batch flows that pass no tierId.
+    if (tierId) {
+      trackBatchTierPurchase(tierId, value, currency, {
+        ...(userData?.email && { email: userData.email }),
+        ...(userData?.phoneNumber && { phone: userData.phoneNumber }),
+        ...(userData?.firstName && { firstName: userData.firstName }),
+        ...(userData?.lastName && { lastName: userData.lastName }),
+      });
+    }
+
+    if (!sendTo) return;
 
     let attempts = 0;
     let timeout: ReturnType<typeof setTimeout> | undefined;
 
     const tryFire = () => {
-      if (fired.current) return;
       if (typeof window !== "undefined" && window.gtag) {
-        fired.current = true;
         if (gtagUserData) {
           window.gtag("set", "user_data", gtagUserData);
         }
@@ -86,7 +100,7 @@ export function PurchaseConversion({
     return () => {
       if (timeout) clearTimeout(timeout);
     };
-  }, [value, currency, transactionId, userData]);
+  }, [tierId, value, currency, transactionId, userData]);
 
   return null;
 }

@@ -133,16 +133,16 @@ export function ExitIntentPopup() {
         {!submitted ? (
           <>
             <DialogHeader>
-              <div className="mx-auto sm:mx-0 mb-2 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium w-fit">
+              <div className="bg-primary/10 text-primary mx-auto mb-2 inline-flex w-fit items-center gap-2 rounded-full px-3 py-1 text-xs font-medium sm:mx-0">
                 <FileText className="h-3.5 w-3.5" />
                 Free Download
               </div>
-              <DialogTitle className="text-2xl font-heading">
+              <DialogTitle className="font-heading text-2xl">
                 Wait — grab the QualVol Content Playbook
               </DialogTitle>
               <DialogDescription>
-                The exact playbook we use to ship 270–2,700 on-brand posts per
-                month across every platform. Free PDF, sent to your inbox.
+                The exact playbook we use to ship 270–2,700 on-brand posts per month across every
+                platform. Free PDF, sent to your inbox.
               </DialogDescription>
             </DialogHeader>
 
@@ -150,7 +150,7 @@ export function ExitIntentPopup() {
               <div className="space-y-2">
                 <Label htmlFor="exit-intent-name">Name</Label>
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <User className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
                   <Input
                     id="exit-intent-name"
                     type="text"
@@ -167,7 +167,7 @@ export function ExitIntentPopup() {
               <div className="space-y-2">
                 <Label htmlFor="exit-intent-email">Email</Label>
                 <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+                  <Mail className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
                   <Input
                     id="exit-intent-email"
                     type="email"
@@ -182,18 +182,13 @@ export function ExitIntentPopup() {
               </div>
 
               {error && (
-                <p className="text-sm text-destructive" role="alert">
+                <p className="text-destructive text-sm" role="alert">
                   {error}
                 </p>
               )}
 
               <DialogFooter className="sm:justify-stretch">
-                <Button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full"
-                  size="lg"
-                >
+                <Button type="submit" disabled={loading} className="w-full" size="lg">
                   {loading ? (
                     <>
                       <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -208,7 +203,7 @@ export function ExitIntentPopup() {
                 </Button>
               </DialogFooter>
 
-              <p className="text-xs text-muted-foreground text-center">
+              <p className="text-muted-foreground text-center text-xs">
                 No spam. Unsubscribe anytime.
               </p>
             </form>
@@ -216,24 +211,18 @@ export function ExitIntentPopup() {
         ) : (
           <>
             <DialogHeader>
-              <div className="mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-                <CheckCircle className="h-6 w-6 text-primary" />
+              <div className="bg-primary/10 mx-auto mb-2 flex h-12 w-12 items-center justify-center rounded-full">
+                <CheckCircle className="text-primary h-6 w-6" />
               </div>
-              <DialogTitle className="text-center text-2xl font-heading">
+              <DialogTitle className="font-heading text-center text-2xl">
                 Check your inbox
               </DialogTitle>
               <DialogDescription className="text-center">
-                The QualVol Content Playbook is on its way. You can also
-                download it now.
+                The QualVol Content Playbook is on its way. You can also download it now.
               </DialogDescription>
             </DialogHeader>
             <DialogFooter className="sm:justify-stretch">
-              <Button
-                onClick={handleDownload}
-                disabled={!downloadUrl}
-                className="w-full"
-                size="lg"
-              >
+              <Button onClick={handleDownload} disabled={!downloadUrl} className="w-full" size="lg">
                 <Download className="mr-2 h-4 w-4" />
                 Download playbook
               </Button>

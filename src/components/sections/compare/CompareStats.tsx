@@ -24,14 +24,10 @@ export function CompareStats({ stats }: CompareStatsProps) {
               viewport={viewport}
             >
               <BorderGlow borderRadius={10} innerClassName="p-8 text-center">
-                <div className="text-4xl font-bold text-primary">
-                  {stat.value}
-                </div>
+                <div className="text-primary text-4xl font-bold">{stat.value}</div>
                 <div className="mt-2 text-lg font-semibold">{stat.label}</div>
                 {stat.description && (
-                  <div className="mt-2 text-sm text-muted-foreground">
-                    {stat.description}
-                  </div>
+                  <div className="text-muted-foreground mt-2 text-sm">{stat.description}</div>
                 )}
               </BorderGlow>
             </motion.div>

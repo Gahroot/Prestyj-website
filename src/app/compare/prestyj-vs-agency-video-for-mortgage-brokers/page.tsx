@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { mortgageBrokersVsAgencyVideoCompareData } from "@/lib/compare/data/prestyj-vs-agency-video-for-mortgage-brokers";
 
-export default function PrestyJVsAgencyForMortgageBrokersPage() {
+export default function PrestyjVsAgencyForMortgageBrokersPage() {
   return <ComparePageWrapper data={mortgageBrokersVsAgencyVideoCompareData} />;
 }

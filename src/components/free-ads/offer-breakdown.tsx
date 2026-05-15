@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Video,
-  Clock,
-  Megaphone,
-  Globe,
-  Bot,
-  CalendarCheck,
-} from "lucide-react";
+import { Video, Clock, Megaphone, Globe, Bot, CalendarCheck } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import BorderGlow from "@/components/ui/border-glow";
@@ -23,8 +16,7 @@ const features = [
   {
     icon: Clock,
     title: "24-Hour Turnaround",
-    description:
-      "Send us your footage today, get 300 finished ads back tomorrow. That fast.",
+    description: "Send us your footage today, get 300 finished ads back tomorrow. That fast.",
     free: true,
   },
   {
@@ -64,38 +56,35 @@ export function OfferBreakdown() {
 
   return (
     <section className="py-12 md:py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-16 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             Here&apos;s Exactly What You Get
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            300 free video ads is just the beginning. Here&apos;s the full system that turns your footage into booked appointments.
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            300 free video ads is just the beginning. Here&apos;s the full system that turns your
+            footage into booked appointments.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
             <AnimateOnScroll key={index} delay={index * 0.1}>
-              <BorderGlow borderRadius={14} innerClassName="p-6" className="h-full relative">
+              <BorderGlow borderRadius={14} innerClassName="p-6" className="relative h-full">
                 <span
-                  className={`absolute top-4 right-4 text-xs font-bold px-2.5 py-1 rounded-full ${
-                    feature.free
-                      ? "bg-success/10 text-success"
-                      : "bg-primary/10 text-primary"
+                  className={`absolute top-4 right-4 rounded-full px-2.5 py-1 text-xs font-bold ${
+                    feature.free ? "bg-success/10 text-success" : "bg-primary/10 text-primary"
                   }`}
                 >
                   {feature.free ? "1ST BATCH FREE" : "PAID"}
                 </span>
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-primary" />
+                <div className="bg-primary/10 mb-4 flex h-12 w-12 items-center justify-center rounded-full">
+                  <feature.icon className="text-primary h-6 w-6" />
                 </div>
-                <h3 className="font-heading font-semibold text-foreground text-lg mb-2">
+                <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
                   {feature.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
-                  {feature.description}
-                </p>
+                <p className="text-muted-foreground text-sm">{feature.description}</p>
               </BorderGlow>
             </AnimateOnScroll>
           ))}
@@ -105,7 +94,7 @@ export function OfferBreakdown() {
           <Button
             size="lg"
             onClick={scrollToForm}
-            className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+            className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
           >
             Get My FREE Ads
           </Button>

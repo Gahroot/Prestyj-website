@@ -38,20 +38,18 @@ interface LandingPainPointsProps {
 export function LandingPainPoints({ content }: LandingPainPointsProps) {
   return (
     <section className="py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             {content.headline}
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {content.subheadline}
-          </p>
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{content.subheadline}</p>
         </motion.div>
 
         <motion.div
@@ -59,7 +57,7 @@ export function LandingPainPoints({ content }: LandingPainPointsProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-8"
+          className="grid gap-8 md:grid-cols-3"
         >
           {content.points.map((point) => {
             const Icon = getIcon(point.icon);
@@ -68,7 +66,7 @@ export function LandingPainPoints({ content }: LandingPainPointsProps) {
                 <Card className="bg-background border-border h-full">
                   <CardContent className="p-6">
                     <Icon className={`h-10 w-10 ${colorClasses[point.color]} mb-4`} />
-                    <h3 className="text-xl font-heading font-semibold text-foreground mb-3">
+                    <h3 className="font-heading text-foreground mb-3 text-xl font-semibold">
                       {point.title}
                     </h3>
                     <p className="text-muted-foreground">{point.description}</p>

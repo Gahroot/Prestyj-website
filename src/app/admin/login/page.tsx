@@ -29,10 +29,10 @@ export default function AdminLoginPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-4 bg-background">
+    <main className="bg-background flex min-h-screen items-center justify-center p-4">
       <Card className="w-full max-w-sm">
         <CardHeader>
-          <div className="text-xs font-semibold tracking-widest text-muted-foreground uppercase mb-1">
+          <div className="text-muted-foreground mb-1 text-xs font-semibold tracking-widest uppercase">
             Prestyj
           </div>
           <CardTitle>Admin</CardTitle>
@@ -50,9 +50,7 @@ export default function AdminLoginPage() {
                 disabled={loading}
               />
             </div>
-            {error && (
-              <p className="text-sm text-destructive">Incorrect secret.</p>
-            )}
+            {error && <p className="text-destructive text-sm">Incorrect secret.</p>}
             <Button type="submit" className="w-full" disabled={loading}>
               {loading ? "Signing in…" : "Sign in"}
             </Button>

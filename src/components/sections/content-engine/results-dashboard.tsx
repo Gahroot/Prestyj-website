@@ -1,13 +1,6 @@
 "use client";
 
-import {
-  Activity,
-  BarChart3,
-  CalendarDays,
-  Layers,
-  Send,
-  TrendingUp,
-} from "lucide-react";
+import { Activity, BarChart3, CalendarDays, Layers, Send, TrendingUp } from "lucide-react";
 
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Badge } from "@/components/ui/badge";
@@ -85,49 +78,44 @@ export function ContentEngineResultsDashboard({
   const peakWeek = history.reduce((acc, week) => Math.max(acc, week.posts), 0);
 
   return (
-    <section className="py-24 bg-muted/20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-12">
+    <section className="bg-muted/20 py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-12 text-center">
           <Badge variant="secondary" className="mb-4 inline-flex items-center gap-1.5">
-            <Activity className="size-3.5 text-primary" />
+            <Activity className="text-primary size-3.5" />
             Live from /media-master
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
-            We run this on{" "}
-            <span className="text-primary">our own accounts</span> first.
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
+            We run this on <span className="text-primary">our own accounts</span> first.
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Real numbers from Prestyj&apos;s internal content engine — the same
-            system we ship for clients. Updated weekly.
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            Real numbers from Prestyj&apos;s internal content engine — the same system we ship for
+            clients. Updated weekly.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card, index) => (
             <AnimateOnScroll key={card.label} delay={index * 0.08}>
               <Card className="h-full">
                 <CardHeader className="flex flex-row items-center justify-between gap-2 space-y-0 pb-2">
-                  <CardTitle className="text-sm font-medium text-muted-foreground">
+                  <CardTitle className="text-muted-foreground text-sm font-medium">
                     {card.label}
                   </CardTitle>
-                  <div className="size-9 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-                    <card.icon className="size-4 text-primary" />
+                  <div className="bg-primary/10 flex size-9 shrink-0 items-center justify-center rounded-lg">
+                    <card.icon className="text-primary size-4" />
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-2">
+                  <div className="font-heading text-foreground mb-2 text-3xl font-bold sm:text-4xl">
                     <CountUp
                       to={card.value}
                       duration={1.6}
-                      separator={card.separator}
+                      {...(card.separator !== undefined && { separator: card.separator })}
                     />
-                    {card.suffix && (
-                      <span className="text-primary">{card.suffix}</span>
-                    )}
+                    {card.suffix && <span className="text-primary">{card.suffix}</span>}
                   </div>
-                  <p className="text-xs text-muted-foreground line-clamp-2">
-                    {card.helper}
-                  </p>
+                  <p className="text-muted-foreground line-clamp-2 text-xs">{card.helper}</p>
                 </CardContent>
               </Card>
             </AnimateOnScroll>
@@ -137,12 +125,10 @@ export function ContentEngineResultsDashboard({
         <AnimateOnScroll delay={0.2}>
           <Card>
             <CardHeader>
-              <div className="flex items-center justify-between gap-3 flex-wrap">
+              <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
-                  <BarChart3 className="size-5 text-primary" />
-                  <CardTitle className="text-lg">
-                    Weekly posts shipped
-                  </CardTitle>
+                  <BarChart3 className="text-primary size-5" />
+                  <CardTitle className="text-lg">Weekly posts shipped</CardTitle>
                 </div>
                 <Badge variant="outline" className="text-xs">
                   Last updated {formatLastUpdated(stats.lastUpdated)}
@@ -151,7 +137,7 @@ export function ContentEngineResultsDashboard({
             </CardHeader>
             <CardContent>
               <div
-                className="grid gap-3 items-end h-48"
+                className="grid h-48 items-end gap-3"
                 style={{
                   gridTemplateColumns: `repeat(${history.length}, minmax(0, 1fr))`,
                 }}
@@ -159,19 +145,15 @@ export function ContentEngineResultsDashboard({
                 aria-label="Weekly posts shipped chart"
               >
                 {history.map((week) => {
-                  const heightPct = peakWeek
-                    ? Math.max(8, (week.posts / peakWeek) * 100)
-                    : 0;
+                  const heightPct = peakWeek ? Math.max(8, (week.posts / peakWeek) * 100) : 0;
                   return (
                     <div
                       key={week.weekOf}
-                      className="flex flex-col items-center justify-end h-full gap-2"
+                      className="flex h-full flex-col items-center justify-end gap-2"
                     >
-                      <span className="text-xs font-medium text-foreground">
-                        {week.posts}
-                      </span>
+                      <span className="text-foreground text-xs font-medium">{week.posts}</span>
                       <div
-                        className="w-full rounded-t-md bg-gradient-to-t from-primary/40 to-primary transition-all"
+                        className="from-primary/40 to-primary w-full rounded-t-md bg-gradient-to-t transition-all"
                         style={{ height: `${heightPct}%` }}
                       />
                     </div>
@@ -179,7 +161,7 @@ export function ContentEngineResultsDashboard({
                 })}
               </div>
               <div
-                className="grid gap-3 mt-2"
+                className="mt-2 grid gap-3"
                 style={{
                   gridTemplateColumns: `repeat(${history.length}, minmax(0, 1fr))`,
                 }}
@@ -188,7 +170,7 @@ export function ContentEngineResultsDashboard({
                 {history.map((week) => (
                   <span
                     key={week.weekOf}
-                    className="text-[10px] sm:text-xs text-muted-foreground text-center"
+                    className="text-muted-foreground text-center text-[10px] sm:text-xs"
                   >
                     {formatWeekLabel(week.weekOf)}
                   </span>

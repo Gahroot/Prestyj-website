@@ -16,55 +16,49 @@ const stats = [
     icon: Users,
     value: "78%",
     label: "Work with first responder",
-    description:
-      "Buyers and sellers hire the agent who responds first. Be that agent.",
+    description: "Buyers and sellers hire the agent who responds first. Be that agent.",
   },
   {
     icon: Zap,
     value: "< 60s",
     label: "AI response time",
-    description:
-      "Your agent responds before competitors even see the notification.",
+    description: "Your agent responds before competitors even see the notification.",
   },
   {
     icon: TrendingUp,
     value: "3–5x",
     label: "Average ROI in first 90 days",
-    description:
-      "Clients typically see 3–5x return on investment within the first quarter.",
+    description: "Clients typically see 3–5x return on investment within the first quarter.",
   },
 ];
 
 export function PricingROISection() {
   return (
     <section className="py-24">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           <AnimateOnScroll>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-6">
-              One Closing Pays for{" "}
-              <span className="text-primary">Months of Service</span>
+            <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl">
+              One Closing Pays for <span className="text-primary">Months of Service</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-6">
-              The average real estate commission on a $400K home is $10K–$12K.
-              Your AI pays for itself with the first appointment that converts —
-              and every deal after that is pure ROI.
+            <p className="text-muted-foreground mb-6 text-lg">
+              The average real estate commission on a $400K home is $10K–$12K. Your AI pays for
+              itself with the first appointment that converts — and every deal after that is pure
+              ROI.
             </p>
             <p className="text-muted-foreground mb-4">
-              The math is simple: the cost of missing one lead is higher than an
-              entire year of service. Every minute you wait to respond, your
-              close rate drops. Every lead that goes unanswered is a commission
-              walking out the door.
+              The math is simple: the cost of missing one lead is higher than an entire year of
+              service. Every minute you wait to respond, your close rate drops. Every lead that goes
+              unanswered is a commission walking out the door.
             </p>
             <p className="text-muted-foreground">
-              Your AI agent doesn&apos;t take breaks, doesn&apos;t call in sick,
-              and never forgets to follow up. It&apos;s the highest-ROI hire
-              you&apos;ll ever make.
+              Your AI agent doesn&apos;t take breaks, doesn&apos;t call in sick, and never forgets
+              to follow up. It&apos;s the highest-ROI hire you&apos;ll ever make.
             </p>
             <div className="mt-6">
               <Link
                 href="/platform"
-                className="text-sm text-primary hover:text-primary/80 underline underline-offset-2"
+                className="text-primary hover:text-primary/80 text-sm underline underline-offset-2"
               >
                 See how our AI platform works →
               </Link>
@@ -77,19 +71,15 @@ export function PricingROISection() {
                 <Card className="bg-card border-border">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <stat.icon className="h-6 w-6 text-primary" />
+                      <div className="bg-primary/10 rounded-lg p-3">
+                        <stat.icon className="text-primary h-6 w-6" />
                       </div>
                       <div>
-                        <p className="text-2xl font-heading font-bold text-foreground">
+                        <p className="font-heading text-foreground text-2xl font-bold">
                           {stat.value}
                         </p>
-                        <p className="text-sm font-medium text-foreground mb-1">
-                          {stat.label}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {stat.description}
-                        </p>
+                        <p className="text-foreground mb-1 text-sm font-medium">{stat.label}</p>
+                        <p className="text-muted-foreground text-sm">{stat.description}</p>
                       </div>
                     </div>
                   </CardContent>

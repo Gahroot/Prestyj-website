@@ -34,12 +34,9 @@ export default async function AffiliateDashboardPage() {
     .filter((p) => p.status === "PAID")
     .reduce((sum, p) => sum + p.amountCents, 0);
 
-  const hasApproved = conversions.some(
-    (c) => c.status === "APPROVED" && !c.payoutId
-  );
+  const hasApproved = conversions.some((c) => c.status === "APPROVED" && !c.payoutId);
 
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://prestyj.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://prestyj.com";
   const affiliateLink = `${siteUrl}/r/${affiliate.slug}`;
 
   return (

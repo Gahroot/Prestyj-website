@@ -51,7 +51,7 @@ const BorderGlow: React.FC<BorderGlowProps> = ({
   return (
     <SpotlightCard
       spotlightColor="rgba(112, 88, 227, 0.25)"
-      className={cn("border border-border bg-card rounded-xl", className)}
+      className={cn("border-border bg-card rounded-xl border", className)}
       {...rest}
     >
       <div className={innerClassName} style={innerStyle}>

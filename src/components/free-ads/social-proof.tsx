@@ -31,35 +31,30 @@ export function SocialProof({ ctaHref }: { ctaHref?: string }) {
 
   return (
     <section className="py-8 md:py-16">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-12 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             Don&apos;t Take Our Word For It
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
             Real results from real clients who sent us their footage.
           </p>
         </AnimateOnScroll>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="mb-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <AnimateOnScroll key={index} delay={index * 0.15}>
               <BorderGlow borderRadius={14} innerClassName="p-6 flex flex-col" className="h-full">
-                <div className="flex gap-1 mb-4">
+                <div className="mb-4 flex gap-1">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-5 h-5 fill-success text-success"
-                    />
+                    <Star key={i} className="fill-success text-success h-5 w-5" />
                   ))}
                 </div>
-                <p className="text-foreground font-heading font-semibold text-lg mb-3">
+                <p className="text-foreground font-heading mb-3 text-lg font-semibold">
                   &ldquo;{testimonial.highlight}&rdquo;
                 </p>
-                <p className="text-muted-foreground text-sm flex-1">
-                  {testimonial.text}
-                </p>
-                <p className="text-xs text-primary font-medium mt-3 pt-3 border-t border-border">
+                <p className="text-muted-foreground flex-1 text-sm">{testimonial.text}</p>
+                <p className="text-primary border-border mt-3 border-t pt-3 text-xs font-medium">
                   {testimonial.role}
                 </p>
               </BorderGlow>
@@ -72,7 +67,7 @@ export function SocialProof({ ctaHref }: { ctaHref?: string }) {
             <Button
               size="lg"
               asChild
-              className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+              className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
             >
               <Link href={ctaHref}>Get My FREE Ads</Link>
             </Button>
@@ -80,7 +75,7 @@ export function SocialProof({ ctaHref }: { ctaHref?: string }) {
             <Button
               size="lg"
               onClick={scrollToForm}
-              className="font-bold text-base md:text-lg px-8 md:px-12 py-6 md:py-7 rounded-lg shadow-lg shadow-primary/25"
+              className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
             >
               Get My FREE Ads
             </Button>

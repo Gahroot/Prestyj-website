@@ -34,21 +34,18 @@ export function VideoCarousel({ videos }: { videos: string[] }) {
   return (
     <Carousel
       opts={{ align: "start", loop: true, dragFree: true }}
-      className="w-full max-w-5xl mx-auto"
+      className="mx-auto w-full max-w-5xl"
     >
       <CarouselContent className="-ml-2">
         {videos.map((id) => {
           const isActive = activeVideo === id;
           return (
-            <CarouselItem
-              key={id}
-              className="pl-2 basis-[70%] sm:basis-[45%] md:basis-[30%]"
-            >
-              <div className="rounded-xl overflow-hidden border border-border">
-                <div className="aspect-[9/16] relative bg-black">
+            <CarouselItem key={id} className="basis-[70%] pl-2 sm:basis-[45%] md:basis-[30%]">
+              <div className="border-border overflow-hidden rounded-xl border">
+                <div className="relative aspect-[9/16] bg-black">
                   <iframe
                     src={`https://player.vimeo.com/video/${id}?autoplay=${isActive ? 1 : 0}&background=0`}
-                    className="w-full h-full"
+                    className="h-full w-full"
                     frameBorder="0"
                     allow="autoplay; fullscreen"
                     allowFullScreen
@@ -58,12 +55,12 @@ export function VideoCarousel({ videos }: { videos: string[] }) {
                     <button
                       type="button"
                       aria-label="Play video"
-                      className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer bg-black/20 hover:bg-black/10 transition-colors"
+                      className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/20 transition-colors hover:bg-black/10"
                       onPointerDown={handlePointerDown}
                       onPointerUp={(e) => handlePointerUp(id, e)}
                     >
-                      <span className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                        <Play className="w-6 h-6 text-black fill-black ml-0.5" />
+                      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 shadow-lg">
+                        <Play className="ml-0.5 h-6 w-6 fill-black text-black" />
                       </span>
                     </button>
                   )}
@@ -73,8 +70,8 @@ export function VideoCarousel({ videos }: { videos: string[] }) {
           );
         })}
       </CarouselContent>
-      <CarouselPrevious className="hidden md:flex -left-12" />
-      <CarouselNext className="hidden md:flex -right-12" />
+      <CarouselPrevious className="-left-12 hidden md:flex" />
+      <CarouselNext className="-right-12 hidden md:flex" />
     </Carousel>
   );
 }

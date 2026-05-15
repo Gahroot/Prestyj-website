@@ -12,11 +12,7 @@ interface ItemListJsonLdProps {
   items: ListItem[];
 }
 
-export function ItemListJsonLd({
-  name,
-  description,
-  items,
-}: ItemListJsonLdProps) {
+export function ItemListJsonLd({ name, description, items }: ItemListJsonLdProps) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",

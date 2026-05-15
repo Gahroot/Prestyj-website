@@ -40,25 +40,25 @@ const STEPS: Step[] = [
     id: "name",
     title: "What's your name?",
     subtitle: "So we know who we're making ads for",
-    icon: <User className="w-6 h-6" />,
+    icon: <User className="h-6 w-6" />,
   },
   {
     id: "email",
     title: "What's your email?",
     subtitle: "We'll send your ad previews here",
-    icon: <Mail className="w-6 h-6" />,
+    icon: <Mail className="h-6 w-6" />,
   },
   {
     id: "phone",
     title: "What's your phone number?",
     subtitle: "For quick updates on your ads",
-    icon: <Phone className="w-6 h-6" />,
+    icon: <Phone className="h-6 w-6" />,
   },
   {
     id: "adSpend",
     title: "What's your monthly ad spend?",
     subtitle: "Helps us tailor the right package for you",
-    icon: <DollarSign className="w-6 h-6" />,
+    icon: <DollarSign className="h-6 w-6" />,
   },
 ];
 
@@ -100,9 +100,7 @@ export function LeadForm() {
   });
   const [errors, setErrors] = useState<Partial<Record<string, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitState, setSubmitState] = useState<
-    "form" | "qualified" | "waitlist"
-  >("form");
+  const [submitState, setSubmitState] = useState<"form" | "qualified" | "waitlist">("form");
   const stepInputRef = useRef<HTMLInputElement>(null);
 
   const focusStepInput = useCallback(() => {
@@ -111,14 +109,13 @@ export function LeadForm() {
 
   const validateCurrentStep = (): boolean => {
     const step = STEPS[currentStep];
+    if (!step) return true;
     const newErrors: Partial<Record<string, string>> = {};
 
     switch (step.id) {
       case "name":
-        if (!formData.firstName.trim())
-          newErrors.firstName = "First name is required";
-        if (!formData.lastName.trim())
-          newErrors.lastName = "Last name is required";
+        if (!formData.firstName.trim()) newErrors.firstName = "First name is required";
+        if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
         break;
       case "email":
         if (!formData.email.trim()) newErrors.email = "Email is required";
@@ -150,8 +147,7 @@ export function LeadForm() {
 
       try {
         const adSpendLabel =
-          AD_SPEND_OPTIONS.find((o) => o.value === formData.adSpend)?.label ||
-          formData.adSpend;
+          AD_SPEND_OPTIONS.find((o) => o.value === formData.adSpend)?.label || formData.adSpend;
 
         await fetch(
           "https://backend-api-production-b536.up.railway.app/api/v1/p/leads/ls_VPUWE5hD",
@@ -165,7 +161,7 @@ export function LeadForm() {
               email: formData.email.trim(),
               notes: `Monthly Ad Spend: ${adSpendLabel}`,
             }),
-          }
+          },
         );
       } catch {
         // Still route them — don't block the UX
@@ -177,9 +173,7 @@ export function LeadForm() {
           lastName: formData.lastName,
         });
         setIsSubmitting(false);
-        setSubmitState(
-          isQualified(formData.adSpend) ? "qualified" : "waitlist"
-        );
+        setSubmitState(isQualified(formData.adSpend) ? "qualified" : "waitlist");
       }
     }
   };
@@ -200,16 +194,16 @@ export function LeadForm() {
   if (submitState === "qualified") {
     return (
       <section id="lead-form" className="py-12 md:py-16">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center mb-8"
+            className="mb-8 text-center"
           >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 mb-6">
-              <CheckCircle className="w-8 h-8 text-success" />
+            <div className="bg-success/10 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+              <CheckCircle className="text-success h-8 w-8" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
+            <h2 className="font-heading text-foreground mb-3 text-3xl font-bold sm:text-4xl">
               You Qualify!
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -237,33 +231,27 @@ export function LeadForm() {
   if (submitState === "waitlist") {
     return (
       <section id="lead-form" className="py-12 md:py-16">
-        <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-          >
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-6">
-              <CheckCircle className="w-8 h-8 text-primary" />
+        <div className="mx-auto max-w-xl px-4 text-center sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }}>
+            <div className="bg-primary/10 mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full">
+              <CheckCircle className="text-primary h-8 w-8" />
             </div>
-            <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-3">
+            <h2 className="font-heading text-foreground mb-3 text-3xl font-bold sm:text-4xl">
               Thanks! You&apos;re on the List
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
-              We&apos;ll reach out when a spot opens up. In the meantime, join our free community to start learning.
+            <p className="text-muted-foreground mb-8 text-lg">
+              We&apos;ll reach out when a spot opens up. In the meantime, join our free community to
+              start learning.
             </p>
             <Button
               size="lg"
               variant="outline"
-              className="font-bold text-base px-8 py-6 rounded-lg"
+              className="rounded-lg px-8 py-6 text-base font-bold"
               asChild
             >
-              <a
-                href="https://www.skool.com/prestyj"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://www.skool.com/prestyj" target="_blank" rel="noopener noreferrer">
                 Join Our Community
-                <ExternalLink className="w-4 h-4 ml-2" />
+                <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </Button>
           </motion.div>
@@ -274,6 +262,7 @@ export function LeadForm() {
 
   const renderStepContent = () => {
     const step = STEPS[currentStep];
+    if (!step) return null;
 
     switch (step.id) {
       case "name":
@@ -285,51 +274,43 @@ export function LeadForm() {
           >
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
+                <label className="text-foreground mb-1.5 block text-sm font-medium">
                   First Name
                 </label>
                 <input
                   type="text"
                   value={formData.firstName}
-                  onChange={(e) =>
-                    handleInputChange("firstName", e.target.value)
-                  }
+                  onChange={(e) => handleInputChange("firstName", e.target.value)}
                   className={cn(
-                    "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
-                    "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
+                    "bg-card text-foreground w-full rounded-xl border-2 px-4 py-3 transition-colors",
+                    "focus:border-primary focus:ring-primary/20 focus:ring-2 focus:outline-none",
                     "placeholder:text-muted-foreground",
-                    errors.firstName ? "border-destructive" : "border-border"
+                    errors.firstName ? "border-destructive" : "border-border",
                   )}
                   placeholder="John"
                 />
                 {errors.firstName && (
-                  <p className="text-sm text-destructive mt-1">
-                    {errors.firstName}
-                  </p>
+                  <p className="text-destructive mt-1 text-sm">{errors.firstName}</p>
                 )}
               </div>
               <div>
-                <label className="block text-sm font-medium text-foreground mb-1.5">
+                <label className="text-foreground mb-1.5 block text-sm font-medium">
                   Last Name
                 </label>
                 <input
                   type="text"
                   value={formData.lastName}
-                  onChange={(e) =>
-                    handleInputChange("lastName", e.target.value)
-                  }
+                  onChange={(e) => handleInputChange("lastName", e.target.value)}
                   className={cn(
-                    "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
-                    "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
+                    "bg-card text-foreground w-full rounded-xl border-2 px-4 py-3 transition-colors",
+                    "focus:border-primary focus:ring-primary/20 focus:ring-2 focus:outline-none",
                     "placeholder:text-muted-foreground",
-                    errors.lastName ? "border-destructive" : "border-border"
+                    errors.lastName ? "border-destructive" : "border-border",
                   )}
                   placeholder="Smith"
                 />
                 {errors.lastName && (
-                  <p className="text-sm text-destructive mt-1">
-                    {errors.lastName}
-                  </p>
+                  <p className="text-destructive mt-1 text-sm">{errors.lastName}</p>
                 )}
               </div>
             </div>
@@ -338,11 +319,8 @@ export function LeadForm() {
 
       case "email":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <label className="block text-sm font-medium text-foreground mb-1.5">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <label className="text-foreground mb-1.5 block text-sm font-medium">
               Email Address
             </label>
             <input
@@ -351,44 +329,35 @@ export function LeadForm() {
               value={formData.email}
               onChange={(e) => handleInputChange("email", e.target.value)}
               className={cn(
-                "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
-                "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
+                "bg-card text-foreground w-full rounded-xl border-2 px-4 py-3 transition-colors",
+                "focus:border-primary focus:ring-primary/20 focus:ring-2 focus:outline-none",
                 "placeholder:text-muted-foreground",
-                errors.email ? "border-destructive" : "border-border"
+                errors.email ? "border-destructive" : "border-border",
               )}
               placeholder="john@company.com"
             />
-            {errors.email && (
-              <p className="text-sm text-destructive mt-1">{errors.email}</p>
-            )}
+            {errors.email && <p className="text-destructive mt-1 text-sm">{errors.email}</p>}
           </motion.div>
         );
 
       case "phone":
         return (
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <label className="block text-sm font-medium text-foreground mb-1.5">
-              Phone Number
-            </label>
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+            <label className="text-foreground mb-1.5 block text-sm font-medium">Phone Number</label>
             <input
               ref={stepInputRef}
               type="tel"
               value={formData.phone}
               onChange={(e) => handleInputChange("phone", e.target.value)}
               className={cn(
-                "w-full px-4 py-3 rounded-xl border-2 bg-card text-foreground transition-colors",
-                "focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20",
+                "bg-card text-foreground w-full rounded-xl border-2 px-4 py-3 transition-colors",
+                "focus:border-primary focus:ring-primary/20 focus:ring-2 focus:outline-none",
                 "placeholder:text-muted-foreground",
-                errors.phone ? "border-destructive" : "border-border"
+                errors.phone ? "border-destructive" : "border-border",
               )}
               placeholder="(555) 123-4567"
             />
-            {errors.phone && (
-              <p className="text-sm text-destructive mt-1">{errors.phone}</p>
-            )}
+            {errors.phone && <p className="text-destructive mt-1 text-sm">{errors.phone}</p>}
           </motion.div>
         );
 
@@ -397,7 +366,7 @@ export function LeadForm() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+            className="grid grid-cols-1 gap-3 sm:grid-cols-2"
           >
             {AD_SPEND_OPTIONS.map((option) => (
               <button
@@ -405,20 +374,18 @@ export function LeadForm() {
                 type="button"
                 onClick={() => handleSelect(option.value)}
                 className={cn(
-                  "p-4 rounded-xl border-2 transition-all duration-200 text-center",
+                  "rounded-xl border-2 p-4 text-center transition-all duration-200",
                   "hover:border-primary hover:bg-primary/5",
                   formData.adSpend === option.value
-                    ? "border-primary bg-primary/10 ring-2 ring-primary/20"
-                    : "border-border bg-card"
+                    ? "border-primary bg-primary/10 ring-primary/20 ring-2"
+                    : "border-border bg-card",
                 )}
               >
-                <span className="font-heading font-semibold text-foreground">
-                  {option.label}
-                </span>
+                <span className="font-heading text-foreground font-semibold">{option.label}</span>
               </button>
             ))}
             {errors.adSpend && (
-              <p className="text-sm text-destructive mt-1 col-span-full text-center">
+              <p className="text-destructive col-span-full mt-1 text-center text-sm">
                 {errors.adSpend}
               </p>
             )}
@@ -437,128 +404,138 @@ export function LeadForm() {
 
   return (
     <section id="lead-form" className="py-12 md:py-16">
-      <div className="max-w-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-xl px-4 sm:px-6 lg:px-8">
         <BorderGlow borderRadius={18} innerClassName="p-8 md:p-10">
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleNext();
-          }}
-        >
-          {/* Progress dots */}
-          <div className="flex justify-center gap-2 mb-8">
-            {STEPS.map((_, index) => (
-              <div
-                key={index}
-                className={cn(
-                  "h-2 rounded-full transition-all duration-300",
-                  index === currentStep
-                    ? "w-8 bg-primary"
-                    : index < currentStep
-                      ? "w-2 bg-primary"
-                      : "w-2 bg-muted"
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              handleNext();
+            }}
+          >
+            {/* Progress dots */}
+            <div className="mb-8 flex justify-center gap-2">
+              {STEPS.map((_, index) => (
+                <div
+                  key={index}
+                  className={cn(
+                    "h-2 rounded-full transition-all duration-300",
+                    index === currentStep
+                      ? "bg-primary w-8"
+                      : index < currentStep
+                        ? "bg-primary w-2"
+                        : "bg-muted w-2",
+                  )}
+                />
+              ))}
+            </div>
+
+            {/* Step header */}
+            <div className="mb-8 text-center">
+              <motion.div
+                key={`icon-${currentStep}`}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                className="bg-primary/10 text-primary mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full"
+              >
+                {STEPS[currentStep]?.icon}
+              </motion.div>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`header-${currentStep}`}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <h2 className="font-heading text-foreground mb-2 text-2xl font-bold sm:text-3xl">
+                    {STEPS[currentStep]?.title}
+                  </h2>
+                  <p className="text-muted-foreground">{STEPS[currentStep]?.subtitle}</p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Step content */}
+            <div className="relative min-h-[140px] overflow-hidden">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={currentStep}
+                  custom={direction}
+                  variants={slideVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  onAnimationComplete={(definition) => {
+                    if (definition === "center") focusStepInput();
+                  }}
+                >
+                  {renderStepContent()}
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Navigation */}
+            <div className="border-border mt-8 flex items-center justify-between border-t pt-6">
+              <Button
+                type="button"
+                variant="ghost"
+                onClick={handleBack}
+                disabled={currentStep === 0}
+                className={cn(currentStep === 0 && "invisible")}
+              >
+                <ArrowLeft className="mr-2 h-4 w-4" />
+                Back
+              </Button>
+
+              <Button
+                type="submit"
+                size="lg"
+                className="min-w-[160px] font-bold"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Submitting...
+                  </>
+                ) : currentStep === STEPS.length - 1 ? (
+                  <>
+                    Get My FREE Ads
+                    <CheckCircle className="ml-2 h-4 w-4" />
+                  </>
+                ) : (
+                  <>
+                    Continue
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </>
                 )}
-              />
-            ))}
-          </div>
+              </Button>
+            </div>
 
-          {/* Step header */}
-          <div className="text-center mb-8">
-            <motion.div
-              key={`icon-${currentStep}`}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary mb-4"
-            >
-              {STEPS[currentStep].icon}
-            </motion.div>
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={`header-${currentStep}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
+            <p className="text-muted-foreground mt-6 text-center text-xs">
+              By submitting, you consent to receive marketing communications via email, phone, and
+              SMS. You can unsubscribe at any time. See our{" "}
+              <a
+                href="/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground underline"
               >
-                <h2 className="text-2xl sm:text-3xl font-heading font-bold text-foreground mb-2">
-                  {STEPS[currentStep].title}
-                </h2>
-                <p className="text-muted-foreground">
-                  {STEPS[currentStep].subtitle}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Step content */}
-          <div className="min-h-[140px] relative overflow-hidden">
-            <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
-                key={currentStep}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                onAnimationComplete={(definition) => {
-                  if (definition === "center") focusStepInput();
-                }}
+                Terms
+              </a>{" "}
+              and{" "}
+              <a
+                href="/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-foreground underline"
               >
-                {renderStepContent()}
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Navigation */}
-          <div className="flex justify-between items-center mt-8 pt-6 border-t border-border">
-            <Button
-              type="button"
-              variant="ghost"
-              onClick={handleBack}
-              disabled={currentStep === 0}
-              className={cn(currentStep === 0 && "invisible")}
-            >
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back
-            </Button>
-
-            <Button
-              type="submit"
-              size="lg"
-              className="min-w-[160px] font-bold"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                  Submitting...
-                </>
-              ) : currentStep === STEPS.length - 1 ? (
-                <>
-                  Get My FREE Ads
-                  <CheckCircle className="w-4 h-4 ml-2" />
-                </>
-              ) : (
-                <>
-                  Continue
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </>
-              )}
-            </Button>
-          </div>
-
-          <p className="text-center text-xs text-muted-foreground mt-6">
-            By submitting, you consent to receive marketing communications via email, phone, and SMS. You can unsubscribe at any time. See our{" "}
-            <a href="/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
-              Terms
-            </a>{" "}
-            and{" "}
-            <a href="/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
-              Privacy Policy
-            </a>.
-          </p>
-        </form>
+                Privacy Policy
+              </a>
+              .
+            </p>
+          </form>
         </BorderGlow>
       </div>
     </section>

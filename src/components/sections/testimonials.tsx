@@ -25,9 +25,8 @@ export function TestimonialsSection() {
             What Our Customers Say
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            We&rsquo;re onboarding our earliest customers right now. Real,
-            attributable results will land here as soon as they&rsquo;re in
-            the door.
+            We&rsquo;re onboarding our earliest customers right now. Real, attributable results will
+            land here as soon as they&rsquo;re in the door.
           </p>
         </AnimateOnScroll>
 
@@ -37,9 +36,7 @@ export function TestimonialsSection() {
               <Trophy className="text-muted-foreground/40 size-8" />
               <Badge variant="secondary">Pending</Badge>
             </div>
-            <p className="text-muted-foreground text-sm">
-              Early customer results coming soon.
-            </p>
+            <p className="text-muted-foreground text-sm">Early customer results coming soon.</p>
           </div>
         </AnimateOnScroll>
       </div>

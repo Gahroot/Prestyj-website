@@ -215,6 +215,13 @@ export function FoundingCohortApplicationForm() {
                 Not a founding-cohort fit right now
               </h2>
               <p className="text-muted-foreground mt-2">{rejection.message}</p>
+              <p className="text-muted-foreground mt-3 text-sm">
+                Not a fit for the cohort? You can still start with our{" "}
+                <a href="/batch-video-ads" className="text-primary font-medium hover:underline">
+                  $497 sample (100 ads, same engine)
+                </a>
+                .
+              </p>
             </div>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">

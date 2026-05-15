@@ -43,6 +43,7 @@ export default async function IntakePage({
   return (
     <main className="min-h-screen pt-24 pb-12">
       <PurchaseConversion
+        tierId={tier.id}
         value={(session.amountTotal ?? 0) / 100}
         currency={(session.currency ?? "usd").toUpperCase()}
         transactionId={session.sessionId}

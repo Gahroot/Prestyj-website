@@ -21,15 +21,12 @@ export function DemoSection({
   children,
 }: DemoSectionProps) {
   return (
-    <section
-      id={id}
-      className="min-h-screen flex items-center py-16 px-6 md:px-12 lg:px-20"
-    >
+    <section id={id} className="flex min-h-screen items-center px-6 py-16 md:px-12 lg:px-20">
       <div
         className={cn(
-          "w-full max-w-7xl mx-auto grid gap-12 lg:gap-20 items-center",
+          "mx-auto grid w-full max-w-7xl items-center gap-12 lg:gap-20",
           "grid-cols-1 lg:grid-cols-2",
-          reverse && "lg:[&>*:first-child]:order-2"
+          reverse && "lg:[&>*:first-child]:order-2",
         )}
       >
         {/* Text side */}
@@ -40,13 +37,13 @@ export function DemoSection({
           transition={{ duration: 0.6 }}
           className="space-y-6"
         >
-          <span className="text-sm font-mono tracking-widest text-[#7058e3] uppercase">
+          <span className="font-mono text-sm tracking-widest text-[#7058e3] uppercase">
             {number}
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold leading-tight text-white group-data-[demo-light]:text-zinc-900">
+          <h2 className="font-heading text-3xl leading-tight font-bold text-white group-data-[demo-light]:text-zinc-900 md:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="text-lg md:text-xl leading-relaxed max-w-lg text-zinc-400 group-data-[demo-light]:text-zinc-600">
+          <p className="max-w-lg text-lg leading-relaxed text-zinc-400 group-data-[demo-light]:text-zinc-600 md:text-xl">
             {description}
           </p>
         </motion.div>

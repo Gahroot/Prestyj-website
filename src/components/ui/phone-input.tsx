@@ -4,8 +4,7 @@ import * as React from "react";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
-interface PhoneInputProps
-  extends Omit<React.ComponentProps<"input">, "onChange" | "value"> {
+interface PhoneInputProps extends Omit<React.ComponentProps<"input">, "onChange" | "value"> {
   value: string;
   onChange: (value: string) => void;
 }
@@ -44,12 +43,7 @@ export function normalizeToE164(value: string): string {
   return value;
 }
 
-export function PhoneInput({
-  value,
-  onChange,
-  className,
-  ...props
-}: PhoneInputProps) {
+export function PhoneInput({ value, onChange, className, ...props }: PhoneInputProps) {
   // Extract the 10-digit number for display
   const digits = extractDigits(value);
   const displayValue = formatPhoneDisplay(digits);

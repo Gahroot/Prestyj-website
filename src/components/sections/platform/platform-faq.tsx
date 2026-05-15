@@ -12,15 +12,14 @@ import BorderGlow from "@/components/ui/border-glow";
 
 export function PlatformFAQSection() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-3xl mx-auto">
-        <AnimateOnScroll className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mb-4">
+    <section className="px-4 py-20 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-3xl">
+        <AnimateOnScroll className="mb-12 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
             Platform Questions? Answered.
           </h2>
           <p className="text-muted-foreground text-lg">
-            Everything you need to know about the Prestyj AI platform,
-            integrations, and deployment.
+            Everything you need to know about the Prestyj AI platform, integrations, and deployment.
           </p>
         </AnimateOnScroll>
 
@@ -28,11 +27,8 @@ export function PlatformFAQSection() {
           <Accordion type="single" collapsible className="space-y-4">
             {platformFaqs.map((faq, index) => (
               <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
-                <AccordionItem
-                  value={`item-${index}`}
-                  className="border-none"
-                >
-                  <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
+                <AccordionItem value={`item-${index}`} className="border-none">
+                  <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground">

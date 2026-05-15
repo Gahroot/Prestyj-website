@@ -12,10 +12,7 @@ import { pricingFaqs } from "@/lib/pricing-data";
 import BorderGlow from "@/components/ui/border-glow";
 
 /** Key phrases that should become internal links within FAQ answers. */
-const linkReplacements: Record<
-  string,
-  { href: string; label: string }
-> = {
+const linkReplacements: Record<string, { href: string; label: string }> = {
   "batch video ads": {
     href: "/batch-video-ads",
     label: "batch video ads",
@@ -31,17 +28,14 @@ const linkReplacements: Record<
  * Uses longest-match-first to avoid nested replacements.
  */
 function renderAnswerWithLinks(answer: string) {
-  const sorted = Object.entries(linkReplacements).sort(
-    (a, b) => b[0].length - a[0].length,
-  );
+  const sorted = Object.entries(linkReplacements).sort((a, b) => b[0].length - a[0].length);
 
   // Build a list of segments — either plain strings or Link elements
   const segments: React.ReactNode[] = [];
   let remaining = answer;
 
   while (remaining.length > 0) {
-    let earliestMatch: { index: number; phrase: string; href: string } | null =
-      null;
+    let earliestMatch: { index: number; phrase: string; href: string } | null = null;
 
     for (const [phrase, { href }] of sorted) {
       const idx = remaining.toLowerCase().indexOf(phrase.toLowerCase());
@@ -67,7 +61,7 @@ function renderAnswerWithLinks(answer: string) {
       <Link
         key={segments.length}
         href={earliestMatch.href}
-        className="text-primary underline underline-offset-2 hover:text-primary/80"
+        className="text-primary hover:text-primary/80 underline underline-offset-2"
       >
         {earliestMatch.phrase}
       </Link>,
@@ -82,14 +76,13 @@ function renderAnswerWithLinks(answer: string) {
 export function PricingFAQSection() {
   return (
     <section className="py-24">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-12 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             Pricing Questions? Answered.
           </h2>
           <p className="text-muted-foreground text-lg">
-            Everything you need to know about plans, pricing, and getting
-            started.
+            Everything you need to know about plans, pricing, and getting started.
           </p>
         </AnimateOnScroll>
 
@@ -97,17 +90,14 @@ export function PricingFAQSection() {
           <Accordion type="single" collapsible className="space-y-4">
             {pricingFaqs.map((faq, index) => (
               <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
-              <AccordionItem
-                value={`item-${index}`}
-                className="border-none"
-              >
-                <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {renderAnswerWithLinks(faq.answer)}
-                </AccordionContent>
-              </AccordionItem>
+                <AccordionItem value={`item-${index}`} className="border-none">
+                  <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground">
+                    {renderAnswerWithLinks(faq.answer)}
+                  </AccordionContent>
+                </AccordionItem>
               </BorderGlow>
             ))}
           </Accordion>

@@ -32,12 +32,10 @@ export function CompareRelatedResources({ resources }: CompareRelatedResourcesPr
               >
                 <BorderGlow borderRadius={10} innerClassName="p-6">
                   <h3 className="mb-3 text-lg font-bold">{resource.title}</h3>
-                  <p className="mb-4 text-sm text-muted-foreground">
-                    {resource.description}
-                  </p>
+                  <p className="text-muted-foreground mb-4 text-sm">{resource.description}</p>
                   <Link
                     href={resource.href}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                    className="text-primary inline-flex items-center gap-2 text-sm font-medium hover:underline"
                   >
                     {resource.linkText}
                     <ArrowRight className="h-4 w-4" />

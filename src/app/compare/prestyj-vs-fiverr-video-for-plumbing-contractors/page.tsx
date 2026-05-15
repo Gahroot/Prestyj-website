@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { plumbingContractorsVsFiverrVideoCompareData } from "@/lib/compare/data/prestyj-vs-fiverr-video-for-plumbing-contractors";
 
-export default function PrestyJVsFiverrForPlumbingContractorsPage() {
+export default function PrestyjVsFiverrForPlumbingContractorsPage() {
   return <ComparePageWrapper data={plumbingContractorsVsFiverrVideoCompareData} />;
 }

@@ -1,13 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Phone,
-  MessageSquare,
-  Loader2,
-  CheckCircle2,
-  AlertCircle,
-} from "lucide-react";
+import { Phone, MessageSquare, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
@@ -47,22 +41,18 @@ export function HeroDemoForm() {
 
   return (
     <BorderGlow borderRadius={18} innerClassName="p-8" className="relative shadow-lg">
-      <div className="space-y-3 mb-8">
-        <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
+      <div className="mb-8 space-y-3">
+        <h2 className="font-heading text-foreground text-3xl font-bold md:text-4xl">
           Don&apos;t believe us?
         </h2>
-        <p className="text-xl md:text-2xl text-muted-foreground">
-          Have our AI give you a call.
-        </p>
+        <p className="text-muted-foreground text-xl md:text-2xl">Have our AI give you a call.</p>
       </div>
 
       <div aria-live="polite" role="status">
         {isSuccess && (
-          <div className="py-6 space-y-3">
-            <CheckCircle2 className="size-12 text-success" aria-hidden="true" />
-            <p className="text-success font-medium text-lg">
-              {successMessage}
-            </p>
+          <div className="space-y-3 py-6">
+            <CheckCircle2 className="text-success size-12" aria-hidden="true" />
+            <p className="text-success text-lg font-medium">{successMessage}</p>
           </div>
         )}
       </div>
@@ -91,7 +81,7 @@ export function HeroDemoForm() {
           <Button
             type="button"
             size="lg"
-            className="w-full h-12 font-semibold"
+            className="h-12 w-full font-semibold"
             disabled={!isPhoneValid || isPending}
             onClick={() => handleDemo("call")}
           >
@@ -112,7 +102,7 @@ export function HeroDemoForm() {
             type="button"
             size="lg"
             variant="outline"
-            className="w-full h-12 font-semibold"
+            className="h-12 w-full font-semibold"
             disabled={!isPhoneValid || isPending}
             onClick={() => handleDemo("text")}
           >

@@ -26,8 +26,7 @@ export function HomeHeroSection() {
 
         <p className="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg">
           One recording session. We script, edit, and ship 100 vertical ads built for Meta, TikTok,
-          and YouTube Shorts. Want more angles? Scale to 300, 500, or 1,000 — same engine, same
-          day.
+          and YouTube Shorts. Want more angles? Scale to 300, 500, or 1,000 — same engine, same day.
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">

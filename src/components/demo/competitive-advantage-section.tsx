@@ -45,23 +45,23 @@ const itemVariants = {
 
 export function CompetitiveAdvantageSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="border-t border-zinc-800/50 py-24 group-data-[demo-light]:border-gray-200/50">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+          <span className="bg-primary/10 text-primary mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium">
             The Competitive Advantage
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
+          <h2 className="font-heading mb-4 text-3xl font-bold text-white group-data-[demo-light]:text-zinc-900 sm:text-4xl">
             One Recording. 300 Ready-to-Run Ads.
           </h2>
-          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-zinc-400 group-data-[demo-light]:text-zinc-600">
             AI-powered — not just AI-assisted. Your competitors are still editing by hand.
           </p>
         </motion.div>
@@ -72,23 +72,25 @@ export function CompetitiveAdvantageSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-3 gap-6 mb-12"
+          className="mb-12 grid gap-6 md:grid-cols-3"
         >
           {stats.map((stat) => (
             <motion.div key={stat.label} variants={itemVariants}>
-              <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 hover:border-primary/50 transition-colors h-full">
-                <CardContent className="p-8 flex flex-col items-center text-center gap-4">
-                  <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <stat.icon className="h-6 w-6 text-primary" />
+              <Card className="hover:border-primary/50 h-full border-zinc-800 bg-zinc-900 transition-colors group-data-[demo-light]:border-gray-200 group-data-[demo-light]:bg-white">
+                <CardContent className="flex flex-col items-center gap-4 p-8 text-center">
+                  <div className="bg-primary/10 flex h-12 w-12 items-center justify-center rounded-lg">
+                    <stat.icon className="text-primary h-6 w-6" />
                   </div>
-                  <span className="text-6xl font-heading font-extrabold text-primary leading-none">
+                  <span className="font-heading text-primary text-6xl leading-none font-extrabold">
                     {stat.value}
                   </span>
                   <div>
-                    <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-lg">
+                    <p className="font-heading text-lg font-semibold text-white group-data-[demo-light]:text-zinc-900">
                       {stat.label}
                     </p>
-                    <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm mt-1">{stat.description}</p>
+                    <p className="mt-1 text-sm text-zinc-400 group-data-[demo-light]:text-zinc-600">
+                      {stat.description}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -102,12 +104,12 @@ export function CompetitiveAdvantageSection() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-6"
+          className="grid gap-6 md:grid-cols-2"
         >
           {/* BatchEdit screenshot */}
           <motion.div variants={itemVariants}>
-            <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden h-full">
-              <div className="relative w-full aspect-video bg-black group-data-[demo-light]:bg-gray-200">
+            <Card className="h-full overflow-hidden border-zinc-800 bg-zinc-900 group-data-[demo-light]:border-gray-200 group-data-[demo-light]:bg-white">
+              <div className="relative aspect-video w-full bg-black group-data-[demo-light]:bg-gray-200">
                 <Image
                   src="/images/demo/batcheditapp.png"
                   alt="BatchEdit AI Video Engine"
@@ -116,11 +118,12 @@ export function CompetitiveAdvantageSection() {
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-lg mb-1">
+                <h3 className="font-heading mb-1 text-lg font-semibold text-white group-data-[demo-light]:text-zinc-900">
                   BatchEdit — AI Video Engine
                 </h3>
-                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm">
-                  Drop in your raw clips. BatchEdit splits every hook, meat, and CTA combination automatically — no timeline, no manual exports, no editor.
+                <p className="text-sm text-zinc-400 group-data-[demo-light]:text-zinc-600">
+                  Drop in your raw clips. BatchEdit splits every hook, meat, and CTA combination
+                  automatically — no timeline, no manual exports, no editor.
                 </p>
               </CardContent>
             </Card>
@@ -128,8 +131,8 @@ export function CompetitiveAdvantageSection() {
 
           {/* 300 rendered files screenshot */}
           <motion.div variants={itemVariants}>
-            <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden h-full">
-              <div className="relative w-full aspect-video bg-black group-data-[demo-light]:bg-gray-200">
+            <Card className="h-full overflow-hidden border-zinc-800 bg-zinc-900 group-data-[demo-light]:border-gray-200 group-data-[demo-light]:bg-white">
+              <div className="relative aspect-video w-full bg-black group-data-[demo-light]:bg-gray-200">
                 <Image
                   src="/images/demo/300_ready_to_go_video_ads.png"
                   alt="300 rendered video ads ready to deploy"
@@ -138,11 +141,12 @@ export function CompetitiveAdvantageSection() {
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-lg mb-1">
+                <h3 className="font-heading mb-1 text-lg font-semibold text-white group-data-[demo-light]:text-zinc-900">
                   300 Files Rendered — Ready to Deploy
                 </h3>
-                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm">
-                  Every file named, organized, and ready to upload. Your ad manager gets a full creative library delivered — nothing touched by hand.
+                <p className="text-sm text-zinc-400 group-data-[demo-light]:text-zinc-600">
+                  Every file named, organized, and ready to upload. Your ad manager gets a full
+                  creative library delivered — nothing touched by hand.
                 </p>
               </CardContent>
             </Card>

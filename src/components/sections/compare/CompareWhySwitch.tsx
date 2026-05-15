@@ -17,10 +17,8 @@ export function CompareWhySwitch({ data }: CompareWhySwitchProps) {
       <div className="container">
         <div className="mx-auto max-w-5xl">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
-              {title}
-            </h2>
-            <p className="text-lg text-muted-foreground">{description}</p>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
+            <p className="text-muted-foreground text-lg">{description}</p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2">
@@ -34,7 +32,7 @@ export function CompareWhySwitch({ data }: CompareWhySwitchProps) {
                   viewport={viewport}
                 >
                   <BorderGlow borderRadius={10} innerClassName="p-8">
-                    <Icon className="mb-4 h-12 w-12 text-primary" />
+                    <Icon className="text-primary mb-4 h-12 w-12" />
                     <h3 className="mb-3 text-xl font-bold">{reason.title}</h3>
                     <p className="text-muted-foreground">{reason.description}</p>
                   </BorderGlow>

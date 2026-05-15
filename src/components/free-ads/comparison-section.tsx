@@ -24,7 +24,7 @@ function CellValue({ value }: { value: string }) {
   if (isPositive) {
     return (
       <span className="flex items-center justify-center gap-1.5">
-        <Check className="h-4 w-4 text-success shrink-0" />
+        <Check className="text-success h-4 w-4 shrink-0" />
         <span>{value}</span>
       </span>
     );
@@ -32,7 +32,7 @@ function CellValue({ value }: { value: string }) {
   if (isNegative) {
     return (
       <span className="flex items-center justify-center gap-1.5">
-        <X className="h-4 w-4 text-muted-foreground/40 shrink-0" />
+        <X className="text-muted-foreground/40 h-4 w-4 shrink-0" />
         <span>{value}</span>
       </span>
     );
@@ -45,14 +45,14 @@ export function FreeAdsComparisonSection() {
 
   return (
     <section className="py-16">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <AnimateOnScroll className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-foreground mb-4">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <AnimateOnScroll className="mb-12 text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
             Prestyj Free Ads vs. DIY vs. Hiring an Agency
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            See how our free batch video ad offer compares to doing it yourself
-            or hiring a traditional agency.
+          <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
+            See how our free batch video ad offer compares to doing it yourself or hiring a
+            traditional agency.
           </p>
         </AnimateOnScroll>
 
@@ -64,11 +64,11 @@ export function FreeAdsComparisonSection() {
           >
             <table className="w-full">
               <thead>
-                <tr className="border-b border-border bg-muted/30">
+                <tr className="border-border bg-muted/30 border-b">
                   {headers.map((header, i) => (
                     <th
                       key={header}
-                      className={`p-4 font-heading font-semibold text-foreground text-sm ${
+                      className={`font-heading text-foreground p-4 text-sm font-semibold ${
                         i === 0 ? "text-left" : "text-center"
                       } ${i === 1 ? "text-primary" : ""}`}
                     >
@@ -81,20 +81,16 @@ export function FreeAdsComparisonSection() {
                 {rows.map((row, idx) => (
                   <tr
                     key={row.feature}
-                    className={
-                      idx % 2 === 0 ? "bg-muted/30" : "bg-transparent"
-                    }
+                    className={idx % 2 === 0 ? "bg-muted/30" : "bg-transparent"}
                   >
-                    <td className="p-4 text-foreground font-medium text-sm">
-                      {row.feature}
-                    </td>
-                    <td className="p-4 text-center text-sm text-foreground">
+                    <td className="text-foreground p-4 text-sm font-medium">{row.feature}</td>
+                    <td className="text-foreground p-4 text-center text-sm">
                       <CellValue value={row.prestyj} />
                     </td>
-                    <td className="p-4 text-center text-sm text-muted-foreground">
+                    <td className="text-muted-foreground p-4 text-center text-sm">
                       <CellValue value={row.diy} />
                     </td>
-                    <td className="p-4 text-center text-sm text-muted-foreground">
+                    <td className="text-muted-foreground p-4 text-center text-sm">
                       <CellValue value={row.agency} />
                     </td>
                   </tr>
@@ -105,31 +101,23 @@ export function FreeAdsComparisonSection() {
         </AnimateOnScroll>
 
         {/* Mobile cards */}
-        <div className="md:hidden space-y-6">
+        <div className="space-y-6 md:hidden">
           {rows.map((row, idx) => (
             <AnimateOnScroll key={row.feature} delay={idx * 0.05}>
-              <div className="bg-card border border-border rounded-lg p-4">
-                <p className="font-heading font-semibold text-foreground mb-3">
-                  {row.feature}
-                </p>
+              <div className="bg-card border-border rounded-lg border p-4">
+                <p className="font-heading text-foreground mb-3 font-semibold">{row.feature}</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-primary font-medium">
-                      Prestyj Free Ads
-                    </span>
-                    <span className="text-foreground text-right max-w-[60%]">
-                      {row.prestyj}
-                    </span>
+                    <span className="text-primary font-medium">Prestyj Free Ads</span>
+                    <span className="text-foreground max-w-[60%] text-right">{row.prestyj}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">DIY</span>
-                    <span className="text-muted-foreground text-right max-w-[60%]">
-                      {row.diy}
-                    </span>
+                    <span className="text-muted-foreground max-w-[60%] text-right">{row.diy}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Agency</span>
-                    <span className="text-muted-foreground text-right max-w-[60%]">
+                    <span className="text-muted-foreground max-w-[60%] text-right">
                       {row.agency}
                     </span>
                   </div>

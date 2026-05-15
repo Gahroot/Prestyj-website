@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { roofingContractorsVsInHouseVideoCompareData } from "@/lib/compare/data/prestyj-vs-in-house-video-for-roofing-contractors";
 
-export default function PrestyJVsInHouseForRoofingContractorsPage() {
+export default function PrestyjVsInHouseForRoofingContractorsPage() {
   return <ComparePageWrapper data={roofingContractorsVsInHouseVideoCompareData} />;
 }

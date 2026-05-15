@@ -38,7 +38,7 @@ export function CompareCTA({ data }: CompareCTAProps) {
           </motion.h2>
 
           <motion.p
-            className="mb-8 text-lg text-muted-foreground"
+            className="text-muted-foreground mb-8 text-lg"
             {...fadeInUp}
             transition={transitions.withDelay(0.1)}
             viewport={viewport}
@@ -46,11 +46,7 @@ export function CompareCTA({ data }: CompareCTAProps) {
             {description}
           </motion.p>
 
-          <motion.div
-            {...fadeInUp}
-            transition={transitions.withDelay(0.2)}
-            viewport={viewport}
-          >
+          <motion.div {...fadeInUp} transition={transitions.withDelay(0.2)} viewport={viewport}>
             <Button size="lg" asChild>
               <Link href={buttonHref}>{buttonText}</Link>
             </Button>
@@ -58,7 +54,7 @@ export function CompareCTA({ data }: CompareCTAProps) {
 
           {disclaimer && (
             <motion.p
-              className="mt-6 text-sm text-muted-foreground"
+              className="text-muted-foreground mt-6 text-sm"
               {...fadeInUp}
               transition={transitions.withDelay(0.3)}
               viewport={viewport}

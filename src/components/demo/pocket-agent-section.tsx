@@ -49,10 +49,12 @@ function CapabilityItem({ item, index }: { item: Capability; index: number }) {
       transition={{ duration: 0.3, delay: index * 0.05 }}
       className="flex items-center gap-3"
     >
-      <div className="h-8 w-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
-        <item.icon className="h-4 w-4 text-primary" />
+      <div className="bg-primary/10 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg">
+        <item.icon className="text-primary h-4 w-4" />
       </div>
-      <p className="text-zinc-300 group-data-[demo-light]:text-zinc-700 text-sm font-medium">{item.label}</p>
+      <p className="text-sm font-medium text-zinc-300 group-data-[demo-light]:text-zinc-700">
+        {item.label}
+      </p>
     </motion.div>
   );
 }
@@ -78,17 +80,14 @@ function ScreenshotCard({
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className="flex flex-col gap-3"
     >
-      <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden">
-        <div className={`relative w-full ${portrait ? "aspect-[9/16] max-h-[480px]" : "aspect-video"} bg-black group-data-[demo-light]:bg-gray-200`}>
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            className="object-cover object-top"
-          />
+      <Card className="overflow-hidden border-zinc-800 bg-zinc-900 group-data-[demo-light]:border-gray-200 group-data-[demo-light]:bg-white">
+        <div
+          className={`relative w-full ${portrait ? "aspect-[9/16] max-h-[480px]" : "aspect-video"} bg-black group-data-[demo-light]:bg-gray-200`}
+        >
+          <Image src={src} alt={alt} fill className="object-cover object-top" />
         </div>
       </Card>
-      <p className="text-zinc-500 text-xs text-center">{caption}</p>
+      <p className="text-center text-xs text-zinc-500">{caption}</p>
     </motion.div>
   );
 }
@@ -97,26 +96,25 @@ function ScreenshotCard({
 
 export function PocketAgentSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
+    <section className="border-t border-zinc-800/50 py-24 group-data-[demo-light]:border-gray-200/50">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+          <span className="bg-primary/10 text-primary mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium">
             Pocket Agent
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
-            An AI That Actually{" "}
-            <span className="text-primary">Does Things</span>
+          <h2 className="font-heading mb-4 text-3xl font-bold text-white group-data-[demo-light]:text-zinc-900 sm:text-4xl">
+            An AI That Actually <span className="text-primary">Does Things</span>
           </h2>
-          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-xl mx-auto">
-            Works on your computer. Available on your phone. Anything a person can do at a desk — it can do.
+          <p className="mx-auto max-w-xl text-lg text-zinc-400 group-data-[demo-light]:text-zinc-600">
+            Works on your computer. Available on your phone. Anything a person can do at a desk — it
+            can do.
           </p>
         </motion.div>
 
@@ -128,14 +126,18 @@ export function PocketAgentSection() {
           transition={{ duration: 0.5 }}
           className="mb-4"
         >
-          <div className="flex items-center gap-2 mb-6">
-            <span className="text-3xl font-heading font-bold text-primary/20 leading-none">01</span>
+          <div className="mb-6 flex items-center gap-2">
+            <span className="font-heading text-primary/20 text-3xl leading-none font-bold">01</span>
             <div>
-              <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold">With You Everywhere</p>
-              <p className="text-zinc-500 text-sm">Desktop and phone. Ask it anything, from anywhere.</p>
+              <p className="font-heading font-semibold text-white group-data-[demo-light]:text-zinc-900">
+                With You Everywhere
+              </p>
+              <p className="text-sm text-zinc-500">
+                Desktop and phone. Ask it anything, from anywhere.
+              </p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             <ScreenshotCard
               src="/images/demo/Pocket_agent_what_I_can_do.png"
               alt="Pocket Agent desktop — full capabilities"
@@ -152,7 +154,7 @@ export function PocketAgentSection() {
           </div>
         </motion.div>
 
-        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 my-16" />
+        <Separator className="my-16 bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50" />
 
         {/* Beat 2 — Memory */}
         <motion.div
@@ -162,14 +164,18 @@ export function PocketAgentSection() {
           transition={{ duration: 0.5 }}
           className="mb-4"
         >
-          <div className="flex items-center gap-2 mb-6">
-            <span className="text-3xl font-heading font-bold text-primary/20 leading-none">02</span>
+          <div className="mb-6 flex items-center gap-2">
+            <span className="font-heading text-primary/20 text-3xl leading-none font-bold">02</span>
             <div>
-              <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold">It Knows Your Business</p>
-              <p className="text-zinc-500 text-sm">Stores facts, learns preferences, gets smarter over time.</p>
+              <p className="font-heading font-semibold text-white group-data-[demo-light]:text-zinc-900">
+                It Knows Your Business
+              </p>
+              <p className="text-sm text-zinc-500">
+                Stores facts, learns preferences, gets smarter over time.
+              </p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             <ScreenshotCard
               src="/images/demo/pocket_agent_brain_learnings.png"
               alt="Pocket Agent brain — stored business memory"
@@ -185,7 +191,7 @@ export function PocketAgentSection() {
           </div>
         </motion.div>
 
-        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 my-16" />
+        <Separator className="my-16 bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50" />
 
         {/* Beat 3 — Autonomous */}
         <motion.div
@@ -195,14 +201,18 @@ export function PocketAgentSection() {
           transition={{ duration: 0.5 }}
           className="mb-4"
         >
-          <div className="flex items-center gap-2 mb-6">
-            <span className="text-3xl font-heading font-bold text-primary/20 leading-none">03</span>
+          <div className="mb-6 flex items-center gap-2">
+            <span className="font-heading text-primary/20 text-3xl leading-none font-bold">03</span>
             <div>
-              <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold">Works While You Sleep</p>
-              <p className="text-zinc-500 text-sm">Runs routines on its own — no prompting required.</p>
+              <p className="font-heading font-semibold text-white group-data-[demo-light]:text-zinc-900">
+                Works While You Sleep
+              </p>
+              <p className="text-sm text-zinc-500">
+                Runs routines on its own — no prompting required.
+              </p>
             </div>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             <ScreenshotCard
               src="/images/demo/pocket_agent_running_twitter.png"
               alt="Pocket Agent — autonomously running Twitter outreach"
@@ -218,7 +228,7 @@ export function PocketAgentSection() {
           </div>
         </motion.div>
 
-        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 my-16" />
+        <Separator className="my-16 bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50" />
 
         {/* Capabilities grid */}
         <motion.div
@@ -228,15 +238,17 @@ export function PocketAgentSection() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <p className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold mb-6">What It Can Do</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <p className="font-heading mb-6 font-semibold text-white group-data-[demo-light]:text-zinc-900">
+            What It Can Do
+          </p>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {capabilities.map((item, i) => (
               <CapabilityItem key={item.label} item={item} index={i} />
             ))}
           </div>
         </motion.div>
 
-        <Separator className="bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50 mb-16" />
+        <Separator className="mb-16 bg-zinc-800/50 group-data-[demo-light]:bg-gray-200/50" />
 
         {/* Customization callout */}
         <motion.div
@@ -244,20 +256,22 @@ export function PocketAgentSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="rounded-xl border border-primary/20 bg-primary/5 p-8 mb-8"
+          className="border-primary/20 bg-primary/5 mb-8 rounded-xl border p-8"
         >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
+          <div className="grid items-center gap-8 md:grid-cols-2">
             <div className="space-y-4">
               <Badge className="bg-primary/20 text-primary border-primary/30">
                 Built for Your Brand
               </Badge>
-              <h3 className="text-2xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900">
+              <h3 className="font-heading text-2xl font-bold text-white group-data-[demo-light]:text-zinc-900">
                 We Don&apos;t Give You a Generic Tool.
                 <br />
                 <span className="text-primary">We Build Yours.</span>
               </h3>
-              <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">
-                Every agent is trained on your business, named after your brand, and set up to run your workflows. DOBI gets Roxy — named after your mascot, built for your agents, ready on day one.
+              <p className="text-sm leading-relaxed text-zinc-400 group-data-[demo-light]:text-zinc-600">
+                Every agent is trained on your business, named after your brand, and set up to run
+                your workflows. DOBI gets Roxy — named after your mascot, built for your agents,
+                ready on day one.
               </p>
             </div>
             <div className="space-y-3">
@@ -275,8 +289,10 @@ export function PocketAgentSection() {
                   transition={{ duration: 0.3, delay: i * 0.08 }}
                   className="flex items-center gap-3"
                 >
-                  <div className="h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                  <p className="text-zinc-300 group-data-[demo-light]:text-zinc-700 text-sm">{item}</p>
+                  <div className="bg-primary h-1.5 w-1.5 shrink-0 rounded-full" />
+                  <p className="text-sm text-zinc-300 group-data-[demo-light]:text-zinc-700">
+                    {item}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -289,19 +305,19 @@ export function PocketAgentSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="rounded-xl border border-zinc-800 group-data-[demo-light]:border-gray-200 bg-zinc-900/40 group-data-[demo-light]:bg-gray-100/40 p-8 text-center"
+          className="rounded-xl border border-zinc-800 bg-zinc-900/40 p-8 text-center group-data-[demo-light]:border-gray-200 group-data-[demo-light]:bg-gray-100/40"
         >
-          <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-            <Gift className="h-6 w-6 text-primary" />
+          <div className="bg-primary/10 mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl">
+            <Gift className="text-primary h-6 w-6" />
           </div>
-          <h3 className="text-xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-2">
+          <h3 className="font-heading mb-2 text-xl font-bold text-white group-data-[demo-light]:text-zinc-900">
             Free Install for Every Agent
           </h3>
-          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm max-w-lg mx-auto">
-            Book us for your next brokerage meeting. We come in, install it, and walk every agent through setup. They leave with it running.
+          <p className="mx-auto max-w-lg text-sm text-zinc-400 group-data-[demo-light]:text-zinc-600">
+            Book us for your next brokerage meeting. We come in, install it, and walk every agent
+            through setup. They leave with it running.
           </p>
         </motion.div>
-
       </div>
     </section>
   );

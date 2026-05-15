@@ -1021,8 +1021,8 @@ export function BatchVideoAdsClient() {
                   <table className="w-full text-left text-sm">
                     <thead>
                       <tr className="border-border/60 border-b">
-                        <th className="text-muted-foreground pb-3 pr-4 font-semibold">Tier</th>
-                        <th className="text-muted-foreground pb-3 pr-4 font-semibold">Price</th>
+                        <th className="text-muted-foreground pr-4 pb-3 font-semibold">Tier</th>
+                        <th className="text-muted-foreground pr-4 pb-3 font-semibold">Price</th>
                         <th className="text-muted-foreground pb-3 font-semibold">Cost per ad</th>
                       </tr>
                     </thead>
@@ -1059,7 +1059,10 @@ export function BatchVideoAdsClient() {
             </AnimateOnScroll>
 
             <AnimateOnScroll delay={0.1}>
-              <BorderGlow borderRadius={18} innerClassName="p-6 md:p-8 h-full flex flex-col justify-center">
+              <BorderGlow
+                borderRadius={18}
+                innerClassName="p-6 md:p-8 h-full flex flex-col justify-center"
+              >
                 <h3 className="font-heading text-foreground mb-4 text-2xl font-bold md:text-3xl">
                   $497 is the cheapest way to see if our scripts work for your offer.
                 </h3>

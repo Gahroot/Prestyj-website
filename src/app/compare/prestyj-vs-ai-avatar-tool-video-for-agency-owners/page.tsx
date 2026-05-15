@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { agencyOwnersVsAiAvatarToolVideoCompareData } from "@/lib/compare/data/prestyj-vs-ai-avatar-tool-video-for-agency-owners";
 
-export default function PrestyJVsAiAvatarToolForAgencyOwnersPage() {
+export default function PrestyjVsAiAvatarToolForAgencyOwnersPage() {
   return <ComparePageWrapper data={agencyOwnersVsAiAvatarToolVideoCompareData} />;
 }

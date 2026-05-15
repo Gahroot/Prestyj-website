@@ -1,17 +1,17 @@
-import * as React from "react"
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
+import * as React from "react";
+import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
-import { cn } from "@/lib/utils"
-import { SafeJsonLd } from "@/components/seo/safe-json-ld"
+import { cn } from "@/lib/utils";
+import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 
 export interface BreadcrumbItem {
-  label: string
-  href?: string
+  label: string;
+  href?: string;
 }
 
 interface BreadcrumbProps extends React.ComponentProps<"nav"> {
-  items: BreadcrumbItem[]
+  items: BreadcrumbItem[];
 }
 
 function Breadcrumb({ items, className, ...props }: BreadcrumbProps) {
@@ -25,7 +25,7 @@ function Breadcrumb({ items, className, ...props }: BreadcrumbProps) {
       name: item.label,
       ...(item.href && { item: item.href }),
     })),
-  }
+  };
 
   return (
     <>
@@ -38,24 +38,20 @@ function Breadcrumb({ items, className, ...props }: BreadcrumbProps) {
       >
         <ol className="flex items-center gap-1.5">
           {items.map((item, index) => {
-            const isLast = index === items.length - 1
+            const isLast = index === items.length - 1;
 
             return (
               <li key={index} className="flex items-center gap-1.5">
                 {item.href && !isLast ? (
                   <Link
                     href={item.href}
-                    className="text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
+                    className="text-muted-foreground hover:text-foreground focus-visible:ring-ring rounded-sm transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
                   >
                     {item.label}
                   </Link>
                 ) : (
                   <span
-                    className={cn(
-                      isLast
-                        ? "text-foreground font-medium"
-                        : "text-muted-foreground"
-                    )}
+                    className={cn(isLast ? "text-foreground font-medium" : "text-muted-foreground")}
                     aria-current={isLast ? "page" : undefined}
                   >
                     {item.label}
@@ -63,17 +59,17 @@ function Breadcrumb({ items, className, ...props }: BreadcrumbProps) {
                 )}
                 {!isLast && (
                   <ChevronRight
-                    className="size-4 text-muted-foreground/60 shrink-0"
+                    className="text-muted-foreground/60 size-4 shrink-0"
                     aria-hidden="true"
                   />
                 )}
               </li>
-            )
+            );
           })}
         </ol>
       </nav>
     </>
-  )
+  );
 }
 
-export { Breadcrumb }
+export { Breadcrumb };

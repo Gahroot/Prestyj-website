@@ -73,11 +73,7 @@ export default function RoofersFreeAdsPage() {
         }}
       />
       <main className="min-h-screen">
-        <IndustryHero
-          industry="Roofing"
-          headline={PAGE_TITLE}
-          ctaText="Get My FREE Roofing Ads"
-        />
+        <IndustryHero industry="Roofing" headline={PAGE_TITLE} ctaText="Get My FREE Roofing Ads" />
         <IndustryPainPoints painPoints={ROOFER_PAIN_POINTS} ctaText="Get My FREE Roofing Ads" />
         <SocialProof />
         <OfferBreakdown />

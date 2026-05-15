@@ -8,29 +8,29 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export function OneVideoSection() {
   return (
-    <section className="py-24 border-t border-zinc-800/50 group-data-[demo-light]:border-gray-200/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="border-t border-zinc-800/50 py-24 group-data-[demo-light]:border-gray-200/50">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="mb-16 text-center"
         >
-          <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+          <span className="bg-primary/10 text-primary mb-4 inline-block rounded-full px-3 py-1 text-sm font-medium">
             How It Works
           </span>
-          <h2 className="text-3xl sm:text-4xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900 mb-4">
+          <h2 className="font-heading mb-4 text-3xl font-bold text-white group-data-[demo-light]:text-zinc-900 sm:text-4xl">
             1 Video <span className="text-primary">→</span> 300 Ads
           </h2>
-          <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-lg max-w-2xl mx-auto">
+          <p className="mx-auto max-w-2xl text-lg text-zinc-400 group-data-[demo-light]:text-zinc-600">
             Fully automated. Zero manual editing. Runs in the background.
           </p>
         </motion.div>
 
         {/* Two-column flow */}
-        <div className="grid md:grid-cols-[1fr_auto_1fr] gap-6 items-stretch mb-16">
+        <div className="mb-16 grid items-stretch gap-6 md:grid-cols-[1fr_auto_1fr]">
           {/* Input — raw footage */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -38,7 +38,7 @@ export function OneVideoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden h-full">
+            <Card className="h-full overflow-hidden border-zinc-800 bg-zinc-900 group-data-[demo-light]:border-gray-200 group-data-[demo-light]:bg-white">
               {/* Two stacked video thumbnails */}
               <div className="grid grid-cols-2 gap-0.5 bg-zinc-800 group-data-[demo-light]:bg-gray-200">
                 <div className="relative aspect-[9/16]">
@@ -48,7 +48,7 @@ export function OneVideoSection() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-1.5 py-0.5 rounded font-mono">
+                  <div className="absolute right-2 bottom-2 rounded bg-black/70 px-1.5 py-0.5 font-mono text-xs text-white">
                     13:08
                   </div>
                 </div>
@@ -59,20 +59,24 @@ export function OneVideoSection() {
                     fill
                     className="object-cover"
                   />
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-1.5 py-0.5 rounded font-mono">
+                  <div className="absolute right-2 bottom-2 rounded bg-black/70 px-1.5 py-0.5 font-mono text-xs text-white">
                     8:20
                   </div>
                 </div>
               </div>
-              <CardContent className="p-6 space-y-2">
-                <Badge variant="outline" className="border-zinc-600 group-data-[demo-light]:border-gray-300 text-zinc-400 group-data-[demo-light]:text-zinc-600 text-xs">
+              <CardContent className="space-y-2 p-6">
+                <Badge
+                  variant="outline"
+                  className="border-zinc-600 text-xs text-zinc-400 group-data-[demo-light]:border-gray-300 group-data-[demo-light]:text-zinc-600"
+                >
                   Raw Footage
                 </Badge>
-                <p className="text-3xl font-heading font-extrabold text-white group-data-[demo-light]:text-zinc-900 leading-none">
+                <p className="font-heading text-3xl leading-none font-extrabold text-white group-data-[demo-light]:text-zinc-900">
                   1 Video
                 </p>
-                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">
-                  13 min for first-timers. 8 min for experienced users. No script, no studio, no production crew.
+                <p className="text-sm leading-relaxed text-zinc-400 group-data-[demo-light]:text-zinc-600">
+                  13 min for first-timers. 8 min for experienced users. No script, no studio, no
+                  production crew.
                 </p>
               </CardContent>
             </Card>
@@ -86,8 +90,8 @@ export function OneVideoSection() {
             transition={{ duration: 0.4, delay: 0.2 }}
             className="flex items-center justify-center"
           >
-            <div className="h-12 w-12 rounded-full bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
-              <ArrowRight className="h-5 w-5 text-primary" />
+            <div className="bg-primary/10 border-primary/30 flex h-12 w-12 shrink-0 items-center justify-center rounded-full border">
+              <ArrowRight className="text-primary h-5 w-5" />
             </div>
           </motion.div>
 
@@ -98,8 +102,8 @@ export function OneVideoSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <Card className="bg-zinc-900 group-data-[demo-light]:bg-white border-zinc-800 group-data-[demo-light]:border-gray-200 overflow-hidden h-full">
-              <div className="relative w-full aspect-video bg-black group-data-[demo-light]:bg-gray-200">
+            <Card className="h-full overflow-hidden border-zinc-800 bg-zinc-900 group-data-[demo-light]:border-gray-200 group-data-[demo-light]:bg-white">
+              <div className="relative aspect-video w-full bg-black group-data-[demo-light]:bg-gray-200">
                 <Image
                   src="/images/demo/video_ads_mass_preview.png"
                   alt="300 ready-to-go video ads — thumbnail preview"
@@ -107,15 +111,16 @@ export function OneVideoSection() {
                   className="object-cover object-top"
                 />
               </div>
-              <CardContent className="p-6 space-y-2">
+              <CardContent className="space-y-2 p-6">
                 <Badge className="bg-primary/20 text-primary border-primary/30 text-xs">
                   Output
                 </Badge>
-                <p className="text-3xl font-heading font-extrabold text-primary leading-none">
+                <p className="font-heading text-primary text-3xl leading-none font-extrabold">
                   300 Ads
                 </p>
-                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">
-                  Every hook × meat × CTA variation. Named, organized, and ready to upload to any ad platform.
+                <p className="text-sm leading-relaxed text-zinc-400 group-data-[demo-light]:text-zinc-600">
+                  Every hook × meat × CTA variation. Named, organized, and ready to upload to any ad
+                  platform.
                 </p>
               </CardContent>
             </Card>
@@ -130,26 +135,26 @@ export function OneVideoSection() {
           transition={{ duration: 0.5 }}
           className="mb-16"
         >
-          <div className="text-center mb-8">
-            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-3">
+          <div className="mb-8 text-center">
+            <span className="bg-primary/10 text-primary mb-3 inline-block rounded-full px-3 py-1 text-sm font-medium">
               Final Output Sample
             </span>
-            <h3 className="text-2xl font-heading font-bold text-white group-data-[demo-light]:text-zinc-900">
+            <h3 className="font-heading text-2xl font-bold text-white group-data-[demo-light]:text-zinc-900">
               Here&apos;s What One Finished Ad Looks Like
             </h3>
-            <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm mt-2">
+            <p className="mt-2 text-sm text-zinc-400 group-data-[demo-light]:text-zinc-600">
               This came out of a single raw recording — zero manual editing.
             </p>
           </div>
 
           <div className="flex justify-center">
-            <div className="relative w-full max-w-[320px] aspect-[9/16] rounded-xl overflow-hidden border border-zinc-800 group-data-[demo-light]:border-gray-200 shadow-lg">
+            <div className="relative aspect-[9/16] w-full max-w-[320px] overflow-hidden rounded-xl border border-zinc-800 shadow-lg group-data-[demo-light]:border-gray-200">
               <iframe
                 src="https://www.youtube.com/embed/qh9gYvwDQQM"
                 title="Final result ad sample"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                className="absolute inset-0 w-full h-full"
+                className="absolute inset-0 h-full w-full"
               />
             </div>
           </div>
@@ -191,14 +196,16 @@ export function OneVideoSection() {
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="flex items-start gap-6"
             >
-              <span className="text-4xl font-heading font-bold text-primary/20 leading-none shrink-0 pt-1">
+              <span className="font-heading text-primary/20 shrink-0 pt-1 text-4xl leading-none font-bold">
                 {step.number}
               </span>
               <div>
-                <h3 className="text-white group-data-[demo-light]:text-zinc-900 font-heading font-semibold text-xl mb-1">
+                <h3 className="font-heading mb-1 text-xl font-semibold text-white group-data-[demo-light]:text-zinc-900">
                   {step.title}
                 </h3>
-                <p className="text-zinc-400 group-data-[demo-light]:text-zinc-600 text-sm leading-relaxed">{step.description}</p>
+                <p className="text-sm leading-relaxed text-zinc-400 group-data-[demo-light]:text-zinc-600">
+                  {step.description}
+                </p>
               </div>
             </motion.div>
           ))}

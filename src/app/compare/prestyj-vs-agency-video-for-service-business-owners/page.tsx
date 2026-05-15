@@ -4,6 +4,6 @@
 import { ComparePageWrapper } from "@/components/sections/compare/ComparePageWrapper";
 import { serviceBusinessOwnersVsAgencyVideoCompareData } from "@/lib/compare/data/prestyj-vs-agency-video-for-service-business-owners";
 
-export default function PrestyJVsAgencyForServiceBusinessOwnersPage() {
+export default function PrestyjVsAgencyForServiceBusinessOwnersPage() {
   return <ComparePageWrapper data={serviceBusinessOwnersVsAgencyVideoCompareData} />;
 }

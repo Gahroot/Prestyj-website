@@ -4,3 +4,4 @@ export { LandingBenefits } from "./benefits";
 export { LandingCTA } from "./cta";
 export { ObjectionAccordion } from "./objection-accordion";
 export { ROICalculator } from "./roi-calculator";
+export { BatchVideoAdsFeatureSection } from "./batch-video-ads-feature";

@@ -8,11 +8,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AffiliatLoginPage() {
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">(
-    "idle"
-  );
+  const [status, setStatus] = useState<"idle" | "loading" | "sent" | "error">("idle");
   const error = new URLSearchParams(
-    typeof window !== "undefined" ? window.location.search : ""
+    typeof window !== "undefined" ? window.location.search : "",
   ).get("error");
 
   async function handleSubmit(e: React.FormEvent) {
@@ -35,27 +33,26 @@ export default function AffiliatLoginPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center p-4 bg-background">
+    <main className="bg-background flex min-h-screen items-center justify-center p-4">
       <Card className="w-full max-w-sm">
         <CardHeader className="space-y-1">
-          <div className="text-sm font-semibold tracking-widest text-muted-foreground uppercase mb-1">
+          <div className="text-muted-foreground mb-1 text-sm font-semibold tracking-widest uppercase">
             Prestyj
           </div>
           <CardTitle className="text-2xl">Affiliate portal</CardTitle>
         </CardHeader>
         <CardContent>
           {status === "sent" ? (
-            <div className="text-center py-4 space-y-2">
+            <div className="space-y-2 py-4 text-center">
               <p className="font-medium">Check your email</p>
-              <p className="text-sm text-muted-foreground">
-                We sent a login link to <strong>{email}</strong>. It expires in
-                15 minutes.
+              <p className="text-muted-foreground text-sm">
+                We sent a login link to <strong>{email}</strong>. It expires in 15 minutes.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               {error === "invalid" && (
-                <p className="text-sm text-destructive">
+                <p className="text-destructive text-sm">
                   That link has expired or already been used. Request a new one.
                 </p>
               )}
@@ -72,15 +69,9 @@ export default function AffiliatLoginPage() {
                 />
               </div>
               {status === "error" && (
-                <p className="text-sm text-destructive">
-                  Something went wrong. Try again.
-                </p>
+                <p className="text-destructive text-sm">Something went wrong. Try again.</p>
               )}
-              <Button
-                type="submit"
-                className="w-full"
-                disabled={status === "loading"}
-              >
+              <Button type="submit" className="w-full" disabled={status === "loading"}>
                 {status === "loading" ? "Sending…" : "Send login link"}
               </Button>
             </form>

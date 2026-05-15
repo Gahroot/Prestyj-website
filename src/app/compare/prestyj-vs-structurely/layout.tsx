@@ -3,10 +3,6 @@ import { structurelyMetadata } from "@/lib/compare/data/structurely";
 
 export const metadata = generateCompareMetadata(structurelyMetadata);
 
-export default function CompareLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function CompareLayout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;
 }
