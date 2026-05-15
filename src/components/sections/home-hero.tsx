@@ -17,23 +17,23 @@ export function HomeHeroSection() {
         </div>
 
         <h1 className="font-heading text-foreground mt-6 text-4xl leading-[1.1] font-bold md:text-5xl lg:text-6xl">
-          AI agents that run your marketing and sales —{" "}
-          <span className="text-primary">24/7.</span>
+          100 video ads. <span className="text-primary">$497.</span> Delivered in 24 hours.
         </h1>
 
         <p className="text-muted-foreground mt-4 text-sm md:text-base">
-          Built for service businesses, real estate teams, and professional services.
+          For anyone running paid ads.
         </p>
 
         <p className="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg">
-          We build AI agents that capture leads, respond in under 60 seconds, qualify them, and
-          book meetings on your calendar — automatically. Stop duct-taping 10 SaaS tools.
+          One recording session. We script, edit, and ship 100 vertical ads built for Meta, TikTok,
+          and YouTube Shorts. Want more angles? Scale to 300, 500, or 1,000 — same engine, same
+          day.
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button size="lg" className="w-full px-8 text-lg font-bold sm:w-auto" asChild>
-            <Link href="/book-demo">
-              Book a Demo
+            <Link href="/batch-video-ads">
+              Get 100 ads for $497
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -43,7 +43,7 @@ export function HomeHeroSection() {
             className="w-full px-8 text-lg font-bold sm:w-auto"
             asChild
           >
-            <Link href="/pricing">See Pricing</Link>
+            <Link href="/bulk-video-ad-pricing">See pricing</Link>
           </Button>
         </div>
 
@@ -65,7 +65,7 @@ export function HomeHeroSection() {
             <span className="text-foreground font-semibold">24/7</span> availability
           </span>
           <span className="text-border hidden sm:inline">•</span>
-          <span>Built for service businesses</span>
+          <span>For anyone running paid ads</span>
         </div>
       </div>
     </section>
