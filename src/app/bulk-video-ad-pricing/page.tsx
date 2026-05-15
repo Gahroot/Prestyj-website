@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import BorderGlow from "@/components/ui/border-glow";
 import { bulkAdPricingTiers } from "@/lib/bulk-ad-pricing-data";
+import { BulkCheckoutButton } from "./checkout-button";
 
 export const metadata: Metadata = {
   title: "Batch Video Ad Pricing",
@@ -29,8 +30,8 @@ export default function BulkVideoAdPricingPage() {
               Batch Video Ad Pricing
             </h1>
             <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-xl md:text-2xl">
-              Pick how many customer problems you want each ad to speak to. 300, 500, or 1,000
-              scripted ads — delivered in 1–2 business days.
+              Start with 100 ads for $497. Upgrade any time — every dollar you spend at $497 counts
+              toward 300, 500, or 1,000.
             </p>
           </AnimateOnScroll>
         </div>
@@ -48,7 +49,7 @@ export default function BulkVideoAdPricingPage() {
             </p>
           </AnimateOnScroll>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
             {bulkAdPricingTiers.map((tier, index) => (
               <AnimateOnScroll key={tier.name} delay={index * 0.1}>
                 <BorderGlow
@@ -72,6 +73,9 @@ export default function BulkVideoAdPricingPage() {
                       <span className="text-foreground text-4xl font-bold">{tier.price}</span>
                       <span className="text-muted-foreground text-sm">one-time</span>
                     </div>
+                    <p className="text-muted-foreground mt-1 text-xs">
+                      Cost per ad: {tier.costPerAd}
+                    </p>
                   </div>
 
                   <ul className="mb-8 flex-1 space-y-3">
@@ -83,17 +87,11 @@ export default function BulkVideoAdPricingPage() {
                     ))}
                   </ul>
 
-                  <Button
-                    size="lg"
+                  <BulkCheckoutButton
+                    tierId={tier.tierId}
+                    label={tier.ctaLabel}
                     variant={tier.popular ? "default" : "outline"}
-                    className="w-full font-bold"
-                    asChild
-                  >
-                    <Link href="/book-demo">
-                      Book a Demo
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                  />
                 </BorderGlow>
               </AnimateOnScroll>
             ))}

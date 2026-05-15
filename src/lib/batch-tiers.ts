@@ -1,4 +1,4 @@
-export type BatchTierId = "minimum" | "pro" | "max";
+export type BatchTierId = "starter" | "minimum" | "pro" | "max";
 
 export type BatchTier = {
   id: BatchTierId;
@@ -13,6 +13,22 @@ export type BatchTier = {
 };
 
 export const BATCH_TIERS: Record<BatchTierId, BatchTier> = {
+  starter: {
+    id: "starter",
+    name: "Starter",
+    tagline: "Sample the system",
+    priceLabel: "$497",
+    priceCents: 49700,
+    adCount: 100,
+    painPoints: 1,
+    highlights: [
+      "100 unique vertical video ads",
+      "1 customer problem tested",
+      "Hook, body & CTA variations",
+      "1–2 business day turnaround",
+      "Error revisions included",
+    ],
+  },
   minimum: {
     id: "minimum",
     name: "Minimum",
@@ -68,6 +84,7 @@ export const BATCH_TIERS: Record<BatchTierId, BatchTier> = {
 };
 
 export const BATCH_TIER_LIST: BatchTier[] = [
+  BATCH_TIERS.starter,
   BATCH_TIERS.minimum,
   BATCH_TIERS.pro,
   BATCH_TIERS.max,
@@ -75,6 +92,8 @@ export const BATCH_TIER_LIST: BatchTier[] = [
 
 export function getBatchTierPriceId(id: BatchTierId): string {
   switch (id) {
+    case "starter":
+      return process.env.STRIPE_PRICE_STARTER ?? "";
     case "minimum":
       return process.env.STRIPE_PRICE_MINIMUM ?? "";
     case "pro":
@@ -85,6 +104,7 @@ export function getBatchTierPriceId(id: BatchTierId): string {
 }
 
 export function getBatchTierByPriceId(priceId: string): BatchTier | null {
+  if (priceId === process.env.STRIPE_PRICE_STARTER) return BATCH_TIERS.starter;
   if (priceId === process.env.STRIPE_PRICE_MINIMUM) return BATCH_TIERS.minimum;
   if (priceId === process.env.STRIPE_PRICE_PRO) return BATCH_TIERS.pro;
   if (priceId === process.env.STRIPE_PRICE_MAX) return BATCH_TIERS.max;
@@ -92,5 +112,5 @@ export function getBatchTierByPriceId(priceId: string): BatchTier | null {
 }
 
 export function isBatchTierId(value: unknown): value is BatchTierId {
-  return value === "minimum" || value === "pro" || value === "max";
+  return value === "starter" || value === "minimum" || value === "pro" || value === "max";
 }
