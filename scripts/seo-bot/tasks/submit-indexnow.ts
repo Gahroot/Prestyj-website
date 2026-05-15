@@ -40,9 +40,7 @@ interface IndexNowSubmission {
   urlList: string[];
 }
 
-async function loadShippedManifest(
-  config: AppConfig
-): Promise<ShippedManifest> {
+async function loadShippedManifest(config: AppConfig): Promise<ShippedManifest> {
   const filePath = path.resolve(process.cwd(), config.state.shippedFile);
   try {
     const raw = await fs.readFile(filePath, "utf-8");
@@ -67,9 +65,7 @@ function hostFromBaseUrl(baseUrl: string): string {
   }
 }
 
-export async function submitIndexNow(
-  input: OptimizationTaskInput
-): Promise<TaskExecutionResult> {
+export async function submitIndexNow(input: OptimizationTaskInput): Promise<TaskExecutionResult> {
   const start = Date.now();
   const manifest = await loadShippedManifest(input.config);
 
@@ -103,7 +99,7 @@ export async function submitIndexNow(
   if (!apiKey) {
     console.warn(
       "[submit-indexnow] INDEXNOW_API_KEY not set — skipping submission. Would have submitted " +
-        `${uniqueUrls.length} url(s).`
+        `${uniqueUrls.length} url(s).`,
     );
     return {
       task: "socialCopy",
@@ -139,7 +135,7 @@ export async function submitIndexNow(
     }
 
     console.log(
-      `[submit-indexnow] Submitted ${uniqueUrls.length} URL(s) to IndexNow (status ${response.status}).`
+      `[submit-indexnow] Submitted ${uniqueUrls.length} URL(s) to IndexNow (status ${response.status}).`,
     );
     return {
       task: "socialCopy",

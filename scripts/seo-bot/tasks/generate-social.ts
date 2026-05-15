@@ -55,17 +55,14 @@ const SocialJsonSchema = {
     },
     reddit: {
       type: "string",
-      description:
-        "Reddit post body — genuine, conversational, self-promotion-aware.",
+      description: "Reddit post body — genuine, conversational, self-promotion-aware.",
     },
   },
   required: ["linkedin", "x", "reddit"],
   additionalProperties: false,
 } as const;
 
-async function loadShippedManifest(
-  config: AppConfig
-): Promise<ShippedManifest> {
+async function loadShippedManifest(config: AppConfig): Promise<ShippedManifest> {
   const filePath = path.resolve(process.cwd(), config.state.shippedFile);
   try {
     const raw = await fs.readFile(filePath, "utf-8");
@@ -105,19 +102,19 @@ function todayYMD(): string {
 function parseJsonLoose(raw: string): unknown {
   const trimmed = raw.trim();
   const fenceMatch = trimmed.match(/^```(?:json)?\s*\n([\s\S]*?)\n```$/);
-  const body = fenceMatch ? fenceMatch[1] : trimmed;
+  const body = fenceMatch?.[1] ?? trimmed;
   return JSON.parse(body);
 }
 
 function renderMarkdown(
   items: Array<{ item: ShippedItem; url: string }>,
-  social: z.infer<typeof SocialSchema>
+  social: z.infer<typeof SocialSchema>,
 ): string {
   const lines: string[] = [];
   lines.push(`# Social Copy — ${todayYMD()}`);
   lines.push("");
   lines.push(
-    `Generated from ${items.length} page${items.length === 1 ? "" : "s"} shipped in the last ${LOOKBACK_DAYS} days.`
+    `Generated from ${items.length} page${items.length === 1 ? "" : "s"} shipped in the last ${LOOKBACK_DAYS} days.`,
   );
   lines.push("");
   lines.push("## Pages Referenced");
@@ -145,9 +142,7 @@ function renderMarkdown(
   return lines.join("\n");
 }
 
-export async function generateSocial(
-  input: OptimizationTaskInput
-): Promise<TaskExecutionResult> {
+export async function generateSocial(input: OptimizationTaskInput): Promise<TaskExecutionResult> {
   const start = Date.now();
 
   const manifest = await loadShippedManifest(input.config);
@@ -180,7 +175,7 @@ export async function generateSocial(
   const pageSummaries = withUrls
     .map(
       ({ item, url }, i) =>
-        `${i + 1}. [${item.type}] ${item.title}\n   Slug: ${item.slug}\n   URL: ${url}\n   Description: ${item.description}`
+        `${i + 1}. [${item.type}] ${item.title}\n   Slug: ${item.slug}\n   URL: ${url}\n   Description: ${item.description}`,
     )
     .join("\n\n");
 
@@ -232,11 +227,7 @@ export async function generateSocial(
   const outPath = path.join(socialDir, `${todayYMD()}.md`);
   try {
     await fs.mkdir(socialDir, { recursive: true });
-    await fs.writeFile(
-      outPath,
-      renderMarkdown(withUrls, social),
-      "utf-8"
-    );
+    await fs.writeFile(outPath, renderMarkdown(withUrls, social), "utf-8");
   } catch (err) {
     return {
       task: "socialCopy",

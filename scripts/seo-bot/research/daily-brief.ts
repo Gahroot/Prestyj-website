@@ -1,11 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import type {
-  AppConfig,
-  DedupContext,
-  LLMProvider,
-  ResearchBrief,
-} from "../types";
+import type { AppConfig, DedupContext, LLMProvider, ResearchBrief } from "../types";
 import { summarizeDedupContextForPrompt } from "./dedup-context";
 
 export interface BuildDailyBriefArgs {
@@ -38,25 +33,20 @@ function coerceStringArray(value: unknown): string[] {
   return out;
 }
 
-function coerceCompetitorMoves(
-  value: unknown
-): Array<{ competitor: string; observation: string }> {
+function coerceCompetitorMoves(value: unknown): Array<{ competitor: string; observation: string }> {
   if (!Array.isArray(value)) return [];
   const out: Array<{ competitor: string; observation: string }> = [];
   for (const entry of value) {
     if (!entry || typeof entry !== "object") continue;
     const obj = entry as Record<string, unknown>;
     const competitor = typeof obj.competitor === "string" ? obj.competitor : "";
-    const observation =
-      typeof obj.observation === "string" ? obj.observation : "";
+    const observation = typeof obj.observation === "string" ? obj.observation : "";
     if (competitor && observation) out.push({ competitor, observation });
   }
   return out;
 }
 
-function coerceGscOpportunities(
-  value: unknown
-): Array<{ query: string; reason: string }> {
+function coerceGscOpportunities(value: unknown): Array<{ query: string; reason: string }> {
   if (!Array.isArray(value)) return [];
   const out: Array<{ query: string; reason: string }> = [];
   for (const entry of value) {
@@ -106,8 +96,7 @@ function parseResearchBrief(raw: string, dateIso: string): ResearchBrief {
   }
 
   const obj = parsed as Record<string, unknown>;
-  const date =
-    typeof obj.date === "string" && obj.date.length > 0 ? obj.date : dateIso;
+  const date = typeof obj.date === "string" && obj.date.length > 0 ? obj.date : dateIso;
   const rawNotes = typeof obj.rawNotes === "string" ? obj.rawNotes : raw;
 
   return {
@@ -162,10 +151,7 @@ function renderBriefMarkdown(brief: ResearchBrief): string {
   return lines.join("\n");
 }
 
-async function saveBriefMarkdown(
-  config: AppConfig,
-  brief: ResearchBrief
-): Promise<string> {
+async function saveBriefMarkdown(config: AppConfig, brief: ResearchBrief): Promise<string> {
   const outDir = path.resolve(process.cwd(), config.output.reportDir);
   await fs.mkdir(outDir, { recursive: true });
   const fileName = `research-${brief.date}.md`;
@@ -174,11 +160,8 @@ async function saveBriefMarkdown(
   return filePath;
 }
 
-export async function buildDailyBrief(
-  args: BuildDailyBriefArgs
-): Promise<ResearchBrief> {
-  const { config, provider, model, systemPrompt, taskPrompt, dedupContext, date } =
-    args;
+export async function buildDailyBrief(args: BuildDailyBriefArgs): Promise<ResearchBrief> {
+  const { config, provider, model, systemPrompt, taskPrompt, dedupContext, date } = args;
 
   const dateIso = formatDate(date);
   const cacheKey = `${dateIso}::${provider.name}::${model}`;

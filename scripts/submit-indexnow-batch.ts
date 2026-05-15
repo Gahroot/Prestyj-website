@@ -39,9 +39,7 @@ const newCompareRoutes = [
   "/compare/structurely-vs-prestyj",
 ];
 
-const urlList = [...contentEngineVariants, ...newCompareRoutes].map(
-  (path) => `${BASE_URL}${path}`,
-);
+const urlList = [...contentEngineVariants, ...newCompareRoutes].map((path) => `${BASE_URL}${path}`);
 
 async function main() {
   const key = process.env.INDEXNOW_API_KEY;

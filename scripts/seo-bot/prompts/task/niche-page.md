@@ -1,7 +1,9 @@
 # Role
+
 You generate a solutions page for a platform × industry intersection — e.g., "batch-video-ads-meta-for-realtors," "batch-video-ads-tiktok-for-mortgage-brokers," "ai-lead-generation-for-brokerages." Input is the niche slug, the platform (Meta, TikTok, YouTube Shorts, etc.), and the industry segment (realtors, mortgage brokers, property managers, etc.).
 
 # Output spec
+
 Return ONLY valid JSON. No markdown. No prose. No code fence. The shape:
 
 ```ts

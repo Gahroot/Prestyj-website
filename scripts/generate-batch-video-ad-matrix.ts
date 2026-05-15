@@ -20,26 +20,26 @@ const SRC = join(ROOT, "src");
 // ---------- vertical definitions ----------
 
 interface Vertical {
-  slug: string;            // url segment + filename base
-  varBase: string;         // camelCase identifier base
-  name: string;            // "HVAC Companies"
-  shortName: string;       // "HVAC"
-  audience: string;        // descriptive audience phrase used in copy
-  jobValue: string;        // typical revenue per closed deal/job, in copy
-  cplWithBatch: string;    // typical CPL with batch creative
-  cplWithout: string;      // typical CPL without
-  painA: string;           // unique pain hook 1
-  painB: string;           // unique pain hook 2
-  painC: string;           // unique pain hook 3
-  hiddenCost: string;      // sentence: "the hidden costs of X"
+  slug: string; // url segment + filename base
+  varBase: string; // camelCase identifier base
+  name: string; // "HVAC Companies"
+  shortName: string; // "HVAC"
+  audience: string; // descriptive audience phrase used in copy
+  jobValue: string; // typical revenue per closed deal/job, in copy
+  cplWithBatch: string; // typical CPL with batch creative
+  cplWithout: string; // typical CPL without
+  painA: string; // unique pain hook 1
+  painB: string; // unique pain hook 2
+  painC: string; // unique pain hook 3
+  hiddenCost: string; // sentence: "the hidden costs of X"
   competitor: {
-    slug: string;          // competitor slug for /compare/prestyj-vs-{slug}-video
+    slug: string; // competitor slug for /compare/prestyj-vs-{slug}-video
     varBase: string;
-    name: string;          // "UGC Creator", "Fiverr", "AI Avatar Tool", "In-House Production", "Video Agency"
-    pricing: string;       // "$200-500 per video"
+    name: string; // "UGC Creator", "Fiverr", "AI Avatar Tool", "In-House Production", "Video Agency"
+    pricing: string; // "$200-500 per video"
     pricingPeriod: string; // "/video" or "/month"
-    badge: string;         // hero badge
-    angle: string;         // headline angle
+    badge: string; // hero badge
+    angle: string; // headline angle
   };
 }
 
@@ -56,7 +56,8 @@ const VERTICALS: Vertical[] = [
     painA: "Your face is the offer — but you only have 4 ad creatives in rotation",
     painB: "Webinar registrations stalled because every prospect has seen your same hook 12 times",
     painC: "VSL-only funnels are dying in 2026 — short-form ads now feed every booking call",
-    hiddenCost: "the hidden cost of running coach ads is creative fatigue tax — your CPL doubles every 3 weeks until you ship fresh creative",
+    hiddenCost:
+      "the hidden cost of running coach ads is creative fatigue tax — your CPL doubles every 3 weeks until you ship fresh creative",
     competitor: {
       slug: "ugc-creator",
       varBase: "UgcCreator",
@@ -72,14 +73,16 @@ const VERTICALS: Vertical[] = [
     varBase: "mediaBuyers",
     name: "Media Buyers",
     shortName: "Media Buyers",
-    audience: "in-house media buyers and performance marketers managing $50K-$2M/month in paid social spend",
+    audience:
+      "in-house media buyers and performance marketers managing $50K-$2M/month in paid social spend",
     jobValue: "every 1-point CPA improvement on a $200K/month account = $20K-$60K saved/quarter",
     cplWithBatch: "30-60% lower vs static rotation",
     cplWithout: "rising CPA every 7-14 days due to fatigue",
     painA: "You can ship 50 ad sets a week — but your creative team can ship 4 videos",
     painB: "The algorithm exits learning at 50 fresh creatives per ad set, and you have 6",
     painC: "Every Q4, ad fatigue compounds and your account collapses without volume",
-    hiddenCost: "the hidden cost is the 'creative bottleneck tax' — your buying skill is capped by how many videos you have to test",
+    hiddenCost:
+      "the hidden cost is the 'creative bottleneck tax' — your buying skill is capped by how many videos you have to test",
     competitor: {
       slug: "fiverr",
       varBase: "Fiverr",
@@ -87,7 +90,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$25-$500",
       pricingPeriod: "per gig",
       badge: "Fiverr Lottery vs Batch System",
-      angle: "Fiverr is fine for a logo. It is not a creative testing engine for a $200K/month account.",
+      angle:
+        "Fiverr is fine for a logo. It is not a creative testing engine for a $200K/month account.",
     },
   },
   {
@@ -95,14 +99,16 @@ const VERTICALS: Vertical[] = [
     varBase: "cmos",
     name: "CMOs",
     shortName: "CMOs",
-    audience: "B2B and DTC CMOs at $10M-$200M revenue companies driving paid social as a primary channel",
+    audience:
+      "B2B and DTC CMOs at $10M-$200M revenue companies driving paid social as a primary channel",
     jobValue: "$100K-$500K MQL pipeline lift per quarter from creative testing alone",
     cplWithBatch: "40% lower MQL cost on average",
     cplWithout: "MQL cost up 18% YoY industry-wide",
     painA: "Your in-house team ships 8 videos/quarter and your board wants 80",
     painB: "Agency retainers are $25K-$60K/month and you still can't get creative volume",
     painC: "You have 6 buyer personas to test and your team can only afford to make creative for 2",
-    hiddenCost: "the hidden cost is the opportunity cost of un-tested personas — you are leaving an entire ICP segment unaddressed because creative production cannot keep pace",
+    hiddenCost:
+      "the hidden cost is the opportunity cost of un-tested personas — you are leaving an entire ICP segment unaddressed because creative production cannot keep pace",
     competitor: {
       slug: "in-house",
       varBase: "InHouse",
@@ -110,7 +116,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$180K-$450K",
       pricingPeriod: "fully loaded annual",
       badge: "Fractional Batch vs In-House Studio",
-      angle: "An in-house team of 3 ships fewer ads per quarter than a single Prestyj batch — at 10x the cost.",
+      angle:
+        "An in-house team of 3 ships fewer ads per quarter than a single Prestyj batch — at 10x the cost.",
     },
   },
   {
@@ -122,10 +129,12 @@ const VERTICALS: Vertical[] = [
     jobValue: "$3,000-$15,000/month in retainer per landed client",
     cplWithBatch: "$22-$48 cost-per-discovery-call",
     cplWithout: "$120-$300 (when you ship at all)",
-    painA: "The cobbler's kids have no shoes — you ship creative for clients but never for yourself",
+    painA:
+      "The cobbler's kids have no shoes — you ship creative for clients but never for yourself",
     painB: "Your positioning case studies are gold and they live in a Notion doc nobody sees",
     painC: "Every retainer churn forces you to scramble for new business with zero creative bench",
-    hiddenCost: "the hidden cost of skipping your own marketing is concentration risk — one client churn becomes a survival event because you never built creative volume to backfill",
+    hiddenCost:
+      "the hidden cost of skipping your own marketing is concentration risk — one client churn becomes a survival event because you never built creative volume to backfill",
     competitor: {
       slug: "ai-avatar-tool",
       varBase: "AiAvatarTool",
@@ -133,7 +142,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$110-$220",
       pricingPeriod: "/month",
       badge: "AI Avatar vs Real Founder Face",
-      angle: "Your prospects can clock an AI avatar in 2 seconds. The moment they do, your agency loses authority.",
+      angle:
+        "Your prospects can clock an AI avatar in 2 seconds. The moment they do, your agency loses authority.",
     },
   },
   {
@@ -141,14 +151,17 @@ const VERTICALS: Vertical[] = [
     varBase: "serviceBusinessOwners",
     name: "Service Business Owners",
     shortName: "Service Business Owners",
-    audience: "service business owners running $500K-$10M/year operations across home services, professional services, and local trades",
+    audience:
+      "service business owners running $500K-$10M/year operations across home services, professional services, and local trades",
     jobValue: "$800-$20,000 per closed job depending on trade",
     cplWithBatch: "$18-$45 per booked appointment",
     cplWithout: "$80-$220 per appointment via Yelp/Angi/Thumbtack",
     painA: "Lead aggregator costs are up 60% in 24 months and you still don't own the customer",
     painB: "You tried Facebook ads, spent $3K, got 4 leads, and your agency blamed 'the algorithm'",
-    painC: "Every truck on the road is a billboard you already paid for — and zero of it is in any ad",
-    hiddenCost: "the hidden cost of relying on aggregators is permanent pricing pressure — they sell the same lead to 3 competitors and your close rate collapses",
+    painC:
+      "Every truck on the road is a billboard you already paid for — and zero of it is in any ad",
+    hiddenCost:
+      "the hidden cost of relying on aggregators is permanent pricing pressure — they sell the same lead to 3 competitors and your close rate collapses",
     competitor: {
       slug: "agency",
       varBase: "Agency",
@@ -156,7 +169,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$3,500-$8,000",
       pricingPeriod: "/month retainer",
       badge: "Retainer Agency vs Flat-Fee Batch",
-      angle: "Agencies bill you for 'creative production' as a line item and ship 3 videos a quarter. Batch ships 500 for less than your first month's retainer.",
+      angle:
+        "Agencies bill you for 'creative production' as a line item and ship 3 videos a quarter. Batch ships 500 for less than your first month's retainer.",
     },
   },
   {
@@ -168,10 +182,13 @@ const VERTICALS: Vertical[] = [
     jobValue: "$280 service call → $7,500-$22,000 system replacement",
     cplWithBatch: "$22-$55 per booked appointment",
     cplWithout: "$110-$240 per Angi/Yelp lead (sold to 3 competitors)",
-    painA: "Heat-wave Tuesday means peak demand on Wednesday — but your ads were last refreshed in March",
+    painA:
+      "Heat-wave Tuesday means peak demand on Wednesday — but your ads were last refreshed in March",
     painB: "ServiceTitan tells you which job pays — it doesn't tell you which ad creative drove it",
-    painC: "Equipment financing offers convert 4x better in video — but you only have 2 financing creatives running",
-    hiddenCost: "the hidden cost of static creative for HVAC is missed weather windows — every heat event is a 7-day demand spike and your competition's ads are already running",
+    painC:
+      "Equipment financing offers convert 4x better in video — but you only have 2 financing creatives running",
+    hiddenCost:
+      "the hidden cost of static creative for HVAC is missed weather windows — every heat event is a 7-day demand spike and your competition's ads are already running",
     competitor: {
       slug: "ugc-creator",
       varBase: "UgcCreator",
@@ -179,7 +196,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$200-$600",
       pricingPeriod: "per video",
       badge: "UGC Marketplace vs Owner-Led HVAC Ads",
-      angle: "A UGC actress in her kitchen is not an HVAC technician. Homeowners trust the owner of the company they're letting into their attic — not a hired model.",
+      angle:
+        "A UGC actress in her kitchen is not an HVAC technician. Homeowners trust the owner of the company they're letting into their attic — not a hired model.",
     },
   },
   {
@@ -187,14 +205,19 @@ const VERTICALS: Vertical[] = [
     varBase: "plumbingContractors",
     name: "Plumbing Contractors",
     shortName: "Plumbing",
-    audience: "residential and commercial plumbing contractors running $1M-$15M/year with 3-30 trucks",
+    audience:
+      "residential and commercial plumbing contractors running $1M-$15M/year with 3-30 trucks",
     jobValue: "$220 service call → $4,500-$28,000 repipe / sewer / water-heater install",
     cplWithBatch: "$18-$44 per booked appointment",
     cplWithout: "$95-$210 per aggregator lead (sold to 3 competitors)",
-    painA: "Sewer-line jobs and water-heater jobs are different audiences — and your one ad treats them as one",
-    painB: "Emergency leak ads vs preventive repipe ads need different creative — you ship one generic 'we do plumbing' video",
-    painC: "Your warranty pitch and your financing pitch never appear in the same ad rotation because you only have 2 ads",
-    hiddenCost: "the hidden cost is mismatched-intent traffic — generic plumbing ads pull tire-kickers while specific 'water-heater replacement' or 'slab leak' ads pull buyers",
+    painA:
+      "Sewer-line jobs and water-heater jobs are different audiences — and your one ad treats them as one",
+    painB:
+      "Emergency leak ads vs preventive repipe ads need different creative — you ship one generic 'we do plumbing' video",
+    painC:
+      "Your warranty pitch and your financing pitch never appear in the same ad rotation because you only have 2 ads",
+    hiddenCost:
+      "the hidden cost is mismatched-intent traffic — generic plumbing ads pull tire-kickers while specific 'water-heater replacement' or 'slab leak' ads pull buyers",
     competitor: {
       slug: "fiverr",
       varBase: "Fiverr",
@@ -202,7 +225,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$25-$500",
       pricingPeriod: "per gig",
       badge: "Fiverr Lottery vs Plumbing Batch System",
-      angle: "Your Fiverr editor has never written a sewer-replacement script. Prestyj's batch ships 50 plumbing-specific scripts in one delivery.",
+      angle:
+        "Your Fiverr editor has never written a sewer-replacement script. Prestyj's batch ships 50 plumbing-specific scripts in one delivery.",
     },
   },
   {
@@ -210,14 +234,16 @@ const VERTICALS: Vertical[] = [
     varBase: "roofingContractors",
     name: "Roofing Contractors",
     shortName: "Roofing",
-    audience: "residential roofing contractors with 3-100 crews chasing storm and retail-reroof demand",
+    audience:
+      "residential roofing contractors with 3-100 crews chasing storm and retail-reroof demand",
     jobValue: "$12,000-$40,000 per reroof (insurance or retail)",
     cplWithBatch: "$15-$45 per booked inspection",
     cplWithout: "$80-$200 per canvasser-generated lead (fully loaded labor)",
     painA: "Hail-storm windows close in 10 days and your agency ships ads in 14",
     painB: "Hail vs wind vs retail-reroof are three different creatives and you ship one",
     painC: "Adjuster-denial-reversal ads are gold and you don't have a single one in rotation",
-    hiddenCost: "the hidden cost is missed storm windows — the gold rush collapses inside 14 days and a retainer agency cannot ship event-specific creative in time",
+    hiddenCost:
+      "the hidden cost is missed storm windows — the gold rush collapses inside 14 days and a retainer agency cannot ship event-specific creative in time",
     competitor: {
       slug: "in-house",
       varBase: "InHouse",
@@ -225,7 +251,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$72K-$110K",
       pricingPeriod: "fully loaded annual salary",
       badge: "In-House Hire vs Roofing Batch",
-      angle: "An in-house marketing manager ships 8 videos a quarter and costs you $90K. A Prestyj batch ships 500 in 24 hours for $3,997.",
+      angle:
+        "An in-house marketing manager ships 8 videos a quarter and costs you $90K. A Prestyj batch ships 500 in 24 hours for $3,997.",
     },
   },
   {
@@ -233,14 +260,17 @@ const VERTICALS: Vertical[] = [
     varBase: "realEstateTeams",
     name: "Real Estate Teams",
     shortName: "RE Teams",
-    audience: "real estate teams of 5-50 agents running paid social as a primary buyer/seller acquisition channel",
+    audience:
+      "real estate teams of 5-50 agents running paid social as a primary buyer/seller acquisition channel",
     jobValue: "$8,000-$24,000 GCI per closed transaction",
     cplWithBatch: "$12-$38 per qualified buyer/seller lead",
     cplWithout: "$45-$140 per Zillow/CINC/Realtor.com lead",
     painA: "Buyer leads and seller leads need different creative — most teams run only buyer ads",
-    painB: "Listing video ads, market-update ads, and seller-pain-point ads are three full creative tracks and your team has none",
+    painB:
+      "Listing video ads, market-update ads, and seller-pain-point ads are three full creative tracks and your team has none",
     painC: "Recruiting agent video ads are a separate channel and you've never shipped one",
-    hiddenCost: "the hidden cost of portal leads is permanent buyer-side bias and zero brand equity — every dollar to Zillow strengthens Zillow, not your team brand",
+    hiddenCost:
+      "the hidden cost of portal leads is permanent buyer-side bias and zero brand equity — every dollar to Zillow strengthens Zillow, not your team brand",
     competitor: {
       slug: "ai-avatar-tool",
       varBase: "AiAvatarTool",
@@ -248,7 +278,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$110-$220",
       pricingPeriod: "/month",
       badge: "AI Avatar vs Real Agent Face for RE",
-      angle: "A buyer spending $400K researches the agent before they call. An AI avatar tells them nothing. Your real face tells them everything.",
+      angle:
+        "A buyer spending $400K researches the agent before they call. An AI avatar tells them nothing. Your real face tells them everything.",
     },
   },
   {
@@ -256,14 +287,19 @@ const VERTICALS: Vertical[] = [
     varBase: "mortgageBrokers",
     name: "Mortgage Brokers",
     shortName: "Mortgage Brokers",
-    audience: "independent mortgage brokers and small mortgage shops competing against retail lenders and rocket-style direct-to-consumer brands",
+    audience:
+      "independent mortgage brokers and small mortgage shops competing against retail lenders and rocket-style direct-to-consumer brands",
     jobValue: "$2,800-$9,500 commission per funded loan",
     cplWithBatch: "$22-$60 per pre-qualified borrower lead",
     cplWithout: "$120-$320 per shared lead from Zillow/LendingTree",
-    painA: "Rate-quote ads, refi ads, first-time-buyer ads, and HELOC ads are four creative tracks and you have one",
-    painB: "When the 10-year yield moves, your competition has an ad in market in 24 hours and you do not",
-    painC: "Realtor-partnership ads (recruiting referral partners) are a separate ad track and you've never shipped one",
-    hiddenCost: "the hidden cost is rate-cycle invisibility — when rates move you should be in market within hours and a retainer agency cannot ship event-driven creative at that pace",
+    painA:
+      "Rate-quote ads, refi ads, first-time-buyer ads, and HELOC ads are four creative tracks and you have one",
+    painB:
+      "When the 10-year yield moves, your competition has an ad in market in 24 hours and you do not",
+    painC:
+      "Realtor-partnership ads (recruiting referral partners) are a separate ad track and you've never shipped one",
+    hiddenCost:
+      "the hidden cost is rate-cycle invisibility — when rates move you should be in market within hours and a retainer agency cannot ship event-driven creative at that pace",
     competitor: {
       slug: "agency",
       varBase: "Agency",
@@ -271,7 +307,8 @@ const VERTICALS: Vertical[] = [
       pricing: "$2,500-$6,500",
       pricingPeriod: "/month retainer",
       badge: "Retainer Agency vs Mortgage Batch",
-      angle: "Mortgage marketing agencies bill $4K/month and ship 6 videos a year. Batch ships 500 in 24 hours for less than a single month of retainer.",
+      angle:
+        "Mortgage marketing agencies bill $4K/month and ship 6 videos a year. Batch ships 500 in 24 hours for less than a single month of retainer.",
     },
   },
 ];
@@ -307,7 +344,6 @@ function write(path: string, content: string) {
   writeFileSync(path, content);
   written.push(path.replace(ROOT + "/", ""));
 }
-
 
 // ---------- TEMPLATE 1: best-for/batch-video-ads-for-{vertical} ----------
 
@@ -670,7 +706,6 @@ function cap(s: string): string {
 function capFirst(s: string): string {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
-
 
 // ---------- TEMPLATE 3: alternatives/{vertical}-video-production-alternative ----------
 
@@ -1056,7 +1091,6 @@ function competitorFeaturesFor(v: Vertical): string {
   }
 }
 
-
 // ---------- compare route file ----------
 
 function buildCompareRoute(v: Vertical): string {
@@ -1087,7 +1121,7 @@ function ensureBlock(
   startMarker: string,
   endMarker: string,
   insertBefore: string,
-  newContent: string
+  newContent: string,
 ): string {
   const startIdx = source.indexOf(startMarker);
   const endIdx = source.indexOf(endMarker);
@@ -1131,7 +1165,7 @@ function patchBestForIndex() {
     "// BATCH-MATRIX-IMPORTS-START",
     "// BATCH-MATRIX-IMPORTS-END",
     "export const bestForPages",
-    importLines.join("\n")
+    importLines.join("\n"),
   );
 
   src = ensureBlock(
@@ -1139,7 +1173,7 @@ function patchBestForIndex() {
     "  // BATCH-MATRIX-REGISTER-START",
     "  // BATCH-MATRIX-REGISTER-END",
     "};\n\nexport function getBestFor",
-    registerLines.join("\n")
+    registerLines.join("\n"),
   );
 
   writeFileSync(path, src);
@@ -1164,7 +1198,7 @@ function patchAlternativesIndex() {
     "// BATCH-MATRIX-IMPORTS-START",
     "// BATCH-MATRIX-IMPORTS-END",
     "export const alternatives",
-    importLines.join("\n")
+    importLines.join("\n"),
   );
 
   src = ensureBlock(
@@ -1172,7 +1206,7 @@ function patchAlternativesIndex() {
     "  // BATCH-MATRIX-REGISTER-START",
     "  // BATCH-MATRIX-REGISTER-END",
     "};\n\nexport function getAlternative",
-    registerLines.join("\n")
+    registerLines.join("\n"),
   );
 
   writeFileSync(path, src);
@@ -1198,7 +1232,7 @@ function patchSitemap() {
     "    // BATCH-MATRIX-COMPARE-START",
     "    // BATCH-MATRIX-COMPARE-END",
     "  ];\n\n  // Location pages",
-    compareEntries
+    compareEntries,
   );
 
   writeFileSync(path, src);
@@ -1210,31 +1244,22 @@ function patchSitemap() {
 function main() {
   for (const v of VERTICALS) {
     // Best-for: batch
-    write(
-      join(SRC, "lib/best-for", `batch-video-ads-for-${v.slug}.ts`),
-      buildBatchBestFor(v)
-    );
+    write(join(SRC, "lib/best-for", `batch-video-ads-for-${v.slug}.ts`), buildBatchBestFor(v));
     // Best-for: cost-per-angle
     write(
       join(SRC, "lib/best-for", `cost-per-tested-ad-angle-for-${v.slug}.ts`),
-      buildCostPerAngleBestFor(v)
+      buildCostPerAngleBestFor(v),
     );
     // Alternative
     write(
       join(SRC, "lib/alternatives", `${v.slug}-video-production-alternative.ts`),
-      buildAlternative(v)
+      buildAlternative(v),
     );
     // Compare data
     const compareSlug = `prestyj-vs-${v.competitor.slug}-video-for-${v.slug}`;
-    write(
-      join(SRC, "lib/compare/data", `${compareSlug}.ts`),
-      buildCompareData(v)
-    );
+    write(join(SRC, "lib/compare/data", `${compareSlug}.ts`), buildCompareData(v));
     // Compare route
-    write(
-      join(SRC, "app/compare", compareSlug, "page.tsx"),
-      buildCompareRoute(v)
-    );
+    write(join(SRC, "app/compare", compareSlug, "page.tsx"), buildCompareRoute(v));
   }
 
   // Patch indexes / sitemap
@@ -1242,7 +1267,9 @@ function main() {
   patchAlternativesIndex();
   patchSitemap();
 
-  console.log(`\nGenerated ${written.length} files for ${VERTICALS.length} verticals × 4 angles:\n`);
+  console.log(
+    `\nGenerated ${written.length} files for ${VERTICALS.length} verticals × 4 angles:\n`,
+  );
   for (const w of written) console.log("  " + w);
 }
 

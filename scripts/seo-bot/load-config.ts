@@ -4,11 +4,7 @@ import yaml from "js-yaml";
 import { z } from "zod";
 import type { AppConfig, ProviderName, TaskName } from "./types";
 
-const PROVIDER_TYPES: readonly ProviderName[] = [
-  "anthropic",
-  "gemini",
-  "openai-compat",
-];
+const PROVIDER_TYPES: readonly ProviderName[] = ["anthropic", "gemini", "openai-compat"];
 
 const TASK_NAMES: readonly TaskName[] = [
   "geoPage",
@@ -21,10 +17,7 @@ const TASK_NAMES: readonly TaskName[] = [
   "dailyResearch",
 ];
 
-const ProviderTypeSchema = z.enum([...PROVIDER_TYPES] as [
-  ProviderName,
-  ...ProviderName[],
-]);
+const ProviderTypeSchema = z.enum([...PROVIDER_TYPES] as [ProviderName, ...ProviderName[]]);
 
 const ProviderConfigSchema = z.object({
   type: ProviderTypeSchema,
@@ -48,7 +41,7 @@ const TaskRoutingSchema = z.object({
         provider: z.string().min(1),
         model: z.string().min(1),
         label: z.string().min(1),
-      })
+      }),
     )
     .optional(),
 });
@@ -70,19 +63,17 @@ const CircuitBreakerSchema = z.object({
   maxApiErrorsBeforeHalt: z.number().int().positive(),
 });
 
-const TasksSchema = z
-  .record(z.string(), TaskRoutingSchema)
-  .superRefine((obj, ctx) => {
-    for (const taskName of TASK_NAMES) {
-      if (!(taskName in obj)) {
-        ctx.addIssue({
-          code: "custom",
-          path: [taskName],
-          message: `Task "${taskName}" missing from tasks config.`,
-        });
-      }
+const TasksSchema = z.record(z.string(), TaskRoutingSchema).superRefine((obj, ctx) => {
+  for (const taskName of TASK_NAMES) {
+    if (!(taskName in obj)) {
+      ctx.addIssue({
+        code: "custom",
+        path: [taskName],
+        message: `Task "${taskName}" missing from tasks config.`,
+      });
     }
-  });
+  }
+});
 
 const AppConfigSchema = z.object({
   baseUrl: z.string().url(),
@@ -110,19 +101,14 @@ const AppConfigSchema = z.object({
 const DEFAULT_CONFIG_PATH = "scripts/seo-bot/config.yml";
 
 export function loadConfig(configPath?: string): AppConfig {
-  const resolved = path.resolve(
-    process.cwd(),
-    configPath ?? DEFAULT_CONFIG_PATH
-  );
+  const resolved = path.resolve(process.cwd(), configPath ?? DEFAULT_CONFIG_PATH);
 
   let raw: string;
   try {
     raw = readFileSync(resolved, "utf8");
   } catch (err) {
     const reason = err instanceof Error ? err.message : String(err);
-    throw new Error(
-      `[load-config] Unable to read config file at ${resolved}: ${reason}`
-    );
+    throw new Error(`[load-config] Unable to read config file at ${resolved}: ${reason}`);
   }
 
   let parsed: unknown;
@@ -130,9 +116,7 @@ export function loadConfig(configPath?: string): AppConfig {
     parsed = yaml.load(raw);
   } catch (err) {
     const reason = err instanceof Error ? err.message : String(err);
-    throw new Error(
-      `[load-config] YAML parse failed for ${resolved}: ${reason}`
-    );
+    throw new Error(`[load-config] YAML parse failed for ${resolved}: ${reason}`);
   }
 
   const result = AppConfigSchema.safeParse(parsed);
@@ -140,9 +124,7 @@ export function loadConfig(configPath?: string): AppConfig {
     const issues = result.error.issues
       .map((i) => `  - ${i.path.join(".") || "<root>"}: ${i.message}`)
       .join("\n");
-    throw new Error(
-      `[load-config] Invalid config at ${resolved}:\n${issues}`
-    );
+    throw new Error(`[load-config] Invalid config at ${resolved}:\n${issues}`);
   }
 
   const providers = result.data.providers;
@@ -151,12 +133,12 @@ export function loadConfig(configPath?: string): AppConfig {
     if (!routing) continue;
     if (!providers[routing.provider]) {
       throw new Error(
-        `[load-config] Task "${taskName}" references unknown provider "${routing.provider}". Known providers: ${Object.keys(providers).join(", ")}`
+        `[load-config] Task "${taskName}" references unknown provider "${routing.provider}". Known providers: ${Object.keys(providers).join(", ")}`,
       );
     }
     if (routing.fallback && !providers[routing.fallback.provider]) {
       throw new Error(
-        `[load-config] Task "${taskName}" fallback references unknown provider "${routing.fallback.provider}".`
+        `[load-config] Task "${taskName}" fallback references unknown provider "${routing.fallback.provider}".`,
       );
     }
   }

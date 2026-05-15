@@ -37,11 +37,13 @@ const FALLBACK_PRICING: PriceTier = {
 };
 
 function resolvePricing(model: string): PriceTier {
-  if (PRICING[model]) return PRICING[model];
+  const exact = PRICING[model];
+  if (exact) return exact;
   const prefix = Object.keys(PRICING).find((k) => model.startsWith(k));
-  if (prefix) return PRICING[prefix];
+  const byPrefix = prefix ? PRICING[prefix] : undefined;
+  if (byPrefix) return byPrefix;
   console.warn(
-    `[anthropic] Unknown pricing for model "${model}"; using conservative fallback ($5/M in, $15/M out).`
+    `[anthropic] Unknown pricing for model "${model}"; using conservative fallback ($5/M in, $15/M out).`,
   );
   return FALLBACK_PRICING;
 }
@@ -50,7 +52,7 @@ function computeCost(
   model: string,
   inputTokens: number,
   cachedInputTokens: number,
-  outputTokens: number
+  outputTokens: number,
 ): number {
   const p = resolvePricing(model);
   const uncachedInput = Math.max(0, inputTokens - cachedInputTokens);
@@ -91,9 +93,7 @@ export class AnthropicProvider implements LLMProvider {
     if (this.clientCache) return this.clientCache;
     const apiKey = process.env[this.config.apiKeyEnv];
     if (!apiKey) {
-      throw new Error(
-        `[anthropic] Missing API key in env var ${this.config.apiKeyEnv}`
-      );
+      throw new Error(`[anthropic] Missing API key in env var ${this.config.apiKeyEnv}`);
     }
     this.clientCache = new Anthropic({
       apiKey,
@@ -103,9 +103,7 @@ export class AnthropicProvider implements LLMProvider {
   }
 
   estimateCostUSD(req: LLMRequest, outputTokens: number): number {
-    const approxInputTokens = Math.ceil(
-      (req.system.length + req.user.length) / 4
-    );
+    const approxInputTokens = Math.ceil((req.system.length + req.user.length) / 4);
     return computeCost(req.model, approxInputTokens, 0, outputTokens);
   }
 
@@ -140,8 +138,7 @@ export class AnthropicProvider implements LLMProvider {
     if (wantsJson && req.jsonSchema) {
       const tool: Tool = {
         name: "emit_structured_response",
-        description:
-          "Emit the final response as a JSON object conforming to the provided schema.",
+        description: "Emit the final response as a JSON object conforming to the provided schema.",
         input_schema: req.jsonSchema as unknown as Tool.InputSchema,
       };
       params.tools = [tool];
@@ -153,9 +150,7 @@ export class AnthropicProvider implements LLMProvider {
       msg = await client.messages.create(params);
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
-      throw new Error(
-        `[anthropic] generate failed (model=${req.model}): ${reason}`
-      );
+      throw new Error(`[anthropic] generate failed (model=${req.model}): ${reason}`);
     }
 
     const inputTokens = msg.usage.input_tokens ?? 0;
@@ -173,12 +168,7 @@ export class AnthropicProvider implements LLMProvider {
       },
       model: msg.model,
       provider: this.name,
-      costUSD: computeCost(
-        req.model,
-        totalInputForCost,
-        cachedInputTokens,
-        outputTokens
-      ),
+      costUSD: computeCost(req.model, totalInputForCost, cachedInputTokens, outputTokens),
       latencyMs: Date.now() - start,
       raw: msg,
     };

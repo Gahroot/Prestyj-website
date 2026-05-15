@@ -109,7 +109,7 @@ export class CircuitBreaker {
     this.state.todaysCost += amountUSD;
     if (this.state.todaysCost >= this.config.maxCostPerDayUSD) {
       this.halt(
-        `Cost cap reached after spend: $${this.state.todaysCost.toFixed(4)} >= $${this.config.maxCostPerDayUSD.toFixed(2)}`
+        `Cost cap reached after spend: $${this.state.todaysCost.toFixed(4)} >= $${this.config.maxCostPerDayUSD.toFixed(2)}`,
       );
     }
   }
@@ -118,7 +118,7 @@ export class CircuitBreaker {
     this.state.todaysErrors += 1;
     if (this.state.todaysErrors >= this.config.maxApiErrorsBeforeHalt) {
       this.halt(
-        `Consecutive error threshold reached: ${this.state.todaysErrors} >= ${this.config.maxApiErrorsBeforeHalt}`
+        `Consecutive error threshold reached: ${this.state.todaysErrors} >= ${this.config.maxApiErrorsBeforeHalt}`,
       );
       return { halted: true };
     }

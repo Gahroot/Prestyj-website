@@ -1,7 +1,9 @@
 # Role
+
 You audit a competitor's homepage (or landing page) and extract actionable insights for Prestyj. Input is a competitor's HTML or scraped text content. You read it with the eye of a competitive strategist — what are they pricing, positioning on, launching, and failing to address? Your output becomes the brief for a comparison page or a counter-positioning decision.
 
 # Output spec
+
 Return ONLY valid JSON. No markdown. No code fence. <=500 words total across all fields.
 
 ```ts
@@ -71,12 +73,21 @@ Input: scraped HTML of `arcads.ai` homepage (hypothetical — in practice the or
       {
         "name": "Starter",
         "price": "$110/month",
-        "features": ["Limited monthly renders", "Access to AI actor library", "Standard resolution exports"]
+        "features": [
+          "Limited monthly renders",
+          "Access to AI actor library",
+          "Standard resolution exports"
+        ]
       },
       {
         "name": "Pro",
         "price": "$220/month",
-        "features": ["Higher render cap", "Full actor library", "Priority generation queue", "Advanced editing"]
+        "features": [
+          "Higher render cap",
+          "Full actor library",
+          "Priority generation queue",
+          "Advanced editing"
+        ]
       }
     ],
     "notes": "Pricing published publicly. Starter tier appears aggressive to pull in individual creators; Pro targets agencies and teams."
@@ -100,20 +111,20 @@ Input: scraped HTML of `arcads.ai` homepage (hypothetical — in practice the or
   ],
   "gapsPrestyjCanExploit": [
     {
-      "gap": "Does not write scripts for the customer",
-      "prestyjAngle": "Customer must write every single script — Prestyj includes 300–1,000 scripts researched for the vertical."
+      "gap": "Creative tool only — doesn't run the ad account or respond to leads",
+      "prestyjAngle": "Arcads stops at ad generation. Prestyj runs the full stack: ad management, AI agents that reply to every lead in 60 seconds, qualification, and calendar booking — one subscription."
     },
     {
-      "gap": "AI avatar uncanny valley",
-      "prestyjAngle": "2026 audiences clock AI avatars fast. Prestyj uses the client's real face — zero synthetic-content risk."
+      "gap": "Customer writes every script and operates every campaign themselves",
+      "prestyjAngle": "Arcads users do all the script writing, ad ops, and lead follow-up. Prestyj's done-for-you setup includes scripts, ad management, AI agent training, and CRM — live in 7–10 days."
+    },
+    {
+      "gap": "AI avatar uncanny valley when the owner is the brand",
+      "prestyjAngle": "In owner-led verticals (real estate, home services, advisors), 2026 audiences clock AI avatars fast. Prestyj uses the client's real face for batch creative inside the plan — zero synthetic-content risk."
     },
     {
       "gap": "No vertical expertise (real estate, home services)",
-      "prestyjAngle": "Arcads is industry-agnostic. Prestyj has deep research for real estate (post-NAR, MLS-specific hooks, sub-market angles)."
-    },
-    {
-      "gap": "Subscription never ends",
-      "prestyjAngle": "At month 12 a customer has paid Arcads more than a Prestyj batch — and still has no ads unless they keep paying."
+      "prestyjAngle": "Arcads is industry-agnostic. Prestyj has deep playbooks for real estate (post-NAR, MLS-specific hooks, sub-market angles) and home services (emergency windows, ticket-size math)."
     },
     {
       "gap": "Platforms are flagging synthetic UGC",
@@ -121,11 +132,11 @@ Input: scraped HTML of `arcads.ai` homepage (hypothetical — in practice the or
     }
   ],
   "riskFactors": [
-    "Rendering speed (minutes per ad) is faster than Prestyj's 24-hour turnaround when the customer only needs one ad quickly",
-    "Unlimited generation under subscription is appealing to marketers who have their own script pipeline",
-    "Well-funded and adding features fast — gaps above may close over time"
+    "Rendering speed (minutes per ad) is faster when a customer only needs one ad quickly and has their own script pipeline",
+    "Lower price floor ($110–$220/mo) than Prestyj's plans ($1,997+/mo) for customers who only want creative, not a full marketing+sales stack",
+    "Well-funded and adding features fast — gaps above may close over time, especially if Arcads adds ad management or lead-response features"
   ],
-  "recommendedAction": "Build and maintain a /compare/prestyj-vs-arcads page focused on real-face wedge and script inclusion. Monitor their script-assistance feature announcements — if they launch a script library, the wedge tightens."
+  "recommendedAction": "Build and maintain a /compare/prestyj-vs-arcads page positioned as 'creative tool vs full AI marketing + sales stack.' Acknowledge Arcads is the right pick when a customer only wants synthetic UGC creative and operates everything else themselves; pivot to Prestyj when the customer wants the agents, ads, and creative bundled. Monitor for Arcads adding ad management or lead-response — that would compress the wedge."
 }
 ```
 

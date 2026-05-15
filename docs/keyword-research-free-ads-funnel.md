@@ -4,38 +4,38 @@
 
 This research documents provides a comprehensive keyword strategy for the Prestyj's "300 Free video ads" lead-to-appointment pipeline. covering:
 
- funnel stages, keyword opportunities by funnel stage, AI citation optimization recommendations.
+funnel stages, keyword opportunities by funnel stage, AI citation optimization recommendations.
 
- and content cluster strategy.
+and content cluster strategy.
 
- 
 ## Executive Summary
 
 This keyword research identifies key opportunities for Prestyj to expand its lead generation pipeline through targeted keyword research. capture the full funnel from awareness to decision.
 
- with minimal competition. We a done-for you high-intent keywords that the agencies and, management, AI voice agents, lead response/automation, appointment setting. etc.) that are currently missing or have a potential clients searching for.
-
- 
+with minimal competition. We a done-for you high-intent keywords that the agencies and, management, AI voice agents, lead response/automation, appointment setting. etc.) that are currently missing or have a potential clients searching for.
 
 ## Funnel Stage Analysis
 
 The document organizes keywords by funnel stage (awareness → Consideration → decision):
 
- with clear intent signals:
+with clear intent signals:
 
- 
 ### Awareness Stage (Top of Funnel)
-*Users just discovering the service exists, not investigating alternatives*
+
+_Users just discovering the service exists, not investigating alternatives_
 
 Keywords:
+
 - free video ads / free facebook video ads/300 free video ads for contractors/300 free video ads for roofers/300 free video ads for plumbers/300 free video ads for landsc/250 free video ads for electricians/300 free video ads for painters/300 free video ads for dentists/300 free video ads for solar
-300 free solar video ads
-300 free Meta ads
+  300 free solar video ads
+  300 free Meta ads
 
 ### Consideration Stage (Mid-funnel)
-*Competitors targeting same problems - researching solutions:
+
+\*Competitors targeting same problems - researching solutions:
+
 - Prestyj vs Retell AI / Vapi vs Bland
- Synthflow/Retell alternative
+  Synthflow/Retell alternative
 - ElevenLabs Conversational AI alternative
 - GoHighlevel (ISA) alternative
 - AI answeringing service / virtual receptionist
@@ -54,22 +54,23 @@ Keywords:
 - AI phone answering service
 - AI inbound call handling
 - AI intake form
-    - booking appointments
-    - qualifying leads
-    - scheduling meetings
-    - live transfers
+  - booking appointments
+  - qualifying leads
+  - scheduling meetings
+  - live transfers
 
 - lead reactivation
-    - reengage old leads
-    - resurrect dead leads
-    - bulk outreach
+  - reengage old leads
+  - resurrect dead leads
+  - bulk outreach
 
 - lead follow-up
 - nurturing campaigns
 - speed to lead
-    - -minute response time
-- -38% of  + companies lose leads to competitors with speed.
+  - -minute response time
+- -38% of + companies lose leads to competitors with speed.
 - Data:
+
 ```
 **Industry-specific keyword opportunities by industry:**
 | Industry | Primary Keywords | Monthly Search Volume | Competition | Intent |
@@ -88,7 +89,7 @@ Keywords:
 
 | Roofing contractors | ,100-1,000 | High | High            |
 | **Competitor Analysis (AI Voice Agents)**
- 
+
 ### Retell AI
 - **Keywords:** AI voice agent, AI voice platform, conversational AI, phone call automation
 - **Homepage tagline:** #1 AI Voice Agent Platform for Automating Calls at scale
@@ -102,38 +103,40 @@ Keywords:
 - **Use Cases:** Lead Qualification, Customer Support, Receptionists, Dispatch Service
  Customer Stories
 ```
- 
+
 ### Vapi
+
 - **Keywords:** voice AI, voice AI platform, AI voice agents, API-native, developer-friendly
- AI phone calls
+  AI phone calls
 - **Homepage tagline:** Build Advanced voice AI agents in minutes
- Deploy at scale
+  Deploy at scale
 - **Key features:** API-native, ultra-low latency (~600ms), Bring your own telephony, SIP trunking, Native integrations, Twilio, Vonage, GoHighLevel, HubSpot, n8n
 - **Pricing:** Pay-as-you go ($0.04/min for minute for voice, $25/month), ~500 concurrent calls
 
 - **Competitors:** Bapi, Bapi AI, Synthflow, ElevenLabs, Thoughtly, Bland, Retell
 
- 
 ### Synthflow
+
 - **Keywords:** AI voice agent, AI voice agent platform, no-code AI phone agents
- end-to end, humanlike conversations, scale effortlessly
+  end-to end, humanlike conversations, scale effortlessly
 - **Homepage tagline:** Build and automate AI phone agents without code
- Deploy at scale
+  Deploy at scale
 - **Key features:** No-code required, drag-and-drop agent builder, knowledge base, RAG, Appointment booking, CRM integrations, native, open-source (source), Zapier, Twilio, Salesforce, HubSpot, Zendesk, GoHighLevel, Stripe, Calendly
 
- Make, Make.com, ZendDesk, Zapier, Slack, Gong, Intercom
+Make, Make.com, ZendDesk, Zapier, Slack, Gong, Intercom
 
 - **Key features:** Omni-channel, conversational AI, Voice, Chat, SMS, API
-Multilingual, 32+ languages
- AI Guardrails to prevent hallucinations
- Enterprise security & compliance
- Case Studies, customer success stories
+  Multilingual, 32+ languages
+  AI Guardrails to prevent hallucinations
+  Enterprise security & compliance
+  Case Studies, customer success stories
 - **Pricing:** 5¢/minute (starting at 5/month)
   ~1M concurrent calls. ~50% cost reduction
 
- A $7,000+ from AI Answering service
+A $7,000+ from AI Answering service
+
 ```
- 
+
 ### ElevenLabs
 - **Keywords:** Conversational AI, text to speech, voice cloning, conversational agents, realistic AI agents
 - **Homepage tagline:** Conversational AI for Real-time Voice & Chat
@@ -145,19 +148,22 @@ Multilingual, 32+ languages
  Calendly
 - **Pricing:** Business-focused pricing, Enterprise
 ```
- 
+
 ### Thoughtly
+
 - **Keywords:** AI phone agent, no-code, AI agents, humans-sounding, build & deploy in days, or weeks, not months
 - **Homepage tagline:** Build and automate AI phone agents in weeks without code
- Deploy at scale - Thoughtly
- **Pricing:** 5¢/minute | Up to 5k minutes for annual plans
+  Deploy at scale - Thoughtly
+  **Pricing:** 5¢/minute | Up to 5k minutes for annual plans
 
- Subscription-based usage. Value-based pricing for enterprises
+Subscription-based usage. Value-based pricing for enterprises
+
 - **Target Industries:** Home Services, Healthcare, Financial Services, Insurance, Logistics, Retail & Hospitality
 - **Use Cases:** Inbound calls, outbound calls, receptionists, appointment setting, lead qualification, customer support, dispatch service, telemarketing, debt collection
- Customer Stories
+  Customer Stories
+
 ```
- 
+
 ### Bland AI
 - **Keywords:** AI voice agent, AI call Center, Conversational AI, custom-trained models, Zero retention
  deployment, HIPAA, SOC2, GDPR
@@ -170,14 +176,14 @@ Multilingual, 32+ languages
 - **Comparison keywords:** Retell vs Vapi vs ElevenLabs vs Synthflow vs Thoughtly
  Competitor: Bland.com, Bland.com, Synthflow.com and Thoughtly.com target similar ICM using generative AI terms.
 
- 
+
 ### Competitor Keyword Gaps
 Based on my competitor research, here are some gaps and present opportunities for Prestyj to expand:
  presence.
 
- 
+
 ### Keyword Gaps Identified:
- 
+
 **Competitor keywords where Prestyj is not currently ranking:**
 
 | Keyword | Estimated Monthly search volume | Competition | Intent |
@@ -198,7 +204,7 @@ Based on my competitor research, here are some gaps and present opportunities fo
 How these trends show that PPC ads are underperforming. digital marketing landscape. These businesses need to adapt and's digital marketing strategies to attract more leads in local search visibility, and more.
  We ** keywords:** contractor marketing, contractor SEO, contractor advertising ideas** contractor website design** contractor lead generation services
 - **Contractor lead generation** contractors need a constant stream of qualified leads. grow their business,** Using a mix of digital marketing tactics including:
- 
+
 ### High-Intent keyword with good search volume ( moderate competition):
 
 | `free video ads` (1,000-5,000)   | `free video ads for contractors` (3,000)          | `free facebook video ads` (4,000)                |
@@ -229,7 +235,7 @@ How these trends show that PPC ads are underperforming. digital marketing landsc
 
     - If you don't within 5 minutes, their contact rate drops by 50%.
             | **Speed to Lead by 5-Min Response Rate = 78%** (Source: MIT Sloan Study, 2007,  study found that contacting a lead within 5 minutes is 78% more likely to make a purchase. If you respond within 5 minutes, the contact rate drops by 400%.
-    - **Speed to Lead best practices:**  
+    - **Speed to Lead best practices:**
       - Respond to leads within 5 minutes (preferably within 10 minutes)
       - Lead response time under 1 hour kills 35% of leads
       - The odds of contacting a lead within 5 minutes are 21x higher than calling after 5 minutes or 100x
@@ -245,7 +251,7 @@ How these trends show that PPC ads are underperforming. digital marketing landsc
  information, and guide them through the scheduling process. Ideally, you AI appointment setter uses:
 AI technology to make calls to schedule appointments, 24/7/ in any time zone. This  it's work in ANY business where.
 
- 
+
 ### Decision Stage (Bottom of Funnel)
 *High-intent, ready to buy**
 | Keyword | Estimated Monthly Search Volume | Competition | Intent |
@@ -314,12 +320,12 @@ AI technology to make calls to schedule appointments, 24/7/ in any time zone. Th
 | `Google Ads for plumbers`              | 2,900 | High            | Commercial                    |
 | `Google Ads for roofers`               | 2,900| High            | Commercial                    |
 
- 
+
 ### Long-tail Keyword Opportunities by Industry
 Tailored variations that proven to convert effectively across different industries. **Content cluster策略** demonstrates how these pages should interlink to capture traffic at each funnel stage.
  and drive conversions.
 
- 
+
 ## Content Cluster Strategy
 
 **Awareness → Decision Funnel:**
@@ -366,7 +372,7 @@ The awareness stage content targets users who are early in their journey. discov
     - Highlight cost savings vs. manual follow-up
     - Quantify lost revenue (use phrases like "dead leads," " stagnant leads," "revive," etc.
 
- 
+
 ### AI Citation Optimization Recommendations
 
 AI assistants like ChatGPT, Perplexity, and Claude often cite sources that answer questions like:
@@ -375,14 +381,14 @@ AI assistants like ChatGPT, Perplexity, and Claude often cite sources that answe
  add supporting content with clear, actionable insights and statistics.
     - **Use specific statistics:** "The average response time within 5 minutes increases conversion rates by 400%" and "Within 1 hour, conversion rate drops by 35%+." **Speed to Lead is a powerful, but for other lead management and CRM software:
 - - Cite the and case studies from reputable sources like MIT Sloan or Drift, HubSpot, and Inc., For instance
-   
+
 ### Recommended Page Titles and Meta descriptions
 
-Based on the keyword research, I've provided recommendations for existing and new pages that the funnel stage. 
+Based on the keyword research, I've provided recommendations for existing and new pages that the funnel stage.
 
  pages should target these keyword and incorporate them into the content to improve click-through rates and conversions.
 
- 
+
 ---
 
 ## Awareness Stage (Top of Funnel)
@@ -401,7 +407,7 @@ Based on the keyword research, I've provided recommendations for existing and ne
 | `free video ads for dentists`            | 5,000-20,000| Low             |
 | `free video ads for pest control`        | 4,000-7,000| Low             |
 | `free video ads for general contractors`  | 22,000+ | **@home services (general contractors)** |
- 
+
 **Meta Description:** What if you had 300 video ads running by next week? We'll create them for free. You just send the footage. 24-hour turnaround. Get more qualified leads with our AI-powered lead conversion system.
 
  No risk, no credit card. | Learn more →
@@ -410,45 +416,73 @@ Based on the keyword research, I've provided recommendations for existing and ne
 
 **Title:** 300 Free Video Ads for HVAC Companies | PRESTYJ
 **Description:** Get 300 HVAC video ads by next week—no editing required. We us run them for We'll build a landing page, and have AI respond to every lead in seconds. 24-hour turnaround. For HVAC contractors exclusively.
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for Plumbers | PRESTYJ
 **Description:** Get 300 plumber video ads by next week! Free, no editing required. Plumbers get more emergency calls and24-hour turnaround. No risk, no credit card. | Learn more →
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for Roofing Companies | PRESTYJ
 **Description:** What if you had 300 video ads running before the next storm? We'll create them for free. You just send the footage. 24-hour turnaround. Storm season ready.
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for Electricians | PRESTYJ
 **Description:** Get 300 electrician video ads by next week! Free, no editing required. Electricians get more jobs with fast response times. 24-hour turnaround.
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for Landscapers | PRESTYJ
 **Description:** Get 300 landscaping video ads by next week! Free, no editing required. Landscapers get more design leads with fast response. 24-hour turnaround.
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for Painters | PRESTYJ
 **Description:** Get 300 painting contractor video ads by next week! Free, no editing required. Painters get more jobs with fast response. 24-hour turnaround.
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for Dentists | PRESTYJ
 **Description:** Get 300 dental practice video ads by next week! Free, no editing required. Dentists attract new patients with targeted video ads. 24-hour turnaround.
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for Pest Control | PRESTYJ
 **Description:** Get 300 pest control video ads by next week! Free, no editing required. Exterminators get more calls with fresh creative and fast response. 24-hour turnaround.
+
 ```
+
 ```
+
 **Title:** 300 Free Video Ads for General Contractors | PRESTYJ
 **Description:** Get 300 general contractor video ads by next week! We'll create them for free. You just send the footage. 24-hour turnaround. For general contractors and remodelers.
+
 ```
+
 ```
 
 ### Content Cluster: Ad Management Services
+
 The content cluster targeting "ad management" and "done for you ads" keywords, connecting the free ads offer to the paid management services funnel.
 
 **Pages to Create:**
+
 - `/ad-management/contractors`
 - `/ad-management/hvac`
 - `/ad-management/plumbers`
@@ -460,16 +494,20 @@ The content cluster targeting "ad management" and "done for you ads" keywords, c
 - `/ad-management/pest-control`
 
 ### Content Cluster: AI Lead Response & Speed to Lead
+
 **Topic Relationship:** These services are the logical extension of the free ads offer into the full appointment pipeline. Create dedicated pages and link from the parent /free-ads pages.
 **Pages to create:**
+
 - `/free-ads/contractors` → Link to `/solutions/speed-to-lead`
 - `/free-ads/hvac` → Link to `/solutions/lead-reactivation`
 - `/free-ads/plumbers` → Link to `/best-for/ai-voice-receptionist`
 - `/free-ads/roofers` → Link to `/solutions/home-services`
 
 ### Content Cluster: AI Voice & Appointment Setting
+
 **Topic Relationship:** Target competitors and alternatives to position Prestyj as the comprehensive solution. These pages compete for the same keywords but with different positioning.
 **Pages to create:**
+
 - `/alternatives/retell-ai`
 - `/alternatives/vapi`
 - `/alternatives/bland-ai`
@@ -482,8 +520,10 @@ The content cluster targeting "ad management" and "done for you ads" keywords, c
 - `/alternatives/hatch`
 
 ### Content Cluster: Landing Page & Conversion Optimization
+
 **Topic Relationship:** Connect ad campaigns to conversion with optimized landing pages and AI lead handling. Support the pipeline expansion from existing /free-ads pages.
 **Pages to create:**
+
 - `/landing-pages/contractors`
 - `/landing-pages/hvac`
 - `/landing-pages/plumbers`
@@ -491,21 +531,26 @@ The content cluster targeting "ad management" and "done for you ads" keywords, c
 - `/landing-pages/real-estate`
 
 ### Content Cluster: Lead Magnets &Educational Content
+
 **Topic Relationship:** Gated content to capture emails and build authority. Create lead magnets for each industry:
+
 - ROI calculators
 - Case study
 - Whitepapers
 - Checklists
 
 **Pages to create:**
+
 - `/lead-magnets/hvac-roi-calculator`
 - `/lead-magnets/plumber-roi-calculator`
 - `/lead-magnets/contractor-roi-calculator`
 - `/lead-magnets/speed-to-lead-playbook`
 
 ### Content Cluster: Blog Content
+
 **Topic Relationship:** Blog posts targeting industry-specific keywords and funnel-related topics. Each post should link to relevant free-ads pages and solution pages.
 **Topics to cover:**
+
 - Speed to lead statistics for and benchmarks
 - How to get more contractor leads
 - AI appointment setting best practices
@@ -519,6 +564,7 @@ The content cluster targeting "ad management" and "done for you ads" keywords, c
 - AI receptionist cost analysis
 - Done for you vs. DIY marketing
 - Marketing agency alternatives for contractors
+
 ```
 
 ## Action Items
@@ -544,5 +590,6 @@ The content cluster targeting "ad management" and "done for you ads" keywords, c
 8. **Submit to search consoles for indexing)
 9. **Monitor rankings and traffic over time
 </parameter>
-<parameter>Let me create the comprehensive keyword research document for the Prestyj "300 Free Video Ads" lead-to-appointment pipeline. I'll organize the it by keyword research, keyword opportunities, and recommended actions. Let's start by creating the docs directory and the keyword research document: 
+<parameter>Let me create the comprehensive keyword research document for the Prestyj "300 Free Video Ads" lead-to-appointment pipeline. I'll organize the it by keyword research, keyword opportunities, and recommended actions. Let's start by creating the docs directory and the keyword research document:
 bash (command)
+```

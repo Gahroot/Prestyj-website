@@ -1,15 +1,18 @@
 # Top-of-funnel strategy
 
 ## The offer
+
 100 video ads for $497, delivered in 24 hours.
 Upsell ladder: 100 / 300 / 500 / 1,000.
 
 ## Target metrics
+
 - Starter CAC: $100 (5x ROI on TOF alone)
 - Plan CAC: $500 (full expansion)
 - Expansion rate: 28% of starter buyers upgrade to a plan within 90 days
 
 ## Meta ads — first run
+
 - Start: $75/day ($2,250/mo)
 - Single campaign, $497 SKU as the conversion event
 - Target CPA: $100 per starter purchase
@@ -17,17 +20,20 @@ Upsell ladder: 100 / 300 / 500 / 1,000.
 - Scale rule: +50% budget every 30 purchases at target CPA
 
 ## Upsell sequence
+
 1. Order bump at checkout: +$1,000 → 300 ads (50%+ take rate typical)
 2. Day-1 post-delivery email: "Want 500 ads for +$1,000? Reply YES"
 3. Day-7 email: "These 100 ads work better with our AI follow-up agent" → Starter plan
 4. Day-30 email: Plan upsell with case study
 
 ## Why this works
+
 - Self-funding ads: every starter buyer covers their own CAC
 - Buyer ≠ prospect: every TOF lead is a paying customer
 - Ladder protects anchor: $497 is "sample", not a discount
 
 ## Risks
+
 - Quality drop on starter tier → expansion craters
 - Brand dilution if "100 ads" becomes the only message — keep AI agents framing in sub-copy
 - Cannibalization if $497 too prominent — keep "Most Popular" on 500-pack

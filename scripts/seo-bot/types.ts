@@ -108,13 +108,7 @@ export interface AppConfig {
 
 export const ShippedItemSchema = z.object({
   slug: z.string(),
-  type: z.enum([
-    "geo-page",
-    "niche-page",
-    "comparison",
-    "blog-post",
-    "title-rewrite",
-  ]),
+  type: z.enum(["geo-page", "niche-page", "comparison", "blog-post", "title-rewrite"]),
   title: z.string(),
   description: z.string(),
   filePath: z.string(),
@@ -132,13 +126,7 @@ export const ShippedManifestSchema = z.object({
 export type ShippedManifest = z.infer<typeof ShippedManifestSchema>;
 
 export const BacklogItemSchema = z.object({
-  type: z.enum([
-    "geo-page",
-    "niche-page",
-    "comparison",
-    "blog-post",
-    "competitor",
-  ]),
+  type: z.enum(["geo-page", "niche-page", "comparison", "blog-post", "competitor"]),
   payload: z.record(z.string(), z.unknown()),
   priority: z.number().default(5),
   notes: z.string().optional(),
@@ -168,7 +156,7 @@ export const DailyMetricsSchema = z.object({
       count: z.number(),
       costUSD: z.number(),
       latencyMs: z.number(),
-    })
+    }),
   ),
 });
 export type DailyMetrics = z.infer<typeof DailyMetricsSchema>;

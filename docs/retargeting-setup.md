@@ -15,14 +15,14 @@ You only need to (a) create the audiences/conversions in the ad platforms and (b
 
 The `<ContentEngineVisitorPixel />` component is mounted inside `ContentEnginePageLayout`, so the event fires on **every page that uses that layout**:
 
-| Variant slug | URL |
-|---|---|
-| Canonical | `/done-for-you-social-media` |
-| Replace-a-hire | `/ai-content-department` |
-| Volume tier | `/1000-posts-per-month` |
-| Generic SEO | `/ai-social-media-management` |
-| Generic SEO | `/managed-social-media-service` |
-| Generic SEO | `/social-media-on-autopilot` |
+| Variant slug   | URL                             |
+| -------------- | ------------------------------- |
+| Canonical      | `/done-for-you-social-media`    |
+| Replace-a-hire | `/ai-content-department`        |
+| Volume tier    | `/1000-posts-per-month`         |
+| Generic SEO    | `/ai-social-media-management`   |
+| Generic SEO    | `/managed-social-media-service` |
+| Generic SEO    | `/social-media-on-autopilot`    |
 
 The current `pathname` is sent as a `variant` custom parameter on the Meta event so you can split the audience per landing page.
 
@@ -142,10 +142,10 @@ After deploying, walk through this list:
 
 ## 5. Where the code lives
 
-| File | Purpose |
-|---|---|
-| `src/lib/meta-pixel.ts` | `trackContentEngineVisitor()` + Meta/LinkedIn ID exports |
-| `src/components/seo/content-engine-visitor-pixel.tsx` | Reusable client component that fires on mount |
-| `src/components/sections/content-engine/content-engine-page-layout.tsx` | Mounts the pixel on every variant page |
-| `src/app/layout.tsx` | Loads Meta Pixel + LinkedIn Insight Tag base scripts |
-| `src/app/api/meta-capi/route.ts` | Server-side CAPI mirror (now supports `customData`) |
+| File                                                                    | Purpose                                                  |
+| ----------------------------------------------------------------------- | -------------------------------------------------------- |
+| `src/lib/meta-pixel.ts`                                                 | `trackContentEngineVisitor()` + Meta/LinkedIn ID exports |
+| `src/components/seo/content-engine-visitor-pixel.tsx`                   | Reusable client component that fires on mount            |
+| `src/components/sections/content-engine/content-engine-page-layout.tsx` | Mounts the pixel on every variant page                   |
+| `src/app/layout.tsx`                                                    | Loads Meta Pixel + LinkedIn Insight Tag base scripts     |
+| `src/app/api/meta-capi/route.ts`                                        | Server-side CAPI mirror (now supports `customData`)      |

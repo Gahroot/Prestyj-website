@@ -35,13 +35,12 @@ function stripHtml(html: string): string {
 
 export async function fetchCompetitor(
   url: string,
-  options?: CompetitorFetchOptions
+  options?: CompetitorFetchOptions,
 ): Promise<CompetitorFetchResult> {
   const timeoutMs = options?.timeoutMs ?? DEFAULT_TIMEOUT_MS;
   const maxChars = options?.maxChars ?? MAX_CHARS;
   const userAgent =
-    options?.userAgent ??
-    "Mozilla/5.0 (compatible; PrestyjSEOBot/1.0; +https://prestyj.com)";
+    options?.userAgent ?? "Mozilla/5.0 (compatible; PrestyjSEOBot/1.0; +https://prestyj.com)";
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
@@ -53,8 +52,7 @@ export async function fetchCompetitor(
       signal: controller.signal,
       headers: {
         "user-agent": userAgent,
-        accept:
-          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "accept-language": "en-US,en;q=0.9",
       },
     });

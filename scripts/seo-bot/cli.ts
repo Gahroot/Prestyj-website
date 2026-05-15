@@ -46,7 +46,7 @@ function parseFlagValue(args: string[], flag: string): string | undefined {
   const idx = args.indexOf(flag);
   if (idx >= 0 && idx + 1 < args.length) {
     const next = args[idx + 1];
-    if (!next.startsWith("--")) return next;
+    if (next && !next.startsWith("--")) return next;
   }
   return undefined;
 }
@@ -63,9 +63,7 @@ function parseTaskList(raw: string | undefined): TaskName[] | undefined {
     .filter((s) => s.length > 0);
   const invalid = items.filter((t) => !isTaskName(t));
   if (invalid.length > 0) {
-    throw new Error(
-      `Invalid task names: ${invalid.join(", ")}. Valid: ${VALID_TASKS.join(", ")}`
-    );
+    throw new Error(`Invalid task names: ${invalid.join(", ")}. Valid: ${VALID_TASKS.join(", ")}`);
   }
   return items.filter(isTaskName);
 }
@@ -90,10 +88,10 @@ async function runDailyCommand(args: string[]): Promise<void> {
     config,
     date: new Date(),
     dryRun,
-    taskOverride,
+    ...(taskOverride !== undefined && { taskOverride }),
   });
   console.log(
-    `[seo-bot] daily complete — pages=${metrics.pagesShipped} blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`
+    `[seo-bot] daily complete — pages=${metrics.pagesShipped} blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`,
   );
 }
 
@@ -103,9 +101,7 @@ async function runTaskCommand(args: string[]): Promise<void> {
     throw new Error("Missing task name. Usage: cli.ts task <taskName>");
   }
   if (!isTaskName(taskName)) {
-    throw new Error(
-      `Invalid task name "${taskName}". Valid: ${VALID_TASKS.join(", ")}`
-    );
+    throw new Error(`Invalid task name "${taskName}". Valid: ${VALID_TASKS.join(", ")}`);
   }
   const rest = args.slice(1);
   const configPath = parseFlagValue(rest, "--config");
@@ -118,7 +114,7 @@ async function runTaskCommand(args: string[]): Promise<void> {
     taskOverride: [taskName],
   });
   console.log(
-    `[seo-bot] task "${taskName}" complete — shipped_pages=${metrics.pagesShipped} shipped_blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`
+    `[seo-bot] task "${taskName}" complete — shipped_pages=${metrics.pagesShipped} shipped_blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`,
   );
 }
 
@@ -131,7 +127,7 @@ async function runDryRunCommand(args: string[]): Promise<void> {
     dryRun: true,
   });
   console.log(
-    `[seo-bot] dry-run complete — would-ship pages=${metrics.pagesShipped} blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)}`
+    `[seo-bot] dry-run complete — would-ship pages=${metrics.pagesShipped} blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)}`,
   );
 }
 

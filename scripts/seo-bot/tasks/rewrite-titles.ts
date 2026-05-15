@@ -87,7 +87,10 @@ function shuffle<T>(arr: T[], rng: () => number): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
+    const ai = a[i] as T;
+    const aj = a[j] as T;
+    a[i] = aj;
+    a[j] = ai;
   }
   return a;
 }
@@ -124,11 +127,14 @@ function findField(scope: string, fieldName: string): FieldMatch | null {
   // Match `indent fieldName:` then optional whitespace/newlines then a quoted string.
   const pattern = new RegExp(
     `(^|\\n)([ \\t]*)${fieldName}:\\s*(["'])((?:\\\\.|(?!\\3)[^\\\\])*)\\3`,
-    "m"
+    "m",
   );
   const m = scope.match(pattern);
   if (!m) return null;
   const [full, , indent, quote, rawValue] = m;
+  if (full === undefined || indent === undefined || quote === undefined || rawValue === undefined) {
+    return null;
+  }
   // Drop the leading `\n` if it was captured as part of the anchor.
   const fullMatch = full.startsWith("\n") ? full.slice(1) : full;
   // Unescape for display-level comparison.
@@ -150,14 +156,14 @@ function replaceField(
   scopeStart: number,
   scopeEnd: number,
   match: FieldMatch,
-  newValue: string
+  newValue: string,
 ): string {
   const scope = source.slice(scopeStart, scopeEnd);
   const replacement = `${match.indent}${match.fieldName}: ${match.quote}${escapeForLiteral(newValue, match.quote)}${match.quote}`;
   const updatedScope = scope.replace(match.fullMatch, replacement);
   if (updatedScope === scope) {
     throw new Error(
-      `[rewrite-titles] Failed to splice new value for field "${match.fieldName}" — old string not found.`
+      `[rewrite-titles] Failed to splice new value for field "${match.fieldName}" — old string not found.`,
     );
   }
   return source.slice(0, scopeStart) + updatedScope + source.slice(scopeEnd);
@@ -166,9 +172,7 @@ function replaceField(
 /**
  * Locate the `meta: { ... }` block inside a best-for file.
  */
-function findBestForMetaScope(
-  source: string
-): { start: number; end: number } | null {
+function findBestForMetaScope(source: string): { start: number; end: number } | null {
   const metaIdx = source.search(/^\s*meta:\s*\{/m);
   if (metaIdx === -1) return null;
   const braceIdx = source.indexOf("{", metaIdx);
@@ -190,9 +194,7 @@ function findBestForMetaScope(
 /**
  * Locate the `CompareMetadata = { ... }` block inside a compare data file.
  */
-function findCompareMetadataScope(
-  source: string
-): { start: number; end: number } | null {
+function findCompareMetadataScope(source: string): { start: number; end: number } | null {
   const idx = source.search(/:\s*CompareMetadata\s*=\s*\{/);
   if (idx === -1) return null;
   const braceIdx = source.indexOf("{", idx);
@@ -213,12 +215,10 @@ function findCompareMetadataScope(
 
 function extractScopeFields(
   source: string,
-  kind: PageCandidate["kind"]
+  kind: PageCandidate["kind"],
 ): { title: string; description: string; scopeStart: number; scopeEnd: number } | null {
   const scope =
-    kind === "best-for"
-      ? findBestForMetaScope(source)
-      : findCompareMetadataScope(source);
+    kind === "best-for" ? findBestForMetaScope(source) : findCompareMetadataScope(source);
   if (!scope) return null;
 
   const scopeText = source.slice(scope.start, scope.end);
@@ -233,18 +233,14 @@ function extractScopeFields(
   };
 }
 
-async function listCandidates(
-  config: AppConfig
-): Promise<PageCandidate[]> {
+async function listCandidates(config: AppConfig): Promise<PageCandidate[]> {
   const candidates: PageCandidate[] = [];
 
   // best-for
   const bestForDir = path.resolve(process.cwd(), config.baseDirs.bestFor);
   try {
     const bestForFiles = (await fs.readdir(bestForDir)).filter(
-      (f) =>
-        f.endsWith(".ts") &&
-        !["index.ts", "types.ts", "_geo-helpers.ts"].includes(f)
+      (f) => f.endsWith(".ts") && !["index.ts", "types.ts", "_geo-helpers.ts"].includes(f),
     );
     for (const file of bestForFiles) {
       const filePath = path.join(bestForDir, file);
@@ -271,9 +267,7 @@ async function listCandidates(
   // compare
   const compareDir = path.resolve(process.cwd(), config.baseDirs.compare);
   try {
-    const compareFiles = (await fs.readdir(compareDir)).filter((f) =>
-      f.endsWith(".ts")
-    );
+    const compareFiles = (await fs.readdir(compareDir)).filter((f) => f.endsWith(".ts"));
     for (const file of compareFiles) {
       const filePath = path.join(compareDir, file);
       let source: string;
@@ -299,9 +293,7 @@ async function listCandidates(
   return candidates;
 }
 
-async function loadShippedManifest(
-  config: AppConfig
-): Promise<ShippedManifest> {
+async function loadShippedManifest(config: AppConfig): Promise<ShippedManifest> {
   const filePath = path.resolve(process.cwd(), config.state.shippedFile);
   try {
     const raw = await fs.readFile(filePath, "utf-8");
@@ -312,10 +304,7 @@ async function loadShippedManifest(
   }
 }
 
-async function appendShippedItem(
-  config: AppConfig,
-  item: ShippedItem
-): Promise<void> {
+async function appendShippedItem(config: AppConfig, item: ShippedItem): Promise<void> {
   const filePath = path.resolve(process.cwd(), config.state.shippedFile);
   const manifest = await loadShippedManifest(config);
   manifest.items.push(item);
@@ -342,7 +331,7 @@ function parseJsonLoose(raw: string): unknown {
   // Models sometimes wrap JSON in code fences despite instructions.
   const trimmed = raw.trim();
   const fenceMatch = trimmed.match(/^```(?:json)?\s*\n([\s\S]*?)\n```$/);
-  const body = fenceMatch ? fenceMatch[1] : trimmed;
+  const body = fenceMatch?.[1] ?? trimmed;
   return JSON.parse(body);
 }
 
@@ -361,7 +350,7 @@ function buildUserInput(candidate: PageCandidate): string {
 
 function validateRewrite(
   candidate: PageCandidate,
-  parsed: z.infer<typeof LLMResponseSchema>
+  parsed: z.infer<typeof LLMResponseSchema>,
 ): string | null {
   const { newTitle, newDescription } = parsed;
   if (!newTitle.trim()) return "newTitle is empty";
@@ -370,8 +359,7 @@ function validateRewrite(
     return `newTitle exceeds ${TITLE_MAX} chars (${newTitle.length})`;
   if (newDescription.length > DESCRIPTION_MAX)
     return `newDescription exceeds ${DESCRIPTION_MAX} chars (${newDescription.length})`;
-  if (newTitle === candidate.currentTitle)
-    return "newTitle is identical to current";
+  if (newTitle === candidate.currentTitle) return "newTitle is identical to current";
   if (newDescription === candidate.currentDescription)
     return "newDescription is identical to current";
   return null;
@@ -379,7 +367,7 @@ function validateRewrite(
 
 async function rewriteSingleCandidate(
   input: OptimizationTaskInput,
-  candidate: PageCandidate
+  candidate: PageCandidate,
 ): Promise<TaskExecutionResult> {
   const startedAt = Date.now();
   try {
@@ -446,13 +434,7 @@ async function rewriteSingleCandidate(
       };
     }
 
-    let updated = replaceField(
-      source,
-      scope.start,
-      scope.end,
-      titleMatch,
-      parsed.newTitle
-    );
+    let updated = replaceField(source, scope.start, scope.end, titleMatch, parsed.newTitle);
     // Recompute scope bounds since we mutated the file (length may have changed).
     const newScope =
       candidate.kind === "best-for"
@@ -483,7 +465,7 @@ async function rewriteSingleCandidate(
       newScope.start,
       newScope.end,
       descMatch2,
-      parsed.newDescription
+      parsed.newDescription,
     );
 
     await fs.writeFile(candidate.filePath, updated, "utf-8");
@@ -519,9 +501,7 @@ async function rewriteSingleCandidate(
   }
 }
 
-export async function rewriteTitles(
-  input: OptimizationTaskInput
-): Promise<TaskExecutionResult[]> {
+export async function rewriteTitles(input: OptimizationTaskInput): Promise<TaskExecutionResult[]> {
   const payload = input.payload ?? {};
   const seedVal = typeof payload.seed === "number" ? payload.seed : undefined;
   const pickCountVal =

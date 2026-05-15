@@ -48,7 +48,8 @@ const mainHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Business owner celebrating a closed deal, natural lighting, genuine expression of success",
+      subject:
+        "Business owner celebrating a closed deal, natural lighting, genuine expression of success",
       industry: "general",
       mood: "triumphant",
     }),
@@ -65,7 +66,8 @@ const howItWorksImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "industry-shot",
-      subject: "Business owner responding to lead on phone immediately, focused expression, professional setting",
+      subject:
+        "Business owner responding to lead on phone immediately, focused expression, professional setting",
       industry: "roofing",
       mood: "dynamic",
     }),
@@ -75,7 +77,8 @@ const howItWorksImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "industry-shot",
-      subject: "Professional reviewing lead qualifications on tablet, analyzing data, modern office environment",
+      subject:
+        "Professional reviewing lead qualifications on tablet, analyzing data, modern office environment",
       industry: "real-estate",
       mood: "focused",
     }),
@@ -85,7 +88,8 @@ const howItWorksImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "industry-shot",
-      subject: "Appointment being booked with client, handshake or calendar moment, professional interaction",
+      subject:
+        "Appointment being booked with client, handshake or calendar moment, professional interaction",
       industry: "general",
       mood: "warm",
     }),
@@ -95,7 +99,8 @@ const howItWorksImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "industry-shot",
-      subject: "Business professional following up with previous missed lead, phone conversation, determined expression",
+      subject:
+        "Business professional following up with previous missed lead, phone conversation, determined expression",
       industry: "mortgage",
       mood: "focused",
     }),
@@ -112,7 +117,8 @@ const solutionHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate agent responding quickly to client inquiry, professional urgency, mobile device in hand",
+      subject:
+        "Real estate agent responding quickly to client inquiry, professional urgency, mobile device in hand",
       industry: "real-estate",
       mood: "dynamic",
     }),
@@ -122,7 +128,8 @@ const solutionHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Business professional reviewing database of previous clients, reconnection moment, office setting",
+      subject:
+        "Business professional reviewing database of previous clients, reconnection moment, office setting",
       industry: "general",
       mood: "confident",
     }),
@@ -132,7 +139,8 @@ const solutionHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Roofer on residential jobsite, answering phone while on ladder or near roof, stormy sky context",
+      subject:
+        "Roofer on residential jobsite, answering phone while on ladder or near roof, stormy sky context",
       industry: "roofing",
       mood: "dynamic",
     }),
@@ -159,7 +167,8 @@ const testimonialImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "testimonial-portrait",
-      subject: "Professional headshot of Sarah Martinez, real estate agent, modern office background",
+      subject:
+        "Professional headshot of Sarah Martinez, real estate agent, modern office background",
       industry: "real-estate",
       mood: "warm",
     }),
@@ -199,7 +208,8 @@ const testimonialImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "testimonial-portrait",
-      subject: "Professional headshot of Amanda Rivera, personal injury attorney, law office background",
+      subject:
+        "Professional headshot of Amanda Rivera, personal injury attorney, law office background",
       industry: "legal",
       mood: "confident",
     }),

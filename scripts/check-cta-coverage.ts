@@ -128,14 +128,8 @@ function printTable(rows: readonly FileCounts[]): void {
   const bookHeader = "/book-demo";
   const batchHeader = "/batch-video-ads";
 
-  const fileWidth = Math.max(
-    fileHeader.length,
-    ...rows.map((r) => r.file.length),
-  );
-  const bookWidth = Math.max(
-    bookHeader.length,
-    ...rows.map((r) => String(r.bookDemo).length),
-  );
+  const fileWidth = Math.max(fileHeader.length, ...rows.map((r) => r.file.length));
+  const bookWidth = Math.max(bookHeader.length, ...rows.map((r) => String(r.bookDemo).length));
   const batchWidth = Math.max(
     batchHeader.length,
     ...rows.map((r) => String(r.batchVideoAds).length),
@@ -190,20 +184,18 @@ function main(): void {
     const row = byFile.get(page);
     if (!row) {
       // No CTAs of either kind in the file — flag so the list stays honest.
-      missingBatch.push(`${page} (file has no /book-demo or /batch-video-ads links — remove from COLD_TRAFFIC_PAGES if intentional)`);
+      missingBatch.push(
+        `${page} (file has no /book-demo or /batch-video-ads links — remove from COLD_TRAFFIC_PAGES if intentional)`,
+      );
       continue;
     }
     if (row.bookDemo > 0 && row.batchVideoAds === 0) {
-      violations.push(
-        `${page}: /book-demo=${row.bookDemo}, /batch-video-ads=${row.batchVideoAds}`,
-      );
+      violations.push(`${page}: /book-demo=${row.bookDemo}, /batch-video-ads=${row.batchVideoAds}`);
     }
   }
 
   // Sanity: warn about pages in HIGH_INTENT_PAGES that ALSO appear in COLD_TRAFFIC_PAGES.
-  const overlap = COLD_TRAFFIC_PAGES.filter((p) =>
-    HIGH_INTENT_PAGES.includes(p),
-  );
+  const overlap = COLD_TRAFFIC_PAGES.filter((p) => HIGH_INTENT_PAGES.includes(p));
 
   console.log("");
   console.log(
@@ -221,9 +213,7 @@ function main(): void {
   }
 
   if (violations.length > 0) {
-    console.error(
-      "\nFAIL: cold-traffic pages with /book-demo but no /batch-video-ads CTA:",
-    );
+    console.error("\nFAIL: cold-traffic pages with /book-demo but no /batch-video-ads CTA:");
     for (const v of violations) console.error(`  - ${v}`);
     process.exit(1);
   }

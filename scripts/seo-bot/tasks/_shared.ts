@@ -37,9 +37,7 @@ export function slugToCamelCase(slug: string): string {
   const bare = slug.includes("/") ? slug.split("/").pop() || slug : slug;
   return bare
     .split("-")
-    .map((part, i) =>
-      i === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1)
-    )
+    .map((part, i) => (i === 0 ? part : part.charAt(0).toUpperCase() + part.slice(1)))
     .join("");
 }
 
@@ -90,7 +88,7 @@ export function formatTsValue(value: unknown, indent: number = 2): string {
     }
     if (typeof val === "object") {
       const entries = Object.entries(val as Record<string, unknown>).filter(
-        ([, v]) => v !== undefined
+        ([, v]) => v !== undefined,
       );
       if (entries.length === 0) return "{}";
       const body = entries
@@ -292,7 +290,7 @@ function formatZodError(err: z.ZodError): string {
  */
 export function buildContextSuffix(
   dedupContext: DedupContext,
-  researchBrief?: ResearchBrief
+  researchBrief?: ResearchBrief,
 ): string {
   const parts: string[] = [];
 
@@ -301,13 +299,8 @@ export function buildContextSuffix(
     parts.push(
       "## Recently shipped (DO NOT duplicate angles, hooks, or titles):\n" +
         recent
-          .map(
-            (r) =>
-              `- [${r.slug}] ${r.title}${
-                r.description ? ` — ${r.description}` : ""
-              }`
-          )
-          .join("\n")
+          .map((r) => `- [${r.slug}] ${r.title}${r.description ? ` — ${r.description}` : ""}`)
+          .join("\n"),
     );
   }
 
@@ -325,9 +318,7 @@ export function buildContextSuffix(
       .map((g) => `- "${g.query}" — ${g.reason}`)
       .join("\n");
 
-    parts.push(
-      `## Today's research brief (${researchBrief.date}) — weave angles into the output:`
-    );
+    parts.push(`## Today's research brief (${researchBrief.date}) — weave angles into the output:`);
     if (angleLines) parts.push(`### Trending angles:\n${angleLines}`);
     if (compLines) parts.push(`### Competitor moves:\n${compLines}`);
     if (gscLines) parts.push(`### GSC opportunities:\n${gscLines}`);
@@ -340,10 +331,7 @@ export function buildContextSuffix(
  * Update the shipped.json manifest by reading, appending a new item,
  * updating lastUpdated, and writing back.
  */
-export async function appendShippedItem(
-  config: AppConfig,
-  item: ShippedItem
-): Promise<void> {
+export async function appendShippedItem(config: AppConfig, item: ShippedItem): Promise<void> {
   const shippedPath = path.join(process.cwd(), config.state.shippedFile);
   let manifest: ShippedManifest;
   try {
@@ -355,11 +343,7 @@ export async function appendShippedItem(
   }
   manifest.items.push(item);
   manifest.lastUpdated = new Date().toISOString();
-  await writeFile(
-    shippedPath,
-    JSON.stringify(manifest, null, 2) + "\n",
-    "utf8"
-  );
+  await writeFile(shippedPath, JSON.stringify(manifest, null, 2) + "\n", "utf8");
 }
 
 /**
@@ -374,8 +358,7 @@ export async function appendImportAndRegister(options: {
   importMarker: string;
   registerMarker: string;
 }): Promise<void> {
-  const { indexFile, importLine, registerLine, importMarker, registerMarker } =
-    options;
+  const { indexFile, importLine, registerLine, importMarker, registerMarker } = options;
   let content = await readFile(indexFile, "utf8");
 
   // Ensure import marker exists.
@@ -384,7 +367,8 @@ export async function appendImportAndRegister(options: {
     const lines = content.split("\n");
     let lastImportIdx = -1;
     for (let i = 0; i < lines.length; i++) {
-      if (/^import\s/.test(lines[i])) lastImportIdx = i;
+      const line = lines[i];
+      if (line && /^import\s/.test(line)) lastImportIdx = i;
     }
     if (lastImportIdx === -1) {
       content = `${importMarker}\n${content}`;
@@ -401,9 +385,7 @@ export async function appendImportAndRegister(options: {
     const mapCloseIdx = content.lastIndexOf("};");
     if (mapCloseIdx !== -1) {
       content =
-        content.slice(0, mapCloseIdx) +
-        `  ${registerMarker}\n` +
-        content.slice(mapCloseIdx);
+        content.slice(0, mapCloseIdx) + `  ${registerMarker}\n` + content.slice(mapCloseIdx);
     } else {
       content = `${content}\n${registerMarker}\n`;
     }
@@ -414,10 +396,7 @@ export async function appendImportAndRegister(options: {
     content = content.replace(importMarker, `${importMarker}\n${importLine}`);
   }
   if (!content.includes(registerLine.trim())) {
-    content = content.replace(
-      registerMarker,
-      `${registerMarker}\n${registerLine}`
-    );
+    content = content.replace(registerMarker, `${registerMarker}\n${registerLine}`);
   }
 
   await writeFile(indexFile, content, "utf8");
@@ -426,10 +405,7 @@ export async function appendImportAndRegister(options: {
 /**
  * Quality gate helpers — return error string if invalid, null if ok.
  */
-export function validateTitleDescription(
-  title: string,
-  description: string
-): string | null {
+export function validateTitleDescription(title: string, description: string): string | null {
   if (title.length > 70) {
     return `Title too long (${title.length} > 70 chars): "${title}"`;
   }
@@ -439,10 +415,7 @@ export function validateTitleDescription(
   return null;
 }
 
-export function ensureSlugUnique(
-  slug: string,
-  dedupContext: DedupContext
-): string | null {
+export function ensureSlugUnique(slug: string, dedupContext: DedupContext): string | null {
   if (dedupContext.shippedSlugs.has(slug)) {
     return `duplicate slug: ${slug} is already shipped`;
   }
@@ -456,13 +429,9 @@ export function composeUserPrompt(
   taskPrompt: string,
   payload: BacklogItem["payload"],
   dedupContext: DedupContext,
-  researchBrief?: ResearchBrief
+  researchBrief?: ResearchBrief,
 ): string {
-  const payloadBlock = `## Payload:\n\`\`\`json\n${JSON.stringify(
-    payload,
-    null,
-    2
-  )}\n\`\`\``;
+  const payloadBlock = `## Payload:\n\`\`\`json\n${JSON.stringify(payload, null, 2)}\n\`\`\``;
   const context = buildContextSuffix(dedupContext, researchBrief);
   return `${taskPrompt}\n\n${payloadBlock}${context}`;
 }

@@ -149,9 +149,7 @@ interface ComparisonPayload {
   competitorUrl?: unknown;
 }
 
-export async function shipComparison(
-  input: ShipTaskInput
-): Promise<TaskExecutionResult> {
+export async function shipComparison(input: ShipTaskInput): Promise<TaskExecutionResult> {
   const {
     config,
     provider,
@@ -187,12 +185,7 @@ export async function shipComparison(
   }
 
   const bareSlug = stripPrestyjVsPrefix(fullSlug);
-  const userPrompt = composeUserPrompt(
-    taskPrompt,
-    payload,
-    dedupContext,
-    researchBrief
-  );
+  const userPrompt = composeUserPrompt(taskPrompt, payload, dedupContext, researchBrief);
 
   const result = await callProviderWithValidation({
     provider,
@@ -217,10 +210,7 @@ export async function shipComparison(
   // Normalize: authoritative slug is the one from payload.
   content.compareData.slug = fullSlug;
 
-  const tdErr = validateTitleDescription(
-    content.metadata.title,
-    content.metadata.description
-  );
+  const tdErr = validateTitleDescription(content.metadata.title, content.metadata.description);
   if (tdErr) {
     return {
       task: "comparison",
@@ -243,18 +233,9 @@ export async function shipComparison(
   const dataIdentifier = `${slugToCamelCase(bareSlug)}CompareData`;
   const metaIdentifier = `${slugToCamelCase(bareSlug)}Metadata`;
 
-  const fileBody = renderCompareModule(
-    dataIdentifier,
-    metaIdentifier,
-    content,
-    fullSlug
-  );
+  const fileBody = renderCompareModule(dataIdentifier, metaIdentifier, content, fullSlug);
 
-  const filePath = path.join(
-    process.cwd(),
-    config.baseDirs.compare,
-    `${bareSlug}.ts`
-  );
+  const filePath = path.join(process.cwd(), config.baseDirs.compare, `${bareSlug}.ts`);
   await writeFile(filePath, fileBody, "utf8");
 
   // Append /compare/<fullSlug> route to submit-indexnow.ts compareRoutes list.
@@ -286,7 +267,7 @@ function renderCompareModule(
   dataIdentifier: string,
   metaIdentifier: string,
   content: CompareShape,
-  fullSlug: string
+  fullSlug: string,
 ): string {
   const compareInputBody = formatTsValue(content.compareData, 2);
   const metadataLiteral = formatTsValue(
@@ -297,7 +278,7 @@ function renderCompareModule(
       description: content.metadata.description,
       keywords: content.metadata.keywords,
     },
-    2
+    2,
   );
 
   return (
@@ -313,10 +294,7 @@ function renderCompareModule(
  * scripts/submit-indexnow.ts. Idempotent — skips if already present.
  */
 async function appendCompareRoute(fullSlug: string): Promise<void> {
-  const filePath = path.join(
-    process.cwd(),
-    "scripts/submit-indexnow.ts"
-  );
+  const filePath = path.join(process.cwd(), "scripts/submit-indexnow.ts");
   const route = `/compare/${fullSlug}`;
   const raw = await readFile(filePath, "utf8");
   if (raw.includes(`"${route}"`)) return;
@@ -327,7 +305,7 @@ async function appendCompareRoute(fullSlug: string): Promise<void> {
     // Fallback: do nothing if the shape isn't recognized; don't throw,
     // caller can pick it up later. But record in console for debugging.
     console.warn(
-      `[ship-comparison] Could not find compareRoutes array in ${filePath}; skipped append.`
+      `[ship-comparison] Could not find compareRoutes array in ${filePath}; skipped append.`,
     );
     return;
   }
@@ -347,9 +325,7 @@ async function appendCompareRoute(fullSlug: string): Promise<void> {
     }
   }
   if (closeIdx === -1) {
-    console.warn(
-      `[ship-comparison] Unbalanced compareRoutes array; skipped append.`
-    );
+    console.warn(`[ship-comparison] Unbalanced compareRoutes array; skipped append.`);
     return;
   }
 

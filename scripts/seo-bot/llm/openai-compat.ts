@@ -35,11 +35,13 @@ function isOpenRouter(baseURL?: string): boolean {
 }
 
 function resolvePricing(model: string): PriceTier {
-  if (PRICING[model]) return PRICING[model];
+  const exact = PRICING[model];
+  if (exact) return exact;
   const prefix = Object.keys(PRICING).find((k) => model.startsWith(k));
-  if (prefix) return PRICING[prefix];
+  const byPrefix = prefix ? PRICING[prefix] : undefined;
+  if (byPrefix) return byPrefix;
   console.warn(
-    `[openai-compat] Unknown pricing for model "${model}"; using conservative fallback ($5/M in, $15/M out).`
+    `[openai-compat] Unknown pricing for model "${model}"; using conservative fallback ($5/M in, $15/M out).`,
   );
   return FALLBACK_PRICING;
 }
@@ -49,7 +51,7 @@ function computeCost(
   inputTokens: number,
   cachedInputTokens: number,
   outputTokens: number,
-  openRouterPassthroughCost?: number
+  openRouterPassthroughCost?: number,
 ): number {
   if (typeof openRouterPassthroughCost === "number") {
     return openRouterPassthroughCost * OPENROUTER_MARKUP;
@@ -72,11 +74,11 @@ interface OpenRouterGenerationResponse {
 
 async function fetchOpenRouterCost(
   client: OpenAI,
-  generationId: string
+  generationId: string,
 ): Promise<number | undefined> {
   try {
     const result = await client.get<OpenRouterGenerationResponse>(
-      `/generation?id=${encodeURIComponent(generationId)}`
+      `/generation?id=${encodeURIComponent(generationId)}`,
     );
     const cost = result?.data?.total_cost;
     return typeof cost === "number" ? cost : undefined;
@@ -103,9 +105,7 @@ export class OpenAICompatProvider implements LLMProvider {
     if (this.clientCache) return this.clientCache;
     const apiKey = process.env[this.config.apiKeyEnv];
     if (!apiKey) {
-      throw new Error(
-        `[openai-compat] Missing API key in env var ${this.config.apiKeyEnv}`
-      );
+      throw new Error(`[openai-compat] Missing API key in env var ${this.config.apiKeyEnv}`);
     }
     this.clientCache = new OpenAI({
       apiKey,
@@ -115,9 +115,7 @@ export class OpenAICompatProvider implements LLMProvider {
   }
 
   estimateCostUSD(req: LLMRequest, outputTokens: number): number {
-    const approxInputTokens = Math.ceil(
-      (req.system.length + req.user.length) / 4
-    );
+    const approxInputTokens = Math.ceil((req.system.length + req.user.length) / 4);
     return computeCost(req.model, approxInputTokens, 0, outputTokens);
   }
 
@@ -147,8 +145,7 @@ export class OpenAICompatProvider implements LLMProvider {
       const usage = completion.usage;
       const inputTokens = usage?.prompt_tokens ?? 0;
       const outputTokens = usage?.completion_tokens ?? 0;
-      const cachedInputTokens =
-        usage?.prompt_tokens_details?.cached_tokens ?? 0;
+      const cachedInputTokens = usage?.prompt_tokens_details?.cached_tokens ?? 0;
 
       let openRouterCost: number | undefined;
       if (isOpenRouter(this.config.baseURL) && completion.id) {
@@ -169,7 +166,7 @@ export class OpenAICompatProvider implements LLMProvider {
           inputTokens,
           cachedInputTokens,
           outputTokens,
-          openRouterCost
+          openRouterCost,
         ),
         latencyMs: Date.now() - start,
         raw: completion,
@@ -177,7 +174,7 @@ export class OpenAICompatProvider implements LLMProvider {
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
       throw new Error(
-        `[openai-compat] generate failed (model=${req.model}, baseURL=${this.config.baseURL ?? "default"}): ${reason}`
+        `[openai-compat] generate failed (model=${req.model}, baseURL=${this.config.baseURL ?? "default"}): ${reason}`,
       );
     }
   }

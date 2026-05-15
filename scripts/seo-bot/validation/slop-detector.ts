@@ -39,11 +39,10 @@ function escapeRegex(input: string): string {
   return input.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-const compiledPatterns: Array<{ phrase: string; regex: RegExp }> =
-  SLOP_PHRASES.map((phrase) => ({
-    phrase,
-    regex: new RegExp(escapeRegex(phrase), "gi"),
-  }));
+const compiledPatterns: Array<{ phrase: string; regex: RegExp }> = SLOP_PHRASES.map((phrase) => ({
+  phrase,
+  regex: new RegExp(escapeRegex(phrase), "gi"),
+}));
 
 function scoreSeverity(count: number): SlopSeverity {
   if (count <= 2) return "low";

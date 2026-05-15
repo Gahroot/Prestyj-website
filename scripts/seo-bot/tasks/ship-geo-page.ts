@@ -91,9 +91,7 @@ interface GeoPayload {
   kind?: unknown;
 }
 
-export async function shipGeoPage(
-  input: ShipTaskInput
-): Promise<TaskExecutionResult> {
+export async function shipGeoPage(input: ShipTaskInput): Promise<TaskExecutionResult> {
   const {
     config,
     provider,
@@ -128,12 +126,7 @@ export async function shipGeoPage(
     };
   }
 
-  const userPrompt = composeUserPrompt(
-    taskPrompt,
-    payload,
-    dedupContext,
-    researchBrief
-  );
+  const userPrompt = composeUserPrompt(taskPrompt, payload, dedupContext, researchBrief);
 
   const result = await callProviderWithValidation({
     provider,
@@ -161,10 +154,7 @@ export async function shipGeoPage(
   }
 
   // Quality gates.
-  const tdErr = validateTitleDescription(
-    content.meta.title,
-    content.meta.description
-  );
+  const tdErr = validateTitleDescription(content.meta.title, content.meta.description);
   if (tdErr) {
     return {
       task: "geoPage",
@@ -205,18 +195,10 @@ export async function shipGeoPage(
   const identifier = slugToCamelCase(slug);
   const fileBody = renderBestForModule(identifier, content);
 
-  const filePath = path.join(
-    process.cwd(),
-    config.baseDirs.bestFor,
-    `${slug}.ts`
-  );
+  const filePath = path.join(process.cwd(), config.baseDirs.bestFor, `${slug}.ts`);
   await writeFile(filePath, fileBody, "utf8");
 
-  const indexFile = path.join(
-    process.cwd(),
-    config.baseDirs.bestFor,
-    "index.ts"
-  );
+  const indexFile = path.join(process.cwd(), config.baseDirs.bestFor, "index.ts");
   await appendImportAndRegister({
     indexFile,
     importLine: `import { ${identifier} } from "./${slug}";`,
@@ -247,10 +229,7 @@ export async function shipGeoPage(
   };
 }
 
-function renderBestForModule(
-  identifier: string,
-  content: BestForShape
-): string {
+function renderBestForModule(identifier: string, content: BestForShape): string {
   const body = formatTsValue(content, 2);
   return (
     `import type { BestForPageContent } from "./types";\n\n` +

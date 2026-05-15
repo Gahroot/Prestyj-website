@@ -64,11 +64,10 @@ async function main() {
 
   for (let i = 0; i < blogPosts.length; i++) {
     const post = blogPosts[i];
+    if (!post) continue;
     const outputPath = `${TARGET_DIR}/${post.filename}`;
 
-    console.log(
-      `[${i + 1}/${blogPosts.length}] Generating: ${post.filename}`
-    );
+    console.log(`[${i + 1}/${blogPosts.length}] Generating: ${post.filename}`);
     console.log(`  Industry: ${post.industry}`);
     console.log(`  Title: ${post.title.substring(0, 60)}...`);
 

@@ -27,11 +27,7 @@ function sanitizeLabel(label: string): string {
   return label.replace(/[^a-zA-Z0-9_-]+/g, "-").replace(/^-+|-+$/g, "");
 }
 
-function formatMarkdown(
-  variant: ABTestVariant,
-  result: ABTestResult,
-  req: LLMRequest
-): string {
+function formatMarkdown(variant: ABTestVariant, result: ABTestResult, req: LLMRequest): string {
   const lines: string[] = [];
   lines.push(`# A/B Test Variant: ${variant.label}`);
   lines.push("");
@@ -42,7 +38,7 @@ function formatMarkdown(
     lines.push(`- **Latency**: ${r.latencyMs} ms`);
     lines.push(`- **Cost**: $${r.costUSD.toFixed(6)}`);
     lines.push(
-      `- **Tokens**: in=${r.usage.inputTokens} out=${r.usage.outputTokens} cached=${r.usage.cachedInputTokens}`
+      `- **Tokens**: in=${r.usage.inputTokens} out=${r.usage.outputTokens} cached=${r.usage.cachedInputTokens}`,
     );
   }
   if (result.error) {
@@ -77,7 +73,7 @@ function formatMarkdown(
 export async function runABTest(
   req: LLMRequest,
   variants: ABTestVariant[],
-  options: ABTestOptions = {}
+  options: ABTestOptions = {},
 ): Promise<ABTestResult[]> {
   const settled = await Promise.all(
     variants.map(async (variant): Promise<ABTestResult> => {
@@ -91,7 +87,7 @@ export async function runABTest(
         const reason = err instanceof Error ? err.message : String(err);
         return { label: variant.label, error: reason };
       }
-    })
+    }),
   );
 
   if (options.saveDir) {
@@ -101,12 +97,13 @@ export async function runABTest(
     await Promise.all(
       settled.map(async (result, idx) => {
         const variant = variants[idx];
+        if (!variant) return;
         const label = sanitizeLabel(result.label);
         const filename = `${date}-${task}-${label}.md`;
         const filePath = path.join(options.saveDir as string, filename);
         const md = formatMarkdown(variant, result, req);
         await writeFile(filePath, md, "utf8");
-      })
+      }),
     );
   }
 

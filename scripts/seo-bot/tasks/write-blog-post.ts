@@ -36,9 +36,7 @@ interface BlogPayload {
   targetKeyword?: unknown;
 }
 
-export async function writeBlogPost(
-  input: ShipTaskInput
-): Promise<TaskExecutionResult> {
+export async function writeBlogPost(input: ShipTaskInput): Promise<TaskExecutionResult> {
   const {
     config,
     provider,
@@ -73,12 +71,7 @@ export async function writeBlogPost(
     };
   }
 
-  const userPrompt = composeUserPrompt(
-    taskPrompt,
-    payload,
-    dedupContext,
-    researchBrief
-  );
+  const userPrompt = composeUserPrompt(taskPrompt, payload, dedupContext, researchBrief);
 
   const result = await callProviderWithValidation({
     provider,
@@ -148,19 +141,15 @@ export async function writeBlogPost(
     title: content.title,
     description: content.description,
     date,
-    author: content.author,
-    category: content.category,
-    tags: content.tags,
-    keywords: content.keywords,
-    image: content.image,
+    ...(content.author !== undefined && { author: content.author }),
+    ...(content.category !== undefined && { category: content.category }),
+    ...(content.tags !== undefined && { tags: content.tags }),
+    ...(content.keywords !== undefined && { keywords: content.keywords }),
+    ...(content.image !== undefined && { image: content.image }),
     body: bodyWithoutH1,
   });
 
-  const filePath = path.join(
-    process.cwd(),
-    config.baseDirs.blog,
-    `${slug}.mdx`
-  );
+  const filePath = path.join(process.cwd(), config.baseDirs.blog, `${slug}.mdx`);
   await writeFile(filePath, mdx, "utf8");
 
   const shipped: ShippedItem = {
@@ -189,9 +178,12 @@ function stripLeadingH1(body: string): string {
   // If the first non-empty line begins with "# ", drop it.
   const lines = body.split("\n");
   let idx = 0;
-  while (idx < lines.length && lines[idx].trim() === "") idx++;
-  if (idx < lines.length && /^#\s+/.test(lines[idx])) {
-    return lines.slice(idx + 1).join("\n").replace(/^\s*\n+/, "");
+  while (idx < lines.length && (lines[idx]?.trim() ?? "") === "") idx++;
+  if (idx < lines.length && /^#\s+/.test(lines[idx] ?? "")) {
+    return lines
+      .slice(idx + 1)
+      .join("\n")
+      .replace(/^\s*\n+/, "");
   }
   return body;
 }

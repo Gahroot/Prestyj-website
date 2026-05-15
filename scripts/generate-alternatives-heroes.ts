@@ -57,7 +57,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Business owner frustrated with missed calls while phone rings unanswered, office setting, after-hours darkness visible through window",
+      subject:
+        "Business owner frustrated with missed calls while phone rings unanswered, office setting, after-hours darkness visible through window",
       industry: "real-estate",
       mood: "focused",
     }),
@@ -67,7 +68,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Office manager overwhelmed by phones, multiple lines ringing, stacks of resumes showing ISA turnover, stressful environment",
+      subject:
+        "Office manager overwhelmed by phones, multiple lines ringing, stacks of resumes showing ISA turnover, stressful environment",
       industry: "general",
       mood: "focused",
     }),
@@ -77,7 +79,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "ISA service representative reading from script, phone headset, busy call center environment, generic approach",
+      subject:
+        "ISA service representative reading from script, phone headset, busy call center environment, generic approach",
       industry: "general",
       mood: "candid",
     }),
@@ -87,7 +90,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Offshore call center with cultural disconnect, representative struggling with US real estate terminology, confusing communication",
+      subject:
+        "Offshore call center with cultural disconnect, representative struggling with US real estate terminology, confusing communication",
       industry: "general",
       mood: "candid",
     }),
@@ -99,7 +103,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate agent confused by complex dashboard, multiple screens, expensive software subscription visible, frustration",
+      subject:
+        "Real estate agent confused by complex dashboard, multiple screens, expensive software subscription visible, frustration",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -109,7 +114,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate team manager with tablet showing expensive enterprise software, complex setup, training manuals visible, overwhelmed",
+      subject:
+        "Real estate team manager with tablet showing expensive enterprise software, complex setup, training manuals visible, overwhelmed",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -119,7 +125,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate broker reviewing expensive lead gen software bill, looking concerned, complex interface, office setting",
+      subject:
+        "Real estate broker reviewing expensive lead gen software bill, looking concerned, complex interface, office setting",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -129,7 +136,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate team at large brokerage, expensive platform licenses on screen, enterprise complexity, onboarding overwhelm",
+      subject:
+        "Real estate team at large brokerage, expensive platform licenses on screen, enterprise complexity, onboarding overwhelm",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -139,7 +147,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Solo agent with laptop, expensive CRM subscription visible, confused by complex features meant for teams, simple home office",
+      subject:
+        "Solo agent with laptop, expensive CRM subscription visible, confused by complex features meant for teams, simple home office",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -149,7 +158,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate team looking at Sierra Interactive dashboard, complex reporting features, expensive enterprise tier, training session",
+      subject:
+        "Real estate team looking at Sierra Interactive dashboard, complex reporting features, expensive enterprise tier, training session",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -159,7 +169,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Agent happy with their CRM but frustrated by manual lead follow-up, phone with unanswered notifications, missed opportunities",
+      subject:
+        "Agent happy with their CRM but frustrated by manual lead follow-up, phone with unanswered notifications, missed opportunities",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -169,7 +180,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate agent using Homebot dashboard, expensive monthly subscription visible, limited automation, manual work",
+      subject:
+        "Real estate agent using Homebot dashboard, expensive monthly subscription visible, limited automation, manual work",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -179,7 +191,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Agent reviewing Betterbot pricing on screen, expensive subscription, limited features compared to full solution",
+      subject:
+        "Agent reviewing Betterbot pricing on screen, expensive subscription, limited features compared to full solution",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -189,7 +202,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate professional using Lofty platform, generic AI chatbot interface, expensive monthly cost, limited customization",
+      subject:
+        "Real estate professional using Lofty platform, generic AI chatbot interface, expensive monthly cost, limited customization",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -201,7 +215,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Enterprise team in 12-week implementation meeting, complex project timeline on whiteboard, expensive consulting, frustration",
+      subject:
+        "Enterprise team in 12-week implementation meeting, complex project timeline on whiteboard, expensive consulting, frustration",
       industry: "general",
       mood: "candid",
     }),
@@ -211,7 +226,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "VP of sales reviewing Conversica contract, expensive minimums, long implementation, generic not real estate specific",
+      subject:
+        "VP of sales reviewing Conversica contract, expensive minimums, long implementation, generic not real estate specific",
       industry: "general",
       mood: "candid",
     }),
@@ -221,7 +237,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate franchise operator outgrowing Structurely, hitting seat limits and lead caps, need for enterprise scale",
+      subject:
+        "Real estate franchise operator outgrowing Structurely, hitting seat limits and lead caps, need for enterprise scale",
       industry: "real-estate",
       mood: "focused",
     }),
@@ -233,7 +250,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Developer configuring Retell voice AI, code on screen, technical setup required, not done-for-you solution",
+      subject:
+        "Developer configuring Retell voice AI, code on screen, technical setup required, not done-for-you solution",
       industry: "general",
       mood: "focused",
     }),
@@ -243,7 +261,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Technical team setting up Vapi voice API, complex configuration, coding required, not for non-technical users",
+      subject:
+        "Technical team setting up Vapi voice API, complex configuration, coding required, not for non-technical users",
       industry: "general",
       mood: "focused",
     }),
@@ -253,7 +272,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Developer building voice AI with Bland.ai, code screen, technical implementation, DIY approach vs done-for-you",
+      subject:
+        "Developer building voice AI with Bland.ai, code screen, technical implementation, DIY approach vs done-for-you",
       industry: "general",
       mood: "focused",
     }),
@@ -263,7 +283,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Same as Bland.ai - developer building voice AI, DIY technical approach vs managed service",
+      subject:
+        "Same as Bland.ai - developer building voice AI, DIY technical approach vs managed service",
       industry: "general",
       mood: "focused",
     }),
@@ -273,7 +294,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Developer configuring AirDotAI voice agent, API integration, technical setup, not turnkey solution",
+      subject:
+        "Developer configuring AirDotAI voice agent, API integration, technical setup, not turnkey solution",
       industry: "general",
       mood: "focused",
     }),
@@ -283,7 +305,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Technical user building Synthflow voice workflows, drag-drop interface but still requires setup, not done-for-you",
+      subject:
+        "Technical user building Synthflow voice workflows, drag-drop interface but still requires setup, not done-for-you",
       industry: "general",
       mood: "focused",
     }),
@@ -293,7 +316,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Real estate team using EliseAI AI assistant, expensive enterprise pricing, complex setup, not simple implementation",
+      subject:
+        "Real estate team using EliseAI AI assistant, expensive enterprise pricing, complex setup, not simple implementation",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -303,7 +327,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Agent reviewing SmartAlto AI platform, expensive subscription, learning curve, not instant deployment",
+      subject:
+        "Agent reviewing SmartAlto AI platform, expensive subscription, learning curve, not instant deployment",
       industry: "real-estate",
       mood: "candid",
     }),
@@ -313,7 +338,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Small business owner trying Goodcall AI phone agent, limited features, requires technical setup, not full service",
+      subject:
+        "Small business owner trying Goodcall AI phone agent, limited features, requires technical setup, not full service",
       industry: "general",
       mood: "candid",
     }),
@@ -323,7 +349,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Enterprise evaluating PolyAI voice assistant, expensive implementation, technical integration required",
+      subject:
+        "Enterprise evaluating PolyAI voice assistant, expensive implementation, technical integration required",
       industry: "general",
       mood: "candid",
     }),
@@ -333,7 +360,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "IT team configuring CloudTalk cloud phone system, complex setup, not AI-focused solution",
+      subject:
+        "IT team configuring CloudTalk cloud phone system, complex setup, not AI-focused solution",
       industry: "general",
       mood: "focused",
     }),
@@ -343,7 +371,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Sales team using Dialpad for calls, expensive per-seat pricing, not AI lead response focused",
+      subject:
+        "Sales team using Dialpad for calls, expensive per-seat pricing, not AI lead response focused",
       industry: "general",
       mood: "candid",
     }),
@@ -353,7 +382,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Office using RingCentral phone system, expensive per-seat, traditional voip not AI automation",
+      subject:
+        "Office using RingCentral phone system, expensive per-seat, traditional voip not AI automation",
       industry: "general",
       mood: "candid",
     }),
@@ -363,7 +393,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Developer building Voiceflow chatbot, visual workflow builder, requires ongoing maintenance, not done-for-you",
+      subject:
+        "Developer building Voiceflow chatbot, visual workflow builder, requires ongoing maintenance, not done-for-you",
       industry: "general",
       mood: "focused",
     }),
@@ -375,7 +406,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Receptionist at desk during business hours, phone visible, after-hours darkness showing missed calls, limited availability",
+      subject:
+        "Receptionist at desk during business hours, phone visible, after-hours darkness showing missed calls, limited availability",
       industry: "legal",
       mood: "candid",
     }),
@@ -385,7 +417,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Hybrid receptionist service, expensive per-minute fees adding up, human handoff delays, unpredictable costs",
+      subject:
+        "Hybrid receptionist service, expensive per-minute fees adding up, human handoff delays, unpredictable costs",
       industry: "legal",
       mood: "candid",
     }),
@@ -395,7 +428,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Answer Connect call center, expensive per-minute billing, business hours only, message taking not qualification",
+      subject:
+        "Answer Connect call center, expensive per-minute billing, business hours only, message taking not qualification",
       industry: "general",
       mood: "candid",
     }),
@@ -405,7 +439,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "My AI Front Desk tablet interface, limited AI capabilities, expensive subscription, not full service solution",
+      subject:
+        "My AI Front Desk tablet interface, limited AI capabilities, expensive subscription, not full service solution",
       industry: "medical",
       mood: "candid",
     }),
@@ -417,7 +452,8 @@ const alternativeHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Professional using Lindy AI assistant, generic productivity AI, not specialized for real estate lead response",
+      subject:
+        "Professional using Lindy AI assistant, generic productivity AI, not specialized for real estate lead response",
       industry: "general",
       mood: "candid",
     }),
@@ -434,7 +470,8 @@ const compareHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Split scene: human ISA at desk during business hours vs AI handling calls at night, comparison of availability",
+      subject:
+        "Split scene: human ISA at desk during business hours vs AI handling calls at night, comparison of availability",
       industry: "real-estate",
       mood: "dynamic",
     }),
@@ -444,7 +481,8 @@ const compareHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Enterprise real estate office comparison: complex Drift implementation timeline vs Prestyj quick deployment",
+      subject:
+        "Enterprise real estate office comparison: complex Drift implementation timeline vs Prestyj quick deployment",
       industry: "real-estate",
       mood: "dynamic",
     }),
@@ -454,7 +492,8 @@ const compareHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Conversica enterprise AI vs Prestyj real estate-specific solution, comparison of implementation and focus",
+      subject:
+        "Conversica enterprise AI vs Prestyj real estate-specific solution, comparison of implementation and focus",
       industry: "real-estate",
       mood: "dynamic",
     }),
@@ -464,7 +503,8 @@ const compareHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Internal ISA team management challenge: hiring, training, turnover vs AI consistent performance",
+      subject:
+        "Internal ISA team management challenge: hiring, training, turnover vs AI consistent performance",
       industry: "real-estate",
       mood: "focused",
     }),
@@ -474,7 +514,8 @@ const compareHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Offshore ISA comparison: quality control challenges and TCPA compliance risks vs AI consistency",
+      subject:
+        "Offshore ISA comparison: quality control challenges and TCPA compliance risks vs AI consistency",
       industry: "real-estate",
       mood: "focused",
     }),
@@ -484,7 +525,8 @@ const compareHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Ylopo vs Prestyj comparison: ad spend requirements and platform focus, real estate agents evaluating options",
+      subject:
+        "Ylopo vs Prestyj comparison: ad spend requirements and platform focus, real estate agents evaluating options",
       industry: "real-estate",
       mood: "dynamic",
     }),
@@ -494,7 +536,8 @@ const compareHeroImages: ImageConfig[] = [
   {
     prompt: buildPrompt({
       category: "hero",
-      subject: "Structurely small team platform vs Prestyj enterprise scale, franchise operations comparison",
+      subject:
+        "Structurely small team platform vs Prestyj enterprise scale, franchise operations comparison",
       industry: "real-estate",
       mood: "dynamic",
     }),
@@ -536,7 +579,9 @@ function printReport(report: GenerationReport): void {
 
 async function main(): Promise<void> {
   console.log("Starting alternative and compare page hero generation...\n");
-  console.log(`Total images to generate: ${alternativeHeroImages.length + compareHeroImages.length}`);
+  console.log(
+    `Total images to generate: ${alternativeHeroImages.length + compareHeroImages.length}`,
+  );
   console.log(`  - Alternatives: ${alternativeHeroImages.length}`);
   console.log(`  - Compares: ${compareHeroImages.length}\n`);
 

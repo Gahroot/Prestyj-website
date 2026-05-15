@@ -135,9 +135,7 @@ interface NichePayload {
   industry?: unknown;
 }
 
-export async function shipNichePage(
-  input: ShipTaskInput
-): Promise<TaskExecutionResult> {
+export async function shipNichePage(input: ShipTaskInput): Promise<TaskExecutionResult> {
   const {
     config,
     provider,
@@ -177,7 +175,7 @@ export async function shipNichePage(
     taskPrompt,
     { ...payload, slug },
     dedupContext,
-    researchBrief
+    researchBrief,
   );
 
   const result = await callProviderWithValidation({
@@ -202,10 +200,7 @@ export async function shipNichePage(
   const content: SolutionShape = result.data;
   content.slug = slug;
 
-  const tdErr = validateTitleDescription(
-    content.meta.title,
-    content.meta.description
-  );
+  const tdErr = validateTitleDescription(content.meta.title, content.meta.description);
   if (tdErr) {
     return {
       task: "nichePage",
@@ -273,10 +268,7 @@ export async function shipNichePage(
   };
 }
 
-function renderSolutionModule(
-  identifier: string,
-  content: SolutionShape
-): string {
+function renderSolutionModule(identifier: string, content: SolutionShape): string {
   const body = formatTsValue(content, 2);
   return (
     `import type { SolutionPageContent } from "./types";\n\n` +

@@ -1,18 +1,8 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import yaml from "js-yaml";
-import type {
-  AppConfig,
-  Backlog,
-  DailyMetrics,
-  ShippedItem,
-  ShippedManifest,
-} from "../types";
-import {
-  BacklogSchema,
-  DailyMetricsSchema,
-  ShippedManifestSchema,
-} from "../types";
+import type { AppConfig, Backlog, DailyMetrics, ShippedItem, ShippedManifest } from "../types";
+import { BacklogSchema, DailyMetricsSchema, ShippedManifestSchema } from "../types";
 
 interface MetricsHistoryFile {
   days: DailyMetrics[];
@@ -37,36 +27,29 @@ async function readTextSafe(filePath: string): Promise<string | null> {
 
 function isoWeekKey(date: Date): string {
   // ISO week year-week (YYYY-Www)
-  const target = new Date(
-    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
-  );
+  const target = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
   const dayNum = (target.getUTCDay() + 6) % 7; // Monday=0..Sunday=6
   target.setUTCDate(target.getUTCDate() - dayNum + 3);
   const firstThursday = new Date(Date.UTC(target.getUTCFullYear(), 0, 4));
-  const diff =
-    (target.getTime() - firstThursday.getTime()) / (24 * 3600 * 1000);
+  const diff = (target.getTime() - firstThursday.getTime()) / (24 * 3600 * 1000);
   const week = 1 + Math.round((diff - 3 + ((firstThursday.getUTCDay() + 6) % 7)) / 7);
   const y = target.getUTCFullYear();
   return `${y}-W${String(week).padStart(2, "0")}`;
 }
 
 function last7DaysWindow(date: Date): { start: string; end: string } {
-  const end = new Date(
-    Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate())
-  );
+  const end = new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
   const start = new Date(end);
   start.setUTCDate(end.getUTCDate() - 6);
   const toISO = (d: Date): string =>
     `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(
       2,
-      "0"
+      "0",
     )}-${String(d.getUTCDate()).padStart(2, "0")}`;
   return { start: toISO(start), end: toISO(end) };
 }
 
-async function loadMetricsHistory(
-  metricsFile: string
-): Promise<DailyMetrics[]> {
+async function loadMetricsHistory(metricsFile: string): Promise<DailyMetrics[]> {
   const data = await readJSONSafe<MetricsHistoryFile>(metricsFile);
   if (!data || !Array.isArray(data.days)) return [];
   const valid: DailyMetrics[] = [];
@@ -77,9 +60,7 @@ async function loadMetricsHistory(
   return valid;
 }
 
-async function loadShippedManifest(
-  shippedFile: string
-): Promise<ShippedManifest> {
+async function loadShippedManifest(shippedFile: string): Promise<ShippedManifest> {
   const parsed = await readJSONSafe<unknown>(shippedFile);
   if (!parsed) return { items: [], lastUpdated: new Date().toISOString() };
   const result = ShippedManifestSchema.safeParse(parsed);
@@ -104,22 +85,15 @@ function withinWindow(dateISO: string, start: string, end: string): boolean {
   return dateISO >= start && dateISO <= end;
 }
 
-function shipWithinWindow(
-  shippedAt: string,
-  start: string,
-  end: string
-): boolean {
+function shipWithinWindow(shippedAt: string, start: string, end: string): boolean {
   const dateOnly = shippedAt.slice(0, 10);
   return withinWindow(dateOnly, start, end);
 }
 
 function aggregateTaskBreakdown(
-  days: DailyMetrics[]
+  days: DailyMetrics[],
 ): Record<string, { count: number; costUSD: number; latencyMs: number }> {
-  const agg: Record<
-    string,
-    { count: number; costUSD: number; latencyMs: number }
-  > = {};
+  const agg: Record<string, { count: number; costUSD: number; latencyMs: number }> = {};
   for (const day of days) {
     for (const [task, data] of Object.entries(day.taskBreakdown)) {
       const existing = agg[task] ?? { count: 0, costUSD: 0, latencyMs: 0 };
@@ -133,7 +107,7 @@ function aggregateTaskBreakdown(
 }
 
 function aggregateProviderCost(
-  items: ShippedItem[]
+  items: ShippedItem[],
 ): Record<string, { count: number; costUSD: number }> {
   const agg: Record<string, { count: number; costUSD: number }> = {};
   for (const item of items) {
@@ -157,10 +131,7 @@ function countBacklogRemaining(backlog: Backlog | null): Record<string, number> 
   };
 }
 
-export async function runWeeklyDigest(
-  config: AppConfig,
-  date: Date
-): Promise<void> {
+export async function runWeeklyDigest(config: AppConfig, date: Date): Promise<void> {
   const cwd = process.cwd();
   const { start, end } = last7DaysWindow(date);
 
@@ -171,9 +142,7 @@ export async function runWeeklyDigest(
   ]);
 
   const windowDays = history.filter((d) => withinWindow(d.date, start, end));
-  const windowShipped = manifest.items.filter((i) =>
-    shipWithinWindow(i.shippedAt, start, end)
-  );
+  const windowShipped = manifest.items.filter((i) => shipWithinWindow(i.shippedAt, start, end));
 
   const totalPages = windowDays.reduce((n, d) => n + d.pagesShipped, 0);
   const totalBlogs = windowDays.reduce((n, d) => n + d.blogsShipped, 0);
@@ -212,9 +181,7 @@ export async function runWeeklyDigest(
 
   lines.push("## Cost by provider/model");
   lines.push("");
-  const providerEntries = Object.entries(providerCost).sort(
-    (a, b) => b[1].costUSD - a[1].costUSD
-  );
+  const providerEntries = Object.entries(providerCost).sort((a, b) => b[1].costUSD - a[1].costUSD);
   if (providerEntries.length === 0) {
     lines.push("_No shipped items this week._");
   } else {
@@ -235,9 +202,7 @@ export async function runWeeklyDigest(
     lines.push("|------|-------|------|------------------|");
     for (const [task, data] of topTasks) {
       const avg = data.count > 0 ? Math.round(data.latencyMs / data.count) : 0;
-      lines.push(
-        `| ${task} | ${data.count} | $${data.costUSD.toFixed(4)} | ${avg} |`
-      );
+      lines.push(`| ${task} | ${data.count} | $${data.costUSD.toFixed(4)} | ${avg} |`);
     }
   }
   lines.push("");

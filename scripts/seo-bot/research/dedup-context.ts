@@ -3,12 +3,7 @@ import path from "node:path";
 import type { AppConfig, DedupContext, ShippedItem } from "../types";
 import { ShippedManifestSchema } from "../types";
 
-const BEST_FOR_EXCLUDED = new Set([
-  "index",
-  "types",
-  "_geo-helpers",
-  "noindex-list",
-]);
+const BEST_FOR_EXCLUDED = new Set(["index", "types", "_geo-helpers", "noindex-list"]);
 
 async function readJSONSafe(filePath: string): Promise<unknown> {
   try {
@@ -22,7 +17,7 @@ async function readJSONSafe(filePath: string): Promise<unknown> {
 async function listSlugsByExtension(
   dir: string,
   extension: string,
-  excluded: Set<string> = new Set()
+  excluded: Set<string> = new Set(),
 ): Promise<string[]> {
   try {
     const entries = await fs.readdir(dir, { withFileTypes: true });
@@ -53,7 +48,7 @@ async function loadShippedManifest(shippedFile: string): Promise<ShippedItem[]> 
 
 function pickRecent(
   items: ShippedItem[],
-  limit: number
+  limit: number,
 ): Array<{
   slug: string;
   title: string;
@@ -71,23 +66,19 @@ function pickRecent(
     }));
 }
 
-export async function buildDedupContext(
-  config: AppConfig
-): Promise<DedupContext> {
+export async function buildDedupContext(config: AppConfig): Promise<DedupContext> {
   const cwd = process.cwd();
   const bestForDir = path.resolve(cwd, config.baseDirs.bestFor);
   const compareDir = path.resolve(cwd, config.baseDirs.compare);
   const blogDir = path.resolve(cwd, config.baseDirs.blog);
   const shippedFile = path.resolve(cwd, config.state.shippedFile);
 
-  const [shippedItems, bestForSlugs, compareSlugs, blogSlugs] = await Promise.all(
-    [
-      loadShippedManifest(shippedFile),
-      listSlugsByExtension(bestForDir, ".ts", BEST_FOR_EXCLUDED),
-      listSlugsByExtension(compareDir, ".ts"),
-      listSlugsByExtension(blogDir, ".mdx"),
-    ]
-  );
+  const [shippedItems, bestForSlugs, compareSlugs, blogSlugs] = await Promise.all([
+    loadShippedManifest(shippedFile),
+    listSlugsByExtension(bestForDir, ".ts", BEST_FOR_EXCLUDED),
+    listSlugsByExtension(compareDir, ".ts"),
+    listSlugsByExtension(blogDir, ".mdx"),
+  ]);
 
   const shippedSlugs = new Set<string>();
   for (const slug of bestForSlugs) shippedSlugs.add(slug);
@@ -107,7 +98,7 @@ export async function buildDedupContext(
 
 export function summarizeDedupContextForPrompt(
   context: DedupContext,
-  options?: { recentLimit?: number }
+  options?: { recentLimit?: number },
 ): string {
   const limit = options?.recentLimit ?? 10;
   const recent = context.recentlyShippedSummaries.slice(0, limit);

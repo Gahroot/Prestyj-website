@@ -1,8 +1,4 @@
-import {
-  GoogleGenerativeAI,
-  type GenerationConfig,
-  type ModelParams,
-} from "@google/generative-ai";
+import { GoogleGenerativeAI, type GenerationConfig, type ModelParams } from "@google/generative-ai";
 import type {
   LLMProvider,
   LLMRequest,
@@ -67,25 +63,20 @@ function sanitizeGeminiSchema(schema: unknown): unknown {
 }
 
 function resolvePricing(model: string): PriceTier {
-  if (PRICING[model]) return PRICING[model];
+  const exact = PRICING[model];
+  if (exact) return exact;
   const prefix = Object.keys(PRICING).find((k) => model.startsWith(k));
-  if (prefix) return PRICING[prefix];
+  const byPrefix = prefix ? PRICING[prefix] : undefined;
+  if (byPrefix) return byPrefix;
   console.warn(
-    `[gemini] Unknown pricing for model "${model}"; using conservative fallback ($5/M in, $15/M out).`
+    `[gemini] Unknown pricing for model "${model}"; using conservative fallback ($5/M in, $15/M out).`,
   );
   return FALLBACK_PRICING;
 }
 
-function computeCost(
-  model: string,
-  inputTokens: number,
-  outputTokens: number
-): number {
+function computeCost(model: string, inputTokens: number, outputTokens: number): number {
   const p = resolvePricing(model);
-  return (
-    (inputTokens * p.inputPerM) / 1_000_000 +
-    (outputTokens * p.outputPerM) / 1_000_000
-  );
+  return (inputTokens * p.inputPerM) / 1_000_000 + (outputTokens * p.outputPerM) / 1_000_000;
 }
 
 export class GeminiProvider implements LLMProvider {
@@ -106,18 +97,14 @@ export class GeminiProvider implements LLMProvider {
     if (this.clientCache) return this.clientCache;
     const apiKey = process.env[this.config.apiKeyEnv];
     if (!apiKey) {
-      throw new Error(
-        `[gemini] Missing API key in env var ${this.config.apiKeyEnv}`
-      );
+      throw new Error(`[gemini] Missing API key in env var ${this.config.apiKeyEnv}`);
     }
     this.clientCache = new GoogleGenerativeAI(apiKey);
     return this.clientCache;
   }
 
   estimateCostUSD(req: LLMRequest, outputTokens: number): number {
-    const approxInputTokens = Math.ceil(
-      (req.system.length + req.user.length) / 4
-    );
+    const approxInputTokens = Math.ceil((req.system.length + req.user.length) / 4);
     return computeCost(req.model, approxInputTokens, outputTokens);
   }
 
@@ -130,11 +117,7 @@ export class GeminiProvider implements LLMProvider {
     // room. For non-research tasks we disable thinking entirely.
     const isFlash = req.model.includes("flash");
     const needsThinking = req.useWebSearch === true;
-    const thinkingBudget = needsThinking
-      ? undefined
-      : isFlash
-        ? 0
-        : 512;
+    const thinkingBudget = needsThinking ? undefined : isFlash ? 0 : 512;
     const outputBudget = Math.max(req.maxTokens, 2048);
 
     const generationConfig: GenerationConfig & {
@@ -160,9 +143,7 @@ export class GeminiProvider implements LLMProvider {
       generationConfig,
     };
     if (useSearch) {
-      (modelParams as unknown as { tools: unknown[] }).tools = [
-        { googleSearch: {} },
-      ];
+      (modelParams as unknown as { tools: unknown[] }).tools = [{ googleSearch: {} }];
     }
 
     try {
@@ -190,9 +171,7 @@ export class GeminiProvider implements LLMProvider {
       };
     } catch (err) {
       const reason = err instanceof Error ? err.message : String(err);
-      throw new Error(
-        `[gemini] generate failed (model=${req.model}): ${reason}`
-      );
+      throw new Error(`[gemini] generate failed (model=${req.model}): ${reason}`);
     }
   }
 }

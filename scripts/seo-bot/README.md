@@ -4,15 +4,15 @@ Daily autonomous content generation for the Prestyj marketing site. Research →
 
 ## What it ships
 
-| Day | Tasks | Default provider |
-|-----|-------|------------------|
-| Mon | 1 research brief + 3 geo pages + 2 niche pages | Gemini Pro (free tier) |
-| Tue | 1 research brief + 1 blog post (1,500+ words) | Claude Sonnet for blog |
-| Wed | 1 research brief + 3 geo pages + 1 comparison page | Gemini Pro + Claude Sonnet |
-| Thu | 1 research brief + 10 title rewrites | Gemini Flash (free) |
-| Fri | 1 research brief + 1 competitor audit + social drafts | Gemini Flash |
-| Sat | Social copy for next week | Gemini Flash |
-| Sun | Rest (weekly digest runs instead) | — |
+| Day | Tasks                                                 | Default provider           |
+| --- | ----------------------------------------------------- | -------------------------- |
+| Mon | 1 research brief + 3 geo pages + 2 niche pages        | Gemini Pro (free tier)     |
+| Tue | 1 research brief + 1 blog post (1,500+ words)         | Claude Sonnet for blog     |
+| Wed | 1 research brief + 3 geo pages + 1 comparison page    | Gemini Pro + Claude Sonnet |
+| Thu | 1 research brief + 10 title rewrites                  | Gemini Flash (free)        |
+| Fri | 1 research brief + 1 competitor audit + social drafts | Gemini Flash               |
+| Sat | Social copy for next week                             | Gemini Flash               |
+| Sun | Rest (weekly digest runs instead)                     | —                          |
 
 Edit `scripts/seo-bot/config.yml` to change rotation, model routing, or circuit breaker limits without touching code.
 
@@ -108,6 +108,7 @@ scripts/seo-bot/
 ## Cost expectations
 
 Default config (Gemini free for volume + Claude Sonnet for blogs + comparisons):
+
 - Monday-Friday: ~$0.50-1.00/day
 - Saturday: negligible
 - Monthly: **~$10-20**
@@ -124,7 +125,7 @@ Edit `config.yml`. To move blog generation off Claude:
 ```yaml
 tasks:
   blogPost:
-    provider: deepseek     # instead of anthropic
+    provider: deepseek # instead of anthropic
     model: deepseek-chat
 ```
 

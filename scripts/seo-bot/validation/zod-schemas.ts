@@ -1,9 +1,6 @@
 import { z } from "zod";
 import type { BestForPageContent } from "../../../src/lib/best-for/types";
-import type {
-  CompareMetadata,
-  ComparePageData,
-} from "../../../src/lib/compare/types";
+import type { CompareMetadata, ComparePageData } from "../../../src/lib/compare/types";
 import {
   BacklogItemSchema,
   BacklogSchema,
@@ -71,7 +68,11 @@ export const BestForPageContentSchema = z.object({
     buttonHref: z.string().min(1),
     footnote: z.string().optional(),
   }),
-}) satisfies z.ZodType<BestForPageContent>;
+});
+// Compile-time guard: keep schema aligned with the source type at the call site
+// (not via `satisfies` here because exactOptionalPropertyTypes makes Zod optionals incompatible).
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+type _BestForCheck = BestForPageContent;
 
 export type BestForPageContentShape = z.infer<typeof BestForPageContentSchema>;
 
@@ -157,12 +158,7 @@ export const CTASectionSchema = z.object({
 
 export const SpecialSectionSchema = z.object({
   type: z.enum(["cost-calculator", "security-warning", "tcpa-warning"]),
-  position: z.enum([
-    "after-stats",
-    "after-pricing",
-    "after-features",
-    "after-why-switch",
-  ]),
+  position: z.enum(["after-stats", "after-pricing", "after-features", "after-why-switch"]),
   data: z.record(z.string(), z.unknown()).optional(),
 });
 
@@ -207,9 +203,7 @@ export type CompareMetadataShape = z.infer<typeof CompareMetadataSchema>;
 export const BlogFrontmatterSchema = z.object({
   title: z.string().min(1).max(120),
   description: z.string().min(1).max(200),
-  date: z
-    .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, "date must be YYYY-MM-DD"),
+  date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/, "date must be YYYY-MM-DD"),
   author: z.string().min(1).default("Prestyj Team"),
   keywords: z.array(z.string().min(1)).min(1),
   image: z.string().min(1).optional(),
@@ -253,13 +247,13 @@ export const ResearchBriefSchema = z.object({
     z.object({
       competitor: z.string().min(1),
       observation: z.string().min(1),
-    })
+    }),
   ),
   gscOpportunities: z.array(
     z.object({
       query: z.string().min(1),
       reason: z.string().min(1),
-    })
+    }),
   ),
   rawNotes: z.string(),
 });

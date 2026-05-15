@@ -72,9 +72,7 @@ const ReportSchema = z
   .transform((obj) => ({
     pricing: flattenToString(obj.pricing) || "Pricing not stated.",
     positioning: flattenToString(obj.positioning) || "Positioning not stated.",
-    recentFeatures: flattenToStringArray(
-      obj.recentFeatures ?? obj.recentFeatureAdditions
-    ),
+    recentFeatures: flattenToStringArray(obj.recentFeatures ?? obj.recentFeatureAdditions),
     gapsForPrestyj: flattenToStringArray(obj.gapsForPrestyj ?? obj.gaps),
   }));
 
@@ -108,10 +106,8 @@ async function fetchWithTimeout(url: string): Promise<string> {
     const response = await fetch(url, {
       signal: controller.signal,
       headers: {
-        "User-Agent":
-          "Mozilla/5.0 (compatible; PrestyjSeoBot/1.0; +https://prestyj.com)",
-        Accept:
-          "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "User-Agent": "Mozilla/5.0 (compatible; PrestyjSeoBot/1.0; +https://prestyj.com)",
+        Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
       },
       redirect: "follow",
     });
@@ -168,7 +164,7 @@ function parseJsonLoose(raw: string): unknown {
   } catch (err) {
     const errMsg = err instanceof Error ? err.message : String(err);
     const posMatch = errMsg.match(/position (\d+)/);
-    const pos = posMatch ? parseInt(posMatch[1], 10) : 0;
+    const pos = posMatch?.[1] ? parseInt(posMatch[1], 10) : 0;
     // Dump raw response for debugging
     try {
       writeFileSync("/tmp/seo-bot-raw.json", raw);
@@ -181,13 +177,11 @@ function parseJsonLoose(raw: string): unknown {
     const hex = Array.from(snippet)
       .map((c) => {
         const code = c.charCodeAt(0);
-        return code >= 0x20 && code < 0x7f
-          ? c
-          : `\\u${code.toString(16).padStart(4, "0")}`;
+        return code >= 0x20 && code < 0x7f ? c : `\\u${code.toString(16).padStart(4, "0")}`;
       })
       .join("");
     console.error(
-      `[audit-competitor] parse failed: ${errMsg}\n  raw dumped to /tmp/seo-bot-raw.json\n  hex-escaped snippet: ${hex}`
+      `[audit-competitor] parse failed: ${errMsg}\n  raw dumped to /tmp/seo-bot-raw.json\n  hex-escaped snippet: ${hex}`,
     );
     throw err;
   }
@@ -202,18 +196,16 @@ function todayYMD(): string {
 }
 
 function safeName(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 60) || "competitor";
+  return (
+    name
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 60) || "competitor"
+  );
 }
 
-function renderMarkdown(
-  name: string,
-  url: string,
-  report: z.infer<typeof ReportSchema>
-): string {
+function renderMarkdown(name: string, url: string, report: z.infer<typeof ReportSchema>): string {
   const bullets = (items: string[]) =>
     items.length ? items.map((i) => `- ${i}`).join("\n") : "- (none reported)";
   return [
@@ -241,9 +233,7 @@ function renderMarkdown(
   ].join("\n");
 }
 
-export async function auditCompetitor(
-  input: OptimizationTaskInput
-): Promise<TaskExecutionResult> {
+export async function auditCompetitor(input: OptimizationTaskInput): Promise<TaskExecutionResult> {
   const start = Date.now();
 
   // Validate payload
@@ -324,17 +314,10 @@ export async function auditCompetitor(
 
   // Write the markdown report
   const reportDir = path.resolve(process.cwd(), input.config.output.reportDir);
-  const outPath = path.join(
-    reportDir,
-    `competitor-${safeName(competitor.name)}-${todayYMD()}.md`
-  );
+  const outPath = path.join(reportDir, `competitor-${safeName(competitor.name)}-${todayYMD()}.md`);
   try {
     await fs.mkdir(reportDir, { recursive: true });
-    await fs.writeFile(
-      outPath,
-      renderMarkdown(competitor.name, competitor.url, report),
-      "utf-8"
-    );
+    await fs.writeFile(outPath, renderMarkdown(competitor.name, competitor.url, report), "utf-8");
   } catch (err) {
     return {
       task: "competitorAudit",

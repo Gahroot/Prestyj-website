@@ -1,7 +1,9 @@
 # Role
+
 You generate a best-for page for a specific metro or state. The input is a metro name (or state), and your job is to produce a JSON object matching the `BestForPageContent` shape that a senior real estate marketer in that metro would recognize as researched, not templated.
 
 # Output spec
+
 Return ONLY valid JSON. No markdown. No prose. No code fence. The shape:
 
 ```ts
@@ -179,15 +181,47 @@ Input: metro = "Boise, ID"
     }
   ],
   "comparison": {
-    "headers": ["Feature", "Prestyj Batch Video Ads", "Hiring a Local Real Estate Marketing Agency"],
+    "headers": [
+      "Feature",
+      "Prestyj Batch Video Ads",
+      "Hiring a Local Real Estate Marketing Agency"
+    ],
     "rows": [
-      { "feature": "Ad variations delivered", "prestyj": "300–1,000 unique variations", "others": "4–10 ads per month on retainer" },
-      { "feature": "Cost structure", "prestyj": "One-time: $1,497 / $2,497 / $3,997", "others": "$1,500–$4,000/month ongoing retainer" },
-      { "feature": "Who is on camera", "prestyj": "You — the agent Boise clients will actually hire", "others": "Stock footage, listing photos, or hired UGC actors" },
-      { "feature": "Time commitment from you", "prestyj": "One 15–20 minute selfie recording", "others": "Ongoing strategy calls, approvals, shoot days" },
-      { "feature": "Delivery time", "prestyj": "24 hours after footage submission", "others": "2–4 week production cycle per ad set" },
-      { "feature": "Local market hook coverage", "prestyj": "Scripts tuned to IMLS inventory, CA relo, Micron, Eagle/Meridian", "others": "Generic 'just listed' templates" },
-      { "feature": "Creative volume for Meta learning phase", "prestyj": "30–50+ fresh creatives per ad set available day one", "others": "Algorithm stuck in learning on 3–5 creatives" }
+      {
+        "feature": "Ad variations delivered",
+        "prestyj": "300–1,000 unique variations",
+        "others": "4–10 ads per month on retainer"
+      },
+      {
+        "feature": "Cost structure",
+        "prestyj": "One-time: $1,497 / $2,497 / $3,997",
+        "others": "$1,500–$4,000/month ongoing retainer"
+      },
+      {
+        "feature": "Who is on camera",
+        "prestyj": "You — the agent Boise clients will actually hire",
+        "others": "Stock footage, listing photos, or hired UGC actors"
+      },
+      {
+        "feature": "Time commitment from you",
+        "prestyj": "One 15–20 minute selfie recording",
+        "others": "Ongoing strategy calls, approvals, shoot days"
+      },
+      {
+        "feature": "Delivery time",
+        "prestyj": "24 hours after footage submission",
+        "others": "2–4 week production cycle per ad set"
+      },
+      {
+        "feature": "Local market hook coverage",
+        "prestyj": "Scripts tuned to IMLS inventory, CA relo, Micron, Eagle/Meridian",
+        "others": "Generic 'just listed' templates"
+      },
+      {
+        "feature": "Creative volume for Meta learning phase",
+        "prestyj": "30–50+ fresh creatives per ad set available day one",
+        "others": "Algorithm stuck in learning on 3–5 creatives"
+      }
     ]
   },
   "faq": [

@@ -12,10 +12,7 @@ import type {
   TaskExecutionResult,
   TaskName,
 } from "../types";
-import {
-  DailyMetricsSchema,
-  ShippedManifestSchema,
-} from "../types";
+import { DailyMetricsSchema, ShippedManifestSchema } from "../types";
 import { CircuitBreaker } from "./circuit-breaker";
 import type { CircuitState } from "./circuit-breaker";
 
@@ -64,9 +61,7 @@ const TASK_PROMPT_FILES: Record<TaskName, string> = {
   dailyResearch: "prompts/task/daily-research.md",
 };
 
-const BACKLOG_SLICE_BY_TASK: Partial<
-  Record<TaskName, keyof import("../types").Backlog>
-> = {
+const BACKLOG_SLICE_BY_TASK: Partial<Record<TaskName, keyof import("../types").Backlog>> = {
   geoPage: "geoPages",
   nichePage: "nichePages",
   comparison: "comparisons",
@@ -90,23 +85,15 @@ function isTaskName(value: string): value is TaskName {
   return Object.prototype.hasOwnProperty.call(TASK_MODULE_MAP, value);
 }
 
-function classifyShipType(
-  item: ShippedItem
-): "page" | "blog" | "other" {
+function classifyShipType(item: ShippedItem): "page" | "blog" | "other" {
   if (item.type === "blog-post") return "blog";
-  if (
-    item.type === "geo-page" ||
-    item.type === "niche-page" ||
-    item.type === "comparison"
-  ) {
+  if (item.type === "geo-page" || item.type === "niche-page" || item.type === "comparison") {
     return "page";
   }
   return "other";
 }
 
-async function readJSONSafe<T>(
-  filePath: string
-): Promise<T | null> {
+async function readJSONSafe<T>(filePath: string): Promise<T | null> {
   try {
     const raw = await fs.readFile(filePath, "utf8");
     return JSON.parse(raw) as T;
@@ -137,7 +124,7 @@ function todayISODate(date: Date): string {
 
 function rotationDayFromDate(date: Date): RotationDay {
   const dayIndex = date.getUTCDay();
-  return ROTATION_BY_DAY_INDEX[dayIndex];
+  return ROTATION_BY_DAY_INDEX[dayIndex] ?? "monday";
 }
 
 function emptyMetrics(dateISO: string): DailyMetrics {
@@ -153,9 +140,7 @@ function emptyMetrics(dateISO: string): DailyMetrics {
   };
 }
 
-async function loadMetricsHistory(
-  metricsFile: string
-): Promise<MetricsHistoryFile> {
+async function loadMetricsHistory(metricsFile: string): Promise<MetricsHistoryFile> {
   const data = await readJSONSafe<MetricsHistoryFile>(metricsFile);
   if (!data || !Array.isArray(data.days)) {
     return { days: [] };
@@ -168,10 +153,7 @@ async function loadMetricsHistory(
   return { days };
 }
 
-async function loadTodaysCircuitState(
-  metricsFile: string,
-  dateISO: string
-): Promise<CircuitState> {
+async function loadTodaysCircuitState(metricsFile: string, dateISO: string): Promise<CircuitState> {
   const history = await loadMetricsHistory(metricsFile);
   const today = history.days.find((d) => d.date === dateISO);
   if (!today) {
@@ -194,7 +176,7 @@ async function loadTodaysCircuitState(
 async function saveMetricsHistory(
   metricsFile: string,
   dateISO: string,
-  metrics: DailyMetrics
+  metrics: DailyMetrics,
 ): Promise<void> {
   const history = await loadMetricsHistory(metricsFile);
   const idx = history.days.findIndex((d) => d.date === dateISO);
@@ -207,9 +189,7 @@ async function saveMetricsHistory(
   await writeJSON(metricsFile, history);
 }
 
-async function loadShippedManifest(
-  shippedFile: string
-): Promise<ShippedManifest> {
+async function loadShippedManifest(shippedFile: string): Promise<ShippedManifest> {
   const parsed = await readJSONSafe<unknown>(shippedFile);
   if (!parsed) {
     return { items: [], lastUpdated: new Date().toISOString() };
@@ -223,7 +203,7 @@ async function loadShippedManifest(
 
 async function appendToShippedManifest(
   shippedFile: string,
-  newItems: ShippedItem[]
+  newItems: ShippedItem[],
 ): Promise<void> {
   if (newItems.length === 0) return;
   const manifest = await loadShippedManifest(shippedFile);
@@ -242,15 +222,8 @@ async function loadSystemPrompt(cwd: string): Promise<string> {
   return parts.join("\n\n---\n\n");
 }
 
-async function loadTaskPrompt(
-  cwd: string,
-  taskName: TaskName
-): Promise<string | null> {
-  const full = path.resolve(
-    cwd,
-    "scripts/seo-bot",
-    TASK_PROMPT_FILES[taskName]
-  );
+async function loadTaskPrompt(cwd: string, taskName: TaskName): Promise<string | null> {
+  const full = path.resolve(cwd, "scripts/seo-bot", TASK_PROMPT_FILES[taskName]);
   return await readTextSafe(full);
 }
 
@@ -258,7 +231,7 @@ async function popBacklogItem(
   cwd: string,
   config: AppConfig,
   taskName: TaskName,
-  dryRun: boolean
+  dryRun: boolean,
 ): Promise<import("../types").BacklogItem | null> {
   const sliceKey = BACKLOG_SLICE_BY_TASK[taskName];
   if (!sliceKey) return null;
@@ -321,7 +294,7 @@ type TaskModule = Record<string, unknown>;
 
 function pickTaskFunction(
   mod: TaskModule,
-  taskName: TaskName
+  taskName: TaskName,
 ): ((input: unknown) => Promise<TaskExecutionResult>) | null {
   const preferred = TASK_EXPORT_MAP[taskName];
   const candidate = mod[preferred] ?? mod.default ?? mod.run;
@@ -339,7 +312,7 @@ async function loadResearchIfInList(
     systemPrompt: string;
     dryRun: boolean;
     date: Date;
-  }
+  },
 ): Promise<{
   brief: ResearchBrief | null;
   result: TaskExecutionResult | null;
@@ -384,9 +357,7 @@ async function loadResearchIfInList(
 
   const envVar = providerCfg.apiKeyEnv;
   if (!process.env[envVar]) {
-    console.warn(
-      `[seo-bot] Skipping dailyResearch: ${envVar} not set`
-    );
+    console.warn(`[seo-bot] Skipping dailyResearch: ${envVar} not set`);
     return { brief: null, result: null, remainingTasks: remaining };
   }
 
@@ -440,9 +411,7 @@ async function loadResearchIfInList(
   }
 }
 
-function extractBriefFromResult(
-  result: TaskExecutionResult
-): ResearchBrief | null {
+function extractBriefFromResult(result: TaskExecutionResult): ResearchBrief | null {
   const maybe = result as unknown as { brief?: ResearchBrief };
   if (maybe && typeof maybe === "object" && maybe.brief) {
     return maybe.brief;
@@ -450,24 +419,18 @@ function extractBriefFromResult(
   return null;
 }
 
-function updateMetricsForResult(
-  metrics: DailyMetrics,
-  result: TaskExecutionResult
-): void {
+function updateMetricsForResult(metrics: DailyMetrics, result: TaskExecutionResult): void {
   metrics.apiCalls += 1;
   metrics.costUSD += Number.isFinite(result.costUSD) ? result.costUSD : 0;
 
-  const breakdown =
-    metrics.taskBreakdown[result.task] ?? {
-      count: 0,
-      costUSD: 0,
-      latencyMs: 0,
-    };
+  const breakdown = metrics.taskBreakdown[result.task] ?? {
+    count: 0,
+    costUSD: 0,
+    latencyMs: 0,
+  };
   breakdown.count += 1;
   breakdown.costUSD += Number.isFinite(result.costUSD) ? result.costUSD : 0;
-  breakdown.latencyMs += Number.isFinite(result.latencyMs)
-    ? result.latencyMs
-    : 0;
+  breakdown.latencyMs += Number.isFinite(result.latencyMs) ? result.latencyMs : 0;
   metrics.taskBreakdown[result.task] = breakdown;
 
   if (!result.success) {
@@ -508,10 +471,7 @@ async function runTypecheck(cwd: string): Promise<{
   }
 }
 
-async function rollbackShippedFiles(
-  cwd: string,
-  newShipped: ShippedItem[]
-): Promise<string[]> {
+async function rollbackShippedFiles(cwd: string, newShipped: ShippedItem[]): Promise<string[]> {
   const removed: string[] = [];
   for (const item of newShipped) {
     const filePath = path.resolve(cwd, item.filePath);
@@ -536,7 +496,7 @@ async function rollbackShippedFiles(
         "scripts/seo-bot/state/",
         "scripts/submit-indexnow.ts",
       ],
-      { cwd }
+      { cwd },
     );
   } catch {
     // best effort
@@ -547,7 +507,7 @@ async function rollbackShippedFiles(
 
 async function commitAndPush(
   cwd: string,
-  summary: string
+  summary: string,
 ): Promise<{ success: boolean; message: string }> {
   try {
     await execFileAsync(
@@ -560,23 +520,15 @@ async function commitAndPush(
         "content/blog/",
         "scripts/submit-indexnow.ts",
       ],
-      { cwd }
+      { cwd },
     );
 
-    const { stdout: statusOut } = await execFileAsync(
-      "git",
-      ["status", "--porcelain"],
-      { cwd }
-    );
+    const { stdout: statusOut } = await execFileAsync("git", ["status", "--porcelain"], { cwd });
     if (!statusOut.trim()) {
       return { success: true, message: "Nothing to commit." };
     }
 
-    await execFileAsync(
-      "git",
-      ["commit", "-m", `seo-bot: ${summary}`],
-      { cwd }
-    );
+    await execFileAsync("git", ["commit", "-m", `seo-bot: ${summary}`], { cwd });
     await execFileAsync("git", ["push"], { cwd });
     return { success: true, message: "Committed and pushed." };
   } catch (err) {
@@ -613,7 +565,7 @@ async function writeDailyReport(
     commitMessage?: string;
     indexnowMessage?: string;
     dryRun: boolean;
-  }
+  },
 ): Promise<string> {
   const dir = path.resolve(cwd, config.output.reportDir);
   await fs.mkdir(dir, { recursive: true });
@@ -649,9 +601,7 @@ async function writeDailyReport(
     lines.push("| Task | Count | Cost | Latency (ms) |");
     lines.push("|------|-------|------|--------------|");
     for (const [task, data] of entries) {
-      lines.push(
-        `| ${task} | ${data.count} | $${data.costUSD.toFixed(4)} | ${data.latencyMs} |`
-      );
+      lines.push(`| ${task} | ${data.count} | $${data.costUSD.toFixed(4)} | ${data.latencyMs} |`);
     }
   }
   lines.push("");
@@ -666,7 +616,7 @@ async function writeDailyReport(
       const ship = r.shipped ? ` shipped=${r.shipped.slug}` : "";
       const err = r.error ? ` — ${r.error}` : "";
       lines.push(
-        `- **${r.task}** [${status}] cost=$${r.costUSD.toFixed(4)} latency=${r.latencyMs}ms${ship}${err}`
+        `- **${r.task}** [${status}] cost=$${r.costUSD.toFixed(4)} latency=${r.latencyMs}ms${ship}${err}`,
       );
     }
   }
@@ -733,7 +683,7 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
   // Circuit breaker pre-checks
   const state = await loadTodaysCircuitState(
     path.resolve(cwd, args.config.state.metricsFile),
-    dateISO
+    dateISO,
   );
   const breaker = new CircuitBreaker(args.config.circuitBreaker, state);
   const pre = breaker.preRunChecks();
@@ -746,15 +696,11 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
     const reportPath = await writeDailyReport(cwd, args.config, dateISO, {
       metrics,
       results: allResults,
-      haltReason: pre.reason,
+      ...(pre.reason !== undefined && { haltReason: pre.reason }),
       dryRun,
     });
     if (!dryRun) {
-      await saveMetricsHistory(
-        path.resolve(cwd, args.config.state.metricsFile),
-        dateISO,
-        metrics
-      );
+      await saveMetricsHistory(path.resolve(cwd, args.config.state.metricsFile), dateISO, metrics);
     }
     console.log(`[seo-bot] Report: ${reportPath}`);
     return metrics;
@@ -763,14 +709,17 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
   const systemPrompt = await loadSystemPrompt(cwd);
 
   // Run dailyResearch FIRST if present
-  const { brief, result: researchResult, remainingTasks } =
-    await loadResearchIfInList(tasksToday, {
-      config: args.config,
-      dedup,
-      systemPrompt,
-      dryRun,
-      date: args.date,
-    });
+  const {
+    brief,
+    result: researchResult,
+    remainingTasks,
+  } = await loadResearchIfInList(tasksToday, {
+    config: args.config,
+    dedup,
+    systemPrompt,
+    dryRun,
+    date: args.date,
+  });
   if (researchResult) {
     allResults.push(researchResult);
     updateMetricsForResult(metrics, researchResult);
@@ -787,9 +736,7 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
   // Iterate remaining tasks
   for (const taskName of remainingTasks) {
     if (breaker.isHalted()) {
-      console.warn(
-        `[seo-bot] Halted — skipping remaining tasks: ${breaker.getHaltReason()}`
-      );
+      console.warn(`[seo-bot] Halted — skipping remaining tasks: ${breaker.getHaltReason()}`);
       break;
     }
 
@@ -818,24 +765,15 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
     }
 
     // Ship-type gating
-    if (
-      taskName === "blogPost" &&
-      !breaker.canShipBlog().allowed
-    ) {
-      console.warn(
-        `[seo-bot] Skipping ${taskName}: ${breaker.canShipBlog().reason}`
-      );
+    if (taskName === "blogPost" && !breaker.canShipBlog().allowed) {
+      console.warn(`[seo-bot] Skipping ${taskName}: ${breaker.canShipBlog().reason}`);
       continue;
     }
     if (
-      (taskName === "geoPage" ||
-        taskName === "nichePage" ||
-        taskName === "comparison") &&
+      (taskName === "geoPage" || taskName === "nichePage" || taskName === "comparison") &&
       !breaker.canShipPage().allowed
     ) {
-      console.warn(
-        `[seo-bot] Skipping ${taskName}: ${breaker.canShipPage().reason}`
-      );
+      console.warn(`[seo-bot] Skipping ${taskName}: ${breaker.canShipPage().reason}`);
       continue;
     }
 
@@ -843,12 +781,7 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
     const taskPrompt = (await loadTaskPrompt(cwd, taskName)) ?? "";
 
     // Pop backlog item if task needs one
-    const backlogItem = await popBacklogItem(
-      cwd,
-      args.config,
-      taskName,
-      dryRun
-    );
+    const backlogItem = await popBacklogItem(cwd, args.config, taskName, dryRun);
 
     // Resolve LLM provider instance
     let providerInstance;
@@ -886,7 +819,7 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
       const fn = pickTaskFunction(mod, taskName);
       if (!fn) {
         throw new Error(
-          `Task module for "${taskName}" missing expected export "${TASK_EXPORT_MAP[taskName]}"`
+          `Task module for "${taskName}" missing expected export "${TASK_EXPORT_MAP[taskName]}"`,
         );
       }
       rawResult = await fn(input);
@@ -913,9 +846,7 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
       if (!result.success) {
         const { halted } = breaker.recordError();
         if (halted) {
-          console.warn(
-            `[seo-bot] Halting further tasks after error: ${breaker.getHaltReason()}`
-          );
+          console.warn(`[seo-bot] Halting further tasks after error: ${breaker.getHaltReason()}`);
           break;
         }
       }
@@ -936,22 +867,17 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
   const hasShippedContent = newShipped.length > 0;
   if (!dryRun && hasShippedContent) {
     // Append to shipped manifest BEFORE typecheck so rollback knows what to delete
-    await appendToShippedManifest(
-      path.resolve(cwd, args.config.state.shippedFile),
-      newShipped
-    );
+    await appendToShippedManifest(path.resolve(cwd, args.config.state.shippedFile), newShipped);
 
     const tc = await runTypecheck(cwd);
     if (!tc.success) {
       typecheckFailure = [tc.stdout, tc.stderr].filter(Boolean).join("\n");
       console.error("[seo-bot] Typecheck failed. Rolling back shipped files.");
       const removed = await rollbackShippedFiles(cwd, newShipped);
-      console.error(
-        `[seo-bot] Rolled back ${removed.length} file(s): ${removed.join(", ")}`
-      );
+      console.error(`[seo-bot] Rolled back ${removed.length} file(s): ${removed.join(", ")}`);
       // Drop shipped records from metrics since we rolled back
       metrics.errors.push(
-        `Typecheck failed — rolled back ${removed.length} file(s). Details in report.`
+        `Typecheck failed — rolled back ${removed.length} file(s). Details in report.`,
       );
     } else {
       const summary = summarizeShipped(newShipped);
@@ -970,23 +896,20 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
     indexnowMessage = "Dry run: indexnow skipped.";
   }
 
+  const haltReason = breaker.isHalted() ? breaker.getHaltReason() : undefined;
   const reportPath = await writeDailyReport(cwd, args.config, dateISO, {
     metrics,
     results: allResults,
-    haltReason: breaker.isHalted() ? breaker.getHaltReason() : undefined,
-    typecheckFailure,
-    commitMessage,
-    indexnowMessage,
+    ...(haltReason !== undefined && { haltReason }),
+    ...(typecheckFailure !== undefined && { typecheckFailure }),
+    ...(commitMessage !== undefined && { commitMessage }),
+    ...(indexnowMessage !== undefined && { indexnowMessage }),
     dryRun,
   });
   console.log(`[seo-bot] Report: ${reportPath}`);
 
   if (!dryRun) {
-    await saveMetricsHistory(
-      path.resolve(cwd, args.config.state.metricsFile),
-      dateISO,
-      metrics
-    );
+    await saveMetricsHistory(path.resolve(cwd, args.config.state.metricsFile), dateISO, metrics);
   }
 
   return metrics;
@@ -998,8 +921,6 @@ function summarizeShipped(items: ShippedItem[]): string {
   for (const item of items) {
     counts[item.type] = (counts[item.type] ?? 0) + 1;
   }
-  const parts = Object.entries(counts).map(
-    ([type, n]) => `${n} ${type}${n > 1 ? "s" : ""}`
-  );
+  const parts = Object.entries(counts).map(([type, n]) => `${n} ${type}${n > 1 ? "s" : ""}`);
   return parts.join(", ");
 }

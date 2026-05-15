@@ -21,9 +21,7 @@ export interface DailyResearchResult extends TaskExecutionResult {
   brief?: ResearchBrief;
 }
 
-export async function runDailyResearch(
-  input: DailyResearchInput
-): Promise<DailyResearchResult> {
+export async function runDailyResearch(input: DailyResearchInput): Promise<DailyResearchResult> {
   const start = Date.now();
   try {
     const brief = await buildDailyBrief({

@@ -80,7 +80,7 @@ function getAllUrls(): string[] {
     `${BASE_URL}/ai-content-department`,
     `${BASE_URL}/social-media-on-autopilot`,
     `${BASE_URL}/ai-social-media-management`,
-    `${BASE_URL}/managed-social-media-service`
+    `${BASE_URL}/managed-social-media-service`,
   );
 
   // Blog posts - scan content/blog directory
@@ -205,9 +205,7 @@ async function submitUrls(urls: string[], key: string): Promise<void> {
     console.log(`✓ Successfully submitted ${urls.length} URLs to IndexNow`);
     console.log(`  Status: ${response.status} ${response.statusText}`);
     console.log(`\nSearch engines notified: Bing, Yandex, Naver, Seznam, Yep`);
-    console.log(
-      `Note: Google does not support IndexNow. Use Search Console for Google.`
-    );
+    console.log(`Note: Google does not support IndexNow. Use Search Console for Google.`);
   } else {
     const errorMessages: Record<number, string> = {
       400: "Invalid request format",
@@ -217,9 +215,7 @@ async function submitUrls(urls: string[], key: string): Promise<void> {
     };
 
     console.error(`✗ Failed to submit URLs`);
-    console.error(
-      `  Error: ${errorMessages[response.status] || `HTTP ${response.status}`}`
-    );
+    console.error(`  Error: ${errorMessages[response.status] || `HTTP ${response.status}`}`);
     process.exit(1);
   }
 }
@@ -228,19 +224,16 @@ async function main() {
   const args = process.argv.slice(2);
   const dryRun = args.includes("--dry-run");
   const singleUrlIndex = args.indexOf("--url");
-  const singleUrl =
-    singleUrlIndex !== -1 ? args[singleUrlIndex + 1] : undefined;
+  const singleUrl = singleUrlIndex !== -1 ? args[singleUrlIndex + 1] : undefined;
 
   const key = process.env.INDEXNOW_API_KEY;
 
   if (!key && !dryRun) {
     console.error("Error: INDEXNOW_API_KEY environment variable not set");
     console.error("\nUsage:");
+    console.error("  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts");
     console.error(
-      "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts"
-    );
-    console.error(
-      "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts --url https://prestyj.com/blog/example"
+      "  INDEXNOW_API_KEY=your-key npx tsx scripts/submit-indexnow.ts --url https://prestyj.com/blog/example",
     );
     console.error("  npx tsx scripts/submit-indexnow.ts --dry-run");
     process.exit(1);

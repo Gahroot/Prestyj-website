@@ -1,9 +1,4 @@
-import type {
-  AppConfig,
-  LLMProvider,
-  ProviderEndpointConfig,
-  ProviderName,
-} from "../types";
+import type { AppConfig, LLMProvider, ProviderEndpointConfig, ProviderName } from "../types";
 import { AnthropicProvider } from "./anthropic";
 import { GeminiProvider } from "./gemini";
 import { OpenAICompatProvider } from "./openai-compat";
@@ -26,7 +21,7 @@ function buildProvider(cfg: ConfiguredProvider): LLMProvider {
     default: {
       const exhaustive: never = cfg.type;
       throw new Error(
-        `[llm] Unknown provider type "${String(exhaustive)}" — update router switch.`
+        `[llm] Unknown provider type "${String(exhaustive)}" — update router switch.`,
       );
     }
   }
@@ -37,23 +32,20 @@ export function getProvider(config: AppConfig, name: string): LLMProvider {
   if (!cfg) {
     throw new Error(
       `[llm] Provider "${name}" not found in config. Available: ${Object.keys(
-        config.providers
-      ).join(", ")}`
+        config.providers,
+      ).join(", ")}`,
     );
   }
   const provider = buildProvider(cfg);
   if (!provider.isConfigured()) {
     throw new Error(
-      `[llm] Provider "${name}" is not configured: env var ${cfg.apiKeyEnv} is missing or empty.`
+      `[llm] Provider "${name}" is not configured: env var ${cfg.apiKeyEnv} is missing or empty.`,
     );
   }
   return provider;
 }
 
-export function tryGetProvider(
-  config: AppConfig,
-  name: string
-): LLMProvider | undefined {
+export function tryGetProvider(config: AppConfig, name: string): LLMProvider | undefined {
   const cfg = config.providers[name];
   if (!cfg) return undefined;
   const provider = buildProvider(cfg);

@@ -154,7 +154,8 @@ const OFFERS: Offer[] = [
     expansionRate: beta(0.32, 60), // lower entry = bigger top, slightly higher expansion %
     expansionMRR: BLENDED_PLAN_MRR,
     expansionMonths: AVG_RETENTION_MONTHS,
-    notes: "Trip-wire ADDED below current pricing. Doesn't cannibalize — catches buyers who'd never pay $1,497.",
+    notes:
+      "Trip-wire ADDED below current pricing. Doesn't cannibalize — catches buyers who'd never pay $1,497.",
   },
   {
     name: "Batch Video Ads — reprice 300/$497 (replace)",
@@ -335,7 +336,10 @@ function simulate(offer: Offer): Result {
   }
 
   const year1RevenueP50 = pct(year1Revenue, 0.5);
-  const cacP50 = pct(cacs.filter((c) => Number.isFinite(c)), 0.5);
+  const cacP50 = pct(
+    cacs.filter((c) => Number.isFinite(c)),
+    0.5,
+  );
   const adSpendTotal = adSpend;
 
   return {
@@ -393,7 +397,9 @@ results.forEach((r, i) => {
   const rev = `${money(r.year1RevenueP10).padStart(7)} / ${money(r.year1RevenueP50).padStart(7)} / ${money(r.year1RevenueP90).padStart(7)}`;
   const cac = `$${fmt(r.cacP50, 0).trim().padStart(5)}`;
   const payback = `${r.paybackRatio.toFixed(1)}x`;
-  console.log(`  ${(i + 1).toString().padStart(2)}. ${name} ${rev}   ${cac}   ${payback.padStart(5)}`);
+  console.log(
+    `  ${(i + 1).toString().padStart(2)}. ${name} ${rev}   ${cac}   ${payback.padStart(5)}`,
+  );
 });
 
 console.log("\nREVENUE BREAKDOWN — where the money comes from\n");

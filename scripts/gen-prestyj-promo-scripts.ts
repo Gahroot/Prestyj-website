@@ -142,8 +142,9 @@ function parseArgs() {
   };
   for (let i = 0; i < args.length; i++) {
     const arg = args[i];
-    if (arg === "--count") opts.count = parseInt(args[++i], 10);
-    else if (arg === "--pains") opts.pains = args[++i].split(",").map((n) => parseInt(n, 10));
+    if (arg === "--count") opts.count = parseInt(args[++i] ?? "", 10);
+    else if (arg === "--pains")
+      opts.pains = (args[++i] ?? "").split(",").map((n) => parseInt(n, 10));
     else if (arg === "--list") opts.list = true;
     else if (arg === "--dry-run") opts.dryRun = true;
     else if (arg === "--help" || arg === "-h") {
@@ -172,7 +173,10 @@ function shuffle<T>(arr: T[]): T[] {
   const out = [...arr];
   for (let i = out.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [out[i], out[j]] = [out[j], out[i]];
+    const ai = out[i] as T;
+    const aj = out[j] as T;
+    out[i] = aj;
+    out[j] = ai;
   }
   return out;
 }
