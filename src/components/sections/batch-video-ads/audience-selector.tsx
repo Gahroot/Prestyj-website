@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Briefcase, Building2, Megaphone, Mic, Wrench, type LucideIcon } from "lucide-react";
+import { Briefcase, Building2, Megaphone, Mic, Target, Wrench, type LucideIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
@@ -26,6 +26,19 @@ interface AudienceSelectorProps {
 }
 
 const DEFAULT_AUDIENCES: AudienceProfile[] = [
+  {
+    id: "everyone",
+    label: "Anyone Running Paid Ads",
+    icon: Target,
+    headline: "Ads, not videos.",
+    pain: "You don't need a brand film. You need 100+ angles to find what converts.",
+    outcome: "100 ads for $497, 24-hour turnaround, ready to upload.",
+    bullets: [
+      "Works for any product, service, or offer",
+      "Native vertical format for Meta, TikTok, YouTube Shorts",
+      "Scale to 300, 500, or 1,000 anytime",
+    ],
+  },
   {
     id: "coaches",
     label: "Coaches & Course Creators",
