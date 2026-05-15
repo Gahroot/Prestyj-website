@@ -1005,6 +1005,83 @@ export function BatchVideoAdsClient() {
         </div>
       </section>
 
+      {/* WHY NOT JUST START WITH 500 */}
+      <section className="bg-muted/20 px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
+              Why not just start with 500?
+            </h2>
+          </AnimateOnScroll>
+
+          <div className="grid grid-cols-1 items-stretch gap-8 md:grid-cols-2">
+            <AnimateOnScroll>
+              <BorderGlow borderRadius={18} innerClassName="p-6 md:p-8 h-full">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-sm">
+                    <thead>
+                      <tr className="border-border/60 border-b">
+                        <th className="text-muted-foreground pb-3 pr-4 font-semibold">Tier</th>
+                        <th className="text-muted-foreground pb-3 pr-4 font-semibold">Price</th>
+                        <th className="text-muted-foreground pb-3 font-semibold">Cost per ad</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-border/40 divide-y">
+                      <tr>
+                        <td className="text-foreground py-3 pr-4">100 ads</td>
+                        <td className="text-foreground py-3 pr-4 font-semibold">$497</td>
+                        <td className="text-muted-foreground py-3">$4.97</td>
+                      </tr>
+                      <tr>
+                        <td className="text-foreground py-3 pr-4">300 ads</td>
+                        <td className="text-foreground py-3 pr-4 font-semibold">$1,497</td>
+                        <td className="text-muted-foreground py-3">$4.99</td>
+                      </tr>
+                      <tr className="bg-primary/5">
+                        <td className="text-foreground py-3 pr-4 font-semibold">
+                          500 ads
+                          <span className="bg-primary/15 text-primary ml-2 rounded-full px-2 py-0.5 text-[10px] font-bold tracking-wide uppercase">
+                            Sweet spot
+                          </span>
+                        </td>
+                        <td className="text-foreground py-3 pr-4 font-semibold">$2,497</td>
+                        <td className="text-muted-foreground py-3">$4.99</td>
+                      </tr>
+                      <tr>
+                        <td className="text-foreground py-3 pr-4">1,000 ads</td>
+                        <td className="text-foreground py-3 pr-4 font-semibold">$3,997</td>
+                        <td className="text-success py-3 font-semibold">$4.00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </BorderGlow>
+            </AnimateOnScroll>
+
+            <AnimateOnScroll delay={0.1}>
+              <BorderGlow borderRadius={18} innerClassName="p-6 md:p-8 h-full flex flex-col justify-center">
+                <h3 className="font-heading text-foreground mb-4 text-2xl font-bold md:text-3xl">
+                  $497 is the cheapest way to see if our scripts work for your offer.
+                </h3>
+                <p className="text-muted-foreground mb-6 text-base leading-relaxed md:text-lg">
+                  If they do, you&apos;ll want more angles fast. 500 is where most buyers end up —
+                  same delivery time, more variations, lower cost per ad.
+                </p>
+                <div>
+                  <a
+                    href="#pricing"
+                    className="text-primary inline-flex items-center gap-1 text-sm font-semibold hover:underline"
+                  >
+                    Jump to the 500-pack
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              </BorderGlow>
+            </AnimateOnScroll>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="px-4 py-24">
         <div className="mx-auto max-w-3xl">
