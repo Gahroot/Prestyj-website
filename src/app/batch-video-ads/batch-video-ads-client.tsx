@@ -331,7 +331,7 @@ export function BatchVideoAdsClient() {
           >
             <Badge variant="outline" className="border-primary/50 text-primary mb-3">
               <ShinyText
-                text="ADD-ON TO AI MARKETING AGENT PLANS"
+                text="Sample the system — 100 ads for $497"
                 speed={3}
                 color="#b0b0b0"
                 shineColor="#7058e3"
@@ -341,13 +341,13 @@ export function BatchVideoAdsClient() {
 
           <h1 className="font-heading text-foreground mb-4 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
             <BlurText
-              text="AI-produced video ads — 300+ ads in 24 hours,"
+              text="100 video ads. $497."
               delay={60}
               animateBy="words"
               className="justify-center"
             />
             <BlurText
-              text="as an add-on to your AI marketing agent plan."
+              text="Delivered in 24 hours."
               delay={60}
               animateBy="words"
               className="text-primary justify-center"
@@ -393,14 +393,8 @@ export function BatchVideoAdsClient() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-muted-foreground mx-auto mb-3 max-w-3xl text-sm sm:text-base"
           >
-            Add a Batch Video Ad pack to your AI marketing agent plan. Send 15–20 minutes of casual
-            selfie footage and get back{" "}
-            <span className="text-foreground font-semibold">
-              300+ scripted ads that look like content, not ads
-            </span>
-            , delivered in <span className="text-foreground font-semibold">1–2 business days</span>.
-            Packs start at <span className="text-foreground font-semibold">$1,497</span> (~$4 per
-            ad) vs $500–$2K per ad at an agency.
+            One recording session. We script, edit, and ship 100 vertical ads built to test on Meta,
+            TikTok, and YouTube Shorts. For anyone running paid video ads.
           </motion.p>
 
           <motion.div
@@ -411,16 +405,16 @@ export function BatchVideoAdsClient() {
           >
             <ClickSpark sparkColor="#7058e3" sparkCount={12} sparkRadius={28}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <a href="#pricing">
+                  Get 100 ads for $497
                   <Rocket className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
             </ClickSpark>
             <ClickSpark sparkColor="#5ee5b3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" variant="outline" className="px-8 text-lg font-bold" asChild>
                 <a href="#pricing">
-                  See Pack Pricing
+                  See the 500-pack
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
