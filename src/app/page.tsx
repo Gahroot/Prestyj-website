@@ -37,11 +37,18 @@ const FAQSection = dynamic(() => import("@/components/sections/faq").then((m) =>
 const CTASection = dynamic(() => import("@/components/sections/cta").then((m) => m.CTASection), {
   ssr: true,
 });
+const BatchVideoAdsFeatureSection = dynamic(
+  () =>
+    import("@/components/sections/landing/batch-video-ads-feature").then(
+      (m) => m.BatchVideoAdsFeatureSection,
+    ),
+  { ssr: true },
+);
 
 export const metadata: Metadata = {
   title: "Prestyj | AI Agents for Marketing & Sales",
   description:
-    "We build AI agents that run your marketing and sales — capture leads, respond in seconds, qualify, and book meetings 24/7.",
+    "100 video ads for $497, delivered in 24 hours. Scale to 300, 500, or 1,000 anytime. Built for anyone running paid ads.",
   keywords: [
     "AI sales agent",
     "AI marketing agent",
@@ -62,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Prestyj | AI Agents for Marketing & Sales",
     description:
-      "We build AI agents that run your marketing and sales — capture leads, respond in seconds, qualify, and book meetings 24/7.",
+      "100 video ads for $497, delivered in 24 hours. Scale to 300, 500, or 1,000 anytime. Built for anyone running paid ads.",
     type: "website",
     url: "https://prestyj.com",
   },
@@ -70,7 +77,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prestyj | AI Agents for Marketing & Sales",
     description:
-      "We build AI agents that run your marketing and sales — capture leads, respond in seconds, qualify, and book meetings 24/7.",
+      "100 video ads for $497, delivered in 24 hours. Scale to 300, 500, or 1,000 anytime. Built for anyone running paid ads.",
   },
   alternates: {
     canonical: "https://prestyj.com",
@@ -91,6 +98,7 @@ export default function Home() {
         <SolutionSection />
         <HowItWorksSection />
         <StatisticsSection />
+        <BatchVideoAdsFeatureSection />
         <PricingSection />
         <FAQSection />
         <CTASection />

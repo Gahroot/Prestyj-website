@@ -2,14 +2,20 @@ import type { Metadata } from "next";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 export const metadata: Metadata = {
-  title: "Batch Video Ads — Add-on to Your AI Marketing Agent Plan",
+  title: "100 Video Ads for $497 — Batch Video Ads by Prestyj",
   description:
-    "AI-produced video ads as an add-on to your AI marketing agent plan. 300+ scripted video ads from a single recording session, delivered in 1–2 business days.",
+    "100 vertical video ads in 24 hours for $497. One recording session. Scale to 300, 500, or 1,000 anytime. For anyone running paid ads.",
   openGraph: {
-    title: "Batch Video Ads — Add-on to Your AI Marketing Agent Plan",
+    title: "100 Video Ads for $497 — Batch Video Ads by Prestyj",
     description:
-      "AI-produced video ads as an add-on to your AI marketing agent plan. 300+ scripted video ads from a single recording session, delivered in 1–2 business days.",
+      "100 vertical video ads in 24 hours for $497. One recording session. Scale to 300, 500, or 1,000 anytime. For anyone running paid ads.",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "100 Video Ads for $497 — Batch Video Ads by Prestyj",
+    description:
+      "100 vertical video ads in 24 hours for $497. One recording session. Scale to 300, 500, or 1,000 anytime. For anyone running paid ads.",
   },
 };
 
