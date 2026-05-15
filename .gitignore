@@ -47,6 +47,8 @@ next-env.d.ts
 
 # analytics exports
 *.csv
+# ...but allow the tracked AI citation archive (aggregate query/citation counts, no PII)
+!data/ai-citations/**/*.csv
 
 # media master assets
 media-master/
