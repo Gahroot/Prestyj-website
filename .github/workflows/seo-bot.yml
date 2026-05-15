@@ -2,14 +2,14 @@ name: SEO Bot Daily Run
 
 on:
   schedule:
-    - cron: '0 7 * * *'  # 7am UTC daily
+    - cron: "0 7 * * *" # 7am UTC daily
   workflow_dispatch:
     inputs:
       tasks:
-        description: 'Comma-separated task list (override rotation)'
+        description: "Comma-separated task list (override rotation)"
         required: false
       dryRun:
-        description: 'Dry run (no commit)'
+        description: "Dry run (no commit)"
         type: boolean
         default: false
 
@@ -25,8 +25,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
       - run: npm ci
       - name: Configure git
         run: |
