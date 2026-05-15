@@ -73,11 +73,11 @@ export default function BrokeragePlaybookPage() {
     }
   };
 
-  const handleInputChange = (field: keyof Omit<FormData, "magnetType">) => (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
-    setFormData((prev) => ({ ...prev, [field]: e.target.value }));
-  };
+  const handleInputChange =
+    (field: keyof Omit<FormData, "magnetType">) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      setFormData((prev) => ({ ...prev, [field]: e.target.value }));
+    };
 
   const handleDownloadClick = () => {
     if (downloadUrl) {
@@ -88,9 +88,9 @@ export default function BrokeragePlaybookPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-b from-background to-muted/20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <main className="from-background to-muted/20 min-h-screen bg-gradient-to-b">
+        <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="grid items-start gap-12 lg:grid-cols-2">
             {/* Left Column - Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -99,25 +99,27 @@ export default function BrokeragePlaybookPage() {
               className="space-y-8"
             >
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
-                <FileText className="w-4 h-4" />
+              <div className="bg-primary/10 text-primary inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
+                <FileText className="h-4 w-4" />
                 Free Playbook
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl sm:text-5xl font-heading font-bold tracking-tighter">
+              <h1 className="font-heading text-4xl font-bold tracking-tighter sm:text-5xl">
                 The $20M+ Brokerage Playbook:{" "}
                 <span className="text-primary">How Top Teams Convert 3x More Ad Leads with AI</span>
               </h1>
 
               {/* Subheadline */}
-              <p className="text-xl text-muted-foreground">
-                The exact playbook top real estate teams and brokerages use to respond to every Facebook and YouTube lead in under 60 seconds — and book 3x more appointments without adding ISAs.
+              <p className="text-muted-foreground text-xl">
+                The exact playbook top real estate teams and brokerages use to respond to every
+                Facebook and YouTube lead in under 60 seconds — and book 3x more appointments
+                without adding ISAs.
               </p>
 
               {/* What You Get */}
               <BorderGlow borderRadius={14} innerClassName="p-6 space-y-4">
-                <h2 className="text-lg font-heading font-bold mb-4">What&apos;s Inside</h2>
+                <h2 className="font-heading mb-4 text-lg font-bold">What&apos;s Inside</h2>
 
                 <div className="space-y-4">
                   {[
@@ -147,10 +149,10 @@ export default function BrokeragePlaybookPage() {
                     },
                   ].map((item) => (
                     <div key={item.title} className="flex gap-3">
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                      <CheckCircle className="text-primary mt-0.5 h-5 w-5 shrink-0" />
                       <div>
                         <p className="font-medium">{item.title}</p>
-                        <p className="text-sm text-muted-foreground">{item.desc}</p>
+                        <p className="text-muted-foreground text-sm">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -158,10 +160,10 @@ export default function BrokeragePlaybookPage() {
               </BorderGlow>
 
               {/* Who This Is For */}
-              <div className="bg-primary/5 rounded-xl border border-primary/20 p-6">
-                <div className="flex gap-3 mb-4">
-                  <Building2 className="w-6 h-6 text-primary" />
-                  <h2 className="text-lg font-heading font-bold">
+              <div className="bg-primary/5 border-primary/20 rounded-xl border p-6">
+                <div className="mb-4 flex gap-3">
+                  <Building2 className="text-primary h-6 w-6" />
+                  <h2 className="font-heading text-lg font-bold">
                     Made for Real Estate Team Leaders & Broker-Owners
                   </h2>
                 </div>
@@ -181,10 +183,8 @@ export default function BrokeragePlaybookPage() {
               </div>
 
               {/* Social Proof placeholder — early customer results coming soon */}
-              <div className="border-t border-border pt-6">
-                <p className="text-sm text-muted-foreground">
-                  Early customer results coming soon.
-                </p>
+              <div className="border-border border-t pt-6">
+                <p className="text-muted-foreground text-sm">Early customer results coming soon.</p>
               </div>
             </motion.div>
 
@@ -203,16 +203,18 @@ export default function BrokeragePlaybookPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <BorderGlow borderRadius={18} innerClassName="p-8 sm:p-10" className="shadow-xl">
+                    <BorderGlow
+                      borderRadius={18}
+                      innerClassName="p-8 sm:p-10"
+                      className="shadow-xl"
+                    >
                       {/* Form Header */}
-                      <div className="text-center mb-8">
-                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                          <Download className="w-4 h-4" />
+                      <div className="mb-8 text-center">
+                        <div className="bg-primary/10 text-primary mb-4 inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium">
+                          <Download className="h-4 w-4" />
                           Free Instant Access
                         </div>
-                        <h2 className="text-2xl font-heading font-bold">
-                          Get Your Free Playbook
-                        </h2>
+                        <h2 className="font-heading text-2xl font-bold">Get Your Free Playbook</h2>
                         <p className="text-muted-foreground">
                           We&apos;ll send it immediately — no fluff, no sales pitch.
                         </p>
@@ -221,13 +223,13 @@ export default function BrokeragePlaybookPage() {
                       {/* Form */}
                       <form onSubmit={handleSubmit} className="space-y-5">
                         {error && (
-                          <div className="mb-4 p-3 rounded-lg bg-destructive/10 text-destructive text-sm">
+                          <div className="bg-destructive/10 text-destructive mb-4 rounded-lg p-3 text-sm">
                             {error}
                           </div>
                         )}
 
                         <div>
-                          <label htmlFor="name" className="block text-sm font-medium mb-2">
+                          <label htmlFor="name" className="mb-2 block text-sm font-medium">
                             Full Name <span className="text-destructive">*</span>
                           </label>
                           <input
@@ -237,12 +239,12 @@ export default function BrokeragePlaybookPage() {
                             placeholder="Sarah Johnson"
                             value={formData.name}
                             onChange={handleInputChange("name")}
-                            className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="email" className="block text-sm font-medium mb-2">
+                          <label htmlFor="email" className="mb-2 block text-sm font-medium">
                             Work Email <span className="text-destructive">*</span>
                           </label>
                           <input
@@ -252,12 +254,12 @@ export default function BrokeragePlaybookPage() {
                             placeholder="sarah@premierhomes.com"
                             value={formData.email}
                             onChange={handleInputChange("email")}
-                            className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="brokerage" className="block text-sm font-medium mb-2">
+                          <label htmlFor="brokerage" className="mb-2 block text-sm font-medium">
                             Brokerage / Team Name
                           </label>
                           <input
@@ -266,19 +268,19 @@ export default function BrokeragePlaybookPage() {
                             placeholder="Premier Homes Team"
                             value={formData.brokerage}
                             onChange={handleInputChange("brokerage")}
-                            className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
                           />
                         </div>
 
                         <div>
-                          <label htmlFor="teamSize" className="block text-sm font-medium mb-2">
+                          <label htmlFor="teamSize" className="mb-2 block text-sm font-medium">
                             Team Size
                           </label>
                           <select
                             id="teamSize"
                             value={formData.teamSize}
                             onChange={handleInputChange("teamSize")}
-                            className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
                           >
                             <option value="">Select team size...</option>
                             <option value="1-5">1–5 agents</option>
@@ -290,14 +292,14 @@ export default function BrokeragePlaybookPage() {
                         </div>
 
                         <div>
-                          <label htmlFor="adSpend" className="block text-sm font-medium mb-2">
+                          <label htmlFor="adSpend" className="mb-2 block text-sm font-medium">
                             Monthly Ad Spend
                           </label>
                           <select
                             id="adSpend"
                             value={formData.adSpend}
                             onChange={handleInputChange("adSpend")}
-                            className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                            className="border-border bg-background focus:ring-primary w-full rounded-lg border px-4 py-3 transition-all focus:border-transparent focus:ring-2 focus:outline-none"
                           >
                             <option value="">Select monthly ad spend...</option>
                             <option value="under-1k">Under $1,000/month</option>
@@ -311,16 +313,16 @@ export default function BrokeragePlaybookPage() {
                         <button
                           type="submit"
                           disabled={loading}
-                          className="w-full bg-primary text-primary-foreground font-medium py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                          className="bg-primary text-primary-foreground hover:bg-primary/90 flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50"
                         >
                           {loading ? (
                             <>
-                              <Loader2 className="w-4 h-4 animate-spin" />
+                              <Loader2 className="h-4 w-4 animate-spin" />
                               Sending...
                             </>
                           ) : (
                             <>
-                              <Download className="w-4 h-4" />
+                              <Download className="h-4 w-4" />
                               Get Your Free Playbook
                             </>
                           )}
@@ -328,9 +330,9 @@ export default function BrokeragePlaybookPage() {
                       </form>
 
                       {/* Trust Signals */}
-                      <div className="mt-6 pt-6 border-t border-border">
-                        <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                          <Mail className="w-3 h-3" />
+                      <div className="border-border mt-6 border-t pt-6">
+                        <div className="text-muted-foreground flex items-center gap-2 text-xs">
+                          <Mail className="h-3 w-3" />
                           <span>No spam, ever. Unsubscribe anytime.</span>
                         </div>
                       </div>
@@ -344,61 +346,64 @@ export default function BrokeragePlaybookPage() {
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.3 }}
                   >
-                  <BorderGlow borderRadius={18} innerClassName="p-8 sm:p-10 text-center" className="shadow-xl">
-                    <motion.div
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.2, type: "spring" }}
-                      className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6"
+                    <BorderGlow
+                      borderRadius={18}
+                      innerClassName="p-8 sm:p-10 text-center"
+                      className="shadow-xl"
                     >
-                      <CheckCircle className="w-8 h-8 text-primary" />
-                    </motion.div>
-
-                    <h2 className="text-2xl font-heading font-bold mb-3">
-                      Your Playbook Is Ready
-                    </h2>
-                    <p className="text-muted-foreground mb-6">
-                      <span className="font-semibold">
-                        The $20M+ Brokerage Playbook
-                      </span>{" "}
-                      is ready to download. We&apos;ve also saved a copy to{" "}
-                      <span className="font-medium">{formData.email}</span>.
-                    </p>
-                    {downloadUrl && (
-                      <button
-                        onClick={handleDownloadClick}
-                        className="mt-4 w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-medium py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors"
+                      <motion.div
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ delay: 0.2, type: "spring" }}
+                        className="bg-primary/10 mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full"
                       >
-                        <Download className="w-4 h-4" />
-                        Download Your Playbook Now
-                      </button>
-                    )}
+                        <CheckCircle className="text-primary h-8 w-8" />
+                      </motion.div>
 
-                    <div className="bg-primary/5 rounded-lg p-4 text-left space-y-3 mt-6">
-                      <p className="font-medium">What&apos;s Next:</p>
-                      <ol className="space-y-2 text-sm text-muted-foreground">
-                        <li className="flex gap-2">
-                          <span className="text-primary font-bold">1.</span>
-                          <span>Read the playbook (takes about 20 minutes)</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-primary font-bold">2.</span>
-                          <span>Book a demo to see AI lead response in action</span>
-                        </li>
-                        <li className="flex gap-2">
-                          <span className="text-primary font-bold">3.</span>
-                          <span>Start converting 3x more of your ad leads</span>
-                        </li>
-                      </ol>
-                    </div>
+                      <h2 className="font-heading mb-3 text-2xl font-bold">
+                        Your Playbook Is Ready
+                      </h2>
+                      <p className="text-muted-foreground mb-6">
+                        <span className="font-semibold">The $20M+ Brokerage Playbook</span> is ready
+                        to download. We&apos;ve also saved a copy to{" "}
+                        <span className="font-medium">{formData.email}</span>.
+                      </p>
+                      {downloadUrl && (
+                        <button
+                          onClick={handleDownloadClick}
+                          className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 font-medium transition-colors"
+                        >
+                          <Download className="h-4 w-4" />
+                          Download Your Playbook Now
+                        </button>
+                      )}
 
-                    <a
-                      href="/book-demo"
-                      className="inline-flex items-center justify-center gap-2 w-full bg-primary text-primary-foreground font-medium py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors text-center mt-4"
-                    >
-                      Book Your Strategy Call
-                    </a>
-                  </BorderGlow>
+                      <div className="bg-primary/5 mt-6 space-y-3 rounded-lg p-4 text-left">
+                        <p className="font-medium">What&apos;s Next:</p>
+                        <ol className="text-muted-foreground space-y-2 text-sm">
+                          <li className="flex gap-2">
+                            <span className="text-primary font-bold">1.</span>
+                            <span>Read the playbook (takes about 20 minutes)</span>
+                          </li>
+                          <li className="flex gap-2">
+                            <span className="text-primary font-bold">2.</span>
+                            <span>Book a demo to see AI lead response in action</span>
+                          </li>
+                          <li className="flex gap-2">
+                            <span className="text-primary font-bold">3.</span>
+                            <span>Start converting 3x more of your ad leads</span>
+                          </li>
+                        </ol>
+                      </div>
+
+                      {/* CTA-sweep: cold traffic → batch offer */}
+                      <a
+                        href="/batch-video-ads"
+                        className="bg-primary text-primary-foreground hover:bg-primary/90 mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-center font-medium transition-colors"
+                      >
+                        Get 100 ads for $497
+                      </a>
+                    </BorderGlow>
                   </motion.div>
                 )}
               </AnimatePresence>

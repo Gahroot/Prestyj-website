@@ -41,9 +41,10 @@ export function BatchVideoAdsCrossSellSection() {
                   ))}
                 </div>
               </div>
+              {/* CTA-sweep: cold traffic → batch offer */}
               <Button size="lg" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <Link href="/batch-video-ads">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

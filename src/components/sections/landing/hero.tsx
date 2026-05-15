@@ -24,29 +24,39 @@ interface LandingHeroProps {
 
 export function LandingHero({ content }: LandingHeroProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden">
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+    <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-16">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="outline" className="mb-6 border-primary/50 text-primary">
+            <Badge variant="outline" className="border-primary/50 text-primary mb-6">
               <ShinyText text={content.badge} speed={3} color="#b0b0b0" shineColor="#7058e3" />
             </Badge>
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold text-foreground mb-6">
-            <BlurText text={content.headline} delay={75} animateBy="words" className="justify-center" />
-            <BlurText text={content.headlineAccent} delay={75} animateBy="words" className="justify-center text-primary" />
+          <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
+            <BlurText
+              text={content.headline}
+              delay={75}
+              animateBy="words"
+              className="justify-center"
+            />
+            <BlurText
+              text={content.headlineAccent}
+              delay={75}
+              animateBy="words"
+              className="text-primary justify-center"
+            />
           </h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
+            className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg sm:text-xl"
           >
             {content.subheadline}
           </motion.p>
@@ -55,12 +65,13 @@ export function LandingHero({ content }: LandingHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
-              <Button size="lg" className="text-lg px-8" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+              {/* CTA-sweep: cold traffic → batch offer */}
+              <Button size="lg" className="px-8 text-lg" asChild>
+                <Link href="/batch-video-ads">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -77,11 +88,11 @@ export function LandingHero({ content }: LandingHeroProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-muted-foreground"
+            className="text-muted-foreground mt-16 flex flex-col items-center justify-center gap-8 sm:flex-row"
           >
             {content.stats.map((stat, index) => (
               <div key={stat.label} className="flex items-center gap-2">
-                {index > 0 && <div className="hidden sm:block w-px h-8 bg-border mr-6" />}
+                {index > 0 && <div className="bg-border mr-6 hidden h-8 w-px sm:block" />}
                 <span className={`text-2xl font-bold ${colorClasses[stat.color]}`}>
                   {stat.value}
                 </span>

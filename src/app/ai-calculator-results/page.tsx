@@ -225,9 +225,12 @@ export default function CalculatorResultsPage() {
               <Separator className="my-6" />
 
               <div className="flex flex-col gap-4 sm:flex-row">
+                {/* CTA-sweep: cold traffic → batch offer */}
                 <Button size="lg" className="flex-1" asChild>
-                  <Link href="/book-demo">
-                    <Calendar className="mr-2 h-5 w-5" />Book a Demo</Link>
+                  <Link href="/batch-video-ads">
+                    <Calendar className="mr-2 h-5 w-5" />
+                    Get 100 ads for $497
+                  </Link>
                 </Button>
                 <Button size="lg" variant="outline" className="flex-1" asChild>
                   <Link href="/contact">
@@ -237,9 +240,7 @@ export default function CalculatorResultsPage() {
                 </Button>
               </div>
 
-              <p className="text-muted-foreground text-center text-xs">
-                No credit card required
-              </p>
+              <p className="text-muted-foreground text-center text-xs">No credit card required</p>
             </CardContent>
           </Card>
 

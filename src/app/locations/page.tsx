@@ -23,8 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Prestyj by City",
-    description:
-      "Prestyj's AI agents for marketing & sales by city — across 20+ major US metros.",
+    description: "Prestyj's AI agents for marketing & sales by city — across 20+ major US metros.",
     type: "website",
     url: `${siteUrl}/locations`,
   },
@@ -112,11 +111,12 @@ export default function LocationsPage() {
               Prestyj serves home service businesses nationwide. Book a demo to learn how we can
               help you dominate your local market — wherever you operate.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <a
-              href="/book-demo"
+              href="/batch-video-ads"
               className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center justify-center rounded-md px-10 py-6 text-lg font-medium transition-colors"
             >
-              Book a Demo
+              Get 100 ads for $497
               <ArrowRight className="ml-2 h-5 w-5" />
             </a>
           </div>

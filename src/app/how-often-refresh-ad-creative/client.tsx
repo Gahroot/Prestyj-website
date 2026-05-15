@@ -178,9 +178,10 @@ export function RefreshCadenceClient({ faqs }: { faqs: Faq[] }) {
                   </p>
                 </div>
 
+                {/* CTA-sweep: cold traffic → batch offer */}
                 <Button size="lg" className="w-full font-bold" asChild>
-                  <Link href="/book-demo">
-                Book a Demo
+                  <Link href="/batch-video-ads">
+                    Get 100 ads for $497
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -289,9 +290,10 @@ export function RefreshCadenceClient({ faqs }: { faqs: Faq[] }) {
               pipeline for weeks or months off a single recording session.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
+              {/* CTA-sweep: cold traffic → batch offer */}
               <Button size="lg" className="font-bold" asChild>
-                <Link href="/book-demo">
-                Book a Demo
+                <Link href="/batch-video-ads">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
@@ -337,9 +339,10 @@ export function RefreshCadenceClient({ faqs }: { faqs: Faq[] }) {
             <p className="text-muted-foreground mb-8 text-lg md:text-xl">
               One recording. Months of fresh creative. No more fatigue.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

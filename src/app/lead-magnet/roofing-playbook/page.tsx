@@ -196,9 +196,7 @@ export default function RoofingPlaybookPage() {
 
               {/* Social Proof placeholder — early customer results coming soon */}
               <div className="border-border border-t pt-6">
-                <p className="text-muted-foreground text-sm">
-                  Early customer results coming soon.
-                </p>
+                <p className="text-muted-foreground text-sm">Early customer results coming soon.</p>
               </div>
             </motion.div>
 
@@ -382,13 +380,14 @@ export default function RoofingPlaybookPage() {
                       </div>
 
                       {/* Secondary CTA — demoted to subtle link */}
+                      {/* CTA-sweep: cold traffic → batch offer */}
                       <p className="text-muted-foreground mt-6 text-sm">
-                        Want to see AI response in action?{" "}
+                        Need fresh ad creative this week?{" "}
                         <Link
-                          href="/book-demo"
+                          href="/batch-video-ads"
                           className="text-primary font-medium underline-offset-4 hover:underline"
                         >
-                          Book a 15-min demo →
+                          Get 100 ads for $497 →
                         </Link>
                       </p>
                     </BorderGlow>

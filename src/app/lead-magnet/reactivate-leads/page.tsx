@@ -174,9 +174,7 @@ export default function ReactivateLeadsPage() {
 
               {/* Social Proof placeholder — early customer results coming soon */}
               <div className="border-border border-t pt-6">
-                <p className="text-muted-foreground text-sm">
-                  Early customer results coming soon.
-                </p>
+                <p className="text-muted-foreground text-sm">Early customer results coming soon.</p>
               </div>
             </motion.div>
 
@@ -206,9 +204,7 @@ export default function ReactivateLeadsPage() {
                           <Phone className="h-4 w-4" />
                           Call You in &lt;60 Seconds
                         </div>
-                        <h2 className="font-heading text-2xl font-bold">
-                          Get a Live AI Demo Call
-                        </h2>
+                        <h2 className="font-heading text-2xl font-bold">Get a Live AI Demo Call</h2>
                         <p className="text-muted-foreground">
                           Enter your details and our AI agent will call you right now to walk
                           through a reactivation scenario.
@@ -296,8 +292,8 @@ export default function ReactivateLeadsPage() {
                             className="accent-primary mt-0.5 h-4 w-4 shrink-0 cursor-pointer"
                           />
                           <span className="text-muted-foreground">
-                            By submitting, you agree to receive a phone call and follow-up text
-                            from our AI agent at the number provided.{" "}
+                            By submitting, you agree to receive a phone call and follow-up text from
+                            our AI agent at the number provided.{" "}
                             <span className="text-foreground font-medium">
                               Yes — you&apos;ll get to experience the product live.
                             </span>
@@ -388,19 +384,20 @@ export default function ReactivateLeadsPage() {
                           <li className="flex gap-2">
                             <span className="text-primary font-bold">3.</span>
                             <span>
-                              If you want to deploy this on your own dead-lead list, book a
-                              strategy call below
+                              If you want to deploy this on your own dead-lead list, book a strategy
+                              call below
                             </span>
                           </li>
                         </ol>
                       </div>
 
                       {/* CTA Button */}
+                      {/* CTA-sweep: cold traffic → batch offer */}
                       <a
-                        href="/book-demo"
+                        href="/batch-video-ads"
                         className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-center font-medium transition-colors"
                       >
-                        Book a Strategy Call
+                        Get 100 ads for $497
                       </a>
                     </BorderGlow>
                   </motion.div>

@@ -84,9 +84,10 @@ export default function AdFatigueSolutionPage() {
             strategy — it&apos;s a factory.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -279,9 +280,10 @@ export default function AdFatigueSolutionPage() {
               Compare to your current output. If you&apos;re producing 2-4 ads a month and spending
               $5k+, you&apos;re structurally fatigued — and no optimization will change that.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -354,9 +356,10 @@ export default function AdFatigueSolutionPage() {
               One recording. 300-1000 scripted ad variations. Your creative library finally big
               enough to match your spend.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

@@ -155,15 +155,16 @@ export default function LeadMagnetIndexPage() {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="mt-14 text-center"
           >
+            {/* CTA-sweep: cold traffic → batch offer */}
             <p className="text-muted-foreground text-sm">
-              Don&apos;t see your use case?{" "}
+              Need fresh ad creative this week?{" "}
               <Link
-                href="/book-demo"
+                href="/batch-video-ads"
                 className="text-primary font-medium underline-offset-4 hover:underline"
               >
-                Book a 15-min demo
+                Get 100 ads for $497
               </Link>{" "}
-              and we&apos;ll build the playbook with you.
+              and beat ad fatigue.
             </p>
           </motion.div>
         </div>

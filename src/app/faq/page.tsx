@@ -102,9 +102,10 @@ export default function FAQPage() {
                 Book a free demo and we&apos;ll walk you through exactly how AI agents would work in
                 your marketing and sales funnel.
               </p>
+              {/* CTA-sweep: cold traffic → batch offer */}
               <Button size="lg" className="px-10 py-6 text-lg" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <Link href="/batch-video-ads">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

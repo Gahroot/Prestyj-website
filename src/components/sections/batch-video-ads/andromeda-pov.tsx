@@ -70,9 +70,10 @@ export function AndromedaPOV() {
               algorithm tell you what won.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              {/* CTA-sweep: cold traffic → batch offer */}
               <Button size="lg" className="font-bold" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <Link href="/batch-video-ads">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

@@ -323,19 +323,22 @@ export default function RealEstateROICalculatorPage() {
                 {/* CTA */}
                 <BorderGlow borderRadius={18} innerClassName="p-6 text-center">
                   <h3 className="font-heading mb-2 text-lg font-bold">
-                    Ready to Unlock This Revenue?
+                    Need ads that actually convert this pipeline?
                   </h3>
                   <p className="text-muted-foreground mb-4 text-sm">
-                    Book a strategy call. We&apos;ll show you exactly how AI lead response works for
-                    your team&apos;s specific setup.
+                    One short recording. 100 scripted vertical video ads delivered in 1–2 business
+                    days — so you can stop feeding cold traffic stale creative.
                   </p>
+                  {/* CTA-sweep: cold traffic → batch offer */}
                   <Link
-                    href="/book-demo"
+                    href="/batch-video-ads"
                     className="bg-primary text-primary-foreground hover:bg-primary/90 inline-flex items-center gap-2 rounded-lg px-6 py-3 font-medium transition-colors"
-                  >Book a Demo<ArrowRight className="h-4 w-4" />
+                  >
+                    Get 100 ads for $497
+                    <ArrowRight className="h-4 w-4" />
                   </Link>
                   <p className="text-muted-foreground mt-3 text-xs">
-                    No credit card required. 30-minute call.
+                    No subscription. Delivered in 1–2 business days.
                   </p>
                 </BorderGlow>
               </div>

@@ -213,9 +213,10 @@ export default function AlternativesHubPage() {
               Book a personalized demo to see how Prestyj handles lead response and reactivation.
               We&apos;ll show you exactly how it compares to your current setup.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

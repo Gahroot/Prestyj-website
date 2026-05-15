@@ -80,14 +80,15 @@ export function LeadMagnetBanner({ variant = "default" }: LeadMagnetBannerProps)
                   Download Free Playbook
                 </Link>
               </Button>
+              {/* CTA-sweep: cold traffic → batch offer */}
               <Button
                 size="lg"
                 variant="outline"
                 className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 px-8 text-lg"
                 asChild
               >
-                <Link href="/book-demo">
-                  Book a Demo
+                <Link href="/batch-video-ads">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

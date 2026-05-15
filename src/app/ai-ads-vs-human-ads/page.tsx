@@ -97,9 +97,10 @@ export default function AiAdsVsHumanAdsPage() {
             can win on speed and cost. For service businesses where trust is the purchase decision,
             a real owner on camera still outperforms AI avatars — even when CTR looks similar.
           </p>
+          {/* CTA-sweep: cold traffic → batch offer */}
           <Button size="lg" className="font-bold" asChild>
-            <Link href="/book-demo">
-              Book a Demo
+            <Link href="/batch-video-ads">
+              Get 100 ads for $497
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -374,9 +375,10 @@ export default function AiAdsVsHumanAdsPage() {
               One recording. 300-1000 scripted variations. Same speed as AI without the trust
               penalty.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

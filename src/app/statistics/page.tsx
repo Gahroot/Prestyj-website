@@ -124,8 +124,9 @@ export default function StatisticsPage() {
               and industry benchmark statistics — sourced, dated, and ready to cite in your content.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              {/* CTA-sweep: cold traffic → batch offer */}
               <Button size="lg" asChild>
-                <Link href="/book-demo">Book a Demo</Link>
+                <Link href="/batch-video-ads">Get 100 ads for $497</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link href="/platform">Explore the Platform</Link>
@@ -177,8 +178,9 @@ export default function StatisticsPage() {
               a single recording.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
+              {/* CTA-sweep: cold traffic → batch offer */}
               <Button size="lg" asChild>
-                <Link href="/book-demo">Book a Demo</Link>
+                <Link href="/batch-video-ads">Get 100 ads for $497</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
                 <Link href="/pricing">See Pricing</Link>

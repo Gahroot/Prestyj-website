@@ -174,9 +174,10 @@ export function HowManyCreativesClient({ faqs }: { faqs: Faq[] }) {
                   </p>
                 </div>
 
+                {/* CTA-sweep: cold traffic → batch offer */}
                 <Button size="lg" className="w-full font-bold" asChild>
-                  <Link href="/book-demo">
-                Book a Demo
+                  <Link href="/batch-video-ads">
+                    Get 100 ads for $497
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -305,9 +306,10 @@ export function HowManyCreativesClient({ faqs }: { faqs: Faq[] }) {
             <p className="text-muted-foreground mb-8 text-lg md:text-xl">
               One recording. Hundreds of variations. The volume your spend actually needs.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

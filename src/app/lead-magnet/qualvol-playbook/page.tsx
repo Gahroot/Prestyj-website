@@ -98,8 +98,8 @@ export default function QualvolPlaybookPage() {
               {/* Subheadline */}
               <p className="text-muted-foreground text-xl">
                 Quality and volume aren&apos;t opposites — they&apos;re multipliers. The exact
-                operating system used to ship hundreds of on-brand posts per week without
-                burning out a team or trading reach for polish.
+                operating system used to ship hundreds of on-brand posts per week without burning
+                out a team or trading reach for polish.
               </p>
 
               {/* What You Get */}
@@ -157,7 +157,7 @@ export default function QualvolPlaybookPage() {
                     "Service businesses serious about category leadership in their metro",
                     "Coaches, CMOs, and agency owners stuck between quality and volume",
                     "Operators ready to ship 1,000+ posts/month without an in-house team of 6",
-                    "Anyone tired of \"good\" content that nobody sees",
+                    'Anyone tired of "good" content that nobody sees',
                   ].map((item) => (
                     <li key={item} className="flex gap-2">
                       <span className="text-primary">→</span>
@@ -169,9 +169,7 @@ export default function QualvolPlaybookPage() {
 
               {/* Social Proof placeholder */}
               <div className="border-border border-t pt-6">
-                <p className="text-muted-foreground text-sm">
-                  Early customer results coming soon.
-                </p>
+                <p className="text-muted-foreground text-sm">Early customer results coming soon.</p>
               </div>
             </motion.div>
 
@@ -310,8 +308,8 @@ export default function QualvolPlaybookPage() {
                         Your Playbook Is Ready
                       </h2>
                       <p className="text-muted-foreground mb-6">
-                        <span className="font-semibold">The QualVol Content Playbook</span> is
-                        ready to download. We&apos;ve also saved a copy to{" "}
+                        <span className="font-semibold">The QualVol Content Playbook</span> is ready
+                        to download. We&apos;ve also saved a copy to{" "}
                         <span className="font-medium">{formData.email}</span>.
                       </p>
                       {downloadUrl && (
@@ -342,13 +340,14 @@ export default function QualvolPlaybookPage() {
                         </ol>
                       </div>
 
+                      {/* CTA-sweep: cold traffic → batch offer */}
                       <p className="text-muted-foreground mt-6 text-sm">
-                        Want to see what a QualVol-aligned content engine looks like?{" "}
+                        Need scripted video volume to feed your QualVol engine?{" "}
                         <Link
-                          href="/book-demo"
+                          href="/batch-video-ads"
                           className="text-primary font-medium underline-offset-4 hover:underline"
                         >
-                          Book a 15-min demo →
+                          Get 100 ads for $497 →
                         </Link>
                       </p>
                     </BorderGlow>

@@ -124,9 +124,10 @@ export default function WhyFacebookAdsStopWorkingPage() {
             walks through the five possible causes — and why 80% of the time it&apos;s the one
             nobody wants to hear.
           </p>
+          {/* CTA-sweep: cold traffic → batch offer */}
           <Button size="lg" className="font-bold" asChild>
-            <Link href="/book-demo">
-              Book a Demo
+            <Link href="/batch-video-ads">
+              Get 100 ads for $497
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -340,9 +341,10 @@ export default function WhyFacebookAdsStopWorkingPage() {
                 </div>
               ))}
             </div>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
@@ -384,9 +386,10 @@ export default function WhyFacebookAdsStopWorkingPage() {
             <p className="text-muted-foreground mb-8 text-lg md:text-xl">
               One recording. 300-1000 ad variations. Your account alive again in 24 hours.
             </p>
+            {/* CTA-sweep: cold traffic → batch offer */}
             <Button size="lg" className="px-10 py-6 text-lg font-bold" asChild>
-              <Link href="/book-demo">
-                Book a Demo
+              <Link href="/batch-video-ads">
+                Get 100 ads for $497
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

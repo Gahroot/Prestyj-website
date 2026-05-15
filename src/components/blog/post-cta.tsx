@@ -12,16 +12,17 @@ export function PostCta() {
         id="post-cta-heading"
         className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl"
       >
-        Want AI agents like this in your business?
+        Need fresh ad creative this week?
       </h3>
       <p className="text-muted-foreground mb-6 text-base sm:text-lg">
-        Prestyj builds AI agents for marketing &amp; sales — so your team books more demos and
-        closes more deals.
+        One short recording. 100 scripted vertical video ads delivered in 1–2 business days — so you
+        can test more hooks and beat ad fatigue.
       </p>
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
+        {/* CTA-sweep: cold traffic → batch offer */}
         <Button size="lg" asChild>
-          <Link href="/book-demo">
-            Book a Demo
+          <Link href="/batch-video-ads">
+            Get 100 ads for $497
             <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Button>
