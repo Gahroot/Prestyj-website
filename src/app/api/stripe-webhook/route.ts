@@ -134,6 +134,42 @@ async function sendIntakeFallbackEmail(
   }
 }
 
+async function sendStarterUpsellEmail(
+  session: Stripe.Checkout.Session,
+  priceId: string,
+): Promise<void> {
+  const tier = getBatchTierByPriceId(priceId);
+  if (tier?.id !== "starter") return;
+
+  // Skip if the order-bump was already applied at checkout — the upsell is
+  // redundant in that case.
+  if (session.metadata?.bump_applied === "true") return;
+
+  const to = session.customer_details?.email;
+  if (!to) return;
+
+  const subject = "Want 500 ads for +$1,000?";
+  const body =
+    "Your 100 ads are being made. If you want 500 ads instead — same delivery window — reply YES and we'll send a $1,000 upgrade invoice. Or keep your 100 and we'll talk in a few days.";
+
+  try {
+    await getResend().emails.send({
+      from: RESEND_FROM_EMAIL,
+      to,
+      subject,
+      text: body,
+      replyTo: "hello@prestyj.com",
+    });
+    console.log("[stripe-webhook] starter upsell email sent:", {
+      event: "starter_upsell_email_sent",
+      email: to,
+      sessionId: session.id,
+    });
+  } catch (error) {
+    console.error("[stripe-webhook] starter upsell email error:", error);
+  }
+}
+
 async function recordAffiliateConversion(
   session: Stripe.Checkout.Session,
   tierId: string,
@@ -262,6 +298,7 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session): Promis
   await Promise.allSettled([
     fireMetaPurchase(session, attributionPriceId),
     sendIntakeFallbackEmail(session, attributionPriceId),
+    sendStarterUpsellEmail(session, attributionPriceId),
     recordAffiliateConversion(session, tierId),
   ]);
 }
