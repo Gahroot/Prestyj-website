@@ -28,9 +28,7 @@ const nextConfig: NextConfig = {
       // agents — they were SEO orphan content diluting positioning. 301 to /compare.
       { source: "/compare/prestyj-vs-capcut", destination: "/compare", permanent: true },
       { source: "/compare/prestyj-vs-opus-clip", destination: "/compare", permanent: true },
-      { source: "/compare/prestyj-vs-pencil", destination: "/compare", permanent: true },
       { source: "/compare/prestyj-vs-invideo", destination: "/compare", permanent: true },
-      { source: "/compare/prestyj-vs-billo", destination: "/compare", permanent: true },
       { source: "/compare/prestyj-vs-fiverr-video-ads", destination: "/compare", permanent: true },
       {
         source: "/compare/prestyj-vs-fiverr-social-media",

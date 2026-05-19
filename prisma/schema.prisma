@@ -110,3 +110,39 @@ enum TokenType {
   LOGIN
   SESSION
 }
+
+model LeadMagnetLead {
+  id           String         @id @default(cuid())
+  email        String
+  firstName    String         @map("first_name")
+  lastName     String?        @map("last_name")
+  phone        String?
+  businessType String         @map("business_type")
+  revenueBand  String         @map("revenue_band")
+  role         String
+  source       String         @default("ai-first-audit")
+  createdAt    DateTime       @default(now()) @map("created_at")
+  audits       AiFirstAudit[]
+
+  @@index([email])
+  @@map("lead_magnet_leads")
+}
+
+model AiFirstAudit {
+  id              String         @id @default(cuid())
+  shareSlug       String         @unique @map("share_slug")
+  editToken       String         @unique @map("edit_token")
+  leadId          String         @map("lead_id")
+  lead            LeadMagnetLead @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  hourlyCost      Float          @map("hourly_cost")
+  tasksJson       Json           @map("tasks_json")
+  resultJson      Json?          @map("result_json")
+  status          String         @default("DRAFT")
+  finalizedAt     DateTime?      @map("finalized_at")
+  emailsScheduled Boolean        @default(false) @map("emails_scheduled")
+  createdAt       DateTime       @default(now()) @map("created_at")
+  updatedAt       DateTime       @updatedAt @map("updated_at")
+
+  @@index([leadId])
+  @@map("ai_first_audits")
+}

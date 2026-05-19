@@ -10,6 +10,18 @@ import {
   TrendingDown,
   Users,
   Thermometer,
+  Activity,
+  Smile,
+  Sparkles,
+  Home as HomeIcon,
+  Megaphone,
+  Mic,
+  Building2,
+  Sun,
+  Zap,
+  Scale,
+  Dumbbell,
+  Car,
   type LucideIcon,
 } from "lucide-react";
 
@@ -19,7 +31,19 @@ type IconName =
   | "PhoneOff"
   | "TrendingDown"
   | "Users"
-  | "Thermometer";
+  | "Thermometer"
+  | "Activity"
+  | "Smile"
+  | "Sparkles"
+  | "Home"
+  | "Megaphone"
+  | "Mic"
+  | "Building2"
+  | "Sun"
+  | "Zap"
+  | "Scale"
+  | "Dumbbell"
+  | "Car";
 
 const iconMap: Record<IconName, LucideIcon> = {
   AlertTriangle,
@@ -28,6 +52,18 @@ const iconMap: Record<IconName, LucideIcon> = {
   TrendingDown,
   Users,
   Thermometer,
+  Activity,
+  Smile,
+  Sparkles,
+  Home: HomeIcon,
+  Megaphone,
+  Mic,
+  Building2,
+  Sun,
+  Zap,
+  Scale,
+  Dumbbell,
+  Car,
 };
 
 interface PainPoint {

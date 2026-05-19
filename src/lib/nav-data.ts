@@ -1,4 +1,4 @@
-import { Bot, Megaphone, Zap, Phone, type LucideIcon } from "lucide-react";
+import { Bot, Megaphone, Zap, Phone, Sparkles, type LucideIcon } from "lucide-react";
 
 export type DropdownLink = {
   href: string;
@@ -10,6 +10,7 @@ export type DropdownLink = {
 export const navLinks = [
   { href: "/platform", label: "Product" },
   { href: "#solutions", label: "Solutions", dropdown: true as const },
+  { href: "/ai-first-audit", label: "Free Audit" },
   { href: "/results", label: "Founding Customers" },
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },
@@ -61,5 +62,11 @@ export const solutionLinks: DropdownLink[] = [
     label: "AI Voice Receptionist",
     description: "24/7 AI voice agent that answers, qualifies, and books.",
     icon: Phone,
+  },
+  {
+    href: "/ai-first-audit",
+    label: "The AI-First Audit",
+    description: "Free 6-minute audit — find your top 3 tasks to automate first.",
+    icon: Sparkles,
   },
 ];

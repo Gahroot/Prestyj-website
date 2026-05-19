@@ -13,8 +13,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Static routes — buyer-intent pages and key product/positioning pages aligned
   // with the core "AI agents for marketing & sales" positioning. Every URL here
   // MUST have a backing page in src/app/. Off-positioning / orphan / utility
-  // pages (e.g. /free-ads/*, /demo, /intake, /admin, /affiliate, /r, /media-master)
-  // are intentionally excluded.
+  // pages (e.g. /demo, /intake, /admin, /affiliate, /r, /media-master) are
+  // intentionally excluded. /free-ads/* IS included — the free-ads offer is
+  // now the primary top-of-funnel for the AI agents pricing tier.
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -110,6 +111,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: `${baseUrl}/ai-first-audit`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/lead-magnet/brokerage-playbook`,
       lastModified: now,
       changeFrequency: "monthly",
@@ -148,6 +155,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/real-estate-roi-calculator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/batch-video-ad-roi-calculator`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/cost-per-tested-ad-angle-calculator`,
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.7,
@@ -247,7 +266,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   //     → /alternatives/human-isa
   //   - {structurely,alanna-ai,follow-up-boss,lofty,resimpli}-vs-prestyj
   //     → canonical prestyj-vs-X orientation
-  //   - off-positioning compares (capcut, opus-clip, pencil, invideo, billo,
+  //   - off-positioning compares (capcut, opus-clip, invideo,
   //     fiverr-video-ads, fiverr-social-media, buffer, later, hootsuite, canva)
   //     → /compare
   //   - ai-consultant-* pages → /pricing
@@ -274,10 +293,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "prestyj-vs-creatify",
     "prestyj-vs-heygen",
     "prestyj-vs-synthesia",
+    "prestyj-vs-pencil",
+    "prestyj-vs-pictory",
     "prestyj-vs-ai-avatar-ads",
     "prestyj-vs-ugc-creators",
     "prestyj-vs-ugc-marketplaces",
+    "prestyj-vs-billo",
+    "prestyj-vs-insense",
     "prestyj-vs-production-agencies",
+    "prestyj-vs-traditional-video-agency",
+    "prestyj-vs-in-house-creative-team",
     "prestyj-vs-adcreative-ai",
     // Marketing platforms (managed alternatives)
     "prestyj-vs-highlevel",
@@ -317,6 +342,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Free-ads landing pages — top-of-funnel for the AI agents offer. Hub +
+  // one page per vertical. Every slug MUST have a backing
+  // src/app/free-ads/<slug>/page.tsx.
+  const freeAdsSlugs = [
+    "agencies",
+    "auto-dealers",
+    "chiropractors",
+    "coaches",
+    "contractors",
+    "dentists",
+    "electricians",
+    "gyms",
+    "hvac",
+    "law-firms",
+    "med-spas",
+    "mortgage-brokers",
+    "plumbers",
+    "real-estate-agents",
+    "roofers",
+    "solar-companies",
+  ];
+  const freeAdsRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/free-ads`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    ...freeAdsSlugs.map((slug) => ({
+      url: `${baseUrl}/free-ads/${slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.75,
+    })),
+  ];
+
   // Location pages — registry-driven.
   const locationRoutes: MetadataRoute.Sitemap = [
     {
@@ -340,6 +401,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...solutionRoutes,
     ...bestForRoutes,
     ...compareRoutes,
+    ...freeAdsRoutes,
     ...locationRoutes,
   ];
 }
