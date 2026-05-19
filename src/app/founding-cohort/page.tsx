@@ -15,6 +15,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Badge } from "@/components/ui/badge";
 import { FoundingCohortApplicationForm } from "@/components/founding-cohort/application-form";
+import { FoundingCohortHeroVideo } from "@/components/founding-cohort/hero-video";
 import { SpotCounter } from "@/components/founding-cohort/spot-counter";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FOUNDING_COHORT, spotsRemaining } from "@/lib/founding-cohort";
@@ -101,42 +102,44 @@ export default function FoundingCohortPage() {
       />
       <Navbar />
       <main className="pt-24 pb-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {/* Hero */}
-          <div className="space-y-6 text-center">
-            <div className="flex justify-center">
-              <Badge variant="outline" className="border-primary/50 text-primary">
-                Founding Cohort · {FOUNDING_COHORT.totalSpots} spots only
-              </Badge>
-            </div>
-            <h1 className="font-heading text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              300 video ads. <span className="text-primary">$0 for 5 businesses.</span>
-            </h1>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              We&apos;re taking{" "}
-              <span className="text-foreground font-semibold">
-                {FOUNDING_COHORT.totalSpots} service businesses
-              </span>{" "}
-              as founding case studies. You get a full $1,497 batch — 300 scripted vertical ads in
-              24 hours — for free. We get the testimonial, the review, and the results data. When{" "}
-              {FOUNDING_COHORT.totalSpots} is reached, it&apos;s closed.
-            </p>
-            <div className="flex justify-center">
-              <SpotCounter variant="block" className="max-w-md" />
+          <div className="grid items-center gap-8 lg:grid-cols-[1fr_0.92fr] lg:gap-10">
+            <div className="space-y-5 text-center lg:text-left">
+              <div className="flex justify-center lg:justify-start">
+                <Badge variant="outline" className="border-primary/50 text-primary">
+                  Founding Cohort · {FOUNDING_COHORT.totalSpots} spots only
+                </Badge>
+              </div>
+              <h1 className="font-heading text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                300 video ads. <span className="text-primary">$0 for 5 businesses.</span>
+              </h1>
+              <p className="text-muted-foreground mx-auto max-w-2xl text-lg lg:mx-0">
+                We&apos;re taking{" "}
+                <span className="text-foreground font-semibold">
+                  {FOUNDING_COHORT.totalSpots} service businesses
+                </span>{" "}
+                as founding case studies. You get a full $1,497 batch — 300 scripted vertical ads in
+                24 hours — for free. We get the testimonial, the review, and the results data. When{" "}
+                {FOUNDING_COHORT.totalSpots} is reached, it&apos;s closed.
+              </p>
+              <SpotCounter variant="block" className="mx-auto max-w-md lg:mx-0" />
+
+              {remaining === 0 && (
+                <div className="border-border bg-muted/40 text-muted-foreground mx-auto max-w-xl rounded-xl border p-5 text-sm lg:mx-0">
+                  Founding cohort is full. The standard $1,497 Minimum batch is still available and
+                  ships in 24 hours.{" "}
+                  <Link
+                    href={FOUNDING_COHORT.checkoutHref}
+                    className="text-primary font-semibold hover:underline"
+                  >
+                    See pricing →
+                  </Link>
+                </div>
+              )}
             </div>
 
-            {remaining === 0 && (
-              <div className="border-border bg-muted/40 text-muted-foreground mx-auto max-w-xl rounded-xl border p-5 text-sm">
-                Founding cohort is full. The standard $1,497 Minimum batch is still available and
-                ships in 24 hours.{" "}
-                <Link
-                  href={FOUNDING_COHORT.checkoutHref}
-                  className="text-primary font-semibold hover:underline"
-                >
-                  See pricing →
-                </Link>
-              </div>
-            )}
+            <FoundingCohortHeroVideo />
           </div>
 
           {/* What you get */}
