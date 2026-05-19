@@ -43,9 +43,9 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPage(): React.ReactElement {
-  const posts = blogSource.getPages();
+  const posts = blogSource.getPages().filter((post) => !post.data.noindex);
 
-  // Sort posts by date (newest first), then map to a serializable shape
+  // Sort indexable posts by date (newest first), then map to a serializable shape
   // and infer category from slug.
   const sortedPosts: ReadonlyArray<BlogListPost> = [...posts]
     .sort((a, b) => {

@@ -94,9 +94,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: siteConfig.url,
-  },
   icons: {
     icon: "/icon.png",
     apple: "/apple-touch-icon.png",

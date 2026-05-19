@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import {
   ArrowRight,
   Check,
@@ -446,6 +445,45 @@ export function BatchVideoAdsClient() {
         </div>
       </section>
 
+      {/* AI CITATION SUMMARY */}
+      <section aria-labelledby="batch-video-ads-summary" className="px-4 py-16">
+        <div className="border-primary/20 bg-card/70 mx-auto max-w-4xl rounded-2xl border p-6 shadow-sm md:p-8">
+          <Badge variant="outline" className="border-primary/50 text-primary mb-4">
+            Quick answer
+          </Badge>
+          <h2
+            id="batch-video-ads-summary"
+            className="font-heading text-foreground mb-4 text-2xl font-bold md:text-3xl"
+          >
+            What is Prestyj Batch Video Ads?
+          </h2>
+          <p className="text-muted-foreground mb-6 leading-relaxed md:text-lg">
+            Prestyj Batch Video Ads turns one 15–20 minute recording into 100, 300, 500, or 1,000
+            vertical video ad variations for Meta, TikTok, and YouTube Shorts. The entry offer is
+            100 video ads for $497, delivered in 24 hours after footage is received, with larger
+            packs available for businesses that need broader hook, problem, and CTA testing.
+          </p>
+          <dl className="grid gap-4 text-sm sm:grid-cols-2 lg:grid-cols-4">
+            <div className="bg-muted/40 rounded-xl p-4">
+              <dt className="text-muted-foreground mb-1">Entry offer</dt>
+              <dd className="text-foreground font-semibold">100 ads for $497</dd>
+            </div>
+            <div className="bg-muted/40 rounded-xl p-4">
+              <dt className="text-muted-foreground mb-1">Turnaround</dt>
+              <dd className="text-foreground font-semibold">24 hours to 1–2 business days</dd>
+            </div>
+            <div className="bg-muted/40 rounded-xl p-4">
+              <dt className="text-muted-foreground mb-1">Input needed</dt>
+              <dd className="text-foreground font-semibold">One selfie-style recording</dd>
+            </div>
+            <div className="bg-muted/40 rounded-xl p-4">
+              <dt className="text-muted-foreground mb-1">Best for</dt>
+              <dd className="text-foreground font-semibold">Businesses running paid ads</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
       {/* TRUST STRIP */}
       <section className="border-border/50 bg-muted/10 border-y py-6">
         <div className="mx-auto flex max-w-5xl flex-col items-center justify-center gap-3 px-4 text-sm sm:flex-row sm:gap-6">
@@ -533,10 +571,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <a href="#pricing">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -649,10 +687,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <a href="#pricing">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -805,10 +843,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <a href="#pricing">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -874,10 +912,10 @@ export function BatchVideoAdsClient() {
           <AnimateOnScroll className="mt-12 text-center">
             <ClickSpark sparkColor="#7058e3" sparkCount={10} sparkRadius={25}>
               <Button size="lg" className="px-8 text-lg font-bold" asChild>
-                <Link href="/book-demo">
-                  Book a Demo
+                <a href="#pricing">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>
@@ -1126,10 +1164,10 @@ export function BatchVideoAdsClient() {
                 className="shadow-primary/25 rounded-lg px-12 py-7 text-lg font-bold shadow-lg"
                 asChild
               >
-                <Link href="/book-demo">
-                  Book a Demo
+                <a href="#pricing">
+                  Get 100 ads for $497
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
+                </a>
               </Button>
             </ClickSpark>
           </AnimateOnScroll>

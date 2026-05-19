@@ -10,7 +10,7 @@ export type DropdownLink = {
 export const navLinks = [
   { href: "/platform", label: "Product" },
   { href: "#solutions", label: "Solutions", dropdown: true as const },
-  { href: "/ai-first-audit", label: "Free Audit" },
+  { href: "/batch-video-ads", label: "Batch Video Ads" },
   { href: "/results", label: "Founding Customers" },
   { href: "/pricing", label: "Pricing" },
   { href: "/contact", label: "Contact" },

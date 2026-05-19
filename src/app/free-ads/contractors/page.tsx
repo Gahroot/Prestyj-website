@@ -46,6 +46,10 @@ export const metadata: Metadata = {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
     type: "website",
+    url: "https://prestyj.com/free-ads/contractors",
+  },
+  alternates: {
+    canonical: "https://prestyj.com/free-ads/contractors",
   },
 };
 

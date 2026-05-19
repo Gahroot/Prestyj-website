@@ -46,6 +46,10 @@ export const metadata: Metadata = {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
     type: "website",
+    url: "https://prestyj.com/free-ads/mortgage-brokers",
+  },
+  alternates: {
+    canonical: "https://prestyj.com/free-ads/mortgage-brokers",
   },
 };
 
