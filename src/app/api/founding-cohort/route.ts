@@ -1,11 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
-import { foundingCohortSchema, isQualified } from "@/lib/validations/founding-cohort-schemas";
+import {
+  foundingCohortSchema,
+  isQualified,
+  type FoundingCohortOutput,
+} from "@/lib/validations/founding-cohort-schemas";
 import { FOUNDING_COHORT, isCohortOpen } from "@/lib/founding-cohort";
+import { getStripe } from "@/lib/stripe";
 
 const API_BASE_URL = "https://backend-api-production-b536.up.railway.app";
 
 export const runtime = "nodejs";
 
+/**
+ * Founding Cohort application handler.
+ *
+ * Three response shapes:
+ *
+ *   { approved: true, checkoutUrl, ... }
+ *     - Cohort open + applicant qualifies + Stripe session minted.
+ *     - Form redirects directly to Stripe ($0 due, code pre-applied).
+ *
+ *   { approved: true, approvedHref, ... }  (fallback, no checkoutUrl)
+ *     - Stripe call failed but the lead is captured. Form falls back to
+ *       /founding-cohort/approved with the manual code copy flow.
+ *
+ *   { approved: false, reason: "cohort_full" | "soft_qualify_out", ... }
+ *     - Hard close (cohort full) or soft qualify-out (under-spend / not
+ *       running ads). Soft path now offers the $497 sample tier and still
+ *       captures the lead \u2014 no dead-end.
+ */
 export async function POST(request: NextRequest) {
   let body: unknown;
   try {
@@ -24,42 +47,70 @@ export async function POST(request: NextRequest) {
 
   const data = validation.data;
 
-  // Hard gate 1 — cohort full
+  // Push every applicant into the CRM \u2014 qualified or not. Soft qualify-outs
+  // are still valuable leads who self-identified as wanting ad creative.
+  await logLead(data, isCohortOpen() && isQualified(data) ? "qualified" : "soft");
+
+  // Hard gate \u2014 cohort full. No founding spot, but we still surface the
+  // standard pricing path.
   if (!isCohortOpen()) {
     return NextResponse.json(
       {
         approved: false,
         reason: "cohort_full",
-        message: "All founding cohort spots are filled. You can join the regular pricing below.",
+        message:
+          "All founding cohort spots are filled \u2014 we'll add you to the list for the next cohort. In the meantime, the standard $1,497 batch is available below.",
+        fallbackHref: FOUNDING_COHORT.checkoutHref,
       },
       { status: 200 },
     );
   }
 
-  // Hard gate 2 — not qualified (ad spend / not running ads)
+  // Soft qualify-out \u2014 under-$1K spenders or not-running-yet. Used to be a
+  // hard wall; now we route them to the $497 sample tier.
   if (!isQualified(data)) {
     return NextResponse.json(
       {
         approved: false,
-        reason: "not_qualified",
+        reason: "soft_qualify_out",
         message:
-          "Founding cohort spots are reserved for businesses already running paid ads — that's how we get real performance signal for the case study. The standard $1,497 batch is still available below.",
+          "Founding spots need real ad-account data to produce a useful case study, so they're reserved for businesses already spending. Good news: the $497 sample (100 ads, same engine) is built for exactly your stage \u2014 you can be running in 24 hours.",
+        fallbackHref: "/batch-video-ads#pricing",
+        fallbackTier: FOUNDING_COHORT.sampleTier,
       },
       { status: 200 },
     );
   }
 
-  // Push the lead into the CRM regardless of approval path — record of intent.
+  // Approved \u2014 mint a Stripe Checkout Session with the FREE300 promo
+  // pre-applied. Removes the "paste promo code" friction.
+  const checkoutUrl = await mintCheckoutSession(request, data.contactEmail).catch((err) => {
+    console.error("[founding-cohort] Stripe session mint failed:", err);
+    return null;
+  });
+
+  return NextResponse.json({
+    approved: true,
+    promoCode: FOUNDING_COHORT.promoCode,
+    checkoutHref: FOUNDING_COHORT.checkoutHref,
+    approvedHref: FOUNDING_COHORT.approvedHref,
+    // Present when Stripe mint succeeded. Form sends user straight here.
+    // When null, form falls back to the /approved page with manual code.
+    checkoutUrl,
+  });
+}
+
+async function logLead(data: FoundingCohortOutput, status: "qualified" | "soft"): Promise<void> {
   const notes = [
-    "Founding Cohort Application",
+    `Founding Cohort Application (${status})`,
     `Business: ${data.businessName}`,
-    data.website ? `Website: ${data.website}` : null,
     `Monthly ad spend: ${data.monthlyAdSpend}`,
     `Platforms: ${data.platforms.join(", ")}`,
     `Creative situation: ${data.creativeSituation}`,
     `Offer: ${data.offer}`,
-    `Why them: ${data.whyYou}`,
-    `Committed to: testimonial=${data.agreeTestimonial}, review=${data.agreeReview}, 14-day run=${data.agreeRun14Days}, results rights=${data.agreeResultsRights}`,
+    `Why now: ${data.whyNow}`,
+    data.whyYouDetail ? `Why-you detail: ${data.whyYouDetail}` : null,
+    `Agreed to founding-cohort terms: ${data.agreeAll}`,
   ]
     .filter(Boolean)
     .join("\n");
@@ -72,7 +123,7 @@ export async function POST(request: NextRequest) {
         first_name: data.contactName.split(" ")[0],
         email: data.contactEmail,
         notes,
-        source: "founding-cohort-application",
+        source: `founding-cohort-application:${status}`,
         trigger_call: false,
         trigger_text: false,
       }),
@@ -81,16 +132,56 @@ export async function POST(request: NextRequest) {
     if (!crmResponse.ok) {
       const errorText = await crmResponse.text();
       console.error("[founding-cohort] CRM error:", errorText);
-      // Don't fail the user — log and continue. They still get the code.
     }
   } catch (err) {
     console.error("[founding-cohort] CRM submission failed:", err);
   }
+}
 
-  return NextResponse.json({
-    approved: true,
-    promoCode: FOUNDING_COHORT.promoCode,
-    checkoutHref: FOUNDING_COHORT.checkoutHref,
-    approvedHref: FOUNDING_COHORT.approvedHref,
+async function mintCheckoutSession(
+  request: NextRequest,
+  customerEmail: string,
+): Promise<string | null> {
+  const minimumPriceId = process.env.STRIPE_PRICE_MINIMUM;
+  const promotionCodeId = process.env.STRIPE_PROMO_CODE_FREE300;
+
+  if (!minimumPriceId) {
+    console.error("[founding-cohort] STRIPE_PRICE_MINIMUM is not configured");
+    return null;
+  }
+  if (!promotionCodeId) {
+    console.error("[founding-cohort] STRIPE_PROMO_CODE_FREE300 is not configured");
+    return null;
+  }
+
+  const stripe = getStripe();
+  const origin = request.headers.get("origin") ?? request.nextUrl.origin ?? "https://prestyj.com";
+  const affiliateRef = request.cookies.get("affiliate_ref")?.value;
+
+  const checkoutMetadata = {
+    tier: "minimum",
+    ad_count: "300",
+    pain_points: "3",
+    flow: "founding_cohort",
+    ...(affiliateRef ? { affiliate_ref: affiliateRef } : {}),
+  };
+
+  const session = await stripe.checkout.sessions.create({
+    mode: "payment",
+    line_items: [{ price: minimumPriceId, quantity: 1 }],
+    customer_email: customerEmail,
+    automatic_tax: { enabled: true },
+    billing_address_collection: "required",
+    phone_number_collection: { enabled: true },
+    // Cannot use `allow_promotion_codes` together with `discounts`.
+    discounts: [{ promotion_code: promotionCodeId }],
+    success_url: `${origin}/intake?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${origin}/founding-cohort/approved`,
+    metadata: checkoutMetadata,
+    payment_intent_data: {
+      metadata: checkoutMetadata,
+    },
   });
+
+  return session.url ?? null;
 }

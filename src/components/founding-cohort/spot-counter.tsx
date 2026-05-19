@@ -8,6 +8,15 @@ type SpotCounterProps = {
 };
 
 /**
+ * Returns a short "as of <month> <day>" string for the freshness stamp.
+ * Computed at request time (server component caller) so the page rebuild
+ * naturally pushes the date forward each day.
+ */
+function asOfLabel(): string {
+  return new Date().toLocaleDateString("en-US", { month: "short", day: "numeric" });
+}
+
+/**
  * Renders the live "X of N spots remaining" indicator.
  * Numbers come from `FOUNDING_COHORT` config so updating spots is a
  * single-line code change.
@@ -17,6 +26,7 @@ export function SpotCounter({ className, variant = "badge" }: SpotCounterProps) 
   const taken = FOUNDING_COHORT.spotsFilled;
   const total = FOUNDING_COHORT.totalSpots;
   const isOpen = remaining > 0;
+  const asOf = asOfLabel();
 
   if (variant === "block") {
     return (
@@ -42,7 +52,7 @@ export function SpotCounter({ className, variant = "badge" }: SpotCounterProps) 
         </p>
         <p className="text-muted-foreground mt-2 text-sm">
           {isOpen
-            ? `${taken} already claimed. Applications close when ${total} is reached.`
+            ? `${taken} already claimed · as of ${asOf}`
             : "All founding spots have been claimed. Standard pricing applies."}
         </p>
       </div>
@@ -67,7 +77,7 @@ export function SpotCounter({ className, variant = "badge" }: SpotCounterProps) 
           <span className="bg-muted-foreground relative inline-flex h-2 w-2 rounded-full" />
         )}
       </span>
-      {isOpen ? `${remaining} of ${total} founding spots left` : "Founding cohort full"}
+      {isOpen ? `${remaining} of ${total} founding spots left · ${asOf}` : "Founding cohort full"}
     </div>
   );
 }

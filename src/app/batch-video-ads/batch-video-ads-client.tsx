@@ -36,8 +36,8 @@ import { AndromedaPOV } from "@/components/sections/batch-video-ads/andromeda-po
 import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 import { cn } from "@/lib/utils";
 import { BATCH_TIERS, type BatchTierId } from "@/lib/batch-tiers";
+import { CLIENT_TESTIMONIALS, GMB_REVIEWS_URL } from "@/lib/testimonials";
 
-const GMB_REVIEWS_URL = "https://share.google/NDBtHySNKzPF0mTvG";
 const VSL_VIMEO_ID = "1185604057";
 
 const SAMPLE_VIDEOS = [
@@ -49,31 +49,7 @@ const SAMPLE_VIDEOS = [
   "1171065337",
 ];
 
-const TESTIMONIALS = [
-  {
-    quote:
-      "300 Facebook video ads in less than 12 hours — nailed the scripts, edits, and hooks on every single one.",
-    full: "I had an incredible experience working with Nolan. In less than 12 hours, he produced 300 Facebook video ads — and somehow managed to absolutely nail the scripts, edits, and hooks on every single one. If you're looking for someone who can deliver high-volume creative production without sacrificing quality, Nolan is the real deal.",
-    author: "Randy Narciso",
-    source: "Google Review",
-    href: GMB_REVIEWS_URL,
-  },
-  {
-    quote:
-      "Saved me a ton of time making 300 versions of content for my Meta ads. Delivery was fast and straightforward.",
-    full: "The service Nolan provided helped me save a ton of time making 300 versions of content for my meta ads. His delivery was fast and straight forward!",
-    author: "Max Sherrod",
-    source: "Google Review · Local Guide",
-    href: GMB_REVIEWS_URL,
-  },
-  {
-    quote: "If I could give them more than 5 stars I would.",
-    full: "100% happy and will definitely be using their services in the future. If I could give them more than 5 stars I would.",
-    author: "Verified client",
-    source: "Client testimonial",
-    href: null,
-  },
-];
+const TESTIMONIALS = CLIENT_TESTIMONIALS;
 
 type UITier = {
   id: BatchTierId;

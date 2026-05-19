@@ -14,9 +14,12 @@ import {
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { FoundingCohortApplicationForm } from "@/components/founding-cohort/application-form";
 import { FoundingCohortHeroVideo } from "@/components/founding-cohort/hero-video";
 import { SpotCounter } from "@/components/founding-cohort/spot-counter";
+import { SocialProofStrip } from "@/components/founding-cohort/social-proof-strip";
+import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FOUNDING_COHORT, spotsRemaining } from "@/lib/founding-cohort";
 
@@ -125,6 +128,20 @@ export default function FoundingCohortPage() {
               </p>
               <SpotCounter variant="block" className="mx-auto max-w-md lg:mx-0" />
 
+              {remaining > 0 && (
+                <div className="flex flex-col items-center gap-3 sm:flex-row lg:items-start lg:justify-start">
+                  <Button asChild size="lg" className="w-full sm:w-auto">
+                    <a href="#apply">
+                      Claim my spot
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                  <span className="text-muted-foreground text-sm">
+                    ~2 minutes · instant decision
+                  </span>
+                </div>
+              )}
+
               {remaining === 0 && (
                 <div className="border-border bg-muted/40 text-muted-foreground mx-auto max-w-xl rounded-xl border p-5 text-sm lg:mx-0">
                   Founding cohort is full. The standard $1,497 Minimum batch is still available and
@@ -141,6 +158,10 @@ export default function FoundingCohortPage() {
 
             <FoundingCohortHeroVideo />
           </div>
+
+          {/* Social proof — above the fold (the form is still in view, this just */}
+          {/* answers "is this real?" before the prospect commits to filling it out). */}
+          <SocialProofStrip />
 
           {/* What you get */}
           <section className="mt-16 grid gap-4 sm:grid-cols-2">
@@ -260,6 +281,8 @@ export default function FoundingCohortPage() {
         </div>
       </main>
       <Footer />
+      {/* Exit-intent capture — recovers leads who bail mid-decision. */}
+      <ExitIntentPopup />
     </>
   );
 }

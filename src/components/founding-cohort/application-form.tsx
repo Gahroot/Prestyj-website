@@ -42,6 +42,7 @@ import {
   MONTHLY_AD_SPEND_OPTIONS,
   PLATFORM_OPTIONS,
   CREATIVE_SITUATION_OPTIONS,
+  WHY_NOW_OPTIONS,
   type FoundingCohortInput,
   type FoundingCohortOutput,
   type PlatformValue,
@@ -57,13 +58,15 @@ const STEPS: ReadonlyArray<{
   description: string;
   icon: typeof Building2;
   fields: ReadonlyArray<Path<FoundingCohortInput>>;
+  continueLabel: string;
 }> = [
   {
     key: "basics",
     title: "Who you are",
     description: "Quick basics so we know how to reach you.",
     icon: Building2,
-    fields: ["contactName", "contactEmail", "businessName", "website"],
+    fields: ["contactName", "contactEmail", "businessName"],
+    continueLabel: "Next: where you are",
   },
   {
     key: "qualify",
@@ -72,23 +75,47 @@ const STEPS: ReadonlyArray<{
       "Founding spots go to businesses already running paid ads — that's the only way the case study produces real numbers.",
     icon: Target,
     fields: ["monthlyAdSpend", "platforms", "creativeSituation"],
+    continueLabel: "Next: what you sell",
   },
   {
     key: "fit",
     title: "What you sell",
-    description: "Tell us your offer and why you're the right fit for a founding spot.",
+    description: "Tell us your offer and what would move the needle.",
     icon: Users,
-    fields: ["offer", "whyYou"],
+    fields: ["offer", "whyNow", "whyYouDetail"],
+    continueLabel: "Next: the trade",
   },
   {
     key: "commit",
     title: "The trade",
     description:
-      "Founding spots aren't free — you pay in testimonial, review, and results data. Confirm you're in for all four.",
+      "You get a $1,497 batch for $0. We get a founding case study. One agreement covers all of it.",
     icon: CheckCircle2,
-    fields: ["agreeTestimonial", "agreeReview", "agreeRun14Days", "agreeResultsRights"],
+    fields: ["agreeAll"],
+    continueLabel: "Claim my spot",
   },
 ];
+
+type SoftQualifyOut = {
+  reason: "soft_qualify_out";
+  message: string;
+  fallbackHref: string;
+  fallbackTier?: string;
+};
+
+type CohortFull = {
+  reason: "cohort_full";
+  message: string;
+  fallbackHref: string;
+};
+
+type ClientQualifyOut = {
+  reason: "client_qualify_out";
+  message: string;
+  fallbackHref: string;
+};
+
+type RejectionState = SoftQualifyOut | CohortFull | ClientQualifyOut;
 
 type ApiResponse =
   | {
@@ -96,21 +123,21 @@ type ApiResponse =
       promoCode: string;
       checkoutHref: string;
       approvedHref: string;
+      checkoutUrl: string | null;
     }
   | {
       approved: false;
-      reason: "cohort_full" | "not_qualified";
+      reason: "cohort_full" | "soft_qualify_out";
       message: string;
+      fallbackHref: string;
+      fallbackTier?: string;
     };
 
 export function FoundingCohortApplicationForm() {
   const router = useRouter();
   const [stepIndex, setStepIndex] = useState(0);
   const [submitError, setSubmitError] = useState<string | null>(null);
-  const [rejection, setRejection] = useState<{
-    reason: "cohort_full" | "not_qualified" | "client_qualify_out";
-    message: string;
-  } | null>(null);
+  const [rejection, setRejection] = useState<RejectionState | null>(null);
 
   const form = useForm<FoundingCohortInput, unknown, FoundingCohortOutput>({
     resolver: zodResolver(foundingCohortSchema),
@@ -119,16 +146,13 @@ export function FoundingCohortApplicationForm() {
       contactName: "",
       contactEmail: "",
       businessName: "",
-      website: "",
       monthlyAdSpend: "" as FoundingCohortInput["monthlyAdSpend"],
       platforms: [],
       creativeSituation: "" as FoundingCohortInput["creativeSituation"],
       offer: "",
-      whyYou: "",
-      agreeTestimonial: false as unknown as true,
-      agreeReview: false as unknown as true,
-      agreeRun14Days: false as unknown as true,
-      agreeResultsRights: false as unknown as true,
+      whyNow: "" as FoundingCohortInput["whyNow"],
+      whyYouDetail: "",
+      agreeAll: false as unknown as true,
     },
   });
 
@@ -140,8 +164,10 @@ export function FoundingCohortApplicationForm() {
     const valid = await form.trigger(step.fields);
     if (!valid) return;
 
-    // Client-side qualify-out after step 2 — kill the form before
-    // they waste effort on the rest if they can't qualify anyway.
+    // Client-side soft qualify-out after the qualify step. Instead of a
+    // dead-end, we route under-spenders to the $497 sample tier — they
+    // self-identified as wanting creative, just at the wrong stage for
+    // the cohort.
     if (step.key === "qualify") {
       const spendValue = form.getValues("monthlyAdSpend");
       const option = MONTHLY_AD_SPEND_OPTIONS.find((o) => o.value === spendValue);
@@ -149,7 +175,8 @@ export function FoundingCohortApplicationForm() {
         setRejection({
           reason: "client_qualify_out",
           message:
-            "Founding spots are reserved for businesses already running paid ads — that's how we get real performance signal for the case study. The standard $1,497 batch is still a great fit and gets you the same 300 ads.",
+            "Founding spots need real ad-account data, so they're reserved for businesses already spending. The $497 sample (100 ads, same engine) is built for exactly your stage — finish your contact info on the next step and we'll point you there.",
+          fallbackHref: "/batch-video-ads#pricing",
         });
         return;
       }
@@ -179,10 +206,26 @@ export function FoundingCohortApplicationForm() {
       }
 
       if (!json.approved) {
-        setRejection({ reason: json.reason, message: json.message });
+        setRejection({
+          reason: json.reason,
+          message: json.message,
+          fallbackHref: json.fallbackHref,
+          ...("fallbackTier" in json && json.fallbackTier
+            ? { fallbackTier: json.fallbackTier }
+            : {}),
+        } as RejectionState);
         return;
       }
 
+      // Happy path: server minted a Stripe checkout session with FREE300
+      // pre-applied. Skip the /approved page entirely.
+      if (json.checkoutUrl) {
+        window.location.assign(json.checkoutUrl);
+        return;
+      }
+
+      // Fallback: Stripe session mint failed but lead is captured.
+      // Send them to /approved with the manual code copy flow.
       router.push(json.approvedHref);
     } catch (err) {
       setSubmitError(err instanceof Error ? err.message : "Something went wrong. Try again.");
@@ -212,22 +255,19 @@ export function FoundingCohortApplicationForm() {
             </div>
             <div>
               <h2 className="font-heading text-2xl font-bold tracking-tight">
-                Not a founding-cohort fit right now
+                {rejection.reason === "cohort_full"
+                  ? "Founding cohort just filled"
+                  : "Not a founding-cohort fit right now"}
               </h2>
               <p className="text-muted-foreground mt-2">{rejection.message}</p>
-              <p className="text-muted-foreground mt-3 text-sm">
-                Not a fit for the cohort? You can still start with our{" "}
-                <a href="/batch-video-ads" className="text-primary font-medium hover:underline">
-                  $497 sample (100 ads, same engine)
-                </a>
-                .
-              </p>
             </div>
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button size="lg" asChild>
-              <a href={FOUNDING_COHORT.checkoutHref}>
-                See standard pricing
+              <a href={rejection.fallbackHref}>
+                {rejection.reason === "cohort_full"
+                  ? "See standard pricing"
+                  : "See the $497 sample"}
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
             </Button>
@@ -297,15 +337,15 @@ export function FoundingCohortApplicationForm() {
               </Button>
 
               {!isLastStep ? (
-                <Button type="button" onClick={handleNext} size="lg" className="sm:min-w-40">
-                  Continue
+                <Button type="button" onClick={handleNext} size="lg" className="sm:min-w-52">
+                  {step.continueLabel}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               ) : (
                 <Button
                   type="submit"
                   size="lg"
-                  className="sm:min-w-48"
+                  className="sm:min-w-52"
                   disabled={form.formState.isSubmitting}
                 >
                   {form.formState.isSubmitting ? (
@@ -316,7 +356,7 @@ export function FoundingCohortApplicationForm() {
                   ) : (
                     <>
                       <Send className="mr-2 h-4 w-4" />
-                      Apply for a spot
+                      Claim my spot
                     </>
                   )}
                 </Button>
@@ -378,22 +418,6 @@ function BasicsStep({ form }: StepProps) {
             <FormControl>
               <Input placeholder="Acme Roofing" {...field} />
             </FormControl>
-            <FormMessage />
-          </FormItem>
-        )}
-      />
-      <FormField
-        control={form.control}
-        name="website"
-        render={({ field }) => (
-          <FormItem>
-            <FormLabel>Website (optional)</FormLabel>
-            <FormControl>
-              <Input placeholder="acmeroofing.com" {...field} />
-            </FormControl>
-            <FormDescription>
-              Helps us understand your offer before the kickoff call.
-            </FormDescription>
             <FormMessage />
           </FormItem>
         )}
@@ -526,20 +550,50 @@ function FitStep({ form }: StepProps) {
       />
       <FormField
         control={form.control}
-        name="whyYou"
+        name="whyNow"
         render={({ field }) => (
           <FormItem>
-            <FormLabel>Why you for a founding spot?</FormLabel>
+            <FormLabel>What would 300 fresh ads change for you?</FormLabel>
+            <div className="grid gap-2">
+              {WHY_NOW_OPTIONS.map((option) => {
+                const active = field.value === option.value;
+                return (
+                  <button
+                    type="button"
+                    key={option.value}
+                    onClick={() => field.onChange(option.value)}
+                    className={cn(
+                      "rounded-lg border px-4 py-3 text-left text-sm font-medium transition",
+                      active
+                        ? "border-primary bg-primary/10 text-primary"
+                        : "border-border bg-background text-foreground hover:border-primary/40",
+                    )}
+                    aria-pressed={active}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+      <FormField
+        control={form.control}
+        name="whyYouDetail"
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>Anything else we should know? (optional)</FormLabel>
             <FormControl>
               <Textarea
-                rows={4}
-                placeholder="What's broken in your current creative? What would a winning ad change about your business?"
+                rows={3}
+                placeholder="Optional — what's broken in your current creative, what you've tried, what a winning ad would change."
                 {...field}
               />
             </FormControl>
             <FormDescription>
-              We&apos;re picking founders who&apos;ll actually run the ads and have something to say
-              in a testimonial.
+              Skip if you covered it above. Helps us pick founders who&apos;ll get the most signal.
             </FormDescription>
             <FormMessage />
           </FormItem>
@@ -549,79 +603,68 @@ function FitStep({ form }: StepProps) {
   );
 }
 
-const COMMITMENTS: Array<{
-  name: "agreeTestimonial" | "agreeReview" | "agreeRun14Days" | "agreeResultsRights";
-  label: string;
-  detail: string;
-}> = [
-  {
-    name: "agreeRun14Days",
-    label: `Run the batch for ${FOUNDING_COHORT.testWindowDays}+ days at $${FOUNDING_COHORT.minDailyTestSpendUsd}/day minimum on the platform of your choice.`,
-    detail: "No spend, no signal. We need real performance data, not a download-and-shelf.",
-  },
-  {
-    name: "agreeTestimonial",
-    label: "Record a 3–5 minute video testimonial after the 14-day test.",
-    detail: "What you tested, what won, the number that moved. Specifics, not vibes.",
-  },
-  {
-    name: "agreeReview",
-    label: "Leave a Google review on delivery.",
-    detail: "We'll send the link the day the batch is ready.",
-  },
-  {
-    name: "agreeResultsRights",
-    label:
-      "Allow Prestyj to use your name, logo, ad screenshots, and performance data in marketing.",
-    detail:
-      "Standard case-study rights — we don't share private financials or proprietary creative.",
-  },
-];
-
 function CommitStep({ form }: StepProps) {
   return (
     <div className="space-y-4">
-      <div className="border-primary/30 bg-primary/5 rounded-xl border p-4 text-sm">
+      <div className="border-primary/30 bg-primary/5 rounded-xl border p-5 text-sm">
         <p className="text-foreground font-semibold">The deal, plainly:</p>
         <p className="text-muted-foreground mt-1">
-          You get 300 video ads (a $1,497 batch) for $0. We get a founding case study. All four
-          boxes have to be checked or it doesn&apos;t work for either of us.
+          You get 300 video ads (a $1,497 batch) for $0. In exchange:
         </p>
+        <ul className="text-muted-foreground mt-3 space-y-1.5 text-sm">
+          <li className="flex gap-2">
+            <span className="text-primary">→</span>
+            Run the batch for {FOUNDING_COHORT.testWindowDays}+ days at $
+            {FOUNDING_COHORT.minDailyTestSpendUsd}/day minimum.
+          </li>
+          <li className="flex gap-2">
+            <span className="text-primary">→</span>
+            Record a 3–5 minute video testimonial after the test window.
+          </li>
+          <li className="flex gap-2">
+            <span className="text-primary">→</span>
+            Leave a Google review on delivery.
+          </li>
+          <li className="flex gap-2">
+            <span className="text-primary">→</span>
+            Permission to use your name, logo, and results in our marketing.
+          </li>
+        </ul>
       </div>
-      {COMMITMENTS.map((commitment) => (
-        <FormField
-          key={commitment.name}
-          control={form.control}
-          name={commitment.name}
-          render={({ field, fieldState }) => (
-            <FormItem>
-              <label
-                className={cn(
-                  "flex cursor-pointer items-start gap-3 rounded-lg border p-4 transition",
-                  field.value
-                    ? "border-primary bg-primary/5"
-                    : "border-border bg-background hover:border-primary/40",
-                  fieldState.error && "border-destructive",
-                )}
-              >
-                <input
-                  type="checkbox"
-                  className="accent-primary mt-1 h-4 w-4 shrink-0"
-                  checked={Boolean(field.value)}
-                  onChange={(e) => field.onChange(e.target.checked)}
-                />
-                <span className="space-y-1">
-                  <span className="text-foreground block text-sm font-medium">
-                    {commitment.label}
-                  </span>
-                  <span className="text-muted-foreground block text-xs">{commitment.detail}</span>
+      <FormField
+        control={form.control}
+        name="agreeAll"
+        render={({ field, fieldState }) => (
+          <FormItem>
+            <label
+              className={cn(
+                "flex cursor-pointer items-start gap-3 rounded-lg border p-4 transition",
+                field.value
+                  ? "border-primary bg-primary/5"
+                  : "border-border bg-background hover:border-primary/40",
+                fieldState.error && "border-destructive",
+              )}
+            >
+              <input
+                type="checkbox"
+                className="accent-primary mt-1 h-4 w-4 shrink-0"
+                checked={Boolean(field.value)}
+                onChange={(e) => field.onChange(e.target.checked)}
+              />
+              <span className="space-y-1">
+                <span className="text-foreground block text-sm font-semibold">
+                  I agree to the founding-cohort terms above.
                 </span>
-              </label>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-      ))}
+                <span className="text-muted-foreground block text-xs">
+                  Run the batch · 3–5 min testimonial · Google review · case-study rights. One
+                  checkbox covers all four.
+                </span>
+              </span>
+            </label>
+            <FormMessage />
+          </FormItem>
+        )}
+      />
     </div>
   );
 }

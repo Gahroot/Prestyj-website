@@ -3,10 +3,11 @@
  *
  * The form qualifies applicants out client-side before submission:
  * - Monthly ad spend must clear `FOUNDING_COHORT.minMonthlyAdSpendUsd`
- * - They must agree to the testimonial + 14-day spend commitment
+ * - They must agree to the single combined founding-cohort agreement
  *
- * Anyone failing either gate sees a polite "not a fit right now" message
- * and never reaches the API.
+ * Sub-threshold applicants used to hit a hard wall — they now get a soft
+ * qualify-out that still captures the lead and routes them to the $497
+ * sample tier (`FOUNDING_COHORT.sampleTier`).
  */
 
 import z from "zod";
@@ -58,20 +59,28 @@ export const CREATIVE_SITUATION_OPTIONS = [
 
 export type CreativeSituationValue = (typeof CREATIVE_SITUATION_OPTIONS)[number]["value"];
 
+/**
+ * Why-now options for the fit step. Removes the blank-page "why you?" text
+ * field that was killing step-3 completion. Optional free-text follows.
+ */
+export const WHY_NOW_OPTIONS = [
+  { value: "creative-not-converting", label: "My current ads aren’t converting" },
+  { value: "burned-on-ugc", label: "Burned out paying UGC creators / agencies" },
+  { value: "never-tried-video", label: "Never tried video at volume" },
+  { value: "scaling-need-volume", label: "Scaling — need more creative volume" },
+  { value: "other", label: "Something else" },
+] as const;
+
+export type WhyNowValue = (typeof WHY_NOW_OPTIONS)[number]["value"];
+
 export const foundingCohortSchema = z.object({
-  // Step 1 — Basics
+  // Step 1 — Basics (website dropped — not needed for the application,
+  // can be derived from email domain if we want it later).
   contactName: z.string().min(2, "Your name is required"),
   contactEmail: z
     .string()
     .refine((v) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), "Enter your work email"),
   businessName: z.string().min(1, "Business name is required"),
-  website: z
-    .string()
-    .optional()
-    .refine(
-      (v) => !v || v.length === 0 || /^(https?:\/\/)?[^\s.]+\.[^\s]{2,}$/.test(v.trim()),
-      "Enter a valid website URL",
-    ),
 
   // Step 2 — Qualification
   monthlyAdSpend: z.enum(["under-1k", "1k-3k", "3k-10k", "10k-25k", "25k-plus", "not-yet"]),
@@ -82,20 +91,19 @@ export const foundingCohortSchema = z.object({
 
   // Step 3 — Fit
   offer: z.string().min(20, "Tell us a sentence or two about your offer (min 20 chars)"),
-  whyYou: z.string().min(30, "Tell us why you're a fit (min 30 chars)"),
+  whyNow: z.enum([
+    "creative-not-converting",
+    "burned-on-ugc",
+    "never-tried-video",
+    "scaling-need-volume",
+    "other",
+  ]),
+  whyYouDetail: z.string().optional(),
 
-  // Step 4 — Commitment (all required to submit)
-  agreeTestimonial: z.literal(true, {
-    error: "Please confirm to claim your founding spot",
-  }),
-  agreeReview: z.literal(true, {
-    error: "Please confirm to claim your founding spot",
-  }),
-  agreeRun14Days: z.literal(true, {
-    error: "Please confirm to claim your founding spot",
-  }),
-  agreeResultsRights: z.literal(true, {
-    error: "Please confirm to claim your founding spot",
+  // Step 4 — Single combined agreement (was 4 separate checkboxes).
+  // Bundles testimonial + Google review + 14-day run + results rights.
+  agreeAll: z.literal(true, {
+    error: "Please confirm the founding-cohort terms to claim your spot",
   }),
 });
 

@@ -1,48 +1,62 @@
 "use client";
 
 import { useState } from "react";
-import { VolumeX } from "lucide-react";
+import Image from "next/image";
+import { Play } from "lucide-react";
 
 const VIMEO_VIDEO_ID = "1169158190";
 
+/**
+ * Click-to-play hero video. Previous version auto-played muted and
+ * required a click to unmute, which is two clicks of friction for users
+ * who actually wanted to watch and a permanent UI tax for users who
+ * didn't. New version shows a poster + play button \u2014 one click, real
+ * intent, audio on from the start.
+ */
 export function FoundingCohortHeroVideo() {
-  const [isMuted, setIsMuted] = useState(true);
-  const [showOverlay, setShowOverlay] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-  const handleUnmute = () => {
-    setIsMuted(false);
-    setShowOverlay(false);
-  };
+  if (isPlaying) {
+    return (
+      <div className="border-border/80 bg-card relative aspect-video w-full overflow-hidden rounded-2xl border shadow-2xl shadow-black/10">
+        <iframe
+          src={`https://player.vimeo.com/video/${VIMEO_VIDEO_ID}?autoplay=1&muted=0&loop=0&background=0`}
+          className="absolute inset-0 h-full w-full"
+          frameBorder="0"
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          title="Founding cohort video ads offer"
+        />
+      </div>
+    );
+  }
 
   return (
-    <div className="border-border/80 bg-card relative aspect-video w-full overflow-hidden rounded-2xl border shadow-2xl shadow-black/10">
-      <iframe
-        src={`https://player.vimeo.com/video/${VIMEO_VIDEO_ID}?autoplay=1&muted=${isMuted ? "1" : "0"}&loop=0&background=0`}
-        className="absolute inset-0 h-full w-full"
-        frameBorder="0"
-        allow="autoplay; fullscreen"
-        allowFullScreen
-        title="Founding cohort video ads offer"
+    <button
+      type="button"
+      onClick={() => setIsPlaying(true)}
+      className="border-border/80 group bg-card relative aspect-video w-full cursor-pointer overflow-hidden rounded-2xl border shadow-2xl shadow-black/10"
+      aria-label="Play founding cohort overview video"
+    >
+      <Image
+        src={`https://vumbnail.com/${VIMEO_VIDEO_ID}.jpg`}
+        alt="Founding cohort video preview"
+        fill
+        unoptimized
+        className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+        sizes="(max-width: 1024px) 100vw, 50vw"
       />
-
-      {showOverlay && (
-        <button
-          type="button"
-          onClick={handleUnmute}
-          className="absolute inset-0 z-10 flex cursor-pointer items-center justify-center bg-black/40 backdrop-blur-[2px] transition-all hover:bg-black/30"
-          aria-label="Unmute founding cohort video"
-        >
-          <span className="flex flex-col items-center gap-2 rounded-2xl border border-white/20 bg-white/10 p-4 shadow-2xl backdrop-blur-md">
-            <span className="bg-primary/20 flex h-12 w-12 items-center justify-center rounded-full">
-              <VolumeX className="text-primary h-6 w-6" />
-            </span>
-            <span className="text-foreground font-heading text-base font-semibold">
-              Your Video Is Playing
-            </span>
-            <span className="text-muted-foreground text-sm">Click To Unmute</span>
-          </span>
-        </button>
-      )}
-    </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+      <span className="absolute inset-0 z-10 flex items-center justify-center">
+        <span className="bg-primary text-primary-foreground flex h-16 w-16 items-center justify-center rounded-full shadow-2xl transition-transform duration-300 group-hover:scale-110">
+          <Play className="ml-1 h-7 w-7 fill-current" />
+        </span>
+      </span>
+      <span className="absolute right-0 bottom-0 left-0 p-4 text-left">
+        <span className="text-sm font-semibold text-white drop-shadow-md">
+          Watch the offer (90 sec)
+        </span>
+      </span>
+    </button>
   );
 }

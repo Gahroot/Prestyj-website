@@ -6,9 +6,11 @@
  * and a 14-day commitment to actually run the ads at $50/day minimum.
  *
  * Promo code FREE300 is configured in Stripe as 100% off the Minimum price.
- * Checkout (`src/app/api/checkout/route.ts`) already has
- * `allow_promotion_codes: true`, so approved applicants enter the code at
- * checkout, see $0 due, and are redirected to /intake on completion.
+ * For approved applicants the API now mints a Stripe Checkout Session with
+ * the promo code pre-applied (`discounts: [{ promotion_code: <id> }]`) so
+ * the user never has to paste anything. `/founding-cohort/approved` is kept
+ * as a fallback when the Stripe mint fails (so a successful application is
+ * never wasted).
  */
 
 export const FOUNDING_COHORT = {
@@ -25,6 +27,11 @@ export const FOUNDING_COHORT = {
    * Approval page directs applicants here, where they enter FREE300.
    */
   checkoutTier: "minimum" as const,
+  /**
+   * Sample tier we steer soft-qualify-outs toward (sub-$1K spenders or
+   * not-running-yet). 100 ads for $497 — same engine, lower commitment.
+   */
+  sampleTier: "starter" as const,
   checkoutHref: "/batch-video-ads#pricing",
   applicationHref: "/founding-cohort",
   approvedHref: "/founding-cohort/approved",
