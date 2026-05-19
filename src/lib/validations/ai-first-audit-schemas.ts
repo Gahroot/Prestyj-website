@@ -59,12 +59,9 @@ export const auditTaskInputSchema = z.object({
   title: z.string().trim().min(1, "Task title is required").max(160),
   category: z.enum(toolCategoryValues),
   hoursPerWeek: subScoreSchema,
-  cost: subScoreSchema,
   frequency: subScoreSchema,
-  bottleneck: subScoreSchema,
   repeatability: subScoreSchema,
   judgment: subScoreSchema,
-  errorTolerance: subScoreSchema,
   dataAvailability: subScoreSchema,
 });
 

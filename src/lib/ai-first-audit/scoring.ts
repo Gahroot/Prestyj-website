@@ -15,8 +15,11 @@ import {
 } from "./types";
 import { pickRecipe } from "./tool-library";
 
-const QUADRANT_THRESHOLD = 12;
-const MAX_AXIS = 20;
+// Leverage = hoursPerWeek + frequency (range 2–10). Midpoint = 6.
+// Readiness = repeatability + judgment + dataAvailability (range 3–15). Midpoint = 9.
+const LEVERAGE_THRESHOLD = 6;
+const READINESS_THRESHOLD = 9;
+const MAX_READINESS = 15;
 
 function hoursPerWeekMidpoint(value: SubScore): number {
   const option = HOURS_PER_WEEK_OPTIONS.find((o) => o.value === value);
@@ -27,8 +30,8 @@ function hoursPerWeekMidpoint(value: SubScore): number {
 }
 
 function classifyQuadrant(leverage: number, readiness: number): Quadrant {
-  const highLeverage = leverage >= QUADRANT_THRESHOLD;
-  const highReadiness = readiness >= QUADRANT_THRESHOLD;
+  const highLeverage = leverage >= LEVERAGE_THRESHOLD;
+  const highReadiness = readiness >= READINESS_THRESHOLD;
   if (highLeverage && highReadiness) return "automate-first";
   if (highLeverage && !highReadiness) return "delegate";
   if (!highLeverage && highReadiness) return "automate-later";
@@ -36,23 +39,29 @@ function classifyQuadrant(leverage: number, readiness: number): Quadrant {
 }
 
 /**
- * Score a single task. The "inverted" sub-scores (judgment, errorTolerance)
- * are already inverted at question time — option index 5 ("rules-based" /
- * "easy to catch") gives the highest readiness contribution, which is the
- * intuitive direction. We sum directly.
+ * Score a single task. The "inverted" sub-score (judgment) is already
+ * inverted at question time — option 5 ("rules-based / mechanical") gives
+ * the highest readiness contribution, which is the intuitive direction.
+ * We sum directly.
+ *
+ * Axes:
+ *   leverage   = hoursPerWeek + frequency                          → 2–10
+ *   readiness  = repeatability + judgment + dataAvailability        → 3–15
+ *
+ * `rankScore` normalizes readiness to a 0–1 ratio so it stays comparable
+ * with the leverage magnitude.
  */
 export function scoreTask(input: AuditTaskInput, hourlyCost: number): ScoredTask {
-  const leverage = input.hoursPerWeek + input.cost + input.frequency + input.bottleneck; // 4–20
-  const readiness =
-    input.repeatability + input.judgment + input.errorTolerance + input.dataAvailability; // 4–20
+  const leverage = input.hoursPerWeek + input.frequency; // 2–10
+  const readiness = input.repeatability + input.judgment + input.dataAvailability; // 3–15
 
   const quadrant = classifyQuadrant(leverage, readiness);
-  const rankScore = leverage * (readiness / MAX_AXIS);
+  const rankScore = leverage * (readiness / MAX_READINESS);
 
-  // Savings math: midpoint of the hours-per-week band, haircut by readiness/20,
+  // Savings math: midpoint of the hours-per-week band, haircut by readiness/MAX,
   // multiplied by hourly cost over 52 weeks.
   const rawWeeklyHours = hoursPerWeekMidpoint(input.hoursPerWeek);
-  const weeklyHoursSaved = rawWeeklyHours * (readiness / MAX_AXIS);
+  const weeklyHoursSaved = rawWeeklyHours * (readiness / MAX_READINESS);
   const annualDollarsSaved = weeklyHoursSaved * 52 * hourlyCost;
 
   return {

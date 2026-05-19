@@ -224,8 +224,8 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Get your AI-First Audit</h2>
         <p className="text-muted-foreground mt-1 text-sm">
-          We&apos;ll score 5–15 of your team&apos;s tasks and tell you which 3 to automate first.
-          Takes about 6 minutes.
+          We&apos;ll score 5–7 of your team&apos;s tasks and tell you which 3 to automate first.
+          Takes about 4 minutes.
         </p>
         <div className="bg-muted mt-4 h-1 w-full overflow-hidden rounded-full">
           <motion.div

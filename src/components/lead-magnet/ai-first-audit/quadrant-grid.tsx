@@ -14,13 +14,15 @@ interface PlottedTask {
 }
 
 /**
- * Maps the 4–20 axis to 0–100% for positioning. We invert Y because CSS
- * top:0 = top of grid but high leverage = top.
+ * Maps each axis to 0–100% for positioning. We invert Y because CSS top:0
+ * = top of grid but high leverage = top.
+ *   leverage  range 2–10 (span 8)
+ *   readiness range 3–15 (span 12)
  */
 function plot(tasks: readonly ScoredTask[]): PlottedTask[] {
   return tasks.map((task, i) => {
-    const x = ((task.readiness - 4) / 16) * 100;
-    const y = 100 - ((task.leverage - 4) / 16) * 100;
+    const x = ((task.readiness - 3) / 12) * 100;
+    const y = 100 - ((task.leverage - 2) / 8) * 100;
     return { task, x, y, rank: i + 1 };
   });
 }
@@ -65,7 +67,7 @@ export function QuadrantGrid({ tasks }: QuadrantGridProps) {
                 : "bg-card text-foreground border-border border",
             )}
             style={{ left: `${x}%`, top: `${y}%` }}
-            title={`${task.input.title} — leverage ${task.leverage}/20, readiness ${task.readiness}/20`}
+            title={`${task.input.title} — leverage ${task.leverage}/10, readiness ${task.readiness}/15`}
           >
             {rank}
           </div>

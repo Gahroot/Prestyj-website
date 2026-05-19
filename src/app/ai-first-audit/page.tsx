@@ -17,21 +17,21 @@ export default function AiFirstAuditPage() {
               The AI-First Audit
             </div>
             <h1 className="font-heading text-foreground mt-5 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Your team is wasting <span className="text-primary">23 hours/week</span> on tasks AI
-              can already do.
+              Find the <span className="text-primary">3 tasks</span> AI should take off your
+              team&apos;s plate this quarter.
             </h1>
             <p className="text-muted-foreground mt-5 max-w-2xl text-lg sm:text-xl">
-              Take 6 minutes. Score the tasks your team actually runs. Get your top 3 automate-first
-              recipes, a 7-day deployment plan, and the exact tools to use — emailed instantly.
-              Free, no sales call required.
+              Score the tasks your team actually runs against a 2-axis rubric (leverage ×
+              AI-readiness). Get a ranked top 3, a 7-day deployment plan, and the exact tool stack
+              for each — emailed instantly. Free, no sales call.
             </p>
 
             <div className="text-muted-foreground mt-8 flex flex-wrap gap-4 text-sm">
               <div className="flex items-center gap-2">
-                <Clock className="text-primary h-4 w-4" /> 6 minutes
+                <Clock className="text-primary h-4 w-4" /> ~4 minutes
               </div>
               <div className="flex items-center gap-2">
-                <Target className="text-primary h-4 w-4" /> Personalized top 3
+                <Target className="text-primary h-4 w-4" /> Ranked top 3 for your business
               </div>
               <div className="flex items-center gap-2">
                 <FileText className="text-primary h-4 w-4" /> PDF + 7-day plan emailed

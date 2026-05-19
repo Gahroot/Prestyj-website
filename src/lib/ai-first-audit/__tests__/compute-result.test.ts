@@ -20,12 +20,9 @@ function task(id: string, overrides: Partial<AuditTaskInput> = {}): AuditTaskInp
     title: `Task ${id}`,
     category: "inbox-triage",
     hoursPerWeek: 3,
-    cost: 3,
     frequency: 3,
-    bottleneck: 3,
     repeatability: 3,
     judgment: 3,
-    errorTolerance: 3,
     dataAvailability: 3,
     ...overrides,
   };
@@ -36,32 +33,23 @@ describe("computeResult", () => {
     const tasks: AuditTaskInput[] = [
       task("low", {
         hoursPerWeek: 1,
-        cost: 1,
         frequency: 1,
-        bottleneck: 1,
         repeatability: 1,
         judgment: 1,
-        errorTolerance: 1,
         dataAvailability: 1,
       }),
       task("mid", {
         hoursPerWeek: 3,
-        cost: 3,
         frequency: 3,
-        bottleneck: 3,
         repeatability: 4,
         judgment: 4,
-        errorTolerance: 4,
         dataAvailability: 4,
       }),
       task("high", {
         hoursPerWeek: 5,
-        cost: 5,
         frequency: 5,
-        bottleneck: 5,
         repeatability: 5,
         judgment: 5,
-        errorTolerance: 5,
         dataAvailability: 5,
       }),
     ];
@@ -76,32 +64,23 @@ describe("computeResult", () => {
     const tasks: AuditTaskInput[] = [
       task("a", {
         hoursPerWeek: 5,
-        cost: 5,
         frequency: 5,
-        bottleneck: 5,
         repeatability: 5,
         judgment: 5,
-        errorTolerance: 5,
         dataAvailability: 5,
       }),
       task("b", {
         hoursPerWeek: 5,
-        cost: 5,
         frequency: 5,
-        bottleneck: 5,
         repeatability: 1,
         judgment: 1,
-        errorTolerance: 1,
         dataAvailability: 1,
       }),
       task("c", {
         hoursPerWeek: 1,
-        cost: 1,
         frequency: 1,
-        bottleneck: 1,
         repeatability: 5,
         judgment: 5,
-        errorTolerance: 5,
         dataAvailability: 5,
       }),
     ];
@@ -115,12 +94,9 @@ describe("computeResult", () => {
     const tasks: AuditTaskInput[] = [
       task("a", {
         hoursPerWeek: 3,
-        cost: 3,
         frequency: 3,
-        bottleneck: 3,
         repeatability: 5,
         judgment: 5,
-        errorTolerance: 5,
         dataAvailability: 5,
       }),
     ];
@@ -134,12 +110,9 @@ describe("computeResult", () => {
     const tasks: AuditTaskInput[] = [
       task("a", {
         hoursPerWeek: 5,
-        cost: 5,
         frequency: 5,
-        bottleneck: 5,
         repeatability: 5,
         judgment: 5,
-        errorTolerance: 5,
         dataAvailability: 5,
       }),
     ];
@@ -161,22 +134,16 @@ describe("computeResult", () => {
     const tasks: AuditTaskInput[] = [
       task("alpha", {
         hoursPerWeek: 4,
-        cost: 3,
         frequency: 4,
-        bottleneck: 3,
         repeatability: 4,
         judgment: 4,
-        errorTolerance: 3,
         dataAvailability: 4,
       }),
       task("beta", {
         hoursPerWeek: 4,
-        cost: 3,
         frequency: 4,
-        bottleneck: 3,
         repeatability: 4,
         judgment: 4,
-        errorTolerance: 3,
         dataAvailability: 4,
       }),
     ];

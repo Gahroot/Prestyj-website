@@ -10,6 +10,7 @@ interface TaskRowProps {
   readonly title: string;
   readonly selected: boolean;
   readonly editable?: boolean;
+  readonly badge?: React.ReactNode;
   readonly onToggle: (id: string) => void;
   readonly onRename?: (id: string, title: string) => void;
   readonly onRemove?: (id: string) => void;
@@ -20,6 +21,7 @@ export function TaskRow({
   title,
   selected,
   editable = false,
+  badge,
   onToggle,
   onRename,
   onRemove,
@@ -46,15 +48,18 @@ export function TaskRow({
         {selected && <Check className="h-4 w-4" />}
       </button>
 
-      {editable && onRename ? (
-        <Input
-          value={title}
-          onChange={(e) => onRename(id, e.target.value)}
-          className="border-0 bg-transparent p-0 text-sm shadow-none focus-visible:ring-0"
-        />
-      ) : (
-        <span className="text-sm">{title}</span>
-      )}
+      <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
+        {editable && onRename ? (
+          <Input
+            value={title}
+            onChange={(e) => onRename(id, e.target.value)}
+            className="min-w-0 flex-1 border-0 bg-transparent p-0 text-sm shadow-none focus-visible:ring-0"
+          />
+        ) : (
+          <span className="min-w-0 flex-1 text-sm">{title}</span>
+        )}
+        {badge && !selected && badge}
+      </div>
 
       {onRemove && (
         <button

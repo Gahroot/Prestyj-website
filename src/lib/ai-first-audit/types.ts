@@ -73,28 +73,12 @@ export const HOURS_PER_WEEK_OPTIONS = [
   { value: 5 as SubScore, label: "More than 15 hrs/wk", midpoint: 20 },
 ] as const;
 
-export const COST_OPTIONS = [
-  { value: 1 as SubScore, label: "Under $25/hr" },
-  { value: 2 as SubScore, label: "$25 – $50/hr" },
-  { value: 3 as SubScore, label: "$50 – $100/hr" },
-  { value: 4 as SubScore, label: "$100 – $150/hr" },
-  { value: 5 as SubScore, label: "Over $150/hr" },
-] as const;
-
 export const FREQUENCY_OPTIONS = [
   { value: 1 as SubScore, label: "Monthly or less" },
   { value: 2 as SubScore, label: "Weekly" },
   { value: 3 as SubScore, label: "A few times a week" },
   { value: 4 as SubScore, label: "Daily" },
   { value: 5 as SubScore, label: "Multiple times a day" },
-] as const;
-
-export const BOTTLENECK_OPTIONS = [
-  { value: 1 as SubScore, label: "Not really" },
-  { value: 2 as SubScore, label: "A little" },
-  { value: 3 as SubScore, label: "Sometimes" },
-  { value: 4 as SubScore, label: "Often slows revenue" },
-  { value: 5 as SubScore, label: "Actively blocks revenue" },
 ] as const;
 
 export const REPEATABILITY_OPTIONS = [
@@ -113,14 +97,6 @@ export const JUDGMENT_OPTIONS = [
   { value: 5 as SubScore, label: "Rules-based / mechanical" },
 ] as const;
 
-export const ERROR_TOLERANCE_OPTIONS = [
-  { value: 1 as SubScore, label: "Zero errors allowed" },
-  { value: 2 as SubScore, label: "Low tolerance" },
-  { value: 3 as SubScore, label: "Medium tolerance" },
-  { value: 4 as SubScore, label: "High tolerance" },
-  { value: 5 as SubScore, label: "Easy to catch & fix" },
-] as const;
-
 export const DATA_AVAILABILITY_OPTIONS = [
   { value: 1 as SubScore, label: "Lives in someone's head" },
   { value: 2 as SubScore, label: "Scattered across places" },
@@ -134,12 +110,9 @@ export interface AuditTaskInput {
   readonly title: string;
   readonly category: ToolCategory;
   readonly hoursPerWeek: SubScore;
-  readonly cost: SubScore;
   readonly frequency: SubScore;
-  readonly bottleneck: SubScore;
   readonly repeatability: SubScore;
   readonly judgment: SubScore;
-  readonly errorTolerance: SubScore;
   readonly dataAvailability: SubScore;
 }
 
@@ -196,8 +169,8 @@ export type Quadrant = "automate-first" | "delegate" | "automate-later" | "ignor
 
 export interface ScoredTask {
   readonly input: AuditTaskInput;
-  readonly leverage: number; // 4–20
-  readonly readiness: number; // 4–20
+  readonly leverage: number; // 2–10 (hoursPerWeek + frequency)
+  readonly readiness: number; // 3–15 (repeatability + judgment + dataAvailability)
   readonly rankScore: number; // composite for top-3 ordering
   readonly quadrant: Quadrant;
   readonly weeklyHoursSaved: number;

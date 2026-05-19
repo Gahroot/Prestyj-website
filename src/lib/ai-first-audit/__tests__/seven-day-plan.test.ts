@@ -19,12 +19,9 @@ function input(id: string, overrides: Partial<AuditTaskInput> = {}): AuditTaskIn
     title: `Task ${id}`,
     category: "inbox-triage",
     hoursPerWeek: 4,
-    cost: 4,
     frequency: 4,
-    bottleneck: 4,
     repeatability: 4,
     judgment: 4,
-    errorTolerance: 4,
     dataAvailability: 4,
     ...overrides,
   };

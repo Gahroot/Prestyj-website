@@ -7,7 +7,58 @@
  * user edit titles, add their own, and remove unwanted rows.
  */
 
-import type { TaskPreset, BusinessType } from "./types";
+import type { TaskPreset, BusinessType, ToolCategory } from "./types";
+
+/**
+ * Human-readable section headers for grouping presets in the picker.
+ * Not every tool category needs its own group — some collapse into
+ * broader buckets so the UI doesn't fragment into 1-row sections.
+ */
+export const TASK_GROUPS = [
+  {
+    id: "inbound",
+    label: "Inbound & support",
+    categories: ["inbox-triage", "voice-agent", "support-deflection", "scheduling"] as const,
+  },
+  {
+    id: "outbound",
+    label: "Sales, outreach & follow-up",
+    categories: [
+      "outbound-personalization",
+      "research-workflow",
+      "lead-enrichment",
+    ] as const,
+  },
+  {
+    id: "ops",
+    label: "Ops, dispatch & admin",
+    categories: [
+      "ops-automation",
+      "data-entry",
+      "finance-ops",
+      "hiring-screen",
+      "knowledge-base",
+    ] as const,
+  },
+  {
+    id: "content",
+    label: "Content, reporting & QA",
+    categories: ["content-ops", "reporting", "qa-review"] as const,
+  },
+] as const;
+
+export type TaskGroupId = (typeof TASK_GROUPS)[number]["id"];
+
+function categoryGroupId(category: ToolCategory): TaskGroupId {
+  for (const group of TASK_GROUPS) {
+    if ((group.categories as readonly ToolCategory[]).includes(category)) {
+      return group.id;
+    }
+  }
+  // Fallback — should never hit because every ToolCategory is mapped above,
+  // but keeps the type signature total without an exception.
+  return "ops";
+}
 
 export const TASK_PRESETS: readonly TaskPreset[] = [
   // ---- Cross-business core ----------------------------------------------
@@ -177,4 +228,41 @@ export const TASK_PRESETS: readonly TaskPreset[] = [
  */
 export function getPresetsForBusinessType(businessType: BusinessType): readonly TaskPreset[] {
   return TASK_PRESETS.filter((preset) => preset.businessTypes.includes(businessType));
+}
+
+export interface GroupedPresets {
+  readonly id: TaskGroupId;
+  readonly label: string;
+  readonly presets: readonly TaskPreset[];
+}
+
+/**
+ * Group business-type-relevant presets under their display section.
+ * Empty groups are omitted so the UI doesn't render dead headers.
+ */
+export function getGroupedPresetsForBusinessType(
+  businessType: BusinessType,
+): readonly GroupedPresets[] {
+  const flat = getPresetsForBusinessType(businessType);
+  const groups: GroupedPresets[] = TASK_GROUPS.map((g) => ({
+    id: g.id,
+    label: g.label,
+    presets: flat.filter((p) => categoryGroupId(p.category) === g.id),
+  }));
+  return groups.filter((g) => g.presets.length > 0);
+}
+
+/**
+ * The first N presets in `getPresetsForBusinessType` order are the most
+ * universally relevant for that business — we surface them as
+ * "Common for …" pills so users have an anchor without auto-checking
+ * anything.
+ */
+export function getSuggestedPresetIds(
+  businessType: BusinessType,
+  count = 4,
+): readonly string[] {
+  return getPresetsForBusinessType(businessType)
+    .slice(0, count)
+    .map((p) => p.id);
 }

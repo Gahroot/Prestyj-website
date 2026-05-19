@@ -79,12 +79,9 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
       title: t.title,
       category: t.category as AuditTaskInput["category"],
       hoursPerWeek: t.hoursPerWeek,
-      cost: t.cost,
       frequency: t.frequency,
-      bottleneck: t.bottleneck,
       repeatability: t.repeatability,
       judgment: t.judgment,
-      errorTolerance: t.errorTolerance,
       dataAvailability: t.dataAvailability,
     }));
 

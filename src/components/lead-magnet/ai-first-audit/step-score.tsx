@@ -8,12 +8,9 @@ import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import {
   HOURS_PER_WEEK_OPTIONS,
-  COST_OPTIONS,
   FREQUENCY_OPTIONS,
-  BOTTLENECK_OPTIONS,
   REPEATABILITY_OPTIONS,
   JUDGMENT_OPTIONS,
-  ERROR_TOLERANCE_OPTIONS,
   DATA_AVAILABILITY_OPTIONS,
   type SubScore,
   type AuditTaskInput,
@@ -29,12 +26,9 @@ interface StepScoreProps {
 
 type ScoreDraft = Partial<{
   hoursPerWeek: SubScore;
-  cost: SubScore;
   frequency: SubScore;
-  bottleneck: SubScore;
   repeatability: SubScore;
   judgment: SubScore;
-  errorTolerance: SubScore;
   dataAvailability: SubScore;
 }>;
 
@@ -45,19 +39,9 @@ const QUESTIONS = [
     options: HOURS_PER_WEEK_OPTIONS,
   },
   {
-    key: "cost" as const,
-    label: "What does the person doing it cost per hour (loaded)?",
-    options: COST_OPTIONS,
-  },
-  {
     key: "frequency" as const,
     label: "How often does this task come up?",
     options: FREQUENCY_OPTIONS,
-  },
-  {
-    key: "bottleneck" as const,
-    label: "Is this task a bottleneck for revenue?",
-    options: BOTTLENECK_OPTIONS,
   },
   {
     key: "repeatability" as const,
@@ -68,11 +52,6 @@ const QUESTIONS = [
     key: "judgment" as const,
     label: "How much human judgment does it require?",
     options: JUDGMENT_OPTIONS,
-  },
-  {
-    key: "errorTolerance" as const,
-    label: "What's the cost of getting it wrong?",
-    options: ERROR_TOLERANCE_OPTIONS,
   },
   {
     key: "dataAvailability" as const,
@@ -166,12 +145,9 @@ export function StepScore({ picked, onBack, onComplete }: StepScoreProps) {
         title: task.title,
         category: task.category,
         hoursPerWeek: d.hoursPerWeek,
-        cost: d.cost,
         frequency: d.frequency,
-        bottleneck: d.bottleneck,
         repeatability: d.repeatability,
         judgment: d.judgment,
-        errorTolerance: d.errorTolerance,
         dataAvailability: d.dataAvailability,
       });
     }
@@ -200,7 +176,7 @@ export function StepScore({ picked, onBack, onComplete }: StepScoreProps) {
       <div>
         <div className="text-muted-foreground mb-2 flex items-center justify-between text-xs">
           <span>
-            Task {index + 1} of {activeTasks.length}
+            Task {index + 1} of {activeTasks.length} · ~20 sec each
           </span>
           <span>{Math.round(progress)}%</span>
         </div>
@@ -266,12 +242,17 @@ export function StepScore({ picked, onBack, onComplete }: StepScoreProps) {
 
       {error && <p className="text-destructive text-sm">{error}</p>}
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-wrap items-center gap-3">
         <Button onClick={handlePrev} variant="outline" size="lg">
           <ArrowLeft className="mr-1 h-4 w-4" /> Back
         </Button>
-        <Button onClick={skip} variant="ghost" size="lg">
-          <SkipForward className="mr-1 h-4 w-4" /> Not relevant
+        <Button
+          onClick={skip}
+          variant="outline"
+          size="lg"
+          className="text-muted-foreground hover:text-foreground"
+        >
+          <SkipForward className="mr-1 h-4 w-4" /> Skip this task
         </Button>
         <Button onClick={handleNext} size="lg" className="ml-auto">
           {index + 1 >= activeTasks.length ? "See my results" : "Next task"}
