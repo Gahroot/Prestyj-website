@@ -118,6 +118,20 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
     setError(null);
   }
 
+  function advanceFrom(nextForm: FormState) {
+    const err = validateField(currentStep, nextForm);
+    if (err) {
+      setError(err);
+      return;
+    }
+    setError(null);
+    if (!isLast) {
+      setStepIndex((i) => i + 1);
+      return;
+    }
+    void submit(nextForm);
+  }
+
   function goNext() {
     const err = validateField(currentStep, form);
     if (err) {
@@ -129,7 +143,7 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
       setStepIndex((i) => i + 1);
       return;
     }
-    void submit();
+    void submit(form);
   }
 
   function goBack() {
@@ -138,18 +152,18 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
     setStepIndex((i) => i - 1);
   }
 
-  async function submit() {
-    const { firstName, lastName } = splitName(form.fullName);
-    const phone = normalizeToE164(form.phone);
+  async function submit(formState: FormState) {
+    const { firstName, lastName } = splitName(formState.fullName);
+    const phone = normalizeToE164(formState.phone);
 
     const parsed = leadCaptureSchema.safeParse({
       firstName,
       lastName,
-      email: form.email.trim(),
+      email: formState.email.trim(),
       phone,
-      businessType: form.businessType,
-      revenueBand: form.revenueBand,
-      role: form.role,
+      businessType: formState.businessType,
+      revenueBand: formState.revenueBand,
+      role: formState.role,
     });
 
     if (!parsed.success) {
@@ -314,8 +328,9 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
                       label={opt.label}
                       active={active}
                       onClick={() => {
-                        update("businessType", opt.value);
-                        setTimeout(() => goNext(), 80);
+                        const nextForm = { ...form, businessType: opt.value };
+                        setForm(nextForm);
+                        advanceFrom(nextForm);
                       }}
                     />
                   );
@@ -336,8 +351,9 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
                       label={opt.label}
                       active={active}
                       onClick={() => {
-                        update("revenueBand", opt.value);
-                        setTimeout(() => goNext(), 80);
+                        const nextForm = { ...form, revenueBand: opt.value };
+                        setForm(nextForm);
+                        advanceFrom(nextForm);
                       }}
                     />
                   );
@@ -358,8 +374,9 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
                       label={opt.label}
                       active={active}
                       onClick={() => {
-                        update("role", opt.value);
-                        setTimeout(() => goNext(), 80);
+                        const nextForm = { ...form, role: opt.value };
+                        setForm(nextForm);
+                        advanceFrom(nextForm);
                       }}
                     />
                   );
@@ -372,7 +389,7 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
 
       {error && <p className="text-destructive text-sm">{error}</p>}
 
-      <div className="flex gap-3">
+      <div className="flex flex-col gap-3 sm:flex-row">
         {stepIndex > 0 && (
           <Button type="button" onClick={goBack} variant="outline" size="lg" disabled={submitting}>
             <ArrowLeft className="mr-1 h-4 w-4" /> Back
@@ -384,7 +401,7 @@ export function StepLeadCapture({ onComplete }: StepLeadCaptureProps) {
             type="button"
             onClick={goNext}
             size="lg"
-            className="ml-auto"
+            className="w-full sm:ml-auto sm:w-auto"
             disabled={submitting}
           >
             {submitting ? "Starting…" : isLast ? "Start my audit" : "Next"}

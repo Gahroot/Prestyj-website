@@ -7,7 +7,7 @@ export default function AiFirstAuditPage() {
   return (
     <>
       <Navbar />
-      <main className="bg-background min-h-screen">
+      <main className="min-h-screen">
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 pb-16">
           <div className="bg-primary/10 absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full blur-3xl" />

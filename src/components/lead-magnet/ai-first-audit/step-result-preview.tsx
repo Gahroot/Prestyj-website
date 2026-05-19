@@ -112,14 +112,14 @@ export function StepResultPreview({
           <p className="text-primary text-sm font-medium">Sent. Redirecting to your audit…</p>
         )}
 
-        <div className="flex gap-3">
-          <Button onClick={onBack} variant="outline" size="lg" className="w-full">
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Button onClick={onBack} variant="outline" size="lg" className="w-full sm:flex-1">
             Back
           </Button>
           <Button
             onClick={finalize}
             size="lg"
-            className="w-full"
+            className="w-full sm:flex-1"
             disabled={submitting || shareSlug !== null}
           >
             {submitting ? "Generating…" : shareSlug ? "Sent" : "Email me my full audit"}

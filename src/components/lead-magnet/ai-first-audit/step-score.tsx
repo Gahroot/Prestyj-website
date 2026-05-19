@@ -242,19 +242,19 @@ export function StepScore({ picked, onBack, onComplete }: StepScoreProps) {
 
       {error && <p className="text-destructive text-sm">{error}</p>}
 
-      <div className="flex flex-wrap items-center gap-3">
-        <Button onClick={handlePrev} variant="outline" size="lg">
+      <div className="grid gap-3 sm:grid-cols-[auto_auto_1fr] sm:items-center">
+        <Button onClick={handlePrev} variant="outline" size="lg" className="w-full sm:w-auto">
           <ArrowLeft className="mr-1 h-4 w-4" /> Back
         </Button>
         <Button
           onClick={skip}
           variant="outline"
           size="lg"
-          className="text-muted-foreground hover:text-foreground"
+          className="text-muted-foreground w-full hover:text-foreground sm:w-auto"
         >
           <SkipForward className="mr-1 h-4 w-4" /> Skip this task
         </Button>
-        <Button onClick={handleNext} size="lg" className="ml-auto">
+        <Button onClick={handleNext} size="lg" className="w-full sm:ml-auto sm:w-auto">
           {index + 1 >= activeTasks.length ? "See my results" : "Next task"}
           <ArrowRight className="ml-1 h-4 w-4" />
         </Button>

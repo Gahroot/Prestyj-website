@@ -266,11 +266,11 @@ export function StepTaskPicker({
 
       {error && <p className="text-destructive text-sm">{error}</p>}
 
-      <div className="flex gap-3">
-        <Button onClick={onBack} variant="outline" size="lg" className="w-full">
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <Button onClick={onBack} variant="outline" size="lg" className="w-full sm:flex-1">
           Back
         </Button>
-        <Button onClick={handleNext} size="lg" className="w-full" disabled={!meetsMinimum}>
+        <Button onClick={handleNext} size="lg" className="w-full sm:flex-1" disabled={!meetsMinimum}>
           Score these tasks
         </Button>
       </div>
