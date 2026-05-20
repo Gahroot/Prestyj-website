@@ -225,12 +225,6 @@ const HERO_SUBJECTS: Record<string, string> = {
     "Insurance agency office, reception desk with phone, professional atmosphere",
 };
 
-// Subject descriptions for any slugs not explicitly defined above
-const DEFAULT_SUBJECTS: Record<string, string> = {
-  default:
-    "Business owner at desk reviewing results, modern office environment, confident expression, natural lighting",
-};
-
 function getSubjectForSlug(slug: string): string {
   // First check if we have a specific subject
   if (HERO_SUBJECTS[slug]) {

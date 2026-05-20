@@ -21,6 +21,7 @@ import { SpotCounter } from "@/components/founding-cohort/spot-counter";
 import { SocialProofStrip } from "@/components/founding-cohort/social-proof-strip";
 import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { VideoCarousel } from "@/components/sections/video-carousel";
 import { FOUNDING_COHORT, spotsRemaining } from "@/lib/founding-cohort";
 
 const PAGE_URL = "https://prestyj.com/founding-cohort";
@@ -90,6 +91,15 @@ const DEAL = [
     detail:
       "Standard case-study rights. We don't share private financials or proprietary creative.",
   },
+] as const;
+
+const SAMPLE_VIDEOS = [
+  "1182069557",
+  "1182069871",
+  "1173092805",
+  "1173092688",
+  "1173092572",
+  "1171065337",
 ] as const;
 
 export default function FoundingCohortPage() {
@@ -212,6 +222,21 @@ export default function FoundingCohortPage() {
                 </li>
               ))}
             </ol>
+          </section>
+
+          {/* Samples */}
+          <section className="mt-16 space-y-8">
+            <div className="space-y-3 text-center">
+              <h2 className="font-heading text-3xl font-bold tracking-tight">
+                See the finished video ads you&apos;ll get
+              </h2>
+              <p className="text-muted-foreground mx-auto max-w-2xl">
+                Real ads from real batches. Each one built from a single 15–20 minute recording.
+              </p>
+            </div>
+            <div className="px-4 md:px-16">
+              <VideoCarousel videos={[...SAMPLE_VIDEOS]} />
+            </div>
           </section>
 
           {/* Form */}

@@ -2,12 +2,9 @@ import {
   Ban,
   BarChart3,
   Bot,
-  Building2,
-  Calculator,
   Clock,
   Cog,
   CreditCard,
-  DollarSign,
   Facebook,
   Instagram,
   Linkedin,
@@ -16,12 +13,8 @@ import {
   Rocket,
   ShieldCheck,
   Target,
-  Timer,
   Twitter,
-  Users,
-  Volume2,
   Youtube,
-  Zap,
 } from "lucide-react";
 
 import type { ContentEnginePageConfig } from "./page-config";

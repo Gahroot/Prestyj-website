@@ -260,7 +260,7 @@ async function main() {
   const pains = pickPains(opts.count, opts.pains);
 
   console.log(`\nUsing ${pains.length} pain point${pains.length === 1 ? "" : "s"}:\n`);
-  pains.forEach((p, i) => {
+  pains.forEach((p) => {
     const idx = PAIN_POINTS.indexOf(p) + 1;
     console.log(`  [${idx}] ${p.pain_point.slice(0, 90)}${p.pain_point.length > 90 ? "..." : ""}`);
   });

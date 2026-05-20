@@ -13,8 +13,7 @@ config({ path: ".env.local" });
 
 import { buildPrompt } from "./prompt-builder";
 import { generateAndDownload } from "./z-image";
-import type { AspectRatio, Industry } from "./types";
-import { readdirSync } from "node:fs";
+import type { Industry } from "./types";
 import { existsSync } from "node:fs";
 
 // ---------------------------------------------------------------------------

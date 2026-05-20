@@ -30,7 +30,6 @@ export function ContentEngineProofScreenshots({
                 <div className="relative aspect-[3/4] overflow-hidden bg-black/50">
                   <picture>
                     <source srcSet={shot.src} type="image/webp" />
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={shot.fallback}
                       alt={shot.alt}

@@ -1319,7 +1319,6 @@ function renderCompareRoute(v: Vertical): string {
     .split("-")
     .map((s, i) => (i === 0 ? cap(s) : cap(s)))
     .join("");
-  const slugForFn = `${v.slug}-${c.slug}`.split("-").map(cap).join("");
   const fnName = `PrestyjVs${cap(
     c.slug
       .split("-")

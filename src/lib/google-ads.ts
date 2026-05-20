@@ -32,7 +32,7 @@ export function getGoogleAdsBookingSendTo(): string | null {
  * Fire a Google Ads conversion event for a CTA click (e.g. "Book a Demo").
  * Safe no-op if gtag hasn't loaded yet or the label is not configured.
  */
-export function trackGoogleAdsConversion(label: string): void {
+export function trackGoogleAdsConversion(): void {
   const sendTo = getGoogleAdsBookingSendTo();
   if (!sendTo) return;
 

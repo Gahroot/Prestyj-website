@@ -28,7 +28,7 @@ interface CalculatorInputs {
 
 export default function CalculatorResultsPage() {
   // Initialize state lazily from sessionStorage
-  const [results, setResults] = useState<ROIResults | null>(() => {
+  const [results] = useState<ROIResults | null>(() => {
     if (typeof window !== "undefined") {
       const storedResults = sessionStorage.getItem("calculatorResults");
       return storedResults ? JSON.parse(storedResults) : null;
@@ -36,7 +36,7 @@ export default function CalculatorResultsPage() {
     return null;
   });
 
-  const [inputs, setInputs] = useState<CalculatorInputs | null>(() => {
+  const [inputs] = useState<CalculatorInputs | null>(() => {
     if (typeof window !== "undefined") {
       const storedInputs = sessionStorage.getItem("calculatorInputs");
       return storedInputs ? JSON.parse(storedInputs) : null;

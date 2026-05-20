@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Download, Mail, Building2, FileText, CheckCircle, Loader2 } from "lucide-react";

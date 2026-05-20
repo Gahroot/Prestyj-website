@@ -104,7 +104,6 @@ function categorizeCompetitor(slug: string, alt: AlternativePageContent): Compet
 
 function getAlternativeHeroPrompt(slug: string, alt: AlternativePageContent): string {
   const category = categorizeCompetitor(slug, alt);
-  const competitorName = alt.competitor.name;
 
   let subject = "";
   let industry: PromptRequest["industry"] = "general";

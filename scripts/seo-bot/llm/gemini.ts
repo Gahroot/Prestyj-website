@@ -19,48 +19,6 @@ const PRICING: Record<string, PriceTier> = {
 
 const FALLBACK_PRICING: PriceTier = { inputPerM: 5, outputPerM: 15 };
 
-/**
- * Gemini's responseSchema accepts only a subset of JSON Schema / OpenAPI.
- * Unsupported keywords (additionalProperties, $schema, $id, examples, default,
- * const, etc.) cause a 400 Bad Request. Recursively strip them.
- */
-const GEMINI_SCHEMA_ALLOWED = new Set([
-  "type",
-  "properties",
-  "required",
-  "items",
-  "enum",
-  "format",
-  "description",
-  "nullable",
-  "minItems",
-  "maxItems",
-  "minimum",
-  "maximum",
-  "minLength",
-  "maxLength",
-  "pattern",
-  "title",
-  "anyOf",
-  "oneOf",
-  "allOf",
-  "propertyOrdering",
-]);
-
-function sanitizeGeminiSchema(schema: unknown): unknown {
-  if (Array.isArray(schema)) {
-    return schema.map(sanitizeGeminiSchema);
-  }
-  if (schema && typeof schema === "object") {
-    const out: Record<string, unknown> = {};
-    for (const [key, val] of Object.entries(schema as Record<string, unknown>)) {
-      if (!GEMINI_SCHEMA_ALLOWED.has(key)) continue;
-      out[key] = sanitizeGeminiSchema(val);
-    }
-    return out;
-  }
-  return schema;
-}
 
 function resolvePricing(model: string): PriceTier {
   const exact = PRICING[model];

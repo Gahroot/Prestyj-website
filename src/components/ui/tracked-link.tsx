@@ -34,7 +34,7 @@ export function TrackedLink({
       content_name: contentName,
       event_label: eventLabel,
     });
-    trackGoogleAdsConversion(eventLabel);
+    trackGoogleAdsConversion();
   };
 
   return (
