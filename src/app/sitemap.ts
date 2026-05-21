@@ -90,6 +90,67 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.9,
     },
+    // Batch video ads exact-intent landing pages
+    {
+      url: `${baseUrl}/100-video-ads`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.82,
+    },
+    {
+      url: `${baseUrl}/300-video-ads`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.82,
+    },
+    {
+      url: `${baseUrl}/500-video-ads`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.84,
+    },
+    {
+      url: `${baseUrl}/1000-video-ads`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.84,
+    },
+    {
+      url: `${baseUrl}/ad-creative-testing-service`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.84,
+    },
+    {
+      url: `${baseUrl}/run-my-first-facebook-ads`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.78,
+    },
+    {
+      url: `${baseUrl}/scale-facebook-ads-with-more-creative`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.78,
+    },
+    {
+      url: `${baseUrl}/creative-volume`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.78,
+    },
+    {
+      url: `${baseUrl}/meta-ad-creative-testing`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.78,
+    },
+    {
+      url: `${baseUrl}/tiktok-ad-creative-testing`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.78,
+    },
     // Hub indexes for dynamic page collections
     {
       url: `${baseUrl}/alternatives`,

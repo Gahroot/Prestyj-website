@@ -58,6 +58,33 @@ interface BestForPageClientProps {
 }
 
 export function BestForPageClient({ bestFor }: BestForPageClientProps) {
+  const isBatchCreativePage =
+    bestFor.slug.startsWith("batch-video-ads-for-") ||
+    bestFor.slug.startsWith("cost-per-tested-ad-angle-for-") ||
+    bestFor.slug.startsWith("creative-testing-for-");
+  const nicheLabel = bestFor.niche.shortName || bestFor.niche.name;
+  const whyHeading = isBatchCreativePage
+    ? `Why this creative volume model fits ${nicheLabel}`
+    : `Why Prestyj is Best For ${nicheLabel}`;
+  const whyDescription = isBatchCreativePage
+    ? "The key reasons this niche needs structured ad variation, not another generic video."
+    : "Discover the key reasons why professionals in your niche choose Prestyj";
+  const painHeading = isBatchCreativePage ? "Creative Bottlenecks This Fixes" : "Your Challenges, Solved";
+  const painDescription = isBatchCreativePage
+    ? "See how batch production turns common paid-social constraints into testable creative lanes."
+    : "See how Prestyj transforms common pain points into competitive advantages";
+  const comparisonHeading = isBatchCreativePage
+    ? "Batch Creative vs. the Status Quo"
+    : "How Prestyj Compares";
+  const comparisonDescription = isBatchCreativePage
+    ? "Compare structured ad variation against the traditional ways teams source creative."
+    : "See how Prestyj stacks up against traditional methods";
+  const faqDescription = isBatchCreativePage
+    ? `Common questions about batch video ads and creative testing for ${nicheLabel}`
+    : `Common questions about using Prestyj for ${nicheLabel}`;
+  const ctaHref = isBatchCreativePage ? "/batch-video-ads#pricing" : bestFor.cta.buttonHref;
+  const ctaButtonText = isBatchCreativePage ? "See Batch Pricing" : bestFor.cta.buttonText;
+
   return (
     <>
       {/* Breadcrumb */}
@@ -120,10 +147,10 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
             className="mb-12 text-center"
           >
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-              Why Prestyj is Best For {bestFor.niche.shortName || bestFor.niche.name}
+              {whyHeading}
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              Discover the key reasons why professionals in your niche choose Prestyj
+              {whyDescription}
             </p>
           </motion.div>
 
@@ -171,10 +198,10 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
             className="mb-12 text-center"
           >
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-              Your Challenges, Solved
+              {painHeading}
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              See how Prestyj transforms common pain points into competitive advantages
+              {painDescription}
             </p>
           </motion.div>
 
@@ -232,10 +259,10 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
             className="mb-12 text-center"
           >
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-              How Prestyj Compares
+              {comparisonHeading}
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              See how Prestyj stacks up against traditional methods
+              {comparisonDescription}
             </p>
           </motion.div>
 
@@ -313,8 +340,7 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
               Frequently Asked Questions
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              Common questions about using Prestyj for{" "}
-              {bestFor.niche.shortName || bestFor.niche.name}
+              {faqDescription}
             </p>
           </motion.div>
 
@@ -356,8 +382,8 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
               {bestFor.cta.subheadline}
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
-              <Link href={bestFor.cta.buttonHref}>
-                {bestFor.cta.buttonText}
+              <Link href={ctaHref}>
+                {ctaButtonText}
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>

@@ -51,6 +51,49 @@ const SAMPLE_VIDEOS = [
 
 const TESTIMONIALS = CLIENT_TESTIMONIALS;
 
+const CREATIVE_TESTING_RESOURCES = [
+  {
+    href: "/100-video-ads",
+    label: "100 video ads",
+    description: "Start with the $497 test batch for first signal around one customer problem.",
+  },
+  {
+    href: "/500-video-ads",
+    label: "500 video ads",
+    description: "The recommended batch for five pain points and a deeper creative matrix.",
+  },
+  {
+    href: "/1000-video-ads",
+    label: "1,000 video ads",
+    description: "The max sprint for launches, large accounts, and aggressive fatigue protection.",
+  },
+  {
+    href: "/ad-creative-testing-service",
+    label: "Ad creative testing service",
+    description: "Use Prestyj as the high-volume creative production layer for paid social tests.",
+  },
+  {
+    href: "/meta-ad-creative-testing",
+    label: "Meta ad creative testing",
+    description: "A Facebook and Instagram testing workflow built around fresh variation.",
+  },
+  {
+    href: "/creative-volume",
+    label: "Creative volume",
+    description: "Why modern paid social accounts need more useful creative inputs.",
+  },
+  {
+    href: "/batch-video-ad-roi-calculator",
+    label: "ROI calculator",
+    description: "Model how many winners a batch needs to find to pay for itself.",
+  },
+  {
+    href: "/best-for/batch-video-ads-for-ecommerce-brands",
+    label: "Ecommerce batch ads",
+    description: "See how the batch system applies to product brands and DTC testing.",
+  },
+];
+
 type UITier = {
   id: BatchTierId;
   name: string;
@@ -1118,6 +1161,45 @@ export function BatchVideoAdsClient() {
                   </summary>
                   <div className="text-muted-foreground px-6 pb-6 leading-relaxed">{item.a}</div>
                 </details>
+              </AnimateOnScroll>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CREATIVE TESTING RESOURCES */}
+      <section className="bg-muted/20 border-border/50 border-y px-4 py-24">
+        <div className="mx-auto max-w-6xl">
+          <AnimateOnScroll className="mb-12 text-center">
+            <Badge variant="outline" className="border-primary/40 text-primary mb-4">
+              CREATIVE TESTING RESOURCES
+            </Badge>
+            <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-5xl">
+              Choose the page closest to your next test
+            </h2>
+            <p className="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl">
+              Size your batch, model the economics, or jump into a platform-specific creative testing
+              plan before you buy.
+            </p>
+          </AnimateOnScroll>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {CREATIVE_TESTING_RESOURCES.map((resource, index) => (
+              <AnimateOnScroll key={resource.href} delay={index * 0.04}>
+                <a
+                  href={resource.href}
+                  className="border-border bg-background/70 hover:border-primary/50 group block h-full rounded-2xl border p-6 transition-colors"
+                >
+                  <div className="mb-4 flex items-start justify-between gap-4">
+                    <h3 className="font-heading text-foreground group-hover:text-primary font-bold transition-colors">
+                      {resource.label}
+                    </h3>
+                    <ArrowRight className="text-primary mt-1 h-4 w-4 flex-shrink-0 transition-transform group-hover:translate-x-1" />
+                  </div>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {resource.description}
+                  </p>
+                </a>
               </AnimateOnScroll>
             ))}
           </div>

@@ -111,7 +111,7 @@ export function categorizeSlug(slug: string): BlogCategory {
     return "Video Ads";
   }
   if (s.includes("how-many-video")) return "Video Ads";
-  if (s.includes("1000-ad-sprint")) return "Video Ads";
+  if (s.includes("1000-ad-sprint") || s.includes("how-to-run-1000-ads")) return "Video Ads";
   if (s.includes("ad-fatigue") || s.includes("ad-creative-testing-tools")) {
     return "Video Ads";
   }
@@ -128,6 +128,13 @@ export function categorizeSlug(slug: string): BlogCategory {
     return "Video Ads";
   }
   if (s.includes("best-way-to-test-100-ad")) return "Video Ads";
+  if (s.includes("first-facebook-ads") || s.includes("run-your-first-facebook-ads")) {
+    return "Video Ads";
+  }
+  if (s.includes("test-50-hooks") || s.includes("ad-creative-testing-matrix")) {
+    return "Video Ads";
+  }
+  if (s.includes("100-video-ad-ideas")) return "Video Ads";
   if (s.includes("scale-facebook-ads")) return "Video Ads";
   if (s.includes("real-cost-of-testing-100")) return "Video Ads";
   if (s.includes("true-cost-of-one-viral")) return "Video Ads";

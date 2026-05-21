@@ -127,6 +127,51 @@ import { socialVolumeStrategyForConsultants } from "./social-volume-strategy-for
 // SOCIAL-VERTICAL-MATRIX-IMPORTS-END
 // BATCH-MATRIX-IMPORTS-END
 
+// BATCH-ORGANIC-MATRIX-IMPORTS-START
+import { batchVideoAdsForElectricians } from "./batch-video-ads-for-electricians";
+import { creativeTestingForElectricians } from "./creative-testing-for-electricians";
+import { batchVideoAdsForPestControlCompanies } from "./batch-video-ads-for-pest-control-companies";
+import { creativeTestingForPestControlCompanies } from "./creative-testing-for-pest-control-companies";
+import { batchVideoAdsForGarageDoorCompanies } from "./batch-video-ads-for-garage-door-companies";
+import { creativeTestingForGarageDoorCompanies } from "./creative-testing-for-garage-door-companies";
+import { batchVideoAdsForLandscapers } from "./batch-video-ads-for-landscapers";
+import { creativeTestingForLandscapers } from "./creative-testing-for-landscapers";
+import { batchVideoAdsForPoolServiceCompanies } from "./batch-video-ads-for-pool-service-companies";
+import { creativeTestingForPoolServiceCompanies } from "./creative-testing-for-pool-service-companies";
+import { batchVideoAdsForRestorationCompanies } from "./batch-video-ads-for-restoration-companies";
+import { creativeTestingForRestorationCompanies } from "./creative-testing-for-restoration-companies";
+import { batchVideoAdsForGeneralContractors } from "./batch-video-ads-for-general-contractors";
+import { creativeTestingForGeneralContractors } from "./creative-testing-for-general-contractors";
+import { batchVideoAdsForDentists } from "./batch-video-ads-for-dentists";
+import { creativeTestingForDentists } from "./creative-testing-for-dentists";
+import { batchVideoAdsForMedSpas } from "./batch-video-ads-for-med-spas";
+import { creativeTestingForMedSpas } from "./creative-testing-for-med-spas";
+import { batchVideoAdsForLawFirms } from "./batch-video-ads-for-law-firms";
+import { creativeTestingForLawFirms } from "./creative-testing-for-law-firms";
+import { batchVideoAdsForChiropractors } from "./batch-video-ads-for-chiropractors";
+import { creativeTestingForChiropractors } from "./creative-testing-for-chiropractors";
+import { batchVideoAdsForGyms } from "./batch-video-ads-for-gyms";
+import { creativeTestingForGyms } from "./creative-testing-for-gyms";
+import { batchVideoAdsForSolarCompanies } from "./batch-video-ads-for-solar-companies";
+import { creativeTestingForSolarCompanies } from "./creative-testing-for-solar-companies";
+import { batchVideoAdsForAutoDealerships } from "./batch-video-ads-for-auto-dealerships";
+import { creativeTestingForAutoDealerships } from "./creative-testing-for-auto-dealerships";
+import { batchVideoAdsForInsuranceAgents } from "./batch-video-ads-for-insurance-agents";
+import { creativeTestingForInsuranceAgents } from "./creative-testing-for-insurance-agents";
+import { batchVideoAdsForFinancialAdvisors } from "./batch-video-ads-for-financial-advisors";
+import { creativeTestingForFinancialAdvisors } from "./creative-testing-for-financial-advisors";
+import { batchVideoAdsForEcommerceBrands } from "./batch-video-ads-for-ecommerce-brands";
+import { creativeTestingForEcommerceBrands } from "./creative-testing-for-ecommerce-brands";
+import { batchVideoAdsForSaasFounders } from "./batch-video-ads-for-saas-founders";
+import { creativeTestingForSaasFounders } from "./creative-testing-for-saas-founders";
+import { batchVideoAdsForCreators } from "./batch-video-ads-for-creators";
+import { creativeTestingForCreators } from "./creative-testing-for-creators";
+import { batchVideoAdsForConsultants } from "./batch-video-ads-for-consultants";
+import { creativeTestingForConsultants } from "./creative-testing-for-consultants";
+import { batchVideoAdsForPersonalBrands } from "./batch-video-ads-for-personal-brands";
+import { creativeTestingForPersonalBrands } from "./creative-testing-for-personal-brands";
+// BATCH-ORGANIC-MATRIX-IMPORTS-END
+
 export const bestForPages: Record<string, BestForPageContent> = {
   "real-estate-teams": realEstateTeams,
   "isa-replacement": isaReplacement,
@@ -253,6 +298,51 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "social-volume-strategy-for-consultants": socialVolumeStrategyForConsultants,
   // SOCIAL-VERTICAL-MATRIX-REGISTER-END
   // BATCH-MATRIX-REGISTER-END
+
+  // BATCH-ORGANIC-MATRIX-REGISTER-START
+  "batch-video-ads-for-electricians": batchVideoAdsForElectricians,
+  "creative-testing-for-electricians": creativeTestingForElectricians,
+  "batch-video-ads-for-pest-control-companies": batchVideoAdsForPestControlCompanies,
+  "creative-testing-for-pest-control-companies": creativeTestingForPestControlCompanies,
+  "batch-video-ads-for-garage-door-companies": batchVideoAdsForGarageDoorCompanies,
+  "creative-testing-for-garage-door-companies": creativeTestingForGarageDoorCompanies,
+  "batch-video-ads-for-landscapers": batchVideoAdsForLandscapers,
+  "creative-testing-for-landscapers": creativeTestingForLandscapers,
+  "batch-video-ads-for-pool-service-companies": batchVideoAdsForPoolServiceCompanies,
+  "creative-testing-for-pool-service-companies": creativeTestingForPoolServiceCompanies,
+  "batch-video-ads-for-restoration-companies": batchVideoAdsForRestorationCompanies,
+  "creative-testing-for-restoration-companies": creativeTestingForRestorationCompanies,
+  "batch-video-ads-for-general-contractors": batchVideoAdsForGeneralContractors,
+  "creative-testing-for-general-contractors": creativeTestingForGeneralContractors,
+  "batch-video-ads-for-dentists": batchVideoAdsForDentists,
+  "creative-testing-for-dentists": creativeTestingForDentists,
+  "batch-video-ads-for-med-spas": batchVideoAdsForMedSpas,
+  "creative-testing-for-med-spas": creativeTestingForMedSpas,
+  "batch-video-ads-for-law-firms": batchVideoAdsForLawFirms,
+  "creative-testing-for-law-firms": creativeTestingForLawFirms,
+  "batch-video-ads-for-chiropractors": batchVideoAdsForChiropractors,
+  "creative-testing-for-chiropractors": creativeTestingForChiropractors,
+  "batch-video-ads-for-gyms": batchVideoAdsForGyms,
+  "creative-testing-for-gyms": creativeTestingForGyms,
+  "batch-video-ads-for-solar-companies": batchVideoAdsForSolarCompanies,
+  "creative-testing-for-solar-companies": creativeTestingForSolarCompanies,
+  "batch-video-ads-for-auto-dealerships": batchVideoAdsForAutoDealerships,
+  "creative-testing-for-auto-dealerships": creativeTestingForAutoDealerships,
+  "batch-video-ads-for-insurance-agents": batchVideoAdsForInsuranceAgents,
+  "creative-testing-for-insurance-agents": creativeTestingForInsuranceAgents,
+  "batch-video-ads-for-financial-advisors": batchVideoAdsForFinancialAdvisors,
+  "creative-testing-for-financial-advisors": creativeTestingForFinancialAdvisors,
+  "batch-video-ads-for-ecommerce-brands": batchVideoAdsForEcommerceBrands,
+  "creative-testing-for-ecommerce-brands": creativeTestingForEcommerceBrands,
+  "batch-video-ads-for-saas-founders": batchVideoAdsForSaasFounders,
+  "creative-testing-for-saas-founders": creativeTestingForSaasFounders,
+  "batch-video-ads-for-creators": batchVideoAdsForCreators,
+  "creative-testing-for-creators": creativeTestingForCreators,
+  "batch-video-ads-for-consultants": batchVideoAdsForConsultants,
+  "creative-testing-for-consultants": creativeTestingForConsultants,
+  "batch-video-ads-for-personal-brands": batchVideoAdsForPersonalBrands,
+  "creative-testing-for-personal-brands": creativeTestingForPersonalBrands,
+// BATCH-ORGANIC-MATRIX-REGISTER-END
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

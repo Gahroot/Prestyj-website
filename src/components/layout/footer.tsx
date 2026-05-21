@@ -37,6 +37,14 @@ const footerLinks = {
     { href: "/blog", label: "Blog" },
     { href: "/statistics", label: "Statistics", highlight: true },
   ],
+  videoAds: [
+    { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
+    { href: "/ad-creative-testing-service", label: "Creative Testing Service" },
+    { href: "/1000-video-ads", label: "1,000 Video Ads" },
+    { href: "/batch-video-ad-roi-calculator", label: "ROI Calculator" },
+    { href: "/cost-per-tested-ad-angle-calculator", label: "Cost Per Angle" },
+    { href: "/ad-fatigue-solution", label: "Ad Fatigue Solution" },
+  ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
@@ -71,7 +79,7 @@ export function Footer() {
   return (
     <footer className="bg-card border-border border-t">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-7">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2">
@@ -128,6 +136,7 @@ export function Footer() {
           <FooterColumn title="Product" links={footerLinks.product} />
           <FooterColumn title="Company" links={footerLinks.company} />
           <FooterColumn title="Resources" links={footerLinks.resources} />
+          <FooterColumn title="Video Ads" links={footerLinks.videoAds} />
           <FooterColumn title="Legal" links={footerLinks.legal} />
         </div>
 

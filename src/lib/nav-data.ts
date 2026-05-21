@@ -1,4 +1,4 @@
-import { Bot, Megaphone, Zap, Phone, Sparkles, type LucideIcon } from "lucide-react";
+import { Bot, Megaphone, Zap, Phone, Sparkles, FlaskConical, type LucideIcon } from "lucide-react";
 
 export type DropdownLink = {
   href: string;
@@ -62,6 +62,12 @@ export const solutionLinks: DropdownLink[] = [
     label: "AI Voice Receptionist",
     description: "24/7 AI voice agent that answers, qualifies, and books.",
     icon: Phone,
+  },
+  {
+    href: "/ad-creative-testing-service",
+    label: "Creative Testing Service",
+    description: "High-volume video ad variations for Meta, TikTok, and YouTube Shorts.",
+    icon: FlaskConical,
   },
   {
     href: "/ai-first-audit",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
@@ -169,6 +170,12 @@ export default function BatchVideoAdsPage() {
       <SafeJsonLd data={serviceJsonLd} />
       <SafeJsonLd data={productJsonLd} />
       <FAQJsonLd faqs={batchVideoAdsFaqs} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "https://prestyj.com" },
+          { name: "Batch Video Ads", url: pageUrl },
+        ]}
+      />
       <BatchVideoAdsClient />
     </>
   );
