@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 
 /**
- * Security middleware for Next.js 16
+ * Security proxy for Next.js 16
  * Implements Content Security Policy and other security headers
  */
-export function middleware() {
+export function proxy() {
   // Content Security Policy directives
   const cspDirectives = [
     { name: "default-src", values: ["'self'"] },
@@ -119,7 +119,7 @@ export function middleware() {
   return response;
 }
 
-// Configure which routes the middleware runs on
+// Configure which routes the proxy runs on
 export const config = {
   matcher: [
     /*

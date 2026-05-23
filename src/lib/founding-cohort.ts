@@ -3,7 +3,7 @@
  *
  * 5 service businesses get a free Minimum batch (300 ads, $1,497 value)
  * in exchange for a video testimonial, Google review, results-sharing rights,
- * and a 14-day commitment to actually run the ads at $50/day minimum.
+ * and a 14-day commitment to actually run the ads at $100/day minimum.
  *
  * Promo code FREE300 is configured in Stripe as 100% off the Minimum price.
  * For approved applicants the API now mints a Stripe Checkout Session with
@@ -28,7 +28,7 @@ export const FOUNDING_COHORT = {
    */
   checkoutTier: "minimum" as const,
   /**
-   * Sample tier we steer soft-qualify-outs toward (sub-$1K spenders or
+   * Sample tier we steer soft-qualify-outs toward (sub-$3K spenders or
    * not-running-yet). 100 ads for $497 — same engine, lower commitment.
    */
   sampleTier: "starter" as const,
@@ -40,12 +40,12 @@ export const FOUNDING_COHORT = {
    * monthly aren't running enough volume to produce real signal — they
    * get qualified out client-side before reaching the API.
    */
-  minMonthlyAdSpendUsd: 1000,
+  minMonthlyAdSpendUsd: 3000,
   /**
    * Minimum daily spend they commit to running the batch at, used as the
    * floor for any performance signal. Surfaced in the terms.
    */
-  minDailyTestSpendUsd: 50,
+  minDailyTestSpendUsd: 100,
   /**
    * Test window in days. Buyer must run the batch for this long before
    * the testimonial / debrief is scheduled.

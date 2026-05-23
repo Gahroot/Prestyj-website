@@ -175,7 +175,7 @@ export function FoundingCohortApplicationForm() {
         setRejection({
           reason: "client_qualify_out",
           message:
-            "Founding spots need real ad-account data, so they're reserved for businesses already spending. The $497 sample (100 ads, same engine) is built for exactly your stage — finish your contact info on the next step and we'll point you there.",
+            "Founding spots need real ad-account data, so they're reserved for businesses already spending about $100/day or more. The $497 sample (100 ads, same engine) is built for exactly your stage — finish your contact info on the next step and we'll point you there.",
           fallbackHref: "/batch-video-ads#pricing",
         });
         return;
@@ -459,8 +459,8 @@ function QualifyStep({
               </SelectContent>
             </Select>
             <FormDescription>
-              Founding spots are reserved for businesses already spending — the case study needs
-              real ad-account data.
+              Founding spots are reserved for businesses already spending about $100/day or more —
+              the case study needs real ad-account data.
             </FormDescription>
             <FormMessage />
           </FormItem>

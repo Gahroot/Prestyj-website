@@ -25,7 +25,7 @@ export const runtime = "nodejs";
  *       /founding-cohort/approved with the manual code copy flow.
  *
  *   { approved: false, reason: "cohort_full" | "soft_qualify_out", ... }
- *     - Hard close (cohort full) or soft qualify-out (under-spend / not
+ *     - Hard close (cohort full) or soft qualify-out (under-$3K spend / not
  *       running ads). Soft path now offers the $497 sample tier and still
  *       captures the lead \u2014 no dead-end.
  */
@@ -66,7 +66,7 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Soft qualify-out \u2014 under-$1K spenders or not-running-yet. Used to be a
+  // Soft qualify-out \u2014 under-$3K spenders or not-running-yet. Used to be a
   // hard wall; now we route them to the $497 sample tier.
   if (!isQualified(data)) {
     return NextResponse.json(
@@ -74,7 +74,7 @@ export async function POST(request: NextRequest) {
         approved: false,
         reason: "soft_qualify_out",
         message:
-          "Founding spots need real ad-account data to produce a useful case study, so they're reserved for businesses already spending. Good news: the $497 sample (100 ads, same engine) is built for exactly your stage \u2014 you can be running in 24 hours.",
+          "Founding spots need real ad-account data to produce a useful case study, so they're reserved for businesses already spending about $100/day or more. Good news: the $497 sample (100 ads, same engine) is built for exactly your stage \u2014 you can be running in 24 hours.",
         fallbackHref: "/batch-video-ads#pricing",
         fallbackTier: FOUNDING_COHORT.sampleTier,
       },

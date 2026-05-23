@@ -1,6 +1,4 @@
 import { ImageResponse } from "next/og";
-
-export const runtime = "edge";
 export const alt = "PRESTYJ — 100 video ads for $497, delivered in 24 hours";
 export const size = {
   width: 1200,
@@ -118,7 +116,7 @@ export default async function Image() {
               fontSize: "24px",
             }}
           >
-            <span>✓</span>
+            <span>OK</span>
             <span>One recording session</span>
           </div>
           <div
@@ -130,7 +128,7 @@ export default async function Image() {
               fontSize: "24px",
             }}
           >
-            <span>✓</span>
+            <span>OK</span>
             <span>Scale to 1,000 anytime</span>
           </div>
           <div
@@ -142,7 +140,7 @@ export default async function Image() {
               fontSize: "24px",
             }}
           >
-            <span>✓</span>
+            <span>OK</span>
             <span>Built for paid ads</span>
           </div>
         </div>

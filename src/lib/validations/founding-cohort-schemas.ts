@@ -14,7 +14,7 @@ import z from "zod";
 
 export const MONTHLY_AD_SPEND_OPTIONS = [
   { value: "under-1k", label: "Under $1,000/mo", qualifies: false },
-  { value: "1k-3k", label: "$1,000–$3,000/mo", qualifies: true },
+  { value: "1k-3k", label: "$1,000–$3,000/mo", qualifies: false },
   { value: "3k-10k", label: "$3,000–$10,000/mo", qualifies: true },
   { value: "10k-25k", label: "$10,000–$25,000/mo", qualifies: true },
   { value: "25k-plus", label: "$25,000+/mo", qualifies: true },
