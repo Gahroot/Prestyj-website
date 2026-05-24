@@ -621,6 +621,296 @@ const industryStats: Statistic[] = [
   },
 ];
 
+// ─── Batch Video Ads & Creative Testing Statistics ─────────────────────────────
+
+const batchVideoAdStats: Statistic[] = [
+  {
+    id: "bva-winner-rate-home-services",
+    value: "7–12%",
+    description:
+      "Home service batch video ad tests average a 7–12% winning-ad rate, or roughly 1 winning ad per 8–14 tested creatives.",
+    source: {
+      name: "Prestyj production benchmark across home service batch video ad tests",
+      year: "2026",
+      url: "https://prestyj.com/blog/average-winning-ad-rate-batch-video-ad-testing-home-services-2026",
+    },
+    context:
+      "Benchmark covers HVAC, roofing, plumbing, electrical, garage door, pest control, restoration, solar, landscaping, and pool service batch tests where a winner meets at least two performance thresholds against the account control.",
+  },
+  {
+    id: "bva-cost-per-ad-variation",
+    value: "$4–$5",
+    description:
+      "Prestyj batch video ad packs price finished vertical ad variations at roughly $4–$5 per ad in 300–1,000-ad batches, compared with $75–$2,000 per ad from UGC or agency production.",
+    source: {
+      name: "Prestyj batch video ads pricing and market cost comparison",
+      year: "2026",
+      url: "https://prestyj.com/batch-video-ads",
+    },
+    context:
+      "Calculated from Prestyj's $1,497 / 300-ad, $2,497 / 500-ad, and $3,997 / 1,000-ad packs and compared with published UGC creator, agency, and in-house production cost ranges summarized on the Batch Video Ads page.",
+  },
+  {
+    id: "bva-cost-per-tested-angle",
+    value: "$400–$500",
+    description:
+      "A tested customer-problem angle costs about $400–$500 through batch video production versus $1K–$15K through UGC, agency, or in-house production workflows.",
+    source: {
+      name: "Prestyj batch video ads pricing and hidden-cost comparison",
+      year: "2026",
+      url: "https://prestyj.com/batch-video-ads#hidden-cost",
+    },
+    context:
+      "Uses the Prestyj 300+ ad batch economics and compares the cost of testing one customer-problem angle against common UGC, agency, and in-house production alternatives.",
+  },
+  {
+    id: "bva-creative-volume-top-accounts",
+    value: "300–1,000/mo",
+    description:
+      "Top-performing lead-generation accounts post-Andromeda commonly run 300–1,000 distinct creative variations per month to keep testing velocity ahead of fatigue.",
+    source: {
+      name: "Prestyj batch video ad statistics synthesis",
+      year: "2026",
+      url: "https://prestyj.com/blog/batch-video-ad-statistics-2026",
+    },
+    context:
+      "Synthesized from Meta Andromeda creative-volume discussions, creative testing benchmarks, and Prestyj campaign operations for lead-generation accounts.",
+  },
+  {
+    id: "bva-small-batch-zero-winner-risk",
+    value: "30–40%",
+    description:
+      "Small creative batches below 25 ads can produce zero winners 30–40% of the time purely from sample-size variance, even at a healthy 9% long-run winner rate.",
+    source: {
+      name: "Prestyj home services winning-ad-rate benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/average-winning-ad-rate-batch-video-ad-testing-home-services-2026",
+    },
+    context:
+      "Used to explain why 4–10-ad agency starter packages often fail to generate reliable signal for paid social advertisers.",
+  },
+];
+
+const creativeFatigueStats: Statistic[] = [
+  {
+    id: "fatigue-meta-cpa-degradation-5-7-days",
+    value: "5–7 days",
+    description:
+      "Meta video ads show measurable CPA degradation within 5–7 days of active spend once weekly frequency rises above roughly 2.0.",
+    source: {
+      name: "Motion App Creative Trends Report / Prestyj synthesis",
+      year: "2025–2026",
+      url: "https://prestyj.com/blog/batch-video-ad-statistics-2026",
+    },
+    context:
+      "Relevant for paid social accounts refreshing creative weekly or slower; sourced from creative fatigue benchmarks cited in the batch video ad statistics roundup.",
+  },
+  {
+    id: "fatigue-ads-fully-fatigued-14-days",
+    value: "60%",
+    description:
+      "Roughly 60% of Meta video ads are fully fatigued within 14 days of launch when CPA rises above 2× the original baseline.",
+    source: {
+      name: "Foreplay ad library cohort analysis / Prestyj synthesis",
+      year: "2025–2026",
+      url: "https://prestyj.com/blog/batch-video-ad-statistics-2026",
+    },
+    context:
+      "Used as a planning benchmark for accounts that need fresh creative before a two-week fatigue window closes.",
+  },
+  {
+    id: "fatigue-cpm-creep-14-days",
+    value: "+28–40%",
+    description:
+      "Across industry benchmarks, CPM commonly creeps 28–40% in the first 14 days of running the same creative pool.",
+    source: {
+      name: "Varos, Northbeam, Motion, Triple Whale, and Prestyj benchmark synthesis",
+      year: "2026",
+      url: "https://prestyj.com/blog/creative-fatigue-statistics-by-industry-2026",
+    },
+    context:
+      "Range summarizes the industry table for HVAC, roofing, solar, real estate, mortgage, dental, med-spa, ecommerce, coaches, and lead-gen agencies.",
+  },
+  {
+    id: "fatigue-refresh-extends-life",
+    value: "3–5×",
+    description:
+      "High-volume creative refresh programs using 15–50+ new variants per month can extend campaign life 3–5× compared with thin creative libraries.",
+    source: {
+      name: "Motion, Foreplay, and Prestyj creative fatigue benchmark synthesis",
+      year: "2026",
+      url: "https://prestyj.com/blog/creative-fatigue-statistics-by-industry-2026",
+    },
+    context:
+      "Applies most directly to accounts spending $10K+/month in paid social where single-creative campaigns reliably decay within 14–21 days.",
+  },
+];
+
+const socialMediaEconomicsStats: Statistic[] = [
+  {
+    id: "social-dfy-real-loaded-cost",
+    value: "$2.4K–$7.8K/mo",
+    description:
+      "Done-for-you social media retainers advertised at $800–$3,500 per month often cost $2,400–$7,800 per month after setup, platform, premium content, revision, and contract costs are included.",
+    source: {
+      name: "Prestyj hidden-cost analysis of done-for-you social media services",
+      year: "2026",
+      url: "https://prestyj.com/blog/hidden-costs-done-for-you-social-media-2026",
+    },
+    context:
+      "Fully loaded cost range includes typical agency setup fees, per-platform upcharges, premium content tiers, revision overages, strategy calls, reporting, and contract lock-in costs.",
+  },
+  {
+    id: "social-agency-post-volume",
+    value: "20–30/mo",
+    description:
+      "Typical done-for-you social media agency packages ship only 20–30 posts per month, often on one or two platforms.",
+    source: {
+      name: "Prestyj hidden-cost analysis of done-for-you social media services",
+      year: "2026",
+      url: "https://prestyj.com/blog/hidden-costs-done-for-you-social-media-2026",
+    },
+    context:
+      "Used to compare standard agency output against high-volume AI content operations and platform-level posting cadence requirements.",
+  },
+  {
+    id: "social-platform-cadence-short-form",
+    value: "1–3/day",
+    description:
+      "Short-form recommendation systems such as TikTok, Instagram Reels, and YouTube Shorts commonly reward 1–3 posts per day per account in 2026 cadence benchmarks.",
+    source: {
+      name: "Prestyj platform-by-platform posting frequency synthesis",
+      year: "2026",
+      url: "https://prestyj.com/blog/posting-frequency-by-platform-2026",
+    },
+    context:
+      "Synthesized from Buffer, Socialinsider, Sprout Social, AuthoredUp, Adobe, and late-2025 platform cadence research cited in the posting-frequency guide.",
+  },
+  {
+    id: "social-effective-cost-per-post",
+    value: "$0.74–$7.40",
+    description:
+      "Prestyj AI Content Department pricing can produce an effective cost per post of roughly $0.74–$7.40, compared with $83–$500 for many agency packages.",
+    source: {
+      name: "Prestyj AI Content Department pricing comparison",
+      year: "2026",
+      url: "https://prestyj.com/ai-content-department#hidden-cost",
+    },
+    context:
+      "Calculated from Prestyj's $1,997–$4,997 monthly pricing and 270–2,700 post-per-month plan ranges, compared with typical social agency output and retainers.",
+  },
+];
+
+const leadReactivationStats: Statistic[] = [
+  {
+    id: "reactivation-dormant-crm-volume",
+    value: "3,000–10,000",
+    description:
+      "The average SMB with several years of lead history has roughly 3,000–10,000 untouched leads sitting in its CRM.",
+    source: {
+      name: "Prestyj lead reactivation statistics benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/lead-reactivation-statistics",
+    },
+    context:
+      "Vendor audits and reactivation planning benchmarks across real estate teams, mortgage brokers, home services, insurance, solar, dental, and B2B services.",
+  },
+  {
+    id: "reactivation-cost-savings",
+    value: "60–80% less",
+    description:
+      "Lead reactivation campaigns commonly cost 60–80% less per qualified lead than acquiring new leads through paid channels.",
+    source: {
+      name: "Prestyj lead reactivation statistics benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/lead-reactivation-statistics",
+    },
+    context:
+      "Compares email, SMS, and AI voice reactivation cost ranges with Google Ads, Meta Ads, lead aggregators, and outbound SDR acquisition cost ranges.",
+  },
+  {
+    id: "reactivation-multichannel-rate",
+    value: "8–15%",
+    description:
+      "Multi-channel lead reactivation campaigns using email, SMS, and AI voice commonly reactivate 8–15% of dormant leads, outperforming single-channel outreach by 3–5×.",
+    source: {
+      name: "Prestyj lead reactivation statistics benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/lead-reactivation-statistics",
+    },
+    context:
+      "Applies to dormant CRM audiences where consent and list hygiene support multi-channel outreach.",
+  },
+  {
+    id: "reactivation-home-services-recovered-revenue",
+    value: "$50K–$200K+",
+    description:
+      "Home service companies can often recover $50K–$200K+ in revenue within 60–90 days by reactivating 3–5% of a 2,000–5,000 lead dormant database.",
+    source: {
+      name: "Prestyj home services lead reactivation benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/lead-reactivation-for-home-services",
+    },
+    context:
+      "Modeled across HVAC, plumbing, roofing, electrical, and other service businesses using typical dormant database sizes and ticket values.",
+  },
+];
+
+const instantLeadResponseStats: Statistic[] = [
+  {
+    id: "lead-response-ai-time-to-contact",
+    value: "12–45 sec",
+    description:
+      "Modern AI lead response systems can make first contact in 12–45 seconds, compared with 42–47 hours for many delayed human follow-up workflows.",
+    source: {
+      name: "Prestyj AI lead response systems guide",
+      year: "2026",
+      url: "https://prestyj.com/blog/ai-lead-response-systems-2026",
+    },
+    context:
+      "Covers AI systems connected to web forms, phone calls, SMS, email, CRM webhooks, and lead portals.",
+  },
+  {
+    id: "lead-response-ai-cost-per-lead-engaged",
+    value: "$2–$8",
+    description:
+      "AI lead response systems commonly engage and qualify leads at $2–$8 per lead, versus roughly $25–$50 for human follow-up workflows.",
+    source: {
+      name: "Prestyj AI lead response systems guide",
+      year: "2026",
+      url: "https://prestyj.com/blog/ai-lead-response-systems-2026",
+    },
+    context:
+      "Used for ROI modeling when AI handles initial contact, qualification, and appointment booking before human handoff.",
+  },
+  {
+    id: "lead-response-ai-roi-six-months",
+    value: "300–500%",
+    description:
+      "AI lead response systems can deliver 300–500% ROI within six months by lowering cost per engaged lead and recovering pipeline lost to slow follow-up.",
+    source: {
+      name: "Prestyj AI lead response systems guide",
+      year: "2026",
+      url: "https://prestyj.com/blog/ai-lead-response-systems-2026",
+    },
+    context:
+      "ROI estimate assumes paid lead volume already exists and the AI system improves first-contact speed, multi-channel follow-up, and appointment booking.",
+  },
+  {
+    id: "lead-response-hybrid-conversion-lift",
+    value: "+34%",
+    description:
+      "Hybrid AI-plus-human lead response converts 34% more leads than either fully manual or fully automated follow-up alone.",
+    source: {
+      name: "Prestyj AI lead response systems guide",
+      year: "2026",
+      url: "https://prestyj.com/blog/ai-lead-response-systems-2026",
+    },
+    context:
+      "AI handles speed, qualification, and routing while humans take the highest-intent sales conversations.",
+  },
+];
+
 // ─── Aggregated Categories ────────────────────────────────────────────────────
 
 export const statCategories: StatCategory[] = [
@@ -657,6 +947,46 @@ export const statCategories: StatCategory[] = [
     statistics: leadConversionStats,
   },
   {
+    id: "batch-video-ads",
+    title: "Batch Video Ads & Creative Testing Statistics",
+    slug: "batch-video-ads-creative-testing",
+    description:
+      "Winner-rate, creative-volume, cost-per-ad, and cost-per-tested-angle benchmarks for paid social advertisers using batch video ad production.",
+    statistics: batchVideoAdStats,
+  },
+  {
+    id: "creative-fatigue",
+    title: "Creative Fatigue & Refresh Statistics",
+    slug: "creative-fatigue-refresh",
+    description:
+      "How quickly paid social creative fatigues, how CPM creeps, and how high-volume refresh cadences extend campaign life.",
+    statistics: creativeFatigueStats,
+  },
+  {
+    id: "social-media-economics",
+    title: "Done-For-You Social Media Economics",
+    slug: "done-for-you-social-media-economics",
+    description:
+      "Fully loaded agency costs, posting frequency benchmarks, post-volume economics, and AI content department cost-per-post comparisons.",
+    statistics: socialMediaEconomicsStats,
+  },
+  {
+    id: "lead-reactivation",
+    title: "Lead Reactivation Benchmarks",
+    slug: "lead-reactivation-benchmarks",
+    description:
+      "Dormant CRM value, reactivation cost savings, multi-channel response rates, and recovered-revenue benchmarks for old leads.",
+    statistics: leadReactivationStats,
+  },
+  {
+    id: "instant-lead-response",
+    title: "Instant AI Lead Response Economics",
+    slug: "instant-ai-lead-response-economics",
+    description:
+      "AI lead response speed, cost-per-engaged-lead, ROI, and hybrid AI-plus-human conversion benchmarks.",
+    statistics: instantLeadResponseStats,
+  },
+  {
     id: "industry-benchmarks",
     title: "Industry Benchmarks: Cost Per Lead & Conversion Rates",
     slug: "industry-benchmarks",
@@ -686,7 +1016,7 @@ export const statisticsFaqs: StatisticsFAQ[] = [
   {
     question: "How does AI improve lead response times?",
     answer:
-      "AI lead response systems can engage leads in under 60 seconds — compared to the industry average of 42 hours. Instant lead response achieves a 66.7% meeting booking rate vs. ~30% for standard delayed follow-up. AI-using sales teams see a 15–30% boost in lead conversion, and 86% of teams report positive ROI within the first year of AI adoption.",
+      "AI lead response systems can engage leads in 12–45 seconds or under 60 seconds across web forms, calls, SMS, and email — compared to the industry average of 42+ hours. Instant lead response achieves a 66.7% meeting booking rate vs. ~30% for standard delayed follow-up. AI-using sales teams see a 15–30% boost in lead conversion, and 86% of teams report positive ROI within the first year of AI adoption.",
   },
   {
     question: "What is the average cost per lead in 2025?",
@@ -696,7 +1026,7 @@ export const statisticsFaqs: StatisticsFAQ[] = [
   {
     question: "How effective are video ads compared to static images?",
     answer:
-      "Video significantly outperforms static content. 92% of marketers say video delivers a positive ROI vs. 74% for images. Landing pages with video convert at 38% vs. 21% for image-only pages. 64% of consumers make a purchase after watching branded social videos, and video emails see 300% higher click-through rates.",
+      "Video significantly outperforms static content. 92% of marketers say video delivers a positive ROI vs. 74% for images. Landing pages with video convert at 38% vs. 21% for image-only pages. Batch creative benchmarks show home service video tests average a 7–12% winning-ad rate, while fatigue benchmarks show many Meta video ads decay within 5–14 days without fresh variants.",
   },
   {
     question: "How many sales reps use AI in 2025?",
@@ -712,5 +1042,15 @@ export const statisticsFaqs: StatisticsFAQ[] = [
     question: "What are the latest AI adoption trends for sales teams?",
     answer:
       "AI adoption in sales is accelerating rapidly. Generative AI adoption doubled from 33% in 2023 to 71% in 2024. Sellers using AI close 45% more deals and are 3.7× more likely to meet quota. 86% of sales teams achieve positive ROI in the first year, and Gartner predicts 95% of seller research workflows will begin with AI by 2027.",
+  },
+  {
+    question: "What batch video ad statistics should paid social teams track?",
+    answer:
+      "The highest-leverage batch video ad statistics are winning-ad rate, cost per finished ad, cost per tested customer-problem angle, creative fatigue window, CPM creep, and fresh creative volume per month. Prestyj benchmarks put home service winner rates at 7–12%, batch production at roughly $4–$5 per ad, and top lead-gen accounts at 300–1,000 variants per month.",
+  },
+  {
+    question: "What are the economics of done-for-you social media in 2026?",
+    answer:
+      "Traditional done-for-you social media retainers often advertise $800–$3,500 per month but land around $2,400–$7,800 per month once setup, platform, premium content, revision, reporting, and contract costs are included. Output is usually 20–30 posts per month, while modern short-form platforms often reward daily or multi-daily posting cadences.",
   },
 ];

@@ -15,6 +15,7 @@ import { getSolution, getAllSolutionSlugs } from "@/lib/solutions";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { CitationStatsSection } from "@/components/sections/citation-stats-section";
 
 interface SolutionPageProps {
   params: Promise<{ slug: string }>;
@@ -107,6 +108,15 @@ export default async function SolutionPage({ params }: SolutionPageProps) {
         {slug === "roofing" && <LeadMagnetBanner variant="roofing" />}
         <LandingPainPoints content={solution.painPoints} />
         {solution.calculator && <ROICalculator content={solution.calculator} />}
+        {solution.citationStatIds && (
+          <CitationStatsSection
+            statIds={solution.citationStatIds}
+            title={`${solution.hero.badge} benchmarks you can cite.`}
+            description="Permanent Prestyj statistics for the core economics behind this solution, with source notes, permalinks, and embed widgets for each claim."
+            cta={{ label: "Browse the statistics dataset", href: "/statistics" }}
+            className="bg-muted/20 border-border/50 border-y"
+          />
+        )}
         <LandingBenefits content={solution.benefits} />
         {solution.objections && <ObjectionAccordion content={solution.objections} />}
         <LandingCTA content={solution.cta} />

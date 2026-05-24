@@ -15,6 +15,8 @@ import { join } from "path";
 import { getAllAlternativeSlugs } from "../src/lib/alternatives";
 import { getAllSolutionSlugs } from "../src/lib/solutions";
 import { getAllBestForSlugs } from "../src/lib/best-for";
+import { getAllStatIds } from "../src/lib/statistics";
+import { getAllEmbeddableCalculatorSlugs } from "../src/lib/calculator/embeddable";
 
 const INDEXNOW_ENDPOINT = "https://yandex.com/indexnow";
 const BASE_URL = "https://prestyj.com";
@@ -81,7 +83,26 @@ function getAllUrls(): string[] {
     `${BASE_URL}/social-media-on-autopilot`,
     `${BASE_URL}/ai-social-media-management`,
     `${BASE_URL}/managed-social-media-service`,
+    // Open dataset + statistics permalinks + embed surfaces (added 2026-05)
+    `${BASE_URL}/data`,
+    `${BASE_URL}/data/statistics.csv`,
+    `${BASE_URL}/data/statistics.json`,
+    `${BASE_URL}/api/statistics`,
+    `${BASE_URL}/feed/stats.xml`,
+    `${BASE_URL}/llms.txt`,
+    `${BASE_URL}/statistics`,
   );
+
+  // Per-stat permalink pages — every stat gets its own citable URL
+  for (const id of getAllStatIds()) {
+    urls.push(`${BASE_URL}/stat/${id}`);
+    urls.push(`${BASE_URL}/embed/stat/${id}`);
+  }
+
+  // Calculator embed iframes
+  for (const slug of getAllEmbeddableCalculatorSlugs()) {
+    urls.push(`${BASE_URL}/embed/calculator/${slug}`);
+  }
 
   // Blog posts - scan content/blog directory
   for (const slug of getBlogSlugs()) {

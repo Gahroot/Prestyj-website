@@ -49,11 +49,26 @@ type OfferCategory =
   | "lead reactivation"
   | "uncategorized";
 
+type PriorityOffer =
+  | "batch video ads"
+  | "ai content department"
+  | "lead reactivation"
+  | "ai lead response";
+
 interface CategoryStats {
   category: OfferCategory;
   queryCitations: number;
   pageCitations: number;
   total: number;
+}
+
+interface PriorityOfferStats {
+  offer: PriorityOffer;
+  queryCitations: number;
+  pageCitations: number;
+  total: number;
+  topQueries: QueryRow[];
+  topPages: PageRow[];
 }
 
 // ---------------------------------------------------------------------------
@@ -283,6 +298,74 @@ function categorize(text: string): OfferCategory {
   return "uncategorized";
 }
 
+const PRIORITY_OFFER_RULES: { offer: PriorityOffer; patterns: RegExp[] }[] = [
+  {
+    offer: "batch video ads",
+    patterns: [
+      /batch video/i,
+      /bulk video/i,
+      /100 video ads/i,
+      /500 video ads/i,
+      /1000 video ads/i,
+      /creative fatigue/i,
+      /creative volume/i,
+      /cost per tested/i,
+      /winning ad rate/i,
+      /ad creative testing/i,
+      /\/batch-video-ads/i,
+      /\/batch-video-ad/i,
+      /\/cost-per-tested-ad-angle/i,
+    ],
+  },
+  {
+    offer: "ai content department",
+    patterns: [
+      /ai content department/i,
+      /done-for-you social/i,
+      /done for you social/i,
+      /managed social media/i,
+      /social media on autopilot/i,
+      /posts per month/i,
+      /posting frequency/i,
+      /\/ai-content-department/i,
+      /\/done-for-you-social-media/i,
+    ],
+  },
+  {
+    offer: "lead reactivation",
+    patterns: [
+      /lead reactivation/i,
+      /reactivat/i,
+      /dormant lead/i,
+      /dead lead/i,
+      /database reactivation/i,
+      /old quote/i,
+      /\/solutions\/lead-reactivation/i,
+      /\/lead-reactivation/i,
+    ],
+  },
+  {
+    offer: "ai lead response",
+    patterns: [
+      /ai lead response/i,
+      /instant.*lead/i,
+      /speed to lead/i,
+      /lead response system/i,
+      /missed call text/i,
+      /response time/i,
+      /\/solutions\/ai-lead-response/i,
+      /\/ai-lead-response/i,
+    ],
+  },
+];
+
+function priorityOfferFor(text: string): PriorityOffer | null {
+  for (const rule of PRIORITY_OFFER_RULES) {
+    if (rule.patterns.some((p) => p.test(text))) return rule.offer;
+  }
+  return null;
+}
+
 // ---------------------------------------------------------------------------
 // Analysis
 // ---------------------------------------------------------------------------
@@ -332,6 +415,50 @@ function categoryStats(snapshot: Snapshot): CategoryStats[] {
     stats.total += p.citations;
   }
   return [...map.values()].sort((a, b) => b.total - a.total);
+}
+
+function priorityOfferStats(snapshot: Snapshot): PriorityOfferStats[] {
+  const map = new Map<PriorityOffer, PriorityOfferStats>();
+  const ensure = (offer: PriorityOffer): PriorityOfferStats => {
+    const existing = map.get(offer);
+    if (existing) return existing;
+    const fresh: PriorityOfferStats = {
+      offer,
+      queryCitations: 0,
+      pageCitations: 0,
+      total: 0,
+      topQueries: [],
+      topPages: [],
+    };
+    map.set(offer, fresh);
+    return fresh;
+  };
+
+  for (const q of snapshot.queries) {
+    const offer = priorityOfferFor(q.query);
+    if (!offer) continue;
+    const stats = ensure(offer);
+    stats.queryCitations += q.citations;
+    stats.total += q.citations;
+    stats.topQueries.push(q);
+  }
+
+  for (const p of snapshot.pages) {
+    const offer = priorityOfferFor(p.page);
+    if (!offer) continue;
+    const stats = ensure(offer);
+    stats.pageCitations += p.citations;
+    stats.total += p.citations;
+    stats.topPages.push(p);
+  }
+
+  return [...map.values()]
+    .map((stats) => ({
+      ...stats,
+      topQueries: [...stats.topQueries].sort((a, b) => b.citations - a.citations).slice(0, 5),
+      topPages: [...stats.topPages].sort((a, b) => b.citations - a.citations).slice(0, 5),
+    }))
+    .sort((a, b) => b.total - a.total);
 }
 
 // ---------------------------------------------------------------------------
@@ -386,6 +513,9 @@ function renderReport(snapshots: Snapshot[]): string {
   const topQueries = [...current.queries].sort((a, b) => b.citations - a.citations).slice(0, 10);
   const topPages = [...current.pages].sort((a, b) => b.citations - a.citations).slice(0, 10);
   const categories = categoryStats(current);
+  const priorityOffers = priorityOfferStats(current);
+  const totalCitations = totalQueryCitations + totalPageCitations;
+  const gapToThousand = Math.max(0, 1000 - totalCitations);
 
   const recommendations = buildRecommendations(current, deltas, previous);
 
@@ -500,6 +630,72 @@ function renderReport(snapshots: Snapshot[]): string {
   }
   lines.push("");
 
+  lines.push("## Priority offer citation totals");
+  lines.push("");
+  lines.push(
+    `Current combined query + page citations: **${totalCitations}**. Gap to 1,000/day target: **${gapToThousand}**.`,
+  );
+  lines.push("");
+  if (priorityOffers.length === 0) {
+    lines.push("_No priority offer citations matched this snapshot._");
+  } else {
+    lines.push(
+      "| Priority offer | Query citations | Page citations | Total | Share of all citations | Top matched query | Top matched page |",
+    );
+    lines.push("| --- | ---: | ---: | ---: | ---: | --- | --- |");
+    for (const offer of priorityOffers) {
+      const share =
+        totalCitations > 0 ? `${((offer.total / totalCitations) * 100).toFixed(1)}%` : "0.0%";
+      const topQuery = offer.topQueries[0]?.query ?? "—";
+      const topPage = offer.topPages[0] ? shortPath(offer.topPages[0].page) : "—";
+      lines.push(
+        `| ${offer.offer} | ${offer.queryCitations} | ${offer.pageCitations} | ${offer.total} | ${share} | ${topQuery} | \`${topPage}\` |`,
+      );
+    }
+  }
+  lines.push("");
+
+  lines.push("## Surging queries by priority offer");
+  lines.push("");
+  if (!previous) {
+    lines.push("_Need a prior snapshot to compute priority-offer surges._");
+  } else {
+    const prioritySurges = deltas
+      .map((d) => ({ ...d, offer: priorityOfferFor(d.query) }))
+      .filter((d): d is QueryDelta & { offer: PriorityOffer } => d.offer !== null)
+      .filter((d) => d.delta > 0 || d.previous === 0)
+      .sort((a, b) => b.delta - a.delta || b.current - a.current);
+
+    if (prioritySurges.length === 0) {
+      lines.push("_No priority-offer surges found._");
+    } else {
+      lines.push("| Offer | Query | Prev | Now | Δ | % |");
+      lines.push("| --- | --- | ---: | ---: | ---: | ---: |");
+      for (const surge of prioritySurges.slice(0, 20)) {
+        lines.push(
+          `| ${surge.offer} | ${surge.query} | ${surge.previous} | ${surge.current} | ${fmtDelta(surge.delta)} | ${fmtPct(surge.pctChange)} |`,
+        );
+      }
+    }
+  }
+  lines.push("");
+
+  lines.push("## Priority content gaps");
+  lines.push("");
+  const missingPriorityOffers = PRIORITY_OFFER_RULES.map((rule) => rule.offer).filter(
+    (offer) => !priorityOffers.some((stats) => stats.offer === offer),
+  );
+  if (missingPriorityOffers.length === 0) {
+    lines.push("_All priority offers have at least one matched citation signal in this snapshot._");
+  } else {
+    for (const offer of missingPriorityOffers) {
+      lines.push(
+        `- **${offer}:** No matched citation signal. Add or refresh direct-answer assets with pricing, ROI, hidden-cost, benchmark, and statistics framing.`,
+      );
+    }
+  }
+  lines.push("");
+
   lines.push("## Recommendations");
   lines.push("");
   if (recommendations.length === 0) {
@@ -580,6 +776,17 @@ function buildRecommendations(
   for (const w of weak) {
     recs.push(
       `**Coverage gap:** \`${w.category}\` is under 5% of total citations (${w.total}/${total}). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.`,
+    );
+  }
+
+  // Rule 6: priority offers with no matched citations
+  const priorityStats = priorityOfferStats(current);
+  const missingPriorityOffers = PRIORITY_OFFER_RULES.map((rule) => rule.offer).filter(
+    (offer) => !priorityStats.some((stats) => stats.offer === offer),
+  );
+  for (const offer of missingPriorityOffers) {
+    recs.push(
+      `**Priority offer gap:** \`${offer}\` has no matched citation signal. Add direct-answer statistics, pricing, ROI, and hidden-cost blocks that link to the canonical offer page and /stat permalinks.`,
     );
   }
 

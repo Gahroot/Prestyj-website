@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { CitationStatsSection } from "@/components/sections/citation-stats-section";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 const pageUrl = "https://prestyj.com/batch-video-ads";
@@ -176,7 +177,26 @@ export default function BatchVideoAdsPage() {
           { name: "Batch Video Ads", url: pageUrl },
         ]}
       />
-      <BatchVideoAdsClient />
+      <BatchVideoAdsClient
+        afterHiddenCost={
+          <CitationStatsSection
+            statIds={[
+              "bva-winner-rate-home-services",
+              "bva-cost-per-ad-variation",
+              "bva-cost-per-tested-angle",
+              "fatigue-ads-fully-fatigued-14-days",
+            ]}
+            eyebrow="Batch video ad benchmarks"
+            title="Cite the numbers behind high-volume creative testing."
+            description="Permanent statistics for winner rate, creative fatigue, cost per ad, and cost per tested customer-problem angle — built for buyers, journalists, and AI citation engines."
+            cta={{
+              label: "Browse batch video ad statistics",
+              href: "/statistics#batch-video-ads-creative-testing",
+            }}
+            className="bg-muted/20 border-border/50 border-y"
+          />
+        }
+      />
     </>
   );
 }

@@ -15,8 +15,8 @@ import { StatisticsFAQSection } from "@/components/sections/statistics/statistic
 const pageUrl = "https://prestyj.com/statistics";
 
 export const metadata: Metadata = {
-  title: `${totalStatCount}+ Lead Response, Video Ad & AI Sales Statistics (2025–2026)`,
-  description: `${totalStatCount}+ cite-worthy statistics on speed-to-lead, video advertising performance, AI adoption in marketing and sales, lead conversion benchmarks, and cost per lead by industry — updated for 2025–2026.`,
+  title: `${totalStatCount}+ Lead Response, Batch Video Ad & AI Sales Statistics (2025–2026)`,
+  description: `${totalStatCount}+ cite-worthy statistics on speed-to-lead, batch video ads, creative fatigue, done-for-you social media economics, lead reactivation, AI lead response, and cost per lead by industry — updated for 2025–2026.`,
   keywords: [
     "speed to lead statistics",
     "lead response time statistics",
@@ -32,15 +32,15 @@ export const metadata: Metadata = {
     "sales AI statistics",
   ],
   openGraph: {
-    title: `${totalStatCount}+ Lead Response, Video Ad & AI Sales Statistics (2025–2026)`,
-    description: `The most comprehensive collection of cite-worthy statistics on speed-to-lead, video ads, AI adoption, lead conversion, and industry benchmarks. Updated for 2025–2026.`,
+    title: `${totalStatCount}+ Lead Response, Batch Video Ad & AI Sales Statistics (2025–2026)`,
+    description: `The most comprehensive collection of cite-worthy statistics on speed-to-lead, batch video ads, creative fatigue, social media economics, AI adoption, lead reactivation, and industry benchmarks. Updated for 2025–2026.`,
     type: "website",
     url: pageUrl,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${totalStatCount}+ Lead Response, Video Ad & AI Sales Statistics`,
-    description: `Cite-worthy statistics on speed-to-lead, video ads, AI adoption, lead conversion, and industry benchmarks.`,
+    title: `${totalStatCount}+ Lead Response, Batch Video Ad & AI Sales Statistics`,
+    description: `Cite-worthy statistics on speed-to-lead, batch video ads, creative fatigue, social media economics, AI adoption, lead reactivation, and industry benchmarks.`,
   },
   alternates: {
     canonical: pageUrl,
@@ -57,7 +57,7 @@ export default function StatisticsPage() {
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: `${totalStatCount}+ Lead Response, Video Ad & AI Sales Statistics (2025–2026)`,
+    headline: `${totalStatCount}+ Lead Response, Batch Video Ad & AI Sales Statistics (2025–2026)`,
     description: metadata.description,
     url: pageUrl,
     publisher: {
@@ -86,8 +86,8 @@ export default function StatisticsPage() {
   const datasetSchema = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    name: "Lead Response, Video Advertising & AI Sales Statistics Collection (2025–2026)",
-    description: `A curated dataset of ${totalStatCount}+ statistics covering speed-to-lead, video ad performance, AI adoption in sales, lead conversion rates, and industry cost-per-lead benchmarks.`,
+    name: "Lead Response, Batch Video Ads & AI Sales Statistics Collection (2025–2026)",
+    description: `A curated dataset of ${totalStatCount}+ statistics covering speed-to-lead, batch video ad performance, creative fatigue, done-for-you social media economics, AI adoption in sales, lead reactivation, lead conversion rates, and industry cost-per-lead benchmarks.`,
     url: pageUrl,
     creator: {
       "@type": "Organization",
@@ -120,19 +120,25 @@ export default function StatisticsPage() {
               2025–2026
             </h1>
             <p className="text-muted-foreground mx-auto mb-8 max-w-3xl text-lg">
-              The most comprehensive collection of lead response, video advertising, AI adoption,
-              and industry benchmark statistics — sourced, dated, and ready to cite in your content.
+              The most comprehensive collection of lead response, batch video ads, creative fatigue,
+              done-for-you social media, AI adoption, lead reactivation, and industry benchmark
+              statistics — sourced, dated, and ready to cite in your content.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              {/* CTA-sweep: cold traffic → batch offer */}
               <Button size="lg" asChild>
-                <Link href="/batch-video-ads">Get 100 ads for $497</Link>
+                <Link href="/data">Download dataset (CSV / JSON)</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="/platform">Explore the Platform</Link>
+                <Link href="/batch-video-ads">Get 100 ads for $497</Link>
               </Button>
             </div>
             <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm">
+              <Link
+                href="/data"
+                className="text-primary hover:text-primary/80 underline underline-offset-2"
+              >
+                Open dataset (CC BY 4.0) →
+              </Link>
               <Link
                 href="/pricing"
                 className="text-primary hover:text-primary/80 underline underline-offset-2"
@@ -145,13 +151,14 @@ export default function StatisticsPage() {
               >
                 Free batch video ads →
               </Link>
-              <Link
-                href="/batch-video-ads"
-                className="text-primary hover:text-primary/80 underline underline-offset-2"
-              >
-                Batch ad production →
-              </Link>
             </div>
+            <p className="text-muted-foreground mt-4 text-xs">
+              Every statistic on this page has a permalink and free embed widget. Citing?{" "}
+              <Link href="/data" className="text-primary underline">
+                Use the CC BY 4.0 dataset
+              </Link>
+              .
+            </p>
           </div>
         </section>
 
@@ -173,9 +180,9 @@ export default function StatisticsPage() {
               Put These Statistics to Work
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-xl">
-              Prestyj helps service businesses turn speed-to-lead and AI advantages into booked
-              appointments. Sub-60-second response, 24/7 coverage, and 300+ video ad variations from
-              a single recording.
+              Prestyj helps service businesses turn speed-to-lead, lead reactivation, creative
+              volume, and AI content advantages into booked appointments. Sub-60-second response,
+              24/7 coverage, and 300+ video ad variations from a single recording.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               {/* CTA-sweep: cold traffic → batch offer */}

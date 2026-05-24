@@ -49,7 +49,7 @@ export function StatCategorySection({ category, index }: StatCategorySectionProp
                         className="shrink-0 opacity-0 transition-opacity group-hover:opacity-100"
                       />
                     </div>
-                    <div className="border-border mt-3 border-t pt-3">
+                    <div className="border-border mt-3 flex flex-wrap items-center justify-between gap-2 border-t pt-3">
                       <p className="text-muted-foreground text-xs">
                         <span className="font-medium">Source:</span>{" "}
                         {stat.source.url ? (
@@ -66,6 +66,12 @@ export function StatCategorySection({ category, index }: StatCategorySectionProp
                         )}{" "}
                         <span className="text-muted-foreground/70">({stat.source.year})</span>
                       </p>
+                      <Link
+                        href={`/stat/${stat.id}`}
+                        className="text-primary text-xs font-medium underline-offset-2 hover:underline"
+                      >
+                        Cite / embed →
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>

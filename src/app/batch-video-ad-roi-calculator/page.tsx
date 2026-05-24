@@ -3,6 +3,7 @@ import { Calculator } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { BatchVideoAdRoiCalculator } from "@/components/sections/calculator/batch-video-ad-roi-calculator";
+import { CalculatorEmbedCta } from "@/components/embed/calculator-embed-cta";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { HowToJsonLd } from "@/components/seo/how-to-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
@@ -133,6 +134,7 @@ export default function BatchVideoAdRoiCalculatorPage() {
         <section className="px-4 pb-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <BatchVideoAdRoiCalculator />
+            <CalculatorEmbedCta slug="batch-video-ad-roi" />
 
             {/* Methodology */}
             <div className="bg-muted/30 border-border mt-8 rounded-xl border p-6">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { RoiCalculator } from "@/components/sections/calculator/roi-calculator";
+import { CalculatorEmbedCta } from "@/components/embed/calculator-embed-cta";
 
 export const metadata: Metadata = {
   title: "AI Call Handling ROI Calculator",
@@ -41,8 +42,9 @@ export default function RoiCalculatorPage() {
       </section>
 
       {/* Calculator Section */}
-      <section className="container mx-auto px-4 pb-24">
+      <section className="container mx-auto px-4 pb-12">
         <RoiCalculator />
+        <CalculatorEmbedCta slug="ai-call-handling-roi" />
       </section>
     </main>
   );

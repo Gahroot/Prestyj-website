@@ -4,6 +4,7 @@ import { ArrowRight, Calculator } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { CostPerTestedAngleCalculator } from "@/components/sections/calculator/cost-per-tested-angle-calculator";
+import { CalculatorEmbedCta } from "@/components/embed/calculator-embed-cta";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { HowToJsonLd } from "@/components/seo/how-to-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
@@ -147,6 +148,7 @@ export default function CostPerTestedAngleCalculatorPage() {
         <section className="px-4 pb-24 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <CostPerTestedAngleCalculator />
+            <CalculatorEmbedCta slug="cost-per-tested-angle" />
 
             {/* Methodology */}
             <div className="bg-muted/30 border-border mt-8 rounded-xl border p-6">

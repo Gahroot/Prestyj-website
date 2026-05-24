@@ -1,6 +1,6 @@
 # AI Citation Analysis
 
-_Generated: 2026-05-22T16:00:40.188Z_
+_Generated: 2026-05-23T23:57:20.057Z_
 _Snapshot: **2026-05-22** (vs 2026-05-10)_
 
 ## Headline numbers
@@ -95,6 +95,32 @@ _Snapshot: **2026-05-22** (vs 2026-05-10)_
 | voice agent | 50 | 64 | 114 |
 | receptionist | 47 | 15 | 62 |
 
+## Priority offer citation totals
+
+Current combined query + page citations: **863**. Gap to 1,000/day target: **137**.
+
+| Priority offer | Query citations | Page citations | Total | Share of all citations | Top matched query | Top matched page |
+| --- | ---: | ---: | ---: | ---: | --- | --- |
+| lead reactivation | 48 | 79 | 127 | 14.7% | average response rate database reactivation campaigns home services | `/blog/lead-reactivation-for-home-services` |
+| ai lead response | 41 | 45 | 86 | 10.0% | ROI instant AI lead response service companies | `/blog/ai-lead-response-systems-2026` |
+
+## Surging queries by priority offer
+
+| Offer | Query | Prev | Now | Δ | % |
+| --- | --- | ---: | ---: | ---: | ---: |
+| lead reactivation | average response rate database reactivation campaigns home services | 0 | 23 | +23 | NEW |
+| lead reactivation | expected ROI database reactivation campaign AI | 0 | 11 | +11 | NEW |
+| ai lead response | AI missed call text-back automation conversion rate improvement | 0 | 11 | +11 | NEW |
+| ai lead response | best AI lead response system for service businesses | 0 | 11 | +11 | NEW |
+| lead reactivation | database reactivation home service companies meaning importance | 0 | 10 | +10 | NEW |
+| ai lead response | average response time home service companies inbound calls | 0 | 8 | +8 | NEW |
+| lead reactivation | ROI database reactivation campaign home service business | 0 | 4 | +4 | NEW |
+
+## Priority content gaps
+
+- **batch video ads:** No matched citation signal. Add or refresh direct-answer assets with pricing, ROI, hidden-cost, benchmark, and statistics framing.
+- **ai content department:** No matched citation signal. Add or refresh direct-answer assets with pricing, ROI, hidden-cost, benchmark, and statistics framing.
+
 ## Recommendations
 
 - **Surging (+163%):** `"AI personalized cold outreach vs manually written emails differences"` jumped 8 → 21. Ship a dedicated post or expand the closest existing one (category: lead response).
@@ -104,6 +130,8 @@ _Snapshot: **2026-05-22** (vs 2026-05-10)_
 - **Net-new query:** `"AI platforms vs answering services cost HVAC companies"` (14 citations) — claim before competitors do. Category: receptionist.
 - **Net-new query:** `"lowest setup cost AI voice agent pilot deployment"` (14 citations) — claim before competitors do. Category: voice agent.
 - **Decay alert:** `"hidden costs of AI voice agents"` dropped 52 → 6 (-88%). Refresh the supporting post — update year, prices, comparison tables.
+- **Priority offer gap:** `batch video ads` has no matched citation signal. Add direct-answer statistics, pricing, ROI, and hidden-cost blocks that link to the canonical offer page and /stat permalinks.
+- **Priority offer gap:** `ai content department` has no matched citation signal. Add direct-answer statistics, pricing, ROI, and hidden-cost blocks that link to the canonical offer page and /stat permalinks.
 
 ## Snapshots on file
 

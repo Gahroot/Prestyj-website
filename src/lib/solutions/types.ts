@@ -124,5 +124,6 @@ export interface SolutionPageContent {
   faqs?: SolutionFAQ[];
   objections?: SolutionObjections;
   calculator?: SolutionCalculator;
+  citationStatIds?: string[];
   cta: SolutionCTA;
 }

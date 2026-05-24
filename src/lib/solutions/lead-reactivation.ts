@@ -143,6 +143,12 @@ export const leadReactivation: SolutionPageContent = {
     conversionRate: 0.05,
     resultLabel: "Potential recovered revenue",
   },
+  citationStatIds: [
+    "reactivation-dormant-crm-volume",
+    "reactivation-cost-savings",
+    "reactivation-multichannel-rate",
+    "reactivation-home-services-recovered-revenue",
+  ],
   cta: {
     headline: "Stop Buying New Leads. Start Working the Ones You Own.",
     subheadline: "Your database has untapped potential worth tens of thousands. Let's prove it.",

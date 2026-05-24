@@ -4,6 +4,8 @@ import { getAllAlternativeSlugs } from "@/lib/alternatives";
 import { getAllSolutionSlugs } from "@/lib/solutions";
 import { getAllBestForSlugs } from "@/lib/best-for";
 import { getAllLocationSlugs } from "@/lib/locations";
+import { getAllStatIds } from "@/lib/statistics";
+import { getAllIndustrySlugs } from "@/lib/statistics/industries";
 
 const baseUrl = "https://prestyj.com";
 
@@ -239,6 +241,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.75,
     },
+    // Open dataset landing + downloads (CC BY 4.0). High link-acquisition
+    // value: every external citation must attribute back here.
+    {
+      url: `${baseUrl}/data`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    },
+    // Discovery + redistribution endpoints (oEmbed, RSS, public API)
+    {
+      url: `${baseUrl}/feed/stats.xml`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/api/statistics`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.55,
+    },
+    {
+      url: `${baseUrl}/data/statistics.csv`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/data/statistics.json`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.6,
+    },
     {
       url: `${baseUrl}/ad-fatigue-solution`,
       lastModified: now,
@@ -455,6 +490,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  // Per-statistic permalink pages (/stat/[id]). Each one is a citable
+  // anchor for a single quotable number — the canonical home for embeds.
+  const statRoutes: MetadataRoute.Sitemap = getAllStatIds().map((id) => ({
+    url: `${baseUrl}/stat/${id}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.55,
+  }));
+
+  // Per-industry hub pages + slice downloads. Each industry hub is its own
+  // crawlable Dataset schema with CSV + JSON distribution.
+  const industryRoutes: MetadataRoute.Sitemap = getAllIndustrySlugs().flatMap((slug) => [
+    {
+      url: `${baseUrl}/statistics/${slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/data/industry/${slug}`,
+      lastModified: now,
+      changeFrequency: "weekly" as const,
+      priority: 0.55,
+    },
+  ]);
+
   return [
     ...staticRoutes,
     ...blogRoutes,
@@ -464,5 +525,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...compareRoutes,
     ...freeAdsRoutes,
     ...locationRoutes,
+    ...statRoutes,
+    ...industryRoutes,
   ];
 }

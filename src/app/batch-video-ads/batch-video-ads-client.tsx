@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { type ReactElement, type ReactNode, useState } from "react";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -304,7 +304,11 @@ const FAQS = [
   },
 ];
 
-export function BatchVideoAdsClient() {
+interface BatchVideoAdsClientProps {
+  afterHiddenCost?: ReactNode;
+}
+
+export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProps): ReactElement {
   const [loadingTier, setLoadingTier] = useState<BatchTierId | null>(null);
   const [checkoutError, setCheckoutError] = useState<string | null>(null);
   const [isMuted, setIsMuted] = useState(true);
@@ -782,6 +786,7 @@ export function BatchVideoAdsClient() {
       <div id="hidden-cost">
         <HiddenCostTable rows={HIDDEN_COST_ROWS} />
       </div>
+      {afterHiddenCost}
 
       {/* NATIVE vs PRODUCTION */}
       <section className="px-4 py-24">
@@ -1178,8 +1183,8 @@ export function BatchVideoAdsClient() {
               Choose the page closest to your next test
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-lg md:text-xl">
-              Size your batch, model the economics, or jump into a platform-specific creative testing
-              plan before you buy.
+              Size your batch, model the economics, or jump into a platform-specific creative
+              testing plan before you buy.
             </p>
           </AnimateOnScroll>
 

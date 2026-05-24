@@ -122,6 +122,12 @@ export const aiLeadResponse: SolutionPageContent = {
     conversionRate: 0.25,
     resultLabel: "Additional monthly revenue with AI",
   },
+  citationStatIds: [
+    "lead-response-ai-time-to-contact",
+    "lead-response-ai-cost-per-lead-engaged",
+    "lead-response-ai-roi-six-months",
+    "lead-response-hybrid-conversion-lift",
+  ],
   objections: {
     headline: "Common Concerns About AI Lead Response",
     subheadline: "Real answers for sales and marketing leaders evaluating AI follow-up.",
