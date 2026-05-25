@@ -9,6 +9,7 @@ import { PricingStoriesSection } from "@/components/sections/pricing/pricing-sto
 import { PricingROISection } from "@/components/sections/pricing/pricing-roi";
 import { PricingFAQSection } from "@/components/sections/pricing/pricing-faq";
 import { CTASection } from "@/components/sections/cta";
+import { CitationStatsSection } from "@/components/sections/citation-stats-section";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
@@ -114,6 +115,22 @@ export default function PricingPage() {
       <main>
         <PricingHero />
         <PricingTiersSection />
+        <CitationStatsSection
+          statIds={[
+            "voice-agent-cost-per-minute-at-scale",
+            "voice-agent-pilot-setup-cost-range",
+            "voice-agent-hidden-cost-percent",
+            "batch-video-pilot-setup-cost",
+          ]}
+          eyebrow="Citable pricing benchmarks"
+          title="The numbers behind Prestyj pricing."
+          description="Per-minute cost at scale, pilot setup cost, hidden-cost percentage, and batch video ad pilot pricing — each a permanent statistic with source, embed, and citation formats."
+          cta={{
+            label: "Browse all Prestyj statistics",
+            href: "/statistics",
+          }}
+          className="bg-muted/20 border-border/50 border-y"
+        />
         <PricingComparisonSection />
         <PricingStoriesSection />
         <PricingROISection />

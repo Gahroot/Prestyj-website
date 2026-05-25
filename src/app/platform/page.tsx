@@ -22,6 +22,7 @@ import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { PlatformStatsSection } from "@/components/sections/platform/platform-stats";
+import { CitationStatsSection } from "@/components/sections/citation-stats-section";
 import { PlatformComparisonSection } from "@/components/sections/platform/platform-comparison";
 import { PlatformFAQSection } from "@/components/sections/platform/platform-faq";
 import { platformFaqs } from "@/lib/platform-data";
@@ -250,6 +251,24 @@ export default function PlatformPage() {
             </div>
           </div>
         </section>
+
+        {/* Citation-friendly voice agent benchmarks */}
+        <CitationStatsSection
+          statIds={[
+            "voice-agent-cost-per-minute-at-scale",
+            "voice-agent-hidden-cost-percent",
+            "voice-agent-pilot-setup-cost-range",
+            "branded-calling-answer-rate-lift",
+          ]}
+          eyebrow="AI voice agent benchmarks"
+          title="Cite the numbers behind the Prestyj platform."
+          description="Per-minute cost at scale, hidden-cost percentage, pilot setup cost, and branded-calling answer-rate lift — each a permanent statistic with source, embed, and citation formats."
+          cta={{
+            label: "Browse all voice agent statistics",
+            href: "/statistics#ai-voice-agent-economics",
+          }}
+          className="bg-muted/20 border-border/50 border-y"
+        />
 
         {/* Comparison */}
         <PlatformComparisonSection />

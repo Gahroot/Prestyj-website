@@ -179,22 +179,40 @@ export default function BatchVideoAdsPage() {
       />
       <BatchVideoAdsClient
         afterHiddenCost={
-          <CitationStatsSection
-            statIds={[
-              "bva-winner-rate-home-services",
-              "bva-cost-per-ad-variation",
-              "bva-cost-per-tested-angle",
-              "fatigue-ads-fully-fatigued-14-days",
-            ]}
-            eyebrow="Batch video ad benchmarks"
-            title="Cite the numbers behind high-volume creative testing."
-            description="Permanent statistics for winner rate, creative fatigue, cost per ad, and cost per tested customer-problem angle — built for buyers, journalists, and AI citation engines."
-            cta={{
-              label: "Browse batch video ad statistics",
-              href: "/statistics#batch-video-ads-creative-testing",
-            }}
-            className="bg-muted/20 border-border/50 border-y"
-          />
+          <>
+            <CitationStatsSection
+              statIds={[
+                "bva-winner-rate-home-services",
+                "bva-cost-per-ad-variation",
+                "bva-cost-per-tested-angle",
+                "fatigue-ads-fully-fatigued-14-days",
+              ]}
+              eyebrow="Batch video ad benchmarks"
+              title="Cite the numbers behind high-volume creative testing."
+              description="Permanent statistics for winner rate, creative fatigue, cost per ad, and cost per tested customer-problem angle — built for buyers, journalists, and AI citation engines."
+              cta={{
+                label: "Browse batch video ad statistics",
+                href: "/statistics#batch-video-ads-creative-testing",
+              }}
+              className="bg-muted/20 border-border/50 border-y"
+            />
+            <CitationStatsSection
+              statIds={[
+                "ugc-ad-roi-vs-ai-batch-roi-ratio",
+                "ugc-marketplace-hidden-cost-percent",
+                "batch-video-cost-per-tested-angle-vs-agency",
+                "batch-video-pilot-setup-cost",
+              ]}
+              eyebrow="Batch vs UGC marketplace vs agency"
+              title="Batch video vs UGC creator marketplaces and creative agencies."
+              description="ROI ratios, hidden-cost percentages, cost per tested angle, and pilot setup-cost comparisons between AI batch video, UGC creator marketplaces, and traditional creative agencies."
+              cta={{
+                label: "Browse batch vs UGC vs agency benchmarks",
+                href: "/statistics#batch-video-vs-ugc-agency-benchmarks",
+              }}
+              className="bg-background border-border/50 border-b"
+            />
+          </>
         }
       />
     </>

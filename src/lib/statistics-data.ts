@@ -856,6 +856,195 @@ const leadReactivationStats: Statistic[] = [
   },
 ];
 
+// ─── Voice Agent Economics ────────────────────────────────────────────────────
+
+const voiceAgentStats: Statistic[] = [
+  {
+    id: "voice-agent-hidden-cost-percent",
+    value: "18–35%",
+    description:
+      "Hidden costs (per-minute overage, telephony pass-through, integration fees, after-hours premiums, voice cloning, and managed-knowledge updates) add 18–35% to the advertised monthly price of most AI voice agent vendors.",
+    source: {
+      name: "Prestyj AI voice agent pricing benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/hidden-costs-of-ai-voice-agents-2026",
+    },
+    context:
+      "Compiled from published rate cards, vendor contracts, and Prestyj implementation invoices across HVAC, plumbing, roofing, dental, real estate, and property management deployments.",
+  },
+  {
+    id: "voice-agent-cost-per-minute-at-scale",
+    value: "$0.06–$0.18/min",
+    description:
+      "At scale (50,000+ minutes/month) AI voice agents deliver fully-loaded cost per minute of $0.06–$0.18, versus $0.65–$1.20 for live answering services and $0.95–$2.40 for in-house receptionists on a loaded basis.",
+    source: {
+      name: "Prestyj AI voice agent at-scale pricing benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/ai-voice-agent-cost-per-minute-at-scale-2026",
+    },
+    context:
+      "Reflects platform + LLM + STT/TTS + telephony costs at high-volume tiers and assumes managed implementation. Live answering and in-house numbers use Glassdoor loaded-cost data and industry rate cards.",
+  },
+  {
+    id: "voice-agent-pilot-setup-cost-range",
+    value: "$0–$1,500",
+    description:
+      "A properly scoped AI voice agent pilot deployment costs $0–$1,500 in setup fees, including persona configuration, knowledge ingestion, CRM webhook, and call routing — versus the $5,000–$25,000 setup fees still quoted by legacy enterprise voice vendors.",
+    source: {
+      name: "Prestyj AI voice agent pilot benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/lowest-setup-cost-ai-voice-agent-pilot-2026",
+    },
+    context:
+      "Range covers SMB pilots across home services, dental, real estate, and property management. Some Prestyj pilots launch at $0 setup when contracted under a 90-day production commitment.",
+  },
+  {
+    id: "branded-calling-answer-rate-lift",
+    value: "+27–41%",
+    description:
+      "Branded calling (verified caller ID with business name + logo) lifts outbound answer rates by 27–41% on average versus unbranded numbers for tech services and home services firms.",
+    source: {
+      name: "Prestyj branded calling pricing benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/branded-calling-pricing-comparison-2026",
+    },
+    context:
+      "Synthesized from CTIA STIR/SHAKEN attestation data, First Orion and Hiya answer-rate studies, and Prestyj branded-calling campaign A/B tests.",
+  },
+];
+
+// ─── Sales Outreach Economics ─────────────────────────────────────────────────
+
+const salesOutreachStats: Statistic[] = [
+  {
+    id: "ai-cold-call-volume-per-agent-per-month",
+    value: "46,000+/mo",
+    description:
+      "A single AI cold-calling agent can place 46,000+ outbound dial attempts per month — roughly the equivalent of 35–50 human SDRs working a 9-to-5 schedule with industry-average dial cadence.",
+    source: {
+      name: "Prestyj AI cold-calling capacity benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/ai-make-46000-calls-per-month-without-hiring-sdrs-2026",
+    },
+    context:
+      "Assumes 24/7 parallel dialing, compliant local-time windows, and standard list-warming and pacing rules. Human SDR baseline uses Bridge Group annual dial-volume averages.",
+  },
+];
+
+// ─── Lead Reactivation Industry Expansions ────────────────────────────────────
+
+const leadReactivationIndustryStats: Statistic[] = [
+  {
+    id: "dormant-lead-reactivation-real-estate-rate",
+    value: "6–14%",
+    description:
+      "Real estate teams running multi-channel dormant lead reactivation (email + SMS + AI voice) commonly convert 6–14% of dormant database contacts to a live conversation within a 30-day campaign.",
+    source: {
+      name: "Prestyj real estate dormant lead reactivation benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/dormant-lead-reactivation-software-real-estate-2026",
+    },
+    context:
+      "Modeled across brokerages and team accounts with 2,000–25,000 dormant leads from past portal inquiries, open-house signups, and expired follow-up sequences.",
+  },
+  {
+    id: "off-season-database-revenue-share",
+    value: "18–32%",
+    description:
+      "Home service companies running structured off-season database reactivation campaigns commonly source 18–32% of annual revenue from existing customer and dormant lead lists rather than new paid acquisition.",
+    source: {
+      name: "Prestyj home services off-season revenue benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/home-services-off-season-revenue-customer-database-2026",
+    },
+    context:
+      "Applies to HVAC, plumbing, roofing, electrical, pool service, landscaping, and pest control databases ≥2 years old with seasonal demand swings.",
+  },
+  {
+    id: "home-services-avg-inbound-call-response",
+    value: "47 hours",
+    description:
+      "Home service companies take an average of 47 hours to respond to inbound web form leads and over 8 minutes to answer inbound calls during peak hours — AI voice and SMS systems cut both to 12–45 seconds.",
+    source: {
+      name: "Prestyj home services inbound response benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/average-response-time-home-services-inbound-calls-2026",
+    },
+    context:
+      "Synthesized from Lead Response Management research, ServiceTitan and Housecall Pro public benchmark reports, and Prestyj mystery-shopper studies of contractor inbound response.",
+  },
+  {
+    id: "cpl-reduction-conversational-ai",
+    value: "32–58%",
+    description:
+      "Conversational AI (voice + SMS qualification before human handoff) reduces effective cost per qualified lead by 32–58% by killing unqualified traffic earlier and lifting show-up rates on booked appointments.",
+    source: {
+      name: "Prestyj conversational AI CPL reduction benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/cost-per-lead-reduction-conversational-ai-2026",
+    },
+    context:
+      "Modeled across paid lead sources (Google Ads, Meta, lead aggregators) where AI qualification sits between form submit and human sales touch.",
+  },
+];
+
+// ─── Batch Video Ads vs Alternatives Expansions ───────────────────────────────
+
+const batchVideoCitationStats: Statistic[] = [
+  {
+    id: "ugc-ad-roi-vs-ai-batch-roi-ratio",
+    value: "2.1–4.7×",
+    description:
+      "AI-generated batch video ads deliver 2.1–4.7× the per-dollar ROI of UGC creator marketplace ads when measured on cost per winning ad across a 60–90 day test window.",
+    source: {
+      name: "Prestyj UGC vs AI batch ROI benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/evaluate-roi-ai-generated-ugc-ads-2026",
+    },
+    context:
+      "Uses winning-ad-rate, cost-per-finished-variation, and cost-per-tested-angle to normalize across vendor types. UGC marketplace inputs from published Billo, Insense, and JoinBrands rate cards.",
+  },
+  {
+    id: "ugc-marketplace-hidden-cost-percent",
+    value: "22–48%",
+    description:
+      "Hidden costs (revision rounds, usage rights, exclusivity fees, reshoots, and platform service fees) add 22–48% to the advertised price of UGC creator marketplace ads.",
+    source: {
+      name: "Prestyj UGC marketplace hidden cost benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/hidden-costs-of-ugc-creator-marketplaces-2026",
+    },
+    context:
+      "Compiled from Billo, Insense, JoinBrands, and Trend.io public rate cards plus Prestyj client invoice audits.",
+  },
+  {
+    id: "batch-video-cost-per-tested-angle-vs-agency",
+    value: "$400–$500 vs $4K–$12K",
+    description:
+      "Batch video production tests a customer-problem angle for $400–$500, versus $4,000–$12,000 per tested angle at a traditional creative agency once concept, shoot, edit, and revision rounds are included.",
+    source: {
+      name: "Prestyj cost per tested ad angle benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/cost-per-tested-ad-angle-batch-video-vs-agency-2026",
+    },
+    context:
+      "Uses Prestyj's 300/500/1,000-ad pack economics and compares with published agency creative rate cards and creative-RFP medians.",
+  },
+  {
+    id: "batch-video-pilot-setup-cost",
+    value: "$497",
+    description:
+      "A batch video ad pilot starts at $497 for 100 vertical ad variations delivered in 1–2 business days, versus $5,000+ for a traditional creative-agency starter retainer that typically produces 4–10 finished ads.",
+    source: {
+      name: "Prestyj batch video ads pilot pricing",
+      year: "2026",
+      url: "https://prestyj.com/batch-video-ads",
+    },
+    context:
+      "Pilot pricing reflects Prestyj's published 100-ad $497 pack and is contrasted with traditional creative-agency and in-house pilot starter retainers.",
+  },
+];
+
 const instantLeadResponseStats: Statistic[] = [
   {
     id: "lead-response-ai-time-to-contact",
@@ -984,7 +1173,31 @@ export const statCategories: StatCategory[] = [
     slug: "instant-ai-lead-response-economics",
     description:
       "AI lead response speed, cost-per-engaged-lead, ROI, and hybrid AI-plus-human conversion benchmarks.",
-    statistics: instantLeadResponseStats,
+    statistics: [...instantLeadResponseStats, ...leadReactivationIndustryStats],
+  },
+  {
+    id: "voice-agent-economics",
+    title: "AI Voice Agent Economics",
+    slug: "ai-voice-agent-economics",
+    description:
+      "Per-minute, pilot setup, hidden cost, and branded-calling answer-rate benchmarks for AI voice agents in 2026.",
+    statistics: voiceAgentStats,
+  },
+  {
+    id: "sales-outreach-economics",
+    title: "AI Sales Outreach Economics",
+    slug: "ai-sales-outreach-economics",
+    description:
+      "Per-agent dial volume, SDR-equivalent capacity, and outbound throughput benchmarks for AI cold-calling agents.",
+    statistics: salesOutreachStats,
+  },
+  {
+    id: "batch-video-citations",
+    title: "Batch Video vs UGC & Agency Benchmarks",
+    slug: "batch-video-vs-ugc-agency-benchmarks",
+    description:
+      "ROI ratios, hidden-cost percentages, cost-per-tested-angle, and pilot setup-cost comparisons between AI batch video production, UGC creator marketplaces, and traditional creative agencies.",
+    statistics: batchVideoCitationStats,
   },
   {
     id: "industry-benchmarks",
