@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BlogList, type BlogListPost } from "@/components/blog/blog-list";
 import { categorizeSlug, slugFromUrl } from "@/lib/blog/categories";
+import { resolveBlogImage } from "@/lib/blog/images";
 
 const siteUrl = "https://prestyj.com";
 
@@ -53,14 +54,18 @@ export default function BlogPage(): React.ReactElement {
       const dateB = b.data.date ? new Date(b.data.date).getTime() : 0;
       return dateB - dateA;
     })
-    .map((post) => ({
-      url: post.url,
-      title: post.data.title,
-      description: post.data.description ?? "",
-      date: post.data.date,
-      image: post.data.image,
-      category: categorizeSlug(slugFromUrl(post.url)),
-    }));
+    .map((post) => {
+      const category = categorizeSlug(slugFromUrl(post.url));
+
+      return {
+        url: post.url,
+        title: post.data.title,
+        description: post.data.description ?? "",
+        date: post.data.date,
+        image: resolveBlogImage(post.data.image, category),
+        category,
+      };
+    });
 
   // JSON-LD for Blog listing
   const jsonLd = {

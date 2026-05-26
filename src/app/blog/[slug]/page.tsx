@@ -5,7 +5,8 @@ import { ArrowLeft } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { blogSource } from "@/lib/source";
-import { categorizeSlug, fallbackImageForCategory } from "@/lib/blog/categories";
+import { categorizeSlug } from "@/lib/blog/categories";
+import { resolveBlogImage } from "@/lib/blog/images";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
@@ -40,7 +41,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
   const { title, description, keywords, author, image, date, noindex } = page.data;
   const postUrl = `${siteUrl}/blog/${slug}`;
-  const ogImage = image || fallbackImageForCategory(categorizeSlug(slug));
+  const category = categorizeSlug(slug);
+  const ogImage = resolveBlogImage(image, category);
 
   return {
     title: title,
@@ -102,6 +104,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const MDXContent = page.data.body;
   const { title, description, author, date, image, keywords, updated } = page.data;
   const postUrl = `${siteUrl}/blog/${slug}`;
+  const category = categorizeSlug(slug);
+  const resolvedImage = resolveBlogImage(image, category);
 
   // Get raw MDX content for word count, FAQ extraction, and step extraction
   const mdxPath = join(process.cwd(), "content/blog", `${slug}.mdx`);
@@ -186,7 +190,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     "@type": "Article",
     headline: title,
     description,
-    image: `${siteUrl}${image ?? fallbackImageForCategory(categorizeSlug(slug))}`,
+    image: resolvedImage.startsWith("/") ? `${siteUrl}${resolvedImage}` : resolvedImage,
     author: {
       "@type": "Organization",
       name: author || "Prestyj Team",
@@ -246,12 +250,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Navbar />
       <main className="pt-24 pb-16">
         <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <Link href="/blog">
-            <Button variant="ghost" className="mb-8">
+          <Button variant="ghost" className="mb-8" asChild>
+            <Link href="/blog">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Blog
-            </Button>
-          </Link>
+            </Link>
+          </Button>
 
           <header className="mb-12">
             {date && (
@@ -267,19 +271,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {title}
             </h1>
             {description && <p className="text-muted-foreground text-xl">{description}</p>}
-            {image && (
-              <figure className="mt-8">
-                <Image
-                  src={image}
-                  alt={`${title} — Prestyj`}
-                  width={1200}
-                  height={630}
-                  className="w-full rounded-lg"
-                  priority
-                />
-                <figcaption className="sr-only">{title} — Prestyj</figcaption>
-              </figure>
-            )}
+            <figure className="mt-8">
+              <Image
+                src={resolvedImage}
+                alt={`${title} — Prestyj`}
+                width={1200}
+                height={630}
+                className="w-full rounded-lg"
+                priority
+              />
+              <figcaption className="sr-only">{title} — Prestyj</figcaption>
+            </figure>
           </header>
 
           <div className="prose prose-invert prose-lg prose-headings:font-heading prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-code:text-primary max-w-none">

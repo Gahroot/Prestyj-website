@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { blogSource } from "@/lib/source";
+import { categorizeSlug, slugFromUrl } from "@/lib/blog/categories";
+import { resolveBlogImage } from "@/lib/blog/images";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface RelatedPostsProps {
@@ -27,12 +29,14 @@ export function RelatedPosts({ currentSlug, keywords, limit = 3 }: RelatedPostsP
     .map((post) => {
       const postKeywords = (post.data.keywords ?? []).map((k) => k.toLowerCase());
       const overlap = postKeywords.filter((k) => currentKeywords.has(k)).length;
+      const category = categorizeSlug(slugFromUrl(post.url));
+
       return {
         url: post.url,
         title: post.data.title,
         description: post.data.description,
         date: post.data.date,
-        image: post.data.image,
+        image: resolveBlogImage(post.data.image, category),
         score: overlap,
       };
     })
