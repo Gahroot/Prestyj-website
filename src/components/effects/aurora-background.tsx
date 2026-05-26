@@ -1,10 +1,6 @@
 "use client";
 
-import dynamic from "next/dynamic";
-
-const DarkVeil = dynamic(() => import("@/components/effects/dark-veil"), {
-  ssr: false,
-});
+import DarkVeil from "@/components/effects/dark-veil";
 
 export function AuroraBackground() {
   return (

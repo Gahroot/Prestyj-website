@@ -11,21 +11,20 @@ type Stat = {
 
 const stats: Stat[] = [
   {
-    value: "Under a minute",
-    label: "Typical AI agent response time to a new inbound lead",
+    value: "300",
+    label: "Finished vertical ads in the minimum paid testing pack",
   },
   {
-    value: "78%",
-    label: "Of buyers purchase from the company that responds first",
-    source: "Harvard Business Review, 2011",
+    value: "3",
+    label: "Customer pain points covered in the 300-ad sprint",
   },
   {
-    value: "24/7",
-    label: "AI agents qualify and reply while your team sleeps",
+    value: "1",
+    label: "Selfie-style recording session required from you",
   },
   {
-    value: "Weeks, not quarters",
-    label: "Time to deploy a working AI agent in your pipeline",
+    value: "1–2 days",
+    label: "Typical delivery window after we receive your footage",
   },
 ];
 
@@ -35,10 +34,11 @@ export function StatisticsSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="mb-12 text-center">
           <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-            Built for results in 90 days.
+            Clear output. Clear scope. No agency fog.
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            Real performance data from businesses using Prestyj&apos;s AI agents.
+            You are not buying vague marketing help. You are buying a specific creative testing
+            asset: 300 finished ads built from your offer and customer problems.
           </p>
         </AnimateOnScroll>
 

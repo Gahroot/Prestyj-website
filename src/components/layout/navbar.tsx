@@ -14,7 +14,7 @@ export function Navbar() {
           </span>
           <span aria-hidden="true" className="hidden h-4 w-px bg-white/20 lg:block" />
           <span className="hidden text-xs font-light tracking-wide text-white/60 lg:block">
-            AI agents for marketing &amp; sales
+            300 video ads from one recording
           </span>
         </Link>
 

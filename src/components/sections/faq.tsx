@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
-import { faqs } from "@/lib/faq-data";
+import { homeFaqs } from "@/lib/home-faq-data";
 import BorderGlow from "@/components/ui/border-glow";
 
 export function FAQSection() {
@@ -19,13 +19,13 @@ export function FAQSection() {
             Questions? Answers.
           </h2>
           <p className="text-muted-foreground text-lg">
-            Everything you need to know about your AI agent.
+            Everything you need to know before buying a batch of video ads.
           </p>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.2}>
           <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
+            {homeFaqs.map((faq, index) => (
               <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
                 <AccordionItem value={`item-${index}`} className="border-none">
                   <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">

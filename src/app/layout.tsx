@@ -18,9 +18,9 @@ const manrope = Manrope({
 
 const siteConfig = {
   name: "Prestyj",
-  title: "Prestyj | AI Agents for Marketing & Sales",
+  title: "Prestyj | 300 Video Ads for Paid Social Testing",
   description:
-    "We build AI agents for marketing and sales. AI agents and automations that capture leads, respond in seconds, qualify, and book meetings — 24/7.",
+    "Prestyj turns one recording session into hundreds of vertical video ads for paid social creative testing across Meta, TikTok, YouTube Shorts, and Reels.",
   url: "https://prestyj.com",
   ogImage: "/og-image.jpg",
   creator: "@prestyj_",
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "AI sales agent",
-    "AI marketing agent",
-    "AI lead response",
-    "AI appointment setter",
-    "AI marketing automation",
-    "AI sales automation",
-    "AI agents for business",
+    "300 video ads",
+    "batch video ads",
+    "paid social creative testing",
+    "Meta ad creative testing",
+    "TikTok video ads",
+    "YouTube Shorts ads",
+    "UGC style video ads",
   ],
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,

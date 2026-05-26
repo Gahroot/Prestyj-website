@@ -1,27 +1,27 @@
-import { Clock, PhoneMissed, DollarSign } from "lucide-react";
+import { Clock, DollarSign, Repeat } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 
 const painPoints = [
   {
-    icon: Clock,
-    title: "Your leads respond to the first reply they get",
+    icon: Repeat,
+    title: "You are testing too few ads to know what works",
     description:
-      "78% of leads work with whoever responds first. You're in a meeting. They fill out a form. Your competitor calls them back in 2 minutes. You call back in 4 hours. The deal is gone.",
+      "Three hooks, one polished video, and a couple captions is not a creative test. It is a guess. You need enough variation to see which customer problems, claims, and CTAs actually get attention.",
     color: "text-warning",
   },
   {
-    icon: PhoneMissed,
-    title: "Every cold lead cost you real money",
+    icon: Clock,
+    title: "Creative production is slower than ad fatigue",
     description:
-      "You spent $40, $80, maybe $150 to generate that lead. When it goes unanswered, you don't just lose the deal — you lose the ad spend that generated it. That's money you'll never get back.",
+      "Most teams take weeks to plan, script, film, edit, review, and launch a handful of videos. By the time the next batch is ready, the account is already starving for fresh creative.",
     color: "text-destructive",
   },
   {
     icon: DollarSign,
-    title: "A good sales rep costs $4K–$6K a month — and still clocks out",
+    title: "Agencies and creators are too expensive for volume",
     description:
-      "And then they call in sick. Take vacations. Quit. Your AI agent never does any of that. Same quality follow-up. A fraction of the cost. Every single day.",
+      "If every ad costs hundreds or thousands to make, you cannot test enough angles. The math breaks before you ever find the message your market wants to hear.",
     color: "text-primary",
   },
 ];
@@ -32,10 +32,11 @@ export function PainPointsSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="mb-16 text-center">
           <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-            Three problems killing your lead-to-revenue funnel
+            The problem is not your ad account. It is creative volume.
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            Businesses spending money on marketing can&apos;t afford these three problems.
+            Cold traffic does not care about your brand yet. The winning message usually comes from
+            testing more angles than your competitors can produce.
           </p>
         </AnimateOnScroll>
 

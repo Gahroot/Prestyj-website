@@ -1,27 +1,27 @@
-import { MessageCircle, Calendar, Zap, Moon } from "lucide-react";
+import { Captions, Clapperboard, FileText, Target } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import BorderGlow from "@/components/ui/border-glow";
 
 const features = [
   {
-    icon: Zap,
-    title: "Instant Response",
-    description: "Under 60 seconds, every time.",
+    icon: FileText,
+    title: "Scripts written for you",
+    description: "Hooks, bodies, CTAs, and pain-point angles mapped before you record.",
   },
   {
-    icon: MessageCircle,
-    title: "Speaks as a named team member",
-    description: "Leads engage with a named team member. No robotic scripts. No awkward handoffs.",
+    icon: Clapperboard,
+    title: "One recording session",
+    description: "Read the script once on your phone. No studio, actors, or production day.",
   },
   {
-    icon: Calendar,
-    title: "Fills Your Calendar",
-    description: "Qualified appointments land on your calendar. You show up and close.",
+    icon: Captions,
+    title: "Finished vertical ads",
+    description: "Edited, captioned 9:16 files ready for paid social upload.",
   },
   {
-    icon: Moon,
-    title: "Works 24/7",
-    description: "Saturday at 11pm. Sunday morning. Holidays. It doesn't take time off.",
+    icon: Target,
+    title: "Built to test angles",
+    description: "Hundreds of variations across hooks, pain points, and offers.",
   },
 ];
 
@@ -32,37 +32,35 @@ export function SolutionSection() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <AnimateOnScroll>
             <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
-              AI agents that respond, qualify, and book —{" "}
-              <span className="text-primary">24/7.</span>
+              We turn one recording into a full creative testing library.
             </h2>
             <p className="text-muted-foreground mb-8 text-lg">
-              Prestyj&apos;s AI agents respond to every lead in under 60 seconds, have a real
-              conversation, qualify them, and book a meeting on your calendar. They work nights,
-              weekends, and holidays.
+              You give us the business, offer, audience, and customer problems. We write the scripts,
+              tell you exactly what to record, and turn the raw footage into 300 ads built to test what
+              your market responds to.
             </p>
             <div className="space-y-4">
               <div className="text-muted-foreground flex items-center gap-3">
                 <div className="bg-success h-2 w-2 rounded-full" />
                 <span>
-                  Replies as a named team member (&ldquo;Hey, it&apos;s Alex from [Your
-                  Business]&rdquo;)
+                  300 unique vertical video ads from one 15–20 minute recording
                 </span>
               </div>
               <div className="text-muted-foreground flex items-center gap-3">
                 <div className="bg-success h-2 w-2 rounded-full" />
-                <span>Qualifies buyers, sellers, and investors naturally</span>
+                <span>3 customer pain points tested in the minimum batch</span>
               </div>
               <div className="text-muted-foreground flex items-center gap-3">
                 <div className="bg-success h-2 w-2 rounded-full" />
-                <span>Books directly to your calendar — no back-and-forth</span>
+                <span>Multiple hooks, bodies, CTAs, and captions per angle</span>
               </div>
               <div className="text-muted-foreground flex items-center gap-3">
                 <div className="bg-success h-2 w-2 rounded-full" />
-                <span>Re-engages old leads sitting cold in your CRM</span>
+                <span>Delivered in 1–2 business days after footage is received</span>
               </div>
               <div className="text-muted-foreground flex items-center gap-3">
                 <div className="bg-success h-2 w-2 rounded-full" />
-                <span>Works nights, weekends, and holidays without overtime</span>
+                <span>One-time pack — no retainer, no media buying, no mystery scope</span>
               </div>
             </div>
           </AnimateOnScroll>

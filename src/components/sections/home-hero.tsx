@@ -12,27 +12,27 @@ export function HomeHeroSection() {
       >
         <div className="flex justify-center">
           <Badge variant="outline" className="border-primary/50 text-primary">
-            AI Agents for Marketing & Sales · 5★ on Google
+            Batch video ads · Built for paid social testing
           </Badge>
         </div>
 
         <h1 className="font-heading text-foreground mt-6 text-4xl leading-[1.1] font-bold md:text-5xl lg:text-6xl">
-          100 video ads. <span className="text-primary">$497.</span> Delivered in 24 hours.
+          Get <span className="text-primary">300 video ads</span> from one recording session.
         </h1>
 
         <p className="text-muted-foreground mt-4 text-sm md:text-base">
-          For anyone running paid ads.
+          Scripts, edits, captions, hooks, bodies, and CTAs handled for you.
         </p>
 
         <p className="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg">
-          One recording session. We script, edit, and ship 100 vertical ads built for Meta, TikTok,
-          and YouTube Shorts. Want more angles? Scale to 300, 500, or 1,000 — same engine, same day.
+          Prestyj turns one 15–20 minute selfie-style recording into 300 vertical ads you can test
+          across Meta, TikTok, YouTube Shorts, and Reels in 1–2 business days.
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button size="lg" className="w-full px-8 text-lg font-bold sm:w-auto" asChild>
-            <Link href="/batch-video-ads">
-              Get 100 ads for $497
+            <Link href="/batch-video-ads#pricing">
+              Get 300 ads for $1,497
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>
@@ -42,7 +42,7 @@ export function HomeHeroSection() {
             className="w-full px-8 text-lg font-bold sm:w-auto"
             asChild
           >
-            <Link href="/bulk-video-ad-pricing">See pricing</Link>
+            <Link href="/batch-video-ads">See how it works</Link>
           </Button>
         </div>
 
@@ -57,14 +57,14 @@ export function HomeHeroSection() {
           </div>
           <span className="text-border hidden sm:inline">•</span>
           <span>
-            <span className="text-foreground font-semibold">&lt;60s</span> lead response
+            <span className="text-foreground font-semibold">300</span> finished vertical ads
           </span>
           <span className="text-border hidden sm:inline">•</span>
           <span>
-            <span className="text-foreground font-semibold">24/7</span> availability
+            <span className="text-foreground font-semibold">1–2</span> business days
           </span>
           <span className="text-border hidden sm:inline">•</span>
-          <span>For anyone running paid ads</span>
+          <span>No monthly retainer</span>
         </div>
       </div>
     </section>

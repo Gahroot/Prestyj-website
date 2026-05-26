@@ -9,35 +9,37 @@ function getTopHighlights(tier: BatchTier): string[] {
   return tier.highlights.slice(0, 3);
 }
 
+function getCardTone(tier: BatchTier): string {
+  if (tier.id === "minimum") {
+    return "border-primary shadow-primary/10 border-2 shadow-lg";
+  }
+
+  return "bg-card border-border";
+}
+
 export function BatchVideoAdsFeatureSection() {
   return (
     <section id="batch-video-ads" className="py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="mb-12 text-center">
           <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-            Pick your batch.
+            Start at 300. Scale when you need more angles.
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            Start with 100 ads for $497. Scale up anytime.
+            The 100-ad pack exists if you only want to sample the system. The real starting point
+            for cold traffic is 300 ads across 3 customer problems.
           </p>
         </AnimateOnScroll>
 
         <AnimateOnScroll delay={0.2}>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
             {BATCH_TIER_LIST.map((tier) => {
-              const isPopular = tier.popular === true;
+              const isMinimum = tier.id === "minimum";
               return (
-                <Card
-                  key={tier.id}
-                  className={`relative h-full ${
-                    isPopular
-                      ? "border-primary shadow-primary/10 border-2 shadow-lg"
-                      : "bg-card border-border"
-                  }`}
-                >
-                  {isPopular ? (
+                <Card key={tier.id} className={`relative h-full ${getCardTone(tier)}`}>
+                  {isMinimum ? (
                     <span className="bg-primary text-primary-foreground absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-3 py-1 text-[11px] font-semibold tracking-wide uppercase">
-                      Most popular
+                      Recommended start
                     </span>
                   ) : null}
                   <CardContent className="flex h-full flex-col p-6">
@@ -74,7 +76,7 @@ export function BatchVideoAdsFeatureSection() {
         <AnimateOnScroll delay={0.3} className="mt-10 text-center">
           <Button size="lg" asChild>
             <Link href="/batch-video-ads#pricing">
-              Get 100 ads for $497
+              Get 300 ads for $1,497
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

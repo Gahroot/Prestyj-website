@@ -1,39 +1,38 @@
-import { Zap, MessageSquare, Calendar, RotateCcw } from "lucide-react";
+import { FileText, Smartphone, Target, Upload } from "lucide-react";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
-import { HowItWorksCTA } from "./how-it-works-cta";
 
 const steps = [
   {
     number: "01",
-    icon: Zap,
-    title: "Instant Lead Response",
+    icon: Target,
+    title: "Pick the problems to test",
     description:
-      "A lead fills out your form at 9pm on a Saturday. Your AI agent texts them back in under 60 seconds — from your brand, in your voice. Your competitors haven't even seen the notification yet.",
-    highlight: "Sub-60-second average response",
+      "Tell us your offer, audience, market, and the customer problems you want to attack. The 300-ad pack covers 3 pain points, so every angle has a job.",
+    highlight: "3 customer problems in the 300-ad pack",
   },
   {
     number: "02",
-    icon: MessageSquare,
-    title: "Smart Qualification",
+    icon: FileText,
+    title: "We write the scripts",
     description:
-      "The conversation flows naturally. Timeline, motivation, budget, fit. Your AI agent asks the right questions without sounding like a script. You only talk to the leads worth your time.",
-    highlight: "Leads qualified by our AI in plain conversation.",
+      "We build the hook, body, CTA, and variation matrix for you. You do not need to know what to say or how to structure a paid-social creative test.",
+    highlight: "Hooks, bodies, CTAs, and captions planned",
   },
   {
     number: "03",
-    icon: Calendar,
-    title: "Appointment Booking",
+    icon: Smartphone,
+    title: "You record once",
     description:
-      "Qualified leads get booked directly on your calendar. You wake up to confirmed appointments — not a pile of voicemails and texts to sort through.",
-    highlight: "Direct calendar integration",
+      "Prop up your phone and read the script selfie-style in one take. The recording usually takes 15–20 minutes, and we edit around small mistakes.",
+    highlight: "One raw recording file",
   },
   {
     number: "04",
-    icon: RotateCcw,
-    title: "Lead Recovery",
+    icon: Upload,
+    title: "You get 300 ads to launch",
     description:
-      "That database of leads from last year? Most teams leave them for dead. Your AI agent re-engages them with personalized follow-ups that actually get responses. Turn sunk ad spend into new business.",
-    highlight: "Reactivate cold leads in your CRM.",
+      "We cut the footage into finished 9:16 ads with captions and variations, then send the files so you or your media buyer can test them across paid social.",
+    highlight: "Delivered in 1–2 business days",
   },
 ];
 
@@ -43,10 +42,10 @@ export function HowItWorksSection() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="mb-16 text-center">
           <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-            How Our AI Agents Work
+            How the 300-ad sprint works
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            From lead capture to booked meeting — fully automated.
+            Simple input. Fast output. Enough creative volume to actually learn what converts.
           </p>
         </AnimateOnScroll>
 
@@ -75,8 +74,6 @@ export function HowItWorksSection() {
             </AnimateOnScroll>
           ))}
         </div>
-
-        <HowItWorksCTA />
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ const siteConfig = {
   name: "Prestyj",
   url: "https://prestyj.com",
   description:
-    "We build AI agents for marketing & sales. AI agents and automations that capture leads, respond instantly, qualify them, and book meetings — built for businesses.",
+    "Prestyj turns one recording session into hundreds of vertical video ads for paid social creative testing across Meta, TikTok, YouTube Shorts, and Reels.",
   logo: "https://prestyj.com/icon-512.png",
 };
 
@@ -129,6 +129,45 @@ export function SoftwareApplicationJsonLd() {
       "Multi-industry support",
       "Missed call text back",
     ],
+  };
+
+  return <SafeJsonLd data={jsonLd} />;
+}
+
+export function BatchVideoAdsJsonLd() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteConfig.url}/#batch-video-ads-service`,
+    name: "Prestyj Batch Video Ads",
+    alternateName: "300 Video Ads for Paid Social Testing",
+    description:
+      "Prestyj turns one 15–20 minute recording into 300 vertical video ads for paid social creative testing across Meta, TikTok, YouTube Shorts, and Reels.",
+    url: siteConfig.url,
+    provider: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    serviceType: [
+      "Batch Video Ads",
+      "Video Ad Production",
+      "Paid Social Creative Testing",
+      "UGC-Style Video Ads",
+    ],
+    areaServed: "United States",
+    offers: {
+      "@type": "Offer",
+      name: "300 vertical video ads",
+      price: "1497",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: `${siteConfig.url}/batch-video-ads#pricing`,
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Businesses running paid social ads",
+    },
   };
 
   return <SafeJsonLd data={jsonLd} />;

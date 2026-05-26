@@ -22,16 +22,16 @@ const socialLinks = [
 
 const footerLinks = {
   product: [
-    { href: "/platform", label: "Platform" },
+    { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
     { href: "/#how-it-works", label: "How It Works" },
-    { href: "/pricing", label: "Pricing" },
-    { href: "/results", label: "Founding Customers" },
+    { href: "/300-video-ads", label: "300 Video Ads" },
+    { href: "/results", label: "Proof" },
     { href: "/#faq", label: "FAQ" },
   ],
   company: [
-    { href: "/results", label: "Founding Customers" },
+    { href: "/results", label: "Proof" },
+    { href: "/founding-cohort", label: "Founding Cohort" },
     { href: "/contact", label: "Contact" },
-    { href: "/book-demo", label: "Book a Demo" },
   ],
   resources: [
     { href: "/blog", label: "Blog" },
@@ -86,8 +86,8 @@ export function Footer() {
               <span className="font-heading text-primary text-xl font-bold">PRESTYJ</span>
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm text-sm">
-              We build AI agents for marketing and sales. AI agents and automations that capture
-              leads, respond instantly, qualify, and book meetings 24/7.
+              We turn one recording session into hundreds of vertical video ads for paid social
+              creative testing.
             </p>
             <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
               <div className="flex flex-wrap gap-x-2">

@@ -3,13 +3,8 @@ import dynamic from "next/dynamic";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { HomeHeroSection } from "@/components/sections/home-hero";
-import { faqs } from "@/lib/faq-data";
-import {
-  ProductJsonLd,
-  FAQJsonLd,
-  SoftwareApplicationJsonLd,
-  ServiceJsonLd,
-} from "@/components/seo/json-ld";
+import { homeFaqs } from "@/lib/home-faq-data";
+import { BatchVideoAdsJsonLd, FAQJsonLd } from "@/components/seo/json-ld";
 
 const StatisticsSection = dynamic(
   () => import("@/components/sections/statistics").then((m) => m.StatisticsSection),
@@ -17,10 +12,6 @@ const StatisticsSection = dynamic(
 );
 const HowItWorksSection = dynamic(
   () => import("@/components/sections/how-it-works").then((m) => m.HowItWorksSection),
-  { ssr: true },
-);
-const PricingSection = dynamic(
-  () => import("@/components/sections/pricing").then((m) => m.PricingSection),
   { ssr: true },
 );
 const PainPointsSection = dynamic(
@@ -46,38 +37,33 @@ const BatchVideoAdsFeatureSection = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: "Prestyj | AI Agents for Marketing & Sales",
+  title: "Prestyj | 300 Video Ads for Paid Social Testing",
   description:
-    "100 video ads for $497, delivered in 24 hours. Scale to 300, 500, or 1,000 anytime. Built for anyone running paid ads.",
+    "Get 300 vertical video ads in 1–2 business days from one recording session. Built for businesses testing hooks, pain points, and offers on Meta, TikTok, YouTube Shorts, and Reels.",
   keywords: [
-    "AI sales agent",
-    "AI marketing agent",
-    "AI agents for business",
-    "AI lead response",
-    "AI appointment setter",
-    "AI marketing automation",
-    "AI sales automation",
-    "AI lead generation",
-    "AI inbound sales",
-    "AI outbound sales",
-    "AI sales assistant",
-    "AI marketing assistant",
-    "AI sales platform",
-    "AI marketing platform",
-    "AI agents",
+    "300 video ads",
+    "batch video ads",
+    "video ad variations",
+    "paid social creative testing",
+    "Meta ad creative testing",
+    "TikTok video ads",
+    "YouTube Shorts ads",
+    "UGC style video ads",
+    "ad creative volume",
+    "short form video ads",
   ],
   openGraph: {
-    title: "Prestyj | AI Agents for Marketing & Sales",
+    title: "Prestyj | 300 Video Ads for Paid Social Testing",
     description:
-      "100 video ads for $497, delivered in 24 hours. Scale to 300, 500, or 1,000 anytime. Built for anyone running paid ads.",
+      "Get 300 vertical video ads in 1–2 business days from one recording session. Test hooks, pain points, and offers without hiring editors, creators, or an agency.",
     type: "website",
     url: "https://prestyj.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prestyj | AI Agents for Marketing & Sales",
+    title: "Prestyj | 300 Video Ads for Paid Social Testing",
     description:
-      "100 video ads for $497, delivered in 24 hours. Scale to 300, 500, or 1,000 anytime. Built for anyone running paid ads.",
+      "Get 300 vertical video ads in 1–2 business days from one recording session. Test hooks, pain points, and offers without hiring editors, creators, or an agency.",
   },
   alternates: {
     canonical: "https://prestyj.com",
@@ -87,10 +73,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <ProductJsonLd />
-      <SoftwareApplicationJsonLd />
-      <ServiceJsonLd />
-      <FAQJsonLd faqs={faqs} />
+      <BatchVideoAdsJsonLd />
+      <FAQJsonLd faqs={homeFaqs} />
       <Navbar />
       <main>
         <HomeHeroSection />
@@ -99,7 +83,6 @@ export default function Home() {
         <HowItWorksSection />
         <StatisticsSection />
         <BatchVideoAdsFeatureSection />
-        <PricingSection />
         <FAQSection />
         <CTASection />
       </main>

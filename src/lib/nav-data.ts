@@ -8,11 +8,10 @@ export type DropdownLink = {
 };
 
 export const navLinks = [
-  { href: "/platform", label: "Product" },
-  { href: "#solutions", label: "Solutions", dropdown: true as const },
-  { href: "/batch-video-ads", label: "Batch Video Ads" },
-  { href: "/results", label: "Founding Customers" },
-  { href: "/pricing", label: "Pricing" },
+  { href: "/batch-video-ads", label: "How It Works" },
+  { href: "#solutions", label: "Resources", dropdown: true as const },
+  { href: "/results", label: "Proof" },
+  { href: "/statistics", label: "Stats" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -23,44 +22,43 @@ export type CtaLink = {
 };
 
 export const primaryCta: CtaLink = {
-  href: "/batch-video-ads",
-  label: "Get 100 ads — $497",
+  href: "/batch-video-ads#pricing",
+  label: "Get 300 ads — $1,497",
   variant: "primary",
 };
 
 export const secondaryCta: CtaLink = {
-  href: "/book-demo",
-  label: "Book a Demo",
+  href: "/batch-video-ads",
+  label: "See How It Works",
   variant: "secondary",
 };
 
 export const ctaLinks: readonly CtaLink[] = [primaryCta, secondaryCta];
 
-// Solution dropdown — references only canonical surviving solution slugs that
-// align with the "AI agents for marketing & sales" core positioning.
+// Resource dropdown — keep the homepage navigation focused on the batch video ad offer.
 export const solutionLinks: DropdownLink[] = [
   {
-    href: "/solutions/sales-automation",
-    label: "AI Sales Agents",
-    description: "Autonomous agents that qualify, follow up, and close.",
-    icon: Bot,
-  },
-  {
-    href: "/solutions/marketing-automation",
-    label: "AI Marketing Agents",
-    description: "Agents that run campaigns, content, and outreach 24/7.",
+    href: "/batch-video-ads",
+    label: "Batch Video Ads",
+    description: "The full offer: one recording turned into 100–1,000 ads.",
     icon: Megaphone,
   },
   {
-    href: "/solutions/ai-lead-response",
-    label: "AI Lead Response & Booking",
-    description: "Sub-60-second response and calendar booking on autopilot.",
+    href: "/300-video-ads",
+    label: "300 Video Ads",
+    description: "The recommended starting pack for 3 customer problems.",
     icon: Zap,
   },
   {
-    href: "/solutions/ai-virtual-receptionist",
-    label: "AI Voice Receptionist",
-    description: "24/7 AI voice agent that answers, qualifies, and books.",
+    href: "/500-video-ads",
+    label: "500 Video Ads",
+    description: "More creative coverage across hooks, bodies, and CTAs.",
+    icon: Sparkles,
+  },
+  {
+    href: "/1000-video-ads",
+    label: "1,000 Video Ads",
+    description: "Maximum batch volume for aggressive testing and launches.",
     icon: Phone,
   },
   {
@@ -70,9 +68,9 @@ export const solutionLinks: DropdownLink[] = [
     icon: FlaskConical,
   },
   {
-    href: "/ai-first-audit",
-    label: "The AI-First Audit",
-    description: "Free 6-minute audit — find your top 3 tasks to automate first.",
-    icon: Sparkles,
+    href: "/batch-video-ad-roi-calculator",
+    label: "ROI Calculator",
+    description: "Model how many winning ads a batch needs to find to pay for itself.",
+    icon: Bot,
   },
 ];

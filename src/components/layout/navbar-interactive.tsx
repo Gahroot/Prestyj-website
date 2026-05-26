@@ -98,7 +98,7 @@ export function NavbarMobile() {
         <SheetHeader>
           <SheetTitle className="text-white">PRESTYJ</SheetTitle>
           <p className="text-xs font-light tracking-wide text-white/60">
-            AI agents for marketing &amp; sales
+            300 video ads from one recording
           </p>
         </SheetHeader>
         <nav className="mt-8 flex flex-col gap-4">
@@ -115,7 +115,7 @@ export function NavbarMobile() {
             ),
           )}
 
-          <MobileSection title="Solutions" items={solutionLinks} onNavigate={close} />
+          <MobileSection title="Resources" items={solutionLinks} onNavigate={close} />
 
           <div className="mt-8 flex flex-col gap-3">
             <Button asChild className="w-full">
