@@ -29,6 +29,7 @@ const footerLinks = {
     { href: "/#faq", label: "FAQ" },
   ],
   company: [
+    { href: "/about", label: "About" },
     { href: "/results", label: "Proof" },
     { href: "/founding-cohort", label: "Founding Cohort" },
     { href: "/contact", label: "Contact" },

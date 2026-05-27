@@ -4,30 +4,71 @@ import { SafeJsonLd } from "./safe-json-ld";
 const siteConfig = {
   name: "Prestyj",
   url: "https://prestyj.com",
+  organizationId: "https://prestyj.com/#organization",
+  websiteId: "https://prestyj.com/#website",
   description:
     "Prestyj turns one recording session into hundreds of vertical video ads for paid social creative testing across Meta, TikTok, YouTube Shorts, and Reels.",
   logo: "https://prestyj.com/icon-512.png",
+  email: "hello@prestyj.com",
+  contactUrl: "https://prestyj.com/contact",
+  foundingDate: "2026",
+  sameAs: [
+    "https://www.instagram.com/prestyj_/",
+    "https://www.linkedin.com/company/prestyj/",
+    "https://www.facebook.com/profile.php?id=61582824703610",
+    "https://x.com/prestyj_",
+    "https://www.wikidata.org/wiki/Q139892537",
+  ],
 };
 
 export function OrganizationJsonLd() {
   const jsonLd: WithContext<Organization> = {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": siteConfig.organizationId,
     name: siteConfig.name,
+    alternateName: ["PRESTYJ", "Prestyj AI", "Prestyj Batch Video Ads"],
+    legalName: siteConfig.name,
     url: siteConfig.url,
-    logo: siteConfig.logo,
-    description: siteConfig.description,
-    sameAs: [
-      "https://www.instagram.com/prestyj_/",
-      "https://www.linkedin.com/company/prestyj/",
-      "https://www.facebook.com/profile.php?id=61582824703610",
-      "https://x.com/prestyj_",
-    ],
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "sales",
-      availableLanguage: "English",
+    logo: {
+      "@type": "ImageObject",
+      url: siteConfig.logo,
     },
+    image: siteConfig.logo,
+    description: siteConfig.description,
+    foundingDate: siteConfig.foundingDate,
+    email: siteConfig.email,
+    contactPoint: [
+      {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        email: siteConfig.email,
+        url: siteConfig.contactUrl,
+        availableLanguage: "English",
+      },
+      {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        email: siteConfig.email,
+        url: siteConfig.contactUrl,
+        availableLanguage: "English",
+      },
+    ],
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    knowsAbout: [
+      "Batch video ads",
+      "Paid social creative testing",
+      "Meta ad creative testing",
+      "TikTok video ads",
+      "YouTube Shorts ads",
+      "AI marketing agents",
+      "AI sales agents",
+      "Lead response automation",
+    ],
+    sameAs: siteConfig.sameAs,
   };
 
   return <SafeJsonLd data={jsonLd} />;
@@ -46,9 +87,14 @@ export function WebSiteJsonLd() {
   const jsonLd: WithContext<WebSite> = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": siteConfig.websiteId,
     name: siteConfig.name,
+    alternateName: "PRESTYJ",
     url: siteConfig.url,
     description: siteConfig.description,
+    publisher: {
+      "@id": siteConfig.organizationId,
+    },
     potentialAction,
   };
 
