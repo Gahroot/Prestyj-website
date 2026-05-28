@@ -25,6 +25,9 @@ import {
 } from "lucide-react";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { VideoObjectJsonLd } from "@/components/seo/video-object-json-ld";
+import { VideoTestimonialSection } from "@/components/sections/video-testimonial";
+import { MAX_SHERROD_VIDEO_TESTIMONIAL } from "@/lib/testimonials";
 
 // What we're building toward - aspirational targets, not measured results
 const goals = [
@@ -191,20 +194,29 @@ export default function ResultsPage() {
           brand: { "@type": "Brand", name: "Prestyj" },
         }}
       />
+      <VideoObjectJsonLd
+        videos={[
+          {
+            vimeoId: MAX_SHERROD_VIDEO_TESTIMONIAL.vimeoId,
+            name: MAX_SHERROD_VIDEO_TESTIMONIAL.videoName,
+            description: MAX_SHERROD_VIDEO_TESTIMONIAL.videoDescription,
+          },
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-16">
         {/* Hero Section */}
         <section className="mx-auto mb-20 max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <Badge variant="outline" className="border-primary/50 text-primary mb-6">
-            Pre-Launch · No Customers Yet
+            Pre-Launch · AI Sales Agent
           </Badge>
           <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
             Founding Customers Wanted
           </h1>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
-            We&apos;re pre-revenue and looking for founding partners. No case studies yet — be the
-            first. In return: priority access, founding rates, and a featured story when we have
-            real numbers to share.
+            The AI Sales Agent is pre-revenue and looking for founding partners. No agent case
+            studies yet — be the first. In return: priority access, founding rates, and a featured
+            story when we have real numbers to share.
           </p>
         </section>
 
@@ -251,6 +263,29 @@ export default function ResultsPage() {
               </motion.div>
             ))}
           </motion.div>
+        </section>
+
+        {/* Cross-product proof — the AI Sales Agent is pre-launch, but the Batch */}
+        {/* Video Ads service is already shipping real client outcomes. Surface */}
+        {/* one to give the founding-customer CTA something concrete to lean on. */}
+        <section className="mx-auto mb-20 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center">
+            <Badge variant="outline" className="border-success/50 text-success mb-3">
+              Already shipping · Batch Video Ads
+            </Badge>
+            <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
+              While the agent is in pre-launch, our ad system already is.
+            </h2>
+            <p className="text-muted-foreground mx-auto max-w-2xl">
+              A recent result from{" "}
+              <Link href="/batch-video-ads" className="text-primary hover:underline">
+                Prestyj Batch Video Ads
+              </Link>
+              {" — "}
+              the sister product founding AI Sales Agent partners get early access to.
+            </p>
+          </div>
+          <VideoTestimonialSection className="px-0 py-0" />
         </section>
 
         {/* Founding Case Study CTA */}

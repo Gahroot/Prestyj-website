@@ -27,6 +27,7 @@ import ClickSpark from "@/components/ui/click-spark";
 import BorderGlow from "@/components/ui/border-glow";
 import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { VideoCarousel } from "@/components/sections/video-carousel";
+import { VideoTestimonialSection } from "@/components/sections/video-testimonial";
 import { BatchAudienceSelector } from "@/components/sections/batch-video-ads/audience-selector";
 import {
   HiddenCostTable,
@@ -733,6 +734,10 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               Not stock quotes. Real clients who sent us their footage and got their batch back.
             </p>
+          </AnimateOnScroll>
+
+          <AnimateOnScroll className="mb-12">
+            <VideoTestimonialSection className="px-0 py-0" />
           </AnimateOnScroll>
 
           <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">

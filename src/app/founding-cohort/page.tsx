@@ -21,8 +21,11 @@ import { SpotCounter } from "@/components/founding-cohort/spot-counter";
 import { SocialProofStrip } from "@/components/founding-cohort/social-proof-strip";
 import { ExitIntentPopup } from "@/components/effects/exit-intent-popup";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { VideoObjectJsonLd } from "@/components/seo/video-object-json-ld";
 import { VideoCarousel } from "@/components/sections/video-carousel";
+import { VideoTestimonialSection } from "@/components/sections/video-testimonial";
 import { FOUNDING_COHORT, spotsRemaining } from "@/lib/founding-cohort";
+import { MAX_SHERROD_VIDEO_TESTIMONIAL } from "@/lib/testimonials";
 
 const PAGE_URL = "https://prestyj.com/founding-cohort";
 
@@ -113,6 +116,15 @@ export default function FoundingCohortPage() {
           { name: "Founding Cohort", url: PAGE_URL },
         ]}
       />
+      <VideoObjectJsonLd
+        videos={[
+          {
+            vimeoId: MAX_SHERROD_VIDEO_TESTIMONIAL.vimeoId,
+            name: MAX_SHERROD_VIDEO_TESTIMONIAL.videoName,
+            description: MAX_SHERROD_VIDEO_TESTIMONIAL.videoDescription,
+          },
+        ]}
+      />
       <Navbar />
       <main className="pt-24 pb-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -172,6 +184,24 @@ export default function FoundingCohortPage() {
           {/* Social proof — above the fold (the form is still in view, this just */}
           {/* answers "is this real?" before the prospect commits to filling it out). */}
           <SocialProofStrip />
+
+          {/* Featured video testimonial — paid-batch result. Lifts the founding */}
+          {/* offer (which IS the same batch, just free) by showing what running */}
+          {/* it actually produced for a comparable service business. */}
+          <VideoTestimonialSection
+            className="-mx-4 mt-10 px-4 py-0 sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8"
+            eyebrow="What a paid batch produced"
+            context={
+              <>
+                Max paid for his 300-ad batch. Your founding spot trades that{" "}
+                <span className="text-foreground font-semibold">
+                  ${FOUNDING_COHORT.minDailyTestSpendUsd * FOUNDING_COHORT.testWindowDays}+ in test
+                  spend
+                </span>{" "}
+                and a testimonial for the same batch — same scripts, same 24-hour turnaround.
+              </>
+            }
+          />
 
           {/* What you get */}
           <section className="mt-16 grid gap-4 sm:grid-cols-2">

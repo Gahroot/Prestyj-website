@@ -17,6 +17,38 @@ export type Testimonial = {
   href: string | null;
 };
 
+/**
+ * Featured video testimonial \u2014 used as a hero-style social proof block on
+ * /batch-video-ads, /founding-cohort, and /results. Headline + subhead are
+ * direct quotes from the speaker. Keep edits minimal: light punctuation and
+ * leading-capitalization cleanup is fine, but don't paraphrase.
+ */
+export type VideoTestimonial = {
+  vimeoId: string;
+  headlineQuote: string;
+  subheadQuote: string;
+  author: string;
+  role: string;
+  company: string;
+  /** Used for VideoObject JSON-LD + alt text. */
+  videoName: string;
+  videoDescription: string;
+};
+
+export const MAX_SHERROD_VIDEO_TESTIMONIAL: VideoTestimonial = {
+  vimeoId: "1196469200",
+  headlineQuote: "We actually closed, within 24 hours, $5,000 worth of business.",
+  subheadQuote:
+    "Basically what I did was I recorded for 20 minutes, they pumped out 300 ads, and the turnaround was less than 24 hours.",
+  author: "Max Sherrod",
+  role: "Founder",
+  company: "Maxteriors Exterior Lighting",
+  videoName:
+    "Max Sherrod, Maxteriors Exterior Lighting \u2014 $5,000 closed in 24 hours with Prestyj Batch Video Ads",
+  videoDescription:
+    "Max Sherrod, founder of Maxteriors Exterior Lighting, describes recording for 20 minutes and receiving 300 finished vertical video ads in less than 24 hours, then closing $5,000 in business within a day of running them.",
+};
+
 export const CLIENT_TESTIMONIALS: ReadonlyArray<Testimonial> = [
   {
     quote:

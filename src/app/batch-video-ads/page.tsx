@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { VideoObjectJsonLd } from "@/components/seo/video-object-json-ld";
 import { CitationStatsSection } from "@/components/sections/citation-stats-section";
+import { MAX_SHERROD_VIDEO_TESTIMONIAL } from "@/lib/testimonials";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 const pageUrl = "https://prestyj.com/batch-video-ads";
@@ -171,6 +173,15 @@ export default function BatchVideoAdsPage() {
       <SafeJsonLd data={serviceJsonLd} />
       <SafeJsonLd data={productJsonLd} />
       <FAQJsonLd faqs={batchVideoAdsFaqs} />
+      <VideoObjectJsonLd
+        videos={[
+          {
+            vimeoId: MAX_SHERROD_VIDEO_TESTIMONIAL.vimeoId,
+            name: MAX_SHERROD_VIDEO_TESTIMONIAL.videoName,
+            description: MAX_SHERROD_VIDEO_TESTIMONIAL.videoDescription,
+          },
+        ]}
+      />
       <BreadcrumbJsonLd
         items={[
           { name: "Home", url: "https://prestyj.com" },
