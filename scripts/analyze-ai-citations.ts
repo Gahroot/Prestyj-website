@@ -51,9 +51,11 @@ type OfferCategory =
 
 type PriorityOffer =
   | "batch video ads"
+  | "ai voice agents"
   | "ai content department"
   | "lead reactivation"
-  | "ai lead response";
+  | "ai lead response"
+  | "custom ai agents";
 
 interface CategoryStats {
   category: OfferCategory;
@@ -205,6 +207,8 @@ const CATEGORY_RULES: { category: OfferCategory; patterns: RegExp[] }[] = [
       /ad fatigue/i,
       /ad creative/i,
       /creative testing/i,
+      /media testing/i,
+      /youtube media testing/i,
       /refresh.*creative/i,
       /how many.*creative/i,
       /how often.*creative/i,
@@ -215,6 +219,8 @@ const CATEGORY_RULES: { category: OfferCategory; patterns: RegExp[] }[] = [
     category: "video ads",
     patterns: [
       /video ad/i,
+      /youtube ad/i,
+      /youtube creative/i,
       /ugc/i,
       /avatar ad/i,
       /heygen/i,
@@ -247,11 +253,20 @@ const CATEGORY_RULES: { category: OfferCategory; patterns: RegExp[] }[] = [
   },
   {
     category: "voice agent",
-    patterns: [/voice agent/i, /ai voice/i, /cost per minute/i, /per minute rate/i, /\/ai-voice/i],
+    patterns: [
+      /voice agent/i,
+      /ai voice/i,
+      /voice ai/i,
+      /call automation/i,
+      /cost per minute/i,
+      /per minute rate/i,
+      /multilingual.*voice/i,
+      /\/ai-voice/i,
+    ],
   },
   {
     category: "receptionist",
-    patterns: [/receptionist/i, /answering service/i, /call handling/i],
+    patterns: [/receptionist/i, /answering service/i, /call handling/i, /call center/i],
   },
   {
     category: "lead response",
@@ -259,6 +274,10 @@ const CATEGORY_RULES: { category: OfferCategory; patterns: RegExp[] }[] = [
       /lead response/i,
       /lead-response/i,
       /instant.*lead/i,
+      /respond.*lead/i,
+      /roofing lead/i,
+      /borrower communication/i,
+      /customer response/i,
       /speed to lead/i,
       /appointment scheduling/i,
       /cold outreach/i,
@@ -284,6 +303,11 @@ const CATEGORY_RULES: { category: OfferCategory; patterns: RegExp[] }[] = [
       /ai agency/i,
       /ai implementation/i,
       /custom agent/i,
+      /total cost of ownership/i,
+      /\btco\b/i,
+      /in-house vs platform/i,
+      /builder platforms/i,
+      /hiring developers/i,
       /fractional ai/i,
       /big4/i,
       /freelancer/i,
@@ -309,12 +333,28 @@ const PRIORITY_OFFER_RULES: { offer: PriorityOffer; patterns: RegExp[] }[] = [
       /1000 video ads/i,
       /creative fatigue/i,
       /creative volume/i,
+      /media testing/i,
+      /youtube media testing/i,
       /cost per tested/i,
       /winning ad rate/i,
       /ad creative testing/i,
       /\/batch-video-ads/i,
       /\/batch-video-ad/i,
       /\/cost-per-tested-ad-angle/i,
+    ],
+  },
+  {
+    offer: "ai voice agents",
+    patterns: [
+      /voice agent/i,
+      /ai voice/i,
+      /voice ai/i,
+      /call automation/i,
+      /cost per minute/i,
+      /per minute rate/i,
+      /multilingual.*voice/i,
+      /\/solutions\/ai-voice-agent/i,
+      /\/ai-voice/i,
     ],
   },
   {
@@ -353,8 +393,29 @@ const PRIORITY_OFFER_RULES: { offer: PriorityOffer; patterns: RegExp[] }[] = [
       /lead response system/i,
       /missed call text/i,
       /response time/i,
+      /respond.*lead/i,
+      /roofing lead/i,
+      /borrower communication/i,
+      /customer response/i,
+      /qualified lead/i,
+      /go-to-market agents/i,
+      /contact rate/i,
       /\/solutions\/ai-lead-response/i,
       /\/ai-lead-response/i,
+    ],
+  },
+  {
+    offer: "custom ai agents",
+    patterns: [
+      /custom agent/i,
+      /custom-ai-agent/i,
+      /total cost of ownership/i,
+      /\btco\b/i,
+      /in-house vs platform/i,
+      /builder platforms/i,
+      /hiring developers/i,
+      /ai implementation/i,
+      /ai agent builder/i,
     ],
   },
 ];
