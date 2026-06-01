@@ -1100,6 +1100,135 @@ const instantLeadResponseStats: Statistic[] = [
   },
 ];
 
+// ─── Missed Call & After-Hours Revenue Recovery ───────────────────────────────
+
+const missedCallRecoveryStats: Statistic[] = [
+  {
+    id: "mcr-unanswered-call-rate",
+    value: "62%",
+    description:
+      "62% of phone calls to small businesses go unanswered — only 37.8% are answered by a live person, while 37.8% hit voicemail and 24.3% get no response at all.",
+    source: {
+      name: "411 Locals (study of 85 businesses across 58 industries, 30-day call monitoring)",
+      year: "2024 (widely re-cited 2025–2026)",
+      url: "https://411locals.us/small-business-owners-dont-answer-62-of-phone-calls/",
+    },
+    context:
+      "The 62% figure is the most widely cited benchmark for the SMB missed-call rate and underpins most missed-call revenue-loss models. Home services, property management, and contractor verticals frequently exceed it.",
+  },
+  {
+    id: "mcr-never-call-back",
+    value: "85%",
+    description:
+      "85% of callers whose call is not answered on the first attempt never call back — they call the next business on the list instead.",
+    source: {
+      name: "PATLive / BrightLocal",
+      year: "2025",
+    },
+    context:
+      "Because there is no voicemail or callback, the lost lead is invisible — the business never knows the opportunity existed. This is the single most important behavioral statistic in the missed-call category.",
+  },
+  {
+    id: "mcr-switch-to-competitor",
+    value: "62%",
+    description:
+      "62% of callers who cannot reach a business immediately contact a competitor instead, permanently transferring that lifetime customer value to a rival.",
+    source: {
+      name: "Dialzara missed-call behavior analysis",
+      year: "2025",
+      url: "https://dialzara.com/blog/missed-calls-hidden-costs-and-ai-solutions",
+    },
+    context:
+      "Combined with the 85% no-callback rate, a missed call is functionally a referral to a competitor — the worst possible outcome for paid-acquisition spend.",
+  },
+  {
+    id: "mcr-voicemail-abandonment",
+    value: "80%",
+    description:
+      "80% of callers who reach a business voicemail hang up without leaving a message, so voicemail captures only a fraction of missed-call demand.",
+    source: {
+      name: "Multiple business-call studies (BIA/Kelsey, PATLive)",
+      year: "2024–2026",
+    },
+    context:
+      "Younger consumers are the least likely to leave voicemail. Voicemail is not a safety net for missed calls — automated text-back and AI answering recover what voicemail loses.",
+  },
+  {
+    id: "mcr-annual-revenue-lost",
+    value: "$126,000",
+    description:
+      "The average small business loses roughly $126,000 per year in revenue to missed calls, with each unanswered call costing $100–$1,200 depending on industry.",
+    source: {
+      name: "Aggregated SMB missed-call revenue analysis (Dialzara, getAira, RingEden)",
+      year: "2025–2026",
+    },
+    context:
+      "Derived from monthly missed calls × average customer value × 12 × non-callback rate. Higher-ticket verticals (dental, legal, home services) sit at the top of the range.",
+  },
+  {
+    id: "mcr-phone-lead-conversion-multiple",
+    value: "10–15×",
+    description:
+      "Inbound phone leads convert at 10–15× the rate of web-form leads, making a missed call one of the most expensive leads a business can lose.",
+    source: {
+      name: "BIA/Kelsey inbound call conversion research",
+      year: "2024–2026",
+    },
+    context:
+      "Phone callers are higher-intent than form-fillers — they have an active, urgent need. Losing a phone lead is far costlier than losing a form lead.",
+  },
+  {
+    id: "mcr-after-hours-call-share",
+    value: "30–40%",
+    description:
+      "30–40% of inbound calls to local service businesses arrive after business hours, when staffed phone lines roll to voicemail and most of the demand is lost.",
+    source: {
+      name: "SMB call-tracking and telecom volume analyses",
+      year: "2025–2026",
+    },
+    context:
+      "After-hours, lunch-hour, and Monday-morning peaks are the largest structural sources of missed calls — exactly the windows 24/7 AI answering covers.",
+  },
+  {
+    id: "mcr-instant-response-expectation",
+    value: "65%",
+    description:
+      "65% of customers expect an instant response when they contact a business — an expectation voicemail and next-day callbacks structurally cannot meet.",
+    source: {
+      name: "Salesforce State of the Connected Customer",
+      year: "2024–2025",
+    },
+    context:
+      "Instant-response expectation is why AI answering and sub-minute missed-call text-back outperform traditional reception and answering services on conversion.",
+  },
+  {
+    id: "mcr-text-back-recovery-rate",
+    value: "93%",
+    description:
+      "Automated missed-call text-back within one minute recovers up to 93% of leads that would otherwise be lost, generating roughly $3,500 in additional monthly revenue on average for a service business.",
+    source: {
+      name: "SchedulingKit missed-call recovery analysis",
+      year: "2026",
+      url: "https://schedulingkit.com/statistics/missed-call-statistics",
+    },
+    context:
+      "A one-minute automated text turns an invisible missed call into an active conversation before the caller dials a competitor. This is the highest-leverage, lowest-cost missed-call fix.",
+  },
+  {
+    id: "mcr-ai-answer-rate",
+    value: "99%+",
+    description:
+      "AI phone answering systems handle unlimited simultaneous calls and answer 99%+ of inbound calls instantly, 24/7 — cutting missed calls by about 75% versus staffed-only reception.",
+    source: {
+      name: "Prestyj AI answering benchmark (synthesized from SchedulingKit, Dialzara)",
+      year: "2026",
+      url: "https://prestyj.com/ai-receptionist",
+    },
+    context:
+      "Unlike a human receptionist limited to one call at a time, AI answers every concurrent call, removing the primary mechanical cause of missed calls during peak hours.",
+  },
+];
+
 // ─── Aggregated Categories ────────────────────────────────────────────────────
 
 export const statCategories: StatCategory[] = [
@@ -1200,6 +1329,14 @@ export const statCategories: StatCategory[] = [
     statistics: batchVideoCitationStats,
   },
   {
+    id: "missed-call-recovery",
+    title: "Missed Call & After-Hours Revenue Recovery",
+    slug: "missed-call-after-hours-revenue-recovery",
+    description:
+      "How many calls small businesses miss, what each missed call costs, caller callback and competitor-switching behavior, and how AI answering plus missed-call text-back recover lost revenue.",
+    statistics: missedCallRecoveryStats,
+  },
+  {
     id: "industry-benchmarks",
     title: "Industry Benchmarks: Cost Per Lead & Conversion Rates",
     slug: "industry-benchmarks",
@@ -1265,5 +1402,25 @@ export const statisticsFaqs: StatisticsFAQ[] = [
     question: "What are the economics of done-for-you social media in 2026?",
     answer:
       "Traditional done-for-you social media retainers often advertise $800–$3,500 per month but land around $2,400–$7,800 per month once setup, platform, premium content, revision, reporting, and contract costs are included. Output is usually 20–30 posts per month, while modern short-form platforms often reward daily or multi-daily posting cadences.",
+  },
+  {
+    question: "What percentage of business calls go unanswered?",
+    answer:
+      "A widely cited 411 Locals study of 85 businesses across 58 industries found that 62% of phone calls to small businesses go unanswered — only 37.8% are answered by a live person, while 37.8% hit voicemail and 24.3% get no response at all. Home services, property management, and contractor verticals often exceed the 62% miss rate because staff are on job sites.",
+  },
+  {
+    question: "How much does a missed call cost a business?",
+    answer:
+      "Each missed call costs an estimated $100–$1,200 depending on industry, and the average small business loses roughly $126,000 per year to unanswered calls. The cost is high because inbound phone leads convert at 10–15× the rate of web-form leads, 85% of callers never call back, and 62% immediately contact a competitor instead.",
+  },
+  {
+    question: "Does missed-call text-back actually recover leads?",
+    answer:
+      "Yes. Automated missed-call text-back within one minute recovers up to 93% of leads that would otherwise be lost and generates roughly $3,500 in additional monthly revenue on average for a service business. Because 80% of callers will not leave a voicemail and 85% never call back, an instant automated text is often the only thing that keeps a missed call from becoming a competitor's sale.",
+  },
+  {
+    question: "How do AI answering systems reduce missed calls?",
+    answer:
+      "AI phone answering systems answer 99%+ of inbound calls instantly, 24/7, and handle unlimited simultaneous calls — removing the main mechanical cause of missed calls, which is a human receptionist being limited to one call at a time. They cut missed calls by about 75% versus staffed-only reception and cover the after-hours, lunch-hour, and Monday-morning peaks that account for 30–40% of inbound call volume.",
   },
 ];

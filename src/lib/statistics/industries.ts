@@ -218,6 +218,8 @@ const CROSS_CUTTING_IDS = [
   "stl-50pct-first",
   "lead-response-ai-time-to-contact",
   "lead-response-ai-cost-per-lead-engaged",
+  "mcr-unanswered-call-rate",
+  "mcr-text-back-recovery-rate",
 ];
 
 /**
