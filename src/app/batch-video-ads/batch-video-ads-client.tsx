@@ -469,6 +469,11 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
         </div>
       </section>
 
+      {/* VIDEO TESTIMONIAL — just under the fold */}
+      <AnimateOnScroll>
+        <VideoTestimonialSection className="bg-muted/10 px-4 py-14 sm:py-16" />
+      </AnimateOnScroll>
+
       {/* AI CITATION SUMMARY */}
       <section aria-labelledby="batch-video-ads-summary" className="px-4 py-16">
         <div className="border-primary/20 bg-card/70 mx-auto max-w-4xl rounded-2xl border p-6 shadow-sm md:p-8">
@@ -734,10 +739,6 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
               Not stock quotes. Real clients who sent us their footage and got their batch back.
             </p>
-          </AnimateOnScroll>
-
-          <AnimateOnScroll className="mb-12">
-            <VideoTestimonialSection className="px-0 py-0" />
           </AnimateOnScroll>
 
           <div className="mb-10 grid grid-cols-1 gap-6 md:grid-cols-3">
