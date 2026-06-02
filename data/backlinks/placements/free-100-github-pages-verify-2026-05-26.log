@@ -1,0 +1,104 @@
+
+> prestyj@0.1.0 backlinks:verify:free100
+> tsx scripts/backlinks/verify-free-100.ts
+
+
+Free 100 backlink verifier
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+OK   HTTP  KEY                              ID                                         REASON
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+✓    200   https://wikidata.org/wiki/Q13989 wikidata-q139892537                        Verified
+✓    200   github.com/Gahroot/prestyj-stati github-gahroot-statistics-dataset          Verified
+✓    200   github.com/Gahroot/prestyj-stats github-gahroot-prestyj-stats-mcp           Verified
+✓    200   https://gist.github.com/Gahroot/ gist-speed-to-lead-statistics              Verified
+✓    200   https://gist.github.com/Gahroot/ gist-ai-sales-benchmarks                   Verified
+✓    200   https://gist.github.com/Gahroot/ gist-home-services-cpl-benchmarks          Verified
+✓    200   https://gist.github.com/Gahroot/ gist-real-estate-lead-response             Verified
+✓    200   https://gist.github.com/Gahroot/ gist-video-ad-roi-benchmarks               Verified
+✓    200   https://gist.github.com/Gahroot/ gist-mcp-statistics-server                 Verified
+✓    200   https://gist.github.com/Gahroot/ gist-open-marketing-statistics-dataset     Verified
+✓    200   https://gist.github.com/Gahroot/ gist-ai-receptionist-roi                   Verified
+✓    200   https://gist.github.com/Gahroot/ gist-lead-response-calculator              Verified
+✓    200   https://gist.github.com/Gahroot/ gist-andromeda-video-creative-volume       Verified
+✓    200   github.com/Gahroot/Gahroot       github-gahroot-profile-readme              Verified
+✓    200   github.com/Gahroot/prestyj-stati github-release-dataset-data-2026-05-26     Verified
+✓    200   github.com/Gahroot/prestyj-stati github-release-dataset-citation-2026-05-26 Verified
+✓    200   github.com/Gahroot/prestyj-stati github-release-dataset-npm-package-2026-05 Verified
+✓    200   github.com/Gahroot/prestyj-stats github-release-mcp-v0-1-0-2026-05-26       Verified
+✓    200   github.com/Gahroot/prestyj-stats github-release-mcp-npm-tarball-2026-05-26  Verified
+✓    200   https://gahroot.github.io/presty github-pages-prestyj-statistics-citation-i Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-21x              Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-391              Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-78pct            Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-100x             Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-8x-drop          Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-400pct-drop      Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-avg-42hr         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-only-01pct       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-77pct-no-respons Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-82pct-10min      Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-1pct-b2b         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-instant-66       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-50pct-first      Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-stl-53pct-frustratio Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-89pct            Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-93pct-roi        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-85b-vs-59b       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-64pct-purchase   Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-300pct-email     Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-38pct-lp         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-completion-15s   Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-mobile-28pct     Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-92pct-roi        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-87pct-buy        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-96pct-ai         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-vid-82pct-ai-roi     Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-56pct-daily       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-24-to-43          Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-37x-quota         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-15pct-conv        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-45pct-deals       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-81pct-rev         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-86pct-roi-year1   Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-40pct-productivit Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-28pct-quota       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-25pct-selling     Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-62pct-agents      Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ai-trillion          Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-7x-1hr            Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-60x-1hr           Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-13-attempts       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-15pct-day1        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-51pct-never       Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-57pct-week        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-37pct-1hr         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-48pct-rev         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-20-30pct-pred     Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-lc-12pp-quota        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-cpl-70           Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-cpl-legal        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-cpl-auto         Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-cpl-biz          Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-ctr-66           Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-cvr-752          Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-cpc-526          Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-linkedin-110     Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-auto-conv        Verified
+✓    200   https://gahroot.github.io/presty github-pages-citation-ind-education-cpl-up Verified
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+{
+  "target": 100,
+  "inventory_items": 124,
+  "eligible_live_free_third_party_items": 78,
+  "unique_live_url_keys_checked": 78,
+  "unique_placement_basis": "canonical live URL (GitHub repositories remain repository-level)",
+  "verified_backlinks": 78,
+  "failed_checks": 0,
+  "allowed_prestyj_links": [
+    "https://prestyj.com",
+    "https://prestyj.com/data",
+    "prestyj.com canonical paths"
+  ],
+  "pass": false
+}
+❌ 22 verified backlink(s) short of 100.

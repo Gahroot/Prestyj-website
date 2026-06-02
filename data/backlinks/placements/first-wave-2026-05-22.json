@@ -1,0 +1,69 @@
+{
+  "wave": "first-free-backlink-acquisition-wave",
+  "date": "2026-05-22",
+  "cap": 50,
+  "total_executed": 7,
+  "policy": "No SEO listicles, paid listings, PBNs, or spam automation. Only clean GitHub PRs and free GitHub redistribution mirrors requiring no missing credentials were counted.",
+  "github_prs_open_verified_by_gh_cli": [
+    {
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/awesomedata/apd-core/pull/412",
+      "status": "sent",
+      "evidence_url": "https://github.com/awesomedata/apd-core/pull/412",
+      "title": "Add Prestyj Lead Response & AI Sales Statistics dataset (SocialSciences)",
+      "state": "OPEN"
+    },
+    {
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/secretGeek/AwesomeCSV/pull/57",
+      "status": "sent",
+      "evidence_url": "https://github.com/secretGeek/AwesomeCSV/pull/57",
+      "title": "Add Prestyj Statistics Dataset under Data",
+      "state": "OPEN"
+    },
+    {
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/etewiah/awesome-real-estate/pull/29",
+      "status": "sent",
+      "evidence_url": "https://github.com/etewiah/awesome-real-estate/pull/29",
+      "title": "Add Prestyj Lead Response & AI Sales Statistics dataset under Authoritative Research & Publications",
+      "state": "OPEN"
+    },
+    {
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/e2b-dev/awesome-ai-agents/pull/997",
+      "status": "sent",
+      "evidence_url": "https://github.com/e2b-dev/awesome-ai-agents/pull/997",
+      "title": "Add Prestyj — AI sales & marketing agents for home services & real estate",
+      "state": "OPEN"
+    },
+    {
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/EdoStra/Marketing-for-Founders/pull/28",
+      "status": "sent",
+      "evidence_url": "https://github.com/EdoStra/Marketing-for-Founders/pull/28",
+      "title": "Add Prestyj's open statistics dataset under Free-Tool Marketing",
+      "state": "OPEN"
+    }
+  ],
+  "free_registry_mirrors_live": [
+    {
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset",
+      "status": "live",
+      "evidence_url": "https://github.com/Gahroot/prestyj-statistics-dataset",
+      "notes": "Public GitHub dataset mirror with homepage https://prestyj.com/data. Verified by gh repo view."
+    },
+    {
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "status": "live",
+      "evidence_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "notes": "Public GitHub MCP/code registry mirror with homepage https://prestyj.com/data. Verified by gh repo view."
+    }
+  ],
+  "resend_outreach": {
+    "sent": 0,
+    "reason": "No Resend API credentials were present/verified in this worker, so no email was sent. Existing concrete personalized drafts remain under docs/backlinks/pitch-drafts/."
+  }
+}

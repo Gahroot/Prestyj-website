@@ -1,0 +1,1157 @@
+{
+  "generated_at": "2026-05-26",
+  "goal": "Get 100 FREE backlinks using only .env.local keys or key-free methods",
+  "total_targets": 115,
+  "targets": [
+    {
+      "id": "wikidata-q139892537",
+      "name": "Wikidata Prestyj entity",
+      "target_url": "https://www.wikidata.org/wiki/Q139892537",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json:wikidata-q139892537",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-dataset-repo",
+      "name": "GitHub dataset mirror",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json:github-gahroot-statistics-dataset",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-mcp-repo",
+      "name": "GitHub Prestyj Stats MCP repo",
+      "target_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json:github-gahroot-prestyj-stats-mcp",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-profile-readme",
+      "name": "GitHub profile README",
+      "target_url": "https://github.com/Gahroot",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md:Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "linkedin-company",
+      "name": "LinkedIn company website field",
+      "target_url": "https://www.linkedin.com/company/prestyj/",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md shared assets",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "x-profile",
+      "name": "X/Twitter profile bio",
+      "target_url": "https://x.com/prestyj_",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md shared assets",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "instagram-profile",
+      "name": "Instagram profile bio",
+      "target_url": "https://www.instagram.com/prestyj_/",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md shared assets",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "facebook-profile",
+      "name": "Facebook profile website/about",
+      "target_url": "https://www.facebook.com/profile.php?id=61582824703610",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md shared assets",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-awesomedata-apd-core-412",
+      "name": "pr awesomedata apd core 412",
+      "target_url": "https://github.com/awesomedata/apd-core/pull/412",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-secretgeek-awesomecsv-57",
+      "name": "pr secretgeek awesomecsv 57",
+      "target_url": "https://github.com/secretGeek/AwesomeCSV/pull/57",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-etewiah-awesome-real-estate-29",
+      "name": "pr etewiah awesome real estate 29",
+      "target_url": "https://github.com/etewiah/awesome-real-estate/pull/29",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-e2b-awesome-ai-agents-997",
+      "name": "pr e2b awesome ai agents 997",
+      "target_url": "https://github.com/e2b-dev/awesome-ai-agents/pull/997",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-edostra-marketing-for-founders-28",
+      "name": "pr edostra marketing for founders 28",
+      "target_url": "https://github.com/EdoStra/Marketing-for-Founders/pull/28",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-punkpeye-awesome-mcp-servers",
+      "name": "pr punkpeye awesome mcp servers",
+      "target_url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-tensorblock-awesome-mcp-servers",
+      "name": "pr tensorblock awesome mcp servers",
+      "target_url": "https://github.com/TensorBlock/awesome-mcp-servers",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-jim-schwoebel-awesome-ai-agents",
+      "name": "pr jim schwoebel awesome ai agents",
+      "target_url": "https://github.com/jim-schwoebel/awesome_ai_agents",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "pr-slavakurilyak-awesome-ai-agents",
+      "name": "pr slavakurilyak awesome ai agents",
+      "target_url": "https://github.com/slavakurilyak/awesome-ai-agents",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + docs/backlinks/pitch-drafts/github-wave-2-2026-05-23",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-awesomedata-awesome-public-datasets",
+      "name": "awesomedata/awesome-public-datasets",
+      "target_url": "https://github.com/awesomedata/awesome-public-datasets",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-secretgeek-awesomecsv",
+      "name": "secretGeek/AwesomeCSV",
+      "target_url": "https://github.com/secretGeek/AwesomeCSV",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-e2b-dev-awesome-ai-agents",
+      "name": "e2b-dev/awesome-ai-agents",
+      "target_url": "https://github.com/e2b-dev/awesome-ai-agents",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-etewiah-awesome-real-estate",
+      "name": "etewiah/awesome-real-estate",
+      "target_url": "https://github.com/etewiah/awesome-real-estate",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-edostra-marketing-for-founders",
+      "name": "EdoStra/Marketing-for-Founders",
+      "target_url": "https://github.com/EdoStra/Marketing-for-Founders",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-shubhamsaboo-awesome-llm-apps",
+      "name": "Shubhamsaboo/awesome-llm-apps",
+      "target_url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-enescingoz-awesome-n8n-templates",
+      "name": "enescingoz/awesome-n8n-templates",
+      "target_url": "https://github.com/enescingoz/awesome-n8n-templates",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-mmccaff-placestopostyourstartup",
+      "name": "mmccaff/PlacesToPostYourStartup",
+      "target_url": "https://github.com/mmccaff/PlacesToPostYourStartup",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-bmpi-dev-awesome-seo",
+      "name": "bmpi-dev/awesome-seo",
+      "target_url": "https://github.com/bmpi-dev/awesome-seo",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-ibexoft-awesome-startup-tools-list",
+      "name": "Ibexoft/awesome-startup-tools-list",
+      "target_url": "https://github.com/Ibexoft/awesome-startup-tools-list",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-re50urces-awesome-ai",
+      "name": "re50urces/Awesome-AI",
+      "target_url": "https://github.com/re50urces/Awesome-AI",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-astrotars-awesome-ecommerce-stack",
+      "name": "astrotars/awesome-ecommerce-stack",
+      "target_url": "https://github.com/astrotars/awesome-ecommerce-stack",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-felipfr-awesome-n8n-workflows",
+      "name": "felipfr/awesome-n8n-workflows",
+      "target_url": "https://github.com/felipfr/awesome-n8n-workflows",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-ronakganatra-awesome-marketing",
+      "name": "ronakganatra/awesome-marketing",
+      "target_url": "https://github.com/ronakganatra/awesome-marketing",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-ronakganatra-awesome-developer-marketing",
+      "name": "ronakganatra/awesome-developer-marketing",
+      "target_url": "https://github.com/ronakganatra/awesome-developer-marketing",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-eibrahim-landing-pages-resources",
+      "name": "eibrahim/landing-pages-resources",
+      "target_url": "https://github.com/eibrahim/landing-pages-resources",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-marketingtoolslist-awesome-marketing",
+      "name": "marketingtoolslist/awesome-marketing",
+      "target_url": "https://github.com/marketingtoolslist/awesome-marketing",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-paulbradish-awesome-digital-marketing",
+      "name": "paulbradish/awesome-digital-marketing",
+      "target_url": "https://github.com/paulbradish/awesome-digital-marketing",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-lecoupa-awesome-bootstrappers",
+      "name": "LeCoupa/awesome-bootstrappers",
+      "target_url": "https://github.com/LeCoupa/awesome-bootstrappers",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-vihar-awesome-oss-saas",
+      "name": "vihar/awesome-oss-saas",
+      "target_url": "https://github.com/vihar/awesome-oss-saas",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-altstackhq-altstack-data",
+      "name": "altstackHQ/altstack-data",
+      "target_url": "https://github.com/altstackHQ/altstack-data",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-georgezouq-awesome-saas",
+      "name": "georgezouq/awesome-saas",
+      "target_url": "https://github.com/georgezouq/awesome-saas",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-kuchin-awesome-ceo",
+      "name": "kuchin/awesome-ceo",
+      "target_url": "https://github.com/kuchin/awesome-ceo",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-bekatom-awesome-growth-hacking",
+      "name": "bekatom/awesome-growth-hacking",
+      "target_url": "https://github.com/bekatom/awesome-growth-hacking",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-marketinguys-awesome-gtm-engineering",
+      "name": "marketinguys/awesome-gtm-engineering",
+      "target_url": "https://github.com/marketinguys/awesome-gtm-engineering",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-marketinguys-awesome-dev-marketing",
+      "name": "marketinguys/awesome-dev-marketing",
+      "target_url": "https://github.com/marketinguys/awesome-dev-marketing",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-alexchalakov-awesome-generative-ai-companies",
+      "name": "AlexChalakov/awesome-generative-ai-companies",
+      "target_url": "https://github.com/AlexChalakov/awesome-generative-ai-companies",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-mailtoharshit-awesome-salesforce",
+      "name": "mailtoharshit/awesome-salesforce",
+      "target_url": "https://github.com/mailtoharshit/awesome-salesforce",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-sfmcdg-awesome-salesforce-marketingcloud",
+      "name": "sfmcdg/awesome-salesforce-marketingcloud",
+      "target_url": "https://github.com/sfmcdg/awesome-salesforce-marketingcloud",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "gh-jplock-awesome-fintech",
+      "name": "jplock/awesome-fintech",
+      "target_url": "https://github.com/jplock/awesome-fintech",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a71",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-speed-to-lead-statistics",
+      "name": "GitHub Gist: speed-to-lead-statistics",
+      "target_url": "https://gist.github.com/Gahroot/speed-to-lead-statistics",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-ai-sales-benchmarks",
+      "name": "GitHub Gist: ai-sales-benchmarks",
+      "target_url": "https://gist.github.com/Gahroot/ai-sales-benchmarks",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-home-services-cpl-benchmarks",
+      "name": "GitHub Gist: home-services-cpl-benchmarks",
+      "target_url": "https://gist.github.com/Gahroot/home-services-cpl-benchmarks",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-real-estate-lead-response",
+      "name": "GitHub Gist: real-estate-lead-response",
+      "target_url": "https://gist.github.com/Gahroot/real-estate-lead-response",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-video-ad-roi-benchmarks",
+      "name": "GitHub Gist: video-ad-roi-benchmarks",
+      "target_url": "https://gist.github.com/Gahroot/video-ad-roi-benchmarks",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-mcp-statistics-server",
+      "name": "GitHub Gist: mcp-statistics-server",
+      "target_url": "https://gist.github.com/Gahroot/mcp-statistics-server",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-open-marketing-statistics-dataset",
+      "name": "GitHub Gist: open-marketing-statistics-dataset",
+      "target_url": "https://gist.github.com/Gahroot/open-marketing-statistics-dataset",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-ai-receptionist-roi",
+      "name": "GitHub Gist: ai-receptionist-roi",
+      "target_url": "https://gist.github.com/Gahroot/ai-receptionist-roi",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-lead-response-calculator",
+      "name": "GitHub Gist: lead-response-calculator",
+      "target_url": "https://gist.github.com/Gahroot/lead-response-calculator",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "github-gist-andromeda-video-creative-volume",
+      "name": "GitHub Gist: andromeda-video-creative-volume",
+      "target_url": "https://gist.github.com/Gahroot/andromeda-video-creative-volume",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "GitHub PRs/issues/gists using existing gh auth",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 8 + existing gh auth",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-huggingface",
+      "name": "Hugging Face Datasets",
+      "target_url": "https://huggingface.co/new-dataset",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-kaggle",
+      "name": "Kaggle Datasets",
+      "target_url": "https://www.kaggle.com/datasets",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-dataworld",
+      "name": "data.world",
+      "target_url": "https://data.world/new",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-zenodo",
+      "name": "Zenodo",
+      "target_url": "https://zenodo.org/uploads/new",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-figshare",
+      "name": "Figshare",
+      "target_url": "https://figshare.com/account/projects",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-openml",
+      "name": "OpenML",
+      "target_url": "https://www.openml.org/new/data",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-github-generic",
+      "name": "GitHub generic dataset release",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset/releases",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-internet-archive",
+      "name": "Internet Archive data item",
+      "target_url": "https://archive.org/create/",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-osf",
+      "name": "OSF project",
+      "target_url": "https://osf.io/",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "redistribution-mendeley-data",
+      "name": "Mendeley Data",
+      "target_url": "https://data.mendeley.com/datasets",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "open-data redistribution",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-npm-mcp",
+      "name": "npm package: prestyj-stats-mcp",
+      "target_url": "https://www.npmjs.com/package/prestyj-stats-mcp",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-npm-dataset",
+      "name": "npm package: prestyj-statistics-dataset",
+      "target_url": "https://www.npmjs.com/package/prestyj-statistics-dataset",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-smithery",
+      "name": "Smithery MCP registry",
+      "target_url": "https://smithery.ai/new",
+      "expected_link_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-mcp-so",
+      "name": "mcp.so registry",
+      "target_url": "https://mcp.so/",
+      "expected_link_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-glama",
+      "name": "Glama MCP directory",
+      "target_url": "https://glama.ai/mcp",
+      "expected_link_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-pulsemcp",
+      "name": "PulseMCP servers",
+      "target_url": "https://www.pulsemcp.com/servers",
+      "expected_link_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-dockerhub",
+      "name": "Docker Hub MCP image",
+      "target_url": "https://hub.docker.com/",
+      "expected_link_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "registry-pkg-pr-new",
+      "name": "pkg.pr package preview",
+      "target_url": "https://pkg.pr.new/",
+      "expected_link_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "channel": "npm/MCP/package registries if key-free",
+      "automation_feasibility": "can-do-now",
+      "evidence_source": "data/backlinks/inventory.json + draft-pitches.ts MCP notes",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "press-housingwire",
+      "name": "HousingWire",
+      "target_url": "https://www.housingwire.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "journalist outreach via RESEND_API_KEY public recipient",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities.md lines 195-198 recipient editor@housingwire.com",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "press-inman",
+      "name": "Inman",
+      "target_url": "https://www.inman.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "journalist outreach via RESEND_API_KEY public recipient",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/opportunities.md lines 195-198 recipient tips@inman.com",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-crunchbase",
+      "name": "Crunchbase",
+      "target_url": "https://www.crunchbase.com/add-new-company",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-g2",
+      "name": "G2.com",
+      "target_url": "https://www.g2.com/products/new",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-capterra",
+      "name": "Capterra",
+      "target_url": "https://www.capterra.com/vendors/sign-up",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-software-advice",
+      "name": "Software Advice",
+      "target_url": "https://www.softwareadvice.com/vendors/",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-getapp",
+      "name": "GetApp",
+      "target_url": "https://www.getapp.com/vendors/",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-trustradius",
+      "name": "TrustRadius",
+      "target_url": "https://www.trustradius.com/vendor/sign-up",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-producthunt",
+      "name": "Product Hunt",
+      "target_url": "https://www.producthunt.com/posts/new",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-alternativeto",
+      "name": "AlternativeTo",
+      "target_url": "https://alternativeto.net/applications/add/",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-slant",
+      "name": "Slant",
+      "target_url": "https://www.slant.co/products/new",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-stackshare",
+      "name": "StackShare",
+      "target_url": "https://stackshare.io/apps/new",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-theresanaiforthat",
+      "name": "There Is An AI For That",
+      "target_url": "https://theresanaiforthat.com/submit",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-futurepedia",
+      "name": "Futurepedia",
+      "target_url": "https://www.futurepedia.io/submit-tool",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-aitoolhunt",
+      "name": "AIToolHunt",
+      "target_url": "https://www.aitoolhunt.com/submit-tool",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-insidr-ai",
+      "name": "Insidr AI",
+      "target_url": "https://www.insidr.ai/submit",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-toolify",
+      "name": "Toolify",
+      "target_url": "https://www.toolify.ai/submit",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "third-party-review",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "directory-f6s",
+      "name": "F6S",
+      "target_url": "https://www.f6s.com/company/sign-up",
+      "expected_link_url": "https://prestyj.com",
+      "channel": "directories/forms only if no automation block (classified here)",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/directory-profiles.md",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-featured",
+      "name": "Featured.com",
+      "target_url": "https://featured.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-qwoted",
+      "name": "Qwoted",
+      "target_url": "https://www.qwoted.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-help-b2b",
+      "name": "Help A B2B Writer",
+      "target_url": "https://helpab2bwriter.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-sourcebottle",
+      "name": "SourceBottle",
+      "target_url": "https://sourcebottle.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-speakerhub",
+      "name": "SpeakerHub",
+      "target_url": "https://speakerhub.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-speakermatch",
+      "name": "SpeakerMatch",
+      "target_url": "https://www.speakermatch.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-devto",
+      "name": "DEV.to",
+      "target_url": "https://dev.to",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-hashnode",
+      "name": "Hashnode",
+      "target_url": "https://hashnode.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-indiehackers",
+      "name": "Indie Hackers",
+      "target_url": "https://www.indiehackers.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "profile-substack",
+      "name": "Substack",
+      "target_url": "https://substack.com",
+      "expected_link_url": "https://prestyj.com/data",
+      "channel": "live-owned/free profile surfaces",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities.md Tier 5/Tier 8",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-lead-generation-stl-21x",
+      "name": "Lead generation",
+      "target_url": "https://en.wikipedia.org/wiki/Lead_generation",
+      "expected_link_url": "https://prestyj.com/stat/stl-21x",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-lead-generation-stl-391",
+      "name": "Lead generation",
+      "target_url": "https://en.wikipedia.org/wiki/Lead_generation",
+      "expected_link_url": "https://prestyj.com/stat/stl-391",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-sales-process-engineering-stl-391",
+      "name": "Sales process engineering",
+      "target_url": "https://en.wikipedia.org/wiki/Sales_process_engineering",
+      "expected_link_url": "https://prestyj.com/stat/stl-391",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-sales-process-engineering-stl-78pct",
+      "name": "Sales process engineering",
+      "target_url": "https://en.wikipedia.org/wiki/Sales_process_engineering",
+      "expected_link_url": "https://prestyj.com/stat/stl-78pct",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-marketing-automation-stl-78pct",
+      "name": "Marketing automation",
+      "target_url": "https://en.wikipedia.org/wiki/Marketing_automation",
+      "expected_link_url": "https://prestyj.com/stat/stl-78pct",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-marketing-automation-stl-100x",
+      "name": "Marketing automation",
+      "target_url": "https://en.wikipedia.org/wiki/Marketing_automation",
+      "expected_link_url": "https://prestyj.com/stat/stl-100x",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-customer-relationship-management-stl-100x",
+      "name": "Customer relationship management",
+      "target_url": "https://en.wikipedia.org/wiki/Customer_relationship_management",
+      "expected_link_url": "https://prestyj.com/stat/stl-100x",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-customer-relationship-management-lead-77pct",
+      "name": "Customer relationship management",
+      "target_url": "https://en.wikipedia.org/wiki/Customer_relationship_management",
+      "expected_link_url": "https://prestyj.com/stat/lead-77pct",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-inside-sales-lead-77pct",
+      "name": "Inside sales",
+      "target_url": "https://en.wikipedia.org/wiki/Inside_sales",
+      "expected_link_url": "https://prestyj.com/stat/lead-77pct",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-inside-sales-lead-44pct",
+      "name": "Inside sales",
+      "target_url": "https://en.wikipedia.org/wiki/Inside_sales",
+      "expected_link_url": "https://prestyj.com/stat/lead-44pct",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-chatbot-lead-44pct",
+      "name": "Chatbot",
+      "target_url": "https://en.wikipedia.org/wiki/Chatbot",
+      "expected_link_url": "https://prestyj.com/stat/lead-44pct",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    },
+    {
+      "id": "wiki-chatbot-ai-sales-83pct",
+      "name": "Chatbot",
+      "target_url": "https://en.wikipedia.org/wiki/Chatbot",
+      "expected_link_url": "https://prestyj.com/stat/ai-sales-83pct",
+      "channel": "Wikipedia talk-page suggestions",
+      "automation_feasibility": "needs-human-login",
+      "evidence_source": "docs/backlinks/opportunities-extended.md \u00a72",
+      "counts_live_only_after_verifier_confirms_link": true
+    }
+  ]
+}

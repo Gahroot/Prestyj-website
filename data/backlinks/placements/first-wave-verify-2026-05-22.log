@@ -1,0 +1,16 @@
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Prestyj backlink verifier
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✗  Unique referring domains                    3 / 1000
+  ✗  DR≥30 share (of 0 with DR data)             0 / 50
+  ✗  Awesome-list merges (live)                  0 / 20
+  ✗  Wiki citations (live)                       1 / 3
+  ✗  Press / journalist (live)                   0 / 30
+  ✗  Directories (live)                          0 / 50
+  ✗  Embed installations (live)                  4 / 100
+  ✗  Open-data redistribution (live)             2 / 200
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❌ 997 referring domain(s) short of the 1000-domain target.
+   Next: re-export from Bing Webmaster Tools → data/backlinks/bing-export-YYYY-MM-DD.csv
+         then  npm run backlinks:snapshot data/backlinks/bing-export-YYYY-MM-DD.csv

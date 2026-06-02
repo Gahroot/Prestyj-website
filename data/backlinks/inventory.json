@@ -1,0 +1,1408 @@
+{
+  "items": [
+    {
+      "id": "wikidata-q139892537",
+      "bucket": "wikipedia",
+      "target_url": "https://www.wikidata.org/wiki/Q139892537",
+      "status": "live",
+      "live_url": "https://www.wikidata.org/wiki/Q139892537",
+      "first_seen": "2026-05-22",
+      "notes": "Prestyj entity item with 10 claims + references. P856 (official website) → https://prestyj.com is the canonical backlink."
+    },
+    {
+      "id": "github-gahroot-statistics-dataset",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/prestyj-statistics-dataset",
+      "first_seen": "2026-05-22",
+      "notes": "OSS mirror of /data. README + dataset both backlink prestyj.com and prestyj.com/data. Raw CSV/JSON served at raw.githubusercontent.com. Source evidence URL: https://github.com/Gahroot/prestyj-statistics-dataset. Wave-1 log: data/backlinks/placements/first-wave-2026-05-22.json."
+    },
+    {
+      "id": "pr-awesomedata-apd-core-412",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/awesomedata/apd-core/pull/412",
+      "status": "sent",
+      "first_seen": "2026-05-22",
+      "notes": "YAML entry under core/SocialSciences/Prestyj-Lead-Response-Statistics.yml; will appear in awesomedata/awesome-public-datasets (75.6k★) on merge. Source evidence URL: https://github.com/awesomedata/apd-core/pull/412. Wave-1 log: data/backlinks/placements/first-wave-2026-05-22.json."
+    },
+    {
+      "id": "pr-secretgeek-awesomecsv-57",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/secretGeek/AwesomeCSV/pull/57",
+      "status": "sent",
+      "first_seen": "2026-05-22",
+      "notes": "One line under ## Data section; 925★. Source evidence URL: https://github.com/secretGeek/AwesomeCSV/pull/57. Wave-1 log: data/backlinks/placements/first-wave-2026-05-22.json."
+    },
+    {
+      "id": "pr-etewiah-awesome-real-estate-29",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/etewiah/awesome-real-estate/pull/29",
+      "status": "sent",
+      "first_seen": "2026-05-22",
+      "notes": "One line under ### Authoritative Research & Publications; 312★. Source evidence URL: https://github.com/etewiah/awesome-real-estate/pull/29. Wave-1 log: data/backlinks/placements/first-wave-2026-05-22.json."
+    },
+    {
+      "id": "pr-e2b-awesome-ai-agents-997",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/e2b-dev/awesome-ai-agents/pull/997",
+      "status": "sent",
+      "first_seen": "2026-05-22",
+      "notes": "Full ## section block (Category, Description, Links); 28k★. Founder disclosure included in PR body. Source evidence URL: https://github.com/e2b-dev/awesome-ai-agents/pull/997. Wave-1 log: data/backlinks/placements/first-wave-2026-05-22.json."
+    },
+    {
+      "id": "pr-edostra-marketing-for-founders-28",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/EdoStra/Marketing-for-Founders/pull/28",
+      "status": "sent",
+      "first_seen": "2026-05-22",
+      "notes": "Submitted as case-study example under ## 🛠 Free-Tool Marketing; 6.2k★. Maintainer is strict on self-promo — rejection risk acknowledged in PR body. Source evidence URL: https://github.com/EdoStra/Marketing-for-Founders/pull/28. Wave-1 log: data/backlinks/placements/first-wave-2026-05-22.json."
+    },
+    {
+      "id": "oembed-discovery-endpoint",
+      "bucket": "embed",
+      "target_url": "https://prestyj.com/oembed",
+      "status": "live",
+      "live_url": "https://prestyj.com/oembed",
+      "first_seen": "2026-05-22",
+      "notes": "oEmbed 1.0 provider — every Notion/WordPress/Substack/Ghost/Slack/Discord/Reddit paste of a /stat/<id> or /embed/calculator/<slug> URL auto-renders with attribution. Each consumer page = a passive backlink. Auto-discovered via <link rel='alternate' type='application/json+oembed'> on every /stat/[id] page."
+    },
+    {
+      "id": "rss-stats-feed",
+      "bucket": "embed",
+      "target_url": "https://prestyj.com/feed/stats.xml",
+      "status": "live",
+      "live_url": "https://prestyj.com/feed/stats.xml",
+      "first_seen": "2026-05-22",
+      "notes": "RSS 2.0 feed of all 58 statistics. Subscribed by feed readers and AI freshness pipelines; each <item> backlinks the /stat/<id> permalink."
+    },
+    {
+      "id": "public-stats-api",
+      "bucket": "embed",
+      "target_url": "https://prestyj.com/api/statistics",
+      "status": "live",
+      "live_url": "https://prestyj.com/api/statistics",
+      "first_seen": "2026-05-22",
+      "notes": "Public JSON API with CORS open. Every developer consuming it for a dashboard/RAG pipeline backlinks /data in their README. Link header advertises canonical, RSS, and oEmbed alternates."
+    },
+    {
+      "id": "indexnow-batch-2026-05-22",
+      "bucket": "other",
+      "target_url": "https://prestyj.com",
+      "status": "live",
+      "first_seen": "2026-05-22",
+      "notes": "IndexNow ping: 747 URLs submitted to Bing/Yandex/Naver/Seznam/Yep — including all 58 /stat/<id>, 58 /embed/stat/<id>, 3 calculator embeds, /data, CSV/JSON downloads, /oembed, /feed/stats.xml, /api/statistics. Accelerates Bing crawl from days to hours."
+    },
+    {
+      "id": "redistribution-bundles-generated",
+      "bucket": "redistribution",
+      "target_url": "docs/oss-dataset/distributions/",
+      "status": "drafted",
+      "first_seen": "2026-05-22",
+      "notes": "7 platform-specific upload bundles ready: Hugging Face, Kaggle, data.world, Zenodo, Figshare, OpenML, generic GitHub. SUBMISSION-CHECKLIST.md has paste-ready metadata for each form. Awaiting credentials for HF/Kaggle to auto-push."
+    },
+    {
+      "id": "github-gahroot-prestyj-stats-mcp",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/prestyj-stats-mcp",
+      "first_seen": "2026-05-22",
+      "notes": "MCP server exposing the Prestyj statistics dataset over Model Context Protocol. Every Claude Desktop / Cursor / Cline user who installs it gets a backlink-attribution surface. README links prestyj.com, prestyj.com/data, Wikidata Q139892537. Discovery via npm registry + mcp.so + smithery.ai (manual submission). Note: attempted PRs to appcypher/awesome-mcp-servers and wong2/awesome-mcp-servers — both repos have PRs+issues disabled at repo level, so direct maintainer contact needed for those lists. Source evidence URL: https://github.com/Gahroot/prestyj-stats-mcp. Wave-1 log: data/backlinks/placements/first-wave-2026-05-22.json."
+    },
+    {
+      "id": "industry-hub-pages",
+      "bucket": "embed",
+      "target_url": "https://prestyj.com/statistics/<industry>",
+      "status": "live",
+      "live_url": "https://prestyj.com/statistics/hvac",
+      "first_seen": "2026-05-22",
+      "notes": "13 industry hub pages (hvac, plumbing, roofing, real-estate, solar, dental, mortgage, electricians, pest-control, med-spas, law-firms, auto-dealers, agencies) each with its own Dataset schema + CSV/JSON download at /data/industry/<slug>. Each hub is an indexable citable surface targeting vertical-specific search queries."
+    },
+    {
+      "id": "resend-housingwire-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.housingwire.com",
+      "status": "sent",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/housingwire-tech.md",
+      "notes": "Sent via Resend to editor@housingwire.com from Nolan Grout <nolan@prestyj.com>; free, primary-source-derived outreach from docs/backlinks/opportunities.md; expected backlink if covered/cited: https://www.housingwire.com. Log: data/backlinks/placements/resend-wave-2026-05-23.jsonl."
+    },
+    {
+      "id": "resend-inman-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.inman.com",
+      "status": "sent",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/inman-tips.md",
+      "notes": "Sent via Resend to tips@inman.com from Nolan Grout <nolan@prestyj.com>; free, primary-source-derived outreach from docs/backlinks/opportunities.md; expected backlink if covered/cited: https://www.inman.com. Log: data/backlinks/placements/resend-wave-2026-05-23.jsonl."
+    },
+    {
+      "id": "draft-achrnews-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.achrnews.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/achrnews.md",
+      "notes": "Draft-only item for ACHR News: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-roofing-contractor-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.roofingcontractor.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/roofing-contractor.md",
+      "notes": "Draft-only item for Roofing Contractor: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-pmmag-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.pmmag.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/plumbing-mechanical.md",
+      "notes": "Draft-only item for Plumbing & Mechanical: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-search-engine-land-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://searchengineland.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/search-engine-land.md",
+      "notes": "Draft-only item for Search Engine Land: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-search-engine-journal-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.searchenginejournal.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/search-engine-journal.md",
+      "notes": "Draft-only item for Search Engine Journal: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-adexchanger-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.adexchanger.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/adexchanger.md",
+      "notes": "Draft-only item for AdExchanger: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-marketing-brew-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.marketingbrew.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/marketing-brew.md",
+      "notes": "Draft-only item for Marketing Brew: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-rismedia-resend-wave-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.rismedia.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/rismedia.md",
+      "notes": "Draft-only item for RISMedia: no direct recipient email present in allowed local docs or official target evidence in this bounded wave. Free, primary-source-derived opportunity; use artifact before manual form/contact submission."
+    },
+    {
+      "id": "draft-crunchbase-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.crunchbase.com/add-new-company",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/crunchbase.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.crunchbase.com/add-new-company. Exact blocker: Browser-only free account + email verification required; cannot complete locally."
+    },
+    {
+      "id": "draft-g2-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.g2.com/products/new",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/g2.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://sell.g2.com/sell-with-g2. Exact blocker: Browser-only vendor/product creation and likely account/email verification required; cannot complete locally."
+    },
+    {
+      "id": "draft-capterra-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.capterra.com/vendors/sign-up",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/capterra.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.capterra.com/vendors/sign-up. Exact blocker: Vendor signup requires browser form and email/business verification; cannot complete locally."
+    },
+    {
+      "id": "draft-trustradius-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.trustradius.com/vendor/sign-up",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/trustradius.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.trustradius.com/vendor/sign-up. Exact blocker: Vendor signup requires browser/account verification; cannot complete locally."
+    },
+    {
+      "id": "draft-producthunt-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.producthunt.com/posts/new",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/producthunt.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.producthunt.com/posts/new. Exact blocker: Product launch submission requires logged-in browser/OAuth workflow and launch scheduling; cannot complete locally."
+    },
+    {
+      "id": "draft-alternativeto-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://alternativeto.net/applications/add/",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/alternativeto.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://alternativeto.net/applications/add/. Exact blocker: App submission requires logged-in browser account and editorial review; cannot complete locally."
+    },
+    {
+      "id": "draft-slant-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.slant.co/products/new",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/slant.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.slant.co/products/new. Exact blocker: Product creation requires logged-in browser account; cannot complete locally."
+    },
+    {
+      "id": "draft-stackshare-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://stackshare.io/apps/new",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/stackshare.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://stackshare.io/apps/new. Exact blocker: App submission requires browser signup/login; cannot complete locally."
+    },
+    {
+      "id": "draft-theresanaiforthat-directory-wave-2026-05-23",
+      "bucket": "resource-page",
+      "target_url": "https://theresanaiforthat.com/submit",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/theresanaiforthat.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://theresanaiforthat.com/submit. Exact blocker: Submit form is browser-only and may require CAPTCHA/account/editorial review; cannot complete locally."
+    },
+    {
+      "id": "draft-futurepedia-directory-wave-2026-05-23",
+      "bucket": "resource-page",
+      "target_url": "https://www.futurepedia.io/submit-tool",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/futurepedia.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.futurepedia.io/submit-tool. Exact blocker: Tool submission requires browser form/account/editorial review; cannot complete locally."
+    },
+    {
+      "id": "draft-aitoolhunt-directory-wave-2026-05-23",
+      "bucket": "resource-page",
+      "target_url": "https://www.aitoolhunt.com/submit-tool",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/aitoolhunt.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.aitoolhunt.com/submit-tool. Exact blocker: Tool submission requires browser form and review; cannot complete locally."
+    },
+    {
+      "id": "draft-insidr-ai-directory-wave-2026-05-23",
+      "bucket": "resource-page",
+      "target_url": "https://www.insidr.ai/submit",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/insidr-ai.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.insidr.ai/submit. Exact blocker: Tool submission requires browser form and review; cannot complete locally."
+    },
+    {
+      "id": "draft-toolify-directory-wave-2026-05-23",
+      "bucket": "resource-page",
+      "target_url": "https://www.toolify.ai/submit",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/toolify.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.toolify.ai/submit. Exact blocker: Tool submission requires browser form and review; cannot complete locally."
+    },
+    {
+      "id": "draft-f6s-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.f6s.com/company/sign-up",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/f6s.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.f6s.com/company/sign-up. Exact blocker: Company signup requires browser account/email verification; cannot complete locally."
+    },
+    {
+      "id": "pr-punkpeye-awesome-mcp-servers-draft",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/github-wave-2-2026-05-23/punkpeye-awesome-mcp-servers.md",
+      "notes": "Active MCP list discovered by gh search; target fit is Prestyj Stats MCP server. Draft only because automated PR requires repo format review and self-submission policy check. Source evidence URL: https://github.com/punkpeye/awesome-mcp-servers"
+    },
+    {
+      "id": "pr-tensorblock-awesome-mcp-servers-draft",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/TensorBlock/awesome-mcp-servers",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/github-wave-2-2026-05-23/tensorblock-awesome-mcp-servers.md",
+      "notes": "Active MCP list discovered by gh search; target fit is Prestyj Stats MCP server. Draft only pending contribution-rule verification. Source evidence URL: https://github.com/TensorBlock/awesome-mcp-servers"
+    },
+    {
+      "id": "pr-jim-schwoebel-awesome-ai-agents-draft",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/jim-schwoebel/awesome_ai_agents",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/github-wave-2-2026-05-23/jim-schwoebel-awesome-ai-agents.md",
+      "notes": "Active AI-agent list discovered by gh search; target fit is open statistics dataset/API for AI sales/marketing agents. Draft only pending section-specific edit. Source evidence URL: https://github.com/jim-schwoebel/awesome_ai_agents"
+    },
+    {
+      "id": "pr-slavakurilyak-awesome-ai-agents-draft",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/slavakurilyak/awesome-ai-agents",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/github-wave-2-2026-05-23/slavakurilyak-awesome-ai-agents.md",
+      "notes": "Active AI-agent list discovered by gh search; target fit is Prestyj Stats MCP/API as data tool for agents. Draft only pending contribution-rule verification. Source evidence URL: https://github.com/slavakurilyak/awesome-ai-agents"
+    },
+    {
+      "id": "pr-awesome-public-datasets-followup-draft",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/awesomedata/awesome-public-datasets",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/github-wave-2-2026-05-23/awesomedata-followup.md",
+      "notes": "Already has wave-1 PR via awesomedata/apd-core; no duplicate PR opened. Draft follow-up artifact only. Source evidence URL: https://github.com/awesomedata/apd-core/pull/412"
+    },
+    {
+      "id": "official-contractormag-2026-05-23",
+      "bucket": "press",
+      "target_url": "https://www.contractormag.com",
+      "status": "drafted",
+      "first_seen": "2026-05-23",
+      "artifact_path": "docs/backlinks/pitch-drafts/official-contact-wave-2026-05-23/contractor-magazine.md",
+      "notes": "Official-contact wave artifact. Contact source evidence URL: https://www.contractormag.com/contact-us. Draft-only because fetched official page did not reveal a concrete usable recipient email (protected placeholders only); no guessed emails. Link request is free and data-first, asking only for citation/link if covered."
+    },
+    {
+      "id": "gist-speed-to-lead-statistics",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/7143ed0931c56c1fbb5af78acba63e3c",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/7143ed0931c56c1fbb5af78acba63e3c"
+    },
+    {
+      "id": "gist-ai-sales-benchmarks",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/60f0af75fa23fcf101d3cab0b5123c30",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/60f0af75fa23fcf101d3cab0b5123c30"
+    },
+    {
+      "id": "gist-home-services-cpl-benchmarks",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/aa5fb44ee1d637acd33c74b09a07800d",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/aa5fb44ee1d637acd33c74b09a07800d"
+    },
+    {
+      "id": "gist-real-estate-lead-response",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/19be50477c6180be84d7df49a4318774",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/19be50477c6180be84d7df49a4318774"
+    },
+    {
+      "id": "gist-video-ad-roi-benchmarks",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/ba4b3a02dc01af70f03b8eac049c8191",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/ba4b3a02dc01af70f03b8eac049c8191"
+    },
+    {
+      "id": "gist-mcp-statistics-server",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/65bf82e71b81a286231bbe7a29677a92",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/65bf82e71b81a286231bbe7a29677a92"
+    },
+    {
+      "id": "gist-open-marketing-statistics-dataset",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/741856c78e303e76b45b8231bf5c2e76",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/741856c78e303e76b45b8231bf5c2e76"
+    },
+    {
+      "id": "gist-ai-receptionist-roi",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/e15664b75dd2afc0298b2f0ebbd2973b",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/e15664b75dd2afc0298b2f0ebbd2973b"
+    },
+    {
+      "id": "gist-lead-response-calculator",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/958e586f12c6f57ee9dae36b76d798ef",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/958e586f12c6f57ee9dae36b76d798ef"
+    },
+    {
+      "id": "gist-andromeda-video-creative-volume",
+      "bucket": "github-gist",
+      "target_url": "https://gist.github.com/Gahroot/e68aa61b8fdd3bcf94b6fb6e43658dcf",
+      "status": "live",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-2026-05-26.jsonl",
+      "notes": "Public GitHub gist created via gh auth with Prestyj Open Statistics Dataset backlink to https://prestyj.com/data. Verifier confirmed rendered/raw gist contains allowed Prestyj backlink.",
+      "live_url": "https://gist.github.com/Gahroot/e68aa61b8fdd3bcf94b6fb6e43658dcf"
+    },
+    {
+      "id": "resend-housingwire-free100-2026-05-26",
+      "bucket": "press",
+      "target_url": "https://www.housingwire.com",
+      "status": "sent",
+      "first_seen": "2026-05-26",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/housingwire-tech.md",
+      "notes": "Sent via safe/free outreach wave using public recipient editor@housingwire.com from Nolan Grout <nolan@prestyj.com>; expected backlink if covered/cited: https://www.housingwire.com; artifact: docs/backlinks/pitch-drafts/press/housingwire-tech.md; log: data/backlinks/placements/free-100-outreach-2026-05-26.jsonl; resend_id: 5e30bc5f-22bc-42c2-bbf7-295a73064c13."
+    },
+    {
+      "id": "resend-inman-free100-2026-05-26",
+      "bucket": "press",
+      "target_url": "https://www.inman.com",
+      "status": "sent",
+      "first_seen": "2026-05-26",
+      "artifact_path": "docs/backlinks/pitch-drafts/press/inman-tips.md",
+      "notes": "Sent via safe/free outreach wave using public recipient tips@inman.com from Nolan Grout <nolan@prestyj.com>; expected backlink if covered/cited: https://www.inman.com; artifact: docs/backlinks/pitch-drafts/press/inman-tips.md; log: data/backlinks/placements/free-100-outreach-2026-05-26.jsonl; resend_id: 04ad8a6c-8eec-491e-befb-b10c6a6a3c39."
+    },
+    {
+      "id": "github-gahroot-profile-readme",
+      "bucket": "other",
+      "target_url": "https://github.com/Gahroot",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/Gahroot",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-owned-github-2026-05-26.jsonl",
+      "notes": "Free owned GitHub profile README created with existing gh auth. Relevant because the profile describes current AI/data work and cites the open Prestyj statistics dataset at https://prestyj.com/data."
+    },
+    {
+      "id": "pr-shubhamsaboo-awesome-llm-apps-843",
+      "bucket": "awesome-list",
+      "target_url": "https://github.com/Shubhamsaboo/awesome-llm-apps/pull/843",
+      "status": "sent",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-upstream-github-2026-05-26.jsonl",
+      "notes": "Submitted upstream PR adding Prestyj Stats MCP/dataset citation to Shubhamsaboo/awesome-llm-apps. Expected backlink https://prestyj.com/data will be live only if merged; PR body includes maintainer disclosure."
+    },
+    {
+      "id": "github-release-dataset-data-2026-05-26",
+      "bucket": "github-release-open-data",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset/releases",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/prestyj-statistics-dataset/releases/tag/dataset-v2026-05-26",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-package-release-2026-05-26.jsonl",
+      "notes": "Free GitHub release for the Prestyj open-data CSV/JSON dataset assets; contextual release notes cite https://prestyj.com/data and verification found the allowed backlink."
+    },
+    {
+      "id": "github-release-dataset-citation-2026-05-26",
+      "bucket": "github-release-open-data",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset/releases",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/prestyj-statistics-dataset/releases/tag/citation-v2026-05-26",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-package-release-2026-05-26.jsonl",
+      "notes": "Free GitHub release for citation metadata (CITATION.cff) for researchers citing the Prestyj open statistics dataset; contextual notes cite https://prestyj.com/data and verification found the allowed backlink."
+    },
+    {
+      "id": "github-release-dataset-npm-package-2026-05-26",
+      "bucket": "github-release-package",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset/releases",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/prestyj-statistics-dataset/releases/tag/npm-package-v0.1.0",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-package-release-2026-05-26.jsonl",
+      "notes": "Free GitHub package/release artifact for @prestyj/statistics-dataset metadata; npm publish was attempted with existing local auth but npm public page was not verifiable, so the immediate-live GitHub release is counted. Notes cite https://prestyj.com/data and verification found the allowed backlink."
+    },
+    {
+      "id": "github-release-mcp-v0-1-0-2026-05-26",
+      "bucket": "github-release-package",
+      "target_url": "https://github.com/Gahroot/prestyj-stats-mcp/releases",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/prestyj-stats-mcp/releases/tag/v0.1.0",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-package-release-2026-05-26.jsonl",
+      "notes": "Free GitHub release for @prestyj/stats-mcp v0.1.0 MCP server; contextual notes cite https://prestyj.com/data and verification found the allowed backlink."
+    },
+    {
+      "id": "github-release-mcp-npm-tarball-2026-05-26",
+      "bucket": "github-release-package",
+      "target_url": "https://github.com/Gahroot/prestyj-stats-mcp/releases",
+      "status": "live",
+      "live_url": "https://github.com/Gahroot/prestyj-stats-mcp/releases/tag/npm-tarball-v0.1.0",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-package-release-2026-05-26.jsonl",
+      "notes": "Free GitHub release containing installable npm tarball/package metadata for Prestyj Stats MCP; contextual notes cite https://prestyj.com/data and verification found the allowed backlink."
+    },
+    {
+      "id": "npm-prestyj-stats-mcp-2026-05-26",
+      "bucket": "npm-package",
+      "target_url": "https://www.npmjs.com/package/@prestyj/stats-mcp",
+      "status": "blocked",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-package-release-2026-05-26.jsonl",
+      "notes": "Existing npm auth was present and npm publish initially returned success, but npm registry/page verification returned 404/403 during this run; not counted live until public page or registry metadata is fetch-verifiable with an allowed Prestyj link."
+    },
+    {
+      "id": "npm-prestyj-statistics-dataset-2026-05-26",
+      "bucket": "npm-package",
+      "target_url": "https://www.npmjs.com/package/@prestyj/statistics-dataset",
+      "status": "blocked",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-package-release-2026-05-26.jsonl",
+      "notes": "Published attempt made with existing npm auth, but npm registry/page verification returned 404/403 during this run; not counted live until public page or registry metadata is fetch-verifiable with an allowed Prestyj link."
+    },
+    {
+      "id": "github-pages-prestyj-statistics-citation-index",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data GitHub Pages citation mirror index with contextual backlink to https://prestyj.com/data."
+    },
+    {
+      "id": "github-pages-citation-stl-21x",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-21x.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-21x; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-391",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-391.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-391; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-78pct",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-78pct.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-78pct; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-100x",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-100x.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-100x; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-8x-drop",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-8x-drop.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-8x-drop; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-400pct-drop",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-400pct-drop.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-400pct-drop; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-avg-42hr",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-avg-42hr.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-avg-42hr; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-only-01pct",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-only-01pct.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-only-01pct; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-77pct-no-response",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-77pct-no-response.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-77pct-no-response; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-82pct-10min",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-82pct-10min.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-82pct-10min; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-1pct-b2b",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-1pct-b2b.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-1pct-b2b; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-instant-66",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-instant-66.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-instant-66; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-50pct-first",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-50pct-first.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-50pct-first; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-stl-53pct-frustration",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-53pct-frustration.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Speed to Lead Statistics statistic stl-53pct-frustration; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-89pct",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-89pct.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-89pct; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-93pct-roi",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-93pct-roi.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-93pct-roi; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-85b-vs-59b",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-85b-vs-59b.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-85b-vs-59b; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-64pct-purchase",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-64pct-purchase.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-64pct-purchase; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-300pct-email",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-300pct-email.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-300pct-email; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-38pct-lp",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-38pct-lp.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-38pct-lp; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-completion-15s",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-completion-15s.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-completion-15s; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-mobile-28pct",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-mobile-28pct.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-mobile-28pct; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-92pct-roi",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-92pct-roi.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-92pct-roi; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-87pct-buy",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-87pct-buy.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-87pct-buy; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-96pct-ai",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-96pct-ai.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-96pct-ai; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-vid-82pct-ai-roi",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-82pct-ai-roi.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Video Advertising Statistics statistic vid-82pct-ai-roi; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-56pct-daily",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-56pct-daily.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-56pct-daily; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-24-to-43",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-24-to-43.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-24-to-43; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-37x-quota",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-37x-quota.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-37x-quota; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-15pct-conv",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-15pct-conv.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-15pct-conv; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-45pct-deals",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-45pct-deals.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-45pct-deals; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-81pct-rev",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-81pct-rev.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-81pct-rev; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-86pct-roi-year1",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-86pct-roi-year1.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-86pct-roi-year1; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-40pct-productivity",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-40pct-productivity.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-40pct-productivity; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-28pct-quota",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-28pct-quota.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-28pct-quota; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-25pct-selling",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-25pct-selling.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-25pct-selling; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-62pct-agents",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-62pct-agents.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-62pct-agents; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ai-trillion",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-trillion.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for AI Adoption in Sales Statistics statistic ai-trillion; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-7x-1hr",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-7x-1hr.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-7x-1hr; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-60x-1hr",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-60x-1hr.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-60x-1hr; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-13-attempts",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-13-attempts.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-13-attempts; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-15pct-day1",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-15pct-day1.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-15pct-day1; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-51pct-never",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-51pct-never.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-51pct-never; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-57pct-week",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-57pct-week.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-57pct-week; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-37pct-1hr",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-37pct-1hr.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-37pct-1hr; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-48pct-rev",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-48pct-rev.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-48pct-rev; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-20-30pct-pred",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-20-30pct-pred.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-20-30pct-pred; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-lc-12pp-quota",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-12pp-quota.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Lead Response & Conversion Statistics statistic lc-12pp-quota; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-cpl-70",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-70.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-cpl-70; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-cpl-legal",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-legal.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-cpl-legal; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-cpl-auto",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-auto.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-cpl-auto; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-cpl-biz",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-biz.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-cpl-biz; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-ctr-66",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-ctr-66.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-ctr-66; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-cvr-752",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cvr-752.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-cvr-752; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-cpc-526",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpc-526.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-cpc-526; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-linkedin-110",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-linkedin-110.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-linkedin-110; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-auto-conv",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-auto-conv.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-auto-conv; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-citation-ind-education-cpl-up",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-education-cpl-up.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-github-pages-2026-05-26.jsonl",
+      "notes": "Free open-data mirror page for Industry Benchmarks: Cost Per Lead & Conversion Rates statistic ind-education-cpl-up; includes attribution and canonical Prestyj backlink."
+    },
+    {
+      "id": "github-pages-benchmark-speed-to-lead",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/speed-to-lead.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the speed to lead benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-lead-response-conversion",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/lead-response-conversion.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the lead response conversion benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-video-advertising-roi",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/video-advertising-roi.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the video advertising roi benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-ai-sales-adoption",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ai-sales-adoption.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the ai sales adoption benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-home-services-cpl",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/home-services-cpl.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the home services cpl benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-real-estate-lead-response",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/real-estate-lead-response.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the real estate lead response benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-agency-creative-benchmarks",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/agency-creative-benchmarks.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the agency creative benchmarks benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-batch-video-ads",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/batch-video-ads.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the batch video ads benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-creative-fatigue-refresh",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/creative-fatigue-refresh.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the creative fatigue refresh benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-social-media-economics",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/social-media-economics.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the social media economics benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-lead-reactivation",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/lead-reactivation.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the lead reactivation benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-ai-voice-agents",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ai-voice-agents.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the ai voice agents benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-sales-outreach-ai",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/sales-outreach-ai.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the sales outreach ai benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-ugc-vs-batch-video",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ugc-vs-batch-video.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the ugc vs batch video benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-paid-search-cpl",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/paid-search-cpl.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the paid search cpl benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-local-services-benchmarks",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/local-services-benchmarks.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the local services benchmarks benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-b2b-saas-lead-benchmarks",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/b2b-saas-lead-benchmarks.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the b2b saas lead benchmarks benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-ecommerce-video-benchmarks",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ecommerce-video-benchmarks.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the ecommerce video benchmarks benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-appointment-setting",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/appointment-setting.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the appointment setting benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-conversion-rate-benchmarks",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/conversion-rate-benchmarks.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the conversion rate benchmarks benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-response-time-sla",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/response-time-sla.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the response time sla benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    },
+    {
+      "id": "github-pages-benchmark-marketing-roi-benchmarks",
+      "bucket": "redistribution",
+      "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
+      "status": "live",
+      "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/marketing-roi-benchmarks.html",
+      "first_seen": "2026-05-26",
+      "artifact_path": "data/backlinks/placements/free-100-benchmark-pages-2026-05-26.jsonl",
+      "notes": "Distinct free benchmark mirror page aggregating Prestyj statistics into the marketing roi benchmarks benchmark table; contextual backlink to https://prestyj.com/data; GitHub Pages HTTP 200, backlink_found=true."
+    }
+  ]
+}

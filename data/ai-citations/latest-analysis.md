@@ -1,6 +1,6 @@
 # AI Citation Analysis
 
-_Generated: 2026-05-28T14:17:33.240Z_
+_Generated: 2026-06-01T14:31:38.681Z_
 _Snapshot: **2026-05-28** (vs 2026-05-22)_
 
 ## Headline numbers
@@ -31,15 +31,15 @@ _Snapshot: **2026-05-28** (vs 2026-05-22)_
 
 | # | Page | Citations | Category |
 | ---: | --- | ---: | --- |
-| 1 | `/blog/video-ad-testing-pricing-2026` | 225 | uncategorized |
+| 1 | `/blog/video-ad-testing-pricing-2026` | 225 | creative testing |
 | 2 | `/blog/ai-voice-agent-costs-compared` | 152 | voice agent |
 | 3 | `/blog/ai-lead-response-systems-2026` | 141 | lead response |
 | 4 | `/blog/ai-cold-outreach-vs-human-2026` | 88 | lead response |
 | 5 | `/blog/ai-sales-agent-vs-human-sdr-cost` | 80 | lead response |
-| 6 | `/blog/sales-ai-agent-vs-human-cost-comparison-2026` | 73 | uncategorized |
+| 6 | `/blog/sales-ai-agent-vs-human-cost-comparison-2026` | 73 | lead response |
 | 7 | `/blog/ai-sales-agent-pricing-guide-2026` | 65 | lead response |
 | 8 | `/blog/lead-reactivation-for-home-services` | 57 | lead reactivation |
-| 9 | `/blog/annual-savings-contractors-switching-from-answering-services-to-ai-2026` | 54 | uncategorized |
+| 9 | `/blog/annual-savings-contractors-switching-from-answering-services-to-ai-2026` | 54 | receptionist |
 | 10 | `/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco` | 54 | custom agent |
 
 ## New queries this period
@@ -51,7 +51,7 @@ _Snapshot: **2026-05-28** (vs 2026-05-22)_
 | AI platforms vs answering services cost comparison HVAC companies | 20 | receptionist |
 | fastest way to respond to roofing leads before competitors | 17 | lead response |
 | cost to automate mortgage borrower communication | 15 | lead response |
-| AI impact ROI hiring inside sales rep contractor | 15 | uncategorized |
+| AI impact ROI hiring inside sales rep contractor | 15 | lead response |
 | automated lead response solutions for customers | 15 | lead response |
 | AI sales agents vs human SDR conversion rates | 15 | lead response |
 | automated multilingual voice agent QA vendor pricing models | 14 | voice agent |
@@ -61,14 +61,14 @@ _Snapshot: **2026-05-28** (vs 2026-05-22)_
 | AI personalized cold outreach vs manually written emails comparison | 9 | lead response |
 | Voice AI vs call center cost comparison multifamily properties | 9 | voice agent |
 | dormant lead reactivation software real estate teams | 9 | lead reactivation |
-| AI objection handling frameworks conversational AI | 8 | uncategorized |
+| AI objection handling frameworks conversational AI | 8 | lead response |
 | cost benefit analysis AI answering services vs human receptionists | 8 | receptionist |
 | integrate AI voice agents into existing systems | 8 | voice agent |
-| SuperDial vs Retell.ai payer calls comparison | 7 | uncategorized |
+| SuperDial vs Retell.ai payer calls comparison | 7 | voice agent |
 | AI-generated cold outreach vs human-written effectiveness | 7 | lead response |
 | AI call automation pricing cost | 7 | voice agent |
-| best AI platforms real estate response time | 6 | uncategorized |
-| AI impact ROI hiring inside sales rep contractor business | 6 | uncategorized |
+| best AI platforms real estate response time | 6 | lead response |
+| AI impact ROI hiring inside sales rep contractor business | 6 | lead response |
 | AI agent builder platforms lowest total cost of ownership vs hiring developers | 6 | custom agent |
 | evaluate ROI AI-generated UGC ads | 6 | video ads |
 
@@ -88,17 +88,17 @@ _Snapshot: **2026-05-28** (vs 2026-05-22)_
 | voice agent testing pricing | 10 | 21 | +11 | +110% | voice agent |
 | AI sales automation vs hiring SDRs ROI case study | 4 | 8 | +4 | +100% | lead response |
 | ROI instant AI lead response service companies | 11 | 20 | +9 | +82% | lead response |
-| home service companies AI sales team structure follow-up | 4 | 7 | +3 | +75% | uncategorized |
+| home service companies AI sales team structure follow-up | 4 | 7 | +3 | +75% | lead response |
 | expected ROI database reactivation campaign AI | 11 | 19 | +8 | +73% | lead reactivation |
-| AI platforms objection handling voice scripts contractors | 3 | 5 | +2 | +67% | uncategorized |
+| AI platforms objection handling voice scripts contractors | 3 | 5 | +2 | +67% | voice agent |
 
 ## Decaying queries (>50% WoW drop)
 
 | Query | Prev | Now | Δ | % | Category |
 | --- | ---: | ---: | ---: | ---: | --- |
 | AI SDR vs human SDR team cost comparison | 14 | 4 | -10 | -71% | lead response |
-| average response time home service companies inbound calls | 8 | 3 | -5 | -63% | uncategorized |
-| home service companies off-season revenue customer database | 12 | 5 | -7 | -58% | uncategorized |
+| average response time home service companies inbound calls | 8 | 3 | -5 | -63% | lead response |
+| home service companies off-season revenue customer database | 12 | 5 | -7 | -58% | lead reactivation |
 | AI personalized cold outreach vs manually written emails differences | 21 | 9 | -12 | -57% | lead response |
 | AI answering services vs human receptionists cost benefit analysis | 7 | 3 | -4 | -57% | receptionist |
 | best AI lead response system for service businesses | 11 | 5 | -6 | -55% | lead response |
@@ -107,12 +107,12 @@ _Snapshot: **2026-05-28** (vs 2026-05-22)_
 
 | Category | Query citations | Page citations | Total |
 | --- | ---: | ---: | ---: |
-| lead response | 248 | 395 | 643 |
-| uncategorized | 97 | 529 | 626 |
-| voice agent | 196 | 217 | 413 |
-| creative testing | 225 | 0 | 225 |
-| lead reactivation | 98 | 107 | 205 |
-| receptionist | 95 | 7 | 102 |
+| lead response | 300 | 468 | 768 |
+| voice agent | 204 | 290 | 494 |
+| creative testing | 225 | 225 | 450 |
+| lead reactivation | 110 | 107 | 217 |
+| receptionist | 95 | 61 | 156 |
+| uncategorized | 25 | 104 | 129 |
 | custom agent | 38 | 54 | 92 |
 | video ads | 6 | 27 | 33 |
 
@@ -122,11 +122,11 @@ Current combined query + page citations: **2339**. Gap to 1,000/day target: **0*
 
 | Priority offer | Query citations | Page citations | Total | Share of all citations | Top matched query | Top matched page |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
-| ai voice agents | 196 | 217 | 413 | 17.7% | AI voice agent cost per minute at scale | `/blog/ai-voice-agent-costs-compared` |
-| ai lead response | 87 | 153 | 240 | 10.3% | ROI instant AI lead response service companies | `/blog/ai-lead-response-systems-2026` |
-| batch video ads | 225 | 0 | 225 | 9.6% | evaluate pricing models YouTube media testing services | `—` |
-| lead reactivation | 98 | 107 | 205 | 8.8% | ROI database reactivation campaign home service business | `/blog/lead-reactivation-for-home-services` |
-| custom ai agents | 38 | 54 | 92 | 3.9% | total cost of ownership AI agents in-house vs platform | `/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco` |
+| ai voice agents | 211 | 290 | 501 | 21.4% | AI voice agent cost per minute at scale | `/blog/ai-voice-agent-costs-compared` |
+| ai lead response | 189 | 306 | 495 | 21.2% | ROI instant AI lead response service companies | `/blog/ai-lead-response-systems-2026` |
+| batch video ads | 225 | 225 | 450 | 19.2% | evaluate pricing models YouTube media testing services | `/blog/video-ad-testing-pricing-2026` |
+| lead reactivation | 103 | 107 | 210 | 9.0% | ROI database reactivation campaign home service business | `/blog/lead-reactivation-for-home-services` |
+| custom ai agents | 45 | 79 | 124 | 5.3% | total cost of ownership AI agents in-house vs platform | `/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco` |
 | ai content department | 3 | 0 | 3 | 0.1% | best posting frequency Instagram Facebook 2026 | `—` |
 
 ## Surging queries by priority offer
@@ -139,6 +139,8 @@ Current combined query + page citations: **2339**. Gap to 1,000/day target: **0*
 | ai voice agents | AI voice agent cost per minute at scale | 5 | 22 | +17 | +340% |
 | ai lead response | fastest way to respond to roofing leads before competitors | 0 | 17 | +17 | NEW |
 | ai lead response | cost to automate mortgage borrower communication | 0 | 15 | +15 | NEW |
+| ai lead response | AI impact ROI hiring inside sales rep contractor | 0 | 15 | +15 | NEW |
+| ai lead response | AI sales agents vs human SDR conversion rates | 0 | 15 | +15 | NEW |
 | ai voice agents | automated multilingual voice agent QA vendor pricing models | 0 | 14 | +14 | NEW |
 | ai voice agents | hidden costs AI voice agents | 0 | 13 | +13 | NEW |
 | lead reactivation | home service company reactivation campaign timing | 0 | 12 | +12 | NEW |
@@ -151,8 +153,6 @@ Current combined query + page citations: **2339**. Gap to 1,000/day target: **0*
 | ai voice agents | Voice AI vs call center cost comparison multifamily properties | 0 | 9 | +9 | NEW |
 | lead reactivation | dormant lead reactivation software real estate teams | 0 | 9 | +9 | NEW |
 | lead reactivation | expected ROI database reactivation campaign AI | 11 | 19 | +8 | +73% |
-| ai voice agents | AI voice agent enterprise pricing breakdown beyond per minute rate | 4 | 12 | +8 | +200% |
-| ai voice agents | integrate AI voice agents into existing systems | 0 | 8 | +8 | NEW |
 
 ## Priority content gaps
 
@@ -178,7 +178,6 @@ _All priority offers have at least one matched citation signal in this snapshot.
 - **Decay alert:** `"home service companies off-season revenue customer database"` dropped 12 → 5 (-58%). Refresh the supporting post — update year, prices, comparison tables.
 - **Decay alert:** `"AI personalized cold outreach vs manually written emails differences"` dropped 21 → 9 (-57%). Refresh the supporting post — update year, prices, comparison tables.
 - **Decay alert:** `"best AI lead response system for service businesses"` dropped 11 → 5 (-55%). Refresh the supporting post — update year, prices, comparison tables.
-- **Coverage gap:** `receptionist` is under 5% of total citations (102/2339). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
 - **Coverage gap:** `custom agent` is under 5% of total citations (92/2339). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
 - **Coverage gap:** `video ads` is under 5% of total citations (33/2339). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
 
