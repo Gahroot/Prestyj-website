@@ -17,7 +17,7 @@ image: /images/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco.jpg
 
 Most AI agent decisions are made on year-one cost, which is exactly why most AI agent decisions are wrong. The build is the smallest line on the 3-year ledger. Maintenance, model deprecations, drift, compliance audits, and engineering opportunity cost stack year after year — and the platform you picked because it had the cheapest setup quote often ends up the most expensive in year three.
 
-**TL;DR:** Over 36 months, a custom AI agent runs **$380K–$1.1M (in-house build)**, **$210K–$520K (agency build)**, **$95K–$280K (no-code platform like Vapi/Bland/Retell)**, **$72K–$210K (white-label)**, and **$21K–$90K (done-for-you platforms like Prestyj)**. Maintenance averages **40–65% of 3-year TCO** — most teams budget under 20%. Model deprecations cost **15–40 engineering hours each** and hit every 6–12 months. Break-even vs. human response staff lands at **2–5 months for done-for-you**, **9–18 months for agency builds**, and **18–36 months for in-house builds**.
+**TL;DR:** Over 36 months, a custom AI agent runs **$380K–$1.1M (in-house build)**, **$210K–$520K (agency build)**, **$95K–$280K (no-code platform like Vapi/Bland/Retell)**, **$72K–$210K (white-label)**, and **$21K–$90K (done-for-you platforms like Prestyj)**. Maintenance averages **40–65% of 3-year TCO** — most teams budget under 20%. Model deprecations cost **15–40 engineering hours each** and hit every 6–12 months. Break-even vs. human response staff lands at **2–5 months for done-for-you**, **9–18 months for agency builds**, and **18–36 months for in-house builds**. For the commercial managed-service hub, use [Done-For-You AI Agents](/done-for-you-ai-agents).
 
 ## Key Takeaways
 
@@ -51,6 +51,21 @@ Every operator running this decision should start with this table. Numbers assum
 The math is uncomfortable for custom builds: **a done-for-you platform costs 6–18x less over 36 months than any flavor of custom build** while shipping 6–24 weeks faster. The custom build wins only when the AI agent is the product, not a back-office utility.
 
 For the line-item-by-line-item breakdown of where the custom-build cost comes from, see our [custom AI agent build cost breakdown](/blog/custom-ai-agent-build-cost-breakdown-2026) and the [hidden costs of custom AI agents](/blog/hidden-costs-custom-ai-agents-2026).
+
+### 2026 Build-Platform TCO Rows Buyers Should Add
+
+Teams comparing "in-house vs platform" usually need a more granular table than custom vs done-for-you. Add these rows to any procurement spreadsheet.
+
+| Platform path | Year-one cash cost | 3-year TCO planning range | Hidden cost that changes the answer | Best fit |
+| --- | ---: | ---: | --- | --- |
+| Vapi / Retell developer build | $42K–$120K | $95K–$280K | Engineering ownership, model swaps, evals, telephony, QA | Technical teams building a differentiated voice workflow |
+| Bland AI outbound-heavy build | $35K–$110K | $90K–$260K | Prompt maintenance, call QA, compliance on outbound campaigns | High-volume outbound with engineering support |
+| Synthflow / no-code workflow | $18K–$75K | $72K–$220K | Less engineering, but more ops time and workflow limitations | SMBs with simple call flows and internal ops capacity |
+| White-label agency platform | $28K–$95K | $72K–$210K | Reseller markup and unclear responsibility during failures | Agencies or brands needing white-labeled packaging |
+| Done-for-you vertical platform | $7K–$30K | $21K–$90K | Less custom IP control | Operators who need lead response, voice, or reactivation outcomes fast |
+| In-house proprietary agent | $180K–$620K | $380K–$1.1M+ | Opportunity cost of 1.5–3 FTEs for 36 months | AI-native companies where the agent is the product |
+
+The procurement question should be: **will custom ownership create enough differentiated enterprise value to justify the extra $100K–$1M over three years?** If the agent answers calls, follows up with leads, books appointments, or reactivates old contacts, the answer is usually no.
 
 ---
 
@@ -506,6 +521,18 @@ Always model 36 months minimum. Include: (1) build cost, (2) ongoing LLM token c
 
 White-label has the second-best 3-year TCO ($72K–$210K) after done-for-you ($21K–$90K). It works best when the reseller adds genuine vertical expertise or ongoing optimization. It's a bad deal when the reseller is just a logo on someone else's platform with a 30–60% markup and no operational value-add. See [white-label AI calling](/blog/white-label-ai-calling) for the deeper analysis.
 
+### Which AI agent builder platform has the lowest total cost of ownership?
+
+For technical teams under 5,000 calls or conversations per month, Synthflow-style no-code or Vapi/Retell-style developer platforms can have the lowest year-one cash cost. Over three years, done-for-you vertical platforms usually have the lowest TCO because they absorb engineering maintenance, model deprecations, compliance updates, QA, and integrations. The lowest sticker price platform is not the lowest TCO if it requires 5–15 hours/month of engineering or ops labor.
+
+### When is a custom AI agent worth the extra TCO?
+
+A custom AI agent is worth it when the agent is core product IP, when workflows are genuinely proprietary, when the company has senior AI/voice engineers already on payroll, and when volume is high enough to amortize build cost. If the use case is lead response, phone intake, appointment booking, reactivation, or outbound qualification, a platform usually wins on both speed and 3-year cost.
+
+### Which Prestyj page should I use for managed AI agent implementation?
+
+Use [Done-For-You AI Agents](/done-for-you-ai-agents) for the commercial hub, [done-for-you AI](/best-for/done-for-you-ai) for the use-case page, [AI Sales Agents](/ai-sales-agents) for SDR replacement, and [AI Voice Agents](/ai-voice-agents) for phone workflows. Use this article for the long-form three-year TCO model.
+
 ---
 
 ## Related Reading
@@ -513,13 +540,15 @@ White-label has the second-best 3-year TCO ($72K–$210K) after done-for-you ($2
 - [Custom AI Agent Build Cost Breakdown 2026 (14 Line Items)](/blog/custom-ai-agent-build-cost-breakdown-2026)
 - [Should You Build or Buy Your AI Agent in 2026? Decision Framework](/blog/should-you-build-or-buy-ai-agent-2026)
 - [Hidden Costs of Custom AI Agents: 12 Fees Vendors Don't Quote](/blog/hidden-costs-custom-ai-agents-2026)
+- [Done-For-You AI Agents](/done-for-you-ai-agents)
+- [Done-For-You AI use case](/best-for/done-for-you-ai)
 - [Done-For-You AI Agents Guide](/blog/done-for-you-ai-agents-guide)
 - [Done-For-You AI Pricing Guide](/blog/done-for-you-ai-pricing-guide)
 - [Multi-Agent Sales System Architecture](/blog/multi-agent-sales-system-architecture)
 - [AI Voice Agent Costs Compared (7 Platforms)](/blog/ai-voice-agent-costs-compared)
 - [Build vs Buy AI Sales Agents (Real Estate)](/blog/build-vs-buy-ai-sales-agents-real-estate)
 
-Explore the platform: [AI Sales Agent](/solutions/ai-lead-response) · [Platform overview](/platform) · [AI Content Department](/ai-content-department) · [Pricing](/pricing)
+Explore the platform: [Done-For-You AI Agents](/done-for-you-ai-agents) · [AI Sales Agents](/ai-sales-agents) · [AI Voice Agents](/ai-voice-agents) · [Platform overview](/platform) · [AI Content Department](/ai-content-department) · [Pricing](/pricing)
 
 ---
 
