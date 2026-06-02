@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { StatEmbedCard } from "@/components/embed/stat-embed-card";
+import { siteConfig } from "@/lib/site-config";
 import {
   findIndustrySlice,
   getAllIndustrySlugs,
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const slice = findIndustrySlice(industry);
   if (!slice) return { title: "Industry not found" };
   const stats = getStatisticsForIndustry(slice);
-  const pageUrl = `https://prestyj.com/statistics/${industry}`;
+  const pageUrl = `${siteConfig.url}/statistics/${industry}`;
   return {
     title: `${stats.length}+ ${slice.title} (2024-2026)`,
     description: slice.description,
@@ -55,13 +56,18 @@ export default async function IndustryStatsHub({ params }: PageProps) {
   const slice = findIndustrySlice(industry);
   if (!slice) notFound();
   const stats = getStatisticsForIndustry(slice);
-  const pageUrl = `https://prestyj.com/statistics/${industry}`;
-  const csvUrl = `https://prestyj.com/data/industry/${industry}?format=csv`;
-  const jsonUrl = `https://prestyj.com/data/industry/${industry}`;
+  const pageUrl = `${siteConfig.url}/statistics/${industry}`;
+  const csvUrl = `${siteConfig.url}/data/industry/${industry}?format=csv`;
+  const jsonUrl = `${siteConfig.url}/data/industry/${industry}`;
+  const datasetVersion = new Date().toISOString().slice(0, 10);
+  const datasetIdentifier = `urn:prestyj:dataset:statistics:${industry}:2026`;
+  const sourceUrls = Array.from(
+    new Set(stats.map((stat) => stat.source.url).filter((url) => url !== undefined)),
+  ).slice(0, 50);
 
   const breadcrumbs = [
-    { name: "Home", url: "https://prestyj.com" },
-    { name: "Statistics", url: "https://prestyj.com/statistics" },
+    { name: "Home", url: siteConfig.url },
+    { name: "Statistics", url: `${siteConfig.url}/statistics` },
     { name: slice.title, url: pageUrl },
   ];
 
@@ -70,22 +76,75 @@ export default async function IndustryStatsHub({ params }: PageProps) {
   const datasetSchema = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "@id": pageUrl,
+    "@id": `${pageUrl}#dataset`,
+    identifier: [
+      datasetIdentifier,
+      pageUrl,
+      {
+        "@type": "PropertyValue",
+        propertyID: "Prestyj dataset identifier",
+        value: datasetIdentifier,
+        url: pageUrl,
+      },
+    ],
     name: slice.title,
-    description: slice.description,
+    alternateName: [`Prestyj ${slice.title}`, `${slice.slug} marketing statistics dataset`],
+    description: `${slice.description} This industry slice contains ${stats.length} statistics from the Prestyj open statistics dataset, with source publisher, source year, source URL when available, context, permanent citation URLs, and embeddable stat-card URLs for each row.`,
     url: pageUrl,
-    sameAs: ["https://prestyj.com/data"],
-    isPartOf: { "@type": "Dataset", "@id": "https://prestyj.com/data" },
-    keywords: [slice.slug, "lead response", "AI sales", "marketing benchmarks"],
-    creator: { "@type": "Organization", name: "Prestyj", url: "https://prestyj.com" },
-    publisher: { "@type": "Organization", name: "Prestyj", url: "https://prestyj.com" },
+    mainEntityOfPage: pageUrl,
+    sameAs: [`${siteConfig.url}/data`, jsonUrl, csvUrl],
+    isPartOf: { "@type": "Dataset", "@id": `${siteConfig.url}/data#dataset` },
+    keywords: [slice.slug, "lead response", "AI sales", "marketing benchmarks", "open data"],
+    creator: {
+      "@type": "Organization",
+      "@id": siteConfig.organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: siteConfig.logo,
+      sameAs: [...siteConfig.sameAs],
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": siteConfig.organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: siteConfig.logo,
+    },
     license: "https://creativecommons.org/licenses/by/4.0/",
     isAccessibleForFree: true,
     temporalCoverage: "2024-01-01/2026-12-31",
-    dateModified: new Date().toISOString().slice(0, 10),
+    datePublished: "2026-01-01",
+    dateModified: datasetVersion,
+    version: datasetVersion,
+    inLanguage: "en-US",
+    spatialCoverage: { "@type": "Place", name: "United States" },
+    measurementTechnique:
+      "Industry-filtered editorial aggregation of the Prestyj open statistics dataset. Rows are selected by explicit statistic IDs, industry keyword matches, and cross-cutting lead-response benchmarks; each row retains source publisher, year, URL when available, context, permalink, and embed URL.",
+    isBasedOn: sourceUrls,
+    variableMeasured: stats.slice(0, 25).map((stat) => ({
+      "@type": "PropertyValue",
+      name: stat.id,
+      value: stat.value,
+      description: stat.description,
+      url: stat.permalink,
+    })),
     distribution: [
-      { "@type": "DataDownload", encodingFormat: "text/csv", contentUrl: csvUrl },
-      { "@type": "DataDownload", encodingFormat: "application/json", contentUrl: jsonUrl },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "text/csv",
+        contentUrl: csvUrl,
+        name: `${slice.title} — CSV`,
+        description: `CSV export for the ${slice.title} slice with source, year, permalink, embed URL, and context columns.`,
+        license: "https://creativecommons.org/licenses/by/4.0/",
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/json",
+        contentUrl: jsonUrl,
+        name: `${slice.title} — JSON`,
+        description: `JSON export for the ${slice.title} slice for RAG pipelines, apps, and analysis workflows.`,
+        license: "https://creativecommons.org/licenses/by/4.0/",
+      },
     ],
   };
 
@@ -187,9 +246,8 @@ export default async function IndustryStatsHub({ params }: PageProps) {
               Want the full dataset?
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-xl">
-              {stats.length} {slice.slug} stats here. {58 - stats.length}+ more across every other
-              vertical, plus speed-to-lead, video advertising, AI adoption, and Google Ads CPL
-              benchmarks.
+              {stats.length} {slice.slug} stats here. Open the full dataset for every other vertical,
+              plus speed-to-lead, video advertising, AI adoption, and Google Ads CPL benchmarks.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg">

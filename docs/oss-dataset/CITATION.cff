@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it."
+title: "Prestyj Lead Response, Video Advertising & AI Sales Statistics Dataset"
+authors:
+  - name: "Prestyj"
+    website: "https://prestyj.com"
+type: dataset
+license: CC-BY-4.0
+url: "https://prestyj.com/data"
+repository: "https://github.com/prestyj/statistics-dataset"
+year: 2026
+keywords:
+  - lead response time
+  - speed to lead
+  - video advertising
+  - AI in sales
+  - cost per lead
+  - marketing benchmarks
+  - home services marketing
+  - real estate lead response
+preferred-citation:
+  type: dataset
+  title: "Lead Response, Video Advertising & AI Sales Statistics Dataset"
+  authors:
+    - name: "Prestyj"
+  year: 2026
+  url: "https://prestyj.com/data"

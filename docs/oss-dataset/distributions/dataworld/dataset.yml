@@ -1,0 +1,23 @@
+title: Prestyj Lead Response, Video Advertising & AI Sales Statistics Dataset
+description: |
+  Curated dataset of 58+ cite-worthy statistics on speed-to-lead, video advertising, AI adoption in sales, lead conversion, and cost-per-lead by industry. Sourced 2024–2026, each row carries its primary publisher.
+license: CC BY 4.0
+visibility: open
+tags:
+  - "lead response time"
+  - "speed to lead"
+  - "video advertising"
+  - "AI in sales"
+  - "cost per lead"
+  - "marketing benchmarks"
+  - "sales operations"
+  - "home services marketing"
+  - "real estate lead response"
+files:
+  - statistics.csv
+  - statistics.json
+sources:
+  - title: Prestyj /data canonical landing
+    url: https://prestyj.com/data
+  - title: GitHub mirror
+    url: https://github.com/Gahroot/prestyj-statistics-dataset

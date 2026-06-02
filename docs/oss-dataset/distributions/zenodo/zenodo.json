@@ -1,0 +1,40 @@
+{
+  "creators": [
+    {
+      "name": "Prestyj",
+      "affiliation": "Prestyj"
+    }
+  ],
+  "title": "Prestyj Lead Response, Video Advertising & AI Sales Statistics Dataset",
+  "description": "A curated CC BY 4.0 dataset of cite-worthy statistics covering speed-to-lead, video advertising performance, AI adoption in sales, lead conversion rates, and cost-per-lead benchmarks by industry. Each row carries its primary publisher (Harvard Business Review, InsideSales, Wyzowl, HubSpot, WordStream, McKinsey, Gartner, Salesforce, etc.) and year of publication, plus a stable permalink at https://prestyj.com/stat/<id>. \n\nCanonical source: https://prestyj.com/data \nGitHub mirror: https://github.com/Gahroot/prestyj-statistics-dataset",
+  "keywords": [
+    "lead response time",
+    "speed to lead",
+    "video advertising",
+    "AI in sales",
+    "cost per lead",
+    "marketing benchmarks",
+    "sales operations",
+    "home services marketing",
+    "real estate lead response"
+  ],
+  "license": "cc-by-4.0",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "relation": "isDescribedBy",
+      "identifier": "https://prestyj.com/data",
+      "scheme": "url",
+      "resource_type": "dataset"
+    },
+    {
+      "relation": "isCompiledBy",
+      "identifier": "https://github.com/Gahroot/prestyj-statistics-dataset",
+      "scheme": "url"
+    }
+  ],
+  "publication_date": "2026-05-29",
+  "version": "2026-05-29",
+  "language": "eng"
+}

@@ -1,10 +1,12 @@
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
 /**
  * Security proxy for Next.js 16
  * Implements Content Security Policy and other security headers
  */
-export function proxy() {
+export function proxy(request: NextRequest) {
+  const isEmbedRoute = request.nextUrl.pathname.startsWith("/embed/");
+
   // Content Security Policy directives
   const cspDirectives = [
     { name: "default-src", values: ["'self'"] },
@@ -74,10 +76,14 @@ export function proxy() {
         "https://frontend-navy-five-92.vercel.app", // AI agent embed pages
       ],
     },
-    {
-      name: "frame-ancestors",
-      values: ["'none'"], // Prevent clickjacking
-    },
+    ...(!isEmbedRoute
+      ? [
+          {
+            name: "frame-ancestors",
+            values: ["'none'"], // Prevent clickjacking
+          },
+        ]
+      : []),
     {
       name: "base-uri",
       values: ["'self'"],
@@ -108,7 +114,9 @@ export function proxy() {
 
   // Additional security headers
   response.headers.set("X-Content-Type-Options", "nosniff");
-  response.headers.set("X-Frame-Options", "DENY");
+  if (!isEmbedRoute) {
+    response.headers.set("X-Frame-Options", "DENY");
+  }
   response.headers.set("X-XSS-Protection", "1; mode=block");
   response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   response.headers.set(

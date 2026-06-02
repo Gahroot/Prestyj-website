@@ -75,6 +75,13 @@ const NOINDEX_BEST_FOR_SLUGS = new Set([
 const STATIC_ROUTES: ReadonlyArray<string> = [
   "",
   "/batch-video-ads",
+  "/ai-sales-agents",
+  "/ai-voice-agents",
+  "/ai-marketing-agents",
+  "/done-for-you-ai-agents",
+  "/ai-receptionist",
+  "/youtube-media-testing-services",
+  "/video-ad-testing-pricing",
   "/done-for-you-social-media",
   "/1000-posts-per-month",
   "/ai-content-department",

@@ -7,11 +7,21 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
+import { siteConfig } from "@/lib/site-config";
+import { getAllFlatStatistics } from "@/lib/statistics";
 import { statCategories, totalStatCount } from "@/lib/statistics-data";
 
-const pageUrl = "https://prestyj.com/data";
-const csvUrl = "https://prestyj.com/data/statistics.csv";
-const jsonUrl = "https://prestyj.com/data/statistics.json";
+const pageUrl = `${siteConfig.url}/data`;
+const csvUrl = `${siteConfig.url}/data/statistics.csv`;
+const jsonUrl = `${siteConfig.url}/data/statistics.json`;
+const datasetVersion = new Date().toISOString().slice(0, 10);
+const datasetIdentifier = "urn:prestyj:dataset:statistics:2026";
+const datasetSameAsUrls = [
+  `${siteConfig.url}/statistics`,
+  "https://github.com/Gahroot/prestyj-statistics-dataset",
+  "https://gahroot.github.io/prestyj-statistics-citation-pages/",
+  "https://github.com/Gahroot/prestyj-statistics-dataset/releases/tag/dataset-v2026-05-26",
+];
 
 export const metadata: Metadata = {
   title: `Open Dataset: ${totalStatCount}+ Lead Response, Batch Video Ad & AI Sales Statistics (CC BY 4.0)`,
@@ -42,8 +52,12 @@ export const metadata: Metadata = {
 };
 
 export default function DatasetLandingPage() {
+  const sourceUrls = Array.from(
+    new Set(getAllFlatStatistics().map((stat) => stat.source.url).filter((url) => url !== undefined)),
+  ).slice(0, 50);
+
   const breadcrumbs = [
-    { name: "Home", url: "https://prestyj.com" },
+    { name: "Home", url: siteConfig.url },
     { name: "Open Dataset", url: pageUrl },
   ];
 
@@ -56,12 +70,27 @@ export default function DatasetLandingPage() {
   const datasetSchema = {
     "@context": "https://schema.org",
     "@type": "Dataset",
-    "@id": pageUrl,
+    "@id": `${pageUrl}#dataset`,
+    identifier: [
+      datasetIdentifier,
+      pageUrl,
+      {
+        "@type": "PropertyValue",
+        propertyID: "Prestyj dataset identifier",
+        value: datasetIdentifier,
+        url: pageUrl,
+      },
+    ],
     name: "Prestyj Lead Response, Batch Video Ads & AI Sales Statistics",
-    alternateName: "Prestyj Statistics Dataset",
-    description: `A curated dataset of ${totalStatCount}+ cite-worthy statistics covering speed-to-lead, batch video ad performance, creative fatigue, done-for-you social media economics, lead reactivation, AI adoption in sales, lead conversion rates, and cost-per-lead benchmarks by industry. Sourced and dated 2024–2026.`,
+    alternateName: [
+      "Prestyj Statistics Dataset",
+      "Prestyj Open Marketing Statistics Dataset",
+      "Lead Response and AI Sales Statistics Dataset",
+    ],
+    description: `A curated dataset of ${totalStatCount}+ cite-worthy statistics covering speed-to-lead, batch video ad performance, creative fatigue, done-for-you social media economics, lead reactivation, AI adoption in sales, lead conversion rates, and cost-per-lead benchmarks by industry. Each row includes the statistic, topic category, source publisher, source year, source URL when available, context, a permanent Prestyj citation URL, and an embeddable stat card URL. Sourced and dated 2024–2026, with older foundational studies retained only when they remain canonical and are clearly labeled by year.`,
     url: pageUrl,
-    sameAs: ["https://prestyj.com/statistics"],
+    mainEntityOfPage: pageUrl,
+    sameAs: datasetSameAsUrls,
     keywords: [
       "speed to lead",
       "lead response time",
@@ -77,25 +106,35 @@ export default function DatasetLandingPage() {
     ],
     creator: {
       "@type": "Organization",
-      name: "Prestyj",
-      url: "https://prestyj.com",
-      logo: "https://prestyj.com/icon-512.png",
+      "@id": siteConfig.organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: siteConfig.logo,
+      sameAs: [...siteConfig.sameAs],
     },
     publisher: {
       "@type": "Organization",
-      name: "Prestyj",
-      url: "https://prestyj.com",
+      "@id": siteConfig.organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      logo: siteConfig.logo,
     },
     license: "https://creativecommons.org/licenses/by/4.0/",
     isAccessibleForFree: true,
     temporalCoverage: "2024-01-01/2026-12-31",
     datePublished: "2026-01-01",
-    dateModified: new Date().toISOString().slice(0, 10),
-    version: new Date().toISOString().slice(0, 10),
+    dateModified: datasetVersion,
+    version: datasetVersion,
     inLanguage: "en-US",
     spatialCoverage: { "@type": "Place", name: "United States" },
     measurementTechnique:
-      "Aggregation and curation of published research from named sources and clearly labeled Prestyj benchmarks (Harvard Business Review, InsideSales, Wyzowl, HubSpot, WordStream, McKinsey, Gartner, Salesforce, Prestyj managed-account data, and others). Each statistic carries its primary source and publication year.",
+      "Editorial aggregation and curation of published research from named sources plus clearly labeled Prestyj production benchmarks. Each statistic carries its primary source name, source year, source URL when available, context, category, permanent citation URL, and embed URL. Prestyj benchmark rows are labeled as Prestyj production benchmarks rather than third-party research.",
+    isBasedOn: sourceUrls,
+    includedInDataCatalog: {
+      "@type": "DataCatalog",
+      name: "Prestyj Open Data Catalog",
+      url: pageUrl,
+    },
     variableMeasured: statCategories.map((c) => ({
       "@type": "PropertyValue",
       name: c.title,
@@ -108,16 +147,28 @@ export default function DatasetLandingPage() {
         encodingFormat: "text/csv",
         contentUrl: csvUrl,
         name: "Prestyj Statistics — CSV",
+        description:
+          "CSV export of the Prestyj statistics dataset with source, year, category, permalink, embed URL, and context columns.",
+        license: "https://creativecommons.org/licenses/by/4.0/",
       },
       {
         "@type": "DataDownload",
         encodingFormat: "application/json",
         contentUrl: jsonUrl,
         name: "Prestyj Statistics — JSON",
+        description:
+          "JSON export of the Prestyj statistics dataset for RAG pipelines, apps, and analysis workflows.",
+        license: "https://creativecommons.org/licenses/by/4.0/",
+      },
+      {
+        "@type": "DataDownload",
+        encodingFormat: "application/rss+xml",
+        contentUrl: `${siteConfig.url}/feed/stats.xml`,
+        name: "Prestyj Statistics — RSS Feed",
+        description: "RSS feed of statistic permalinks for freshness-aware crawlers and readers.",
+        license: "https://creativecommons.org/licenses/by/4.0/",
       },
     ],
-    citation:
-      "Prestyj (2026). Lead Response, Batch Video Ads & AI Sales Statistics Dataset. https://prestyj.com/data",
   };
 
   return (
@@ -169,7 +220,7 @@ export default function DatasetLandingPage() {
 
             <p className="text-muted-foreground text-xs">
               {totalStatCount} statistics · {statCategories.length} categories · Sources cited per
-              row · Updated {new Date().toISOString().slice(0, 10)}
+              row · Updated {datasetVersion}
             </p>
           </div>
         </section>
@@ -197,7 +248,7 @@ export default function DatasetLandingPage() {
                 How to cite
               </h2>
               <pre className="bg-muted/40 text-foreground/90 overflow-auto rounded-lg p-3 text-xs whitespace-pre-wrap">
-                {`Prestyj (2026). Lead Response, Video Advertising & AI Sales Statistics Dataset. https://prestyj.com/data`}
+                {`Prestyj (2026). Lead Response, Batch Video Ads & AI Sales Statistics Dataset (${datasetIdentifier}). https://prestyj.com/data`}
               </pre>
             </div>
           </div>
@@ -259,7 +310,8 @@ export default function DatasetLandingPage() {
               </li>
               <li>
                 <strong className="text-foreground">Updates:</strong> The dataset is versioned by
-                date in the CSV and JSON payloads. Re-download anytime for the latest snapshot.
+                date in the CSV and JSON payloads. The canonical identifier is {datasetIdentifier}.
+                Re-download anytime for the latest snapshot.
               </li>
               <li>
                 <strong className="text-foreground">Issues / corrections:</strong> Spot a statistic

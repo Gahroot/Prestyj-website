@@ -87,6 +87,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ai-sales-agents`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ai-voice-agents`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/ai-marketing-agents`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.88,
+    },
+    {
+      url: `${baseUrl}/done-for-you-ai-agents`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.88,
+    },
+    {
+      url: `${baseUrl}/ai-receptionist`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.88,
+    },
+    {
       url: `${baseUrl}/founding-cohort`,
       lastModified: now,
       changeFrequency: "daily",
@@ -125,6 +155,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/ad-creative-testing-service`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.84,
+    },
+    {
+      url: `${baseUrl}/youtube-media-testing-services`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.84,
+    },
+    {
+      url: `${baseUrl}/video-ad-testing-pricing`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.84,
