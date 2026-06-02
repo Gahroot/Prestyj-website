@@ -5,6 +5,7 @@ import "./globals.css";
 import { AuroraBackground } from "@/components/effects/aurora-background";
 import { PIXEL_ID, LINKEDIN_PARTNER_ID } from "@/lib/meta-pixel";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
+import { siteConfig } from "@/lib/site-config";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,16 +16,6 @@ const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
 });
-
-const siteConfig = {
-  name: "Prestyj",
-  title: "Prestyj | 300 Video Ads for Paid Social Testing",
-  description:
-    "Prestyj turns one recording session into hundreds of vertical video ads for paid social creative testing across Meta, TikTok, YouTube Shorts, and Reels.",
-  url: "https://prestyj.com",
-  ogImage: "/og-image.jpg",
-  creator: "@prestyj_",
-};
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -44,6 +35,11 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
+    "AI lead conversion platform",
+    "AI lead response",
+    "AI voice agents",
+    "AI sales agents",
+    "lead reactivation",
     "300 video ads",
     "batch video ads",
     "paid social creative testing",
@@ -100,6 +96,15 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   category: "technology",
+  // Discovery tags — oEmbed (Notion/WordPress/Substack auto-embed) +
+  // RSS feed of the statistics dataset (auto-pickup by feed readers and
+  // AI freshness pipelines).
+  alternates: {
+    types: {
+      "application/json+oembed": `${siteConfig.url}/oembed`,
+      "application/rss+xml": `${siteConfig.url}/feed/stats.xml`,
+    },
+  },
 };
 
 export default function RootLayout({

@@ -1,25 +1,6 @@
 import type { Organization, WebSite, Product, FAQPage, WithContext } from "schema-dts";
+import { siteConfig } from "@/lib/site-config";
 import { SafeJsonLd } from "./safe-json-ld";
-
-const siteConfig = {
-  name: "Prestyj",
-  url: "https://prestyj.com",
-  organizationId: "https://prestyj.com/#organization",
-  websiteId: "https://prestyj.com/#website",
-  description:
-    "Prestyj turns one recording session into hundreds of vertical video ads for paid social creative testing across Meta, TikTok, YouTube Shorts, and Reels.",
-  logo: "https://prestyj.com/icon-512.png",
-  email: "hello@prestyj.com",
-  contactUrl: "https://prestyj.com/contact",
-  foundingDate: "2026",
-  sameAs: [
-    "https://www.instagram.com/prestyj_/",
-    "https://www.linkedin.com/company/prestyj/",
-    "https://www.facebook.com/profile.php?id=61582824703610",
-    "https://x.com/prestyj_",
-    "https://www.wikidata.org/wiki/Q139892537",
-  ],
-};
 
 export function OrganizationJsonLd() {
   const jsonLd: WithContext<Organization> = {
@@ -27,8 +8,8 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     "@id": siteConfig.organizationId,
     name: siteConfig.name,
-    alternateName: ["PRESTYJ", "Prestyj AI", "Prestyj Batch Video Ads"],
-    legalName: siteConfig.name,
+    alternateName: [...siteConfig.alternateNames],
+    legalName: siteConfig.legalName,
     url: siteConfig.url,
     logo: {
       "@type": "ImageObject",
@@ -58,16 +39,7 @@ export function OrganizationJsonLd() {
       "@type": "Country",
       name: "United States",
     },
-    knowsAbout: [
-      "Batch video ads",
-      "Paid social creative testing",
-      "Meta ad creative testing",
-      "TikTok video ads",
-      "YouTube Shorts ads",
-      "AI marketing agents",
-      "AI sales agents",
-      "Lead response automation",
-    ],
+    knowsAbout: [...siteConfig.offerClusters],
     sameAs: siteConfig.sameAs,
   };
 
@@ -105,9 +77,8 @@ export function ProductJsonLd() {
   const jsonLd: WithContext<Product> = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Prestyj AI Agents for Marketing & Sales",
-    description:
-      "AI agents and automations that capture leads, respond instantly, qualify them, and book meetings — built for businesses.",
+    name: "Prestyj AI Lead Conversion Platform",
+    description: siteConfig.description,
     brand: {
       "@type": "Brand",
       name: siteConfig.name,
@@ -156,7 +127,7 @@ export function SoftwareApplicationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Prestyj AI Agents for Marketing & Sales",
+    name: "Prestyj AI Lead Conversion Platform",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: siteConfig.description,
@@ -166,14 +137,16 @@ export function SoftwareApplicationJsonLd() {
       priceCurrency: "USD",
     },
     featureList: [
+      "Batch video ad production",
+      "Paid social creative testing",
       "60-second lead response",
       "AI-powered lead qualification",
+      "AI voice agents",
+      "Lead reactivation campaigns",
       "Automated appointment booking",
       "24/7 availability",
       "CRM integration",
       "Multi-channel support",
-      "Multi-industry support",
-      "Missed call text back",
     ],
   };
 
@@ -223,36 +196,25 @@ export function ServiceJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AI Agents for Marketing & Sales",
-    description:
-      "AI agents and automations that capture leads, respond instantly, qualify them, and book meetings — built for businesses.",
+    name: "Prestyj AI Lead Conversion Platform",
+    description: siteConfig.description,
     provider: {
       "@type": "Organization",
       name: siteConfig.name,
       url: siteConfig.url,
     },
-    serviceType: [
-      "AI Lead Generation",
-      "AI Lead Response",
-      "AI Sales Agent",
-      "AI Receptionist",
-      "Lead Reactivation",
-      "Sales Automation",
-      "Marketing Automation",
-      "Business Automation",
-      "AI Customer Engagement",
-    ],
+    serviceType: [...siteConfig.offerClusters],
     areaServed: "United States",
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "AI Agent Services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Lead Generation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Batch Video Ads" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Lead Response" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Sales Agent" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice Agent" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Receptionist" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lead Reactivation" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Sales Automation" } },
       ],
     },
   };
