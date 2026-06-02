@@ -28,15 +28,20 @@ const footerLinks = {
     { href: "/results", label: "Proof" },
     { href: "/#faq", label: "FAQ" },
   ],
-  company: [
-    { href: "/about", label: "About" },
-    { href: "/results", label: "Proof" },
-    { href: "/founding-cohort", label: "Founding Cohort" },
-    { href: "/contact", label: "Contact" },
+  aiAgents: [
+    { href: "/ai-sales-agents", label: "AI Sales Agents", highlight: true },
+    { href: "/ai-voice-agents", label: "AI Voice Agents" },
+    { href: "/ai-receptionist", label: "AI Receptionist" },
+    { href: "/ai-marketing-agents", label: "AI Marketing Agents" },
+    { href: "/done-for-you-ai-agents", label: "Done-For-You AI" },
+    { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
   ],
   resources: [
     { href: "/blog", label: "Blog" },
     { href: "/statistics", label: "Statistics", highlight: true },
+    { href: "/data", label: "Open Dataset" },
+    { href: "/llms.txt", label: "AI Citation Map" },
+    { href: "/feed/stats.xml", label: "Stats Feed" },
   ],
   videoAds: [
     { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
@@ -80,7 +85,7 @@ export function Footer() {
   return (
     <footer className="bg-card border-border border-t">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-7">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-8">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2">
@@ -88,7 +93,7 @@ export function Footer() {
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm text-sm">
               We turn one recording session into hundreds of vertical video ads for paid social
-              creative testing.
+              creative testing, plus AI agents that respond to, qualify, and reactivate leads.
             </p>
             <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
               <div className="flex flex-wrap gap-x-2">
@@ -135,7 +140,7 @@ export function Footer() {
           </div>
 
           <FooterColumn title="Product" links={footerLinks.product} />
-          <FooterColumn title="Company" links={footerLinks.company} />
+          <FooterColumn title="AI Agents" links={footerLinks.aiAgents} />
           <FooterColumn title="Resources" links={footerLinks.resources} />
           <FooterColumn title="Video Ads" links={footerLinks.videoAds} />
           <FooterColumn title="Legal" links={footerLinks.legal} />

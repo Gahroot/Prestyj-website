@@ -43,7 +43,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BlogPage(): React.ReactElement {
+type BlogSearchParams = {
+  q?: string | string[];
+};
+
+type BlogPageProps = {
+  searchParams?: Promise<BlogSearchParams>;
+};
+
+function normalizeSearchQuery(searchParams: BlogSearchParams | undefined): string {
+  const rawQuery = Array.isArray(searchParams?.q) ? searchParams.q[0] : searchParams?.q;
+  return rawQuery?.trim() ?? "";
+}
+
+export default async function BlogPage({ searchParams }: BlogPageProps): Promise<React.ReactElement> {
+  const query = normalizeSearchQuery(await searchParams);
   const posts = blogSource.getPages().filter((post) => !post.data.noindex);
 
   // Sort indexable posts by date (newest first), then map to a serializable shape
@@ -106,6 +120,11 @@ export default function BlogPage(): React.ReactElement {
               Guides, playbooks, and how-tos on AI agents, lead response, and marketing & sales
               automation.
             </p>
+            {query ? (
+              <p className="text-muted-foreground mt-3 text-sm">
+                Showing posts matching <span className="text-foreground font-medium">“{query}”</span>.
+              </p>
+            ) : null}
           </div>
 
           {sortedPosts.length === 0 ? (
@@ -113,7 +132,7 @@ export default function BlogPage(): React.ReactElement {
               <p className="text-muted-foreground">No posts yet. Check back soon!</p>
             </div>
           ) : (
-            <BlogList posts={sortedPosts} />
+            <BlogList posts={sortedPosts} initialQuery={query} />
           )}
         </div>
       </main>

@@ -74,6 +74,16 @@ const CREATIVE_TESTING_RESOURCES = [
     description: "Use Prestyj as the high-volume creative production layer for paid social tests.",
   },
   {
+    href: "/video-ad-testing-pricing",
+    label: "Video ad testing pricing",
+    description: "Compare batch, agency, UGC, in-house, and AI-tool pricing by tested angle.",
+  },
+  {
+    href: "/youtube-media-testing-services",
+    label: "YouTube media testing",
+    description: "Evaluate YouTube Shorts media testing pricing models and creative-volume economics.",
+  },
+  {
     href: "/meta-ad-creative-testing",
     label: "Meta ad creative testing",
     description: "A Facebook and Instagram testing workflow built around fresh variation.",

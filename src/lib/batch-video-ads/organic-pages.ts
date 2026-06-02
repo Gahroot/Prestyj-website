@@ -465,6 +465,230 @@ export const organicIntentPages = [
     ],
   },
   {
+    slug: "youtube-media-testing-services",
+    title: "YouTube Media Testing Services | Pricing Models & Creative Volume",
+    description:
+      "Evaluate YouTube media testing services, pricing models, and creative-volume economics. Compare Prestyj batch video ads against agencies, UGC creators, and traditional production for YouTube Shorts testing.",
+    keywords: [
+      "YouTube media testing services",
+      "YouTube media testing pricing",
+      "evaluate pricing models YouTube media testing services",
+      "YouTube Shorts ad testing",
+      "video ad testing service",
+    ],
+    breadcrumbLabel: "YouTube Media Testing Services",
+    eyebrow: "YOUTUBE MEDIA TESTING · PRICING MODELS",
+    headline: "YouTube media testing needs more than one polished spot.",
+    highlightedHeadline: "Compare pricing by tested angle, not by asset.",
+    subheadline:
+      "Prestyj turns one recording into a YouTube Shorts-ready creative library so media teams can test hooks, buyer problems, proof, and CTAs without paying agency-per-concept economics.",
+    primaryCta: "Price a YouTube test batch",
+    secondaryCta: {
+      href: "/blog/youtube-media-testing-services-pricing-models-2026",
+      label: "Read the pricing-model guide",
+      description: "Detailed article for evaluating YouTube media testing service pricing.",
+    },
+    intentLabel: "YouTube media testing pricing",
+    stats: [
+      { value: "100–1,000", label: "YouTube-ready variations", detail: "Captioned vertical ads built for Shorts and reusable paid social placements." },
+      { value: "$4–$5", label: "typical cost per ad", detail: "At 300–1,000 ad batch sizes, before media spend." },
+      { value: "1", label: "recording session", detail: "One founder/operator recording becomes the testing matrix." },
+    ],
+    problem: {
+      eyebrow: "THE PRICING PROBLEM",
+      title: "Most YouTube media testing pricing rewards production activity, not learning velocity.",
+      body: [
+        "Traditional YouTube testing quotes often bundle strategy, editing, review cycles, and a handful of final assets. That can work for a brand campaign, but it is weak for Shorts testing where the first line and buyer angle decide whether the ad earns attention.",
+        "A batch pricing model changes the unit of analysis. Instead of asking how much one video costs, buyers can compare the cost per hook, cost per tested customer problem, and cost per usable ad variation.",
+      ],
+      bullets: [
+        "Best for teams evaluating YouTube Shorts paid-media tests or cross-platform vertical-video tests.",
+        "Useful when agency quotes look reasonable per concept but expensive per tested angle.",
+        "Pairs with the canonical /batch-video-ads pricing page and the YouTube pricing-model article.",
+      ],
+    },
+    proofCards: [
+      {
+        title: "Platform-specific, not platform-limited",
+        body: "The files are built for vertical video testing on YouTube Shorts and can also be reused on Meta, TikTok, Reels, and similar placements.",
+      },
+      {
+        title: "Pricing tied to learning units",
+        body: "Media teams can compare cost per hook family, cost per customer problem, and cost per tested ad angle instead of only cost per produced asset.",
+      },
+      {
+        title: "Better fit for rapid iteration",
+        body: "A batch gives buyers enough variation to find which opening, proof point, or CTA deserves more media spend before commissioning another shoot.",
+      },
+    ],
+    processTitle: "How a YouTube media testing batch works",
+    processIntro: "The workflow keeps the production step simple so the test can focus on market signal.",
+    steps: [
+      { title: "Define the testing matrix", body: "Map buyer problems, hooks, proof mechanisms, CTAs, and YouTube Shorts-specific openings before scripts are written." },
+      { title: "Record one source session", body: "The founder, operator, or spokesperson records the script set once in a native vertical-video style." },
+      { title: "Launch and compare lanes", body: "Your media buyer groups variations by hypothesis so spend reveals the angles worth scaling." },
+    ],
+    comparisonTitle: "YouTube media testing pricing models compared",
+    comparisonRows: [
+      { label: "Pricing unit", oldWay: "Per concept or per finished spot", batchWay: "Per batch and cost per tested angle" },
+      { label: "Typical output", oldWay: "3–10 polished videos", batchWay: "100–1,000 Shorts-ready variations" },
+      { label: "Learning depth", oldWay: "A few creative bets", batchWay: "Hooks, pains, proof, and CTAs tested separately" },
+      { label: "Production cycle", oldWay: "Weeks of briefs and revisions", batchWay: "1–2 business days after footage" },
+    ],
+    relatedLinks: [
+      ...sharedRelatedLinks,
+      {
+        href: "/batch-video-ads",
+        label: "Batch Video Ads",
+        description: "Canonical Prestyj pricing and offer page for 100–1,000 vertical video ads.",
+      },
+      {
+        href: "/video-ad-testing-pricing",
+        label: "Video ad testing pricing",
+        description: "Commercial pricing page for evaluating video ad testing economics.",
+      },
+      {
+        href: "/blog/video-ad-testing-pricing-2026",
+        label: "Video ad testing pricing guide",
+        description: "Long-form article that currently anchors the pricing query cluster.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How should I evaluate pricing models for YouTube media testing services?",
+        answer:
+          "Compare total test cost, number of usable video variations, number of hooks and customer problems tested, turnaround time, revision limits, usage rights, and whether media buying is included. Cost per tested angle is usually more useful than cost per polished asset.",
+      },
+      {
+        question: "Is YouTube media testing different from Meta or TikTok testing?",
+        answer:
+          "The first seconds and native vertical format matter across all short-form platforms, but YouTube Shorts can reward different pacing, context, and search-adjacent intent. A good batch keeps files reusable while letting the media buyer isolate YouTube-specific signals.",
+      },
+      {
+        question: "Does Prestyj manage YouTube campaigns?",
+        answer:
+          "No. Prestyj produces the script matrix and finished vertical video files. Your team or media buyer handles YouTube campaign setup, budgets, targeting, and reporting.",
+      },
+      {
+        question: "What batch size should a YouTube media test start with?",
+        answer:
+          "Start with 100 ads for one buyer problem, 300 ads for three problem lanes, 500 ads for the recommended testing matrix, and 1,000 ads for aggressive launches or larger media budgets.",
+      },
+    ],
+  },
+  {
+    slug: "video-ad-testing-pricing",
+    title: "Video Ad Testing Pricing | Compare Cost per Tested Angle",
+    description:
+      "Compare video ad testing pricing across Prestyj batch video ads, agencies, UGC creators, in-house teams, and AI video tools. Model cost per ad, cost per tested angle, and turnaround time.",
+    keywords: [
+      "video ad testing pricing",
+      "video ad testing cost",
+      "cost per tested ad angle",
+      "batch video ad pricing",
+      "creative testing pricing",
+    ],
+    breadcrumbLabel: "Video Ad Testing Pricing",
+    eyebrow: "VIDEO AD TESTING PRICING",
+    headline: "Video ad testing pricing should expose the real unit of learning.",
+    highlightedHeadline: "Cost per tested angle beats cost per asset.",
+    subheadline:
+      "Prestyj gives advertisers a pricing model for testing many hooks, buyer problems, and CTAs without turning every new idea into another agency brief or creator contract.",
+    primaryCta: "See batch pricing",
+    secondaryCta: {
+      href: "/blog/video-ad-testing-pricing-2026",
+      label: "Read the full pricing guide",
+      description: "The detailed article for video ad testing pricing models.",
+    },
+    intentLabel: "Commercial pricing comparison",
+    stats: [
+      { value: "$497", label: "starter batch", detail: "100 video ads from one recording session." },
+      { value: "$1,497", label: "300-ad minimum test", detail: "Three customer-problem lanes at roughly $5 per ad." },
+      { value: "$3,997", label: "1,000-ad max sprint", detail: "Ten problem lanes at roughly $4 per ad." },
+    ],
+    problem: {
+      eyebrow: "WHY PRICING GETS CONFUSING",
+      title: "A cheap video can still be expensive if it tests only one idea.",
+      body: [
+        "Most pricing pages quote deliverables: one UGC video, five edited concepts, a monthly creative retainer, or a fixed number of agency rounds. That hides the real testing question: how many meaningfully different buyer angles can the account learn from?",
+        "Batch pricing makes the comparison clearer. Buyers can evaluate how much it costs to test one customer problem, three problem lanes, five proof mechanisms, or ten full angle families before spending more media budget.",
+      ],
+      bullets: [
+        "Best for buyers comparing agencies, UGC creators, in-house editors, AI tools, and batch production.",
+        "Useful when a media buyer needs more inputs but does not need another strategy retainer.",
+        "Built as a short commercial hub that routes deeper readers to the full 2026 pricing guide.",
+      ],
+    },
+    proofCards: [
+      {
+        title: "Transparent batch tiers",
+        body: "100 ads for $497, 300 for $1,497, 500 for $2,497, and 1,000 for $3,997 gives buyers a clear cost-per-variation model.",
+      },
+      {
+        title: "Comparable against alternatives",
+        body: "UGC, agencies, in-house editors, and AI avatar tools can all be normalized to cost per usable ad and cost per tested angle.",
+      },
+      {
+        title: "Built for media buyers",
+        body: "The output is organized for launch and analysis so pricing connects to what the ad account can actually learn.",
+      },
+    ],
+    processTitle: "How to price a video ad test",
+    processIntro: "Use a repeatable model so the cheapest-looking option does not hide low learning volume.",
+    steps: [
+      { title: "Count the hypotheses", body: "List the hooks, customer problems, proof points, offers, and CTAs the test needs to compare." },
+      { title: "Normalize the deliverables", body: "Convert each vendor quote into finished usable ads, tested angles, timeline, revisions, and usage rights." },
+      { title: "Pick the smallest valid batch", body: "Choose the least expensive batch that still covers enough variation for the account to learn." },
+    ],
+    comparisonTitle: "Video ad testing pricing by production model",
+    comparisonRows: [
+      { label: "UGC creator", oldWay: "$150–$500+ per video", batchWay: "Useful for authenticity, weak for high-volume angle coverage" },
+      { label: "Creative agency", oldWay: "$5K–$25K/month", batchWay: "Useful for strategy, expensive per tested angle" },
+      { label: "In-house editor", oldWay: "$4K–$8K/month loaded", batchWay: "Useful for control, limited by human throughput" },
+      { label: "Prestyj batch", oldWay: "$497–$3,997 per sprint", batchWay: "100–1,000 variations from one recording" },
+    ],
+    relatedLinks: [
+      ...sharedRelatedLinks,
+      {
+        href: "/batch-video-ads",
+        label: "Batch Video Ads",
+        description: "Canonical Prestyj offer page with package pricing and CTA.",
+      },
+      {
+        href: "/youtube-media-testing-services",
+        label: "YouTube media testing services",
+        description: "Platform-specific page for YouTube media testing pricing models.",
+      },
+      {
+        href: "/blog/batch-video-ad-services-costs-compared-2026",
+        label: "Batch video ad services costs compared",
+        description: "Long-form cost comparison across batch services and alternatives.",
+      },
+    ],
+    faqs: [
+      {
+        question: "How much does video ad testing cost?",
+        answer:
+          "Video ad testing can cost anywhere from a few hundred dollars for a small batch to tens of thousands for agency retainers. Prestyj batch pricing starts at $497 for 100 video ads, then scales to $1,497 for 300, $2,497 for 500, and $3,997 for 1,000.",
+      },
+      {
+        question: "What is cost per tested ad angle?",
+        answer:
+          "Cost per tested ad angle is total production cost divided by the number of meaningfully different hooks, buyer problems, proof points, or CTAs the test can evaluate. It is a better metric than cost per asset when the goal is learning.",
+      },
+      {
+        question: "Is batch video ad pricing cheaper than UGC creators?",
+        answer:
+          "On a cost-per-video and cost-per-tested-angle basis, batch production is usually cheaper. UGC creators can still be valuable for authenticity, but one creator deliverable often costs as much as dozens of batch variations.",
+      },
+      {
+        question: "Does video ad testing pricing include media spend?",
+        answer:
+          "Prestyj pricing covers script and creative production, not ad spend or media buying. Your team or agency controls campaign budgets, targeting, launch structure, and reporting.",
+      },
+    ],
+  },
+  {
     slug: "ad-creative-testing-service",
     title: "Ad Creative Testing Service | Paid Social Creative Volume",
     description:

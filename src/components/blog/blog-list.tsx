@@ -21,10 +21,26 @@ type FilterValue = BlogCategory | "All";
 
 type Props = {
   posts: ReadonlyArray<BlogListPost>;
+  initialQuery?: string;
 };
 
-export function BlogList({ posts }: Props): React.ReactElement {
+function postMatchesQuery(post: BlogListPost, query: string): boolean {
+  const normalizedQuery = query.trim().toLowerCase();
+  if (!normalizedQuery) return true;
+
+  const searchableText = [post.title, post.description, post.category, post.url]
+    .join(" ")
+    .toLowerCase();
+
+  return normalizedQuery
+    .split(/\s+/)
+    .filter(Boolean)
+    .every((term) => searchableText.includes(term));
+}
+
+export function BlogList({ posts, initialQuery = "" }: Props): React.ReactElement {
   const [active, setActive] = useState<FilterValue>("All");
+  const [query, setQuery] = useState(initialQuery);
 
   const counts = useMemo(() => {
     const map = new Map<FilterValue, number>();
@@ -35,14 +51,31 @@ export function BlogList({ posts }: Props): React.ReactElement {
   }, [posts]);
 
   const filtered = useMemo(() => {
-    if (active === "All") return posts;
-    return posts.filter((p) => p.category === active);
-  }, [posts, active]);
+    return posts.filter((post) => {
+      const matchesCategory = active === "All" || post.category === active;
+      return matchesCategory && postMatchesQuery(post, query);
+    });
+  }, [posts, active, query]);
 
   const filters: ReadonlyArray<FilterValue> = ["All", ...BLOG_CATEGORIES];
 
   return (
     <>
+      <div className="mb-8">
+        <label htmlFor="blog-search" className="sr-only">
+          Search blog posts
+        </label>
+        <input
+          id="blog-search"
+          type="search"
+          name="q"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+          placeholder="Search by topic, offer, or cost question..."
+          className="border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 mx-auto block w-full max-w-xl rounded-full border px-4 py-3 text-sm outline-none transition-colors focus:ring-4"
+        />
+      </div>
+
       <div
         role="tablist"
         aria-label="Filter posts by category"
@@ -83,7 +116,9 @@ export function BlogList({ posts }: Props): React.ReactElement {
 
       {filtered.length === 0 ? (
         <div className="py-12 text-center">
-          <p className="text-muted-foreground">No posts in this category yet.</p>
+          <p className="text-muted-foreground">
+            No posts match this search and category combination yet.
+          </p>
         </div>
       ) : (
         <div className="grid gap-6">
