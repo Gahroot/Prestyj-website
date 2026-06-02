@@ -4,8 +4,14 @@
  *  - 6 content engine variant landing pages
  *  - All new compare pages not yet present in the canonical IndexNow list
  *
- * Reads INDEXNOW_API_KEY from env (.env.local is loaded via `tsx --env-file`).
+ * Reads INDEXNOW_API_KEY from env (.env.local and .env are auto-loaded below).
  */
+
+import { config as loadEnv } from "dotenv";
+
+// Load .env.local first (overrides), then .env
+loadEnv({ path: ".env.local" });
+loadEnv();
 
 const BASE_URL = "https://prestyj.com";
 

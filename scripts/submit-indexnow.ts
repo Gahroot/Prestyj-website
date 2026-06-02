@@ -12,11 +12,16 @@
 
 import { readdirSync } from "fs";
 import { join } from "path";
+import { config as loadEnv } from "dotenv";
 import { getAllAlternativeSlugs } from "../src/lib/alternatives";
 import { getAllSolutionSlugs } from "../src/lib/solutions";
 import { getAllBestForSlugs } from "../src/lib/best-for";
 import { getAllStatIds } from "../src/lib/statistics";
 import { getAllEmbeddableCalculatorSlugs } from "../src/lib/calculator/embeddable";
+
+// Load .env.local first (overrides), then .env
+loadEnv({ path: ".env.local" });
+loadEnv();
 
 const INDEXNOW_ENDPOINT = "https://yandex.com/indexnow";
 const BASE_URL = "https://prestyj.com";

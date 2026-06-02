@@ -23,10 +23,16 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync } from "fs";
 import { join, dirname } from "path";
 import { load as parseYaml } from "js-yaml";
+import { config as loadEnv } from "dotenv";
 import { getAllAlternativeSlugs } from "../src/lib/alternatives";
 import { getAllSolutionSlugs } from "../src/lib/solutions";
 import { getAllBestForSlugs } from "../src/lib/best-for";
 import { getAllLocationSlugs } from "../src/lib/locations";
+
+// Load .env.local first (overrides), then .env. In CI the key is already in
+// the environment, so these no-op safely.
+loadEnv({ path: ".env.local" });
+loadEnv();
 
 const BASE_URL = "https://prestyj.com";
 const INDEXNOW_ENDPOINT = "https://yandex.com/indexnow";
