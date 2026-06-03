@@ -21,6 +21,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import BlurText from "@/components/ui/blur-text";
+import RotatingText from "@/components/ui/rotating-text";
 import ShinyText from "@/components/ui/shiny-text";
 import CountUp from "@/components/ui/count-up";
 import ClickSpark from "@/components/ui/click-spark";
@@ -374,16 +375,33 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
 
           <h1 className="font-heading text-foreground mb-4 text-2xl font-bold sm:text-3xl md:text-4xl lg:text-5xl">
             <BlurText
-              text="100 video ads. $497."
+              text="We find the ad that"
               delay={60}
               animateBy="words"
               className="justify-center"
             />
+            <RotatingText
+              texts={[
+                "makes the phone ring",
+                "books more jobs",
+                "brings in clients",
+                "grows your business",
+              ]}
+              mainClassName="text-primary justify-center"
+              splitBy="characters"
+              staggerFrom="last"
+              staggerDuration={0.02}
+              rotationInterval={2200}
+              transition={{ type: "spring", damping: 30, stiffness: 350 }}
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-120%", opacity: 0 }}
+            />
             <BlurText
-              text="Delivered in 24 hours."
+              text="by testing hundreds of them."
               delay={60}
               animateBy="words"
-              className="text-primary justify-center"
+              className="justify-center"
             />
           </h1>
 
