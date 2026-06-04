@@ -6,6 +6,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { blogSource } from "@/lib/source";
 import { categorizeSlug } from "@/lib/blog/categories";
+import { resolveAuthor } from "@/lib/blog/authors";
 import { resolveBlogImage } from "@/lib/blog/images";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
@@ -43,12 +44,13 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const postUrl = `${siteUrl}/blog/${slug}`;
   const category = categorizeSlug(slug);
   const ogImage = resolveBlogImage(image, category);
+  const resolvedAuthor = resolveAuthor(author, category);
 
   return {
     title: title,
     description,
     keywords: keywords?.length ? keywords : undefined,
-    authors: author ? [{ name: author }] : undefined,
+    authors: [{ name: resolvedAuthor.name, url: `${siteUrl}/about#${resolvedAuthor.slug}` }],
     openGraph: {
       type: "article",
       locale: "en_US",
@@ -57,7 +59,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       description,
       siteName: "Prestyj",
       publishedTime: date,
-      authors: author ? [author] : undefined,
+      authors: [resolvedAuthor.name],
       images: [
         {
           url: ogImage,
@@ -106,6 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const postUrl = `${siteUrl}/blog/${slug}`;
   const category = categorizeSlug(slug);
   const resolvedImage = resolveBlogImage(image, category);
+  const resolvedAuthor = resolveAuthor(author, category);
 
   // Get raw MDX content for word count, FAQ extraction, and step extraction
   const mdxPath = join(process.cwd(), "content/blog", `${slug}.mdx`);
@@ -192,9 +195,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     description,
     image: resolvedImage.startsWith("/") ? `${siteUrl}${resolvedImage}` : resolvedImage,
     author: {
-      "@type": "Organization",
-      name: author || "Prestyj Team",
-      url: siteUrl,
+      "@type": "Person",
+      name: resolvedAuthor.name,
+      url: `${siteUrl}/about#${resolvedAuthor.slug}`,
+      jobTitle: resolvedAuthor.jobTitle,
+      description: resolvedAuthor.bio,
+      knowsAbout: [...resolvedAuthor.expertise],
+      worksFor: {
+        "@type": "Organization",
+        name: "Prestyj",
+        url: siteUrl,
+      },
     },
     publisher: {
       "@type": "Organization",
@@ -271,6 +282,28 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {title}
             </h1>
             {description && <p className="text-muted-foreground text-xl">{description}</p>}
+            <div className="border-border mt-6 flex items-center gap-3 border-t pt-6">
+              <span
+                aria-hidden="true"
+                className="bg-primary/15 text-primary flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-bold"
+              >
+                {resolvedAuthor.name
+                  .split(" ")
+                  .map((part) => part[0])
+                  .join("")}
+              </span>
+              <div className="text-sm">
+                <span className="text-muted-foreground">By </span>
+                <Link
+                  href={`/about#${resolvedAuthor.slug}`}
+                  className="text-foreground font-semibold hover:underline"
+                  rel="author"
+                >
+                  {resolvedAuthor.name}
+                </Link>
+                <span className="text-muted-foreground block">{resolvedAuthor.jobTitle}</span>
+              </div>
+            </div>
             <figure className="mt-8">
               <Image
                 src={resolvedImage}
