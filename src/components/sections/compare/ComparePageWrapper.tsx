@@ -7,12 +7,16 @@ import { ComparePricing } from "./ComparePricing";
 import { CompareFeatureTable } from "./CompareFeatureTable";
 import { CompareWhySwitch } from "./CompareWhySwitch";
 import { CompareRelatedResources } from "./CompareRelatedResources";
+import { CompareReviews } from "./CompareReviews";
 import { CompareCTA } from "./CompareCTA";
 import { CostCalculator } from "./special/CostCalculator";
 import { SecurityWarning } from "./special/SecurityWarning";
 import { TCPAWarning } from "./special/TCPAWarning";
+import { CLIENT_TESTIMONIALS } from "@/lib/testimonials";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { resolveProprietaryData } from "@/lib/proprietary-data";
+import { ProprietaryDataSection } from "@/components/sections/proprietary-data-section";
 
 interface ComparePageWrapperProps {
   data: ComparePageData;
@@ -33,6 +37,8 @@ export function ComparePageWrapper({ data }: ComparePageWrapperProps) {
     cta,
     specialSections = [],
   } = data;
+
+  const proprietaryData = resolveProprietaryData(data.proprietaryData);
 
   const pageUrl = `${SITE_URL}/compare/${slug}`;
 
@@ -59,6 +65,20 @@ export function ComparePageWrapper({ data }: ComparePageWrapperProps) {
       availability: "https://schema.org/InStock",
       seller: { "@type": "Organization", name: "Prestyj" },
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "5",
+      bestRating: "5",
+      worstRating: "1",
+      reviewCount: CLIENT_TESTIMONIALS.length,
+    },
+    review: CLIENT_TESTIMONIALS.map((t) => ({
+      "@type": "Review",
+      reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+      author: { "@type": "Person", name: t.author },
+      reviewBody: t.full,
+      ...(t.href ? { url: t.href } : {}),
+    })),
   };
 
   // FAQPage schema derived from hero key stats and feature comparisons
@@ -117,6 +137,10 @@ export function ComparePageWrapper({ data }: ComparePageWrapperProps) {
 
         <CompareWhySwitch data={whySwitch} />
         {renderSpecialSections("after-why-switch")}
+
+        {proprietaryData && <ProprietaryDataSection block={proprietaryData} surface="muted" />}
+
+        <CompareReviews competitorName={competitorName} />
 
         {relatedResources && relatedResources.length > 0 && (
           <CompareRelatedResources resources={relatedResources} />

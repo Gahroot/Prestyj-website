@@ -31,6 +31,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import type { BestForPageContent } from "@/lib/best-for";
+import { resolveProprietaryData } from "@/lib/proprietary-data";
+import { ProprietaryDataSection } from "@/components/sections/proprietary-data-section";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Clock,
@@ -84,6 +86,7 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
     : `Common questions about using Prestyj for ${nicheLabel}`;
   const ctaHref = isBatchCreativePage ? "/batch-video-ads#pricing" : bestFor.cta.buttonHref;
   const ctaButtonText = isBatchCreativePage ? "See Batch Pricing" : bestFor.cta.buttonText;
+  const proprietaryData = resolveProprietaryData(bestFor.proprietaryData);
 
   return (
     <>
@@ -325,6 +328,9 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
           </motion.div>
         </div>
       </section>
+
+      {/* Proprietary Data Section */}
+      {proprietaryData && <ProprietaryDataSection block={proprietaryData} />}
 
       {/* FAQ Section */}
       <section className="bg-muted/30 py-20">

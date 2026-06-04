@@ -16,12 +16,16 @@ const csvUrl = `${siteConfig.url}/data/statistics.csv`;
 const jsonUrl = `${siteConfig.url}/data/statistics.json`;
 const datasetVersion = new Date().toISOString().slice(0, 10);
 const datasetIdentifier = "urn:prestyj:dataset:statistics:2026";
-const datasetSameAsUrls = [
-  `${siteConfig.url}/statistics`,
-  "https://github.com/Gahroot/prestyj-statistics-dataset",
-  "https://gahroot.github.io/prestyj-statistics-citation-pages/",
-  "https://github.com/Gahroot/prestyj-statistics-dataset/releases/tag/dataset-v2026-05-26",
-];
+// `sameAs` should point at INDEPENDENT third-party copies of the dataset, not
+// at more self-owned GitHub mirrors (those add crawl footprint, not authority).
+// As each reputable dataset directory goes live, add its canonical URL / DOI
+// here — e.g. the Zenodo / Figshare / Harvard Dataverse DOI links. Until then we
+// only assert the first-party web-browse surface.
+//
+// Workflow: npm run dataset:bundles → submit (see
+// docs/oss-dataset/distributions/SUBMISSION-CHECKLIST.md) → npm run dataset:pitch
+// → paste the resulting DOI URLs below.
+const datasetSameAsUrls: string[] = [`${siteConfig.url}/statistics`];
 
 export const metadata: Metadata = {
   title: `Open Dataset: ${totalStatCount}+ Lead Response, Batch Video Ad & AI Sales Statistics (CC BY 4.0)`,
@@ -53,7 +57,11 @@ export const metadata: Metadata = {
 
 export default function DatasetLandingPage() {
   const sourceUrls = Array.from(
-    new Set(getAllFlatStatistics().map((stat) => stat.source.url).filter((url) => url !== undefined)),
+    new Set(
+      getAllFlatStatistics()
+        .map((stat) => stat.source.url)
+        .filter((url) => url !== undefined),
+    ),
   ).slice(0, 50);
 
   const breadcrumbs = [

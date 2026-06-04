@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { AlternativePageContent } from "@/lib/alternatives";
 import { getIconSafe } from "@/lib/content-factory/constants/icons";
+import { resolveProprietaryData } from "@/lib/proprietary-data";
+import { ProprietaryDataSection } from "@/components/sections/proprietary-data-section";
 
 interface AlternativePageClientProps {
   alternative: AlternativePageContent;
@@ -15,6 +17,7 @@ interface AlternativePageClientProps {
 
 export function AlternativePageClient({ alternative }: AlternativePageClientProps) {
   const isIntegration = alternative.type === "integration-partner";
+  const proprietaryData = resolveProprietaryData(alternative.proprietaryData);
 
   return (
     <>
@@ -337,6 +340,9 @@ export function AlternativePageClient({ alternative }: AlternativePageClientProp
           </div>
         </div>
       </section>
+
+      {/* Proprietary Data Section */}
+      {proprietaryData && <ProprietaryDataSection block={proprietaryData} surface="muted" />}
 
       {/* When Each Fits */}
       <section className="py-20">
