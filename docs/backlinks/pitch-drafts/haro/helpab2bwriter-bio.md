@@ -5,7 +5,7 @@ name: "Help A B2B Writer"
 target_url: https://helpab2bwriter.com
 channel: directory-form
 status: drafted
-generated_at: 2026-05-22T19:27:13.765Z
+generated_at: 2026-06-04T16:37:02.897Z
 ai_personalized: false
 ---
 ## Founder bio (paste into Help A B2B Writer expert profile)

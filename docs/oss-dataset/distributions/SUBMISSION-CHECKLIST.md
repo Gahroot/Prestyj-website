@@ -1,43 +1,55 @@
-# Open-Data Redistribution: Submission Checklist
+# Third-Party Dataset Directory: Submission Checklist
 
-The agent generated platform-specific bundles. Each row below is **one** upload
-that produces one permanent backlink (each backlinks `https://prestyj.com` from a
-high-DR platform). Total potential: 7+ DR-90+ links across academic, ML, and
-data-discovery destinations.
+> **Policy:** these are REAL, independently-operated dataset repositories — not
+> self-owned GitHub mirrors. Each one independently hosts and curates the
+> dataset, and the academic ones mint a permanent DOI that resolves back to the
+> canonical home (<https://prestyj.com/data>). Submitting here earns an independent
+> referring domain + a citable DOI, which is exactly what the link policy wants.
+> Self-owned GitHub/Pages/npm mirrors stay halted (see scripts/backlinks/halt.ts).
 
-| # | Destination | Files to upload | URL to submit | Notes |
-| - | --- | --- | --- | --- |
-| 1 | **Hugging Face Datasets** | `docs/oss-dataset/distributions/huggingface/` — push as a new dataset repo at `huggingface.co/datasets/<user>/prestyj-statistics` | https://huggingface.co/new-dataset | Requires HF account + `huggingface_hub` CLI: `huggingface-cli login` then `huggingface-cli upload <repo> .`. DR≈90. |
-| 2 | **Kaggle Datasets** | `docs/oss-dataset/distributions/kaggle/` — `kaggle datasets create -p docs/oss-dataset/distributions/kaggle` | https://www.kaggle.com/datasets | Needs Kaggle account + API token (download from kaggle.com/<user>/account → "Create New Token"). `dataset-metadata.json` is already configured. DR≈92. |
-| 3 | **data.world** | `docs/oss-dataset/distributions/dataworld/` — upload via UI (no public CLI for free tier) | https://data.world/new | Needs free account. Make dataset PUBLIC, paste from `dataset.yml`, upload both CSV + JSON. DR≈84. |
-| 4 | **Zenodo** | `docs/oss-dataset/distributions/zenodo/` — upload via UI; paste from `zenodo.json` | https://zenodo.org/uploads/new | Awards a permanent DOI — best academic-citation primitive. Free, requires ORCID or email account. DR≈92. |
-| 5 | **Figshare** | `docs/oss-dataset/distributions/figshare/` — upload via UI; paste from `metadata.json` | https://figshare.com/account/projects | Free account; produces a permanent DOI like Zenodo. DR≈92. |
-| 6 | **OpenML** | `docs/oss-dataset/distributions/openml/` — upload via UI or `openml-python` package | https://www.openml.org/new-data | Less polished UI; CSV gets cleanly absorbed. DR≈80. |
-| 7 | **GitHub generic mirror** | `docs/oss-dataset/distributions/github-generic/` — `git init && gh repo create` for any other GitHub org | https://github.com/new | Already done at `Gahroot/prestyj-statistics-dataset` — but a duplicate at a more authoritative-sounding name (`prestyj/statistics` if you create the org) would help. DR≈95. |
+The agent generated platform-specific bundles below from the current
+102-row dataset. Each row is **one** submission. Prioritize the
+DOI-minting academic repositories first — a DOI is the strongest citation
+primitive and is picked up by Google Dataset Search + DataCite.
 
-## Once uploaded
+| # | Destination | DOI? | Files to upload | Where to submit | Notes |
+| - | --- | --- | --- | --- | --- |
+| 1 | **Zenodo** (CERN) | ✅ | `docs/oss-dataset/distributions/zenodo/` — paste from `zenodo.json` | https://zenodo.org/uploads/new | Free, ORCID/email account. Best academic-citation primitive. |
+| 2 | **Figshare** (Digital Science) | ✅ | `docs/oss-dataset/distributions/figshare/` — paste from `metadata.json` | https://figshare.com/account/projects | Free account; permanent DOI like Zenodo. |
+| 3 | **Harvard Dataverse** | ✅ | `docs/oss-dataset/distributions/dataverse/` — paste from `dataset.json` or use native API | https://dataverse.harvard.edu | Recognized research-data repository; great for academic citation. |
+| 4 | **Mendeley Data** (Elsevier) | ✅ | `docs/oss-dataset/distributions/mendeley/` — paste from `metadata.json` | https://data.mendeley.com | DataCite-indexed; appears in Google Dataset Search. |
+| 5 | **Hugging Face Datasets** | — | `docs/oss-dataset/distributions/huggingface/` — push as a new dataset repo | https://huggingface.co/new-dataset | ML community discovery. `huggingface-cli login` then `huggingface-cli upload <repo> .`. |
+| 6 | **Kaggle Datasets** | — | `docs/oss-dataset/distributions/kaggle/` — `kaggle datasets create -p docs/oss-dataset/distributions/kaggle` | https://www.kaggle.com/datasets | Data-science discovery. Needs Kaggle account + API token. `dataset-metadata.json` is pre-configured. |
+| 7 | **data.world** | — | `docs/oss-dataset/distributions/dataworld/` — upload via UI | https://data.world/new | Open-data community. Make dataset PUBLIC, paste from `dataset.yml`. |
+| 8 | **OpenML** | — | `docs/oss-dataset/distributions/openml/` — upload via UI or `openml-python` | https://www.openml.org/new-data | ML benchmark catalog; CSV gets cleanly absorbed. |
 
-For each successful upload, append a row to `data/backlinks/inventory.json`:
+## Once published
+
+For each successful submission, append a row to `data/backlinks/inventory.json`
+(bucket **`dataset-directory`**, not the old `redistribution`):
 
 ```json
 {
   "id": "zenodo-<doi>",
-  "bucket": "redistribution",
-  "target_url": "https://zenodo.org/record/<id>",
+  "bucket": "dataset-directory",
+  "target_url": "https://zenodo.org/records/<id>",
   "status": "live",
-  "live_url": "https://zenodo.org/record/<id>",
-  "first_seen": "<YYYY-MM-DD>"
+  "live_url": "https://doi.org/<doi>",
+  "first_seen": "<YYYY-MM-DD>",
+  "notes": "Third-party repository copy of /data. DOI resolves to canonical landing. Not a self-owned mirror."
 }
 ```
 
-Then re-run `npm run backlinks:verify` to update the gap report.
+Then re-run `npm run backlinks:verify` to update the gap report and
+`npm run dataset:pitch` to refresh the researcher/journalist outreach drafts.
 
 ## Bundle integrity
 
 Regenerate any time with:
 
 ```bash
-npx tsx scripts/backlinks/generate-redistribution-bundles.ts
+npm run dataset:bundles
+# or: npx tsx scripts/backlinks/generate-dataset-directory-bundles.ts
 ```
 
 Reads from `src/lib/statistics-data.ts` so the bundles always reflect the

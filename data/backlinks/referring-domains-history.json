@@ -1,0 +1,22 @@
+{
+  "_comment": "Source of truth for EARNED referring-domain authority over time. Committed to git (unlike the gitignored CSV exports) so the trend survives. Append one snapshot per export via `npm run backlinks:track`. 'Earned' = a referring domain we did NOT create ourselves: it is neither an owned property nor a self-made placement recorded in inventory.json.",
+  "owned_domains": [
+    "prestyj.com",
+    "github.com",
+    "gist.github.com",
+    "gahroot.github.io",
+    "wikidata.org",
+    "npmjs.com"
+  ],
+  "snapshots": [
+    {
+      "date": "2026-06-04",
+      "source": "bing-webmaster-tools",
+      "all_referring_count": 3,
+      "self_made_count": 0,
+      "earned_count": 3,
+      "earned_domains": ["linkedin.com", "oppy.pro", "thelazyagent.com"],
+      "note": "Baseline. Search engines see only 3 real referring domains. The 105 'live' self-made placements in inventory.json (directories, GitHub, gists, Wikidata) are NOT yet indexed as referring domains and NEVER count as wins. POLICY 2026-06-04: self-made backlink creation is HALTED (more self-owned mirrors = SpamBrain link-scheme risk, not authority). Goal: 5-15 NEW real, independent referring domains per month, tracked here as earned_count growth."
+    }
+  ]
+}

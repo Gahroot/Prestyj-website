@@ -6,23 +6,38 @@ target_url: https://www.rismedia.com
 channel: email
 status: drafted
 generated_at: 2026-05-22T19:27:19.957Z
+last_revised: 2026-06-04
+revision: data-story
 ai_personalized: true
+angle: >
+  Re-pitch as a ready-to-run data resource for RISMedia's content team.
+  Lead with a clean "by the numbers" block they can build a piece around,
+  emphasize that it's pre-sourced and quotable. No product mention.
 ---
-**Subject:** A new dataset for RISMedia: lead response times in real estate
 
-RISMedia, I'm sharing a dataset we just made public that could be useful for your reporting.
+**Subject:** Original, sourced data for a "real estate lead response, by the numbers" piece
 
-At Prestyj, we've been tracking lead response times across industries, and the numbers are stark:
+Hi {{first name}},
 
-*   77% of inbound leads never get any response at all (InsideSales, 2025 re-analysis)
-*   Only 0.1% of inbound leads are engaged within 5 minutes
-*   Companies that respond in 5 minutes are 21× more likely to qualify the lead than those that wait 30 (HBR, re-cited 2024–2026)
-*   Average B2B response time is 42 hours
-*   Average Google Ads CPL is $70.11 across all industries; legal services pay $131.63 (WordStream/LocaliQ analysis of 16k+ campaigns)
+I follow RISMedia's data-driven coverage, so I'll keep this to the data — no product angle.
 
-This data, including per-vertical slices, is available for research at https://prestyj.com/data. It's CC BY 4.0, CSV + JSON, schema.org/Dataset, with every row sourced and dated. You can quote directly from it without re-verification.
+We maintain an open statistics dataset on lead response and conversion, and I think the real-estate-relevant numbers add up to a clean "by the numbers" piece for your content team:
 
-Let me know if this is something your content team could use.
+- **77%** of inbound leads never receive any response at all (InsideSales).
+- **0.1%** of inbound leads are engaged within 5 minutes.
+- **42 hours** — the average B2B lead response time, vs. the 5-minute window that maximizes conversions.
+- **21×** more likely to qualify a lead with a 5-minute reply than a 30-minute one (Harvard Business Review).
+- **$70.11** average Google Ads cost-per-lead in 2025, up 5.13% YoY (WordStream/LocaliQ, 16,000+ campaigns) — so the leads being ignored aren't cheap.
+
+The narrative those numbers support: response speed, not lead volume, is the under-managed lever in real estate sales — and it's measurable, so it makes a strong evergreen reference piece.
+
+Why it's low-effort for your team:
+
+- Every row carries its original publisher, year, and a stable permalink — quotable without a re-verification round.
+- Per-vertical slices (including real estate) are available on request.
+- Licensed CC BY 4.0, CSV + JSON, schema.org/Dataset: https://prestyj.com/data
+
+If you'd like, I'll send the real-estate cut and a suggested chart breakdown so it's close to drop-in.
 
 Thanks,
 Nolan Grout — Prestyj (https://prestyj.com)

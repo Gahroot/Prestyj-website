@@ -210,16 +210,39 @@ existence, not encyclopedic notability. Suggested claims:
 | `Facebook profile ID (P2013)` | `61582824703610`                                                                  |
 | `inception (P571)`            | founding date (year only)                                                         |
 
-Once the Wikidata Q-ID exists, add it to `src/components/seo/json-ld.tsx`
-`sameAs` array on the `OrganizationJsonLd` component — that's how AI engines
-and Google verify entity identity. Suggested edit:
+The Wikidata item is **live: [Q139892537](https://www.wikidata.org/wiki/Q139892537)**
+and is already in the canonical `sameAs` array in `src/lib/site-config.ts` (consumed
+by `OrganizationJsonLd` in `src/components/seo/json-ld.tsx`) — that's how AI engines
+and Google verify entity identity. The single source of truth is:
 
 ```ts
+// src/lib/site-config.ts
 sameAs: [
   "https://www.instagram.com/prestyj_/",
   "https://www.linkedin.com/company/prestyj/",
   "https://www.facebook.com/profile.php?id=61582824703610",
   "https://x.com/prestyj_",
-  "https://www.wikidata.org/wiki/Q{{Q_ID_HERE}}",
+  "https://www.wikidata.org/wiki/Q139892537",
 ],
 ```
+
+All JSON-LD that emits an Organization `sameAs` (json-ld.tsx, batch-video-ads,
+data, statistics) reads from this array — never hardcode the list per page.
+
+### Entity-graph validation (last checked 2026-06-04)
+
+The Wikidata claims round-trip against `siteConfig` — each external profile is
+cross-referenced and self-consistent:
+
+| Wikidata claim                | Value on Q139892537            | Matches site-config |
+| ----------------------------- | ------------------------------ | ------------------- |
+| `official website (P856)`     | `https://prestyj.com`          | ✅ `url`            |
+| `LinkedIn slug (P4264)`       | `prestyj`                      | ✅                  |
+| `X username (P2002)`          | `prestyj_`                     | ✅                  |
+| `Instagram username (P2003)`  | `prestyj_`                     | ✅                  |
+| `Facebook profile ID (P2013)` | `61582824703610`               | ✅                  |
+| label / alias                 | `Prestyj` / `prestyj.com`      | ✅ `name`           |
+
+Re-run this check whenever a profile URL changes or a new earned mention lands:
+fetch `https://www.wikidata.org/wiki/Special:EntityData/Q139892537.json` and
+confirm every claim still resolves to a live profile in `siteConfig.sameAs`.

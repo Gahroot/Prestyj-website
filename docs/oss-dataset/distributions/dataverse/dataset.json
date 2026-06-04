@@ -1,0 +1,144 @@
+{
+  "datasetVersion": {
+    "license": {
+      "name": "CC BY 4.0",
+      "uri": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    "metadataBlocks": {
+      "citation": {
+        "displayName": "Citation Metadata",
+        "fields": [
+          {
+            "typeName": "title",
+            "multiple": false,
+            "typeClass": "primitive",
+            "value": "Prestyj Lead Response, Video Advertising & AI Sales Statistics Dataset"
+          },
+          {
+            "typeName": "author",
+            "multiple": true,
+            "typeClass": "compound",
+            "value": [
+              {
+                "authorName": {
+                  "typeName": "authorName",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "Prestyj"
+                },
+                "authorAffiliation": {
+                  "typeName": "authorAffiliation",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "Prestyj"
+                }
+              }
+            ]
+          },
+          {
+            "typeName": "dsDescription",
+            "multiple": true,
+            "typeClass": "compound",
+            "value": [
+              {
+                "dsDescriptionValue": {
+                  "typeName": "dsDescriptionValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "A curated CC BY 4.0 dataset of cite-worthy statistics covering speed-to-lead, video advertising performance, AI adoption in sales, lead conversion rates, and cost-per-lead benchmarks by industry. Each row carries its primary publisher (Harvard Business Review, InsideSales, Wyzowl, HubSpot, WordStream, McKinsey, Gartner, Salesforce, etc.) and year of publication, plus a stable permalink at https://prestyj.com/stat/<id>. \n\nCanonical source: https://prestyj.com/data"
+                }
+              }
+            ]
+          },
+          {
+            "typeName": "keyword",
+            "multiple": true,
+            "typeClass": "compound",
+            "value": [
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "lead response time"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "speed to lead"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "video advertising"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "AI in sales"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "cost per lead"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "marketing benchmarks"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "sales operations"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "home services marketing"
+                }
+              },
+              {
+                "keywordValue": {
+                  "typeName": "keywordValue",
+                  "multiple": false,
+                  "typeClass": "primitive",
+                  "value": "real estate lead response"
+                }
+              }
+            ]
+          },
+          {
+            "typeName": "subject",
+            "multiple": true,
+            "typeClass": "controlledVocabulary",
+            "value": [
+              "Business and Management"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

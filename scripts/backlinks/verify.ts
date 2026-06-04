@@ -8,7 +8,7 @@
  *   ≥1000 unique referring domains
  *   ≥50% with DR≥30 (best-effort with available data)
  *   ≥20 awesome-list, ≥3 wiki, ≥30 press, ≥50 directory,
- *   ≥100 embed, ≥200 redistribution
+ *   ≥100 embed, ≥8 third-party dataset-directory placements
  *
  * Otherwise exits 1 and prints a precise gap report.
  */
@@ -29,9 +29,18 @@ interface InventoryItem {
     | "awesome-list"
     | "wikipedia"
     | "press"
+    | "journalist"
+    | "researcher"
     | "embed"
     | "directory"
-    | "redistribution"
+    | "dataset-directory"
+    // self-owned GitHub/Pages/npm mirrors — counted as footprint, never a win
+    | "self-owned-mirror"
+    | "github-gist"
+    | "github-release-open-data"
+    | "github-release-package"
+    | "npm-package"
+    | "resource-page"
     | "other";
   target_url: string;
   status: "drafted" | "sent" | "live" | "rejected";
@@ -50,7 +59,10 @@ const TARGETS = {
   press: 30,
   directory: 50,
   embed: 100,
-  redistribution: 200,
+  // Third-party dataset directories are EARNED placements (Zenodo, Figshare,
+  // Harvard Dataverse, Mendeley, Hugging Face, Kaggle, data.world, OpenML) —
+  // not self-owned mirrors. The prepared bundle covers 8 destinations.
+  datasetDirectory: 8,
 } as const;
 
 function loadSnapshot(): SnapshotRow[] {
@@ -119,7 +131,10 @@ function main(): void {
     press: countLive(inv, "press"),
     directory: countLive(inv, "directory"),
     embed: countLive(inv, "embed"),
-    redistribution: countLive(inv, "redistribution"),
+    // Only REAL third-party repositories count here. Self-owned GitHub mirrors
+    // were reclassified to bucket "self-owned-mirror" and are deliberately
+    // excluded — they are footprint, not a win.
+    datasetDirectory: countLive(inv, "dataset-directory"),
   };
 
   const checks: Array<{ label: string; have: number; want: number; ok: boolean }> = [
@@ -135,12 +150,42 @@ function main(): void {
       want: TARGETS.dr30_pct,
       ok: dr.withDrData > 0 ? dr.pctOfKnown >= TARGETS.dr30_pct : false,
     },
-    { label: "Awesome-list merges (live)", have: counts.awesomeList, want: TARGETS.awesomeList, ok: counts.awesomeList >= TARGETS.awesomeList },
-    { label: "Wiki citations (live)", have: counts.wikipedia, want: TARGETS.wikipedia, ok: counts.wikipedia >= TARGETS.wikipedia },
-    { label: "Press / journalist (live)", have: counts.press, want: TARGETS.press, ok: counts.press >= TARGETS.press },
-    { label: "Directories (live)", have: counts.directory, want: TARGETS.directory, ok: counts.directory >= TARGETS.directory },
-    { label: "Embed installations (live)", have: counts.embed, want: TARGETS.embed, ok: counts.embed >= TARGETS.embed },
-    { label: "Open-data redistribution (live)", have: counts.redistribution, want: TARGETS.redistribution, ok: counts.redistribution >= TARGETS.redistribution },
+    {
+      label: "Awesome-list merges (live)",
+      have: counts.awesomeList,
+      want: TARGETS.awesomeList,
+      ok: counts.awesomeList >= TARGETS.awesomeList,
+    },
+    {
+      label: "Wiki citations (live)",
+      have: counts.wikipedia,
+      want: TARGETS.wikipedia,
+      ok: counts.wikipedia >= TARGETS.wikipedia,
+    },
+    {
+      label: "Press / journalist (live)",
+      have: counts.press,
+      want: TARGETS.press,
+      ok: counts.press >= TARGETS.press,
+    },
+    {
+      label: "Directories (live)",
+      have: counts.directory,
+      want: TARGETS.directory,
+      ok: counts.directory >= TARGETS.directory,
+    },
+    {
+      label: "Embed installations (live)",
+      have: counts.embed,
+      want: TARGETS.embed,
+      ok: counts.embed >= TARGETS.embed,
+    },
+    {
+      label: "Third-party dataset directories (live)",
+      have: counts.datasetDirectory,
+      want: TARGETS.datasetDirectory,
+      ok: counts.datasetDirectory >= TARGETS.datasetDirectory,
+    },
   ];
 
   console.log(`\n${"━".repeat(64)}`);
@@ -160,9 +205,7 @@ function main(): void {
   }
 
   const gap = TARGETS.total - rows.length;
-  console.log(
-    `❌ ${gap > 0 ? gap : 0} referring domain(s) short of the 1000-domain target.`,
-  );
+  console.log(`❌ ${gap > 0 ? gap : 0} referring domain(s) short of the 1000-domain target.`);
   console.log(
     `   Next: re-export from Bing Webmaster Tools → data/backlinks/bing-export-YYYY-MM-DD.csv`,
   );

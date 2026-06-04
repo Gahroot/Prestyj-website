@@ -83,20 +83,23 @@ Rules applied: free/key-free only; no submissions made; live count requires veri
 | 48 | https://gist.github.com/Gahroot/lead-response-calculator | https://prestyj.com/data | can-do-now | docs/backlinks/opportunities.md Tier 8 + existing gh auth | yes |
 | 49 | https://gist.github.com/Gahroot/andromeda-video-creative-volume | https://prestyj.com/data | can-do-now | docs/backlinks/opportunities.md Tier 8 + existing gh auth | yes |
 
-## open-data redistribution (10)
+## third-party dataset directories (8)
 
-| # | target_url | expected link URL | automation feasibility | evidence source | count live only after verifier confirms link |
+> Reputable, independently-operated repositories — NOT self-owned mirrors. Each
+> hosts/curates the copy itself; the academic ones mint a permanent DOI that
+> resolves back to https://prestyj.com/data. Generate bundles with
+> `npm run dataset:bundles`; outreach drafts with `npm run dataset:pitch`.
+
+| # | target_url | expected link URL | automation feasibility | evidence source | DOI |
 |---:|---|---|---|---|---|
-| 1 | https://huggingface.co/new-dataset | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 2 | https://www.kaggle.com/datasets | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 3 | https://data.world/new | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 4 | https://zenodo.org/uploads/new | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 5 | https://figshare.com/account/projects | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 6 | https://www.openml.org/new/data | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 7 | https://github.com/Gahroot/prestyj-statistics-dataset/releases | https://prestyj.com/data | can-do-now | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 8 | https://archive.org/create/ | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 9 | https://osf.io/ | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
-| 10 | https://data.mendeley.com/datasets | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-redistribution-bundles.ts + docs/oss-dataset/distributions | yes |
+| 1 | https://zenodo.org/uploads/new | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/zenodo | yes |
+| 2 | https://figshare.com/account/projects | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/figshare | yes |
+| 3 | https://dataverse.harvard.edu | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/dataverse | yes |
+| 4 | https://data.mendeley.com | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/mendeley | yes |
+| 5 | https://huggingface.co/new-dataset | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/huggingface | no |
+| 6 | https://www.kaggle.com/datasets | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/kaggle | no |
+| 7 | https://data.world/new | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/dataworld | no |
+| 8 | https://www.openml.org/new-data | https://prestyj.com/data | needs-human-login | scripts/backlinks/generate-dataset-directory-bundles.ts + docs/oss-dataset/distributions/openml | no |
 
 ## npm/MCP/package registries if key-free (8)
 

@@ -2,7 +2,7 @@
   "description": "Curated dataset of 58+ cite-worthy statistics on speed-to-lead, video advertising, AI adoption in sales, lead conversion, and cost-per-lead by industry. Sourced 2024–2026, each row carries its primary publisher.",
   "license": "cc-by-4.0",
   "homepage": "https://prestyj.com/data",
-  "version": "2026-05-29",
+  "version": "2026-06-04",
   "features": {
     "id": "string",
     "category": "string",

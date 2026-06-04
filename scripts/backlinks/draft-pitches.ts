@@ -22,18 +22,22 @@
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { config as loadEnv } from "dotenv";
+import { isSelfMadeBucket, selfMadeBacklinksAllowed } from "./halt";
 
 loadEnv({ path: ".env.local" });
 loadEnv();
 
 interface Target {
+  // Editorial / earned outreach buckets only. Reputable third-party dataset
+  // directories (Zenodo, Figshare, Hugging Face, Kaggle, …) are pitched by the
+  // dedicated scripts/backlinks/pitch-dataset.ts instead of here, and self-owned
+  // GitHub/Pages/npm mirrors stay halted (see halt.ts).
   bucket:
     | "awesome-list"
     | "wikipedia"
     | "press"
     | "directory"
     | "podcast"
-    | "redistribution"
     | "haro"
     | "resource-page";
   slug: string;
@@ -55,7 +59,8 @@ const TARGETS: Target[] = [
     slug: "featured-com-bio",
     name: "Featured.com",
     url: "https://featured.com",
-    context: "Founder expert bio template for answering journalist queries on AI in sales, home services marketing, real estate lead response, ad creative testing.",
+    context:
+      "Founder expert bio template for answering journalist queries on AI in sales, home services marketing, real estate lead response, ad creative testing.",
     channel: "directory-form",
   },
   {
@@ -63,7 +68,8 @@ const TARGETS: Target[] = [
     slug: "qwoted-bio",
     name: "Qwoted",
     url: "https://www.qwoted.com",
-    context: "Founder expert bio for Qwoted (serves Forbes, Inc., Entrepreneur sourcing). Same areas of expertise.",
+    context:
+      "Founder expert bio for Qwoted (serves Forbes, Inc., Entrepreneur sourcing). Same areas of expertise.",
     channel: "directory-form",
   },
   {
@@ -71,7 +77,8 @@ const TARGETS: Target[] = [
     slug: "helpab2bwriter-bio",
     name: "Help A B2B Writer",
     url: "https://helpab2bwriter.com",
-    context: "Founder expert bio for the B2B writer query platform. Focus areas: AI agents for SMB, marketing automation, lead conversion benchmarks.",
+    context:
+      "Founder expert bio for the B2B writer query platform. Focus areas: AI agents for SMB, marketing automation, lead conversion benchmarks.",
     channel: "directory-form",
   },
 
@@ -99,7 +106,8 @@ const TARGETS: Target[] = [
     slug: "rismedia",
     name: "RISMedia",
     url: "https://www.rismedia.com",
-    context: "Real estate news/research site. Pitch the open dataset as a research resource for their content team.",
+    context:
+      "Real estate news/research site. Pitch the open dataset as a research resource for their content team.",
     channel: "email",
   },
 
@@ -109,7 +117,8 @@ const TARGETS: Target[] = [
     slug: "achrnews",
     name: "ACHR News (HVAC industry)",
     url: "https://www.achrnews.com",
-    context: "HVAC industry trade publication. Pitch HVAC-specific lead response + AI receptionist ROI data.",
+    context:
+      "HVAC industry trade publication. Pitch HVAC-specific lead response + AI receptionist ROI data.",
     channel: "email",
   },
   {
@@ -117,7 +126,8 @@ const TARGETS: Target[] = [
     slug: "roofing-contractor",
     name: "Roofing Contractor magazine",
     url: "https://www.roofingcontractor.com",
-    context: "Roofing industry trade publication. Pitch storm-response speed-to-lead data + roofer-specific AI adoption stats.",
+    context:
+      "Roofing industry trade publication. Pitch storm-response speed-to-lead data + roofer-specific AI adoption stats.",
     channel: "email",
   },
   {
@@ -125,7 +135,8 @@ const TARGETS: Target[] = [
     slug: "plumbing-mechanical",
     name: "Plumbing & Mechanical (pmmag.com)",
     url: "https://www.pmmag.com",
-    context: "Plumbing trade pub. Pitch plumbing-specific CPL data + AI receptionist ROI for plumbers.",
+    context:
+      "Plumbing trade pub. Pitch plumbing-specific CPL data + AI receptionist ROI for plumbers.",
     channel: "email",
   },
   {
@@ -133,7 +144,8 @@ const TARGETS: Target[] = [
     slug: "contractor-mag",
     name: "Contractor Magazine",
     url: "https://www.contractormag.com",
-    context: "General contractor industry pub covering HVAC, plumbing, electrical. Pitch the cross-vertical lead-response benchmark.",
+    context:
+      "General contractor industry pub covering HVAC, plumbing, electrical. Pitch the cross-vertical lead-response benchmark.",
     channel: "email",
   },
 
@@ -152,7 +164,8 @@ const TARGETS: Target[] = [
     slug: "search-engine-journal",
     name: "Search Engine Journal",
     url: "https://www.searchenginejournal.com",
-    context: "Paid social + SEO publication. Same angle as SEL — cost-per-tested-angle benchmark backed by the open dataset.",
+    context:
+      "Paid social + SEO publication. Same angle as SEL — cost-per-tested-angle benchmark backed by the open dataset.",
     channel: "email",
   },
   {
@@ -160,7 +173,8 @@ const TARGETS: Target[] = [
     slug: "adexchanger",
     name: "AdExchanger",
     url: "https://www.adexchanger.com",
-    context: "Programmatic advertising publication. Pitch the digital-video-spend-vs-TV stat + the creative-volume angle.",
+    context:
+      "Programmatic advertising publication. Pitch the digital-video-spend-vs-TV stat + the creative-volume angle.",
     channel: "email",
   },
   {
@@ -168,7 +182,8 @@ const TARGETS: Target[] = [
     slug: "marketing-brew",
     name: "Marketing Brew",
     url: "https://www.marketingbrew.com",
-    context: "Daily marketing newsletter. Short cite-worthy stat angle. Pitch the dataset as a quick stat source.",
+    context:
+      "Daily marketing newsletter. Short cite-worthy stat angle. Pitch the dataset as a quick stat source.",
     channel: "email",
   },
 
@@ -187,7 +202,8 @@ const TARGETS: Target[] = [
     slug: "futurepedia-submit",
     name: "Futurepedia",
     url: "https://www.futurepedia.io/submit-tool",
-    context: "AI tool directory. Submit under Sales / Marketing / Video Generation / Customer Support.",
+    context:
+      "AI tool directory. Submit under Sales / Marketing / Video Generation / Customer Support.",
     channel: "directory-form",
   },
   {
@@ -230,7 +246,8 @@ const TARGETS: Target[] = [
     slug: "g2-list-product",
     name: "G2.com",
     url: "https://www.g2.com/products/new",
-    context: "DR ~92. Categories: AI Sales Assistant, Conversational AI Platforms, AI Sales Agents, Outbound Call Tracking, AI Receptionist.",
+    context:
+      "DR ~92. Categories: AI Sales Assistant, Conversational AI Platforms, AI Sales Agents, Outbound Call Tracking, AI Receptionist.",
     channel: "directory-form",
   },
   {
@@ -238,7 +255,8 @@ const TARGETS: Target[] = [
     slug: "capterra-vendor",
     name: "Capterra",
     url: "https://www.capterra.com/vendors/sign-up",
-    context: "DR ~91. Free profile. Categories: AI Sales Assistant Software, AI Sales Agents, Marketing Automation, Conversational AI Platforms, Video Production Software. Capterra also auto-creates profiles on GetApp and Software Advice.",
+    context:
+      "DR ~91. Free profile. Categories: AI Sales Assistant Software, AI Sales Agents, Marketing Automation, Conversational AI Platforms, Video Production Software. Capterra also auto-creates profiles on GetApp and Software Advice.",
     channel: "directory-form",
   },
   {
@@ -321,7 +339,8 @@ const TARGETS: Target[] = [
     slug: "roofing-success",
     name: "Roofing Success",
     url: "https://www.roofingsuccess.com/podcast/",
-    context: "Roofing operator podcast (Jim Ahlin). Founder guest pitch — angle: 'Storm-response speed-to-lead'.",
+    context:
+      "Roofing operator podcast (Jim Ahlin). Founder guest pitch — angle: 'Storm-response speed-to-lead'.",
     channel: "podcast-pitch",
   },
 
@@ -369,7 +388,8 @@ const TARGETS: Target[] = [
     slug: "wp-sales-process",
     name: "Wikipedia: Sales process engineering",
     url: "https://en.wikipedia.org/wiki/Talk:Sales_process_engineering",
-    context: "Suggest citation addition for /stat/stl-391 (391% conversion lift from sub-1-min response).",
+    context:
+      "Suggest citation addition for /stat/stl-391 (391% conversion lift from sub-1-min response).",
     channel: "wiki-talk",
   },
   {
@@ -397,47 +417,10 @@ const TARGETS: Target[] = [
     channel: "wiki-talk",
   },
 
-  // Open data redistribution (UI uploads with metadata I generated)
-  {
-    bucket: "redistribution",
-    slug: "huggingface-upload",
-    name: "Hugging Face Datasets",
-    url: "https://huggingface.co/new-dataset",
-    context: "Upload docs/oss-dataset/distributions/huggingface/ bundle. Needs HF account + huggingface-cli login.",
-    channel: "directory-form",
-  },
-  {
-    bucket: "redistribution",
-    slug: "kaggle-upload",
-    name: "Kaggle Datasets",
-    url: "https://www.kaggle.com/datasets",
-    context: "Upload docs/oss-dataset/distributions/kaggle/ bundle. Needs Kaggle account + API token.",
-    channel: "directory-form",
-  },
-  {
-    bucket: "redistribution",
-    slug: "dataworld-upload",
-    name: "data.world",
-    url: "https://data.world/new",
-    context: "Upload docs/oss-dataset/distributions/dataworld/ files via UI.",
-    channel: "directory-form",
-  },
-  {
-    bucket: "redistribution",
-    slug: "zenodo-upload",
-    name: "Zenodo (gives a DOI)",
-    url: "https://zenodo.org/uploads/new",
-    context: "Upload docs/oss-dataset/distributions/zenodo/ bundle via UI. Zenodo awards permanent DOI.",
-    channel: "directory-form",
-  },
-  {
-    bucket: "redistribution",
-    slug: "figshare-upload",
-    name: "Figshare (gives a DOI)",
-    url: "https://figshare.com/account/projects",
-    context: "Upload docs/oss-dataset/distributions/figshare/ bundle via UI. Figshare awards permanent DOI.",
-    channel: "directory-form",
-  },
+  // NOTE: reputable third-party dataset directories (Hugging Face, Kaggle,
+  // data.world, Zenodo, Figshare, Harvard Dataverse, Mendeley, OpenML) are
+  // pitched by scripts/backlinks/pitch-dataset.ts (npm run dataset:pitch),
+  // which quotes live dataset stats and writes to the dataset-directory bucket.
 ];
 
 // ─── Template builders ──────────────────────────────────────────────────────
@@ -577,33 +560,10 @@ Founder of Prestyj (https://prestyj.com) — AI agents for marketing & sales, us
 
 ### Source-of-authority links to include
 
-- Open dataset: https://prestyj.com/data
-- GitHub: https://github.com/Gahroot/prestyj-statistics-dataset
-- MCP server (developers): https://github.com/Gahroot/prestyj-stats-mcp
+- Open dataset (canonical): https://prestyj.com/data
 - Statistics page: https://prestyj.com/statistics
+- Cite-a-stat permalinks: https://prestyj.com/stat/<id>
 `,
-      };
-
-    case "redistribution":
-      return {
-        body: `## ${target.name} upload checklist
-
-**URL:** ${target.url}
-**Bundle path:** docs/oss-dataset/distributions/${target.slug.replace(/-upload$/, "")}
-
-${target.context}
-
-### Steps
-1. Create / sign in to the account at ${target.url.split("/").slice(0, 3).join("/")}.
-2. Click upload / new dataset.
-3. Paste metadata from the bundle's metadata file.
-4. Upload both \`statistics.csv\` and \`statistics.json\`.
-5. Set license: CC BY 4.0.
-6. Confirm + publish.
-
-### After publish
-Append a row to data/backlinks/inventory.json with the live URL and bucket="redistribution".
-Then re-run \`npm run backlinks:verify\` to update the gap report.`,
       };
 
     case "awesome-list":
@@ -730,13 +690,32 @@ function parseArgs(): CliOpts {
 
 async function main(): Promise<void> {
   const opts = parseArgs();
-  const candidates = opts.bucket
-    ? TARGETS.filter((t) => t.bucket === opts.bucket)
-    : TARGETS;
+  const allowSelfMade = selfMadeBacklinksAllowed();
+  const candidates = (
+    opts.bucket ? TARGETS.filter((t) => t.bucket === opts.bucket) : TARGETS
+  ).filter((t) => {
+    if (allowSelfMade) return true;
+    if (isSelfMadeBucket(t.bucket)) {
+      console.log(
+        `⛔ Skipping self-made bucket "${t.bucket}" target (${t.slug}) — link policy halts self-made backlinks.`,
+      );
+      return false;
+    }
+    return true;
+  });
+  if (candidates.length === 0) {
+    console.log(
+      "No editorial (earned) pitch targets to draft. Self-made buckets are halted by policy.",
+    );
+    console.log("Override for a deliberate one-off:  ALLOW_SELF_MADE_BACKLINKS=1 <command>");
+    return;
+  }
   const chosen = candidates.slice(0, opts.limit);
 
   const hasKey = !opts.noAi && !!process.env.GEMINI_API_KEY;
-  console.log(`Drafting ${chosen.length} pitch(es)${hasKey ? " with Gemini personalization" : " (template-only)"}…`);
+  console.log(
+    `Drafting ${chosen.length} pitch(es)${hasKey ? " with Gemini personalization" : " (template-only)"}…`,
+  );
 
   let count = 0;
   let aiCount = 0;
@@ -760,14 +739,18 @@ async function main(): Promise<void> {
     }
     const path = writeDraft(target, final, personalized);
     count++;
-    console.log(`  ✓ ${target.bucket}/${target.slug}.md${personalized ? " (AI-personalized)" : ""}`);
+    console.log(
+      `  ✓ ${target.bucket}/${target.slug}.md${personalized ? " (AI-personalized)" : ""}`,
+    );
     void path;
     // Gentle pacing on Gemini free tier
     if (personalized) await new Promise((r) => setTimeout(r, 250));
   }
 
   console.log(`\nWrote ${count} pitch draft(s); ${aiCount} personalized via Gemini.`);
-  console.log(`Output: docs/backlinks/pitch-drafts/{${Array.from(new Set(chosen.map((t) => t.bucket))).join(",")}}/`);
+  console.log(
+    `Output: docs/backlinks/pitch-drafts/{${Array.from(new Set(chosen.map((t) => t.bucket))).join(",")}}/`,
+  );
 }
 
 main().catch((err: unknown) => {

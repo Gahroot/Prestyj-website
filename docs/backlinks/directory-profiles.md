@@ -23,7 +23,7 @@
 | **Headquarters** | United States |
 | **Industries served** | Home Services, Real Estate, Marketing Agencies, Coaches/Creators |
 | **Categories** | AI Sales Agents · AI Voice Agents · Video Ad Creation · Marketing Automation · Lead Response · Conversational AI |
-| **Founded** | 2024 |
+| **Founded** | 2026 |
 | **Founder** | Nolan Grout |
 | **Contact email** | nolan@prestyj.com |
 | **LinkedIn** | https://www.linkedin.com/company/prestyj/ |
@@ -51,7 +51,7 @@
   - Website → https://prestyj.com
   - Short description → use the ≤250 char one above
   - Industries → Artificial Intelligence, SaaS, Marketing, Sales Automation
-  - Founded → 2024
+  - Founded → 2026
   - HQ → United States
   - Operating Status → Active
   - Type → For-profit

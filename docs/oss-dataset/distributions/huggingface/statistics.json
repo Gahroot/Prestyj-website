@@ -6,9 +6,9 @@
   "license_url": "https://creativecommons.org/licenses/by/4.0/",
   "attribution": "Prestyj — https://prestyj.com",
   "citation": "Prestyj (2026). Prestyj Lead Response, Video Advertising & AI Sales Statistics Dataset. https://prestyj.com/data",
-  "version": "2026-05-29",
-  "last_modified": "2026-05-29T16:52:37.973Z",
-  "total": 92,
+  "version": "2026-06-04",
+  "last_modified": "2026-06-04T16:38:58.750Z",
+  "total": 102,
   "categories": [
     {
       "id": "speed-to-lead",
@@ -1415,6 +1415,179 @@
           "permalink": "https://prestyj.com/stat/batch-video-pilot-setup-cost",
           "embedUrl": "https://prestyj.com/embed/stat/batch-video-pilot-setup-cost",
           "categoryPermalink": "https://prestyj.com/statistics#batch-video-vs-ugc-agency-benchmarks"
+        }
+      ]
+    },
+    {
+      "id": "missed-call-recovery",
+      "title": "Missed Call & After-Hours Revenue Recovery",
+      "slug": "missed-call-after-hours-revenue-recovery",
+      "description": "How many calls small businesses miss, what each missed call costs, caller callback and competitor-switching behavior, and how AI answering plus missed-call text-back recover lost revenue.",
+      "permalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery",
+      "statistics": [
+        {
+          "id": "mcr-unanswered-call-rate",
+          "value": "62%",
+          "description": "62% of phone calls to small businesses go unanswered — only 37.8% are answered by a live person, while 37.8% hit voicemail and 24.3% get no response at all.",
+          "source": {
+            "name": "411 Locals (study of 85 businesses across 58 industries, 30-day call monitoring)",
+            "year": "2024 (widely re-cited 2025–2026)",
+            "url": "https://411locals.us/small-business-owners-dont-answer-62-of-phone-calls/"
+          },
+          "context": "The 62% figure is the most widely cited benchmark for the SMB missed-call rate and underpins most missed-call revenue-loss models. Home services, property management, and contractor verticals frequently exceed it.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-unanswered-call-rate",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-unanswered-call-rate",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-never-call-back",
+          "value": "85%",
+          "description": "85% of callers whose call is not answered on the first attempt never call back — they call the next business on the list instead.",
+          "source": {
+            "name": "PATLive / BrightLocal",
+            "year": "2025"
+          },
+          "context": "Because there is no voicemail or callback, the lost lead is invisible — the business never knows the opportunity existed. This is the single most important behavioral statistic in the missed-call category.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-never-call-back",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-never-call-back",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-switch-to-competitor",
+          "value": "62%",
+          "description": "62% of callers who cannot reach a business immediately contact a competitor instead, permanently transferring that lifetime customer value to a rival.",
+          "source": {
+            "name": "Dialzara missed-call behavior analysis",
+            "year": "2025",
+            "url": "https://dialzara.com/blog/missed-calls-hidden-costs-and-ai-solutions"
+          },
+          "context": "Combined with the 85% no-callback rate, a missed call is functionally a referral to a competitor — the worst possible outcome for paid-acquisition spend.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-switch-to-competitor",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-switch-to-competitor",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-voicemail-abandonment",
+          "value": "80%",
+          "description": "80% of callers who reach a business voicemail hang up without leaving a message, so voicemail captures only a fraction of missed-call demand.",
+          "source": {
+            "name": "Multiple business-call studies (BIA/Kelsey, PATLive)",
+            "year": "2024–2026"
+          },
+          "context": "Younger consumers are the least likely to leave voicemail. Voicemail is not a safety net for missed calls — automated text-back and AI answering recover what voicemail loses.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-voicemail-abandonment",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-voicemail-abandonment",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-annual-revenue-lost",
+          "value": "$126,000",
+          "description": "The average small business loses roughly $126,000 per year in revenue to missed calls, with each unanswered call costing $100–$1,200 depending on industry.",
+          "source": {
+            "name": "Aggregated SMB missed-call revenue analysis (Dialzara, getAira, RingEden)",
+            "year": "2025–2026"
+          },
+          "context": "Derived from monthly missed calls × average customer value × 12 × non-callback rate. Higher-ticket verticals (dental, legal, home services) sit at the top of the range.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-annual-revenue-lost",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-annual-revenue-lost",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-phone-lead-conversion-multiple",
+          "value": "10–15×",
+          "description": "Inbound phone leads convert at 10–15× the rate of web-form leads, making a missed call one of the most expensive leads a business can lose.",
+          "source": {
+            "name": "BIA/Kelsey inbound call conversion research",
+            "year": "2024–2026"
+          },
+          "context": "Phone callers are higher-intent than form-fillers — they have an active, urgent need. Losing a phone lead is far costlier than losing a form lead.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-phone-lead-conversion-multiple",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-phone-lead-conversion-multiple",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-after-hours-call-share",
+          "value": "30–40%",
+          "description": "30–40% of inbound calls to local service businesses arrive after business hours, when staffed phone lines roll to voicemail and most of the demand is lost.",
+          "source": {
+            "name": "SMB call-tracking and telecom volume analyses",
+            "year": "2025–2026"
+          },
+          "context": "After-hours, lunch-hour, and Monday-morning peaks are the largest structural sources of missed calls — exactly the windows 24/7 AI answering covers.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-after-hours-call-share",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-after-hours-call-share",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-instant-response-expectation",
+          "value": "65%",
+          "description": "65% of customers expect an instant response when they contact a business — an expectation voicemail and next-day callbacks structurally cannot meet.",
+          "source": {
+            "name": "Salesforce State of the Connected Customer",
+            "year": "2024–2025"
+          },
+          "context": "Instant-response expectation is why AI answering and sub-minute missed-call text-back outperform traditional reception and answering services on conversion.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-instant-response-expectation",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-instant-response-expectation",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-text-back-recovery-rate",
+          "value": "93%",
+          "description": "Automated missed-call text-back within one minute recovers up to 93% of leads that would otherwise be lost, generating roughly $3,500 in additional monthly revenue on average for a service business.",
+          "source": {
+            "name": "SchedulingKit missed-call recovery analysis",
+            "year": "2026",
+            "url": "https://schedulingkit.com/statistics/missed-call-statistics"
+          },
+          "context": "A one-minute automated text turns an invisible missed call into an active conversation before the caller dials a competitor. This is the highest-leverage, lowest-cost missed-call fix.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-text-back-recovery-rate",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-text-back-recovery-rate",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
+        },
+        {
+          "id": "mcr-ai-answer-rate",
+          "value": "99%+",
+          "description": "AI phone answering systems handle unlimited simultaneous calls and answer 99%+ of inbound calls instantly, 24/7 — cutting missed calls by about 75% versus staffed-only reception.",
+          "source": {
+            "name": "Prestyj AI answering benchmark (synthesized from SchedulingKit, Dialzara)",
+            "year": "2026",
+            "url": "https://prestyj.com/ai-receptionist"
+          },
+          "context": "Unlike a human receptionist limited to one call at a time, AI answers every concurrent call, removing the primary mechanical cause of missed calls during peak hours.",
+          "categoryId": "missed-call-recovery",
+          "categoryTitle": "Missed Call & After-Hours Revenue Recovery",
+          "categorySlug": "missed-call-after-hours-revenue-recovery",
+          "permalink": "https://prestyj.com/stat/mcr-ai-answer-rate",
+          "embedUrl": "https://prestyj.com/embed/stat/mcr-ai-answer-rate",
+          "categoryPermalink": "https://prestyj.com/statistics#missed-call-after-hours-revenue-recovery"
         }
       ]
     },

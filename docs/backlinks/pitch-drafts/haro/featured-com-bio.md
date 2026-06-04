@@ -5,7 +5,7 @@ name: "Featured.com"
 target_url: https://featured.com
 channel: directory-form
 status: drafted
-generated_at: 2026-05-22T19:27:13.764Z
+generated_at: 2026-06-04T16:37:02.896Z
 ai_personalized: false
 ---
 ## Founder bio (paste into Featured.com expert profile)

@@ -7,7 +7,10 @@ authors:
 type: dataset
 license: CC-BY-4.0
 url: "https://prestyj.com/data"
-repository: "https://github.com/prestyj/statistics-dataset"
+# Canonical home is the URL above. Once the dataset is published to a
+# DOI-minting third-party repository (Zenodo / Figshare / Harvard Dataverse /
+# Mendeley Data), add a `doi:` field here so this file resolves to a permanent,
+# citable identifier instead of a self-owned mirror.
 year: 2026
 keywords:
   - lead response time

@@ -6,21 +6,39 @@ target_url: https://www.achrnews.com
 channel: email
 status: drafted
 generated_at: 2026-05-22T19:27:22.221Z
+last_revised: 2026-06-04
+revision: data-story
 ai_personalized: true
+angle: >
+  Re-pitch as a data story framed around the HVAC contractor's real
+  problem: the phone going unanswered = lost revenue, quantified. Lead
+  with the missed-call/response gap, tie to ad spend. Drop the "tools
+  like AI receptionists / improve your ROI" product framing.
 ---
-**Subject:** HVAC lead response data: 0.1% get a 5-minute call
 
-I'm writing to ACHR News because we just published some data relevant to HVAC companies.
+**Subject:** Data: HVAC contractors are paying for leads, then missing the call that closes them
 
-Our research shows a significant gap in lead response times that directly impacts ROI for businesses, including those in HVAC. Specifically:
+Hi {{first name}},
 
-*   77% of inbound leads never get any response at all (InsideSales, 2025 re-analysis)
-*   Only 0.1% of inbound leads are engaged within 5 minutes
-*   Companies that respond in 5 min are 21× more likely to qualify the lead than those that wait 30 (HBR, re-cited 2024–2026)
-*   Average B2B response time is 42 hours
-*   Average Google Ads CPL is $70.11 across all industries; legal services pay $131.63 (WordStream/LocaliQ analysis of 16k+ campaigns)
+A data story for ACHR News, not a vendor pitch — it's about a leak in the contractor sales process that I don't see quantified often.
 
-The full dataset, including sources, is available at https://prestyj.com/data. We see a clear opportunity for HVAC businesses to improve their lead qualification rates and advertising ROI, especially with tools like AI receptionists. I can provide the HVAC-specific slice of this data if that's useful.
+We compiled an open dataset on lead response across service industries, and the pattern is brutal for trades like HVAC where jobs are won on the phone:
+
+- **77%** of inbound leads never get any response at all (InsideSales).
+- Only **0.1%** are engaged within 5 minutes — the window that decides the booking.
+- A 5-minute reply is **21× more likely to qualify** the lead than a 30-minute one (Harvard Business Review).
+- In home services specifically, the **average inbound-call response time is 47 hours** — long after the buyer has already called the next contractor.
+- And the leads being missed aren't free: Google Ads cost-per-lead averaged **$70.11** across industries in 2025, up 5.13% YoY (WordStream/LocaliQ).
+
+The angle for your readers: contractors are spending more than ever on demand-gen, but the bottleneck isn't lead *volume* — it's the unanswered call during a busy install day. That's a margin story every HVAC owner feels, and it's backed by hard numbers rather than anecdote.
+
+What I can provide, no strings:
+
+- The home-services/HVAC-relevant slice, pulled from the cross-industry set.
+- Original publisher and year for every figure (sourced and dated).
+- Full dataset under CC BY 4.0, CSV + JSON: https://prestyj.com/data — quote or chart freely.
+
+Glad to send the HVAC cut over today or walk a writer through the methodology.
 
 Thanks,
 Nolan Grout — Prestyj (https://prestyj.com)

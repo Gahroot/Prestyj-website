@@ -11,7 +11,7 @@
     },
     {
       "id": "github-gahroot-statistics-dataset",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-dataset",
       "status": "live",
       "live_url": "https://github.com/Gahroot/prestyj-statistics-dataset",
@@ -95,15 +95,15 @@
     },
     {
       "id": "redistribution-bundles-generated",
-      "bucket": "redistribution",
+      "bucket": "dataset-directory",
       "target_url": "docs/oss-dataset/distributions/",
       "status": "drafted",
       "first_seen": "2026-05-22",
-      "notes": "7 platform-specific upload bundles ready: Hugging Face, Kaggle, data.world, Zenodo, Figshare, OpenML, generic GitHub. SUBMISSION-CHECKLIST.md has paste-ready metadata for each form. Awaiting credentials for HF/Kaggle to auto-push."
+      "notes": "8 third-party dataset-directory upload bundles ready: Zenodo, Figshare, Harvard Dataverse, Mendeley Data, Hugging Face, Kaggle, data.world, OpenML. docs/oss-dataset/distributions/SUBMISSION-CHECKLIST.md has paste-ready metadata for each. These are independent third-party repositories (DOI-minting for the academic ones), NOT self-owned mirrors. Awaiting human signup to publish; record each live DOI/URL here with bucket=dataset-directory once published."
     },
     {
       "id": "github-gahroot-prestyj-stats-mcp",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-stats-mcp",
       "status": "live",
       "live_url": "https://github.com/Gahroot/prestyj-stats-mcp",
@@ -262,6 +262,24 @@
       "first_seen": "2026-05-23",
       "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/alternativeto.md",
       "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://alternativeto.net/applications/add/. Exact blocker: App submission requires logged-in browser account and editorial review; cannot complete locally."
+    },
+    {
+      "id": "draft-getapp-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.getapp.com/vendors/",
+      "status": "drafted",
+      "first_seen": "2026-06-04",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/getapp.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.getapp.com/listing_guidelines/. Exact blocker: GetApp listings are created via the Gartner Digital Markets vendor form; browser-only signup + email/business verification and editorial review required; cannot complete locally."
+    },
+    {
+      "id": "draft-softwaresuggest-directory-wave-2026-05-23",
+      "bucket": "directory",
+      "target_url": "https://www.softwaresuggest.com/vendors",
+      "status": "drafted",
+      "first_seen": "2026-06-04",
+      "artifact_path": "docs/backlinks/pitch-drafts/directory-wave-2026-05-23/softwaresuggest.md",
+      "notes": "Draft-only directory/tool submission artifact. Official source evidence URL: https://www.softwaresuggest.com/vendors/guidelines. Exact blocker: Free vendor listing requires browser signup + email account-setup confirmation and editorial review; cannot complete locally."
     },
     {
       "id": "draft-slant-directory-wave-2026-05-23",
@@ -596,7 +614,7 @@
     },
     {
       "id": "github-pages-prestyj-statistics-citation-index",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/",
@@ -606,7 +624,7 @@
     },
     {
       "id": "github-pages-citation-stl-21x",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-21x.html",
@@ -616,7 +634,7 @@
     },
     {
       "id": "github-pages-citation-stl-391",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-391.html",
@@ -626,7 +644,7 @@
     },
     {
       "id": "github-pages-citation-stl-78pct",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-78pct.html",
@@ -636,7 +654,7 @@
     },
     {
       "id": "github-pages-citation-stl-100x",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-100x.html",
@@ -646,7 +664,7 @@
     },
     {
       "id": "github-pages-citation-stl-8x-drop",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-8x-drop.html",
@@ -656,7 +674,7 @@
     },
     {
       "id": "github-pages-citation-stl-400pct-drop",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-400pct-drop.html",
@@ -666,7 +684,7 @@
     },
     {
       "id": "github-pages-citation-stl-avg-42hr",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-avg-42hr.html",
@@ -676,7 +694,7 @@
     },
     {
       "id": "github-pages-citation-stl-only-01pct",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-only-01pct.html",
@@ -686,7 +704,7 @@
     },
     {
       "id": "github-pages-citation-stl-77pct-no-response",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-77pct-no-response.html",
@@ -696,7 +714,7 @@
     },
     {
       "id": "github-pages-citation-stl-82pct-10min",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-82pct-10min.html",
@@ -706,7 +724,7 @@
     },
     {
       "id": "github-pages-citation-stl-1pct-b2b",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-1pct-b2b.html",
@@ -716,7 +734,7 @@
     },
     {
       "id": "github-pages-citation-stl-instant-66",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-instant-66.html",
@@ -726,7 +744,7 @@
     },
     {
       "id": "github-pages-citation-stl-50pct-first",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-50pct-first.html",
@@ -736,7 +754,7 @@
     },
     {
       "id": "github-pages-citation-stl-53pct-frustration",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/stl-53pct-frustration.html",
@@ -746,7 +764,7 @@
     },
     {
       "id": "github-pages-citation-vid-89pct",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-89pct.html",
@@ -756,7 +774,7 @@
     },
     {
       "id": "github-pages-citation-vid-93pct-roi",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-93pct-roi.html",
@@ -766,7 +784,7 @@
     },
     {
       "id": "github-pages-citation-vid-85b-vs-59b",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-85b-vs-59b.html",
@@ -776,7 +794,7 @@
     },
     {
       "id": "github-pages-citation-vid-64pct-purchase",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-64pct-purchase.html",
@@ -786,7 +804,7 @@
     },
     {
       "id": "github-pages-citation-vid-300pct-email",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-300pct-email.html",
@@ -796,7 +814,7 @@
     },
     {
       "id": "github-pages-citation-vid-38pct-lp",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-38pct-lp.html",
@@ -806,7 +824,7 @@
     },
     {
       "id": "github-pages-citation-vid-completion-15s",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-completion-15s.html",
@@ -816,7 +834,7 @@
     },
     {
       "id": "github-pages-citation-vid-mobile-28pct",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-mobile-28pct.html",
@@ -826,7 +844,7 @@
     },
     {
       "id": "github-pages-citation-vid-92pct-roi",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-92pct-roi.html",
@@ -836,7 +854,7 @@
     },
     {
       "id": "github-pages-citation-vid-87pct-buy",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-87pct-buy.html",
@@ -846,7 +864,7 @@
     },
     {
       "id": "github-pages-citation-vid-96pct-ai",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-96pct-ai.html",
@@ -856,7 +874,7 @@
     },
     {
       "id": "github-pages-citation-vid-82pct-ai-roi",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/vid-82pct-ai-roi.html",
@@ -866,7 +884,7 @@
     },
     {
       "id": "github-pages-citation-ai-56pct-daily",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-56pct-daily.html",
@@ -876,7 +894,7 @@
     },
     {
       "id": "github-pages-citation-ai-24-to-43",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-24-to-43.html",
@@ -886,7 +904,7 @@
     },
     {
       "id": "github-pages-citation-ai-37x-quota",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-37x-quota.html",
@@ -896,7 +914,7 @@
     },
     {
       "id": "github-pages-citation-ai-15pct-conv",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-15pct-conv.html",
@@ -906,7 +924,7 @@
     },
     {
       "id": "github-pages-citation-ai-45pct-deals",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-45pct-deals.html",
@@ -916,7 +934,7 @@
     },
     {
       "id": "github-pages-citation-ai-81pct-rev",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-81pct-rev.html",
@@ -926,7 +944,7 @@
     },
     {
       "id": "github-pages-citation-ai-86pct-roi-year1",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-86pct-roi-year1.html",
@@ -936,7 +954,7 @@
     },
     {
       "id": "github-pages-citation-ai-40pct-productivity",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-40pct-productivity.html",
@@ -946,7 +964,7 @@
     },
     {
       "id": "github-pages-citation-ai-28pct-quota",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-28pct-quota.html",
@@ -956,7 +974,7 @@
     },
     {
       "id": "github-pages-citation-ai-25pct-selling",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-25pct-selling.html",
@@ -966,7 +984,7 @@
     },
     {
       "id": "github-pages-citation-ai-62pct-agents",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-62pct-agents.html",
@@ -976,7 +994,7 @@
     },
     {
       "id": "github-pages-citation-ai-trillion",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ai-trillion.html",
@@ -986,7 +1004,7 @@
     },
     {
       "id": "github-pages-citation-lc-7x-1hr",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-7x-1hr.html",
@@ -996,7 +1014,7 @@
     },
     {
       "id": "github-pages-citation-lc-60x-1hr",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-60x-1hr.html",
@@ -1006,7 +1024,7 @@
     },
     {
       "id": "github-pages-citation-lc-13-attempts",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-13-attempts.html",
@@ -1016,7 +1034,7 @@
     },
     {
       "id": "github-pages-citation-lc-15pct-day1",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-15pct-day1.html",
@@ -1026,7 +1044,7 @@
     },
     {
       "id": "github-pages-citation-lc-51pct-never",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-51pct-never.html",
@@ -1036,7 +1054,7 @@
     },
     {
       "id": "github-pages-citation-lc-57pct-week",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-57pct-week.html",
@@ -1046,7 +1064,7 @@
     },
     {
       "id": "github-pages-citation-lc-37pct-1hr",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-37pct-1hr.html",
@@ -1056,7 +1074,7 @@
     },
     {
       "id": "github-pages-citation-lc-48pct-rev",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-48pct-rev.html",
@@ -1066,7 +1084,7 @@
     },
     {
       "id": "github-pages-citation-lc-20-30pct-pred",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-20-30pct-pred.html",
@@ -1076,7 +1094,7 @@
     },
     {
       "id": "github-pages-citation-lc-12pp-quota",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/lc-12pp-quota.html",
@@ -1086,7 +1104,7 @@
     },
     {
       "id": "github-pages-citation-ind-cpl-70",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-70.html",
@@ -1096,7 +1114,7 @@
     },
     {
       "id": "github-pages-citation-ind-cpl-legal",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-legal.html",
@@ -1106,7 +1124,7 @@
     },
     {
       "id": "github-pages-citation-ind-cpl-auto",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-auto.html",
@@ -1116,7 +1134,7 @@
     },
     {
       "id": "github-pages-citation-ind-cpl-biz",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpl-biz.html",
@@ -1126,7 +1144,7 @@
     },
     {
       "id": "github-pages-citation-ind-ctr-66",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-ctr-66.html",
@@ -1136,7 +1154,7 @@
     },
     {
       "id": "github-pages-citation-ind-cvr-752",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cvr-752.html",
@@ -1146,7 +1164,7 @@
     },
     {
       "id": "github-pages-citation-ind-cpc-526",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-cpc-526.html",
@@ -1156,7 +1174,7 @@
     },
     {
       "id": "github-pages-citation-ind-linkedin-110",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-linkedin-110.html",
@@ -1166,7 +1184,7 @@
     },
     {
       "id": "github-pages-citation-ind-auto-conv",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-auto-conv.html",
@@ -1176,7 +1194,7 @@
     },
     {
       "id": "github-pages-citation-ind-education-cpl-up",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-statistics-citation-pages",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-statistics-citation-pages/stat/ind-education-cpl-up.html",
@@ -1186,7 +1204,7 @@
     },
     {
       "id": "github-pages-benchmark-speed-to-lead",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/speed-to-lead.html",
@@ -1196,7 +1214,7 @@
     },
     {
       "id": "github-pages-benchmark-lead-response-conversion",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/lead-response-conversion.html",
@@ -1206,7 +1224,7 @@
     },
     {
       "id": "github-pages-benchmark-video-advertising-roi",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/video-advertising-roi.html",
@@ -1216,7 +1234,7 @@
     },
     {
       "id": "github-pages-benchmark-ai-sales-adoption",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ai-sales-adoption.html",
@@ -1226,7 +1244,7 @@
     },
     {
       "id": "github-pages-benchmark-home-services-cpl",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/home-services-cpl.html",
@@ -1236,7 +1254,7 @@
     },
     {
       "id": "github-pages-benchmark-real-estate-lead-response",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/real-estate-lead-response.html",
@@ -1246,7 +1264,7 @@
     },
     {
       "id": "github-pages-benchmark-agency-creative-benchmarks",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/agency-creative-benchmarks.html",
@@ -1256,7 +1274,7 @@
     },
     {
       "id": "github-pages-benchmark-batch-video-ads",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/batch-video-ads.html",
@@ -1266,7 +1284,7 @@
     },
     {
       "id": "github-pages-benchmark-creative-fatigue-refresh",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/creative-fatigue-refresh.html",
@@ -1276,7 +1294,7 @@
     },
     {
       "id": "github-pages-benchmark-social-media-economics",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/social-media-economics.html",
@@ -1286,7 +1304,7 @@
     },
     {
       "id": "github-pages-benchmark-lead-reactivation",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/lead-reactivation.html",
@@ -1296,7 +1314,7 @@
     },
     {
       "id": "github-pages-benchmark-ai-voice-agents",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ai-voice-agents.html",
@@ -1306,7 +1324,7 @@
     },
     {
       "id": "github-pages-benchmark-sales-outreach-ai",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/sales-outreach-ai.html",
@@ -1316,7 +1334,7 @@
     },
     {
       "id": "github-pages-benchmark-ugc-vs-batch-video",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ugc-vs-batch-video.html",
@@ -1326,7 +1344,7 @@
     },
     {
       "id": "github-pages-benchmark-paid-search-cpl",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/paid-search-cpl.html",
@@ -1336,7 +1354,7 @@
     },
     {
       "id": "github-pages-benchmark-local-services-benchmarks",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/local-services-benchmarks.html",
@@ -1346,7 +1364,7 @@
     },
     {
       "id": "github-pages-benchmark-b2b-saas-lead-benchmarks",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/b2b-saas-lead-benchmarks.html",
@@ -1356,7 +1374,7 @@
     },
     {
       "id": "github-pages-benchmark-ecommerce-video-benchmarks",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/ecommerce-video-benchmarks.html",
@@ -1366,7 +1384,7 @@
     },
     {
       "id": "github-pages-benchmark-appointment-setting",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/appointment-setting.html",
@@ -1376,7 +1394,7 @@
     },
     {
       "id": "github-pages-benchmark-conversion-rate-benchmarks",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/conversion-rate-benchmarks.html",
@@ -1386,7 +1404,7 @@
     },
     {
       "id": "github-pages-benchmark-response-time-sla",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/response-time-sla.html",
@@ -1396,7 +1414,7 @@
     },
     {
       "id": "github-pages-benchmark-marketing-roi-benchmarks",
-      "bucket": "redistribution",
+      "bucket": "self-owned-mirror",
       "target_url": "https://github.com/Gahroot/prestyj-benchmark-tables",
       "status": "live",
       "live_url": "https://gahroot.github.io/prestyj-benchmark-tables/benchmarks/marketing-roi-benchmarks.html",
