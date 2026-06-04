@@ -1,0 +1,37 @@
+{
+  "_comment": "Source of truth for the FOUR monthly Google Search Console progress metrics, judged against the Phase 0 baseline. Committed to git (the raw GSC CSV exports are gitignored and disposable) so the trend survives. Append one snapshot per month via `npm run seo:gsc-progress`. The four metrics: (1) indexed_pages — GSC > Indexing > Pages > 'Indexed' count; (2) referring_domains_earned — auto-derived from data/backlinks/referring-domains-history.json; (3) branded_impressions — GSC > Performance, Query regex (?i)prestyj, last 28d; (4) target_keywords_top10 / avg_position — auto-derived from the latest data/keyword-rankings/<date>/ CSV. Realistic lag: backlinks take ~6-10 weeks to move rankings, so a flat ranking/branded line inside that window is EXPECTED, not failure.",
+  "lag_model": {
+    "backlinks_to_rankings_weeks_min": 6,
+    "backlinks_to_rankings_weeks_max": 10,
+    "indexing_to_ranking_note": "New/refreshed pages get indexed in days-to-weeks but earn stable positions only after links + engagement accrue. Judge indexed_pages monthly; judge rankings on the 6-10 week lag from the link/content push, not the month it shipped.",
+    "branded_lag_days": "2-10 days after Meta spend ramps (see docs/branded-search-accelerant.md)"
+  },
+  "metrics": {
+    "indexed_pages": "GSC > Indexing > Pages > 'Indexed' count. Denominator = sitemap_submitted_urls.",
+    "referring_domains_earned": "Independent referring domains we did NOT create ourselves. Auto-derived from referring-domains-history.json (earned_count).",
+    "branded_impressions_28d": "GSC > Performance > Search results, Query filter Custom(regex) (?i)prestyj, date range last 28 days. Record impressions, clicks, avg position.",
+    "target_keywords": "19 priority commercial keywords. Count in top 10 + avg position of those found. Auto-derived from latest data/keyword-rankings/<date>/ CSV."
+  },
+  "sitemap_submitted_urls": 688,
+  "sitemap_submitted_urls_note": "Indexable URLs declared by src/app/sitemap.ts on 2026-06-04: 56 static + 289 indexable blog posts + 39 alternatives + 12 solutions + 82 best-for + 44 compare + 17 free-ads + 21 locations + 102 stat + 26 industry. Re-derive when the sitemap changes; this is the indexed_pages denominator.",
+  "phase0_baseline_date": "2026-06-04",
+  "snapshots": [
+    {
+      "date": "2026-06-04",
+      "phase": "Phase 0",
+      "source": "gsc + repo-derived",
+      "indexed_pages": null,
+      "sitemap_submitted_urls": 688,
+      "referring_domains_earned": 3,
+      "branded_impressions_28d": null,
+      "branded_clicks_28d": null,
+      "branded_avg_position": null,
+      "branded_window": "28d",
+      "target_keywords_total": 19,
+      "target_keywords_top10": 4,
+      "target_keywords_found": 4,
+      "target_keywords_avg_position_found": 6.5,
+      "note": "Phase 0 baseline. GSC-only fields (indexed_pages, branded_*) are null until the first post-verification GSC pull; fill them on the first monthly run per docs/gsc-progress-tracker.md. referring_domains_earned=3 (linkedin.com, oppy.pro, thelazyagent.com) from referring-domains-history.json. Target keywords: 4 of 19 in top 10 (batch-video + multifamily voice-agent clusters), avg position 6.5 of the 4 found. Honest starting line; the other 15 commercial terms are not yet on page one. Judge rankings/branded on the ~6-10 week backlink lag, not the month work shipped."
+    }
+  ]
+}

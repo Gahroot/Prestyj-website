@@ -2,6 +2,8 @@
 
 > **Purpose:** Reverse-engineered formula for writing blog posts that get cited by ChatGPT, Perplexity, Claude, and Gemini. Reference this doc for every new content task.
 >
+> **Cross-engine note (2026-06):** The formula below was validated on Bing/Copilot citation data, then ported to Google AI Overviews, Perplexity, and ChatGPT. The mechanics that win are engine-agnostic — see [Section 6: Porting the formula across engines](#6-porting-the-formula-across-engines-aio-perplexity-chatgpt). The single highest-leverage cross-engine element is the **Direct answer block** in the first 150 words (a 2–4 sentence paragraph with hard numbers and linked `/stat/<id>` permalinks), layered on top of the existing TL;DR.
+>
 > **Evidence base:** Two posts driving ~62% of all our AI citations:
 >
 > - [`ai-cold-outreach-vs-human-2026.mdx`](../content/blog/ai-cold-outreach-vs-human-2026.mdx) — **75 citations**
@@ -201,6 +203,54 @@ Tick every box before opening a PR. If any box is unchecked, the post is not rea
 - [ ] **Skeptic framing section** present (`Hidden costs`, `Common mistakes`, or `What vendors don't tell you`).
 - [ ] **FAQ block** at the bottom with 8–10 questions phrased the way a buyer would type them into ChatGPT.
 - [ ] **Internal links** to 3–5 related Prestyj posts in a `## Related Reading` section + a `[Book a demo](/book-demo)` CTA in the closing line.
+
+---
+
+## 6. Porting the formula across engines (AIO, Perplexity, ChatGPT)
+
+The Bing/Copilot-validated formula transfers to Google AI Overviews, Perplexity, and ChatGPT because all four extract the same things: a self-contained answer near the top, a liftable table, and verifiable numbers. The differences are in *how* each engine selects and renders, so the formula gets three small additions rather than a rewrite.
+
+### What's the same on every engine
+
+- **Direct answer in the first 150 words.** All four reward a 2–4 sentence answer paragraph that resolves the query before the reader scrolls. Keep the existing `**TL;DR:**` block AND add a `**Direct answer:**` paragraph immediately after it that restates the headline numbers in prose and links the `/stat/<id>` permalinks behind each number.
+- **Comparison table in the first 30%.** Still the biggest single driver. Markdown pipe tables, every cell numeric.
+- **Hard numbers with a citable source.** Each number in the Direct answer links to its `/stat/<id>` permalink so the engine has a discrete, quotable URL per claim.
+- **Buyer-phrased FAQ** at the bottom feeding `FAQPage` JSON-LD (already auto-extracted by `src/app/blog/[slug]/page.tsx`).
+
+### Engine-specific tuning
+
+| Engine | How it selects | What to add on top of the base formula |
+| --- | --- | --- |
+| **Google AI Overviews** | Leans on Search ranking + passage extraction; rewards FAQ/HowTo schema and clean passage boundaries. | Keep the `## Key Takeaways` list and `## FAQ` (both already feed schema). Make the Direct answer a single self-contained paragraph — AIO lifts one passage, so it must stand alone without the sentence before it. |
+| **Perplexity** | Retrieves a handful of sources and quotes short spans with inline citations; favors pages with discrete, numeric, attributable claims. | Link every number to a `/stat/<id>` permalink — Perplexity prefers citing a page that *is* the claim. The `/stat/*`, `/data`, and `/llms.txt` surfaces exist for exactly this. |
+| **ChatGPT (search + browse)** | Uses Bing-style retrieval plus its own ranker; rewards named entities and tables it can reformat. | Name competitors with 2026 pricing (already a rule) and keep tables 3–6 columns so they survive reformatting into ChatGPT's answer. |
+
+### The Direct answer block (copy this shape)
+
+Insert immediately after the `**TL;DR:**` block, inside the first 150 words:
+
+```md
+**Direct answer:** [One-sentence resolution with the headline number]. The citable
+benchmarks are [$X–$Y per unit](/stat/<id-1>), [N% something](/stat/<id-2>), and
+[$Z setup](/stat/<id-3>). For the commercial path, see [Offer Hub](/offer-page) or
+[book a demo](/book-demo).
+```
+
+Rules:
+
+- 2–4 sentences, self-contained, no pronoun referring to an earlier sentence.
+- Every number links to a real `/stat/<id>` permalink whose `value`/`description` matches the number exactly (grep `src/lib/statistics-data.ts` before linking — divergent numbers across pages destroy credibility per `data-sources.md`).
+- End with one commercial link + `/book-demo`.
+
+### Rollout: apply to top commercial posts as authority grows
+
+Don't retrofit the whole library at once. Order by current citation volume (from `data/ai-citations/latest-analysis.md`) so the pages already ranking get the cross-engine lift first:
+
+1. Highest-cited commercial posts first (e.g. `video-ad-testing-pricing-2026`, `ai-voice-agent-costs-compared`, the `ai-sales-agent-*`/`sales-ai-agent-*` cost posts, `custom-ai-agent-vs-off-the-shelf-3-year-tco`, `lead-reactivation-for-home-services`).
+2. Then surging queries with a clear canonical page (see "Surging queries by priority offer").
+3. Then net-new query gaps — ship a dedicated post rather than retrofitting.
+
+Re-pull the AI search reports ~30 days after each batch and confirm the retrofitted pages hold or grow citations across all three engines before expanding the rollout.
 
 ---
 
