@@ -100,9 +100,9 @@ const CREATIVE_TESTING_RESOURCES = [
     description: "Model how many winners a batch needs to find to pay for itself.",
   },
   {
-    href: "/best-for/batch-video-ads-for-ecommerce-brands",
-    label: "Ecommerce batch ads",
-    description: "See how the batch system applies to product brands and DTC testing.",
+    href: "/best-for/batch-video-ads-for-dentists",
+    label: "Batch video ads by vertical",
+    description: "See how the batch system applies to a specific service vertical.",
   },
 ];
 

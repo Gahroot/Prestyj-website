@@ -4,7 +4,7 @@ import { z } from "zod";
 var blogSchema = frontmatterSchema.extend({
   date: z.string().optional().default(() => (/* @__PURE__ */ new Date()).toISOString().split("T")[0] ?? ""),
   updated: z.string().optional(),
-  author: z.string().optional().default("Prestyj Team"),
+  author: z.string().optional().default("Priya Raman"),
   keywords: z.array(z.string()).optional().default([]),
   image: z.string().optional(),
   noindex: z.boolean().optional().default(false)

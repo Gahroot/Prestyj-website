@@ -148,8 +148,8 @@ export const organicIntentPages = [
     relatedLinks: [
       ...sharedRelatedLinks,
       {
-        href: "/best-for/batch-video-ads-for-creators",
-        label: "Batch video ads for creators",
+        href: "/best-for/batch-video-ads-for-dentists",
+        label: "Batch video ads by vertical",
         description: "Turn one recording session into a paid-social test library.",
       },
     ],

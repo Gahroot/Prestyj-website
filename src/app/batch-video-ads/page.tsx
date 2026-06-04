@@ -5,6 +5,7 @@ import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { VideoObjectJsonLd } from "@/components/seo/video-object-json-ld";
 import { CitationStatsSection } from "@/components/sections/citation-stats-section";
 import { MAX_SHERROD_VIDEO_TESTIMONIAL } from "@/lib/testimonials";
+import { siteConfig } from "@/lib/site-config";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 const pageUrl = "https://prestyj.com/batch-video-ads";
@@ -80,14 +81,10 @@ export default function BatchVideoAdsPage() {
     url: pageUrl,
     provider: {
       "@type": "Organization",
-      name: "Prestyj",
-      url: "https://prestyj.com",
-      sameAs: [
-        "https://www.instagram.com/prestyj_/",
-        "https://www.linkedin.com/company/prestyj/",
-        "https://www.facebook.com/profile.php?id=61582824703610",
-        "https://x.com/prestyj_",
-      ],
+      "@id": siteConfig.organizationId,
+      name: siteConfig.name,
+      url: siteConfig.url,
+      sameAs: [...siteConfig.sameAs],
     },
     serviceType: [
       "Batch Video Ads",

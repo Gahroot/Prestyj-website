@@ -32,12 +32,13 @@
  *   - Writes the Q-ID to data/wikidata/prestyj-qid.json so other scripts
  *     can consume it.
  *   - Prints the JSON-LD `sameAs` snippet to add to
- *     src/components/seo/json-ld.tsx.
+ *     src/lib/site-config.ts (the canonical sameAs source of truth).
  */
 
 import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { config as loadEnv } from "dotenv";
+import { assertSelfMadeBacklinksHalted } from "../backlinks/halt";
 
 // Load .env.local first (overrides), then .env
 loadEnv({ path: ".env.local" });
@@ -521,6 +522,9 @@ async function main(): Promise<void> {
     return;
   }
 
+  // A Wikidata item is a self-made placement — halted by link policy.
+  assertSelfMadeBacklinksHalted("wikidata:create (self-made Wikidata entity backlink)");
+
   // Live mode requires credentials
   if (!username || !password) {
     console.error("\n❌ Missing credentials.");
@@ -557,7 +561,7 @@ async function main(): Promise<void> {
 
   console.log("\nNext step (automatic):");
   console.log("  The Q-ID is saved to data/wikidata/prestyj-qid.json.");
-  console.log(`  Add this URL to the sameAs array in src/components/seo/json-ld.tsx:`);
+  console.log(`  Add this URL to the sameAs array in src/lib/site-config.ts:`);
   console.log(`    "https://www.wikidata.org/wiki/${qid}"\n`);
 }
 
