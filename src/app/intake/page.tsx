@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getPaidSession } from "@/lib/stripe";
 import { getBatchTierByPriceId } from "@/lib/batch-tiers";
+import {
+  LEGACY_INTAKE_ENABLED,
+  PREMIUM_PORTAL_URL,
+} from "@/lib/premium-portal";
 import { IntakeClient } from "./intake-client";
 import { PurchaseConversion } from "./purchase-conversion";
 
@@ -25,6 +29,13 @@ export default async function IntakePage({
 
   if (!rawSessionId) {
     redirect("/batch-video-ads#pricing");
+  }
+
+  // Cutover: paid orders now flow through the premium portal's claim page. The
+  // legacy on-site intake is kept only as a temporary emergency backup. When it
+  // is disabled, forward verified sessions straight to the portal.
+  if (!LEGACY_INTAKE_ENABLED) {
+    redirect(`${PREMIUM_PORTAL_URL.replace(/\/$/, "")}/start?session_id=${rawSessionId}`);
   }
 
   const session = await getPaidSession(rawSessionId);
@@ -62,6 +73,19 @@ export default async function IntakePage({
         }}
       />
       <div className="mx-auto mb-8 max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+        <div className="border-primary/30 bg-primary/5 text-foreground mx-auto mb-6 flex max-w-xl flex-col items-center gap-2 rounded-xl border px-4 py-3 text-sm">
+          <p className="font-semibold">Your order is moving to the new guided portal.</p>
+          <p className="text-muted-foreground">
+            We&apos;ve upgraded onboarding. You can finish here, or{" "}
+            <a
+              href={`${PREMIUM_PORTAL_URL.replace(/\/$/, "")}/start?session_id=${session.sessionId}`}
+              className="text-primary font-medium underline"
+            >
+              continue in the new portal
+            </a>
+            .
+          </p>
+        </div>
         <p className="border-success/40 text-success mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wide uppercase">
           Payment confirmed · {tier.name}
         </p>

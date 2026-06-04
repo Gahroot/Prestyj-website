@@ -3,6 +3,7 @@ import { getStripe } from "@/lib/stripe";
 import { BATCH_TIERS, getBatchTierPriceId, isBatchTierId } from "@/lib/batch-tiers";
 import { getPlanCheckoutPrices } from "@/lib/plan-checkout";
 import { getPricingTier, isDirectBuyTier } from "@/lib/pricing-data";
+import { buildPortalClaimSuccessUrl } from "@/lib/premium-portal";
 
 export const runtime = "nodejs";
 
@@ -115,7 +116,9 @@ async function handleBatchCheckout(request: NextRequest, tierId: unknown, bump: 
       billing_address_collection: "required",
       phone_number_collection: { enabled: true },
       allow_promotion_codes: true,
-      success_url: `${origin}/intake?session_id={CHECKOUT_SESSION_ID}`,
+      // Hand paid buyers to the premium portal's verified claim flow.
+      // Stripe expands {CHECKOUT_SESSION_ID}; the portal verifies it server-side.
+      success_url: buildPortalClaimSuccessUrl(),
       cancel_url: `${origin}/pricing`,
       metadata: checkoutMetadata,
       payment_intent_data: {
