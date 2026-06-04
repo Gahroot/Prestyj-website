@@ -96,6 +96,13 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   category: "technology",
+  // Google Search Console verification. Driven by env so the token can be set
+  // (Vercel → Production) without a code change. Omitted entirely when unset so
+  // no broken/placeholder meta tag is emitted. Required before branded-query
+  // ("Prestyj") impressions can be tracked in Search Console.
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   // Discovery tags — oEmbed (Notion/WordPress/Substack auto-embed) +
   // RSS feed of the statistics dataset (auto-pickup by feed readers and
   // AI freshness pipelines).
