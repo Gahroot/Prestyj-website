@@ -116,24 +116,34 @@ export const serviceBusinessOwnersVsAgencyVideoCompareData: ComparePageData = cr
       linkText: "Learn more",
     },
     {
-      title: "Batch Video Ads for Service Business Owners",
-      description: "Service Business Owners-specific use case",
-      href: "/best-for/batch-video-ads-for-service-business-owners",
+      title: "Batch Video Ads for Real Estate Teams",
+      description: "How the batch system applies to real estate teams",
+      href: "/best-for/batch-video-ads-for-real-estate-teams",
       linkText: "Read use case",
     },
     {
-      title: "Cost Per Tested Ad Angle for Service Business Owners",
+      title: "Cost Per Tested Ad Angle",
       description: "Full pricing math breakdown",
-      href: "/best-for/cost-per-tested-ad-angle-for-service-business-owners",
+      href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams",
       linkText: "See the math",
     },
     {
-      title: "Service Business Owners Video Production Alternative",
-      description: "Alternative to traditional service business owners video production",
-      href: "/alternatives/service-business-owners-video-production-alternative",
+      title: "Video Production Alternative",
+      description: "Alternative to traditional video production",
+      href: "/alternatives/real-estate-teams-video-production-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "How much proof does a service business owner get before committing agency money?",
+    intro: "For local service companies, the expensive part is not simply producing a polished video; it is learning which customer pain points actually produce booked jobs. These benchmarks show why a batch-testing model changes the risk profile versus a traditional video agency engagement.",
+    stats: [
+      { statId: "batch-video-cost-per-tested-angle-vs-agency", analysis: "An agency quote usually forces owners to bet thousands on a narrow concept before the market has spoken. Prestyj makes the angle itself inexpensive enough to compare multiple homeowner objections instead of treating the first script as the strategy." },
+      { statId: "bva-cost-per-tested-angle", analysis: "At this range, a service business can evaluate problems like emergency response, financing, trust, or seasonal maintenance as separate experiments. The buyer is paying for learning velocity, not just another finished asset to place in a campaign." },
+      { statId: "bva-winner-rate-home-services", analysis: "A low winner rate means even competent creative will mostly be average, so the vendor decision should reward systems that expect misses. Prestyj's advantage is that it lets owners absorb that reality without turning every non-winner into an agency-budget setback." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "Service Business Owners Pick Batch Over Marketing Agencies.",
     description:

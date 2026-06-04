@@ -146,6 +146,29 @@ export const socialVolumeStrategyForServiceBusinessOwners: BestForPageContent = 
         "Most service business owners see clear reach and follower-growth signal within 30 days. Pipeline impact (inbound, qualified conversations, downstream revenue) typically lifts within 60–90 days as the content library accumulates authority. The compounding effect is the point: month 6 outperforms month 2 by 5–10×, month 12 outperforms month 6 by 3–5×.",
     },
   ],
+  proprietaryData: {
+    heading: "How much social volume does a local service business need to stay visible?",
+    intro:
+      "Service business owners are not competing only on captions; they are competing on whether prospects see recent proof before requesting an estimate. These benchmarks explain why cadence, refresh, and platform coverage have become operational requirements rather than vanity metrics.",
+    stats: [
+      {
+        statId: "social-platform-cadence-short-form",
+        analysis:
+          "A 1–3 short-form posts-per-day rhythm gives the business repeated chances to show jobs in progress, finished work, technician expertise, and customer reactions. That matters locally because trust is built from recency and repetition, not from one polished brand video pinned for months.",
+      },
+      {
+        statId: "social-agency-post-volume",
+        analysis:
+          "A 20–30 post monthly cadence creates long gaps between proof points, especially when spread across several platforms. For a service owner, those gaps can make a healthy operation look quiet exactly when a homeowner is comparing companies online.",
+      },
+      {
+        statId: "fatigue-refresh-extends-life",
+        analysis:
+          "Extending creative life 3–5× through refreshes means the owner can keep a proven offer or job-story format in market without letting it go stale. The strategy is not endless novelty; it is keeping the same trust signal recognizable while changing the hooks, formats, and examples around it.",
+      },
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     headline: "Stop Posting What You Have Time For. Start Posting What the Algorithm Rewards.",
     subheadline:

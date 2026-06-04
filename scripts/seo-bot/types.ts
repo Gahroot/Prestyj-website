@@ -79,6 +79,12 @@ export interface DailyRotation {
 export interface CircuitBreaker {
   maxPagesPerDay: number;
   maxBlogsPerDay: number;
+  /**
+   * Max blog posts that may be generated across a rolling 7-day window.
+   * Enforces the post-March-2026 "a few deeply-differentiated pieces per week"
+   * policy on top of the per-day cap. Optional for backward compatibility.
+   */
+  maxBlogsPerWeek?: number;
   maxCostPerDayUSD: number;
   maxApiErrorsBeforeHalt: number;
 }

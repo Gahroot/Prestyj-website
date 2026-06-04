@@ -154,6 +154,29 @@ export const doneForYouSocialForServiceBusinessOwners: BestForPageContent = {
         "Yes — and at a fraction of the cost. A traditional smma / social media marketing agency runs $3K–$15K/month retainer and ships 20–30 posts. Prestyj is $3,000/month flat for 1,500+ posts across 7 platforms. Most service business owners replace the entire existing stack within 30 days.",
     },
   ],
+  proprietaryData: {
+    heading: "What does done-for-you social really cost a service business owner?",
+    intro:
+      "HVAC, roofing, plumbing, electrical, and home-service owners need social proof to be current, local, and frequent, but the labor model behind that output is usually hidden. These numbers compare the actual production burden with the post volume most agencies deliver.",
+    stats: [
+      {
+        statId: "social-dfy-real-loaded-cost",
+        analysis:
+          "A $2.4K–$7.8K monthly loaded cost shows why ‘just hire someone’ is not a simple fix for a shop owner already managing crews, dispatch, and estimates. The cost range also excludes the owner time needed to feed that person job photos, reviews, and approvals.",
+      },
+      {
+        statId: "social-agency-post-volume",
+        analysis:
+          "Twenty to thirty posts a month may maintain a brochure-like presence, but it does not keep a local service brand visibly active through busy season, storm season, or replacement campaigns. For a trades business, sparse posting leaves too many trust-building moments trapped in camera rolls.",
+      },
+      {
+        statId: "social-effective-cost-per-post",
+        analysis:
+          "The $0.74–$7.40 effective cost-per-post range reframes social from a retainer line item into a distribution system. Owners can judge whether the content engine is creating enough local proof points per dollar, not just whether a calendar was filled.",
+      },
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     headline: "Your Service Business Owners Brand Shouldn't Depend on Your Free Time.",
     subheadline:

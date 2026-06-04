@@ -38,27 +38,9 @@ import { alannaAi } from "./alanna-ai";
 import { socialMediaAgencies } from "./social-media-agencies";
 
 // BATCH-MATRIX-IMPORTS-START
-import { coachesVideoProductionAlternative } from "./coaches-video-production-alternative";
-import { mediaBuyersVideoProductionAlternative } from "./media-buyers-video-production-alternative";
-import { cmosVideoProductionAlternative } from "./cmos-video-production-alternative";
-import { agencyOwnersVideoProductionAlternative } from "./agency-owners-video-production-alternative";
-import { serviceBusinessOwnersVideoProductionAlternative } from "./service-business-owners-video-production-alternative";
-import { hvacCompaniesVideoProductionAlternative } from "./hvac-companies-video-production-alternative";
-import { plumbingContractorsVideoProductionAlternative } from "./plumbing-contractors-video-production-alternative";
-import { roofingContractorsVideoProductionAlternative } from "./roofing-contractors-video-production-alternative";
 import { realEstateTeamsVideoProductionAlternative } from "./real-estate-teams-video-production-alternative";
-import { mortgageBrokersVideoProductionAlternative } from "./mortgage-brokers-video-production-alternative";
 // SOCIAL-VERTICAL-MATRIX-IMPORTS-START
-import { coachesSocialMediaAgencyAlternative } from "./coaches-social-media-agency-alternative";
-import { mediaBuyersSocialMediaAgencyAlternative } from "./media-buyers-social-media-agency-alternative";
-import { cmosSocialMediaAgencyAlternative } from "./cmos-social-media-agency-alternative";
-import { agencyOwnersSocialMediaAgencyAlternative } from "./agency-owners-social-media-agency-alternative";
 import { serviceBusinessOwnersSocialMediaAgencyAlternative } from "./service-business-owners-social-media-agency-alternative";
-import { ecommerceBrandsSocialMediaAgencyAlternative } from "./ecommerce-brands-social-media-agency-alternative";
-import { saasFoundersSocialMediaAgencyAlternative } from "./saas-founders-social-media-agency-alternative";
-import { personalBrandsSocialMediaAgencyAlternative } from "./personal-brands-social-media-agency-alternative";
-import { creatorsSocialMediaAgencyAlternative } from "./creators-social-media-agency-alternative";
-import { consultantsSocialMediaAgencyAlternative } from "./consultants-social-media-agency-alternative";
 // SOCIAL-VERTICAL-MATRIX-IMPORTS-END
 // BATCH-MATRIX-IMPORTS-END
 
@@ -101,30 +83,10 @@ export const alternatives: Record<string, AlternativePageContent> = {
   "alanna-ai": alannaAi,
   "social-media-agencies": socialMediaAgencies,
   // BATCH-MATRIX-REGISTER-START
-  "coaches-video-production-alternative": coachesVideoProductionAlternative,
-  "media-buyers-video-production-alternative": mediaBuyersVideoProductionAlternative,
-  "cmos-video-production-alternative": cmosVideoProductionAlternative,
-  "agency-owners-video-production-alternative": agencyOwnersVideoProductionAlternative,
-  "service-business-owners-video-production-alternative":
-    serviceBusinessOwnersVideoProductionAlternative,
-  "hvac-companies-video-production-alternative": hvacCompaniesVideoProductionAlternative,
-  "plumbing-contractors-video-production-alternative":
-    plumbingContractorsVideoProductionAlternative,
-  "roofing-contractors-video-production-alternative": roofingContractorsVideoProductionAlternative,
   "real-estate-teams-video-production-alternative": realEstateTeamsVideoProductionAlternative,
-  "mortgage-brokers-video-production-alternative": mortgageBrokersVideoProductionAlternative,
   // SOCIAL-VERTICAL-MATRIX-REGISTER-START
-  "coaches-social-media-agency-alternative": coachesSocialMediaAgencyAlternative,
-  "media-buyers-social-media-agency-alternative": mediaBuyersSocialMediaAgencyAlternative,
-  "cmos-social-media-agency-alternative": cmosSocialMediaAgencyAlternative,
-  "agency-owners-social-media-agency-alternative": agencyOwnersSocialMediaAgencyAlternative,
   "service-business-owners-social-media-agency-alternative":
     serviceBusinessOwnersSocialMediaAgencyAlternative,
-  "ecommerce-brands-social-media-agency-alternative": ecommerceBrandsSocialMediaAgencyAlternative,
-  "saas-founders-social-media-agency-alternative": saasFoundersSocialMediaAgencyAlternative,
-  "personal-brands-social-media-agency-alternative": personalBrandsSocialMediaAgencyAlternative,
-  "creators-social-media-agency-alternative": creatorsSocialMediaAgencyAlternative,
-  "consultants-social-media-agency-alternative": consultantsSocialMediaAgencyAlternative,
   // SOCIAL-VERTICAL-MATRIX-REGISTER-END
   // BATCH-MATRIX-REGISTER-END
 };

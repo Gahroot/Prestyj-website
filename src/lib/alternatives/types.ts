@@ -1,3 +1,5 @@
+import type { ProprietaryDataBlock } from "@/lib/proprietary-data/types";
+
 export type AlternativeType = "direct-competitor" | "integration-partner";
 
 export interface FeatureRow {
@@ -52,6 +54,11 @@ export interface AlternativePageContent {
     prestyjPricing: PricingInfo;
   };
   whySwitch: WhySwitchReason[];
+  /**
+   * Page-specific proprietary statistics + original analysis that make this
+   * alternative page answer a distinct query no sibling page covers.
+   */
+  proprietaryData?: ProprietaryDataBlock;
   whenCompetitorFits: string[];
   whenPrestyjFits: string[];
   relatedResources: Array<{

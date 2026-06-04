@@ -414,6 +414,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   //     fiverr-video-ads, fiverr-social-media, buffer, later, hootsuite, canva)
   //     → /compare
   //   - ai-consultant-* pages → /pricing
+  //   - thin near-duplicate matrix cells (bland-ai, ugc-creator-video-for-coaches,
+  //     fiverr-video-for-media-buyers, ai-avatar-tool-video-for-agency-owners,
+  //     agency-video-for-mortgage-brokers, in-house-video-for-roofing-contractors,
+  //     in-house-hire-for-{coaches,cmos}, smma-for-{media-buyers,consultants},
+  //     fiverr-for-ecommerce-brands, va-plus-templates-for-personal-brands)
+  //     → canonical sibling per near-duplicate audit
   const compareSlugs = [
     // AI sales / lead-conversion agents (core positioning)
     "prestyj-vs-conversica",
@@ -424,7 +430,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "prestyj-vs-lofty",
     "prestyj-vs-resimpli",
     // AI voice agents
-    "prestyj-vs-bland-ai",
     "prestyj-vs-vapi",
     "prestyj-vs-retell-ai",
     "prestyj-vs-synthflow",
@@ -454,28 +459,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "prestyj-vs-sprout-social",
     "prestyj-vs-social-media-agency",
     "prestyj-vs-junior-social-hire",
-    // Vertical video-production matrix
-    "prestyj-vs-ugc-creator-video-for-coaches",
-    "prestyj-vs-fiverr-video-for-media-buyers",
+    // Vertical video-production matrix — near-duplicate cells consolidated
+    // into one canonical per cluster (see
+    // scripts/output/near-duplicate-report-*.md). Pruned cells 301-redirect
+    // to their canonical in next.config.ts.
     "prestyj-vs-in-house-video-for-cmos",
-    "prestyj-vs-ai-avatar-tool-video-for-agency-owners",
     "prestyj-vs-agency-video-for-service-business-owners",
     "prestyj-vs-ugc-creator-video-for-hvac-companies",
     "prestyj-vs-fiverr-video-for-plumbing-contractors",
-    "prestyj-vs-in-house-video-for-roofing-contractors",
     "prestyj-vs-ai-avatar-tool-video-for-real-estate-teams",
-    "prestyj-vs-agency-video-for-mortgage-brokers",
-    // Vertical social matrix
-    "prestyj-vs-in-house-hire-for-coaches",
-    "prestyj-vs-smma-for-media-buyers",
-    "prestyj-vs-in-house-hire-for-cmos",
+    // Vertical social matrix — near-duplicate cells consolidated to canonical.
     "prestyj-vs-va-plus-templates-for-agency-owners",
     "prestyj-vs-smma-for-service-business-owners",
-    "prestyj-vs-fiverr-for-ecommerce-brands",
     "prestyj-vs-in-house-hire-for-saas-founders",
-    "prestyj-vs-va-plus-templates-for-personal-brands",
     "prestyj-vs-fiverr-for-creators",
-    "prestyj-vs-smma-for-consultants",
     // Generic positioning compare
     "ai-lead-generation-vs-traditional",
   ];

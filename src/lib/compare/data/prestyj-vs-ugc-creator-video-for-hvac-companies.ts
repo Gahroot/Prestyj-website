@@ -112,24 +112,34 @@ export const hvacCompaniesVsUgcCreatorVideoCompareData: ComparePageData = create
       linkText: "Learn more",
     },
     {
-      title: "Batch Video Ads for HVAC Companies",
-      description: "HVAC-specific use case",
-      href: "/best-for/batch-video-ads-for-hvac-companies",
+      title: "Batch Video Ads for Real Estate Teams",
+      description: "How the batch system applies to real estate teams",
+      href: "/best-for/batch-video-ads-for-real-estate-teams",
       linkText: "Read use case",
     },
     {
-      title: "Cost Per Tested Ad Angle for HVAC",
+      title: "Cost Per Tested Ad Angle",
       description: "Full pricing math breakdown",
-      href: "/best-for/cost-per-tested-ad-angle-for-hvac-companies",
+      href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams",
       linkText: "See the math",
     },
     {
-      title: "HVAC Companies Video Production Alternative",
-      description: "Alternative to traditional hvac video production",
-      href: "/alternatives/hvac-companies-video-production-alternative",
+      title: "Video Production Alternative",
+      description: "Alternative to traditional video production",
+      href: "/alternatives/real-estate-teams-video-production-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "Do HVAC companies get better ad learning from AI batches than individual UGC creators?",
+    intro: "HVAC marketing depends on matching the right seasonal problem to the right homeowner segment at the right time. These benchmarks show why creative breadth and cost transparency matter more than the charm of a single creator video.",
+    stats: [
+      { statId: "ugc-ad-roi-vs-ai-batch-roi-ratio", analysis: "A stronger per-dollar return means HVAC teams can test more comfort, repair, financing, and maintenance messages for the same spend. The practical advantage is more shots at finding the offer that fills the board during peak and shoulder seasons." },
+      { statId: "ugc-marketplace-hidden-cost-percent", analysis: "Hidden marketplace costs are especially painful when seasonal windows are short and every revision delays launch. HVAC companies should compare the complete path to a usable ad, not only the creator's base fee." },
+      { statId: "bva-winner-rate-home-services", analysis: "Because only a minority of home-service ads win, buying one or two creator concepts is an optimistic strategy. Prestyj's batch approach fits the odds by generating enough variations for the market to reveal which homeowner concern actually converts." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "HVAC Pick Batch Over Home Services UGC Creators.",
     description:

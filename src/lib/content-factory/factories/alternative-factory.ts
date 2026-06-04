@@ -4,6 +4,7 @@ import type {
   FeatureRow,
   PricingInfo,
 } from "@/lib/alternatives/types";
+import type { ProprietaryDataBlock } from "@/lib/proprietary-data/types";
 import { STANDARD_INDUSTRY_STATS, REACTIVATION_STATS } from "../constants/industry-stats";
 import { CTA_TEMPLATES } from "../constants/cta-snippets";
 import { PRESTYJ_STANDARD_PRICING } from "../constants/pricing-features";
@@ -28,6 +29,7 @@ interface AlternativeFactoryInput {
     prestyjPricingOverrides?: Partial<PricingInfo>;
   };
   whySwitch: Array<{ icon: IconName; title: string; description: string }>;
+  proprietaryData?: ProprietaryDataBlock;
   whenCompetitorFits: string[];
   whenPrestyjFits: string[];
   relatedResources: Array<{
@@ -74,6 +76,10 @@ export function createAlternativePage(input: AlternativeFactoryInput): Alternati
     ...input.cta,
   };
 
+  const proprietaryDataSection = input.proprietaryData
+    ? { proprietaryData: input.proprietaryData }
+    : {};
+
   return {
     slug: input.slug,
     type: input.type,
@@ -87,6 +93,7 @@ export function createAlternativePage(input: AlternativeFactoryInput): Alternati
       prestyjPricing,
     },
     whySwitch: input.whySwitch,
+    ...proprietaryDataSection,
     whenCompetitorFits: input.whenCompetitorFits,
     whenPrestyjFits: input.whenPrestyjFits,
     relatedResources: input.relatedResources,

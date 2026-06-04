@@ -4,6 +4,12 @@ export interface CircuitState {
   todaysShipped: { pages: number; blogs: number };
   todaysCost: number;
   todaysErrors: number;
+  /**
+   * Blog posts shipped over the trailing 7 days (excluding today). Combined
+   * with today's count to enforce the weekly cap that backs the
+   * "a few deeply-differentiated pieces per week" policy.
+   */
+  trailingWeekBlogs?: number;
 }
 
 export interface CircuitCheck {
@@ -26,6 +32,7 @@ export class CircuitBreaker {
       },
       todaysCost: state.todaysCost,
       todaysErrors: state.todaysErrors,
+      trailingWeekBlogs: state.trailingWeekBlogs ?? 0,
     };
     this.halted = false;
   }
@@ -86,6 +93,15 @@ export class CircuitBreaker {
         allowed: false,
         reason: `Blog ship limit reached (${this.state.todaysShipped.blogs}/${this.config.maxBlogsPerDay}).`,
       };
+    }
+    if (this.config.maxBlogsPerWeek !== undefined) {
+      const weekTotal = (this.state.trailingWeekBlogs ?? 0) + this.state.todaysShipped.blogs;
+      if (weekTotal >= this.config.maxBlogsPerWeek) {
+        return {
+          allowed: false,
+          reason: `Weekly blog cap reached (${weekTotal}/${this.config.maxBlogsPerWeek}). Policy: a few deeply-differentiated, human-reviewed pieces per week.`,
+        };
+      }
     }
     return { allowed: true };
   }

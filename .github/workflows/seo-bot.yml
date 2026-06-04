@@ -1,23 +1,31 @@
-name: SEO Bot Daily Run
+name: SEO Bot (manual draft → review PR)
+
+# Policy (March 2026 scaled-content update):
+# Rapid mass publishing on a low-authority domain is the exact footprint the
+# update penalizes. The autonomous DAILY CRON IS DISABLED. The bot now only
+# runs on manual dispatch, generates a small number of DRAFTS in review mode
+# (no auto-commit to main, no IndexNow), and opens a pull request so a human
+# reviews and merges deliberately. Cap: a few deeply-differentiated pieces/week.
 
 on:
-  schedule:
-    - cron: "0 7 * * *" # 7am UTC daily
   workflow_dispatch:
     inputs:
       tasks:
         description: "Comma-separated task list (override rotation)"
         required: false
       dryRun:
-        description: "Dry run (no commit)"
+        description: "Dry run (generate nothing, simulate only)"
         type: boolean
         default: false
 
+# Note: no `schedule:` block. Autonomous daily generation is intentionally off.
+
 jobs:
-  daily:
+  draft:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -32,7 +40,7 @@ jobs:
         run: |
           git config user.name "seo-bot"
           git config user.email "seo-bot@prestyj.com"
-      - name: Run daily SEO bot
+      - name: Run SEO bot in review mode
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -41,8 +49,9 @@ jobs:
           MOONSHOT_API_KEY: ${{ secrets.MOONSHOT_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          INDEXNOW_API_KEY: ${{ secrets.INDEXNOW_API_KEY }}
         run: |
+          # Never pass --publish here. Review mode leaves drafts uncommitted in
+          # the working tree; the next step opens a PR for a human to review.
           if [ "${{ github.event.inputs.dryRun }}" = "true" ]; then
             npx tsx scripts/seo-bot/cli.ts daily --dry-run
           elif [ -n "${{ github.event.inputs.tasks }}" ]; then
@@ -50,6 +59,28 @@ jobs:
           else
             npx tsx scripts/seo-bot/cli.ts daily
           fi
+      - name: Open review pull request
+        if: ${{ github.event.inputs.dryRun != 'true' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          # Only proceed if the bot actually drafted something.
+          if [ -z "$(git status --porcelain content/blog/ src/lib/)" ]; then
+            echo "No drafts generated — nothing to review."
+            exit 0
+          fi
+          BRANCH="seo-bot/drafts-$(date -u +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git add content/blog/ src/lib/
+          git commit -m "seo-bot: drafts for human review (do not merge without review)"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "SEO bot drafts for human review — $(date -u +%Y-%m-%d)" \
+            --body "Auto-generated DRAFTS in review mode. Per the March 2026 scaled-content policy, these must be human-reviewed and deeply differentiated before merge. Do NOT bulk-merge. IndexNow fires only after merge to main." \
+            --base main \
+            --head "$BRANCH" \
+            --label "needs-human-review"
       - name: Upload reports artifact
         if: always()
         uses: actions/upload-artifact@v4

@@ -153,14 +153,29 @@ async function loadMetricsHistory(metricsFile: string): Promise<MetricsHistoryFi
   return { days };
 }
 
+function isoDaysBefore(dateISO: string, days: number): string {
+  const d = new Date(`${dateISO}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - days);
+  return todayISODate(d);
+}
+
 async function loadTodaysCircuitState(metricsFile: string, dateISO: string): Promise<CircuitState> {
   const history = await loadMetricsHistory(metricsFile);
   const today = history.days.find((d) => d.date === dateISO);
+
+  // Rolling 7-day window ending yesterday (today is counted separately by the
+  // circuit breaker as blogs ship during the run).
+  const windowStart = isoDaysBefore(dateISO, 6);
+  const trailingWeekBlogs = history.days
+    .filter((d) => d.date >= windowStart && d.date < dateISO)
+    .reduce((sum, d) => sum + d.blogsShipped, 0);
+
   if (!today) {
     return {
       todaysShipped: { pages: 0, blogs: 0 },
       todaysCost: 0,
       todaysErrors: 0,
+      trailingWeekBlogs,
     };
   }
   return {
@@ -170,6 +185,7 @@ async function loadTodaysCircuitState(metricsFile: string, dateISO: string): Pro
     },
     todaysCost: today.costUSD,
     todaysErrors: today.errors.length,
+    trailingWeekBlogs,
   };
 }
 
@@ -661,11 +677,19 @@ export interface RunDailyArgs {
   date: Date;
   dryRun?: boolean;
   taskOverride?: TaskName[];
+  /**
+   * Review mode: write generated files and run the typecheck gate, but do NOT
+   * commit, push, or submit to IndexNow. Files are left in the working tree so
+   * a human can review and publish them deliberately (e.g. via a pull request).
+   * This enforces the post-March-2026 policy: no autonomous mass publishing.
+   */
+  noCommit?: boolean;
 }
 
 export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
   const cwd = process.cwd();
   const dryRun = args.dryRun === true;
+  const noCommit = args.noCommit === true;
   const dateISO = todayISODate(args.date);
   const metrics = emptyMetrics(dateISO);
 
@@ -878,6 +902,13 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
       // Drop shipped records from metrics since we rolled back
       metrics.errors.push(
         `Typecheck failed — rolled back ${removed.length} file(s). Details in report.`,
+      );
+    } else if (noCommit) {
+      commitMessage =
+        "Review mode — files left uncommitted for human review. No push, no IndexNow.";
+      indexnowMessage = "Review mode: IndexNow skipped (will fire when a human publishes).";
+      console.log(
+        "[seo-bot] Review mode: typecheck passed; leaving generated files for human review.",
       );
     } else {
       const summary = summarizeShipped(newShipped);

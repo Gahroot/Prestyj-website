@@ -166,6 +166,29 @@ export const costPerTestedAdAngleForRealEstateTeams: BestForPageContent = {
         "The hidden cost of portal leads is permanent buyer-side bias and zero brand equity — every dollar to Zillow strengthens Zillow, not your team brand. Cost per tested angle has to be re-paid every 30-60 days because winning angles fatigue. Batch math: a refresh batch is the same flat fee. Agency math: every refresh resets the retainer clock. Over 12 months the cost gap widens dramatically — most re teams who run continuous paid social see batch save 60-85% of fully-loaded creative cost over a calendar year.",
     },
   ],
+  proprietaryData: {
+    heading: "What is the real unit cost of proving a real estate ad angle?",
+    intro:
+      "For real estate teams, the expensive mistake is pricing creative by the finished video instead of by the decision it lets the media buyer make. These benchmarks translate production into the cost of learning whether a buyer, seller, or recruiting angle deserves spend.",
+    stats: [
+      {
+        statId: "bva-cost-per-tested-angle",
+        analysis:
+          "A $400–$500 tested angle is small compared with the gross commission upside of one additional appointment that turns into a closing. It lets a team retire weak messaging quickly instead of protecting a bad concept because the shoot was expensive.",
+      },
+      {
+        statId: "batch-video-cost-per-tested-angle-vs-agency",
+        analysis:
+          "The gap versus a $4K–$12K agency-tested angle matters because real estate positioning is rarely solved in one attempt. Teams need to compare market-update authority, seller urgency, buyer education, and agent-recruiting concepts in parallel, not spend a quarter discovering that one broad promise was too vague.",
+      },
+      {
+        statId: "bva-small-batch-zero-winner-risk",
+        analysis:
+          "A 30–40% chance of finding no winner in a tiny batch means the team may misread an underpowered test as a channel failure. In a local market, that can push budget back to portals even though the missing ingredient was enough variations to give Meta a fair shot.",
+      },
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     headline: "Run the Math for RE Teams: ≈$500 Per Tested Angle.",
     subheadline:

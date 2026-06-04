@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { ProprietaryDataBlock } from "@/lib/proprietary-data/types";
 
 export interface ComparePageData {
   slug: string;
@@ -9,6 +10,11 @@ export interface ComparePageData {
   features: FeatureComparison[];
   whySwitch: WhySwitchSection;
   relatedResources?: RelatedResource[];
+  /**
+   * Page-specific proprietary statistics + original analysis that make this
+   * comparison answer a distinct query no sibling compare page covers.
+   */
+  proprietaryData?: ProprietaryDataBlock;
   cta: CTASection;
   specialSections?: SpecialSection[];
 }

@@ -116,24 +116,34 @@ export const plumbingContractorsVsFiverrVideoCompareData: ComparePageData = crea
       linkText: "Learn more",
     },
     {
-      title: "Batch Video Ads for Plumbing Contractors",
-      description: "Plumbing-specific use case",
-      href: "/best-for/batch-video-ads-for-plumbing-contractors",
+      title: "Batch Video Ads for Real Estate Teams",
+      description: "How the batch system applies to real estate teams",
+      href: "/best-for/batch-video-ads-for-real-estate-teams",
       linkText: "Read use case",
     },
     {
-      title: "Cost Per Tested Ad Angle for Plumbing",
+      title: "Cost Per Tested Ad Angle",
       description: "Full pricing math breakdown",
-      href: "/best-for/cost-per-tested-ad-angle-for-plumbing-contractors",
+      href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams",
       linkText: "See the math",
     },
     {
-      title: "Plumbing Contractors Video Production Alternative",
-      description: "Alternative to traditional plumbing video production",
-      href: "/alternatives/plumbing-contractors-video-production-alternative",
+      title: "Video Production Alternative",
+      description: "Alternative to traditional video production",
+      href: "/alternatives/real-estate-teams-video-production-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "Will a plumbing contractor get enough fresh winners to keep emergency calls efficient?",
+    intro: "Plumbing ads fatigue quickly because the audience is local, urgent, and repeatedly exposed to similar promises. These benchmarks explain why contractors need ongoing creative throughput, not occasional freelancer videos.",
+    stats: [
+      { statId: "bva-winner-rate-home-services", analysis: "With only a small share of home-service ads becoming winners, a plumbing company cannot rely on a handful of Fiverr concepts to carry the month. The smarter buy is a process that assumes many hooks will fail and keeps searching for the few that lower booked-call costs." },
+      { statId: "fatigue-refresh-extends-life", analysis: "Fresh variants can stretch campaign usefulness far beyond a single lucky creative. For plumbers, that means the best drain-cleaning, leak, or water-heater angle can be refreshed before performance collapses instead of being replaced from scratch." },
+      { statId: "fatigue-ads-fully-fatigued-14-days", analysis: "A two-week fatigue horizon is brutal for contractors who wait on freelancers between orders. If new creative is not already queued, media spend can keep running while the ad has lost its ability to compete in the feed." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "Plumbing Pick Batch Over Fiverr Video Editors.",
     description:

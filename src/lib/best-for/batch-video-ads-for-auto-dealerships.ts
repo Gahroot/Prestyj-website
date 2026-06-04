@@ -128,6 +128,29 @@ export const batchVideoAdsForAutoDealerships: BestForPageContent = {
       answer: "Choose 100 ads for a focused first test, 300 for three problem lanes, 500 for the recommended matrix, and 1,000 if you need to test many auto dealers triggers or refresh a larger account.",
     },
   ],
+  proprietaryData: {
+    heading: "How should auto dealerships use creative volume when lead benchmarks are already competitive?",
+    intro:
+      "Auto dealers operate in a category where paid-search benchmarks prove demand exists, but the creative still determines which inventory, payment, and trade-in messages convert on social. These numbers pair industry lead benchmarks with Prestyj's low-cost variation model.",
+    stats: [
+      {
+        statId: "ind-cpl-auto",
+        analysis:
+          "The $28.50 automotive CPL is an industry benchmark, not a Prestyj-owned result, and it sets a useful performance reference for dealership marketers. If social creative cannot approach the economics buyers already see in high-intent channels, the first place to inspect is whether the ads are specific enough to inventory, financing, and trade-in intent.",
+      },
+      {
+        statId: "ind-auto-conv",
+        analysis:
+          "The 14.67% automotive conversion-rate benchmark shows that auto shoppers will act when the offer and path are clear. Prestyj's creative-testing role is to supply enough compliant variations to discover which payment promise, model availability, or credit-path message earns that action on feed-based platforms.",
+      },
+      {
+        statId: "bva-cost-per-ad-variation",
+        analysis:
+          "At $4–$5 per variation, dealers can make creative as fast-moving as inventory. Instead of waiting for a vendor to remake a sales-event spot, the store can test trucks, SUVs, trade-ins, subprime paths, and service retention angles while the opportunity is still live.",
+      },
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     headline: "Auto Dealerships: Turn One Recording Into a Paid-Social Test Library.",
     subheadline: "Get scripts and finished video ads built around auto dealers economics, timing triggers, compliance constraints, and buyer objections.",

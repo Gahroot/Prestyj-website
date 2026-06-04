@@ -162,6 +162,29 @@ export const batchVideoAdsForRealEstateTeams: BestForPageContent = {
         "There isn't one — it's a flat fee for 300 ads / 3 angles. We make money because the production system is engineered for batch output, not because we're hiding costs. Most RE Teams start at the $2,497 tier (500 ads / 5 angles) because the cost-per-angle math is significantly better there.",
     },
   ],
+  proprietaryData: {
+    heading: "How much creative volume do real estate teams need before paid social stops guessing?",
+    intro:
+      "Real estate teams are often trying to make one market-update video carry buyer leads, seller leads, recruiting, and listing promotion at the same time. These numbers show why the team that can rotate many specific ads gets a different learning loop than the team waiting on a monthly creative drop.",
+    stats: [
+      {
+        statId: "bva-creative-volume-top-accounts",
+        analysis:
+          "A 300–1,000 ad month changes the operating model from ‘launch a campaign’ to ‘manage an inventory of hypotheses.’ For a real estate team, that means seller valuation hooks, relocation hooks, neighborhood proof, and agent-recruiting messages can each get enough surface area without stealing budget from one another.",
+      },
+      {
+        statId: "bva-cost-per-ad-variation",
+        analysis:
+          "At $4–$5 per variation, local specificity becomes affordable instead of precious. A team can test a downsizing-seller version, a move-up-buyer version, and a listing-shortage version without treating every edit like a mini production decision.",
+      },
+      {
+        statId: "fatigue-cpm-creep-14-days",
+        analysis:
+          "The +28–40% CPM creep after two weeks is especially punishing in real estate because audiences are geographically constrained. If the same faces and hooks keep hitting a small ZIP-code pool, the team pays more to reach people who have already decided whether they care.",
+      },
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     headline: "Real Estate Teams: 500 Real Video Ads in 24 Hours.",
     subheadline:

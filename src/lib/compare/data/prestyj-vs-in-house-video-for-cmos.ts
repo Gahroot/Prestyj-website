@@ -111,24 +111,34 @@ export const cmosVsInHouseVideoCompareData: ComparePageData = createComparePage(
       linkText: "Learn more",
     },
     {
-      title: "Batch Video Ads for CMOs",
-      description: "CMOs-specific use case",
-      href: "/best-for/batch-video-ads-for-cmos",
+      title: "Batch Video Ads for Real Estate Teams",
+      description: "How the batch system applies to real estate teams",
+      href: "/best-for/batch-video-ads-for-real-estate-teams",
       linkText: "Read use case",
     },
     {
-      title: "Cost Per Tested Ad Angle for CMOs",
+      title: "Cost Per Tested Ad Angle",
       description: "Full pricing math breakdown",
-      href: "/best-for/cost-per-tested-ad-angle-for-cmos",
+      href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams",
       linkText: "See the math",
     },
     {
-      title: "CMOs Video Production Alternative",
-      description: "Alternative to traditional cmos video production",
-      href: "/alternatives/cmos-video-production-alternative",
+      title: "Video Production Alternative",
+      description: "Alternative to traditional video production",
+      href: "/alternatives/real-estate-teams-video-production-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "What does a CMO gain by buying tested angles instead of expanding internal video capacity?",
+    intro: "CMOs are accountable for pipeline efficiency, not merely for having more assets in the brand library. These benchmarks show how angle economics and fatigue pressure change the decision between Prestyj and an in-house video buildout.",
+    stats: [
+      { statId: "bva-cost-per-tested-angle", analysis: "This cost level lets marketing leadership fund many messaging hypotheses within the budget that internal teams might spend polishing a smaller set. The operational win is faster evidence on which buyer pain deserves media, sales enablement, and landing-page support." },
+      { statId: "batch-video-cost-per-tested-angle-vs-agency", analysis: "The agency comparison highlights the opportunity cost of treating each concept as a major production event. For a CMO, cheaper tested angles create more chances to find a scalable narrative before quarterly targets force a budget reallocation." },
+      { statId: "fatigue-cpm-creep-14-days", analysis: "Rising CPMs from stale creative can make an otherwise sound campaign look inefficient. Internal capacity helps only if it can refresh ads before media costs drift, which is why production cadence belongs in the ROI calculation." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "CMOs Pick Batch Over In-House Video Production.",
     description:

@@ -156,6 +156,30 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
         "Generic 'video production' ships generic creative. Batch begins with a vertical research pass on the highest-converting re teams hook patterns from current-quarter ad libraries — meaning the scripts are already tuned to re teams pain before you hit record.",
     },
   ],
+  proprietaryData: {
+    heading: "What does replacing real estate video production change in your paid-social testing math?",
+    intro:
+      "Real estate teams are not just buying prettier listing videos; they are buying enough buyer, seller, neighborhood, and market-update angles to keep campaigns learning. These benchmarks show whether a production replacement can support that testing workload without turning every new angle into a budget decision.",
+    stats: [
+      {
+        statId: "batch-video-cost-per-tested-angle-vs-agency",
+        analysis:
+          "For a team trying to prove which seller objection or buyer urgency message works, the agency-style price forces you to pre-pick winners before the market sees them. At the Prestyj benchmark range, testing a full angle becomes closer to a media-planning line item than a quarterly production bet, so teams can compare listing, valuation, and relocation narratives in parallel.",
+      },
+      {
+        statId: "bva-creative-volume-top-accounts",
+        analysis:
+          "A real estate account with multiple agents, towns, price bands, and lead types burns through creative faster than a single brand campaign. This volume gives the team enough permutations to localize hooks and rotate proof points without asking agents to record from scratch every time a neighborhood or inventory story changes.",
+      },
+      {
+        statId: "bva-cost-per-ad-variation",
+        analysis:
+          "When each variation is only a few dollars, the constraint shifts from production scarcity to deciding which messages deserve spend. That matters for teams replacing a video company because the alternative can support continuous iteration instead of preserving a small set of expensive assets long after their signal has gone stale.",
+      },
+    ],
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   whenCompetitorFits: [
     "You need a single high-polish brand film for a website hero or an investor deck",
     "You're producing a long-form documentary or case-study video where a 24-hour batch cadence is irrelevant",

@@ -1,20 +1,24 @@
 # SEO Bot
 
-Daily autonomous content generation for the Prestyj marketing site. Research → write → validate → commit → IndexNow. Pluggable across Claude / Gemini / DeepSeek / Qwen / Moonshot / Groq / OpenRouter. Runs on GitHub Actions cron; set at least one provider key and it works.
+> **Policy change (March 2026 scaled-content update).** Rapid mass publishing on a low-authority domain is the exact footprint Google's update penalizes. This bot **no longer mass-generates pages or auto-publishes.** The daily cron is disabled. The bulk geo/niche/comparison page factories are retired from the rotation. The bot now **only drafts a few deeply-differentiated, human-reviewed blog posts per week**, in review mode — nothing reaches `main` or IndexNow without a human merging a pull request.
 
-## What it ships
+Assisted content **drafting** for the Prestyj marketing site. Research → write → validate → **leave for human review**. Pluggable across Claude / Gemini / DeepSeek / Qwen / Moonshot / Groq / OpenRouter. Runs on **manual dispatch only**; set at least one provider key and it works.
 
-| Day | Tasks                                                 | Default provider           |
-| --- | ----------------------------------------------------- | -------------------------- |
-| Mon | 1 research brief + 3 geo pages + 2 niche pages        | Gemini Pro (free tier)     |
-| Tue | 1 research brief + 1 blog post (1,500+ words)         | Claude Sonnet for blog     |
-| Wed | 1 research brief + 3 geo pages + 1 comparison page    | Gemini Pro + Claude Sonnet |
-| Thu | 1 research brief + 10 title rewrites                  | Gemini Flash (free)        |
-| Fri | 1 research brief + 1 competitor audit + social drafts | Gemini Flash               |
-| Sat | Social copy for next week                             | Gemini Flash               |
-| Sun | Rest (weekly digest runs instead)                     | —                          |
+## What it drafts
 
-Edit `scripts/seo-bot/config.yml` to change rotation, model routing, or circuit breaker limits without touching code.
+| Day | Tasks                                  | Default provider       |
+| --- | -------------------------------------- | ---------------------- |
+| Mon | 1 research brief                       | Gemini Pro (free tier) |
+| Tue | 1 research brief + 1 blog DRAFT        | Gemini Pro for blog    |
+| Wed | —                                      | —                      |
+| Thu | 1 research brief + 1 blog DRAFT        | Gemini Pro for blog    |
+| Fri | 1 competitor audit                     | Gemini Flash           |
+| Sat | —                                      | —                      |
+| Sun | Rest (weekly digest runs instead)      | —                      |
+
+**Hard cap: at most 2 blog drafts per rolling 7 days** (`circuitBreaker.maxBlogsPerWeek`), and **zero automated pages** (`maxPagesPerDay: 0`). Every draft is left uncommitted for human review — the CLI runs in review mode by default and the GitHub Action opens a PR instead of pushing to `main`.
+
+Edit `scripts/seo-bot/config.yml` to change rotation, model routing, or circuit breaker limits without touching code. **Do not** re-add the page-factory tasks (`geoPage`, `nichePage`, `comparison`) to the rotation or raise the weekly blog cap without a deliberate authority/quality review.
 
 ## Setup
 
@@ -41,11 +45,14 @@ Add the same keys as repo secrets at `Settings → Secrets and variables → Act
 ### 3. That's it
 
 ```bash
-npm run seo-bot -- daily           # run today's rotation
-npm run seo-bot -- daily --dry-run # simulate
-npm run seo-bot -- task geoPage    # run one task
-npm run seo-bot -- digest          # weekly rollup
+npm run seo-bot -- daily            # draft today's rotation in REVIEW mode (no commit/push/IndexNow)
+npm run seo-bot -- daily --dry-run  # simulate, write nothing
+npm run seo-bot -- daily --publish  # LEGACY: auto-commit+push+IndexNow (discouraged — bypasses human review)
+npm run seo-bot -- task blogPost    # draft one blog post for review
+npm run seo-bot -- digest           # weekly rollup
 ```
+
+By default every run is **review mode**: generated files are validated (typecheck gate) and left in the working tree, uncommitted. A human reviews and merges them (the GitHub Action opens a pull request). `--publish` restores the old autonomous commit+push+IndexNow path and should not be used for routine content.
 
 ## Architecture
 
@@ -99,8 +106,10 @@ scripts/seo-bot/
 
 ## Safety rails
 
-- **Typecheck gate**: every run executes `npm run typecheck` after shipping. If it fails, all generated files are `fs.unlink`ed and index files are restored via `git checkout --` before anything else happens. Nothing is committed.
-- **Circuit breaker**: hard daily limits (default: 8 pages, 2 blogs, $5 cost, 3 errors). Halts the run mid-loop if breached.
+- **Human review gate**: review mode is the default. Drafts are never committed, pushed, or submitted to IndexNow automatically. The GitHub Action opens a PR labeled `needs-human-review` instead of writing to `main`.
+- **No autonomous cron**: the daily schedule is removed from `.github/workflows/seo-bot.yml`. The bot only runs on manual `workflow_dispatch`.
+- **Typecheck gate**: every run executes `npm run typecheck` after generating. If it fails, all generated files are `fs.unlink`ed and index files are restored via `git checkout --` before anything else happens. Nothing is committed.
+- **Circuit breaker**: hard limits (default: **0 pages**, 1 blog/day, **2 blogs/rolling 7 days**, $5 cost, 3 errors). Halts the run mid-loop if breached.
 - **Slop detector**: every generation is scanned for 26 marketing-slop phrases. Informational today; upgrade hook for revision-retry is in `validation/slop-detector.ts`.
 - **Graceful degradation**: missing API keys skip the affected tasks with a warning, rest of the rotation proceeds.
 - **Dedup**: every task receives `DedupContext` including all shipped slugs + 20 most recent item summaries, so generators know what already exists.

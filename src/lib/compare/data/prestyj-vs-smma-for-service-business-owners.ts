@@ -133,24 +133,34 @@ export const serviceBusinessOwnersVsSmmaForCompareData: ComparePageData = create
       linkText: "Learn more",
     },
     {
-      title: "Done-For-You Social Media for Service Business Owners",
-      description: "Service Business Owners-specific offer page",
+      title: "Done-For-You Social for Service Businesses",
+      description: "Managed social content for service businesses",
       href: "/best-for/done-for-you-social-for-service-business-owners",
       linkText: "Read use case",
     },
     {
-      title: "Social Volume Strategy for Service Business Owners",
-      description: "Cadence math and 2026 platform priorities",
+      title: "Social Volume Strategy for Service Businesses",
+      description: "High-volume social strategy for service businesses",
       href: "/best-for/social-volume-strategy-for-service-business-owners",
       linkText: "See the strategy",
     },
     {
-      title: "Service Business Owners Social Media Agency Alternative",
-      description: "Alternative to traditional service business owners social media agencies",
+      title: "Social Media Agency Alternative",
+      description: "Alternative to a social media agency",
       href: "/alternatives/service-business-owners-social-media-agency-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "Are service business owners paying SMMA retainers for enough usable content volume?",
+    intro: "Local service companies need frequent, practical creative that supports offers, seasonality, hiring, reviews, and lead generation. These numbers help owners compare a managed social retainer with Prestyj's unit economics and production cadence.",
+    stats: [
+      { statId: "social-dfy-real-loaded-cost", analysis: "The true retainer burden can consume the same budget owners need for media, promotions, or field operations. Prestyj makes the comparison less about whether someone manages posting and more about how much usable creative the monthly spend produces." },
+      { statId: "social-agency-post-volume", analysis: "A few dozen posts may keep a page alive, but it rarely supports every service line, location, offer, and recruiting message a growing contractor needs. Owners should measure whether the agency's calendar leaves enough room for real testing." },
+      { statId: "social-effective-cost-per-post", analysis: "At this effective cost, content can become a flexible operating asset rather than a scarce deliverable. Service businesses can afford to cover more FAQs, neighborhoods, promotions, and proof points without asking an agency to re-scope the month." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title:
       "Service Business Owners Pick the AI Content Engine Over SMMA / Social Media Marketing Agency.",

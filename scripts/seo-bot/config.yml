@@ -81,37 +81,37 @@ tasks:
     provider: gemini-pro
     model: gemini-2.5-pro
 
+# Post March-2026 scaled-content policy:
+# Rapid mass publishing on a low-authority domain is the exact footprint the
+# update penalizes. Bulk geo/niche/comparison page generation is RETIRED.
+# We cap new content to a few deeply-differentiated, human-reviewed blog posts
+# per week. The bot only DRAFTS them (review mode, see cli `--publish`); a human
+# reviews and merges via pull request before anything goes live.
+#
+# Cadence: research support Mon/Thu, at most one drafted blog post Tue & Thu
+# (2/week, human-gated). No automated page factories. No daily commits.
 rotation:
   monday:
     - dailyResearch
-    - geoPage
-    - geoPage
-    - geoPage
-    - nichePage
-    - nichePage
   tuesday:
     - dailyResearch
     - blogPost
-  wednesday:
-    - dailyResearch
-    - geoPage
-    - geoPage
-    - geoPage
-    - comparison
+  wednesday: []
   thursday:
     - dailyResearch
-    - titleRewrite
+    - blogPost
   friday:
-    - dailyResearch
     - competitorAudit
-    - socialCopy
-  saturday:
-    - socialCopy
+  saturday: []
   sunday: []
 
+# Hard caps act as a safety net behind the rotation. No pages ship at all.
+# At most one blog DRAFT per run, and never more than a couple drafts per week
+# (enforced by the weekly cap below + the review gate).
 circuitBreaker:
-  maxPagesPerDay: 8
-  maxBlogsPerDay: 2
+  maxPagesPerDay: 0
+  maxBlogsPerDay: 1
+  maxBlogsPerWeek: 2
   maxCostPerDayUSD: 5.00
   maxApiErrorsBeforeHalt: 3
 

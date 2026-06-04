@@ -168,7 +168,7 @@ export const airAiCompareData: ComparePageData = createComparePage({
     {
       title: "Prestyj vs Bland AI",
       description: "Compare a developer-first infrastructure platform",
-      href: "/compare/prestyj-vs-bland-ai",
+      href: "/compare/prestyj-vs-retell-ai",
       linkText: "Read comparison",
     },
     {

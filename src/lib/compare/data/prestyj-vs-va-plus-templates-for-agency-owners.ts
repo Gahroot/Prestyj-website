@@ -136,24 +136,34 @@ export const agencyOwnersVsVaPlusTemplatesForCompareData: ComparePageData = crea
       linkText: "Learn more",
     },
     {
-      title: "Done-For-You Social Media for Agency Owners",
-      description: "Agency Owners-specific offer page",
-      href: "/best-for/done-for-you-social-for-agency-owners",
+      title: "Done-For-You Social for Service Businesses",
+      description: "Managed social content for service businesses",
+      href: "/best-for/done-for-you-social-for-service-business-owners",
       linkText: "Read use case",
     },
     {
-      title: "Social Volume Strategy for Agency Owners",
-      description: "Cadence math and 2026 platform priorities",
-      href: "/best-for/social-volume-strategy-for-agency-owners",
+      title: "Social Volume Strategy for Service Businesses",
+      description: "High-volume social strategy for service businesses",
+      href: "/best-for/social-volume-strategy-for-service-business-owners",
       linkText: "See the strategy",
     },
     {
-      title: "Agency Owners Social Media Agency Alternative",
-      description: "Alternative to traditional agency owners social media agencies",
-      href: "/alternatives/agency-owners-social-media-agency-alternative",
+      title: "Social Media Agency Alternative",
+      description: "Alternative to a social media agency",
+      href: "/alternatives/service-business-owners-social-media-agency-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "Can agency owners outgrow VA-plus-template production without inflating delivery costs?",
+    intro: "Agency owners need dependable content throughput across clients while protecting margins and strategist time. These benchmarks compare template-assisted labor with a production model built for higher cadence and lower unit cost.",
+    stats: [
+      { statId: "social-effective-cost-per-post", analysis: "Low unit economics give agencies room to include more creative in retainers without turning every extra post into margin pressure. That flexibility is hard to get when a VA workflow still requires management, review, and manual assembly." },
+      { statId: "social-platform-cadence-short-form", analysis: "Short-form platforms reward a pace that can overwhelm template queues once multiple clients need daily coverage. Agency owners should judge the system by whether it can sustain algorithmic cadence without consuming account-manager bandwidth." },
+      { statId: "social-agency-post-volume", analysis: "Typical agency output can be acceptable for maintenance accounts but thin for clients expecting growth, testing, and platform-native variety. Prestyj helps owners raise the delivery ceiling without rebuilding the team around repetitive production work." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "Agency Owners Pick the AI Content Engine Over VA + Canva Templates Stack.",
     description:

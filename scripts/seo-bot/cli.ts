@@ -70,10 +70,15 @@ function parseTaskList(raw: string | undefined): TaskName[] | undefined {
 
 function printUsage(): void {
   console.log(`Usage:
-  npx tsx scripts/seo-bot/cli.ts daily [--dry-run] [--tasks <list>] [--config <path>]
-  npx tsx scripts/seo-bot/cli.ts task <taskName> [--dry-run] [--config <path>]
+  npx tsx scripts/seo-bot/cli.ts daily [--dry-run] [--publish] [--tasks <list>] [--config <path>]
+  npx tsx scripts/seo-bot/cli.ts task <taskName> [--dry-run] [--publish] [--config <path>]
   npx tsx scripts/seo-bot/cli.ts dry-run [--config <path>]
   npx tsx scripts/seo-bot/cli.ts digest [--config <path>]
+
+By default, generated content is left UNCOMMITTED for human review (no push,
+no IndexNow). Pass --publish only after a human has reviewed and approved the
+output. Autonomous mass publishing is disabled post the March 2026
+scaled-content update.
 
 Valid task names: ${VALID_TASKS.join(", ")}
 `);
@@ -82,12 +87,17 @@ Valid task names: ${VALID_TASKS.join(", ")}
 async function runDailyCommand(args: string[]): Promise<void> {
   const configPath = parseFlagValue(args, "--config");
   const dryRun = hasFlag(args, "--dry-run");
+  // Default to review mode (no auto-commit/push/IndexNow). Autonomous mass
+  // publishing is disabled post the March 2026 scaled-content update.
+  // Pass --publish to opt back into the legacy commit+push+IndexNow behaviour.
+  const noCommit = !hasFlag(args, "--publish");
   const taskOverride = parseTaskList(parseFlagValue(args, "--tasks"));
   const config = loadConfig(configPath);
   const metrics = await runDaily({
     config,
     date: new Date(),
     dryRun,
+    noCommit,
     ...(taskOverride !== undefined && { taskOverride }),
   });
   console.log(
@@ -106,11 +116,13 @@ async function runTaskCommand(args: string[]): Promise<void> {
   const rest = args.slice(1);
   const configPath = parseFlagValue(rest, "--config");
   const dryRun = hasFlag(rest, "--dry-run");
+  const noCommit = !hasFlag(rest, "--publish");
   const config = loadConfig(configPath);
   const metrics = await runDaily({
     config,
     date: new Date(),
     dryRun,
+    noCommit,
     taskOverride: [taskName],
   });
   console.log(

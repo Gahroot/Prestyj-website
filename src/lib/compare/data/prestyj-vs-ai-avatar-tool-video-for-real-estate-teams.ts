@@ -129,23 +129,33 @@ export const realEstateTeamsVsAiAvatarToolVideoCompareData: ComparePageData = cr
     },
     {
       title: "Batch Video Ads for Real Estate Teams",
-      description: "RE Teams-specific use case",
+      description: "How the batch system applies to real estate teams",
       href: "/best-for/batch-video-ads-for-real-estate-teams",
       linkText: "Read use case",
     },
     {
-      title: "Cost Per Tested Ad Angle for RE Teams",
+      title: "Cost Per Tested Ad Angle",
       description: "Full pricing math breakdown",
       href: "/best-for/cost-per-tested-ad-angle-for-real-estate-teams",
       linkText: "See the math",
     },
     {
-      title: "Real Estate Teams Video Production Alternative",
-      description: "Alternative to traditional re teams video production",
+      title: "Video Production Alternative",
+      description: "Alternative to traditional video production",
       href: "/alternatives/real-estate-teams-video-production-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "Can a real estate team scale listing and lead-gen tests without avatar-tool bottlenecks?",
+    intro: "Real estate teams need fresh hooks for buyers, sellers, neighborhoods, and agents faster than a self-serve avatar workflow usually supports. These numbers frame the difference between owning a tool and operating a repeatable creative testing engine.",
+    stats: [
+      { statId: "bva-cost-per-ad-variation", analysis: "When each finished variation is this cheap, teams can localize messages for zip codes, property types, and lead sources instead of recycling one talking-head template. The comparison shifts from software subscription cost to the volume of usable market tests the team can actually ship." },
+      { statId: "bva-creative-volume-top-accounts", analysis: "Top lead-gen accounts run at a pace that exposes whether a message works across audiences, not just whether an avatar looks acceptable. For a brokerage or team leader, this is the gap between occasional content production and a pipeline discipline." },
+      { statId: "fatigue-cpm-creep-14-days", analysis: "If the same avatar creative stays live too long, media efficiency can deteriorate before the month is over. Real estate teams comparing tools should ask who will keep the campaign supplied after the first batch, because stale creative quietly taxes every lead." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "RE Teams Pick Batch Over AI Avatar Tools.",
     description:

@@ -128,6 +128,29 @@ export const creativeTestingForAutoDealerships: BestForPageContent = {
       answer: "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
     },
   ],
+  proprietaryData: {
+    heading: "What makes an auto dealership creative test large enough to trust?",
+    intro:
+      "Dealership tests often fail because the store tests one sales-event concept and treats the result as a verdict on paid social. These benchmarks show why a useful test needs enough variations, enough replacement creative, and a fast read before fatigue distorts the outcome.",
+    stats: [
+      {
+        statId: "bva-winner-rate-home-services",
+        analysis:
+          "A 7–12% winner rate means most dealership ad concepts should be expected to lose, even when the offer is legitimate. The practical takeaway is to design the matrix around many buyer situations—trade-in equity, payment target, model availability, credit rebuild—not around protecting one favorite concept.",
+      },
+      {
+        statId: "bva-small-batch-zero-winner-risk",
+        analysis:
+          "A 30–40% zero-winner risk in a small batch is dangerous for auto dealers because inventory and incentives change before a second slow test can recover the learning. Underpowered testing can make the team abandon a profitable lane simply because there were not enough hooks to find it.",
+      },
+      {
+        statId: "fatigue-meta-cpa-degradation-5-7-days",
+        analysis:
+          "CPA degradation inside 5–7 days means dealership tests need replacement variants ready almost as soon as signal appears. When the winning message is tied to a rate change, tax refund window, or specific vehicle group, waiting for new creative can waste the narrow demand window.",
+      },
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     headline: "Build an auto dealer Creative Testing Matrix.",
     subheadline: "Turn one recording into enough auto dealers ads to test buyer problems, timing triggers, objections, proof, and CTAs.",

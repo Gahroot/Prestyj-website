@@ -136,24 +136,34 @@ export const creatorsVsFiverrForCompareData: ComparePageData = createComparePage
       linkText: "Learn more",
     },
     {
-      title: "Done-For-You Social Media for Creators",
-      description: "Creators-specific offer page",
-      href: "/best-for/done-for-you-social-for-creators",
+      title: "Done-For-You Social for Service Businesses",
+      description: "Managed social content for service businesses",
+      href: "/best-for/done-for-you-social-for-service-business-owners",
       linkText: "Read use case",
     },
     {
-      title: "Social Volume Strategy for Creators",
-      description: "Cadence math and 2026 platform priorities",
-      href: "/best-for/social-volume-strategy-for-creators",
+      title: "Social Volume Strategy for Service Businesses",
+      description: "High-volume social strategy for service businesses",
+      href: "/best-for/social-volume-strategy-for-service-business-owners",
       linkText: "See the strategy",
     },
     {
-      title: "Creators Social Media Agency Alternative",
-      description: "Alternative to traditional creators social media agencies",
-      href: "/alternatives/creators-social-media-agency-alternative",
+      title: "Social Media Agency Alternative",
+      description: "Alternative to a social media agency",
+      href: "/alternatives/service-business-owners-social-media-agency-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "What does a creator risk when testing paid content through one-off Fiverr gigs?",
+    intro: "Creators often need proof before they can justify a bigger launch, sponsorship funnel, or product push. These figures show why isolated freelance deliverables can look affordable while still leaving the creator short on statistically useful tests.",
+    stats: [
+      { statId: "batch-video-pilot-setup-cost", analysis: "A fixed pilot price gives creators a defined experiment rather than a series of disconnected gig orders. That matters when the goal is to learn which offers, hooks, or audience segments deserve more spend before scaling." },
+      { statId: "bva-small-batch-zero-winner-risk", analysis: "Small batches feel safe because the invoice is limited, but they can easily end with no signal. For creators, that means wasted launch time and ambiguous feedback instead of a clear decision about the next content angle." },
+      { statId: "ugc-marketplace-hidden-cost-percent", analysis: "Marketplace work often expands through revisions, usage questions, coordination, and editing gaps after the headline price is accepted. A creator comparing Fiverr to Prestyj should account for that operational drag, not just the first visible quote." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "Creators Pick the AI Content Engine Over Fiverr Freelancers.",
     description:

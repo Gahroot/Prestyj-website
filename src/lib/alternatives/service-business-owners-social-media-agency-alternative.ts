@@ -197,6 +197,30 @@ export const serviceBusinessOwnersSocialMediaAgencyAlternative: AlternativePageC
           "Service Business Owners agencies report quarterly. Prestyj's content engine ingests performance signals from every post and tunes the next batch — what's hooking, what's converting, what's fatiguing. You get learning velocity, not PowerPoint reviews.",
       },
     ],
+    proprietaryData: {
+      heading: "What does an agency replacement do to the social economics of a service business?",
+      intro:
+        "For home-service owners, the real question is whether social content can stay local, frequent, and affordable while crews are busy in the field. These benchmarks translate the agency alternative into monthly overhead, per-post economics, and the cadence needed to stay visible between urgent service calls.",
+      stats: [
+        {
+          statId: "social-dfy-real-loaded-cost",
+          analysis:
+            "A retainer is only one part of the burden when an owner still has to feed the agency photos, approvals, revisions, and meeting time. This range makes the replacement decision concrete: if the content system removes coordination drag as well as vendor cost, the owner gets back management capacity while preserving a predictable monthly spend.",
+        },
+        {
+          statId: "social-effective-cost-per-post",
+          analysis:
+            "Service businesses need many small, locally credible touches: a finished install, a storm-season reminder, a technician tip, a review, a financing prompt. Low per-post economics let those moments become publishable inventory instead of being rationed into a few polished monthly assets that cannot cover every route, season, and service line.",
+        },
+        {
+          statId: "social-platform-cadence-short-form",
+          analysis:
+            "Daily short-form cadence matters because homeowners usually notice the brand before they need the emergency call. An agency replacement that can sustain this rhythm helps a contractor build familiarity ahead of demand spikes, rather than trying to manufacture trust only when the phone is already supposed to ring.",
+        },
+      ],
+      footnote:
+        "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    },
     whenCompetitorFits: [
       "You want a hand-touched, custom hero campaign with multiple human strategists in the room",
       "You prefer the relationship and meeting cadence of a traditional service business owners agency over volume",

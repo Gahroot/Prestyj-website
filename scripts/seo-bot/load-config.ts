@@ -59,6 +59,7 @@ const RotationSchema = z.object({
 const CircuitBreakerSchema = z.object({
   maxPagesPerDay: z.number().int().nonnegative(),
   maxBlogsPerDay: z.number().int().nonnegative(),
+  maxBlogsPerWeek: z.number().int().nonnegative().optional(),
   maxCostPerDayUSD: z.number().nonnegative(),
   maxApiErrorsBeforeHalt: z.number().int().positive(),
 });

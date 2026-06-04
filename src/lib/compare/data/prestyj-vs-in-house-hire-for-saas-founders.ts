@@ -133,24 +133,34 @@ export const saasFoundersVsInHouseHireForCompareData: ComparePageData = createCo
       linkText: "Learn more",
     },
     {
-      title: "Done-For-You Social Media for SaaS Founders",
-      description: "SaaS Founders-specific offer page",
-      href: "/best-for/done-for-you-social-for-saas-founders",
+      title: "Done-For-You Social for Service Businesses",
+      description: "Managed social content for service businesses",
+      href: "/best-for/done-for-you-social-for-service-business-owners",
       linkText: "Read use case",
     },
     {
-      title: "Social Volume Strategy for SaaS Founders",
-      description: "Cadence math and 2026 platform priorities",
-      href: "/best-for/social-volume-strategy-for-saas-founders",
+      title: "Social Volume Strategy for Service Businesses",
+      description: "High-volume social strategy for service businesses",
+      href: "/best-for/social-volume-strategy-for-service-business-owners",
       linkText: "See the strategy",
     },
     {
-      title: "SaaS Founders Social Media Agency Alternative",
-      description: "Alternative to traditional saas founders social media agencies",
-      href: "/alternatives/saas-founders-social-media-agency-alternative",
+      title: "Social Media Agency Alternative",
+      description: "Alternative to a social media agency",
+      href: "/alternatives/service-business-owners-social-media-agency-alternative",
       linkText: "Compare",
     },
   ],
+  proprietaryData: {
+    heading: "Can a SaaS founder match paid-social learning speed with a single in-house hire?",
+    intro: "Early SaaS teams need to discover the message that converts before payroll, onboarding, and tool stacks slow the experiment down. These numbers compare the cadence required by paid acquisition with the practical output of hiring one creative generalist.",
+    stats: [
+      { statId: "fatigue-meta-cpa-degradation-5-7-days", analysis: "If CPA can slide within a week, a founder cannot wait for a new employee to plan, produce, and iterate at a comfortable internal pace. The creative system has to move on the same clock as the ad account." },
+      { statId: "bva-creative-volume-top-accounts", analysis: "This monthly volume shows how far serious acquisition teams push message testing across personas, pain points, and offers. One hire may improve brand consistency, but matching this learning rate usually requires a production bench rather than a single calendar." },
+      { statId: "batch-video-pilot-setup-cost", analysis: "A low pilot cost lets a founder validate the creative operating model before adding permanent headcount. It turns the hire-versus-outsourcing question into an evidence-based decision instead of a long-term payroll bet made too early." }
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     title: "SaaS Founders Pick the AI Content Engine Over In-House Social Media Hire.",
     description:

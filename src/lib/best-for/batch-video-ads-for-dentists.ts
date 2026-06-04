@@ -128,6 +128,29 @@ export const batchVideoAdsForDentists: BestForPageContent = {
       answer: "Choose 100 ads for a focused first test, 300 for three problem lanes, 500 for the recommended matrix, and 1,000 if you need to test many dentists triggers or refresh a larger account.",
     },
   ],
+  proprietaryData: {
+    heading: "Why do dental practices need refreshable ad batches instead of one polished treatment video?",
+    intro:
+      "Dental demand splits across anxiety, timing, price, and trust, so one generic ad cannot carry implants, Invisalign, emergency, and hygiene campaigns for long. These benchmarks show why practices need inexpensive variation and planned refreshes to protect media efficiency.",
+    stats: [
+      {
+        statId: "fatigue-cpm-creep-14-days",
+        analysis:
+          "A +28–40% CPM increase after two weeks can quietly erase the margin on campaigns that depend on consult volume. Dental audiences are often narrow by geography and treatment intent, so repeated exposure to the same implant or aligner pitch gets expensive quickly.",
+      },
+      {
+        statId: "bva-cost-per-ad-variation",
+        analysis:
+          "At $4–$5 per variation, a practice can afford to separate fear-of-pain messaging from cost, appearance, insurance timing, and trust-building proof. That variety is what lets the media buyer learn which patient objection is blocking appointments instead of guessing from one broad creative.",
+      },
+      {
+        statId: "fatigue-refresh-extends-life",
+        analysis:
+          "A 3–5× longer creative life is valuable for dentists because the underlying offers may stay the same while patient motivations change by season. Refreshing hooks and proof around benefits reset, wedding season, or emergency availability keeps the account active without requiring a new shoot every time.",
+      },
+    ],
+    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+  },
   cta: {
     headline: "Dentists: Turn One Recording Into a Paid-Social Test Library.",
     subheadline: "Get scripts and finished video ads built around dentists economics, timing triggers, compliance constraints, and buyer objections.",

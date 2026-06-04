@@ -1,3 +1,5 @@
+import type { ProprietaryDataBlock } from "@/lib/proprietary-data/types";
+
 export interface WhyBestForReason {
   icon: string;
   title: string;
@@ -46,6 +48,11 @@ export interface BestForPageContent {
     rows: ComparisonRow[];
   };
   faq: FAQItem[];
+  /**
+   * Page-specific proprietary statistics + original analysis. Differentiates
+   * the page beyond the shared template so it answers a distinct query.
+   */
+  proprietaryData?: ProprietaryDataBlock;
   cta: {
     headline: string;
     subheadline: string;

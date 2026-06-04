@@ -157,7 +157,7 @@ export const vapiCompareData: ComparePageData = createComparePage({
     {
       title: "Prestyj vs Bland AI",
       description: "Compare another developer-first voice platform",
-      href: "/compare/prestyj-vs-bland-ai",
+      href: "/compare/prestyj-vs-retell-ai",
       linkText: "Read comparison",
     },
     {

@@ -26,6 +26,7 @@ interface CompareFactoryInput {
     reasons: Array<{ icon: IconName; title: string; description: string }>;
   };
   relatedResources?: ComparePageData["relatedResources"];
+  proprietaryData?: ComparePageData["proprietaryData"];
   cta?: Partial<ComparePageData["cta"]>;
   specialSections?: ComparePageData["specialSections"];
 }
@@ -80,6 +81,7 @@ export function createComparePage(input: CompareFactoryInput): ComparePageData {
       reasons: whySwitchReasons,
     },
     ...(input.relatedResources !== undefined && { relatedResources: input.relatedResources }),
+    ...(input.proprietaryData !== undefined && { proprietaryData: input.proprietaryData }),
     cta: ctaSection,
     ...(input.specialSections !== undefined && { specialSections: input.specialSections }),
   };

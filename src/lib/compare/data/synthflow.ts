@@ -158,7 +158,7 @@ export const synthflowCompareData: ComparePageData = createComparePage({
     {
       title: "Prestyj vs Bland AI",
       description: "Compare a developer-first per-minute platform",
-      href: "/compare/prestyj-vs-bland-ai",
+      href: "/compare/prestyj-vs-retell-ai",
       linkText: "Read comparison",
     },
     {
