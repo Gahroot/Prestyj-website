@@ -14,7 +14,12 @@ export const homeFaqs: FAQItem[] = [
   {
     question: "What do I have to record?",
     answer:
-      "After checkout, we collect the details about your business, offer, audience, and customer problems. Then we send you scripts. You prop up your phone, read the script selfie-style in one 15–20 minute recording, and send us the raw footage.",
+      "After checkout you land in your guided filming portal. It collects the details about your business, offer, audience, and customer problems, then generates your master script. You open the built-in teleprompter, prop up your phone, read the script selfie-style in one 15–20 minute recording, and upload the raw take right in the portal.",
+  },
+  {
+    question: "How do I send my footage?",
+    answer:
+      "You upload it directly inside your filming portal — phone or desktop — the moment you finish recording. No Google Drive, no Dropbox, no WeTransfer, no email attachments. The upload is tied to your order automatically and we're notified right away.",
   },
   {
     question: "How fast is delivery?",

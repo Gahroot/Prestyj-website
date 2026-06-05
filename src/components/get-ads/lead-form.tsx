@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { formatPhoneNumber } from "@/lib/api";
 import { trackEvent } from "@/lib/meta-pixel";
 import type { BatchTierId } from "@/lib/batch-tiers";
+import { PREMIUM_PORTAL_URL } from "@/lib/premium-portal";
 import {
   ArrowRight,
   ArrowLeft,
@@ -672,7 +673,7 @@ export function GetAdsLeadForm({
             >
               <BorderGlow borderRadius={18} innerClassName="p-6 md:p-8">
                 <h3 className="font-heading text-foreground mb-4 text-2xl font-bold">
-                  Next: record and send your footage
+                  Next: record and upload your footage
                 </h3>
                 <ol className="text-muted-foreground space-y-4">
                   <li className="flex items-start gap-3">
@@ -688,14 +689,18 @@ export function GetAdsLeadForm({
                     <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold">
                       <Film className="h-4 w-4" />
                     </div>
-                    <span>Upload the raw file to Google Drive, Dropbox, or WeTransfer.</span>
+                    <span>
+                      Upload your raw take right in your filming portal — phone or desktop. No Drive,
+                      Dropbox, WeTransfer, or email attachments.
+                    </span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="bg-primary/10 text-primary flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full text-sm font-bold">
                       <Send className="h-4 w-4" />
                     </div>
                     <span>
-                      Reply to your confirmation email with the link. Your batch ships within{" "}
+                      That&apos;s it — the upload is tied to your order and we&apos;re notified
+                      automatically. Your batch ships within{" "}
                       <span className="text-foreground font-semibold">
                         24 hours of receiving footage
                       </span>
@@ -703,6 +708,18 @@ export function GetAdsLeadForm({
                     </span>
                   </li>
                 </ol>
+                <div className="mt-6">
+                  <Button asChild>
+                    <a
+                      href={`${PREMIUM_PORTAL_URL.replace(/\/$/, "")}/start${
+                        sessionId ? `?session_id=${sessionId}` : ""
+                      }`}
+                    >
+                      Open your filming portal
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </a>
+                  </Button>
+                </div>
               </BorderGlow>
             </motion.div>
           ) : (

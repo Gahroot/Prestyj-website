@@ -268,7 +268,7 @@ const HIDDEN_COST_ROWS: HiddenCostRow[] = [
 const FAQS = [
   {
     q: "What do I actually have to do?",
-    a: "Fill out the form, then wait for us to send you your scripts. When they arrive, prop up your phone, hit record, and read the whole script in one take — about 15–20 minutes. Selfie style, at home or in your car, wherever. You don't write anything, you don't plan anything, you don't have to know what a good hook looks like. You just read what we send. Send us back the one raw video file and we handle the rest.",
+    a: "Pay once and you land in your guided filming portal. Answer a few quick questions and it generates your master script in minutes. Then open the built-in teleprompter, prop up your phone, and read the whole script in one take — about 15–20 minutes. Selfie style, at home or in your car, wherever. You don't write anything, you don't plan anything, you don't have to know what a good hook looks like. You just read what's on the screen and upload the one raw take right in the portal. We handle the rest.",
   },
   {
     q: "What's NOT included? Be specific.",
@@ -276,7 +276,15 @@ const FAQS = [
   },
   {
     q: "How does pricing actually work? Any hidden fees?",
-    a: "Four pack sizes, one-time payment per pack: $497 (100 ads / 1 customer problem), $1,497 (300 ads / 3 customer problems), $2,497 (500 ads / 5 customer problems), $3,997 (1,000 ads / 10 customer problems). That's the entire invoice. No platform fees, no usage fees, no per-edit fees, no rush fees. Pay once per pack, get the files, done.",
+    a: "Four pack sizes, one-time payment per pack: $497 (100 ads / 1 customer problem), $1,497 (300 ads / 3 customer problems), $2,497 (500 ads / 5 customer problems), $3,997 (1,000 ads / 10 customer problems). The pack you pick sets how many customer pain points your portal walks you through — 1, 3, 5, or 10. That's the entire invoice. No platform fees, no usage fees, no per-edit fees, no rush fees. Pay once per pack, get the files, done.",
+  },
+  {
+    q: "How do I submit my footage?",
+    a: "Right inside your filming portal. When you finish your one-take recording, you upload the raw file straight from the portal — phone or desktop. No Google Drive, no Dropbox, no WeTransfer, no email attachments. The upload is tied to your account and script automatically, and we're notified the moment it lands.",
+  },
+  {
+    q: "What happens after I upload?",
+    a: "Your raw take is stored against your order and we're notified automatically — nothing to email. From there it's 1–2 business days to turn your single recording into your full pack of finished 9:16 ads, captioned and ready to upload to Meta, TikTok, and YouTube Shorts.",
   },
   {
     q: "How is this different from hiring a UGC creator?",
@@ -312,7 +320,7 @@ const FAQS = [
   },
   {
     q: "What if I don't know what problems to focus on yet?",
-    a: "The form walks you through it step by step. If you have a business, you already know what your customers complain about — we just help you structure it.",
+    a: "Your portal walks you through it step by step, one pain point at a time, up to the number your pack includes. If you have a business, you already know what your customers complain about — we just help you structure it.",
   },
 ];
 
@@ -576,8 +584,8 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
               How This Works
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              You don&apos;t think about what to record. You don&apos;t write scripts. You show up
-              and read what we send. Four steps.
+              Pay once and you land in your guided filming portal. It writes your script, runs the
+              teleprompter, and takes your upload. Four steps.
             </p>
           </AnimateOnScroll>
 
@@ -585,26 +593,26 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
             {[
               {
                 step: "01",
-                title: "Tell us about your business",
-                body: "Fill out the form on this page. Business name, audience, customer problems, offer. Takes a few minutes.",
+                title: "Check out & open your portal",
+                body: "Pick your pack and pay once. You're taken straight into your private filming portal — no waiting on an email.",
                 icon: <Target className="h-7 w-7" />,
               },
               {
                 step: "02",
-                title: "We write your scripts",
-                body: "We send you back a full script — every hook, body, and CTA already written. You don't write a single word.",
+                title: "We write your master script",
+                body: "Answer a few guided questions in the portal and we generate your full master filming script — every hook, body, and CTA written for you.",
                 icon: <Sparkles className="h-7 w-7" />,
               },
               {
                 step: "03",
-                title: "One-take recording",
-                body: "Prop up your phone, read the script start to finish. ~15–20 minutes. One video file. That's it.",
+                title: "Film one take in the portal",
+                body: "Open the built-in teleprompter, prop up your phone, and read your script start to finish. ~15–20 minutes, one take.",
                 icon: <Film className="h-7 w-7" />,
               },
               {
                 step: "04",
-                title: "Hundreds of ads, 1–2 days later",
-                body: "Send us the raw footage. We turn it into your full pack of ads — ready to launch and test every angle in parallel.",
+                title: "Upload and we ship your ads",
+                body: "Upload your raw take right in the portal — no Drive, no email attachments. We turn it into your full pack of ads in 1–2 business days.",
                 icon: <Rocket className="h-7 w-7" />,
               },
             ].map((item, i) => (
@@ -935,7 +943,7 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
               {
                 icon: <Film className="h-6 w-6" />,
                 title: "Show up and read",
-                body: "We send the scripts. You prop up your phone and read. One 15–20 minute session, one video file, zero thinking about what to say.",
+                body: "Your master script and teleprompter live in your portal. Prop up your phone and read. One 15–20 minute session, one upload, zero thinking about what to say.",
               },
               {
                 icon: <Eye className="h-6 w-6" />,
@@ -1253,7 +1261,8 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
               Stop Guessing What Works
             </h2>
             <p className="text-muted-foreground mb-8 text-lg md:text-xl">
-              One recording session. Hundreds of angles. Your winners found in days, not months.
+              Pay once, open your guided filming portal, record one take, and upload — no Drive, no
+              email. Hundreds of angles, your winners found in days, not months.
             </p>
             <ClickSpark sparkColor="#7058e3" sparkCount={12} sparkRadius={28}>
               <Button
