@@ -24,6 +24,17 @@ interface BlogPostPageProps {
 
 const siteUrl = "https://prestyj.com";
 
+function formatLongDate(value: string): string {
+  // Parse YYYY-MM-DD as UTC midnight and format in UTC so the displayed day
+  // matches the authored date regardless of server timezone.
+  return new Date(`${value}T00:00:00Z`).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+}
+
 export async function generateStaticParams() {
   return blogSource.getPages().map((page) => ({
     slug: page.slugs[0],
@@ -128,7 +139,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   // Extract FAQ items with answers from MDX content
   const faqItems: Array<{ question: string; answer: string }> = [];
-  const faqRegex = /##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)[\s\S]*?(?=##|$)/i;
+  // Capture from the FAQ H2 up to the next H2 (`\n## `, not `###`), an `---` rule, or EOF.
+  const faqRegex =
+    /##\s+(?:Frequently Asked Questions|FAQs?|Common Questions)[\s\S]*?(?=\n##\s|\n---|$)/i;
   const faqSection = faqRegex.exec(rawContent);
   if (faqSection) {
     // Split FAQ section into individual Q&A pairs (### question + following paragraphs)
@@ -269,15 +282,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Button>
 
           <header className="mb-12">
-            {date && (
-              <time dateTime={date} className="text-muted-foreground mb-2 block text-sm">
-                {new Date(date).toLocaleDateString("en-US", {
-                  year: "numeric",
-                  month: "long",
-                  day: "numeric",
-                })}
-              </time>
-            )}
+            <div className="text-muted-foreground mb-2 flex flex-wrap items-center gap-x-2 text-sm">
+              {date && <time dateTime={date}>Published {formatLongDate(date)}</time>}
+              {updated && updated !== date && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <time dateTime={updated} className="text-foreground font-medium">
+                    Updated {formatLongDate(updated)}
+                  </time>
+                </>
+              )}
+            </div>
             <h1 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
               {title}
             </h1>

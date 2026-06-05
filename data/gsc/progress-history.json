@@ -12,8 +12,8 @@
     "branded_impressions_28d": "GSC > Performance > Search results, Query filter Custom(regex) (?i)prestyj, date range last 28 days. Record impressions, clicks, avg position.",
     "target_keywords": "19 priority commercial keywords. Count in top 10 + avg position of those found. Auto-derived from latest data/keyword-rankings/<date>/ CSV."
   },
-  "sitemap_submitted_urls": 688,
-  "sitemap_submitted_urls_note": "Indexable URLs declared by src/app/sitemap.ts on 2026-06-04: 56 static + 289 indexable blog posts + 39 alternatives + 12 solutions + 82 best-for + 44 compare + 17 free-ads + 21 locations + 102 stat + 26 industry. Re-derive when the sitemap changes; this is the indexed_pages denominator.",
+  "sitemap_submitted_urls": 586,
+  "sitemap_submitted_urls_note": "Indexable URLs declared by src/app/sitemap.ts on 2026-06-04 (revised): 56 static + 289 indexable blog posts + 39 alternatives + 12 solutions + 82 best-for + 44 compare + 17 free-ads + 21 locations + 26 industry (13 hubs + 13 slice downloads). The 102 atomic /stat/[id] permalinks were REMOVED from the sitemap and set to noindex (still crawlable + embeddable as citation surfaces) on 2026-06-04: each adds ~1 sentence of unique content, and listing 100+ near-identical template pages dragged site-wide indexing on a low-authority domain (Google docs: noindex per-page index control + sitemaps should list pages you want in search). The /statistics, /statistics/[industry], and /data hubs remain the indexable consolidation layer. Re-derive when the sitemap changes; this is the indexed_pages denominator.",
   "phase0_baseline_date": "2026-06-04",
   "snapshots": [
     {

@@ -201,8 +201,20 @@ const queryCitationMap = [
     supportingPaths: [
       "/ai-voice-agents",
       "/solutions/ai-voice-agent-pricing",
+      "/blog/ai-voice-agent-statistics-2026",
       "/blog/ai-voice-agent-cost-per-minute-at-scale-2026",
       "/blog/ai-voice-agent-enterprise-pricing-breakdown-2026",
+    ],
+  },
+  {
+    query: "AI voice agent statistics answer rate ROI benchmarks",
+    canonicalPath: "/blog/ai-voice-agent-statistics-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/statistics",
+      "/blog/ai-voice-agent-costs-compared",
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+      "/blog/missed-call-revenue-loss-statistics-2026",
     ],
   },
   {

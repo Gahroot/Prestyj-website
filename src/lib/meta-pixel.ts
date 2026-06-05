@@ -16,7 +16,10 @@ const PIXEL_ID = "892763637077397";
  * build time. The base tag in app/layout.tsx is gated on this being present
  * so local/dev builds do not fire LinkedIn requests.
  */
-const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID ?? "";
+// Use `||` (not `??`) on inlined NEXT_PUBLIC_* env reads in client-bundled
+// modules: when unset, Turbopack inlines `undefined` and SWC's nullish-
+// coalescing transform panics on `undefined ?? ""`. `||` is equivalent here.
+const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID || "";
 
 /**
  * Optional event-specific LinkedIn conversion ID for the Content Engine
@@ -25,7 +28,7 @@ const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID ?? "";
  * and the page-load Insight Tag still feeds the retargeting audience.
  */
 const LINKEDIN_CONTENT_ENGINE_CONVERSION_ID =
-  process.env.NEXT_PUBLIC_LINKEDIN_CONTENT_ENGINE_CONVERSION_ID ?? "";
+  process.env.NEXT_PUBLIC_LINKEDIN_CONTENT_ENGINE_CONVERSION_ID || "";
 
 /** Custom Meta Pixel event name for the Content Engine retargeting audience. */
 export const CONTENT_ENGINE_VISITOR_EVENT = "ContentEngineVisitor";

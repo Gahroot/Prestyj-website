@@ -25,11 +25,18 @@ export const dynamicParams = false;
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const stat = findStatById(id);
-  if (!stat) return { title: "Statistic Not Found" };
+  if (!stat) return { title: "Statistic Not Found", robots: { index: false, follow: false } };
   const title = `${stat.value} — ${stat.description.slice(0, 90)}${stat.description.length > 90 ? "…" : ""}`;
   return {
     title: `${title} | Prestyj Statistics`,
     description: stat.description,
+    // Atomic stat permalinks stay crawlable + embeddable (citation/oembed
+    // surface) but are noindexed: each adds ~1 sentence of unique content, and
+    // 100+ near-identical template pages drag site-wide indexing on a
+    // low-authority domain (Google: noindex must stay crawlable to be seen).
+    // follow: true so equity flows to the indexable /statistics hubs and /data.
+    // The indexable layer is /statistics, /statistics/[industry], and /data.
+    robots: { index: false, follow: true },
     alternates: {
       canonical: stat.permalink,
       types: {

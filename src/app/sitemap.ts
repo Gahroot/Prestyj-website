@@ -4,7 +4,6 @@ import { getAllAlternativeSlugs } from "@/lib/alternatives";
 import { getAllSolutionSlugs } from "@/lib/solutions";
 import { getAllBestForSlugs } from "@/lib/best-for";
 import { getAllLocationSlugs } from "@/lib/locations";
-import { getAllStatIds } from "@/lib/statistics";
 import { getAllIndustrySlugs } from "@/lib/statistics/industries";
 
 const baseUrl = "https://prestyj.com";
@@ -535,14 +534,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
-  // Per-statistic permalink pages (/stat/[id]). Each one is a citable
-  // anchor for a single quotable number — the canonical home for embeds.
-  const statRoutes: MetadataRoute.Sitemap = getAllStatIds().map((id) => ({
-    url: `${baseUrl}/stat/${id}`,
-    lastModified: now,
-    changeFrequency: "monthly" as const,
-    priority: 0.55,
-  }));
+  // Per-statistic permalink pages (/stat/[id]) are intentionally EXCLUDED from
+  // the sitemap. They remain live, crawlable, and embeddable as citation/oembed
+  // surfaces, but are noindex (see src/app/stat/[id]/page.tsx): each adds only
+  // ~1 sentence of unique content, and listing 100+ near-identical template
+  // pages drags site-wide indexing on a low-authority domain. The indexable
+  // statistics surfaces are /statistics, /statistics/[industry], and /data,
+  // which consolidate the same numbers into substantial sourced hub pages.
 
   // Per-industry hub pages + slice downloads. Each industry hub is its own
   // crawlable Dataset schema with CSV + JSON distribution.
@@ -570,7 +568,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...compareRoutes,
     ...freeAdsRoutes,
     ...locationRoutes,
-    ...statRoutes,
     ...industryRoutes,
   ];
 }

@@ -8,6 +8,7 @@ import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { statCategories, statisticsFaqs, totalStatCount } from "@/lib/statistics-data";
+import { industrySlices } from "@/lib/statistics/industries";
 import { StatisticsTableOfContents } from "@/components/sections/statistics/table-of-contents";
 import { StatCategorySection } from "@/components/sections/statistics/stat-category-section";
 import { StatisticsFAQSection } from "@/components/sections/statistics/statistics-faq";
@@ -159,6 +160,31 @@ export default function StatisticsPage() {
               </Link>
               .
             </p>
+          </div>
+        </section>
+
+        {/* Industry hubs — internal links so each /statistics/[industry] hub is
+            reachable from this prominent indexable page, not just from sibling
+            hubs or the sitemap (avoids orphan-page signals). */}
+        <section className="px-4 pb-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="font-heading text-foreground mb-4 text-center text-xl font-bold">
+              Statistics by industry
+            </h2>
+            <div className="flex flex-wrap justify-center gap-2">
+              {industrySlices.map((slice) => (
+                <Link
+                  key={slice.slug}
+                  href={`/statistics/${slice.slug}`}
+                  className="border-border/60 text-foreground hover:border-primary/40 hover:text-primary inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-medium"
+                >
+                  {slice.title
+                    .replace(" Marketing & Lead Response Statistics", "")
+                    .replace(" Lead Response & Ad Creative Statistics", "")
+                    .replace(" Statistics", "")}
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

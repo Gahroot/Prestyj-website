@@ -11,8 +11,13 @@
  * working path. Flip `LEGACY_INTAKE_ENABLED` to `false` after the portal
  * cutover is verified; keep it as an emergency backup until then.
  */
+// NOTE: use `||` (not `??`) on inlined NEXT_PUBLIC_* env reads. This module is
+// pulled into the client bundle (via lead-form.tsx), where Turbopack inlines
+// the env value; when the var is unset it becomes `undefined`, and SWC's
+// nullish-coalescing transform panics on `undefined ?? "..."`. `||` routes
+// through a stable transform and yields the same fallback for unset/empty.
 export const PREMIUM_PORTAL_URL =
-  process.env.NEXT_PUBLIC_PREMIUM_PORTAL_URL ?? "https://portal.prestyj.com";
+  process.env.NEXT_PUBLIC_PREMIUM_PORTAL_URL || "https://portal.prestyj.com";
 
 /**
  * Cutover switch for the legacy on-site intake. While `true`, `/intake` still
