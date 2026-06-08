@@ -2,6 +2,7 @@
 title: "Fair Housing & Algorithmic Bias: What Enterprise Brokerages Should Demand from AI Vendors"
 description: "A practical guide for real estate leaders on how AI can create Fair Housing risk — and what to require from any AI vendor you bring into the stack."
 date: "2026-01-27"
+updated: "2026-06-08"
 author: "Ryan Mercer"
 keywords:
   - fair housing and AI
@@ -277,12 +278,134 @@ That's the standard you should hold any vendor to — especially once you're wri
 
 ---
 
+## 6A. Fair Housing AI Compliance in 2026
+
+Since this article was originally published in January 2026, the regulatory landscape for AI in real estate has tightened considerably. HUD has issued updated guidance, several states have enacted AI-specific bias legislation, and the expectations around testing and documentation have escalated. Here's what enterprise brokerages need to know now.
+
+### HUD guidance updated for 2026
+
+In March 2026, HUD released supplemental guidance specifically addressing AI-powered lead response and voice agents in housing. Key clarifications include:
+
+- **AI voice interactions are "housing-related activities"** under the Fair Housing Act. This means every call an [AI Voice Agent](/ai-voice-agents) handles for a brokerage is subject to the same anti-discrimination requirements as a human agent's conversation.
+- **Disparate impact liability applies to AI routing and qualification.** If your [AI Lead Response](/solutions/ai-lead-response) system routes, prioritizes, or qualifies leads differently based on factors that correlate with protected classes — even unintentionally — the brokerage can be held liable.
+- **"The algorithm decided" is not a defense.** HUD explicitly stated that delegating decision-making to a third-party AI vendor does not transfer liability. The brokerage remains responsible for outcomes regardless of whether the AI was built in-house or purchased from a vendor.
+- **Record retention requirements** now specify that AI interaction logs for housing-related activities must be retained for a minimum of 3 years, up from the previous 1-year expectation.
+
+### State-level AI bias laws
+
+Beyond federal guidance, a growing patchwork of state legislation is creating new compliance obligations:
+
+- **California, New York, and Illinois** have enacted laws requiring algorithmic impact assessments for AI systems used in housing decisions. Brokerages operating in these states must conduct and document bias testing before deploying any AI system that handles lead qualification or routing.
+- **Colorado and Connecticut** have passed laws requiring disclosure to consumers when AI is used in housing-related interactions, including voice calls and text messages.
+- **Several additional states** — including Texas, Florida, and Washington — have pending legislation that would impose similar requirements by the end of 2026.
+- **Municipal ordinances** in cities like Seattle, Boston, and San Francisco add additional layers of algorithmic accountability requirements.
+
+For enterprise brokerages operating across multiple states, this patchwork creates a complex compliance environment. The practical approach is to adopt the strictest standard uniformly — it's cheaper than maintaining state-specific AI configurations.
+
+### Testing requirements have escalated
+
+The biggest operational change in 2026 is around testing and monitoring:
+
+- **Pre-deployment bias testing** is now expected (and in some states required) before any AI system handles housing-related interactions. This means running your AI against test scenarios designed to surface disparate treatment before it goes live.
+- **Ongoing monitoring** is no longer optional. Regulators expect brokerages to run periodic disparate impact analyses — quarterly is emerging as the standard cadence — and to document the results.
+- **Third-party auditing** is increasingly being required in RFPs and procurement processes. Enterprise brokerages are being asked to demonstrate that their AI vendors have undergone independent bias audits, not just self-certifications.
+
+### What this means for your AI stack
+
+If you deployed [AI Voice Agents](/ai-voice-agents) or [AI Lead Response](/solutions/ai-lead-response) before these requirements existed, you need to:
+
+1. **Conduct a retroactive bias assessment** of your existing AI systems.
+2. **Implement quarterly monitoring** with documented results.
+3. **Update vendor contracts** to include bias audit provisions and compliance representations.
+4. **Train your compliance team** on AI-specific Fair Housing risk.
+
+The cost of non-compliance has also increased. HUD penalty amounts for Fair Housing violations have risen, and class-action lawsuits targeting algorithmic bias in housing are becoming more common. Enterprise brokerages are especially exposed because of their volume and visibility.
+
+---
+
+## 6B. How to Audit Your AI for Fair Housing Bias
+
+Auditing AI for Fair Housing compliance doesn't require a PhD in machine learning. It requires a structured process, consistent documentation, and the discipline to act on what you find. Here's a practical framework that enterprise brokerages can implement immediately.
+
+### Step 1: Map your AI's decision points
+
+Start by documenting every point in your AI system where a decision is made that could affect how a lead is treated:
+
+- **Lead routing:** How does the AI decide which agent or office gets the lead? Are geography, income estimates, or price ranges used as routing factors?
+- **Qualification scoring:** Does the AI assign a "fit score" or priority level? What inputs drive that score?
+- **Script variation:** Does the AI say different things to different callers? Are there scenarios where the conversation path diverges based on caller attributes?
+- **Handoff criteria:** Under what conditions does the AI escalate to a human? Are those conditions applied consistently across all segments?
+
+Create a decision map that documents each of these points, the inputs used, and the outputs generated. This becomes the foundation for your audit.
+
+### Step 2: Design test scenarios
+
+Create a set of test cases designed to surface differential treatment. The goal is to simulate how your AI handles comparable callers from different demographic contexts:
+
+- **Geographic tests:** Send leads from different neighborhoods or ZIP codes with equivalent qualifications and compare response times, script paths, and agent assignments.
+- **Income/price tests:** Vary stated budget or income levels while keeping other factors constant and check for differences in qualification or treatment.
+- **Name/phone tests:** Use caller names associated with different racial or ethnic groups and compare AI behavior across calls.
+- **Language/accent tests:** Test with callers who have different accents or who switch between languages to ensure consistent service.
+
+Run each test case at least 10 times to account for natural AI variation. Document the results systematically.
+
+### Step 3: Analyze for disparate treatment
+
+Compare the results across your test groups. Look for:
+
+- **Response time differences** — Are some segments getting faster responses?
+- **Script differences** — Are different questions asked, or different language used?
+- **Routing differences** — Are certain leads consistently routed to different agents or offices?
+- **Qualification differences** — Are comparable leads scored or qualified differently?
+- **Handoff differences** — Are some callers escalated to humans more frequently?
+
+Any statistically significant difference across protected-class-related segments is a red flag that requires investigation.
+
+### Step 4: Document everything
+
+Your audit documentation should include:
+
+- **Decision map** — A complete map of every AI decision point and its inputs/outputs.
+- **Test methodology** — How you designed and executed your test scenarios.
+- **Raw results** — The complete data from your tests, not just summaries.
+- **Analysis** — Your assessment of whether disparate treatment exists and, if so, its magnitude.
+- **Remediation plan** — What you found, what you're fixing, and by when.
+- **Ongoing monitoring plan** — How often you'll re-test and who's responsible.
+
+Store these records for at least 3 years (per the updated HUD guidance) and make them available to your legal and compliance teams.
+
+### Step 5: Red flags to watch for
+
+Be especially alert to these common patterns:
+
+- **Geographic steering** — Leads from certain neighborhoods consistently getting slower responses, different scripts, or lower-priority routing.
+- **Income-based qualification gaps** — Leads with lower stated budgets being handled differently than those with higher budgets, even when other factors are equivalent.
+- **Name-driven divergence** — Any measurable difference in AI behavior based on caller name patterns that correlate with race or ethnicity.
+- **Escalation asymmetry** — Some segments being escalated to humans at significantly higher rates than others.
+- **Script language drift** — The AI using discouraging language with some callers and enthusiastic language with others in comparable situations.
+- **Vendor opacity** — If your [AI Voice Agent](/ai-voice-agents) vendor can't explain how their system makes decisions, that's a red flag regardless of whether you find bias in your testing.
+
+### Step 6: Vendor accountability
+
+Your [AI Voice Agent Pricing](/solutions/ai-voice-agent-pricing) contract should include explicit provisions for:
+
+- **Annual bias audits** conducted by the vendor and shared with you.
+- **Documentation of model changes** that could affect fairness.
+- **Cooperation with your internal audits** — the vendor should provide the data and access you need.
+- **Remediation timelines** — when you identify an issue, the vendor commits to a specific timeline for investigation and fix.
+
+If your current vendor can't or won't meet these standards, it's time to evaluate alternatives. The compliance risk of working with an opaque AI vendor in 2026 is simply too high for enterprise brokerages.
+
+---
+
 ## Related Reading
 
 - **[Build vs Buy for AI Sales Agents](/blog/build-vs-buy-ai-sales-agents-real-estate)** — A CFO's guide to the real costs and timelines of building vs buying AI
 - **[Designing Lead Response Operations for 50+ Offices](/blog/designing-lead-response-operations-50-offices)** — How to move from chaos to centralized, scalable operations
 - **[Enterprise Lead Response Infrastructure](/blog/enterprise-lead-infrastructure)** — The complete guide for real estate brokerages at scale
+- **[AI Voice Agent vs Human Receptionist](/blog/ai-voice-agent-vs-human-receptionist)** — Updated comparison including the hybrid model
+- **[ISA Cost 2026: The Real Numbers](/blog/isa-cost-2026)** — Complete cost breakdown of human vs AI ISAs
 
 ---
 
-_Want to see how Prestyj handles Fair Housing compliance? [Book a demo](/book-demo) and ask us about our visibility, control, and evidence capabilities._
+_Want to see how [AI Voice Agents](/ai-voice-agents) handle Fair Housing compliance? [Book a demo](/book-demo) and ask us about our visibility, control, and evidence capabilities._
