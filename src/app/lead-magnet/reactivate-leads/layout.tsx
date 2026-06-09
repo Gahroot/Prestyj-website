@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Free Guide: Reactivate Dead Leads with AI",
+  title: "Experience an AI Reactivation Call Live — Free Demo",
   description:
-    "Download the free guide on how to reactivate dead leads using AI-powered outreach. Turn old contacts into booked appointments — automatically.",
+    "Your old leads are worth thousands. Submit your number and our AI agent will call you in under 60 seconds — exactly how it re-engages dormant leads. Live interactive demo.",
   keywords: [
-    "reactivate dead leads",
-    "lead reactivation strategy",
-    "AI lead follow up",
-    "revive old leads",
-    "automated lead reactivation",
-    "dead lead recovery",
+    "lead reactivation demo",
+    "AI lead reactivation",
+    "cold lead follow-up AI",
+    "dormant leads reactivation",
+    "AI sales call demo",
+    "lead re-engagement",
   ],
   openGraph: {
-    title: "Free Guide: Reactivate Dead Leads with AI",
+    title: "Experience an AI Reactivation Call Live",
     description:
-      "Your old leads are worth thousands. Download the free guide to reactivate them with AI-powered outreach.",
+      "Submit your number and our AI agent calls you in under 60 seconds. Live demo of how dormant leads get re-engaged.",
     type: "website",
     url: "https://prestyj.com/lead-magnet/reactivate-leads",
   },

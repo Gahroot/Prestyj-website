@@ -5,8 +5,9 @@ import { getAllSolutionSlugs } from "@/lib/solutions";
 import { getAllBestForSlugs } from "@/lib/best-for";
 import { getAllLocationSlugs } from "@/lib/locations";
 import { getAllIndustrySlugs } from "@/lib/statistics/industries";
+import { siteConfig } from "@/lib/site-config";
 
-const baseUrl = "https://prestyj.com";
+const baseUrl = siteConfig.url;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();

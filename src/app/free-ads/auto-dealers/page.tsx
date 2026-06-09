@@ -42,6 +42,14 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  keywords: [
+    "free video ads for auto dealers",
+    "auto dealers advertising",
+    "video ads for auto dealers",
+    "auto dealers marketing",
+    "free facebook ads auto dealers",
+    "auto dealers lead generation",
+  ],
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

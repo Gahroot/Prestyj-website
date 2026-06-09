@@ -42,6 +42,14 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  keywords: [
+    "free video ads for HVAC",
+    "HVAC advertising",
+    "video ads for HVAC",
+    "HVAC marketing",
+    "free facebook ads HVAC",
+    "HVAC lead generation",
+  ],
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

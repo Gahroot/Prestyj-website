@@ -42,6 +42,14 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  keywords: [
+    "free video ads for plumbers",
+    "plumbers advertising",
+    "video ads for plumbers",
+    "plumbers marketing",
+    "free facebook ads plumbers",
+    "plumbers lead generation",
+  ],
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

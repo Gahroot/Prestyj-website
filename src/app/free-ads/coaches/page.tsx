@@ -42,6 +42,14 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  keywords: [
+    "free video ads for coaches",
+    "coaches advertising",
+    "video ads for coaches",
+    "coaches marketing",
+    "free facebook ads coaches",
+    "coaches lead generation",
+  ],
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

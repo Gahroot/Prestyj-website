@@ -42,6 +42,14 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  keywords: [
+    "free video ads for solar companies",
+    "solar companies advertising",
+    "video ads for solar companies",
+    "solar companies marketing",
+    "free facebook ads solar companies",
+    "solar companies lead generation",
+  ],
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

@@ -42,6 +42,14 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  keywords: [
+    "free video ads for real estate agents",
+    "real estate agents advertising",
+    "video ads for real estate agents",
+    "real estate agents marketing",
+    "free facebook ads real estate agents",
+    "real estate agents lead generation",
+  ],
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

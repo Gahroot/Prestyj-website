@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The $20M+ Brokerage Playbook: Convert 3x More Ad Leads with AI",
+  title: "The $20M+ Brokerage Playbook — Convert 3× More Ad Leads with AI",
   description:
-    "Free playbook for real estate team leaders and broker-owners running Facebook and YouTube ads. Get the speed to lead data, AI vs. ISA cost comparison, and step-by-step follow-up system used by top brokerages.",
+    "Free playbook: the exact system top real estate teams use to respond to every Facebook and YouTube lead in under 60 seconds, book 3× more appointments, and run AI at $20M+ production — without adding ISAs.",
   keywords: [
     "real estate brokerage playbook",
-    "AI lead response real estate playbook",
-    "real estate team leader free guide",
-    "brokerage AI lead conversion",
-    "real estate Facebook ads playbook",
-    "speed to lead real estate guide",
+    "AI lead response for brokerages",
+    "Facebook leads real estate",
+    "ISA vs AI real estate",
+    "brokerage lead conversion",
+    "real estate team lead response",
   ],
   openGraph: {
-    title: "The $20M+ Brokerage Playbook | Free Download",
+    title: "The $20M+ Brokerage Playbook",
     description:
-      "How top real estate teams convert 3x more Facebook and YouTube ad leads with AI. Free guide for team leaders and broker-owners.",
+      "Free playbook: respond to every Facebook & YouTube lead in under 60 seconds and book 3× more appointments — without adding ISAs.",
     type: "website",
     url: "https://prestyj.com/lead-magnet/brokerage-playbook",
   },

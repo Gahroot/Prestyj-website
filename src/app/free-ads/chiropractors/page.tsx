@@ -42,6 +42,14 @@ const PAGE_DESCRIPTION =
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
+  keywords: [
+    "free video ads for chiropractors",
+    "chiropractors advertising",
+    "video ads for chiropractors",
+    "chiropractors marketing",
+    "free facebook ads chiropractors",
+    "chiropractors lead generation",
+  ],
   openGraph: {
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,

@@ -9,7 +9,7 @@ export const siteConfig = {
   organizationId: "https://prestyj.com/#organization",
   websiteId: "https://prestyj.com/#website",
   logo: "https://prestyj.com/icon-512.png",
-  ogImage: "/og-image.jpg",
+  ogImage: "https://prestyj.com/og-image.jpg",
   creator: "@prestyj_",
   email: "hello@prestyj.com",
   contactUrl: "https://prestyj.com/contact",

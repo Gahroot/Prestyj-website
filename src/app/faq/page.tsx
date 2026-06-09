@@ -15,11 +15,12 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { ArrowRight } from "lucide-react";
 import BorderGlow from "@/components/ui/border-glow";
 import { faqs } from "@/lib/faq-data";
+import { siteConfig } from "@/lib/site-config";
 
-const siteUrl = "https://prestyj.com";
+const siteUrl = siteConfig.url;
 
 export const metadata: Metadata = {
-  title: "FAQ",
+  title: "Prestyj FAQ — AI Agents, Batch Video Ads, Pricing Answers",
   description:
     "Common questions about Prestyj's AI agents for marketing and sales — what you get, pricing, onboarding, integrations, and how the agents work.",
   keywords: [
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
     "Prestyj FAQ",
   ],
   openGraph: {
-    title: "FAQ",
+    title: "Prestyj FAQ — AI Agents, Batch Video Ads, Pricing Answers",
     description:
       "Common questions about Prestyj's AI agents for marketing and sales — what you get, pricing, onboarding, integrations, and how the agents work.",
     type: "website",
