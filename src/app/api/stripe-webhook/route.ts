@@ -4,7 +4,6 @@ import { getStripe } from "@/lib/stripe";
 import { getResend } from "@/lib/resend";
 import { getBatchTierByPriceId } from "@/lib/batch-tiers";
 import { getPlanByPriceId, getPlanTierByPriceId } from "@/lib/plan-checkout";
-import { PREMIUM_PORTAL_URL } from "@/lib/premium-portal";
 import { prisma } from "@/lib/prisma";
 
 export const runtime = "nodejs";
@@ -110,9 +109,10 @@ async function sendIntakeFallbackEmail(
   const tierName = tier.name;
   const adCount = tier.adCount;
   const firstName = (session.customer_details?.name ?? "").split(/\s+/)[0];
-  // Send buyers to the premium portal's verified claim flow. The portal
-  // verifies the session server-side and walks them through guided onboarding.
-  const intakeUrl = `${PREMIUM_PORTAL_URL.replace(/\/$/, "")}/start?session_id=${session.id}`;
+  // Send buyers to the legacy on-site intake. The premium portal
+  // (portal.prestyj.com/start) is still in development and not deployed, so
+  // batch buyers finish onboarding on-site until the portal cutover.
+  const intakeUrl = `${SITE_URL}/intake?session_id=${session.id}`;
 
   try {
     await getResend().emails.send({
@@ -123,9 +123,9 @@ async function sendIntakeFallbackEmail(
         <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #111;">
           <h1 style="font-size: 24px; margin: 0 0 16px;">Payment confirmed — one more step</h1>
           <p>Hey${firstName ? ` ${firstName}` : ""},</p>
-          <p>Thanks for picking up the <strong>${tierName}</strong> batch. Your order is moving to our new guided portal. To generate your <strong>${adCount} ad scripts</strong>, open your portal and finish onboarding:</p>
+          <p>Thanks for picking up the <strong>${tierName}</strong> batch. To generate your <strong>${adCount} ad scripts</strong>, complete your quick intake:</p>
           <p style="margin: 24px 0;">
-            <a href="${intakeUrl}" style="display: inline-block; background: #7058e3; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600;">Open your portal</a>
+            <a href="${intakeUrl}" style="display: inline-block; background: #7058e3; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600;">Complete your intake</a>
           </p>
           <p style="font-size: 13px; color: #555;">If you already finished onboarding, you can ignore this — scripts are on their way. If anything looks off, just reply to this email.</p>
           <p style="font-size: 13px; color: #555; margin-top: 24px;">— Prestyj</p>

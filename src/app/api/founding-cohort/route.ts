@@ -6,7 +6,6 @@ import {
 } from "@/lib/validations/founding-cohort-schemas";
 import { FOUNDING_COHORT, isCohortOpen } from "@/lib/founding-cohort";
 import { getStripe } from "@/lib/stripe";
-import { buildPortalClaimSuccessUrl } from "@/lib/premium-portal";
 
 const API_BASE_URL = "https://backend-api-production-b536.up.railway.app";
 
@@ -176,8 +175,9 @@ async function mintCheckoutSession(
     phone_number_collection: { enabled: true },
     // Cannot use `allow_promotion_codes` together with `discounts`.
     discounts: [{ promotion_code: promotionCodeId }],
-    // Hand paid buyers to the premium portal's verified claim flow.
-    success_url: buildPortalClaimSuccessUrl(),
+    // Legacy on-site intake. The premium portal (portal.prestyj.com/start) is
+    // still in development and not deployed, so buyers finish on-site.
+    success_url: `${origin}/intake?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${origin}/founding-cohort/approved`,
     metadata: checkoutMetadata,
     payment_intent_data: {
