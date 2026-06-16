@@ -77,7 +77,7 @@ export function ProductJsonLd() {
   const jsonLd: WithContext<Product> = {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Prestyj AI Lead Conversion Platform",
+    name: "Prestyj Custom AI Agents & Automation",
     description: siteConfig.description,
     brand: {
       "@type": "Brand",
@@ -127,7 +127,7 @@ export function SoftwareApplicationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Prestyj AI Lead Conversion Platform",
+    name: "Prestyj Custom AI Agent Systems",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: siteConfig.description,
@@ -137,16 +137,16 @@ export function SoftwareApplicationJsonLd() {
       priceCurrency: "USD",
     },
     featureList: [
+      "Custom AI agents",
+      "AI voice agents",
+      "AI receptionist workflows",
+      "AI sales follow-up",
+      "Marketing and content automation",
+      "Internal workflow automation",
+      "Desktop AI applications",
       "Batch video ad production",
       "Paid social creative testing",
-      "60-second lead response",
-      "AI-powered lead qualification",
-      "AI voice agents",
-      "Lead reactivation campaigns",
-      "Automated appointment booking",
-      "24/7 availability",
-      "CRM integration",
-      "Multi-channel support",
+      "CRM and calendar integration",
     ],
   };
 
@@ -196,7 +196,7 @@ export function ServiceJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Prestyj AI Lead Conversion Platform",
+    name: "Prestyj Custom AI Agents & Automation",
     description: siteConfig.description,
     provider: {
       "@type": "Organization",
@@ -209,12 +209,12 @@ export function ServiceJsonLd() {
       "@type": "OfferCatalog",
       name: "AI Agent Services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Batch Video Ads" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Lead Response" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Sales Agent" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice Agent" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom AI Agents" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice Agents" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Receptionist" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Lead Reactivation" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Sales Agents" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Marketing Agents" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Batch Video Ads" } },
       ],
     },
   };

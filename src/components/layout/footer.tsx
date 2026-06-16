@@ -7,7 +7,7 @@ const SUPPORT_EMAIL = "hello@prestyj.com";
 const SUPPORT_PHONE_DISPLAY = "TBD — real number coming soon";
 const SUPPORT_PHONE_HREF: string | null = null;
 
-type FooterLink = { href: string; label: string; highlight?: boolean };
+type FooterLink = { href: string; label: string; highlight?: boolean; external?: boolean };
 
 const socialLinks = [
   { href: "https://www.instagram.com/prestyj_/", label: "Instagram", icon: Instagram },
@@ -22,38 +22,46 @@ const socialLinks = [
 
 const footerLinks = {
   product: [
-    { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
-    { href: "/#how-it-works", label: "How It Works" },
-    { href: "/300-video-ads", label: "300 Video Ads" },
-    { href: "/results", label: "Proof" },
-    { href: "/#faq", label: "FAQ" },
-  ],
-  aiAgents: [
-    { href: "/ai-sales-agents", label: "AI Sales Agents", highlight: true },
+    { href: "/#ai-concierge", label: "Live AI Concierge", highlight: true },
+    { href: "/done-for-you-ai-agents", label: "Done-For-You AI" },
     { href: "/ai-voice-agents", label: "AI Voice Agents" },
     { href: "/ai-receptionist", label: "AI Receptionist" },
+    { href: "/ai-sales-agents", label: "AI Sales Agents" },
     { href: "/ai-marketing-agents", label: "AI Marketing Agents" },
-    { href: "/done-for-you-ai-agents", label: "Done-For-You AI" },
-    { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
   ],
-  resources: [
-    { href: "/blog", label: "Blog" },
-    { href: "/statistics", label: "Statistics", highlight: true },
-    { href: "/data", label: "Open Dataset" },
-    { href: "/llms.txt", label: "AI Citation Map" },
-    { href: "/feed/stats.xml", label: "Stats Feed" },
+  aiAgents: [
+    { href: "/ai-content-department", label: "AI Content Department", highlight: true },
+    { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
+    { href: "/platform", label: "Platform" },
+    { href: "/book-demo", label: "Book a Strategy Call" },
+    { href: "/contact", label: "Contact" },
+  ],
+  proof: [
+    { href: "/#proof", label: "Shipped Product Proof", highlight: true },
+    {
+      href: "https://website-three-eosin-0v0xmdepg0.vercel.app",
+      label: "EZ Coder",
+      external: true,
+    },
+    {
+      href: "https://media-master-gilt.vercel.app/",
+      label: "Media Master",
+      external: true,
+    },
+    { href: "/results", label: "Results" },
+    { href: "/statistics", label: "Statistics" },
   ],
   videoAds: [
     { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
+    { href: "/300-video-ads", label: "300 Video Ads" },
     { href: "/ad-creative-testing-service", label: "Creative Testing Service" },
-    { href: "/1000-video-ads", label: "1,000 Video Ads" },
     { href: "/batch-video-ad-roi-calculator", label: "ROI Calculator" },
     { href: "/cost-per-tested-ad-angle-calculator", label: "Cost Per Angle" },
-    { href: "/ad-fatigue-solution", label: "Ad Fatigue Solution" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
+    { href: "/llms.txt", label: "AI Citation Map" },
   ],
 } satisfies Record<string, ReadonlyArray<FooterLink>>;
 
@@ -66,6 +74,8 @@ function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<Fo
           <li key={link.href}>
             <Link
               href={link.href}
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noreferrer" : undefined}
               className={
                 link.highlight
                   ? "text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
@@ -92,8 +102,9 @@ export function Footer() {
               <span className="font-heading text-primary text-xl font-bold">PRESTYJ</span>
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm text-sm">
-              We turn one recording session into hundreds of vertical video ads for paid social
-              creative testing, plus AI agents that respond to, qualify, and reactivate leads.
+              Prestyj builds custom AI agents, voice systems, automations, internal
+              tools, and productized AI apps — with batch video ads as one focused
+              on-ramp inside the broader stack.
             </p>
             <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
               <div className="flex flex-wrap gap-x-2">
@@ -139,9 +150,9 @@ export function Footer() {
             </div>
           </div>
 
-          <FooterColumn title="Product" links={footerLinks.product} />
-          <FooterColumn title="AI Agents" links={footerLinks.aiAgents} />
-          <FooterColumn title="Resources" links={footerLinks.resources} />
+          <FooterColumn title="AI Agents" links={footerLinks.product} />
+          <FooterColumn title="Automation" links={footerLinks.aiAgents} />
+          <FooterColumn title="Proof" links={footerLinks.proof} />
           <FooterColumn title="Video Ads" links={footerLinks.videoAds} />
           <FooterColumn title="Legal" links={footerLinks.legal} />
         </div>

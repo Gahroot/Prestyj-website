@@ -5,7 +5,13 @@ import { useState } from "react";
 import { Menu, ChevronDown, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-import { navLinks, primaryCta, solutionLinks, type DropdownLink } from "@/lib/nav-data";
+import {
+  navLinks,
+  primaryCta,
+  secondaryCta,
+  solutionLinks,
+  type DropdownLink,
+} from "@/lib/nav-data";
 
 function NavDropdown({ label, items }: { label: string; items: DropdownLink[] }) {
   return (
@@ -98,7 +104,7 @@ export function NavbarMobile() {
         <SheetHeader>
           <SheetTitle className="text-white">PRESTYJ</SheetTitle>
           <p className="text-xs font-light tracking-wide text-white/60">
-            300 video ads from one recording
+            AI agents built around your business
           </p>
         </SheetHeader>
         <nav className="mt-8 flex flex-col gap-4">
@@ -115,12 +121,17 @@ export function NavbarMobile() {
             ),
           )}
 
-          <MobileSection title="Resources" items={solutionLinks} onNavigate={close} />
+          <MobileSection title="Solutions" items={solutionLinks} onNavigate={close} />
 
           <div className="mt-8 flex flex-col gap-3">
             <Button asChild className="w-full">
               <Link href={primaryCta.href} onClick={close}>
                 {primaryCta.label}
+              </Link>
+            </Button>
+            <Button asChild variant="outline" className="w-full border-white/15 text-white">
+              <Link href={secondaryCta.href} onClick={close}>
+                {secondaryCta.label}
               </Link>
             </Button>
           </div>

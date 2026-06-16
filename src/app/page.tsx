@@ -1,69 +1,45 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import { HomeHeroSection } from "@/components/sections/home-hero";
-import { homeFaqs } from "@/lib/home-faq-data";
-import { BatchVideoAdsJsonLd, FAQJsonLd } from "@/components/seo/json-ld";
 
-const StatisticsSection = dynamic(
-  () => import("@/components/sections/statistics").then((m) => m.StatisticsSection),
-  { ssr: true },
-);
-const HowItWorksSection = dynamic(
-  () => import("@/components/sections/how-it-works").then((m) => m.HowItWorksSection),
-  { ssr: true },
-);
-const PainPointsSection = dynamic(
-  () => import("@/components/sections/pain-points").then((m) => m.PainPointsSection),
-  { ssr: true },
-);
-const SolutionSection = dynamic(
-  () => import("@/components/sections/solution").then((m) => m.SolutionSection),
-  { ssr: true },
-);
-const FAQSection = dynamic(() => import("@/components/sections/faq").then((m) => m.FAQSection), {
-  ssr: true,
-});
-const CTASection = dynamic(() => import("@/components/sections/cta").then((m) => m.CTASection), {
-  ssr: true,
-});
-const BatchVideoAdsFeatureSection = dynamic(
-  () =>
-    import("@/components/sections/landing/batch-video-ads-feature").then(
-      (m) => m.BatchVideoAdsFeatureSection,
-    ),
-  { ssr: true },
-);
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { FAQJsonLd, ServiceJsonLd, SoftwareApplicationJsonLd } from "@/components/seo/json-ld";
+import { AiCapabilitiesSection } from "@/components/sections/homepage/ai-capabilities-section";
+import { AiConciergeHero } from "@/components/sections/homepage/ai-concierge-hero";
+import { HomepageFaqSection } from "@/components/sections/homepage/homepage-faq-section";
+import { HomepageFinalCta } from "@/components/sections/homepage/homepage-final-cta";
+import { ShippedProductsSection } from "@/components/sections/homepage/shipped-products-section";
+import { VideoMachineSection } from "@/components/sections/homepage/video-machine-section";
+import { homepageFaqs } from "@/lib/homepage-faq-data";
 
 export const metadata: Metadata = {
-  title: "Prestyj | 300 Video Ads for Paid Social Testing",
+  title: "Prestyj | Custom AI Agents, Voice Agents & Automation",
   description:
-    "Get 300 vertical video ads in 1–2 business days from one recording session. Built for businesses testing hooks, pain points, and offers on Meta, TikTok, YouTube Shorts, and Reels.",
+    "Prestyj builds custom AI agents, voice agents, sales/receptionist workflows, marketing/content engines, and productized AI systems for businesses.",
   keywords: [
-    "300 video ads",
+    "custom AI agents",
+    "AI voice agents",
+    "AI automation",
+    "AI sales agents",
+    "AI receptionist",
+    "AI marketing agents",
+    "AI content department",
+    "coding agents",
+    "marketing automation",
+    "desktop AI applications",
     "batch video ads",
-    "video ad variations",
-    "paid social creative testing",
-    "Meta ad creative testing",
-    "TikTok video ads",
-    "YouTube Shorts ads",
-    "UGC style video ads",
-    "ad creative volume",
-    "short form video ads",
   ],
   openGraph: {
-    title: "Prestyj | 300 Video Ads for Paid Social Testing",
+    title: "Prestyj | Custom AI Agents, Voice Agents & Automation",
     description:
-      "Get 300 vertical video ads in 1–2 business days from one recording session. Test hooks, pain points, and offers without hiring editors, creators, or an agency.",
+      "Talk to Prestyj's live AI concierge and explore custom AI agents, voice workflows, sales/receptionist systems, content engines, internal tools, and batch video ads.",
     type: "website",
     url: "https://prestyj.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Prestyj | 300 Video Ads for Paid Social Testing",
+    title: "Prestyj | Custom AI Agents, Voice Agents & Automation",
     description:
-      "Get 300 vertical video ads in 1–2 business days from one recording session. Test hooks, pain points, and offers without hiring editors, creators, or an agency.",
+      "Prestyj builds practical AI agents and automation for calls, leads, content, operations, internal tools, and productized software.",
   },
   alternates: {
     canonical: "https://prestyj.com",
@@ -73,18 +49,17 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <BatchVideoAdsJsonLd />
-      <FAQJsonLd faqs={homeFaqs} />
+      <ServiceJsonLd />
+      <SoftwareApplicationJsonLd />
+      <FAQJsonLd faqs={homepageFaqs} />
       <Navbar />
       <main>
-        <HomeHeroSection />
-        <PainPointsSection />
-        <SolutionSection />
-        <HowItWorksSection />
-        <StatisticsSection />
-        <BatchVideoAdsFeatureSection />
-        <FAQSection />
-        <CTASection />
+        <AiConciergeHero />
+        <AiCapabilitiesSection />
+        <ShippedProductsSection />
+        <VideoMachineSection />
+        <HomepageFaqSection />
+        <HomepageFinalCta />
       </main>
       <Footer />
     </>

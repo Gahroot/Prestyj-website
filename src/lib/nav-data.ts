@@ -1,4 +1,16 @@
-import { Bot, Megaphone, Zap, Phone, Sparkles, FlaskConical, type LucideIcon } from "lucide-react";
+import {
+  Bot,
+  Calculator,
+  Clapperboard,
+  FileText,
+  Headphones,
+  Megaphone,
+  Mic2,
+  PhoneCall,
+  Sparkles,
+  Workflow,
+  type LucideIcon,
+} from "lucide-react";
 
 export type DropdownLink = {
   href: string;
@@ -8,10 +20,10 @@ export type DropdownLink = {
 };
 
 export const navLinks = [
-  { href: "/batch-video-ads", label: "How It Works" },
-  { href: "#solutions", label: "Resources", dropdown: true as const },
-  { href: "/results", label: "Proof" },
-  { href: "/statistics", label: "Stats" },
+  { href: "/#ai-concierge", label: "Live AI" },
+  { href: "#solutions", label: "Solutions", dropdown: true as const },
+  { href: "/#proof", label: "Proof" },
+  { href: "/batch-video-ads", label: "Video Ads" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -22,55 +34,78 @@ export type CtaLink = {
 };
 
 export const primaryCta: CtaLink = {
-  href: "/batch-video-ads#pricing",
-  label: "Get 300 ads — $1,497",
+  href: "/#ai-concierge",
+  label: "Talk to the AI",
   variant: "primary",
 };
 
 export const secondaryCta: CtaLink = {
-  href: "/batch-video-ads",
-  label: "See How It Works",
+  href: "/book-demo",
+  label: "Book a call",
   variant: "secondary",
 };
 
 export const ctaLinks: readonly CtaLink[] = [primaryCta, secondaryCta];
 
-// Resource dropdown — keep the homepage navigation focused on the batch video ad offer.
 export const solutionLinks: DropdownLink[] = [
   {
-    href: "/batch-video-ads",
-    label: "Batch Video Ads",
-    description: "The full offer: one recording turned into 100–1,000 ads.",
+    href: "/done-for-you-ai-agents",
+    label: "Done-for-you AI agents",
+    description: "Custom agents, workflows, dashboards, and internal tools.",
+    icon: Workflow,
+  },
+  {
+    href: "/ai-voice-agents",
+    label: "AI voice agents",
+    description: "Phone and browser agents for qualification, routing, and booking.",
+    icon: Mic2,
+  },
+  {
+    href: "/ai-receptionist",
+    label: "AI receptionist",
+    description: "Answer calls, recover missed leads, schedule, and escalate cleanly.",
+    icon: Headphones,
+  },
+  {
+    href: "/ai-sales-agents",
+    label: "AI sales agents",
+    description: "Speed-to-lead, follow-up, qualification, reminders, and handoff.",
+    icon: Bot,
+  },
+  {
+    href: "/ai-marketing-agents",
+    label: "AI marketing agents",
+    description: "Campaign workflows, lead magnets, creative testing, and reporting.",
     icon: Megaphone,
   },
   {
-    href: "/300-video-ads",
-    label: "300 Video Ads",
-    description: "The recommended starting pack for 3 customer problems.",
-    icon: Zap,
+    href: "/ai-content-department",
+    label: "AI content department",
+    description: "Planning, repurposing, publishing support, and feedback loops.",
+    icon: FileText,
   },
   {
-    href: "/500-video-ads",
-    label: "500 Video Ads",
-    description: "More creative coverage across hooks, bodies, and CTAs.",
-    icon: Sparkles,
-  },
-  {
-    href: "/1000-video-ads",
-    label: "1,000 Video Ads",
-    description: "Maximum batch volume for aggressive testing and launches.",
-    icon: Phone,
-  },
-  {
-    href: "/ad-creative-testing-service",
-    label: "Creative Testing Service",
-    description: "High-volume video ad variations for Meta, TikTok, and YouTube Shorts.",
-    icon: FlaskConical,
+    href: "/batch-video-ads",
+    label: "Batch video ads",
+    description: "One recording turned into hundreds of ad variants for testing.",
+    icon: Clapperboard,
   },
   {
     href: "/batch-video-ad-roi-calculator",
-    label: "ROI Calculator",
-    description: "Model how many winning ads a batch needs to find to pay for itself.",
-    icon: Bot,
+    label: "ROI calculator / proof",
+    description: "Model how many winners a creative batch needs to find.",
+    icon: Calculator,
+  },
+  {
+    href: "/300-video-ads",
+    label: "300 video ads",
+    description: "The productized video-ad machine as a focused landing page.",
+    icon: Sparkles,
+  },
+  {
+    href: "/book-demo",
+    label: "Book a human call",
+    description: "Talk through the highest-leverage AI system for your business.",
+    icon: PhoneCall,
   },
 ];
