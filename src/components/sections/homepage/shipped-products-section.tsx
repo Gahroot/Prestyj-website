@@ -11,7 +11,7 @@ const products = [
     url: "https://website-three-eosin-0v0xmdepg0.vercel.app",
     label: "Desktop coding agent",
     description:
-      "Built by Prestyj / Nolan. Free/open-source, local-first, provider login, plan mode, and multi-window agents.",
+      "A local desktop coding agent with provider login, plan mode, multi-window agents and hands-on codebase tooling.",
     icon: Code2,
   },
   {
@@ -34,12 +34,12 @@ export function ShippedProductsSection(): ReactElement {
               Proof we ship
             </Badge>
             <h2 className="font-heading text-foreground mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
-              Prestyj is a builder, not a slide-deck AI agency.
+              We ship working AI software, not slide decks.
             </h2>
             <p className="text-muted-foreground mt-4 text-lg leading-8">
-              EZ Coder and Media Master are public examples of shipped Prestyj-built
-              software. They are not the main sales funnel here — they prove we can
-              turn AI workflows into real products.
+              EZ Coder and Media Master show the same builder muscle we bring to
+              client work: agents, apps, automations, browser workflows and clean
+              interfaces people can actually use.
             </p>
           </div>
 

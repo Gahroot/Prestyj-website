@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { FormEvent, ReactElement } from "react";
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   ArrowRight,
   Bot,
@@ -33,18 +33,18 @@ import {
 } from "@/lib/use-tribunal-voice-session";
 
 function formatAgentState(state: string): string {
-  if (state === "listening") return "Listening for your business bottleneck";
-  if (state === "thinking") return "Thinking through the right system";
-  if (state === "speaking") return "Speaking live through the AI stack";
+  if (state === "listening") return "Listening";
+  if (state === "thinking") return "Choosing the next step";
+  if (state === "speaking") return "Answering live";
   return "Ready when you are";
 }
 
 function formatStatus(status: string, isConfigured: boolean): string {
-  if (!isConfigured) return "Live demo fallback active";
-  if (status === "connecting") return "Connecting securely to the voice agent";
-  if (status === "connected") return "Live session running in your browser";
+  if (!isConfigured) return "Voice demo is not live in this environment";
+  if (status === "connecting") return "Connecting to the voice agent";
+  if (status === "connected") return "Live voice session running";
   if (status === "error") return "Voice demo needs a reset";
-  return "Mic starts only when you press the button";
+  return "Your mic starts only when you press start";
 }
 
 function WaveBars({ frequencies }: { frequencies: number[] }): ReactElement {
@@ -123,7 +123,7 @@ export function AiConciergeHero(): ReactElement {
   const apiBase = resolveTribunalApiBase();
   const publicId = getTribunalHomepageAgentId();
   const phoneDemoEnabled = isTribunalPhoneDemoEnabled();
-  const isConfigured = Boolean(apiBase && publicId);
+  const isConfigured = apiBase !== null && Boolean(publicId);
 
   const {
     config,
@@ -152,6 +152,8 @@ export function AiConciergeHero(): ReactElement {
     barCount: 28,
   });
 
+  const phoneFormRef = useRef<HTMLFormElement>(null);
+  const phoneInputRef = useRef<HTMLInputElement>(null);
   const [phoneNumber, setPhoneNumber] = useState("");
   const [callerName, setCallerName] = useState("");
   const [phoneConsent, setPhoneConsent] = useState(false);
@@ -166,7 +168,7 @@ export function AiConciergeHero(): ReactElement {
 
   const isSessionActive = status === "connecting" || status === "connected";
   const liveIssue = configError || voiceError;
-  const agentDisplayName = config ? config.name : "Nova — AI systems showroom";
+  const agentDisplayName = config ? config.name : "Nova, Prestyj AI concierge";
   const connectionStatusText = formatStatus(
     isLoading ? "connecting" : status,
     isConfigured,
@@ -182,12 +184,17 @@ export function AiConciergeHero(): ReactElement {
     await start();
   }
 
+  function focusPhoneDemo(): void {
+    phoneFormRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    window.setTimeout(() => phoneInputRef.current?.focus(), 250);
+  }
+
   async function handlePhoneSubmit(event: FormEvent<HTMLFormElement>): Promise<void> {
     event.preventDefault();
     setPhoneMessage(null);
     setPhoneError(null);
 
-    if (!apiBase || !publicId) {
+    if (apiBase === null || !publicId) {
       setPhoneError("The phone demo is not configured in this environment.");
       return;
     }
@@ -210,7 +217,7 @@ export function AiConciergeHero(): ReactElement {
         publicId,
         phoneNumber: normalized.phoneNumber,
         callerName,
-        notes: "Homepage visitor requested the Prestyj AI concierge phone encore.",
+        notes: "Homepage visitor requested a phone demo from the Prestyj homepage.",
       });
       setPhoneMessage(response.message);
       setPhoneNumber(normalized.displayNumber);
@@ -236,18 +243,18 @@ export function AiConciergeHero(): ReactElement {
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div>
           <Badge variant="outline" className="border-primary/50 text-primary bg-background/60">
-            CUSTOM AI AGENTS · LIVE VOICE DEMO
+            AI AGENTS FOR CALLS, LEADS, CONTENT AND OPS
           </Badge>
 
           <h1 className="font-heading text-foreground mt-6 text-4xl leading-[1.04] font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            We build AI agents your business can actually use.
-            <span className="text-primary block">Talk to one right now.</span>
+            Put AI on the work that slows your team down.
+            <span className="text-primary block">Hear it handle the next lead.</span>
           </h1>
 
           <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-8">
-            Voice agents, sales agents, receptionist workflows, content engines,
-            lead-response systems, internal tools, and productized AI apps — built
-            around your real operations.
+            Prestyj builds voice agents, receptionists, sales follow-up, content
+            workflows and internal tools that plug into how your business already
+            sells, books and operates.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -269,30 +276,52 @@ export function AiConciergeHero(): ReactElement {
                 {status === "connecting"
                   ? "Connecting..."
                   : isSessionActive
-                    ? "End AI session"
-                    : "Talk to the AI concierge"}
+                    ? "End voice demo"
+                    : "Start browser voice demo"}
               </Button>
             ) : (
               <Button size="lg" className="h-12 px-7 text-base font-semibold" asChild>
                 <Link href="/book-demo">
-                  Book a human strategy call
-                  <ArrowRight className="h-5 w-5" />
+                  Book a build call
+                  <Calendar className="h-5 w-5" />
                 </Link>
               </Button>
             )}
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="h-12 px-7 text-base font-semibold"
-              asChild
-            >
-              <Link href="/book-demo">
-                <Calendar className="h-5 w-5" />
-                Book a human call
-              </Link>
-            </Button>
+            {isConfigured && phoneDemoEnabled ? (
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 px-7 text-base font-semibold"
+                onClick={focusPhoneDemo}
+                type="button"
+              >
+                <PhoneCall className="h-5 w-5" />
+                Have the AI call me
+              </Button>
+            ) : (
+              <Button
+                size="lg"
+                variant="outline"
+                className="h-12 px-7 text-base font-semibold"
+                asChild
+              >
+                <Link href="/#capabilities">
+                  See what we build
+                  <ArrowRight className="h-5 w-5" />
+                </Link>
+              </Button>
+            )}
           </div>
+
+          {isConfigured ? (
+            <Link
+              href="/book-demo"
+              className="text-muted-foreground hover:text-primary mt-4 inline-flex text-sm font-medium transition-colors"
+            >
+              Prefer a human? Book a call.
+            </Link>
+          ) : null}
 
           <div className="text-muted-foreground mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
             <span className="flex items-center gap-2">
@@ -301,7 +330,7 @@ export function AiConciergeHero(): ReactElement {
             </span>
             <span className="text-border hidden sm:inline">•</span>
             <Link href="/batch-video-ads" className="hover:text-primary transition-colors">
-              See the productized video-ad machine
+              Need ad creative? See batch video ads
             </Link>
           </div>
 
@@ -311,9 +340,9 @@ export function AiConciergeHero(): ReactElement {
 
           <div className="mt-10 grid gap-4 text-sm sm:grid-cols-3">
             {[
-              ["Voice", "browser + phone agents"],
-              ["Ops", "workflow automation"],
-              ["Proof", "real shipped products"],
+              ["Calls", "answers and qualifies"],
+              ["Follow-up", "texts, books and updates"],
+              ["Ops", "keeps work moving"],
             ].map(([label, value]) => (
               <div key={label} className="bg-card/50 rounded-2xl border p-4">
                 <div className="text-foreground font-semibold">{label}</div>
@@ -361,7 +390,7 @@ export function AiConciergeHero(): ReactElement {
                     {formatAgentState(agentState)}
                   </p>
                   <p className="mt-1 text-xs text-slate-400">
-                    Ask what to automate, which agent fits, or how the stack works.
+                    Ask what to automate, how calls are handled, or where leads leak.
                   </p>
                 </div>
                 {status === "connected" ? (
@@ -407,6 +436,7 @@ export function AiConciergeHero(): ReactElement {
 
             {isConfigured && phoneDemoEnabled ? (
               <form
+                ref={phoneFormRef}
                 className="mt-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4"
                 onSubmit={(event) => void handlePhoneSubmit(event)}
               >
@@ -415,16 +445,18 @@ export function AiConciergeHero(): ReactElement {
                     <PhoneCall className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">Phone-call encore</p>
+                    <p className="text-sm font-semibold text-white">
+                      Have the AI call your phone
+                    </p>
                     <p className="mt-1 text-xs leading-5 text-slate-400">
-                      Want to feel the same stack on a real phone line? Request one
-                      automated demo call with consent.
+                      Enter your number, confirm consent and trigger one short demo call.
                     </p>
                   </div>
                 </div>
 
                 <div className="mt-4 grid gap-3 sm:grid-cols-[1fr_0.8fr]">
                   <Input
+                    ref={phoneInputRef}
                     value={phoneNumber}
                     onChange={(event) => setPhoneNumber(event.target.value)}
                     placeholder="(555) 123-4567"
@@ -462,7 +494,7 @@ export function AiConciergeHero(): ReactElement {
                     className="bg-primary hover:bg-primary/90"
                   >
                     {isRequestingPhone ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-                    Request phone demo
+                    Call me with the AI demo
                   </Button>
                   <Button
                     type="button"
@@ -471,7 +503,7 @@ export function AiConciergeHero(): ReactElement {
                     className="text-slate-300 hover:bg-white/10 hover:text-white"
                     asChild
                   >
-                    <Link href="/book-demo">Skip to human call</Link>
+                    <Link href="/book-demo">Book a human instead</Link>
                   </Button>
                 </div>
 

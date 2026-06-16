@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 
 // Keep in sync with src/app/contact/page.tsx
 const SUPPORT_EMAIL = "hello@prestyj.com";
-const SUPPORT_PHONE_DISPLAY = "TBD — real number coming soon";
+const SUPPORT_PHONE_DISPLAY = "TBD, real number coming soon";
 const SUPPORT_PHONE_HREF: string | null = null;
 
 type FooterLink = { href: string; label: string; highlight?: boolean; external?: boolean };
@@ -33,7 +33,7 @@ const footerLinks = {
     { href: "/ai-content-department", label: "AI Content Department", highlight: true },
     { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
     { href: "/platform", label: "Platform" },
-    { href: "/book-demo", label: "Book a Strategy Call" },
+    { href: "/book-demo", label: "Book a Build Call" },
     { href: "/contact", label: "Contact" },
   ],
   proof: [
@@ -103,8 +103,8 @@ export function Footer() {
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm text-sm">
               Prestyj builds custom AI agents, voice systems, automations, internal
-              tools, and productized AI apps — with batch video ads as one focused
-              on-ramp inside the broader stack.
+              tools, and AI software for calls, lead follow-up, content, operations,
+              and creative testing.
             </p>
             <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
               <div className="flex flex-wrap gap-x-2">

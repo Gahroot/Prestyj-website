@@ -243,7 +243,7 @@ export function useTribunalAgentConfig({
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (!enabled || !apiBase || !publicId) return;
+    if (!enabled || apiBase === null || !publicId) return;
 
     const abortController = new AbortController();
     setIsLoading(true);
@@ -461,7 +461,7 @@ export function useTribunalVoiceSession({
   }, []);
 
   const flushTranscript = useCallback(async (): Promise<void> => {
-    if (!saveTranscript || !apiBase || !publicId) return;
+    if (!saveTranscript || apiBase === null || !publicId) return;
 
     const pendingAssistant = currentAssistantTextRef.current.trim();
     if (pendingAssistant) {
@@ -532,7 +532,7 @@ export function useTribunalVoiceSession({
   const start = useCallback(async (): Promise<void> => {
     if (status === "connecting" || status === "connected") return;
 
-    if (!apiBase || !publicId || !config) {
+    if (apiBase === null || !publicId || !config) {
       reportError("The live AI concierge is not configured yet.");
       setStatus("error");
       return;
@@ -794,7 +794,7 @@ export function useTribunalVoiceSession({
     smoothedLevel,
     transcript,
     error,
-    canStart: Boolean(apiBase && publicId && config),
+    canStart: apiBase !== null && Boolean(publicId && config),
     start,
     end,
     toggleMute,

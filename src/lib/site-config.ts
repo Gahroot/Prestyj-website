@@ -4,7 +4,7 @@ export const siteConfig = {
   alternateNames: ["PRESTYJ", "Prestyj AI", "Prestyj AI Agents"],
   title: "Prestyj | Custom AI Agents, Voice Agents & Automation",
   description:
-    "Prestyj builds custom AI agents, voice agents, sales and receptionist workflows, marketing/content engines, internal automation, and productized AI software for businesses.",
+    "Prestyj builds custom AI agents, voice agents, sales and receptionist workflows, marketing and content systems, internal automation, and AI software for businesses.",
   url: "https://prestyj.com",
   organizationId: "https://prestyj.com/#organization",
   websiteId: "https://prestyj.com/#website",

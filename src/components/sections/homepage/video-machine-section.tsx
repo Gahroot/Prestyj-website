@@ -14,12 +14,12 @@ export function VideoMachineSection(): ReactElement {
               <Clapperboard className="h-5 w-5" />
             </div>
             <h2 className="font-heading text-foreground mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
-              The productized on-ramp: one recording into hundreds of ad tests.
+              Need more ads to test? Turn one recording into hundreds.
             </h2>
             <p className="text-muted-foreground mt-4 text-lg leading-8">
-              The video-ad machine is still here — just in the right place. It is
-              one repeatable Prestyj system inside the broader AI-agent stack for
-              creative testing, lead capture, and follow-up.
+              If you need creative volume, Prestyj can take one shoot or source
+              asset and build a full batch of vertical ads for Meta, TikTok,
+              YouTube Shorts and Reels.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
@@ -47,7 +47,7 @@ export function VideoMachineSection(): ReactElement {
                 "Hooks: first-three-second angles and pattern interrupts.",
                 "Bodies: pains, proof points, demos, objections, and offers.",
                 "CTAs: booking, lead magnets, quote requests, and direct response.",
-                "Variants: enough volume to learn instead of guessing from 3–5 ads.",
+                "Variants: enough volume to learn instead of guessing from 3 to 5 ads.",
               ].map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
                   {item}

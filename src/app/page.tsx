@@ -14,7 +14,7 @@ import { homepageFaqs } from "@/lib/homepage-faq-data";
 export const metadata: Metadata = {
   title: "Prestyj | Custom AI Agents, Voice Agents & Automation",
   description:
-    "Prestyj builds custom AI agents, voice agents, sales/receptionist workflows, marketing/content engines, and productized AI systems for businesses.",
+    "Prestyj builds custom AI agents, voice agents, sales and receptionist workflows, marketing and content systems, internal automation, and AI software for businesses.",
   keywords: [
     "custom AI agents",
     "AI voice agents",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Prestyj | Custom AI Agents, Voice Agents & Automation",
     description:
-      "Prestyj builds practical AI agents and automation for calls, leads, content, operations, internal tools, and productized software.",
+      "Prestyj builds practical AI agents and automation for calls, leads, content, operations, internal tools, and AI software.",
   },
   alternates: {
     canonical: "https://prestyj.com",

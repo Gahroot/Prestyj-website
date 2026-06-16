@@ -99,13 +99,13 @@ export const solutionLinks: DropdownLink[] = [
   {
     href: "/300-video-ads",
     label: "300 video ads",
-    description: "The productized video-ad machine as a focused landing page.",
+    description: "See the 300-ad offer for paid social testing.",
     icon: Sparkles,
   },
   {
     href: "/book-demo",
     label: "Book a human call",
-    description: "Talk through the highest-leverage AI system for your business.",
+    description: "Show us the repeated work you want off your plate.",
     icon: PhoneCall,
   },
 ];

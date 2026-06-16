@@ -1,5 +1,8 @@
 import { z } from "zod";
 
+const DEFAULT_TRIBUNAL_API_BASE = "";
+const DEFAULT_TRIBUNAL_HOMEPAGE_AGENT_ID = "ag_L2rFuSnp";
+
 const tribunalToolSchema = z.object({
   type: z.string(),
   name: z.string(),
@@ -176,8 +179,11 @@ async function fetchTribunalJson<T>(
 export function resolveTribunalApiBase(
   rawValue: string | undefined = process.env.NEXT_PUBLIC_TRIBUNAL_API_BASE,
 ): string | null {
-  const value = normalizeEnvString(rawValue)?.replace(/\/+$/, "");
-  if (!value) return null;
+  const value =
+    normalizeEnvString(rawValue)?.replace(/\/+$/, "") ?? DEFAULT_TRIBUNAL_API_BASE;
+
+  if (!value) return "";
+  if (value.startsWith("/")) return value;
 
   try {
     const parsed = new URL(value);
@@ -188,7 +194,10 @@ export function resolveTribunalApiBase(
 }
 
 export function getTribunalHomepageAgentId(): string | null {
-  return normalizeEnvString(process.env.NEXT_PUBLIC_TRIBUNAL_HOMEPAGE_AGENT_ID);
+  return (
+    normalizeEnvString(process.env.NEXT_PUBLIC_TRIBUNAL_HOMEPAGE_AGENT_ID) ??
+    DEFAULT_TRIBUNAL_HOMEPAGE_AGENT_ID
+  );
 }
 
 export function isTribunalPhoneDemoEnabled(): boolean {

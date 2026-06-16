@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactElement } from "react";
-import { ArrowRight, Bot, Calendar } from "lucide-react";
+import { ArrowRight, Bot, Mic } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -13,24 +13,23 @@ export function HomepageFinalCta(): ReactElement {
             <Bot className="h-6 w-6" />
           </div>
           <h2 className="font-heading text-foreground mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
-            Bring us the bottleneck. We will map the agent.
+            Give us the task your team keeps doing by hand.
           </h2>
           <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-lg leading-8">
-            If you know what is repetitive, slow, expensive, or falling through the
-            cracks, Prestyj can help decide whether it should become a voice agent,
-            sales agent, content engine, internal tool, or productized workflow.
+            We will turn the repeated calls, follow-up, intake, reporting, content,
+            booking or handoff work into an AI system your team can use every day.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button asChild size="lg">
-              <Link href="/#ai-concierge">
-                Talk to the AI
+              <Link href="/book-demo">
+                Book a build call
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline">
-              <Link href="/book-demo">
-                <Calendar className="h-5 w-5" />
-                Book a human strategy call
+              <Link href="/#ai-concierge">
+                <Mic className="h-5 w-5" />
+                Try the voice demo
               </Link>
             </Button>
           </div>

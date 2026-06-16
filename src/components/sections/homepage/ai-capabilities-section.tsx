@@ -19,8 +19,8 @@ const capabilities = [
     title: "Done-for-you AI agents",
     href: "/done-for-you-ai-agents",
     description:
-      "Custom agents, automations, dashboards, and workflows built around how your team already operates.",
-    outcome: "Turn repeated work into reliable systems.",
+      "Custom agents, automations, dashboards and workflows that take repetitive work off your team's plate.",
+    outcome: "Replace manual handoffs with a system that runs.",
     icon: Workflow,
   },
   {
@@ -28,7 +28,7 @@ const capabilities = [
     href: "/ai-voice-agents",
     description:
       "Browser and phone agents that qualify callers, answer questions, route requests, and book next steps.",
-    outcome: "Make every live conversation instantly actionable.",
+    outcome: "Turn live conversations into booked next steps.",
     icon: Mic2,
   },
   {
@@ -51,15 +51,15 @@ const capabilities = [
     title: "AI marketing agents",
     href: "/ai-marketing-agents",
     description:
-      "Campaign workflows, lead magnets, content repurposing, creative testing, and performance loops.",
-    outcome: "Keep campaigns moving without manual drag.",
+      "Campaign workflows, lead magnets, content repurposing, creative testing and reporting.",
+    outcome: "Keep marketing moving without chasing every task.",
     icon: Megaphone,
   },
   {
     title: "AI content department",
     href: "/ai-content-department",
     description:
-      "Planning, drafting, repurposing, publishing support, and feedback from what the market responds to.",
+      "Planning, drafting, repurposing, publishing support and feedback from what the market responds to.",
     outcome: "Turn one idea into a consistent content engine.",
     icon: FileText,
   },
@@ -82,11 +82,11 @@ export function AiCapabilitiesSection(): ReactElement {
             What we build
           </Badge>
           <h2 className="font-heading text-foreground mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
-            AI systems mapped to real business bottlenecks.
+            AI agents that answer, follow up, create and keep records clean.
           </h2>
           <p className="text-muted-foreground mt-4 text-lg">
-            Start with the work that repeats every day: calls, lead response,
-            follow-up, content, reporting, handoffs, and internal coordination.
+            Start with the work your team repeats every day: calls, lead response,
+            follow-up, content, reporting, handoffs and internal coordination.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ export function AiCapabilitiesSection(): ReactElement {
                   {capability.outcome}
                 </p>
                 <div className="text-primary mt-6 flex items-center gap-2 text-sm font-semibold">
-                  Explore offer
+                  See details
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </div>
               </Link>
