@@ -3,9 +3,11 @@ import { NextRequest, NextResponse } from "next/server";
 const TRIBUNAL_API_BASE = (
   process.env.TRIBUNAL_API_BASE ?? "https://backend-api-production-b536.up.railway.app"
 ).replace(/\/+$/, "");
+const HOMEPAGE_AGENT_PUBLIC_ID =
+  process.env.NEXT_PUBLIC_TRIBUNAL_HOMEPAGE_AGENT_ID?.trim() || "ag_L2rFuSnp";
 
-const ALLOWED_ENDPOINTS = new Set([
-  "config",
+const GET_ENDPOINTS = new Set(["config"]);
+const POST_ENDPOINTS = new Set([
   "token",
   "tool-call",
   "transcript",
@@ -21,8 +23,14 @@ interface RouteContext {
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-function isSafePublicId(publicId: string): boolean {
-  return /^ag_[A-Za-z0-9]+$/.test(publicId);
+function isAllowedPublicId(publicId: string): boolean {
+  return publicId === HOMEPAGE_AGENT_PUBLIC_ID;
+}
+
+function isAllowedEndpoint(method: "GET" | "POST", endpoint: string): boolean {
+  return method === "GET"
+    ? GET_ENDPOINTS.has(endpoint)
+    : POST_ENDPOINTS.has(endpoint);
 }
 
 function buildForwardHeaders(request: NextRequest): Headers {
@@ -50,8 +58,11 @@ async function proxyTribunalEmbedRequest(
 ): Promise<NextResponse> {
   const { publicId, endpoint } = await params;
 
-  if (!isSafePublicId(publicId) || !ALLOWED_ENDPOINTS.has(endpoint)) {
-    return NextResponse.json({ error: "Unsupported AI concierge request" }, { status: 404 });
+  if (!isAllowedPublicId(publicId) || !isAllowedEndpoint(method, endpoint)) {
+    return NextResponse.json(
+      { error: "Unsupported AI concierge request" },
+      { status: 404 },
+    );
   }
 
   const targetUrl = `${TRIBUNAL_API_BASE}/api/v1/p/embed/${encodeURIComponent(
