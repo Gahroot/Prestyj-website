@@ -911,6 +911,45 @@ const voiceAgentStats: Statistic[] = [
     context:
       "Synthesized from CTIA STIR/SHAKEN attestation data, First Orion and Hiya answer-rate studies, and Prestyj branded-calling campaign A/B tests.",
   },
+  {
+    id: "branded-calling-cost-per-line",
+    value: "$12–$45/line/mo",
+    description:
+      "Branded calling (verified caller ID with business name + logo) costs $12–$45 per line per month in 2026 across First Orion, Hiya Connect, TNS Call Guardian, and CallerID Reputation, plus a one-time STIR/SHAKEN attestation setup of $0–$500.",
+    source: {
+      name: "Prestyj branded calling pricing benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/branded-calling-pricing-comparison-2026",
+    },
+    context:
+      "Range reflects published rate cards and Prestyj benchmark sales conversations across Q1–Q2 2026 for technical services, IT services, and MSP firms. Bundled voice-agent providers fold branded display into the per-minute price instead of a separate line item.",
+  },
+  {
+    id: "branded-calling-cost-per-connected-call",
+    value: "$0.04–$0.11",
+    description:
+      "At 2,000+ outbound dials/month per line, branded calling adds $0.04–$0.11 in fully-loaded cost per connected conversation — typically lower than the per-connection cost it removes, because the 27–41% answer-rate lift spreads the same line fee across more live conversations.",
+    source: {
+      name: "Prestyj branded calling cost-per-connection model",
+      year: "2026",
+      url: "https://prestyj.com/blog/branded-calling-cost-per-call-comparison-2026",
+    },
+    context:
+      "Modeled at $12–$45/line/month spread across 2,000–10,000 monthly dials at industry-average connect rates. Break-even for tech services and MSP outbound campaigns lands at roughly 800–1,500 dials/month per line.",
+  },
+  {
+    id: "branded-calling-msp-break-even-dials",
+    value: "800–1,500 dials/mo",
+    description:
+      "For IT services firms and MSPs running outbound qualification, renewal, and win-back campaigns, branded calling reaches break-even at roughly 800–1,500 outbound dials per month per line; above that volume the answer-rate lift compounds against the flat per-line fee.",
+    source: {
+      name: "Prestyj branded calling MSP/IT services benchmark",
+      year: "2026",
+      url: "https://prestyj.com/blog/best-branded-calling-for-it-services-msps-2026",
+    },
+    context:
+      "Derived from per-line pricing of $12–$45/month and a 27–41% answer-rate lift across managed-IT and technical-services outbound dialing. Below ~500 dials/month per line the math rarely pencils.",
+  },
 ];
 
 // ─── Sales Outreach Economics ─────────────────────────────────────────────────

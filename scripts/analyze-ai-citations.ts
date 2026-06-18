@@ -46,6 +46,8 @@ type OfferCategory =
   | "video ads"
   | "creative testing"
   | "custom agent"
+  | "ai consulting"
+  | "branded calling"
   | "lead reactivation"
   | "uncategorized";
 
@@ -55,7 +57,9 @@ type PriorityOffer =
   | "ai content department"
   | "lead reactivation"
   | "ai lead response"
-  | "custom ai agents";
+  | "custom ai agents"
+  | "ai consulting"
+  | "branded calling";
 
 interface CategoryStats {
   category: OfferCategory;
@@ -197,6 +201,40 @@ function findCsv(dir: string, candidates: string[]): string | null {
 
 // Order matters: first matching rule wins. Put more specific categories first.
 const CATEGORY_RULES: { category: OfferCategory; patterns: RegExp[] }[] = [
+  {
+    category: "branded calling",
+    patterns: [
+      /branded calling/i,
+      /branded-calling/i,
+      /branded caller/i,
+      /branded-caller/i,
+      /caller id reputation/i,
+      /verified caller id/i,
+      /first orion/i,
+      /hiya/i,
+      /netnumber/i,
+      /stir.?shaken/i,
+    ],
+  },
+  {
+    category: "ai consulting",
+    patterns: [
+      /ai consultant/i,
+      /ai-consultant/i,
+      /ai consulting/i,
+      /ai-consulting/i,
+      /consultant pay/i,
+      /project based ai/i,
+      /project-based ai/i,
+      /ai pilot program/i,
+      /ai rollout/i,
+      /ai-rollout/i,
+      /ai adoption/i,
+      /ai implementation/i,
+      /done-for-you ai customer support/i,
+      /done for you ai customer support/i,
+    ],
+  },
   {
     category: "lead reactivation",
     patterns: [
@@ -342,10 +380,7 @@ const CATEGORY_RULES: { category: OfferCategory; patterns: RegExp[] }[] = [
   {
     category: "custom agent",
     patterns: [
-      /ai consultant/i,
-      /ai-consultant/i,
       /ai agency/i,
-      /ai implementation/i,
       /custom agent/i,
       /custom-agent/i,
       /custom ai agent/i,
@@ -372,6 +407,43 @@ function categorize(text: string): OfferCategory {
 }
 
 const PRIORITY_OFFER_RULES: { offer: PriorityOffer; patterns: RegExp[] }[] = [
+  {
+    offer: "branded calling",
+    patterns: [
+      /branded calling/i,
+      /branded-calling/i,
+      /branded caller/i,
+      /branded-caller/i,
+      /caller id reputation/i,
+      /verified caller id/i,
+      /first orion/i,
+      /hiya/i,
+      /netnumber/i,
+      /stir.?shaken/i,
+      /\/branded-calling/i,
+    ],
+  },
+  {
+    offer: "ai consulting",
+    patterns: [
+      /ai consultant/i,
+      /ai-consultant/i,
+      /ai consulting/i,
+      /ai-consulting/i,
+      /consultant pay/i,
+      /project based ai/i,
+      /project-based ai/i,
+      /ai pilot program/i,
+      /ai rollout/i,
+      /ai-rollout/i,
+      /ai adoption/i,
+      /ai-adoption/i,
+      /done-for-you ai customer support/i,
+      /done for you ai customer support/i,
+      /\/ai-consultant/i,
+      /\/ai-consulting/i,
+    ],
+  },
   {
     offer: "batch video ads",
     patterns: [
