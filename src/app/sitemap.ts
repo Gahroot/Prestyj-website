@@ -111,6 +111,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.88,
     },
     {
+      url: `${baseUrl}/done-for-you-ai-customer-support`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.88,
+    },
+    {
+      url: `${baseUrl}/custom-ai-agents`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.86,
+    },
+    {
+      url: `${baseUrl}/ai-consulting`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.86,
+    },
+    {
       url: `${baseUrl}/ai-receptionist`,
       lastModified: now,
       changeFrequency: "weekly",

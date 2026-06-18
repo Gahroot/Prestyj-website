@@ -193,14 +193,24 @@ const page = {
   },
   relatedLinks: [
     {
+      href: "/done-for-you-ai-customer-support",
+      label: "Done-for-you AI customer support",
+      description: "Managed chat, email, and help-desk support implementation with ticket deflection.",
+    },
+    {
+      href: "/custom-ai-agents",
+      label: "Custom AI agents",
+      description: "Bespoke agents for workflows off-the-shelf and standard managed agents cannot model.",
+    },
+    {
+      href: "/ai-consulting",
+      label: "AI consulting",
+      description: "Strategy, audit, and ROI-ranked roadmap before committing to a build.",
+    },
+    {
       href: "/best-for/done-for-you-ai",
       label: "Done-for-you AI use case",
       description: "Existing best-for page for turnkey AI implementation buyers.",
-    },
-    {
-      href: "/best-for/custom-ai-development",
-      label: "Custom AI development",
-      description: "Use-case page for buyers comparing custom development approaches.",
     },
     {
       href: "/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco",

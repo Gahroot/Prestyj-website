@@ -119,11 +119,36 @@ const offerGroups = [
   {
     title: "Custom AI Agents / TCO",
     urls: [
+      "/custom-ai-agents",
       "/done-for-you-ai-agents",
+      "/best-for/custom-ai-development",
       "/best-for/done-for-you-ai",
       "/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco",
       "/blog/custom-ai-agent-build-cost-breakdown-2026",
       "/blog/hidden-costs-custom-ai-agents-2026",
+    ],
+  },
+  {
+    title: "Done-For-You AI Customer Support Implementation",
+    urls: [
+      "/done-for-you-ai-customer-support",
+      "/done-for-you-ai-agents",
+      "/ai-receptionist",
+      "/best-for/ai-customer-engagement",
+      "/blog/ai-customer-engagement-2026",
+    ],
+  },
+  {
+    title: "AI Consulting / Strategy & Implementation",
+    urls: [
+      "/ai-consulting",
+      "/ai-first-audit",
+      "/blog/is-ai-consulting-worth-it-2026",
+      "/blog/ai-consulting-engagement-models-explained-2026",
+      "/blog/ai-consultant-pricing-guide-2026",
+      "/blog/ai-consultant-deliverables-2026",
+      "/blog/ai-rollout-consulting-2026",
+      "/blog/ai-adoption-consultant-2026",
     ],
   },
   {
@@ -180,10 +205,43 @@ const queryCitationMap = [
     query: "total cost of ownership AI agents in-house vs platform",
     canonicalPath: "/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco",
     supportingPaths: [
+      "/custom-ai-agents",
       "/done-for-you-ai-agents",
       "/best-for/done-for-you-ai",
       "/blog/custom-ai-agent-build-cost-breakdown-2026",
       "/blog/hidden-costs-custom-ai-agents-2026",
+    ],
+  },
+  {
+    query: "done-for-you AI customer support implementation",
+    canonicalPath: "/done-for-you-ai-customer-support",
+    supportingPaths: [
+      "/done-for-you-ai-agents",
+      "/ai-receptionist",
+      "/best-for/ai-customer-engagement",
+      "/blog/ai-customer-engagement-2026",
+    ],
+  },
+  {
+    query: "custom AI agents development build cost",
+    canonicalPath: "/custom-ai-agents",
+    supportingPaths: [
+      "/best-for/custom-ai-development",
+      "/done-for-you-ai-agents",
+      "/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco",
+      "/blog/custom-ai-agent-build-cost-breakdown-2026",
+      "/blog/hidden-costs-custom-ai-agents-2026",
+    ],
+  },
+  {
+    query: "AI consulting services strategy and implementation",
+    canonicalPath: "/ai-consulting",
+    supportingPaths: [
+      "/ai-first-audit",
+      "/done-for-you-ai-agents",
+      "/blog/is-ai-consulting-worth-it-2026",
+      "/blog/ai-consulting-engagement-models-explained-2026",
+      "/blog/ai-consultant-pricing-guide-2026",
     ],
   },
   {
