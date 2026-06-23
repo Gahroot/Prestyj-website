@@ -1,6 +1,45 @@
-import type { Organization, WebSite, Product, FAQPage, WithContext } from "schema-dts";
+import type {
+  Organization,
+  WebSite,
+  Product,
+  FAQPage,
+  Review,
+  AggregateRating,
+  WithContext,
+} from "schema-dts";
 import { siteConfig } from "@/lib/site-config";
+import { customerReviews, getAggregateRating } from "@/lib/reviews";
 import { SafeJsonLd } from "./safe-json-ld";
+
+/** Builds AggregateRating from REAL reviews, or undefined when there are none. */
+function buildAggregateRating(): AggregateRating | undefined {
+  const summary = getAggregateRating();
+  if (!summary) return undefined;
+  return {
+    "@type": "AggregateRating",
+    ratingValue: summary.ratingValue,
+    reviewCount: summary.reviewCount,
+    bestRating: summary.bestRating,
+    worstRating: summary.worstRating,
+  };
+}
+
+/** Builds Review markup from REAL reviews, or undefined when there are none. */
+function buildReviews(): Review[] | undefined {
+  if (customerReviews.length === 0) return undefined;
+  return customerReviews.map((review) => ({
+    "@type": "Review",
+    author: { "@type": "Person", name: review.author },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: String(review.rating),
+      bestRating: "5",
+      worstRating: "1",
+    },
+    reviewBody: review.body,
+    datePublished: review.datePublished,
+  }));
+}
 
 export function OrganizationJsonLd() {
   const jsonLd: WithContext<Organization> = {
@@ -98,6 +137,12 @@ export function ProductJsonLd() {
     },
   };
 
+  // Only attached when real reviews exist — never fabricated.
+  const aggregateRating = buildAggregateRating();
+  if (aggregateRating) jsonLd.aggregateRating = aggregateRating;
+  const reviews = buildReviews();
+  if (reviews) jsonLd.review = reviews;
+
   return <SafeJsonLd data={jsonLd} />;
 }
 
@@ -148,6 +193,9 @@ export function SoftwareApplicationJsonLd() {
       "Paid social creative testing",
       "CRM and calendar integration",
     ],
+    // Only present when real reviews exist — never fabricated.
+    ...(buildAggregateRating() ? { aggregateRating: buildAggregateRating() } : {}),
+    ...(buildReviews() ? { review: buildReviews() } : {}),
   };
 
   return <SafeJsonLd data={jsonLd} />;
