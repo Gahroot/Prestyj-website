@@ -6,9 +6,9 @@ import { replaceAHireConfig } from "@/lib/content-engine/replace-a-hire-config";
 import { AIContentDepartmentClient } from "./ai-content-department-client";
 
 const PAGE_URL = "https://prestyj.com/ai-content-department";
-const PAGE_TITLE = "AI Content Department — Done-For-You Social Media on Autopilot";
+const PAGE_TITLE = "AI Content Department — Social Media for Service Businesses";
 const PAGE_DESCRIPTION =
-  "Prestyj AI Content Department is done-for-you social media on autopilot: 270–2,700 posts/month across up to 7 platforms, live in 24 hours, from $1,997/month.";
+  "Done-for-you social media content for service businesses: 270–2,700 posts/month across up to 7 platforms, live in 24 hours. Supporting the marketing pillar of your AI marketing and sales system. From $1,997/month.";
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,
@@ -59,6 +59,7 @@ const serviceJsonLd = {
     logo: "https://prestyj.com/icon-512.png",
   },
   serviceType: [
+    "Social Media Content for Service Businesses",
     "Done-For-You Social Media",
     "Managed Social Media Service",
     "AI Agent for Social Media",

@@ -9,7 +9,7 @@ function CellValue({ value }: { value: string }) {
   const isPositive =
     value === "Included" ||
     value === "Done for you" ||
-    value === "Free (first batch)" ||
+    value === "Included with plan" ||
     value === "Every hook × angle × CTA" ||
     value === "300+ from 1 session" ||
     value === "24 hours";
@@ -48,11 +48,11 @@ export function FreeAdsComparisonSection() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <AnimateOnScroll className="mb-12 text-center">
           <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-            Prestyj Free Ads vs. DIY vs. Hiring an Agency
+            Prestyj vs. DIY vs. Hiring an Agency
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            See how our free batch video ad offer compares to doing it yourself or hiring a
-            traditional agency.
+            See how our done-for-you batch video ads and AI agents compare to doing it yourself or
+            hiring a traditional agency.
           </p>
         </AnimateOnScroll>
 
@@ -108,7 +108,7 @@ export function FreeAdsComparisonSection() {
                 <p className="font-heading text-foreground mb-3 font-semibold">{row.feature}</p>
                 <div className="space-y-2 text-sm">
                   <div className="flex justify-between">
-                    <span className="text-primary font-medium">Prestyj Free Ads</span>
+                    <span className="text-primary font-medium">Prestyj</span>
                     <span className="text-foreground max-w-[60%] text-right">{row.prestyj}</span>
                   </div>
                   <div className="flex justify-between">

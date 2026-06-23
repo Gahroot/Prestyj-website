@@ -9,15 +9,15 @@ import { siteConfig } from "@/lib/site-config";
 import { BatchVideoAdsClient } from "./batch-video-ads-client";
 
 const pageUrl = "https://prestyj.com/batch-video-ads";
-const pageTitle = "100 Video Ads for $497 — Batch Video Ads by Prestyj";
+const pageTitle = "Batch Video Ads — The Creative Engine of Prestyj AI Agents";
 const pageDescription =
-  "100 vertical video ads in 24 hours for $497. One recording session. Scale to 300, 500, or 1,000 anytime. For anyone running paid ads.";
+  "Prestyj turns one 15–20 minute recording into 100, 300, 500, or 1,000 vertical video ads for Meta, TikTok, and YouTube Shorts. The creative engine behind every Prestyj plan — 100 ads for $497 standalone, included in every plan from $1,997/mo.";
 
 const batchVideoAdsFaqs = [
   {
     question: "What is Prestyj Batch Video Ads?",
     answer:
-      "Prestyj Batch Video Ads is a high-volume video ad production service that turns one 15–20 minute founder or operator recording into 100, 300, 500, or 1,000 vertical video ad variations for Meta, TikTok, and YouTube Shorts.",
+      "Prestyj Batch Video Ads is the creative engine behind every Prestyj plan — a high-volume video ad production system that turns one 15–20 minute founder or operator recording into 100, 300, 500, or 1,000 vertical video ad variations for Meta, TikTok, and YouTube Shorts.",
   },
   {
     question: "How much does Prestyj Batch Video Ads cost?",
@@ -76,7 +76,7 @@ export default function BatchVideoAdsPage() {
     "@type": "Service",
     "@id": `${pageUrl}#service`,
     name: "Prestyj Batch Video Ads",
-    alternateName: ["Batch Video Ads", "100 Video Ads for $497"],
+    alternateName: ["Batch Video Ads", "AI Agent Video Ads", "100 Video Ads for $497"],
     description: pageDescription,
     url: pageUrl,
     provider: {

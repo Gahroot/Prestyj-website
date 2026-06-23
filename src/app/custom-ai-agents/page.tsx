@@ -12,9 +12,9 @@ import {
 } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/custom-ai-agents";
-const pageTitle = "Custom AI Agents | Built, Integrated & Managed | Cost & TCO";
+const pageTitle = "Custom AI Agents for Marketing and Sales | Built & Managed";
 const pageDescription =
-  "Custom AI agents built for your workflow, data, and systems — designed, integrated, launched, and maintained by Prestyj. Compare custom build vs off-the-shelf TCO, timelines, and what bespoke actually requires.";
+  "Custom AI agents built for your marketing and sales workflows — designed, integrated, launched, and maintained by Prestyj. When standard agents need tailoring for service businesses and real estate teams.";
 
 const page = {
   slug: "custom-ai-agents",
@@ -31,12 +31,12 @@ const page = {
     "custom conversational AI",
     "AI agent development service",
     "managed custom AI agents",
-    "enterprise custom AI agents",
+    "custom AI agents for marketing and sales",
   ],
   breadcrumbLabel: "Custom AI Agents",
   serviceName: "Prestyj Custom AI Agents",
   serviceType: [
-    "Custom AI Agent Development",
+    "Custom AI Agent Development for Marketing and Sales",
     "Bespoke AI Agent Implementation",
     "Custom Conversational AI",
     "Managed Custom AI Agents",
@@ -47,20 +47,20 @@ const page = {
   highPrice: "24997",
   offerCount: "4",
   hero: {
-    eyebrow: "CUSTOM AI AGENTS · BUILD VS BUY",
-    headline: "Custom AI agents, built for your workflow — not a template.",
+    eyebrow: "CUSTOM AI AGENTS · MARKETING AND SALES WORKFLOWS",
+    headline: "Custom AI agents for your marketing and sales workflows.",
     accent: "Bespoke where it matters, managed everywhere else.",
     subheadline:
-      "When an off-the-shelf agent cannot model your data, rules, or systems, Prestyj designs and builds a custom AI agent — then integrates, launches, monitors, and maintains it. You get bespoke behavior without standing up an internal AI team.",
+      "When a standard agent cannot model your sales process, lead routing, or marketing workflow, Prestyj designs and builds a custom AI agent — then integrates, launches, monitors, and maintains it within your done-for-you system.",
     primaryCta: {
       href: "/book-demo",
       label: "Scope a custom AI agent",
-      description: "Review your workflow, data, and integrations.",
+      description: "Review your marketing and sales workflow, data, and integrations.",
     },
     secondaryCta: {
-      href: "/done-for-you-ai-agents",
-      label: "Compare done-for-you agents",
-      description: "When a managed standard agent is the faster path.",
+      href: "/pricing",
+      label: "See pricing",
+      description: "Review plans for the full done-for-you system.",
     },
     stats: [
       {
@@ -86,16 +86,16 @@ const page = {
   tldr: {
     title: "When you actually need a custom AI agent",
     bullets: [
-      "Build custom when the agent is core intellectual property, depends on proprietary workflows or data no vendor supports, or requires deep product integration that a configurable agent cannot reach.",
-      "For common revenue workflows — lead response, voice intake, sales qualification, reactivation, tier-1 support — a managed standard agent is usually faster, cheaper, and lower-risk than a bespoke build.",
-      "A fair custom TCO counts design, engineering, integration, prompt QA, monitoring, security, and ongoing maintenance — not just the first build invoice. Prestyj can own the build and the upkeep so it does not become orphaned internal software.",
+      "Build custom when the agent is core intellectual property, depends on proprietary marketing or sales workflows no vendor supports, or requires deep CRM integration that a configurable agent cannot reach.",
+      "For common revenue workflows — lead response, voice intake, sales qualification, reactivation — a managed standard agent is usually faster, cheaper, and lower-risk than a bespoke build.",
+      "A fair custom TCO counts design, engineering, integration, prompt QA, monitoring, and ongoing maintenance — not just the first build invoice. Prestyj can own the build and the upkeep so it does not become an orphaned project.",
     ],
   },
   pricingTable: {
     title: "Custom AI agent TCO model",
     description:
       "Custom is the most flexible path and the most expensive to do well. The real comparison is lifetime cost and ownership, not the initial build quote.",
-    columns: ["Cost line", "Prestyj managed custom", "Build internally", "Off-the-shelf agent"],
+    columns: ["Cost line", "Prestyj managed custom", "Build internally", "Off-the-shelf platform"],
     rows: [
       {
         label: "First-year cash outlay",
@@ -118,7 +118,7 @@ const page = {
         values: ["Managed after launch", "Internal team, ongoing cost", "Vendor-managed core, your config"],
       },
       {
-        label: "Risk of orphaned software",
+        label: "Risk of orphaned project",
         values: ["Low — maintained as a service", "High if the team disbands", "Low — vendor owns the core"],
       },
     ],
@@ -135,7 +135,7 @@ const page = {
       },
       {
         label: "Prestyj done-for-you standard agent",
-        values: ["Common revenue and support workflows", "Less bespoke than a full custom build", "Often the faster, cheaper first move"],
+        values: ["Common marketing and sales workflows", "Less bespoke than a full custom build", "Often the faster, cheaper first move"],
       },
       {
         label: "Internal custom build",
@@ -146,7 +146,7 @@ const page = {
         values: ["Technical operators prototyping fast", "You own QA, integrations, monitoring", "Compare labor hours, not just plan price"],
       },
       {
-        label: "Off-the-shelf agents",
+        label: "Off-the-shelf agent platforms",
         values: ["Standard, well-supported use cases", "Limited to the platform's capabilities", "Start here unless you hit a hard limit"],
       },
     ],
@@ -155,7 +155,7 @@ const page = {
     eyebrow: "BUYER UTILITY",
     title: "What a real custom build should include",
     description:
-      "Custom does not mean a one-off script handed over and forgotten. A defensible custom agent is designed, integrated, tested, monitored, and maintained — or it quietly rots into unowned internal software.",
+      "Custom does not mean a one-off script handed over and forgotten. A defensible custom agent is designed, integrated, tested, monitored, and maintained — or it quietly degrades into an unowned project.",
     cards: [
       {
         title: "Discovery + solution design",
@@ -231,47 +231,47 @@ const page = {
     {
       question: "What is a custom AI agent?",
       answer:
-        "A custom AI agent is built specifically for your workflow, data, business rules, and systems instead of being configured from a standard template. It is the right choice when off-the-shelf or done-for-you agents cannot model your logic, integrate deeply enough, or meet a proprietary requirement.",
+        "A custom AI agent is built specifically for your marketing or sales workflow, data, business rules, and systems instead of being configured from a standard template. It is the right choice when done-for-you agents cannot model your logic, integrate deeply enough, or meet a proprietary requirement.",
     },
     {
       question: "How much does a custom AI agent cost?",
       answer:
-        "Cost depends on the complexity of the logic, the depth of integrations, data requirements, channels, and ongoing maintenance. A focused custom agent is far less than a multi-system enterprise build. The honest comparison is total cost of ownership over time versus a managed standard agent or off-the-shelf platform.",
+        "Cost depends on the complexity of the logic, the depth of integrations, data requirements, channels, and ongoing maintenance. A focused custom agent is far less than a multi-system build. The honest comparison is total cost of ownership over time versus a managed standard agent.",
     },
     {
-      question: "Should I build custom or buy an off-the-shelf agent?",
+      question: "Should I build custom or start with a managed agent?",
       answer:
-        "Start by checking whether a standard or done-for-you agent can do the job, because it is usually faster and cheaper. Go custom only when the agent is core intellectual property, depends on proprietary workflows no vendor supports, or requires deep integration a configurable product cannot reach.",
+        "Start by checking whether a done-for-you agent can do the job, because it is usually faster and cheaper. Go custom only when the agent is core intellectual property, depends on proprietary marketing or sales workflows no vendor supports, or requires deep integration a configurable product cannot reach.",
     },
     {
       question: "Why not just hire engineers and build it in-house?",
       answer:
-        "You can, if AI agents are core infrastructure and you can fund a dedicated team for engineering, prompt QA, integrations, monitoring, security, and maintenance indefinitely. Otherwise an internal build often becomes orphaned software. Prestyj can build the custom agent and own its upkeep as a managed service.",
+        "You can, if AI agents are core infrastructure and you can fund a dedicated team for engineering, prompt QA, integrations, monitoring, security, and maintenance indefinitely. Otherwise an internal build often becomes an orphaned project. Prestyj can build the custom agent and own its upkeep as a managed service.",
     },
     {
       question: "Do you maintain the agent after it launches?",
       answer:
-        "Yes. A custom agent that is not monitored and maintained degrades as data, tools, and policies change. Prestyj tracks outcomes, reviews failures, updates prompts and integrations, and keeps the agent working — so it does not become unowned internal software.",
+        "Yes. A custom agent that is not monitored and maintained degrades as data, tools, and policies change. Prestyj tracks outcomes, reviews failures, updates prompts and integrations, and keeps the agent working — so it does not become an unowned project.",
     },
     {
       question: "What workflows are good candidates for custom agents?",
       answer:
-        "Workflows with proprietary logic, unusual data, strict compliance requirements, or deep system integration are the strongest custom candidates. Common revenue workflows like lead response, voice intake, sales qualification, reactivation, and tier-1 support are usually better served by a managed standard agent.",
+        "Workflows with proprietary marketing or sales logic, unusual lead data, strict compliance requirements, or deep CRM integration are the strongest custom candidates. Common revenue workflows like lead response, voice intake, sales qualification, and reactivation are usually better served by a managed standard agent.",
     },
   ],
   finalCta: {
     title: "Find out whether you actually need custom — before you pay for it.",
     description:
-      "Prestyj will pressure-test build vs buy, scope a custom AI agent only where it earns its cost, and compare it against managed standard agents and off-the-shelf platforms.",
+      "Prestyj will pressure-test build vs buy, scope a custom AI agent only where it earns its cost, and show how it fits within your done-for-you AI marketing and sales system.",
     primaryCta: {
       href: "/book-demo",
       label: "Scope a custom AI agent",
       description: "Review your requirements and build path.",
     },
     secondaryCta: {
-      href: "/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco",
-      label: "Read the TCO guide",
-      description: "See the build-vs-buy economics.",
+      href: "/pricing",
+      label: "View pricing",
+      description: "See plans for the full done-for-you system.",
     },
   },
 } satisfies AiOfferPageData;

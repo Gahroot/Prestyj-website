@@ -28,7 +28,14 @@ export function PricingTiersSection() {
                     <h3 className="font-heading text-foreground mb-1 text-xl font-bold">
                       {tier.name}
                     </h3>
-                    <p className="text-muted-foreground mb-6 text-sm">{tier.tagline}</p>
+                    <p className="text-muted-foreground mb-1 text-sm">{tier.tagline}</p>
+                    <p className="text-muted-foreground/80 mb-6 text-xs">
+                      {tier.id === "starter"
+                        ? "Ad management + AI appointment agent."
+                        : tier.id === "pro"
+                          ? "Starter + AI chatbot, texting & lead reactivation."
+                          : "Pro + AI voice agent & AI receptionist."}
+                    </p>
 
                     <div className="mb-2 flex flex-wrap items-baseline gap-x-2 gap-y-1">
                       <span className="font-heading text-foreground text-3xl font-bold">

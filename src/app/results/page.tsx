@@ -15,7 +15,6 @@ import {
   ArrowRight,
   Clock,
   TrendingUp,
-  Users,
   AlertTriangle,
   Target,
   Star,
@@ -35,23 +34,23 @@ const goals = [
     icon: Clock,
     target: "<60s",
     label: "Response Time Target",
-    description: "Instant lead engagement",
+    description: "AI agents respond to every lead instantly",
     color: "text-primary",
     bgColor: "bg-primary/10",
   },
   {
     icon: TrendingUp,
     target: "3×",
-    label: "Appointment Target",
-    description: "More booked meetings",
+    label: "More Booked Appointments",
+    description: "Agents qualify and book around the clock",
     color: "text-success",
     bgColor: "bg-success/10",
   },
   {
-    icon: Users,
+    icon: Target,
     target: "90%+",
-    label: "Engagement Target",
-    description: "Lead response rate",
+    label: "Lower Cost Per Lead",
+    description: "Batch video ads find winners fast",
     color: "text-warning",
     bgColor: "bg-warning/10",
   },
@@ -190,7 +189,7 @@ export default function ResultsPage() {
           "@type": "Product",
           name: "Prestyj AI Sales Agent",
           description:
-            "AI-powered lead response and appointment-setting platform for service businesses.",
+            "Done-for-you AI agents and ad production for service businesses and real estate teams — answer calls, follow up with leads, book appointments, and produce video ads at scale.",
           brand: { "@type": "Brand", name: "Prestyj" },
         }}
       />
@@ -208,13 +207,13 @@ export default function ResultsPage() {
         {/* Hero Section */}
         <section className="mx-auto mb-20 max-w-6xl px-4 text-center sm:px-6 lg:px-8">
           <Badge variant="outline" className="border-primary/50 text-primary mb-6">
-            Pre-Launch · AI Sales Agent
+            Pre-Launch · AI Agents for Marketing &amp; Sales
           </Badge>
           <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
             Founding Customers Wanted
           </h1>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg sm:text-xl">
-            The AI Sales Agent is pre-revenue and looking for founding partners. No agent case
+            The AI agents are pre-revenue and looking for founding partners. No agent case
             studies yet — be the first. In return: priority access, founding rates, and a featured
             story when we have real numbers to share.
           </p>
@@ -235,8 +234,9 @@ export default function ResultsPage() {
               What We&apos;re Building Toward
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl">
-              The numbers below are the targets we&apos;ve set for ourselves — not customer
-              outcomes. We&apos;ll publish real results once founding customers complete their first
+              These are the targets we&apos;ve set for AI agents and ad production outcomes — more
+              booked appointments, faster lead response, lower cost per lead — not customer results
+              yet. We&apos;ll publish real numbers once founding customers complete their first
               quarter with us.
             </p>
           </motion.div>
@@ -274,7 +274,7 @@ export default function ResultsPage() {
               Already shipping · Batch Video Ads
             </Badge>
             <h2 className="font-heading text-foreground mb-3 text-2xl font-bold sm:text-3xl">
-              While the agent is in pre-launch, our ad system already is.
+              While the agents are in pre-launch, our ad system already is.
             </h2>
             <p className="text-muted-foreground mx-auto max-w-2xl">
               A recent result from{" "}
@@ -282,7 +282,7 @@ export default function ResultsPage() {
                 Prestyj Batch Video Ads
               </Link>
               {" — "}
-              the sister product founding AI Sales Agent partners get early access to.
+              one of the three pillars founding AI agent partners get early access to.
             </p>
           </div>
           <VideoTestimonialSection className="px-0 py-0" />
@@ -518,10 +518,11 @@ export default function ResultsPage() {
         <section className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <div className="from-primary/10 via-background to-success/5 border-border rounded-2xl border bg-gradient-to-br p-8 sm:p-12">
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
-              Not Ready for Case Study?
+              Not Ready for a Case Study?
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-xl text-lg">
-              No problem. Book a demo to see how Prestyj can transform your lead response.
+              No problem. Book a demo to see how AI agents and batch video ads can run your
+              marketing and sales.
             </p>
             <Button size="lg" className="px-10 py-6 text-lg" asChild>
               <Link href="/book-demo">

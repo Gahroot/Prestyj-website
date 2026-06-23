@@ -26,6 +26,7 @@ import {
   requestTribunalPhoneDemo,
   resolveTribunalApiBase,
 } from "@/lib/tribunal-embed";
+import { positioning } from "@/lib/positioning";
 import { cn } from "@/lib/utils";
 import {
   useTribunalAgentConfig,
@@ -243,18 +244,16 @@ export function AiConciergeHero(): ReactElement {
       <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div>
           <Badge variant="outline" className="border-primary/50 text-primary bg-background/60">
-            AI AGENTS FOR CALLS, LEADS, CONTENT AND OPS
+            AI AGENTS + AD PRODUCTION FOR SERVICE BUSINESSES
           </Badge>
 
           <h1 className="font-heading text-foreground mt-6 text-4xl leading-[1.04] font-bold tracking-tight sm:text-5xl lg:text-6xl">
             Put AI on the work that slows your team down.
-            <span className="text-primary block">Hear it handle the next lead.</span>
+            <span className="text-primary block">Calls, leads, follow-up, and ad creative — done for you.</span>
           </h1>
 
           <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-8">
-            Prestyj builds voice agents, receptionists, sales follow-up, content
-            workflows and internal tools that plug into how your business already
-            sells, books and operates.
+            {positioning.fullPitch}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -342,7 +341,7 @@ export function AiConciergeHero(): ReactElement {
             {[
               ["Calls", "answers and qualifies"],
               ["Follow-up", "texts, books and updates"],
-              ["Ops", "keeps work moving"],
+              ["Ad Creative", "hundreds of variants from one recording"],
             ].map(([label, value]) => (
               <div key={label} className="bg-card/50 rounded-2xl border p-4">
                 <div className="text-foreground font-semibold">{label}</div>

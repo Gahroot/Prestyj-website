@@ -276,7 +276,7 @@ export const pricingFaqs: PricingFAQ[] = [
   {
     question: "What industries do you work with?",
     answer:
-      "We specialize in real estate teams and brokerages running paid advertising on Facebook, YouTube, and Google. Our AI agents are trained specifically for real estate conversations — qualifying buyers vs. sellers, handling objections, and booking appointments directly onto your agents' calendars.",
+      "We work with service businesses and real estate teams — HVAC, plumbing, roofing, solar, dental, legal, med-spas, mortgage, and real estate brokerages. If you get leads from ads and need to respond fast, we fit.",
   },
   {
     question: "How long does onboarding take?",

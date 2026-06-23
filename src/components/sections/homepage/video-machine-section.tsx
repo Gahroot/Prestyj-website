@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { ReactElement } from "react";
-import { ArrowRight, Calculator, Clapperboard, Layers3 } from "lucide-react";
+import { ArrowRight, Clapperboard, Layers3 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 
@@ -14,24 +14,18 @@ export function VideoMachineSection(): ReactElement {
               <Clapperboard className="h-5 w-5" />
             </div>
             <h2 className="font-heading text-foreground mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
-              Need more ads to test? Turn one recording into hundreds.
+              Your ad creative engine.
             </h2>
             <p className="text-muted-foreground mt-4 text-lg leading-8">
-              If you need creative volume, Prestyj can take one shoot or source
-              asset and build a full batch of vertical ads for Meta, TikTok,
-              YouTube Shorts and Reels.
+              Batch video ads are included in every plan. One recording becomes
+              hundreds of vertical ad variants for Meta, TikTok, YouTube Shorts and
+              Reels — the creative volume your paid social needs to win.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">
                 <Link href="/batch-video-ads">
                   See batch video ads
                   <ArrowRight className="h-5 w-5" />
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline">
-                <Link href="/batch-video-ad-roi-calculator">
-                  <Calculator className="h-5 w-5" />
-                  Run ROI calculator
                 </Link>
               </Button>
             </div>
@@ -54,13 +48,6 @@ export function VideoMachineSection(): ReactElement {
                 </div>
               ))}
             </div>
-            <Link
-              href="/300-video-ads"
-              className="text-primary mt-6 inline-flex items-center gap-2 text-sm font-semibold hover:underline"
-            >
-              View the 300-video-ad page
-              <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </div>
       </div>

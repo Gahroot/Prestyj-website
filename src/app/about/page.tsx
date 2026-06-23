@@ -26,18 +26,20 @@ const CONTACT_EMAIL = "hello@prestyj.com";
 export const metadata: Metadata = {
   title: "About Prestyj",
   description:
-    "About Prestyj, the batch video ads and AI marketing systems company that turns one recording session into hundreds of vertical ad variations for paid social testing.",
+    "Prestyj is a done-for-you AI marketing and sales automation company for service businesses and real estate teams — AI agents, batch video ads, and managed ad spend.",
   keywords: [
     "about Prestyj",
     "Prestyj company",
     "Prestyj AI",
-    "Prestyj batch video ads",
-    "paid social creative testing company",
+    "AI marketing agents",
+    "batch video ads",
+    "managed ad spend",
+    "done-for-you AI marketing",
   ],
   openGraph: {
     title: "About Prestyj",
     description:
-      "Prestyj turns one recording session into hundreds of vertical video ads for paid social creative testing.",
+      "Prestyj runs your ads, produces hundreds of video ad variations from a single recording, and deploys AI agents that answer calls, respond to leads, and book appointments — 24/7. Done for you.",
     type: "website",
     url: PAGE_URL,
     siteName: "Prestyj",
@@ -54,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About Prestyj",
     description:
-      "Prestyj turns one recording session into hundreds of vertical video ads for paid social creative testing.",
+      "Prestyj runs your ads, produces hundreds of video ad variations from a single recording, and deploys AI agents that answer calls, respond to leads, and book appointments — 24/7. Done for you.",
     images: ["https://prestyj.com/og-image.jpg"],
   },
   alternates: {
@@ -63,34 +65,35 @@ export const metadata: Metadata = {
 };
 
 const proofPoints = [
-  "One recording session becomes a structured testing library, not a single polished ad.",
-  "Scripts, hooks, bodies, CTAs, captions, and 9:16 exports are built for Meta, TikTok, YouTube Shorts, and Reels.",
-  "The core offer is designed for businesses that need creative volume without hiring editors, creators, or an agency retainer.",
+  "AI agents that answer calls, respond to leads in under 60 seconds, and book appointments directly into your calendar — 24/7.",
+  "One recording session becomes hundreds of video ad variants — hooks, angles, offers, and CTAs — built for Meta, TikTok, YouTube Shorts, and Reels.",
+  "Managed Google and Meta ad spend so your budget goes toward what converts, not what looks good in a dashboard.",
 ];
 
 const capabilities = [
   {
+    title: "AI agents",
+    description:
+      "Voice agents, sales agents, receptionists, and marketing agents that answer calls, follow up with leads, book appointments, and reactivate dead contacts — 24/7.",
+    icon: Sparkles,
+  },
+  {
     title: "Batch video ads",
     description:
-      "High-volume vertical video ad variations from existing founder, operator, or product footage.",
+      "One recording turned into hundreds of ad variants — hooks, angles, offers, bodies, and CTAs — for Meta, TikTok, YouTube Shorts, and Reels.",
     icon: Video,
   },
   {
-    title: "Creative testing systems",
-    description: "Hook, angle, offer, body, and CTA variation maps for paid social testing.",
+    title: "Managed ad spend",
+    description:
+      "Google and Meta campaigns built, launched, and optimized for you. We test creatives, manage budgets, and report on cost per lead.",
     icon: Megaphone,
   },
   {
     title: "Fast turnaround",
     description:
-      "Production workflows built around speed, volume, and clear upload-ready deliverables.",
+      "Most clients are live in 7–10 business days. We handle setup, integrations, and training — you just show up to a kickoff call.",
     icon: Timer,
-  },
-  {
-    title: "AI-assisted marketing operations",
-    description:
-      "AI-supported content, lead response, and sales automations for businesses that need leverage.",
-    icon: Sparkles,
   },
 ];
 
@@ -129,7 +132,7 @@ export default function AboutPage(): React.ReactElement {
     name: "About Prestyj",
     url: PAGE_URL,
     description:
-      "About Prestyj, a batch video ads and AI marketing systems company for businesses running paid social creative testing.",
+      "About Prestyj, a done-for-you AI marketing and sales automation company for service businesses and real estate teams.",
     isPartOf: {
       "@id": "https://prestyj.com/#website",
     },
@@ -173,12 +176,12 @@ export default function AboutPage(): React.ReactElement {
               About Prestyj
             </p>
             <h1 className="font-heading text-foreground text-4xl font-bold tracking-tighter sm:text-5xl lg:text-6xl">
-              A creative volume system for paid social teams.
+              Done-for-you AI agents, batch video ads, and managed ad spend.
             </h1>
             <p className="text-muted-foreground mt-6 text-lg leading-relaxed sm:text-xl">
-              Prestyj helps businesses turn one recording session into hundreds of vertical video ad
-              variations so they can test more hooks, pain points, offers, and CTAs without building
-              a full in-house production team.
+              Prestyj runs your ads, produces hundreds of video ad variations from a single
+              recording, and deploys AI agents that answer calls, respond to leads in 60 seconds,
+              and book appointments on your calendar — 24/7. Done for you, not a tool you learn.
             </p>
           </div>
         </section>
@@ -191,10 +194,12 @@ export default function AboutPage(): React.ReactElement {
                   What Prestyj does
                 </h2>
                 <p className="text-muted-foreground mt-4 leading-relaxed">
-                  The flagship Prestyj offer is batch video ad production: scripts, angle mapping,
-                  editing, captions, and platform-ready exports at a volume built for modern
-                  creative testing. Instead of trying to make one perfect ad, teams get a library of
-                  variants they can launch, measure, and iterate from.
+                  Prestyj is a done-for-you AI marketing and sales automation company for service
+                  businesses and real estate teams. We deploy AI agents that answer calls, follow up
+                  with leads, and book appointments; produce hundreds of video ad variants from a
+                  single recording; and manage your Google and Meta ad spend end-to-end. Instead of
+                  hiring an agency, an ISA team, and a video editor, you get one system that runs
+                  your marketing and sales.
                 </p>
               </div>
               <ul className="space-y-4">
@@ -215,8 +220,8 @@ export default function AboutPage(): React.ReactElement {
               Core capabilities
             </h2>
             <p className="text-muted-foreground mx-auto mt-3 max-w-2xl">
-              Prestyj is positioned around practical marketing output: more ad angles, more tests,
-              faster learning cycles, and less production bottleneck.
+              Three pillars — AI agents, batch video ads, and managed ad spend — designed for
+              businesses that need more appointments, lower cost per lead, and less manual work.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -347,7 +352,7 @@ export default function AboutPage(): React.ReactElement {
                   </div>
                   <div>
                     <dt className="text-foreground font-semibold">Primary category</dt>
-                    <dd>Batch video ads and AI-assisted marketing systems</dd>
+                    <dd>Done-for-you AI agents, batch video ads, and managed ad spend</dd>
                   </div>
                   <div>
                     <dt className="text-foreground font-semibold">Contact</dt>

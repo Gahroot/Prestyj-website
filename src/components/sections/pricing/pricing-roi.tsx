@@ -9,20 +9,20 @@ const stats = [
   {
     icon: DollarSign,
     value: "$8K–$25K",
-    label: "Average commission per closing",
-    description: "One closed deal from an ad lead pays for months of service.",
+    label: "Average value per closed lead",
+    description: "One closed job from an ad lead pays for months of service.",
   },
   {
     icon: Users,
     value: "78%",
-    label: "Work with first responder",
-    description: "Buyers and sellers hire the agent who responds first. Be that agent.",
+    label: "Hire the first responder",
+    description: "Customers go with the business that responds first. Be that business.",
   },
   {
     icon: Zap,
     value: "< 60s",
-    label: "AI response time",
-    description: "Your agent responds before competitors even see the notification.",
+    label: "AI agent response time",
+    description: "Your AI agents respond before competitors even see the notification.",
   },
   {
     icon: TrendingUp,
@@ -39,28 +39,29 @@ export function PricingROISection() {
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <AnimateOnScroll>
             <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl">
-              One Closing Pays for <span className="text-primary">Months of Service</span>
+              One Closed Job Pays for <span className="text-primary">Months of Service</span>
             </h2>
             <p className="text-muted-foreground mb-6 text-lg">
-              The average real estate commission on a $400K home is $10K–$12K. Your AI pays for
-              itself with the first appointment that converts — and every deal after that is pure
-              ROI.
+              Whether it&apos;s a real estate commission, a roofing job, or a dental implant case, a
+              single closed lead from your AI agents and ad production typically covers months of
+              service — and every deal after that is pure ROI.
             </p>
             <p className="text-muted-foreground mb-4">
               The math is simple: the cost of missing one lead is higher than an entire year of
               service. Every minute you wait to respond, your close rate drops. Every lead that goes
-              unanswered is a commission walking out the door.
+              unanswered is revenue walking out the door.
             </p>
             <p className="text-muted-foreground">
-              Your AI agent doesn&apos;t take breaks, doesn&apos;t call in sick, and never forgets
-              to follow up. It&apos;s the highest-ROI hire you&apos;ll ever make.
+              Your AI agents don&apos;t take breaks, don&apos;t call in sick, and never forget to
+              follow up. Combined with batch video ads and managed ad spend, it&apos;s the
+              highest-ROI marketing and sales system you&apos;ll ever deploy.
             </p>
             <div className="mt-6">
               <Link
-                href="/platform"
+                href="/done-for-you-ai-agents"
                 className="text-primary hover:text-primary/80 text-sm underline underline-offset-2"
               >
-                See how our AI platform works →
+                See how our done-for-you AI agents work →
               </Link>
             </div>
           </AnimateOnScroll>

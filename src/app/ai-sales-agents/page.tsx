@@ -12,9 +12,9 @@ import {
 } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/ai-sales-agents";
-const pageTitle = "AI Sales Agents | Pricing, SDR Replacement & Cost per Meeting";
+const pageTitle = "AI Sales Agents for Service Businesses | Speed-to-Lead Engine";
 const pageDescription =
-  "Compare AI sales agent pricing, SDR replacement economics, cost per qualified meeting, and 24/7 lead response with Prestyj's managed AI sales agents.";
+  "AI sales agents that respond to leads in 60 seconds, qualify, and book appointments 24/7 — the speed-to-lead engine in your done-for-you AI marketing and sales system. Managed by Prestyj.";
 
 const page = {
   slug: "ai-sales-agents",
@@ -46,20 +46,20 @@ const page = {
   highPrice: "4997",
   offerCount: "4",
   hero: {
-    eyebrow: "AI SALES AGENTS · SDR COST COMPARISON",
+    eyebrow: "AI SALES AGENTS · THE SPEED-TO-LEAD ENGINE",
     headline: "AI sales agents that respond, qualify, and book.",
-    accent: "Without $75K SDR overhead.",
+    accent: "The speed-to-lead engine for service businesses.",
     subheadline:
-      "Prestyj gives sales teams a managed AI sales agent for inbound lead response, qualification, follow-up, CRM updates, and appointment booking — with cost-per-meeting economics a human SDR team cannot match.",
+      "Prestyj gives service businesses and real estate teams a managed AI sales agent for inbound lead response, qualification, follow-up, CRM updates, and appointment booking — the conversion layer of your done-for-you AI marketing and sales system.",
     primaryCta: {
       href: "/book-demo",
       label: "Book an AI sales demo",
       description: "See how the agent handles your real lead flow.",
     },
     secondaryCta: {
-      href: "/solutions/ai-sales-agent-cost",
-      label: "Compare SDR costs",
-      description: "Review the full SDR cost comparison page.",
+      href: "/pricing",
+      label: "See pricing",
+      description: "Review plans for the full AI marketing and sales system.",
     },
     stats: [
       {
@@ -263,16 +263,16 @@ const page = {
   finalCta: {
     title: "See what an AI sales agent would cost in your pipeline.",
     description:
-      "Bring your lead volume, show rate, and SDR cost assumptions. Prestyj will model the cost-per-meeting difference and show where AI should handle the first touch.",
+      "Bring your lead volume, show rate, and current response times. Prestyj will model the speed-to-lead engine within your done-for-you AI marketing and sales system and show where AI should handle the first touch.",
     primaryCta: {
       href: "/book-demo",
       label: "Book a demo",
       description: "Get a custom sales-agent workflow review.",
     },
     secondaryCta: {
-      href: "/solutions/ai-sales-agent-cost",
-      label: "View SDR cost page",
-      description: "Compare the canonical AI vs SDR economics.",
+      href: "/pricing",
+      label: "View pricing",
+      description: "See plans for the full done-for-you system.",
     },
   },
 } satisfies AiOfferPageData;

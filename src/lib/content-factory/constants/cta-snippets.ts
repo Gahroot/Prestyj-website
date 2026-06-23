@@ -7,7 +7,7 @@ export const CTA_SNIPPETS = {
     buttonText: "Book a Demo",
     buttonHref: "/book-demo",
   },
-  NO_CREDIT_CARD: "No credit card required. See results in minutes.",
+  NO_CONTRACT: "Month-to-month after onboarding. No long-term contract.",
   NO_COMMITMENT: "No commitment required.",
 } as const;
 
@@ -17,7 +17,7 @@ export const CTA_TEMPLATES = {
     subheadline:
       "See Prestyj's AI agents respond to a lead, qualify, and book a meeting — live, in 30 minutes.",
     ...CTA_SNIPPETS.BOOK_FREE_DEMO,
-    footnote: CTA_SNIPPETS.NO_CREDIT_CARD,
+    footnote: CTA_SNIPPETS.NO_CONTRACT,
   },
   TEAM_DEMO: {
     headline: "Give Your Team 24/7 Lead Coverage",

@@ -12,6 +12,7 @@ import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
 import { pricingTiers } from "@/lib/pricing-data";
 import { bulkAdPricingTiers } from "@/lib/bulk-ad-pricing-data";
+import { positioning } from "@/lib/positioning";
 
 const starterTier = pricingTiers.find((t) => t.id === "starter");
 if (!starterTier) {
@@ -23,9 +24,9 @@ const STARTER_MONTHLY = formatPrice(starterTier.monthlyPrice);
 
 const faqs: { question: string; answer: ReactNode }[] = [
   {
-    question: "Are the 300 video ads really free?",
+    question: "Are the 300 video ads really included?",
     answer:
-      "Yes, 100% free. You send us your raw footage, and within 24 hours we deliver 300 unique video ads ready to run. No catch, no credit card, no commitment. We do this because we know once you see the quality, you'll want the full system.",
+      "Yes. When you start a Prestyj AI agents plan, 300 video ads are included with your plan — they are not a standalone free product. We send you the scripts, help you film, and within 24 hours we deliver 300 unique video ads ready to run alongside your AI agents and managed ad spend.",
   },
   {
     question: "What kind of footage do I need to send?",
@@ -36,14 +37,16 @@ const faqs: { question: string; answer: ReactNode }[] = [
     question: "What happens after I get my 300 ads?",
     answer: (
       <>
-        We hope you give us the opportunity to run those ads for you and set up our full{" "}
+        We run those ads for you, build the landing page, and deploy AI agents that answer calls,
+        respond to leads in 60 seconds, and book appointments on your calendar — 24/7. The ads are
+        part of the full{" "}
         <Link
-          href="/platform"
+          href="/pricing"
           className="text-primary hover:text-primary/80 underline underline-offset-2"
         >
-          AI platform
-        </Link>
-        . If not, the ads are yours and we go our separate ways.
+          {positioning.coreOffer.split(",")[0]!.toLowerCase()}
+        </Link>{" "}
+        system.
       </>
     ),
   },
@@ -111,17 +114,17 @@ const faqs: { question: string; answer: ReactNode }[] = [
   {
     question: "Can I see samples before committing?",
     answer:
-      "You already are. The ad you clicked, this landing page you're reading, and the AI that will follow up with you after you submit — that's the exact system we build for your business.",
+      "You already are. The ad you clicked, this landing page you're reading, and the AI agents that will follow up with you after you submit — that's the exact system we build for your business.",
   },
   {
     question: "How is this different from other ad agencies?",
     answer:
-      "Most agencies hand you a few ads and a report. We build the entire pipeline: 300 ads, landing page, and an AI system that responds to leads in seconds — not hours. No leads slip through the cracks because a human wasn't fast enough.",
+      "Most agencies hand you a few ads and a report. We deploy the entire pipeline: 300 ads, landing page, and AI agents that respond to leads in seconds — not hours. No leads slip through the cracks because a human wasn't fast enough.",
   },
   {
     question: "What industries do you create video ads for?",
     answer:
-      "We create video ads for service businesses including real estate teams, HVAC contractors, plumbers, roofers, landscapers, and home service companies. Our scripts and ad strategies are tailored to each industry's buyer psychology and seasonal patterns.",
+      "We create video ads for service businesses and real estate teams — HVAC contractors, plumbers, roofers, landscapers, and home service companies. Our scripts and ad strategies are tailored to each industry's buyer psychology and seasonal patterns.",
   },
   {
     question: "What platforms do the video ads work on?",
@@ -131,10 +134,6 @@ const faqs: { question: string; answer: ReactNode }[] = [
 ];
 
 export function FreeAdsFAQ() {
-  const scrollToForm = () => {
-    document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="py-12 md:py-16">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -164,10 +163,10 @@ export function FreeAdsFAQ() {
         <AnimateOnScroll delay={0.3} className="mt-12 flex justify-center">
           <Button
             size="lg"
-            onClick={scrollToForm}
+            asChild
             className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
           >
-            Get My FREE Ads
+            <Link href="/pricing">See Plans &amp; Pricing</Link>
           </Button>
         </AnimateOnScroll>
       </div>

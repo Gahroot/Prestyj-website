@@ -13,33 +13,33 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { freeAdsFaqs } from "@/lib/free-ads-data";
 
 export const metadata: Metadata = {
-  title: "Get 300 Free Video Ads with a Prestyj Plan",
+  title: "300 Video Ads Included With Your Plan | Prestyj",
   description:
-    "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Part of our AI agents for marketing & sales — 24-hour turnaround from one recording session.",
+    "300 video ads are included when you start a Prestyj AI agents plan from $1,997/mo (setup fee applies). Done-for-you batch video ads, managed ad spend, and AI agents that book appointments — 24/7.",
   keywords: [
-    "free video ads",
-    "free video ads for service businesses",
+    "video ads included with plan",
     "batch video ads",
+    "video ads for service businesses",
     "video ads for contractors",
     "video ads for real estate",
-    "free facebook video ads",
-    "free meta video ads",
-    "service business video ads",
+    "ai agents for marketing",
+    "done for you video ads",
     "vertical video ads",
     "ad creative testing",
+    "managed ad spend",
   ],
   openGraph: {
-    title: "Get 300 Free Video Ads with a Prestyj Plan",
+    title: "300 Video Ads Included With Your Plan | Prestyj",
     description:
-      "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Part of our AI agents for marketing & sales.",
+      "300 video ads included when you start a Prestyj AI agents plan from $1,997/mo (setup fee applies). Done-for-you batch video ads, managed ad spend, and AI agents that book appointments.",
     type: "website",
     url: "https://prestyj.com/free-ads",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Get 300 Free Video Ads with a Prestyj Plan",
+    title: "300 Video Ads Included With Your Plan | Prestyj",
     description:
-      "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Part of our AI agents for marketing & sales.",
+      "300 video ads included when you start a Prestyj AI agents plan from $1,997/mo (setup fee applies). Done-for-you batch video ads, managed ad spend, and AI agents.",
   },
   alternates: {
     canonical: "https://prestyj.com/free-ads",
@@ -50,9 +50,9 @@ export default function FreeAdsPage() {
   const freeAdsServiceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Free Batch Video Ads with a Prestyj Plan",
+    name: "300 Video Ads Included With Your Prestyj Plan",
     description:
-      "300 free video ads when you start a Prestyj plan from $1,997/mo (setup fee applies). Created from a single 15-minute recording session. Optimized for Meta, TikTok, and YouTube Shorts. 24-hour turnaround.",
+      "300 video ads included when you start a Prestyj AI agents plan from $1,997/mo (setup fee applies). Created from a single 15-minute recording session. Optimized for Meta, TikTok, and YouTube Shorts. 24-hour turnaround.",
     provider: {
       "@type": "Organization",
       name: "Prestyj",
@@ -64,7 +64,7 @@ export default function FreeAdsPage() {
 
   const breadcrumbs = [
     { name: "Home", url: "https://prestyj.com" },
-    { name: "Free Video Ads", url: "https://prestyj.com/free-ads" },
+    { name: "Video Ads Included", url: "https://prestyj.com/free-ads" },
   ];
 
   return (

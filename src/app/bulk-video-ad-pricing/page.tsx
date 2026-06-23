@@ -10,11 +10,11 @@ import { BulkCheckoutButton } from "./checkout-button";
 export const metadata: Metadata = {
   title: "Batch Video Ad Pricing",
   description:
-    "Pricing for Batch Video Ads — part of our AI agents for marketing & sales. 300, 500, or 1,000 scripted video ad variations with a 1–2 business day turnaround.",
+    "Pricing for Batch Video Ads — the creative engine of Prestyj AI agents. 100, 300, 500, or 1,000 scripted video ad variations from one recording. From $497 standalone, included in every plan from $1,997/mo.",
   openGraph: {
     title: "Batch Video Ad Pricing",
     description:
-      "Pricing for Batch Video Ads — part of our AI agents for marketing & sales. 300, 500, or 1,000 scripted video ad variations.",
+      "Pricing for Batch Video Ads — the creative engine of Prestyj AI agents. 100, 300, 500, or 1,000 scripted video ad variations.",
     type: "website",
   },
 };
@@ -105,6 +105,25 @@ export default function BulkVideoAdPricingPage() {
           Turnaround measured in business days from when we receive your footage. Revisions for
           errors only — this is ad creative testing, not boutique edit work.
         </p>
+      </section>
+
+      {/* CROSS-SELL: These ads are included in every plan */}
+      <section className="border-primary/20 bg-primary/5 border-y px-4 py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-heading text-foreground mb-4 text-3xl font-bold">
+            These ads are included in every Prestyj plan.
+          </h2>
+          <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
+            Done-for-you AI agents that answer calls, follow up with leads in 60 seconds, and book
+            appointments — with batch video ads and managed ad spend built in. Plans from $1,997/mo.
+          </p>
+          <Button size="lg" variant="outline" asChild>
+            <Link href="/pricing">
+              See plan pricing
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
+        </div>
       </section>
 
       {/* CTA */}

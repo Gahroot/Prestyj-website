@@ -12,9 +12,9 @@ import {
 } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/ai-voice-agents";
-const pageTitle = "AI Voice Agents | Pricing, Cost per Minute & Hidden Fees";
+const pageTitle = "AI Voice Agents for Service Businesses | Done-For-You Calling";
 const pageDescription =
-  "Compare AI voice agent pricing, cost per minute, hidden fees, testing costs, and answering-service replacement economics with Prestyj's managed AI voice agents.";
+  "AI voice agents that answer every call, qualify leads, and book appointments 24/7 — the calling arm of your done-for-you AI marketing and sales system. Managed by Prestyj.";
 
 const page = {
   slug: "ai-voice-agents",
@@ -46,20 +46,20 @@ const page = {
   highPrice: "4997",
   offerCount: "4",
   hero: {
-    eyebrow: "AI VOICE AGENTS · COST PER MINUTE",
+    eyebrow: "AI VOICE AGENTS · THE CALLING ARM OF YOUR SYSTEM",
     headline: "AI voice agents that answer, qualify, and book.",
-    accent: "With pricing you can actually model.",
+    accent: "The calling arm of your AI marketing and sales system.",
     subheadline:
-      "Prestyj builds managed AI voice agents for inbound calls, missed-call recovery, after-hours answering, outbound reactivation, and appointment booking — without burying the economics in surprise fees.",
+      "Prestyj deploys managed AI voice agents for inbound calls, missed-call recovery, after-hours answering, outbound reactivation, and appointment booking — one piece of your done-for-you AI marketing and sales system, not a standalone tool.",
     primaryCta: {
       href: "/book-demo",
       label: "Book a voice-agent demo",
       description: "Hear how a voice agent would handle your calls.",
     },
     secondaryCta: {
-      href: "/solutions/ai-voice-agent-pricing",
-      label: "See pricing breakdown",
-      description: "Review the detailed AI voice pricing solution page.",
+      href: "/pricing",
+      label: "See pricing",
+      description: "Review plans for the full AI marketing and sales system.",
     },
     stats: [
       {
@@ -263,16 +263,16 @@ const page = {
   finalCta: {
     title: "Model your voice-agent cost before you buy.",
     description:
-      "Bring call volume, average call length, missed-call rate, and current answering costs. Prestyj will map the voice-agent workflow and estimate total monthly cost.",
+      "Bring call volume, average call length, missed-call rate, and current answering costs. Prestyj will map the voice-agent workflow within your done-for-you AI marketing and sales system and estimate total monthly cost.",
     primaryCta: {
       href: "/book-demo",
       label: "Book a voice demo",
       description: "Review your voice-agent economics.",
     },
     secondaryCta: {
-      href: "/solutions/ai-voice-agent-pricing",
-      label: "View voice pricing page",
-      description: "See the canonical pricing breakdown.",
+      href: "/pricing",
+      label: "View pricing",
+      description: "See plans for the full done-for-you system.",
     },
   },
 } satisfies AiOfferPageData;

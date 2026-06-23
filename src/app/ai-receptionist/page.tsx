@@ -12,9 +12,9 @@ import {
 } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/ai-receptionist";
-const pageTitle = "AI Receptionist | Answering-Service Replacement & 24/7 Call Handling";
+const pageTitle = "AI Receptionist for Service Businesses | Never Miss a Lead";
 const pageDescription =
-  "Compare AI receptionist pricing, answering-service replacement economics, HVAC call-handling costs, and 24/7 appointment booking with Prestyj.";
+  "An AI receptionist that answers every call in under 5 seconds, qualifies leads, and books appointments 24/7 — part of your done-for-you AI marketing and sales system. Managed by Prestyj.";
 
 const page = {
   slug: "ai-receptionist",
@@ -46,20 +46,20 @@ const page = {
   highPrice: "4997",
   offerCount: "4",
   hero: {
-    eyebrow: "AI RECEPTIONIST · ANSWERING-SERVICE REPLACEMENT",
-    headline: "An AI receptionist that answers, qualifies, and books.",
-    accent: "Without per-minute answering-service creep.",
+    eyebrow: "AI RECEPTIONIST · NEVER MISS A LEAD",
+    headline: "Never miss a lead — the AI answers every call.",
+    accent: "Part of your done-for-you AI marketing and sales system.",
     subheadline:
-      "Prestyj gives contractors, professional services, real estate teams, and local operators a 24/7 AI receptionist for missed calls, overflow, after-hours intake, appointment booking, and human escalation.",
+      "Prestyj gives service businesses and real estate teams a 24/7 AI receptionist for missed calls, overflow, after-hours intake, appointment booking, and human escalation — so every lead that calls gets captured.",
     primaryCta: {
       href: "/book-demo",
       label: "Hear an AI receptionist",
       description: "Review your call flow and replacement economics.",
     },
     secondaryCta: {
-      href: "/solutions/ai-virtual-receptionist",
-      label: "View virtual receptionist solution",
-      description: "See the canonical solution page for front-desk coverage.",
+      href: "/pricing",
+      label: "See pricing",
+      description: "Review plans for the full AI marketing and sales system.",
     },
     stats: [
       {
@@ -263,16 +263,16 @@ const page = {
   finalCta: {
     title: "Replace message-taking with booked appointments.",
     description:
-      "Bring your answering-service invoice, call volume, average job value, and booking rules. Prestyj will model the AI receptionist workflow and the replacement economics.",
+      "Bring your answering-service invoice, call volume, average job value, and booking rules. Prestyj will model the AI receptionist within your done-for-you AI marketing and sales system and show the replacement economics.",
     primaryCta: {
       href: "/book-demo",
       label: "Book a receptionist demo",
       description: "Hear the call flow and review your economics.",
     },
     secondaryCta: {
-      href: "/solutions/ai-virtual-receptionist",
-      label: "View solution page",
-      description: "See the canonical AI virtual receptionist page.",
+      href: "/pricing",
+      label: "View pricing",
+      description: "See plans for the full done-for-you system.",
     },
   },
 } satisfies AiOfferPageData;

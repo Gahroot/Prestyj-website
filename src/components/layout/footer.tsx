@@ -22,46 +22,29 @@ const socialLinks = [
 
 const footerLinks = {
   product: [
-    { href: "/#ai-concierge", label: "Live AI Concierge", highlight: true },
-    { href: "/done-for-you-ai-agents", label: "Done-For-You AI" },
     { href: "/ai-voice-agents", label: "AI Voice Agents" },
     { href: "/ai-receptionist", label: "AI Receptionist" },
     { href: "/ai-sales-agents", label: "AI Sales Agents" },
     { href: "/ai-marketing-agents", label: "AI Marketing Agents" },
-  ],
-  aiAgents: [
-    { href: "/ai-content-department", label: "AI Content Department", highlight: true },
-    { href: "/solutions/lead-reactivation", label: "Lead Reactivation" },
-    { href: "/platform", label: "Platform" },
-    { href: "/book-demo", label: "Book a Build Call" },
-    { href: "/contact", label: "Contact" },
-  ],
-  proof: [
-    { href: "/#proof", label: "Shipped Product Proof", highlight: true },
-    {
-      href: "https://website-three-eosin-0v0xmdepg0.vercel.app",
-      label: "EZ Coder",
-      external: true,
-    },
-    {
-      href: "https://media-master-gilt.vercel.app/",
-      label: "Media Master",
-      external: true,
-    },
-    { href: "/results", label: "Results" },
-    { href: "/statistics", label: "Statistics" },
+    { href: "/done-for-you-ai-agents", label: "Done-for-You AI" },
   ],
   videoAds: [
     { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
     { href: "/300-video-ads", label: "300 Video Ads" },
-    { href: "/ad-creative-testing-service", label: "Creative Testing Service" },
+    { href: "/ad-creative-testing-service", label: "Creative Testing" },
+    { href: "/bulk-video-ad-pricing", label: "Bulk Pricing" },
     { href: "/batch-video-ad-roi-calculator", label: "ROI Calculator" },
-    { href: "/cost-per-tested-ad-angle-calculator", label: "Cost Per Angle" },
+  ],
+  company: [
+    { href: "/pricing", label: "Pricing", highlight: true },
+    { href: "/book-demo", label: "Book a Call" },
+    { href: "/results", label: "Results" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy Policy" },
     { href: "/terms", label: "Terms of Service" },
-    { href: "/llms.txt", label: "AI Citation Map" },
   ],
 } satisfies Record<string, ReadonlyArray<FooterLink>>;
 
@@ -95,16 +78,15 @@ export function Footer() {
   return (
     <footer className="bg-card border-border border-t">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-8">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2">
               <span className="font-heading text-primary text-xl font-bold">PRESTYJ</span>
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm text-sm">
-              Prestyj builds custom AI agents, voice systems, automations, internal
-              tools, and AI software for calls, lead follow-up, content, operations,
-              and creative testing.
+              Done-for-you AI agents for marketing and sales. Ads, video
+              creative, lead response, calls, and bookings — handled.
             </p>
             <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
               <div className="flex flex-wrap gap-x-2">
@@ -151,9 +133,8 @@ export function Footer() {
           </div>
 
           <FooterColumn title="AI Agents" links={footerLinks.product} />
-          <FooterColumn title="Automation" links={footerLinks.aiAgents} />
-          <FooterColumn title="Proof" links={footerLinks.proof} />
-          <FooterColumn title="Video Ads" links={footerLinks.videoAds} />
+          <FooterColumn title="Ad Production" links={footerLinks.videoAds} />
+          <FooterColumn title="Company" links={footerLinks.company} />
           <FooterColumn title="Legal" links={footerLinks.legal} />
         </div>
 

@@ -16,9 +16,9 @@ import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { pricingFaqs, pricingTiers } from "@/lib/pricing-data";
 
 export const metadata: Metadata = {
-  title: "AI Agent & Batch Video Ads Pricing — From $1,497/mo",
+  title: "Pricing — AI Agents & Ad Production Plans | Prestyj",
   description:
-    "Transparent pricing for Prestyj's AI agents for marketing and sales. Lead response, appointment setting, and batch video ads for businesses. Plans from $1,997/mo. No contracts.",
+    "Prestyj runs your ads, produces hundreds of video ad variations from a single recording, and deploys AI agents that answer calls, respond to leads in 60 seconds, and book appointments on your calendar — 24/7. Done for you, not a tool you learn. Plans from $1,997/mo.",
   keywords: [
     "AI lead response pricing",
     "batch video ads pricing",
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     "video ad production pricing",
   ],
   openGraph: {
-    title: "AI Agent & Batch Video Ads Pricing — From $1,497/mo",
+    title: "Pricing — AI Agents & Ad Production Plans | Prestyj",
     description:
-      "Transparent pricing for Prestyj's AI agents for marketing and sales. Plans from $1,997/mo.",
+      "Done-for-you AI agents and ad production for service businesses and real estate teams. Plans from $1,997/mo.",
     type: "website",
     url: "https://prestyj.com/pricing",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Agent & Batch Video Ads Pricing — From $1,497/mo",
+    title: "Pricing — AI Agents & Ad Production Plans | Prestyj",
     description:
-      "Transparent pricing for AI lead response and batch video ads. Plans from $1,997/mo. No contracts.",
+      "Done-for-you AI agents and ad production for service businesses and real estate teams. Plans from $1,997/mo.",
   },
   alternates: {
     canonical: "https://prestyj.com/pricing",

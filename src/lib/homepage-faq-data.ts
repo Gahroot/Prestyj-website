@@ -2,38 +2,38 @@ import type { FAQItem } from "@/lib/faq-data";
 
 export const homepageFaqs: FAQItem[] = [
   {
-    question: "Do you only make video ads?",
+    question: "What does Prestyj actually do?",
     answer:
-      "No. Prestyj also builds custom AI agents and automation: voice agents, sales follow-up, receptionist workflows, content engines, internal tools and software that handles repeated work for your team.",
+      "Prestyj is a done-for-you AI marketing and sales service. We run your ads, produce hundreds of video ad variations from a single recording, and deploy AI agents that answer calls, respond to leads in 60 seconds, and book appointments on your calendar — 24/7. You get the output of a full marketing and sales team without the hires.",
+  },
+  {
+    question: "Who is this for?",
+    answer:
+      "Service businesses and real estate teams doing 50–500 leads per month. If you run ads and need to respond to leads fast, Prestyj fits. We work with HVAC, plumbing, roofing, solar, dental, legal, med-spas, mortgage, and real estate brokerages.",
   },
   {
     question: "What kinds of AI agents do you build?",
     answer:
-      "We build AI voice agents, receptionists, sales follow-up agents, marketing agents, content systems, workflow automations, dashboards and custom internal tools. The common thread is practical work: answer calls, qualify leads, send follow-up, route tasks, generate content and keep systems updated.",
+      "We build AI voice agents, receptionists, sales follow-up agents, and marketing agents. The common thread is practical marketing and sales work: answer calls, qualify leads, send follow-up, book appointments, test ad creative, and keep your pipeline moving.",
   },
   {
-    question: "Can the homepage voice agent call my real phone?",
+    question: "How does the live voice demo work?",
     answer:
-      "Yes, when the live demo is enabled you can enter your number, confirm consent and request one automated phone-call demo. The call is limited to a short demo so it stays safe and intentional.",
+      "Click 'Start browser voice demo' on the homepage to talk to our AI concierge right now. You can also enter your phone number to have the AI call you. The demo shows exactly how our voice agents handle real conversations.",
   },
   {
-    question: "Is this for home services only?",
+    question: "What's included in the setup?",
     answer:
-      "No. Prestyj started with lead conversion problems common in home services and real estate, but the AI-agent work applies to any business with repeated calls, follow-up, content, sales, support, operations, or internal workflows.",
+      "Everything is done for you: AI agent training on your business, landing page or website build, ad campaign creation across Google and Meta, CRM configuration, calendar integration, and phone number provisioning. You're live within 7–10 business days.",
   },
   {
-    question: "Do you build custom internal tools or only marketing agents?",
+    question: "What does it cost?",
     answer:
-      "We build both. Marketing and sales agents are common because they show ROI quickly, but we also build internal dashboards, workflow automations, browser automations, CRM handoffs and custom AI software.",
+      "Plans start at $1,997/month with a setup fee. The Starter plan includes $1,000/mo in ad spend, 300 video ads, and an AI appointment agent. Pro and Scale plans add more agents, more ad volume, and voice capabilities. See our pricing page for details.",
   },
   {
-    question: "Where do EZ Coder and Media Master fit?",
+    question: "What are batch video ads?",
     answer:
-      "They are public proof that Prestyj ships software, not just slides. EZ Coder is a desktop coding agent, and Media Master is a desktop marketing agent app with brand kits, offers, publishing workflows, ad swipe files, dashboards and browser automation.",
-  },
-  {
-    question: "How do we start?",
-    answer:
-      "Start by trying the AI concierge or booking a build call. Bring the work your team keeps doing by hand, and we will show you what a useful AI system could take over first.",
+      "Batch video ads are short-form vertical video ads we create from a single 15-minute recording session. One recording becomes 100, 300, 500, or 1,000 ad variations optimized for Meta, TikTok, and YouTube Shorts. They're included in every Prestyj plan.",
   },
 ];

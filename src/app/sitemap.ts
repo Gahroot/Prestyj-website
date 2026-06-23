@@ -13,11 +13,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
   // Static routes — buyer-intent pages and key product/positioning pages aligned
-  // with the core "AI agents for marketing & sales" positioning. Every URL here
-  // MUST have a backing page in src/app/. Off-positioning / orphan / utility
-  // pages (e.g. /demo, /intake, /admin, /affiliate, /r, /media-master) are
-  // intentionally excluded. /free-ads/* IS included — the free-ads offer is
-  // now the primary top-of-funnel for the AI agents pricing tier.
+  // with the "done-for-you AI agents + ad production for service businesses and
+  // real estate teams" positioning. Every URL here MUST have a backing page in
+  // src/app/. Off-positioning / orphan / utility pages are intentionally
+  // excluded. See src/lib/positioning.ts for canonical vocabulary.
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -118,12 +117,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/custom-ai-agents`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.86,
-    },
-    {
-      url: `${baseUrl}/ai-consulting`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.86,

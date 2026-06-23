@@ -207,7 +207,8 @@ export function LeadForm() {
               You Qualify!
             </h2>
             <p className="text-muted-foreground text-lg">
-              Book your strategy call below and we&apos;ll map out your 300-ad campaign.
+              Book your strategy call below and we&apos;ll map out your plan — 300 video ads
+              included, plus AI agents and managed ad spend.
             </p>
           </motion.div>
           <motion.div
@@ -501,7 +502,7 @@ export function LeadForm() {
                   </>
                 ) : currentStep === STEPS.length - 1 ? (
                   <>
-                    Get My FREE Ads
+                    See Plans & Pricing
                     <CheckCircle className="ml-2 h-4 w-4" />
                   </>
                 ) : (

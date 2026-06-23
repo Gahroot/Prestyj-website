@@ -38,7 +38,8 @@ export default function ContactPage(): React.ReactElement {
               Contact <span className="text-primary">Prestyj</span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
-              Talk to us about AI agents for your marketing and sales.
+              Talk to us about AI agents, batch video ads, and managed ad spend for your marketing
+              and sales.
             </p>
           </div>
 
@@ -49,7 +50,8 @@ export default function ContactPage(): React.ReactElement {
                 <div>
                   <h2 className="font-heading text-xl font-bold">Talk to a human</h2>
                   <p className="text-muted-foreground mt-1 text-sm">
-                    The fastest way to scope an AI agent for your business is a 30-minute call.
+                    The fastest way to scope AI agents and ad production for your business is a
+                    30-minute call.
                   </p>
                 </div>
                 <Button asChild size="lg" className="w-full">

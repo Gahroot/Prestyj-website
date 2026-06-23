@@ -12,9 +12,9 @@ import {
 } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/done-for-you-ai-customer-support";
-const pageTitle = "Done-For-You AI Customer Support Implementation | Managed Setup";
+const pageTitle = "AI Customer Support Agents for Service Businesses | Done-For-You";
 const pageDescription =
-  "Done-for-you AI customer support implementation across chat, email, and help desk. Prestyj designs, integrates, launches, and optimizes support agents that deflect tickets and escalate cleanly — no internal build.";
+  "Done-for-you AI customer support agents for service businesses. Prestyj designs, integrates, launches, and optimizes support agents that deflect tickets and escalate cleanly — adjacent to your AI marketing and sales system.";
 
 const page = {
   slug: "done-for-you-ai-customer-support",
@@ -48,20 +48,20 @@ const page = {
   highPrice: "7997",
   offerCount: "5",
   hero: {
-    eyebrow: "DONE-FOR-YOU AI CUSTOMER SUPPORT · MANAGED IMPLEMENTATION",
-    headline: "Done-for-you AI customer support, implemented end to end.",
+    eyebrow: "AI CUSTOMER SUPPORT · FOR SERVICE BUSINESSES",
+    headline: "AI customer support agents for service businesses.",
     accent: "Deflect tickets, not customers.",
     subheadline:
-      "Prestyj scopes, builds, integrates, launches, monitors, and improves AI support agents across chat, email, and your help desk — so your team buys resolved tickets and faster response times instead of staffing another build project.",
+      "Prestyj scopes, builds, integrates, launches, monitors, and improves AI support agents across chat, email, and your help desk — so service businesses buy resolved tickets and faster response times instead of staffing another build project.",
     primaryCta: {
       href: "/book-demo",
       label: "Scope a managed support agent",
       description: "Review your tickets, channels, and integrations.",
     },
     secondaryCta: {
-      href: "/done-for-you-ai-agents",
-      label: "See all done-for-you AI agents",
-      description: "Sales, voice, lead response, and marketing workflows.",
+      href: "/pricing",
+      label: "See pricing",
+      description: "Review plans for the full done-for-you system.",
     },
     stats: [
       {
@@ -267,16 +267,16 @@ const page = {
   finalCta: {
     title: "Scope your AI support implementation before you build it.",
     description:
-      "Prestyj will audit your tickets and knowledge base, map channels and integrations, and compare managed implementation against internal build and DIY chatbot costs.",
+      "Prestyj will audit your tickets and knowledge base, map channels and integrations, and show how AI support fits alongside your done-for-you AI marketing and sales system.",
     primaryCta: {
       href: "/book-demo",
       label: "Scope a managed support agent",
       description: "Review your implementation path.",
     },
     secondaryCta: {
-      href: "/done-for-you-ai-agents",
-      label: "See all done-for-you AI agents",
-      description: "Compare adjacent managed workflows.",
+      href: "/pricing",
+      label: "View pricing",
+      description: "See plans for the full done-for-you system.",
     },
   },
 } satisfies AiOfferPageData;

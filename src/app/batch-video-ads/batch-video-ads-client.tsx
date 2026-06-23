@@ -1,6 +1,7 @@
 "use client";
 
 import { type ReactElement, type ReactNode, useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -1102,10 +1103,28 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
           )}
 
           <p className="text-muted-foreground mx-auto mt-10 max-w-2xl text-center text-xs">
-            Secure checkout via Stripe. Batch Video Ads is an add-on to your AI marketing agent
-            plan. Delivery in 1–2 business days from the moment we receive your footage. Revisions
-            for errors only — this is ad creative testing, not boutique edit work.
+            Secure checkout via Stripe. Delivery in 1–2 business days from the moment we receive
+            your footage. Revisions for errors only — this is ad creative testing, not boutique
+            edit work.
           </p>
+
+          {/* CROSS-SELL: These ads are included in every plan */}
+          <div className="border-primary/20 bg-primary/5 mx-auto mt-8 max-w-2xl rounded-xl border p-6 text-center">
+            <p className="text-foreground mb-2 text-base font-semibold">
+              These ads are included in every Prestyj plan.
+            </p>
+            <p className="text-muted-foreground mb-4 text-sm">
+              Done-for-you AI agents that answer calls, follow up with leads, and book appointments —
+              with batch video ads and managed ad spend built in. Plans from $1,997/mo.
+            </p>
+            <Link
+              href="/pricing"
+              className="text-primary inline-flex items-center gap-1 text-sm font-bold hover:underline"
+            >
+              See pricing
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
 

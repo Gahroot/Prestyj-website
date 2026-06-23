@@ -66,7 +66,7 @@ export default function BookDemoPage() {
           "@type": "Service",
           name: "Prestyj Strategy Call & Demo",
           description:
-            "Book a 30-minute strategy call to see how Prestyj's AI sales agents can automate lead response, qualification, and appointment booking for your business.",
+            "Book a 30-minute strategy call to see how Prestyj's AI agents can answer calls, follow up with leads, and book appointments — plus batch video ads and managed ad spend — for your business.",
           provider: {
             "@type": "Organization",
             name: "Prestyj",
@@ -106,7 +106,8 @@ export default function BookDemoPage() {
                     Book your <span className="text-primary">30-minute demo</span>
                   </h1>
                   <p className="text-muted-foreground mx-auto max-w-2xl text-xl">
-                    See how our AI agents respond, qualify, and book leads for your team.
+                    See how AI agents can run your marketing and sales — answer calls, follow up
+                    with leads, book appointments, and produce ad creative at scale.
                   </p>
                 </div>
 

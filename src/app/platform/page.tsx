@@ -30,23 +30,22 @@ import { pricingTiers } from "@/lib/pricing-data";
 import { getIntegrationGroups } from "@/lib/integrations";
 
 export const metadata: Metadata = {
-  title: "Platform | The AI Agent Platform That Runs Your Marketing & Sales",
+  title: "How It Works | AI Agents, Batch Video Ads & Managed Ad Spend",
   description:
-    "See how Prestyj works under the hood. The AI agent platform that powers every plan — voice, chat, SMS, and CRM agents that run your marketing and sales 24/7.",
+    "How Prestyj works: AI agents that answer calls and book appointments, batch video ads from one recording, and managed Google & Meta ad spend — all done for you.",
   keywords: [
     "AI agents for marketing and sales",
-    "AI sales agent platform",
+    "batch video ads",
+    "managed ad spend",
+    "AI sales agent",
     "AI voice agent",
-    "AI chatbot",
-    "AI texting agent",
-    "CRM AI integration",
-    "lead reactivation AI",
     "AI receptionist",
+    "done-for-you AI marketing",
   ],
   openGraph: {
-    title: "Platform | The AI Agent Platform That Runs Your Marketing & Sales",
+    title: "How It Works | AI Agents, Batch Video Ads & Managed Ad Spend",
     description:
-      "The AI agent platform under the hood of every Prestyj plan. Voice, chat, SMS, and CRM agents working together to run your marketing and sales.",
+      "How Prestyj works: AI agents that answer calls and book appointments, batch video ads from one recording, and managed Google & Meta ad spend — all done for you.",
     type: "website",
     url: "https://prestyj.com/platform",
   },
@@ -131,7 +130,7 @@ export default function PlatformPage() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "The AI agent platform that powers every Prestyj plan — voice, chat, SMS, and CRM agents that run your marketing and sales 24/7.",
+      "Done-for-you AI agents, batch video ads, and managed ad spend for service businesses and real estate teams.",
     url: "https://prestyj.com/platform",
     featureList: capabilities.map((cap) => cap.title),
     offers: {
@@ -151,7 +150,7 @@ export default function PlatformPage() {
     "@type": "Service",
     name: "Prestyj AI Agent Platform",
     description:
-      "The AI agent platform under the hood of every Prestyj plan. Voice, chat, SMS, and CRM agents working together to run your marketing and sales.",
+      "AI agents, batch video ads, and managed ad spend — done for you. Answer calls, follow up with leads, book appointments, and run paid social at scale.",
     provider: {
       "@type": "Organization",
       name: "Prestyj",
@@ -160,17 +159,17 @@ export default function PlatformPage() {
     serviceType: [
       "AI Agents for Marketing",
       "AI Agents for Sales",
+      "Batch Video Ads",
+      "Managed Ad Spend",
       "AI Voice Agent",
-      "AI Chatbot",
-      "AI Texting Agent",
-      "CRM Integration",
+      "AI Receptionist",
     ],
     areaServed: "United States",
   };
 
   const breadcrumbs = [
     { name: "Home", url: "https://prestyj.com" },
-    { name: "Platform", url: "https://prestyj.com/platform" },
+    { name: "How It Works", url: "https://prestyj.com/platform" },
   ];
 
   return (
@@ -185,19 +184,20 @@ export default function PlatformPage() {
         <section className="relative flex min-h-[70vh] items-center justify-center overflow-hidden pt-16">
           <div className="relative z-10 mx-auto w-full max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8">
             <Badge variant="outline" className="border-primary/50 text-primary mb-6">
-              Platform & Technology
+              How It Works
             </Badge>
             <h1 className="font-heading text-foreground mb-6 text-4xl leading-[1.1] font-bold md:text-5xl lg:text-6xl">
-              How Prestyj&rsquo;s AI agents work —{" "}
-              <span className="text-primary">the platform under the hood.</span>
+              Three systems that run your{" "}
+              <span className="text-primary">marketing and sales.</span>
             </h1>
             <p className="text-muted-foreground mx-auto mb-4 max-w-2xl text-lg">
-              Voice, chat, SMS, and CRM agents working together to answer every lead, book every
-              meeting, and reactivate every cold contact in your database — 24/7.
+              AI agents that answer calls and book appointments, batch video ads turned out from a
+              single recording, and managed Google &amp; Meta ad spend — all done for you, not a
+              tool you learn.
             </p>
             <p className="text-foreground mx-auto mb-8 max-w-2xl text-base font-medium">
-              All Prestyj plans are powered by our AI agent platform. Here&rsquo;s what&rsquo;s
-              inside.
+              Every Prestyj plan includes some combination of these three pillars. Here&rsquo;s how
+              they work together.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Button size="lg" asChild>
@@ -226,28 +226,52 @@ export default function PlatformPage() {
         {/* Statistics */}
         <PlatformStatsSection />
 
-        {/* Capabilities Grid */}
+        {/* Three Pillars */}
         <section className="px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
               <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
-                What&rsquo;s inside every Prestyj plan
+                The three pillars of every Prestyj plan
               </h2>
               <p className="text-muted-foreground mx-auto max-w-2xl">
-                The same AI agent platform powers Starter, Pro, and Scale — each plan just turns on
-                more of it.
+                AI agents, batch video ads, and managed ad spend. Starter, Pro, and Scale each turn
+                on more of all three.
               </p>
             </div>
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {capabilities.map((cap) => (
-                <BorderGlow key={cap.title} borderRadius={14} innerClassName="p-6">
-                  <cap.icon className="text-primary mb-4 h-8 w-8" />
-                  <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
-                    {cap.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">{cap.description}</p>
-                </BorderGlow>
-              ))}
+            <div className="grid gap-8 md:grid-cols-3">
+              <BorderGlow borderRadius={14} innerClassName="p-6">
+                <Bot className="text-primary mb-4 h-8 w-8" />
+                <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
+                  1. AI Agents
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  Voice agents that answer every call, sales agents that follow up with leads in
+                  under 60 seconds, receptionists that book appointments, and marketing agents that
+                  reactivate dead leads — 24/7.
+                </p>
+              </BorderGlow>
+              <BorderGlow borderRadius={14} innerClassName="p-6">
+                <BarChart3 className="text-primary mb-4 h-8 w-8" />
+                <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
+                  2. Batch Video Ads
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  One recording session becomes hundreds of ad variants — different hooks, bodies,
+                  offers, and CTAs — exported for Meta, TikTok, YouTube Shorts, and Reels so you can
+                  test fast and find winners.
+                </p>
+              </BorderGlow>
+              <BorderGlow borderRadius={14} innerClassName="p-6">
+                <Server className="text-primary mb-4 h-8 w-8" />
+                <h3 className="font-heading text-foreground mb-2 text-lg font-semibold">
+                  3. Managed Ad Spend
+                </h3>
+                <p className="text-muted-foreground text-sm">
+                  Google and Meta campaigns built and optimized for you. We launch, test creatives,
+                  manage budgets, and report on cost per lead — so your ad dollars go toward what
+                  actually converts.
+                </p>
+              </BorderGlow>
             </div>
           </div>
         </section>
@@ -261,7 +285,7 @@ export default function PlatformPage() {
             "branded-calling-answer-rate-lift",
           ]}
           eyebrow="AI voice agent benchmarks"
-          title="Cite the numbers behind the Prestyj platform."
+          title="The numbers behind the Prestyj system."
           description="Per-minute cost at scale, hidden-cost percentage, pilot setup cost, and branded-calling answer-rate lift — each a permanent statistic with source, embed, and citation formats."
           cta={{
             label: "Browse all voice agent statistics",
@@ -369,7 +393,7 @@ export default function PlatformPage() {
         <section className="bg-card/50 px-4 py-20 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
-              See the platform in action.
+              See how it works in action.
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-xl">
               Book a 30-minute demo and we&rsquo;ll show you the AI agents running live on a

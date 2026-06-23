@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { VolumeX } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,10 +25,6 @@ export function HeroVideo() {
     setShowOverlay(false);
   };
 
-  const scrollToForm = () => {
-    document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="relative flex flex-col items-center justify-start overflow-hidden px-4 pt-8 pb-6 md:pt-12">
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-3 text-center md:gap-4">
@@ -37,7 +34,7 @@ export function HeroVideo() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Get 300 free video ads when you start a Prestyj plan from {STARTER_MONTHLY}/mo.
+          300 video ads included when you start a Prestyj plan from {STARTER_MONTHLY}/mo.
         </motion.h1>
 
         <motion.p
@@ -46,8 +43,9 @@ export function HeroVideo() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          Setup fee applies (from {STARTER_SETUP}). We send you the scripts and help you film — just
-          stand in front of the camera and read. 300 ads delivered in 24 hours.
+          These ads come with your plan — they&apos;re not a standalone free product. Setup fee applies
+          (from {STARTER_SETUP}). We send you the scripts and help you film — just stand in front of
+          the camera and read. 300 ads delivered in 24 hours.
         </motion.p>
 
         {/* Stats row */}
@@ -110,9 +108,9 @@ export function HeroVideo() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           Here&apos;s the deal: start a Prestyj plan ({STARTER_SETUP} setup + {STARTER_MONTHLY}/mo,
-          plus $1k/mo minimum ad spend paid to Meta) and the first 300 video ads are on us.
-          We&apos;ll set up the ads, build the landing page, and have AI respond to every lead. If
-          it doesn&apos;t work, you keep the ads and we part ways.
+          plus $1k/mo minimum ad spend paid to Meta) and 300 video ads are included. We&apos;ll set
+          up the ads, build the landing page, and deploy AI agents that answer calls, respond to
+          leads in 60 seconds, and book appointments on your calendar — 24/7.
         </motion.p>
 
         <motion.div
@@ -123,10 +121,10 @@ export function HeroVideo() {
         >
           <Button
             size="lg"
-            onClick={scrollToForm}
+            asChild
             className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
           >
-            Get My FREE Ads
+            <Link href="/pricing">See Plans &amp; Pricing</Link>
           </Button>
         </motion.div>
       </div>

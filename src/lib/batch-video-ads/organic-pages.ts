@@ -63,6 +63,11 @@ export interface OrganicIntentPage {
 
 const sharedRelatedLinks: OrganicIntentRelatedLink[] = [
   {
+    href: "/pricing",
+    label: "Prestyj plan pricing",
+    description: "These batch video ads are included in every Prestyj plan — AI agents, ad production, and managed spend from $1,997/mo.",
+  },
+  {
     href: "/batch-video-ad-roi-calculator",
     label: "Batch video ad ROI calculator",
     description: "Model how many winners a batch has to find to pay for itself.",
@@ -84,7 +89,7 @@ export const organicIntentPages = [
     slug: "100-video-ads",
     title: "100 Video Ads for $497 | Test 100 Ads Fast",
     description:
-      "Get 100 vertical video ads for $497 from one recording session. Test hooks, angles, and offers on Meta, TikTok, or YouTube Shorts without hiring a production team.",
+      "Get 100 vertical video ads for $497 from one recording session — the creative engine behind every Prestyj plan. Test hooks, angles, and offers on Meta, TikTok, or YouTube Shorts for service businesses and real estate teams.",
     keywords: ["100 video ads", "100 video ads for $497", "test 100 ads", "100 ad creatives"],
     breadcrumbLabel: "100 Video Ads",
     eyebrow: "100 VIDEO ADS · STARTER PACK",
@@ -180,7 +185,7 @@ export const organicIntentPages = [
     slug: "300-video-ads",
     title: "300 Video Ads | Minimum Viable Creative Batch",
     description:
-      "Get 300 vertical video ad variations from one recording session. Test three customer problems, dozens of hooks, and enough creative volume for serious Meta or TikTok testing.",
+      "Get 300 vertical video ad variations from one recording session — the creative engine behind Prestyj AI agents. Test three customer problems, dozens of hooks, and enough creative volume for serious Meta or TikTok testing.",
     keywords: ["300 video ads", "300 ad creative variations", "minimum viable batch", "paid social creative testing"],
     breadcrumbLabel: "300 Video Ads",
     eyebrow: "300 VIDEO ADS · MINIMUM VIABLE BATCH",
@@ -276,7 +281,7 @@ export const organicIntentPages = [
     slug: "500-video-ads",
     title: "500 Video Ads | Recommended Creative Testing Batch",
     description:
-      "Get 500 vertical video ads from one recording session. The recommended batch for teams that need enough creative volume to test five pain points and scale winners.",
+      "Get 500 vertical video ads from one recording session — the creative engine behind Prestyj AI agents. The recommended batch for teams that need enough creative volume to test five pain points and scale winners.",
     keywords: ["500 video ads", "500 ad creatives", "recommended creative testing batch", "creative volume service"],
     breadcrumbLabel: "500 Video Ads",
     eyebrow: "500 VIDEO ADS · RECOMMENDED",
@@ -372,7 +377,7 @@ export const organicIntentPages = [
     slug: "1000-video-ads",
     title: "1,000 Video Ads | Run 1000 Ads From One Recording",
     description:
-      "Run 1,000 video ads from one recording session. The max creative sprint for teams that need to test ten customer problems, fight fatigue, and scale paid social with volume.",
+      "Run 1,000 video ads from one recording session — the creative engine behind Prestyj AI agents. The max creative sprint for teams that need to test ten customer problems, fight fatigue, and scale paid social with volume.",
     keywords: ["1000 video ads", "1,000 video ads", "run 1000 ads", "1000 ad creatives"],
     breadcrumbLabel: "1,000 Video Ads",
     eyebrow: "1,000 VIDEO ADS · MAX SPRINT",
@@ -580,7 +585,7 @@ export const organicIntentPages = [
     slug: "video-ad-testing-pricing",
     title: "Video Ad Testing Pricing | Compare Cost per Tested Angle",
     description:
-      "Compare video ad testing pricing across Prestyj batch video ads, agencies, UGC creators, in-house teams, and AI video tools. Model cost per ad, cost per tested angle, and turnaround time.",
+      "Compare video ad testing pricing across Prestyj batch video ads, agencies, UGC creators, in-house teams, and AI video tools. The creative engine of every Prestyj plan — model cost per ad, cost per tested angle, and turnaround time.",
     keywords: [
       "video ad testing pricing",
       "video ad testing cost",
@@ -692,7 +697,7 @@ export const organicIntentPages = [
     slug: "ad-creative-testing-service",
     title: "Ad Creative Testing Service | Paid Social Creative Volume",
     description:
-      "A paid social ad creative testing service that produces 100, 300, 500, or 1,000 video ad variations from one recording session for Meta, TikTok, and YouTube Shorts.",
+      "A paid social ad creative testing service powered by the Prestyj system — produces 100, 300, 500, or 1,000 video ad variations from one recording session for Meta, TikTok, and YouTube Shorts. The creative engine behind every Prestyj plan.",
     keywords: ["ad creative testing service", "creative testing agency", "paid social creative testing", "ad testing service"],
     breadcrumbLabel: "Ad Creative Testing Service",
     eyebrow: "AD CREATIVE TESTING SERVICE",
@@ -765,7 +770,7 @@ export const organicIntentPages = [
       {
         question: "Is Prestyj a creative testing agency?",
         answer:
-          "Prestyj is a high-volume video ad production service for creative testing. We produce the scripts and finished ad files; your team or agency runs the media buying.",
+          "Prestyj is a done-for-you AI agents and ad production system. Batch video ads are the creative engine — we produce the scripts and finished ad files as part of a complete plan that also includes AI agents and managed ad spend. Your team or agency runs the media buying.",
       },
       {
         question: "Do you manage the ad account?",

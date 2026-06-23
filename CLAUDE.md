@@ -1,6 +1,18 @@
 # Prestyj
 
-AI-powered lead conversion platform for home services & real estate. Next.js marketing site with blog, comparison pages, calculators, and lead magnets.
+Done-for-you AI agents and ad production for service businesses and real estate teams. Next.js marketing site with blog, comparison pages, calculators, and lead magnets.
+
+## Positioning
+
+**One lane:** Done-for-you AI agents + ad production for service businesses and real estate teams.
+
+**What we say:** "AI agents for marketing and sales" / "done-for-you" / "service businesses and real estate"
+
+**What we don't say:** "custom AI" / "AI automation" / "internal tools" / "AI software" / "coding agents" / "desktop AI"
+
+**Core offer:** AI agents (voice, receptionist, sales, marketing) + batch video ads + managed ad spend. Three pricing tiers: Starter ($1,997/mo), Pro ($3,497/mo), Scale ($5,997/mo).
+
+**See:** `src/lib/positioning.ts` for canonical vocabulary.
 
 ## Project Structure
 

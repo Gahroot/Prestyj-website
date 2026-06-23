@@ -24,19 +24,19 @@ const bulkSummary = bulkAdPricingTiers
 
 export const freeAdsFaqs: FreeAdsFAQ[] = [
   {
-    question: "How much does it cost?",
+    question: "Are the 300 video ads really included?",
     answer:
-      "100 ads is $497. 300 is $1,497. 500 is $2,497. 1,000 is $3,997. All include 24-hour turnaround and error revisions.",
+      "Yes. When you start a Prestyj AI agents plan from $1,997/mo (setup fee applies), 300 video ads are included with your plan — they are not a standalone free product. We send you the scripts, help you film, and deliver 300 unique video ads ready to run within 24 hours.",
   },
   {
     question: "Who is this for?",
     answer:
-      "Anyone running paid video ads on Meta, TikTok, or YouTube Shorts. We've shipped batches for coaches, agencies, real-estate teams, contractors, e-commerce brands, and SaaS founders. If you need vertical video ads at volume, this works.",
+      "Service businesses and real estate teams doing 50–500 leads/month. We've shipped batches for contractors, HVAC companies, roofers, plumbers, and real estate teams. If you need vertical video ads at volume, this works.",
   },
   {
-    question: "Are the 300 video ads really free?",
+    question: "Are the 300 video ads free standing?",
     answer:
-      "Yes, 100% free. You send us your raw footage, and within 24 hours we deliver 300 unique video ads ready to run. No catch, no credit card, no commitment. We do this because we know once you see the quality, you'll want the full system.",
+      "No. The 300 video ads are bundled with your Prestyj AI agents plan starting at $1,997/mo (setup fee applies). They come as part of the done-for-you system: batch video ads, managed ad spend, and AI agents that book appointments — not as a standalone free product.",
   },
   {
     question: "What kind of footage do I need to send?",
@@ -46,7 +46,7 @@ export const freeAdsFaqs: FreeAdsFAQ[] = [
   {
     question: "What happens after I get my 300 ads?",
     answer:
-      "We hope you give us the opportunity to run those ads for you and set up our full system. If not, the ads are yours and we go our separate ways.",
+      "We run those ads for you, build the landing page, and deploy AI agents that answer calls, respond to leads in 60 seconds, and book appointments on your calendar — 24/7. The ads are part of the full done-for-you system.",
   },
   {
     question: "How much does the full system cost?",
@@ -59,17 +59,17 @@ export const freeAdsFaqs: FreeAdsFAQ[] = [
   {
     question: "Can I see samples before committing?",
     answer:
-      "You already are. The ad you clicked, this landing page you're reading, and the AI that will follow up with you after you submit — that's the exact system we build for your business.",
+      "You already are. The ad you clicked, this landing page you're reading, and the AI agents that will follow up with you after you submit — that's the exact system we build for your business.",
   },
   {
     question: "How is this different from other ad agencies?",
     answer:
-      "Most agencies hand you a few ads and a report. We build the entire pipeline: 300 ads, landing page, and an AI system that responds to leads in seconds — not hours. No leads slip through the cracks because a human wasn't fast enough.",
+      "Most agencies hand you a few ads and a report. We deploy the entire pipeline: 300 ads, landing page, and AI agents that respond to leads in seconds — not hours. No leads slip through the cracks because a human wasn't fast enough.",
   },
   {
     question: "What industries do you create video ads for?",
     answer:
-      "Anyone running paid video ads — e.g., real estate teams, contractors, coaches, agencies, e-commerce brands, SaaS founders, and home service companies. Scripts and ad angles are tailored to your specific offer and audience, not a generic industry template.",
+      "Service businesses and real estate teams — e.g., HVAC contractors, plumbers, roofers, landscapers, and home service companies. Scripts and ad angles are tailored to your specific offer and audience, not a generic industry template.",
   },
   {
     question: "What platforms do the video ads work on?",
@@ -102,7 +102,7 @@ export const freeAdsStats = [
 ];
 
 export const freeAdsComparison = {
-  headers: ["Feature", "Prestyj Free Ads", "DIY Ads", "Hiring an Agency"],
+  headers: ["Feature", "Prestyj", "DIY Ads", "Hiring an Agency"],
   rows: [
     {
       feature: "Number of ads",
@@ -118,12 +118,12 @@ export const freeAdsComparison = {
     },
     {
       feature: "Cost per batch",
-      prestyj: "Free (first batch)",
+      prestyj: "Included with plan",
       diy: "$500–$2,000 in tools",
       agency: "$3,000–$10,000",
     },
     {
-      feature: "AI lead follow-up",
+      feature: "AI agents lead follow-up",
       prestyj: "Included",
       diy: "Not included",
       agency: "Extra cost or not available",

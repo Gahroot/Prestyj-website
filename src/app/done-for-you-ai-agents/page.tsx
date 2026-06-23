@@ -12,9 +12,9 @@ import {
 } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/done-for-you-ai-agents";
-const pageTitle = "Done-For-You AI Agents | Managed AI Implementation & TCO";
+const pageTitle = "Done-For-You AI Agents | Your AI Marketing and Sales Team";
 const pageDescription =
-  "Get managed, done-for-you AI agents for sales, voice, lead response, and marketing workflows. Compare build-vs-buy TCO, timelines, and implementation costs.";
+  "Your done-for-you AI marketing and sales team: voice agents that answer every call, sales agents that respond in 60 seconds, marketing agents that test creative, and appointment booking — all managed by Prestyj.";
 
 const page = {
   slug: "done-for-you-ai-agents",
@@ -46,20 +46,20 @@ const page = {
   highPrice: "4997",
   offerCount: "5",
   hero: {
-    eyebrow: "DONE-FOR-YOU AI AGENTS · BUILD VS BUY",
-    headline: "Done-for-you AI agents without the internal build risk.",
+    eyebrow: "DONE-FOR-YOU AI AGENTS · YOUR MARKETING AND SALES TEAM",
+    headline: "Your done-for-you AI marketing and sales team.",
     accent: "Live in weeks, not quarters.",
     subheadline:
-      "Prestyj designs, launches, monitors, and improves AI agents for sales, voice, lead response, lead reactivation, and marketing workflows — so your team buys the outcome instead of hiring engineers to build the plumbing.",
+      "Prestyj designs, launches, monitors, and improves AI agents for voice, sales follow-up, lead response, reactivation, and marketing — a complete done-for-you system for service businesses and real estate teams, not a tool you learn.",
     primaryCta: {
       href: "/book-demo",
-      label: "Scope a managed AI agent",
+      label: "Book a call",
       description: "Review your workflow and implementation path.",
     },
     secondaryCta: {
-      href: "/best-for/done-for-you-ai",
-      label: "View done-for-you use case",
-      description: "See the existing best-for page for turnkey AI buyers.",
+      href: "/pricing",
+      label: "See pricing",
+      description: "Review plans for the full done-for-you system.",
     },
     stats: [
       {
@@ -80,11 +80,11 @@ const page = {
     ],
   },
   tldr: {
-    title: "Who should buy done-for-you AI",
+    title: "Your done-for-you AI marketing and sales team",
     bullets: [
-      "Choose done-for-you AI when the workflow is commercially important but your team does not have spare AI engineering, prompt QA, telephony, CRM, and operations capacity.",
-      "The managed route is strongest for lead response, AI voice agents, AI sales agents, lead reactivation, and marketing execution where mistakes directly cost pipeline.",
-      "A fair TCO comparison includes internal labor, failed experiments, monitoring, prompt updates, integration maintenance, and opportunity cost — not just software subscription price.",
+      "Prestyj runs your AI voice agents, sales follow-up, lead response, reactivation, and marketing — so service businesses and real estate teams get a complete system, not a tool to learn.",
+      "Every agent is part of one workflow: ads generate demand, AI answers every call, sales agents respond in 60 seconds, and appointments land on your calendar — 24/7.",
+      "Done for you means Prestyj owns the design, implementation, monitoring, and improvement. You supply the business rules; we handle the rest.",
     ],
   },
   pricingTable: {
@@ -257,7 +257,7 @@ const page = {
     {
       question: "What workflows can Prestyj manage?",
       answer:
-        "Prestyj focuses on commercial workflows: AI lead response, AI sales agents, AI voice agents, AI receptionist, lead reactivation, batch video ads, AI content operations, and marketing automation tied to pipeline outcomes.",
+        "Prestyj focuses on marketing and sales workflows: AI lead response, AI sales agents, AI voice agents, AI receptionist, lead reactivation, batch video ads, social media content, and marketing automation tied to pipeline outcomes for service businesses and real estate teams.",
     },
     {
       question: "How do I avoid buying a black-box AI service?",
@@ -266,18 +266,18 @@ const page = {
     },
   ],
   finalCta: {
-    title: "Scope the AI agent before you build it yourself.",
+    title: "Get your done-for-you AI marketing and sales team live.",
     description:
-      "Prestyj will map the workflow, estimate managed implementation effort, and compare it against internal build and DIY platform costs.",
+      "Prestyj will map your done-for-you AI marketing and sales system, estimate managed implementation effort, and show how voice, sales, and marketing agents work together to capture every lead.",
     primaryCta: {
       href: "/book-demo",
-      label: "Scope a managed agent",
+      label: "Book a call",
       description: "Review your implementation path.",
     },
     secondaryCta: {
-      href: "/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco",
-      label: "Read the TCO guide",
-      description: "See the build-vs-buy economics.",
+      href: "/pricing",
+      label: "View pricing",
+      description: "See plans for the full done-for-you system.",
     },
   },
 } satisfies AiOfferPageData;

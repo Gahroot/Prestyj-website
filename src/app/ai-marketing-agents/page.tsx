@@ -12,9 +12,9 @@ import {
 } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/ai-marketing-agents";
-const pageTitle = "AI Marketing Agents | Batch Video Ads, Content & Lead Response";
+const pageTitle = "AI Marketing Agents for Service Businesses | Campaigns & Creative Automated";
 const pageDescription =
-  "Prestyj AI marketing agents combine batch video ads, AI content operations, marketing automation, and lead response so growth teams can test more creative and convert more demand.";
+  "AI marketing agents that run campaigns, test creative, and report on results — automated. Part of your done-for-you AI marketing and sales system for service businesses. Managed by Prestyj.";
 
 const page = {
   slug: "ai-marketing-agents",
@@ -46,20 +46,20 @@ const page = {
   highPrice: "4997",
   offerCount: "5",
   hero: {
-    eyebrow: "AI MARKETING AGENTS · CREATIVE TO CONVERSION",
-    headline: "AI marketing agents for creative volume and lead conversion.",
-    accent: "Not another dashboard to babysit.",
+    eyebrow: "AI MARKETING AGENTS · CAMPAIGNS, CREATIVE & REPORTING",
+    headline: "Campaigns, creative testing, and reporting — automated.",
+    accent: "The marketing pillar of your AI system.",
     subheadline:
-      "Prestyj connects the work growth teams usually split across creators, editors, social agencies, automations, and SDR follow-up: batch video ads, high-volume content, campaign workflows, and AI lead response.",
+      "Prestyj connects the work service businesses usually split across creators, editors, social agencies, and automations: batch video ads, high-volume social content, campaign workflows, and AI lead response — all managed as one done-for-you AI marketing and sales system.",
     primaryCta: {
       href: "/book-demo",
-      label: "Plan your AI marketing stack",
+      label: "Plan your AI marketing system",
       description: "Map which marketing-agent workflow should launch first.",
     },
     secondaryCta: {
-      href: "/batch-video-ads",
-      label: "Start with batch video ads",
-      description: "Review Prestyj's fastest creative-volume offer.",
+      href: "/pricing",
+      label: "See pricing",
+      description: "Review plans for the full AI marketing and sales system.",
     },
     stats: [
       {
@@ -70,7 +70,7 @@ const page = {
       {
         value: "270–2,700",
         label: "posts per month",
-        detail: "AI Content Department output range for teams replacing low-volume social management.",
+        detail: "Social media content output range for service businesses replacing low-volume social management.",
       },
       {
         value: "60 sec",
@@ -83,7 +83,7 @@ const page = {
     title: "What “AI marketing agent” should mean",
     bullets: [
       "A useful AI marketing agent performs an outcome workflow: creates testable ad variations, publishes content, routes responses, follows up, and records conversion data.",
-      "Prestyj treats batch video ads as the creative-testing layer, AI Content Department as the organic/social layer, and AI lead response as the conversion layer.",
+      "Prestyj treats batch video ads as the creative-testing layer, social media content as the organic/social layer, and AI lead response as the conversion layer — all part of your done-for-you AI marketing and sales system.",
       "The buyer test is simple: does the system reduce cost per tested angle, increase publishing volume, or improve speed-to-lead in a measurable way?",
     ],
   },
@@ -254,16 +254,16 @@ const page = {
   finalCta: {
     title: "Build the AI marketing-agent stack around your biggest bottleneck.",
     description:
-      "Prestyj will help you decide whether batch video ads, AI Content Department, marketing automation, or AI lead response should launch first.",
+      "Prestyj will help you decide whether batch video ads, social content, marketing automation, or AI lead response should launch first within your done-for-you AI marketing and sales system.",
     primaryCta: {
       href: "/book-demo",
       label: "Book a planning call",
       description: "Map the first AI marketing-agent workflow.",
     },
     secondaryCta: {
-      href: "/batch-video-ads",
-      label: "View batch video ads",
-      description: "Start with the creative-testing workflow.",
+      href: "/pricing",
+      label: "View pricing",
+      description: "See plans for the full done-for-you system.",
     },
   },
 } satisfies AiOfferPageData;

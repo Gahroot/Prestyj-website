@@ -30,10 +30,6 @@ const steps = [
 ];
 
 export function LiveProof({ ctaHref }: { ctaHref?: string }) {
-  const scrollToForm = () => {
-    document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section className="py-12 md:py-16">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
@@ -76,23 +72,13 @@ export function LiveProof({ ctaHref }: { ctaHref?: string }) {
         </div>
 
         <AnimateOnScroll className="mt-10 flex justify-center">
-          {ctaHref ? (
-            <Button
-              size="lg"
-              asChild
-              className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
-            >
-              <Link href={ctaHref}>Get My FREE Ads</Link>
-            </Button>
-          ) : (
-            <Button
-              size="lg"
-              onClick={scrollToForm}
-              className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
-            >
-              Get My FREE Ads
-            </Button>
-          )}
+          <Button
+            size="lg"
+            asChild
+            className="shadow-primary/25 rounded-lg px-8 py-6 text-base font-bold shadow-lg md:px-12 md:py-7 md:text-lg"
+          >
+            <Link href={ctaHref ?? "/pricing"}>See Plans &amp; Pricing</Link>
+          </Button>
         </AnimateOnScroll>
       </div>
     </section>

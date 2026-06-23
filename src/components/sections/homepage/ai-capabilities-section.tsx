@@ -1,75 +1,34 @@
 import Link from "next/link";
 import type { ReactElement } from "react";
-import {
-  ArrowRight,
-  Bot,
-  FileText,
-  Megaphone,
-  Mic2,
-  PhoneIncoming,
-  Sparkles,
-  Workflow,
-} from "lucide-react";
+import { ArrowRight, Megaphone, Sparkles, Workflow } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
 const capabilities = [
   {
-    title: "Done-for-you AI agents",
+    title: "AI Agents",
     href: "/done-for-you-ai-agents",
     description:
-      "Custom agents, automations, dashboards and workflows that take repetitive work off your team's plate.",
+      "Voice agents, receptionists, sales follow-up, and marketing agents that answer calls, respond to leads, and book appointments — 24/7.",
     outcome: "Replace manual handoffs with a system that runs.",
     icon: Workflow,
   },
   {
-    title: "AI voice agents",
-    href: "/ai-voice-agents",
-    description:
-      "Browser and phone agents that qualify callers, answer questions, route requests, and book next steps.",
-    outcome: "Turn live conversations into booked next steps.",
-    icon: Mic2,
-  },
-  {
-    title: "AI receptionist",
-    href: "/ai-receptionist",
-    description:
-      "After-hours intake, missed-call recovery, FAQs, scheduling, and clean escalation to your human team.",
-    outcome: "Stop losing leads to voicemail and slow callbacks.",
-    icon: PhoneIncoming,
-  },
-  {
-    title: "AI sales agents",
-    href: "/ai-sales-agents",
-    description:
-      "Speed-to-lead, qualification, reminders, objection handling, follow-up, and CRM handoff.",
-    outcome: "Follow up while intent is still hot.",
-    icon: Bot,
-  },
-  {
-    title: "AI marketing agents",
-    href: "/ai-marketing-agents",
-    description:
-      "Campaign workflows, lead magnets, content repurposing, creative testing and reporting.",
-    outcome: "Keep marketing moving without chasing every task.",
-    icon: Megaphone,
-  },
-  {
-    title: "AI content department",
-    href: "/ai-content-department",
-    description:
-      "Planning, drafting, repurposing, publishing support and feedback from what the market responds to.",
-    outcome: "Turn one idea into a consistent content engine.",
-    icon: FileText,
-  },
-  {
-    title: "Batch video ads",
+    title: "Batch Video Ads",
     href: "/batch-video-ads",
     description:
-      "One recording or source asset turned into hundreds of vertical ad variants for paid-social testing.",
+      "One recording turned into hundreds of vertical ad variants for paid-social testing.",
     outcome: "Test hooks, angles, and CTAs at real volume.",
     icon: Sparkles,
+  },
+  {
+    title: "Managed Ad Spend",
+    href: "/pricing",
+    description:
+      "Google and Meta campaigns built, managed, and optimized for you.",
+    outcome: "Leads flowing within 7-10 business days.",
+    icon: Megaphone,
   },
 ] as const;
 
@@ -82,16 +41,16 @@ export function AiCapabilitiesSection(): ReactElement {
             What we build
           </Badge>
           <h2 className="font-heading text-foreground mt-5 text-3xl font-bold tracking-tight sm:text-4xl">
-            AI agents that answer, follow up, create and keep records clean.
+            One system. AI runs your marketing and sales.
           </h2>
           <p className="text-muted-foreground mt-4 text-lg">
             Start with the work your team repeats every day: calls, lead response,
-            follow-up, content, reporting, handoffs and internal coordination.
+            follow-up, and ad creative.
           </p>
         </div>
 
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {capabilities.map((capability, index) => {
+          {capabilities.map((capability) => {
             const Icon = capability.icon;
             return (
               <Link
@@ -99,7 +58,6 @@ export function AiCapabilitiesSection(): ReactElement {
                 href={capability.href}
                 className={cn(
                   "group bg-card/60 hover:border-primary/40 block rounded-3xl border p-6 transition-all hover:-translate-y-1 hover:shadow-xl",
-                  index === 0 ? "lg:col-span-2" : null,
                 )}
               >
                 <div className="bg-primary/10 text-primary grid size-12 place-items-center rounded-2xl">

@@ -13,8 +13,7 @@ export function FreeAdsStatsSection() {
             Why Video Ads Win for Service Businesses
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-            Data-driven proof that batch video ads and AI-powered follow-up outperform traditional
-            advertising.
+            Data-driven proof that batch video ads and AI agents outperform traditional advertising.
           </p>
         </AnimateOnScroll>
 

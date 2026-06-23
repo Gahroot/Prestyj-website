@@ -31,7 +31,7 @@ const PAGE_URL = "https://prestyj.com/founding-cohort";
 
 export const metadata: Metadata = {
   title: "Founding Cohort: 300 Free Video Ads for 5 Service Businesses",
-  description: `${FOUNDING_COHORT.totalSpots} founding spots. 300 scripted video ads (a $1,497 batch) for $0 in exchange for a testimonial, a Google review, and a 14-day commitment to actually run them. Apply now — when ${FOUNDING_COHORT.totalSpots} is reached, it's closed.`,
+  description: `${FOUNDING_COHORT.totalSpots} founding spots. 300 scripted video ads (a $1,497 batch) for $0 — separate from our pricing plans, no purchase required — in exchange for a testimonial, a Google review, and a 14-day commitment to actually run them. Apply now — when ${FOUNDING_COHORT.totalSpots} is reached, it's closed.`,
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "Founding Cohort: 300 Free Video Ads for 5 Service Businesses",
@@ -147,6 +147,10 @@ export default function FoundingCohortPage() {
                 as founding case studies. You get a full $1,497 batch — 300 scripted vertical ads in
                 24 hours — for free. We get the testimonial, the review, and the results data. When{" "}
                 {FOUNDING_COHORT.totalSpots} is reached, it&apos;s closed.
+              </p>
+              <p className="text-muted-foreground mx-auto max-w-2xl text-sm font-medium lg:mx-0">
+                This is separate from our pricing plans. No purchase required — 300 ads for free in
+                exchange for a testimonial and a Google review.
               </p>
               <SpotCounter variant="block" className="mx-auto max-w-md lg:mx-0" />
 

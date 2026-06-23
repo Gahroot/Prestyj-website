@@ -79,7 +79,7 @@ interface IndustryPainPointsProps {
 
 export function IndustryPainPoints({
   painPoints,
-  ctaText = "Get My FREE Ads",
+  ctaText = "See Plans & Pricing",
 }: IndustryPainPointsProps) {
   const scrollToForm = () => {
     document.getElementById("lead-form")?.scrollIntoView({ behavior: "smooth" });

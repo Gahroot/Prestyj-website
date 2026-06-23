@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "AI lead conversion platform",
+    "AI agents for service businesses",
     "AI lead response",
     "AI voice agents",
     "AI sales agents",

@@ -63,8 +63,8 @@ export default function FAQPage() {
                 Questions? Answers.
               </h1>
               <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
-                Everything you need to know about Prestyj — what we build, how it works, what it
-                costs, and what happens after you book a demo.
+                Everything you need to know about Prestyj — AI agents, batch video ads, managed ad
+                spend, what it costs, and what happens after you book a demo.
               </p>
             </AnimateOnScroll>
           </div>
@@ -103,10 +103,10 @@ export default function FAQPage() {
                 Book a free demo and we&apos;ll walk you through exactly how AI agents would work in
                 your marketing and sales funnel.
               </p>
-              {/* CTA-sweep: cold traffic → batch offer */}
+              {/* CTA: primary conversion action */}
               <Button size="lg" className="px-10 py-6 text-lg" asChild>
-                <Link href="/batch-video-ads">
-                  Get 100 ads for $497
+                <Link href="/book-demo">
+                  Book a call
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>

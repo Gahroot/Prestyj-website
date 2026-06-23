@@ -937,6 +937,13 @@ const nextConfig: NextConfig = {
       { source: "/compare/prestyj-vs-smma-for-media-buyers", destination: "/compare/prestyj-vs-smma-for-service-business-owners", permanent: true },
       { source: "/compare/prestyj-vs-ugc-creator-video-for-coaches", destination: "/compare/prestyj-vs-ugc-creator-video-for-hvac-companies", permanent: true },
       { source: "/compare/prestyj-vs-va-plus-templates-for-personal-brands", destination: "/compare/prestyj-vs-va-plus-templates-for-agency-owners", permanent: true },
+      // Off-positioning pages — AI consulting doesn't fit the "done-for-you agents"
+      // one-lane positioning. Redirect to /pricing where the actual offer lives.
+      {
+        source: "/ai-consulting",
+        destination: "/pricing",
+        permanent: true,
+      },
     ];
   },
 };

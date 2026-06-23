@@ -15,10 +15,10 @@ if (!starterTier) {
 const STARTER_MONTHLY = `$${starterTier.monthlyPrice.toLocaleString("en-US")}`;
 const STARTER_SETUP = `$${starterTier.setupFee.toLocaleString("en-US")}`;
 
-const DEFAULT_HEADLINE = `Get 300 Free Video Ads When You Start a Prestyj Plan from ${STARTER_MONTHLY}/mo.`;
+const DEFAULT_HEADLINE = `300 Video Ads Included When You Start a Prestyj Plan from ${STARTER_MONTHLY}/mo.`;
 const DEFAULT_SUBHEADLINE =
-  "Setup fee applies. We send you the scripts and help you film — just stand in front of the camera and read.";
-const DEFAULT_DESCRIPTION = `Here's the deal: start a Prestyj plan (${STARTER_SETUP} setup + ${STARTER_MONTHLY}/mo, plus $1k/mo minimum ad spend paid to Meta) and the first 300 video ads are on us. We'll set up the ads, build the landing page, and have AI respond to every lead in seconds. If it doesn't work, you keep the ads and we part ways.`;
+  "These ads come with your plan — they're not a standalone free product. Setup fee applies. We send you the scripts and help you film — just stand in front of the camera and read.";
+const DEFAULT_DESCRIPTION = `Here's the deal: start a Prestyj plan (${STARTER_SETUP} setup + ${STARTER_MONTHLY}/mo, plus $1k/mo minimum ad spend paid to Meta) and 300 video ads are included. We'll set up the ads, build the landing page, and deploy AI agents that answer calls, respond to leads in 60 seconds, and book appointments on your calendar — 24/7.`;
 
 interface IndustryHeroProps {
   industry: string;
@@ -33,7 +33,7 @@ export function IndustryHero({
   headline = DEFAULT_HEADLINE,
   subheadline = DEFAULT_SUBHEADLINE,
   description = DEFAULT_DESCRIPTION,
-  ctaText = "Get My FREE Ads",
+  ctaText = "See Plans & Pricing",
 }: IndustryHeroProps) {
   const [isMuted, setIsMuted] = useState(true);
   const [showOverlay, setShowOverlay] = useState(true);
