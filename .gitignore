@@ -55,3 +55,7 @@ media-master/
 
 # Local intake submissions
 .data/
+.secrets/
+
+# local agent/browser smoke-test artifacts
+.gg/

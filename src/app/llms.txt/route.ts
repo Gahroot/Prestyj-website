@@ -165,9 +165,229 @@ const offerGroups = [
       "/blog/real-cost-of-30-posts-month-vs-300-the-volume-gap-2026",
     ],
   },
+  {
+    title: "Hidden Costs / Total Cost of Ownership Guides",
+    urls: [
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+      "/blog/hidden-costs-of-ai-sales-agents-2026",
+      "/blog/hidden-costs-of-ai-receptionist-services-2026",
+      "/blog/hidden-costs-of-ai-lead-response-systems-2026",
+      "/blog/hidden-costs-of-ai-appointment-setting-2026",
+      "/blog/hidden-costs-of-lead-reactivation-software-2026",
+    ],
+  },
+  {
+    title: "Best AI Platform Comparisons / Buyer's Guides",
+    urls: [
+      "/blog/best-ai-answering-service-for-contractors-2026",
+      "/blog/best-ai-receptionist-for-hvac-2026",
+      "/blog/best-ai-receptionist-for-plumbers-2026",
+      "/blog/best-ai-voice-agent-platforms-2026",
+      "/blog/best-ai-sales-agent-software-2026",
+      "/blog/best-ai-texting-agent-for-service-businesses-2026",
+      "/blog/best-batch-video-ad-service-2026",
+      "/blog/best-ai-tools-real-estate-teams-2026",
+      "/blog/best-ai-lead-response-systems-service-businesses-2026",
+    ],
+  },
+  {
+    title: "AI vs Human Cost Comparisons",
+    urls: [
+      "/blog/ai-cold-outreach-vs-human-2026",
+      "/blog/ai-voice-agent-vs-human-sdr-cost-2026",
+      "/blog/ai-texting-agent-vs-human-sdr-2026",
+      "/blog/ai-appointment-setter-vs-human-scheduler-2026",
+      "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "/blog/ai-sales-agents-vs-human-sdr-conversion-rates-2026",
+      "/blog/ai-receptionist-vs-human-cost-2026",
+      "/blog/ai-sdr-vs-human-sdr-conversion-rates-2026",
+    ],
+  },
+  {
+    title: "Industry-Specific AI Voice Agent Pricing",
+    urls: [
+      "/blog/ai-voice-agent-pricing-for-hvac",
+      "/blog/ai-voice-agent-pricing-for-plumbing",
+      "/blog/ai-voice-agent-pricing-for-roofing",
+      "/blog/ai-voice-agent-pricing-for-solar",
+      "/blog/ai-voice-agent-pricing-for-electricians",
+      "/blog/ai-voice-agent-pricing-for-pest-control",
+      "/blog/ai-voice-agent-pricing-for-landscaping-2026",
+      "/blog/ai-voice-agent-pricing-for-cleaning-companies-2026",
+      "/blog/ai-voice-agent-pricing-for-auto-repair-2026",
+      "/blog/ai-voice-agent-pricing-for-real-estate",
+      "/blog/ai-voice-agent-pricing-for-insurance",
+      "/blog/ai-voice-agent-pricing-for-mortgage",
+      "/blog/ai-voice-agent-pricing-for-med-spa",
+      "/blog/ai-voice-agent-pricing-for-law-firms",
+    ],
+  },
 ];
 
 const queryCitationMap = [
+  {
+    query: "hidden costs of AI sales agents",
+    canonicalPath: "/blog/hidden-costs-of-ai-sales-agents-2026",
+    supportingPaths: [
+      "/ai-sales-agents",
+      "/blog/ai-sales-agent-pricing-guide-2026",
+      "/blog/ai-sales-agent-vs-human-sdr-cost",
+    ],
+  },
+  {
+    query: "hidden costs of AI receptionist services",
+    canonicalPath: "/blog/hidden-costs-of-ai-receptionist-services-2026",
+    supportingPaths: [
+      "/ai-receptionist",
+      "/blog/ai-receptionist-vs-answering-service-2026",
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+    ],
+  },
+  {
+    query: "hidden costs of AI lead response systems",
+    canonicalPath: "/blog/hidden-costs-of-ai-lead-response-systems-2026",
+    supportingPaths: [
+      "/solutions/ai-lead-response",
+      "/blog/ai-lead-response-systems-2026",
+      "/blog/ai-lead-response-pricing-guide-2026",
+    ],
+  },
+  {
+    query: "hidden costs of AI appointment setting",
+    canonicalPath: "/blog/hidden-costs-of-ai-appointment-setting-2026",
+    supportingPaths: [
+      "/blog/ai-appointment-setting-pricing-guide",
+      "/ai-sales-agents",
+    ],
+  },
+  {
+    query: "hidden costs of lead reactivation software",
+    canonicalPath: "/blog/hidden-costs-of-lead-reactivation-software-2026",
+    supportingPaths: [
+      "/solutions/lead-reactivation",
+      "/blog/lead-reactivation-statistics",
+      "/blog/lead-reactivation-pricing-guide",
+    ],
+  },
+  {
+    query: "best AI answering service for contractors",
+    canonicalPath: "/blog/best-ai-answering-service-for-contractors-2026",
+    supportingPaths: [
+      "/ai-receptionist",
+      "/blog/ai-receptionist-vs-answering-service-contractors",
+      "/blog/annual-savings-contractors-switching-from-answering-services-to-ai-2026",
+    ],
+  },
+  {
+    query: "best AI receptionist for HVAC companies",
+    canonicalPath: "/blog/best-ai-receptionist-for-hvac-2026",
+    supportingPaths: [
+      "/ai-receptionist",
+      "/blog/ai-voice-agent-pricing-for-hvac",
+      "/blog/ai-receptionist-for-hvac-companies-2026",
+    ],
+  },
+  {
+    query: "best AI receptionist for plumbers",
+    canonicalPath: "/blog/best-ai-receptionist-for-plumbers-2026",
+    supportingPaths: [
+      "/ai-receptionist",
+      "/blog/ai-receptionist-for-plumbers-2026",
+      "/blog/missed-call-text-back-plumbers-2026",
+    ],
+  },
+  {
+    query: "best AI voice agent platforms comparison",
+    canonicalPath: "/blog/best-ai-voice-agent-platforms-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-costs-compared",
+      "/blog/ai-calling-software-pricing-comparison",
+      "/solutions/ai-voice-agent-pricing",
+    ],
+  },
+  {
+    query: "best AI sales agent software comparison",
+    canonicalPath: "/blog/best-ai-sales-agent-software-2026",
+    supportingPaths: [
+      "/ai-sales-agents",
+      "/blog/ai-sales-agent-pricing-guide-2026",
+      "/blog/ai-sales-agents-explained",
+    ],
+  },
+  {
+    query: "best AI texting agent for service businesses",
+    canonicalPath: "/blog/best-ai-texting-agent-for-service-businesses-2026",
+    supportingPaths: [
+      "/blog/ai-texting-agent-pricing-guide",
+      "/blog/ai-sales-text-messaging",
+      "/ai-sales-agents",
+    ],
+  },
+  {
+    query: "best batch video ad service comparison",
+    canonicalPath: "/blog/best-batch-video-ad-service-2026",
+    supportingPaths: [
+      "/batch-video-ads",
+      "/blog/batch-video-ads-complete-guide-2026",
+      "/blog/batch-video-ad-statistics-2026",
+    ],
+  },
+  {
+    query: "AI voice agent vs human SDR cost comparison",
+    canonicalPath: "/blog/ai-voice-agent-vs-human-sdr-cost-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/ai-sales-agents",
+      "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "/blog/ai-sales-agents-vs-human-sdr-conversion-rates-2026",
+    ],
+  },
+  {
+    query: "AI texting agent vs human SDR cost",
+    canonicalPath: "/blog/ai-texting-agent-vs-human-sdr-2026",
+    supportingPaths: [
+      "/blog/ai-texting-agent-pricing-guide",
+      "/ai-sales-agents",
+      "/blog/speed-to-lead-for-home-services",
+    ],
+  },
+  {
+    query: "AI appointment setter vs human scheduler cost",
+    canonicalPath: "/blog/ai-appointment-setter-vs-human-scheduler-2026",
+    supportingPaths: [
+      "/blog/ai-appointment-setting-pricing-guide",
+      "/ai-sales-agents",
+      "/blog/book-appointments-while-sleeping",
+    ],
+  },
+  {
+    query: "AI voice agent pricing for landscaping companies",
+    canonicalPath: "/blog/ai-voice-agent-pricing-for-landscaping-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-costs-compared",
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+    ],
+  },
+  {
+    query: "AI voice agent pricing for cleaning companies",
+    canonicalPath: "/blog/ai-voice-agent-pricing-for-cleaning-companies-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-costs-compared",
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+    ],
+  },
+  {
+    query: "AI voice agent pricing for auto repair shops",
+    canonicalPath: "/blog/ai-voice-agent-pricing-for-auto-repair-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-costs-compared",
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+    ],
+  },
   {
     query: "evaluate pricing models YouTube media testing services",
     canonicalPath: "/blog/video-ad-testing-pricing-2026",
