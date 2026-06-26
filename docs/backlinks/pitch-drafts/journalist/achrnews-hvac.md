@@ -5,7 +5,7 @@ name: "ACHR News (HVAC trade)"
 target_url: https://www.achrnews.com
 channel: email
 status: drafted
-generated_at: 2026-06-04T16:38:58.404Z
+generated_at: 2026-06-26T18:08:37.163Z
 ---
 **Subject:** Original, sourced data on lead response & AI in sales (open CC BY 4.0 dataset)
 

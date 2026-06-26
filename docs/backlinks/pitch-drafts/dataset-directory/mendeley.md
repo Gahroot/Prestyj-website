@@ -6,7 +6,7 @@ target_url: https://data.mendeley.com
 channel: data-repository
 doi: true
 status: drafted
-generated_at: 2026-06-04T16:38:58.406Z
+generated_at: 2026-06-26T18:08:37.165Z
 ---
 ## Mendeley Data (Elsevier) — dataset submission checklist
 

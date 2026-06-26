@@ -6,7 +6,7 @@ target_url: https://www.inman.com
 channel: email
 contact: tips@inman.com
 status: drafted
-generated_at: 2026-06-04T16:38:58.404Z
+generated_at: 2026-06-26T18:08:37.162Z
 ---
 **Subject:** Original, sourced data on lead response & AI in sales (open CC BY 4.0 dataset)
 

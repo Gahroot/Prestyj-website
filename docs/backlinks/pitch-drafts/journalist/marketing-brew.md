@@ -5,7 +5,7 @@ name: "Marketing Brew"
 target_url: https://www.marketingbrew.com
 channel: email
 status: drafted
-generated_at: 2026-06-04T16:38:58.405Z
+generated_at: 2026-06-26T18:08:37.164Z
 ---
 **Subject:** Original, sourced data on lead response & AI in sales (open CC BY 4.0 dataset)
 

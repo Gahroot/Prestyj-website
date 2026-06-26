@@ -5,7 +5,7 @@ name: "Sales operations & RevOps academics"
 target_url: https://scholar.google.com
 channel: email
 status: drafted
-generated_at: 2026-06-04T16:38:58.405Z
+generated_at: 2026-06-26T18:08:37.164Z
 ---
 **Subject:** Citable open dataset: lead response, video advertising & AI-in-sales benchmarks
 

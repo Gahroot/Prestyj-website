@@ -5,7 +5,7 @@ name: "Data journalism collectives (NICAR / Hacks/Hackers)"
 target_url: https://www.ire.org/training/conferences/nicar/
 channel: email
 status: drafted
-generated_at: 2026-06-04T16:38:58.405Z
+generated_at: 2026-06-26T18:08:37.164Z
 ---
 **Subject:** Citable open dataset: lead response, video advertising & AI-in-sales benchmarks
 
