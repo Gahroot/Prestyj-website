@@ -8,15 +8,16 @@
 
 ## 🔴 Due now (this week — highest leverage)
 
-- [ ] **Approve & merge** the Phase 3 refresh: `content/blog/hidden-cost-answering-services-2026.mdx` (added `updated: 2026-06-27`, bolded TL;DR + direct answer, exact-question H2 "How Much Can a Contractor Save by Switching From an Answering Service to AI?"). typecheck + lint pass. **Before merge, resolve the `$299/mo` Prestyj pricing** in this post — it conflicts with current tiers ($1,997 / $3,497 / $5,997). See the verify item below.
-- [ ] **Approve & merge (NEW 06-29):** `content/blog/ai-voice-agent-costs-compared.mdx` — `updated` bumped to **2026-06-29**, one H2 converted to exact-question "How Much Does an AI Voice Agent Cost Per Minute at Scale in 2026?" Stats re-verified (all match). typecheck + lint pass. **Left uncommitted.** Low-risk, safe to merge.
-- [ ] **CTR fix (NEW 06-29):** `/blog/ai-voice-agent-costs-compared` has **2,139 GSC impressions (most of any URL) but 1 click (0.05%) at pos 9.14** — top-of-page-2 leak. Sharpen title/description (keep hard numbers + "2026"); small position/CTR push = outsized click gain. Single highest-leverage on-page win.
+- [x] **Approve & merge** the Phase 3 refresh: `content/blog/hidden-cost-answering-services-2026.mdx` — **MERGED (commit 63cea59)**. Pricing conflict resolved: $299 reframed as AI voice-agent platform/telephony cost, CTA added to /pricing.
+- [x] **Approve & merge (NEW 06-29):** `content/blog/ai-voice-agent-costs-compared.mdx` — **MERGED (commit 63cea59)**. Freshness + exact-question H2.
+- [x] **CTR fix (NEW 06-29):** **DONE (commit 63cea59)** — title sharpened to `$0.06–$0.31/min Across 7 Platforms (2026)`, description front-loads hard numbers.
 - [ ] **Send 1 digital-PR pitch — ACHR News (HVAC trade)**, DR-60+, matches the "contractor savings switching answering service → AI" angle. Draft ready at `docs/backlinks/pitch-drafts/journalist/achrnews-hvac.md`.
 - [ ] **Send 1 digital-PR pitch — HousingWire-tech** (DR-60+, real-estate beat) still outstanding. Draft at `docs/backlinks/pitch-drafts/journalist/housingwire-tech.md`.
-- [ ] **Send 1 digital-PR pitch (NEW 06-29) — CRN** (IT-channel, DR 80+), data-led angle on the **branded-calling-for-MSP surge** (+500–1,080%). Draft at `docs/backlinks/pitch-drafts/journalist/crn-branded-calling-msp.md`. Best fit for today's breakout cluster.
+- [ ] **Send 1 digital-PR pitch (NEW 06-29) — CRN** (IT-channel, DR 80+), data-led angle on the **branded-calling-for-MSP surge** (+500–1,080%). Draft at `docs/backlinks/pitch-drafts/journalist/crn-branded-calling-msp.md`. Best fit for today's breakout cluster. _Bot cannot send emails — human action required._
+- [ ] **Fix seo-bot blogPost schema bug (NEW 06-29):** Gemini returns `{ slug, frontmatter: { title, description, date, ... } }` but the Zod schema expects flat top-level fields. The validation fails after 2 retries. Fix: unwrap `frontmatter` in the response handler, or update the schema/prompt. Blocks all automated blog drafting until fixed.
 - [ ] **Follow up on 1 outstanding pitch.** Late-May press/outreach waves sent; none placed. Reply to the warmest contact (check `data/backlinks/placements/` logs).
 - [ ] **Re-export Bing Webmaster BACKLINKS** → `data/backlinks/bing-export-2026-06-29.csv`, then `npm run backlinks:snapshot <path>`. Snapshot **~38 days stale** (2026-05-22); ref-domain trend unreliable. **+0 earned domains in 25 days → 0.0/mo vs 5–15/mo target. 🔴 Biggest gap.** _(Note: the AI-citations export was refreshed today 06-29; only the backlinks export is stale.)_
-- [ ] **Verify / fix the `$299/mo` Prestyj pricing** in `hidden-cost-answering-services-2026.mdx` (tables, HVAC scenario, ROI calculator). It predates the current $1,997 / $3,497 / $5,997 tiers. Either update to a consistent managed-pricing figure or confirm it's an intentional legacy/hypothetical. Bot did not rewrite it — needs human positioning call.
+- [x] **Verify / fix the `$299/mo` Prestyj pricing** — **FIXED (commit 63cea59)**: reframed as AI voice-agent platform/telephony cost (~$0.06–$0.18/min × 2,000 min ≈ $299). Added CTA to `/pricing` ($1,997/mo+). Comparison math preserved.
 
 ## 🟡 Due this sprint (next 7–14 days)
 
@@ -25,7 +26,7 @@
 - [ ] **Positioning validation (NEW 06-29):** the **branded-calling-for-MSP / IT-services** cluster is the fastest-growing AI-citation category (3,685 cites, #3 overall). MSPs are arguably within "service businesses," and a dedicated page already earns 743 cites — but leaning in harder (satellite posts, refreshed internal links) is a positioning call. Decide whether to double down or hold the line on the core lane.
 - [ ] **G2 / Capterra:** request 1–2 customer reviews (most-cited software sources by ChatGPT/Perplexity). Needs a real customer relationship.
 - [ ] **Record GSC inputs:** pull **indexed pages** and **branded impressions** (regex `(?i)prestyj`) from GSC UI → `npm run seo:gsc-progress -- --indexed <N> --branded-impressions <N>`.
-- [ ] **Clean up repo root:** remove or `.gitignore` the stray `google searchrtf.rtf`.
+- [x] **Clean up repo root:** stray `google searchrtf.rtf` removed (06-29).
 
 ## 🟢 Backlog (claim before competitors)
 
@@ -40,7 +41,9 @@
 
 ### Done ✅
 - [x] 2026-06-29 — Ingested fresh Bing AI-citation export → `data/ai-citations/2026-06-29/`; ran `analyze:citations` (9,584 query / 12,514 page cites, +100% / +86% WoW). Breakout = branded-calling-for-MSP (+500–1,080%).
-- [x] 2026-06-29 — Refreshed `ai-voice-agent-costs-compared.mdx` (freshness `updated: 2026-06-29` + exact-question H2 + 3 verified `/stat/*` links) — _uncommitted, awaiting merge._
+- [x] 2026-06-29 — Committed all work to main (63cea59): pricing fix, CTR title fix, freshness refresh, CRN pitch, citation data, queue update.
+- [x] 2026-06-29 — Blog draft attempted via seo-bot but FAILED (Gemini schema nesting bug — added to Due Now queue for fix).
+- [x] 2026-06-29 — Removed stray `google searchrtf.rtf` from repo root.
 - [x] 2026-06-29 — IndexNow re-pinged the refreshed URL (202 Accepted).
 - [x] 2026-06-29 — Drafted CRN pitch (branded-calling-for-MSP data angle) at `docs/backlinks/pitch-drafts/journalist/crn-branded-calling-msp.md`.
 - [x] 2026-06-27 — Refreshed `hidden-cost-answering-services-2026.mdx` (freshness + bolded TL;DR + direct answer + exact-question H2 + 3 `/stat/*` links) — _awaiting merge + pricing fix above._
