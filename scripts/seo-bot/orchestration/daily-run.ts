@@ -306,6 +306,63 @@ async function popBacklogItem(
   return item;
 }
 
+/**
+ * Re-insert a backlog item that was popped but whose task failed, so the
+ * item is not permanently lost. Puts it back at the front of its slice.
+ */
+async function unshiftBacklogItem(
+  cwd: string,
+  config: AppConfig,
+  taskName: TaskName,
+  item: import("../types").BacklogItem,
+): Promise<void> {
+  const sliceKey = BACKLOG_SLICE_BY_TASK[taskName];
+  if (!sliceKey) return;
+
+  const backlogPath = path.resolve(cwd, config.state.backlogFile);
+  const raw = await readTextSafe(backlogPath);
+  if (!raw) return;
+
+  let yamlMod: { load: (s: string) => unknown; dump: (o: unknown, opts?: unknown) => string };
+  try {
+    const imported = (await import("js-yaml")) as unknown as {
+      default?: {
+        load: (s: string) => unknown;
+        dump: (o: unknown, opts?: unknown) => string;
+      };
+      load?: (s: string) => unknown;
+      dump?: (o: unknown, opts?: unknown) => string;
+    };
+    if (imported.default && typeof imported.default.load === "function") {
+      yamlMod = imported.default;
+    } else if (typeof imported.load === "function" && typeof imported.dump === "function") {
+      yamlMod = { load: imported.load, dump: imported.dump };
+    } else {
+      return;
+    }
+  } catch {
+    return;
+  }
+
+  let parsed: unknown;
+  try {
+    parsed = yamlMod.load(raw);
+  } catch {
+    return;
+  }
+
+  const { BacklogSchema } = await import("../types");
+  const check = BacklogSchema.safeParse(parsed);
+  if (!check.success) return;
+  const backlog = check.data;
+  const slice = backlog[sliceKey];
+  if (!Array.isArray(slice)) return;
+
+  slice.unshift(item);
+  const dumped = yamlMod.dump(backlog, { lineWidth: 120 });
+  await fs.writeFile(backlogPath, dumped, "utf8");
+}
+
 type TaskModule = Record<string, unknown>;
 
 function pickTaskFunction(
@@ -880,6 +937,11 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
         if (kind === "page") breaker.recordShip("page");
         if (kind === "blog") breaker.recordShip("blog");
       }
+    }
+
+    // Re-add backlog item if the task failed, so it isn't lost forever.
+    if (backlogItem && !dryRun && resultsList.every((r) => !r.success)) {
+      await unshiftBacklogItem(cwd, args.config, taskName, backlogItem);
     }
   }
 
