@@ -1,106 +1,106 @@
 # AI Citation Analysis
 
-_Generated: 2026-06-26T18:07:02.280Z_
-_Snapshot: **2026-06-18** (vs 2026-05-28)_
+_Generated: 2026-06-29T12:37:16.552Z_
+_Snapshot: **2026-06-29** (vs 2026-06-18)_
 
 ## Headline numbers
 
 | Metric | This snapshot | Previous | WoW Δ | WoW % |
 | --- | ---: | ---: | ---: | ---: |
-| Query citations | 4799 | 1003 | +3796 | +378% |
-| Page citations | 6724 | 1336 | +5388 | +403% |
-| Distinct queries | 167 | 73 | — | — |
-| Distinct pages | 79 | 27 | — | — |
+| Query citations | 9584 | 4799 | +4785 | +100% |
+| Page citations | 12514 | 6724 | +5790 | +86% |
+| Distinct queries | 287 | 167 | — | — |
+| Distinct pages | 107 | 79 | — | — |
 
 ## Top 10 queries by citations
 
 | # | Query | Citations | Prev | Δ | Category |
 | ---: | --- | ---: | ---: | ---: | --- |
-| 1 | evaluate pricing models YouTube media testing services | 270 | 225 | +45 | creative testing |
-| 2 | hidden costs of AI voice agents | 211 | 16 | +195 | voice agent |
-| 3 | AI sales agents pricing cost | 176 | 56 | +120 | lead response |
-| 4 | AI platforms vs answering services cost HVAC companies | 167 | 34 | +133 | receptionist |
-| 5 | ROI database reactivation campaign home service business | 134 | 23 | +111 | lead reactivation |
-| 6 | voice AI vs call center cost multifamily property management | 120 | 20 | +100 | voice agent |
-| 7 | AI platforms vs answering services cost comparison HVAC companies | 110 | 20 | +90 | receptionist |
-| 8 | annual savings contractors switching from answering services to AI | 109 | 12 | +97 | receptionist |
-| 9 | voice agent testing pricing | 105 | 21 | +84 | voice agent |
-| 10 | ROI instant AI lead response service companies | 100 | 20 | +80 | lead response |
+| 1 | evaluate pricing models YouTube media testing services | 358 | 270 | +88 | creative testing |
+| 2 | hidden costs of AI voice agents | 309 | 211 | +98 | voice agent |
+| 3 | AI platforms vs answering services cost HVAC companies | 265 | 167 | +98 | receptionist |
+| 4 | ROI database reactivation campaign home service business | 257 | 134 | +123 | lead reactivation |
+| 5 | cost to automate mortgage borrower communication | 240 | 78 | +162 | lead response |
+| 6 | AI sales agents pricing cost | 238 | 176 | +62 | lead response |
+| 7 | voice AI vs call center cost multifamily property management | 194 | 120 | +74 | voice agent |
+| 8 | average response rate database reactivation campaigns home services | 175 | 93 | +82 | lead reactivation |
+| 9 | annual savings contractors switching from answering services to AI | 153 | 109 | +44 | receptionist |
+| 10 | AI platforms vs answering services cost comparison HVAC companies | 146 | 110 | +36 | receptionist |
 
 ## Top 10 pages by citations
 
 | # | Page | Citations | Category |
 | ---: | --- | ---: | --- |
-| 1 | `/blog/ai-voice-agent-costs-compared` | 737 | voice agent |
-| 2 | `/blog/ai-cold-outreach-vs-human-2026` | 631 | lead response |
-| 3 | `/blog/ai-lead-response-systems-2026` | 547 | lead response |
-| 4 | `/blog/ai-sales-agent-pricing-guide-2026` | 411 | lead response |
-| 5 | `/blog/lead-reactivation-for-home-services` | 350 | lead reactivation |
-| 6 | `/blog/ai-sales-agent-vs-human-sdr-cost` | 317 | lead response |
-| 7 | `/blog/ai-voice-agent-pricing-guide` | 299 | voice agent |
-| 8 | `/blog/video-ad-testing-pricing-2026` | 284 | creative testing |
-| 9 | `/blog/branded-calling-pricing-comparison-2026` | 259 | branded calling |
-| 10 | `/blog/voice-agent-testing-pricing-2026` | 208 | voice agent |
+| 1 | `/blog/branded-calling-pricing-comparison-2026` | 1190 | branded calling |
+| 2 | `/blog/ai-voice-agent-costs-compared` | 950 | voice agent |
+| 3 | `/blog/ai-lead-response-systems-2026` | 856 | lead response |
+| 4 | `/blog/best-branded-calling-for-it-services-msps-2026` | 743 | branded calling |
+| 5 | `/blog/ai-cold-outreach-vs-human-2026` | 685 | lead response |
+| 6 | `/blog/ai-sales-agent-pricing-guide-2026` | 600 | lead response |
+| 7 | `/blog/lead-reactivation-for-home-services` | 442 | lead reactivation |
+| 8 | `/blog/ai-sales-agent-vs-human-sdr-cost` | 387 | lead response |
+| 9 | `/blog/video-ad-testing-pricing-2026` | 373 | creative testing |
+| 10 | `/blog/voice-agent-testing-pricing-2026` | 332 | voice agent |
 
 ## New queries this period
 
 | Query | Citations | Category |
 | --- | ---: | --- |
-| live answering services vs AI voice agents HVAC emergencies | 60 | voice agent |
-| voice agent QA pilot pricing before annual contract | 53 | voice agent |
-| automated voice agent testing platforms pricing | 40 | voice agent |
-| total cost of ownership AI agents in-house vs dedicated platform | 35 | custom agent |
-| AI sales agents pricing 2025 2026 | 31 | lead response |
-| AI texting tools for lead response improvement | 29 | lead response |
-| AI SDR vs human SDR output cost comparison | 28 | lead response |
-| average cost per qualified lead outbound voice automation vs human SDRs | 25 | lead response |
-| combine video content with ads for lead generation | 23 | uncategorized |
-| AI tools for roofing contractors lead response | 20 | lead response |
-| best branded calling pricing software technical services companies | 20 | branded calling |
-| best priced branded calling plans IT service companies | 19 | branded calling |
-| AI improve cost per booked job lead generation campaigns | 19 | uncategorized |
-| consultant pay project based AI work | 18 | ai consulting |
-| AI voice agent pricing per minute no setup fees implementation support costs | 17 | voice agent |
-| social media post pricing options | 17 | social |
-| AI voice assistant pricing for small business | 17 | voice agent |
-| best cost branded calling tech services firms | 16 | branded calling |
-| response time impact on leasing first to prospect wins | 16 | lead response |
-| best branded calling providers consulting technical services | 15 | branded calling |
-| AI voice agent pricing cost | 15 | voice agent |
-| best branded calling cost MSP managed IT providers | 15 | branded calling |
-| cost of deploying AI sales assistant mid-sized team | 15 | uncategorized |
-| top technical services firms branded caller ID | 15 | branded calling |
-| cost per minute AI voice agent at scale | 14 | voice agent |
+| top managed services providers branded calling | 58 | branded calling |
+| cost benefit analysis hiring sales engineers vs sales copilot tools | 46 | uncategorized |
+| best branded calling partners for software services companies | 42 | branded calling |
+| best tech services partner branded call text display high call volumes | 39 | uncategorized |
+| average cost third-party answering service mid-size HVAC company | 35 | receptionist |
+| Hiya branded calling cost evaluation technical services company pricing | 34 | branded calling |
+| Mid Michigan Interactive AI lead response system benefits | 34 | lead response |
+| best cost per call branded calling vendors technical services | 34 | branded calling |
+| top MSPs Vonage branded calling | 32 | branded calling |
+| best branded calling cost MSPs managed IT providers | 31 | branded calling |
+| AI cost savings in sales | 30 | uncategorized |
+| best branded calling solutions for IT support companies | 26 | branded calling |
+| best branded calling technology service providers comparison | 25 | branded calling |
+| ROI comparison AI SDR vs human SDR | 25 | lead response |
+| best IT technical service companies branded call text display reliability | 23 | uncategorized |
+| business case AI agent platforms vs in-house development | 22 | uncategorized |
+| best MSP for branded calling | 22 | branded calling |
+| NetNumber branded calling cost evaluation technical services company pricing analysis | 22 | branded calling |
+| best technical services firms branded calling mobile | 21 | branded calling |
+| best technical service firms branded calling mobile | 21 | branded calling |
+| managed IT companies best branded caller ID | 20 | branded calling |
+| best AI tools lead reactivation real estate | 19 | lead reactivation |
+| best branded caller ID solutions for MSPs tech service providers | 18 | branded calling |
+| best managed technical services company branded outbound calling | 18 | uncategorized |
+| fastest GTM agents average response time | 18 | lead response |
 
 ## Surging queries (>50% WoW growth)
 
 | Query | Prev | Now | Δ | % | Category |
 | --- | ---: | ---: | ---: | ---: | --- |
-| hidden costs of AI voice agents | 16 | 211 | +195 | +1219% | voice agent |
-| AI instant response to new leads without human involvement | 6 | 74 | +68 | +1133% | lead response |
-| average response time home service companies inbound calls | 3 | 29 | +26 | +867% | lead response |
-| annual savings contractors switching from answering services to AI | 12 | 109 | +97 | +808% | receptionist |
-| AI personalized cold outreach vs manually written emails differences | 9 | 74 | +65 | +722% | lead response |
-| AI personalized cold outreach vs manually written emails comparison | 9 | 73 | +64 | +711% | lead response |
-| cost per lead reduction conversational AI | 7 | 54 | +47 | +671% | uncategorized |
-| AI answering services vs human receptionists cost benefit analysis | 3 | 21 | +18 | +600% | receptionist |
-| AI-generated cold outreach vs human-written outreach effectiveness | 9 | 62 | +53 | +589% | lead response |
-| average response rate database reactivation campaigns home services | 14 | 93 | +79 | +564% | lead reactivation |
-| AI voice agent vendors per-minute pricing 24/7 support PCI-compliant payment | 3 | 19 | +16 | +533% | voice agent |
-| AI-generated cold outreach vs human-written effectiveness | 7 | 44 | +37 | +529% | lead response |
-| voice AI vs call center cost multifamily property management | 20 | 120 | +100 | +500% | voice agent |
-| Voice AI vs call center cost comparison multifamily properties | 9 | 53 | +44 | +489% | voice agent |
-| done-for-you AI customer support implementation | 7 | 41 | +34 | +486% | ai consulting |
-| ROI database reactivation campaign home service business | 23 | 134 | +111 | +483% | lead reactivation |
-| dormant lead reactivation software real estate teams | 9 | 52 | +43 | +478% | lead reactivation |
-| AI voice agent pricing per minute no setup fees implementation support | 4 | 23 | +19 | +475% | voice agent |
-| SuperDial vs Bland AI payer calls comparison | 3 | 17 | +14 | +467% | voice agent |
-| AI sales agents vs human SDR conversion rates comparison | 16 | 90 | +74 | +463% | lead response |
-| AI platforms vs answering services cost comparison HVAC companies | 20 | 110 | +90 | +450% | receptionist |
-| average cost per qualified lead outbound voice automation vs human SDR | 3 | 16 | +13 | +433% | lead response |
-| lowest setup cost AI voice agent pilot deployment | 16 | 85 | +69 | +431% | voice agent |
-| cost to automate mortgage borrower communication | 15 | 78 | +63 | +420% | lead response |
-| voice agent testing pricing | 21 | 105 | +84 | +400% | voice agent |
+| top technical services companies branded calling | 5 | 59 | +54 | +1080% | branded calling |
+| best branded caller ID services for tech companies | 5 | 46 | +41 | +820% | branded calling |
+| branded calling pricing comparison tech services firms | 5 | 39 | +34 | +680% | branded calling |
+| best branded calling providers for IT services firms | 12 | 72 | +60 | +500% | branded calling |
+| low cost branded calling solutions for small IT services firms | 7 | 39 | +32 | +457% | branded calling |
+| best priced branded calling provider for technical services companies | 8 | 44 | +36 | +450% | branded calling |
+| best cost branded calling tech services firms | 16 | 87 | +71 | +444% | branded calling |
+| best branded caller ID solutions for technical services companies | 5 | 27 | +22 | +440% | branded calling |
+| best branded caller ID small tech services companies | 8 | 43 | +35 | +438% | branded calling |
+| best priced branded calling providers for technical services companies | 9 | 48 | +39 | +433% | branded calling |
+| best cost per call branded calling vendor technical services | 13 | 67 | +54 | +415% | branded calling |
+| best priced branded calling plans IT service companies | 19 | 87 | +68 | +358% | branded calling |
+| top technical services firms branded caller ID | 15 | 68 | +53 | +353% | branded calling |
+| best branded calling cost MSP managed IT providers | 15 | 67 | +52 | +347% | branded calling |
+| AI make 46000 calls per month without hiring SDRs | 26 | 112 | +86 | +331% | lead response |
+| hidden costs deploying voice AI drive thru | 5 | 21 | +16 | +320% | voice agent |
+| best branded calling pricing software technical services companies | 20 | 82 | +62 | +310% | branded calling |
+| AI voice platform pricing per minute comparison | 7 | 28 | +21 | +300% | voice agent |
+| AI lead conversion rates contractors | 5 | 20 | +15 | +300% | uncategorized |
+| AI tools instant multi-channel lead response | 6 | 21 | +15 | +250% | lead response |
+| best branded calling providers consulting technical services | 15 | 52 | +37 | +247% | branded calling |
+| home service company reactivation campaign timing | 24 | 79 | +55 | +229% | lead reactivation |
+| evaluate ROI AI-generated UGC ads | 19 | 62 | +43 | +226% | video ads |
+| social media post pricing options 2026 | 4 | 13 | +9 | +225% | social |
+| cost to automate mortgage borrower communication | 78 | 240 | +162 | +208% | lead response |
 
 ## Decaying queries (>50% WoW drop)
 
@@ -110,57 +110,57 @@ _None._
 
 | Category | Query citations | Page citations | Total |
 | --- | ---: | ---: | ---: |
-| lead response | 1447 | 2322 | 3769 |
-| voice agent | 1303 | 1948 | 3251 |
-| lead reactivation | 532 | 587 | 1119 |
-| receptionist | 563 | 367 | 930 |
-| uncategorized | 228 | 645 | 873 |
-| creative testing | 270 | 323 | 593 |
-| branded calling | 200 | 259 | 459 |
-| custom agent | 135 | 154 | 289 |
-| ai consulting | 72 | 72 | 144 |
-| video ads | 28 | 47 | 75 |
-| social | 21 | 0 | 21 |
+| lead response | 2349 | 3588 | 5937 |
+| voice agent | 2023 | 2830 | 4853 |
+| branded calling | 1627 | 2058 | 3685 |
+| lead reactivation | 1059 | 1161 | 2220 |
+| uncategorized | 744 | 1277 | 2021 |
+| receptionist | 922 | 711 | 1633 |
+| creative testing | 358 | 436 | 794 |
+| custom agent | 275 | 298 | 573 |
+| video ads | 79 | 96 | 175 |
+| ai consulting | 95 | 59 | 154 |
+| social | 53 | 0 | 53 |
 
 ## Priority offer citation totals
 
-Current combined query + page citations: **11523**. Gap to 1,000/day target: **0**.
+Current combined query + page citations: **22098**. Gap to 1,000/day target: **0**.
 
 | Priority offer | Query citations | Page citations | Total | Share of all citations | Top matched query | Top matched page |
 | --- | ---: | ---: | ---: | ---: | --- | --- |
-| ai voice agents | 1335 | 1948 | 3283 | 28.5% | hidden costs of AI voice agents | `/blog/ai-voice-agent-costs-compared` |
-| ai lead response | 819 | 1179 | 1998 | 17.3% | ROI instant AI lead response service companies | `/blog/ai-lead-response-systems-2026` |
-| lead reactivation | 500 | 587 | 1087 | 9.4% | ROI database reactivation campaign home service business | `/blog/lead-reactivation-for-home-services` |
-| batch video ads | 270 | 323 | 593 | 5.1% | evaluate pricing models YouTube media testing services | `/blog/video-ad-testing-pricing-2026` |
-| branded calling | 200 | 259 | 459 | 4.0% | best branded calling pricing software technical services companies | `/blog/branded-calling-pricing-comparison-2026` |
-| custom ai agents | 135 | 267 | 402 | 3.5% | total cost of ownership AI agents in-house vs platform | `/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco` |
-| ai consulting | 72 | 72 | 144 | 1.2% | done-for-you AI customer support implementation | `/blog/ai-consultant-pricing-guide-2026` |
-| ai content department | 9 | 0 | 9 | 0.1% | best posting frequency Instagram Facebook 2026 | `—` |
+| ai voice agents | 2068 | 2830 | 4898 | 22.2% | hidden costs of AI voice agents | `/blog/ai-voice-agent-costs-compared` |
+| ai lead response | 1540 | 2155 | 3695 | 16.7% | cost to automate mortgage borrower communication | `/blog/ai-lead-response-systems-2026` |
+| branded calling | 1627 | 2058 | 3685 | 16.7% | best priced branded calling plans IT service companies | `/blog/branded-calling-pricing-comparison-2026` |
+| lead reactivation | 1014 | 1161 | 2175 | 9.8% | ROI database reactivation campaign home service business | `/blog/lead-reactivation-for-home-services` |
+| batch video ads | 358 | 436 | 794 | 3.6% | evaluate pricing models YouTube media testing services | `/blog/video-ad-testing-pricing-2026` |
+| custom ai agents | 275 | 471 | 746 | 3.4% | total cost of ownership AI agents in-house vs platform | `/blog/custom-ai-agent-vs-off-the-shelf-3-year-tco` |
+| ai consulting | 95 | 59 | 154 | 0.7% | done-for-you AI customer support implementation | `/blog/ai-consultant-pricing-guide-2026` |
+| ai content department | 14 | 6 | 20 | 0.1% | best posting frequency Instagram Facebook 2026 | `/blog/done-for-you-social-media-statistics-2026` |
 
 ## Surging queries by priority offer
 
 | Offer | Query | Prev | Now | Δ | % |
 | --- | --- | ---: | ---: | ---: | ---: |
-| ai voice agents | hidden costs of AI voice agents | 16 | 211 | +195 | +1219% |
-| lead reactivation | ROI database reactivation campaign home service business | 23 | 134 | +111 | +483% |
-| ai voice agents | voice AI vs call center cost multifamily property management | 20 | 120 | +100 | +500% |
-| ai voice agents | voice agent testing pricing | 21 | 105 | +84 | +400% |
-| ai lead response | ROI instant AI lead response service companies | 20 | 100 | +80 | +400% |
-| lead reactivation | average response rate database reactivation campaigns home services | 14 | 93 | +79 | +564% |
-| ai lead response | AI sales agents vs human SDR conversion rates comparison | 16 | 90 | +74 | +463% |
-| ai voice agents | lowest setup cost AI voice agent pilot deployment | 16 | 85 | +69 | +431% |
-| ai lead response | AI instant response to new leads without human involvement | 6 | 74 | +68 | +1133% |
-| ai lead response | cost to automate mortgage borrower communication | 15 | 78 | +63 | +420% |
-| ai voice agents | live answering services vs AI voice agents HVAC emergencies | 0 | 60 | +60 | NEW |
-| ai voice agents | voice agent QA pilot pricing before annual contract | 0 | 53 | +53 | NEW |
-| ai voice agents | AI voice agent cost per minute at scale | 22 | 73 | +51 | +232% |
-| ai voice agents | voice AI pricing for plumbing businesses | 18 | 67 | +49 | +272% |
-| lead reactivation | expected ROI database reactivation campaign AI | 19 | 67 | +48 | +253% |
-| batch video ads | evaluate pricing models YouTube media testing services | 225 | 270 | +45 | +20% |
-| ai voice agents | Voice AI vs call center cost comparison multifamily properties | 9 | 53 | +44 | +489% |
-| lead reactivation | dormant lead reactivation software real estate teams | 9 | 52 | +43 | +478% |
-| custom ai agents | total cost of ownership AI agents in-house vs platform | 32 | 73 | +41 | +128% |
-| ai voice agents | automated voice agent testing platforms pricing | 0 | 40 | +40 | NEW |
+| ai lead response | cost to automate mortgage borrower communication | 78 | 240 | +162 | +208% |
+| lead reactivation | ROI database reactivation campaign home service business | 134 | 257 | +123 | +92% |
+| ai voice agents | hidden costs of AI voice agents | 211 | 309 | +98 | +46% |
+| batch video ads | evaluate pricing models YouTube media testing services | 270 | 358 | +88 | +33% |
+| ai lead response | AI make 46000 calls per month without hiring SDRs | 26 | 112 | +86 | +331% |
+| lead reactivation | average response rate database reactivation campaigns home services | 93 | 175 | +82 | +88% |
+| ai voice agents | voice AI vs call center cost multifamily property management | 120 | 194 | +74 | +62% |
+| branded calling | best cost branded calling tech services firms | 16 | 87 | +71 | +444% |
+| branded calling | best priced branded calling plans IT service companies | 19 | 87 | +68 | +358% |
+| ai voice agents | voice agent QA pilot pricing before annual contract | 53 | 118 | +65 | +123% |
+| branded calling | best branded calling pricing software technical services companies | 20 | 82 | +62 | +310% |
+| branded calling | best branded calling providers for IT services firms | 12 | 72 | +60 | +500% |
+| ai voice agents | live answering services vs AI voice agents HVAC emergencies | 60 | 119 | +59 | +98% |
+| lead reactivation | database reactivation home service companies explanation | 39 | 98 | +59 | +151% |
+| branded calling | top managed services providers branded calling | 0 | 58 | +58 | NEW |
+| lead reactivation | expected ROI database reactivation campaign AI | 67 | 122 | +55 | +82% |
+| lead reactivation | home service company reactivation campaign timing | 24 | 79 | +55 | +229% |
+| branded calling | best cost per call branded calling vendor technical services | 13 | 67 | +54 | +415% |
+| branded calling | top technical services companies branded calling | 5 | 59 | +54 | +1080% |
+| branded calling | top technical services firms branded caller ID | 15 | 68 | +53 | +353% |
 
 ## Priority content gaps
 
@@ -168,66 +168,108 @@ _All priority offers have at least one matched citation signal in this snapshot.
 
 ## Recommendations
 
-- **Satellite cluster:** `"evaluate pricing models YouTube media testing services"` crossed **270 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"hidden costs of AI voice agents"` crossed **211 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI sales agents pricing cost"` crossed **176 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI platforms vs answering services cost HVAC companies"` crossed **167 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"ROI database reactivation campaign home service business"` crossed **134 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"voice AI vs call center cost multifamily property management"` crossed **120 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI platforms vs answering services cost comparison HVAC companies"` crossed **110 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"annual savings contractors switching from answering services to AI"` crossed **109 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"voice agent testing pricing"` crossed **105 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"ROI instant AI lead response service companies"` crossed **100 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"average response rate database reactivation campaigns home services"` crossed **93 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI sales agents vs human SDR conversion rates comparison"` crossed **90 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"lowest setup cost AI voice agent pilot deployment"` crossed **85 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"cost to automate mortgage borrower communication"` crossed **78 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI personalized cold outreach vs manually written emails differences"` crossed **74 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI answering services vs traditional answering services for contractors comparison"` crossed **74 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI instant response to new leads without human involvement"` crossed **74 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"evaluate pricing models YouTube media testing services"` crossed **358 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"hidden costs of AI voice agents"` crossed **309 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI platforms vs answering services cost HVAC companies"` crossed **265 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"ROI database reactivation campaign home service business"` crossed **257 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"cost to automate mortgage borrower communication"` crossed **240 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI sales agents pricing cost"` crossed **238 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"voice AI vs call center cost multifamily property management"` crossed **194 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"average response rate database reactivation campaigns home services"` crossed **175 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"annual savings contractors switching from answering services to AI"` crossed **153 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI platforms vs answering services cost comparison HVAC companies"` crossed **146 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"voice agent testing pricing"` crossed **141 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI answering services vs traditional answering services for contractors comparison"` crossed **138 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"cost per lead reduction conversational AI"` crossed **134 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"ROI instant AI lead response service companies"` crossed **126 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"expected ROI database reactivation campaign AI"` crossed **122 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI sales agents vs human SDR conversion rates comparison"` crossed **121 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"live answering services vs AI voice agents HVAC emergencies"` crossed **119 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"voice agent QA pilot pricing before annual contract"` crossed **118 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI voice agent cost per minute at scale"` crossed **115 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"lowest setup cost AI voice agent pilot deployment"` crossed **112 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI make 46000 calls per month without hiring SDRs"` crossed **112 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"database reactivation home service companies explanation"` crossed **98 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"total cost of ownership AI agents in-house vs platform"` crossed **93 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI instant response to new leads without human involvement"` crossed **90 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"voice AI pricing for plumbing businesses"` crossed **88 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best priced branded calling plans IT service companies"` crossed **87 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI personalized cold outreach vs manually written emails differences"` crossed **87 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best cost branded calling tech services firms"` crossed **87 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI voice agent enterprise pricing breakdown beyond per minute rate"` crossed **84 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded calling pricing software technical services companies"` crossed **82 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"home service company reactivation campaign timing"` crossed **79 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI agent builder platforms lowest total cost of ownership vs hiring developers"` crossed **78 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"dormant lead reactivation software real estate teams"` crossed **75 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
 - **Satellite cluster:** `"AI personalized cold outreach vs manually written emails comparison"` crossed **73 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI voice agent cost per minute at scale"` crossed **73 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"total cost of ownership AI agents in-house vs platform"` crossed **73 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"voice AI pricing for plumbing businesses"` crossed **67 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"expected ROI database reactivation campaign AI"` crossed **67 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI-generated cold outreach vs human-written outreach effectiveness"` crossed **62 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"live answering services vs AI voice agents HVAC emergencies"` crossed **60 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"cost per lead reduction conversational AI"` crossed **54 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"Voice AI vs call center cost comparison multifamily properties"` crossed **53 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"voice agent QA pilot pricing before annual contract"` crossed **53 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"dormant lead reactivation software real estate teams"` crossed **52 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI impact ROI hiring inside sales rep contractor"` crossed **45 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"automated lead response solutions for customers"` crossed **45 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI-generated cold outreach vs human-written effectiveness"` crossed **44 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI voice agent enterprise pricing breakdown beyond per minute rate"` crossed **41 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"done-for-you AI customer support implementation"` crossed **41 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"automated voice agent testing platforms pricing"` crossed **40 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"database reactivation home service companies explanation"` crossed **39 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded calling providers for IT services firms"` crossed **72 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"hidden costs AI voice agents"` crossed **71 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"top technical services firms branded caller ID"` crossed **68 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"total cost of ownership AI agents in-house vs dedicated platform"` crossed **67 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best cost per call branded calling vendor technical services"` crossed **67 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded calling cost MSP managed IT providers"` crossed **67 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"done-for-you AI customer support implementation"` crossed **67 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"automated multilingual voice agent QA vendor pricing models"` crossed **64 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI-generated cold outreach vs human-written outreach effectiveness"` crossed **64 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI sales agents vs human sales representatives comparison"` crossed **62 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"evaluate ROI AI-generated UGC ads"` crossed **62 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI sales automation vs hiring SDRs ROI case study"` crossed **62 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"database reactivation home service companies meaning importance"` crossed **61 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI-generated cold outreach vs human-written effectiveness"` crossed **60 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"top technical services companies branded calling"` crossed **59 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"top managed services providers branded calling"` crossed **58 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"Voice AI vs call center cost comparison multifamily properties"` crossed **57 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"automated lead response solutions for customers"` crossed **57 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"average cost per qualified lead outbound voice automation vs human SDRs"` crossed **54 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI sales agents pricing 2025 2026"` crossed **54 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI SDR vs human SDR output cost comparison"` crossed **53 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded calling providers consulting technical services"` crossed **52 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI impact ROI hiring inside sales rep contractor"` crossed **51 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI texting tools for lead response improvement"` crossed **50 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best priced branded calling providers for technical services companies"` crossed **48 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded caller ID services for tech companies"` crossed **46 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"cost benefit analysis hiring sales engineers vs sales copilot tools"` crossed **46 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"automated voice agent testing platforms pricing"` crossed **46 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"trusted voice AI systems customer database integration"` crossed **45 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best priced branded calling provider for technical services companies"` crossed **44 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"fastest way to respond to roofing leads before competitors"` crossed **43 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded caller ID small tech services companies"` crossed **43 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded calling partners for software services companies"` crossed **42 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"low cost branded calling solutions for small IT services firms"` crossed **39 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"branded calling pricing comparison tech services firms"` crossed **39 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best tech services partner branded call text display high call volumes"` crossed **39 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
 - **Satellite cluster:** `"integrate AI voice agents into existing systems"` crossed **39 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI sales automation vs hiring SDRs ROI case study"` crossed **36 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"total cost of ownership AI agents in-house vs dedicated platform"` crossed **35 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"automated multilingual voice agent QA vendor pricing models"` crossed **35 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"cost benefit analysis AI answering services vs human receptionists"` crossed **35 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"fastest way to respond to roofing leads before competitors"` crossed **32 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"trusted voice AI systems customer database integration"` crossed **32 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI sales agents pricing 2025 2026"` crossed **31 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI improve cost per booked job lead generation campaigns"` crossed **37 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"average cost third-party answering service mid-size HVAC company"` crossed **35 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"RevCoverage dormant lead reactivation comparison"` crossed **34 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"Hiya branded calling cost evaluation technical services company pricing"` crossed **34 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"Mid Michigan Interactive AI lead response system benefits"` crossed **34 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"average cost per qualified lead outbound voice automation vs human SDR"` crossed **34 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best cost per call branded calling vendors technical services"` crossed **34 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"social media post pricing options"` crossed **33 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"average response time home service companies inbound calls"` crossed **33 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI voice agent pricing per minute no setup fees implementation support"` crossed **33 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI call automation pricing cost"` crossed **33 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"top MSPs Vonage branded calling"` crossed **32 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"best branded calling cost MSPs managed IT providers"` crossed **31 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Satellite cluster:** `"AI answering services vs human receptionists cost benefit analysis"` crossed **30 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
 - **Satellite cluster:** `"home service companies AI sales team structure follow-up"` crossed **30 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Satellite cluster:** `"AI sales agents vs human sales representatives comparison"` crossed **30 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
-- **Surging (+1219%):** `"hidden costs of AI voice agents"` jumped 16 → 211. Ship a dedicated post or expand the closest existing one (category: voice agent).
-- **Surging (+1133%):** `"AI instant response to new leads without human involvement"` jumped 6 → 74. Ship a dedicated post or expand the closest existing one (category: lead response).
-- **Surging (+867%):** `"average response time home service companies inbound calls"` jumped 3 → 29. Ship a dedicated post or expand the closest existing one (category: lead response).
-- **Surging (+808%):** `"annual savings contractors switching from answering services to AI"` jumped 12 → 109. Ship a dedicated post or expand the closest existing one (category: receptionist).
-- **Surging (+722%):** `"AI personalized cold outreach vs manually written emails differences"` jumped 9 → 74. Ship a dedicated post or expand the closest existing one (category: lead response).
-- **Net-new query:** `"live answering services vs AI voice agents HVAC emergencies"` (60 citations) — claim before competitors do. Category: voice agent.
-- **Net-new query:** `"voice agent QA pilot pricing before annual contract"` (53 citations) — claim before competitors do. Category: voice agent.
-- **Net-new query:** `"automated voice agent testing platforms pricing"` (40 citations) — claim before competitors do. Category: voice agent.
-- **Net-new query:** `"total cost of ownership AI agents in-house vs dedicated platform"` (35 citations) — claim before competitors do. Category: custom agent.
-- **Net-new query:** `"AI sales agents pricing 2025 2026"` (31 citations) — claim before competitors do. Category: lead response.
-- **Coverage gap:** `branded calling` is under 5% of total citations (459/11523). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
-- **Coverage gap:** `custom agent` is under 5% of total citations (289/11523). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
-- **Coverage gap:** `ai consulting` is under 5% of total citations (144/11523). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
-- **Coverage gap:** `video ads` is under 5% of total citations (75/11523). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
-- **Coverage gap:** `social` is under 5% of total citations (21/11523). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
+- **Satellite cluster:** `"AI cost savings in sales"` crossed **30 citations** — write 3–4 satellite posts targeting long-tail variants (e.g., per-vertical, per-price-tier, "hidden costs of…" angle).
+- **Surging (+1080%):** `"top technical services companies branded calling"` jumped 5 → 59. Ship a dedicated post or expand the closest existing one (category: branded calling).
+- **Surging (+820%):** `"best branded caller ID services for tech companies"` jumped 5 → 46. Ship a dedicated post or expand the closest existing one (category: branded calling).
+- **Surging (+680%):** `"branded calling pricing comparison tech services firms"` jumped 5 → 39. Ship a dedicated post or expand the closest existing one (category: branded calling).
+- **Surging (+500%):** `"best branded calling providers for IT services firms"` jumped 12 → 72. Ship a dedicated post or expand the closest existing one (category: branded calling).
+- **Surging (+457%):** `"low cost branded calling solutions for small IT services firms"` jumped 7 → 39. Ship a dedicated post or expand the closest existing one (category: branded calling).
+- **Net-new query:** `"top managed services providers branded calling"` (58 citations) — claim before competitors do. Category: branded calling.
+- **Net-new query:** `"cost benefit analysis hiring sales engineers vs sales copilot tools"` (46 citations) — claim before competitors do. Category: uncategorized.
+- **Net-new query:** `"best branded calling partners for software services companies"` (42 citations) — claim before competitors do. Category: branded calling.
+- **Net-new query:** `"best tech services partner branded call text display high call volumes"` (39 citations) — claim before competitors do. Category: uncategorized.
+- **Net-new query:** `"average cost third-party answering service mid-size HVAC company"` (35 citations) — claim before competitors do. Category: receptionist.
+- **Coverage gap:** `creative testing` is under 5% of total citations (794/22098). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
+- **Coverage gap:** `custom agent` is under 5% of total citations (573/22098). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
+- **Coverage gap:** `video ads` is under 5% of total citations (175/22098). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
+- **Coverage gap:** `ai consulting` is under 5% of total citations (154/22098). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
+- **Coverage gap:** `social` is under 5% of total citations (53/22098). Audit landing pages and blog posts in this category — add comparison tables, real numbers, and "hidden cost" framing.
 
 ## Snapshots on file
 
@@ -235,3 +277,4 @@ _All priority offers have at least one matched citation signal in this snapshot.
 - `2026-05-22` — 376 query citations, 487 page citations
 - `2026-05-28` — 1003 query citations, 1336 page citations
 - `2026-06-18` — 4799 query citations, 6724 page citations
+- `2026-06-29` — 9584 query citations, 12514 page citations
