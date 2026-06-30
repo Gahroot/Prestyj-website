@@ -32,6 +32,16 @@ const priorityStatIds = [
 
 const offerGroups = [
   {
+    title: "Branded Calling / Verified Caller ID for Tech Services & MSPs",
+    urls: [
+      "/blog/branded-calling-pricing-comparison-2026",
+      "/blog/best-branded-calling-for-it-services-msps-2026",
+      "/blog/branded-calling-cost-per-call-comparison-2026",
+      "/ai-voice-agents",
+      "/solutions/ai-voice-agent-pricing",
+    ],
+  },
+  {
     title: "Batch Video Ads / Media Testing Pricing",
     urls: [
       "/batch-video-ads",
@@ -540,6 +550,207 @@ const queryCitationMap = [
       "/statistics#missed-call-after-hours-revenue-recovery",
       "/blog/missed-call-revenue-loss-statistics-2026",
       "/ai-receptionist",
+    ],
+  },
+  {
+    query: "hidden costs of AI voice agents",
+    canonicalPath: "/blog/hidden-costs-of-ai-voice-agents-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-costs-compared",
+      "/blog/ai-voice-agent-enterprise-pricing-breakdown-2026",
+    ],
+  },
+  {
+    query: "branded calling pricing comparison for tech services firms",
+    canonicalPath: "/blog/branded-calling-pricing-comparison-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/best-branded-calling-for-it-services-msps-2026",
+      "/blog/branded-calling-cost-per-call-comparison-2026",
+    ],
+  },
+  {
+    query: "best branded calling providers for IT services firms and MSPs",
+    canonicalPath: "/blog/best-branded-calling-for-it-services-msps-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/branded-calling-pricing-comparison-2026",
+      "/blog/branded-calling-cost-per-call-comparison-2026",
+    ],
+  },
+  {
+    query: "best cost branded calling tech services firms",
+    canonicalPath: "/blog/best-branded-calling-for-it-services-msps-2026",
+    supportingPaths: [
+      "/blog/branded-calling-pricing-comparison-2026",
+      "/blog/branded-calling-cost-per-call-comparison-2026",
+    ],
+  },
+  {
+    query: "best branded caller ID services for tech companies",
+    canonicalPath: "/blog/best-branded-calling-for-it-services-msps-2026",
+    supportingPaths: [
+      "/blog/branded-calling-pricing-comparison-2026",
+      "/ai-voice-agents",
+    ],
+  },
+  {
+    query: "branded calling cost per call comparison",
+    canonicalPath: "/blog/branded-calling-cost-per-call-comparison-2026",
+    supportingPaths: [
+      "/blog/branded-calling-pricing-comparison-2026",
+      "/blog/best-branded-calling-for-it-services-msps-2026",
+    ],
+  },
+  {
+    query: "Hiya branded calling cost evaluation",
+    canonicalPath: "/blog/branded-calling-pricing-comparison-2026",
+    supportingPaths: [
+      "/blog/best-branded-calling-for-it-services-msps-2026",
+      "/ai-voice-agents",
+    ],
+  },
+  {
+    query: "AI make 46000 calls per month without hiring SDRs",
+    canonicalPath: "/blog/ai-make-46000-calls-per-month-without-hiring-sdrs-2026",
+    supportingPaths: [
+      "/ai-sales-agents",
+      "/ai-voice-agents",
+      "/blog/ai-sales-agent-vs-human-sdr-cost",
+    ],
+  },
+  {
+    query: "lowest setup cost AI voice agent pilot deployment",
+    canonicalPath: "/blog/lowest-setup-cost-ai-voice-agent-pilot-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-costs-compared",
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+    ],
+  },
+  {
+    query: "voice agent QA pilot pricing before annual contract",
+    canonicalPath: "/blog/multilingual-ai-voice-agent-qa-pricing-models-2026",
+    supportingPaths: [
+      "/blog/voice-agent-testing-pricing-2026",
+      "/ai-voice-agents",
+    ],
+  },
+  {
+    query: "AI personalized cold outreach vs manually written emails",
+    canonicalPath: "/blog/ai-cold-outreach-vs-human-2026",
+    supportingPaths: [
+      "/ai-sales-agents",
+      "/blog/ai-cold-outreach-vs-manual-emails-effectiveness-2026",
+      "/blog/ai-personalized-outreach-volume-economics-2026",
+    ],
+  },
+  {
+    query: "expected ROI database reactivation campaign AI",
+    canonicalPath: "/blog/database-reactivation-campaign-roi-home-services-2026",
+    supportingPaths: [
+      "/solutions/lead-reactivation",
+      "/blog/lead-reactivation-statistics",
+      "/blog/lead-reactivation-for-home-services",
+    ],
+  },
+  {
+    query: "annual savings contractors switching from answering services to AI",
+    canonicalPath: "/blog/annual-savings-contractors-switching-from-answering-services-to-ai-2026",
+    supportingPaths: [
+      "/ai-receptionist",
+      "/blog/ai-answering-services-vs-traditional-answering-services-contractors-2026",
+      "/blog/ai-receptionist-vs-answering-service-2026",
+    ],
+  },
+  {
+    query: "AI answering services vs traditional answering services for contractors",
+    canonicalPath: "/blog/ai-answering-services-vs-traditional-answering-services-contractors-2026",
+    supportingPaths: [
+      "/ai-receptionist",
+      "/blog/annual-savings-contractors-switching-from-answering-services-to-ai-2026",
+      "/blog/ai-receptionist-vs-answering-service-contractors",
+    ],
+  },
+  {
+    query: "cost per lead reduction conversational AI",
+    canonicalPath: "/blog/cost-per-lead-reduction-conversational-ai-2026",
+    supportingPaths: [
+      "/ai-sales-agents",
+      "/blog/ai-lead-response-systems-2026",
+      "/blog/ai-voice-agent-costs-compared",
+    ],
+  },
+  {
+    query: "AI sales agents vs human SDR conversion rates comparison",
+    canonicalPath: "/blog/ai-sales-agents-vs-human-sdr-conversion-rates-2026",
+    supportingPaths: [
+      "/ai-sales-agents",
+      "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "/blog/ai-cold-outreach-vs-human-2026",
+    ],
+  },
+  {
+    query: "live answering services vs AI voice agents HVAC emergencies",
+    canonicalPath: "/blog/live-answering-services-vs-ai-voice-agents-hvac-emergencies-2026",
+    supportingPaths: [
+      "/ai-receptionist",
+      "/blog/ai-voice-agent-pricing-for-hvac",
+      "/blog/annual-savings-contractors-switching-from-answering-services-to-ai-2026",
+    ],
+  },
+  {
+    query: "integrate AI voice agents into existing systems",
+    canonicalPath: "/blog/ai-voice-agent-integration-guide-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-statistics-2026",
+      "/blog/hidden-costs-of-ai-voice-agents-2026",
+    ],
+  },
+  {
+    query: "trusted voice AI systems customer database integration",
+    canonicalPath: "/blog/ai-voice-agent-integration-guide-2026",
+    supportingPaths: [
+      "/ai-voice-agents",
+      "/blog/ai-voice-agent-statistics-2026",
+    ],
+  },
+  {
+    query: "AI lead conversion rates contractors",
+    canonicalPath: "/blog/ai-sales-agent-for-home-services",
+    supportingPaths: [
+      "/ai-sales-agents",
+      "/blog/ai-lead-response-systems-2026",
+      "/blog/cost-per-lead-reduction-conversational-ai-2026",
+    ],
+  },
+  {
+    query: "average conversion rate increase AI follow-up home services",
+    canonicalPath: "/blog/ai-lead-response-systems-2026",
+    supportingPaths: [
+      "/solutions/ai-lead-response",
+      "/blog/speed-to-lead-for-home-services",
+      "/blog/ai-sales-agent-for-home-services",
+    ],
+  },
+  {
+    query: "contact rate vs response time home service leads",
+    canonicalPath: "/blog/lead-response-time-benchmarks-by-industry",
+    supportingPaths: [
+      "/blog/speed-to-lead-for-home-services",
+      "/blog/speed-to-lead-statistics",
+      "/solutions/ai-lead-response",
+    ],
+  },
+  {
+    query: "best AI tools lead reactivation real estate",
+    canonicalPath: "/blog/real-estate-database-reactivation-ai",
+    supportingPaths: [
+      "/blog/dormant-lead-reactivation-software-real-estate-2026",
+      "/solutions/lead-reactivation",
+      "/blog/best-ai-tools-real-estate-teams-2026",
     ],
   },
 ];
