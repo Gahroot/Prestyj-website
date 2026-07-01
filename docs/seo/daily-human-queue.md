@@ -2,12 +2,16 @@
 
 > Work only a human can do: relationship emails, real-account Reddit/Quora/G2 posts, draft approvals for merge, and manual AI-overview probing. The bot drafts and tracks — a person ships these. Check off done items; the bot re-adds new items each run. Grouped by due-soonest.
 >
-> _Last updated: 2026-06-29 (Sunday). Citations nearly doubled this run (9,584 query / 12,514 page); breakout = branded-calling-for-MSP cluster (+500–1,080%)._
+> _Last updated: 2026-06-30 (Monday). Citations still surging (9,584 query / 12,514 page, +100%/+86% WoW); branded-calling-for-MSP the breakout. Advanced the voice-agent-pilot draft (formula-compliant, pricing-contradiction gated) + refreshed creative-testing-framework-real-estate. Earned ref-domains still flat at 3 (🔴). Nothing committed — two posts staged for review._
 
 ---
 
 ## 🔴 Due now (this week — highest leverage)
 
+- [ ] **Approve & merge (NEW 06-30):** `content/blog/voice-agent-pilot-pricing-before-annual-contract-2026.mdx` — remediated to the proven formula (title+numbers, bolded TL;DR, direct answer, 3 `/stat/*` links, exact-question H2s, `updated`). ⚠️ **BLOCKED on a pricing contradiction:** body says "$3,997–$9,997 setup / $6,997 Pro", which conflicts with `/stat/voice-agent-pilot-setup-cost-range` ($0–$1,500) and the monthly tiers ($1,997/$3,497/$5,997). **Reconcile pricing before merge.** Staged, not committed.
+- [ ] **Approve & merge (NEW 06-30):** `content/blog/creative-testing-framework-real-estate-2026.mdx` — Phase-3 refresh: bolded TL;DR + direct answer + 3 `/stat/*` links (`bva-cost-per-tested-angle`, `bva-cost-per-ad-variation`, `batch-video-cost-per-tested-angle-vs-agency`), `updated` → 06-30, exact-question H2. Priority ad-creative-testing cluster. Staged, not committed.
+- [ ] **IndexNow after deploy (NEW 06-30):** ping `/blog/voice-agent-pilot-pricing-before-annual-contract-2026` + `/blog/creative-testing-framework-real-estate-2026` once both are merged & deployed (deferred — neither is live yet; submitting now 404s).
+- [ ] **Fix seo-bot `--dry-run` side-effect bug (NEW 06-30):** `daily --dry-run` writes the blog file AND mutates `shipped.json` despite its "no files written" report. Gate file writes + state mutation behind `!dryRun`. Low blast radius (review mode is the goal anyway) but the flag is misleading — could cause accidental state drift.
 - [x] **Approve & merge** the Phase 3 refresh: `content/blog/hidden-cost-answering-services-2026.mdx` — **MERGED (commit 63cea59)**. Pricing conflict resolved: $299 reframed as AI voice-agent platform/telephony cost, CTA added to /pricing.
 - [x] **Approve & merge (NEW 06-29):** `content/blog/ai-voice-agent-costs-compared.mdx` — **MERGED (commit 63cea59)**. Freshness + exact-question H2.
 - [x] **CTR fix (NEW 06-29):** **DONE (commit 63cea59)** — title sharpened to `$0.06–$0.31/min Across 7 Platforms (2026)`, description front-loads hard numbers.
@@ -30,6 +34,7 @@
 
 ## 🟢 Backlog (claim before competitors)
 
+- [ ] **Satellite post (NEW 06-30):** "Business case: AI agent platform vs in-house development" — 22 NEW AI citations, currently uncategorized (likely no dedicated page). On-positioning (done-for-you vs in-house build); pairs with `prestyj-vs-in-house-creative-team` and the build-vs-buy angle.
 - [ ] **Blog draft (next Tue):** "Voice agent QA pilot pricing before annual contract" — 118 citations now (was 53), +123% WoW. Buyer-math / hidden-cost framing.
 - [ ] **Satellite / refresh (NEW 06-29):** branded-calling-for-MSP cluster — refresh the internal-link mesh on the two winners (`branded-calling-pricing-comparison-2026` 1,190 cites; `best-branded-calling-for-it-services-msps-2026` 743 cites) toward the surging queries, OR draft one satellite for the top net-new query "top managed services providers branded calling" (58). Gated on the positioning call above.
 - [ ] **Satellite post:** "Live answering services vs AI voice agents for HVAC emergencies" — 60 NEW citations (highest-volume net-new query), distinct after-hours/emergency angle not covered by today's refresh.
@@ -40,6 +45,10 @@
 ---
 
 ### Done ✅
+- [x] 2026-06-30 — Remediated `voice-agent-pilot-pricing-before-annual-contract-2026` to the proven formula (title+numbers, TL;DR, direct answer, 3 `/stat` links, exact-question H2s, `updated`); typecheck+lint green. Pricing contradiction flagged for human (not committed).
+- [x] 2026-06-30 — Phase-3 refresh of `creative-testing-framework-real-estate-2026.mdx` (TL;DR + direct answer + 3 `/stat` links + `updated`); typecheck+lint green (not committed).
+- [x] 2026-06-30 — Reviewed `analyze:citations` (9,584 query / 12,514 page cites, +100%/+86% WoW) + `backlinks:track:dry` (+0 earned/26d 🔴) + GSC progress (4 kw top-10, flat — inside the 6–10w lag window).
+- [x] 2026-06-30 — Confirmed `/stat/*` sitemap exclusion is intentional architecture (not a regression); confirmed `--dry-run` writes files (bug logged above).
 - [x] 2026-06-29 — Ingested fresh Bing AI-citation export → `data/ai-citations/2026-06-29/`; ran `analyze:citations` (9,584 query / 12,514 page cites, +100% / +86% WoW). Breakout = branded-calling-for-MSP (+500–1,080%).
 - [x] 2026-06-29 — Committed all work to main (63cea59): pricing fix, CTR title fix, freshness refresh, CRN pitch, citation data, queue update.
 - [x] 2026-06-29 — Blog draft attempted via seo-bot but FAILED (Gemini schema nesting bug — added to Due Now queue for fix).

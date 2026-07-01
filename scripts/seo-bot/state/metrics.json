@@ -1,3 +1,22 @@
 {
-  "days": []
+  "days": [
+    {
+      "date": "2026-06-29",
+      "pagesShipped": 0,
+      "blogsShipped": 0,
+      "titlesRewritten": 0,
+      "costUSD": 0.08215625,
+      "apiCalls": 1,
+      "errors": [
+        "[blogPost] body word count 1390 is below minimum 1500"
+      ],
+      "taskBreakdown": {
+        "blogPost": {
+          "count": 1,
+          "costUSD": 0.08215625,
+          "latencyMs": 51200
+        }
+      }
+    }
+  ]
 }

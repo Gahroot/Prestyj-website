@@ -10,7 +10,18 @@
       "provider": "gemini",
       "model": "gemini-2.5-pro",
       "costUSD": 0.0436675
+    },
+    {
+      "slug": "voice-agent-pilot-pricing-before-annual-contract-2026",
+      "type": "blog-post",
+      "title": "The Real Cost to Pilot an AI Voice Agent (Before You Sign)",
+      "description": "Per-minute pricing is a trap. Before you sign an annual contract, here's the real cost of a QA-validated AI voice agent pilot, including setup and iteration.",
+      "filePath": "/Users/groot/Prestyj-website/content/blog/voice-agent-pilot-pricing-before-annual-contract-2026.mdx",
+      "shippedAt": "2026-06-30T15:04:14.014Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.050731250000000006
     }
   ],
-  "lastUpdated": "2026-04-17T21:59:47.944Z"
+  "lastUpdated": "2026-06-30T15:04:14.015Z"
 }
