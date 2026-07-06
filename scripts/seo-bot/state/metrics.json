@@ -17,6 +17,38 @@
           "latencyMs": 51200
         }
       }
+    },
+    {
+      "date": "2026-07-03",
+      "pagesShipped": 0,
+      "blogsShipped": 0,
+      "titlesRewritten": 0,
+      "costUSD": 0.001305975,
+      "apiCalls": 1,
+      "errors": [],
+      "taskBreakdown": {
+        "competitorAudit": {
+          "count": 1,
+          "costUSD": 0.001305975,
+          "latencyMs": 5557
+        }
+      }
+    },
+    {
+      "date": "2026-07-06",
+      "pagesShipped": 0,
+      "blogsShipped": 0,
+      "titlesRewritten": 0,
+      "costUSD": 0,
+      "apiCalls": 1,
+      "errors": [],
+      "taskBreakdown": {
+        "dailyResearch": {
+          "count": 1,
+          "costUSD": 0,
+          "latencyMs": 25931
+        }
+      }
     }
   ]
 }

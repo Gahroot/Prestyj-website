@@ -141,11 +141,6 @@ competitors:
     priority: 9
   - type: competitor
     payload:
-      name: Creatify
-      url: https://www.creatify.ai
-    priority: 9
-  - type: competitor
-    payload:
       name: HeyGen
       url: https://www.heygen.com
     priority: 8
