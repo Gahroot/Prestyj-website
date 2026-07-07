@@ -20,6 +20,7 @@ export interface OptimizationTaskInput {
   taskPrompt: string;
   payload?: BacklogItem["payload"];
   dedupContext: DedupContext;
+  dryRun?: boolean;
 }
 
 interface PageCandidate {
@@ -468,8 +469,6 @@ async function rewriteSingleCandidate(
       parsed.newDescription,
     );
 
-    await fs.writeFile(candidate.filePath, updated, "utf-8");
-
     const shipped: ShippedItem = {
       slug: candidate.slug,
       type: "title-rewrite",
@@ -481,7 +480,11 @@ async function rewriteSingleCandidate(
       model: response.model || input.model,
       costUSD: response.costUSD,
     };
-    await appendShippedItem(input.config, shipped);
+
+    if (!input.dryRun) {
+      await fs.writeFile(candidate.filePath, updated, "utf-8");
+      await appendShippedItem(input.config, shipped);
+    }
 
     return {
       task: "titleRewrite",

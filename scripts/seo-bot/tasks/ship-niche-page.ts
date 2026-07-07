@@ -200,15 +200,18 @@ export async function shipNichePage(input: ShipTaskInput): Promise<TaskExecution
   const content: SolutionShape = result.data;
   content.slug = slug;
 
-  const tdErr = validateTitleDescription(content.meta.title, content.meta.description);
-  if (tdErr) {
+  const tdResult = validateTitleDescription(content.meta.title, content.meta.description);
+  if (tdResult.error) {
     return {
       task: "nichePage",
       success: false,
-      error: tdErr,
+      error: tdResult.error,
       costUSD: result.totalCostUSD,
       latencyMs: result.totalLatencyMs,
     };
+  }
+  if (tdResult.description) {
+    content.meta.description = tdResult.description;
   }
 
   if (content.painPoints.points.length < 3) {
@@ -235,16 +238,19 @@ export async function shipNichePage(input: ShipTaskInput): Promise<TaskExecution
 
   const solutionsDir = path.join(process.cwd(), "src/lib/solutions");
   const filePath = path.join(solutionsDir, `${slug}.ts`);
-  await writeFile(filePath, fileBody, "utf8");
 
-  const indexFile = path.join(solutionsDir, "index.ts");
-  await appendImportAndRegister({
-    indexFile,
-    importLine: `import { ${identifier} } from "./${slug}";`,
-    registerLine: `  "${slug}": ${identifier},`,
-    importMarker: "// SEO-BOT-APPEND-IMPORTS",
-    registerMarker: "// SEO-BOT-APPEND-REGISTER",
-  });
+  if (!input.dryRun) {
+    await writeFile(filePath, fileBody, "utf8");
+
+    const indexFile = path.join(solutionsDir, "index.ts");
+    await appendImportAndRegister({
+      indexFile,
+      importLine: `import { ${identifier} } from "./${slug}";`,
+      registerLine: `  "${slug}": ${identifier},`,
+      importMarker: "// SEO-BOT-APPEND-IMPORTS",
+      registerMarker: "// SEO-BOT-APPEND-REGISTER",
+    });
+  }
 
   const shipped: ShippedItem = {
     slug,
@@ -257,7 +263,10 @@ export async function shipNichePage(input: ShipTaskInput): Promise<TaskExecution
     model,
     costUSD: result.totalCostUSD,
   };
-  await appendShippedItem(config, shipped);
+
+  if (!input.dryRun) {
+    await appendShippedItem(config, shipped);
+  }
 
   return {
     task: "nichePage",

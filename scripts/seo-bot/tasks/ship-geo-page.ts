@@ -154,15 +154,18 @@ export async function shipGeoPage(input: ShipTaskInput): Promise<TaskExecutionRe
   }
 
   // Quality gates.
-  const tdErr = validateTitleDescription(content.meta.title, content.meta.description);
-  if (tdErr) {
+  const tdResult = validateTitleDescription(content.meta.title, content.meta.description);
+  if (tdResult.error) {
     return {
       task: "geoPage",
       success: false,
-      error: tdErr,
+      error: tdResult.error,
       costUSD: result.totalCostUSD,
       latencyMs: result.totalLatencyMs,
     };
+  }
+  if (tdResult.description) {
+    content.meta.description = tdResult.description;
   }
   if (content.whyBestFor.length < 3) {
     return {
@@ -196,16 +199,19 @@ export async function shipGeoPage(input: ShipTaskInput): Promise<TaskExecutionRe
   const fileBody = renderBestForModule(identifier, content);
 
   const filePath = path.join(process.cwd(), config.baseDirs.bestFor, `${slug}.ts`);
-  await writeFile(filePath, fileBody, "utf8");
 
-  const indexFile = path.join(process.cwd(), config.baseDirs.bestFor, "index.ts");
-  await appendImportAndRegister({
-    indexFile,
-    importLine: `import { ${identifier} } from "./${slug}";`,
-    registerLine: `  "${slug}": ${identifier},`,
-    importMarker: "// SEO-BOT-APPEND-IMPORTS",
-    registerMarker: "// SEO-BOT-APPEND-REGISTER",
-  });
+  if (!input.dryRun) {
+    await writeFile(filePath, fileBody, "utf8");
+
+    const indexFile = path.join(process.cwd(), config.baseDirs.bestFor, "index.ts");
+    await appendImportAndRegister({
+      indexFile,
+      importLine: `import { ${identifier} } from "./${slug}";`,
+      registerLine: `  "${slug}": ${identifier},`,
+      importMarker: "// SEO-BOT-APPEND-IMPORTS",
+      registerMarker: "// SEO-BOT-APPEND-REGISTER",
+    });
+  }
 
   const shipped: ShippedItem = {
     slug,
@@ -218,7 +224,10 @@ export async function shipGeoPage(input: ShipTaskInput): Promise<TaskExecutionRe
     model,
     costUSD: result.totalCostUSD,
   };
-  await appendShippedItem(config, shipped);
+
+  if (!input.dryRun) {
+    await appendShippedItem(config, shipped);
+  }
 
   return {
     task: "geoPage",

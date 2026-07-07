@@ -21,7 +21,29 @@
       "provider": "gemini",
       "model": "gemini-2.5-pro",
       "costUSD": 0.050731250000000006
+    },
+    {
+      "slug": "how-many-video-ads-real-estate-agent-test-2026",
+      "type": "blog-post",
+      "title": "How Many Video Ads to Test? (The Real Number for 2026)",
+      "description": "Your agency ships 4 ads a month. Your CPL doubles by week six. Here’s the real number of video ads Meta needs to exit the learning phase and why it's 50x mor...",
+      "filePath": "/Users/groot/Prestyj-website/content/blog/how-many-video-ads-real-estate-agent-test-2026.mdx",
+      "shippedAt": "2026-07-07T12:55:20.431Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.0497925
+    },
+    {
+      "slug": "how-many-video-ads-real-estate-agent-test-2026",
+      "type": "blog-post",
+      "title": "How Many Video Ads to Test? (The Real Number for 2026)",
+      "description": "Your agency ships 4 ads a month. Your CPL doubles by week six. Here’s the real number of video ads Meta needs to exit the learning phase and why it's 50x mor...",
+      "filePath": "/Users/groot/Prestyj-website/content/blog/how-many-video-ads-real-estate-agent-test-2026.mdx",
+      "shippedAt": "2026-07-07T12:55:20.431Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.0497925
     }
   ],
-  "lastUpdated": "2026-06-30T15:04:14.015Z"
+  "lastUpdated": "2026-07-07T12:55:20.436Z"
 }

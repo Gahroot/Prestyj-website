@@ -99,18 +99,6 @@ comparisons:
 blogPosts:
   - type: blog-post
     payload:
-      workingTitle: 'Voice Agent Pilot Pricing: What a QA-Validated AI Voice Agent Actually Costs Before an Annual Contract (2026)'
-      targetKeyword: voice agent QA pilot pricing before annual contract
-      slug: voice-agent-pilot-pricing-before-annual-contract-2026
-    priority: 10
-  - type: blog-post
-    payload:
-      workingTitle: How Many Video Ads Should a Real Estate Agent Test? (2026 Data)
-      targetKeyword: how many video ads should real estate agent test
-      slug: how-many-video-ads-real-estate-agent-test-2026
-    priority: 9
-  - type: blog-post
-    payload:
       workingTitle: Real Estate Video Ad Hooks That Actually Convert in 2026
       targetKeyword: real estate video ad hooks
       slug: real-estate-video-ad-hooks-that-convert-2026

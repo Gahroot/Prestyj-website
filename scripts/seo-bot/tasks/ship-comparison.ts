@@ -210,15 +210,18 @@ export async function shipComparison(input: ShipTaskInput): Promise<TaskExecutio
   // Normalize: authoritative slug is the one from payload.
   content.compareData.slug = fullSlug;
 
-  const tdErr = validateTitleDescription(content.metadata.title, content.metadata.description);
-  if (tdErr) {
+  const tdResult = validateTitleDescription(content.metadata.title, content.metadata.description);
+  if (tdResult.error) {
     return {
       task: "comparison",
       success: false,
-      error: tdErr,
+      error: tdResult.error,
       costUSD: result.totalCostUSD,
       latencyMs: result.totalLatencyMs,
     };
+  }
+  if (tdResult.description) {
+    content.metadata.description = tdResult.description;
   }
   if (content.compareData.features.length < 5) {
     return {
@@ -236,10 +239,13 @@ export async function shipComparison(input: ShipTaskInput): Promise<TaskExecutio
   const fileBody = renderCompareModule(dataIdentifier, metaIdentifier, content, fullSlug);
 
   const filePath = path.join(process.cwd(), config.baseDirs.compare, `${bareSlug}.ts`);
-  await writeFile(filePath, fileBody, "utf8");
 
-  // Append /compare/<fullSlug> route to submit-indexnow.ts compareRoutes list.
-  await appendCompareRoute(fullSlug);
+  if (!input.dryRun) {
+    await writeFile(filePath, fileBody, "utf8");
+
+    // Append /compare/<fullSlug> route to submit-indexnow.ts compareRoutes list.
+    await appendCompareRoute(fullSlug);
+  }
 
   const shipped: ShippedItem = {
     slug: fullSlug,
@@ -252,7 +258,10 @@ export async function shipComparison(input: ShipTaskInput): Promise<TaskExecutio
     model,
     costUSD: result.totalCostUSD,
   };
-  await appendShippedItem(config, shipped);
+
+  if (!input.dryRun) {
+    await appendShippedItem(config, shipped);
+  }
 
   return {
     task: "comparison",

@@ -892,6 +892,7 @@ export async function runDaily(args: RunDailyArgs): Promise<DailyMetrics> {
       payload: backlogItem?.payload ?? {},
       dedupContext: dedup,
       researchBrief: brief ?? undefined,
+      dryRun,
     };
 
     let rawResult: unknown;

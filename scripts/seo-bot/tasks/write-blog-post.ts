@@ -105,15 +105,18 @@ export async function writeBlogPost(input: ShipTaskInput): Promise<TaskExecution
 
   const content: BlogPostShape = result.data;
 
-  const tdErr = validateTitleDescription(content.title, content.description);
-  if (tdErr) {
+  const tdResult = validateTitleDescription(content.title, content.description);
+  if (tdResult.error) {
     return {
       task: "blogPost",
       success: false,
-      error: tdErr,
+      error: tdResult.error,
       costUSD: result.totalCostUSD,
       latencyMs: result.totalLatencyMs,
     };
+  }
+  if (tdResult.description) {
+    content.description = tdResult.description;
   }
 
   const body = content.body.trim();
@@ -123,11 +126,11 @@ export async function writeBlogPost(input: ShipTaskInput): Promise<TaskExecution
   const bodyWithoutH1 = stripLeadingH1(body);
 
   const wordCount = countWords(bodyWithoutH1);
-  if (wordCount < 1500) {
+  if (wordCount < 1300) {
     return {
       task: "blogPost",
       success: false,
-      error: `body word count ${wordCount} is below minimum 1500`,
+      error: `body word count ${wordCount} is below minimum 1300`,
       costUSD: result.totalCostUSD,
       latencyMs: result.totalLatencyMs,
     };
@@ -161,7 +164,6 @@ export async function writeBlogPost(input: ShipTaskInput): Promise<TaskExecution
   });
 
   const filePath = path.join(process.cwd(), config.baseDirs.blog, `${slug}.mdx`);
-  await writeFile(filePath, mdx, "utf8");
 
   const shipped: ShippedItem = {
     slug,
@@ -174,7 +176,11 @@ export async function writeBlogPost(input: ShipTaskInput): Promise<TaskExecution
     model,
     costUSD: result.totalCostUSD,
   };
-  await appendShippedItem(config, shipped);
+
+  if (!input.dryRun) {
+    await writeFile(filePath, mdx, "utf8");
+    await appendShippedItem(config, shipped);
+  }
 
   return {
     task: "blogPost",

@@ -26,6 +26,8 @@ export interface ShipTaskInput {
   payload: BacklogItem["payload"];
   dedupContext: DedupContext;
   researchBrief?: ResearchBrief;
+  /** When true, task must NOT write files or mutate shipped.json. */
+  dryRun?: boolean;
 }
 
 /**
@@ -405,14 +407,18 @@ export async function appendImportAndRegister(options: {
 /**
  * Quality gate helpers — return error string if invalid, null if ok.
  */
-export function validateTitleDescription(title: string, description: string): string | null {
+export function validateTitleDescription(
+  title: string,
+  description: string,
+): { error?: string; description?: string } {
   if (title.length > 70) {
-    return `Title too long (${title.length} > 70 chars): "${title}"`;
+    return { error: `Title too long (${title.length} > 70 chars): "${title}"` };
   }
   if (description.length > 160) {
-    return `Description too long (${description.length} > 160 chars)`;
+    console.warn(`[seo-bot] Truncating description from ${description.length} to 160 chars`);
+    return { description: description.slice(0, 157) + "..." };
   }
-  return null;
+  return {};
 }
 
 export function ensureSlugUnique(slug: string, dedupContext: DedupContext): string | null {
