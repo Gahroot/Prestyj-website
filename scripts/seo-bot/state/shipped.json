@@ -43,7 +43,18 @@
       "provider": "gemini",
       "model": "gemini-2.5-pro",
       "costUSD": 0.0497925
+    },
+    {
+      "slug": "real-estate-video-ad-hooks-that-convert-2026",
+      "type": "blog-post",
+      "title": "20 Real Estate Video Ad Hooks That Convert in 2026",
+      "description": "20 buyer and seller video ad hooks, a 4-part scoring framework, and a 25-ad testing plan for real estate teams in 2026.",
+      "filePath": "/Users/groot/Prestyj-website/content/blog/real-estate-video-ad-hooks-that-convert-2026.mdx",
+      "shippedAt": "2026-07-14T14:52:17.443Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.104255
     }
   ],
-  "lastUpdated": "2026-07-07T12:55:20.436Z"
+  "lastUpdated": "2026-07-14T14:52:17.447Z"
 }

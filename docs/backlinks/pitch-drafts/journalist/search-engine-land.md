@@ -4,29 +4,33 @@ bucket: journalist
 name: "Search Engine Land"
 target_url: https://searchengineland.com
 channel: email
-status: drafted
-generated_at: 2026-06-26T18:08:37.163Z
+target_authority: "DR-60+; human should recheck before sending"
+status: awaiting-human-send
+generated_at: 2026-07-14
+angle: "Original Bing AI-citation data: buyer-math pages outpaced generic AI explainers"
 ---
-**Subject:** Original, sourced data on lead response & AI in sales (open CC BY 4.0 dataset)
+
+**Subject:** Original Bing AI data: citation volume rose 86%, led by pricing and ROI pages
 
 Hi Search Engine Land team,
 
-I run Prestyj and we maintain an open, CC BY 4.0 statistics dataset that may fit your beat. A few of the live numbers:
+We analyzed two consecutive Bing Webmaster AI Search exports for Prestyj and found a pattern that may be useful for your GEO readers: the pages gaining citations were not broad AI explainers. Pricing, cost comparisons, ROI, and “what vendors omit” pages dominated.
 
-- 100× — You are 100× more likely to connect with a lead if you respond within 5 minutes vs. 30 minutes. (LeadResponseManagement.org, 2024–2026) https://prestyj.com/stat/stl-100x
-- 1% — Only 1% of B2B companies respond to leads in under 5 minutes. (Amplemarket, 2024) https://prestyj.com/stat/stl-1pct-b2b
-- 21× — Companies that respond within 5 minutes are 21× more likely to qualify a lead than those that wait 30 minutes. (Harvard Business Review / LeadResponseManagement.org, 2011 (widely re-cited 2024–2026)) https://prestyj.com/stat/stl-21x
-- 391% — Calling within the first minute boosts conversion rates by 391% compared to waiting even a few minutes longer. (Velocify, 2024–2025) https://prestyj.com/stat/stl-391
-- 400% — The likelihood of qualifying a lead drops 400% when response time moves from 5 to 10 minutes. (Harvard Business Review (via Amplemarket), 2024) https://prestyj.com/stat/stl-400pct-drop
+From June 18 to June 29, 2026:
 
-Every row is dated and carries its primary publisher (HBR, InsideSales, Wyzowl, HubSpot, WordStream, McKinsey, Gartner, Salesforce, …), so it's quotable without re-verification. Each statistic also has a permanent citation URL on https://prestyj.com/stat/<id>.
+- Page citations rose **6,724 → 12,514 (+86%)**.
+- Query citations rose **4,799 → 9,584 (+100%)**.
+- Distinct cited pages rose **79 → 107 (+35%)**.
+- The top cited pages covered branded-calling pricing, AI voice-agent costs, lead-response systems, AI-vs-human outreach, and AI sales-agent pricing.
+- The largest query buckets were lead response (**5,937 combined query + page citations**) and voice-agent economics (**4,853**).
 
-For your coverage specifically: Cost-per-tested-ad-angle benchmark and the creative-volume thesis, backed by the open dataset's video-advertising rows.
+The story angle: in this single-site dataset, citation growth clustered around buyer math—price bands, hidden costs, response times, and ROI—not “what is AI?” content. It also shows concentration risk: a handful of pages can drive most visibility even while the number of cited URLs grows.
 
-Full dataset (CSV + JSON, schema.org/Dataset): https://prestyj.com/data
-Browse on web: https://prestyj.com/statistics
+I can share both source CSV exports, the categorization rules, and the page-level delta table for independent review. This is an observational single-domain case study, not a claim that the pattern generalizes to every site.
 
-I can also connect you with operators running this in production (HVAC owners, brokerage VPs, agency owners) for a follow-up story.
+Prestyj also maintains an open CC BY 4.0 statistics dataset with stable source permalinks: https://prestyj.com/data
+
+Would the raw export and methodology be useful for a data-led GEO piece?
 
 Thanks,
 Nolan Grout
