@@ -223,7 +223,17 @@ async function appendToShippedManifest(
 ): Promise<void> {
   if (newItems.length === 0) return;
   const manifest = await loadShippedManifest(shippedFile);
-  manifest.items.push(...newItems);
+  const existingItems = new Set(
+    manifest.items.map((item) => `${item.type}\0${item.slug}\0${item.shippedAt}`),
+  );
+  const uniqueNewItems = newItems.filter((item) => {
+    const key = `${item.type}\0${item.slug}\0${item.shippedAt}`;
+    if (existingItems.has(key)) return false;
+    existingItems.add(key);
+    return true;
+  });
+  if (uniqueNewItems.length === 0) return;
+  manifest.items.push(...uniqueNewItems);
   manifest.lastUpdated = new Date().toISOString();
   await writeJSON(shippedFile, manifest);
 }

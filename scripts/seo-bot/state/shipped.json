@@ -34,17 +34,6 @@
       "costUSD": 0.0497925
     },
     {
-      "slug": "how-many-video-ads-real-estate-agent-test-2026",
-      "type": "blog-post",
-      "title": "How Many Video Ads to Test? (The Real Number for 2026)",
-      "description": "Your agency ships 4 ads a month. Your CPL doubles by week six. Here’s the real number of video ads Meta needs to exit the learning phase and why it's 50x mor...",
-      "filePath": "/Users/groot/Prestyj-website/content/blog/how-many-video-ads-real-estate-agent-test-2026.mdx",
-      "shippedAt": "2026-07-07T12:55:20.431Z",
-      "provider": "gemini",
-      "model": "gemini-2.5-pro",
-      "costUSD": 0.0497925
-    },
-    {
       "slug": "real-estate-video-ad-hooks-that-convert-2026",
       "type": "blog-post",
       "title": "20 Real Estate Video Ad Hooks That Convert in 2026",
@@ -54,7 +43,18 @@
       "provider": "gemini",
       "model": "gemini-2.5-pro",
       "costUSD": 0.104255
+    },
+    {
+      "slug": "sales-engineer-vs-sales-copilot-cost-benefit-analysis-2026",
+      "type": "blog-post",
+      "title": "Sales Engineer vs AI Copilot: 3 Cost Scenarios (2026)",
+      "description": "Compare a sales engineer, an AI copilot, and a hybrid team with 3 transparent cost scenarios, break-even formulas, hidden costs, and a 30-day pilot plan.",
+      "filePath": "/Users/groot/Prestyj-website/content/blog/sales-engineer-vs-sales-copilot-cost-benefit-analysis-2026.mdx",
+      "shippedAt": "2026-07-16T13:26:29.203Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.0501175
     }
   ],
-  "lastUpdated": "2026-07-14T14:52:17.447Z"
+  "lastUpdated": "2026-07-16T13:26:29.206Z"
 }

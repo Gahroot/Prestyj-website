@@ -4,28 +4,34 @@ bucket: journalist
 name: "CRN (The Channel Company)"
 target_url: https://www.crn.com
 channel: email
-status: drafted
-generated_at: 2026-06-29T12:45:00.000Z
-angle: "data-led — AI-search demand for MSP branded calling surged 500–1080% in 30 days, with a fresh pricing/ROI benchmark"
+status: awaiting-human-send
+generated_at: 2026-07-15
+angle: "data-led — Bing AI citations for MSP branded-calling queries rose 500–1,080% as official pricing shifted toward call-volume plans"
 ---
-**Subject:** MSPs are suddenly searching "branded calling" 5–10× more — here's the pricing benchmark (open data)
+
+**Subject:** Bing AI citations for MSP branded-calling queries rose 5–10×
 
 Hi CRN team,
 
-I run Prestyj (done-for-you AI agents + outbound for service businesses). Something shifted in the channel over the last 30 days that may fit your telecom / managed-services coverage: AI-search demand for **branded calling among MSPs and IT services firms surged 500–1,080%** in a single month (June 2026, Bing AI Search export). The query cluster — "best branded calling for IT services firms," "branded calling cost MSP managed IT providers," "best branded caller ID solutions for tech companies" — went from a trickle to the fastest-growing AI-cited category we track.
+I run Prestyj, and a shift in our June 2026 Bing AI Search export may fit CRN’s managed-services and telecom coverage: citation counts attached to branded-calling queries for MSPs and IT services firms became the fastest-growing cluster we track. This is citation visibility in a single-domain export—not search-volume data.
 
-We just published the pricing benchmark behind it. The verified numbers for MSP/IT-services buyers in 2026:
+Two examples from June 18 to June 29:
 
-- **$12–$45 per line per month** across First Orion, Hiya Connect, TNS, CallerID Reputation, and NetNumber. https://prestyj.com/stat/branded-calling-cost-per-line
-- **+27–41% lift in outbound answer rates** — the metric that actually moves revenue on renewal, patch-window, and win-back dialing. https://prestyj.com/stat/branded-calling-answer-rate-lift
-- **Break-even at ~800–1,500 outbound dials/month per line** — meaning most MSPs running active outbound are already past it. https://prestyj.com/stat/branded-calling-msp-break-even-dials
+- “best branded calling providers for IT services firms” rose **12 → 72 citations (+500%)**.
+- “top technical services companies branded calling” rose **5 → 59 citations (+1,080%)**.
 
-The "gotcha" angle your readers will care about: a few providers tack on a **per-display micro-fee ($0.005–$0.02 each)** that quietly adds $80–$300/month at scale, plus $300–$500 one-time STIR/SHAKEN attestation setup. The full provider-by-provider breakdown (per-line, setup, per-display, carrier coverage) is in the open dataset.
+The pricing story is more useful than another vendor roundup. Current official self-service pages show usage-based economics rather than the per-line model many buyers still expect:
 
-Full dataset (CSV + JSON, CC BY 4.0, schema.org/Dataset): https://prestyj.com/data
-The MSP-specific breakdown: https://prestyj.com/blog/best-branded-calling-for-it-services-msps-2026
+- **First Orion INFORM:** $31/month for 250 branded calls, $104/month for 1,000, and a $1,200 monthly minimum at 20,000 calls; additional usage steps down from $0.060 to $0.035 as volume grows. https://firstorion.com/inform-pricing
+- **Hiya Branded Call:** self-service packages start at 250 calls, carry a $25 one-time security setup fee, and charge only for calls where branding displays; custom plans use 12-month contracts. https://www.hiya.com/products/connect/pricing
 
-Happy to walk through the rate-card sources, or connect you with MSP operators running branded calling in production for a sourcing quote.
+That creates a practical MSP angle: branded calling is becoming a measurable per-displayed-call infrastructure cost, not just a caller-ID feature or a flat fee per phone number. Buyers need to compare supported networks, displayed-call volume, minimum commitments, and overage tiers before calculating cost per answered call.
+
+I can share the source Bing query exports and calculation sheet for independent review. I can also connect you with MSP operators evaluating branded calling alongside AI voice-agent deployments.
+
+Open statistics dataset (CSV + JSON, CC BY 4.0): https://prestyj.com/data
+
+Would the raw query data and official-rate-card comparison be useful for a short channel pricing story?
 
 Thanks,
 Nolan Grout

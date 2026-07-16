@@ -5,7 +5,7 @@ const SITE_URL = "https://prestyj.com";
 const LOCAL_URL = "http://127.0.0.1:4173";
 const PORT = "4173";
 
-const PRIORITY_URLS = [
+const INDEXABLE_PRIORITY_URLS = [
   "/data",
   "/statistics",
   "/batch-video-ads",
@@ -17,8 +17,11 @@ const PRIORITY_URLS = [
   "/youtube-media-testing-services",
   "/video-ad-testing-pricing",
   "/blog/video-ad-testing-pricing-2026",
-  "/stat/bva-cost-per-tested-angle",
 ];
+
+const LLMS_ONLY_PRIORITY_URLS = ["/stat/bva-cost-per-tested-angle"];
+
+const LLMS_PRIORITY_URLS = [...INDEXABLE_PRIORITY_URLS, ...LLMS_ONLY_PRIORITY_URLS];
 
 interface HeaderSnapshot {
   csp: string | null;
@@ -128,11 +131,33 @@ function checkNormalPageHeaders(headers: HeaderSnapshot): CheckResult[] {
   ];
 }
 
-function checkPriorityUrls(surface: string, label: string, content: string): CheckResult[] {
-  return PRIORITY_URLS.map((path) =>
-    content.includes(`${SITE_URL}${path}`) || content.includes(path)
+function includesPath(content: string, path: string): boolean {
+  return content.includes(`${SITE_URL}${path}`) || content.includes(path);
+}
+
+function checkPriorityUrls(
+  paths: string[],
+  surface: string,
+  label: string,
+  content: string,
+): CheckResult[] {
+  return paths.map((path) =>
+    includesPath(content, path)
       ? pass(`${surface} includes ${path}`, `${label} exposes ${path}`)
       : fail(`${surface} includes ${path}`, `${label} is missing ${path}`),
+  );
+}
+
+function checkExcludedUrls(
+  paths: string[],
+  surface: string,
+  label: string,
+  content: string,
+): CheckResult[] {
+  return paths.map((path) =>
+    !includesPath(content, path)
+      ? pass(`${surface} excludes ${path}`, `${label} intentionally omits ${path}`)
+      : fail(`${surface} excludes ${path}`, `${label} unexpectedly exposes ${path}`),
   );
 }
 
@@ -150,8 +175,9 @@ async function runChecks(baseUrl: string): Promise<CheckResult[]> {
     llmsText.startsWith("# Prestyj AI Citation Map")
       ? pass("llms reachable", "/llms.txt returned the expected citation map")
       : fail("llms reachable", "/llms.txt did not return the expected citation map heading"),
-    ...checkPriorityUrls("llms", "/llms.txt", llmsText),
-    ...checkPriorityUrls("sitemap", "/sitemap.xml", sitemapXml),
+    ...checkPriorityUrls(LLMS_PRIORITY_URLS, "llms", "/llms.txt", llmsText),
+    ...checkPriorityUrls(INDEXABLE_PRIORITY_URLS, "sitemap", "/sitemap.xml", sitemapXml),
+    ...checkExcludedUrls(LLMS_ONLY_PRIORITY_URLS, "sitemap", "/sitemap.xml", sitemapXml),
   ];
 }
 

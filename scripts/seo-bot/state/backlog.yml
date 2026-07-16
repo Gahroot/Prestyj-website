@@ -115,12 +115,13 @@ blogPosts:
       targetKeyword: facebook ad creative fatigue realtors
       slug: facebook-ad-creative-fatigue-realtors-2026
     priority: 7
-competitors:
-  - type: competitor
+  - type: blog-post
     payload:
-      name: Arcads
-      url: https://www.arcads.ai
-    priority: 9
+      workingTitle: "AI Sales Team Structure for Home Services: 4 Follow-Up Roles (2026)"
+      targetKeyword: home service companies AI sales team structure follow-up
+      slug: ai-sales-team-structure-home-services-4-follow-up-roles-2026
+    priority: 8
+competitors:
   - type: competitor
     payload:
       name: HeyGen
