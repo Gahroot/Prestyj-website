@@ -117,6 +117,12 @@ blogPosts:
     priority: 7
   - type: blog-post
     payload:
+      workingTitle: "RevCoverage vs Managed AI Lead Reactivation: Pricing, Workflow, and Evidence (2026)"
+      targetKeyword: RevCoverage dormant lead reactivation comparison
+      slug: revcoverage-vs-managed-ai-lead-reactivation-2026
+    priority: 7
+  - type: blog-post
+    payload:
       workingTitle: "AI Sales Team Structure for Home Services: 4 Follow-Up Roles (2026)"
       targetKeyword: home service companies AI sales team structure follow-up
       slug: ai-sales-team-structure-home-services-4-follow-up-roles-2026
