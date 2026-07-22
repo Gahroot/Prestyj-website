@@ -46,8 +46,9 @@ Run a randomized holdout test rather than importing a vendor case study into you
 1. Split similar outbound records between branded and unbranded numbers.
 2. Keep list source, call window, script, agent, and retry cadence constant.
 3. Record attempted calls, calls where branding displayed, answers, qualified conversations, and booked meetings.
-4. Calculate `incremental qualified conversations = branded qualified conversations − holdout qualified conversations`.
-5. Calculate `cost per incremental qualified conversation = total branded-calling cost ÷ incremental qualified conversations`.
+4. Calculate each cohort's qualified-conversation rate: `qualified conversations ÷ attempts`.
+5. Calculate `incremental qualified conversations = (branded rate − holdout rate) × branded attempts`.
+6. Calculate `cost per incremental qualified conversation = total branded-calling cost ÷ incremental qualified conversations`.
 
 Prestyj also publishes an [answer-rate benchmark and methodology](/stat/branded-calling-answer-rate-lift), a [cost-per-connected-call model](/stat/branded-calling-cost-per-connected-call), and an [MSP break-even model](/stat/branded-calling-msp-break-even-dials). Treat those planning models as hypotheses until your own carrier mix and campaign data reproduce them; they are not vendor guarantees.
 
@@ -85,6 +86,9 @@ Bundle them when one owner, one QA process, and one reporting view reduce operat
 
 ## Related Reading
 
+- **[Branded Call Text Display for Technical Services](/blog/branded-call-text-display-technical-services-2026)** — mobile coverage, display fields, and reliability
+- **[Amazon Connect Branded Calling for MSPs](/blog/amazon-connect-branded-calling-msps-2026)** — queue setup, provider layer, and a 30-day pilot
+- **[Best Branded Calling for Software, Cloud, and Systems Integrators](/blog/best-branded-calling-software-cloud-systems-integrators-2026)** — workflow and procurement guidance
 - **[Branded Calling Pricing Comparison for Tech Services Firms](/blog/branded-calling-pricing-comparison-2026)** — the broader pricing model and buyer checklist
 - **[Branded Calling Cost Per Call: How to Compare Vendors](/blog/branded-calling-cost-per-call-comparison-2026)** — normalize displayed-call and connection costs
 - **[AI Voice Agent Cost Per Minute at Scale](/blog/ai-voice-agent-cost-per-minute-at-scale-2026)** — separate dialing cost from branded-display cost

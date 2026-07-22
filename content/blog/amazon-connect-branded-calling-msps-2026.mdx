@@ -1,0 +1,191 @@
+---
+title: "Amazon Connect Branded Calling for MSPs (2026): Setup, Providers, and Pilot Plan"
+description: "A practical Amazon Connect branded-calling guide for MSPs: queue caller ID, partner display, current public pricing, reporting, and a 30-day pilot plan."
+date: "2026-07-21"
+author: "Daniel Cho"
+keywords:
+  - Amazon Connect branded calling MSP
+  - Amazon Connect branded caller ID technical services
+  - Amazon Connect caller ID name logo
+  - branded calling setup Amazon Connect
+  - branded calling provider Amazon Connect
+  - managed IT branded caller ID
+image: /images/blog/fallback-ai-sales-agents.jpg
+---
+
+**TL;DR: Amazon Connect can set an outbound caller ID name and number at the queue or contact-flow level, but AWS says the name is not guaranteed to reach every recipient across the public telephone network. MSPs that need a verified name, logo, and call reason should add a branded-calling partner layer, then validate displayed calls and qualified conversations in a controlled pilot.**
+
+**Direct answer:** Configure a valid claimed or ported caller ID number in Amazon Connect first. Then test a branded-calling provider on one expected-customer workflow, such as scheduled support callbacks or renewals. Keep an unbranded holdout, report displayed calls separately from attempted calls, and expand only when qualified conversations per 1,000 attempts improve enough to cover the full partner and operating cost.
+
+## Does Amazon Connect Include Branded Calling?
+
+Amazon Connect includes outbound caller ID controls, but basic caller ID and rich branded display are not the same thing.
+
+In the Amazon Connect queue settings, an administrator can set:
+
+- an outbound caller ID name;
+- an outbound caller ID number; and
+- a queue-specific identity used when a contact flow does not override it.
+
+AWS says the caller ID name is passed through the SIP header. Because downstream public telephone networks may not remain SIP end to end, AWS also says delivery is not guaranteed and may be up to 75% effective depending on the country. For richer or more consistent presentation, AWS directs customers to its outbound-reputation guidance and partner solutions.
+
+Source: [Set up outbound caller ID in Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/queues-callerid.html).
+
+## What Does the Branded-Calling Layer Add?
+
+AWS describes call-branding solutions as a way to provide enhanced displays that can include a business name, logo, reason for the call, and service. Its current guidance names First Orion and Neustar as partner examples.
+
+That partner layer is useful when an MSP needs more than a number or short name. Common examples include:
+
+- “Support Callback” for a scheduled ticket response;
+- “Account Review” for a known customer-success call;
+- “Service Update” for an expected operational notice; and
+- the MSP’s verified brand rather than a generic queue number.
+
+A branded display is not a substitute for customer authentication. Agents should still verify identity before discussing account, security, billing, or protected information.
+
+Source: [Optimize outbound-calling reputation in Amazon Connect](https://docs.aws.amazon.com/connect/latest/adminguide/optimize-outbound-calling.html).
+
+## How Do You Set Up Amazon Connect Branded Calling?
+
+Use this sequence so basic caller identity, partner approval, and measurement are not mixed together.
+
+### 1. Inventory Every Outbound Queue and Number
+
+List each queue, claimed or ported number, campaign purpose, region, and customer group. Retire duplicate or unused numbers before submitting a brand profile.
+
+### 2. Configure the Queue Caller ID
+
+In Amazon Connect, open **Routing → Queues**, edit the queue, and set the outbound caller ID name and number. AWS notes that reserved SIP characters in the name can cause failures or inaccurate display, so keep the value simple.
+
+Only use a number the business is authorized to present. AWS says claimed or ported Amazon Connect numbers can be selected directly. External numbers may require a support request and proof of ownership.
+
+### 3. Decide Whether the Number Must Change Dynamically
+
+Amazon Connect can use a **Call phone number** block in an outbound whisper flow to specify a caller ID number. If the block does not specify one, the queue setting is used.
+
+Dynamic selection can be useful for regional queues or account groups, but it creates more numbers to register, monitor, and test. Default to one stable callback number per workflow unless a customer or regulatory requirement justifies more.
+
+### 4. Register the Business and Numbers With the Display Provider
+
+Submit the legal business identity, approved brand name, logo, call reasons, and originating numbers required by the provider. Keep screenshots and approval records for each display variation.
+
+### 5. Build a Holdout Pilot
+
+Route comparable recipients through branded and unbranded cohorts. Hold the list source, consent status, call window, retry cadence, and script constant.
+
+### 6. Join Provider and Amazon Connect Reporting
+
+At minimum, report:
+
+- attempted calls;
+- calls eligible for branded display;
+- calls where branding displayed;
+- answers;
+- qualified conversations;
+- booked meetings or completed service outcomes;
+- opt-outs and complaints; and
+- disconnect or blocking reasons.
+
+### 7. Expand by Workflow, Not All at Once
+
+Approve support callbacks before renewal calls, and renewal calls before broader lead follow-up. Each workflow needs its own call reason, compliance review, baseline, and stop rule.
+
+## What Does a Pilot Cost?
+
+Amazon Connect usage and the branded-display service are separate cost layers. The exact Amazon Connect telecom cost depends on region, number type, call direction, and duration, so calculate it from the AWS pricing for the deployment region.
+
+For the display layer, the following public terms were checked on July 21, 2026:
+
+| Display provider | Public starting point | Commitment | Important buying note |
+| --- | ---: | --- | --- |
+| First Orion INFORM | $31/month for 250 branded calls; $104/month for 1,000 | Below 20,000 calls is monthly; 20,000+ starts at a $1,200 monthly minimum with an annual agreement | First Orion is named in AWS’s outbound-reputation guidance |
+| Hiya Branded Call | Self-service packages start at 250 calls; the live calculator supplies the current quote | Monthly plans are flexible; custom plans use a 12-month contract; $25 one-time setup | Hiya says billing applies only when branding displays; confirm the technical path with both vendors before purchase |
+
+Sources: [First Orion INFORM pricing](https://firstorion.com/inform-pricing), [Hiya Branded Call pricing](https://www.hiya.com/products/connect/pricing), and [AWS outbound-calling guidance](https://docs.aws.amazon.com/connect/latest/adminguide/optimize-outbound-calling.html).
+
+Do not assume that appearing in a generic vendor comparison means a provider has a native, supported Amazon Connect integration for the exact region and workflow. Request the architecture, data flow, support owner, and current quote in writing.
+
+## Which Provider Should an MSP Test First?
+
+**Test First Orion first** when using the AWS-documented partner path and public US entry pricing matters. Its published INFORM plans give a small MSP a low-volume starting point before an enterprise agreement.
+
+**Request a second quote** when the customer mix, geography, handset mix, or enterprise support requirements could make another provider a better fit. Compare eligible and displayed calls, not just submitted volume.
+
+**Use a managed voice-agent provider** when the business also needs the conversation handled, ticket or CRM data updated, appointments booked, and QA managed. The correct comparison is then the full workflow cost, not a branded-display plan against an all-in managed service.
+
+## What Should the 30-Day MSP Pilot Look Like?
+
+### Week 1: Baseline and Registration
+
+Capture the previous four weeks of attempted calls, answers, qualified conversations, completed outcomes, complaints, and destination carrier mix. Submit one brand and a small group of stable numbers.
+
+### Week 2: Controlled Launch
+
+Send 10–20% of eligible traffic through the branded treatment. Check actual display on representative devices and verify that callback routing reaches the right queue.
+
+### Week 3: Holdout Comparison
+
+Keep branded and unbranded groups running under the same operating conditions. Investigate any carrier, device, queue, or time-window differences before interpreting lift.
+
+### Week 4: Go or No-Go
+
+Calculate:
+
+- `display rate = displayed calls ÷ attempted calls`;
+- `branded qualified conversation rate = branded qualified conversations ÷ branded attempts`;
+- `holdout qualified conversation rate = holdout qualified conversations ÷ holdout attempts`;
+- `incremental qualified conversations = (branded rate − holdout rate) × branded attempts`; and
+- `cost per incremental qualified conversation = full pilot cost ÷ incremental qualified conversations`.
+
+Expand only if the value of incremental completed outcomes exceeds the full cost and complaint rates remain acceptable.
+
+## What Common Amazon Connect Mistakes Break the Test?
+
+- **Leaving the queue caller ID blank:** AWS says anonymous calls are commonly blocked and may fail.
+- **Using an unauthorized external number:** External caller ID may require AWS support and proof of ownership.
+- **Treating queue CNAM as guaranteed rich display:** AWS explicitly says downstream delivery is not guaranteed.
+- **Rotating numbers too quickly:** Every new number creates registration, reputation, reporting, and callback complexity.
+- **Mixing support and sales traffic:** A blended answer rate hides whether the call reason matches customer expectations.
+- **Skipping contact-preference controls:** Branding does not create consent or override contact rules.
+- **Measuring answers only:** More answers are useful only when qualified conversations or completed service outcomes also rise.
+
+## Where Do AI Voice Agents Fit?
+
+Amazon Connect can remain the contact-center system while an AI voice workflow handles a defined portion of lead response, appointment setting, or after-hours calls. The design must specify:
+
+- which system initiates the call;
+- which number and brand display are used;
+- where consent and suppression status live;
+- when the AI hands off to a person;
+- which system writes the final disposition; and
+- who reviews recordings, failures, and complaints.
+
+Prestyj deploys done-for-you [AI voice agents](/ai-voice-agents) for service businesses and real estate teams, including CRM and calendar setup. If Amazon Connect must remain in the architecture, [book a call](/book-demo) so the current environment, call volume, handoffs, and branded-display requirements can be scoped before pricing.
+
+## Frequently Asked Questions
+
+### Can Amazon Connect Show a Business Name Without a Partner?
+
+Amazon Connect can pass an outbound caller ID name from the queue settings, but AWS says the name is not guaranteed across all public telephone network paths. A partner display layer is the route AWS recommends when richer, more reliable branding is required.
+
+### Can Amazon Connect Use an External Caller ID Number?
+
+Possibly. AWS says customers should contact Support to confirm eligibility and provide proof of ownership. The number must be supported for custom caller ID in the relevant country.
+
+### Does Branded Calling Guarantee a 30% Answer-Rate Lift?
+
+No. AWS’s guidance states that branding increases answer rate by 30%, but a forecast should treat that as a benchmark, not a guarantee. Use a holdout test on the MSP’s actual customers, carriers, devices, scripts, and call windows.
+
+### Is Branded Calling Included in Amazon Connect Usage Pricing?
+
+Treat it as a separate line item unless the current AWS or partner agreement explicitly says otherwise. Include telecom usage, display fees, setup, integration, analytics, QA, and internal operating time in the pilot cost.
+
+## Related Reading
+
+- **[Branded Call Text Display for Technical Services](/blog/branded-call-text-display-technical-services-2026)** — coverage, pricing, and reliability questions
+- **[Best Branded Calling for IT Services and MSPs](/blog/best-branded-calling-for-it-services-msps-2026)** — standalone provider selection and ROI test
+- **[Best Branded Calling for Software, Cloud, and Systems Integrators](/blog/best-branded-calling-software-cloud-systems-integrators-2026)** — use-case and procurement guidance
+- **[AI Voice Agent Integration Guide](/blog/ai-voice-agent-integration-guide-2026)** — CRM, calendar, telephony, and handoff planning
+
+_Need to connect branded outbound calls with lead qualification and booking? [Book a call](/book-demo) to scope the full managed workflow._
