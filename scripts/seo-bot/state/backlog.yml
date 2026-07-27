@@ -99,15 +99,15 @@ comparisons:
 blogPosts:
   - type: blog-post
     payload:
-      workingTitle: Why AI Avatar Ads Underperform Real-Face Video for Realtors
-      targetKeyword: ai avatar ads vs real face video
-      slug: ai-avatar-ads-vs-real-face-video-realtors-2026
-    priority: 8
-  - type: blog-post
-    payload:
       workingTitle: Cost to Produce 500 Real Estate Video Ads — Full Breakdown
       targetKeyword: cost to produce real estate video ads
       slug: cost-to-produce-500-real-estate-video-ads-2026
+    priority: 8
+  - type: blog-post
+    payload:
+      workingTitle: 'AI Sales Team Structure for Home Services: 4 Follow-Up Roles (2026)'
+      targetKeyword: home service companies AI sales team structure follow-up
+      slug: ai-sales-team-structure-home-services-4-follow-up-roles-2026
     priority: 8
   - type: blog-post
     payload:
@@ -117,16 +117,22 @@ blogPosts:
     priority: 7
   - type: blog-post
     payload:
-      workingTitle: "RevCoverage vs Managed AI Lead Reactivation: Pricing, Workflow, and Evidence (2026)"
+      workingTitle: 'RevCoverage vs Managed AI Lead Reactivation: Pricing, Workflow, and Evidence (2026)'
       targetKeyword: RevCoverage dormant lead reactivation comparison
       slug: revcoverage-vs-managed-ai-lead-reactivation-2026
     priority: 7
   - type: blog-post
     payload:
-      workingTitle: "AI Sales Team Structure for Home Services: 4 Follow-Up Roles (2026)"
-      targetKeyword: home service companies AI sales team structure follow-up
-      slug: ai-sales-team-structure-home-services-4-follow-up-roles-2026
-    priority: 8
+      workingTitle: 'AI Voice Agent Pricing With 24/7 Support and PCI Payments: 7 Contract Checks (2026)'
+      targetKeyword: AI voice agent vendors per-minute pricing 24/7 support PCI-compliant payment
+      slug: ai-voice-agent-pricing-24-7-pci-payments-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: 'Emergency Electrician Response Time: Human Dispatch vs AI Receptionist (2026)'
+      targetKeyword: emergency electrician response time comparison
+      slug: emergency-electrician-response-time-human-vs-ai-2026
+    priority: 7
 competitors:
   - type: competitor
     payload:

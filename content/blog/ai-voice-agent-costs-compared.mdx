@@ -1,8 +1,8 @@
 ---
-title: "AI Voice Agent Pricing Compared: $0.06–$0.31/min (2026)"
-description: "Vapi, Retell, Bland, Synthflow & 3 more compared by real cost-per-minute. Advertised $0.05/min becomes $0.06–$0.31 fully loaded. Full pricing table + hidden fees inside."
+title: "AI Voice Agent Pricing: $0.05–$0.31/min Across 4 Models (2026)"
+description: "Current Vapi, Retell, Bland, and Synthflow pricing compared by platform fee, connected minute, add-ons, implementation, and 5,000-minute monthly cost."
 date: "2026-01-31"
-updated: "2026-07-11"
+updated: "2026-07-21"
 author: "Daniel Cho"
 keywords:
   - how much do AI voice agents cost
@@ -14,669 +14,156 @@ keywords:
 image: /images/blog/ai-voice-agent-costs-compared.jpg
 ---
 
-Most teams shopping for AI voice agents make the same mistake: they compare advertised per-minute rates and choose the cheapest option. Then they get their first bill and realize the $0.05/minute platform actually cost $0.23/minute after all the add-ons.
+**TL;DR: Published AI voice pricing starts at Vapi’s $0.05 platform fee, Retell’s $0.07–$0.31 pay-as-you-go range, Bland’s $0.11–$0.14 connected-minute rates plus plan fees, or Synthflow’s $30,000 annual enterprise minimum. Compare one fully loaded call—not headline rates—and verify telephony, models, transfers, QA, implementation, and support.**
 
-**Commercial shortcut:** Use [AI Voice Agents](/ai-voice-agents) for Prestyj’s buyer hub, [AI Voice Agent Pricing](/solutions/ai-voice-agent-pricing) for the solution page, and [AI Receptionist](/ai-receptionist) when the comparison is really answering-service replacement or inbound call handling.
+**Direct answer:** There is no single “AI voice agent price.” Developer platforms separate orchestration, models, speech, and telephony; bundled platforms meter connected time; enterprise providers scope annual contracts. At 5,000 connected minutes, the published inputs below span $250 for Vapi’s platform layer alone, $350–$1,550 across Retell’s stated pay-as-you-go range, and $700–$1,049 on Bland’s self-serve tiers before optional extras. Terms were checked against official vendor pages on July 21, 2026.
 
-**TL;DR:** AI voice agent costs range from $0.15-0.31/minute (fully loaded) for DIY platforms to $500-3,000/month for managed solutions. The real cost depends on volume, technical resources, and hidden fees for LLMs, telephony, and setup. Most teams underestimate total costs by 2-3x when comparing platforms.
+| Pricing model | Current published price | What the headline omits or varies | 5,000-minute arithmetic |
+| --- | ---: | --- | ---: |
+| [Vapi Build](https://vapi.ai/pricing) | $0.05/min platform fee | Model, voice, speech recognition, transport, telephony, compliance, and added concurrency | $250 platform layer only |
+| [Retell pay as you go](https://www.retellai.com/pricing) | $0.07–$0.31/min | Model and voice choice, telephony, add-ons, phone numbers, and concurrency above 20 | $350–$1,550 at the published range |
+| [Bland self-serve](https://docs.bland.ai/platform/billing) | $0.14/min Start; $299 + $0.12/min Build; $499 + $0.11/min Scale | Transfer time, telephony choices, and enterprise terms | $700 Start; $899 Build; $1,049 Scale |
+| [Synthflow Enterprise](https://synthflow.ai/pricing) | From $30,000/year | Final scope depends on volume, concurrency, telephony, integrations, security, and launch support | $2,500/mo annualized minimum; contract scope controls usage |
 
-**Direct answer:** Fully-loaded AI voice agent cost lands at [$0.06–$0.18 per minute at scale](/stat/voice-agent-cost-per-minute-at-scale) on managed platforms, versus $0.15–$0.31/minute for DIY platforms once LLM, telephony, STT/TTS, and engineering time are counted. Managed pricing carries [18–35% in hidden fees](/stat/voice-agent-hidden-cost-percent) above the advertised rate, and a proper pilot deploys at [$0–$1,500 in setup](/stat/voice-agent-pilot-setup-cost-range). For an all-in quote, see [AI Voice Agents](/ai-voice-agents) and [AI Voice Agent Pricing](/solutions/ai-voice-agent-pricing), or [book a demo](/book-demo).
+The table compares public billing inputs, not call quality or total cost of ownership. It does not rank the vendors. A lower meter can still produce a higher business cost if implementation, failed-call review, or human escalation takes more labor.
 
-## Key Takeaways
+## What Does Each AI Voice Pricing Model Actually Include?
 
-- **Advertised rates are misleading**—platforms quote base fees but real costs include LLM, telephony, STT, TTS, and transcription
-- **7 platforms compared**—actual pricing with all fees included across different use cases
-- **Hidden costs add 150-300%** to advertised per-minute rates
-- **TCO over 12 months** reveals subscription platforms often beat per-minute pricing
-- **Engineering time costs $20,000-60,000** for DIY platforms vs. $0 for managed solutions
+### Vapi: a platform layer with provider costs passed through
 
----
+Vapi’s official pricing page lists a **$0.05-per-minute** Build platform fee. The same page says model costs are passed through to the customer and exposes separate choices for transport, speech-to-text, large language model, and text-to-speech. Ten concurrent calls are included; additional concurrency is listed at **$10 per line per month**. HIPAA and Zero Data Retention appear as separate monthly add-ons on the public page.
 
-## Understanding AI Voice Agent Pricing Models
+That makes $0.05 a valid platform price, but not a valid all-in call price. A buyer needs to select the model, voice, transcription, and telephony stack before calculating the actual minute. At 5,000 minutes, $250 is only the Vapi platform layer:
 
-Before comparing platforms, you need to understand how pricing works. There are three distinct models, each with different cost structures.
-
-### Per-Minute Billing (Usage-Based)
-
-Developer platforms charge based on conversation minutes. The advertised rate is just the platform fee—you pay separately for:
-
-- **Platform orchestration:** $0.05-0.11/minute
-- **LLM inference (GPT-4, Claude):** $0.02-0.12/minute
-- **Speech-to-Text (STT):** $0.01-0.03/minute
-- **Text-to-Speech (TTS):** $0.01-0.05/minute
-- **Telephony (inbound/outbound):** $0.01-0.03/minute
-- **Transcription/logging:** $0.01-0.02/minute
-
-**Real cost:** $0.15-0.31/minute fully loaded.
-
-**Best for:** Developers building voice AI into their own products, highly variable volume, teams with engineering resources.
-
-### Monthly Subscription (Flat Rate)
-
-All-inclusive platforms charge a monthly fee with included minutes and features:
-
-- **Starter plans:** $30-200/month (500-2,000 minutes)
-- **Professional plans:** $200-800/month (2,000-10,000 minutes)
-- **Business plans:** $800-2,000/month (10,000-50,000 minutes)
-- **Enterprise:** Custom pricing, unlimited minutes
-
-**Overage fees:** $0.10-0.30/minute above plan limits.
-
-**Best for:** Predictable budgeting, moderate consistent volume, teams without engineering staff.
-
-### Done-For-You Solutions
-
-Industry-specific platforms include setup, configuration, optimization, and support:
-
-- **Small business:** $500-1,500/month
-- **Mid-market:** $1,500-5,000/month
-- **Enterprise:** $5,000-20,000+/month
-
-Includes: platform access, implementation, industry training, ongoing optimization, dedicated support.
-
-**Best for:** Teams focused on results over technology, industry-specific needs, organizations where engineering time is better spent on core product.
-
----
-
-## Platform-by-Platform Cost Comparison
-
-Here's what you'll actually pay across 7 major platforms. All costs include full stack (LLM, STT, TTS, telephony, transcription).
-
-### Vapi
-
-**Pricing model:** Per-minute usage-based
-
-**Advertised rate:** $0.05/minute (platform fee only)
-
-**Real costs (fully loaded):**
-
-| Component         | Cost per Minute    |
-| ----------------- | ------------------ |
-| Vapi platform fee | $0.05              |
-| OpenAI GPT-4      | $0.04-0.08         |
-| ElevenLabs TTS    | $0.02-0.04         |
-| Deepgram STT      | $0.01-0.02         |
-| Twilio telephony  | $0.01-0.02         |
-| Transcription     | $0.01              |
-| **Total**         | **$0.14-0.22/min** |
-
-**Hidden costs:**
-
-- Engineering setup: 40-80 hours ($4,000-12,000)
-- Ongoing maintenance: 8-15 hours/month ($800-2,250/month)
-- Prompt engineering: 20-40 hours ($2,000-6,000)
-
-**Monthly cost examples:**
-
-- **1,000 minutes:** $140-220 + engineering
-- **5,000 minutes:** $700-1,100 + engineering
-- **10,000 minutes:** $1,400-2,200 + engineering
-- **50,000 minutes:** $7,000-11,000 + engineering
-
-**Best for:** Developers building voice AI products, need maximum control and customization.
-
-### Retell AI
-
-**Pricing model:** Per-minute tiered
-
-**Advertised rate:** $0.07-0.11/minute (depends on tier)
-
-**Real costs (fully loaded):**
-
-| Component         | Cost per Minute    |
-| ----------------- | ------------------ |
-| Retell platform   | $0.07-0.11         |
-| LLM (your choice) | $0.03-0.08         |
-| TTS (included)    | $0.00              |
-| STT (included)    | $0.00              |
-| Telephony         | $0.01-0.02         |
-| Transcription     | $0.01              |
-| **Total**         | **$0.12-0.22/min** |
-
-**Advantages over Vapi:**
-
-- STT/TTS included in platform fee
-- Simpler pricing, fewer add-ons
-- Better WebRTC support
-
-**Hidden costs:**
-
-- Engineering setup: 30-60 hours ($3,000-9,000)
-- Ongoing maintenance: 6-12 hours/month ($600-1,800/month)
-
-**Monthly cost examples:**
-
-- **1,000 minutes:** $120-220 + engineering
-- **5,000 minutes:** $600-1,100 + engineering
-- **10,000 minutes:** $1,200-2,200 + engineering
-- **50,000 minutes:** $6,000-11,000 + engineering
-
-**Best for:** Teams that want developer control but less complexity than Vapi.
-
-### Bland AI
-
-**Pricing model:** Per-minute with bulk discounts
-
-**Advertised rate:** $0.09/minute (base tier)
-
-**Real costs (fully loaded):**
-
-| Component            | Cost per Minute    |
-| -------------------- | ------------------ |
-| Bland platform       | $0.09-0.12         |
-| Included services    | $0.00              |
-| Telephony            | $0.01-0.02         |
-| Custom voice cloning | +$0.02-0.04        |
-| **Total**            | **$0.10-0.18/min** |
-
-**Key difference:** More all-inclusive than Vapi/Retell. Includes LLM, STT, TTS in base price.
-
-**Bulk discounts:**
-
-- 50,000-100,000 min/month: $0.08/min
-- 100,000-500,000 min/month: $0.06/min
-- 500,000+ min/month: Custom pricing
-
-**Hidden costs:**
-
-- Engineering setup: 25-50 hours ($2,500-7,500)
-- Ongoing maintenance: 5-10 hours/month ($500-1,500/month)
-
-**Monthly cost examples:**
-
-- **1,000 minutes:** $100-180 + engineering
-- **5,000 minutes:** $500-900 + engineering
-- **10,000 minutes:** $1,000-1,800 + engineering
-- **50,000 minutes:** $4,000-8,000 (discounted)
-
-**Best for:** Higher volume use cases, teams that want simplicity with developer access.
-
-### Synthflow
-
-**Pricing model:** Monthly subscription
-
-**Plans:**
-
-| Plan       | Monthly Cost | Included Minutes | Overages   |
-| ---------- | ------------ | ---------------- | ---------- |
-| Starter    | $39          | 500 minutes      | $0.28/min  |
-| Pro        | $299         | 3,000 minutes    | $0.22/min  |
-| Business   | $799         | 10,000 minutes   | $0.18/min  |
-| Enterprise | Custom       | 50,000+ minutes  | Negotiated |
-
-**What's included:**
-
-- Platform access and hosting
-- All LLM, STT, TTS costs
-- Telephony and phone numbers
-- Visual workflow builder
-- Basic integrations (Zapier, webhooks)
-- Email support (chat support on Business+)
-
-**Hidden costs:**
-
-- Setup time: 10-20 hours (but no engineering required)
-- Advanced features may require higher tiers
-- CRM integrations limited on lower tiers
-
-**Actual monthly costs:**
-
-- **1,000 minutes:** $39 + $140 overages = **$179**
-- **5,000 minutes:** $299 + $440 overages = **$739**
-- **10,000 minutes:** $799 (no overages) = **$799**
-- **50,000 minutes:** $2,000-3,500 (enterprise)
-
-**Best for:** Non-technical teams, predictable costs, visual workflow builders preferred.
-
-### Air.ai
-
-**Pricing model:** Monthly subscription (higher-end)
-
-**Plans:**
-
-| Plan         | Monthly Cost | Included Minutes | Notes                           |
-| ------------ | ------------ | ---------------- | ------------------------------- |
-| Starter      | $149         | 1,000 minutes    | Basic AI models                 |
-| Professional | $499         | 5,000 minutes    | Advanced AI, integrations       |
-| Business     | $1,299       | 15,000 minutes   | Custom voices, priority support |
-| Enterprise   | $3,000+      | 50,000+ minutes  | White-label, SLA                |
-
-**What's included:**
-
-- More sophisticated AI models (claims human-like conversation)
-- All infrastructure costs
-- Setup and training included
-- Ongoing optimization
-- Integrations with major CRMs
-- Phone support
-
-**Differentiator:** Focuses on conversation quality over cost. Claims 10-15 minute average conversations vs. 3-5 minutes on cheaper platforms.
-
-**Actual monthly costs:**
-
-- **1,000 minutes:** $149
-- **5,000 minutes:** $499
-- **10,000 minutes:** $1,299 (includes 15k)
-- **50,000 minutes:** $3,000-5,000
-
-**Best for:** Sales teams, complex conversations, quality over cost optimization.
-
-### Prestyj (Real Estate Specific)
-
-**Pricing model:** Monthly subscription with done-for-you setup
-
-**Plans:**
-
-| Plan              | Monthly Cost | Volume             | What's Included                              |
-| ----------------- | ------------ | ------------------ | -------------------------------------------- |
-| Solo Agent        | $599         | 2,000 calls/month  | Setup, real estate training, CRM integration |
-| Team (2-5 agents) | $1,299       | 5,000 calls/month  | Multi-agent routing, lead scoring            |
-| Brokerage         | $2,499       | 15,000 calls/month | Office routing, compliance, reporting        |
-| Enterprise        | Custom       | Unlimited          | Multi-office, custom integrations, SLA       |
-
-**What's included:**
-
-- Complete setup and configuration (20+ hours)
-- Real estate-specific AI training (no generic responses)
-- CRM integration (Follow Up Boss, KVCore, LionDesk, etc.)
-- Lead routing and qualification
-- Appointment scheduling
-- Compliance and fair housing training
-- Dedicated success manager
-- Ongoing optimization and maintenance
-
-**No engineering required, no hidden costs.**
-
-**Actual cost per conversation:** $0.30-0.60 (depending on plan and volume).
-
-**Best for:** Real estate agents, teams, and brokerages who want results without building.
-
-### Generic Subscription Platforms (CallHippo, RingCentral AI, etc.)
-
-**Pricing model:** Monthly per-seat or usage
-
-**Typical costs:**
-
-- **Basic AI receptionist:** $30-100/month per line
-- **Advanced routing:** $100-300/month per line
-- **Enterprise solutions:** $500-2,000+/month
-
-**What's included:**
-
-- Basic call answering and routing
-- Limited AI conversation capabilities
-- Standard phone system features
-- Basic integrations
-
-**Limitations:**
-
-- Less sophisticated AI than specialized platforms
-- Limited customization
-- Not industry-specific
-
-**Best for:** Simple receptionist replacement, basic call handling, existing phone system users.
-
----
-
-## How Much Does an AI Voice Agent Cost Per Minute at Scale in 2026?
-
-The same per-minute platform can be cheap for one use case and expensive for another. Normalize quotes by call type, expected call length, required integrations, and escalation rate.
-
-| Use case | Typical monthly volume | Fully loaded 2026 cost | Best pricing model | Hidden cost to verify |
-| --- | ---: | ---: | --- | --- |
-| Small-business AI receptionist | 500–2,000 minutes | $500–$1,500/mo | Managed subscription | After-hours routing, calendar rules, failed-call review |
-| HVAC / home-services call handling | 1,800–11,250 minutes | $499–$1,499/mo managed or $0.20–$0.40/min DIY | Managed flat rate or hybrid AI + human escalation | ServiceTitan/Housecall Pro integration and emergency escalation |
-| Outbound reactivation calls | 2,000–20,000 minutes/campaign | $1,500–$8,000/campaign | Campaign fee or per-reactivated lead | DNC suppression, consent proof, list cleaning |
-| High-volume call center deflection | 50,000+ minutes | $5,000–$20,000+/mo | Enterprise volume contract | QA staffing and analytics retention |
-| Developer-built voice product | Variable | $0.12–$0.31/min plus engineering | Per-minute API platform | 40–120 setup hours and ongoing model/prompt maintenance |
-| Regulated intake (legal, dental, finance) | 1,000–10,000 minutes | $1,500–$7,500/mo | Managed vertical platform | Compliance scripts, recording policy, human handoff thresholds |
-
-**Rule of thumb:** below 5,000 minutes/month, the vendor with the cheapest per-minute rate often loses once setup labor is counted. Above 20,000 minutes/month, negotiate usage tiers or a flat-rate managed contract before volume spikes.
-
----
-
-## What Hidden Costs Do AI Voice Agent Buyers Underestimate?
-
-### 1. Engineering and Setup Time
-
-This is where the "cheap" platforms get expensive — [18–35% in hidden fees](/stat/voice-agent-hidden-cost-percent) is the baseline; DIY platforms often exceed it.
-
-**DIY platforms (Vapi, Retell, Bland):**
-
-| Phase                   | Time Required    | Cost at $150/hr    |
-| ----------------------- | ---------------- | ------------------ |
-| Platform setup          | 15-30 hours      | $2,250-4,500       |
-| Prompt engineering      | 20-40 hours      | $3,000-6,000       |
-| Voice/persona tuning    | 10-20 hours      | $1,500-3,000       |
-| Integration (CRM, etc.) | 15-40 hours      | $2,250-6,000       |
-| Testing and QA          | 10-20 hours      | $1,500-3,000       |
-| **Initial setup total** | **70-150 hours** | **$10,500-22,500** |
-
-**Ongoing maintenance:**
-
-- Prompt updates: 3-5 hours/month
-- Bug fixes: 2-5 hours/month
-- Performance optimization: 3-8 hours/month
-- **Monthly:** 8-18 hours ($1,200-2,700/month)
-
-**Managed platforms:** $0 engineering cost, setup included.
-
-### 2. LLM Cost Volatility
-
-Per-minute platforms expose you to LLM price changes and usage variability.
-
-**Example:** You build on GPT-4 at $0.03 per 1K input tokens. OpenAI raises prices 20%, or you need to upgrade to a better model. Your costs just increased 20% overnight.
-
-**Managed platforms:** Absorb LLM cost changes, you pay a fixed rate.
-
-### 3. Testing and Iteration Costs
-
-During setup and optimization, you'll burn through minutes testing:
-
-| Phase               | Testing Minutes     | Cost at $0.18/min |
-| ------------------- | ------------------- | ----------------- |
-| Initial testing     | 500-1,000 min       | $90-180           |
-| Prompt iteration    | 300-800 min         | $54-144           |
-| Voice tuning        | 200-400 min         | $36-72            |
-| Integration testing | 300-600 min         | $54-108           |
-| **Total**           | **1,300-2,800 min** | **$234-504**      |
-
-**Hidden truth:** You'll spend $200-500 before handling your first real call.
-
-### 4. Support and Troubleshooting
-
-When things break (and they will):
-
-**DIY platforms:**
-
-- Community support (free but slow)
-- Email support (24-48 hour response)
-- Premium support: $500-2,000/month extra
-
-**Managed platforms:**
-
-- Included support
-- Dedicated success manager
-- Fast response times
-
-### 5. Compliance and Quality Assurance
-
-For regulated industries (real estate, finance, healthcare):
-
-| Requirement           | DIY Cost            | Managed Cost |
-| --------------------- | ------------------- | ------------ |
-| Fair housing training | 10-20 hours         | Included     |
-| Call monitoring       | Build yourself      | Included     |
-| Compliance reporting  | Build yourself      | Included     |
-| Regular audits        | Your responsibility | Included     |
-
----
-
-## Total Cost of Ownership: 12-Month Comparison
-
-Let's compare the real cost of running AI voice agents at 5,000 minutes per month for 12 months. A [$0–$1,500 pilot](/stat/voice-agent-pilot-setup-cost-range) lets you validate these numbers before committing.
-
-### Scenario: Real Estate Team (5,000 min/month)
-
-**Option 1: Vapi (DIY)**
-
-| Cost Category                            | Year 1 Cost |
-| ---------------------------------------- | ----------- |
-| Usage (5k min × 12 × $0.18)              | $10,800     |
-| Initial setup (80 hrs × $150)            | $12,000     |
-| Monthly maintenance (10 hrs × 12 × $150) | $18,000     |
-| Testing/iteration                        | $500        |
-| **Total Year 1**                         | **$41,300** |
-| **Effective cost/min**                   | **$0.69**   |
-
-**Option 2: Synthflow (Subscription)**
-
-| Cost Category                  | Year 1 Cost |
-| ------------------------------ | ----------- |
-| Pro plan ($299 × 12)           | $3,588      |
-| Overages (2k min × 12 × $0.22) | $5,280      |
-| Setup time (15 hrs × $50)      | $750        |
-| **Total Year 1**               | **$9,618**  |
-| **Effective cost/min**         | **$0.16**   |
-
-**Option 3: Prestyj (Done-For-You)**
-
-| Cost Category           | Year 1 Cost |
-| ----------------------- | ----------- |
-| Team plan ($1,299 × 12) | $15,588     |
-| Setup/engineering       | $0          |
-| Maintenance             | $0          |
-| Industry training       | $0          |
-| CRM integration         | $0          |
-| Compliance              | $0          |
-| **Total Year 1**        | **$15,588** |
-| **Effective cost/min**  | **$0.26**   |
-
-**The insight:** The "cheapest" DIY option costs 2.6x more than a managed solution when you factor in engineering time.
-
-### Scenario: High-Volume Call Center (50,000 min/month)
-
-**Option 1: Bland AI (DIY with scale)**
-
-| Cost Category                            | Year 1 Cost |
-| ---------------------------------------- | ----------- |
-| Usage (50k × 12 × $0.08 bulk)            | $48,000     |
-| Initial setup                            | $15,000     |
-| Monthly maintenance (15 hrs × 12 × $150) | $27,000     |
-| **Total Year 1**                         | **$90,000** |
-| **Effective cost/min**                   | **$0.15**   |
-
-**Option 2: Air.ai (Managed)**
-
-| Cost Category                  | Year 1 Cost |
-| ------------------------------ | ----------- |
-| Enterprise plan (~$3,500 × 12) | $42,000     |
-| Setup/engineering              | $0          |
-| Maintenance                    | $0          |
-| **Total Year 1**               | **$42,000** |
-| **Effective cost/min**         | **$0.07**   |
-
-**The insight:** At scale, managed platforms are HALF the cost of DIY when you factor in engineering.
-
----
-
-## When Each Platform Makes Sense
-
-### Choose Vapi If:
-
-- You're building voice AI into your own product
-- You need maximum control and customization
-- You have dedicated engineering resources
-- You're venture-backed and optimizing for flexibility over cost
-
-### Choose Retell AI If:
-
-- You want developer control with less complexity than Vapi
-- WebRTC integration is important (web-based calling)
-- You have some engineering resources but want simpler setup
-
-### Choose Bland AI If:
-
-- You need higher volume with bulk discounts
-- You want simpler all-in-one pricing
-- Developer access is important but setup time should be minimal
-
-### Choose Synthflow If:
-
-- You're non-technical and want visual builders
-- Predictable monthly costs are important
-- Volume is moderate (under 10k minutes/month)
-- You want no-code customization
-
-### Choose Air.ai If:
-
-- Conversation quality is more important than cost
-- You're doing complex sales conversations
-- You need longer average conversation times
-- Budget is flexible, results matter more
-
-### Choose Prestyj If:
-
-- You're in real estate and need industry-specific AI
-- You want zero engineering time investment
-- Compliance (fair housing) is a concern
-- CRM integration is critical
-- You prefer outcome-based solutions over technology projects
-
-### Choose Generic Phone Systems If:
-
-- You need simple call answering only
-- You're already using the platform for phone service
-- AI needs are basic (routing, simple FAQ)
-
----
-
-## ROI Calculation Framework
-
-Here's how to calculate if AI voice agents make financial sense for your business.
-
-### Step 1: Calculate Current Cost of Alternative
-
-**Human receptionist:**
-
-- Salary: $35,000-45,000/year
-- Benefits: $8,000-12,000/year
-- Training: $2,000-4,000/year
-- Management: $3,000-6,000/year
-- **Total:** $48,000-67,000/year
-
-**Human ISA (real estate):**
-
-- Salary: $40,000-60,000/year
-- Commission: $10,000-20,000/year
-- Benefits: $10,000-18,000/year
-- Tools: $5,000-8,000/year
-- Training/turnover: $8,000-15,000/year
-- **Total:** $73,000-121,000/year
-
-**Missed leads (no system):**
-
-- Average lead value: $500-5,000
-- Leads missed per month: 5-50
-- **Lost revenue:** $30,000-3,000,000/year
-
-### Step 2: Calculate AI Voice Agent Cost
-
-Use the TCO examples above for your expected volume.
-
-### Step 3: Calculate Payback Period
-
-```
-Payback Period = AI Implementation Cost / (Current Cost - AI Annual Cost)
+```text
+5,000 minutes × $0.05 platform fee = $250
+Fully loaded cost = $250 + model + TTS + STT + transport/telephony + add-ons
 ```
 
-**Example:**
+Vapi is easiest to compare when the buyer already knows the provider mix and can estimate each line separately.
 
-- Current: Human ISA at $95,000/year
-- AI solution: Prestyj at $15,588/year
-- Savings: $79,412/year
-- Payback: Immediate (no large implementation cost)
+### Retell: a visible component calculator and a wide total range
 
-### Step 4: Factor in Intangible Benefits
+Retell’s official pricing page publishes **$0.07–$0.31 per minute** for pay-as-you-go Voice AI. It also breaks out the current components: **$0.055/minute** for voice infrastructure, voice pricing by provider, model pricing by model and speed tier, and **$0.015/minute** for Retell telephony. Custom telephony can remove that Retell telephony line.
 
-AI voice agents also provide:
+The page also lists optional per-minute or per-action add-ons, including knowledge base, batch calls, branded calls, denoising, guardrails, personal-information removal, and AI quality assurance. Twenty concurrent calls are included; added concurrency and Retell phone numbers have monthly prices.
 
-- **24/7 availability** (value: 40-60% more lead capture)
-- **Zero wait times** (value: 15-25% higher conversion)
-- **Perfect consistency** (value: 10-20% quality improvement)
-- **Instant scaling** (value: no hiring lag during growth)
+The useful comparison is a configured estimate, not the top or bottom of the range. At 5,000 minutes:
 
----
+```text
+Low published range: 5,000 × $0.07 = $350
+High published range: 5,000 × $0.31 = $1,550
+```
 
-## Common Pricing Mistakes to Avoid
+A buyer should save the calculator configuration with the quote so a later model or voice change does not silently invalidate the budget.
 
-### Mistake #1: Comparing Only Advertised Rates
+### Bland: plan fee plus connected-minute and transfer rates
 
-"Vapi is $0.05/minute, that's way cheaper than Prestyj at $0.26/minute!"
+Bland’s billing documentation says its current self-serve structure took effect December 5, 2025:
 
-**Reality:** Vapi fully loaded with engineering is $0.69/minute in year one.
+| Bland plan | Monthly plan fee | Connected-minute rate | Transfer-time rate |
+| --- | ---: | ---: | ---: |
+| Start | $0 | $0.14 | $0.05 |
+| Build | $299 | $0.12 | $0.04 |
+| Scale | $499 | $0.11 | $0.03 |
 
-### Mistake #2: Ignoring Engineering Costs
+Bland bills connected time to the second. Its documentation says transfer time is billed additionally when a call transfers through a Bland-provided number; bring-your-own-Twilio transfers do not carry that Bland transfer fee. Enterprise pricing is custom.
 
-"I can build this myself and save money."
+At 5,000 connected minutes before transfer charges:
 
-**Reality:** 80 hours of engineering time at $150/hour is $12,000—more than a year of many managed platforms.
+```text
+Start: 5,000 × $0.14 = $700
+Build: $299 + (5,000 × $0.12) = $899
+Scale: $499 + (5,000 × $0.11) = $1,049
+```
 
-### Mistake #3: Underestimating Volume
+The lower Scale minute rate does not beat Start at this volume because the monthly fee is larger. Solve the full equation before upgrading solely for the meter.
 
-"I'll only use 1,000 minutes per month."
+### Synthflow: an enterprise annual commitment
 
-**Reality:** If it works, usage expands. Plan for 2-3x your initial estimate.
+Synthflow’s current pricing page says enterprise contracts start at **$30,000 annually**. It says final pricing is scoped around call volume, concurrency, telephony setup, integrations, security needs, and launch support.
 
-### Mistake #4: Forgetting Ongoing Maintenance
+That is not directly comparable to a self-serve platform fee. The annualized floor is $2,500 per month, but the page does not promise a public minute allowance at that price. A fair comparison requires a written scope showing included usage, implementation, support, overages, and contract term.
 
-"Setup is a one-time cost."
+## How Do You Calculate the Fully Loaded Cost per Minute?
 
-**Reality:** Prompts need updates, integrations break, AI models improve. Budget 8-15 hours/month ongoing.
+Use one formula for every quote:
 
-### Mistake #5: Not Considering Opportunity Cost
+```text
+Monthly platform or contract fees
++ connected-minute charges
++ telephony and transfer charges
++ model, speech, and voice charges
++ numbers, concurrency, storage, and compliance add-ons
++ implementation and ongoing QA labor
+= fully loaded monthly cost
 
-"My developer can build this."
+Fully loaded monthly cost ÷ connected minutes
+= fully loaded cost per connected minute
+```
 
-**Reality:** Every hour building voice AI infrastructure is an hour not building your core product.
+Do not divide by attempted calls. Failed calls, voicemail, transfers, and silence can follow different billing rules. Use the vendor’s billing definition and your own call logs.
 
----
+Prestyj’s current planning benchmark puts managed, high-volume implementations at [$0.06–$0.18 per minute](/stat/voice-agent-cost-per-minute-at-scale) at **50,000+ minutes per month**. That is a first-party benchmark under stated scale assumptions, not a promise that every account or vendor reaches the range. Low-volume pilots should expect a higher effective cost because setup and review labor are spread over fewer calls.
 
-## FAQ
+## Which Hidden Costs Should Buyers Put in the Quote?
 
-### What's the cheapest AI voice agent platform?
+A useful quote answers these questions in writing:
 
-The cheapest advertised rate is Vapi at $0.05/minute (platform fee only). The cheapest fully-loaded solution depends on volume and whether you factor in engineering time. For most teams under 10,000 minutes/month, subscription platforms like Synthflow deliver the lowest total cost.
+1. **What starts and stops the clock?** Ask about ringing, silence, hold time, voicemail, transfer time, and post-transfer billing.
+2. **Which model and voice produced the demo?** A low-cost configuration may not be the one used in the sales call.
+3. **Is telephony included?** Separate carrier, SIP, phone-number, or transport charges can change the total.
+4. **What happens above included concurrency?** A campaign can fail operationally even when the per-minute budget is correct.
+5. **Which add-ons are required in production?** Knowledge bases, guardrails, redaction, call recording, retention, branded calling, and QA may be optional line items.
+6. **Who owns implementation?** Prompt design, call routing, CRM actions, calendar rules, testing, and escalation need labor even when software setup is free.
+7. **Who reviews failures after launch?** Budget time for transcripts, call recordings, false transfers, missed intents, and knowledge updates.
+8. **What is the contract minimum?** Annual commitments and committed volume can dominate the meter.
 
-### Why are managed platforms sometimes cheaper than DIY?
+Prestyj’s first-party pricing synthesis estimates hidden charges and omitted operating lines at [18–35% above the advertised monthly price](/stat/voice-agent-hidden-cost-percent) across the contracts it reviewed. Treat that as a planning allowance until a vendor-specific quote replaces it.
 
-Because they absorb engineering costs across hundreds of customers. Your $12,000 setup cost is spread across their customer base, making it cheaper for everyone.
+## What Should an AI Voice Pilot Cost?
 
-### Can I switch platforms if I'm unhappy?
+The software bill is only one part of a pilot. A proper pilot also needs a bounded use case, success criteria, test calls, human escalation, consent and recording review, and a rollback path.
 
-Yes, but switching costs time and money. If you built on a DIY platform, you'll need to rebuild. If you're on a subscription platform, you can usually switch more easily (but will lose any customization). Choose carefully upfront.
+Prestyj’s current SMB planning range is [$0–$1,500 in setup fees](/stat/voice-agent-pilot-setup-cost-range) for a scoped pilot with persona configuration, knowledge ingestion, a CRM webhook, and call routing. The range does not include every vendor’s usage charges, your internal labor, or enterprise security work.
 
-### Do prices go down as AI gets cheaper?
+Use a 30-day pilot scorecard:
 
-Potentially, but don't count on it. Platforms may lower prices as LLM costs drop, or they may invest savings into better AI and keep prices stable. Managed platforms insulate you from volatility.
+| Metric | Definition to lock before launch |
+| --- | --- |
+| Connected-minute cost | All vendor charges divided by connected minutes |
+| Cost per resolved call | Fully loaded cost divided by calls completed without avoidable human work |
+| Transfer rate | Calls transferred to a person divided by connected calls |
+| False-transfer rate | Transfers that should have remained automated |
+| Booking or completion rate | Calls that complete the intended business outcome |
+| QA defect rate | Calls with factual, policy, routing, or experience defects |
+| Human review time | Weekly hours spent reviewing and correcting the system |
 
-### What about free trials?
+A cheap call that books the wrong appointment or mishandles an emergency is expensive. A higher-priced call that resolves the workflow safely can be cheaper at the business level.
 
-Most platforms offer free trials or credits. Use them to test thoroughly before committing. Expect to spend 500-1,000 minutes testing to really understand if a platform works for your use case.
+## Which Pricing Model Fits a Service Business?
 
-### What hidden costs make AI voice agents more expensive than advertised?
+Default to the model that matches your team’s operating capacity:
 
-The biggest hidden costs are engineering setup, prompt tuning, telephony pass-through, LLM/STT/TTS add-ons, failed-call QA, compliance review, analytics retention, and CRM integration work. A $0.05/minute platform often lands at **$0.15–$0.31/minute fully loaded** before you count 40–120 hours of setup. For non-technical teams, managed platforms can be cheaper because those costs are bundled.
+- **Choose a developer platform** when engineers want provider-level control and will own monitoring, integrations, and incident response.
+- **Choose a bundled self-serve platform** when an operator can build and maintain workflows but wants fewer provider bills.
+- **Choose an enterprise contract** when security, support, concurrency, procurement, and launch assistance matter more than self-serve flexibility.
+- **Choose a done-for-you service** when the business wants a managed outcome and does not have a person available to own prompts, routing, QA, and optimization.
 
-### How much should AI voice cost at scale per minute?
+The commercial decision should use cost per resolved call or cost per booked qualified appointment—not cost per minute alone. Compare the same workflow, call mix, quality threshold, escalation rules, and labor assumptions.
 
-At low volume, expect **$0.20–$0.40/minute fully loaded** on managed or subscription platforms. At 50,000+ minutes/month, negotiated enterprise pricing can compress toward **$0.08–$0.18/minute**, but QA, escalation, and analytics still add cost. If a vendor quotes less than $0.08/minute at meaningful quality, ask whether LLM, telephony, transcription, call recording, and support are included.
+## What Changed in This July 2026 Refresh?
 
-### How much should I budget for AI voice agents?
+This page previously showed stale or unsupported plan tables for seven vendors, including old Bland rates, a discontinued public Synthflow self-serve structure, unverifiable Air.ai packages, and obsolete Prestyj voice plans. Those tables were removed.
 
-**Small business (under 5k min/month):** $500-1,500/month all-in
+The replacement uses only pricing visible on official Vapi, Retell, Bland, and Synthflow pages checked July 21, 2026. Public pricing can change without notice; verify the linked vendor page and save the quote date before buying.
 
-**Mid-market (5k-20k min/month):** $1,500-5,000/month all-in
+## What Is the Bottom Line on AI Voice Agent Pricing?
 
-**Enterprise (20k+ min/month):** $5,000-20,000+/month all-in
+Start with the official meter, then add every component required to run one production call. Vapi’s $0.05 is a platform layer. Retell publishes a configured $0.07–$0.31 range. Bland combines a plan fee with $0.11–$0.14 connected minutes. Synthflow starts with a $30,000 annual enterprise commitment.
 
-Always add 20-30% buffer for overages and unexpected costs.
+Normalize all four into the same workflow and calculate the fully loaded cost per resolved call. Then run a bounded pilot with human escalation and a written QA threshold.
 
-### Which Prestyj page should I use for voice-agent buying research?
+For deeper buying research, read [AI voice agent pricing](/blog/ai-voice-agent-pricing-guide), [hidden costs of AI voice agents](/blog/hidden-costs-of-ai-voice-agents-2026), [AI voice agent cost per minute at scale](/blog/ai-voice-agent-cost-per-minute-at-scale-2026), and [voice agent testing pricing](/blog/voice-agent-testing-pricing-2026).
 
-Use [AI Voice Agents](/ai-voice-agents) for cost-per-minute and hidden-fee buying research, [AI Voice Agent Pricing](/solutions/ai-voice-agent-pricing) for the canonical solution page, and [AI Receptionist](/ai-receptionist) when you are replacing Ruby, Smith.ai, AnswerConnect, MAP, or an in-house front desk.
-
----
-
-## Related Reading
-
-- **[AI Voice Agents](/ai-voice-agents)** — Commercial hub for per-minute pricing, hidden costs, and testing economics
-- **[AI Receptionist](/ai-receptionist)** — Answering-service replacement and inbound receptionist economics
-- **[AI Voice Agent Pricing in 2026: Complete Cost Breakdown](/blog/ai-voice-agent-pricing-guide)** — Detailed look at pricing models and hidden costs
-- **[Build vs Buy for AI Sales Agents](/blog/build-vs-buy-ai-sales-agents-real-estate)** — Should you build or buy?
-- **[ISA Cost 2026: Complete Breakdown](/blog/isa-cost-2026)** — Compare AI to human ISA costs
-- **[AI Voice Agent vs Human Receptionist](/blog/ai-voice-agent-vs-human-receptionist)** — Head-to-head comparison
-
----
-
-_Confused by AI voice agent pricing? [Book a demo](/book-demo) to see transparent, predictable pricing with no hidden fees._
+Prestyj delivers done-for-you AI agents for marketing and sales for service businesses and real estate teams. [Book a demo](/book-demo) to scope one call workflow using your actual volume, escalation rules, and success metric.
