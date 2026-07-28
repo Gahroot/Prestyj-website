@@ -20,7 +20,7 @@ export const navLinks = [
   { href: "#solutions", label: "Solutions", dropdown: true as const },
   { href: "/pricing", label: "Pricing" },
   { href: "/batch-video-ads", label: "Video Ads" },
-  { href: "/contact", label: "Contact" },
+  { href: "/ad-to-appointment-atlas", label: "Research" },
 ];
 
 export type CtaLink = {

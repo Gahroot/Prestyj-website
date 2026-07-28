@@ -38,6 +38,7 @@ const footerLinks = {
   company: [
     { href: "/pricing", label: "Pricing", highlight: true },
     { href: "/book-demo", label: "Book a Call" },
+    { href: "/ad-to-appointment-atlas", label: "Ad-to-Appointment Atlas" },
     { href: "/results", label: "Results" },
     { href: "/blog", label: "Blog" },
     { href: "/contact", label: "Contact" },
@@ -50,7 +51,7 @@ const footerLinks = {
 
 function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<FooterLink> }) {
   return (
-    <div>
+    <div className="min-w-0">
       <h3 className="font-heading text-foreground mb-4 font-semibold">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => (
@@ -61,8 +62,8 @@ function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<Fo
               rel={link.external ? "noreferrer" : undefined}
               className={
                 link.highlight
-                  ? "text-primary hover:text-primary/80 text-sm font-semibold transition-colors"
-                  : "text-muted-foreground hover:text-foreground text-sm transition-colors"
+                  ? "text-sm font-semibold break-words text-[#a99aff] transition-colors hover:text-white"
+                  : "text-muted-foreground hover:text-foreground text-sm break-words transition-colors"
               }
             >
               {link.label}
@@ -76,17 +77,17 @@ function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<Fo
 
 export function Footer() {
   return (
-    <footer className="bg-card border-border border-t">
+    <footer className="bg-card border-border border-t [overflow-wrap:anywhere]">
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
+        <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-6 md:gap-8">
           {/* Brand */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center space-x-2">
               <span className="font-heading text-primary text-xl font-bold">PRESTYJ</span>
             </Link>
             <p className="text-muted-foreground mt-4 max-w-sm text-sm">
-              Done-for-you AI agents for marketing and sales. Ads, video
-              creative, lead response, calls, and bookings — handled.
+              Done-for-you AI agents for marketing and sales. Ads, video creative, lead response,
+              calls, and bookings — handled.
             </p>
             <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
               <div className="flex flex-wrap gap-x-2">
