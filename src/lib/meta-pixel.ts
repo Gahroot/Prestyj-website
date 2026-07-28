@@ -1,4 +1,5 @@
 import type { BatchTierId } from "@/lib/batch-tiers";
+import type { AuditBusinessType, ReadinessLabel } from "@/lib/ai-first-audit/types";
 
 declare global {
   interface Window {
@@ -81,6 +82,77 @@ export function trackEvent(
   }).catch(() => {
     // Never break UX for tracking
   });
+}
+
+export type AuditEventName =
+  | "AuditViewed"
+  | "AuditStarted"
+  | "AuditProfileComplete"
+  | "AuditWorkflowsPicked"
+  | "AuditScoringComplete"
+  | "AuditPreviewViewed"
+  | "AuditReportViewed"
+  | "AuditReportPrinted"
+  | "AuditReviewClicked";
+
+export type AuditStepName =
+  | "landing"
+  | "profile"
+  | "workflows"
+  | "questions"
+  | "preview"
+  | "request"
+  | "report";
+
+export interface AuditEventData {
+  readonly businessType?: AuditBusinessType;
+  readonly selectedWorkflowCount?: number;
+  readonly stepName?: AuditStepName;
+  readonly readinessBand?: ReadinessLabel;
+}
+
+function safeAuditEventData(data: AuditEventData): Record<string, string> {
+  const safe: Record<string, string> = {};
+  if (data.businessType) safe.business_type = data.businessType;
+  if (data.selectedWorkflowCount !== undefined) {
+    safe.selected_workflow_count = String(data.selectedWorkflowCount);
+  }
+  if (data.stepName) safe.step_name = data.stepName;
+  if (data.readinessBand) safe.result_readiness_band = data.readinessBand;
+  return safe;
+}
+
+/** Send only allowlisted, non-contact audit dimensions to Pixel and CAPI. */
+export function trackAuditEvent(eventName: AuditEventName, data: AuditEventData = {}): void {
+  if (typeof window === "undefined") return;
+  const eventId = crypto.randomUUID();
+  const customData = safeAuditEventData(data);
+
+  if (window.fbq) {
+    window.fbq("trackCustom", eventName, customData, { eventID: eventId });
+  }
+
+  fetch("/api/meta-capi", {
+    method: "POST",
+    keepalive: true,
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      eventName,
+      eventId,
+      sourceUrl: window.location.href,
+      customData,
+    }),
+  }).catch(() => {
+    // Tracking must never interrupt the audit.
+  });
+}
+
+/** Send the requested report as the standard Lead event with safe audit dimensions. */
+export function trackAuditLead(
+  userData: Pick<UserData, "email" | "firstName">,
+  data: AuditEventData,
+ ): void {
+  trackEvent("Lead", userData, safeAuditEventData(data));
 }
 
 /**

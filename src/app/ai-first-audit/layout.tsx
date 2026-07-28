@@ -1,28 +1,29 @@
 import type { Metadata } from "next";
 
+const title = "AI-First Audit | Find Your Costliest Workflows";
+const description =
+  "Find the workflows costing your business the most. See their time cost, business impact, and where an AI agent can help first.";
+
 export const metadata: Metadata = {
-  title: "The AI-First Audit — Find Your $50K/yr Time-Cost in 6 Minutes",
-  description:
-    "Free interactive audit. Score 5–15 of your team's tasks on leverage and AI-readiness, get your top 3 'automate first' recommendations, a 7-day deployment plan, and the exact tools to use — emailed instantly.",
+  title,
+  description,
   keywords: [
-    "ai audit",
-    "ai-first audit",
-    "ai readiness assessment",
-    "automation roi calculator",
-    "what to automate with ai",
-    "ai deployment plan",
+    "AI-First Audit",
+    "business workflow audit",
+    "workflow cost audit",
+    "AI agents for service businesses",
+    "real estate workflow audit",
   ],
   openGraph: {
-    title: "The AI-First Audit",
-    description:
-      "Find the 3 tasks your team should automate first. Free, 6 minutes, personalized 7-day plan emailed instantly.",
+    title,
+    description,
     type: "website",
     url: "https://prestyj.com/ai-first-audit",
   },
   twitter: {
     card: "summary_large_image",
-    title: "The AI-First Audit",
-    description: "Find the 3 tasks your team should automate first.",
+    title,
+    description,
   },
   alternates: {
     canonical: "https://prestyj.com/ai-first-audit",

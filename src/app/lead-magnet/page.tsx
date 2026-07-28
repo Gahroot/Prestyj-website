@@ -30,12 +30,12 @@ const PLAYBOOKS: readonly Playbook[] = [
   {
     href: "/ai-first-audit",
     icon: Sparkles,
-    eyebrow: "Interactive Audit",
-    title: "The AI-First Audit",
+    eyebrow: "Free business audit",
+    title: "AI-First Audit",
     description:
-      "6-minute interactive audit. Score 5–15 of your team’s tasks on leverage and AI-readiness — get your top 3 to automate first, a 7-day deployment plan, and the exact tools to use. PDF emailed instantly.",
-    audience: "Owners and operators ready to put AI to work this month",
-    ctaLabel: "Take the AI-First Audit",
+      "Find the workflows costing you the most. See your top result before email, then get the full ranked report and first fix plan.",
+    audience: "Service business and real estate owners and operators",
+    ctaLabel: "Find my costly workflows",
   },
   {
     href: "/lead-magnet/brokerage-playbook",

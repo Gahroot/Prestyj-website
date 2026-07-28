@@ -1,12 +1,21 @@
 /**
- * Aggregate result computation. Pure — given a context, a list of task
- * inputs, and an hourly cost, return the full `AuditResult` shape that's
+ * Aggregate result computation. Pure. Given a context, a list of task
+ * inputs, and an hourly cost, return the full version 1 result shape that's
  * persisted to `AiFirstAudit.resultJson` and rendered everywhere else.
  */
 
-import type { AuditResult, AuditTaskInput, BusinessContext, ScoredTask } from "./types";
-import { scoreTask } from "./scoring";
+import type {
+  AuditProfile,
+  AuditResultV1,
+  AuditResultV2,
+  AuditTaskInput,
+  BusinessContext,
+  ScoredTask,
+  WorkflowInput,
+} from "./types";
+import { scoreTask, scoreWorkflows } from "./scoring";
 import { buildSevenDayPlan } from "./seven-day-plan";
+import { buildFirstFixPlan } from "./first-fix-plan";
 
 function roundToNearest(value: number, step: number): number {
   return Math.round(value / step) * step;
@@ -22,7 +31,7 @@ export function computeResult(
   tasks: readonly AuditTaskInput[],
   hourlyCost: number,
   options: ComputeResultOptions = {},
-): AuditResult {
+): AuditResultV1 {
   if (tasks.length === 0) {
     throw new Error("Cannot compute audit result with zero tasks");
   }
@@ -72,6 +81,31 @@ export function computeResult(
     totalAnnualDollarsSaved,
     headlineDollars,
     sevenDayPlan,
-    computedAt: (options.now ?? (() => new Date()))().toISOString(),
+    computedAt: (options.now ? options.now() : new Date()).toISOString(),
+  };
+}
+
+export function computeResultV2(
+  profile: AuditProfile,
+  workflows: readonly WorkflowInput[],
+  options: ComputeResultOptions = {},
+): AuditResultV2 {
+  if (workflows.length < 3 || workflows.length > 5) {
+    throw new Error("Choose between 3 and 5 workflows");
+  }
+
+  const scored = scoreWorkflows(workflows, profile.hourlyCost);
+  const topWorkflow = scored[0];
+  if (!topWorkflow) throw new Error("Cannot compute audit result with zero workflows");
+
+  return {
+    version: 2,
+    profile,
+    workflows: scored,
+    topThree: scored.slice(0, 3),
+    totalWeeklyHours: scored.reduce((total, workflow) => total + workflow.weeklyHoursMidpoint, 0),
+    totalAnnualTimeCost: scored.reduce((total, workflow) => total + workflow.annualTimeCost, 0),
+    firstFixPlan: buildFirstFixPlan(topWorkflow),
+    computedAt: (options.now ? options.now() : new Date()).toISOString(),
   };
 }

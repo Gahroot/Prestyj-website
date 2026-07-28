@@ -16,7 +16,7 @@ import { finalizeRequestSchema, tasksListSchema } from "@/lib/validations/ai-fir
 import { computeResult } from "@/lib/ai-first-audit/compute-result";
 import type {
   BusinessContext,
-  AuditResult,
+  AuditResultV1,
   AuditTaskInput,
   BusinessType,
   RevenueBand,
@@ -95,7 +95,7 @@ export async function POST(request: NextRequest, { params }: RouteContext) {
       role: audit.lead.role as Role,
     };
 
-    const result: AuditResult = computeResult(context, tasks, audit.hourlyCost);
+    const result: AuditResultV1 = computeResult(context, tasks, audit.hourlyCost);
 
     // Persist result + finalize status first. Email sends are best-effort.
     await prisma.aiFirstAudit.update({

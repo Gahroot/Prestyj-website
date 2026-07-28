@@ -1,279 +1,200 @@
 "use client";
 
 import * as React from "react";
-import { Plus, Sparkles } from "lucide-react";
+import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { AUDIT_COPY } from "@/lib/ai-first-audit/copy";
+import { getWorkflowPresets } from "@/lib/ai-first-audit/task-library";
+import type { AuditBusinessType, ToolCategory } from "@/lib/ai-first-audit/types";
+import type { WorkflowSelection } from "./wizard";
 import { TaskRow } from "./task-row";
-import {
-  getGroupedPresetsForBusinessType,
-  getSuggestedPresetIds,
-} from "@/lib/ai-first-audit/task-library";
-import type { BusinessType, ToolCategory } from "@/lib/ai-first-audit/types";
-import { cn } from "@/lib/utils";
 
+/** @deprecated Version 1 compatibility for the retired score component. */
 export interface PickedTask {
   readonly id: string;
-  title: string;
+  readonly title: string;
   readonly category: ToolCategory;
-  /** True for user-added rows; allows full title editing + removal. */
   readonly custom: boolean;
 }
 
 interface StepTaskPickerProps {
-  readonly businessType: BusinessType;
-  readonly initialPicked: readonly PickedTask[];
+  readonly businessType: AuditBusinessType;
+  readonly initialSelections: readonly WorkflowSelection[];
   readonly onBack: () => void;
-  readonly onContinue: (picked: readonly PickedTask[]) => void;
+  readonly onContinue: (selections: readonly WorkflowSelection[]) => void;
 }
 
-const MIN_TASKS = 3;
-const MAX_TASKS = 10;
-const TARGET_LOW = 5;
-const TARGET_HIGH = 7;
-
-const BUSINESS_LABEL: Record<BusinessType, string> = {
-  "real-estate": "real-estate teams",
-  "home-services": "home-services pros",
-  agency: "agencies",
-  coaching: "coaches & consultants",
-  ecommerce: "DTC brands",
-  saas: "SaaS teams",
-  "professional-services": "professional services",
-  other: "businesses like yours",
-};
+const MIN_WORKFLOWS = 3;
+const MAX_WORKFLOWS = 5;
 
 export function StepTaskPicker({
   businessType,
-  initialPicked,
+  initialSelections,
   onBack,
   onContinue,
 }: StepTaskPickerProps) {
-  const grouped = React.useMemo(
-    () => getGroupedPresetsForBusinessType(businessType),
-    [businessType],
-  );
-  const suggestedIds = React.useMemo(
-    () => new Set(getSuggestedPresetIds(businessType, 4)),
-    [businessType],
-  );
-
-  // Start empty so the user picks intentionally. Resume state if returning.
-  const [picked, setPicked] = React.useState<PickedTask[]>(() => [...initialPicked]);
-  const [customDraft, setCustomDraft] = React.useState("");
+  const presets = React.useMemo(() => getWorkflowPresets(businessType), [businessType]);
+  const [selections, setSelections] = React.useState<WorkflowSelection[]>(() => [
+    ...initialSelections,
+  ]);
+  const [customTitle, setCustomTitle] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
-  const [showCustomInput, setShowCustomInput] = React.useState(false);
+  const selectedIds = React.useMemo(
+    () => new Set(selections.map((selection) => selection.id)),
+    [selections],
+  );
+  const customSelections = selections.filter((selection) => selection.isCustom);
 
-  const pickedIds = React.useMemo(() => new Set(picked.map((p) => p.id)), [picked]);
-
-  function togglePreset(id: string) {
+  function togglePreset(id: string, selected: boolean) {
     setError(null);
-    setPicked((prev) => {
-      if (prev.some((p) => p.id === id)) {
-        return prev.filter((p) => p.id !== id);
-      }
-      // Find preset across all groups.
-      const preset = grouped.flatMap((g) => g.presets).find((p) => p.id === id);
-      if (!preset) return prev;
-      if (prev.length >= MAX_TASKS) {
-        setError(`Maximum ${MAX_TASKS} tasks. Remove one before adding another.`);
-        return prev;
-      }
-      return [
-        ...prev,
-        { id: preset.id, title: preset.title, category: preset.category, custom: false },
-      ];
-    });
-  }
-
-  function renameTask(id: string, title: string) {
-    setPicked((prev) => prev.map((p) => (p.id === id ? { ...p, title } : p)));
-  }
-
-  function removeTask(id: string) {
-    setPicked((prev) => prev.filter((p) => p.id !== id));
-  }
-
-  function addCustom() {
-    const trimmed = customDraft.trim();
-    if (trimmed.length < 3) {
-      setError("Task title must be at least 3 characters.");
+    if (!selected) {
+      setSelections((current) => current.filter((workflow) => workflow.id !== id));
       return;
     }
-    if (picked.length >= MAX_TASKS) {
-      setError(`Maximum ${MAX_TASKS} tasks. Remove one first.`);
+    if (selections.length >= MAX_WORKFLOWS) {
+      setError("You can choose up to 5 workflows. Remove one to add another.");
       return;
     }
-    setError(null);
-    const customId = `custom-${crypto.randomUUID().slice(0, 8)}`;
-    setPicked((prev) => [
-      ...prev,
-      { id: customId, title: trimmed, category: "ops-automation", custom: true },
+    const preset = presets.find((workflow) => workflow.id === id);
+    if (!preset) return;
+    setSelections((current) => [...current, { ...preset, isCustom: false }]);
+  }
+
+  function addCustomWorkflow() {
+    const title = customTitle.trim();
+    if (title.length < 3) {
+      setError("Enter at least 3 characters for your workflow.");
+      return;
+    }
+    if (title.length > 120) {
+      setError("Keep the workflow name under 120 characters.");
+      return;
+    }
+    if (selections.length >= MAX_WORKFLOWS) {
+      setError("You can choose up to 5 workflows. Remove one first.");
+      return;
+    }
+    if (selections.some((workflow) => workflow.title.toLowerCase() === title.toLowerCase())) {
+      setError("That workflow is already on your list.");
+      return;
+    }
+    setSelections((current) => [
+      ...current,
+      {
+        id: `custom-${crypto.randomUUID().slice(0, 12)}`,
+        title,
+        category: "general",
+        isCustom: true,
+      },
     ]);
-    setCustomDraft("");
-    setShowCustomInput(false);
-  }
-
-  function handleNext() {
-    if (picked.length < MIN_TASKS) {
-      setError(`Pick at least ${MIN_TASKS} tasks.`);
-      return;
-    }
-    if (picked.length > MAX_TASKS) {
-      setError(`Maximum ${MAX_TASKS} tasks.`);
-      return;
-    }
+    setCustomTitle("");
     setError(null);
-    onContinue(picked);
   }
 
-  // Counter banner state: target band is 5–7. Below MIN, dimmed; in band, primary.
-  const inTargetBand = picked.length >= TARGET_LOW && picked.length <= TARGET_HIGH;
-  const meetsMinimum = picked.length >= MIN_TASKS;
+  function continueToQuestions() {
+    if (selections.length < MIN_WORKFLOWS) {
+      setError("Choose at least 3 workflows to continue.");
+      return;
+    }
+    onContinue(selections);
+  }
 
-  const customTasks = picked.filter((p) => p.custom);
+  const presetRows = React.createElement(
+    React.Fragment,
+    null,
+    ...presets.map((preset) =>
+      React.createElement(TaskRow, {
+        id: preset.id,
+        title: preset.title,
+        selected: selectedIds.has(preset.id),
+        disabled: selections.length >= MAX_WORKFLOWS && !selectedIds.has(preset.id),
+        onToggle: togglePreset,
+      }),
+    ),
+  );
+  const customRows = React.createElement(
+    React.Fragment,
+    null,
+    ...customSelections.map((workflow) =>
+      React.createElement(TaskRow, {
+        id: workflow.id,
+        title: workflow.title,
+        selected: true,
+        removable: true,
+        onToggle: (id: string) =>
+          setSelections((current) => current.filter((item) => item.id !== id)),
+        onRemove: (id: string) =>
+          setSelections((current) => current.filter((item) => item.id !== id)),
+      }),
+    ),
+  );
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Which tasks eat your week?</h2>
-        <p className="text-muted-foreground mt-1 text-sm">
-          Pick the tasks your team does repeatedly. You can edit titles to match how your team
-          actually talks about them. Aim for {TARGET_LOW}–{TARGET_HIGH} — we&apos;ll score them
-          next.
+    <section className="border-border bg-card rounded-xl border p-5 sm:p-8">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h2
+            data-wizard-heading
+            tabIndex={-1}
+            className="font-heading text-2xl font-bold outline-none"
+          >
+            {AUDIT_COPY.workflowHeading}
+          </h2>
+          <p className="text-muted-foreground mt-2 max-w-xl">{AUDIT_COPY.workflowSupport}</p>
+        </div>
+        <p className="text-muted-foreground shrink-0 text-sm" aria-live="polite">
+          {selections.length} of {MAX_WORKFLOWS} chosen
         </p>
       </div>
 
-      {/* Live counter banner */}
-      <div
-        className={cn(
-          "rounded-lg border px-4 py-3 text-sm transition-colors",
-          inTargetBand
-            ? "border-primary/40 bg-primary/5 text-foreground"
-            : meetsMinimum
-              ? "border-border bg-muted/30 text-foreground"
-              : "border-border bg-muted/30 text-muted-foreground",
-        )}
-      >
-        <div className="flex items-center justify-between gap-3">
-          <span className="font-medium">
-            {picked.length === 0
-              ? `Pick ${TARGET_LOW}–${TARGET_HIGH} to get the sharpest results.`
-              : inTargetBand
-                ? `Nice — ${picked.length} picked. You can score now or add a couple more.`
-                : meetsMinimum
-                  ? `${picked.length} picked. Add ${TARGET_LOW - picked.length > 0 ? `${TARGET_LOW - picked.length} more` : "a few more"} for a sharper read.`
-                  : `${picked.length} picked · need at least ${MIN_TASKS}.`}
-          </span>
-          <span className="text-muted-foreground shrink-0 text-xs tabular-nums">
-            {picked.length}/{MAX_TASKS}
-          </span>
-        </div>
+      <div className="mt-7 space-y-2" aria-label="Workflow choices">
+        {presetRows}
       </div>
 
-      {/* Grouped presets */}
-      <div className="space-y-6">
-        {grouped.map((group) => (
-          <div key={group.id} className="space-y-2">
-            <h3 className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
-              {group.label}
-            </h3>
-            <div className="space-y-2">
-              {group.presets.map((preset) => {
-                const selected = pickedIds.has(preset.id);
-                const pickedEntry = picked.find((p) => p.id === preset.id);
-                const isSuggested = suggestedIds.has(preset.id);
-                return (
-                  <TaskRow
-                    key={preset.id}
-                    id={preset.id}
-                    title={pickedEntry?.title ?? preset.title}
-                    selected={selected}
-                    editable={selected}
-                    badge={
-                      isSuggested ? (
-                        <span className="bg-primary/10 text-primary inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold tracking-wide uppercase">
-                          <Sparkles className="h-3 w-3" />
-                          Common for {BUSINESS_LABEL[businessType]}
-                        </span>
-                      ) : null
-                    }
-                    onToggle={togglePreset}
-                    onRename={renameTask}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        ))}
-
-        {customTasks.length > 0 && (
-          <div className="space-y-2">
-            <h3 className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
-              Your custom tasks
-            </h3>
-            <div className="space-y-2">
-              {customTasks.map((p) => (
-                <TaskRow
-                  key={p.id}
-                  id={p.id}
-                  title={p.title}
-                  selected
-                  editable
-                  onToggle={() => removeTask(p.id)}
-                  onRename={renameTask}
-                  onRemove={removeTask}
-                />
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      {/* Add custom — collapsed by default so it doesn't compete with presets */}
-      {showCustomInput ? (
-        <div className="border-border flex gap-2 rounded-lg border border-dashed p-3">
-          <input
-            type="text"
-            placeholder="e.g. Following up on expired listings"
-            value={customDraft}
-            onChange={(e) => setCustomDraft(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                e.preventDefault();
-                addCustom();
-              }
-              if (e.key === "Escape") {
-                setShowCustomInput(false);
-                setCustomDraft("");
-              }
-            }}
-            autoFocus
-            className="flex-1 bg-transparent text-sm outline-none"
-          />
-          <Button type="button" variant="outline" size="sm" onClick={addCustom}>
-            Add
-          </Button>
+      {customSelections.length > 0 && (
+        <div className="border-border mt-7 space-y-2 border-t pt-6">
+          <h3 className="font-heading text-base font-semibold">Your workflows</h3>
+          {customRows}
         </div>
-      ) : (
-        <button
-          type="button"
-          onClick={() => setShowCustomInput(true)}
-          className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
-        >
-          <Plus className="h-4 w-4" /> Add your own task
-        </button>
       )}
 
-      {error && <p className="text-destructive text-sm">{error}</p>}
+      <div className="border-border mt-7 border-t pt-6">
+        <Label htmlFor="custom-workflow">Add a workflow we missed</Label>
+        <div className="mt-2 flex flex-col gap-2 sm:flex-row">
+          <Input
+            id="custom-workflow"
+            value={customTitle}
+            onChange={(event) => setCustomTitle(event.target.value)}
+            maxLength={120}
+            placeholder="Example: Prepare client handoffs"
+            className="h-11 flex-1 text-base"
+          />
+          <Button
+            type="button"
+            variant="outline"
+            onClick={addCustomWorkflow}
+            className="min-h-11"
+            disabled={selections.length >= MAX_WORKFLOWS}
+          >
+            <Plus aria-hidden="true" />
+            Add workflow
+          </Button>
+        </div>
+      </div>
 
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <Button onClick={onBack} variant="outline" size="lg" className="w-full sm:flex-1">
+      <p role="alert" className="text-destructive mt-4 min-h-5 text-sm">
+        {error}
+      </p>
+      <div className="mt-4 flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+        <Button type="button" variant="outline" size="lg" onClick={onBack}>
           Back
         </Button>
-        <Button onClick={handleNext} size="lg" className="w-full sm:flex-1" disabled={!meetsMinimum}>
-          Score these tasks
+        <Button type="button" size="lg" onClick={continueToQuestions}>
+          Continue to questions
         </Button>
       </div>
-    </div>
+    </section>
   );
 }

@@ -7,7 +7,13 @@
  * user edit titles, add their own, and remove unwanted rows.
  */
 
-import type { TaskPreset, BusinessType, ToolCategory } from "./types";
+import type {
+  AuditBusinessType,
+  BusinessType,
+  TaskPreset,
+  ToolCategory,
+  WorkflowPreset,
+} from "./types";
 
 /**
  * Human-readable section headers for grouping presets in the picker.
@@ -265,4 +271,99 @@ export function getSuggestedPresetIds(
   return getPresetsForBusinessType(businessType)
     .slice(0, count)
     .map((p) => p.id);
+}
+
+// Version 2 workflow choices. Legacy task exports above remain until the old
+// wizard and historical report path no longer import them.
+const ALL_SERVICE_TYPES: readonly AuditBusinessType[] = [
+  "real-estate-team",
+  "home-services",
+  "professional-services",
+  "agency-consulting",
+  "other-service-business",
+];
+
+export const WORKFLOW_PRESETS: readonly WorkflowPreset[] = [
+  {
+    id: "answer-new-leads",
+    title: "Answer new leads",
+    category: "lead-response",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "return-missed-calls",
+    title: "Return missed calls",
+    category: "missed-calls",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "follow-up-estimates",
+    title: "Follow up estimates",
+    category: "estimate-followup",
+    businessTypes: ["home-services", "professional-services", "other-service-business"],
+  },
+  {
+    id: "book-appointments",
+    title: "Book appointments",
+    category: "appointment-booking",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "wake-up-old-leads",
+    title: "Wake up old leads",
+    category: "lead-reactivation",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "send-sales-followups",
+    title: "Send sales follow-ups",
+    category: "sales-followup",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "update-crm",
+    title: "Update the CRM",
+    category: "crm-updates",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "ask-for-reviews",
+    title: "Ask for reviews",
+    category: "review-requests",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "make-ad-videos",
+    title: "Make new ad videos",
+    category: "ad-production",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "check-ad-results",
+    title: "Check ad results",
+    category: "ad-reporting",
+    businessTypes: ALL_SERVICE_TYPES,
+  },
+  {
+    id: "respond-listing-leads",
+    title: "Respond to listing leads",
+    category: "listing-leads",
+    businessTypes: ["real-estate-team"],
+  },
+  {
+    id: "follow-up-open-house-leads",
+    title: "Follow up open house leads",
+    category: "open-house-followup",
+    businessTypes: ["real-estate-team"],
+  },
+] as const;
+
+export function getWorkflowPresets(
+  businessType: AuditBusinessType,
+): readonly WorkflowPreset[] {
+  return WORKFLOW_PRESETS.filter((workflow) => workflow.businessTypes.includes(businessType));
+}
+
+export function findWorkflowPreset(id: string): WorkflowPreset | undefined {
+  return WORKFLOW_PRESETS.find((workflow) => workflow.id === id);
 }

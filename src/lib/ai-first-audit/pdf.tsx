@@ -8,7 +8,7 @@
 
 import * as React from "react";
 import { Document, Page, Text, View, StyleSheet, renderToBuffer } from "@react-pdf/renderer";
-import type { AuditResult, ScoredTask } from "./types";
+import type { AuditResultV1, ScoredTask } from "./types";
 import { formatCurrency, formatCurrencyCompact, formatHours } from "./format";
 
 const PRIMARY = "#7058E3";
@@ -87,7 +87,7 @@ const QUADRANT_LABEL: Record<ScoredTask["quadrant"], string> = {
   ignore: "Ignore",
 };
 
-function CoverPage({ result }: { result: AuditResult }) {
+function CoverPage({ result }: { result: AuditResultV1 }) {
   const { firstName } = result.context;
   return (
     <Page size="LETTER" style={styles.page}>
@@ -121,7 +121,7 @@ function CoverPage({ result }: { result: AuditResult }) {
   );
 }
 
-function TopThreePage({ result }: { result: AuditResult }) {
+function TopThreePage({ result }: { result: AuditResultV1 }) {
   return (
     <Page size="LETTER" style={styles.page}>
       <Text style={styles.eyebrow}>Top 3 to automate first</Text>
@@ -157,7 +157,7 @@ function TopThreePage({ result }: { result: AuditResult }) {
   );
 }
 
-function SevenDayPage({ result }: { result: AuditResult }) {
+function SevenDayPage({ result }: { result: AuditResultV1 }) {
   return (
     <Page size="LETTER" style={styles.page}>
       <Text style={styles.eyebrow}>7-day deployment</Text>
@@ -173,7 +173,7 @@ function SevenDayPage({ result }: { result: AuditResult }) {
   );
 }
 
-function RankedTablePage({ result }: { result: AuditResult }) {
+function RankedTablePage({ result }: { result: AuditResultV1 }) {
   return (
     <Page size="LETTER" style={styles.page}>
       <Text style={styles.eyebrow}>Full ranking</Text>
@@ -207,7 +207,7 @@ function RankedTablePage({ result }: { result: AuditResult }) {
   );
 }
 
-function AuditDocument({ result }: { result: AuditResult }) {
+function AuditDocument({ result }: { result: AuditResultV1 }) {
   return (
     <Document title="AI-First Audit" author="Prestyj" subject="Personalized AI deployment audit">
       <CoverPage result={result} />
@@ -218,6 +218,6 @@ function AuditDocument({ result }: { result: AuditResult }) {
   );
 }
 
-export async function renderAuditPdf(result: AuditResult): Promise<Buffer> {
+export async function renderAuditPdf(result: AuditResultV1): Promise<Buffer> {
   return renderToBuffer(<AuditDocument result={result} />);
 }

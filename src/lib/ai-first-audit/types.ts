@@ -1,14 +1,6 @@
-/**
- * Domain types for the AI-First Audit wizard.
- *
- * No React, no I/O — pure data shapes shared between the wizard UI,
- * server routes, scoring logic, email templates, and PDF rendering.
- */
+/** Pure, versioned domain types for the AI-First Audit. */
 
-// -------------------------------------------------------------------------
-// Business context
-// -------------------------------------------------------------------------
-
+// Version 1 is retained for historical report links and legacy endpoints.
 export const BUSINESS_TYPES = [
   { value: "real-estate", label: "Real Estate Team / Brokerage" },
   { value: "home-services", label: "Home Services (HVAC, roofing, plumbing, etc.)" },
@@ -52,19 +44,9 @@ export interface BusinessContext {
   readonly role: Role;
 }
 
-// -------------------------------------------------------------------------
-// Task scoring inputs (the rubric the wizard collects per task)
-// -------------------------------------------------------------------------
-
-/**
- * 1–5 score on the leverage (Y) axis and readiness (X) axis components.
- * Each sub-score maps deterministically from a plain-language radio choice.
- */
 export type SubScore = 1 | 2 | 3 | 4 | 5;
-
 export const SUB_SCORE_VALUES: readonly SubScore[] = [1, 2, 3, 4, 5];
 
-/** Hours/week the task currently consumes — used for both leverage and savings math. */
 export const HOURS_PER_WEEK_OPTIONS = [
   { value: 1 as SubScore, label: "Less than 1 hr/wk", midpoint: 0.5 },
   { value: 2 as SubScore, label: "1–3 hrs/wk", midpoint: 2 },
@@ -105,21 +87,6 @@ export const DATA_AVAILABILITY_OPTIONS = [
   { value: 5 as SubScore, label: "Already in clean systems" },
 ] as const;
 
-export interface AuditTaskInput {
-  readonly id: string;
-  readonly title: string;
-  readonly category: ToolCategory;
-  readonly hoursPerWeek: SubScore;
-  readonly frequency: SubScore;
-  readonly repeatability: SubScore;
-  readonly judgment: SubScore;
-  readonly dataAvailability: SubScore;
-}
-
-// -------------------------------------------------------------------------
-// Tool taxonomy + recipes
-// -------------------------------------------------------------------------
-
 export const TOOL_CATEGORIES = [
   "inbox-triage",
   "voice-agent",
@@ -140,6 +107,17 @@ export const TOOL_CATEGORIES = [
 
 export type ToolCategory = (typeof TOOL_CATEGORIES)[number];
 
+export interface AuditTaskInput {
+  readonly id: string;
+  readonly title: string;
+  readonly category: ToolCategory;
+  readonly hoursPerWeek: SubScore;
+  readonly frequency: SubScore;
+  readonly repeatability: SubScore;
+  readonly judgment: SubScore;
+  readonly dataAvailability: SubScore;
+}
+
 export interface ToolRecipe {
   readonly id: string;
   readonly category: ToolCategory;
@@ -149,52 +127,34 @@ export interface ToolRecipe {
   readonly watchOut: string;
 }
 
-// -------------------------------------------------------------------------
-// Task library presets
-// -------------------------------------------------------------------------
-
 export interface TaskPreset {
   readonly id: string;
   readonly title: string;
   readonly category: ToolCategory;
-  /** Which business types should surface this preset by default. */
   readonly businessTypes: readonly BusinessType[];
 }
-
-// -------------------------------------------------------------------------
-// Scoring output
-// -------------------------------------------------------------------------
 
 export type Quadrant = "automate-first" | "delegate" | "automate-later" | "ignore";
 
 export interface ScoredTask {
   readonly input: AuditTaskInput;
-  readonly leverage: number; // 2–10 (hoursPerWeek + frequency)
-  readonly readiness: number; // 3–15 (repeatability + judgment + dataAvailability)
-  readonly rankScore: number; // composite for top-3 ordering
+  readonly leverage: number;
+  readonly readiness: number;
+  readonly rankScore: number;
   readonly quadrant: Quadrant;
   readonly weeklyHoursSaved: number;
   readonly annualDollarsSaved: number;
   readonly recipe: ToolRecipe;
 }
 
-// -------------------------------------------------------------------------
-// 7-day plan
-// -------------------------------------------------------------------------
-
 export interface DayPlan {
-  readonly day: number; // 1–7
+  readonly day: number;
   readonly title: string;
   readonly body: string;
-  /** Which top-task this day primarily addresses (0–2), or null for org-wide days. */
   readonly focusTaskIndex: number | null;
 }
 
-// -------------------------------------------------------------------------
-// Aggregate audit result (persisted to AiFirstAudit.resultJson)
-// -------------------------------------------------------------------------
-
-export interface AuditResult {
+export interface AuditResultV1 {
   readonly version: 1;
   readonly context: BusinessContext;
   readonly hourlyCost: number;
@@ -202,8 +162,146 @@ export interface AuditResult {
   readonly topThree: readonly ScoredTask[];
   readonly totalWeeklyHoursSaved: number;
   readonly totalAnnualDollarsSaved: number;
-  /** Rounded to nearest $1K for the headline. */
   readonly headlineDollars: number;
   readonly sevenDayPlan: readonly DayPlan[];
-  readonly computedAt: string; // ISO timestamp
+  readonly computedAt: string;
 }
+
+// Version 2 separates assessment data from contact data so the browser can
+// calculate and store a useful preview without personal information.
+export const AUDIT_BUSINESS_TYPES = [
+  { value: "real-estate-team", label: "Real estate team" },
+  { value: "home-services", label: "Home services" },
+  { value: "professional-services", label: "Professional services" },
+  { value: "agency-consulting", label: "Agency or consulting" },
+  { value: "other-service-business", label: "Other service business" },
+] as const;
+
+export type AuditBusinessType = (typeof AUDIT_BUSINESS_TYPES)[number]["value"];
+
+export interface AuditProfile {
+  readonly businessType: AuditBusinessType;
+  readonly hourlyCost: number;
+}
+
+export const WORKFLOW_CATEGORIES = [
+  "lead-response",
+  "missed-calls",
+  "estimate-followup",
+  "appointment-booking",
+  "lead-reactivation",
+  "sales-followup",
+  "crm-updates",
+  "review-requests",
+  "ad-production",
+  "ad-reporting",
+  "listing-leads",
+  "open-house-followup",
+  "general",
+] as const;
+
+export type WorkflowCategory = (typeof WORKFLOW_CATEGORIES)[number];
+
+export interface WorkflowPreset {
+  readonly id: string;
+  readonly title: string;
+  readonly category: WorkflowCategory;
+  readonly businessTypes: readonly AuditBusinessType[];
+}
+
+export const WEEKLY_HOURS_OPTIONS = [
+  { value: "under-1", label: "Less than 1 hour", midpoint: 0.5 },
+  { value: "1-3", label: "1 to 3 hours", midpoint: 2 },
+  { value: "4-8", label: "4 to 8 hours", midpoint: 6 },
+  { value: "9-15", label: "9 to 15 hours", midpoint: 12 },
+  { value: "over-15", label: "More than 15 hours", midpoint: 20 },
+] as const;
+
+export type WeeklyHoursAnswer = (typeof WEEKLY_HOURS_OPTIONS)[number]["value"];
+
+export const IMPACT_OPTIONS = [
+  { value: "little", label: "Little happens", score: 0 },
+  { value: "delay", label: "Work gets delayed", score: 33 },
+  { value: "wait", label: "Customers or leads wait", score: 67 },
+  { value: "loss", label: "Leads, sales, or customers are lost", score: 100 },
+] as const;
+
+export type ImpactAnswer = (typeof IMPACT_OPTIONS)[number]["value"];
+export type FourPointAnswer = 1 | 2 | 3 | 4;
+
+export interface ReadinessAnswers {
+  readonly sameSteps: FourPointAnswer;
+  readonly clearRules: FourPointAnswer;
+  readonly informationEasyToFind: FourPointAnswer;
+}
+
+export interface WorkflowInput {
+  readonly id: string;
+  readonly title: string;
+  readonly category: WorkflowCategory;
+  readonly isCustom: boolean;
+  readonly weeklyHours: WeeklyHoursAnswer;
+  readonly impact: ImpactAnswer;
+  readonly readiness: ReadinessAnswers;
+}
+
+export interface WorkflowGuide {
+  readonly category: WorkflowCategory;
+  readonly problem: string;
+  readonly agentRole: string;
+  readonly agentJob: string;
+  readonly firstMove: string;
+  readonly guardrail: string;
+  readonly successMetric: string;
+  readonly readinessFixes: Readonly<{
+    sameSteps: string;
+    clearRules: string;
+    informationEasyToFind: string;
+  }>;
+}
+
+export type ImpactLabel = "Low" | "Medium" | "High" | "Critical";
+export type ReadinessLabel = "Ready now" | "Needs a little prep" | "Needs groundwork";
+export type PriorityAction = "Fix first" | "Prepare first" | "Quick win" | "Leave for now";
+
+export interface ScoredWorkflow {
+  readonly input: WorkflowInput;
+  readonly weeklyHoursMidpoint: number;
+  readonly annualTimeCost: number;
+  readonly impactScore: number;
+  readonly impactLabel: ImpactLabel;
+  readonly readinessScore: number;
+  readonly readinessLabel: ReadinessLabel;
+  readonly normalizedTimeCost: number;
+  readonly priorityScore: number;
+  readonly priorityAction: PriorityAction;
+  readonly guide: WorkflowGuide;
+  readonly whyItRanks: string;
+}
+
+export interface FirstFixPlanItem {
+  readonly title: string;
+  readonly body: string;
+}
+
+export interface AuditResultV2 {
+  readonly version: 2;
+  readonly profile: AuditProfile;
+  readonly workflows: readonly ScoredWorkflow[];
+  readonly topThree: readonly ScoredWorkflow[];
+  readonly totalWeeklyHours: number;
+  readonly totalAnnualTimeCost: number;
+  readonly firstFixPlan: readonly FirstFixPlanItem[];
+  readonly computedAt: string;
+}
+
+export interface AuditContact {
+  readonly firstName: string;
+  readonly workEmail: string;
+}
+
+export interface AuditConsent {
+  readonly followupOptIn: boolean;
+}
+
+export type AuditResult = AuditResultV1 | AuditResultV2;

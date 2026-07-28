@@ -59,8 +59,8 @@ const page = {
     },
     secondaryCta: {
       href: "/ai-first-audit",
-      label: "Start with an AI-first audit",
-      description: "Get a prioritized roadmap before you commit.",
+      label: "Find my costly workflows",
+      description: "See your top workflow before entering your email.",
     },
     stats: [
       {
@@ -190,8 +190,8 @@ const page = {
   relatedLinks: [
     {
       href: "/ai-first-audit",
-      label: "AI-first audit",
-      description: "Start with a prioritized roadmap of your highest-ROI AI opportunities.",
+      label: "AI-First Audit",
+      description: "Find your costliest workflow and where an AI agent can help first.",
     },
     {
       href: "/done-for-you-ai-agents",
@@ -262,8 +262,8 @@ const page = {
     },
     secondaryCta: {
       href: "/ai-first-audit",
-      label: "Start with an AI-first audit",
-      description: "Get a prioritized roadmap first.",
+      label: "Find my costly workflows",
+      description: "See the cost, impact, and first move.",
     },
   },
 } satisfies AiOfferPageData;

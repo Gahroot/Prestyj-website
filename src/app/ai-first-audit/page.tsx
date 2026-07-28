@@ -1,47 +1,55 @@
-import { Navbar } from "@/components/layout/navbar";
+import Link from "next/link";
+import { ArrowDown, BarChart3, Clock3, Gauge } from "lucide-react";
 import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
 import { Wizard } from "@/components/lead-magnet/ai-first-audit/wizard";
-import { Sparkles, Clock, Target, FileText } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const VALUE_LABELS = [
+  { icon: Clock3, label: "Yearly time cost" },
+  { icon: BarChart3, label: "Business impact" },
+  { icon: Gauge, label: "Ready for an agent" },
+] as const;
 
 export default function AiFirstAuditPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen">
-        {/* Hero */}
-        <section className="relative overflow-hidden pt-24 pb-16">
-          <div className="bg-primary/10 absolute -top-32 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full blur-3xl" />
-          <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-            <div className="bg-primary/10 text-primary border-primary/20 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs font-medium">
-              <Sparkles className="h-3.5 w-3.5" />
-              The AI-First Audit
-            </div>
-            <h1 className="font-heading text-foreground mt-5 text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-              Find the <span className="text-primary">3 tasks</span> AI should take off your
-              team&apos;s plate this quarter.
+      <main className="bg-background min-h-screen">
+        <section className="pt-24 pb-8 sm:pt-28 sm:pb-10">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <p className="text-primary text-sm font-semibold tracking-wide uppercase">
+              Free business audit
+            </p>
+            <h1 className="font-heading mt-4 max-w-3xl text-4xl leading-tight font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Find the workflows costing you the most.
             </h1>
             <p className="text-muted-foreground mt-5 max-w-2xl text-lg sm:text-xl">
-              Score the tasks your team actually runs against a 2-axis rubric (leverage ×
-              AI-readiness). Get a ranked top 3, a 7-day deployment plan, and the exact tool stack
-              for each — emailed instantly. Free, no sales call.
+              See what drains time, slows sales, and hurts customers. Find where an AI agent can
+              help first.
+            </p>
+            <Button asChild size="lg" className="mt-7 min-h-12">
+              <Link href="#audit">
+                Find my costly workflows
+                <ArrowDown aria-hidden="true" />
+              </Link>
+            </Button>
+            <p className="text-muted-foreground mt-3 text-sm">
+              Free. About 4 minutes. See your top result before entering your email.
             </p>
 
-            <div className="text-muted-foreground mt-8 flex flex-wrap gap-4 text-sm">
-              <div className="flex items-center gap-2">
-                <Clock className="text-primary h-4 w-4" /> ~4 minutes
-              </div>
-              <div className="flex items-center gap-2">
-                <Target className="text-primary h-4 w-4" /> Ranked top 3 for your business
-              </div>
-              <div className="flex items-center gap-2">
-                <FileText className="text-primary h-4 w-4" /> PDF + 7-day plan emailed
-              </div>
-            </div>
+            <ul className="border-border mt-8 grid border-y sm:grid-cols-3">
+              {VALUE_LABELS.map(({ icon: Icon, label }) => (
+                <li key={label} className="flex min-h-14 items-center gap-3 py-3 sm:px-4 sm:first:ps-0">
+                  <Icon className="text-primary size-4" aria-hidden="true" />
+                  <span className="text-sm font-medium">{label}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
-        {/* Wizard */}
-        <section className="py-12 sm:py-16">
+        <section id="audit" aria-label="AI-First Audit questions" className="scroll-mt-20 py-8 sm:py-12">
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <Wizard />
           </div>

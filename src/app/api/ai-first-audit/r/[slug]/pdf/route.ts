@@ -9,7 +9,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { renderAuditPdf } from "@/lib/ai-first-audit/pdf";
-import type { AuditResult } from "@/lib/ai-first-audit/types";
+import { isAuditResultV1 } from "@/lib/ai-first-audit/result-version";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -29,7 +29,13 @@ export async function GET(_request: NextRequest, { params }: RouteContext) {
       return NextResponse.json({ error: "Audit not found" }, { status: 404 });
     }
 
-    const result = audit.resultJson as unknown as AuditResult;
+    const result = audit.resultJson as unknown;
+    if (!isAuditResultV1(result)) {
+      return NextResponse.json(
+        { error: "PDF downloads are available for historical reports only" },
+        { status: 404 },
+      );
+    }
     const pdf = await renderAuditPdf(result);
     const filename = `ai-first-audit-${slug}.pdf`;
 

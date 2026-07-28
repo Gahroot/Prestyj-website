@@ -155,3 +155,44 @@
     font-family: var(--font-manrope), sans-serif;
   }
 }
+
+@media print {
+  @page {
+    margin: 14mm;
+  }
+
+  nav,
+  footer,
+  .audit-report-actions,
+  .audit-report-cta {
+    display: none !important;
+  }
+
+  body,
+  .audit-report,
+  .audit-report article,
+  .audit-report section,
+  .audit-report [class*="bg-card"] {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  .audit-report {
+    padding-block: 0 !important;
+  }
+
+  .audit-report section {
+    break-inside: avoid;
+    margin-top: 12mm !important;
+  }
+
+  .audit-report p,
+  .audit-report dt {
+    color: #333333 !important;
+  }
+
+  .audit-report article,
+  .audit-report [class*="border"] {
+    border-color: #999999 !important;
+  }
+}

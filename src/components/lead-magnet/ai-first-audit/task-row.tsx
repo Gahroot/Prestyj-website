@@ -1,18 +1,15 @@
 "use client";
 
-import * as React from "react";
 import { Check, X } from "lucide-react";
-import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 
 interface TaskRowProps {
   readonly id: string;
   readonly title: string;
   readonly selected: boolean;
-  readonly editable?: boolean;
-  readonly badge?: React.ReactNode;
-  readonly onToggle: (id: string) => void;
-  readonly onRename?: (id: string, title: string) => void;
+  readonly disabled?: boolean;
+  readonly removable?: boolean;
+  readonly onToggle: (id: string, selected: boolean) => void;
   readonly onRemove?: (id: string) => void;
 }
 
@@ -20,55 +17,51 @@ export function TaskRow({
   id,
   title,
   selected,
-  editable = false,
-  badge,
+  disabled = false,
+  removable = false,
   onToggle,
-  onRename,
   onRemove,
 }: TaskRowProps) {
+  const inputId = `workflow-${id}`;
   return (
     <div
       className={cn(
-        "border-border bg-card flex items-center gap-3 rounded-lg border p-3 transition-colors",
-        selected && "border-primary/40 bg-primary/5",
+        "border-border bg-background flex min-h-14 items-stretch rounded-lg border transition-[border-color,background-color] duration-150",
+        selected && "border-primary bg-secondary",
+        disabled && !selected && "opacity-60",
       )}
     >
-      <button
-        type="button"
-        onClick={() => onToggle(id)}
-        aria-pressed={selected}
-        aria-label={selected ? `Remove ${title}` : `Add ${title}`}
-        className={cn(
-          "flex h-6 w-6 shrink-0 items-center justify-center rounded-md border transition-colors",
-          selected
-            ? "border-primary bg-primary text-primary-foreground"
-            : "border-muted-foreground/40 bg-background hover:border-primary/60",
-        )}
+      <label
+        htmlFor={inputId}
+        className="focus-within:ring-ring flex min-w-0 flex-1 cursor-pointer items-center gap-3 rounded-lg px-3 py-2 focus-within:ring-[3px] focus-within:ring-inset"
       >
-        {selected && <Check className="h-4 w-4" />}
-      </button>
-
-      <div className="flex min-w-0 flex-1 flex-wrap items-center gap-2">
-        {editable && onRename ? (
-          <Input
-            value={title}
-            onChange={(e) => onRename(id, e.target.value)}
-            className="min-w-0 flex-1 border-0 bg-transparent p-0 text-sm shadow-none focus-visible:ring-0"
-          />
-        ) : (
-          <span className="min-w-0 flex-1 text-sm">{title}</span>
-        )}
-        {badge && !selected && badge}
-      </div>
-
-      {onRemove && (
+        <input
+          id={inputId}
+          type="checkbox"
+          checked={selected}
+          disabled={disabled}
+          onChange={(event) => onToggle(id, event.target.checked)}
+          className="peer sr-only"
+        />
+        <span
+          aria-hidden="true"
+          className={cn(
+            "border-muted-foreground flex size-6 shrink-0 items-center justify-center rounded border-2 transition-[border-color,background-color] duration-150 forced-colors:border-[ButtonText]",
+            selected && "border-primary bg-primary text-primary-foreground",
+          )}
+        >
+          {selected && <Check className="size-4" strokeWidth={3} />}
+        </span>
+        <span className="min-w-0 break-words text-sm font-medium">{title}</span>
+      </label>
+      {removable && onRemove && (
         <button
           type="button"
           onClick={() => onRemove(id)}
           aria-label={`Remove ${title}`}
-          className="text-muted-foreground hover:text-destructive ml-auto"
+          className="text-muted-foreground hover:text-foreground focus-visible:ring-ring m-1 flex size-11 shrink-0 items-center justify-center rounded-md outline-none transition-colors focus-visible:ring-[3px]"
         >
-          <X className="h-4 w-4" />
+          <X className="size-4" />
         </button>
       )}
     </div>

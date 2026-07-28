@@ -1,138 +1,71 @@
 "use client";
 
-import * as React from "react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import BorderGlow from "@/components/ui/border-glow";
-import { ScoredTaskCard } from "./scored-task-card";
-import type { AuditResult } from "@/lib/ai-first-audit/types";
-import { formatCurrency, formatHours } from "@/lib/ai-first-audit/format";
-import { trackEvent } from "@/lib/meta-pixel";
+import { AUDIT_COPY } from "@/lib/ai-first-audit/copy";
+import { formatCurrency } from "@/lib/ai-first-audit/format";
+import type { AuditResultV2 } from "@/lib/ai-first-audit/types";
 
 interface StepResultPreviewProps {
-  readonly result: AuditResult;
-  readonly auditId: string;
-  readonly editToken: string;
+  readonly result: AuditResultV2;
   readonly onBack: () => void;
-  readonly leadEmail: string;
-  readonly leadFirstName: string;
-  readonly leadPhone: string;
+  readonly onContinue: () => void;
 }
 
-export function StepResultPreview({
-  result,
-  auditId,
-  editToken,
-  onBack,
-  leadEmail,
-  leadFirstName,
-  leadPhone,
-}: StepResultPreviewProps) {
-  const [submitting, setSubmitting] = React.useState(false);
-  const [error, setError] = React.useState<string | null>(null);
-  const [shareSlug, setShareSlug] = React.useState<string | null>(null);
-
-  async function finalize() {
-    setSubmitting(true);
-    setError(null);
-    try {
-      const res = await fetch(`/api/ai-first-audit/${auditId}/finalize`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ editToken }),
-      });
-      if (!res.ok) {
-        const body = (await res.json().catch(() => ({}))) as { error?: string };
-        setError(body.error ?? "Failed to finalize. Please try again.");
-        return;
-      }
-      const json = (await res.json()) as { shareSlug: string };
-      setShareSlug(json.shareSlug);
-
-      trackEvent(
-        "CompleteRegistration",
-        { email: leadEmail, phone: leadPhone, firstName: leadFirstName },
-        { content_name: "ai-first-audit-finalized", content_category: "lead-magnet" },
-      );
-
-      // Redirect to the public result page after a beat so the user sees
-      // the success state.
-      setTimeout(() => {
-        window.location.href = `/ai-first-audit/r/${json.shareSlug}`;
-      }, 800);
-    } catch (err) {
-      console.error("[ai-first-audit] finalize error", err);
-      setError("Network error. Please try again.");
-    } finally {
-      setSubmitting(false);
-    }
-  }
+export function StepResultPreview({ result, onBack, onContinue }: StepResultPreviewProps) {
+  const top = result.topThree[0];
+  if (!top) return null;
 
   return (
-    <div className="space-y-6">
-      <div>
-        <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
-          Your audit
-        </p>
-        <h2 className="text-2xl leading-tight font-bold sm:text-3xl">
-          {result.context.firstName}, you&apos;re lighting{" "}
-          <span className="text-primary">{formatCurrency(result.headlineDollars)}/yr</span> on fire.
+    <section className="border-border bg-card overflow-hidden rounded-xl border">
+      <div className="border-border border-b p-5 sm:p-8">
+        <p className="text-muted-foreground text-sm font-medium">{AUDIT_COPY.previewLabel}</p>
+        <h2
+          data-wizard-heading
+          tabIndex={-1}
+          className="font-heading mt-2 text-2xl leading-tight font-bold break-words outline-none sm:text-3xl"
+        >
+          {top.input.title} costs about {formatCurrency(top.annualTimeCost)} a year in team time.
         </h2>
-        <p className="text-muted-foreground mt-2 text-sm">
-          That&apos;s the annualized time-cost of your top 3 automate-first tasks —{" "}
-          {formatHours(result.totalWeeklyHoursSaved)} per week at ${result.hourlyCost.toFixed(0)}/hr
-          loaded cost.
+        <p className="text-muted-foreground mt-3 max-w-2xl">
+          It has {top.impactLabel.toLowerCase()} business impact and is{" "}
+          {top.readinessLabel.toLowerCase()} for an AI agent.
         </p>
       </div>
 
-      <BorderGlow borderRadius={14} innerClassName="space-y-2 p-5">
-        <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">
-          Top 3 to automate first
-        </p>
-        <ul className="space-y-1 text-sm">
-          {result.topThree.map((task, i) => (
-            <li key={task.input.id}>
-              <span className="text-primary font-semibold">{i + 1}.</span> {task.input.title}
-              <span className="text-muted-foreground">
-                {" "}
-                — {formatCurrency(task.annualDollarsSaved)}/yr
-              </span>
-            </li>
-          ))}
-        </ul>
-      </BorderGlow>
+      <dl className="grid border-b sm:grid-cols-3">
+        <div className="border-border p-5 sm:border-e">
+          <dt className="text-muted-foreground text-sm">Estimated yearly time cost</dt>
+          <dd className="font-heading mt-1 text-2xl font-bold tabular-nums">
+            {formatCurrency(top.annualTimeCost)}
+          </dd>
+        </div>
+        <div className="border-border border-t p-5 sm:border-t-0 sm:border-e">
+          <dt className="text-muted-foreground text-sm">Business impact</dt>
+          <dd className="mt-1 text-lg font-semibold">{top.impactLabel}</dd>
+        </div>
+        <div className="border-border border-t p-5 sm:border-t-0">
+          <dt className="text-muted-foreground text-sm">Ready for an AI agent</dt>
+          <dd className="mt-1 text-lg font-semibold">{top.readinessLabel}</dd>
+        </div>
+      </dl>
 
-      <div className="space-y-3">
-        <p className="text-sm">
-          Hit the button below and we&apos;ll email you the full audit (PDF + share link) plus a
-          7-day deployment plan personalized to your top 3.
-        </p>
-
-        {error && <p className="text-destructive text-sm">{error}</p>}
-        {shareSlug && (
-          <p className="text-primary text-sm font-medium">Sent. Redirecting to your audit…</p>
-        )}
-
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Button onClick={onBack} variant="outline" size="lg" className="w-full sm:flex-1">
+      <div className="space-y-5 p-5 sm:p-8">
+        <div>
+          <h3 className="font-heading text-lg font-semibold">{top.guide.agentRole}</h3>
+          <p className="text-muted-foreground mt-1">{top.guide.agentJob}</p>
+        </div>
+        <p className="border-border border-s-2 ps-4 text-sm">{top.whyItRanks}</p>
+        <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
+          <Button type="button" variant="outline" size="lg" onClick={onBack}>
             Back
           </Button>
-          <Button
-            onClick={finalize}
-            size="lg"
-            className="w-full sm:flex-1"
-            disabled={submitting || shareSlug !== null}
-          >
-            {submitting ? "Generating…" : shareSlug ? "Sent" : "Email me my full audit"}
+          <Button type="button" size="lg" onClick={onContinue}>
+            Get my full report
+            <ArrowRight aria-hidden="true" />
           </Button>
         </div>
       </div>
-
-      {/* Top-3 card preview (the persistent share page will render the full version) */}
-      <div className="space-y-4 pt-2">
-        {result.topThree.map((task, i) => (
-          <ScoredTaskCard key={task.input.id} rank={i + 1} task={task} />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }
