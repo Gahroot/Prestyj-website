@@ -99,12 +99,6 @@ comparisons:
 blogPosts:
   - type: blog-post
     payload:
-      workingTitle: Cost to Produce 500 Real Estate Video Ads — Full Breakdown
-      targetKeyword: cost to produce real estate video ads
-      slug: cost-to-produce-500-real-estate-video-ads-2026
-    priority: 8
-  - type: blog-post
-    payload:
       workingTitle: 'AI Sales Team Structure for Home Services: 4 Follow-Up Roles (2026)'
       targetKeyword: home service companies AI sales team structure follow-up
       slug: ai-sales-team-structure-home-services-4-follow-up-roles-2026
@@ -132,6 +126,12 @@ blogPosts:
       workingTitle: 'Emergency Electrician Response Time: Human Dispatch vs AI Receptionist (2026)'
       targetKeyword: emergency electrician response time comparison
       slug: emergency-electrician-response-time-human-vs-ai-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: 'Third-Party Answering Service Cost for a Mid-Size HVAC Company: 3 Quote Models (2026)'
+      targetKeyword: average cost third-party answering service mid-size HVAC company
+      slug: third-party-answering-service-cost-mid-size-hvac-2026
     priority: 7
 competitors:
   - type: competitor

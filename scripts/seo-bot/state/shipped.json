@@ -54,7 +54,29 @@
       "provider": "gemini",
       "model": "gemini-2.5-pro",
       "costUSD": 0.0501175
+    },
+    {
+      "slug": "ai-avatar-ads-vs-real-face-video-realtors-2026",
+      "type": "blog-post",
+      "title": "AI Avatar Ads vs. Real Face: Why Realtors Can't Fake Trust",
+      "description": "You tried Arcads or HeyGen. The ads got clicks, not leads. In real estate, trust is the product. Here's why AI avatars get clocked in 2 seconds and why your ...",
+      "filePath": "/Users/groot/Prestyj-website/content/blog/ai-avatar-ads-vs-real-face-video-realtors-2026.mdx",
+      "shippedAt": "2026-07-21T20:45:41.089Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.048125
+    },
+    {
+      "slug": "cost-to-produce-500-real-estate-video-ads-2026",
+      "type": "blog-post",
+      "title": "The Real Cost to Produce 500 Real Estate Video Ads (2026)",
+      "description": "A full cost breakdown of 500 video ads: DIY, agency, and Prestyj's AI agent model. Compare videographer fees, editing hours, and the hidden cost of low volume.",
+      "filePath": "/Users/groot/Prestyj-website/content/blog/cost-to-produce-500-real-estate-video-ads-2026.mdx",
+      "shippedAt": "2026-07-28T13:03:54.865Z",
+      "provider": "gemini",
+      "model": "gemini-2.5-pro",
+      "costUSD": 0.053061250000000004
     }
   ],
-  "lastUpdated": "2026-07-16T13:26:29.206Z"
+  "lastUpdated": "2026-07-28T13:03:54.867Z"
 }

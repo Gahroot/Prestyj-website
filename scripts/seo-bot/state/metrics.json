@@ -113,6 +113,38 @@
           "latencyMs": 31492
         }
       }
+    },
+    {
+      "date": "2026-07-21",
+      "pagesShipped": 0,
+      "blogsShipped": 1,
+      "titlesRewritten": 0,
+      "costUSD": 0.048125,
+      "apiCalls": 1,
+      "errors": [],
+      "taskBreakdown": {
+        "blogPost": {
+          "count": 1,
+          "costUSD": 0.048125,
+          "latencyMs": 28249
+        }
+      }
+    },
+    {
+      "date": "2026-07-28",
+      "pagesShipped": 0,
+      "blogsShipped": 1,
+      "titlesRewritten": 0,
+      "costUSD": 0.053061250000000004,
+      "apiCalls": 1,
+      "errors": [],
+      "taskBreakdown": {
+        "blogPost": {
+          "count": 1,
+          "costUSD": 0.053061250000000004,
+          "latencyMs": 36274
+        }
+      }
     }
   ]
 }
