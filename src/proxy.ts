@@ -24,6 +24,8 @@ export function proxy(request: NextRequest) {
         "https://connect.facebook.net",
         // LinkedIn Insight Tag
         "https://snap.licdn.com",
+        // Google Ads
+        "https://www.googletagmanager.com",
       ],
     },
     {
@@ -62,6 +64,9 @@ export function proxy(request: NextRequest) {
         "https://connect.facebook.net",
         // LinkedIn Insight Tag (page-load + event-specific conversions)
         "https://px.ads.linkedin.com",
+        // Google Ads
+        "https://www.googletagmanager.com",
+        "https://www.google-analytics.com",
         "https://snap.licdn.com",
       ],
     },
