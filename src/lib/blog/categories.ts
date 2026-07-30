@@ -1,6 +1,7 @@
 export const BLOG_CATEGORIES = [
   "AI Sales Agents",
   "AI Marketing",
+  "Enterprise AI",
   "Lead Response",
   "Video Ads",
   "Social Content",
@@ -16,6 +17,7 @@ export type BlogCategory = (typeof BLOG_CATEGORIES)[number];
 const CATEGORY_FALLBACK_IMAGE: Readonly<Record<BlogCategory, string>> = {
   "AI Sales Agents": "/images/blog/fallback-ai-sales-agents.jpg",
   "AI Marketing": "/images/blog/fallback-ai-marketing.jpg",
+  "Enterprise AI": "/images/blog/fallback-ai-sales-agents.jpg",
   "Lead Response": "/images/blog/fallback-lead-response.jpg",
   "Video Ads": "/images/blog/fallback-video-ads.jpg",
   "Social Content": "/images/blog/fallback-social-content.jpg",
@@ -41,6 +43,17 @@ export function fallbackImageForCategory(category: BlogCategory): string {
  */
 export function categorizeSlug(slug: string): BlogCategory {
   const s = slug.toLowerCase();
+
+  // Enterprise AI — verified context, data reconciliation, and controlled execution
+  if (
+    s.includes("verified-context-layer") ||
+    s.includes("enterprise-ai-needs") ||
+    s.includes("real-estate-investment-funds") ||
+    s.includes("stop-requerying-company-data") ||
+    s.includes("ai-workflow-graph")
+  ) {
+    return "Enterprise AI";
+  }
 
   // Case Studies — competitor comparisons + "best of" listicles
   if (s.startsWith("prestyj-vs-")) return "Case Studies";

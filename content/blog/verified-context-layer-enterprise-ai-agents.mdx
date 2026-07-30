@@ -1,0 +1,292 @@
+---
+title: "The Verified Context Layer: What Enterprise AI Agents Are Missing"
+description: "A concrete architecture between enterprise systems and AI agents: context contracts, reconciled facts, provenance, permissions, evaluations, and action controls."
+date: "2026-07-30"
+author: "Nolan Grout"
+keywords:
+  - verified context layer
+  - enterprise AI architecture
+  - enterprise AI agents data layer
+  - reliable enterprise AI
+  - AI context engineering enterprise
+  - AI agent provenance
+  - governed AI data layer
+image: /images/blog/fallback-ai-sales-agents.jpg
+---
+
+Enterprise AI teams spend enormous energy on the two ends of the system.
+
+At one end are data platforms: warehouses, lakes, APIs, document stores, and systems of record.
+
+At the other end are AI experiences: copilots, chat interfaces, agents, workflow automations, and customer assistants.
+
+The expensive failures happen in the middle.
+
+That middle needs a name: **the verified context layer**.
+
+The verified context layer turns raw enterprise records into decision-ready context that an AI system is allowed to use. It does not merely retrieve information. It reconciles identity, preserves provenance, exposes disagreement, applies permissions, tracks freshness, and packages the result for a specific decision or action.
+
+## TL;DR
+
+- A data warehouse stores and transforms data. It does not automatically make that data safe for an AI decision.
+- Retrieval finds relevant material. It does not decide which source is authoritative when evidence conflicts.
+- A verified context layer sits between enterprise sources and AI applications.
+- Its primary output is a context contract: the approved facts, evidence, controls, and unresolved exceptions for one task.
+- Agents should receive the smallest sufficient context, not a dump of everything the user can access.
+
+## The missing contract
+
+Most enterprise AI prototypes use an implicit contract:
+
+> Retrieve whatever looks relevant, place it in the prompt, and ask the model to answer.
+
+That works when the source set is small, the question is low stakes, and the documents mostly agree.
+
+It breaks when:
+
+- the same customer, asset, loan, or product has different identifiers across systems
+- structured records and signed documents disagree
+- permissions vary by entity, fund, region, or role
+- “current” means different things to different systems
+- one metric has multiple business definitions
+- an answer must trigger an action, not just produce text
+- a correction must propagate to previous outputs
+
+The AI should not be responsible for inventing the operating rules that resolve those problems.
+
+## The context contract
+
+A **context contract** defines what a model or agent receives for one bounded task.
+
+A useful contract includes:
+
+| Contract element | Question it answers |
+|---|---|
+| Objective | What decision or action is this context meant to support? |
+| Entity scope | Which fund, asset, customer, account, or campaign is in scope? |
+| Fact set | Which structured facts are approved for use? |
+| Evidence set | Which source passages or records support those facts? |
+| Definitions | What does each business term mean in this workflow? |
+| Effective time | For what period are the facts true? |
+| Freshness | When were the sources observed and when must they refresh? |
+| Provenance | Where did each material fact come from? |
+| Permission envelope | Which facts can this user and this agent access? |
+| Conflict state | Which facts remain disputed or incomplete? |
+| Action boundary | What may the agent do with this context? |
+| Evaluation version | Which tests define acceptable behavior? |
+
+The context contract can be represented as structured data, not prose. The prompt receives a deliberate projection of that contract.
+
+This separates business truth from model behavior. A model can change without forcing the organization to rediscover which facts, definitions, and controls each workflow needs.
+
+## The five layers
+
+### 1. Connect
+
+Ingest only the sources required for the chosen decision.
+
+Connections should preserve source identity, record identity, observed time, effective time, and access policy. Flattening everything into anonymous text destroys information the verification process needs later.
+
+### 2. Reconcile
+
+Resolve identity and definition before asking the model to reason.
+
+Reconciliation includes:
+
+- entity matching
+- duplicate detection
+- field normalization
+- unit conversion
+- date and period alignment
+- business-definition mapping
+- conflict detection
+- materiality rules
+
+The goal is not to force agreement. The goal is to represent agreement and disagreement correctly.
+
+### 3. Verify
+
+Attach the controls that make a fact usable.
+
+A verified fact should answer:
+
+- What source supports it?
+- How fresh is it?
+- Which policy made it authoritative?
+- Is another credible value still unresolved?
+- Who owns correction?
+- Who is permitted to see it?
+- What decision is it approved to support?
+
+“Verified” does not mean universally true. It means the fact has passed the organization’s declared process for this use.
+
+### 4. Serve
+
+Package reusable context for applications.
+
+Possible interfaces include:
+
+- structured APIs
+- materialized views
+- governed search indexes
+- entity profiles
+- event streams
+- cached fact packets
+- tool responses for agents
+
+Each interface should be task-specific. A customer assistant and an investment-committee workflow may refer to the same asset but receive different fields, evidence, and action permissions.
+
+### 5. Act
+
+Allow bounded agents to execute work.
+
+An action contract should define:
+
+- allowed tools
+- required inputs
+- approval thresholds
+- idempotency behavior
+- retry limits
+- escalation rules
+- logging requirements
+- rollback or compensating actions
+- success metrics
+
+Reliable context is necessary, but it is not sufficient. An agent also needs a controlled operating envelope.
+
+## How this differs from adjacent systems
+
+### Data warehouse
+
+A warehouse centralizes and transforms analytical data. The verified context layer can use it, but adds task-specific authority, conflict state, permissions, evidence, and action controls.
+
+### Master data management
+
+Master data management helps establish canonical entities and values. The context layer adds decision scope, temporal state, source evidence, unresolved exceptions, and AI-facing delivery.
+
+### Semantic layer
+
+A semantic layer standardizes metrics and business definitions. The context layer uses those definitions while also handling documents, permissions, provenance, conflicts, and agent actions.
+
+### Retrieval-augmented generation
+
+Retrieval locates relevant content. The context layer decides whether the content is mutually consistent, permitted, current enough, and sufficient for the task.
+
+### Prompt engineering
+
+Prompts shape model behavior. They should not contain the only copy of the company’s authority rules, entity mappings, or correction policy.
+
+## A context packet example
+
+Consider an agent preparing an asset review.
+
+A context packet might include:
+
+```json
+{
+  "objective": "prepare_asset_review",
+  "entity": {
+    "type": "asset",
+    "id": "asset_1042"
+  },
+  "as_of": "2026-07-30",
+  "facts": [
+    {
+      "name": "physical_occupancy",
+      "value": 0.934,
+      "effective_date": "2026-07-28",
+      "source": "property_management_system",
+      "verification": "approved_for_operating_review"
+    }
+  ],
+  "open_conflicts": [
+    {
+      "field": "leased_occupancy",
+      "candidate_values": [0.951, 0.957],
+      "status": "awaiting_asset_manager_review"
+    }
+  ],
+  "permissions": ["read_operating_data"],
+  "allowed_actions": ["draft_review", "create_exception_task"]
+}
+```
+
+This example is illustrative. The important idea is separation: facts, conflicts, permissions, and actions are explicit before the model writes the review.
+
+## Evaluations belong to the context layer too
+
+Model evaluations often test whether an answer sounds correct against a fixed set of questions.
+
+Enterprise evaluations also need to test the context process.
+
+Useful tests include:
+
+- Does the system match the correct entity?
+- Does it select the correct effective period?
+- Does it surface a conflict instead of averaging values?
+- Does it withhold restricted fields?
+- Does it abstain when a required fact is unresolved?
+- Does a source correction invalidate affected context packets?
+- Does the agent stay inside its action boundary?
+- Can a reviewer reconstruct the evidence behind the result?
+
+A model can pass a language benchmark while the surrounding system fails every one of these tests.
+
+## Build the layer around a decision, not around all company data
+
+A verified context layer does not require a multi-year program before value appears.
+
+Start with one decision or workflow:
+
+1. Name the decision.
+2. Define the minimum fact set.
+3. Identify the credible sources.
+4. Map entities and business definitions.
+5. Specify conflict and freshness rules.
+6. Assign permissions and owners.
+7. Build the context contract.
+8. Test answers and actions against real exceptions.
+9. Measure correction time, abstention quality, and downstream work completed.
+
+Then reuse the resulting entities, policies, and delivery patterns for the next workflow.
+
+## What good looks like
+
+A good verified context layer makes several statements possible:
+
+- We know which facts this answer used.
+- We know which sources supported those facts.
+- We know which credible sources disagreed.
+- We know which policy resolved the disagreement.
+- We know what remained unresolved.
+- We know the user and agent were permitted to access the context.
+- We know what action the agent took.
+- We can find outputs affected by a later correction.
+
+If the system cannot answer those questions, it may be useful for drafting. It is not yet dependable infrastructure.
+
+## Frequently asked questions
+
+### Does this create another source of truth?
+
+Not necessarily. It creates a governed view of the facts and evidence approved for a specific task. Systems of record can remain in place.
+
+### Is this just context engineering?
+
+It includes context engineering, but extends beyond prompt assembly. It defines how context is reconciled, verified, permissioned, versioned, evaluated, and corrected across applications.
+
+### Does every answer need a large context packet?
+
+No. The best packet is the smallest sufficient packet. Stable structured facts may require very little text. Supporting evidence can be retrieved only when the task or reviewer needs it.
+
+### Can multiple models use the same layer?
+
+Yes. Separating verified context from model-specific prompts makes it easier to route tasks across models without rebuilding business logic for each one.
+
+## Related reading
+
+- [Enterprise AI Needs a Disagreement System](/blog/enterprise-ai-needs-disagreement-system-not-single-source-of-truth)
+- [Why AI Should Not Re-query Your Company From Scratch](/blog/stop-requerying-company-data-ai-token-costs)
+- [AI for Real Estate Investment Funds: Start With Exception Queues](/blog/ai-for-real-estate-investment-funds-exception-queues)
+
+[See how Prestyj approaches verified enterprise AI systems](/ai-consulting) or [book an enterprise AI session](/book-demo).

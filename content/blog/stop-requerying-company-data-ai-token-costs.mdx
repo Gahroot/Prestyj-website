@@ -1,0 +1,337 @@
+---
+title: "Why AI Should Not Re-query Your Company From Scratch Every Time"
+description: "Reduce repeated retrieval and token waste with verified fact packets, prepared context views, dependency-aware caching, and explicit invalidation rules."
+date: "2026-07-30"
+author: "Nolan Grout"
+keywords:
+  - reduce enterprise AI token costs
+  - AI context cost optimization
+  - RAG token cost reduction
+  - reusable AI context
+  - semantic caching enterprise AI
+  - AI fact packets
+  - enterprise AI retrieval costs
+image: /images/blog/fallback-ai-sales-agents.jpg
+---
+
+Enterprise teams often treat every AI request like a new research project.
+
+The application retrieves documents, expands chunks, assembles history, sends a large prompt, and asks the model to reinterpret the company again. Ten employees can ask versions of the same question and trigger ten separate retrieval and reasoning cycles.
+
+That is not only a token problem. It is a consistency problem.
+
+If every request reconstructs business context from raw sources, every request gets another chance to choose different evidence, apply a different definition, or miss a known discrepancy.
+
+The alternative is not a giant permanent prompt. It is a system of **verified fact packets** and **prepared context views** with explicit freshness and invalidation rules.
+
+## TL;DR
+
+- Token cost is the visible part of a larger company-query tax.
+- Repeated retrieval can produce different answers even when the underlying business state has not changed.
+- Convert stable, decision-relevant evidence into small structured fact packets that can be reused safely.
+- Cache only with dependencies, permissions, effective time, and invalidation behavior attached.
+- Measure cost per accepted outcome, not tokens per request in isolation.
+
+## The company-query tax
+
+Every request can incur four kinds of work.
+
+### 1. Source work
+
+- API calls
+- database queries
+- file reads
+- OCR
+- transcription
+- document parsing
+- vector search
+
+### 2. context work
+
+- entity matching
+- deduplication
+- chunk selection
+- reranking
+- definition alignment
+- permission filtering
+- conflict detection
+
+### 3. model work
+
+- input tokens
+- output tokens
+- tool calls
+- retries
+- model routing
+- validation passes
+
+### 4. human work
+
+- checking sources
+- correcting facts
+- resolving discrepancies
+- editing output
+- approving actions
+- rerunning failed tasks
+
+A team can reduce model-token expense while increasing total operating cost. For example, aggressive truncation may make prompts cheaper but create more human review and rework.
+
+The right optimization target is the cost of a trustworthy completed outcome.
+
+## Raw retrieval is not reusable knowledge
+
+Retrieval returns evidence selected for one query at one moment.
+
+Reusable context requires more structure.
+
+A fact packet can contain:
+
+| Element | Why it matters |
+|---|---|
+| Entity | Prevents facts from being attached to the wrong customer, asset, loan, or campaign |
+| Fact name and value | Gives the model a compact structured input |
+| Business definition | Prevents different meanings from sharing one label |
+| Effective time | States when the fact is true |
+| Observed time | States when the system last checked it |
+| Source evidence | Makes the fact traceable |
+| Verification state | Shows whether the fact passed the required controls |
+| Conflict state | Prevents disputed facts from looking settled |
+| Permission scope | Restricts who and what may use it |
+| Dependencies | Identifies which source changes make it stale |
+| Intended uses | Limits reuse to decisions for which the fact is approved |
+
+The model does not need the full underlying document every time it uses a stable approved fact. It may need the evidence when the task is consequential, when a reviewer asks, or when the fact is challenged.
+
+## Fact packets are not universal truth
+
+A packet should be scoped.
+
+The same underlying evidence may produce different approved views:
+
+- an internal operating view
+- a customer-safe view
+- a leadership summary
+- an audit view with full provenance
+- an agent tool response with only fields required for one action
+
+Reuse without scope creates leakage and semantic errors. The goal is not “cache everything.” The goal is “reuse only what still satisfies the context contract.”
+
+## The four reuse layers
+
+### 1. Retrieval reuse
+
+Reuse source results when the source version, query scope, identity, and permission envelope have not changed.
+
+This avoids repeated searches, but does not itself verify the result.
+
+### 2. Evidence reuse
+
+Reuse normalized passages, tables, extracted fields, and entity links while preserving source location and version.
+
+This avoids reparsing the same material.
+
+### 3. Fact reuse
+
+Reuse reconciled, verified facts with business definitions, effective dates, and conflict status.
+
+This is where consistency improves most. Multiple applications can receive the same approved fact instead of independently interpreting raw evidence.
+
+### 4. Decision-context reuse
+
+Reuse a prepared packet for a recurring workflow, such as an asset review, customer answer, campaign brief, or operating report.
+
+This saves the most repeated work but requires the strongest invalidation rules because more assumptions are bundled together.
+
+## Invalidation is the real architecture
+
+Caching is easy. Knowing when not to trust a cache is the hard part.
+
+Every reusable context object should declare its dependencies.
+
+A fact packet may become stale when:
+
+- a source record changes
+- a newer effective document is executed
+- an entity mapping is corrected
+- a business definition changes
+- a permission changes
+- a disagreement is resolved
+- an approval expires or is revoked
+- the intended use changes
+- the evaluation policy changes
+
+Time-to-live alone is rarely sufficient. A value can remain unchanged for months and then become invalid immediately after a signed amendment or corrected mapping.
+
+Use event-driven invalidation where source events are dependable. Use scheduled reconciliation where they are not. For consequential workflows, include a final freshness check before action.
+
+## A simple cost model
+
+Start with measurement, not a promised savings percentage.
+
+For one workflow, calculate:
+
+```text
+context cost per accepted outcome =
+  source work
++ context preparation
++ model input and output
++ validation and retries
++ human review and correction
+```
+
+Then record:
+
+```text
+repeated-context ratio =
+  context tokens that repeat stable information
+  divided by
+  total input context tokens
+```
+
+And:
+
+```text
+context reuse yield =
+  accepted outcomes using an existing verified packet
+  divided by
+  all accepted outcomes in the workflow
+```
+
+These measures reveal whether reuse actually lowers end-to-end work.
+
+## A before-and-after architecture
+
+### Before
+
+For every request:
+
+1. Search every connected source.
+2. Retrieve overlapping chunks.
+3. Ask the model to identify the entity.
+4. Ask the model to reconcile dates and definitions.
+5. Ask the model to choose among conflicts.
+6. Generate the answer.
+7. Ask a person to check it.
+
+### After
+
+For every material source change:
+
+1. Update the affected entity and evidence records.
+2. Reconcile dependent facts.
+3. Open or resolve discrepancy objects.
+4. Invalidate affected packets.
+5. Rebuild only the packets whose dependencies changed.
+
+For every request:
+
+1. Identify the task and permission envelope.
+2. Fetch the smallest valid packet.
+3. Retrieve supporting evidence only as needed.
+4. Generate or execute inside the action boundary.
+5. Issue a decision receipt.
+
+The expensive interpretation moves from every request to the events that actually change business state.
+
+## Prompt caching is useful, but it solves a different problem
+
+Provider-level prompt caching can reduce the cost or latency of repeated prompt prefixes. Semantic caching can reuse answers to similar questions. Retrieval caching can reuse search results.
+
+Those techniques are valuable. None of them decides whether the cached context is still authorized, current, definitionally consistent, or free of material disagreement.
+
+A verified context layer can use all three, but adds business-aware dependencies and controls.
+
+Think of caching as a delivery optimization. Think of verified context as an operating model.
+
+## When not to reuse context
+
+Fresh assembly is appropriate when:
+
+- the question is investigative and its scope is not yet known
+- source evidence changes rapidly and events are unreliable
+- the user requests a different effective date
+- the permission envelope differs
+- a material conflict remains unresolved
+- a policy or definition changed
+- the action has consequences that require a final direct source check
+- the cost of stale context exceeds the cost of recomputation
+
+The goal is not maximum cache hit rate. It is maximum safe reuse.
+
+## A practical implementation
+
+### Choose one repeated workflow
+
+Look for a task performed many times from mostly stable company context: answering an approved policy question, preparing a recurring report, drafting a campaign batch, or reviewing asset facts.
+
+### Baseline the whole cost
+
+Measure retrieval calls, context tokens, model calls, retries, review time, and correction time.
+
+### Separate facts from evidence
+
+Store compact structured facts while retaining links to the original records and passages.
+
+### Declare dependencies
+
+For every packet, list the source versions, entity mappings, definitions, permissions, conflicts, and approvals it depends on.
+
+### Add invalidation tests
+
+Test not only whether a packet is generated correctly, but whether the right events invalidate it.
+
+### Route by task
+
+Do not send every application the same context. Build the smallest packet for each decision or action.
+
+### Measure accepted outcomes
+
+Compare total operating cost, consistency, review burden, and latency before and after reuse.
+
+## Common failure modes
+
+### Caching final prose instead of reusable facts
+
+The answer may be tied to one question, audience, date, and permission scope. Cache the governed inputs when possible, then generate audience-appropriate output.
+
+### Hiding freshness
+
+Every packet should expose effective and observed time. “Current” is not a field value.
+
+### Ignoring conflicts
+
+A cached value can be fast and wrong. Disputed facts need an explicit state.
+
+### Reusing across permissions
+
+Similarity does not override authorization. Cache keys and packet assembly must include the permission envelope.
+
+### Optimizing token spend before human rework
+
+A smaller prompt that doubles correction time is not cheaper.
+
+## Frequently asked questions
+
+### Will this eliminate retrieval-augmented generation?
+
+No. Retrieval remains useful for evidence, novel questions, and changing documents. The architecture prevents every repeated task from starting only with raw retrieval.
+
+### Are fact packets the same as a semantic layer?
+
+They can use a semantic layer for definitions and metrics. Fact packets add source evidence, effective time, conflict state, permissions, dependencies, and intended AI use.
+
+### How much can this reduce token costs?
+
+The result depends on repetition, context size, model choice, cache behavior, and invalidation frequency. Baseline the workflow before making a claim. The larger benefit may be consistency and lower review burden rather than token spend alone.
+
+### What is the first packet to build?
+
+Choose context that is reused frequently, changes on identifiable events, has clear ownership, and supports a measurable workflow.
+
+## Related reading
+
+- [The Verified Context Layer for Enterprise AI Agents](/blog/verified-context-layer-enterprise-ai-agents)
+- [Enterprise AI Needs a Disagreement System](/blog/enterprise-ai-needs-disagreement-system-not-single-source-of-truth)
+- [From One Video to 100: The Workflow Graph Behind AI Leverage](/blog/one-video-to-100-ai-workflow-graph)
+
+If repeated retrieval is making your AI expensive or inconsistent, [review Prestyj’s enterprise AI consulting approach](/ai-consulting) or [book an enterprise AI session](/book-demo).

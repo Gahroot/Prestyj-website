@@ -25,6 +25,24 @@ export interface Author {
 }
 
 export const AUTHORS = {
+  "nolan-grout": {
+    slug: "nolan-grout",
+    name: "Nolan Grout",
+    jobTitle: "Founder & Enterprise AI Architect",
+    bio: "Nolan leads Prestyj and designs verified AI systems for investment funds and complex enterprises. His work focuses on unified data layers, discrepancy handling, governed context, and AI agents that complete measurable work.",
+    credentials: [
+      "Advises CEOs, COOs, and operating leaders on enterprise AI implementation",
+      "Designs verified data and context layers across fragmented business systems",
+      "Builds controlled AI workflows for high-volume operational and creative work",
+    ],
+    expertise: [
+      "Enterprise AI architecture",
+      "Verified context systems",
+      "Data reconciliation",
+      "AI agents",
+      "Workflow automation",
+    ],
+  },
   "daniel-cho": {
     slug: "daniel-cho",
     name: "Daniel Cho",
@@ -146,6 +164,7 @@ export const DEFAULT_AUTHOR: Author = AUTHORS["priya-raman"];
 const CATEGORY_AUTHOR: Readonly<Record<BlogCategory, Author>> = {
   "AI Sales Agents": AUTHORS["daniel-cho"],
   "AI Marketing": AUTHORS["priya-raman"],
+  "Enterprise AI": AUTHORS["nolan-grout"],
   "Lead Response": AUTHORS["marcus-bell"],
   "Video Ads": AUTHORS["sofia-marquez"],
   "Social Content": AUTHORS["jenna-okafor"],

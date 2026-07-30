@@ -223,41 +223,40 @@ const page = {
     ],
   },
   relatedSection: {
-    title: "Build the case for dependable enterprise AI",
+    title: "Original field notes on verified enterprise AI",
     description:
-      "Review implementation models, identify the first valuable workflow, and see how specialized agents fit once the data foundation is ready.",
+      "Explore the operating patterns behind reliable context, discrepancy handling, lower repeated retrieval, and controlled AI execution.",
   },
   relatedLinks: [
     {
+      href: "/blog/enterprise-ai-needs-disagreement-system-not-single-source-of-truth",
+      label: "The disagreement system",
+      description: "Why enterprise AI must expose conflicting evidence instead of silently choosing a source.",
+    },
+    {
+      href: "/blog/verified-context-layer-enterprise-ai-agents",
+      label: "The verified context layer",
+      description: "The missing architecture between enterprise systems and AI agents.",
+    },
+    {
+      href: "/blog/ai-for-real-estate-investment-funds-exception-queues",
+      label: "AI for real estate investment funds",
+      description: "Start with material exception queues instead of another document chatbot.",
+    },
+    {
+      href: "/blog/stop-requerying-company-data-ai-token-costs",
+      label: "Stop re-querying the company",
+      description: "Reuse verified fact packets without hiding freshness, permissions, or conflicts.",
+    },
+    {
+      href: "/blog/one-video-to-100-ai-workflow-graph",
+      label: "From one video to 100",
+      description: "The workflow graph that turns generation into controlled production capacity.",
+    },
+    {
       href: "/custom-ai-agents",
       label: "Custom AI agents",
-      description:
-        "Explore agents built around workflows that off-the-shelf tools cannot model safely.",
-    },
-    {
-      href: "/done-for-you-ai-agents",
-      label: "Done-for-you AI agents",
-      description: "See the implementation path from scoped workflow to managed agent.",
-    },
-    {
-      href: "/ai-first-audit",
-      label: "AI-First Audit",
-      description: "Identify expensive manual work and rank the first automation opportunity.",
-    },
-    {
-      href: "/blog/is-ai-consulting-worth-it-2026",
-      label: "Is AI consulting worth it?",
-      description: "Evaluate when outside strategy and implementation create enough value.",
-    },
-    {
-      href: "/blog/ai-consulting-engagement-models-explained-2026",
-      label: "AI consulting engagement models",
-      description: "Compare audit, roadmap, advisory, and implementation structures.",
-    },
-    {
-      href: "/blog/ai-consultant-pricing-guide-2026",
-      label: "AI consultant pricing guide",
-      description: "Understand the variables that determine consulting and implementation cost.",
+      description: "Explore agents built around workflows that off-the-shelf tools cannot model safely.",
     },
   ],
   faqs: [

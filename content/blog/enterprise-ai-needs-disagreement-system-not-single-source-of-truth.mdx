@@ -1,0 +1,274 @@
+---
+title: "Enterprise AI Needs a Disagreement System, Not One Source of Truth"
+description: "A practical architecture for enterprise AI when systems disagree: conflict objects, source precedence, review queues, provenance, and decision receipts."
+date: "2026-07-30"
+author: "Nolan Grout"
+keywords:
+  - enterprise AI data discrepancies
+  - AI single source of truth
+  - conflicting data sources AI
+  - AI data reconciliation
+  - verified enterprise AI
+  - enterprise AI provenance
+  - AI discrepancy detection
+image: /images/blog/fallback-ai-sales-agents.jpg
+---
+
+Most enterprise AI projects begin with a sentence that sounds responsible:
+
+> We need a single source of truth before we deploy AI.
+
+The instinct is right. The architecture is usually wrong.
+
+A complex company rarely has one source that is authoritative for every fact, at every point in time, for every business purpose. The accounting system may own posted financials. The property management system may have the freshest occupancy record. A signed amendment may override both. An operating partner may know that the amendment has been approved but not yet entered anywhere.
+
+Forcing those realities into one supposedly perfect database does not remove disagreement. It hides disagreement.
+
+Enterprise AI needs something more useful: **a disagreement system**.
+
+A disagreement system does not promise that every source agrees. It detects where they do not agree, preserves the competing evidence, applies real business rules where those rules exist, and sends unresolved conflicts to an accountable person.
+
+## TL;DR
+
+- A single source of truth is a policy decision, not a database feature.
+- When two credible systems disagree, the AI should not silently pick one.
+- Represent conflicts as durable objects with evidence, status, ownership, and resolution history.
+- Give every consequential AI answer a decision receipt showing what facts and rules produced it.
+- The highest-value first use case may be an exception queue, not a chatbot.
+
+## The dangerous moment is not missing data
+
+Missing data is visible. A blank field can trigger an error.
+
+Conflicting data is more dangerous because every source can look complete.
+
+Imagine an investment organization asking:
+
+> Which assets are likely to breach an operating threshold this quarter?
+
+The answer may depend on values spread across:
+
+- the general ledger
+- a property management platform
+- the latest rent roll
+- debt schedules
+- approved budgets
+- asset-manager forecasts
+- signed leases and amendments
+- emailed operating updates
+
+If two sources report different occupancy, debt terms, dates, or ownership values, retrieval alone does not solve the problem. Retrieval simply gives the model multiple plausible answers.
+
+A language model will often produce one coherent response even when its evidence is incoherent. Fluency can hide the conflict.
+
+## The disagreement object
+
+The core primitive is not a document chunk. It is a **disagreement object**.
+
+A disagreement object can contain:
+
+| Field | Purpose |
+|---|---|
+| Entity | The fund, asset, tenant, loan, customer, campaign, or other object in question |
+| Business field | The exact fact that conflicts, such as maturity date or approved budget |
+| Candidate values | Every materially different value found |
+| Source evidence | System, document, record identifier, and location for each value |
+| Effective time | When each value claims to be true |
+| Observed time | When the system ingested or detected each value |
+| Authority rule | Any approved rule that determines precedence |
+| Materiality | Whether the difference changes a decision |
+| Status | Open, automatically resolved, under review, accepted, or superseded |
+| Owner | The person or team accountable for resolution |
+| Resolution record | What was decided, by whom, why, and under which policy version |
+
+This changes the operating question.
+
+Instead of asking, “Which database is correct?” the organization can ask:
+
+1. What exactly disagrees?
+2. Does the difference matter to the decision?
+3. Is there an approved precedence rule?
+4. If not, who owns the exception?
+5. Which downstream answers must be refreshed after resolution?
+
+## Source precedence should be narrow and versioned
+
+A common mistake is to create one global ranking of sources:
+
+1. System A always wins.
+2. System B wins if A is blank.
+3. Documents are only supporting material.
+
+Real operations are rarely that simple.
+
+Authority is usually field-specific and time-specific.
+
+For example:
+
+- Posted actuals may come from accounting.
+- Current tenant status may come from property operations.
+- Legal obligations may come from the executed agreement.
+- Forecast assumptions may come from an approved planning model.
+- A recent human override may be valid only until the underlying system is corrected.
+
+Treat precedence as a versioned business policy, not hidden application logic. The policy needs an owner, effective date, scope, and review path.
+
+If no approved rule exists, the system should abstain from collapsing the conflict.
+
+## Automatic resolution has limits
+
+Some conflicts can be resolved safely without a person:
+
+- formatting differences
+- unit conversions
+- aliases for the same entity
+- records where one value is clearly superseded by effective date
+- values outside an accepted tolerance that can be recomputed from authoritative inputs
+
+Other conflicts require judgment:
+
+- a signed document differs from a live operational system
+- two teams use different definitions for the same metric
+- a forecast changed without an approved revision
+- a field is accurate for one business purpose but misleading for another
+- two values are both valid for different dates or entities that were incorrectly merged
+
+The system should distinguish **normalization**, **policy resolution**, and **human adjudication**. Calling all three “data cleaning” erases the controls leadership needs.
+
+## The decision receipt
+
+A citation is useful, but a citation alone is not enough.
+
+For consequential work, produce a **decision receipt**.
+
+A decision receipt records:
+
+- the question or workflow objective
+- the answer or action
+- the facts used
+- the sources behind those facts
+- the relevant effective dates
+- the policy version applied
+- any unresolved conflicts
+- any confidence or abstention state
+- the person or agent that initiated the work
+- the downstream action taken
+
+This is not chain-of-thought. It is an operational record of inputs, controls, and outcomes.
+
+The receipt makes review possible without asking the model to recreate its reasoning later. It also makes corrections useful: when a disputed fact is resolved, the system can identify affected decisions and rerun only what needs to change.
+
+## Why this is better than “just add citations”
+
+A citation answers:
+
+> Where did this sentence come from?
+
+A disagreement system answers:
+
+> What other credible values existed, why was this one used, what rule selected it, and who owns the unresolved risk?
+
+That distinction matters when AI moves from search to action.
+
+An employee assistant can survive an imperfect answer to a low-stakes question. An agent updating a forecast, sending a customer notice, changing a campaign, or preparing an investment-committee brief needs a stronger contract.
+
+## Start with an exception queue
+
+The most useful first interface may not have a chat box.
+
+Build a queue that shows:
+
+- the conflicts most likely to change a decision
+- the evidence for each candidate value
+- the rule that resolved it or the reason it remains open
+- the accountable owner
+- the systems that will be updated after resolution
+- the AI workflows currently blocked by the conflict
+
+This creates immediate operational value. It also generates the correction data needed to make future AI answers more reliable.
+
+Every resolved exception teaches the organization something concrete:
+
+- a missing integration
+- an ambiguous definition
+- a weak ownership rule
+- a stale source
+- an entity-matching error
+- a policy that exists only in someone’s head
+
+## A practical implementation sequence
+
+### 1. Choose one consequential decision
+
+Do not begin by connecting every system. Pick one recurring decision where inconsistent facts create visible rework or risk.
+
+### 2. Name the required facts
+
+List the smallest set of entities, fields, dates, and definitions needed to support that decision.
+
+### 3. Map credible sources
+
+For each fact, document every source employees currently consult, including spreadsheets, documents, and manual overrides.
+
+### 4. Define known authority rules
+
+Capture real policy. Do not invent precedence merely to make the software deterministic.
+
+### 5. Create conflict tests
+
+Specify what counts as a disagreement, which tolerances are acceptable, and which differences are material.
+
+### 6. Assign exception owners
+
+A conflict without an owner becomes permanent uncertainty.
+
+### 7. Issue decision receipts
+
+Record the evidence and policy behind every answer or action that matters.
+
+### 8. Expand only after the correction loop works
+
+Once the organization can detect, resolve, propagate, and audit discrepancies for one decision, extend the pattern to adjacent workflows.
+
+## What not to do
+
+- Do not let retrieval rank determine business authority.
+- Do not call the newest record correct unless the business has approved that rule.
+- Do not overwrite losing values without preserving evidence.
+- Do not expose unresolved conflicts to customers as confident answers.
+- Do not build an AI agent that can act more broadly than the organization can review.
+- Do not measure accuracy only on questions where sources already agree.
+
+## The deeper point
+
+The goal is not to make the company appear consistent to the model.
+
+The goal is to make inconsistency governable.
+
+Once disagreements are explicit, the organization can improve its data, sharpen its policies, and give AI a safer foundation. Until then, adding a larger model may only make contradictions sound more polished.
+
+## Frequently asked questions
+
+### Is a disagreement system the same as master data management?
+
+No. Master data management can help establish canonical entities and values. A disagreement system focuses on the operating state around conflicts: competing evidence, materiality, policy, ownership, review, and downstream impact. The two can work together.
+
+### Does every conflicting value need human review?
+
+No. Safe normalization and approved precedence rules can resolve many conflicts automatically. Human review is for material exceptions where policy is missing, context changes the answer, or competing evidence remains credible.
+
+### Can this work with retrieval-augmented generation?
+
+Yes. Retrieval can locate relevant evidence. The disagreement system determines whether that evidence is mutually consistent and whether the AI is allowed to collapse it into one answer.
+
+### What should the AI say when a conflict is unresolved?
+
+It should identify the unresolved fact, show the candidate values and sources appropriate for that user, explain how the conflict affects the requested decision, and either abstain or proceed under an explicitly approved assumption.
+
+## Related reading
+
+- [The Verified Context Layer for Enterprise AI Agents](/blog/verified-context-layer-enterprise-ai-agents)
+- [AI for Real Estate Investment Funds: Start With Exception Queues](/blog/ai-for-real-estate-investment-funds-exception-queues)
+- [Why AI Should Not Re-query Your Company From Scratch](/blog/stop-requerying-company-data-ai-token-costs)
+
+If your AI program depends on facts spread across systems that regularly disagree, [review Prestyj’s enterprise AI consulting approach](/ai-consulting) or [book an enterprise AI session](/book-demo).
