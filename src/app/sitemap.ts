@@ -12,11 +12,10 @@ const baseUrl = siteConfig.url;
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
 
-  // Static routes — buyer-intent pages and key product/positioning pages aligned
-  // with the "done-for-you AI agents + ad production for service businesses and
-  // real estate teams" positioning. Every URL here MUST have a backing page in
-  // src/app/. Off-positioning / orphan / utility pages are intentionally
-  // excluded. See src/lib/positioning.ts for canonical vocabulary.
+  // Static routes include core buyer-intent pages plus the explicitly approved
+  // enterprise AI consulting page. Every URL here MUST have a backing page in
+  // src/app/. Orphan and utility pages are intentionally excluded. See
+  // src/lib/positioning.ts for the core service-business vocabulary.
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
@@ -99,6 +98,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/ai-marketing-agents`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.88,
+    },
+    {
+      url: `${baseUrl}/ai-consulting`,
       lastModified: now,
       changeFrequency: "weekly",
       priority: 0.88,

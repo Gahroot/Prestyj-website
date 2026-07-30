@@ -48,10 +48,10 @@ export interface AiOfferPageData {
   breadcrumbLabel: string;
   serviceName: string;
   serviceType: string[];
-  offerCatalogName: string;
-  lowPrice: string;
-  highPrice: string;
-  offerCount: string;
+  offerCatalogName?: string;
+  lowPrice?: string;
+  highPrice?: string;
+  offerCount?: string;
   hero: {
     eyebrow: string;
     headline: string;
@@ -69,6 +69,11 @@ export interface AiOfferPageData {
   alternativesTable: AiOfferTable;
   utilitySection: AiOfferSection;
   processSection: AiOfferSection;
+  relatedSection?: {
+    eyebrow?: string;
+    title: string;
+    description: string;
+  };
   relatedLinks: AiOfferLink[];
   faqs: AiOfferFaq[];
   finalCta: {
@@ -79,7 +84,25 @@ export interface AiOfferPageData {
   };
 }
 
+function createAggregateOffer(page: AiOfferPageData): Record<string, unknown> | undefined {
+  if (!page.lowPrice || !page.highPrice || !page.offerCount) {
+    return undefined;
+  }
+
+  return {
+    "@type": "AggregateOffer",
+    priceCurrency: "USD",
+    lowPrice: page.lowPrice,
+    highPrice: page.highPrice,
+    offerCount: page.offerCount,
+    availability: "https://schema.org/InStock",
+    url: page.url,
+  };
+}
+
 export function createServiceJsonLd(page: AiOfferPageData): Record<string, unknown> {
+  const aggregateOffer = createAggregateOffer(page);
+
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -96,33 +119,31 @@ export function createServiceJsonLd(page: AiOfferPageData): Record<string, unkno
     },
     serviceType: page.serviceType,
     areaServed: "United States",
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: page.lowPrice,
-      highPrice: page.highPrice,
-      offerCount: page.offerCount,
-      availability: "https://schema.org/InStock",
-      url: page.url,
-    },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: page.offerCatalogName,
-      itemListElement: page.pricingTable.rows.map((row) => ({
-        "@type": "Offer",
-        name: row.label,
-        priceCurrency: "USD",
-        itemOffered: {
-          "@type": "Service",
-          name: `${page.serviceName}: ${row.label}`,
-          description: row.values.join(" · "),
-        },
-      })),
-    },
+    ...(aggregateOffer ? { offers: aggregateOffer } : {}),
+    ...(page.offerCatalogName
+      ? {
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: page.offerCatalogName,
+            itemListElement: page.pricingTable.rows.map((row) => ({
+              "@type": "Offer",
+              name: row.label,
+              priceCurrency: "USD",
+              itemOffered: {
+                "@type": "Service",
+                name: `${page.serviceName}: ${row.label}`,
+                description: row.values.join(" · "),
+              },
+            })),
+          },
+        }
+      : {}),
   };
 }
 
 export function createSoftwareApplicationJsonLd(page: AiOfferPageData): Record<string, unknown> {
+  const aggregateOffer = createAggregateOffer(page);
+
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -132,15 +153,7 @@ export function createSoftwareApplicationJsonLd(page: AiOfferPageData): Record<s
     operatingSystem: "Web",
     description: page.description,
     url: page.url,
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: page.lowPrice,
-      highPrice: page.highPrice,
-      offerCount: page.offerCount,
-      availability: "https://schema.org/InStock",
-      url: page.url,
-    },
+    ...(aggregateOffer ? { offers: aggregateOffer } : {}),
     featureList: page.serviceType,
     provider: {
       "@type": "Organization",

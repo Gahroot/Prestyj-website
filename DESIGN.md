@@ -144,3 +144,48 @@ The dark theme belongs because it is the established product environment. The re
 **23/24.** Specificity 2, hierarchy 2, composition 2, consistency 2, typography 2, material logic 2, state completeness 2, responsive behavior 2, accessibility 1, motion 2, content authenticity 2, visual distinctiveness 2. Accessibility is held at 1 only because a manual screen-reader session is not available.
 
 The first critique identified low-contrast purple utility text, invalid nested definition-list markup, and 200% text overflow from implicit grid tracks. Those failures were corrected. The decorative document icon was removed from the measurement ledger; the page remains specific through its numbered trace, formulas, protocol record, and retention view.
+
+---
+
+# Enterprise AI Consulting Content Design
+
+## Design read
+
+- **Surface:** A direct enterprise marketing page using the existing AI offer template.
+- **Audience:** CEOs, COOs, operating partners, and functional leaders at investment funds, real estate investment organizations, and complex enterprises.
+- **Single job:** Help an executive understand why verified context must come before AI automation, then book an enterprise AI session.
+- **Task and risk:** An infrequent, high-consideration decision. Wrong claims about data accuracy, cost reduction, or productivity would damage trust, so outcomes are bounded and implementation controls are explicit.
+- **Content:** Unified source ingestion, entity and definition reconciliation, discrepancy handling, provenance, permissions, reusable context, agent execution, and high-volume production examples.
+- **Platform and constraints:** Preserve the existing Next.js route, Navbar, Footer, AI offer component, dark Prestyj theme, shared content rail, responsive tables, Lucide icons, and booking flow. The main Prestyj homepage remains focused on service businesses and real estate teams.
+
+## Evidence and thesis
+
+The leading archetype is **marketing and brand**. `apple` supports a direct claim with a deliberate evidence sequence, and `sanity` supports explaining technical infrastructure in business language. `figma` is the contrast because this page should not become a broad collaborative-product tour.
+
+Use a **verified fact path** as the content signature: connect, reconcile, verify, serve, and act. The first glance is the reliable-data claim, the second is discrepancy handling, and the action is an enterprise AI session. The page distinguishes itself through an architecture table and operating-model comparison rather than a generic feature grid.
+
+The existing centered hero, dark theme, badges, cards, and shared offer template remain because this is a content repositioning inside an established route, not a visual redesign. No new glass effects, gradients, ambient motion, icon medallions, hover lift, pills, or unsupported proof are introduced.
+
+## Reuse, responsiveness, and trust
+
+- Reuse `AiOfferPage`, `Navbar`, `Footer`, `Button`, `Accordion`, `Table`, `BorderGlow`, and the existing typography and color tokens.
+- Keep the same `max-w-6xl` content rail and responsive section gutters. Four-column tables use a readable minimum width inside the existing horizontal overflow container on narrow screens.
+- The page adds no forms, media, custom widgets, client-side state, or new motion. Links and accordion controls retain native/shared keyboard and focus behavior.
+- The `1 to 100` example comes directly from the user's supplied workflow and is framed as one bounded content workflow, not a universal productivity guarantee.
+- Token-cost language is conditional and calls for a measured baseline. Data accuracy is described as an operating process with provenance, evaluation, abstention, and correction rather than a guarantee.
+- Consulting prices are not invented. The service schema now omits aggregate pricing when a page has no approved price range, and this consulting page no longer presents itself as a software application.
+- Generated user-facing copy contains no em dashes. No customer logos, fund names, ratings, testimonials, or unsupported portfolio metrics are added.
+
+## Release evidence and critique
+
+- **Rendered evidence:** `.ezcoder/screenshots/ai-consulting-enterprise-desktop-final.png` and `.ezcoder/screenshots/ai-consulting-enterprise-mobile-final.png` cover the full route at 1440 by 1000 and 390 by 844.
+- **Route and discovery:** `/ai-consulting` returns HTTP 200 after removing the obsolete permanent redirect to `/pricing`. The route is included in `sitemap.xml` and remains directly refreshable.
+- **Responsive correction:** The first mobile capture compressed four table columns until cell text became difficult to scan. Both tables now keep a 760-pixel minimum width inside semantic horizontal overflow, preserving readable text and row relationships.
+- **Content correction:** The first capture exposed a generic resources heading. It now states the enterprise decision task, and the unnecessary decorative eyebrow was removed.
+- **Accessibility scope:** The changed page uses one main landmark, ordered headings, labelled semantic tables, links with visible text, and the existing Radix accordion keyboard model. Automated build and source review pass. Manual keyboard traversal, forced-colors, 200% text, Safari plus VoiceOver, and a criterion-by-criterion WCAG 2.2 audit remain unverified, so no WCAG-conformance or ADA-compliance claim is made.
+- **State inventory:** Loading, form errors, retry, offline mutation, destructive, and success states do not apply to this static marketing route. Hover, focus-visible, press, link navigation, and accordion expanded/collapsed states come from existing shared primitives.
+- **Performance:** The route adds no media, client component, external data request, font, dependency, or animation. Production field Core Web Vitals remain unverified.
+
+## Final quality score
+
+**22/24.** Specificity 2, hierarchy 2, composition 2, consistency 2, typography 2, material logic 2, state completeness 2, responsive behavior 2, accessibility 1, motion 2, content authenticity 2, visual distinctiveness 1. Accessibility is held at 1 because manual assistive-technology and changed-scope criterion testing are unavailable. Visual distinctiveness is held at 1 because the page intentionally reuses the established AI offer template rather than introducing a new visual system.

@@ -5,16 +5,12 @@ import { AiOfferPage } from "@/components/sections/ai-offer-page";
 import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { FAQJsonLd } from "@/components/seo/json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
-import {
-  createServiceJsonLd,
-  createSoftwareApplicationJsonLd,
-  type AiOfferPageData,
-} from "@/lib/ai-offer-pages";
+import { createServiceJsonLd, type AiOfferPageData } from "@/lib/ai-offer-pages";
 
 const pageUrl = "https://prestyj.com/ai-consulting";
-const pageTitle = "AI Consulting | Strategy, Audit & Implementation That Ships";
+const pageTitle = "Enterprise AI Consulting for Investment Funds | Prestyj";
 const pageDescription =
-  "AI consulting that ends in working agents, not just a slide deck. Prestyj audits your workflows, prioritizes by ROI, and can implement and manage what it recommends. Compare engagement models, deliverables, and pricing.";
+  "Enterprise AI consulting for investment funds and complex companies. Unify data, resolve discrepancies, give AI verified context, and automate high-volume work.";
 
 const page = {
   slug: "ai-consulting",
@@ -22,248 +18,298 @@ const page = {
   title: pageTitle,
   description: pageDescription,
   keywords: [
-    "AI consulting",
-    "AI consultant",
-    "AI consulting services",
-    "AI strategy consulting",
-    "AI implementation consulting",
-    "AI adoption consultant",
-    "AI consulting pricing",
-    "AI rollout consulting",
-    "is AI consulting worth it",
-    "AI consulting engagement models",
+    "enterprise AI consulting",
+    "AI consulting for investment funds",
+    "real estate investment fund AI",
+    "enterprise AI data layer",
+    "verified AI systems",
+    "AI data reconciliation",
+    "enterprise AI agents",
+    "AI workflow automation consulting",
+    "AI strategy for COOs",
+    "custom enterprise AI systems",
   ],
-  breadcrumbLabel: "AI Consulting",
-  serviceName: "Prestyj AI Consulting",
+  breadcrumbLabel: "Enterprise AI Consulting",
+  serviceName: "Prestyj Enterprise AI Consulting",
   serviceType: [
-    "AI Consulting",
-    "AI Strategy Consulting",
-    "AI Implementation Consulting",
-    "AI Adoption Advisory",
-    "AI Rollout Consulting",
+    "Enterprise AI Consulting",
+    "AI Data Architecture",
+    "Data Reconciliation Systems",
+    "Enterprise AI Agent Implementation",
+    "AI Workflow Automation",
   ],
-  offerCatalogName: "AI Consulting Services",
-  lowPrice: "1497",
-  highPrice: "19997",
-  offerCount: "4",
   hero: {
-    eyebrow: "AI CONSULTING · STRATEGY TO IMPLEMENTATION",
-    headline: "AI consulting that ends in working agents,",
-    accent: "not a slide deck.",
+    eyebrow: "ENTERPRISE AI CONSULTING · VERIFIED DATA TO AUTOMATED WORK",
+    headline: "Make AI work from the same facts",
+    accent: "your business trusts.",
     subheadline:
-      "Prestyj audits your sales, support, and marketing workflows, prioritizes the highest-ROI AI opportunities, and — unlike advisory-only firms — can implement and manage what it recommends. Strategy and execution under one roof.",
+      "Prestyj helps CEOs, COOs, and operating leaders responsible for billion-dollar investment portfolios and complex enterprises build a verified AI operating layer. We unify fragmented sources, surface discrepancies, preserve provenance, and give employees, customers, and AI agents reliable context for real work.",
     primaryCta: {
       href: "/book-demo",
-      label: "Book an AI strategy session",
-      description: "Map your highest-ROI AI opportunities.",
+      label: "Book an enterprise AI session",
+      description: "Map the data, decisions, and workflows that matter first.",
     },
     secondaryCta: {
-      href: "/ai-first-audit",
-      label: "Find my costly workflows",
-      description: "See your top workflow before entering your email.",
+      href: "/custom-ai-agents",
+      label: "Review custom AI systems",
+      description: "See how custom agents fit specialized operations.",
     },
     stats: [
       {
-        value: "1–2 wks",
-        label: "to a prioritized roadmap",
+        value: "One layer",
+        label: "for approved business truth",
         detail:
-          "A focused audit surfaces the workflows where AI pays back fastest, ranked by impact and effort, before any build commitment.",
+          "Models, agents, and employee tools draw from governed context instead of rebuilding an answer from disconnected systems every time.",
       },
       {
-        value: "Strategy + build",
-        label: "under one roof",
+        value: "Cross-checked",
+        label: "before AI answers",
         detail:
-          "The risk of advisory-only consulting is a roadmap no one executes. Prestyj can implement and manage the agents it recommends.",
+          "Conflicting values, stale records, missing fields, and source disagreements are surfaced for resolution instead of hidden inside a confident response.",
       },
       {
-        value: "ROI-ranked",
-        label: "opportunities, not hype",
+        value: "1 to 100",
+        label: "scheduled videos in one day",
         detail:
-          "We prioritize by revenue impact, time-to-value, and feasibility — and tell you where AI is not worth it yet.",
+          "In one high-volume content workflow, the operating target moved from publishing one piece a day to preparing and scheduling 100 with human review.",
       },
     ],
   },
   tldr: {
-    title: "What AI consulting should actually deliver",
+    title: "Reliable AI needs a truth layer before it needs another chatbot",
     bullets: [
-      "Good AI consulting produces a prioritized, ROI-ranked roadmap of specific workflows to automate — not a generic strategy deck about the importance of AI.",
-      "The biggest risk is advisory-only engagements: a polished plan that stalls because no one owns implementation. Prefer a partner who can also build and manage what they recommend.",
-      "Ask up front about engagement model, deliverables, timeline, and pricing — fixed-scope audit, roadmap, retained advisory, or implementation — so you know exactly what you are buying.",
+      "Connect the systems that already run the business, then normalize identities, definitions, permissions, and freshness into reusable context.",
+      "Make disagreement visible. Every important answer should carry source context, validation status, and a clear path for a person to correct the record.",
+      "Put agents on top of that verified layer so they can complete bounded work, reduce repeated retrieval and token usage, and leave an auditable record of what happened.",
     ],
   },
   pricingTable: {
-    title: "AI consulting engagement models",
+    title: "The architecture that makes enterprise AI dependable",
     description:
-      "Consulting pricing varies by scope and depth. The key question is whether the engagement stops at advice or continues into implementation and ownership.",
-    columns: ["Engagement", "What you get", "Typical scope", "Best fit"],
+      "A useful enterprise AI system is not one prompt connected to every database. It is a controlled path from raw records to verified context to accountable action.",
+    columns: ["Layer", "What happens", "Business outcome", "Risk controlled"],
     rows: [
       {
-        label: "AI-first audit",
-        values: ["Workflow audit + prioritized roadmap", "1–2 weeks, fixed scope", "Teams deciding where to start"],
+        label: "Connect",
+        values: [
+          "Ingest approved data from asset, accounting, CRM, document, and operational systems",
+          "One governed view of the information AI is allowed to use",
+          "Blind spots caused by disconnected sources",
+        ],
       },
       {
-        label: "Strategy + roadmap",
-        values: ["Opportunity sizing, sequencing, build-vs-buy", "2–4 weeks", "Leaders planning a multi-quarter rollout"],
+        label: "Reconcile",
+        values: [
+          "Match entities, standardize definitions, compare values, and flag conflicts",
+          "Teams see which facts agree and which need a decision",
+          "Confident answers built on contradictory records",
+        ],
       },
       {
-        label: "Retained advisory",
-        values: ["Ongoing guidance, reviews, vendor selection", "Monthly retainer", "Teams executing with internal staff"],
+        label: "Verify",
+        values: [
+          "Attach provenance, freshness, permissions, validation state, and ownership",
+          "Important outputs can be traced and reviewed",
+          "Unverifiable claims and unauthorized data access",
+        ],
       },
       {
-        label: "Consulting + implementation",
-        values: ["Audit, build, integrate, launch, manage", "Scoped per workflow", "Teams that want outcomes, not a deck"],
+        label: "Serve",
+        values: [
+          "Expose reusable context through governed APIs, indexes, and prepared views",
+          "Employees and AI tools receive consistent answers faster",
+          "Repeated retrieval, oversized prompts, and unnecessary token spend",
+        ],
+      },
+      {
+        label: "Act",
+        values: [
+          "Let agents complete bounded workflows with approvals, logs, and exception handling",
+          "AI performs measurable work instead of only generating text",
+          "Uncontrolled actions and invisible failures",
+        ],
       },
     ],
   },
   alternativesTable: {
-    title: "AI consulting vs agencies, in-house, and platforms",
+    title: "Why most enterprise AI pilots stall after the demo",
     description:
-      "This page is for buyers deciding how to get expert AI guidance that actually ships, not just which firm has the most impressive deck.",
-    columns: ["Approach", "Best fit", "Tradeoff", "Buyer note"],
+      "The difference is rarely access to a model. It is whether the model receives consistent context, knows what it may do, and can prove what happened afterward.",
+    columns: ["Operating model", "Good at", "Breaks when", "Leadership consequence"],
     rows: [
       {
-        label: "Prestyj consulting + implementation",
-        values: ["Teams that want strategy and execution together", "Less neutral than pure advisory", "Best when you want the roadmap built, not shelved"],
+        label: "Ad hoc AI chat",
+        values: [
+          "Drafting and individual research",
+          "The answer depends on company facts or current records",
+          "Employees get fast but inconsistent outputs",
+        ],
       },
       {
-        label: "Advisory-only AI consultants",
-        values: ["Strategy, audits, vendor selection", "Roadmap can stall without an owner", "Confirm who implements after the engagement"],
+        label: "Point automation",
+        values: [
+          "One stable trigger and one stable action",
+          "The workflow crosses teams, systems, or exceptions",
+          "Automation islands create more maintenance",
+        ],
       },
       {
-        label: "Big consulting firms",
-        values: ["Large enterprise transformation programs", "High cost, slower, junior delivery teams", "Watch the gap between partners and doers"],
+        label: "Search over documents",
+        values: [
+          "Finding passages in an approved corpus",
+          "Sources disagree or structured data determines the answer",
+          "Retrieved text sounds authoritative without resolving the fact",
+        ],
       },
       {
-        label: "In-house AI hire",
-        values: ["Sustained internal capability", "Hiring time, salary, key-person risk", "Slow to start; strong long-term if funded"],
-      },
-      {
-        label: "Self-serve AI platforms",
-        values: ["Teams that already know what to build", "No strategy or prioritization included", "Pair with an audit so you build the right thing"],
+        label: "Verified AI operating layer",
+        values: [
+          "Shared context, governed access, and multi-step execution",
+          "Ownership and review rules have not been defined",
+          "AI becomes dependable infrastructure with accountable operators",
+        ],
       },
     ],
   },
   utilitySection: {
-    eyebrow: "BUYER UTILITY",
-    title: "What a real consulting engagement includes",
+    eyebrow: "WHERE THE LEVERAGE APPEARS",
+    title: "Move from AI experiments to operating capacity",
     description:
-      "Useful AI consulting is concrete: it names the workflows, the expected ROI, the build-vs-buy call, and the path to production — not just a maturity model and a list of trends.",
+      "The verified layer is shared infrastructure. Once it is dependable, the same foundation can support executive decisions, employee tools, customer experiences, and high-volume production without rebuilding the truth for every use case.",
     cards: [
       {
-        title: "Workflow + opportunity audit",
-        description: "Inventory sales, support, and marketing workflows, quantify time and revenue leakage, and surface where AI pays back fastest.",
+        title: "Portfolio and executive intelligence",
+        description:
+          "Ask cross-asset questions, compare operating reports, surface exceptions, and prepare decision briefs from governed data with source context attached.",
       },
       {
-        title: "Prioritized roadmap",
-        description: "Rank opportunities by impact, effort, and feasibility, and sequence them so quick wins fund the bigger initiatives.",
+        title: "Discrepancy control",
+        description:
+          "Detect conflicting rent rolls, asset records, financial values, dates, or ownership fields and route the exact disagreement to the right reviewer.",
       },
       {
-        title: "Build-vs-buy + vendor calls",
-        description: "Decide what to build custom, what to buy, and what to run as a managed service — with honest TCO, not vendor hype.",
+        title: "Reliable employee and customer AI",
+        description:
+          "Give assistants approved answers, enforce permissions, expose citations where useful, and keep unresolved facts out of customer-facing responses.",
       },
       {
-        title: "Path to production",
-        description: "Define ownership, metrics, change management, and the implementation plan so the roadmap actually ships and gets measured.",
+        title: "High-volume production systems",
+        description:
+          "Turn approved inputs into large batches of videos, static ads, reports, updates, and scheduled content while preserving review gates and brand rules.",
       },
     ],
   },
   processSection: {
-    eyebrow: "ENGAGEMENT TIMELINE",
-    title: "From audit to live agents in three phases",
+    eyebrow: "IMPLEMENTATION SEQUENCE",
+    title: "Establish truth. Deploy access. Automate work.",
     description:
-      "The sequence matters more than the buzzwords: understand the business first, prioritize ruthlessly, then implement and measure.",
+      "The sequence prevents a common enterprise mistake: automating a process before the organization agrees on the facts, permissions, and exception rules that process depends on.",
     cards: [
       {
-        title: "Audit and prioritize",
-        description: "Map workflows, quantify impact, and produce an ROI-ranked roadmap — including where AI is not yet worth it.",
+        title: "Establish the verified layer",
+        description:
+          "Map critical decisions and systems, define the canonical entities and fields, ingest approved sources, and create reconciliation and correction workflows.",
       },
       {
-        title: "Decide build vs buy",
-        description: "For each priority, choose custom build, off-the-shelf, or managed done-for-you based on cost, time-to-value, and ownership.",
+        title: "Deploy trusted AI access",
+        description:
+          "Serve governed context to employee and customer tools with permissions, source context, evaluation tests, observability, and clear failure behavior.",
       },
       {
-        title: "Implement and measure",
-        description: "Ship the highest-ROI workflow first, track outcomes against the business case, and expand only once results hold.",
+        title: "Automate measurable work",
+        description:
+          "Give agents bounded responsibilities, human approval points, logs, retries, and outcome metrics. Expand only after accuracy and operating value hold.",
       },
     ],
   },
+  relatedSection: {
+    title: "Build the case for dependable enterprise AI",
+    description:
+      "Review implementation models, identify the first valuable workflow, and see how specialized agents fit once the data foundation is ready.",
+  },
   relatedLinks: [
     {
-      href: "/ai-first-audit",
-      label: "AI-First Audit",
-      description: "Find your costliest workflow and where an AI agent can help first.",
+      href: "/custom-ai-agents",
+      label: "Custom AI agents",
+      description:
+        "Explore agents built around workflows that off-the-shelf tools cannot model safely.",
     },
     {
       href: "/done-for-you-ai-agents",
       label: "Done-for-you AI agents",
-      description: "Managed implementation once the roadmap says build.",
+      description: "See the implementation path from scoped workflow to managed agent.",
     },
     {
-      href: "/custom-ai-agents",
-      label: "Custom AI agents",
-      description: "Bespoke builds for workflows off-the-shelf agents cannot model.",
+      href: "/ai-first-audit",
+      label: "AI-First Audit",
+      description: "Identify expensive manual work and rank the first automation opportunity.",
     },
     {
       href: "/blog/is-ai-consulting-worth-it-2026",
       label: "Is AI consulting worth it?",
-      description: "When consulting pays for itself and when to skip straight to implementation.",
+      description: "Evaluate when outside strategy and implementation create enough value.",
     },
     {
       href: "/blog/ai-consulting-engagement-models-explained-2026",
       label: "AI consulting engagement models",
-      description: "Audit, roadmap, retainer, and implementation models compared.",
+      description: "Compare audit, roadmap, advisory, and implementation structures.",
     },
     {
       href: "/blog/ai-consultant-pricing-guide-2026",
       label: "AI consultant pricing guide",
-      description: "What AI consulting costs and how engagements are priced.",
+      description: "Understand the variables that determine consulting and implementation cost.",
     },
   ],
   faqs: [
     {
-      question: "What does an AI consultant actually do?",
+      question: "Who is this enterprise AI consulting for?",
       answer:
-        "A good AI consultant audits your workflows, identifies where AI creates the most value, ranks those opportunities by ROI and feasibility, and produces a roadmap with a clear build-vs-buy call. The strongest engagements also cover the path to production so the plan ships instead of sitting in a deck.",
+        "It is designed for CEOs, COOs, operating partners, and functional leaders at investment funds, real estate investment organizations, and complex enterprises. It fits organizations where critical answers span multiple systems, data quality varies, and a wrong answer can affect capital, operations, customers, or reputation.",
     },
     {
-      question: "Is AI consulting worth it?",
+      question: "What is a verified AI data layer?",
       answer:
-        "It is worth it when it produces a concrete, prioritized roadmap you would not have built alone and prevents expensive mistakes like building the wrong thing or buying the wrong tool. It is not worth it when it stops at generic strategy. The best signal is whether the consultant can also implement and stand behind the results.",
+        "It is a governed layer between source systems and AI applications. It maps entities and business definitions, tracks source and freshness, applies permissions, flags contradictions, and provides reusable context to models and agents. It does not have to replace your warehouse, lake, or systems of record.",
     },
     {
-      question: "How is AI consulting priced?",
+      question: "How does the system handle conflicting sources?",
       answer:
-        "Pricing depends on the engagement model: a fixed-scope audit, a strategy and roadmap project, an ongoing advisory retainer, or consulting bundled with implementation. Fixed-scope audits are the lowest-commitment entry point; implementation engagements are scoped per workflow. Ask for deliverables and timelines before committing.",
+        "We define precedence only where the business has a real rule. When no source is automatically authoritative, the system records the conflict, shows the competing values and provenance, and routes the exception to an accountable reviewer. AI should not quietly choose the most convenient fact.",
     },
     {
-      question: "How is Prestyj different from advisory-only consultants?",
+      question: "How can this reduce AI token costs?",
       answer:
-        "Many firms hand over a roadmap and leave. Prestyj can implement and manage what it recommends — sales, voice, support, lead response, and marketing agents — so the strategy turns into working systems. That removes the most common failure mode: a great plan no one executes.",
+        "Prepared views, reusable indexes, structured facts, caching, and retrieval rules can reduce the amount of raw context sent to a model on every task. The exact savings depend on workload and architecture, so we baseline retrieval and model usage before claiming an outcome.",
     },
     {
-      question: "Where should we start?",
+      question: "Can enterprise AI really make a team 100 times more productive?",
       answer:
-        "Most teams start with an AI-first audit. It produces a prioritized roadmap in one to two weeks, so you invest in the highest-ROI workflow first instead of automating something that does not move the business.",
+        "Not as a blanket guarantee. Extreme leverage is realistic in bounded digital workflows where generation, formatting, versioning, quality checks, and scheduling can run in parallel. One content workflow can move from one published asset to 100 prepared and scheduled assets, while judgment, approval, and accountability remain human responsibilities.",
     },
     {
-      question: "Do you cover build-vs-buy decisions?",
+      question: "How do you keep employee and customer AI accurate?",
       answer:
-        "Yes. For each prioritized workflow we recommend custom build, off-the-shelf, or managed done-for-you based on total cost of ownership, time-to-value, and who will own the system long term — not on what is most profitable to sell.",
+        "We combine approved-source retrieval, structured facts, permission checks, provenance, evaluations, confidence and abstention rules, monitoring, and a correction path. Accuracy is treated as an operating process with owners and feedback, not a one-time prompt-writing exercise.",
+    },
+    {
+      question: "Do you stop at strategy?",
+      answer:
+        "No. An engagement can include architecture, data integration, reconciliation logic, evaluations, agent development, workflow integration, launch, and ongoing improvement. Scope is based on the systems, risk, and operating outcome rather than a prepackaged software tier.",
     },
   ],
   finalCta: {
-    title: "Get an AI roadmap you can actually execute.",
+    title: "Give every AI system a reliable foundation.",
     description:
-      "Prestyj will audit your workflows, rank the highest-ROI AI opportunities, and — when you are ready — build and manage the agents instead of leaving you with a deck.",
+      "Bring the decisions, data sources, discrepancies, and workflows that matter most. We will map the verified layer and identify the first piece of work worth putting into production.",
     primaryCta: {
       href: "/book-demo",
-      label: "Book an AI strategy session",
-      description: "Map your highest-ROI opportunities.",
+      label: "Book an enterprise AI session",
+      description: "Start with one consequential decision or workflow.",
     },
     secondaryCta: {
-      href: "/ai-first-audit",
-      label: "Find my costly workflows",
-      description: "See the cost, impact, and first move.",
+      href: "/custom-ai-agents",
+      label: "Review custom AI systems",
+      description: "See how specialized agents are scoped and built.",
     },
   },
 } satisfies AiOfferPageData;
@@ -292,7 +338,6 @@ export default function AiConsultingPage() {
   return (
     <>
       <SafeJsonLd data={createServiceJsonLd(page)} />
-      <SafeJsonLd data={createSoftwareApplicationJsonLd(page)} />
       <FAQJsonLd faqs={page.faqs} />
       <BreadcrumbJsonLd
         items={[

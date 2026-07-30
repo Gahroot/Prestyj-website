@@ -23,7 +23,7 @@ function OfferTable({ table, emphasizedColumnIndex }: OfferTableProps) {
         <h2 className="font-heading text-foreground text-3xl font-bold md:text-4xl">{table.title}</h2>
         <p className="text-muted-foreground mt-3 max-w-3xl text-lg">{table.description}</p>
       </div>
-      <Table>
+      <Table className="min-w-[760px]" aria-label={table.title}>
         <TableHeader>
           <TableRow>
             {table.columns.map((column, index) => (
@@ -184,14 +184,23 @@ export function AiOfferPage({ page }: AiOfferPageProps) {
       <section className="bg-muted/20 px-4 py-20">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
-            <Badge variant="outline" className="border-primary/40 text-primary mb-4">
-              CITABLE RESOURCES
-            </Badge>
+            {page.relatedSection ? (
+              page.relatedSection.eyebrow ? (
+                <Badge variant="outline" className="border-primary/40 text-primary mb-4">
+                  {page.relatedSection.eyebrow}
+                </Badge>
+              ) : null
+            ) : (
+              <Badge variant="outline" className="border-primary/40 text-primary mb-4">
+                CITABLE RESOURCES
+              </Badge>
+            )}
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold md:text-4xl">
-              Related commercial and research pages
+              {page.relatedSection?.title ?? "Related commercial and research pages"}
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
-              Use these pages to verify costs, compare alternatives, and route buyers to the most specific Prestyj page.
+              {page.relatedSection?.description ??
+                "Use these pages to verify costs, compare alternatives, and route buyers to the most specific Prestyj page."}
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
