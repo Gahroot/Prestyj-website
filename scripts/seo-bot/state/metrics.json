@@ -145,6 +145,22 @@
           "latencyMs": 36274
         }
       }
+    },
+    {
+      "date": "2026-07-30",
+      "pagesShipped": 0,
+      "blogsShipped": 1,
+      "titlesRewritten": 0,
+      "costUSD": 0.05422375,
+      "apiCalls": 1,
+      "errors": [],
+      "taskBreakdown": {
+        "blogPost": {
+          "count": 1,
+          "costUSD": 0.05422375,
+          "latencyMs": 37776
+        }
+      }
     }
   ]
 }

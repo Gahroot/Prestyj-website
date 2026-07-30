@@ -84,7 +84,7 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
       {
         feature: "Uses your real face — not AI or hired actor",
         prestyj: true,
-        competitor: "false" as unknown as boolean | string,
+        competitor: false,
         note: "AI avatars don't look like you — buyers can clock them",
       },
       {

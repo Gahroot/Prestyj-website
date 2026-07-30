@@ -99,12 +99,6 @@ comparisons:
 blogPosts:
   - type: blog-post
     payload:
-      workingTitle: 'AI Sales Team Structure for Home Services: 4 Follow-Up Roles (2026)'
-      targetKeyword: home service companies AI sales team structure follow-up
-      slug: ai-sales-team-structure-home-services-4-follow-up-roles-2026
-    priority: 8
-  - type: blog-post
-    payload:
       workingTitle: Facebook Ad Creative Fatigue for Realtors — How Often to Rotate
       targetKeyword: facebook ad creative fatigue realtors
       slug: facebook-ad-creative-fatigue-realtors-2026
@@ -133,6 +127,12 @@ blogPosts:
       targetKeyword: average cost third-party answering service mid-size HVAC company
       slug: third-party-answering-service-cost-mid-size-hvac-2026
     priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: 'How Fast Do GTM AI Agents Respond? Measuring Sales Follow-Up in 2026'
+      targetKeyword: fastest GTM agents average response time
+      slug: gtm-ai-agent-response-time-benchmarks-2026
+    priority: 8
 competitors:
   - type: competitor
     payload:
