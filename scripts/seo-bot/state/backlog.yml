@@ -133,6 +133,12 @@ blogPosts:
       targetKeyword: fastest GTM agents average response time
       slug: gtm-ai-agent-response-time-benchmarks-2026
     priority: 8
+  - type: blog-post
+    payload:
+      workingTitle: '3-Channel AI Lead Response: SMS, Voice, and Email Timing Benchmarks (2026)'
+      targetKeyword: AI tools instant multi-channel lead response
+      slug: instant-multichannel-ai-lead-response-3-channel-2026
+    priority: 7
 competitors:
   - type: competitor
     payload:
