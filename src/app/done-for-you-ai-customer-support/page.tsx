@@ -108,7 +108,11 @@ const page = {
       },
       {
         label: "Knowledge base preparation",
-        values: ["Audited and structured for you", "Internal team", "Your team, often underestimated"],
+        values: [
+          "Audited and structured for you",
+          "Internal team",
+          "Your team, often underestimated",
+        ],
       },
       {
         label: "Help-desk + CRM integration",
@@ -124,7 +128,11 @@ const page = {
       },
       {
         label: "Failure cost",
-        values: ["Contained pilot and managed iteration", "Large sunk cost, frustrated customers", "Bad answers erode trust quietly"],
+        values: [
+          "Contained pilot and managed iteration",
+          "Large sunk cost, frustrated customers",
+          "Bad answers erode trust quietly",
+        ],
       },
     ],
   },
@@ -136,23 +144,43 @@ const page = {
     rows: [
       {
         label: "Prestyj done-for-you AI support",
-        values: ["Teams that need implementation and outcomes", "Less control than building every component", "Best when response time and CSAT matter now"],
+        values: [
+          "Teams that need implementation and outcomes",
+          "Less control than building every component",
+          "Best when response time and CSAT matter now",
+        ],
       },
       {
         label: "Internal custom build",
-        values: ["Unique support flows, proprietary systems", "High cost, long timeline, maintenance burden", "Only build if support AI is core infrastructure"],
+        values: [
+          "Unique support flows, proprietary systems",
+          "High cost, long timeline, maintenance burden",
+          "Only build if support AI is core infrastructure",
+        ],
       },
       {
         label: "Support chatbot platforms",
-        values: ["Technical teams configuring their own bot", "You own KB prep, integrations, QA, escalation", "Compare labor hours, not just plan price"],
+        values: [
+          "Technical teams configuring their own bot",
+          "You own KB prep, integrations, QA, escalation",
+          "Compare labor hours, not just plan price",
+        ],
       },
       {
         label: "Outsourced BPO / contact center",
-        values: ["Pure human capacity at volume", "Higher cost per ticket, slower nights/weekends", "AI can deflect tier-1 before it reaches them"],
+        values: [
+          "Pure human capacity at volume",
+          "Higher cost per ticket, slower nights/weekends",
+          "AI can deflect tier-1 before it reaches them",
+        ],
       },
       {
         label: "Generic AI consultants",
-        values: ["Strategy, audits, advisory", "May stop before production ownership", "Ask who runs QA and tuning after launch"],
+        values: [
+          "Strategy, audits, advisory",
+          "May stop before production ownership",
+          "Ask who runs QA and tuning after launch",
+        ],
       },
     ],
   },
@@ -164,19 +192,23 @@ const page = {
     cards: [
       {
         title: "Knowledge base audit",
-        description: "Inventory help articles, macros, past tickets, and policies; fix gaps and contradictions so the agent answers from a clean, current source.",
+        description:
+          "Inventory help articles, macros, past tickets, and policies; fix gaps and contradictions so the agent answers from a clean, current source.",
       },
       {
         title: "Channel + help-desk integration",
-        description: "Connect chat, email, and your help desk (Zendesk, Intercom, Freshdesk, Gorgias, HubSpot) so conversations, tickets, and customer context stay in sync.",
+        description:
+          "Connect chat, email, and your help desk (Zendesk, Intercom, Freshdesk, Gorgias, HubSpot) so conversations, tickets, and customer context stay in sync.",
       },
       {
         title: "Escalation + handoff design",
-        description: "Define which intents resolve automatically and which warm-transfer to a human with full context — including refunds, billing disputes, and sensitive accounts.",
+        description:
+          "Define which intents resolve automatically and which warm-transfer to a human with full context — including refunds, billing disputes, and sensitive accounts.",
       },
       {
         title: "Deflection + CSAT tuning",
-        description: "Review transcripts, track deflection rate, resolution rate, and CSAT, and tune answers and routing so quality improves after launch instead of drifting.",
+        description:
+          "Review transcripts, track deflection rate, resolution rate, and CSAT, and tune answers and routing so quality improves after launch instead of drifting.",
       },
     ],
   },
@@ -188,15 +220,18 @@ const page = {
     cards: [
       {
         title: "Scope and prep the knowledge",
-        description: "Pick the highest-volume channel and ticket types, audit the knowledge base, and define success metrics — deflection rate, first-response time, and CSAT.",
+        description:
+          "Pick the highest-volume channel and ticket types, audit the knowledge base, and define success metrics — deflection rate, first-response time, and CSAT.",
       },
       {
         title: "Build, integrate, and QA",
-        description: "Implement the agent, connect the help desk and CRM, design escalation paths, and test real ticket scenarios, edge cases, and handoffs before live traffic.",
+        description:
+          "Implement the agent, connect the help desk and CRM, design escalation paths, and test real ticket scenarios, edge cases, and handoffs before live traffic.",
       },
       {
         title: "Launch, monitor, and improve",
-        description: "Go live on contained traffic, review transcripts and escalations, tune answers and routing, then expand to more channels and intents once quality holds.",
+        description:
+          "Go live on contained traffic, review transcripts and escalations, tune answers and routing, then expand to more channels and intents once quality holds.",
       },
     ],
   },
@@ -204,7 +239,8 @@ const page = {
     {
       href: "/done-for-you-ai-agents",
       label: "Done-for-you AI agents",
-      description: "Managed implementation across sales, voice, lead response, and marketing workflows.",
+      description:
+        "Managed implementation across sales, voice, lead response, and marketing workflows.",
     },
     {
       href: "/ai-receptionist",
@@ -214,7 +250,8 @@ const page = {
     {
       href: "/ai-voice-agents",
       label: "AI voice agents",
-      description: "Managed voice-agent page for cost-per-minute and answering-service comparisons.",
+      description:
+        "Managed voice-agent page for cost-per-minute and answering-service comparisons.",
     },
     {
       href: "/custom-ai-agents",

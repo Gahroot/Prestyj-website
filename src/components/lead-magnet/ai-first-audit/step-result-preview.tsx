@@ -40,7 +40,7 @@ export function StepResultPreview({ result, onBack, onContinue }: StepResultPrev
             {formatCurrency(top.annualTimeCost)}
           </dd>
         </div>
-        <div className="border-border border-t p-5 sm:border-t-0 sm:border-e">
+        <div className="border-border border-t p-5 sm:border-e sm:border-t-0">
           <dt className="text-muted-foreground text-sm">Business impact</dt>
           <dd className="mt-1 text-lg font-semibold">{top.impactLabel}</dd>
         </div>

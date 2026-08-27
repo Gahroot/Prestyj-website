@@ -65,7 +65,8 @@ const page = {
       {
         value: "$0.10–0.25/min",
         label: "common per-minute range",
-        detail: "Published buyer-planning range before setup, transfer, voicemail, and integration assumptions.",
+        detail:
+          "Published buyer-planning range before setup, transfer, voicemail, and integration assumptions.",
       },
       {
         value: "60–80%",
@@ -75,7 +76,8 @@ const page = {
       {
         value: "24/7",
         label: "phone coverage",
-        detail: "Nights, weekends, holidays, overflow, missed calls, and outbound follow-up in one workflow.",
+        detail:
+          "Nights, weekends, holidays, overflow, missed calls, and outbound follow-up in one workflow.",
       },
     ],
   },
@@ -91,31 +93,60 @@ const page = {
     title: "AI voice agent pricing model",
     description:
       "Per-minute pricing is useful only after you know what is included. This table separates usage from the hidden costs that often change the total monthly bill.",
-    columns: ["Cost line", "Prestyj managed voice agent", "Typical API/DIY voice platform", "Traditional answering service"],
+    columns: [
+      "Cost line",
+      "Prestyj managed voice agent",
+      "Typical API/DIY voice platform",
+      "Traditional answering service",
+    ],
     rows: [
       {
         label: "Usage price",
-        values: ["Modeled from call volume and workflow complexity", "$0.05–$0.25/min before add-ons", "$1–$2+ per minute or per-call bundles"],
+        values: [
+          "Modeled from call volume and workflow complexity",
+          "$0.05–$0.25/min before add-ons",
+          "$1–$2+ per minute or per-call bundles",
+        ],
       },
       {
         label: "Monthly planning range",
-        values: ["$497–$4,997 managed", "$100–$2,000 software + labor", "$300–$3,000+ depending on minutes"],
+        values: [
+          "$497–$4,997 managed",
+          "$100–$2,000 software + labor",
+          "$300–$3,000+ depending on minutes",
+        ],
       },
       {
         label: "Setup and workflow build",
-        values: ["Managed implementation", "$2K–$10K if outsourced or internal labor", "Usually script setup, not AI workflow design"],
+        values: [
+          "Managed implementation",
+          "$2K–$10K if outsourced or internal labor",
+          "Usually script setup, not AI workflow design",
+        ],
       },
       {
         label: "Hidden fees to inspect",
-        values: ["Scoped before launch", "Transfers, recordings, voicemail, LLM, telephony, storage", "Overage minutes, holidays, bilingual, intake complexity"],
+        values: [
+          "Scoped before launch",
+          "Transfers, recordings, voicemail, LLM, telephony, storage",
+          "Overage minutes, holidays, bilingual, intake complexity",
+        ],
       },
       {
         label: "Concurrency",
-        values: ["Multiple calls at once", "Depends on telephony and limits", "Limited by staffing and queue rules"],
+        values: [
+          "Multiple calls at once",
+          "Depends on telephony and limits",
+          "Limited by staffing and queue rules",
+        ],
       },
       {
         label: "Optimization",
-        values: ["Managed from transcripts and outcomes", "Your team owns QA", "Script changes, limited automation"],
+        values: [
+          "Managed from transcripts and outcomes",
+          "Your team owns QA",
+          "Script changes, limited automation",
+        ],
       },
     ],
   },
@@ -127,23 +158,43 @@ const page = {
     rows: [
       {
         label: "Prestyj AI voice agents",
-        values: ["Lead intake, missed calls, outbound follow-up, booking", "Requires call-flow design before launch", "Best when every call needs speed and structured data"],
+        values: [
+          "Lead intake, missed calls, outbound follow-up, booking",
+          "Requires call-flow design before launch",
+          "Best when every call needs speed and structured data",
+        ],
       },
       {
         label: "Answering services",
-        values: ["Basic message taking and overflow", "Costs rise with minutes and intake complexity", "Compare lost bookings, not just monthly invoice"],
+        values: [
+          "Basic message taking and overflow",
+          "Costs rise with minutes and intake complexity",
+          "Compare lost bookings, not just monthly invoice",
+        ],
       },
       {
         label: "Call centers",
-        values: ["Large support teams and complex queues", "Higher management overhead", "Use humans where empathy and judgment dominate"],
+        values: [
+          "Large support teams and complex queues",
+          "Higher management overhead",
+          "Use humans where empathy and judgment dominate",
+        ],
       },
       {
         label: "Voice APIs like Vapi, Bland, Retell",
-        values: ["Technical teams building custom agents", "You own prompts, QA, telephony, failures", "Sticker price is not total cost of ownership"],
+        values: [
+          "Technical teams building custom agents",
+          "You own prompts, QA, telephony, failures",
+          "Sticker price is not total cost of ownership",
+        ],
       },
       {
         label: "In-house receptionist",
-        values: ["On-site admin and relationship work", "Limited hours and one-call-at-a-time capacity", "AI can handle overflow while staff focus on office work"],
+        values: [
+          "On-site admin and relationship work",
+          "Limited hours and one-call-at-a-time capacity",
+          "AI can handle overflow while staff focus on office work",
+        ],
       },
     ],
   },
@@ -155,19 +206,23 @@ const page = {
     cards: [
       {
         title: "How many calls and minutes?",
-        description: "Model monthly calls, average handle time, peak spikes, and how many calls currently go unanswered.",
+        description:
+          "Model monthly calls, average handle time, peak spikes, and how many calls currently go unanswered.",
       },
       {
         title: "What counts as billable time?",
-        description: "Ask whether voicemail detection, transfers, hold time, recordings, and failed calls create charges.",
+        description:
+          "Ask whether voicemail detection, transfers, hold time, recordings, and failed calls create charges.",
       },
       {
         title: "What has to integrate?",
-        description: "Calendar booking, CRM notes, service-area logic, emergency routing, and field-service tools affect implementation cost.",
+        description:
+          "Calendar booking, CRM notes, service-area logic, emergency routing, and field-service tools affect implementation cost.",
       },
       {
         title: "Who improves the agent?",
-        description: "Transcript QA, prompt updates, objection tuning, and routing changes determine whether the voice agent gets better or stalls.",
+        description:
+          "Transcript QA, prompt updates, objection tuning, and routing changes determine whether the voice agent gets better or stalls.",
       },
     ],
   },
@@ -179,15 +234,18 @@ const page = {
     cards: [
       {
         title: "Audit call types and risk",
-        description: "Separate booking calls, price shoppers, emergencies, support requests, spam, voicemails, and transfer-required scenarios.",
+        description:
+          "Separate booking calls, price shoppers, emergencies, support requests, spam, voicemails, and transfer-required scenarios.",
       },
       {
         title: "Build and test call flows",
-        description: "Script qualification, calendar booking, transfer logic, caller consent, CRM notes, and fallback handling before live traffic.",
+        description:
+          "Script qualification, calendar booking, transfer logic, caller consent, CRM notes, and fallback handling before live traffic.",
       },
       {
         title: "Measure real calls",
-        description: "Track answer rate, booked appointments, transfer accuracy, call duration, caller sentiment, and total cost per captured lead.",
+        description:
+          "Track answer rate, booked appointments, transfer accuracy, call duration, caller sentiment, and total cost per captured lead.",
       },
     ],
   },

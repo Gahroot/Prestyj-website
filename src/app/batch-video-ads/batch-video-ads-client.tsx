@@ -83,7 +83,8 @@ const CREATIVE_TESTING_RESOURCES = [
   {
     href: "/youtube-media-testing-services",
     label: "YouTube media testing",
-    description: "Evaluate YouTube Shorts media testing pricing models and creative-volume economics.",
+    description:
+      "Evaluate YouTube Shorts media testing pricing models and creative-volume economics.",
   },
   {
     href: "/meta-ad-creative-testing",
@@ -1104,8 +1105,8 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
 
           <p className="text-muted-foreground mx-auto mt-10 max-w-2xl text-center text-xs">
             Secure checkout via Stripe. Delivery in 1–2 business days from the moment we receive
-            your footage. Revisions for errors only — this is ad creative testing, not boutique
-            edit work.
+            your footage. Revisions for errors only — this is ad creative testing, not boutique edit
+            work.
           </p>
 
           {/* CROSS-SELL: These ads are included in every plan */}
@@ -1114,8 +1115,8 @@ export function BatchVideoAdsClient({ afterHiddenCost }: BatchVideoAdsClientProp
               These ads are included in every Prestyj plan.
             </p>
             <p className="text-muted-foreground mb-4 text-sm">
-              Done-for-you AI agents that answer calls, follow up with leads, and book appointments —
-              with batch video ads and managed ad spend built in. Plans from $1,997/mo.
+              Done-for-you AI agents that answer calls, follow up with leads, and book appointments
+              — with batch video ads and managed ad spend built in. Plans from $1,997/mo.
             </p>
             <Link
               href="/pricing"

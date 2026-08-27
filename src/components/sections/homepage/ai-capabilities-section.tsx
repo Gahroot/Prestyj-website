@@ -25,8 +25,7 @@ const capabilities = [
   {
     title: "Managed Ad Spend",
     href: "/pricing",
-    description:
-      "Google and Meta campaigns built, managed, and optimized for you.",
+    description: "Google and Meta campaigns built, managed, and optimized for you.",
     outcome: "Leads flowing within 7-10 business days.",
     icon: Megaphone,
   },
@@ -44,8 +43,8 @@ export function AiCapabilitiesSection(): ReactElement {
             One system. AI runs your marketing and sales.
           </h2>
           <p className="text-muted-foreground mt-4 text-lg">
-            Start with the work your team repeats every day: calls, lead response,
-            follow-up, and ad creative.
+            Start with the work your team repeats every day: calls, lead response, follow-up, and ad
+            creative.
           </p>
         </div>
 
@@ -63,15 +62,9 @@ export function AiCapabilitiesSection(): ReactElement {
                 <div className="bg-primary/10 text-primary grid size-12 place-items-center rounded-2xl">
                   <Icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-foreground mt-6 text-xl font-semibold">
-                  {capability.title}
-                </h3>
-                <p className="text-muted-foreground mt-3 leading-7">
-                  {capability.description}
-                </p>
-                <p className="text-foreground mt-5 text-sm font-semibold">
-                  {capability.outcome}
-                </p>
+                <h3 className="text-foreground mt-6 text-xl font-semibold">{capability.title}</h3>
+                <p className="text-muted-foreground mt-3 leading-7">{capability.description}</p>
+                <p className="text-foreground mt-5 text-sm font-semibold">{capability.outcome}</p>
                 <div className="text-primary mt-6 flex items-center gap-2 text-sm font-semibold">
                   See details
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />

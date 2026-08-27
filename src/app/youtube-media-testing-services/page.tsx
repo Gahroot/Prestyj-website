@@ -45,7 +45,12 @@ export default function YouTubeMediaTestingServicesPage() {
       name: "Prestyj",
       url: "https://prestyj.com",
     },
-    serviceType: ["YouTube Media Testing", "YouTube Shorts Ad Testing", "Batch Video Ads", "Video Ad Testing"],
+    serviceType: [
+      "YouTube Media Testing",
+      "YouTube Shorts Ad Testing",
+      "Batch Video Ads",
+      "Video Ad Testing",
+    ],
     areaServed: "United States",
     offers: {
       "@type": "AggregateOffer",

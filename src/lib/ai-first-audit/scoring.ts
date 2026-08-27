@@ -162,9 +162,9 @@ export function scoreWorkflows(
     const annualTimeCost = costs[index]!;
     const workflowImpact = impactScore(input.impact);
     const workflowReadiness = readinessScore(input.readiness);
-    const normalizedTimeCost = costRange === 0 ? 100 : ((annualTimeCost - minimumCost) / costRange) * 100;
-    const priorityScore =
-      normalizedTimeCost * 0.4 + workflowImpact * 0.4 + workflowReadiness * 0.2;
+    const normalizedTimeCost =
+      costRange === 0 ? 100 : ((annualTimeCost - minimumCost) / costRange) * 100;
+    const priorityScore = normalizedTimeCost * 0.4 + workflowImpact * 0.4 + workflowReadiness * 0.2;
     const partial = {
       impactLabel: impactLabel(workflowImpact),
       readinessLabel: readinessLabel(workflowReadiness),

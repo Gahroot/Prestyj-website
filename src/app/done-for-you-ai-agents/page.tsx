@@ -65,17 +65,20 @@ const page = {
       {
         value: "1–2 wks",
         label: "typical first launch window",
-        detail: "For focused lead response, voice, or reactivation workflows with clear source systems.",
+        detail:
+          "For focused lead response, voice, or reactivation workflows with clear source systems.",
       },
       {
         value: "$200K+",
         label: "possible internal build TCO",
-        detail: "Engineering, product, ops, QA, telephony, integrations, monitoring, and maintenance add up fast.",
+        detail:
+          "Engineering, product, ops, QA, telephony, integrations, monitoring, and maintenance add up fast.",
       },
       {
         value: "60–80%",
         label: "potential TCO reduction",
-        detail: "When replacing internal build labor or fragmented vendor/tool stacks with managed execution.",
+        detail:
+          "When replacing internal build labor or fragmented vendor/tool stacks with managed execution.",
       },
     ],
   },
@@ -111,11 +114,19 @@ const page = {
       },
       {
         label: "Integration maintenance",
-        values: ["Included in managed scope", "Internal engineering", "Often hidden until something breaks"],
+        values: [
+          "Included in managed scope",
+          "Internal engineering",
+          "Often hidden until something breaks",
+        ],
       },
       {
         label: "Failure cost",
-        values: ["Contained pilot and managed iteration", "Large sunk cost and delayed revenue", "Tool churn and fragmented workflows"],
+        values: [
+          "Contained pilot and managed iteration",
+          "Large sunk cost and delayed revenue",
+          "Tool churn and fragmented workflows",
+        ],
       },
     ],
   },
@@ -127,23 +138,43 @@ const page = {
     rows: [
       {
         label: "Prestyj done-for-you AI agents",
-        values: ["Commercial teams that need implementation and outcomes", "Less control than building every component", "Best when time-to-value and ops ownership matter"],
+        values: [
+          "Commercial teams that need implementation and outcomes",
+          "Less control than building every component",
+          "Best when time-to-value and ops ownership matter",
+        ],
       },
       {
         label: "Internal custom build",
-        values: ["Unique workflows, proprietary data, deep product needs", "High cost, long timeline, maintenance burden", "Only build if AI is core infrastructure"],
+        values: [
+          "Unique workflows, proprietary data, deep product needs",
+          "High cost, long timeline, maintenance burden",
+          "Only build if AI is core infrastructure",
+        ],
       },
       {
         label: "AI agent builders",
-        values: ["Technical operators prototyping workflows", "You still own QA, integrations, and monitoring", "Compare labor hours, not just plan price"],
+        values: [
+          "Technical operators prototyping workflows",
+          "You still own QA, integrations, and monitoring",
+          "Compare labor hours, not just plan price",
+        ],
       },
       {
         label: "Consultants",
-        values: ["Strategy, audits, and custom advisory", "May stop before production ownership", "Ask who monitors performance after launch"],
+        values: [
+          "Strategy, audits, and custom advisory",
+          "May stop before production ownership",
+          "Ask who monitors performance after launch",
+        ],
       },
       {
         label: "Point solutions",
-        values: ["One narrow task like chat or transcription", "Fragmented buyer journey", "Works if the problem is isolated"],
+        values: [
+          "One narrow task like chat or transcription",
+          "Fragmented buyer journey",
+          "Works if the problem is isolated",
+        ],
       },
     ],
   },
@@ -155,19 +186,23 @@ const page = {
     cards: [
       {
         title: "Workflow design",
-        description: "Map triggers, channels, qualification rules, escalation paths, CRM fields, success metrics, and failure modes.",
+        description:
+          "Map triggers, channels, qualification rules, escalation paths, CRM fields, success metrics, and failure modes.",
       },
       {
         title: "Technical implementation",
-        description: "Connect phone, SMS, email, calendar, CRM, forms, tracking, and reporting systems without making the buyer manage APIs.",
+        description:
+          "Connect phone, SMS, email, calendar, CRM, forms, tracking, and reporting systems without making the buyer manage APIs.",
       },
       {
         title: "Launch QA",
-        description: "Test edge cases, compliance needs, handoffs, transcripts, booking outcomes, and fallback paths before full traffic.",
+        description:
+          "Test edge cases, compliance needs, handoffs, transcripts, booking outcomes, and fallback paths before full traffic.",
       },
       {
         title: "Ongoing optimization",
-        description: "Review conversations, outcomes, no-shows, objections, and missed opportunities so the agent improves after launch.",
+        description:
+          "Review conversations, outcomes, no-shows, objections, and missed opportunities so the agent improves after launch.",
       },
     ],
   },
@@ -179,15 +214,18 @@ const page = {
     cards: [
       {
         title: "Scope the revenue workflow",
-        description: "Choose one commercially important workflow such as missed-call response, lead qualification, voice intake, or dormant-lead reactivation.",
+        description:
+          "Choose one commercially important workflow such as missed-call response, lead qualification, voice intake, or dormant-lead reactivation.",
       },
       {
         title: "Build and connect the agent",
-        description: "Implement prompts, scripts, channel routing, integrations, notifications, CRM notes, and human handoff rules.",
+        description:
+          "Implement prompts, scripts, channel routing, integrations, notifications, CRM notes, and human handoff rules.",
       },
       {
         title: "Launch, monitor, and improve",
-        description: "Measure real outcomes, review exceptions, tune messaging, expand channels, and add adjacent workflows only after the first one works.",
+        description:
+          "Measure real outcomes, review exceptions, tune messaging, expand channels, and add adjacent workflows only after the first one works.",
       },
     ],
   },
@@ -195,12 +233,14 @@ const page = {
     {
       href: "/done-for-you-ai-customer-support",
       label: "Done-for-you AI customer support",
-      description: "Managed chat, email, and help-desk support implementation with ticket deflection.",
+      description:
+        "Managed chat, email, and help-desk support implementation with ticket deflection.",
     },
     {
       href: "/custom-ai-agents",
       label: "Custom AI agents",
-      description: "Bespoke agents for workflows off-the-shelf and standard managed agents cannot model.",
+      description:
+        "Bespoke agents for workflows off-the-shelf and standard managed agents cannot model.",
     },
     {
       href: "/ai-consulting",
@@ -230,7 +270,8 @@ const page = {
     {
       href: "/ai-voice-agents",
       label: "AI voice agents",
-      description: "Managed voice-agent page for cost-per-minute and answering-service comparisons.",
+      description:
+        "Managed voice-agent page for cost-per-minute and answering-service comparisons.",
     },
   ],
   faqs: [

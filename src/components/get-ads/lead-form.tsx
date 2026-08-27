@@ -690,8 +690,8 @@ export function GetAdsLeadForm({
                       <Film className="h-4 w-4" />
                     </div>
                     <span>
-                      Upload your raw take right in your filming portal — phone or desktop. No Drive,
-                      Dropbox, WeTransfer, or email attachments.
+                      Upload your raw take right in your filming portal — phone or desktop. No
+                      Drive, Dropbox, WeTransfer, or email attachments.
                     </span>
                   </li>
                   <li className="flex items-start gap-3">

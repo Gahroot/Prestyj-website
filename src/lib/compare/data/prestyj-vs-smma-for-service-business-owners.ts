@@ -153,13 +153,27 @@ export const serviceBusinessOwnersVsSmmaForCompareData: ComparePageData = create
   ],
   proprietaryData: {
     heading: "Are service business owners paying SMMA retainers for enough usable content volume?",
-    intro: "Local service companies need frequent, practical creative that supports offers, seasonality, hiring, reviews, and lead generation. These numbers help owners compare a managed social retainer with Prestyj's unit economics and production cadence.",
+    intro:
+      "Local service companies need frequent, practical creative that supports offers, seasonality, hiring, reviews, and lead generation. These numbers help owners compare a managed social retainer with Prestyj's unit economics and production cadence.",
     stats: [
-      { statId: "social-dfy-real-loaded-cost", analysis: "The true retainer burden can consume the same budget owners need for media, promotions, or field operations. Prestyj makes the comparison less about whether someone manages posting and more about how much usable creative the monthly spend produces." },
-      { statId: "social-agency-post-volume", analysis: "A few dozen posts may keep a page alive, but it rarely supports every service line, location, offer, and recruiting message a growing contractor needs. Owners should measure whether the agency's calendar leaves enough room for real testing." },
-      { statId: "social-effective-cost-per-post", analysis: "At this effective cost, content can become a flexible operating asset rather than a scarce deliverable. Service businesses can afford to cover more FAQs, neighborhoods, promotions, and proof points without asking an agency to re-scope the month." }
+      {
+        statId: "social-dfy-real-loaded-cost",
+        analysis:
+          "The true retainer burden can consume the same budget owners need for media, promotions, or field operations. Prestyj makes the comparison less about whether someone manages posting and more about how much usable creative the monthly spend produces.",
+      },
+      {
+        statId: "social-agency-post-volume",
+        analysis:
+          "A few dozen posts may keep a page alive, but it rarely supports every service line, location, offer, and recruiting message a growing contractor needs. Owners should measure whether the agency's calendar leaves enough room for real testing.",
+      },
+      {
+        statId: "social-effective-cost-per-post",
+        analysis:
+          "At this effective cost, content can become a flexible operating asset rather than a scarce deliverable. Service businesses can afford to cover more FAQs, neighborhoods, promotions, and proof points without asking an agency to re-scope the month.",
+      },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     title:

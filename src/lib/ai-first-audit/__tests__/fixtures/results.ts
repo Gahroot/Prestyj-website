@@ -60,8 +60,6 @@ export const RESULT_V2_FIXTURE: AuditResultV2 = {
   topThree: workflows,
   totalWeeklyHours: 18,
   totalAnnualTimeCost: 37_180,
-  firstFixPlan: [
-    { title: "Set the first move", body: "Write down the first reply and handoff." },
-  ],
+  firstFixPlan: [{ title: "Set the first move", body: "Write down the first reply and handoff." }],
   computedAt: "2026-07-27T00:00:00.000Z",
 };

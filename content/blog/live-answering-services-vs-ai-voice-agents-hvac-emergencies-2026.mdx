@@ -52,25 +52,25 @@ The comparison below covers every stage of an HVAC emergency call — from the m
 
 ### The Emergency Call Timeline: Side-by-Side
 
-| Stage | Live Answering Service | AI Voice Agent (Prestyj) |
-| --- | --- | --- |
-| **Phone rings** | Enters queue | — |
-| **Answered** | 60–180 seconds (business hours); 180–300+ sec (after-hours) | 1–3 seconds, 24/7/365 |
-| **Greeting** | Generic: "Thank you for calling. How can I help you?" | Contextual: "I see you're calling about an emergency. Let me help." |
-| **Triage questions** | "What's the problem?" (open-ended, operator interpretation) | Structured: system type, age, specific symptom, urgency assessment |
-| **Information captured** | 3–5 data points: name, phone, "no heat/AC" | 10–12 data points: system type, age, symptom, urgency, address, medical/safety flags, pet warnings, access instructions, on-call preferences |
-| **Emergency assessment** | Operator judgment (no HVAC training) — may under-classify or over-classify urgency | Algorithmic triage with HVAC-specific rules (temp thresholds, safety flags, medical conditions) |
-| **Dispatch trigger** | Message sent via SMS/email to office queue | Real-time dispatch notification to on-call tech with full context |
-| **Time to dispatch** | 5–54 hours (waits for office to open on overnight calls) | 2–5 minutes from call initiation |
-| **Missing information** | Address, system details, urgency level often missing — requires callback | Complete — structured intake captures everything needed for first-trip resolution |
-| **Callback needed** | 30–40% of emergency calls require callback for missing info | Under 5% |
-| **Caller experience** | "We'll have someone call you back" (at 2 AM, this means tomorrow) | "A technician is being dispatched now. You'll receive a text confirmation shortly." |
+| Stage                    | Live Answering Service                                                             | AI Voice Agent (Prestyj)                                                                                                                     |
+| ------------------------ | ---------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Phone rings**          | Enters queue                                                                       | —                                                                                                                                            |
+| **Answered**             | 60–180 seconds (business hours); 180–300+ sec (after-hours)                        | 1–3 seconds, 24/7/365                                                                                                                        |
+| **Greeting**             | Generic: "Thank you for calling. How can I help you?"                              | Contextual: "I see you're calling about an emergency. Let me help."                                                                          |
+| **Triage questions**     | "What's the problem?" (open-ended, operator interpretation)                        | Structured: system type, age, specific symptom, urgency assessment                                                                           |
+| **Information captured** | 3–5 data points: name, phone, "no heat/AC"                                         | 10–12 data points: system type, age, symptom, urgency, address, medical/safety flags, pet warnings, access instructions, on-call preferences |
+| **Emergency assessment** | Operator judgment (no HVAC training) — may under-classify or over-classify urgency | Algorithmic triage with HVAC-specific rules (temp thresholds, safety flags, medical conditions)                                              |
+| **Dispatch trigger**     | Message sent via SMS/email to office queue                                         | Real-time dispatch notification to on-call tech with full context                                                                            |
+| **Time to dispatch**     | 5–54 hours (waits for office to open on overnight calls)                           | 2–5 minutes from call initiation                                                                                                             |
+| **Missing information**  | Address, system details, urgency level often missing — requires callback           | Complete — structured intake captures everything needed for first-trip resolution                                                            |
+| **Callback needed**      | 30–40% of emergency calls require callback for missing info                        | Under 5%                                                                                                                                     |
+| **Caller experience**    | "We'll have someone call you back" (at 2 AM, this means tomorrow)                  | "A technician is being dispatched now. You'll receive a text confirmation shortly."                                                          |
 
 ### What the Caller Experiences
 
 **Answering service experience (2 AM emergency):**
 
-> *Ring... ring... hold music... 90 seconds...* "Thank you for calling ABC Heating and Cooling, this is Sarah, how can I help you?"
+> _Ring... ring... hold music... 90 seconds..._ "Thank you for calling ABC Heating and Cooling, this is Sarah, how can I help you?"
 >
 > "My furnace just died. It's freezing in here, I have a 4-year-old—"
 >
@@ -88,11 +88,11 @@ The comparison below covers every stage of an HVAC emergency call — from the m
 >
 > "I've got that down. A technician will call you back."
 >
-> *Click. Jennifer stares at her phone. 2 AM. No callback is coming until Monday.*
+> _Click. Jennifer stares at her phone. 2 AM. No callback is coming until Monday._
 
 **AI voice agent experience (same 2 AM emergency):**
 
-> *Ring.* "Hello, I understand you're experiencing a heating emergency. Let me get the information we need to dispatch a technician to you right away. Can you confirm your address?"
+> _Ring._ "Hello, I understand you're experiencing a heating emergency. Let me get the information we need to dispatch a technician to you right away. Can you confirm your address?"
 >
 > "1847 Maple Drive."
 >
@@ -118,7 +118,7 @@ The comparison below covers every stage of an HVAC emergency call — from the m
 >
 > "I'm dispatching our on-call technician now. You'll receive a text confirmation with the technician's name and estimated arrival time. Is there anything else you need while you wait?"
 >
-> *Jennifer puts down her phone. A text arrives in 30 seconds. The tech calls her in 2 minutes. He's at her door in 18 minutes. The furnace is fixed by 3 AM.*
+> _Jennifer puts down her phone. A text arrives in 30 seconds. The tech calls her in 2 minutes. He's at her door in 18 minutes. The furnace is fixed by 3 AM._
 
 ---
 
@@ -131,6 +131,7 @@ Triage accuracy determines whether the right technician gets dispatched with the
 AI voice agents achieve **95%+ triage accuracy** on HVAC emergency calls because they use structured intake with HVAC-specific decision trees:
 
 **System type classification:**
+
 - Gas furnace → routes to gas-certified tech
 - Heat pump → routes to heat pump specialist
 - Boiler → routes to boiler-certified tech
@@ -138,6 +139,7 @@ AI voice agents achieve **95%+ triage accuracy** on HVAC emergency calls because
 - Package unit / rooftop → routes to commercial-certified tech
 
 **Symptom-to-diagnosis mapping:**
+
 - No heat + gas smell → **gas leak emergency** → priority dispatch + gas safety protocol
 - No heat + no gas smell → **heating failure** → standard emergency dispatch
 - No cool + condenser running → **refrigerant or compressor issue** → HVAC tech with refrigerant certification
@@ -146,11 +148,13 @@ AI voice agents achieve **95%+ triage accuracy** on HVAC emergency calls because
 - Unusual noise (grinding, squealing, banging) → **mechanical failure** → tech with compressor/motor expertise
 
 **Urgency classification:**
+
 - Temperature below 50°F (heating) or above 90°F (cooling) → **Priority 1: Dispatch immediately**
 - Temperature uncomfortable but not dangerous → **Priority 2: Same-day dispatch**
 - Maintenance or efficiency concern → **Priority 3: Next business day**
 
 **Safety flag detection:**
+
 - Gas smell detected → **Immediately flag as gas emergency, dispatch gas-certified tech with safety protocol**
 - Electrical smell → **Flag as electrical emergency, dispatch with warning**
 - Carbon monoxide mention → **Flag as life-safety emergency, advise caller to evacuate**
@@ -185,12 +189,12 @@ Response time during HVAC emergencies isn't a convenience metric — it's a safe
 
 ### Emergency Response Time Comparison
 
-| Scenario | Answering Service | AI Voice Agent |
-| --- | --- | --- |
+| Scenario                       | Answering Service                                                                | AI Voice Agent                                                       |
+| ------------------------------ | -------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | **Business hours (8 AM–5 PM)** | 60–120 seconds pickup; message relay to dispatch; 15–45 min to tech notification | 1–3 seconds pickup; real-time dispatch; 2–5 min to tech notification |
-| **Evening (5 PM–10 PM)** | 90–180 seconds pickup; message relay; dispatch may not see until morning | 1–3 seconds pickup; real-time dispatch; 2–5 min to tech notification |
-| **Overnight (10 PM–6 AM)** | 120–300 seconds pickup; message in queue until 7–8 AM; **5–14 hour delay** | 1–3 seconds pickup; real-time dispatch; 2–5 min to tech notification |
-| **Holiday / weekend** | 120–300+ seconds; often skeleton crew; high error rate | 1–3 seconds; same quality as any other day |
+| **Evening (5 PM–10 PM)**       | 90–180 seconds pickup; message relay; dispatch may not see until morning         | 1–3 seconds pickup; real-time dispatch; 2–5 min to tech notification |
+| **Overnight (10 PM–6 AM)**     | 120–300 seconds pickup; message in queue until 7–8 AM; **5–14 hour delay**       | 1–3 seconds pickup; real-time dispatch; 2–5 min to tech notification |
+| **Holiday / weekend**          | 120–300+ seconds; often skeleton crew; high error rate                           | 1–3 seconds; same quality as any other day                           |
 
 **The overnight gap is the critical one.** An answering service handling a 2 AM emergency creates a **5–14 hour delay** between the caller's need and the technician's awareness. In that window, the homeowner has already called competitors, potentially 911, and may have experienced property damage (frozen pipes, heat exhaustion) that a faster response would have prevented.
 
@@ -204,22 +208,22 @@ The quality of an emergency dispatch depends on the information available when t
 
 ### Data Points Captured Per Emergency Call
 
-| Data Point | Answering Service | AI Voice Agent |
-| --- | --- | --- |
-| Caller name | ✅ | ✅ |
-| Phone number | ✅ | ✅ |
-| Address | ⚠️ Sometimes captured; often missing | ✅ Always — verified against service area |
-| System type (furnace, heat pump, AC, boiler) | ❌ Rarely asked | ✅ Always — structured intake |
-| System age / brand | ❌ Never | ✅ Always |
-| Specific symptom | ⚠️ "No heat" — no detail | ✅ Detailed: pilot light, compressor, noise, leak, etc. |
-| Urgency level | ❌ Operator judgment (no HVAC training) | ✅ Algorithmic triage with temperature thresholds |
-| Gas/electrical/CO safety flags | ❌ Not part of standard script | ✅ Safety-first protocol |
-| Medical conditions in home | ❌ Not asked | ✅ Always — escalation trigger |
-| Pet warnings | ❌ Not asked | ✅ Always — dispatch context |
-| Access instructions (keypad, lockbox, gate code) | ❌ Rarely asked | ✅ Always |
-| Preferred entry point | ❌ Never | ✅ Always |
-| **Total data points** | **3–5** | **10–12** |
-| **Callback needed for missing info** | **30–40%** | **Under 5%** |
+| Data Point                                       | Answering Service                       | AI Voice Agent                                          |
+| ------------------------------------------------ | --------------------------------------- | ------------------------------------------------------- |
+| Caller name                                      | ✅                                      | ✅                                                      |
+| Phone number                                     | ✅                                      | ✅                                                      |
+| Address                                          | ⚠️ Sometimes captured; often missing    | ✅ Always — verified against service area               |
+| System type (furnace, heat pump, AC, boiler)     | ❌ Rarely asked                         | ✅ Always — structured intake                           |
+| System age / brand                               | ❌ Never                                | ✅ Always                                               |
+| Specific symptom                                 | ⚠️ "No heat" — no detail                | ✅ Detailed: pilot light, compressor, noise, leak, etc. |
+| Urgency level                                    | ❌ Operator judgment (no HVAC training) | ✅ Algorithmic triage with temperature thresholds       |
+| Gas/electrical/CO safety flags                   | ❌ Not part of standard script          | ✅ Safety-first protocol                                |
+| Medical conditions in home                       | ❌ Not asked                            | ✅ Always — escalation trigger                          |
+| Pet warnings                                     | ❌ Not asked                            | ✅ Always — dispatch context                            |
+| Access instructions (keypad, lockbox, gate code) | ❌ Rarely asked                         | ✅ Always                                               |
+| Preferred entry point                            | ❌ Never                                | ✅ Always                                               |
+| **Total data points**                            | **3–5**                                 | **10–12**                                               |
+| **Callback needed for missing info**             | **30–40%**                              | **Under 5%**                                            |
 
 The information gap directly impacts first-trip resolution rates. Technicians dispatched with full context (system type, age, symptom, access) resolve the issue on the first visit **85–90% of the time**. Technicians dispatched with "no heat, call customer" resolve on first visit **55–65% of the time** — requiring a return trip that costs **$150–$300** in labor and erodes customer trust.
 
@@ -231,13 +235,13 @@ For HVAC emergencies, dispatch speed determines whether the problem is resolved 
 
 ### Dispatch Speed Comparison
 
-| Metric | Answering Service | AI Voice Agent (Prestyj) |
-| --- | --- | --- |
-| **Call to message relay** | 2–15 minutes | Instant (real-time) |
-| **Message to tech awareness** | 5–54 hours (overnight) | 1–3 minutes |
-| **Tech awareness to en route** | 10–45 minutes (if tech is available) | 5–15 minutes (direct notification) |
-| **Total call to tech en route** | 5–54+ hours | 2–20 minutes |
-| **First-trip resolution rate** | 55–65% (incomplete info) | 85–90% (full context) |
+| Metric                          | Answering Service                    | AI Voice Agent (Prestyj)           |
+| ------------------------------- | ------------------------------------ | ---------------------------------- |
+| **Call to message relay**       | 2–15 minutes                         | Instant (real-time)                |
+| **Message to tech awareness**   | 5–54 hours (overnight)               | 1–3 minutes                        |
+| **Tech awareness to en route**  | 10–45 minutes (if tech is available) | 5–15 minutes (direct notification) |
+| **Total call to tech en route** | 5–54+ hours                          | 2–20 minutes                       |
+| **First-trip resolution rate**  | 55–65% (incomplete info)             | 85–90% (full context)              |
 
 For a 10-truck HVAC company handling 50–100 emergency calls per month, the dispatch speed advantage translates to:
 
@@ -257,12 +261,12 @@ The answer is yes, and the framework below shows exactly how to run a low-cost, 
 
 Most AI voice platforms — including Prestyj — offer pilot or demo-first pricing so you can validate performance without a multi-year commitment.
 
-| Pilot Option | Cost | Duration | What You Get |
-| --- | --- | --- | ---|
-| **Free demo / proof of concept** | $0 | 1–5 days | Synthetic or live call testing with your specific scripts and scenarios |
-| **Starter pilot (after-hours only)** | $0–$500 | 2 weeks | AI handles after-hours calls only; answering service stays for business hours |
-| **Full pilot** | $500–$1,500 | 2–4 weeks | AI handles 100% of inbound calls; answering service on standby as backup |
-| **Pilot with escalation** | $750–$1,500 | 30 days | AI handles routine + qualifying calls; human escalation for complex/emergency |
+| Pilot Option                         | Cost        | Duration  | What You Get                                                                  |
+| ------------------------------------ | ----------- | --------- | ----------------------------------------------------------------------------- |
+| **Free demo / proof of concept**     | $0          | 1–5 days  | Synthetic or live call testing with your specific scripts and scenarios       |
+| **Starter pilot (after-hours only)** | $0–$500     | 2 weeks   | AI handles after-hours calls only; answering service stays for business hours |
+| **Full pilot**                       | $500–$1,500 | 2–4 weeks | AI handles 100% of inbound calls; answering service on standby as backup      |
+| **Pilot with escalation**            | $750–$1,500 | 30 days   | AI handles routine + qualifying calls; human escalation for complex/emergency |
 
 **Recommended approach for HVAC operators**: Start with the **after-hours-only pilot** ($0–$500 for 2 weeks). This tests AI performance during the exact window where answering services perform worst (overnight, weekends, holidays) while maintaining your existing answering service as a safety net during business hours.
 
@@ -284,30 +288,30 @@ Most AI voice platforms — including Prestyj — offer pilot or demo-first pric
 
 These are the specific metrics that prove or disprove the platform's emergency handling for your operation:
 
-| QA Metric | How to Measure | Target (AI Voice) | Answering Service Baseline |
-| --- | --- | --- | --- |
-| **Pickup time** | Time from ring to AI/agent greeting | Under 3 seconds | 60–180 seconds |
-| **Triage accuracy** | % of calls where urgency level was correctly assessed (verified against actual job type) | 95%+ | 60–70% |
-| **Information capture completeness** | % of calls with all required data points (system type, symptom, urgency, address, access) | 95%+ | 60–70% |
-| **Time to dispatch** | Call initiation to on-call tech notification | Under 5 minutes | 15 min–54 hours |
-| **Callback rate** | % of calls requiring a follow-up call for missing information | Under 5% | 30–40% |
-| **Caller sentiment** | Review transcripts for frustration, confusion, or positive feedback | 85%+ positive/neutral | 60–70% positive/neutral |
-| **Escalation correctness** | % of calls appropriately escalated to human (not over-escalating routine calls, not under-escalating emergencies) | 95%+ | N/A (all calls human) |
-| **Emergency classification accuracy** | % of true emergencies correctly flagged as Priority 1 | 98%+ | 65–75% |
-| **Safety flag detection** | % of safety-related calls (gas smell, CO, medical) correctly identified and flagged | 100% | 40–50% |
-| **Appointment confirmation rate** | % of booked appointments confirmed by customer within 24 hours | 80%+ | 55–65% |
+| QA Metric                             | How to Measure                                                                                                    | Target (AI Voice)     | Answering Service Baseline |
+| ------------------------------------- | ----------------------------------------------------------------------------------------------------------------- | --------------------- | -------------------------- |
+| **Pickup time**                       | Time from ring to AI/agent greeting                                                                               | Under 3 seconds       | 60–180 seconds             |
+| **Triage accuracy**                   | % of calls where urgency level was correctly assessed (verified against actual job type)                          | 95%+                  | 60–70%                     |
+| **Information capture completeness**  | % of calls with all required data points (system type, symptom, urgency, address, access)                         | 95%+                  | 60–70%                     |
+| **Time to dispatch**                  | Call initiation to on-call tech notification                                                                      | Under 5 minutes       | 15 min–54 hours            |
+| **Callback rate**                     | % of calls requiring a follow-up call for missing information                                                     | Under 5%              | 30–40%                     |
+| **Caller sentiment**                  | Review transcripts for frustration, confusion, or positive feedback                                               | 85%+ positive/neutral | 60–70% positive/neutral    |
+| **Escalation correctness**            | % of calls appropriately escalated to human (not over-escalating routine calls, not under-escalating emergencies) | 95%+                  | N/A (all calls human)      |
+| **Emergency classification accuracy** | % of true emergencies correctly flagged as Priority 1                                                             | 98%+                  | 65–75%                     |
+| **Safety flag detection**             | % of safety-related calls (gas smell, CO, medical) correctly identified and flagged                               | 100%                  | 40–50%                     |
+| **Appointment confirmation rate**     | % of booked appointments confirmed by customer within 24 hours                                                    | 80%+                  | 55–65%                     |
 
 ### Pilot Pricing Benchmarks for HVAC Operators
 
 What the market looks like in 2026 for AI voice agent pilots:
 
-| Platform | Pilot Cost | Pilot Duration | Setup Fee | Monthly (Post-Pilot) |
-| --- | --- | --- | --- | --- |
-| **Prestyj** | $0–$1,500 | 2–4 weeks | Included | $499–$1,499/month |
-| **Bland AI** | $0–$500 (usage-based) | Pay-per-minute | $0–$2,500 | $0.09–$0.12/minute |
-| **Synthflow** | $39 (starter plan) | Ongoing | None | $39–$799/month |
-| **Retell AI** | $0–$1,000 (usage-based) | Pay-per-minute | $0–$2,000 | $0.07–$0.11/minute |
-| **Air.ai** | $149 (starter plan) | Ongoing | None | $149–$1,299/month |
+| Platform      | Pilot Cost              | Pilot Duration | Setup Fee | Monthly (Post-Pilot) |
+| ------------- | ----------------------- | -------------- | --------- | -------------------- |
+| **Prestyj**   | $0–$1,500               | 2–4 weeks      | Included  | $499–$1,499/month    |
+| **Bland AI**  | $0–$500 (usage-based)   | Pay-per-minute | $0–$2,500 | $0.09–$0.12/minute   |
+| **Synthflow** | $39 (starter plan)      | Ongoing        | None      | $39–$799/month       |
+| **Retell AI** | $0–$1,000 (usage-based) | Pay-per-minute | $0–$2,000 | $0.07–$0.11/minute   |
+| **Air.ai**    | $149 (starter plan)     | Ongoing        | None      | $149–$1,299/month    |
 
 **Key insight**: The lowest-cost pilot isn't always the best indicator of long-term value. Developer platforms (Bland AI, Retell) have low entry costs but require significant configuration work that impacts pilot quality. Managed platforms (Prestyj) have higher pilot costs but include done-for-you HVAC-specific setup that produces more reliable pilot results. The pilot should test the platform at production quality, not at its cheapest configuration.
 
@@ -326,39 +330,39 @@ To make the comparison concrete, here's a complete walkthrough of what happens w
 
 **What happens with the answering service:**
 
-| Time | Event |
-| --- | --- |
-| 2:00 AM | Mrs. Rodriguez calls. Phone rings. |
-| 2:02:30 AM | Operator answers after 90-second hold. "Thank you for calling. How can I help you?" |
-| 2:03:00 AM | Mrs. Rodriguez explains her AC stopped working. Operator asks for name and number. |
-| 2:03:45 AM | Operator asks "What's the problem?" — Mrs. Rodriguez says "It's hot, I can't sleep, I have breathing problems." |
-| 2:04:30 AM | Operator says "A technician will call you back." Mrs. Rodriguez asks when — operator says "In the morning." |
-| 2:05:00 AM | Operator sends SMS: "Mrs. Rodriguez, 555-0298, AC not working, has breathing problems." |
-| 7:15 AM | Office manager reads message. Calls Mrs. Rodriguez. |
-| 7:25 AM | Mrs. Rodriguez answers. She's been up since 3 AM. House is 86°F. Office manager schedules a tech for "today." |
-| 11:30 AM | Tech arrives. Doesn't have R-22 refrigerant (the system is 15 years old and likely needs a recharge or replacement). Tech confirms system needs replacement — $7,200. Has to order parts. |
-| **Total time from call to resolution** | **9.5 hours** (call at 2 AM, tech arrival at 11:30 AM) |
-| **Information captured on first call** | Name, phone, "AC not working" — 3 data points |
-| **First-trip resolution** | ❌ No — wrong parts, system needs replacement |
+| Time                                   | Event                                                                                                                                                                                     |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2:00 AM                                | Mrs. Rodriguez calls. Phone rings.                                                                                                                                                        |
+| 2:02:30 AM                             | Operator answers after 90-second hold. "Thank you for calling. How can I help you?"                                                                                                       |
+| 2:03:00 AM                             | Mrs. Rodriguez explains her AC stopped working. Operator asks for name and number.                                                                                                        |
+| 2:03:45 AM                             | Operator asks "What's the problem?" — Mrs. Rodriguez says "It's hot, I can't sleep, I have breathing problems."                                                                           |
+| 2:04:30 AM                             | Operator says "A technician will call you back." Mrs. Rodriguez asks when — operator says "In the morning."                                                                               |
+| 2:05:00 AM                             | Operator sends SMS: "Mrs. Rodriguez, 555-0298, AC not working, has breathing problems."                                                                                                   |
+| 7:15 AM                                | Office manager reads message. Calls Mrs. Rodriguez.                                                                                                                                       |
+| 7:25 AM                                | Mrs. Rodriguez answers. She's been up since 3 AM. House is 86°F. Office manager schedules a tech for "today."                                                                             |
+| 11:30 AM                               | Tech arrives. Doesn't have R-22 refrigerant (the system is 15 years old and likely needs a recharge or replacement). Tech confirms system needs replacement — $7,200. Has to order parts. |
+| **Total time from call to resolution** | **9.5 hours** (call at 2 AM, tech arrival at 11:30 AM)                                                                                                                                    |
+| **Information captured on first call** | Name, phone, "AC not working" — 3 data points                                                                                                                                             |
+| **First-trip resolution**              | ❌ No — wrong parts, system needs replacement                                                                                                                                             |
 
 **What happens with AI voice agent (Prestyj):**
 
-| Time | Event |
-| --- | --- |
-| 2:00 AM | Mrs. Rodriguez calls. Phone answers in 2 seconds. |
-| 2:00:02 AM | AI: "I understand you're experiencing a cooling emergency. Let me help. Can you confirm your address?" |
-| 2:00:15 AM | Address verified: 4512 Oak Springs Dr, Austin TX — in service area. |
-| 2:00:20 AM | AI: "What type of cooling system do you have?" — "Trane, split system, about 15 years old." |
-| 2:00:35 AM | AI: "What's happening specifically?" — "It just shut off. The outdoor unit isn't running." |
-| 2:00:45 AM | AI: "You mentioned breathing problems — do you have a medical condition that requires the house to stay cool?" — "Yes, I have COPD." |
-| 2:01:00 AM | AI: "I've flagged this as a priority medical emergency. Do you have any pets?" — "One cat." |
-| 2:01:10 AM | AI: "What's the best entry?" — "Side door, lockbox code 1234." |
-| 2:01:20 AM | AI dispatches on-call tech: **Priority 1 — Medical emergency. 15-year-old Trane split system, outdoor unit not running. Caller has COPD, requires cooling. One cat. Side door lockbox 1234. Likely R-22 system.** |
-| 2:01:30 AM | Tech receives notification on phone. Reads full dispatch context. Grabs R-22 canister "just in case" because the system age suggests it. |
-| 2:18 AM | Tech arrives. Confirms compressor failure. Recharges with R-22 to get cooling running temporarily. Schedules system replacement consultation for Tuesday. Mrs. Rodriguez has cool air by 2:30 AM. |
-| **Total time from call to resolution** | **30 minutes** (call at 2 AM, cooling restored at 2:30 AM) |
-| **Information captured on first call** | 12 data points: address, system type (Trane split), age (15 years), symptom (outdoor unit not running), urgency (medical — COPD), pet (cat), access (side door, lockbox 1234), medical flag |
-| **First-trip resolution** | ✅ Yes — temporary fix with R-22, system replacement scheduled |
+| Time                                   | Event                                                                                                                                                                                                             |
+| -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2:00 AM                                | Mrs. Rodriguez calls. Phone answers in 2 seconds.                                                                                                                                                                 |
+| 2:00:02 AM                             | AI: "I understand you're experiencing a cooling emergency. Let me help. Can you confirm your address?"                                                                                                            |
+| 2:00:15 AM                             | Address verified: 4512 Oak Springs Dr, Austin TX — in service area.                                                                                                                                               |
+| 2:00:20 AM                             | AI: "What type of cooling system do you have?" — "Trane, split system, about 15 years old."                                                                                                                       |
+| 2:00:35 AM                             | AI: "What's happening specifically?" — "It just shut off. The outdoor unit isn't running."                                                                                                                        |
+| 2:00:45 AM                             | AI: "You mentioned breathing problems — do you have a medical condition that requires the house to stay cool?" — "Yes, I have COPD."                                                                              |
+| 2:01:00 AM                             | AI: "I've flagged this as a priority medical emergency. Do you have any pets?" — "One cat."                                                                                                                       |
+| 2:01:10 AM                             | AI: "What's the best entry?" — "Side door, lockbox code 1234."                                                                                                                                                    |
+| 2:01:20 AM                             | AI dispatches on-call tech: **Priority 1 — Medical emergency. 15-year-old Trane split system, outdoor unit not running. Caller has COPD, requires cooling. One cat. Side door lockbox 1234. Likely R-22 system.** |
+| 2:01:30 AM                             | Tech receives notification on phone. Reads full dispatch context. Grabs R-22 canister "just in case" because the system age suggests it.                                                                          |
+| 2:18 AM                                | Tech arrives. Confirms compressor failure. Recharges with R-22 to get cooling running temporarily. Schedules system replacement consultation for Tuesday. Mrs. Rodriguez has cool air by 2:30 AM.                 |
+| **Total time from call to resolution** | **30 minutes** (call at 2 AM, cooling restored at 2:30 AM)                                                                                                                                                        |
+| **Information captured on first call** | 12 data points: address, system type (Trane split), age (15 years), symptom (outdoor unit not running), urgency (medical — COPD), pet (cat), access (side door, lockbox 1234), medical flag                       |
+| **First-trip resolution**              | ✅ Yes — temporary fix with R-22, system replacement scheduled                                                                                                                                                    |
 
 **The delta**: 30 minutes vs 9.5 hours. Mrs. Rodriguez is safe and comfortable by 2:30 AM instead of suffering through a 96°F night. The tech arrives with the right refrigerant because the AI captured the system age on the first call. And the system replacement consultation — a **$7,200 job** — is already on the schedule.
 
@@ -372,15 +376,15 @@ After the 2-week pilot, the QA data tells you exactly whether the AI voice agent
 
 ### Pilot QA Scorecard
 
-| Metric | Weight | Scoring | Your AI Score | Your Answering Service Score |
-| --- | --- | --- | --- | --- |
-| **Emergency triage accuracy** | 25% | % correctly classified (Priority 1/2/3) | ___% | ___% |
-| **Information capture completeness** | 20% | % of calls with 10+ data points | ___% | ___% |
-| **Dispatch time** | 20% | Average call-to-tech-notification | ___min | ___hours |
-| **Safety flag detection** | 15% | % of safety concerns correctly identified | ___% | ___% |
-| **Caller satisfaction** | 10% | % positive/neutral sentiment in transcripts | ___% | ___% |
-| **First-trip resolution rate** | 10% | % of dispatched jobs resolved on first visit | ___% | ___% |
-| **WEIGHTED TOTAL** | 100% | | ___/100 | ___/100 |
+| Metric                               | Weight | Scoring                                      | Your AI Score | Your Answering Service Score |
+| ------------------------------------ | ------ | -------------------------------------------- | ------------- | ---------------------------- |
+| **Emergency triage accuracy**        | 25%    | % correctly classified (Priority 1/2/3)      | \_\_\_%       | \_\_\_%                      |
+| **Information capture completeness** | 20%    | % of calls with 10+ data points              | \_\_\_%       | \_\_\_%                      |
+| **Dispatch time**                    | 20%    | Average call-to-tech-notification            | \_\_\_min     | \_\_\_hours                  |
+| **Safety flag detection**            | 15%    | % of safety concerns correctly identified    | \_\_\_%       | \_\_\_%                      |
+| **Caller satisfaction**              | 10%    | % positive/neutral sentiment in transcripts  | \_\_\_%       | \_\_\_%                      |
+| **First-trip resolution rate**       | 10%    | % of dispatched jobs resolved on first visit | \_\_\_%       | \_\_\_%                      |
+| **WEIGHTED TOTAL**                   | 100%   |                                              | \_\_\_/100    | \_\_\_/100                   |
 
 **Decision threshold**: If the AI voice agent scores **80+** on the weighted total (vs the answering service's typical **50–65**), the pilot has proven the case. Proceed to full deployment.
 

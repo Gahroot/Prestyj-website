@@ -65,12 +65,14 @@ const page = {
       {
         value: "100–1,000",
         label: "video ads per batch",
-        detail: "Turn one recording into enough paid-social creative to test hooks, offers, and angles.",
+        detail:
+          "Turn one recording into enough paid-social creative to test hooks, offers, and angles.",
       },
       {
         value: "270–2,700",
         label: "posts per month",
-        detail: "Social media content output range for service businesses replacing low-volume social management.",
+        detail:
+          "Social media content output range for service businesses replacing low-volume social management.",
       },
       {
         value: "60 sec",
@@ -99,7 +101,11 @@ const page = {
       },
       {
         label: "YouTube / vertical media testing",
-        values: ["/youtube-media-testing-services", "Pricing model and batch size", "Cost per tested hook or angle"],
+        values: [
+          "/youtube-media-testing-services",
+          "Pricing model and batch size",
+          "Cost per tested hook or angle",
+        ],
       },
       {
         label: "High-volume social content",
@@ -107,11 +113,19 @@ const page = {
       },
       {
         label: "Marketing automation",
-        values: ["/solutions/marketing-automation", "Workflow complexity and channels", "Recovered follow-up and campaign speed"],
+        values: [
+          "/solutions/marketing-automation",
+          "Workflow complexity and channels",
+          "Recovered follow-up and campaign speed",
+        ],
       },
       {
         label: "Lead response",
-        values: ["/solutions/ai-lead-response", "Lead volume and channel mix", "Speed-to-lead and booked appointments"],
+        values: [
+          "/solutions/ai-lead-response",
+          "Lead volume and channel mix",
+          "Speed-to-lead and booked appointments",
+        ],
       },
     ],
   },
@@ -123,23 +137,43 @@ const page = {
     rows: [
       {
         label: "Prestyj AI marketing agents",
-        values: ["Teams that need creative, content, and conversion workflows managed", "Not a blank-canvas enterprise marketing suite", "Use when execution volume is the bottleneck"],
+        values: [
+          "Teams that need creative, content, and conversion workflows managed",
+          "Not a blank-canvas enterprise marketing suite",
+          "Use when execution volume is the bottleneck",
+        ],
       },
       {
         label: "Traditional marketing agency",
-        values: ["Strategy, brand, and campaign oversight", "Low output volume and retainer creep", "Ask for cost per shipped asset and cost per tested angle"],
+        values: [
+          "Strategy, brand, and campaign oversight",
+          "Low output volume and retainer creep",
+          "Ask for cost per shipped asset and cost per tested angle",
+        ],
       },
       {
         label: "AI design/video tools",
-        values: ["Internal creative teams with time to operate tools", "Your team still owns scripts, edits, QA, and launch", "Cheap software can hide expensive labor"],
+        values: [
+          "Internal creative teams with time to operate tools",
+          "Your team still owns scripts, edits, QA, and launch",
+          "Cheap software can hide expensive labor",
+        ],
       },
       {
         label: "In-house marketing hire",
-        values: ["Cross-functional ownership and company context", "Salary, ramp, and throughput limits", "Often works best managing AI output, not replacing it"],
+        values: [
+          "Cross-functional ownership and company context",
+          "Salary, ramp, and throughput limits",
+          "Often works best managing AI output, not replacing it",
+        ],
       },
       {
         label: "CRM automation platforms",
-        values: ["Rules, triggers, and nurture infrastructure", "No creative volume by default", "Pair with content and ad supply, or automation has nothing to amplify"],
+        values: [
+          "Rules, triggers, and nurture infrastructure",
+          "No creative volume by default",
+          "Pair with content and ad supply, or automation has nothing to amplify",
+        ],
       },
     ],
   },
@@ -151,19 +185,23 @@ const page = {
     cards: [
       {
         title: "Creative shortage",
-        description: "Use batch video ads when media spend is constrained by too few hooks, angles, and offers to test.",
+        description:
+          "Use batch video ads when media spend is constrained by too few hooks, angles, and offers to test.",
       },
       {
         title: "Organic inconsistency",
-        description: "Use AI Content Department when posts, short-form clips, and authority content ship too slowly.",
+        description:
+          "Use AI Content Department when posts, short-form clips, and authority content ship too slowly.",
       },
       {
         title: "Lead leakage",
-        description: "Use AI lead response when forms, calls, DMs, or booked-demo requests sit untouched after intent appears.",
+        description:
+          "Use AI lead response when forms, calls, DMs, or booked-demo requests sit untouched after intent appears.",
       },
       {
         title: "Workflow drag",
-        description: "Use marketing automation when repetitive nurture, reminders, handoffs, or campaign steps block the team.",
+        description:
+          "Use marketing automation when repetitive nurture, reminders, handoffs, or campaign steps block the team.",
       },
     ],
   },
@@ -175,15 +213,18 @@ const page = {
     cards: [
       {
         title: "Choose the first metric",
-        description: "Pick cost per tested angle, cost per post, speed-to-lead, or recovered appointments before selecting tools.",
+        description:
+          "Pick cost per tested angle, cost per post, speed-to-lead, or recovered appointments before selecting tools.",
       },
       {
         title: "Launch the output layer",
-        description: "Ship the batch, content stream, or response workflow with enough volume to generate a real signal.",
+        description:
+          "Ship the batch, content stream, or response workflow with enough volume to generate a real signal.",
       },
       {
         title: "Route learning into follow-up",
-        description: "Move winning hooks, objections, and lead signals into retargeting, nurture, sales scripts, and CRM notes.",
+        description:
+          "Move winning hooks, objections, and lead signals into retargeting, nurture, sales scripts, and CRM notes.",
       },
     ],
   },
@@ -191,7 +232,8 @@ const page = {
     {
       href: "/batch-video-ads",
       label: "Batch Video Ads",
-      description: "Primary paid-social creative-volume offer: 100–1,000 vertical ads from one recording.",
+      description:
+        "Primary paid-social creative-volume offer: 100–1,000 vertical ads from one recording.",
     },
     {
       href: "/ai-content-department",

@@ -60,20 +60,20 @@ A **context contract** defines what a model or agent receives for one bounded ta
 
 A useful contract includes:
 
-| Contract element | Question it answers |
-|---|---|
-| Objective | What decision or action is this context meant to support? |
-| Entity scope | Which fund, asset, customer, account, or campaign is in scope? |
-| Fact set | Which structured facts are approved for use? |
-| Evidence set | Which source passages or records support those facts? |
-| Definitions | What does each business term mean in this workflow? |
-| Effective time | For what period are the facts true? |
-| Freshness | When were the sources observed and when must they refresh? |
-| Provenance | Where did each material fact come from? |
-| Permission envelope | Which facts can this user and this agent access? |
-| Conflict state | Which facts remain disputed or incomplete? |
-| Action boundary | What may the agent do with this context? |
-| Evaluation version | Which tests define acceptable behavior? |
+| Contract element    | Question it answers                                            |
+| ------------------- | -------------------------------------------------------------- |
+| Objective           | What decision or action is this context meant to support?      |
+| Entity scope        | Which fund, asset, customer, account, or campaign is in scope? |
+| Fact set            | Which structured facts are approved for use?                   |
+| Evidence set        | Which source passages or records support those facts?          |
+| Definitions         | What does each business term mean in this workflow?            |
+| Effective time      | For what period are the facts true?                            |
+| Freshness           | When were the sources observed and when must they refresh?     |
+| Provenance          | Where did each material fact come from?                        |
+| Permission envelope | Which facts can this user and this agent access?               |
+| Conflict state      | Which facts remain disputed or incomplete?                     |
+| Action boundary     | What may the agent do with this context?                       |
+| Evaluation version  | Which tests define acceptable behavior?                        |
 
 The context contract can be represented as structured data, not prose. The prompt receives a deliberate projection of that contract.
 

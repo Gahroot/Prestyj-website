@@ -111,8 +111,14 @@ function checkEmbedHeaders(headers: HeaderSnapshot): CheckResult[] {
   const csp = headers.csp ?? "";
   return [
     headers.xFrameOptions === null
-      ? pass("embed x-frame-options", "No X-Frame-Options header on /embed/stat/bva-cost-per-tested-angle")
-      : fail("embed x-frame-options", `Expected no X-Frame-Options header; received ${headers.xFrameOptions}`),
+      ? pass(
+          "embed x-frame-options",
+          "No X-Frame-Options header on /embed/stat/bva-cost-per-tested-angle",
+        )
+      : fail(
+          "embed x-frame-options",
+          `Expected no X-Frame-Options header; received ${headers.xFrameOptions}`,
+        ),
     !csp.includes("frame-ancestors 'none'")
       ? pass("embed frame-ancestors", "No blocking frame-ancestors directive on embed route")
       : fail("embed frame-ancestors", "Embed CSP still contains frame-ancestors 'none'"),
@@ -124,7 +130,10 @@ function checkNormalPageHeaders(headers: HeaderSnapshot): CheckResult[] {
   return [
     headers.xFrameOptions === "DENY"
       ? pass("page x-frame-options", "Normal page keeps X-Frame-Options: DENY")
-      : fail("page x-frame-options", `Expected DENY; received ${headers.xFrameOptions ?? "<missing>"}`),
+      : fail(
+          "page x-frame-options",
+          `Expected DENY; received ${headers.xFrameOptions ?? "<missing>"}`,
+        ),
     csp.includes("frame-ancestors 'none'")
       ? pass("page frame-ancestors", "Normal page keeps frame-ancestors 'none'")
       : fail("page frame-ancestors", "Normal page CSP is missing frame-ancestors 'none'"),

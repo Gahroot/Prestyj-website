@@ -86,19 +86,19 @@ Reusable context requires more structure.
 
 A fact packet can contain:
 
-| Element | Why it matters |
-|---|---|
-| Entity | Prevents facts from being attached to the wrong customer, asset, loan, or campaign |
-| Fact name and value | Gives the model a compact structured input |
-| Business definition | Prevents different meanings from sharing one label |
-| Effective time | States when the fact is true |
-| Observed time | States when the system last checked it |
-| Source evidence | Makes the fact traceable |
-| Verification state | Shows whether the fact passed the required controls |
-| Conflict state | Prevents disputed facts from looking settled |
-| Permission scope | Restricts who and what may use it |
-| Dependencies | Identifies which source changes make it stale |
-| Intended uses | Limits reuse to decisions for which the fact is approved |
+| Element             | Why it matters                                                                     |
+| ------------------- | ---------------------------------------------------------------------------------- |
+| Entity              | Prevents facts from being attached to the wrong customer, asset, loan, or campaign |
+| Fact name and value | Gives the model a compact structured input                                         |
+| Business definition | Prevents different meanings from sharing one label                                 |
+| Effective time      | States when the fact is true                                                       |
+| Observed time       | States when the system last checked it                                             |
+| Source evidence     | Makes the fact traceable                                                           |
+| Verification state  | Shows whether the fact passed the required controls                                |
+| Conflict state      | Prevents disputed facts from looking settled                                       |
+| Permission scope    | Restricts who and what may use it                                                  |
+| Dependencies        | Identifies which source changes make it stale                                      |
+| Intended uses       | Limits reuse to decisions for which the fact is approved                           |
 
 The model does not need the full underlying document every time it uses a stable approved fact. It may need the evidence when the task is consequential, when a reviewer asks, or when the fact is challenged.
 

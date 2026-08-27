@@ -34,16 +34,16 @@ image: /images/blog/fallback-ai-sales-agents.jpg
 
 ## Multilingual Voice Agent QA Pricing Table
 
-| QA component | English-only cost | Added cost per extra language | What it covers |
-|---|---:|---:|---|
-| Language localization | Included–$1,000 | $500–$2,500 | Script translation, tone, terminology |
-| Pronunciation tuning | $100–$500 | $200–$1,200 | Names, cities, service terms, brand words |
-| Scenario QA | $500–$2,500 | $500–$2,000 | Intent coverage and pass/fail testing |
-| Accent/dialect testing | $0–$800 | $300–$2,000 | Regional accents, code-switching, non-native speech |
-| Human bilingual review | $300–$1,500 | $500–$3,000 | Transcript and call-quality grading |
-| Red-team testing | $600–$2,400 | $300–$1,500 | Prompt injection, unsafe handling, edge cases |
-| Regression monitoring | $200–$1,400/mo | $200–$1,400/mo | Ongoing weekly test calls and drift alerts |
-| Reporting / compliance logs | $100–$500/mo | $100–$500/mo | Audit trail by language and scenario |
+| QA component                | English-only cost | Added cost per extra language | What it covers                                      |
+| --------------------------- | ----------------: | ----------------------------: | --------------------------------------------------- |
+| Language localization       |   Included–$1,000 |                   $500–$2,500 | Script translation, tone, terminology               |
+| Pronunciation tuning        |         $100–$500 |                   $200–$1,200 | Names, cities, service terms, brand words           |
+| Scenario QA                 |       $500–$2,500 |                   $500–$2,000 | Intent coverage and pass/fail testing               |
+| Accent/dialect testing      |           $0–$800 |                   $300–$2,000 | Regional accents, code-switching, non-native speech |
+| Human bilingual review      |       $300–$1,500 |                   $500–$3,000 | Transcript and call-quality grading                 |
+| Red-team testing            |       $600–$2,400 |                   $300–$1,500 | Prompt injection, unsafe handling, edge cases       |
+| Regression monitoring       |    $200–$1,400/mo |                $200–$1,400/mo | Ongoing weekly test calls and drift alerts          |
+| Reporting / compliance logs |      $100–$500/mo |                  $100–$500/mo | Audit trail by language and scenario                |
 
 A vendor that says “Spanish is included” may mean the model can speak Spanish. That does not mean Spanish QA, escalation, transcript review, and regression testing are included.
 
@@ -55,26 +55,26 @@ A vendor that says “Spanish is included” may mean the model can speak Spanis
 
 Translation is not enough. The voice agent needs language-specific service terminology, local phrasing, caller expectations, and escalation rules.
 
-| Example | Bad localization | Better localization |
-|---|---|---|
-| HVAC | Literal translation of “no-cool call” | Spanish phrasing a homeowner would actually use |
-| Plumbing | Generic “pipe problem” | Distinguishes leak, drain clog, sewer backup, water heater |
-| Dental | Direct translation of insurance terms | Patient-friendly explanation with compliance review |
-| Property management | Generic maintenance terms | Lease, unit, emergency, access, and after-hours policy wording |
+| Example             | Bad localization                      | Better localization                                            |
+| ------------------- | ------------------------------------- | -------------------------------------------------------------- |
+| HVAC                | Literal translation of “no-cool call” | Spanish phrasing a homeowner would actually use                |
+| Plumbing            | Generic “pipe problem”                | Distinguishes leak, drain clog, sewer backup, water heater     |
+| Dental              | Direct translation of insurance terms | Patient-friendly explanation with compliance review            |
+| Property management | Generic maintenance terms             | Lease, unit, emergency, access, and after-hours policy wording |
 
 ### 2. Scenario coverage
 
 Every language needs its own scenario test set.
 
-| Scenario type | Example |
-|---|---|
-| New customer booking | Spanish-speaking caller needs HVAC appointment |
-| Existing customer lookup | Caller gives phone number, address, or account name |
-| Emergency triage | Burst pipe, no heat, lockout, water intrusion |
-| Pricing question | Caller asks for estimate or service fee |
-| Cancellation / reschedule | Caller wants appointment moved |
-| Escalation | Caller asks for human or becomes frustrated |
-| Mixed-language conversation | Caller switches between English and Spanish |
+| Scenario type               | Example                                             |
+| --------------------------- | --------------------------------------------------- |
+| New customer booking        | Spanish-speaking caller needs HVAC appointment      |
+| Existing customer lookup    | Caller gives phone number, address, or account name |
+| Emergency triage            | Burst pipe, no heat, lockout, water intrusion       |
+| Pricing question            | Caller asks for estimate or service fee             |
+| Cancellation / reschedule   | Caller wants appointment moved                      |
+| Escalation                  | Caller asks for human or becomes frustrated         |
+| Mixed-language conversation | Caller switches between English and Spanish         |
 
 Mixed-language calls are where many “multilingual” demos fail. Real callers code-switch.
 
@@ -124,14 +124,14 @@ A real regression program runs the same test calls weekly and watches for:
 
 ## Vendor Pricing Models Compared
 
-| Pricing model | How vendors quote it | Hidden issue | Best for |
-|---|---|---|---|
-| Per-minute only | Same rate for every language | QA not included | Simple low-risk agents |
-| Per-language setup | $500–$3,500/language | Ongoing QA may be separate | Serious multilingual launch |
-| Per-scenario QA | $25–$150/test scenario | Can under-test accents | Regulated or complex workflows |
-| Monthly regression | $200–$1,400/mo/language | Needs clear pass/fail reporting | Production agents |
-| Human review bundle | $500–$3,000/mo | Sample size can be too small | High-risk calls |
-| Enterprise QA retainer | $3,000–$15,000/mo | May be overkill for SMBs | Multi-location / regulated deployments |
+| Pricing model          | How vendors quote it         | Hidden issue                    | Best for                               |
+| ---------------------- | ---------------------------- | ------------------------------- | -------------------------------------- |
+| Per-minute only        | Same rate for every language | QA not included                 | Simple low-risk agents                 |
+| Per-language setup     | $500–$3,500/language         | Ongoing QA may be separate      | Serious multilingual launch            |
+| Per-scenario QA        | $25–$150/test scenario       | Can under-test accents          | Regulated or complex workflows         |
+| Monthly regression     | $200–$1,400/mo/language      | Needs clear pass/fail reporting | Production agents                      |
+| Human review bundle    | $500–$3,000/mo               | Sample size can be too small    | High-risk calls                        |
+| Enterprise QA retainer | $3,000–$15,000/mo            | May be overkill for SMBs        | Multi-location / regulated deployments |
 
 The safest quote separates runtime, setup, QA, and human review. Bundled pricing is fine only if the vendor defines what the bundle includes.
 
@@ -141,16 +141,16 @@ The safest quote separates runtime, setup, QA, and human review. Bundled pricing
 
 A plumbing/HVAC company wants English and Spanish call handling for 1,000 calls/month.
 
-| Cost line | English only | English + Spanish |
-|---|---:|---:|
-| Voice agent platform | $600–$1,200/mo | $700–$1,500/mo |
-| Initial setup | $0–$1,500 | $500–$4,000 |
-| Scenario QA | $1,000–$2,500 | $1,800–$5,000 |
-| Pronunciation tuning | $200–$500 | $500–$1,500 |
-| Human review | $300–$1,000/mo | $800–$2,400/mo |
-| Regression monitoring | $200–$800/mo | $500–$1,800/mo |
-| Total first-month cost | $2,300–$7,500 | $4,800–$16,200 |
-| Ongoing monthly cost | $1,100–$3,000 | $2,000–$5,700 |
+| Cost line              |   English only | English + Spanish |
+| ---------------------- | -------------: | ----------------: |
+| Voice agent platform   | $600–$1,200/mo |    $700–$1,500/mo |
+| Initial setup          |      $0–$1,500 |       $500–$4,000 |
+| Scenario QA            |  $1,000–$2,500 |     $1,800–$5,000 |
+| Pronunciation tuning   |      $200–$500 |       $500–$1,500 |
+| Human review           | $300–$1,000/mo |    $800–$2,400/mo |
+| Regression monitoring  |   $200–$800/mo |    $500–$1,800/mo |
+| Total first-month cost |  $2,300–$7,500 |    $4,800–$16,200 |
+| Ongoing monthly cost   |  $1,100–$3,000 |     $2,000–$5,700 |
 
 That does not mean bilingual AI is a bad investment. It means the quote should be honest. A bilingual caller mishandled by a cheap untested agent can cost more than the QA budget.
 
@@ -175,16 +175,16 @@ If the vendor cannot answer these in numbers, multilingual support is probably a
 
 ## Hidden Costs of Multilingual Voice AI
 
-| Hidden cost | Why it appears |
-|---|---|
-| Bilingual call review | Automated scores miss tone and context |
-| Translation QA | Literal translation breaks service meaning |
-| Accent coverage | Callers do not speak like demo audio |
-| Mixed-language handling | Real callers code-switch mid-call |
-| Compliance review | Disclosures must be accurate in each language |
-| CRM field mapping | Notes may need translation and original transcript |
-| Escalation staffing | Human handoff must support the language |
-| Ongoing drift | Models change and language behavior can regress |
+| Hidden cost             | Why it appears                                     |
+| ----------------------- | -------------------------------------------------- |
+| Bilingual call review   | Automated scores miss tone and context             |
+| Translation QA          | Literal translation breaks service meaning         |
+| Accent coverage         | Callers do not speak like demo audio               |
+| Mixed-language handling | Real callers code-switch mid-call                  |
+| Compliance review       | Disclosures must be accurate in each language      |
+| CRM field mapping       | Notes may need translation and original transcript |
+| Escalation staffing     | Human handoff must support the language            |
+| Ongoing drift           | Models change and language behavior can regress    |
 
 A multilingual voice agent is not just an English agent with a translation layer. It is a separate production workflow for every language you support.
 
@@ -192,15 +192,15 @@ A multilingual voice agent is not just an English agent with a translation layer
 
 ## When Multilingual QA Is Worth It
 
-| Business type | Worth it? | Why |
-|---|---|---|
-| HVAC / plumbing in bilingual markets | Yes | High call volume and urgent demand |
-| Dental / healthcare | Yes | Patient access and compliance |
-| Property management | Yes | Tenant support and fair housing sensitivity |
-| Real estate teams | Yes | Lead conversion and language access |
-| Law firms | Often | High value, high compliance risk |
-| Small low-volume business | Maybe | Start with human escalation or limited hours |
-| Internal-only voice bot | Maybe | Lower risk, smaller QA budget |
+| Business type                        | Worth it? | Why                                          |
+| ------------------------------------ | --------- | -------------------------------------------- |
+| HVAC / plumbing in bilingual markets | Yes       | High call volume and urgent demand           |
+| Dental / healthcare                  | Yes       | Patient access and compliance                |
+| Property management                  | Yes       | Tenant support and fair housing sensitivity  |
+| Real estate teams                    | Yes       | Lead conversion and language access          |
+| Law firms                            | Often     | High value, high compliance risk             |
+| Small low-volume business            | Maybe     | Start with human escalation or limited hours |
+| Internal-only voice bot              | Maybe     | Lower risk, smaller QA budget                |
 
 If more than 10–15% of callers prefer another language, multilingual QA usually becomes a revenue and service-quality issue, not just a nice-to-have.
 

@@ -64,9 +64,7 @@ export function ReportActions({
     <Button asChild size="lg">
       <Link
         href={`/book-demo?audit=${encodeURIComponent(slug)}`}
-        onClick={() =>
-          trackAuditEvent("AuditReviewClicked", { stepName: "report", readinessBand })
-        }
+        onClick={() => trackAuditEvent("AuditReviewClicked", { stepName: "report", readinessBand })}
       >
         <CalendarCheck aria-hidden="true" />
         {AUDIT_COPY.report.cta}

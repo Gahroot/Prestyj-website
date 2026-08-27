@@ -133,9 +133,7 @@
             "typeName": "subject",
             "multiple": true,
             "typeClass": "controlledVocabulary",
-            "value": [
-              "Business and Management"
-            ]
+            "value": ["Business and Management"]
           }
         ]
       }

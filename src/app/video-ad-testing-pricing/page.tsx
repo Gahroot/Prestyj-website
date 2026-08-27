@@ -45,7 +45,12 @@ export default function VideoAdTestingPricingPage() {
       name: "Prestyj",
       url: "https://prestyj.com",
     },
-    serviceType: ["Video Ad Testing", "Batch Video Ads", "Paid Social Creative Testing", "Cost Per Tested Angle"],
+    serviceType: [
+      "Video Ad Testing",
+      "Batch Video Ads",
+      "Paid Social Creative Testing",
+      "Cost Per Tested Angle",
+    ],
     areaServed: "United States",
     offers: {
       "@type": "AggregateOffer",

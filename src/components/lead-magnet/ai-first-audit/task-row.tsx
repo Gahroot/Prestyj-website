@@ -52,14 +52,14 @@ export function TaskRow({
         >
           {selected && <Check className="size-4" strokeWidth={3} />}
         </span>
-        <span className="min-w-0 break-words text-sm font-medium">{title}</span>
+        <span className="min-w-0 text-sm font-medium break-words">{title}</span>
       </label>
       {removable && onRemove && (
         <button
           type="button"
           onClick={() => onRemove(id)}
           aria-label={`Remove ${title}`}
-          className="text-muted-foreground hover:text-foreground focus-visible:ring-ring m-1 flex size-11 shrink-0 items-center justify-center rounded-md outline-none transition-colors focus-visible:ring-[3px]"
+          className="text-muted-foreground hover:text-foreground focus-visible:ring-ring m-1 flex size-11 shrink-0 items-center justify-center rounded-md transition-colors outline-none focus-visible:ring-[3px]"
         >
           <X className="size-4" />
         </button>

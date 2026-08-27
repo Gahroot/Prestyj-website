@@ -7,14 +7,7 @@ const HOMEPAGE_AGENT_PUBLIC_ID =
   process.env.NEXT_PUBLIC_TRIBUNAL_HOMEPAGE_AGENT_ID?.trim() || "ag_L2rFuSnp";
 
 const GET_ENDPOINTS = new Set(["config"]);
-const POST_ENDPOINTS = new Set([
-  "token",
-  "tool-call",
-  "transcript",
-  "call",
-  "chat",
-  "text",
-]);
+const POST_ENDPOINTS = new Set(["token", "tool-call", "transcript", "call", "chat", "text"]);
 
 interface RouteContext {
   params: Promise<{ publicId: string; endpoint: string }>;
@@ -28,9 +21,7 @@ function isAllowedPublicId(publicId: string): boolean {
 }
 
 function isAllowedEndpoint(method: "GET" | "POST", endpoint: string): boolean {
-  return method === "GET"
-    ? GET_ENDPOINTS.has(endpoint)
-    : POST_ENDPOINTS.has(endpoint);
+  return method === "GET" ? GET_ENDPOINTS.has(endpoint) : POST_ENDPOINTS.has(endpoint);
 }
 
 function buildForwardHeaders(request: NextRequest): Headers {
@@ -59,10 +50,7 @@ async function proxyTribunalEmbedRequest(
   const { publicId, endpoint } = await params;
 
   if (!isAllowedPublicId(publicId) || !isAllowedEndpoint(method, endpoint)) {
-    return NextResponse.json(
-      { error: "Unsupported AI concierge request" },
-      { status: 404 },
-    );
+    return NextResponse.json({ error: "Unsupported AI concierge request" }, { status: 404 });
   }
 
   const targetUrl = `${TRIBUNAL_API_BASE}/api/v1/p/embed/${encodeURIComponent(
@@ -96,23 +84,14 @@ async function proxyTribunalEmbedRequest(
     return response;
   } catch (error) {
     console.error("[tribunal-embed-proxy] request failed", error);
-    return NextResponse.json(
-      { error: "AI concierge is temporarily unavailable" },
-      { status: 502 },
-    );
+    return NextResponse.json({ error: "AI concierge is temporarily unavailable" }, { status: 502 });
   }
 }
 
-export async function GET(
-  request: NextRequest,
-  context: RouteContext,
-): Promise<NextResponse> {
+export async function GET(request: NextRequest, context: RouteContext): Promise<NextResponse> {
   return proxyTribunalEmbedRequest(request, "GET", context);
 }
 
-export async function POST(
-  request: NextRequest,
-  context: RouteContext,
-): Promise<NextResponse> {
+export async function POST(request: NextRequest, context: RouteContext): Promise<NextResponse> {
   return proxyTribunalEmbedRequest(request, "POST", context);
 }

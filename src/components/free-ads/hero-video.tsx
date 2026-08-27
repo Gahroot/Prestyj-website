@@ -43,9 +43,9 @@ export function HeroVideo() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          These ads come with your plan — they&apos;re not a standalone free product. Setup fee applies
-          (from {STARTER_SETUP}). We send you the scripts and help you film — just stand in front of
-          the camera and read. 300 ads delivered in 24 hours.
+          These ads come with your plan — they&apos;re not a standalone free product. Setup fee
+          applies (from {STARTER_SETUP}). We send you the scripts and help you film — just stand in
+          front of the camera and read. 300 ads delivered in 24 hours.
         </motion.p>
 
         {/* Stats row */}

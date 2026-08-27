@@ -20,8 +20,8 @@ export function ShippedProductsSection(): ReactElement {
             We ship working AI systems, not slide decks.
           </h2>
           <p className="text-muted-foreground mt-4 text-lg leading-8">
-            Every engagement ends with live agents, running ad creative, and booked
-            appointments — not a plan on paper.
+            Every engagement ends with live agents, running ad creative, and booked appointments —
+            not a plan on paper.
           </p>
           <div className="text-primary mt-6 flex items-center justify-center gap-2 text-sm font-semibold">
             <Sparkles className="h-4 w-4" />

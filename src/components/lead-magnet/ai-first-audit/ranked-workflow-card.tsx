@@ -7,11 +7,7 @@ interface RankedWorkflowCardProps {
   readonly detailed?: boolean;
 }
 
-export function RankedWorkflowCard({
-  workflow,
-  rank,
-  detailed = false,
-}: RankedWorkflowCardProps) {
+export function RankedWorkflowCard({ workflow, rank, detailed = false }: RankedWorkflowCardProps) {
   return (
     <article className="border-border bg-card rounded-xl border p-5 sm:p-6">
       <div className="flex items-start gap-4">
@@ -23,7 +19,9 @@ export function RankedWorkflowCard({
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-muted-foreground text-sm">{workflow.priorityAction}</p>
-          <h3 className="font-heading mt-1 text-xl font-bold break-words">{workflow.input.title}</h3>
+          <h3 className="font-heading mt-1 text-xl font-bold break-words">
+            {workflow.input.title}
+          </h3>
         </div>
       </div>
 

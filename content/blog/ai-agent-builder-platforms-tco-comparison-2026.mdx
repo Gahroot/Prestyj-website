@@ -28,15 +28,15 @@ That is why the right comparison is not “which AI agent builder has the lowest
 
 ## 3-Year TCO by Builder Path
 
-| Path | Year-one cash cost | 3-year TCO range | Time to production | Lowest-TCO condition |
-| --- | ---: | ---: | --- | --- |
-| Vapi / Retell developer platform | $42K–$120K | $95K–$280K | 4–12 weeks | Team has engineering and needs custom voice control |
-| Bland AI developer platform | $35K–$110K | $90K–$260K | 4–10 weeks | Outbound-heavy use case with technical owner |
-| Synthflow / no-code builder | $18K–$75K | $72K–$220K | 2–8 weeks | Simple flows, low compliance, internal ops bandwidth |
-| White-label AI platform | $28K–$95K | $72K–$210K | 6–14 weeks | Reseller adds vertical operations, not just markup |
-| Done-for-you vertical platform | $7K–$30K | $21K–$90K | 2–4 weeks | Business outcome matters more than platform ownership |
-| Agency custom build | $95K–$280K | $210K–$520K | 4–9 months | Bespoke workflow but no internal AI team |
-| In-house custom build | $180K–$620K | $380K–$1.1M+ | 6–18 months | Agent is the product and IP ownership matters |
+| Path                             | Year-one cash cost | 3-year TCO range | Time to production | Lowest-TCO condition                                  |
+| -------------------------------- | -----------------: | ---------------: | ------------------ | ----------------------------------------------------- |
+| Vapi / Retell developer platform |         $42K–$120K |       $95K–$280K | 4–12 weeks         | Team has engineering and needs custom voice control   |
+| Bland AI developer platform      |         $35K–$110K |       $90K–$260K | 4–10 weeks         | Outbound-heavy use case with technical owner          |
+| Synthflow / no-code builder      |          $18K–$75K |       $72K–$220K | 2–8 weeks          | Simple flows, low compliance, internal ops bandwidth  |
+| White-label AI platform          |          $28K–$95K |       $72K–$210K | 6–14 weeks         | Reseller adds vertical operations, not just markup    |
+| Done-for-you vertical platform   |           $7K–$30K |        $21K–$90K | 2–4 weeks          | Business outcome matters more than platform ownership |
+| Agency custom build              |         $95K–$280K |      $210K–$520K | 4–9 months         | Bespoke workflow but no internal AI team              |
+| In-house custom build            |        $180K–$620K |     $380K–$1.1M+ | 6–18 months        | Agent is the product and IP ownership matters         |
 
 The table assumes a mid-market lead-response or voice-agent use case with 5,000 calls/messages per month. Higher volume compresses per-unit costs but increases QA, compliance, and uptime requirements.
 
@@ -46,17 +46,17 @@ The table assumes a mid-market lead-response or voice-agent use case with 5,000 
 
 A builder platform sells infrastructure. It does not automatically sell a working business process.
 
-| Missing TCO line | Typical cost | Why it matters |
-| --- | ---: | --- |
-| Initial prompt/workflow design | $2,000–$12,000 | Poor flows create bad bookings and bad handoffs |
-| CRM/calendar integration | $4,000–$24,000 | Tool calls, auth, retries, and duplicate handling take engineering time |
-| Telephony / STT / TTS / LLM pass-through | $0.08–$0.31/minute | Some platforms quote orchestration only |
-| Evals and regression tests | $3,000–$15,000/year | Needed before changing prompts or models |
-| Human QA review | $1,000–$8,000/month | Someone must listen, score, and fix failures |
-| Drift re-tuning | 5–15 hours/month | Offers, pricing, scripts, and customer behavior change |
-| Model deprecation rework | $3,000–$12,000 per event | Happens every 6–12 months |
-| Compliance/legal review | $5,000–$20,000/year | Required in healthcare, finance, legal, outbound voice, and SMS |
-| Incident response | Variable | Bad agent calls become customer-service problems fast |
+| Missing TCO line                         |             Typical cost | Why it matters                                                          |
+| ---------------------------------------- | -----------------------: | ----------------------------------------------------------------------- |
+| Initial prompt/workflow design           |           $2,000–$12,000 | Poor flows create bad bookings and bad handoffs                         |
+| CRM/calendar integration                 |           $4,000–$24,000 | Tool calls, auth, retries, and duplicate handling take engineering time |
+| Telephony / STT / TTS / LLM pass-through |       $0.08–$0.31/minute | Some platforms quote orchestration only                                 |
+| Evals and regression tests               |      $3,000–$15,000/year | Needed before changing prompts or models                                |
+| Human QA review                          |      $1,000–$8,000/month | Someone must listen, score, and fix failures                            |
+| Drift re-tuning                          |         5–15 hours/month | Offers, pricing, scripts, and customer behavior change                  |
+| Model deprecation rework                 | $3,000–$12,000 per event | Happens every 6–12 months                                               |
+| Compliance/legal review                  |      $5,000–$20,000/year | Required in healthcare, finance, legal, outbound voice, and SMS         |
+| Incident response                        |                 Variable | Bad agent calls become customer-service problems fast                   |
 
 If a vendor says “setup is easy,” ask who owns every row in this table after launch.
 
@@ -64,27 +64,27 @@ If a vendor says “setup is easy,” ask who owns every row in this table after
 
 ## Vapi vs Bland vs Retell vs Synthflow: TCO Rows
 
-| Platform type | Strength | Typical hidden TCO | Best use case | Risk |
-| --- | --- | --- | --- | --- |
-| Vapi | Flexible voice-agent API and fast prototyping | Engineering setup, external STT/TTS/LLM, evals | Technical teams building custom voice agents | Cheap minutes can become expensive ownership |
-| Retell | Developer voice platform with bundled speech pieces | Integration maintenance, prompt QA | Fast custom voice prototypes | Still needs technical operator |
-| Bland AI | Outbound voice scale and per-minute simplicity | Compliance, call QA, prompt drift | High-volume outbound/re-activation | Bad list hygiene can create legal and brand risk |
-| Synthflow | No-code workflow builder | Workflow constraints, ops time, advanced integrations | Simple call flows for SMBs | Complex business logic can hit ceiling |
-| White-label reseller | Faster packaging and support | 30–60% markup, unclear escalation ownership | Agencies needing packaged AI | Bad if reseller adds no vertical expertise |
-| Done-for-you | Outcome and operations bundled | Less custom control | Lead response, intake, appointment booking, reactivation | Not ideal for proprietary product IP |
+| Platform type        | Strength                                            | Typical hidden TCO                                    | Best use case                                            | Risk                                             |
+| -------------------- | --------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------ |
+| Vapi                 | Flexible voice-agent API and fast prototyping       | Engineering setup, external STT/TTS/LLM, evals        | Technical teams building custom voice agents             | Cheap minutes can become expensive ownership     |
+| Retell               | Developer voice platform with bundled speech pieces | Integration maintenance, prompt QA                    | Fast custom voice prototypes                             | Still needs technical operator                   |
+| Bland AI             | Outbound voice scale and per-minute simplicity      | Compliance, call QA, prompt drift                     | High-volume outbound/re-activation                       | Bad list hygiene can create legal and brand risk |
+| Synthflow            | No-code workflow builder                            | Workflow constraints, ops time, advanced integrations | Simple call flows for SMBs                               | Complex business logic can hit ceiling           |
+| White-label reseller | Faster packaging and support                        | 30–60% markup, unclear escalation ownership           | Agencies needing packaged AI                             | Bad if reseller adds no vertical expertise       |
+| Done-for-you         | Outcome and operations bundled                      | Less custom control                                   | Lead response, intake, appointment booking, reactivation | Not ideal for proprietary product IP             |
 
 ---
 
 ## TCO by Use Case
 
-| Use case | Builder platform TCO | Done-for-you TCO | Recommended path |
-| --- | ---: | ---: | --- |
-| Inbound lead response for home services | $95K–$280K | $21K–$90K | Done-for-you unless engineering is already allocated |
-| AI receptionist / voice intake | $90K–$260K | $21K–$90K | Done-for-you or white-label with strong vertical ops |
-| Outbound database reactivation | $72K–$220K | $15K–$80K campaign/program | Done-for-you when consent and scripts matter |
-| SaaS product embedding AI voice | $95K–$280K+ | Not applicable | Builder platform or in-house |
-| Enterprise call-center automation | $210K–$520K+ | $90K–$300K+ | Depends on security, volume, and integration depth |
-| Proprietary AI product | $380K–$1.1M+ | Not applicable | In-house/custom build |
+| Use case                                | Builder platform TCO |           Done-for-you TCO | Recommended path                                     |
+| --------------------------------------- | -------------------: | -------------------------: | ---------------------------------------------------- |
+| Inbound lead response for home services |           $95K–$280K |                  $21K–$90K | Done-for-you unless engineering is already allocated |
+| AI receptionist / voice intake          |           $90K–$260K |                  $21K–$90K | Done-for-you or white-label with strong vertical ops |
+| Outbound database reactivation          |           $72K–$220K | $15K–$80K campaign/program | Done-for-you when consent and scripts matter         |
+| SaaS product embedding AI voice         |          $95K–$280K+ |             Not applicable | Builder platform or in-house                         |
+| Enterprise call-center automation       |         $210K–$520K+ |                $90K–$300K+ | Depends on security, volume, and integration depth   |
+| Proprietary AI product                  |         $380K–$1.1M+ |             Not applicable | In-house/custom build                                |
 
 ---
 

@@ -71,7 +71,9 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
   const whyDescription = isBatchCreativePage
     ? "The key reasons this niche needs structured ad variation, not another generic video."
     : "Discover the key reasons why professionals in your niche choose Prestyj";
-  const painHeading = isBatchCreativePage ? "Creative Bottlenecks This Fixes" : "Your Challenges, Solved";
+  const painHeading = isBatchCreativePage
+    ? "Creative Bottlenecks This Fixes"
+    : "Your Challenges, Solved";
   const painDescription = isBatchCreativePage
     ? "See how batch production turns common paid-social constraints into testable creative lanes."
     : "See how Prestyj transforms common pain points into competitive advantages";
@@ -152,9 +154,7 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               {whyHeading}
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              {whyDescription}
-            </p>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{whyDescription}</p>
           </motion.div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -203,9 +203,7 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               {painHeading}
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              {painDescription}
-            </p>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{painDescription}</p>
           </motion.div>
 
           <div className="space-y-4">
@@ -345,9 +343,7 @@ export function BestForPageClient({ bestFor }: BestForPageClientProps) {
             <h2 className="font-heading text-foreground mb-4 text-3xl font-bold sm:text-4xl">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">
-              {faqDescription}
-            </p>
+            <p className="text-muted-foreground mx-auto max-w-2xl text-lg">{faqDescription}</p>
           </motion.div>
 
           <motion.div

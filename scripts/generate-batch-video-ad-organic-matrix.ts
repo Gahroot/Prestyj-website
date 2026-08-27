@@ -398,9 +398,7 @@ function patchBestForIndex(pages: GeneratedPage[]): void {
   const imports = pages
     .map((page) => `import { ${page.variableName} } from "./${page.slug}";`)
     .join("\n");
-  const registrations = pages
-    .map((page) => `  "${page.slug}": ${page.variableName},`)
-    .join("\n");
+  const registrations = pages.map((page) => `  "${page.slug}": ${page.variableName},`).join("\n");
 
   let next = ensureBlock(
     source,

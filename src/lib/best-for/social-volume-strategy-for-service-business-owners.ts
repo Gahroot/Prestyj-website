@@ -167,7 +167,8 @@ export const socialVolumeStrategyForServiceBusinessOwners: BestForPageContent = 
           "Extending creative life 3–5× through refreshes means the owner can keep a proven offer or job-story format in market without letting it go stale. The strategy is not endless novelty; it is keeping the same trust signal recognizable while changing the hooks, formats, and examples around it.",
       },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     headline: "Stop Posting What You Have Time For. Start Posting What the Algorithm Rewards.",

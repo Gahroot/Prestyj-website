@@ -232,7 +232,9 @@ export default async function IndustryStatsHub({ params }: PageProps) {
                     href={`/statistics/${s.slug}`}
                     className="border-border/60 text-foreground hover:border-primary/40 hover:text-primary inline-flex items-center gap-1 rounded-full border px-3 py-1.5 text-xs font-medium"
                   >
-                    {s.title.replace(" Marketing & Lead Response Statistics", "").replace(" Statistics", "")}
+                    {s.title
+                      .replace(" Marketing & Lead Response Statistics", "")
+                      .replace(" Statistics", "")}
                   </Link>
                 ))}
             </div>
@@ -246,8 +248,9 @@ export default async function IndustryStatsHub({ params }: PageProps) {
               Want the full dataset?
             </h2>
             <p className="text-muted-foreground mx-auto mb-8 max-w-xl">
-              {stats.length} {slice.slug} stats here. Open the full dataset for every other vertical,
-              plus speed-to-lead, video advertising, AI adoption, and Google Ads CPL benchmarks.
+              {stats.length} {slice.slug} stats here. Open the full dataset for every other
+              vertical, plus speed-to-lead, video advertising, AI adoption, and Google Ads CPL
+              benchmarks.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row">
               <Button asChild size="lg">

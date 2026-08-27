@@ -12,14 +12,8 @@
     "home services marketing",
     "real estate lead response"
   ],
-  "categories": [
-    "Marketing",
-    "Sales",
-    "Business and Management"
-  ],
+  "categories": ["Marketing", "Sales", "Business and Management"],
   "license": "CC BY 4.0",
-  "references": [
-    "https://prestyj.com/data"
-  ],
+  "references": ["https://prestyj.com/data"],
   "defined_type": "dataset"
 }

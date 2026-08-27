@@ -195,6 +195,9 @@ export async function POST(request: NextRequest) {
       }
     }
     console.error("[ai-first-audit/complete] persistence failed");
-    return NextResponse.json({ error: "We could not save the report. Try again." }, { status: 500 });
+    return NextResponse.json(
+      { error: "We could not save the report. Try again." },
+      { status: 500 },
+    );
   }
 }

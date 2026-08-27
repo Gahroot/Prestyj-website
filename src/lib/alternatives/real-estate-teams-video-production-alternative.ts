@@ -157,7 +157,8 @@ export const realEstateTeamsVideoProductionAlternative: AlternativePageContent =
     },
   ],
   proprietaryData: {
-    heading: "What does replacing real estate video production change in your paid-social testing math?",
+    heading:
+      "What does replacing real estate video production change in your paid-social testing math?",
     intro:
       "Real estate teams are not just buying prettier listing videos; they are buying enough buyer, seller, neighborhood, and market-update angles to keep campaigns learning. These benchmarks show whether a production replacement can support that testing workload without turning every new angle into a budget decision.",
     stats: [

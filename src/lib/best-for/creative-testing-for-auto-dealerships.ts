@@ -7,11 +7,13 @@ export const creativeTestingForAutoDealerships: BestForPageContent = {
   niche: {
     name: "Creative Testing for Auto Dealerships",
     shortName: "Auto Dealers",
-    description: "a paid-social creative testing plan for franchise and independent auto dealerships marketing inventory, trade-ins, financing, and service.",
+    description:
+      "a paid-social creative testing plan for franchise and independent auto dealerships marketing inventory, trade-ins, financing, and service.",
   },
   meta: {
     title: "Creative Testing for Auto Dealerships | Paid Social Ad Matrix",
-    description: "Creative testing for auto dealers using a structured matrix of hooks, buyer pains, seasonal triggers, and compliance-aware video ad variations.",
+    description:
+      "Creative testing for auto dealers using a structured matrix of hooks, buyer pains, seasonal triggers, and compliance-aware video ad variations.",
     keywords: [
       "creative testing for auto dealers",
       "ad creative testing for auto-dealerships",
@@ -25,55 +27,66 @@ export const creativeTestingForAutoDealerships: BestForPageContent = {
     badge: "Creative Testing for Auto Dealers",
     headline: "Auto Dealerships Should Not Test One Ad at a Time.",
     headlineAccent: "Test the angle matrix instead.",
-    subheadline: "A useful auto dealer creative test compares buyer problems, timing triggers, offers, objections, and proof. Prestyj supplies the video variation library so your media buyer can find signal without waiting on weekly production.",
+    subheadline:
+      "A useful auto dealer creative test compares buyer problems, timing triggers, offers, objections, and proof. Prestyj supplies the video variation library so your media buyer can find signal without waiting on weekly production.",
   },
   whyBestFor: [
     {
       icon: "Target",
       title: "Test buyer problems as separate hypotheses.",
-      description: "For auto dealers, the first hypotheses should include: Truck, SUV, first-time buyer, and subprime buyers respond to different hooks. Inventory-specific ads age out fast when production takes weeks. Most dealership ads sound like the same loud sales event template. Each needs its own lane so the account can show what deserves budget.",
+      description:
+        "For auto dealers, the first hypotheses should include: Truck, SUV, first-time buyer, and subprime buyers respond to different hooks. Inventory-specific ads age out fast when production takes weeks. Most dealership ads sound like the same loud sales event template. Each needs its own lane so the account can show what deserves budget.",
     },
     {
       icon: "Zap",
       title: "Test first-three-second hooks, not just finished concepts.",
-      description: "The same offer can win or lose based on the opening. Examples worth testing include The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook.",
+      description:
+        "The same offer can win or lose based on the opening. Examples worth testing include The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook.",
     },
     {
       icon: "Clock",
       title: "Match creative drops to market timing.",
-      description: "Auto dealer demand is shaped by tax refund season, model-year closeout, holiday sales events, rate changes. Creative testing works better when those triggers become test lanes before demand peaks.",
+      description:
+        "Auto dealer demand is shaped by tax refund season, model-year closeout, holiday sales events, rate changes. Creative testing works better when those triggers become test lanes before demand peaks.",
     },
     {
       icon: "DollarSign",
       title: "Read results through unit economics.",
-      description: "$1,500-$6,000 front/back gross plus service retention per sold unit. That means the best creative test is not the prettiest ad — it is the angle that creates profitable booked opportunities.",
+      description:
+        "$1,500-$6,000 front/back gross plus service retention per sold unit. That means the best creative test is not the prettiest ad — it is the angle that creates profitable booked opportunities.",
     },
     {
       icon: "Shield",
       title: "Keep every test within compliance boundaries.",
-      description: "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
+      description:
+        "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
     },
   ],
   painPoints: [
     {
       problem: "Your creative test is too small to produce reliable signal.",
-      solution: "Use a 100-ad batch for one focused problem, 300 ads for three problem lanes, 500 for the recommended matrix, or 1,000 for a full-market sprint.",
+      solution:
+        "Use a 100-ad batch for one focused problem, 300 ads for three problem lanes, 500 for the recommended matrix, or 1,000 for a full-market sprint.",
     },
     {
       problem: "Your current ads blur too many auto dealer buyer motivations together.",
-      solution: "Separate the test into pain, timing, trust, price, and status quo lanes. That keeps auto dealers results readable instead of averaging every buyer into one generic message.",
+      solution:
+        "Separate the test into pain, timing, trust, price, and status quo lanes. That keeps auto dealers results readable instead of averaging every buyer into one generic message.",
     },
     {
       problem: "Your media buyer cannot scale because the creative library runs out.",
-      solution: "Batch production creates enough adjacent variants to refresh winning lanes before the original ad fatigues.",
+      solution:
+        "Batch production creates enough adjacent variants to refresh winning lanes before the original ad fatigues.",
     },
     {
       problem: "Your status quo is still OEM templates and generic dealership video vendors.",
-      solution: "Own the learning loop by building a creative library you can test, analyze, and reuse instead of renting attention from the same crowded sources.",
+      solution:
+        "Own the learning loop by building a creative library you can test, analyze, and reuse instead of renting attention from the same crowded sources.",
     },
     {
       problem: "Your team does not have a repeatable script matrix.",
-      solution: "Prestyj writes the hook, body, objection, proof, and CTA variations, then edits one recording into finished ads.",
+      solution:
+        "Prestyj writes the hook, body, objection, proof, and CTA variations, then edits one recording into finished ads.",
     },
   ],
   comparison: {
@@ -109,23 +122,28 @@ export const creativeTestingForAutoDealerships: BestForPageContent = {
   faq: [
     {
       question: "What should a creative test for auto dealers include?",
-      answer: "It should include separate hypotheses for buyer pains, timing triggers, proof, objections, offers, and CTAs. For auto dealers, strong starting points include The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook.",
+      answer:
+        "It should include separate hypotheses for buyer pains, timing triggers, proof, objections, offers, and CTAs. For auto dealers, strong starting points include The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook.",
     },
     {
       question: "How many ads do I need for a creative test?",
-      answer: "Use 100 ads for first signal around one problem, 300 for three problem lanes, 500 for the recommended matrix, and 1,000 for a full sprint across many buyer motivations.",
+      answer:
+        "Use 100 ads for first signal around one problem, 300 for three problem lanes, 500 for the recommended matrix, and 1,000 for a full sprint across many buyer motivations.",
     },
     {
       question: "How is this different from batch video ads for auto dealers?",
-      answer: "This page focuses on the testing methodology. The batch video ads page focuses on the production service and deliverables for auto dealers. Both point to the same pricing because the production system powers the test.",
+      answer:
+        "This page focuses on the testing methodology. The batch video ads page focuses on the production service and deliverables for auto dealers. Both point to the same pricing because the production system powers the test.",
     },
     {
       question: "Does Prestyj analyze the ad account?",
-      answer: "No. Prestyj creates the creative library. Your media buyer or agency manages launch structure, budgets, reporting, and optimization.",
+      answer:
+        "No. Prestyj creates the creative library. Your media buyer or agency manages launch structure, budgets, reporting, and optimization.",
     },
     {
       question: "What compliance issue matters most for auto dealers creative testing?",
-      answer: "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
+      answer:
+        "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
     },
   ],
   proprietaryData: {
@@ -149,11 +167,13 @@ export const creativeTestingForAutoDealerships: BestForPageContent = {
           "CPA degradation inside 5–7 days means dealership tests need replacement variants ready almost as soon as signal appears. When the winning message is tied to a rate change, tax refund window, or specific vehicle group, waiting for new creative can waste the narrow demand window.",
       },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     headline: "Build an auto dealer Creative Testing Matrix.",
-    subheadline: "Turn one recording into enough auto dealers ads to test buyer problems, timing triggers, objections, proof, and CTAs.",
+    subheadline:
+      "Turn one recording into enough auto dealers ads to test buyer problems, timing triggers, objections, proof, and CTAs.",
     buttonText: "Pick a Batch Size",
     buttonHref: "/batch-video-ads#pricing",
     footnote: "Creative production only · Media buying not included",

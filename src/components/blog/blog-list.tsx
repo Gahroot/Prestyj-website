@@ -72,7 +72,7 @@ export function BlogList({ posts, initialQuery = "" }: Props): React.ReactElemen
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder="Search by topic, offer, or cost question..."
-          className="border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 mx-auto block w-full max-w-xl rounded-full border px-4 py-3 text-sm outline-none transition-colors focus:ring-4"
+          className="border-border bg-card text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 mx-auto block w-full max-w-xl rounded-full border px-4 py-3 text-sm transition-colors outline-none focus:ring-4"
         />
       </div>
 

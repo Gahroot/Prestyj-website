@@ -175,7 +175,8 @@ export const doneForYouSocialForServiceBusinessOwners: BestForPageContent = {
           "The $0.74–$7.40 effective cost-per-post range reframes social from a retainer line item into a distribution system. Owners can judge whether the content engine is creating enough local proof points per dollar, not just whether a calendar was filled.",
       },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     headline: "Your Service Business Owners Brand Shouldn't Depend on Your Free Time.",

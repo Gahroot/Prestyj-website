@@ -7,9 +7,7 @@
       "titlesRewritten": 0,
       "costUSD": 0.08215625,
       "apiCalls": 1,
-      "errors": [
-        "[blogPost] body word count 1390 is below minimum 1500"
-      ],
+      "errors": ["[blogPost] body word count 1390 is below minimum 1500"],
       "taskBreakdown": {
         "blogPost": {
           "count": 1,

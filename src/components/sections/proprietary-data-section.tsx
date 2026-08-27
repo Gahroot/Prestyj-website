@@ -23,8 +23,7 @@ export function ProprietaryDataSection({
   surface = "default",
 }: ProprietaryDataSectionProps) {
   const bg = surface === "muted" ? "bg-muted/30" : "";
-  const gridCols =
-    block.stats.length >= 3 ? "lg:grid-cols-3" : "lg:grid-cols-2";
+  const gridCols = block.stats.length >= 3 ? "lg:grid-cols-3" : "lg:grid-cols-2";
 
   return (
     <section className={`py-20 ${bg}`}>
@@ -61,9 +60,7 @@ export function ProprietaryDataSection({
               <p className="text-foreground mt-3 text-base leading-relaxed font-medium">
                 {stat.description}
               </p>
-              <p className="text-muted-foreground mt-4 grow text-sm leading-relaxed">
-                {analysis}
-              </p>
+              <p className="text-muted-foreground mt-4 grow text-sm leading-relaxed">{analysis}</p>
               <Link
                 href={`/stat/${stat.id}`}
                 className="text-primary mt-5 inline-flex items-center gap-1 text-sm font-medium hover:underline"

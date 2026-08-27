@@ -1,10 +1,22 @@
 import Link from "next/link";
 import { ArrowRight, Check, ExternalLink, Sparkles } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import BorderGlow from "@/components/ui/border-glow";
 import { Button } from "@/components/ui/button";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import type { AiOfferPageData, AiOfferTable } from "@/lib/ai-offer-pages";
 
 interface AiOfferPageProps {
@@ -20,7 +32,9 @@ function OfferTable({ table, emphasizedColumnIndex }: OfferTableProps) {
   return (
     <BorderGlow borderRadius={18} innerClassName="p-3 md:p-5">
       <div className="mb-6 px-2 pt-2">
-        <h2 className="font-heading text-foreground text-3xl font-bold md:text-4xl">{table.title}</h2>
+        <h2 className="font-heading text-foreground text-3xl font-bold md:text-4xl">
+          {table.title}
+        </h2>
         <p className="text-muted-foreground mt-3 max-w-3xl text-lg">{table.description}</p>
       </div>
       <Table className="min-w-[760px]" aria-label={table.title}>
@@ -43,7 +57,11 @@ function OfferTable({ table, emphasizedColumnIndex }: OfferTableProps) {
               {row.values.map((value, index) => (
                 <TableCell
                   key={`${row.label}-${table.columns[index + 1] ?? index}`}
-                  className={index + 1 === emphasizedColumnIndex ? "text-foreground font-semibold" : "text-muted-foreground"}
+                  className={
+                    index + 1 === emphasizedColumnIndex
+                      ? "text-foreground font-semibold"
+                      : "text-muted-foreground"
+                  }
                 >
                   {value}
                 </TableCell>
@@ -88,7 +106,11 @@ export function AiOfferPage({ page }: AiOfferPageProps) {
 
           <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">
             {page.hero.stats.map((stat) => (
-              <BorderGlow key={stat.label} borderRadius={18} innerClassName="p-6 text-center h-full">
+              <BorderGlow
+                key={stat.label}
+                borderRadius={18}
+                innerClassName="p-6 text-center h-full"
+              >
                 <div className="text-primary text-4xl font-bold md:text-5xl">{stat.value}</div>
                 <div className="text-foreground mt-3 font-semibold">{stat.label}</div>
                 <p className="text-muted-foreground mt-2 text-sm">{stat.detail}</p>
@@ -106,8 +128,12 @@ export function AiOfferPage({ page }: AiOfferPageProps) {
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
-                <p className="text-muted-foreground text-xs font-medium tracking-widest uppercase">TL;DR</p>
-                <h2 className="font-heading text-foreground text-2xl font-bold">{page.tldr.title}</h2>
+                <p className="text-muted-foreground text-xs font-medium tracking-widest uppercase">
+                  TL;DR
+                </p>
+                <h2 className="font-heading text-foreground text-2xl font-bold">
+                  {page.tldr.title}
+                </h2>
               </div>
             </div>
             <ul className="space-y-4">
@@ -132,9 +158,14 @@ export function AiOfferPage({ page }: AiOfferPageProps) {
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {page.utilitySection.cards.map((card) => (
-                <div key={card.title} className="border-border bg-background/70 rounded-2xl border p-5">
+                <div
+                  key={card.title}
+                  className="border-border bg-background/70 rounded-2xl border p-5"
+                >
                   <h3 className="font-heading text-foreground mb-2 font-bold">{card.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{card.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {card.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -169,11 +200,16 @@ export function AiOfferPage({ page }: AiOfferPageProps) {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {page.processSection.cards.map((card, index) => (
-              <div key={card.title} className="border-border bg-background/60 h-full rounded-2xl border p-7">
+              <div
+                key={card.title}
+                className="border-border bg-background/60 h-full rounded-2xl border p-7"
+              >
                 <div className="bg-primary/15 text-primary mb-5 flex h-11 w-11 items-center justify-center rounded-full font-mono text-sm font-bold">
                   {index + 1}
                 </div>
-                <h3 className="font-heading text-foreground mb-3 text-xl font-bold">{card.title}</h3>
+                <h3 className="font-heading text-foreground mb-3 text-xl font-bold">
+                  {card.title}
+                </h3>
                 <p className="text-muted-foreground leading-relaxed">{card.description}</p>
               </div>
             ))}
@@ -245,7 +281,9 @@ export function AiOfferPage({ page }: AiOfferPageProps) {
 
       <section className="px-4 pb-24">
         <div className="bg-primary text-primary-foreground mx-auto max-w-5xl rounded-3xl p-8 text-center md:p-12">
-          <h2 className="font-heading mb-4 text-3xl font-bold md:text-4xl">{page.finalCta.title}</h2>
+          <h2 className="font-heading mb-4 text-3xl font-bold md:text-4xl">
+            {page.finalCta.title}
+          </h2>
           <p className="mx-auto mb-8 max-w-2xl text-lg opacity-90">{page.finalCta.description}</p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" variant="secondary" className="font-bold" asChild>
@@ -255,8 +293,15 @@ export function AiOfferPage({ page }: AiOfferPageProps) {
               </Link>
             </Button>
             {page.finalCta.secondaryCta ? (
-              <Button size="lg" variant="outline" className="border-primary-foreground/40 bg-transparent font-bold" asChild>
-                <Link href={page.finalCta.secondaryCta.href}>{page.finalCta.secondaryCta.label}</Link>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-primary-foreground/40 bg-transparent font-bold"
+                asChild
+              >
+                <Link href={page.finalCta.secondaryCta.href}>
+                  {page.finalCta.secondaryCta.label}
+                </Link>
               </Button>
             ) : null}
           </div>

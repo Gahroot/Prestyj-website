@@ -76,17 +76,17 @@ The four services most plumbing operators evaluate:
 
 The advertised numbers — useful as a starting point, not the number that hits the credit card.
 
-| Platform / Service             | Pricing Model               | Per-Minute Rate | Monthly Minimum     | Setup Fee |
-| ------------------------------ | --------------------------- | --------------- | ------------------- | --------- |
-| **Prestyj (AI)**               | Subscription, all-inclusive | ~$0.22–$0.35    | $399                | Included  |
-| **Bland AI**                   | Per-minute, bulk discounts  | $0.09–$0.12     | None                | $0–$2,500 |
-| **Air.ai**                     | Tiered subscription         | ~$0.15–$0.26    | $149                | Included  |
-| **Synthflow**                  | Tiered subscription         | ~$0.18–$0.28    | $39                 | Self-serve|
-| **Retell AI**                  | Per-minute                  | $0.12–$0.22     | None                | $0–$2,000 |
-| **Ruby Receptionists (Human)** | Tiered + overage            | $0.95–$1.25     | $325                | $95       |
-| **AnswerConnect (Human)**      | Tiered + overage            | $1.45–$2.10     | $260                | $0–$150   |
-| **MAP Communications (Human)** | Tiered + overage            | $1.55–$2.40     | $235                | $0–$95    |
-| **Smith.ai (Human)**           | Tiered + per-call           | $1.95–$2.80     | $285 + $7/call live | $0        |
+| Platform / Service             | Pricing Model               | Per-Minute Rate | Monthly Minimum     | Setup Fee  |
+| ------------------------------ | --------------------------- | --------------- | ------------------- | ---------- |
+| **Prestyj (AI)**               | Subscription, all-inclusive | ~$0.22–$0.35    | $399                | Included   |
+| **Bland AI**                   | Per-minute, bulk discounts  | $0.09–$0.12     | None                | $0–$2,500  |
+| **Air.ai**                     | Tiered subscription         | ~$0.15–$0.26    | $149                | Included   |
+| **Synthflow**                  | Tiered subscription         | ~$0.18–$0.28    | $39                 | Self-serve |
+| **Retell AI**                  | Per-minute                  | $0.12–$0.22     | None                | $0–$2,000  |
+| **Ruby Receptionists (Human)** | Tiered + overage            | $0.95–$1.25     | $325                | $95        |
+| **AnswerConnect (Human)**      | Tiered + overage            | $1.45–$2.10     | $260                | $0–$150    |
+| **MAP Communications (Human)** | Tiered + overage            | $1.55–$2.40     | $235                | $0–$95     |
+| **Smith.ai (Human)**           | Tiered + per-call           | $1.95–$2.80     | $285 + $7/call live | $0         |
 
 Two things to notice. First, AI voice clusters between $0.09–$0.35/minute fully loaded; human services cluster at $0.95–$2.80/minute. The gap is structural — a US human operator's loaded labor cost is $18–$32/hour, which back-solves to a minimum viable rate around $1.20/minute before margin. No human service can underprice that floor without operating at a loss.
 
@@ -98,17 +98,17 @@ Second, monthly minimums on human services are deceptive. Ruby's $325/month "sta
 
 The all-in monthly cost for a plumbing operator at three representative call volumes, assuming 4-minute average call duration (blend of 3-minute routine bookings and 6-minute emergency triage).
 
-| Solution                  | 300 calls/mo (1,200 min) | 800 calls/mo (3,200 min) | 2,000 calls/mo (8,000 min) |
-| ------------------------- | ------------------------ | ------------------------ | -------------------------- |
-| **Prestyj (AI)**          | **$449**                 | **$799**                 | **$1,399**                 |
-| **Bland AI (DIY + setup)**| ~$380 + $300 ops         | ~$640 + $350 ops         | ~$1,200 + $500 ops         |
-| **Air.ai**                | $449                     | $849                     | $1,799                     |
-| **Synthflow**             | $399                     | $799                     | $1,699                     |
-| **Retell AI (DIY)**       | ~$460 + $300 ops         | ~$820 + $350 ops         | ~$1,750 + $500 ops         |
-| **Ruby Receptionists**    | $1,290                   | $1,850                   | $3,810                     |
-| **AnswerConnect**         | $1,210                   | $1,450                   | $2,980                     |
-| **MAP Communications**    | $1,110                   | $1,380                   | $2,780                     |
-| **Smith.ai**              | $1,460                   | $2,230                   | $4,320                     |
+| Solution                   | 300 calls/mo (1,200 min) | 800 calls/mo (3,200 min) | 2,000 calls/mo (8,000 min) |
+| -------------------------- | ------------------------ | ------------------------ | -------------------------- |
+| **Prestyj (AI)**           | **$449**                 | **$799**                 | **$1,399**                 |
+| **Bland AI (DIY + setup)** | ~$380 + $300 ops         | ~$640 + $350 ops         | ~$1,200 + $500 ops         |
+| **Air.ai**                 | $449                     | $849                     | $1,799                     |
+| **Synthflow**              | $399                     | $799                     | $1,699                     |
+| **Retell AI (DIY)**        | ~$460 + $300 ops         | ~$820 + $350 ops         | ~$1,750 + $500 ops         |
+| **Ruby Receptionists**     | $1,290                   | $1,850                   | $3,810                     |
+| **AnswerConnect**          | $1,210                   | $1,450                   | $2,980                     |
+| **MAP Communications**     | $1,110                   | $1,380                   | $2,780                     |
+| **Smith.ai**               | $1,460                   | $2,230                   | $4,320                     |
 
 The "ops" line on Bland AI and Retell reflects realistic operator overhead — prompt tuning, integration maintenance, failed-call log review. Bare-metal Bland AI without that overhead books at 60–70% instead of the 85%+ managed deployments hit.
 
@@ -130,16 +130,16 @@ Industry-typical 2026 booking rates for plumbing inbound calls:
 
 Cost per booked job at 800 calls/month (using mid-range booking rates):
 
-| Solution                       | Monthly Cost | Estimated Bookings | Cost / Booked Job |
-| ------------------------------ | ------------ | ------------------ | ----------------- |
-| **Prestyj (AI, 86% booking)**  | $799         | 688                | **$1.16**         |
-| **Bland AI (managed, 82%)**    | $990         | 656                | **$1.51**         |
-| **Air.ai (85%)**               | $849         | 680                | **$1.25**         |
-| **Synthflow (80%)**            | $799         | 640                | **$1.25**         |
-| **Ruby (message-only, 52%)**   | $1,850       | 416                | **$4.45**         |
-| **AnswerConnect (54%)**        | $1,450       | 432                | **$3.36**         |
-| **MAP Communications (55%)**   | $1,380       | 440                | **$3.14**         |
-| **Smith.ai (live-tx, 72%)**    | $2,230       | 576                | **$3.87**         |
+| Solution                      | Monthly Cost | Estimated Bookings | Cost / Booked Job |
+| ----------------------------- | ------------ | ------------------ | ----------------- |
+| **Prestyj (AI, 86% booking)** | $799         | 688                | **$1.16**         |
+| **Bland AI (managed, 82%)**   | $990         | 656                | **$1.51**         |
+| **Air.ai (85%)**              | $849         | 680                | **$1.25**         |
+| **Synthflow (80%)**           | $799         | 640                | **$1.25**         |
+| **Ruby (message-only, 52%)**  | $1,850       | 416                | **$4.45**         |
+| **AnswerConnect (54%)**       | $1,450       | 432                | **$3.36**         |
+| **MAP Communications (55%)**  | $1,380       | 440                | **$3.14**         |
+| **Smith.ai (live-tx, 72%)**   | $2,230       | 576                | **$3.87**         |
 
 Structural takeaway: **cost per booked plumbing job is 2.5–4x higher on human answering services than on AI voice platforms.** For emergency calls — where every minute of delay risks losing a $400–$1,500 job to a competitor who answered first — the cost gap is amplified by lost revenue.
 
@@ -191,14 +191,14 @@ AI voice platforms write directly to the dispatch board with customer name, addr
 
 Profile: $400k–$900k revenue, 2–3 trucks, owner-operator or owner + one tech. Calls peak during freeze events and spring rain season.
 
-| Stack                                 | Monthly Cost | Notes                                                  |
-| ------------------------------------- | ------------ | ------------------------------------------------------ |
-| **Prestyj (AI)**                      | $449         | Full plumbing config, ServiceTitan/HCP integration     |
-| **Bland AI (DIY + ops)**              | ~$680        | Per-min usage + 4–6 hr/mo prompt maintenance           |
-| **Synthflow self-serve**              | ~$420        | Lower-touch config, smaller operator sweet spot        |
-| **MAP Communications**                | $1,110       | Cheapest human option; manual ServiceTitan entry       |
-| **Ruby Receptionists**                | $1,290       | Premium human service; warmth premium                  |
-| **Hybrid: Prestyj AI + MAP overflow** | $589         | AI handles 90%, MAP catches the 10% escalations        |
+| Stack                                 | Monthly Cost | Notes                                              |
+| ------------------------------------- | ------------ | -------------------------------------------------- |
+| **Prestyj (AI)**                      | $449         | Full plumbing config, ServiceTitan/HCP integration |
+| **Bland AI (DIY + ops)**              | ~$680        | Per-min usage + 4–6 hr/mo prompt maintenance       |
+| **Synthflow self-serve**              | ~$420        | Lower-touch config, smaller operator sweet spot    |
+| **MAP Communications**                | $1,110       | Cheapest human option; manual ServiceTitan entry   |
+| **Ruby Receptionists**                | $1,290       | Premium human service; warmth premium              |
+| **Hybrid: Prestyj AI + MAP overflow** | $589         | AI handles 90%, MAP catches the 10% escalations    |
 
 At 300 calls/month, a plumbing operator pays **$1,110–$1,290/month on any human service** vs **$420–$680/month on any AI platform**. Annualized savings: **$8,400–$10,400/year** on platform cost alone, before recovered missed-call revenue.
 
@@ -206,15 +206,15 @@ At 300 calls/month, a plumbing operator pays **$1,110–$1,290/month on any huma
 
 Profile: 4–8 trucks, dedicated office staff during business hours, after-hours and weekend coverage is the painful gap. This is the volume bracket where the cost gap gets material.
 
-| Stack                                  | Monthly Cost | Annual Cost |
-| -------------------------------------- | ------------ | ----------- |
-| **Prestyj (AI)**                       | $799         | $9,588      |
-| **Bland AI (DIY managed)**             | $990         | $11,880     |
-| **Synthflow**                          | $799         | $9,588      |
-| **MAP Communications**                 | $1,380       | $16,560     |
-| **Ruby Receptionists**                 | $1,850       | $22,200     |
-| **Smith.ai (live-tx model)**           | $2,230       | $26,760     |
-| **Hybrid: Prestyj AI + MAP escalation**| $1,050       | $12,600     |
+| Stack                                   | Monthly Cost | Annual Cost |
+| --------------------------------------- | ------------ | ----------- |
+| **Prestyj (AI)**                        | $799         | $9,588      |
+| **Bland AI (DIY managed)**              | $990         | $11,880     |
+| **Synthflow**                           | $799         | $9,588      |
+| **MAP Communications**                  | $1,380       | $16,560     |
+| **Ruby Receptionists**                  | $1,850       | $22,200     |
+| **Smith.ai (live-tx model)**            | $2,230       | $26,760     |
+| **Hybrid: Prestyj AI + MAP escalation** | $1,050       | $12,600     |
 
 At 800 calls/month, the annual delta between Prestyj and Ruby is **$12,612/year**; vs Smith.ai, **$17,172/year**. Both exclude recovered revenue from 24/7 coverage and instant pickup, which typically exceeds the platform delta by 3–5x in freeze-prone markets.
 
@@ -261,11 +261,11 @@ Hybrid stacks book at **84–92%** vs 80–88% for pure AI and 45–60% for mess
 
 Prestyj is an AI voice receptionist built for home service trades, with plumbing, HVAC, electrical, and roofing configurations as first-class products. Pricing tiers:
 
-| Tier               | Monthly Cost | Volume                                            | Included                                                                                                                            |
-| ------------------ | ------------ | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **Plumbing Solo**  | $449         | Up to 500 calls/month (~2,000 min)               | Plumbing-specific training, ServiceTitan or Housecall Pro integration, emergency dispatch routing, after-hours coverage             |
-| **Plumbing Pro**   | $799         | Up to 1,200 calls/month (~5,200 min)             | Everything in Solo + multi-truck dispatch logic, advanced triage, parts-availability checks, on-call rotation handling              |
-| **Plumbing Multi** | $1,399       | Up to 3,500 calls/month (~15,000 min)            | Everything in Pro + multi-location routing, regional dispatch zones, custom reporting, dedicated success manager, priority support  |
+| Tier               | Monthly Cost | Volume                                | Included                                                                                                                           |
+| ------------------ | ------------ | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Plumbing Solo**  | $449         | Up to 500 calls/month (~2,000 min)    | Plumbing-specific training, ServiceTitan or Housecall Pro integration, emergency dispatch routing, after-hours coverage            |
+| **Plumbing Pro**   | $799         | Up to 1,200 calls/month (~5,200 min)  | Everything in Solo + multi-truck dispatch logic, advanced triage, parts-availability checks, on-call rotation handling             |
+| **Plumbing Multi** | $1,399       | Up to 3,500 calls/month (~15,000 min) | Everything in Pro + multi-location routing, regional dispatch zones, custom reporting, dedicated success manager, priority support |
 
 Included at every tier:
 
@@ -284,15 +284,15 @@ Deeper pricing breakdown: [AI voice agent pricing for plumbing](/blog/ai-voice-a
 
 Before switching or renewing, force every AI and human provider to price these line items in writing.
 
-| Hidden cost | Traditional answering service impact | AI voice platform impact | Plumbing buying note |
-| --- | ---: | ---: | --- |
-| Freeze-season surge minutes | +$600–$1,600 in a hard-freeze month | Usually included or marginal usage increase | Stress-test against your busiest week last year |
-| After-hours/weekend premium | +20–40% | Usually no surcharge | Plumbing emergencies happen exactly when human services charge more |
-| Manual ServiceTitan entry | $1.80–$5.00/call in admin labor | $0 if integration is native | At 800 calls/month this can exceed the platform bill |
-| Missed concurrent calls | Lost jobs during freeze/storm spikes | Near-zero if concurrent capacity is included | Ask for concurrent-call limits, not just monthly minutes |
-| Script updates | Often support ticket or extra setup | Included on managed platforms, DIY on developer platforms | Seasonal offers and service areas change monthly |
-| Human escalation | Included but every minute billed | 10–20% of calls routed to human backup | Hybrid beats pure-human if escalation is deliberate |
-| Reporting and QA | Limited call summaries | Transcript, disposition, booking metrics | Require cost per booked job reporting |
+| Hidden cost                 | Traditional answering service impact |                                  AI voice platform impact | Plumbing buying note                                                |
+| --------------------------- | -----------------------------------: | --------------------------------------------------------: | ------------------------------------------------------------------- |
+| Freeze-season surge minutes |  +$600–$1,600 in a hard-freeze month |               Usually included or marginal usage increase | Stress-test against your busiest week last year                     |
+| After-hours/weekend premium |                              +20–40% |                                      Usually no surcharge | Plumbing emergencies happen exactly when human services charge more |
+| Manual ServiceTitan entry   |      $1.80–$5.00/call in admin labor |                               $0 if integration is native | At 800 calls/month this can exceed the platform bill                |
+| Missed concurrent calls     | Lost jobs during freeze/storm spikes |              Near-zero if concurrent capacity is included | Ask for concurrent-call limits, not just monthly minutes            |
+| Script updates              |  Often support ticket or extra setup | Included on managed platforms, DIY on developer platforms | Seasonal offers and service areas change monthly                    |
+| Human escalation            |     Included but every minute billed |                    10–20% of calls routed to human backup | Hybrid beats pure-human if escalation is deliberate                 |
+| Reporting and QA            |               Limited call summaries |                  Transcript, disposition, booking metrics | Require cost per booked job reporting                               |
 
 ---
 
@@ -338,13 +338,13 @@ Below 150 calls/month, either can work if the owner still answers high-value cal
 
 ## Quick Reference: Plumbing Call Volume → Recommended Stack
 
-| Monthly Call Volume         | Operator Profile               | Recommended Stack                                 | Expected Monthly Cost | Expected Booking Rate |
-| --------------------------- | ------------------------------ | ------------------------------------------------- | --------------------- | --------------------- |
-| < 150 calls                 | Solo / part-time plumber       | Basic answering service OR self-serve Synthflow   | $200–$450             | 50–75%                |
-| 150–400 calls               | Two-to-three-truck operator    | Prestyj Solo OR Synthflow self-serve              | $400–$650             | 80–86%                |
-| 400–1,000 calls             | Mid-market ($1.5–4M)           | Prestyj Pro + MAP escalation hybrid               | $900–$1,200           | 84–92%                |
-| 1,000–2,500 calls           | Multi-truck ($4–12M)           | Prestyj Multi + dedicated human escalation team   | $1,400–$2,200         | 86–93%                |
-| 2,500+ calls                | Regional multi-location        | Prestyj Enterprise + in-house dispatch team       | $2,500–$5,000+        | 88–94%                |
+| Monthly Call Volume | Operator Profile            | Recommended Stack                               | Expected Monthly Cost | Expected Booking Rate |
+| ------------------- | --------------------------- | ----------------------------------------------- | --------------------- | --------------------- |
+| < 150 calls         | Solo / part-time plumber    | Basic answering service OR self-serve Synthflow | $200–$450             | 50–75%                |
+| 150–400 calls       | Two-to-three-truck operator | Prestyj Solo OR Synthflow self-serve            | $400–$650             | 80–86%                |
+| 400–1,000 calls     | Mid-market ($1.5–4M)        | Prestyj Pro + MAP escalation hybrid             | $900–$1,200           | 84–92%                |
+| 1,000–2,500 calls   | Multi-truck ($4–12M)        | Prestyj Multi + dedicated human escalation team | $1,400–$2,200         | 86–93%                |
+| 2,500+ calls        | Regional multi-location     | Prestyj Enterprise + in-house dispatch team     | $2,500–$5,000+        | 88–94%                |
 
 ---
 

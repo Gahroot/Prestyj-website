@@ -14,14 +14,18 @@ function LedgerRow({ workflow, rank }: { workflow: ScoredWorkflow; rank: number 
       </div>
       <div>
         <span className="text-muted-foreground block text-xs sm:sr-only">Yearly time cost</span>
-        <span className="font-semibold tabular-nums">{formatCurrency(workflow.annualTimeCost)}</span>
+        <span className="font-semibold tabular-nums">
+          {formatCurrency(workflow.annualTimeCost)}
+        </span>
       </div>
       <div>
         <span className="text-muted-foreground block text-xs sm:sr-only">Business impact</span>
         <span>{workflow.impactLabel}</span>
       </div>
       <div>
-        <span className="text-muted-foreground block text-xs sm:sr-only">Ready for an AI agent</span>
+        <span className="text-muted-foreground block text-xs sm:sr-only">
+          Ready for an AI agent
+        </span>
         <span>{workflow.readinessLabel}</span>
       </div>
     </li>

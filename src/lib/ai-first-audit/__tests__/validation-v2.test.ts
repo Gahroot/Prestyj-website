@@ -37,7 +37,9 @@ describe("complete audit request validation", () => {
   });
 
   it("requires 3 to 5 unique workflows", () => {
-    expect(completeAuditRequestSchema.safeParse({ ...request(), workflows: [validWorkflow] }).success).toBe(false);
+    expect(
+      completeAuditRequestSchema.safeParse({ ...request(), workflows: [validWorkflow] }).success,
+    ).toBe(false);
     const duplicate = request();
     duplicate.workflows[1] = { ...duplicate.workflows[1]!, id: "answer-leads" };
     expect(completeAuditRequestSchema.safeParse(duplicate).success).toBe(false);
@@ -54,9 +56,15 @@ describe("complete audit request validation", () => {
         ],
       }).success,
     ).toBe(false);
-    expect(completeAuditRequestSchema.safeParse({ ...request(), companyWebsite: "spam" }).success).toBe(false);
-    expect(completeAuditRequestSchema.safeParse({ ...request(), completionTimeMs: 500 }).success).toBe(false);
-    expect(completeAuditRequestSchema.safeParse({ ...request(), secret: "extra" }).success).toBe(false);
+    expect(
+      completeAuditRequestSchema.safeParse({ ...request(), companyWebsite: "spam" }).success,
+    ).toBe(false);
+    expect(
+      completeAuditRequestSchema.safeParse({ ...request(), completionTimeMs: 500 }).success,
+    ).toBe(false);
+    expect(completeAuditRequestSchema.safeParse({ ...request(), secret: "extra" }).success).toBe(
+      false,
+    );
   });
 
   it("maps custom workflow text only to the neutral category", () => {

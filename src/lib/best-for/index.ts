@@ -191,7 +191,7 @@ export const bestForPages: Record<string, BestForPageContent> = {
   "batch-video-ads-for-dentists": batchVideoAdsForDentists,
   "batch-video-ads-for-auto-dealerships": batchVideoAdsForAutoDealerships,
   "creative-testing-for-auto-dealerships": creativeTestingForAutoDealerships,
-// BATCH-ORGANIC-MATRIX-REGISTER-END
+  // BATCH-ORGANIC-MATRIX-REGISTER-END
 };
 
 export function getBestFor(slug: string): BestForPageContent | undefined {

@@ -65,17 +65,20 @@ const page = {
       {
         value: "<5 sec",
         label: "target pickup time",
-        detail: "Callers get answered before voicemail, hold queues, or storm-season spikes create lost opportunities.",
+        detail:
+          "Callers get answered before voicemail, hold queues, or storm-season spikes create lost opportunities.",
       },
       {
         value: "24/7",
         label: "after-hours coverage",
-        detail: "Nights, weekends, holidays, lunch breaks, overflow, and emergency routing in one workflow.",
+        detail:
+          "Nights, weekends, holidays, lunch breaks, overflow, and emergency routing in one workflow.",
       },
       {
         value: "50–60%",
         label: "possible hybrid savings",
-        detail: "HVAC cost models often favor AI-led call handling with human escalation for the hardest 10–20% of calls.",
+        detail:
+          "HVAC cost models often favor AI-led call handling with human escalation for the hardest 10–20% of calls.",
       },
     ],
   },
@@ -91,7 +94,12 @@ const page = {
     title: "AI receptionist vs answering-service cost model",
     description:
       "Answering-service invoices usually scale with minutes, surcharges, holidays, and manual handoffs. AI receptionist economics improve when calls are repetitive, seasonal, or appointment-driven.",
-    columns: ["Cost line", "Prestyj AI receptionist", "Traditional answering service", "Human front desk"],
+    columns: [
+      "Cost line",
+      "Prestyj AI receptionist",
+      "Traditional answering service",
+      "Human front desk",
+    ],
     rows: [
       {
         label: "Monthly planning range",
@@ -99,23 +107,43 @@ const page = {
       },
       {
         label: "After-hours pricing",
-        values: ["Same workflow 24/7", "Often premium or limited", "Requires overtime or second shift"],
+        values: [
+          "Same workflow 24/7",
+          "Often premium or limited",
+          "Requires overtime or second shift",
+        ],
       },
       {
         label: "Call spikes",
-        values: ["Concurrent calls handled", "Queue, hold, or voicemail risk", "One caller at a time"],
+        values: [
+          "Concurrent calls handled",
+          "Queue, hold, or voicemail risk",
+          "One caller at a time",
+        ],
       },
       {
         label: "Booking and dispatch data",
-        values: ["Structured notes and calendar/CRM handoff", "Often message-taking", "Staff-dependent consistency"],
+        values: [
+          "Structured notes and calendar/CRM handoff",
+          "Often message-taking",
+          "Staff-dependent consistency",
+        ],
       },
       {
         label: "Manual data entry",
-        values: ["Reduced with integrations", "Common hidden admin cost", "Built into staff workload"],
+        values: [
+          "Reduced with integrations",
+          "Common hidden admin cost",
+          "Built into staff workload",
+        ],
       },
       {
         label: "Best replacement target",
-        values: ["Routine intake, booking, overflow, missed calls", "Basic message capture", "In-office visitors and complex service"],
+        values: [
+          "Routine intake, booking, overflow, missed calls",
+          "Basic message capture",
+          "In-office visitors and complex service",
+        ],
       },
     ],
   },
@@ -127,23 +155,43 @@ const page = {
     rows: [
       {
         label: "Prestyj AI receptionist",
-        values: ["Missed calls, after-hours intake, booking, overflow", "Needs a designed call flow and escalation policy", "Best when every call needs fast structured capture"],
+        values: [
+          "Missed calls, after-hours intake, booking, overflow",
+          "Needs a designed call flow and escalation policy",
+          "Best when every call needs fast structured capture",
+        ],
       },
       {
         label: "Ruby / AnswerConnect / MAP",
-        values: ["Human warmth and basic message-taking", "Minutes, overages, manual entry, limited concurrency", "Compare cost per booked job, not only monthly plan"],
+        values: [
+          "Human warmth and basic message-taking",
+          "Minutes, overages, manual entry, limited concurrency",
+          "Compare cost per booked job, not only monthly plan",
+        ],
       },
       {
         label: "Smith.ai hybrid live answering",
-        values: ["Live-agent plus web-chat support", "Higher per-call and live-agent cost", "Useful benchmark for human escalation layer"],
+        values: [
+          "Live-agent plus web-chat support",
+          "Higher per-call and live-agent cost",
+          "Useful benchmark for human escalation layer",
+        ],
       },
       {
         label: "In-house receptionist",
-        values: ["Office visitors, staff coordination, nuanced calls", "Limited hours and turnover risk", "Often pairs well with AI overflow"],
+        values: [
+          "Office visitors, staff coordination, nuanced calls",
+          "Limited hours and turnover risk",
+          "Often pairs well with AI overflow",
+        ],
       },
       {
         label: "DIY voice platforms",
-        values: ["Technical teams building custom phone agents", "You own QA, integrations, and failed-call monitoring", "Sticker price excludes operations labor"],
+        values: [
+          "Technical teams building custom phone agents",
+          "You own QA, integrations, and failed-call monitoring",
+          "Sticker price excludes operations labor",
+        ],
       },
     ],
   },
@@ -155,19 +203,23 @@ const page = {
     cards: [
       {
         title: "Define routine intake",
-        description: "Name, phone, address, service area, issue type, urgency, equipment details, preferred appointment time, and consent to text.",
+        description:
+          "Name, phone, address, service area, issue type, urgency, equipment details, preferred appointment time, and consent to text.",
       },
       {
         title: "Set escalation rules",
-        description: "Route emergencies, angry callers, high-ticket consults, elderly-care concerns, compliance issues, and repeat failures to a person.",
+        description:
+          "Route emergencies, angry callers, high-ticket consults, elderly-care concerns, compliance issues, and repeat failures to a person.",
       },
       {
         title: "Model seasonal spikes",
-        description: "For HVAC, plumbing, and roofing, compare storm or heatwave call volume rather than an average quiet month.",
+        description:
+          "For HVAC, plumbing, and roofing, compare storm or heatwave call volume rather than an average quiet month.",
       },
       {
         title: "Measure booked outcomes",
-        description: "Track pickup rate, booking rate, transfer accuracy, average call length, cost per booked job, and manual-entry hours saved.",
+        description:
+          "Track pickup rate, booking rate, transfer accuracy, average call length, cost per booked job, and manual-entry hours saved.",
       },
     ],
   },
@@ -179,15 +231,18 @@ const page = {
     cards: [
       {
         title: "Map call types and scripts",
-        description: "Audit calls, answering-service scripts, booking rules, service areas, emergency definitions, and FAQs the receptionist should handle.",
+        description:
+          "Audit calls, answering-service scripts, booking rules, service areas, emergency definitions, and FAQs the receptionist should handle.",
       },
       {
         title: "Connect booking and handoffs",
-        description: "Configure phone numbers, transfer rules, calendars, CRM or field-service notes, notifications, recordings, and fallback paths.",
+        description:
+          "Configure phone numbers, transfer rules, calendars, CRM or field-service notes, notifications, recordings, and fallback paths.",
       },
       {
         title: "Review calls and tune weekly",
-        description: "Use transcripts and outcomes to improve questions, escalation, empathy, booking accuracy, and cost per captured opportunity.",
+        description:
+          "Use transcripts and outcomes to improve questions, escalation, empathy, booking accuracy, and cost per captured opportunity.",
       },
     ],
   },

@@ -113,9 +113,7 @@ function ingest(csvPath: string): SnapshotRow[] {
   const lastSeenIdx = headers.findIndex((h) => /last seen|first seen|date/i.test(h));
 
   if (domainIdx === -1) {
-    throw new Error(
-      `Could not find a domain column. Headers were: ${headers.join(", ")}`,
-    );
+    throw new Error(`Could not find a domain column. Headers were: ${headers.join(", ")}`);
   }
 
   const today = new Date().toISOString().slice(0, 10);
@@ -162,14 +160,7 @@ function writeSnapshot(rows: SnapshotRow[]): { dated: string; latest: string } {
   const lines = [
     SNAPSHOT_HEADER.join(","),
     ...rows.map((r) =>
-      [
-        r.domain,
-        r.last_seen,
-        String(r.referring_urls),
-        r.dr_estimate,
-        r.dofollow_pct,
-        r.source,
-      ]
+      [r.domain, r.last_seen, String(r.referring_urls), r.dr_estimate, r.dofollow_pct, r.source]
         .map(csvEscape)
         .join(","),
     ),

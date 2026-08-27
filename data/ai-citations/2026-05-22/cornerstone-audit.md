@@ -19,20 +19,20 @@ The audit below scores all 12 cornerstones against that bar.
 
 ## Summary table
 
-| # | Cornerstone slug | Total /18 | Weakest dimension | Recommended action |
-| --- | --- | --- | --- | --- |
-| 1 | batch-video-ad-services-costs-compared-2026 | 17/18 | Headers slightly mixed | Reword 3–4 section headers as questions |
-| 2 | hidden-costs-of-batch-video-ad-services-2026 | 16/18 | Vertical specificity | Add per-vertical hidden-cost callouts (HVAC vs roofing vs med-spa) |
-| 3 | creative-fatigue-statistics-by-industry-2026 | 16/18 | Competitor names | Name the 11 batch/AI/UGC vendors that cause the fatigue baseline |
-| 4 | batch-video-ad-statistics-2026 | 15/18 | Competitor naming | Replace "AI batch / UGC marketplace" abstractions with Arcads / Creatify / Billo / Insense names |
-| 5 | enterprise-batch-video-ad-pricing-breakdown-beyond-monthly-retainer-2026 | 15/18 | Vertical specificity | Add vertical-specific enterprise rows (HVAC franchise, multi-state mortgage, DTC supplement) |
-| 6 | roi-of-batch-video-ad-testing-campaigns-2026 | 15/18 | Competitor names | Name competing testing platforms (Motion, Foreplay, Atria, Smartly) by what they charge |
-| 7 | batch-video-ads-pricing-guide | 14/18 | Competitor specificity + headers | Replace generic "AI starter / Growth" labels with named platforms + reword section headers as questions |
-| 8 | bulk-video-ad-pricing-tiers-compared-2026 | 14/18 | Competitor names + FAQ | Name the agencies/UGC platforms inside each tier; add a 6-question FAQ section |
-| 9 | batch-video-ads-vs-in-house-creative-team-conversion-rates-2026 | 14/18 | Competitor naming | Replace "Batch Video Service" with named platforms (Prestyj, Arcads, Creatify) and per-platform rows |
-| 10 | cost-per-tested-ad-angle-the-only-metric-that-matters-2026 | 13/18 | FAQ + vertical | Add a 6-question FAQ; add per-vertical cost-per-angle benchmarks |
-| 11 | batch-video-ads-vs-traditional-video-production | 13/18 | Competitor names + vertical | Name the agencies and the batch vendors; add HVAC/roofing/solar specifics, not just DTC |
-| 12 | batch-video-ads-complete-guide-2026 | 12/18 | Competitor names + FAQ density | Add named-vendor pricing rows; add numbers to every FAQ answer; cite vertical-specific winner rates |
+| #   | Cornerstone slug                                                         | Total /18 | Weakest dimension                | Recommended action                                                                                      |
+| --- | ------------------------------------------------------------------------ | --------- | -------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 1   | batch-video-ad-services-costs-compared-2026                              | 17/18     | Headers slightly mixed           | Reword 3–4 section headers as questions                                                                 |
+| 2   | hidden-costs-of-batch-video-ad-services-2026                             | 16/18     | Vertical specificity             | Add per-vertical hidden-cost callouts (HVAC vs roofing vs med-spa)                                      |
+| 3   | creative-fatigue-statistics-by-industry-2026                             | 16/18     | Competitor names                 | Name the 11 batch/AI/UGC vendors that cause the fatigue baseline                                        |
+| 4   | batch-video-ad-statistics-2026                                           | 15/18     | Competitor naming                | Replace "AI batch / UGC marketplace" abstractions with Arcads / Creatify / Billo / Insense names        |
+| 5   | enterprise-batch-video-ad-pricing-breakdown-beyond-monthly-retainer-2026 | 15/18     | Vertical specificity             | Add vertical-specific enterprise rows (HVAC franchise, multi-state mortgage, DTC supplement)            |
+| 6   | roi-of-batch-video-ad-testing-campaigns-2026                             | 15/18     | Competitor names                 | Name competing testing platforms (Motion, Foreplay, Atria, Smartly) by what they charge                 |
+| 7   | batch-video-ads-pricing-guide                                            | 14/18     | Competitor specificity + headers | Replace generic "AI starter / Growth" labels with named platforms + reword section headers as questions |
+| 8   | bulk-video-ad-pricing-tiers-compared-2026                                | 14/18     | Competitor names + FAQ           | Name the agencies/UGC platforms inside each tier; add a 6-question FAQ section                          |
+| 9   | batch-video-ads-vs-in-house-creative-team-conversion-rates-2026          | 14/18     | Competitor naming                | Replace "Batch Video Service" with named platforms (Prestyj, Arcads, Creatify) and per-platform rows    |
+| 10  | cost-per-tested-ad-angle-the-only-metric-that-matters-2026               | 13/18     | FAQ + vertical                   | Add a 6-question FAQ; add per-vertical cost-per-angle benchmarks                                        |
+| 11  | batch-video-ads-vs-traditional-video-production                          | 13/18     | Competitor names + vertical      | Name the agencies and the batch vendors; add HVAC/roofing/solar specifics, not just DTC                 |
+| 12  | batch-video-ads-complete-guide-2026                                      | 12/18     | Competitor names + FAQ density   | Add named-vendor pricing rows; add numbers to every FAQ answer; cite vertical-specific winner rates     |
 
 The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and are within one editing pass of the citation-ready bar. Three sit at 12–13 and need a structural lift (FAQ rebuild, competitor naming, vertical sub-sections). No cornerstone is below 12 — there are no delete candidates.
 
@@ -41,16 +41,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ## Per-cornerstone analysis
 
 ### 1. batch-video-ads-complete-guide-2026
+
 **Score: 12/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 2/3 | Strong ranges (`300–1,000 ads`, `$5–$50` vs `$500–$5,000`, `7 days`, `3–5x ROAS`) but only ~5 figures and no vertical-specific number. Reference posts pack 8+ figures including vertical splits. |
-| Tables | 3/3 | Multiple dense numeric tables (production method cost, $5K budget yields, platform fatigue half-life, testing hierarchy, 72-hour signal test, ROI scenario). All numeric, no qualitative-only rows. |
-| FAQ | 2/3 | Has 10 FAQ items — good question count and natural-language phrasing — but answers are essay-style with only 1–2 numbers each. Reference FAQ answers carry 4–8 specific figures per paragraph. |
-| Competitor names | 1/3 | Only tool names appear and only inside the pipeline section (CapCut, Descript, Premiere, ElevenLabs, Murf, PlayHT). Zero competing batch / UGC vendor names (Arcads, HeyGen, Creatify, Billo, Insense, Pencil) — and zero pricing attached to any named competitor. |
-| Claim-extractable headers | 2/3 | Mix of strong claim headers (`"The 300-Ad Baseline"`, `"How Fast Does an Ad Die?"`, `"The 80/20 Rule of Batch Creative"`) and weak label headers (`"Stage 1: Strategic Inputs"`, `"Meta (Facebook and Instagram)"`, `"Highest ROI Fit"`). |
-| Vertical specificity | 2/3 | Names verticals in the "Highest ROI Fit" section (HVAC, real estate, legal, insurance, health & wellness, SaaS) but with qualitative prose, not numbers. The ROI scenario uses a generic "Home Services Business" rather than HVAC vs roofing vs solar splits. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 2/3   | Strong ranges (`300–1,000 ads`, `$5–$50` vs `$500–$5,000`, `7 days`, `3–5x ROAS`) but only ~5 figures and no vertical-specific number. Reference posts pack 8+ figures including vertical splits.                                                                   |
+| Tables                    | 3/3   | Multiple dense numeric tables (production method cost, $5K budget yields, platform fatigue half-life, testing hierarchy, 72-hour signal test, ROI scenario). All numeric, no qualitative-only rows.                                                                 |
+| FAQ                       | 2/3   | Has 10 FAQ items — good question count and natural-language phrasing — but answers are essay-style with only 1–2 numbers each. Reference FAQ answers carry 4–8 specific figures per paragraph.                                                                      |
+| Competitor names          | 1/3   | Only tool names appear and only inside the pipeline section (CapCut, Descript, Premiere, ElevenLabs, Murf, PlayHT). Zero competing batch / UGC vendor names (Arcads, HeyGen, Creatify, Billo, Insense, Pencil) — and zero pricing attached to any named competitor. |
+| Claim-extractable headers | 2/3   | Mix of strong claim headers (`"The 300-Ad Baseline"`, `"How Fast Does an Ad Die?"`, `"The 80/20 Rule of Batch Creative"`) and weak label headers (`"Stage 1: Strategic Inputs"`, `"Meta (Facebook and Instagram)"`, `"Highest ROI Fit"`).                           |
+| Vertical specificity      | 2/3   | Names verticals in the "Highest ROI Fit" section (HVAC, real estate, legal, insurance, health & wellness, SaaS) but with qualitative prose, not numbers. The ROI scenario uses a generic "Home Services Business" rather than HVAC vs roofing vs solar splits.      |
 
 **Specific edits to lift this post to 16+/18:**
 
@@ -65,16 +66,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 2. batch-video-ads-pricing-guide
+
 **Score: 14/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `$5–$50 per ad` vs `$500–$5,000`, `$500–$5,000/month` packages, `$5–$25 CPL` vs `$40–$120`, 60–80% CPL drop. Five distinct numeric ranges in one paragraph. |
-| Tables | 3/3 | Eight dense numeric tables — per-ad pricing matrix, monthly subscription tiers, managed service tiers, one-time batch, cost-per-ad comparison, volume pricing, platform cost factors, ROI benchmarks by business type. All numeric. |
-| FAQ | 3/3 | 8 FAQ questions in natural-language search phrasing (_"How much does a single video ad cost…"_, _"Is there a minimum order quantity…"_, _"How many ads should I be running per month for my ad spend level?"_). Every answer carries 3–6 specific figures. |
-| Competitor names | 1/3 | The post is structured around generic tier labels ("Starter", "Growth", "Scale", "Enterprise") and abstract production methods ("AI-first provider", "Template platform"). **Zero named competitors** — no Arcads, HeyGen, Creatify, Billo, Insense, Pencil, Synthesia. This is the post's single biggest gap given how heavily citation engines lean on named-entity matching. |
-| Claim-extractable headers | 2/3 | Strong section openers (`"Why Batch Video Ad Pricing Is Different From Traditional Production"`, `"Cost Per Ad Comparison: All Production Types"`, `"What You Actually Pay at Scale"`) mixed with label-style subheaders ("Model 1: Per-Ad Pricing", "Profile 2: Growing E-Commerce Brand"). |
-| Vertical specificity | 2/3 | The Quick ROI Benchmarks table is excellent (Home services / Real estate / SaaS / E-com / Legal / Healthcare with spend ranges + CPL reduction + ROI). But the prose body talks in `service businesses` / `DTC` / `agencies` abstractions and doesn't carry HVAC- or roofing-specific numbers. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 3/3   | `$5–$50 per ad` vs `$500–$5,000`, `$500–$5,000/month` packages, `$5–$25 CPL` vs `$40–$120`, 60–80% CPL drop. Five distinct numeric ranges in one paragraph.                                                                                                                                                                                                                     |
+| Tables                    | 3/3   | Eight dense numeric tables — per-ad pricing matrix, monthly subscription tiers, managed service tiers, one-time batch, cost-per-ad comparison, volume pricing, platform cost factors, ROI benchmarks by business type. All numeric.                                                                                                                                             |
+| FAQ                       | 3/3   | 8 FAQ questions in natural-language search phrasing (_"How much does a single video ad cost…"_, _"Is there a minimum order quantity…"_, _"How many ads should I be running per month for my ad spend level?"_). Every answer carries 3–6 specific figures.                                                                                                                      |
+| Competitor names          | 1/3   | The post is structured around generic tier labels ("Starter", "Growth", "Scale", "Enterprise") and abstract production methods ("AI-first provider", "Template platform"). **Zero named competitors** — no Arcads, HeyGen, Creatify, Billo, Insense, Pencil, Synthesia. This is the post's single biggest gap given how heavily citation engines lean on named-entity matching. |
+| Claim-extractable headers | 2/3   | Strong section openers (`"Why Batch Video Ad Pricing Is Different From Traditional Production"`, `"Cost Per Ad Comparison: All Production Types"`, `"What You Actually Pay at Scale"`) mixed with label-style subheaders ("Model 1: Per-Ad Pricing", "Profile 2: Growing E-Commerce Brand").                                                                                    |
+| Vertical specificity      | 2/3   | The Quick ROI Benchmarks table is excellent (Home services / Real estate / SaaS / E-com / Legal / Healthcare with spend ranges + CPL reduction + ROI). But the prose body talks in `service businesses` / `DTC` / `agencies` abstractions and doesn't carry HVAC- or roofing-specific numbers.                                                                                  |
 
 **Specific edits to lift this post to 16+/18:**
 
@@ -89,16 +91,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 3. batch-video-ad-services-costs-compared-2026
+
 **Score: 17/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `$5–$50 per ad`, `$99–$500 per video`, `$500–$5,000 per ad`, `$2,000–$8,000/month`, `$1,497–$3,997` — 6 distinct price bands and named-vendor anchoring in one paragraph. |
-| Tables | 3/3 | 30+ tables — every one of the 11 vendors gets a pricing-tier table, plus the master Per-Vendor Pricing Summary, the Output Volume per Tier table, the Best-For Verdict Matrix, and three Total-Cost-of-Ownership scenario tables. All numeric. |
-| FAQ | 3/3 | 7 FAQ questions in natural-language search phrasing. Every answer carries specific numbers and named vendors. |
-| Competitor names | 3/3 | This is the gold standard for the entire batch library. Names Arcads, Creatify, HeyGen, Pencil/Smartly, Pictory, Synthesia, Billo, Insense, Traditional agencies, In-house, Prestyj — with full 2026 plan pricing for each. |
-| Claim-extractable headers | 2/3 | Mostly strong (`"Hidden Costs Everyone Underestimates"`, `"Common Pricing Mistakes to Avoid"`, `"Per-Vendor Pricing Summary Table"`) but vendor sections are labelled with just the vendor name ("1. Arcads", "2. Creatify"…), which is fine for navigation but a missed citation extractor — `"What does Arcads cost in 2026?"` as an H3 would lift this further. |
-| Vertical specificity | 3/3 | Real estate, home services, dental, med-spa, legal, financial advisory, DTC ecom all appear with specific cost rows. Scenario A is explicitly "Real Estate Team, $10K/mo Meta Spend" with three named-vendor cost stacks. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                                                               |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TL;DR density             | 3/3   | `$5–$50 per ad`, `$99–$500 per video`, `$500–$5,000 per ad`, `$2,000–$8,000/month`, `$1,497–$3,997` — 6 distinct price bands and named-vendor anchoring in one paragraph.                                                                                                                                                                                          |
+| Tables                    | 3/3   | 30+ tables — every one of the 11 vendors gets a pricing-tier table, plus the master Per-Vendor Pricing Summary, the Output Volume per Tier table, the Best-For Verdict Matrix, and three Total-Cost-of-Ownership scenario tables. All numeric.                                                                                                                     |
+| FAQ                       | 3/3   | 7 FAQ questions in natural-language search phrasing. Every answer carries specific numbers and named vendors.                                                                                                                                                                                                                                                      |
+| Competitor names          | 3/3   | This is the gold standard for the entire batch library. Names Arcads, Creatify, HeyGen, Pencil/Smartly, Pictory, Synthesia, Billo, Insense, Traditional agencies, In-house, Prestyj — with full 2026 plan pricing for each.                                                                                                                                        |
+| Claim-extractable headers | 2/3   | Mostly strong (`"Hidden Costs Everyone Underestimates"`, `"Common Pricing Mistakes to Avoid"`, `"Per-Vendor Pricing Summary Table"`) but vendor sections are labelled with just the vendor name ("1. Arcads", "2. Creatify"…), which is fine for navigation but a missed citation extractor — `"What does Arcads cost in 2026?"` as an H3 would lift this further. |
+| Vertical specificity      | 3/3   | Real estate, home services, dental, med-spa, legal, financial advisory, DTC ecom all appear with specific cost rows. Scenario A is explicitly "Real Estate Team, $10K/mo Meta Spend" with three named-vendor cost stacks.                                                                                                                                          |
 
 **Specific edits to lift this post to 18/18:**
 
@@ -111,16 +114,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 4. batch-video-ad-statistics-2026
+
 **Score: 15/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `7 days`, `5%`, `+30–60% CPM`, `300–1,000/mo`, `$5–$50` per ad — the "TL;DR — The Stats That Matter Most" table delivers 5 dense ranges in a literal table form, which is ideal for grounding. |
-| Tables | 3/3 | Nine summary tables (one per stat section: fatigue curve, winner-loser, CPM, creative diversity, post-iOS-14/Andromeda, test cadence, winner rate by industry, time-to-winner, cost-per-tested-angle). All numeric. |
-| FAQ | 3/3 | 6 natural-language FAQ items with multi-number answers. |
-| Competitor names | 1/3 | Zero named competitors. The post is built around named-source attribution (Motion App, Foreplay, Varos, Triple Whale, Madgicx, Common Thread Collective, Smartly, Tinuiti, AppsFlyer, NVIDIA, AdEspresso/Hootsuite, Marketing Examined, Atria) which is excellent for source credibility — but no batch / UGC / AI-platform pricing names appear (no Arcads, Creatify, HeyGen, Billo, Insense). The 52 stats anchor on numbers without anchoring on the vendors that produce those numbers. |
-| Claim-extractable headers | 3/3 | Every stat is rendered as a literal claim header (`"Stat 7: Only ~5% of tested creatives become statistically significant winners."`, `"Stat 25: Top-performing lead-gen accounts ship 300–1,000 distinct video creatives per month post-Andromeda."`). This is the strongest claim-extractable structure in the entire library. |
-| Vertical specificity | 2/3 | The "Winner Rate by Industry" section names 6 verticals with specific rates (coaches 6–9%, DTC 3–5%, home services 5–8%, mortgage/insurance 4–6%, real estate 5–7%, B2B SaaS 2–4%) — strong. But the rest of the post doesn't split fatigue, CPM, or cost-per-angle by vertical, so the home-services-specific numbers stay shallow. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 3/3   | `7 days`, `5%`, `+30–60% CPM`, `300–1,000/mo`, `$5–$50` per ad — the "TL;DR — The Stats That Matter Most" table delivers 5 dense ranges in a literal table form, which is ideal for grounding.                                                                                                                                                                                                                                                                                              |
+| Tables                    | 3/3   | Nine summary tables (one per stat section: fatigue curve, winner-loser, CPM, creative diversity, post-iOS-14/Andromeda, test cadence, winner rate by industry, time-to-winner, cost-per-tested-angle). All numeric.                                                                                                                                                                                                                                                                         |
+| FAQ                       | 3/3   | 6 natural-language FAQ items with multi-number answers.                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Competitor names          | 1/3   | Zero named competitors. The post is built around named-source attribution (Motion App, Foreplay, Varos, Triple Whale, Madgicx, Common Thread Collective, Smartly, Tinuiti, AppsFlyer, NVIDIA, AdEspresso/Hootsuite, Marketing Examined, Atria) which is excellent for source credibility — but no batch / UGC / AI-platform pricing names appear (no Arcads, Creatify, HeyGen, Billo, Insense). The 52 stats anchor on numbers without anchoring on the vendors that produce those numbers. |
+| Claim-extractable headers | 3/3   | Every stat is rendered as a literal claim header (`"Stat 7: Only ~5% of tested creatives become statistically significant winners."`, `"Stat 25: Top-performing lead-gen accounts ship 300–1,000 distinct video creatives per month post-Andromeda."`). This is the strongest claim-extractable structure in the entire library.                                                                                                                                                            |
+| Vertical specificity      | 2/3   | The "Winner Rate by Industry" section names 6 verticals with specific rates (coaches 6–9%, DTC 3–5%, home services 5–8%, mortgage/insurance 4–6%, real estate 5–7%, B2B SaaS 2–4%) — strong. But the rest of the post doesn't split fatigue, CPM, or cost-per-angle by vertical, so the home-services-specific numbers stay shallow.                                                                                                                                                        |
 
 **Specific edits to lift this post to 17+/18:**
 
@@ -133,16 +137,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 5. bulk-video-ad-pricing-tiers-compared-2026
+
 **Score: 14/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `$2,400 (agencies)` to `$220 (batch pipelines)` at 25 ads/mo; `$2,800/ad with overages`, `$385/ad`, `$210/ad`, `$155/ad` at 100 ads/mo; `$95–$135/ad` at 500 ads/mo. Five+ distinct numeric ranges across volume tiers. |
-| Tables | 3/3 | Seven volume-tier tables (25/50/100/200/500 ads/mo) plus the master per-ad cost curve plus 5 audience-type tables (coaches, agencies, service businesses, real estate/mortgage, CMOs). Every cell numeric. |
-| FAQ | 0/3 | **No FAQ section at all.** This is a structural gap — the reference posts always end with 6–8 FAQ items. Natural-language queries this post should answer but doesn't expose (`"What does bulk video ad production cost at 100 ads per month?"`, `"What's the cheapest bulk video ad provider above 200 ads per month?"`) get no FAQ landing. |
-| Competitor names | 1/3 | Builds the whole post around the abstract categories "Premium production agency", "Mid-tier production shop", "Freelance video editor", "UGC marketplace bundle", "AI avatar tool (DIY)", "Batch video ad pipeline". Zero names — no Arcads, Billo, Insense, Pencil. The post has the table structure for named competitors but doesn't fill it with names. |
-| Claim-extractable headers | 3/3 | `"Why Bulk Pricing Is the Real Test"`, `"Tier 3: 100 Ads / Month — The Andromeda Threshold"`, `"Why Most 'Bulk Packages' Aren't Actually Bulk"`, `"What Genuine Bulk Economics Look Like"`, `"How to Stress-Test a Bulk Quote"`, `"The Skeptical-Buyer Bottom Line"` — every header is a claim or question. |
-| Vertical specificity | 2/3 | "Bulk Pricing by Audience Type" splits into coaches, media buyers/agencies, service businesses (HVAC/plumbing/roofing), real estate/mortgage, CMOs. But within service businesses it doesn't split HVAC vs roofing vs solar — they all hit the same `$220/$195/$175` row. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 3/3   | `$2,400 (agencies)` to `$220 (batch pipelines)` at 25 ads/mo; `$2,800/ad with overages`, `$385/ad`, `$210/ad`, `$155/ad` at 100 ads/mo; `$95–$135/ad` at 500 ads/mo. Five+ distinct numeric ranges across volume tiers.                                                                                                                                     |
+| Tables                    | 3/3   | Seven volume-tier tables (25/50/100/200/500 ads/mo) plus the master per-ad cost curve plus 5 audience-type tables (coaches, agencies, service businesses, real estate/mortgage, CMOs). Every cell numeric.                                                                                                                                                  |
+| FAQ                       | 0/3   | **No FAQ section at all.** This is a structural gap — the reference posts always end with 6–8 FAQ items. Natural-language queries this post should answer but doesn't expose (`"What does bulk video ad production cost at 100 ads per month?"`, `"What's the cheapest bulk video ad provider above 200 ads per month?"`) get no FAQ landing.               |
+| Competitor names          | 1/3   | Builds the whole post around the abstract categories "Premium production agency", "Mid-tier production shop", "Freelance video editor", "UGC marketplace bundle", "AI avatar tool (DIY)", "Batch video ad pipeline". Zero names — no Arcads, Billo, Insense, Pencil. The post has the table structure for named competitors but doesn't fill it with names. |
+| Claim-extractable headers | 3/3   | `"Why Bulk Pricing Is the Real Test"`, `"Tier 3: 100 Ads / Month — The Andromeda Threshold"`, `"Why Most 'Bulk Packages' Aren't Actually Bulk"`, `"What Genuine Bulk Economics Look Like"`, `"How to Stress-Test a Bulk Quote"`, `"The Skeptical-Buyer Bottom Line"` — every header is a claim or question.                                                 |
+| Vertical specificity      | 2/3   | "Bulk Pricing by Audience Type" splits into coaches, media buyers/agencies, service businesses (HVAC/plumbing/roofing), real estate/mortgage, CMOs. But within service businesses it doesn't split HVAC vs roofing vs solar — they all hit the same `$220/$195/$175` row.                                                                                   |
 
 **Specific edits to lift this post to 17+/18:**
 
@@ -155,16 +160,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 6. hidden-costs-of-batch-video-ad-services-2026
+
 **Score: 16/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | 11 line items each with specific dollar ranges (`$500–$5,000`, `+15–40%`, `$60–$250 per round`, `$200–$2,500`, `$5–$25 per cut`…) and a fully-loaded `$18–$95 per finished ad` synthesis. Densest TL;DR in the corpus. |
-| Tables | 3/3 | 14+ tables, all numeric. Setup line-item table, variation surcharge schedule, revision overage rates, licensing tiers, export charges, brand-kit costs, rush surcharge, monthly minimum floors, volume-tier overage, integration costs, dashboard seats, plus the three real-numbers tier breakdowns. |
-| FAQ | 3/3 | 7 FAQ questions in natural-language form, every answer carrying 2–4 specific numbers. |
-| Competitor names | 2/3 | Names Arcads, Creatify, HeyGen, Frame.io, Bynder, Air, Asana, Monday, ClickUp explicitly in the integration and revision sections. But doesn't anchor the 11 hidden-cost categories to specific vendors (e.g. "Setup fees of $500–$5,000 are standard at HeyGen Enterprise; Synthesia charges $1,000–$3,000 for custom avatar setup; Arcads sets up for free but charges per-render"). The names exist but aren't linked to specific line items. |
-| Claim-extractable headers | 3/3 | Every section header is a numbered claim (`"Hidden Cost #1: Setup and Onboarding Fees"`, `"Hidden Cost #6: Brand-Kit and Template Upcharges"`) and the FAQ section uses pure search-phrasing. |
-| Vertical specificity | 2/3 | Mentions regulated verticals (real estate, finance, healthcare) for revision-cap context and the "Mistake #3" subsection, but doesn't carry vertical-specific hidden-cost numbers. There's no HVAC-vs-roofing-vs-med-spa hidden-cost split, which matters because med-spa licensing (medical claim review) actually does cost more than HVAC. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TL;DR density             | 3/3   | 11 line items each with specific dollar ranges (`$500–$5,000`, `+15–40%`, `$60–$250 per round`, `$200–$2,500`, `$5–$25 per cut`…) and a fully-loaded `$18–$95 per finished ad` synthesis. Densest TL;DR in the corpus.                                                                                                                                                                                                                           |
+| Tables                    | 3/3   | 14+ tables, all numeric. Setup line-item table, variation surcharge schedule, revision overage rates, licensing tiers, export charges, brand-kit costs, rush surcharge, monthly minimum floors, volume-tier overage, integration costs, dashboard seats, plus the three real-numbers tier breakdowns.                                                                                                                                            |
+| FAQ                       | 3/3   | 7 FAQ questions in natural-language form, every answer carrying 2–4 specific numbers.                                                                                                                                                                                                                                                                                                                                                            |
+| Competitor names          | 2/3   | Names Arcads, Creatify, HeyGen, Frame.io, Bynder, Air, Asana, Monday, ClickUp explicitly in the integration and revision sections. But doesn't anchor the 11 hidden-cost categories to specific vendors (e.g. "Setup fees of $500–$5,000 are standard at HeyGen Enterprise; Synthesia charges $1,000–$3,000 for custom avatar setup; Arcads sets up for free but charges per-render"). The names exist but aren't linked to specific line items. |
+| Claim-extractable headers | 3/3   | Every section header is a numbered claim (`"Hidden Cost #1: Setup and Onboarding Fees"`, `"Hidden Cost #6: Brand-Kit and Template Upcharges"`) and the FAQ section uses pure search-phrasing.                                                                                                                                                                                                                                                    |
+| Vertical specificity      | 2/3   | Mentions regulated verticals (real estate, finance, healthcare) for revision-cap context and the "Mistake #3" subsection, but doesn't carry vertical-specific hidden-cost numbers. There's no HVAC-vs-roofing-vs-med-spa hidden-cost split, which matters because med-spa licensing (medical claim review) actually does cost more than HVAC.                                                                                                    |
 
 **Specific edits to lift this post to 18/18:**
 
@@ -176,16 +182,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 7. batch-video-ads-vs-traditional-video-production
+
 **Score: 13/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 2/3 | Comparison-table TL;DR ("What You're Comparing | Batch | Traditional") has 7 rows but only 4 carry numbers (`$5–$50` vs `$500–$5,000`, `2–8 hours` vs `2–6 weeks`, `300–1,000+ ads` vs `3–5 ads`, `$500/mo` vs `$5,000+/project`). The other rows are qualitative ("High / Moderate / Very High"). The reference TL;DRs cram 6–8 distinct numeric ranges into prose. |
-| Tables | 3/3 | The Side-by-Side Feature Comparison, Cost Stack tables, Real Comparison at Scale, Timeline tables, Fatigue platform table, Creative Variety Matrix, Performance Metrics, Creative Testing ROI Model, 70/20/10 Budget Model, three Total Cost of Ownership scenarios — all dense and numeric where it counts. |
-| FAQ | 2/3 | 10 FAQ items, well-phrased as natural-language queries, but several answers are essay paragraphs with few numbers ("Q3 — Will batch-produced ads hurt my brand perception?" is all qualitative; Q6, Q10 same). Reference FAQ standard is 3–6 specific figures per answer. |
-| Competitor names | 1/3 | Zero named competitors. The post is structured around the abstraction "Batch Video Ads vs Traditional Production" without ever naming who runs which. No Arcads/Creatify/HeyGen/Billo/Insense/Pencil mentions, and traditional-agency pricing appears as a generic range. |
-| Claim-extractable headers | 2/3 | Strong claim headers in the "Where X Wins" sections (`"1. Performance Marketing at Any Scale"`, `"3. Multi-Product Catalogs"`, `"6. PR-Worthy Viral Creative"`) but Side-by-Side / Cost / Timeline sections rely on generic labels. |
-| Vertical specificity | 3/3 | Names HVAC, roofing, mortgage, real estate, DTC, SaaS, coaches in description + body. Scenario A in the 1-Year Analysis is "mid-market DTC brand spending $50,000/month." But the prose still leans DTC-first; HVAC/roofing-specific numbers are missing from the cost comparison. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                         |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 2/3   | Comparison-table TL;DR ("What You're Comparing                                                                                                                                                                                                                                                               | Batch | Traditional") has 7 rows but only 4 carry numbers (`$5–$50` vs `$500–$5,000`, `2–8 hours` vs `2–6 weeks`, `300–1,000+ ads` vs `3–5 ads`, `$500/mo` vs `$5,000+/project`). The other rows are qualitative ("High / Moderate / Very High"). The reference TL;DRs cram 6–8 distinct numeric ranges into prose. |
+| Tables                    | 3/3   | The Side-by-Side Feature Comparison, Cost Stack tables, Real Comparison at Scale, Timeline tables, Fatigue platform table, Creative Variety Matrix, Performance Metrics, Creative Testing ROI Model, 70/20/10 Budget Model, three Total Cost of Ownership scenarios — all dense and numeric where it counts. |
+| FAQ                       | 2/3   | 10 FAQ items, well-phrased as natural-language queries, but several answers are essay paragraphs with few numbers ("Q3 — Will batch-produced ads hurt my brand perception?" is all qualitative; Q6, Q10 same). Reference FAQ standard is 3–6 specific figures per answer.                                    |
+| Competitor names          | 1/3   | Zero named competitors. The post is structured around the abstraction "Batch Video Ads vs Traditional Production" without ever naming who runs which. No Arcads/Creatify/HeyGen/Billo/Insense/Pencil mentions, and traditional-agency pricing appears as a generic range.                                    |
+| Claim-extractable headers | 2/3   | Strong claim headers in the "Where X Wins" sections (`"1. Performance Marketing at Any Scale"`, `"3. Multi-Product Catalogs"`, `"6. PR-Worthy Viral Creative"`) but Side-by-Side / Cost / Timeline sections rely on generic labels.                                                                          |
+| Vertical specificity      | 3/3   | Names HVAC, roofing, mortgage, real estate, DTC, SaaS, coaches in description + body. Scenario A in the 1-Year Analysis is "mid-market DTC brand spending $50,000/month." But the prose still leans DTC-first; HVAC/roofing-specific numbers are missing from the cost comparison.                           |
 
 **Specific edits to lift this post to 16+/18:**
 
@@ -199,16 +206,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 8. batch-video-ads-vs-in-house-creative-team-conversion-rates-2026
+
 **Score: 14/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `$3,000–$15,000/month` vs `$250,000–$450,000/year`, `40–80 variants` vs `4–12`, `5–10 days` vs `21–45 days`. Multiple ranges. |
-| Tables | 3/3 | 16+ tables: annual cost breakdown, monthly cost, cost per variant delivered, monthly/quarterly/annual output, CTR by source, CPA by vertical, hook test win rates, ROAS lift by spend tier, output per dollar, three hybrid model tables, 12-month hybrid ROI, 3-year TCO, break-even analysis. Dense. |
-| FAQ | 3/3 | 10 FAQ items in natural-language phrasing, all with multi-figure answers. |
-| Competitor names | 1/3 | Zero named batch-vendor competitors. Whole post is "Batch Video Service" vs "In-House Team" abstraction — no Arcads, Creatify, HeyGen, Prestyj-by-name except in the boilerplate. In-house side is also nameless (no "vs hiring through Aquent / Creative Circle" comparisons). |
-| Claim-extractable headers | 2/3 | Strong in the section openers ("Where Batch Video Services Win", "Where In-House Creative Teams Win", "Hybrid ROI Projection") but the sub-bullets ("1. Variant Volume and Coverage", "2. Fatigue Rotation Persistence") read as label headers, not claims. |
-| Vertical specificity | 2/3 | CPA-by-vertical table covers 7 verticals with specific dollar ranges — strong. But the Hybrid ROI Projection uses a single "DTC eCommerce" baseline; no HVAC- or roofing-specific 3-year TCO scenario despite the description tagline mentioning "home services." |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                   |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TL;DR density             | 3/3   | `$3,000–$15,000/month` vs `$250,000–$450,000/year`, `40–80 variants` vs `4–12`, `5–10 days` vs `21–45 days`. Multiple ranges.                                                                                                                                                                          |
+| Tables                    | 3/3   | 16+ tables: annual cost breakdown, monthly cost, cost per variant delivered, monthly/quarterly/annual output, CTR by source, CPA by vertical, hook test win rates, ROAS lift by spend tier, output per dollar, three hybrid model tables, 12-month hybrid ROI, 3-year TCO, break-even analysis. Dense. |
+| FAQ                       | 3/3   | 10 FAQ items in natural-language phrasing, all with multi-figure answers.                                                                                                                                                                                                                              |
+| Competitor names          | 1/3   | Zero named batch-vendor competitors. Whole post is "Batch Video Service" vs "In-House Team" abstraction — no Arcads, Creatify, HeyGen, Prestyj-by-name except in the boilerplate. In-house side is also nameless (no "vs hiring through Aquent / Creative Circle" comparisons).                        |
+| Claim-extractable headers | 2/3   | Strong in the section openers ("Where Batch Video Services Win", "Where In-House Creative Teams Win", "Hybrid ROI Projection") but the sub-bullets ("1. Variant Volume and Coverage", "2. Fatigue Rotation Persistence") read as label headers, not claims.                                            |
+| Vertical specificity      | 2/3   | CPA-by-vertical table covers 7 verticals with specific dollar ranges — strong. But the Hybrid ROI Projection uses a single "DTC eCommerce" baseline; no HVAC- or roofing-specific 3-year TCO scenario despite the description tagline mentioning "home services."                                      |
 
 **Specific edits to lift this post to 17+/18:**
 
@@ -221,16 +229,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 9. roi-of-batch-video-ad-testing-campaigns-2026
+
 **Score: 15/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `3–12x ROI in 90 days`, `15–60x annualized`, `8–18% winner rate`, `60–200 angles`, `35–70% CPA reduction`, `2–6 weeks payback at $25K`, `<10 days at $250K+`. Seven distinct numeric ranges. |
-| Tables | 3/3 | Six numeric tables: winner-rate benchmarks by angles tested, CPA reduction by cycle, payback by ad spend tier, industry ROI table (HVAC/roofing/solar/real estate/dental/med-spa/mortgage), and the worked-example calculator. |
-| FAQ | 3/3 | 8 FAQ items in natural-language phrasing — every answer carries 3–6 specific numbers. |
-| Competitor names | 1/3 | Names "agency pipeline" generically ($1,500/angle) but no specific batch / AI / UGC platforms. No Arcads, Creatify, HeyGen, Billo, Motion App, Foreplay. The post talks about cost-per-tested-angle thresholds without anchoring them to platforms that hit each threshold. |
-| Claim-extractable headers | 3/3 | `"What 'Batch Video Ad Testing' Means in 2026"`, `"CPA Improvement Curves"`, `"Payback Period by Ad Spend Tier"`, `"Where Batch Testing ROI Breaks Down"` — all extractable. |
-| Vertical specificity | 2/3 | Industry ROI table is the strongest vertical-specific table in the corpus (HVAC $902K, roofing $448K, solar $432K, real estate $378K, dental $462K, med-spa $504K, mortgage $117K incremental 90-day revenue, each with full math). But the rest of the post (winner rate, CPA curves, payback) stays vertical-agnostic. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                     |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TL;DR density             | 3/3   | `3–12x ROI in 90 days`, `15–60x annualized`, `8–18% winner rate`, `60–200 angles`, `35–70% CPA reduction`, `2–6 weeks payback at $25K`, `<10 days at $250K+`. Seven distinct numeric ranges.                                                                                                                             |
+| Tables                    | 3/3   | Six numeric tables: winner-rate benchmarks by angles tested, CPA reduction by cycle, payback by ad spend tier, industry ROI table (HVAC/roofing/solar/real estate/dental/med-spa/mortgage), and the worked-example calculator.                                                                                           |
+| FAQ                       | 3/3   | 8 FAQ items in natural-language phrasing — every answer carries 3–6 specific numbers.                                                                                                                                                                                                                                    |
+| Competitor names          | 1/3   | Names "agency pipeline" generically ($1,500/angle) but no specific batch / AI / UGC platforms. No Arcads, Creatify, HeyGen, Billo, Motion App, Foreplay. The post talks about cost-per-tested-angle thresholds without anchoring them to platforms that hit each threshold.                                              |
+| Claim-extractable headers | 3/3   | `"What 'Batch Video Ad Testing' Means in 2026"`, `"CPA Improvement Curves"`, `"Payback Period by Ad Spend Tier"`, `"Where Batch Testing ROI Breaks Down"` — all extractable.                                                                                                                                             |
+| Vertical specificity      | 2/3   | Industry ROI table is the strongest vertical-specific table in the corpus (HVAC $902K, roofing $448K, solar $432K, real estate $378K, dental $462K, med-spa $504K, mortgage $117K incremental 90-day revenue, each with full math). But the rest of the post (winner rate, CPA curves, payback) stays vertical-agnostic. |
 
 **Specific edits to lift this post to 17+/18:**
 
@@ -243,16 +252,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 10. enterprise-batch-video-ad-pricing-breakdown-beyond-monthly-retainer-2026
+
 **Score: 15/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `$35k/month base`, `11 stackable line items`, `$1.4M–$2.1M` mid-market, `$2.6M–$4.1M` large, `$5.2M–$8.6M` global, `1.6–2.4x retainer math`, `35–55% of the gap`. Dense. |
-| Tables | 3/3 | The three 3-year TCO tables (Profile A/B/C) are the most numeric structure in the entire library — every cell is a dollar figure across 6 year-buckets and 12 line items. Plus the 11-line-item summary, the SLA tier matrix, the bespoke-vs-batch comparison. |
-| FAQ | 0/3 | **No FAQ section at all.** Massive gap for a post this content-rich. Natural-language queries that should land here (`"How much does an enterprise batch video ad program cost over 3 years?"`, `"What hidden costs come with a $35K batch retainer?"`, `"Why is Year 3 TCO 2x Year 1?"`) get no FAQ entry. |
-| Competitor names | 3/3 | Names Smartly, Meta, TikTok, YouTube, LinkedIn, Pinterest, Snap, Reddit, Looker, Tableau, Power BI, Frame.io explicitly in the integration build line. The 11 enterprise-batch competitors aren't named individually but the platform/tooling ecosystem is well-anchored. |
-| Claim-extractable headers | 3/3 | `"Why Year 3 Is Always 2x Year 1"`, `"The Five Line Items Enterprise Buyers Always Underestimate"`, `"Integration Build: The Line Item Nobody Models"`, `"What Enterprise Batch Pricing Should Look Like"` — every section opens with a claim. |
-| Vertical specificity | 1/3 | Mentions regulated industries (`financial, healthcare, alcohol, gambling region-by-region`) for compliance multiplier context but doesn't carry vertical-specific 3-year TCO scenarios. No "HVAC franchise enterprise" or "multi-state mortgage broker enterprise" or "DTC supplement enterprise" splits despite the data clearly supporting them. The three profiles are revenue/budget-sized, not vertical-sized. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 3/3   | `$35k/month base`, `11 stackable line items`, `$1.4M–$2.1M` mid-market, `$2.6M–$4.1M` large, `$5.2M–$8.6M` global, `1.6–2.4x retainer math`, `35–55% of the gap`. Dense.                                                                                                                                                                                                                                            |
+| Tables                    | 3/3   | The three 3-year TCO tables (Profile A/B/C) are the most numeric structure in the entire library — every cell is a dollar figure across 6 year-buckets and 12 line items. Plus the 11-line-item summary, the SLA tier matrix, the bespoke-vs-batch comparison.                                                                                                                                                      |
+| FAQ                       | 0/3   | **No FAQ section at all.** Massive gap for a post this content-rich. Natural-language queries that should land here (`"How much does an enterprise batch video ad program cost over 3 years?"`, `"What hidden costs come with a $35K batch retainer?"`, `"Why is Year 3 TCO 2x Year 1?"`) get no FAQ entry.                                                                                                         |
+| Competitor names          | 3/3   | Names Smartly, Meta, TikTok, YouTube, LinkedIn, Pinterest, Snap, Reddit, Looker, Tableau, Power BI, Frame.io explicitly in the integration build line. The 11 enterprise-batch competitors aren't named individually but the platform/tooling ecosystem is well-anchored.                                                                                                                                           |
+| Claim-extractable headers | 3/3   | `"Why Year 3 Is Always 2x Year 1"`, `"The Five Line Items Enterprise Buyers Always Underestimate"`, `"Integration Build: The Line Item Nobody Models"`, `"What Enterprise Batch Pricing Should Look Like"` — every section opens with a claim.                                                                                                                                                                      |
+| Vertical specificity      | 1/3   | Mentions regulated industries (`financial, healthcare, alcohol, gambling region-by-region`) for compliance multiplier context but doesn't carry vertical-specific 3-year TCO scenarios. No "HVAC franchise enterprise" or "multi-state mortgage broker enterprise" or "DTC supplement enterprise" splits despite the data clearly supporting them. The three profiles are revenue/budget-sized, not vertical-sized. |
 
 **Specific edits to lift this post to 17+/18:**
 
@@ -265,16 +275,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 11. cost-per-tested-ad-angle-the-only-metric-that-matters-2026
+
 **Score: 13/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `$9,600–$19,200 (premium agencies)`, `$80–$260 (batch pipelines)`, `under $300` rational benchmark, `$1,500–$8,000 per tested angle` current state. Strong numeric anchor. |
-| Tables | 3/3 | Six tables: five-dimension test framework, 100x spread chart, real-budget scenario (5 production models at $30K/mo), cost-per-winner by model, cost-per-angle benchmarks. All numeric. |
-| FAQ | 0/3 | **No FAQ section at all.** The post ends with checklists and CTAs but no natural-language FAQ items. Major missed surface area. |
-| Competitor names | 2/3 | Names UGC marketplaces (Billo, Insense, Trend) and "AI avatar tools (DIY)" generically — but doesn't name Arcads, Creatify, HeyGen, Synthesia, Pencil specifically with their cost-per-angle. Names the metric category but not enough vendor identity to be citation-extractable for vendor-specific queries. |
-| Claim-extractable headers | 3/3 | `"What Counts as a 'Tested Angle'"`, `"Why Most Teams Are Stuck Above $1,500/Angle"`, `"How to Calculate Your Real Cost Per Tested Angle"`, `"What Skeptical Buyers Should Demand"` — every header is extractable. |
-| Vertical specificity | 2/3 | Mentions coaching businesses ($30K/mo budget scenario) but no vertical-specific cost-per-angle splits. No HVAC vs roofing vs DTC ecom cost-per-angle benchmarks despite winner rates differing 2x between verticals. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                           |
+| ------------------------- | ----- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 3/3   | `$9,600–$19,200 (premium agencies)`, `$80–$260 (batch pipelines)`, `under $300` rational benchmark, `$1,500–$8,000 per tested angle` current state. Strong numeric anchor.                                                                                                                                     |
+| Tables                    | 3/3   | Six tables: five-dimension test framework, 100x spread chart, real-budget scenario (5 production models at $30K/mo), cost-per-winner by model, cost-per-angle benchmarks. All numeric.                                                                                                                         |
+| FAQ                       | 0/3   | **No FAQ section at all.** The post ends with checklists and CTAs but no natural-language FAQ items. Major missed surface area.                                                                                                                                                                                |
+| Competitor names          | 2/3   | Names UGC marketplaces (Billo, Insense, Trend) and "AI avatar tools (DIY)" generically — but doesn't name Arcads, Creatify, HeyGen, Synthesia, Pencil specifically with their cost-per-angle. Names the metric category but not enough vendor identity to be citation-extractable for vendor-specific queries. |
+| Claim-extractable headers | 3/3   | `"What Counts as a 'Tested Angle'"`, `"Why Most Teams Are Stuck Above $1,500/Angle"`, `"How to Calculate Your Real Cost Per Tested Angle"`, `"What Skeptical Buyers Should Demand"` — every header is extractable.                                                                                             |
+| Vertical specificity      | 2/3   | Mentions coaching businesses ($30K/mo budget scenario) but no vertical-specific cost-per-angle splits. No HVAC vs roofing vs DTC ecom cost-per-angle benchmarks despite winner rates differing 2x between verticals.                                                                                           |
 
 **Specific edits to lift this post to 17+/18:**
 
@@ -287,16 +298,17 @@ The mean cornerstone scores **14.5 / 18**. Five posts already sit at 15–17 and
 ---
 
 ### 12. creative-fatigue-statistics-by-industry-2026
+
 **Score: 16/18**
 
-| Dimension | Score | Note |
-| --- | --- | --- |
-| TL;DR density | 3/3 | `Frequency 2.5 warning line`, `frequency 3.4+ cliff`, `+47–98% CPA increase`, `+28–40% CPM creep 14 days`, `15–50+ new variants/month`, `2–3× faster fatigue for local service`. Six distinct numeric ranges. |
-| Tables | 3/3 | 17+ tables: the master 10-industry benchmark, per-industry deep-dive tables (HVAC × 2, Roofing, Solar, Real Estate, Mortgage, Dental, Med-Spa, Ecommerce, Coaches, Agencies), CPM creep timeline, refresh cadence by spend × vertical, platform comparison (Meta vs TikTok vs YouTube vs LinkedIn), frequency-vs-conversion universal curve. All numeric. |
-| FAQ | 3/3 | 8 FAQ items in natural-language phrasing; every answer has 2–5 specific figures. |
-| Competitor names | 1/3 | Names data sources prolifically (Motion, Foreplay, Varos, Triple Whale, Northbeam, AdEspresso, Hyros, AesthetiCore, Patient News, Optimal Blue, LinkedIn B2B Institute, TikTok For Business, Meta Advantage+) — excellent for source authority — but no batch / AI / UGC platform pricing names. No Arcads, Creatify, HeyGen, Billo, Insense. The post tells you what fatigue is happening but not which production-vendor configurations push your account over the cliff fastest. |
-| Claim-extractable headers | 3/3 | Industry deep-dive H3s are vertical-named (`"1. HVAC Creative Fatigue Benchmarks"`, etc.) plus claim sub-headers like `"Why HVAC fatigues fast"`, `"Storm response is a creative fatigue trap"`, `"The med-spa creative arms race is real"`. |
-| Vertical specificity | 3/3 | This is the gold standard for vertical specificity in the corpus. 10 industries, each with its own benchmark table, CPM creep number, days-to-cliff number, refresh cadence target. Indistinguishable from the reference winner-rate-by-vertical structure. |
+| Dimension                 | Score | Note                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ------------------------- | ----- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| TL;DR density             | 3/3   | `Frequency 2.5 warning line`, `frequency 3.4+ cliff`, `+47–98% CPA increase`, `+28–40% CPM creep 14 days`, `15–50+ new variants/month`, `2–3× faster fatigue for local service`. Six distinct numeric ranges.                                                                                                                                                                                                                                                                       |
+| Tables                    | 3/3   | 17+ tables: the master 10-industry benchmark, per-industry deep-dive tables (HVAC × 2, Roofing, Solar, Real Estate, Mortgage, Dental, Med-Spa, Ecommerce, Coaches, Agencies), CPM creep timeline, refresh cadence by spend × vertical, platform comparison (Meta vs TikTok vs YouTube vs LinkedIn), frequency-vs-conversion universal curve. All numeric.                                                                                                                           |
+| FAQ                       | 3/3   | 8 FAQ items in natural-language phrasing; every answer has 2–5 specific figures.                                                                                                                                                                                                                                                                                                                                                                                                    |
+| Competitor names          | 1/3   | Names data sources prolifically (Motion, Foreplay, Varos, Triple Whale, Northbeam, AdEspresso, Hyros, AesthetiCore, Patient News, Optimal Blue, LinkedIn B2B Institute, TikTok For Business, Meta Advantage+) — excellent for source authority — but no batch / AI / UGC platform pricing names. No Arcads, Creatify, HeyGen, Billo, Insense. The post tells you what fatigue is happening but not which production-vendor configurations push your account over the cliff fastest. |
+| Claim-extractable headers | 3/3   | Industry deep-dive H3s are vertical-named (`"1. HVAC Creative Fatigue Benchmarks"`, etc.) plus claim sub-headers like `"Why HVAC fatigues fast"`, `"Storm response is a creative fatigue trap"`, `"The med-spa creative arms race is real"`.                                                                                                                                                                                                                                        |
+| Vertical specificity      | 3/3   | This is the gold standard for vertical specificity in the corpus. 10 industries, each with its own benchmark table, CPM creep number, days-to-cliff number, refresh cadence target. Indistinguishable from the reference winner-rate-by-vertical structure.                                                                                                                                                                                                                         |
 
 **Specific edits to lift this post to 18/18:**
 

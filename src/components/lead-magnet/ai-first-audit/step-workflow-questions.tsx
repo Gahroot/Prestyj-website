@@ -40,7 +40,10 @@ const QUESTION_KEYS: readonly QuestionKey[] = [
   "informationEasyToFind",
 ];
 
-const FOUR_POINT_OPTIONS: Record<keyof ReadinessAnswers, readonly { value: FourPointAnswer; label: string }[]> = {
+const FOUR_POINT_OPTIONS: Record<
+  keyof ReadinessAnswers,
+  readonly { value: FourPointAnswer; label: string }[]
+> = {
   sameSteps: [
     { value: 1, label: "The steps change every time" },
     { value: 2, label: "Some steps repeat" },
@@ -125,7 +128,11 @@ export function StepWorkflowQuestions({
   if (!currentWorkflow) {
     return (
       <section className="border-border bg-card rounded-xl border p-5 sm:p-8">
-        <h2 data-wizard-heading tabIndex={-1} className="font-heading text-2xl font-bold outline-none">
+        <h2
+          data-wizard-heading
+          tabIndex={-1}
+          className="font-heading text-2xl font-bold outline-none"
+        >
           Choose workflows first.
         </h2>
         <Button type="button" variant="outline" className="mt-6" onClick={onBack}>
@@ -259,7 +266,9 @@ export function StepWorkflowQuestions({
       <p className="text-muted-foreground mt-2">{AUDIT_COPY.scoringIntro}</p>
 
       <fieldset className="mt-7">
-        <legend className="font-heading text-lg font-semibold">{QUESTION_LABELS[questionKey]}</legend>
+        <legend className="font-heading text-lg font-semibold">
+          {QUESTION_LABELS[questionKey]}
+        </legend>
         <div className="mt-4 space-y-2">{optionRows}</div>
       </fieldset>
 

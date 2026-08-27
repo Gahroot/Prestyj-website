@@ -65,7 +65,8 @@ const sharedRelatedLinks: OrganicIntentRelatedLink[] = [
   {
     href: "/pricing",
     label: "Prestyj plan pricing",
-    description: "These batch video ads are included in every Prestyj plan — AI agents, ad production, and managed spend from $1,997/mo.",
+    description:
+      "These batch video ads are included in every Prestyj plan — AI agents, ad production, and managed spend from $1,997/mo.",
   },
   {
     href: "/batch-video-ad-roi-calculator",
@@ -80,9 +81,10 @@ const sharedRelatedLinks: OrganicIntentRelatedLink[] = [
   {
     href: "/ad-fatigue-solution",
     label: "Ad fatigue solution",
-    description: "See why fatigue is usually a creative supply problem, not a media buying problem.",
+    description:
+      "See why fatigue is usually a creative supply problem, not a media buying problem.",
   },
-]
+];
 
 export const organicIntentPages = [
   {
@@ -137,17 +139,31 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "How the 100-ad sprint works",
-    processIntro: "You do the only part AI cannot fake well: record a real human reading the scripts. We handle the rest.",
+    processIntro:
+      "You do the only part AI cannot fake well: record a real human reading the scripts. We handle the rest.",
     steps: [
-      { title: "We write the script matrix", body: "Hooks, bodies, objections, and CTAs are mapped around one core customer problem." },
-      { title: "You record once", body: "Read the script selfie-style in one take. Fumbles are fine — we edit around them." },
-      { title: "You launch 100 variations", body: "Upload the finished files and let spend reveal the angles worth scaling." },
+      {
+        title: "We write the script matrix",
+        body: "Hooks, bodies, objections, and CTAs are mapped around one core customer problem.",
+      },
+      {
+        title: "You record once",
+        body: "Read the script selfie-style in one take. Fumbles are fine — we edit around them.",
+      },
+      {
+        title: "You launch 100 variations",
+        body: "Upload the finished files and let spend reveal the angles worth scaling.",
+      },
     ],
     comparisonTitle: "100 video ads vs. the usual first test",
     comparisonRows: [
       { label: "Creative count", oldWay: "3–5 ads", batchWay: "100 variations" },
       { label: "Cost structure", oldWay: "$500–$2,000 per asset", batchWay: "$4.97 per ad" },
-      { label: "Learning", oldWay: "One concept wins by default", batchWay: "Hook families compete" },
+      {
+        label: "Learning",
+        oldWay: "One concept wins by default",
+        batchWay: "Hook families compete",
+      },
       { label: "Speed", oldWay: "Weeks of edits", batchWay: "1–2 business days after footage" },
     ],
     relatedLinks: [
@@ -186,7 +202,12 @@ export const organicIntentPages = [
     title: "300 Video Ads | Minimum Viable Creative Batch",
     description:
       "Get 300 vertical video ad variations from one recording session — the creative engine behind Prestyj AI agents. Test three customer problems, dozens of hooks, and enough creative volume for serious Meta or TikTok testing.",
-    keywords: ["300 video ads", "300 ad creative variations", "minimum viable batch", "paid social creative testing"],
+    keywords: [
+      "300 video ads",
+      "300 ad creative variations",
+      "minimum viable batch",
+      "paid social creative testing",
+    ],
     breadcrumbLabel: "300 Video Ads",
     eyebrow: "300 VIDEO ADS · MINIMUM VIABLE BATCH",
     headline: "300 video ads is where creative testing starts getting real.",
@@ -233,18 +254,32 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "What a 300-ad batch tests",
-    processIntro: "The pack is structured around three distinct reasons your buyer might care right now.",
+    processIntro:
+      "The pack is structured around three distinct reasons your buyer might care right now.",
     steps: [
-      { title: "Problem lane one", body: "The most obvious pain your current ads already mention, expanded into many hooks." },
-      { title: "Problem lane two", body: "The adjacent objection or urgency trigger your account has not tested deeply enough." },
-      { title: "Problem lane three", body: "The status quo, competitor, or hidden-cost angle that reframes the decision." },
+      {
+        title: "Problem lane one",
+        body: "The most obvious pain your current ads already mention, expanded into many hooks.",
+      },
+      {
+        title: "Problem lane two",
+        body: "The adjacent objection or urgency trigger your account has not tested deeply enough.",
+      },
+      {
+        title: "Problem lane three",
+        body: "The status quo, competitor, or hidden-cost angle that reframes the decision.",
+      },
     ],
     comparisonTitle: "300 ads vs. monthly agency creative",
     comparisonRows: [
       { label: "Monthly output", oldWay: "4–10 ads", batchWay: "300 ads" },
       { label: "Problems tested", oldWay: "Usually one", batchWay: "Three" },
       { label: "Delivery", oldWay: "4–8 weeks", batchWay: "1–2 business days after footage" },
-      { label: "Best use", oldWay: "Polished campaign launch", batchWay: "Creative learning sprint" },
+      {
+        label: "Best use",
+        oldWay: "Polished campaign launch",
+        batchWay: "Creative learning sprint",
+      },
     ],
     relatedLinks: [
       ...sharedRelatedLinks,
@@ -282,7 +317,12 @@ export const organicIntentPages = [
     title: "500 Video Ads | Recommended Creative Testing Batch",
     description:
       "Get 500 vertical video ads from one recording session — the creative engine behind Prestyj AI agents. The recommended batch for teams that need enough creative volume to test five pain points and scale winners.",
-    keywords: ["500 video ads", "500 ad creatives", "recommended creative testing batch", "creative volume service"],
+    keywords: [
+      "500 video ads",
+      "500 ad creatives",
+      "recommended creative testing batch",
+      "creative volume service",
+    ],
     breadcrumbLabel: "500 Video Ads",
     eyebrow: "500 VIDEO ADS · RECOMMENDED",
     headline: "500 video ads is the sweet spot for serious creative volume.",
@@ -297,7 +337,11 @@ export const organicIntentPages = [
     },
     intentLabel: "Recommended volume",
     stats: [
-      { value: "500", label: "finished ads", detail: "The recommended pack for most active advertisers." },
+      {
+        value: "500",
+        label: "finished ads",
+        detail: "The recommended pack for most active advertisers.",
+      },
       { value: "5", label: "pain points", detail: "Test the map, not one guess." },
       { value: "$2,497", label: "one-time", detail: "A production sprint, not a retainer." },
     ],
@@ -331,16 +375,33 @@ export const organicIntentPages = [
     processTitle: "What 500 ads lets you do",
     processIntro: "Use the batch as a creative library, not a one-day upload dump.",
     steps: [
-      { title: "Launch broad tests", body: "Start with representative hooks from all five problem lanes to find early signal." },
-      { title: "Scale the breakouts", body: "When a lane shows promise, feed the account adjacent variants instead of rebuilding from scratch." },
-      { title: "Refresh before fatigue", body: "Rotate new variations into winners before frequency turns into CTR decay." },
+      {
+        title: "Launch broad tests",
+        body: "Start with representative hooks from all five problem lanes to find early signal.",
+      },
+      {
+        title: "Scale the breakouts",
+        body: "When a lane shows promise, feed the account adjacent variants instead of rebuilding from scratch.",
+      },
+      {
+        title: "Refresh before fatigue",
+        body: "Rotate new variations into winners before frequency turns into CTR decay.",
+      },
     ],
     comparisonTitle: "500 ads vs. a typical creative retainer",
     comparisonRows: [
-      { label: "Creative library", oldWay: "A few hero concepts", batchWay: "500 tested variations" },
+      {
+        label: "Creative library",
+        oldWay: "A few hero concepts",
+        batchWay: "500 tested variations",
+      },
       { label: "Customer problems", oldWay: "One or two", batchWay: "Five" },
       { label: "Pricing", oldWay: "$5K–$25K/month", batchWay: "$2,497 one-time" },
-      { label: "Fatigue response", oldWay: "Wait for next production cycle", batchWay: "Pull from the library" },
+      {
+        label: "Fatigue response",
+        oldWay: "Wait for next production cycle",
+        batchWay: "Pull from the library",
+      },
     ],
     relatedLinks: [
       ...sharedRelatedLinks,
@@ -399,7 +460,8 @@ export const organicIntentPages = [
     ],
     problem: {
       eyebrow: "WHY 1,000",
-      title: "If the account is big enough, the cost of under-testing is larger than the cost of production.",
+      title:
+        "If the account is big enough, the cost of under-testing is larger than the cost of production.",
       body: [
         "Large accounts lose money slowly when creative is scarce. Budgets rise, frequency rises, CPMs climb, and every new ad has too much pressure because there are not enough alternatives in the system.",
         "A 1,000-ad sprint gives your account room to explore. Instead of asking one concept to carry the quarter, you test many buyer problems, objections, status quo stories, and proof angles in parallel.",
@@ -425,18 +487,40 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "How to use a 1,000-ad sprint",
-    processIntro: "The goal is not chaos. It is structured exploration across the full set of likely buyer motivations.",
+    processIntro:
+      "The goal is not chaos. It is structured exploration across the full set of likely buyer motivations.",
     steps: [
-      { title: "Map ten customer problems", body: "We build the batch around the strongest economic, emotional, timing, and trust reasons buyers act." },
-      { title: "Launch controlled waves", body: "Your media buyer can group ads by problem, hook, or CTA so the account produces readable signal." },
-      { title: "Keep feeding winners", body: "When a lane breaks out, the library already contains adjacent variants to scale before fatigue hits." },
+      {
+        title: "Map ten customer problems",
+        body: "We build the batch around the strongest economic, emotional, timing, and trust reasons buyers act.",
+      },
+      {
+        title: "Launch controlled waves",
+        body: "Your media buyer can group ads by problem, hook, or CTA so the account produces readable signal.",
+      },
+      {
+        title: "Keep feeding winners",
+        body: "When a lane breaks out, the library already contains adjacent variants to scale before fatigue hits.",
+      },
     ],
     comparisonTitle: "1,000 ads vs. scaling with scarce creative",
     comparisonRows: [
-      { label: "Market coverage", oldWay: "One campaign thesis", batchWay: "Ten customer problems" },
-      { label: "Scaling response", oldWay: "Raise budget on a few ads", batchWay: "Raise budget and add fresh variants" },
+      {
+        label: "Market coverage",
+        oldWay: "One campaign thesis",
+        batchWay: "Ten customer problems",
+      },
+      {
+        label: "Scaling response",
+        oldWay: "Raise budget on a few ads",
+        batchWay: "Raise budget and add fresh variants",
+      },
       { label: "Fatigue risk", oldWay: "High", batchWay: "Managed with library depth" },
-      { label: "Production timeline", oldWay: "Quarter-long calendar", batchWay: "1–2 business days after footage" },
+      {
+        label: "Production timeline",
+        oldWay: "Quarter-long calendar",
+        batchWay: "1–2 business days after footage",
+      },
     ],
     relatedLinks: [
       ...sharedRelatedLinks,
@@ -495,13 +579,26 @@ export const organicIntentPages = [
     },
     intentLabel: "YouTube media testing pricing",
     stats: [
-      { value: "100–1,000", label: "YouTube-ready variations", detail: "Captioned vertical ads built for Shorts and reusable paid social placements." },
-      { value: "$4–$5", label: "typical cost per ad", detail: "At 300–1,000 ad batch sizes, before media spend." },
-      { value: "1", label: "recording session", detail: "One founder/operator recording becomes the testing matrix." },
+      {
+        value: "100–1,000",
+        label: "YouTube-ready variations",
+        detail: "Captioned vertical ads built for Shorts and reusable paid social placements.",
+      },
+      {
+        value: "$4–$5",
+        label: "typical cost per ad",
+        detail: "At 300–1,000 ad batch sizes, before media spend.",
+      },
+      {
+        value: "1",
+        label: "recording session",
+        detail: "One founder/operator recording becomes the testing matrix.",
+      },
     ],
     problem: {
       eyebrow: "THE PRICING PROBLEM",
-      title: "Most YouTube media testing pricing rewards production activity, not learning velocity.",
+      title:
+        "Most YouTube media testing pricing rewards production activity, not learning velocity.",
       body: [
         "Traditional YouTube testing quotes often bundle strategy, editing, review cycles, and a handful of final assets. That can work for a brand campaign, but it is weak for Shorts testing where the first line and buyer angle decide whether the ad earns attention.",
         "A batch pricing model changes the unit of analysis. Instead of asking how much one video costs, buyers can compare the cost per hook, cost per tested customer problem, and cost per usable ad variation.",
@@ -527,18 +624,44 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "How a YouTube media testing batch works",
-    processIntro: "The workflow keeps the production step simple so the test can focus on market signal.",
+    processIntro:
+      "The workflow keeps the production step simple so the test can focus on market signal.",
     steps: [
-      { title: "Define the testing matrix", body: "Map buyer problems, hooks, proof mechanisms, CTAs, and YouTube Shorts-specific openings before scripts are written." },
-      { title: "Record one source session", body: "The founder, operator, or spokesperson records the script set once in a native vertical-video style." },
-      { title: "Launch and compare lanes", body: "Your media buyer groups variations by hypothesis so spend reveals the angles worth scaling." },
+      {
+        title: "Define the testing matrix",
+        body: "Map buyer problems, hooks, proof mechanisms, CTAs, and YouTube Shorts-specific openings before scripts are written.",
+      },
+      {
+        title: "Record one source session",
+        body: "The founder, operator, or spokesperson records the script set once in a native vertical-video style.",
+      },
+      {
+        title: "Launch and compare lanes",
+        body: "Your media buyer groups variations by hypothesis so spend reveals the angles worth scaling.",
+      },
     ],
     comparisonTitle: "YouTube media testing pricing models compared",
     comparisonRows: [
-      { label: "Pricing unit", oldWay: "Per concept or per finished spot", batchWay: "Per batch and cost per tested angle" },
-      { label: "Typical output", oldWay: "3–10 polished videos", batchWay: "100–1,000 Shorts-ready variations" },
-      { label: "Learning depth", oldWay: "A few creative bets", batchWay: "Hooks, pains, proof, and CTAs tested separately" },
-      { label: "Production cycle", oldWay: "Weeks of briefs and revisions", batchWay: "1–2 business days after footage" },
+      {
+        label: "Pricing unit",
+        oldWay: "Per concept or per finished spot",
+        batchWay: "Per batch and cost per tested angle",
+      },
+      {
+        label: "Typical output",
+        oldWay: "3–10 polished videos",
+        batchWay: "100–1,000 Shorts-ready variations",
+      },
+      {
+        label: "Learning depth",
+        oldWay: "A few creative bets",
+        batchWay: "Hooks, pains, proof, and CTAs tested separately",
+      },
+      {
+        label: "Production cycle",
+        oldWay: "Weeks of briefs and revisions",
+        batchWay: "1–2 business days after footage",
+      },
     ],
     relatedLinks: [
       ...sharedRelatedLinks,
@@ -607,9 +730,21 @@ export const organicIntentPages = [
     },
     intentLabel: "Commercial pricing comparison",
     stats: [
-      { value: "$497", label: "starter batch", detail: "100 video ads from one recording session." },
-      { value: "$1,497", label: "300-ad minimum test", detail: "Three customer-problem lanes at roughly $5 per ad." },
-      { value: "$3,997", label: "1,000-ad max sprint", detail: "Ten problem lanes at roughly $4 per ad." },
+      {
+        value: "$497",
+        label: "starter batch",
+        detail: "100 video ads from one recording session.",
+      },
+      {
+        value: "$1,497",
+        label: "300-ad minimum test",
+        detail: "Three customer-problem lanes at roughly $5 per ad.",
+      },
+      {
+        value: "$3,997",
+        label: "1,000-ad max sprint",
+        detail: "Ten problem lanes at roughly $4 per ad.",
+      },
     ],
     problem: {
       eyebrow: "WHY PRICING GETS CONFUSING",
@@ -639,18 +774,44 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "How to price a video ad test",
-    processIntro: "Use a repeatable model so the cheapest-looking option does not hide low learning volume.",
+    processIntro:
+      "Use a repeatable model so the cheapest-looking option does not hide low learning volume.",
     steps: [
-      { title: "Count the hypotheses", body: "List the hooks, customer problems, proof points, offers, and CTAs the test needs to compare." },
-      { title: "Normalize the deliverables", body: "Convert each vendor quote into finished usable ads, tested angles, timeline, revisions, and usage rights." },
-      { title: "Pick the smallest valid batch", body: "Choose the least expensive batch that still covers enough variation for the account to learn." },
+      {
+        title: "Count the hypotheses",
+        body: "List the hooks, customer problems, proof points, offers, and CTAs the test needs to compare.",
+      },
+      {
+        title: "Normalize the deliverables",
+        body: "Convert each vendor quote into finished usable ads, tested angles, timeline, revisions, and usage rights.",
+      },
+      {
+        title: "Pick the smallest valid batch",
+        body: "Choose the least expensive batch that still covers enough variation for the account to learn.",
+      },
     ],
     comparisonTitle: "Video ad testing pricing by production model",
     comparisonRows: [
-      { label: "UGC creator", oldWay: "$150–$500+ per video", batchWay: "Useful for authenticity, weak for high-volume angle coverage" },
-      { label: "Creative agency", oldWay: "$5K–$25K/month", batchWay: "Useful for strategy, expensive per tested angle" },
-      { label: "In-house editor", oldWay: "$4K–$8K/month loaded", batchWay: "Useful for control, limited by human throughput" },
-      { label: "Prestyj batch", oldWay: "$497–$3,997 per sprint", batchWay: "100–1,000 variations from one recording" },
+      {
+        label: "UGC creator",
+        oldWay: "$150–$500+ per video",
+        batchWay: "Useful for authenticity, weak for high-volume angle coverage",
+      },
+      {
+        label: "Creative agency",
+        oldWay: "$5K–$25K/month",
+        batchWay: "Useful for strategy, expensive per tested angle",
+      },
+      {
+        label: "In-house editor",
+        oldWay: "$4K–$8K/month loaded",
+        batchWay: "Useful for control, limited by human throughput",
+      },
+      {
+        label: "Prestyj batch",
+        oldWay: "$497–$3,997 per sprint",
+        batchWay: "100–1,000 variations from one recording",
+      },
     ],
     relatedLinks: [
       ...sharedRelatedLinks,
@@ -698,7 +859,12 @@ export const organicIntentPages = [
     title: "Ad Creative Testing Service | Paid Social Creative Volume",
     description:
       "A paid social ad creative testing service powered by the Prestyj system — produces 100, 300, 500, or 1,000 video ad variations from one recording session for Meta, TikTok, and YouTube Shorts. The creative engine behind every Prestyj plan.",
-    keywords: ["ad creative testing service", "creative testing agency", "paid social creative testing", "ad testing service"],
+    keywords: [
+      "ad creative testing service",
+      "creative testing agency",
+      "paid social creative testing",
+      "ad testing service",
+    ],
     breadcrumbLabel: "Ad Creative Testing Service",
     eyebrow: "AD CREATIVE TESTING SERVICE",
     headline: "A creative testing service built for volume, not vanity assets.",
@@ -713,7 +879,11 @@ export const organicIntentPages = [
     },
     intentLabel: "Service replacement",
     stats: [
-      { value: "100–1,000", label: "ads per sprint", detail: "Choose the testing depth your account needs." },
+      {
+        value: "100–1,000",
+        label: "ads per sprint",
+        detail: "Choose the testing depth your account needs.",
+      },
       { value: "1", label: "recording", detail: "No studio, creator sourcing, or shoot day." },
       { value: "1–2d", label: "turnaround", detail: "After recording footage is received." },
     ],
@@ -745,18 +915,32 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "What Prestyj handles",
-    processIntro: "We stay in the creative production lane so your paid media team can stay in the account.",
+    processIntro:
+      "We stay in the creative production lane so your paid media team can stay in the account.",
     steps: [
-      { title: "Angle planning", body: "We turn your offer and buyer pains into a script matrix for the pack size you choose." },
-      { title: "Founder-style recording", body: "You or your operator records the scripts selfie-style in one focused session." },
-      { title: "Batch editing", body: "We cut, caption, and organize the finished vertical ad variations for upload." },
+      {
+        title: "Angle planning",
+        body: "We turn your offer and buyer pains into a script matrix for the pack size you choose.",
+      },
+      {
+        title: "Founder-style recording",
+        body: "You or your operator records the scripts selfie-style in one focused session.",
+      },
+      {
+        title: "Batch editing",
+        body: "We cut, caption, and organize the finished vertical ad variations for upload.",
+      },
     ],
     comparisonTitle: "Creative testing service vs. traditional agency",
     comparisonRows: [
       { label: "Deliverable", oldWay: "Few polished concepts", batchWay: "100–1,000 testable ads" },
       { label: "Engagement", oldWay: "Retainer", batchWay: "One-time sprint" },
       { label: "Media buying", oldWay: "Often bundled", batchWay: "Not included" },
-      { label: "Best for", oldWay: "Brand campaign production", batchWay: "Paid-social learning velocity" },
+      {
+        label: "Best for",
+        oldWay: "Brand campaign production",
+        batchWay: "Paid-social learning velocity",
+      },
     ],
     relatedLinks: [
       ...sharedRelatedLinks,
@@ -794,7 +978,12 @@ export const organicIntentPages = [
     title: "Run My First Facebook Ads Without Guessing",
     description:
       "Running your first Facebook ads? Start with enough creative variations to learn what buyers respond to instead of betting your budget on three guesses.",
-    keywords: ["run my first Facebook ads", "first Facebook ads", "how to run my first Facebook ads", "Facebook ads creative testing"],
+    keywords: [
+      "run my first Facebook ads",
+      "first Facebook ads",
+      "how to run my first Facebook ads",
+      "Facebook ads creative testing",
+    ],
     breadcrumbLabel: "Run My First Facebook Ads",
     eyebrow: "FIRST FACEBOOK ADS",
     headline: "Running your first Facebook ads? Do not make your first mistake creative scarcity.",
@@ -843,15 +1032,28 @@ export const organicIntentPages = [
     processTitle: "The first-ads workflow",
     processIntro: "Keep the first launch narrow enough to understand and broad enough to learn.",
     steps: [
-      { title: "Choose one offer", body: "Start with one clear buyer action so the test does not mix too many variables." },
-      { title: "Test many hooks", body: "Use a 100-ad batch to vary openings, objections, benefits, and CTAs around that offer." },
-      { title: "Scale only what earns signal", body: "Increase spend on the hooks and angles people actually respond to." },
+      {
+        title: "Choose one offer",
+        body: "Start with one clear buyer action so the test does not mix too many variables.",
+      },
+      {
+        title: "Test many hooks",
+        body: "Use a 100-ad batch to vary openings, objections, benefits, and CTAs around that offer.",
+      },
+      {
+        title: "Scale only what earns signal",
+        body: "Increase spend on the hooks and angles people actually respond to.",
+      },
     ],
     comparisonTitle: "First ads with vs. without creative volume",
     comparisonRows: [
       { label: "Creative plan", oldWay: "Pick 3 favorites", batchWay: "Test 100 variations" },
       { label: "Learning", oldWay: "Was the offer bad?", batchWay: "Which message worked?" },
-      { label: "Founder workload", oldWay: "Write and edit everything", batchWay: "Record scripts once" },
+      {
+        label: "Founder workload",
+        oldWay: "Write and edit everything",
+        batchWay: "Record scripts once",
+      },
       { label: "Next step", oldWay: "Guess again", batchWay: "Scale the winning angle" },
     ],
     relatedLinks: [
@@ -890,7 +1092,12 @@ export const organicIntentPages = [
     title: "Scale Facebook Ads With More Creative",
     description:
       "When Facebook ad CPA rises, scaling usually needs more creative volume. Learn how to feed winning campaigns with fresh video ad variations instead of forcing budget onto stale ads.",
-    keywords: ["scale Facebook ads with more creative", "scale Facebook ads", "more ads works", "Facebook ads CPA rises"],
+    keywords: [
+      "scale Facebook ads with more creative",
+      "scale Facebook ads",
+      "more ads works",
+      "Facebook ads CPA rises",
+    ],
     breadcrumbLabel: "Scale Facebook Ads With More Creative",
     eyebrow: "SCALING FACEBOOK ADS",
     headline: "Scaling Facebook ads usually breaks when creative runs out.",
@@ -905,13 +1112,22 @@ export const organicIntentPages = [
     },
     intentLabel: "Scaling support",
     stats: [
-      { value: "3–5", label: "ads is fragile", detail: "A small library collapses under more budget." },
+      {
+        value: "3–5",
+        label: "ads is fragile",
+        detail: "A small library collapses under more budget.",
+      },
       { value: "300+", label: "scale library", detail: "Enough variants to feed winners." },
-      { value: "1–2d", label: "production", detail: "Refresh inventory without a month-long shoot." },
+      {
+        value: "1–2d",
+        label: "production",
+        detail: "Refresh inventory without a month-long shoot.",
+      },
     ],
     problem: {
       eyebrow: "THE SCALING TRAP",
-      title: "You cannot scale a campaign by forcing more spend through the same tired ads forever.",
+      title:
+        "You cannot scale a campaign by forcing more spend through the same tired ads forever.",
       body: [
         "Small-budget campaigns can hide creative weakness. At higher spend, frequency rises, the easy buyers get exhausted, and the same few ads have to work harder against colder pockets of the audience.",
         "Fresh creative gives Meta more ways to match your offer to different buyer motivations. Scaling becomes less about one magic winning ad and more about a steady bench of adjacent winners.",
@@ -937,17 +1153,35 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "How creative volume supports scale",
-    processIntro: "Use winning signal as the seed for more adjacent creative, not as permission to stop testing.",
+    processIntro:
+      "Use winning signal as the seed for more adjacent creative, not as permission to stop testing.",
     steps: [
-      { title: "Find the winning lane", body: "Identify which pain point, hook style, or promise is carrying the campaign." },
-      { title: "Expand around it", body: "Launch variants that keep the core promise but change the first three seconds, proof, objection, or CTA." },
-      { title: "Refresh before decay", body: "Add new variants while metrics are still strong, not after the ad has already collapsed." },
+      {
+        title: "Find the winning lane",
+        body: "Identify which pain point, hook style, or promise is carrying the campaign.",
+      },
+      {
+        title: "Expand around it",
+        body: "Launch variants that keep the core promise but change the first three seconds, proof, objection, or CTA.",
+      },
+      {
+        title: "Refresh before decay",
+        body: "Add new variants while metrics are still strong, not after the ad has already collapsed.",
+      },
     ],
     comparisonTitle: "Scaling with budget vs. scaling with creative",
     comparisonRows: [
       { label: "Main lever", oldWay: "Raise budget", batchWay: "Raise budget plus add variants" },
-      { label: "Failure mode", oldWay: "Frequency and CPA climb", batchWay: "Fresh matching paths" },
-      { label: "Creative plan", oldWay: "Wait until fatigue", batchWay: "Preload refresh inventory" },
+      {
+        label: "Failure mode",
+        oldWay: "Frequency and CPA climb",
+        batchWay: "Fresh matching paths",
+      },
+      {
+        label: "Creative plan",
+        oldWay: "Wait until fatigue",
+        batchWay: "Preload refresh inventory",
+      },
       { label: "Best pack", oldWay: "A few new concepts", batchWay: "300–1,000 ads" },
     ],
     relatedLinks: [
@@ -986,7 +1220,12 @@ export const organicIntentPages = [
     title: "Creative Volume for Paid Social",
     description:
       "Creative volume is the new paid social advantage: enough ad variations to feed Meta, TikTok, and YouTube algorithms with fresh hooks, angles, and proof before fatigue hits.",
-    keywords: ["creative volume", "ad creative volume", "paid social creative volume", "Andromeda creative volume"],
+    keywords: [
+      "creative volume",
+      "ad creative volume",
+      "paid social creative volume",
+      "Andromeda creative volume",
+    ],
     breadcrumbLabel: "Creative Volume",
     eyebrow: "CREATIVE VOLUME",
     headline: "Creative volume is the new targeting advantage.",
@@ -1001,13 +1240,26 @@ export const organicIntentPages = [
     },
     intentLabel: "Category education",
     stats: [
-      { value: "50+", label: "hooks to test", detail: "Winner discovery needs a distribution, not a guess." },
-      { value: "5–14d", label: "fatigue window", detail: "Many ads decay faster than production teams move." },
-      { value: "100–1,000", label: "batch sizes", detail: "Match output to spend and learning goals." },
+      {
+        value: "50+",
+        label: "hooks to test",
+        detail: "Winner discovery needs a distribution, not a guess.",
+      },
+      {
+        value: "5–14d",
+        label: "fatigue window",
+        detail: "Many ads decay faster than production teams move.",
+      },
+      {
+        value: "100–1,000",
+        label: "batch sizes",
+        detail: "Match output to spend and learning goals.",
+      },
     ],
     problem: {
       eyebrow: "WHY IT MATTERS",
-      title: "The old paid-social playbook optimized targeting. The new one feeds the algorithm better creative.",
+      title:
+        "The old paid-social playbook optimized targeting. The new one feeds the algorithm better creative.",
       body: [
         "As platforms automate more of the media buying layer, creative becomes the clearest controllable input. Hooks, pain points, proof mechanisms, formats, and CTAs tell the algorithm who might care and why.",
         "Creative volume does not mean random spam. It means a structured supply of meaningfully different ads, produced cheaply enough that testing can continue every month.",
@@ -1035,16 +1287,29 @@ export const organicIntentPages = [
     processTitle: "How to build useful creative volume",
     processIntro: "Volume only works when each variation tests a real hypothesis about the buyer.",
     steps: [
-      { title: "Map motivations", body: "List the pains, desires, objections, and timing triggers that could make someone act now." },
-      { title: "Vary the opening", body: "The first three seconds control whether the buyer gives the ad a chance." },
-      { title: "Refresh continuously", body: "Use winning themes to generate adjacent variations before fatigue drains the account." },
+      {
+        title: "Map motivations",
+        body: "List the pains, desires, objections, and timing triggers that could make someone act now.",
+      },
+      {
+        title: "Vary the opening",
+        body: "The first three seconds control whether the buyer gives the ad a chance.",
+      },
+      {
+        title: "Refresh continuously",
+        body: "Use winning themes to generate adjacent variations before fatigue drains the account.",
+      },
     ],
     comparisonTitle: "Creative volume vs. creative perfectionism",
     comparisonRows: [
       { label: "Goal", oldWay: "Make the best ad", batchWay: "Find the best angle" },
       { label: "Output", oldWay: "Few polished assets", batchWay: "Many structured variations" },
       { label: "Learning speed", oldWay: "Slow", batchWay: "Fast" },
-      { label: "Fatigue response", oldWay: "Start another brief", batchWay: "Pull adjacent variants" },
+      {
+        label: "Fatigue response",
+        oldWay: "Start another brief",
+        batchWay: "Pull adjacent variants",
+      },
     ],
     relatedLinks: [
       ...sharedRelatedLinks,
@@ -1082,7 +1347,12 @@ export const organicIntentPages = [
     title: "Meta Ad Creative Testing | Facebook & Instagram Ads",
     description:
       "A Meta ad creative testing system for Facebook and Instagram: produce enough vertical video ad variations to test hooks, angles, and fatigue before CPA rises.",
-    keywords: ["Meta ad creative testing", "Facebook ad creative testing", "Instagram ad creative testing", "Meta creative testing"],
+    keywords: [
+      "Meta ad creative testing",
+      "Facebook ad creative testing",
+      "Instagram ad creative testing",
+      "Meta creative testing",
+    ],
     breadcrumbLabel: "Meta Ad Creative Testing",
     eyebrow: "META CREATIVE TESTING",
     headline: "Meta ad creative testing needs more than a few new hooks.",
@@ -1097,9 +1367,21 @@ export const organicIntentPages = [
     },
     intentLabel: "Meta-specific testing",
     stats: [
-      { value: "Meta", label: "placement fit", detail: "Built for Facebook and Instagram vertical inventory." },
-      { value: "100–1,000", label: "variations", detail: "Choose depth based on spend and fatigue." },
-      { value: "3s", label: "hook window", detail: "Opening variation changes who stops scrolling." },
+      {
+        value: "Meta",
+        label: "placement fit",
+        detail: "Built for Facebook and Instagram vertical inventory.",
+      },
+      {
+        value: "100–1,000",
+        label: "variations",
+        detail: "Choose depth based on spend and fatigue.",
+      },
+      {
+        value: "3s",
+        label: "hook window",
+        detail: "Opening variation changes who stops scrolling.",
+      },
     ],
     problem: {
       eyebrow: "META TESTING REALITY",
@@ -1129,17 +1411,31 @@ export const organicIntentPages = [
       },
     ],
     processTitle: "A simple Meta testing structure",
-    processIntro: "Do not upload chaos. Group variations so Meta results map back to a useful creative hypothesis.",
+    processIntro:
+      "Do not upload chaos. Group variations so Meta results map back to a useful creative hypothesis.",
     steps: [
-      { title: "Group by problem", body: "Separate ads by the buyer pain or promise each variation leads with." },
-      { title: "Watch hook metrics", body: "Use thumb-stop, CTR, hold rate, and early CPA to identify promising lanes." },
-      { title: "Scale adjacent variants", body: "When a lane works, launch more variants around it before the original fatigues." },
+      {
+        title: "Group by problem",
+        body: "Separate ads by the buyer pain or promise each variation leads with.",
+      },
+      {
+        title: "Watch hook metrics",
+        body: "Use thumb-stop, CTR, hold rate, and early CPA to identify promising lanes.",
+      },
+      {
+        title: "Scale adjacent variants",
+        body: "When a lane works, launch more variants around it before the original fatigues.",
+      },
     ],
     comparisonTitle: "Meta creative testing with scarce vs. batch creative",
     comparisonRows: [
       { label: "Inputs", oldWay: "A few new ads", batchWay: "100–1,000 variations" },
       { label: "Testing unit", oldWay: "One concept", batchWay: "Problems, hooks, CTAs" },
-      { label: "Fatigue handling", oldWay: "React after CPA rises", batchWay: "Refresh from the library" },
+      {
+        label: "Fatigue handling",
+        oldWay: "React after CPA rises",
+        batchWay: "Refresh from the library",
+      },
       { label: "Production economics", oldWay: "High per asset", batchWay: "Low per variation" },
     ],
     relatedLinks: [
@@ -1178,7 +1474,12 @@ export const organicIntentPages = [
     title: "TikTok Ad Creative Testing | High-Volume Video Ads",
     description:
       "A TikTok ad creative testing system for producing high-volume vertical video ad variations from one recording session so you can test hooks, angles, and native-style CTAs fast.",
-    keywords: ["TikTok ad creative testing", "TikTok creative testing", "TikTok video ads", "TikTok ad variations"],
+    keywords: [
+      "TikTok ad creative testing",
+      "TikTok creative testing",
+      "TikTok video ads",
+      "TikTok ad variations",
+    ],
     breadcrumbLabel: "TikTok Ad Creative Testing",
     eyebrow: "TIKTOK CREATIVE TESTING",
     headline: "TikTok creative testing rewards fast variation, not overproduced ads.",
@@ -1193,7 +1494,11 @@ export const organicIntentPages = [
     },
     intentLabel: "TikTok-specific testing",
     stats: [
-      { value: "9:16", label: "vertical files", detail: "Made for short-form paid social placements." },
+      {
+        value: "9:16",
+        label: "vertical files",
+        detail: "Made for short-form paid social placements.",
+      },
       { value: "100–1,000", label: "variations", detail: "Test many hooks without many shoots." },
       { value: "1", label: "recording", detail: "One source session becomes the library." },
     ],
@@ -1227,13 +1532,26 @@ export const organicIntentPages = [
     processTitle: "How to test TikTok ad creative",
     processIntro: "Focus on rapid opening-line learning before over-investing in production style.",
     steps: [
-      { title: "Start with hooks", body: "Test problem-first, contrarian, proof-first, and direct-offer openings." },
-      { title: "Watch hold and click quality", body: "A hook needs attention, but it also needs to attract the right buyer." },
-      { title: "Refresh weekly", body: "Use adjacent variants to keep the account from exhausting one winning format." },
+      {
+        title: "Start with hooks",
+        body: "Test problem-first, contrarian, proof-first, and direct-offer openings.",
+      },
+      {
+        title: "Watch hold and click quality",
+        body: "A hook needs attention, but it also needs to attract the right buyer.",
+      },
+      {
+        title: "Refresh weekly",
+        body: "Use adjacent variants to keep the account from exhausting one winning format.",
+      },
     ],
     comparisonTitle: "TikTok testing with creators vs. batch production",
     comparisonRows: [
-      { label: "Creative source", oldWay: "Many creator briefs", batchWay: "One recording session" },
+      {
+        label: "Creative source",
+        oldWay: "Many creator briefs",
+        batchWay: "One recording session",
+      },
       { label: "Hook tests", oldWay: "Limited by deliverables", batchWay: "Dozens to hundreds" },
       { label: "Turnaround", oldWay: "Weeks", batchWay: "1–2 business days after footage" },
       { label: "Best use", oldWay: "Creator authenticity", batchWay: "Fast angle discovery" },
@@ -1269,12 +1587,12 @@ export const organicIntentPages = [
       },
     ],
   },
-] satisfies OrganicIntentPage[]
+] satisfies OrganicIntentPage[];
 
 export function getOrganicIntentPage(slug: string): OrganicIntentPage | undefined {
-  return organicIntentPages.find((page) => page.slug === slug)
+  return organicIntentPages.find((page) => page.slug === slug);
 }
 
 export function getAllOrganicIntentPageSlugs(): string[] {
-  return organicIntentPages.map((page) => page.slug)
+  return organicIntentPages.map((page) => page.slug);
 }

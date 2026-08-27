@@ -26,18 +26,10 @@ export function isRealtimeAudioDoneEvent(type: unknown): type is string {
   return typeof type === "string" && REALTIME_AUDIO_DONE_EVENTS.has(type);
 }
 
-export function isRealtimeAudioTranscriptDeltaEvent(
-  type: unknown,
-): type is string {
-  return (
-    typeof type === "string" && REALTIME_AUDIO_TRANSCRIPT_DELTA_EVENTS.has(type)
-  );
+export function isRealtimeAudioTranscriptDeltaEvent(type: unknown): type is string {
+  return typeof type === "string" && REALTIME_AUDIO_TRANSCRIPT_DELTA_EVENTS.has(type);
 }
 
-export function isRealtimeAudioTranscriptDoneEvent(
-  type: unknown,
-): type is string {
-  return (
-    typeof type === "string" && REALTIME_AUDIO_TRANSCRIPT_DONE_EVENTS.has(type)
-  );
+export function isRealtimeAudioTranscriptDoneEvent(type: unknown): type is string {
+  return typeof type === "string" && REALTIME_AUDIO_TRANSCRIPT_DONE_EVENTS.has(type);
 }

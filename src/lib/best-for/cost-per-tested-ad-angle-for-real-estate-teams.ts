@@ -187,7 +187,8 @@ export const costPerTestedAdAngleForRealEstateTeams: BestForPageContent = {
           "A 30–40% chance of finding no winner in a tiny batch means the team may misread an underpowered test as a channel failure. In a local market, that can push budget back to portals even though the missing ingredient was enough variations to give Meta a fair shot.",
       },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     headline: "Run the Math for RE Teams: ≈$500 Per Tested Angle.",

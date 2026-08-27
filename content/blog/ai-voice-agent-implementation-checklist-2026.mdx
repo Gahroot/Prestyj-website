@@ -52,18 +52,18 @@ This checklist tells you exactly what to have ready before you start, what happe
 
 Document your top 10 call scenarios with scripts:
 
-| # | Scenario | Key information to collect | Action to take |
-|---|---|---|---|
-| 1 | New service inquiry | Service type, address, urgency, preferred time | Book appointment |
-| 2 | Emergency call | Location, nature of emergency | Transfer to on-call / dispatch |
-| 3 | Existing customer follow-up | Name, service history, current need | Book service appointment |
-| 4 | Pricing inquiry | Service type, property details | Provide estimate range, book consultation |
-| 5 | Scheduling/rescheduling | Customer name, preferred time | Reschedule appointment |
-| 6 | After-hours inquiry | Service type, urgency | Collect info, schedule callback |
-| 7 | Warranty/service plan question | Customer name, plan type | Answer or transfer to billing |
-| 8 | Complaint/issue | Customer name, issue description | Collect details, escalate to manager |
-| 9 | Referral inquiry | Referrer name, new customer info | Book consultation |
-| 10 | General question | Topic | Answer or route to appropriate team |
+| #   | Scenario                       | Key information to collect                     | Action to take                            |
+| --- | ------------------------------ | ---------------------------------------------- | ----------------------------------------- |
+| 1   | New service inquiry            | Service type, address, urgency, preferred time | Book appointment                          |
+| 2   | Emergency call                 | Location, nature of emergency                  | Transfer to on-call / dispatch            |
+| 3   | Existing customer follow-up    | Name, service history, current need            | Book service appointment                  |
+| 4   | Pricing inquiry                | Service type, property details                 | Provide estimate range, book consultation |
+| 5   | Scheduling/rescheduling        | Customer name, preferred time                  | Reschedule appointment                    |
+| 6   | After-hours inquiry            | Service type, urgency                          | Collect info, schedule callback           |
+| 7   | Warranty/service plan question | Customer name, plan type                       | Answer or transfer to billing             |
+| 8   | Complaint/issue                | Customer name, issue description               | Collect details, escalate to manager      |
+| 9   | Referral inquiry               | Referrer name, new customer info               | Book consultation                         |
+| 10  | General question               | Topic                                          | Answer or route to appropriate team       |
 
 **The more specific your scenarios, the better your AI agent performs.** Write out the exact questions you want asked and the exact actions for each outcome.
 
@@ -89,59 +89,59 @@ Document your top 10 call scenarios with scripts:
 
 ### Week 1: Setup & Configuration
 
-| Day | Task | Who | Duration |
-|---|---|---|---:|
-| Day 1 | Kickoff call — review scenarios, routing, integrations | You + platform team | 60 min |
-| Day 2 | Phone number setup — forward, port, or new number | Platform team | 1–2 hours |
-| Day 3 | CRM/calendar integration — connect your tools | Platform team | 1–2 hours |
-| Day 4 | Prompt engineering — configure AI agent with your scenarios | Platform team | 2–4 hours |
-| Day 5 | Internal testing — team members make test calls | Your team | 1 hour |
-| Day 6–7 | Adjustments based on test results | Platform team | 1–2 hours |
+| Day     | Task                                                        | Who                 |  Duration |
+| ------- | ----------------------------------------------------------- | ------------------- | --------: |
+| Day 1   | Kickoff call — review scenarios, routing, integrations      | You + platform team |    60 min |
+| Day 2   | Phone number setup — forward, port, or new number           | Platform team       | 1–2 hours |
+| Day 3   | CRM/calendar integration — connect your tools               | Platform team       | 1–2 hours |
+| Day 4   | Prompt engineering — configure AI agent with your scenarios | Platform team       | 2–4 hours |
+| Day 5   | Internal testing — team members make test calls             | Your team           |    1 hour |
+| Day 6–7 | Adjustments based on test results                           | Platform team       | 1–2 hours |
 
 ### Week 2: Testing & Go-Live
 
-| Day | Task | Who | Duration |
-|---|---|---|---:|
-| Day 8 | Soft launch — forward 20% of calls to AI agent | You | Monitor |
-| Day 9–10 | Review call recordings — identify issues | You + platform team | 30 min/day |
-| Day 11 | Prompt adjustments based on real call data | Platform team | 1 hour |
-| Day 12 | Increase to 50% of calls | You | Monitor |
-| Day 13 | Final review — confirm booking accuracy | You + platform team | 30 min |
-| Day 14 | Full launch — 100% of calls to AI agent | You | Monitor |
+| Day      | Task                                           | Who                 |   Duration |
+| -------- | ---------------------------------------------- | ------------------- | ---------: |
+| Day 8    | Soft launch — forward 20% of calls to AI agent | You                 |    Monitor |
+| Day 9–10 | Review call recordings — identify issues       | You + platform team | 30 min/day |
+| Day 11   | Prompt adjustments based on real call data     | Platform team       |     1 hour |
+| Day 12   | Increase to 50% of calls                       | You                 |    Monitor |
+| Day 13   | Final review — confirm booking accuracy        | You + platform team |     30 min |
+| Day 14   | Full launch — 100% of calls to AI agent        | You                 |    Monitor |
 
 ---
 
 ## Post-Launch Monitoring (Weeks 3–4)
 
-| Metric | Target | How to measure |
-|---|---:|---|
-| Answer rate | 95%+ | Calls answered ÷ total calls |
-| Average response time | Under 12 seconds | Platform analytics |
-| Booking rate | 45%+ | Bookings ÷ total calls |
-| Caller satisfaction | 4+ stars | Post-call survey (optional) |
-| Escalation rate | Under 10% | Transfers to human ÷ total calls |
-| Booking accuracy | 95%+ | Bookings confirmed ÷ total bookings |
+| Metric                |           Target | How to measure                      |
+| --------------------- | ---------------: | ----------------------------------- |
+| Answer rate           |             95%+ | Calls answered ÷ total calls        |
+| Average response time | Under 12 seconds | Platform analytics                  |
+| Booking rate          |             45%+ | Bookings ÷ total calls              |
+| Caller satisfaction   |         4+ stars | Post-call survey (optional)         |
+| Escalation rate       |        Under 10% | Transfers to human ÷ total calls    |
+| Booking accuracy      |             95%+ | Bookings confirmed ÷ total bookings |
 
 ### Common Issues & Fixes
 
-| Issue | Likely cause | Fix |
-|---|---|---|
-| Low booking rate | Prompt not capturing key info | Add questions to prompt |
-| High escalation rate | Scenarios not defined | Add missing scenarios |
-| Wrong bookings | Calendar integration issue | Re-sync calendar |
-| Call quality issues | Telephony/carrier problem | Check phone number config |
-| After-hours calls not handled | Hours not configured | Update hours of operation |
+| Issue                         | Likely cause                  | Fix                       |
+| ----------------------------- | ----------------------------- | ------------------------- |
+| Low booking rate              | Prompt not capturing key info | Add questions to prompt   |
+| High escalation rate          | Scenarios not defined         | Add missing scenarios     |
+| Wrong bookings                | Calendar integration issue    | Re-sync calendar          |
+| Call quality issues           | Telephony/carrier problem     | Check phone number config |
+| After-hours calls not handled | Hours not configured          | Update hours of operation |
 
 ---
 
 ## What to Expect After 30 Days
 
-| Metric | Day 14 (launch) | Day 30 (optimized) | Day 90 (mature) |
-|---|---:|---:|---:|
-| Booking rate | 35–45% | 45–55% | 55–65% |
-| Escalation rate | 8–15% | 5–10% | 3–8% |
-| Caller satisfaction | 3.5–4.0 | 4.0–4.5 | 4.5–5.0 |
-| Cost per booking | $2.50–$4.00 | $1.50–$2.50 | $0.94–$1.75 |
+| Metric              | Day 14 (launch) | Day 30 (optimized) | Day 90 (mature) |
+| ------------------- | --------------: | -----------------: | --------------: |
+| Booking rate        |          35–45% |             45–55% |          55–65% |
+| Escalation rate     |           8–15% |              5–10% |            3–8% |
+| Caller satisfaction |         3.5–4.0 |            4.0–4.5 |         4.5–5.0 |
+| Cost per booking    |     $2.50–$4.00 |        $1.50–$2.50 |     $0.94–$1.75 |
 
 The AI agent gets better over time as it learns from real conversations and your team provides feedback on edge cases.
 
@@ -176,4 +176,4 @@ A: Monitor your calendar for the first 2 weeks. Confirm bookings match what the 
 
 ---
 
-*Prestyj handles the entire implementation — from kickoff to live calls in 7–14 days. You provide the scenarios; we handle everything else. [Book a demo](/book-demo) to start.*
+_Prestyj handles the entire implementation — from kickoff to live calls in 7–14 days. You provide the scenarios; we handle everything else. [Book a demo](/book-demo) to start._

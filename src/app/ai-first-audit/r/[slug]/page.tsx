@@ -93,7 +93,11 @@ function VersionTwoReport({
       React.createElement(
         "article",
         { className: "border-border border-t py-5 first:border-t-0" },
-        React.createElement("h3", { className: "font-heading font-semibold" }, workflow.input.title),
+        React.createElement(
+          "h3",
+          { className: "font-heading font-semibold" },
+          workflow.input.title,
+        ),
         React.createElement(
           "ul",
           { className: "text-muted-foreground mt-2 list-disc space-y-2 ps-5" },
@@ -131,7 +135,7 @@ function VersionTwoReport({
               {formatCurrency(top.annualTimeCost)}
             </dd>
           </div>
-          <div className="border-border border-t p-5 sm:border-t-0 sm:border-e">
+          <div className="border-border border-t p-5 sm:border-e sm:border-t-0">
             <dt className="text-muted-foreground text-sm">{AUDIT_COPY.report.impact}</dt>
             <dd className="mt-1 text-xl font-semibold">{top.impactLabel}</dd>
           </div>
@@ -164,7 +168,9 @@ function VersionTwoReport({
 
       <section className="mx-auto mt-16 max-w-5xl px-4 sm:px-6 lg:px-8">
         <h2 className="font-heading text-3xl font-bold">{AUDIT_COPY.report.ranked}</h2>
-        <p className="text-muted-foreground mt-2">Each figure is an estimated current team time cost.</p>
+        <p className="text-muted-foreground mt-2">
+          Each figure is an estimated current team time cost.
+        </p>
         <div className="mt-6 grid gap-5">{rankedCards}</div>
       </section>
 
@@ -209,13 +215,13 @@ function VersionTwoReport({
             work, 67 when customers or leads wait, and 100 when leads, sales, or customers are lost.
           </p>
           <p>
-            Readiness is the average of your answers about repeatable steps, clear rules, and easy-to-find
-            information. Ready now begins at 75. A little prep begins at 50.
+            Readiness is the average of your answers about repeatable steps, clear rules, and
+            easy-to-find information. Ready now begins at 75. A little prep begins at 50.
           </p>
           <p>
             Priority is 40% time cost, 40% business impact, and 20% readiness. Time cost is compared
-            only with the other workflows you selected. Ties use impact, readiness, cost, then a stable
-            workflow identifier.
+            only with the other workflows you selected. Ties use impact, readiness, cost, then a
+            stable workflow identifier.
           </p>
         </div>
       </section>

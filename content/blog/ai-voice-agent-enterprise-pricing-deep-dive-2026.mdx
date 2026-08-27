@@ -47,12 +47,12 @@ This is the base platform cost — the AI framework that routes calls, manages c
 
 The voice agent needs a phone number and a carrier to terminate calls. This is separate from the AI platform and often billed separately.
 
-| Component | Typical Cost | Enterprise Note |
-|---|---|---|
-| Inbound voice (per minute) | $0.008–$0.015 | Volume discounts at 50K+ min/mo |
-| Outbound voice (per minute) | $0.01–$0.025 | Higher for toll-free and international |
-| Phone number provisioning | $1–$5/number/month | Enterprises need 10–50+ numbers |
-| SMS (if enabled) | $0.0079/message | Common for appointment confirmations |
+| Component                   | Typical Cost       | Enterprise Note                        |
+| --------------------------- | ------------------ | -------------------------------------- |
+| Inbound voice (per minute)  | $0.008–$0.015      | Volume discounts at 50K+ min/mo        |
+| Outbound voice (per minute) | $0.01–$0.025       | Higher for toll-free and international |
+| Phone number provisioning   | $1–$5/number/month | Enterprises need 10–50+ numbers        |
+| SMS (if enabled)            | $0.0079/message    | Common for appointment confirmations   |
 
 **What most vendors quote:** Just the platform fee. **What you actually pay:** Platform + telephony + number provisioning. At 50,000 minutes/month, telephony alone runs $400–$750/month.
 
@@ -60,13 +60,13 @@ The voice agent needs a phone number and a carrier to terminate calls. This is s
 
 Every conversation turn requires an LLM call. The cost depends on model choice, token volume, and latency requirements.
 
-| LLM Option | Input Cost (per 1K tokens) | Output Cost (per 1K tokens) | Per-Minute Estimate |
-|---|---|---|---|
-| GPT-4o | $0.0025 | $0.01 | $0.03–$0.08 |
-| Claude 3.5 Sonnet | $0.003 | $0.015 | $0.03–$0.09 |
-| GPT-4o-mini | $0.00015 | $0.0006 | $0.005–$0.02 |
-| Llama 3 (self-hosted) | Infrastructure cost only | — | $0.005–$0.015 |
-| Gemini 1.5 Pro | $0.00125 | $0.005 | $0.02–$0.06 |
+| LLM Option            | Input Cost (per 1K tokens) | Output Cost (per 1K tokens) | Per-Minute Estimate |
+| --------------------- | -------------------------- | --------------------------- | ------------------- |
+| GPT-4o                | $0.0025                    | $0.01                       | $0.03–$0.08         |
+| Claude 3.5 Sonnet     | $0.003                     | $0.015                      | $0.03–$0.09         |
+| GPT-4o-mini           | $0.00015                   | $0.0006                     | $0.005–$0.02        |
+| Llama 3 (self-hosted) | Infrastructure cost only   | —                           | $0.005–$0.015       |
+| Gemini 1.5 Pro        | $0.00125                   | $0.005                      | $0.02–$0.06         |
 
 **Enterprise consideration:** Self-hosting LLMs on dedicated infrastructure ($2K–$8K/month for GPU) can reduce per-minute inference costs by 40–60% at scale — but adds operational complexity. Managed platforms like [Prestyj](/ai-voice-agents) absorb this complexity entirely.
 
@@ -74,11 +74,11 @@ Every conversation turn requires an LLM call. The cost depends on model choice, 
 
 Converting audio to text and back is a real cost that scales linearly with minutes.
 
-| Component | Budget Option | Mid-Tier | Premium |
-|---|---|---|---|
-| STT (per minute) | $0.006 (Deepgram Nova) | $0.012 (Whisper API) | $0.022 (Google enhanced) |
-| TTS (per minute) | $0.008 (standard voices) | $0.022 (ElevenLabs turbo) | $0.05 (ElevenLabs clones) |
-| **Combined STT/TTS** | **$0.014/min** | **$0.034/min** | **$0.072/min** |
+| Component            | Budget Option            | Mid-Tier                  | Premium                   |
+| -------------------- | ------------------------ | ------------------------- | ------------------------- |
+| STT (per minute)     | $0.006 (Deepgram Nova)   | $0.012 (Whisper API)      | $0.022 (Google enhanced)  |
+| TTS (per minute)     | $0.008 (standard voices) | $0.022 (ElevenLabs turbo) | $0.05 (ElevenLabs clones) |
+| **Combined STT/TTS** | **$0.014/min**           | **$0.034/min**            | **$0.072/min**            |
 
 **Enterprise note:** Custom voice cloning for branded experiences adds $200–$500/month in TTS costs. Multilingual support (Spanish, French, Mandarin) typically adds 30–50% to STT/TTS costs due to model switching.
 
@@ -86,14 +86,14 @@ Converting audio to text and back is a real cost that scales linearly with minut
 
 This is where the "cheap per-minute rate" starts to crack. Enterprise integrations are complex and time-consuming.
 
-| Integration | Typical Build Time | Cost at $175/hr (Internal) | Platform Cost |
-|---|---|---|---|
-| CRM (Salesforce, HubSpot) | 20–40 hours | $3,500–$7,000 | Often included |
-| Calendar system (Calendly, Google) | 8–15 hours | $1,400–$2,625 | Often included |
-| Phone system (PBX, SIP) | 30–60 hours | $5,250–$10,500 | $0–$2,000 setup |
-| ERP/custom API | 40–80 hours | $7,000–$14,000 | $1,000–$5,000 |
-| EHR/EMR (healthcare) | 60–120 hours | $10,500–$21,000 | Custom |
-| Total typical enterprise | 100–250 hours | $17,500–$43,750 | $0–$5,000 |
+| Integration                        | Typical Build Time | Cost at $175/hr (Internal) | Platform Cost   |
+| ---------------------------------- | ------------------ | -------------------------- | --------------- |
+| CRM (Salesforce, HubSpot)          | 20–40 hours        | $3,500–$7,000              | Often included  |
+| Calendar system (Calendly, Google) | 8–15 hours         | $1,400–$2,625              | Often included  |
+| Phone system (PBX, SIP)            | 30–60 hours        | $5,250–$10,500             | $0–$2,000 setup |
+| ERP/custom API                     | 40–80 hours        | $7,000–$14,000             | $1,000–$5,000   |
+| EHR/EMR (healthcare)               | 60–120 hours       | $10,500–$21,000            | Custom          |
+| Total typical enterprise           | 100–250 hours      | $17,500–$43,750            | $0–$5,000       |
 
 > **Real example:** A mid-market SaaS company budgeted $5K for CRM integration. The actual Salesforce integration with custom lead scoring, field mapping, and webhook configuration took 38 hours of engineering — $6,650 at their blended rate. That's a 33% overrun on a single integration.
 
@@ -111,14 +111,14 @@ Your AI voice agent is only as good as what it knows. Enterprise knowledge bases
 
 Enterprise compliance requirements are a major cost driver that most pricing pages don't address.
 
-| Compliance Requirement | In-House Build Cost | Managed Platform Cost |
-|---|---|---|
-| HIPAA BAA + infrastructure | $15K–$30K setup + $5K–$15K/year | $500–$2,000/month premium |
-| SOC 2 Type II | $25K–$75K initial audit | Included in enterprise tier |
-| PCI DSS (payment data) | $20K–$50K setup + $10K–$25K/year | Custom pricing |
-| GDPR/CCPA data handling | $5K–$15K setup + $2K–$5K/year | Often included |
-| Call recording consent (varies by state) | $3K–$8K setup | Included |
-| Fair housing / ECOA training | $2K–$5K setup + ongoing | Often included |
+| Compliance Requirement                   | In-House Build Cost              | Managed Platform Cost       |
+| ---------------------------------------- | -------------------------------- | --------------------------- |
+| HIPAA BAA + infrastructure               | $15K–$30K setup + $5K–$15K/year  | $500–$2,000/month premium   |
+| SOC 2 Type II                            | $25K–$75K initial audit          | Included in enterprise tier |
+| PCI DSS (payment data)                   | $20K–$50K setup + $10K–$25K/year | Custom pricing              |
+| GDPR/CCPA data handling                  | $5K–$15K setup + $2K–$5K/year    | Often included              |
+| Call recording consent (varies by state) | $3K–$8K setup                    | Included                    |
+| Fair housing / ECOA training             | $2K–$5K setup + ongoing          | Often included              |
 
 > **Critical point:** If your enterprise voice agent handles healthcare data, financial information, or regulated communications, compliance isn't optional — it's a line item that can add $15K–$50K/year to an in-house build and $6K–$24K/year to a managed platform.
 
@@ -138,18 +138,18 @@ AI voice agents aren't "set and forget." They need continuous tuning.
 
 Here's every layer in one table with typical cost ranges for a 20,000 minutes/month enterprise deployment.
 
-| Cost Layer | Low Estimate | High Estimate | Included in Managed? |
-|---|---|---|---|
-| Platform/orchestration | $800/mo | $3,000/mo | ✅ Yes |
-| Telephony (20K min) | $160/mo | $300/mo | ✅ Usually |
-| LLM inference | $600/mo | $1,600/mo | ✅ Yes |
-| STT/TTS | $280/mo | $1,440/mo | ✅ Yes |
-| Integration setup (amortized) | $500/mo | $2,000/mo | ✅ Often |
-| Knowledge base mgmt | $400/mo | $1,500/mo | ⚠️ Sometimes |
-| Compliance/security | $500/mo | $4,200/mo | ⚠️ Varies |
-| Optimization/support | $500/mo | $2,500/mo | ✅ Yes |
-| **Total monthly** | **$3,740/mo** | **$16,540/mo** | — |
-| **Per-minute (fully loaded)** | **$0.19/min** | **$0.83/min** | — |
+| Cost Layer                    | Low Estimate  | High Estimate  | Included in Managed? |
+| ----------------------------- | ------------- | -------------- | -------------------- |
+| Platform/orchestration        | $800/mo       | $3,000/mo      | ✅ Yes               |
+| Telephony (20K min)           | $160/mo       | $300/mo        | ✅ Usually           |
+| LLM inference                 | $600/mo       | $1,600/mo      | ✅ Yes               |
+| STT/TTS                       | $280/mo       | $1,440/mo      | ✅ Yes               |
+| Integration setup (amortized) | $500/mo       | $2,000/mo      | ✅ Often             |
+| Knowledge base mgmt           | $400/mo       | $1,500/mo      | ⚠️ Sometimes         |
+| Compliance/security           | $500/mo       | $4,200/mo      | ⚠️ Varies            |
+| Optimization/support          | $500/mo       | $2,500/mo      | ✅ Yes               |
+| **Total monthly**             | **$3,740/mo** | **$16,540/mo** | —                    |
+| **Per-minute (fully loaded)** | **$0.19/min** | **$0.83/min**  | —                    |
 
 The low end assumes a managed platform that bundles most layers. The high end assumes a DIY in-house build where every layer is a separate cost.
 
@@ -161,17 +161,17 @@ This is the question that determines whether you spend $15K/year or $200K/year o
 
 ### Building In-House: The Real Cost
 
-| Cost Category | Year 1 | Year 2 | Year 3 |
-|---|---|---|---|
-| Engineering team (2–3 FTE) | $120K–$200K | $80K–$150K | $80K–$150K |
-| Infrastructure (cloud, GPU) | $24K–$96K | $24K–$96K | $24K–$96K |
-| LLM API costs | $12K–$36K | $10K–$30K | $8K–$24K |
-| Telephony | $4K–$12K | $4K–$12K | $4K–$12K |
-| Compliance (SOC 2, HIPAA) | $25K–$75K | $5K–$15K | $5K–$15K |
-| Integration development | $15K–$45K | $5K–$15K | $5K–$15K |
-| Testing and QA | $10K–$25K | $8K–$20K | $8K–$20K |
-| **Total** | **$210K–$489K** | **$136K–$338K** | **$134K–$332K** |
-| **Cumulative (3 years)** | — | — | **$480K–$1.16M** |
+| Cost Category               | Year 1          | Year 2          | Year 3           |
+| --------------------------- | --------------- | --------------- | ---------------- |
+| Engineering team (2–3 FTE)  | $120K–$200K     | $80K–$150K      | $80K–$150K       |
+| Infrastructure (cloud, GPU) | $24K–$96K       | $24K–$96K       | $24K–$96K        |
+| LLM API costs               | $12K–$36K       | $10K–$30K       | $8K–$24K         |
+| Telephony                   | $4K–$12K        | $4K–$12K        | $4K–$12K         |
+| Compliance (SOC 2, HIPAA)   | $25K–$75K       | $5K–$15K        | $5K–$15K         |
+| Integration development     | $15K–$45K       | $5K–$15K        | $5K–$15K         |
+| Testing and QA              | $10K–$25K       | $8K–$20K        | $8K–$20K         |
+| **Total**                   | **$210K–$489K** | **$136K–$338K** | **$134K–$332K**  |
+| **Cumulative (3 years)**    | —               | —               | **$480K–$1.16M** |
 
 **Hidden in-house costs that teams forget:**
 
@@ -182,30 +182,30 @@ This is the question that determines whether you spend $15K/year or $200K/year o
 
 ### Managed Platform: The Real Cost
 
-| Cost Category | Year 1 | Year 2 | Year 3 |
-|---|---|---|---|
-| Platform subscription | $12K–$60K | $12K–$60K | $12K–$60K |
-| Integration setup (one-time) | $0–$5K | $0–$2K | $0–$2K |
-| Compliance add-on | $6K–$24K | $6K–$24K | $6K–$24K |
-| Ongoing optimization | Included | Included | Included |
-| **Total** | **$18K–$89K** | **$18K–$86K** | **$18K–$86K** |
-| **Cumulative (3 years)** | — | — | **$54K–$261K** |
+| Cost Category                | Year 1        | Year 2        | Year 3         |
+| ---------------------------- | ------------- | ------------- | -------------- |
+| Platform subscription        | $12K–$60K     | $12K–$60K     | $12K–$60K      |
+| Integration setup (one-time) | $0–$5K        | $0–$2K        | $0–$2K         |
+| Compliance add-on            | $6K–$24K      | $6K–$24K      | $6K–$24K       |
+| Ongoing optimization         | Included      | Included      | Included       |
+| **Total**                    | **$18K–$89K** | **$18K–$86K** | **$18K–$86K**  |
+| **Cumulative (3 years)**     | —             | —             | **$54K–$261K** |
 
 ### 12-Month TCO Comparison
 
-| Scenario | In-House Build | Managed Platform | Savings |
-|---|---|---|---|
-| Small enterprise (5K min/mo) | $150K–$250K | $18K–$36K | $114K–$214K |
-| Mid-market (20K min/mo) | $210K–$380K | $36K–$72K | $138K–$308K |
-| Large enterprise (100K min/mo) | $350K–$500K | $60K–$120K | $230K–$380K |
+| Scenario                       | In-House Build | Managed Platform | Savings     |
+| ------------------------------ | -------------- | ---------------- | ----------- |
+| Small enterprise (5K min/mo)   | $150K–$250K    | $18K–$36K        | $114K–$214K |
+| Mid-market (20K min/mo)        | $210K–$380K    | $36K–$72K        | $138K–$308K |
+| Large enterprise (100K min/mo) | $350K–$500K    | $60K–$120K       | $230K–$380K |
 
 ### 24-Month TCO Comparison
 
-| Scenario | In-House Build | Managed Platform | Savings |
-|---|---|---|---|
-| Small enterprise (5K min/mo) | $286K–$450K | $36K–$72K | $214K–$378K |
-| Mid-market (20K min/mo) | $346K–$718K | $72K–$144K | $274K–$574K |
-| Large enterprise (100K min/mo) | $600K–$950K | $120K–$240K | $480K–$710K |
+| Scenario                       | In-House Build | Managed Platform | Savings     |
+| ------------------------------ | -------------- | ---------------- | ----------- |
+| Small enterprise (5K min/mo)   | $286K–$450K    | $36K–$72K        | $214K–$378K |
+| Mid-market (20K min/mo)        | $346K–$718K    | $72K–$144K       | $274K–$574K |
+| Large enterprise (100K min/mo) | $600K–$950K    | $120K–$240K      | $480K–$710K |
 
 > **Key insight:** At 24 months, in-house builds cost **2.4–4.2x more** than managed platforms across all enterprise sizes. The gap widens as compliance requirements increase because managed platforms amortize compliance costs across their entire customer base.
 
@@ -252,12 +252,12 @@ Enterprises in regulated industries face additional compliance costs:
 
 Enterprise volume unlocks meaningful per-minute savings:
 
-| Monthly Volume | Typical Discount | Effective Per-Minute Range |
-|---|---|---|
-| 10K–25K minutes | 0–15% | $0.10–$0.18/min |
-| 25K–50K minutes | 15–30% | $0.07–$0.14/min |
-| 50K–100K minutes | 25–40% | $0.05–$0.10/min |
-| 100K+ minutes | 35–50% | $0.04–$0.08/min |
+| Monthly Volume   | Typical Discount | Effective Per-Minute Range |
+| ---------------- | ---------------- | -------------------------- |
+| 10K–25K minutes  | 0–15%            | $0.10–$0.18/min            |
+| 25K–50K minutes  | 15–30%           | $0.07–$0.14/min            |
+| 50K–100K minutes | 25–40%           | $0.05–$0.10/min            |
+| 100K+ minutes    | 35–50%           | $0.04–$0.08/min            |
 
 > **Negotiation tip:** Always negotiate volume pricing based on your 12-month projected volume, not current usage. Locking in enterprise rates upfront saves 15–25% compared to starting at standard rates and renegotiating later.
 

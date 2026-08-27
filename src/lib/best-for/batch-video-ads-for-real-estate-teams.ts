@@ -163,7 +163,8 @@ export const batchVideoAdsForRealEstateTeams: BestForPageContent = {
     },
   ],
   proprietaryData: {
-    heading: "How much creative volume do real estate teams need before paid social stops guessing?",
+    heading:
+      "How much creative volume do real estate teams need before paid social stops guessing?",
     intro:
       "Real estate teams are often trying to make one market-update video carry buyer leads, seller leads, recruiting, and listing promotion at the same time. These numbers show why the team that can rotate many specific ads gets a different learning loop than the team waiting on a monthly creative drop.",
     stats: [
@@ -183,7 +184,8 @@ export const batchVideoAdsForRealEstateTeams: BestForPageContent = {
           "The +28–40% CPM creep after two weeks is especially punishing in real estate because audiences are geographically constrained. If the same faces and hooks keep hitting a small ZIP-code pool, the team pays more to reach people who have already decided whether they care.",
       },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     headline: "Real Estate Teams: 500 Real Video Ads in 24 Hours.",

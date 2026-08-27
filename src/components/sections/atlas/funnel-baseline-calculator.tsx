@@ -138,8 +138,8 @@ export function FunnelBaselineCalculator() {
             Measure the funnel you have before comparing it.
           </h2>
           <p className="text-muted-foreground mt-5 max-w-xl text-base leading-7">
-            Enter one consistent reporting period. The calculator turns your raw counts into the
-            six baseline metrics. Nothing is sent or stored.
+            Enter one consistent reporting period. The calculator turns your raw counts into the six
+            baseline metrics. Nothing is sent or stored.
           </p>
 
           <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">

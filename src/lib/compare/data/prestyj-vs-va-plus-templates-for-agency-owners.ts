@@ -155,14 +155,29 @@ export const agencyOwnersVsVaPlusTemplatesForCompareData: ComparePageData = crea
     },
   ],
   proprietaryData: {
-    heading: "Can agency owners outgrow VA-plus-template production without inflating delivery costs?",
-    intro: "Agency owners need dependable content throughput across clients while protecting margins and strategist time. These benchmarks compare template-assisted labor with a production model built for higher cadence and lower unit cost.",
+    heading:
+      "Can agency owners outgrow VA-plus-template production without inflating delivery costs?",
+    intro:
+      "Agency owners need dependable content throughput across clients while protecting margins and strategist time. These benchmarks compare template-assisted labor with a production model built for higher cadence and lower unit cost.",
     stats: [
-      { statId: "social-effective-cost-per-post", analysis: "Low unit economics give agencies room to include more creative in retainers without turning every extra post into margin pressure. That flexibility is hard to get when a VA workflow still requires management, review, and manual assembly." },
-      { statId: "social-platform-cadence-short-form", analysis: "Short-form platforms reward a pace that can overwhelm template queues once multiple clients need daily coverage. Agency owners should judge the system by whether it can sustain algorithmic cadence without consuming account-manager bandwidth." },
-      { statId: "social-agency-post-volume", analysis: "Typical agency output can be acceptable for maintenance accounts but thin for clients expecting growth, testing, and platform-native variety. Prestyj helps owners raise the delivery ceiling without rebuilding the team around repetitive production work." }
+      {
+        statId: "social-effective-cost-per-post",
+        analysis:
+          "Low unit economics give agencies room to include more creative in retainers without turning every extra post into margin pressure. That flexibility is hard to get when a VA workflow still requires management, review, and manual assembly.",
+      },
+      {
+        statId: "social-platform-cadence-short-form",
+        analysis:
+          "Short-form platforms reward a pace that can overwhelm template queues once multiple clients need daily coverage. Agency owners should judge the system by whether it can sustain algorithmic cadence without consuming account-manager bandwidth.",
+      },
+      {
+        statId: "social-agency-post-volume",
+        analysis:
+          "Typical agency output can be acceptable for maintenance accounts but thin for clients expecting growth, testing, and platform-native variety. Prestyj helps owners raise the delivery ceiling without rebuilding the team around repetitive production work.",
+      },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     title: "Agency Owners Pick the AI Content Engine Over VA + Canva Templates Stack.",

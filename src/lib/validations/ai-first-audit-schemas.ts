@@ -117,12 +117,7 @@ const weeklyHoursValues = WEEKLY_HOURS_OPTIONS.map((item) => item.value) as [
   ...WeeklyHoursAnswer[],
 ];
 const impactValues = IMPACT_OPTIONS.map((item) => item.value) as [ImpactAnswer, ...ImpactAnswer[]];
-const fourPointAnswerSchema = z.union([
-  z.literal(1),
-  z.literal(2),
-  z.literal(3),
-  z.literal(4),
-]);
+const fourPointAnswerSchema = z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4)]);
 
 export const auditProfileV2Schema = z
   .object({
@@ -141,7 +136,12 @@ export const readinessAnswersSchema = z
 
 export const workflowInputV2Schema = z
   .object({
-    id: z.string().trim().min(1).max(80).regex(/^[a-zA-Z0-9_-]+$/),
+    id: z
+      .string()
+      .trim()
+      .min(1)
+      .max(80)
+      .regex(/^[a-zA-Z0-9_-]+$/),
     title: z.string().trim().min(1, "Workflow name is required").max(120),
     category: z.enum(workflowCategoryValues),
     isCustom: z.boolean(),
@@ -199,7 +199,11 @@ export const completeAuditRequestSchema = z
     consent: auditConsentV2Schema,
     submissionKey: z.string().uuid(),
     companyWebsite: z.string().max(0, "Leave this field empty"),
-    completionTimeMs: z.number().int().min(10_000).max(24 * 60 * 60 * 1000),
+    completionTimeMs: z
+      .number()
+      .int()
+      .min(10_000)
+      .max(24 * 60 * 60 * 1000),
   })
   .strict();
 

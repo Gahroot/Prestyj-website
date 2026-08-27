@@ -208,7 +208,7 @@ Tick every box before opening a PR. If any box is unchecked, the post is not rea
 
 ## 6. Porting the formula across engines (AIO, Perplexity, ChatGPT)
 
-The Bing/Copilot-validated formula transfers to Google AI Overviews, Perplexity, and ChatGPT because all four extract the same things: a self-contained answer near the top, a liftable table, and verifiable numbers. The differences are in *how* each engine selects and renders, so the formula gets three small additions rather than a rewrite.
+The Bing/Copilot-validated formula transfers to Google AI Overviews, Perplexity, and ChatGPT because all four extract the same things: a self-contained answer near the top, a liftable table, and verifiable numbers. The differences are in _how_ each engine selects and renders, so the formula gets three small additions rather than a rewrite.
 
 ### What's the same on every engine
 
@@ -219,11 +219,11 @@ The Bing/Copilot-validated formula transfers to Google AI Overviews, Perplexity,
 
 ### Engine-specific tuning
 
-| Engine | How it selects | What to add on top of the base formula |
-| --- | --- | --- |
-| **Google AI Overviews** | Leans on Search ranking + passage extraction; rewards FAQ/HowTo schema and clean passage boundaries. | Keep the `## Key Takeaways` list and `## FAQ` (both already feed schema). Make the Direct answer a single self-contained paragraph — AIO lifts one passage, so it must stand alone without the sentence before it. |
-| **Perplexity** | Retrieves a handful of sources and quotes short spans with inline citations; favors pages with discrete, numeric, attributable claims. | Link every number to a `/stat/<id>` permalink — Perplexity prefers citing a page that *is* the claim. The `/stat/*`, `/data`, and `/llms.txt` surfaces exist for exactly this. |
-| **ChatGPT (search + browse)** | Uses Bing-style retrieval plus its own ranker; rewards named entities and tables it can reformat. | Name competitors with 2026 pricing (already a rule) and keep tables 3–6 columns so they survive reformatting into ChatGPT's answer. |
+| Engine                        | How it selects                                                                                                                         | What to add on top of the base formula                                                                                                                                                                             |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Google AI Overviews**       | Leans on Search ranking + passage extraction; rewards FAQ/HowTo schema and clean passage boundaries.                                   | Keep the `## Key Takeaways` list and `## FAQ` (both already feed schema). Make the Direct answer a single self-contained paragraph — AIO lifts one passage, so it must stand alone without the sentence before it. |
+| **Perplexity**                | Retrieves a handful of sources and quotes short spans with inline citations; favors pages with discrete, numeric, attributable claims. | Link every number to a `/stat/<id>` permalink — Perplexity prefers citing a page that _is_ the claim. The `/stat/*`, `/data`, and `/llms.txt` surfaces exist for exactly this.                                     |
+| **ChatGPT (search + browse)** | Uses Bing-style retrieval plus its own ranker; rewards named entities and tables it can reformat.                                      | Name competitors with 2026 pricing (already a rule) and keep tables 3–6 columns so they survive reformatting into ChatGPT's answer.                                                                                |
 
 ### The Direct answer block (copy this shape)
 

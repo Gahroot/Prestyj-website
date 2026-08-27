@@ -79,17 +79,17 @@ The [hidden cost of answering services](/blog/hidden-cost-answering-services-202
 
 The advertised numbers — useful as a starting point, not the number that hits the credit card.
 
-| Platform / Service             | Pricing Model               | Per-Minute Rate | Monthly Minimum     | Setup Fee |
-| ------------------------------ | --------------------------- | --------------- | ------------------- | --------- |
-| **Prestyj (AI)**               | Subscription, all-inclusive | ~$0.22–$0.35    | $399                | Included  |
-| **Bland AI**                   | Per-minute, bulk discounts  | $0.09–$0.12     | None                | $0–$2,500 |
-| **Air.ai**                     | Tiered subscription         | ~$0.15–$0.26    | $149                | Included  |
-| **Synthflow**                  | Tiered subscription         | ~$0.18–$0.28    | $39                 | Self-serve|
-| **Retell AI**                  | Per-minute                  | $0.12–$0.22     | None                | $0–$2,000 |
-| **Ruby Receptionists (Human)** | Tiered + overage            | $0.95–$1.25     | $325                | $95       |
-| **AnswerConnect (Human)**      | Tiered + overage            | $1.45–$2.10     | $260                | $0–$150   |
-| **MAP Communications (Human)** | Tiered + overage            | $1.55–$2.40     | $235                | $0–$95    |
-| **Smith.ai (Human)**           | Tiered + per-call           | $1.95–$2.80     | $285 + $7/call live | $0        |
+| Platform / Service             | Pricing Model               | Per-Minute Rate | Monthly Minimum     | Setup Fee  |
+| ------------------------------ | --------------------------- | --------------- | ------------------- | ---------- |
+| **Prestyj (AI)**               | Subscription, all-inclusive | ~$0.22–$0.35    | $399                | Included   |
+| **Bland AI**                   | Per-minute, bulk discounts  | $0.09–$0.12     | None                | $0–$2,500  |
+| **Air.ai**                     | Tiered subscription         | ~$0.15–$0.26    | $149                | Included   |
+| **Synthflow**                  | Tiered subscription         | ~$0.18–$0.28    | $39                 | Self-serve |
+| **Retell AI**                  | Per-minute                  | $0.12–$0.22     | None                | $0–$2,000  |
+| **Ruby Receptionists (Human)** | Tiered + overage            | $0.95–$1.25     | $325                | $95        |
+| **AnswerConnect (Human)**      | Tiered + overage            | $1.45–$2.10     | $260                | $0–$150    |
+| **MAP Communications (Human)** | Tiered + overage            | $1.55–$2.40     | $235                | $0–$95     |
+| **Smith.ai (Human)**           | Tiered + per-call           | $1.95–$2.80     | $285 + $7/call live | $0         |
 
 Two things to notice. First, AI voice clusters between $0.09–$0.35/minute fully loaded; human services cluster at $0.95–$2.80/minute. The gap is structural — a US human operator's loaded labor cost is $18–$32/hour, which back-solves to a minimum viable rate around $1.20/minute before margin. No human service can underprice that floor without operating at a loss.
 
@@ -101,17 +101,17 @@ Second, monthly minimums on human services are deceptive. Ruby's $325/month "sta
 
 The all-in monthly cost for an HVAC operator at three representative call volumes, assuming 4.5-minute average call duration (blend of 3.5-minute routine bookings and 7-minute emergency triage).
 
-| Solution                  | 400 calls/mo (1,800 min) | 1,000 calls/mo (4,500 min) | 2,500 calls/mo (11,250 min) |
-| ------------------------- | ------------------------ | -------------------------- | --------------------------- |
-| **Prestyj (AI)**          | **$499**                 | **$799**                   | **$1,499**                  |
-| **Bland AI (DIY + setup)**| ~$420 + $350 ops         | ~$680 + $400 ops           | ~$1,280 + $500 ops          |
-| **Air.ai**                | $499                     | $899                       | $1,899                      |
-| **Synthflow**             | $399                     | $799                       | $1,799                      |
-| **Retell AI (DIY)**       | ~$520 + $350 ops         | ~$890 + $400 ops           | ~$1,950 + $500 ops          |
-| **Ruby Receptionists**    | $1,510                   | $2,180                     | $4,310                      |
-| **AnswerConnect**         | $1,400                   | $1,650                     | $3,180                      |
-| **MAP Communications**    | $1,290                   | $1,610                     | $3,040                      |
-| **Smith.ai**              | $1,720                   | $2,540                     | $4,820                      |
+| Solution                   | 400 calls/mo (1,800 min) | 1,000 calls/mo (4,500 min) | 2,500 calls/mo (11,250 min) |
+| -------------------------- | ------------------------ | -------------------------- | --------------------------- |
+| **Prestyj (AI)**           | **$499**                 | **$799**                   | **$1,499**                  |
+| **Bland AI (DIY + setup)** | ~$420 + $350 ops         | ~$680 + $400 ops           | ~$1,280 + $500 ops          |
+| **Air.ai**                 | $499                     | $899                       | $1,899                      |
+| **Synthflow**              | $399                     | $799                       | $1,799                      |
+| **Retell AI (DIY)**        | ~$520 + $350 ops         | ~$890 + $400 ops           | ~$1,950 + $500 ops          |
+| **Ruby Receptionists**     | $1,510                   | $2,180                     | $4,310                      |
+| **AnswerConnect**          | $1,400                   | $1,650                     | $3,180                      |
+| **MAP Communications**     | $1,290                   | $1,610                     | $3,040                      |
+| **Smith.ai**               | $1,720                   | $2,540                     | $4,820                      |
 
 The "ops" line on Bland AI and Retell reflects realistic operator overhead — prompt tuning, integration maintenance, failed-call log review. Bare-metal Bland AI without that overhead books at 60–70% instead of the 85%+ managed deployments hit.
 
@@ -133,16 +133,16 @@ Industry-typical 2026 booking rates for HVAC inbound calls:
 
 Cost per booked appointment at 1,000 calls/month (using mid-range booking rates):
 
-| Solution                       | Monthly Cost | Estimated Bookings | Cost / Booked Appt |
-| ------------------------------ | ------------ | ------------------ | ------------------ |
-| **Prestyj (AI, 85% booking)**  | $799         | 850                | **$0.94**          |
-| **Bland AI (managed, 80%)**    | $1,080       | 800                | **$1.35**          |
-| **Air.ai (84%)**               | $899         | 840                | **$1.07**          |
-| **Synthflow (78%)**            | $799         | 780                | **$1.02**          |
-| **Ruby (message-only, 52%)**   | $2,180       | 520                | **$4.19**          |
-| **AnswerConnect (54%)**        | $1,650       | 540                | **$3.06**          |
-| **MAP Communications (55%)**   | $1,610       | 550                | **$2.93**          |
-| **Smith.ai (live-tx, 72%)**    | $2,540       | 720                | **$3.53**          |
+| Solution                      | Monthly Cost | Estimated Bookings | Cost / Booked Appt |
+| ----------------------------- | ------------ | ------------------ | ------------------ |
+| **Prestyj (AI, 85% booking)** | $799         | 850                | **$0.94**          |
+| **Bland AI (managed, 80%)**   | $1,080       | 800                | **$1.35**          |
+| **Air.ai (84%)**              | $899         | 840                | **$1.07**          |
+| **Synthflow (78%)**           | $799         | 780                | **$1.02**          |
+| **Ruby (message-only, 52%)**  | $2,180       | 520                | **$4.19**          |
+| **AnswerConnect (54%)**       | $1,650       | 540                | **$3.06**          |
+| **MAP Communications (55%)**  | $1,610       | 550                | **$2.93**          |
+| **Smith.ai (live-tx, 72%)**   | $2,540       | 720                | **$3.53**          |
 
 Two distortions to be honest about. The Smith.ai number assumes live-transfer during business hours — the strongest version of the human offering. After-hours and weekend Smith.ai calls drop back to message-only behavior, pulling realized booking rate toward 55–60%. The AI platform numbers assume HVAC-specific configuration; bare-metal AI with no HVAC training underperforms even Ruby on booking rate, which is why managed deployments matter more than the headline per-minute rate.
 
@@ -202,14 +202,14 @@ The all-in monthly economics, broken out for the three operator sizes that buy t
 
 Profile: $400k–$900k revenue, 1–2 trucks, owner-operator or owner + one tech. Calls peak first AC week and first heat week.
 
-| Stack                                 | Monthly Cost | Notes                                                  |
-| ------------------------------------- | ------------ | ------------------------------------------------------ |
-| **Prestyj (AI)**                      | $499         | Full HVAC config, ServiceTitan/HCP integration         |
-| **Bland AI (DIY + ops)**              | ~$770        | Per-min usage + 4–6 hr/mo prompt maintenance           |
-| **Synthflow self-serve**              | ~$420        | Lower-touch config, smaller operator sweet spot        |
-| **MAP Communications**                | $1,290       | Cheapest human option; manual ServiceTitan entry       |
-| **Ruby Receptionists**                | $1,510       | Premium human service; warmth premium                  |
-| **Hybrid: Prestyj AI + MAP overflow** | $639         | AI handles 90%, MAP catches the 10% escalations        |
+| Stack                                 | Monthly Cost | Notes                                            |
+| ------------------------------------- | ------------ | ------------------------------------------------ |
+| **Prestyj (AI)**                      | $499         | Full HVAC config, ServiceTitan/HCP integration   |
+| **Bland AI (DIY + ops)**              | ~$770        | Per-min usage + 4–6 hr/mo prompt maintenance     |
+| **Synthflow self-serve**              | ~$420        | Lower-touch config, smaller operator sweet spot  |
+| **MAP Communications**                | $1,290       | Cheapest human option; manual ServiceTitan entry |
+| **Ruby Receptionists**                | $1,510       | Premium human service; warmth premium            |
+| **Hybrid: Prestyj AI + MAP overflow** | $639         | AI handles 90%, MAP catches the 10% escalations  |
 
 At 400 calls/month, an HVAC operator pays **$1,290–$1,510/month on any human service** vs **$420–$770/month on any AI platform**. Annualized savings: **$10,400–$13,100/year** on platform cost alone, before recovered missed-call revenue.
 
@@ -217,15 +217,15 @@ At 400 calls/month, an HVAC operator pays **$1,290–$1,510/month on any human s
 
 Profile: 4–8 trucks, dedicated office staff during business hours, after-hours and weekend coverage is the painful gap. This is the volume bracket where the cost gap gets material.
 
-| Stack                                  | Monthly Cost | Annual Cost |
-| -------------------------------------- | ------------ | ----------- |
-| **Prestyj (AI)**                       | $799         | $9,588      |
-| **Bland AI (DIY managed)**             | $1,080       | $12,960     |
-| **Synthflow**                          | $799         | $9,588      |
-| **MAP Communications**                 | $1,610       | $19,320     |
-| **Ruby Receptionists**                 | $2,180       | $26,160     |
-| **Smith.ai (live-tx model)**           | $2,540       | $30,480     |
-| **Hybrid: Prestyj AI + MAP escalation**| $1,100       | $13,200     |
+| Stack                                   | Monthly Cost | Annual Cost |
+| --------------------------------------- | ------------ | ----------- |
+| **Prestyj (AI)**                        | $799         | $9,588      |
+| **Bland AI (DIY managed)**              | $1,080       | $12,960     |
+| **Synthflow**                           | $799         | $9,588      |
+| **MAP Communications**                  | $1,610       | $19,320     |
+| **Ruby Receptionists**                  | $2,180       | $26,160     |
+| **Smith.ai (live-tx model)**            | $2,540       | $30,480     |
+| **Hybrid: Prestyj AI + MAP escalation** | $1,100       | $13,200     |
 
 At 1,000 calls/month, the annual delta between Prestyj and Ruby is **$16,572/year**; vs Smith.ai, **$20,892/year**. Both exclude recovered revenue from 24/7 coverage and instant pickup, which typically exceeds the platform delta by 3–5x in seasonal markets.
 
@@ -272,12 +272,12 @@ Hybrid stacks book at **82–90%** vs 78–88% for pure AI and 52–60% for mess
 
 Prestyj is an AI voice receptionist built for home service trades, with HVAC, plumbing, electrical, and roofing configurations as first-class products. Pricing tiers:
 
-| Tier             | Monthly Cost | Volume                                            | Included                                                                                                                            |
-| ---------------- | ------------ | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| **HVAC Solo**    | $499         | Up to 600 calls/month (~2,700 min)               | HVAC-specific training, ServiceTitan or Housecall Pro integration, emergency dispatch routing, after-hours coverage                 |
-| **HVAC Pro**     | $799         | Up to 1,500 calls/month (~6,750 min)             | Everything in Solo + multi-truck dispatch logic, advanced symptom triage, parts-availability checks, on-call rotation handling      |
-| **HVAC Multi**   | $1,499       | Up to 4,000 calls/month (~18,000 min)            | Everything in Pro + multi-location routing, regional dispatch zones, custom reporting, dedicated success manager, priority support  |
-| **HVAC Enterprise** | Custom    | 4,000+ calls/month                                | Multi-brand support, custom integrations, SLA, white-glove implementation                                                           |
+| Tier                | Monthly Cost | Volume                                | Included                                                                                                                           |
+| ------------------- | ------------ | ------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **HVAC Solo**       | $499         | Up to 600 calls/month (~2,700 min)    | HVAC-specific training, ServiceTitan or Housecall Pro integration, emergency dispatch routing, after-hours coverage                |
+| **HVAC Pro**        | $799         | Up to 1,500 calls/month (~6,750 min)  | Everything in Solo + multi-truck dispatch logic, advanced symptom triage, parts-availability checks, on-call rotation handling     |
+| **HVAC Multi**      | $1,499       | Up to 4,000 calls/month (~18,000 min) | Everything in Pro + multi-location routing, regional dispatch zones, custom reporting, dedicated success manager, priority support |
+| **HVAC Enterprise** | Custom       | 4,000+ calls/month                    | Multi-brand support, custom integrations, SLA, white-glove implementation                                                          |
 
 Included at every tier:
 
@@ -296,15 +296,15 @@ Deeper pricing breakdown: [AI voice agent pricing for HVAC](/blog/ai-voice-agent
 
 Before switching or renewing, force every AI and human provider to price these line items in writing.
 
-| Hidden cost | Traditional answering service impact | AI voice platform impact | HVAC buying note |
-| --- | ---: | ---: | --- |
-| AC-season surge minutes | +$800–$2,000 in a heatwave month | Usually included or marginal usage increase | Stress-test against your busiest week last year |
-| After-hours/weekend premium | +20–40% | Usually no surcharge | HVAC emergencies happen exactly when human services charge more |
-| Manual ServiceTitan entry | $2.40–$6.25/call in admin labor | $0 if integration is native | At 1,000 calls/month this can exceed the platform bill |
-| Missed concurrent calls | Lost jobs during outage spikes | Near-zero if concurrent capacity is included | Ask for concurrent-call limits, not just monthly minutes |
-| Script updates | Often support ticket or extra setup | Included on managed platforms, DIY on developer platforms | Seasonal offers change monthly in HVAC |
-| Human escalation | Included but every minute billed | 10–20% of calls routed to human backup | Hybrid beats pure-human if escalation is deliberate |
-| Reporting and QA | Limited call summaries | Transcript, disposition, booking metrics | Require cost per booked appointment reporting |
+| Hidden cost                 | Traditional answering service impact |                                  AI voice platform impact | HVAC buying note                                                |
+| --------------------------- | -----------------------------------: | --------------------------------------------------------: | --------------------------------------------------------------- |
+| AC-season surge minutes     |     +$800–$2,000 in a heatwave month |               Usually included or marginal usage increase | Stress-test against your busiest week last year                 |
+| After-hours/weekend premium |                              +20–40% |                                      Usually no surcharge | HVAC emergencies happen exactly when human services charge more |
+| Manual ServiceTitan entry   |      $2.40–$6.25/call in admin labor |                               $0 if integration is native | At 1,000 calls/month this can exceed the platform bill          |
+| Missed concurrent calls     |       Lost jobs during outage spikes |              Near-zero if concurrent capacity is included | Ask for concurrent-call limits, not just monthly minutes        |
+| Script updates              |  Often support ticket or extra setup | Included on managed platforms, DIY on developer platforms | Seasonal offers change monthly in HVAC                          |
+| Human escalation            |     Included but every minute billed |                    10–20% of calls routed to human backup | Hybrid beats pure-human if escalation is deliberate             |
+| Reporting and QA            |               Limited call summaries |                  Transcript, disposition, booking metrics | Require cost per booked appointment reporting                   |
 
 A cheaper per-minute rate is not enough. The right HVAC stack is the one with the lowest **cost per booked appointment after surge, integration, and escalation costs**.
 
@@ -352,13 +352,13 @@ Below 200 calls/month, either can work if the owner still answers high-value cal
 
 ## Quick Reference: HVAC Call Volume → Recommended Stack
 
-| Monthly Call Volume         | Operator Profile               | Recommended Stack                                 | Expected Monthly Cost | Expected Booking Rate |
-| --------------------------- | ------------------------------ | ------------------------------------------------- | --------------------- | --------------------- |
-| < 200 calls                 | Solo / part-time HVAC          | Basic answering service OR self-serve Synthflow   | $200–$500             | 50–75%                |
-| 200–500 calls               | Single/two-truck operator      | Prestyj Solo OR Synthflow self-serve              | $400–$700             | 78–86%                |
-| 500–1,200 calls             | Mid-market ($2–5M)             | Prestyj Pro + MAP escalation hybrid               | $900–$1,200           | 82–90%                |
-| 1,200–3,000 calls           | Multi-truck ($5–15M)           | Prestyj Multi + dedicated human escalation team   | $1,500–$2,200         | 85–92%                |
-| 3,000+ calls                | Regional multi-location        | Prestyj Enterprise + in-house dispatch team       | $2,500–$5,000+        | 88–94%                |
+| Monthly Call Volume | Operator Profile          | Recommended Stack                               | Expected Monthly Cost | Expected Booking Rate |
+| ------------------- | ------------------------- | ----------------------------------------------- | --------------------- | --------------------- |
+| < 200 calls         | Solo / part-time HVAC     | Basic answering service OR self-serve Synthflow | $200–$500             | 50–75%                |
+| 200–500 calls       | Single/two-truck operator | Prestyj Solo OR Synthflow self-serve            | $400–$700             | 78–86%                |
+| 500–1,200 calls     | Mid-market ($2–5M)        | Prestyj Pro + MAP escalation hybrid             | $900–$1,200           | 82–90%                |
+| 1,200–3,000 calls   | Multi-truck ($5–15M)      | Prestyj Multi + dedicated human escalation team | $1,500–$2,200         | 85–92%                |
+| 3,000+ calls        | Regional multi-location   | Prestyj Enterprise + in-house dispatch team     | $2,500–$5,000+        | 88–94%                |
 
 The breakpoints are real — operators who stretch a tier usually end up either underpaying (poor booking rates from under-configured AI) or overpaying (Ruby plan upsells during AC season). Match the stack to call volume, then re-evaluate every 90 days.
 

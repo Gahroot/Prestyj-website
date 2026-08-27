@@ -120,10 +120,7 @@ function stopMediaStream(stream: MediaStream | null): void {
   });
 }
 
-function setAudioTracksEnabled(
-  stream: MediaStream | null,
-  enabled: boolean,
-): boolean {
+function setAudioTracksEnabled(stream: MediaStream | null, enabled: boolean): boolean {
   if (!stream) return false;
   for (const track of stream.getAudioTracks()) track.enabled = enabled;
   return true;
@@ -197,10 +194,7 @@ function parseToolArguments(value: unknown): Record<string, unknown> | null {
   return null;
 }
 
-function sendRealtimeEvent(
-  dataChannel: RTCDataChannel,
-  payload: Record<string, unknown>,
-): void {
+function sendRealtimeEvent(dataChannel: RTCDataChannel, payload: Record<string, unknown>): void {
   if (dataChannel.readyState !== "open") return;
   dataChannel.send(JSON.stringify(payload));
 }
@@ -259,9 +253,7 @@ export function useTribunalAgentConfig({
         if (!abortController.signal.aborted) setConfig(nextConfig);
       } catch (err) {
         if (!abortController.signal.aborted) {
-          setError(
-            err instanceof Error ? err.message : "Failed to load the AI concierge.",
-          );
+          setError(err instanceof Error ? err.message : "Failed to load the AI concierge.");
           setConfig(null);
         }
       } finally {
@@ -289,9 +281,7 @@ export function useTribunalVoiceSession({
   const [status, setStatus] = useState<TribunalConnectionStatus>("idle");
   const [agentState, setAgentState] = useState<TribunalAgentState>("idle");
   const [isMuted, setIsMuted] = useState(false);
-  const [frequencies, setFrequencies] = useState<number[]>(() =>
-    new Array(barCount).fill(0),
-  );
+  const [frequencies, setFrequencies] = useState<number[]>(() => new Array(barCount).fill(0));
   const [smoothedLevel, setSmoothedLevel] = useState(0);
   const [transcript, setTranscript] = useState<TribunalTranscriptTurn[]>([]);
   const [error, setError] = useState<string | null>(null);
@@ -363,12 +353,8 @@ export function useTribunalVoiceSession({
               const bands: number[] = [];
               const bufferLength = data.length;
               for (let i = 0; i < barCount; i += 1) {
-                const startIndex = Math.floor(
-                  (i / barCount) ** 1.5 * bufferLength,
-                );
-                const endIndex = Math.floor(
-                  ((i + 1) / barCount) ** 1.5 * bufferLength,
-                );
+                const startIndex = Math.floor((i / barCount) ** 1.5 * bufferLength);
+                const endIndex = Math.floor(((i + 1) / barCount) ** 1.5 * bufferLength);
                 let sum = 0;
                 const count = Math.max(1, endIndex - startIndex);
                 for (let j = startIndex; j < endIndex && j < bufferLength; j += 1) {
@@ -409,10 +395,7 @@ export function useTribunalVoiceSession({
 
   const appendUserTranscript = useCallback((text: string): void => {
     transcriptLogRef.current.push({ role: "user", content: text });
-    setTranscript((previous) => [
-      ...previous,
-      createTranscriptTurn("user", text, true),
-    ]);
+    setTranscript((previous) => [...previous, createTranscriptTurn("user", text, true)]);
   }, []);
 
   const appendAssistantDelta = useCallback((delta: string): void => {
@@ -476,10 +459,7 @@ export function useTribunalVoiceSession({
     if (transcriptLogRef.current.length === 0 || !sessionIdRef.current) return;
 
     const transcriptText = transcriptLogRef.current
-      .map(
-        (entry) =>
-          `[${entry.role === "user" ? "User" : "Assistant"}]: ${entry.content}`,
-      )
+      .map((entry) => `[${entry.role === "user" ? "User" : "Assistant"}]: ${entry.content}`)
       .join("\n\n");
     const durationSeconds = sessionStartTimeRef.current
       ? Math.floor((Date.now() - sessionStartTimeRef.current) / 1000)

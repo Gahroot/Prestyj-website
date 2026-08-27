@@ -6,15 +6,15 @@ Assisted content **drafting** for the Prestyj marketing site. Research → write
 
 ## What it drafts
 
-| Day | Tasks                                  | Default provider       |
-| --- | -------------------------------------- | ---------------------- |
-| Mon | 1 research brief                       | Gemini Pro (free tier) |
-| Tue | 1 research brief + 1 blog DRAFT        | Gemini Pro for blog    |
-| Wed | —                                      | —                      |
-| Thu | 1 research brief + 1 blog DRAFT        | Gemini Pro for blog    |
-| Fri | 1 competitor audit                     | Gemini Flash           |
-| Sat | —                                      | —                      |
-| Sun | Rest (weekly digest runs instead)      | —                      |
+| Day | Tasks                             | Default provider       |
+| --- | --------------------------------- | ---------------------- |
+| Mon | 1 research brief                  | Gemini Pro (free tier) |
+| Tue | 1 research brief + 1 blog DRAFT   | Gemini Pro for blog    |
+| Wed | —                                 | —                      |
+| Thu | 1 research brief + 1 blog DRAFT   | Gemini Pro for blog    |
+| Fri | 1 competitor audit                | Gemini Flash           |
+| Sat | —                                 | —                      |
+| Sun | Rest (weekly digest runs instead) | —                      |
 
 **Hard cap: at most 2 blog drafts per rolling 7 days** (`circuitBreaker.maxBlogsPerWeek`), and **zero automated pages** (`maxPagesPerDay: 0`). Every draft is left uncommitted for human review — the CLI runs in review mode by default and the GitHub Action opens a PR instead of pushing to `main`.
 

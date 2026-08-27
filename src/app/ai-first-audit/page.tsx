@@ -40,7 +40,10 @@ export default function AiFirstAuditPage() {
 
             <ul className="border-border mt-8 grid border-y sm:grid-cols-3">
               {VALUE_LABELS.map(({ icon: Icon, label }) => (
-                <li key={label} className="flex min-h-14 items-center gap-3 py-3 sm:px-4 sm:first:ps-0">
+                <li
+                  key={label}
+                  className="flex min-h-14 items-center gap-3 py-3 sm:px-4 sm:first:ps-0"
+                >
                   <Icon className="text-primary size-4" aria-hidden="true" />
                   <span className="text-sm font-medium">{label}</span>
                 </li>
@@ -49,7 +52,11 @@ export default function AiFirstAuditPage() {
           </div>
         </section>
 
-        <section id="audit" aria-label="AI-First Audit questions" className="scroll-mt-20 py-8 sm:py-12">
+        <section
+          id="audit"
+          aria-label="AI-First Audit questions"
+          className="scroll-mt-20 py-8 sm:py-12"
+        >
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
             <Wizard />
           </div>

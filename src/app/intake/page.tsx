@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { getPaidSession } from "@/lib/stripe";
 import { getBatchTierByPriceId } from "@/lib/batch-tiers";
-import {
-  LEGACY_INTAKE_ENABLED,
-  PREMIUM_PORTAL_URL,
-} from "@/lib/premium-portal";
+import { LEGACY_INTAKE_ENABLED, PREMIUM_PORTAL_URL } from "@/lib/premium-portal";
 import { IntakeClient } from "./intake-client";
 import { PurchaseConversion } from "./purchase-conversion";
 

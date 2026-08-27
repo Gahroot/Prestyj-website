@@ -17,9 +17,9 @@ export function VideoMachineSection(): ReactElement {
               Your ad creative engine.
             </h2>
             <p className="text-muted-foreground mt-4 text-lg leading-8">
-              Batch video ads are included in every plan. One recording becomes
-              hundreds of vertical ad variants for Meta, TikTok, YouTube Shorts and
-              Reels — the creative volume your paid social needs to win.
+              Batch video ads are included in every plan. One recording becomes hundreds of vertical
+              ad variants for Meta, TikTok, YouTube Shorts and Reels — the creative volume your paid
+              social needs to win.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button asChild size="lg">

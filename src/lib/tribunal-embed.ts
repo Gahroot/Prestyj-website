@@ -55,18 +55,10 @@ export type TribunalTool = z.infer<typeof tribunalToolSchema>;
 export type TribunalAgentConfig = z.infer<typeof tribunalAgentConfigSchema>;
 export type TribunalTokenResponse = z.infer<typeof tribunalTokenResponseSchema>;
 export type TribunalActionResponse = z.infer<typeof tribunalActionResponseSchema>;
-export type TribunalTranscriptResponse = z.infer<
-  typeof tribunalTranscriptResponseSchema
->;
-export type TribunalToolCallResponse = z.infer<
-  typeof tribunalToolCallResponseSchema
->;
+export type TribunalTranscriptResponse = z.infer<typeof tribunalTranscriptResponseSchema>;
+export type TribunalToolCallResponse = z.infer<typeof tribunalToolCallResponseSchema>;
 
-export type TribunalConnectionStatus =
-  | "idle"
-  | "connecting"
-  | "connected"
-  | "error";
+export type TribunalConnectionStatus = "idle" | "connecting" | "connected" | "error";
 export type TribunalAgentState = "idle" | "listening" | "thinking" | "speaking";
 export type TribunalTranscriptRole = "user" | "assistant";
 
@@ -179,8 +171,7 @@ async function fetchTribunalJson<T>(
 export function resolveTribunalApiBase(
   rawValue: string | undefined = process.env.NEXT_PUBLIC_TRIBUNAL_API_BASE,
 ): string | null {
-  const value =
-    normalizeEnvString(rawValue)?.replace(/\/+$/, "") ?? DEFAULT_TRIBUNAL_API_BASE;
+  const value = normalizeEnvString(rawValue)?.replace(/\/+$/, "") ?? DEFAULT_TRIBUNAL_API_BASE;
 
   if (!value) return "";
   if (value.startsWith("/")) return value;
@@ -201,9 +192,7 @@ export function getTribunalHomepageAgentId(): string | null {
 }
 
 export function isTribunalPhoneDemoEnabled(): boolean {
-  const value = normalizeEnvString(
-    process.env.NEXT_PUBLIC_TRIBUNAL_PHONE_DEMO_ENABLED,
-  );
+  const value = normalizeEnvString(process.env.NEXT_PUBLIC_TRIBUNAL_PHONE_DEMO_ENABLED);
   return value !== "false";
 }
 
@@ -215,12 +204,9 @@ export function buildTribunalEmbedUrl(
   return `${apiBase}/api/v1/p/embed/${encodeURIComponent(publicId)}/${endpoint}`;
 }
 
-export function normalizeUsPhoneNumber(
-  value: string,
-): TribunalPhoneValidationResult {
+export function normalizeUsPhoneNumber(value: string): TribunalPhoneValidationResult {
   const digits = value.replace(/\D/g, "");
-  const tenDigitNumber =
-    digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
+  const tenDigitNumber = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
 
   if (tenDigitNumber.length !== 10) {
     return { ok: false, error: "Enter a valid 10-digit US phone number." };

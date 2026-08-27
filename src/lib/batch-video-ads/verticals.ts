@@ -26,9 +26,11 @@ export const batchVideoAdsVerticals = [
     shortName: "Electricians",
     audience: "residential and light-commercial electrical contractors with booked-call capacity",
     economics: {
-      customerValue: "$175 service call → $4,000-$18,000 panel, EV charger, generator, or rewiring job",
+      customerValue:
+        "$175 service call → $4,000-$18,000 panel, EV charger, generator, or rewiring job",
       costPressure: "Aggregator leads get resold while emergency and financing angles go untested.",
-      batchLeverage: "Use one owner or master electrician recording to test safety, urgency, financing, and trust angles.",
+      batchLeverage:
+        "Use one owner or master electrician recording to test safety, urgency, financing, and trust angles.",
     },
     seasonalTriggers: ["storm season", "EV charger demand", "holiday lighting", "generator prep"],
     painPoints: [
@@ -37,7 +39,8 @@ export const batchVideoAdsVerticals = [
       "Panel, generator, and EV charger jobs are high-value categories that deserve their own creative lanes.",
     ],
     statusQuoCompetitor: "lead aggregators and generic local PPC agencies",
-    complianceNotes: "Avoid guarantees around code compliance, permitting timelines, utility approvals, or rebate eligibility unless verified by the contractor.",
+    complianceNotes:
+      "Avoid guarantees around code compliance, permitting timelines, utility approvals, or rebate eligibility unless verified by the contractor.",
     adAngleExamples: [
       "The flickering-lights safety check hook",
       "The EV charger installed before delivery hook",
@@ -55,8 +58,10 @@ export const batchVideoAdsVerticals = [
     audience: "local pest control operators selling recurring residential and commercial plans",
     economics: {
       customerValue: "$99 initial visit → $450-$1,200 annual recurring plan",
-      costPressure: "Seasonal spikes create short buying windows and generic ads miss pest-specific intent.",
-      batchLeverage: "Test pest-by-pest hooks while keeping recurring-plan economics front and center.",
+      costPressure:
+        "Seasonal spikes create short buying windows and generic ads miss pest-specific intent.",
+      batchLeverage:
+        "Test pest-by-pest hooks while keeping recurring-plan economics front and center.",
     },
     seasonalTriggers: ["spring ants", "summer mosquitoes", "termite season", "rodent season"],
     painPoints: [
@@ -65,7 +70,8 @@ export const batchVideoAdsVerticals = [
       "Seasonal pest demand changes faster than traditional creative calendars.",
     ],
     statusQuoCompetitor: "Google Local Services and seasonal coupon ads",
-    complianceNotes: "Avoid unsupported claims about eradication rates, pesticide safety, or guaranteed treatment outcomes.",
+    complianceNotes:
+      "Avoid unsupported claims about eradication rates, pesticide safety, or guaranteed treatment outcomes.",
     adAngleExamples: [
       "The one ant means colony hook",
       "The termite damage before you see it hook",
@@ -80,20 +86,29 @@ export const batchVideoAdsVerticals = [
     variableName: "garageDoorCompanies",
     nicheName: "Garage Door Companies",
     shortName: "Garage Door",
-    audience: "garage door repair and replacement companies serving homeowners with urgent and planned projects",
+    audience:
+      "garage door repair and replacement companies serving homeowners with urgent and planned projects",
     economics: {
       customerValue: "$150 repair → $1,800-$6,500 door replacement or opener package",
-      costPressure: "Emergency repair leads are expensive and replacement demand is often under-nurtured.",
-      batchLeverage: "Split urgent repair, safety, curb appeal, insulation, and smart-opener angles into separate tests.",
+      costPressure:
+        "Emergency repair leads are expensive and replacement demand is often under-nurtured.",
+      batchLeverage:
+        "Split urgent repair, safety, curb appeal, insulation, and smart-opener angles into separate tests.",
     },
-    seasonalTriggers: ["winter spring failures", "storm damage", "home sale prep", "holiday travel security"],
+    seasonalTriggers: [
+      "winter spring failures",
+      "storm damage",
+      "home sale prep",
+      "holiday travel security",
+    ],
     painPoints: [
       "Broken-spring emergencies and door replacement buyers are not the same audience.",
       "Most ads compete on same-day service instead of safety, quiet operation, or curb appeal.",
       "High-ticket replacement jobs need financing and before-after proof angles.",
     ],
     statusQuoCompetitor: "coupon PPC and emergency lead marketplaces",
-    complianceNotes: "Do not promise same-day service, specific door availability, or exact repair pricing unless the operator can honor it.",
+    complianceNotes:
+      "Do not promise same-day service, specific door availability, or exact repair pricing unless the operator can honor it.",
     adAngleExamples: [
       "The door stuck before work hook",
       "The noisy opener waking the house hook",
@@ -108,20 +123,29 @@ export const batchVideoAdsVerticals = [
     variableName: "landscapers",
     nicheName: "Landscapers",
     shortName: "Landscapers",
-    audience: "landscaping companies selling maintenance plans, installs, drainage, lighting, and outdoor living projects",
+    audience:
+      "landscaping companies selling maintenance plans, installs, drainage, lighting, and outdoor living projects",
     economics: {
       customerValue: "$150 monthly maintenance → $8,000-$75,000 design-build project",
-      costPressure: "Beautiful project photos underperform when the ad never names the homeowner's trigger.",
-      batchLeverage: "Turn seasonal services and before-after proof into many offer-specific creative tests.",
+      costPressure:
+        "Beautiful project photos underperform when the ad never names the homeowner's trigger.",
+      batchLeverage:
+        "Turn seasonal services and before-after proof into many offer-specific creative tests.",
     },
-    seasonalTriggers: ["spring cleanup", "summer irrigation", "fall leaf cleanup", "outdoor living season"],
+    seasonalTriggers: [
+      "spring cleanup",
+      "summer irrigation",
+      "fall leaf cleanup",
+      "outdoor living season",
+    ],
     painPoints: [
       "Maintenance, drainage, and outdoor living buyers each need different messages.",
       "Seasonal demand peaks before most teams have fresh creative ready.",
       "Project value varies wildly, so generic landscaping ads pull low-intent shoppers.",
     ],
     statusQuoCompetitor: "door hangers, referrals, and boosted before-after posts",
-    complianceNotes: "Avoid exact installation timelines, plant survival guarantees, or irrigation savings claims unless documented.",
+    complianceNotes:
+      "Avoid exact installation timelines, plant survival guarantees, or irrigation savings claims unless documented.",
     adAngleExamples: [
       "The yard embarrassing before guests hook",
       "The drainage problem after one storm hook",
@@ -138,18 +162,27 @@ export const batchVideoAdsVerticals = [
     shortName: "Pool Service",
     audience: "pool cleaning, repair, resurfacing, and remodel companies in warm-weather markets",
     economics: {
-      customerValue: "$150 monthly service → $6,000-$45,000 equipment, resurfacing, or remodel project",
-      costPressure: "Service-plan ads often fail to surface repair and remodel demand hiding inside the customer base.",
-      batchLeverage: "Test algae, equipment, remodel, automation, and seasonal opening angles from one recording.",
+      customerValue:
+        "$150 monthly service → $6,000-$45,000 equipment, resurfacing, or remodel project",
+      costPressure:
+        "Service-plan ads often fail to surface repair and remodel demand hiding inside the customer base.",
+      batchLeverage:
+        "Test algae, equipment, remodel, automation, and seasonal opening angles from one recording.",
     },
-    seasonalTriggers: ["pool opening", "summer algae spikes", "hurricane cleanup", "pre-holiday backyard prep"],
+    seasonalTriggers: [
+      "pool opening",
+      "summer algae spikes",
+      "hurricane cleanup",
+      "pre-holiday backyard prep",
+    ],
     painPoints: [
       "Weekly cleaning buyers and resurfacing buyers do not respond to the same ad.",
       "Emergency equipment failures create urgency that generic maintenance ads miss.",
       "Seasonality compresses the creative calendar into a few critical weeks.",
     ],
     statusQuoCompetitor: "referrals and route-density discount ads",
-    complianceNotes: "Avoid chemical safety, energy savings, or remodel completion claims unless specific and supportable.",
+    complianceNotes:
+      "Avoid chemical safety, energy savings, or remodel completion claims unless specific and supportable.",
     adAngleExamples: [
       "The green pool before party hook",
       "The pump noise warning hook",
@@ -164,11 +197,14 @@ export const batchVideoAdsVerticals = [
     variableName: "restorationCompanies",
     nicheName: "Restoration Companies",
     shortName: "Restoration",
-    audience: "water, fire, mold, and storm restoration companies competing for urgent homeowner demand",
+    audience:
+      "water, fire, mold, and storm restoration companies competing for urgent homeowner demand",
     economics: {
       customerValue: "$2,500-$35,000 mitigation or rebuild job",
-      costPressure: "Urgent jobs go to the first trusted operator while generic ads blur water, mold, and fire intent.",
-      batchLeverage: "Create separate urgency, insurance, safety, and response-time creative lanes.",
+      costPressure:
+        "Urgent jobs go to the first trusted operator while generic ads blur water, mold, and fire intent.",
+      batchLeverage:
+        "Create separate urgency, insurance, safety, and response-time creative lanes.",
     },
     seasonalTriggers: ["freeze events", "hurricane season", "storm damage", "holiday fire risk"],
     painPoints: [
@@ -177,7 +213,8 @@ export const batchVideoAdsVerticals = [
       "Event-driven demand moves faster than agency creative production.",
     ],
     statusQuoCompetitor: "franchise PPC, emergency directories, and plumber referrals",
-    complianceNotes: "Avoid insurance approval promises, health claims, or response-time guarantees unless operationally true.",
+    complianceNotes:
+      "Avoid insurance approval promises, health claims, or response-time guarantees unless operationally true.",
     adAngleExamples: [
       "The first 24 hours after water damage hook",
       "The smell that may be mold hook",
@@ -192,20 +229,29 @@ export const batchVideoAdsVerticals = [
     variableName: "generalContractors",
     nicheName: "General Contractors",
     shortName: "Contractors",
-    audience: "general contractors and remodelers selling renovations, additions, kitchens, baths, and whole-home projects",
+    audience:
+      "general contractors and remodelers selling renovations, additions, kitchens, baths, and whole-home projects",
     economics: {
       customerValue: "$25,000-$250,000 renovation or addition project",
-      costPressure: "Referral pipelines are lumpy and generic project galleries do not qualify budget or timeline.",
-      batchLeverage: "Test budget, timeline, trust, before-after, and project-type angles without a new shoot per project.",
+      costPressure:
+        "Referral pipelines are lumpy and generic project galleries do not qualify budget or timeline.",
+      batchLeverage:
+        "Test budget, timeline, trust, before-after, and project-type angles without a new shoot per project.",
     },
-    seasonalTriggers: ["spring remodel planning", "summer additions", "pre-holiday kitchens", "pre-listing upgrades"],
+    seasonalTriggers: [
+      "spring remodel planning",
+      "summer additions",
+      "pre-holiday kitchens",
+      "pre-listing upgrades",
+    ],
     painPoints: [
       "Kitchen, bathroom, addition, and whole-home projects need distinct qualification hooks.",
       "Homeowners fear contractor horror stories more than they fear price.",
       "Beautiful portfolio posts do not explain process, trust, or project fit.",
     ],
     statusQuoCompetitor: "referrals, Houzz, Angi, and boosted project photos",
-    complianceNotes: "Avoid guaranteed timelines, permit outcomes, financing approvals, or exact ROI claims.",
+    complianceNotes:
+      "Avoid guaranteed timelines, permit outcomes, financing approvals, or exact ROI claims.",
     adAngleExamples: [
       "The remodel horror story avoided hook",
       "The kitchen before holidays hook",
@@ -220,20 +266,29 @@ export const batchVideoAdsVerticals = [
     variableName: "dentists",
     nicheName: "Dentists",
     shortName: "Dentists",
-    audience: "dental practices marketing implants, Invisalign, emergency dentistry, hygiene, and cosmetic cases",
+    audience:
+      "dental practices marketing implants, Invisalign, emergency dentistry, hygiene, and cosmetic cases",
     economics: {
       customerValue: "$150 hygiene patient → $4,000-$35,000 implant or cosmetic case",
-      costPressure: "High-value treatments need trust-building creative while commodity hygiene ads attract price shoppers.",
-      batchLeverage: "Build treatment-specific videos around fear, cost, appearance, timing, and trust objections.",
+      costPressure:
+        "High-value treatments need trust-building creative while commodity hygiene ads attract price shoppers.",
+      batchLeverage:
+        "Build treatment-specific videos around fear, cost, appearance, timing, and trust objections.",
     },
-    seasonalTriggers: ["benefits reset", "wedding season", "back to school", "year-end insurance use"],
+    seasonalTriggers: [
+      "benefits reset",
+      "wedding season",
+      "back to school",
+      "year-end insurance use",
+    ],
     painPoints: [
       "Implants, Invisalign, emergency, and hygiene patients have different anxieties.",
       "Dental ads must build trust quickly without sounding like medical overclaiming.",
       "One generic new-patient special wastes budget on the wrong case mix.",
     ],
     statusQuoCompetitor: "dental PPC agencies and discount new-patient offers",
-    complianceNotes: "Avoid clinical outcome guarantees, before-after implications without consent, or claims that conflict with dental advertising rules.",
+    complianceNotes:
+      "Avoid clinical outcome guarantees, before-after implications without consent, or claims that conflict with dental advertising rules.",
     adAngleExamples: [
       "The missing tooth confidence hook",
       "The clear aligner before photos hook",
@@ -248,20 +303,29 @@ export const batchVideoAdsVerticals = [
     variableName: "medSpas",
     nicheName: "Med Spas",
     shortName: "Med Spas",
-    audience: "med spas selling injectables, skin treatments, body contouring, memberships, and consultations",
+    audience:
+      "med spas selling injectables, skin treatments, body contouring, memberships, and consultations",
     economics: {
       customerValue: "$300 treatment → $2,000-$8,000 annual aesthetic client value",
-      costPressure: "Trends move quickly and compliance-safe creative gets stale before the next promo cycle.",
-      batchLeverage: "Test treatment education, subtle-result, seasonal, membership, and consultation angles.",
+      costPressure:
+        "Trends move quickly and compliance-safe creative gets stale before the next promo cycle.",
+      batchLeverage:
+        "Test treatment education, subtle-result, seasonal, membership, and consultation angles.",
     },
-    seasonalTriggers: ["wedding season", "summer body confidence", "holiday parties", "new year refresh"],
+    seasonalTriggers: [
+      "wedding season",
+      "summer body confidence",
+      "holiday parties",
+      "new year refresh",
+    ],
     painPoints: [
       "Botox, filler, laser, and body treatments each need different education and trust framing.",
       "Before-after-heavy creative can create compliance and platform review risk.",
       "The best angles often answer fear of looking overdone, not price.",
     ],
     statusQuoCompetitor: "influencer posts and aesthetic marketing agencies",
-    complianceNotes: "Avoid medical outcome guarantees, unsafe before-after usage, unrealistic beauty claims, or unapproved treatment claims.",
+    complianceNotes:
+      "Avoid medical outcome guarantees, unsafe before-after usage, unrealistic beauty claims, or unapproved treatment claims.",
     adAngleExamples: [
       "The nobody will know but you hook",
       "The first appointment anxiety hook",
@@ -276,20 +340,28 @@ export const batchVideoAdsVerticals = [
     variableName: "lawFirms",
     nicheName: "Law Firms",
     shortName: "Law Firms",
-    audience: "consumer law firms and boutique practices marketing consultations in competitive local markets",
+    audience:
+      "consumer law firms and boutique practices marketing consultations in competitive local markets",
     economics: {
       customerValue: "$2,500-$75,000 case value depending on practice area",
       costPressure: "Legal clicks are expensive and most firms run indistinguishable trust badges.",
-      batchLeverage: "Test issue-specific education, urgency, objection, and consultation angles with compliant copy.",
+      batchLeverage:
+        "Test issue-specific education, urgency, objection, and consultation angles with compliant copy.",
     },
-    seasonalTriggers: ["tax season", "accident season", "business formation season", "estate planning milestones"],
+    seasonalTriggers: [
+      "tax season",
+      "accident season",
+      "business formation season",
+      "estate planning milestones",
+    ],
     painPoints: [
       "Different legal matters require different levels of urgency, education, and proof.",
       "Prospects fear calling a lawyer before they understand whether they have a real issue.",
       "Compliance constraints make generic ads safer but less useful.",
     ],
     statusQuoCompetitor: "legal directories and expensive search PPC",
-    complianceNotes: "Avoid promises of outcomes, settlement amounts, specialization claims, or attorney-client relationship language unless reviewed.",
+    complianceNotes:
+      "Avoid promises of outcomes, settlement amounts, specialization claims, or attorney-client relationship language unless reviewed.",
     adAngleExamples: [
       "The signs you should call before waiting hook",
       "The free consultation expectation hook",
@@ -304,20 +376,28 @@ export const batchVideoAdsVerticals = [
     variableName: "chiropractors",
     nicheName: "Chiropractors",
     shortName: "Chiropractors",
-    audience: "chiropractic clinics marketing new-patient appointments, corrective care, decompression, and wellness plans",
+    audience:
+      "chiropractic clinics marketing new-patient appointments, corrective care, decompression, and wellness plans",
     economics: {
       customerValue: "$79 exam → $1,200-$4,500 care plan",
-      costPressure: "New-patient specials pull bargain shoppers when the creative never explains the care path.",
+      costPressure:
+        "New-patient specials pull bargain shoppers when the creative never explains the care path.",
       batchLeverage: "Test pain-specific, posture, sports, desk-worker, and family-care hooks.",
     },
-    seasonalTriggers: ["new year wellness", "sports season", "back-to-school routines", "winter stiffness"],
+    seasonalTriggers: [
+      "new year wellness",
+      "sports season",
+      "back-to-school routines",
+      "winter stiffness",
+    ],
     painPoints: [
       "Neck pain, low back pain, headaches, and posture buyers respond to different hooks.",
       "Skepticism is high, so education and trust-building need many variations.",
       "Generic adjustment videos do not qualify serious care-plan candidates.",
     ],
     statusQuoCompetitor: "coupon funnels and generic local wellness ads",
-    complianceNotes: "Avoid medical cure claims, guaranteed pain relief, or unsupported treatment outcomes.",
+    complianceNotes:
+      "Avoid medical cure claims, guaranteed pain relief, or unsupported treatment outcomes.",
     adAngleExamples: [
       "The desk neck check hook",
       "The low back pain daily habit hook",
@@ -332,11 +412,13 @@ export const batchVideoAdsVerticals = [
     variableName: "gyms",
     nicheName: "Gyms",
     shortName: "Gyms",
-    audience: "gyms, fitness studios, personal training facilities, and boutique group fitness operators",
+    audience:
+      "gyms, fitness studios, personal training facilities, and boutique group fitness operators",
     economics: {
       customerValue: "$99-$250 monthly membership → $1,200-$4,000 annual client value",
       costPressure: "Promos spike leads but churn if the ad attracts the wrong fitness motivation.",
-      batchLeverage: "Test beginner anxiety, transformation, accountability, class energy, and offer hooks quickly.",
+      batchLeverage:
+        "Test beginner anxiety, transformation, accountability, class energy, and offer hooks quickly.",
     },
     seasonalTriggers: ["new year", "summer prep", "back to routine", "holiday challenge"],
     painPoints: [
@@ -345,7 +427,8 @@ export const batchVideoAdsVerticals = [
       "Lead quality drops when every ad is a discount or challenge promo.",
     ],
     statusQuoCompetitor: "fitness challenge funnels and boosted Instagram reels",
-    complianceNotes: "Avoid guaranteed weight loss, unrealistic transformation claims, or health promises.",
+    complianceNotes:
+      "Avoid guaranteed weight loss, unrealistic transformation claims, or health promises.",
     adAngleExamples: [
       "The intimidated beginner hook",
       "The first class walkthrough hook",
@@ -360,20 +443,28 @@ export const batchVideoAdsVerticals = [
     variableName: "solarCompanies",
     nicheName: "Solar Companies",
     shortName: "Solar",
-    audience: "residential solar companies and dealers selling consultations in competitive local markets",
+    audience:
+      "residential solar companies and dealers selling consultations in competitive local markets",
     economics: {
       customerValue: "$18,000-$55,000 solar installation",
       costPressure: "Solar lead costs swing hard with rates, incentives, and trust issues.",
-      batchLeverage: "Test utility-bill, incentive, battery, ownership, and skepticism angles without repeating stale savings claims.",
+      batchLeverage:
+        "Test utility-bill, incentive, battery, ownership, and skepticism angles without repeating stale savings claims.",
     },
-    seasonalTriggers: ["summer utility bills", "tax credit deadlines", "storm outage season", "rate hike announcements"],
+    seasonalTriggers: [
+      "summer utility bills",
+      "tax credit deadlines",
+      "storm outage season",
+      "rate hike announcements",
+    ],
     painPoints: [
       "Homeowners are skeptical because bad solar ads overpromised savings for years.",
       "Battery, bill savings, ownership, and incentive messages need separate tests.",
       "Local utility and rate context changes faster than old creative calendars.",
     ],
     statusQuoCompetitor: "shared solar leads and door-to-door appointment setters",
-    complianceNotes: "Avoid guaranteed savings, tax credit eligibility promises, or utility-specific claims without verification.",
+    complianceNotes:
+      "Avoid guaranteed savings, tax credit eligibility promises, or utility-specific claims without verification.",
     adAngleExamples: [
       "The bill shock this summer hook",
       "The battery during outage hook",
@@ -388,20 +479,29 @@ export const batchVideoAdsVerticals = [
     variableName: "autoDealerships",
     nicheName: "Auto Dealerships",
     shortName: "Auto Dealers",
-    audience: "franchise and independent auto dealerships marketing inventory, trade-ins, financing, and service",
+    audience:
+      "franchise and independent auto dealerships marketing inventory, trade-ins, financing, and service",
     economics: {
       customerValue: "$1,500-$6,000 front/back gross plus service retention per sold unit",
-      costPressure: "Inventory turns quickly and stale ads keep promoting the wrong vehicles or incentives.",
-      batchLeverage: "Turn new arrivals, trade-in offers, credit situations, and model-specific inventory into fast creative tests.",
+      costPressure:
+        "Inventory turns quickly and stale ads keep promoting the wrong vehicles or incentives.",
+      batchLeverage:
+        "Turn new arrivals, trade-in offers, credit situations, and model-specific inventory into fast creative tests.",
     },
-    seasonalTriggers: ["tax refund season", "model-year closeout", "holiday sales events", "rate changes"],
+    seasonalTriggers: [
+      "tax refund season",
+      "model-year closeout",
+      "holiday sales events",
+      "rate changes",
+    ],
     painPoints: [
       "Truck, SUV, first-time buyer, and subprime buyers respond to different hooks.",
       "Inventory-specific ads age out fast when production takes weeks.",
       "Most dealership ads sound like the same loud sales event template.",
     ],
     statusQuoCompetitor: "OEM templates and generic dealership video vendors",
-    complianceNotes: "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
+    complianceNotes:
+      "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
     adAngleExamples: [
       "The trade-in value surprise hook",
       "The payment under target hook",
@@ -416,11 +516,13 @@ export const batchVideoAdsVerticals = [
     variableName: "insuranceAgents",
     nicheName: "Insurance Agents",
     shortName: "Insurance Agents",
-    audience: "independent and captive insurance agents marketing auto, home, life, commercial, and bundle policies",
+    audience:
+      "independent and captive insurance agents marketing auto, home, life, commercial, and bundle policies",
     economics: {
       customerValue: "$300-$2,500 annual premium commission plus renewal value",
       costPressure: "Quote shoppers are expensive when every ad only says save money.",
-      batchLeverage: "Test life-event, bundle, protection-gap, rate-increase, and commercial-risk angles.",
+      batchLeverage:
+        "Test life-event, bundle, protection-gap, rate-increase, and commercial-risk angles.",
     },
     seasonalTriggers: ["home buying", "renewal periods", "storm season", "open enrollment"],
     painPoints: [
@@ -429,7 +531,8 @@ export const batchVideoAdsVerticals = [
       "Policy review education needs many examples to feel personally relevant.",
     ],
     statusQuoCompetitor: "carrier co-op templates and purchased lead lists",
-    complianceNotes: "Avoid savings guarantees, coverage promises, or policy advice that violates carrier or state rules.",
+    complianceNotes:
+      "Avoid savings guarantees, coverage promises, or policy advice that violates carrier or state rules.",
     adAngleExamples: [
       "The renewal rate shock hook",
       "The new homeowner coverage gap hook",
@@ -444,20 +547,29 @@ export const batchVideoAdsVerticals = [
     variableName: "financialAdvisorsBatchAds",
     nicheName: "Financial Advisors",
     shortName: "Financial Advisors",
-    audience: "financial advisors, RIAs, and wealth teams marketing consultations, retirement planning, and niche client offers",
+    audience:
+      "financial advisors, RIAs, and wealth teams marketing consultations, retirement planning, and niche client offers",
     economics: {
       customerValue: "$3,000-$25,000 annual advisory revenue per ideal household",
-      costPressure: "Trust is expensive to build and generic retirement ads attract poor-fit leads.",
-      batchLeverage: "Test life-stage, tax, retirement-income, business-owner, and second-opinion angles compliantly.",
+      costPressure:
+        "Trust is expensive to build and generic retirement ads attract poor-fit leads.",
+      batchLeverage:
+        "Test life-stage, tax, retirement-income, business-owner, and second-opinion angles compliantly.",
     },
-    seasonalTriggers: ["tax season", "year-end planning", "retirement milestones", "market volatility"],
+    seasonalTriggers: [
+      "tax season",
+      "year-end planning",
+      "retirement milestones",
+      "market volatility",
+    ],
     painPoints: [
       "Pre-retirees, business owners, widows, and high-income families respond to different messages.",
       "Compliance review slows production, so one approved recording should create many variants.",
       "Most advisor ads are too generic to qualify investable assets or urgency.",
     ],
     statusQuoCompetitor: "seminar funnels and outsourced appointment-setting vendors",
-    complianceNotes: "Route scripts through compliance; avoid investment performance promises, testimonials where restricted, or individualized advice.",
+    complianceNotes:
+      "Route scripts through compliance; avoid investment performance promises, testimonials where restricted, or individualized advice.",
     adAngleExamples: [
       "The retirement income paycheck hook",
       "The second opinion before rollover hook",
@@ -472,11 +584,13 @@ export const batchVideoAdsVerticals = [
     variableName: "ecommerceBrandsBatchAds",
     nicheName: "Ecommerce Brands",
     shortName: "Ecommerce Brands",
-    audience: "ecommerce and DTC brands testing paid social creative for products, bundles, and offers",
+    audience:
+      "ecommerce and DTC brands testing paid social creative for products, bundles, and offers",
     economics: {
       customerValue: "$45-$250 AOV plus repeat purchase and subscription LTV",
       costPressure: "CPMs and creative fatigue punish stores that depend on a handful of hero ads.",
-      batchLeverage: "Use one founder or operator recording to test product problems, objections, demos, and offer framing.",
+      batchLeverage:
+        "Use one founder or operator recording to test product problems, objections, demos, and offer framing.",
     },
     seasonalTriggers: ["product launches", "BFCM", "summer promos", "inventory pushes"],
     painPoints: [
@@ -485,7 +599,8 @@ export const batchVideoAdsVerticals = [
       "UGC creator sourcing adds delay when the brand needs more variants this week.",
     ],
     statusQuoCompetitor: "UGC marketplaces and static product ads",
-    complianceNotes: "Avoid unsupported product performance, health, earnings, or comparative claims.",
+    complianceNotes:
+      "Avoid unsupported product performance, health, earnings, or comparative claims.",
     adAngleExamples: [
       "The problem before product hook",
       "The founder explains why we made it hook",
@@ -500,11 +615,14 @@ export const batchVideoAdsVerticals = [
     variableName: "saasFoundersBatchAds",
     nicheName: "SaaS Founders",
     shortName: "SaaS Founders",
-    audience: "SaaS founders and growth teams using paid social for demos, trials, waitlists, and category education",
+    audience:
+      "SaaS founders and growth teams using paid social for demos, trials, waitlists, and category education",
     economics: {
       customerValue: "$500-$30,000 annual contract value depending on segment",
-      costPressure: "B2B paid social fails when one generic demo ad tries to educate every persona.",
-      batchLeverage: "Turn pain, workflow, competitor, role, and use-case scripts into many founder-led demo ads.",
+      costPressure:
+        "B2B paid social fails when one generic demo ad tries to educate every persona.",
+      batchLeverage:
+        "Turn pain, workflow, competitor, role, and use-case scripts into many founder-led demo ads.",
     },
     seasonalTriggers: ["launches", "funding announcements", "conference season", "budget planning"],
     painPoints: [
@@ -528,11 +646,15 @@ export const batchVideoAdsVerticals = [
     variableName: "creatorsBatchAds",
     nicheName: "Creators",
     shortName: "Creators",
-    audience: "creators selling newsletters, communities, courses, consulting, events, and digital products",
+    audience:
+      "creators selling newsletters, communities, courses, consulting, events, and digital products",
     economics: {
-      customerValue: "$49 digital product → $2,000-$20,000 course, cohort, sponsor, or consulting value",
-      costPressure: "Organic winners rarely become paid ad systems because creators do not cut enough variations.",
-      batchLeverage: "Turn one recording into many paid variations around authority, pain, story, and offer hooks.",
+      customerValue:
+        "$49 digital product → $2,000-$20,000 course, cohort, sponsor, or consulting value",
+      costPressure:
+        "Organic winners rarely become paid ad systems because creators do not cut enough variations.",
+      batchLeverage:
+        "Turn one recording into many paid variations around authority, pain, story, and offer hooks.",
     },
     seasonalTriggers: ["course launches", "cohort deadlines", "event promos", "new year goals"],
     painPoints: [
@@ -541,7 +663,8 @@ export const batchVideoAdsVerticals = [
       "Launch windows are short and creative volume usually arrives too late.",
     ],
     statusQuoCompetitor: "repurposed organic clips and freelance editors",
-    complianceNotes: "Avoid earnings, transformation, health, or investment claims unless substantiated and platform-safe.",
+    complianceNotes:
+      "Avoid earnings, transformation, health, or investment claims unless substantiated and platform-safe.",
     adAngleExamples: [
       "The mistake I keep seeing hook",
       "The contrarian lesson hook",
@@ -556,20 +679,29 @@ export const batchVideoAdsVerticals = [
     variableName: "consultantsBatchAds",
     nicheName: "Consultants",
     shortName: "Consultants",
-    audience: "consultants, advisors, and expert service providers selling audits, retainers, projects, and advisory calls",
+    audience:
+      "consultants, advisors, and expert service providers selling audits, retainers, projects, and advisory calls",
     economics: {
       customerValue: "$3,000-$50,000 project or retainer value",
-      costPressure: "Expertise is hard to compress into one ad, so most consultants under-test positioning.",
-      batchLeverage: "Test problem diagnosis, market insight, mistake, case-story, and audit-offer angles.",
+      costPressure:
+        "Expertise is hard to compress into one ad, so most consultants under-test positioning.",
+      batchLeverage:
+        "Test problem diagnosis, market insight, mistake, case-story, and audit-offer angles.",
     },
-    seasonalTriggers: ["Q1 planning", "budget season", "industry events", "end-of-quarter pipeline pushes"],
+    seasonalTriggers: [
+      "Q1 planning",
+      "budget season",
+      "industry events",
+      "end-of-quarter pipeline pushes",
+    ],
     painPoints: [
       "Prospects need to feel the problem before they care about your framework.",
       "Referrals hide which message would scale beyond your network.",
       "Authority ads must test insight, specificity, and trust without sounding generic.",
     ],
     statusQuoCompetitor: "LinkedIn posts, referrals, and boutique lead-gen agencies",
-    complianceNotes: "Avoid guaranteed business outcomes, revenue claims, or confidential client references.",
+    complianceNotes:
+      "Avoid guaranteed business outcomes, revenue claims, or confidential client references.",
     adAngleExamples: [
       "The expensive mistake hook",
       "The audit teardown hook",
@@ -584,20 +716,30 @@ export const batchVideoAdsVerticals = [
     variableName: "personalBrandsBatchAds",
     nicheName: "Personal Brands",
     shortName: "Personal Brands",
-    audience: "founders, executives, coaches, and operators using their face and point of view to drive paid demand",
+    audience:
+      "founders, executives, coaches, and operators using their face and point of view to drive paid demand",
     economics: {
-      customerValue: "$500-$50,000 per booked call, cohort, sponsorship, service, or advisory relationship",
-      costPressure: "Personal-brand ads fatigue fast because the same face and same line repeat too often.",
-      batchLeverage: "Turn one recording into many opinion, story, mistake, authority, and offer variations.",
+      customerValue:
+        "$500-$50,000 per booked call, cohort, sponsorship, service, or advisory relationship",
+      costPressure:
+        "Personal-brand ads fatigue fast because the same face and same line repeat too often.",
+      batchLeverage:
+        "Turn one recording into many opinion, story, mistake, authority, and offer variations.",
     },
-    seasonalTriggers: ["launches", "speaking events", "book releases", "fundraising or hiring pushes"],
+    seasonalTriggers: [
+      "launches",
+      "speaking events",
+      "book releases",
+      "fundraising or hiring pushes",
+    ],
     painPoints: [
       "Your face is the differentiator, but one hero ad cannot carry every audience.",
       "Organic content is rarely cut into enough paid variants to learn at scale.",
       "Authority requires repeated angles, not one generic brand manifesto.",
     ],
     statusQuoCompetitor: "freelance editors and repurposed organic content",
-    complianceNotes: "Avoid unsupported earnings, investment, health, or transformation claims tied to personal authority.",
+    complianceNotes:
+      "Avoid unsupported earnings, investment, health, or transformation claims tied to personal authority.",
     adAngleExamples: [
       "The unpopular opinion hook",
       "The lesson from a client call hook",

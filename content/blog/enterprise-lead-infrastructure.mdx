@@ -30,7 +30,7 @@ Enterprise brokerages lose an estimated $34 billion annually to operational inef
 
 ## Enterprise Lead Infrastructure in 2026
 
-*Updated June 2026 — reflecting new integration patterns, AI routing capabilities, multi-location orchestration, and data warehouse connectivity.*
+_Updated June 2026 — reflecting new integration patterns, AI routing capabilities, multi-location orchestration, and data warehouse connectivity._
 
 Since publishing the original enterprise infrastructure guide in January, the technology landscape for large brokerages has evolved considerably. New integration patterns have emerged, AI routing has become significantly more sophisticated, and the expectation for data warehouse connectivity has moved from "nice to have" to "required." Here's what's changed.
 
@@ -51,6 +51,7 @@ The key shift is the parallel flow to both CRM and data warehouse. Previously, d
 **API-First Architecture**
 
 The best enterprise solutions in 2026 are API-first, meaning every capability available through the UI is also available programmatically. This matters because enterprise brokerages need to:
+
 - Trigger custom workflows based on AI qualification results
 - Build custom dashboards pulling from multiple data sources
 - Integrate with proprietary internal tools
@@ -63,11 +64,13 @@ If a vendor doesn't expose a comprehensive API, they're not enterprise-ready. Th
 AI routing has evolved from rule-based systems to adaptive, learning engines:
 
 **January 2026 Routing:**
+
 - Geographic match → Specialty match → Capacity check → Performance weighting → Fallback
 - Static rules updated manually
 - No learning from outcomes
 
 **June 2026 Routing:**
+
 - Same baseline rules, plus:
 - **Predictive availability:** AI predicts which agents are likely to answer based on historical patterns (time of day, day of week, recent activity)
 - **Conversion probability scoring:** Routes high-value leads to agents with the highest historical conversion rates for that lead type
@@ -83,16 +86,19 @@ For more on how [AI Lead Response](/solutions/ai-lead-response) systems handle r
 For brokerages operating across multiple states or metro areas, orchestration has become more sophisticated:
 
 **Time Zone Management:**
+
 - Leads are routed based on the lead's local time zone, not the brokerage's headquarters time zone
 - After-hours detection accounts for the lead's location, not the office location
 - [AI Receptionist](/ai-receptionist) systems handle cross-time-zone conversations without the lead knowing they've reached a centralized system
 
 **Regional Customization:**
+
 - Conversation tone and script adjust by market (formal for luxury markets, casual for first-time buyer markets)
 - Qualification questions adapt by region (condo-specific questions in urban markets, acreage questions in rural markets)
 - Local market data is injected into AI conversations (recent comparable sales, neighborhood insights)
 
 **Capacity Balancing Across Regions:**
+
 - When one region is overwhelmed with leads and another is slow, AI can temporarily redirect overflow leads to available agents in adjacent markets
 - This requires careful compliance controls (licensing, fair housing) but dramatically improves lead utilization
 
@@ -124,15 +130,15 @@ One of the most common mistakes in enterprise lead infrastructure is evaluating 
 
 ### Scale Requirements
 
-| Requirement | SMB (1-10 agents) | Enterprise (100+ agents, 50+ offices) |
-| --- | --- | --- |
-| Monthly lead volume | 100-1,000 | 5,000-50,000+ |
-| Response time SLA | Under 5 minutes | Under 60 seconds |
-| Routing complexity | Round-robin or simple assignment | Multi-layered with geographic, specialty, capacity, and performance rules |
-| Integration needs | CRM + lead source | CRM + data warehouse + transaction management + MLS + compliance systems |
-| Customization | Minimal | Market-specific conversation flows, regional qualification criteria |
-| Support requirements | Email/chat | Dedicated account manager + 24/7 technical support |
-| Deployment timeline | Days to weeks | 3-6 months |
+| Requirement          | SMB (1-10 agents)                | Enterprise (100+ agents, 50+ offices)                                     |
+| -------------------- | -------------------------------- | ------------------------------------------------------------------------- |
+| Monthly lead volume  | 100-1,000                        | 5,000-50,000+                                                             |
+| Response time SLA    | Under 5 minutes                  | Under 60 seconds                                                          |
+| Routing complexity   | Round-robin or simple assignment | Multi-layered with geographic, specialty, capacity, and performance rules |
+| Integration needs    | CRM + lead source                | CRM + data warehouse + transaction management + MLS + compliance systems  |
+| Customization        | Minimal                          | Market-specific conversation flows, regional qualification criteria       |
+| Support requirements | Email/chat                       | Dedicated account manager + 24/7 technical support                        |
+| Deployment timeline  | Days to weeks                    | 3-6 months                                                                |
 
 An [AI Voice Agent](/ai-voice-agents) that works perfectly for a 5-person team will collapse under the volume, routing complexity, and compliance requirements of a 50-office enterprise. Conversely, enterprise infrastructure built for a 100-office brokerage is overkill and overpriced for a solo agent.
 
@@ -141,21 +147,25 @@ An [AI Voice Agent](/ai-voice-agents) that works perfectly for a 5-person team w
 Enterprise brokerages face compliance obligations that SMB operations never encounter:
 
 **Multi-State Licensing:**
+
 - AI conversations must comply with each state's real estate communication regulations
 - Lead handling must respect state-specific disclosure requirements
 - Recording consent requirements vary by state and must be handled programmatically
 
 **Fair Housing:**
+
 - AI routing must be auditable for fair housing compliance
 - Conversation content must be reviewable and consistent across markets
 - Demographic data cannot influence lead routing or qualification decisions
 
 **TCPA and Communication Compliance:**
+
 - Consent management across multiple channels (text, voice, email)
 - Opt-out processing that works across the entire technology stack
 - Time-of-day restrictions enforced automatically across time zones
 
 **Data Privacy:**
+
 - SOC 2 compliance for lead data handling
 - GDPR considerations for international buyers
 - State-specific privacy regulations (CCPA, etc.)
@@ -166,14 +176,14 @@ SMB tools rarely handle these requirements because they don't need to. Enterpris
 
 Enterprise buyers operate under service level agreements that define measurable performance guarantees:
 
-| SLA Component | Typical Enterprise Requirement | Why It Matters |
-| --- | --- | --- |
-| Uptime guarantee | 99.9%+ | Downtime = leads lost = revenue lost |
-| Response time guarantee | Sub-60-second for 99%+ of leads | Directly impacts conversion rates |
-| Support response time | Under 1 hour for critical issues | Operational incidents can't wait |
-| Data delivery | Real-time to CRM and data warehouse | Latency = stale analytics = bad decisions |
-| Compliance audit support | Provided on request | Regulatory examinations happen |
-| Implementation timeline | Contractually committed | VP of Operations reports to CEO on delivery |
+| SLA Component            | Typical Enterprise Requirement      | Why It Matters                              |
+| ------------------------ | ----------------------------------- | ------------------------------------------- |
+| Uptime guarantee         | 99.9%+                              | Downtime = leads lost = revenue lost        |
+| Response time guarantee  | Sub-60-second for 99%+ of leads     | Directly impacts conversion rates           |
+| Support response time    | Under 1 hour for critical issues    | Operational incidents can't wait            |
+| Data delivery            | Real-time to CRM and data warehouse | Latency = stale analytics = bad decisions   |
+| Compliance audit support | Provided on request                 | Regulatory examinations happen              |
+| Implementation timeline  | Contractually committed             | VP of Operations reports to CEO on delivery |
 
 An [AI Sales Agent](/ai-sales-agents) for an enterprise brokerage must meet these SLAs consistently. The cost of missing an SLA isn't just lost revenue — it's lost trust with leadership, agents, and franchise partners.
 

@@ -93,7 +93,8 @@ function isExcluded(item: InventoryItem): boolean {
 }
 
 function isFreePlacement(item: InventoryItem): boolean {
-  const haystack = `${item.id} ${item.bucket} ${item.target_url} ${item.live_url ?? ""} ${item.notes ?? ""}`.toLowerCase();
+  const haystack =
+    `${item.id} ${item.bucket} ${item.target_url} ${item.live_url ?? ""} ${item.notes ?? ""}`.toLowerCase();
   return FREE_MARKERS.some((marker) => haystack.includes(marker));
 }
 
@@ -159,21 +160,54 @@ async function verifyItem(item: InventoryItem): Promise<VerificationResult> {
   try {
     const response = await fetchWithTimeout(liveUrl);
     if (response.status < 200 || response.status >= 400) {
-      return { id: item.id, bucket: item.bucket, liveUrl, key, status: "fail", reason: `HTTP ${response.status}`, httpStatus: response.status };
+      return {
+        id: item.id,
+        bucket: item.bucket,
+        liveUrl,
+        key,
+        status: "fail",
+        reason: `HTTP ${response.status}`,
+        httpStatus: response.status,
+      };
     }
     if (!hasAllowedPrestyjLink(response.text)) {
-      return { id: item.id, bucket: item.bucket, liveUrl, key, status: "fail", reason: "No allowed Prestyj link found", httpStatus: response.status };
+      return {
+        id: item.id,
+        bucket: item.bucket,
+        liveUrl,
+        key,
+        status: "fail",
+        reason: "No allowed Prestyj link found",
+        httpStatus: response.status,
+      };
     }
-    return { id: item.id, bucket: item.bucket, liveUrl, key, status: "pass", reason: "Verified", httpStatus: response.status };
+    return {
+      id: item.id,
+      bucket: item.bucket,
+      liveUrl,
+      key,
+      status: "pass",
+      reason: "Verified",
+      httpStatus: response.status,
+    };
   } catch (error) {
-    return { id: item.id, bucket: item.bucket, liveUrl, key, status: "fail", reason: error instanceof Error ? error.message : "Fetch failed" };
+    return {
+      id: item.id,
+      bucket: item.bucket,
+      liveUrl,
+      key,
+      status: "fail",
+      reason: error instanceof Error ? error.message : "Fetch failed",
+    };
   }
 }
 
 function printTable(results: VerificationResult[]): void {
   console.log("\nFree 100 backlink verifier");
   console.log("─".repeat(120));
-  console.log(`${"OK".padEnd(4)} ${"HTTP".padEnd(5)} ${"KEY".padEnd(32)} ${"ID".padEnd(42)} REASON`);
+  console.log(
+    `${"OK".padEnd(4)} ${"HTTP".padEnd(5)} ${"KEY".padEnd(32)} ${"ID".padEnd(42)} REASON`,
+  );
   console.log("─".repeat(120));
   for (const result of results) {
     console.log(
@@ -186,7 +220,9 @@ function printTable(results: VerificationResult[]): void {
 async function main(): Promise<void> {
   const inventory = loadInventory();
   const candidates = inventory.items.filter((item) => !isExcluded(item) && isFreePlacement(item));
-  const uniqueCandidates = [...new Map(candidates.map((item) => [canonicalLiveUrlKey(item.live_url ?? ""), item])).values()];
+  const uniqueCandidates = [
+    ...new Map(candidates.map((item) => [canonicalLiveUrlKey(item.live_url ?? ""), item])).values(),
+  ];
   const results = await Promise.all(uniqueCandidates.map(verifyItem));
   const passed = results.filter((result) => result.status === "pass");
 
@@ -200,7 +236,11 @@ async function main(): Promise<void> {
     unique_placement_basis: "canonical live URL (GitHub repositories remain repository-level)",
     verified_backlinks: passed.length,
     failed_checks: results.length - passed.length,
-    allowed_prestyj_links: ["https://prestyj.com", "https://prestyj.com/data", "prestyj.com canonical paths"],
+    allowed_prestyj_links: [
+      "https://prestyj.com",
+      "https://prestyj.com/data",
+      "prestyj.com canonical paths",
+    ],
     pass: passed.length >= TARGET,
   };
 

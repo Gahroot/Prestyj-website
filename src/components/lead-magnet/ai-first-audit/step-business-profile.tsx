@@ -33,7 +33,11 @@ export function StepBusinessProfile({ initialProfile, onContinue }: StepBusiness
 
   return (
     <form onSubmit={submit} className="border-border bg-card rounded-xl border p-5 sm:p-8">
-      <h2 data-wizard-heading tabIndex={-1} className="font-heading text-2xl font-bold outline-none">
+      <h2
+        data-wizard-heading
+        tabIndex={-1}
+        className="font-heading text-2xl font-bold outline-none"
+      >
         {AUDIT_COPY.profileHeading}
       </h2>
       <p className="text-muted-foreground mt-2">Two answers shape your cost and workflow list.</p>
@@ -58,7 +62,7 @@ export function StepBusinessProfile({ initialProfile, onContinue }: StepBusiness
             </select>
             <ChevronDown
               aria-hidden="true"
-              className="text-muted-foreground pointer-events-none absolute top-1/2 end-4 size-4 -translate-y-1/2"
+              className="text-muted-foreground pointer-events-none absolute end-4 top-1/2 size-4 -translate-y-1/2"
             />
           </div>
         </div>

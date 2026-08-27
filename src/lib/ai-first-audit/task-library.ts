@@ -29,11 +29,7 @@ export const TASK_GROUPS = [
   {
     id: "outbound",
     label: "Sales, outreach & follow-up",
-    categories: [
-      "outbound-personalization",
-      "research-workflow",
-      "lead-enrichment",
-    ] as const,
+    categories: ["outbound-personalization", "research-workflow", "lead-enrichment"] as const,
   },
   {
     id: "ops",
@@ -264,10 +260,7 @@ export function getGroupedPresetsForBusinessType(
  * "Common for …" pills so users have an anchor without auto-checking
  * anything.
  */
-export function getSuggestedPresetIds(
-  businessType: BusinessType,
-  count = 4,
-): readonly string[] {
+export function getSuggestedPresetIds(businessType: BusinessType, count = 4): readonly string[] {
   return getPresetsForBusinessType(businessType)
     .slice(0, count)
     .map((p) => p.id);
@@ -358,9 +351,7 @@ export const WORKFLOW_PRESETS: readonly WorkflowPreset[] = [
   },
 ] as const;
 
-export function getWorkflowPresets(
-  businessType: AuditBusinessType,
-): readonly WorkflowPreset[] {
+export function getWorkflowPresets(businessType: AuditBusinessType): readonly WorkflowPreset[] {
   return WORKFLOW_PRESETS.filter((workflow) => workflow.businessTypes.includes(businessType));
 }
 

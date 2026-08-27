@@ -35,16 +35,14 @@ export function SolutionSection() {
               We turn one recording into a full creative testing library.
             </h2>
             <p className="text-muted-foreground mb-8 text-lg">
-              You give us the business, offer, audience, and customer problems. We write the scripts,
-              tell you exactly what to record, and turn the raw footage into 300 ads built to test what
-              your market responds to.
+              You give us the business, offer, audience, and customer problems. We write the
+              scripts, tell you exactly what to record, and turn the raw footage into 300 ads built
+              to test what your market responds to.
             </p>
             <div className="space-y-4">
               <div className="text-muted-foreground flex items-center gap-3">
                 <div className="bg-success h-2 w-2 rounded-full" />
-                <span>
-                  300 unique vertical video ads from one 15–20 minute recording
-                </span>
+                <span>300 unique vertical video ads from one 15–20 minute recording</span>
               </div>
               <div className="text-muted-foreground flex items-center gap-3">
                 <div className="bg-success h-2 w-2 rounded-full" />

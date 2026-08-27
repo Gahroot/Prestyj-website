@@ -22,12 +22,12 @@ The integration is not “done” when a test call creates a contact. It is done
 
 ## Which AI Voice Integration Method Should You Choose?
 
-| Method | Best fit | Main advantage | Hidden risk to test first |
-| --- | --- | --- | --- |
-| Native platform tool | Standard CRM, calendar, or notification action | Least custom infrastructure | The connector may expose fewer fields or controls than the underlying API |
-| Automation platform | Post-call notifications, enrichment, and simple multi-app workflows | Fast visual configuration | Task limits, delayed jobs, and opaque retry behavior |
-| Custom API or webhook | Live lookups, booking rules, dispatch logic, or proprietary systems | Full validation and observability | Your team owns authentication, timeouts, retries, and incident response |
-| Human-assisted workflow | Payments, exceptions, high-risk changes, or early pilots | Safest path while evidence is limited | More manual labor and slower completion |
+| Method                  | Best fit                                                            | Main advantage                        | Hidden risk to test first                                                 |
+| ----------------------- | ------------------------------------------------------------------- | ------------------------------------- | ------------------------------------------------------------------------- |
+| Native platform tool    | Standard CRM, calendar, or notification action                      | Least custom infrastructure           | The connector may expose fewer fields or controls than the underlying API |
+| Automation platform     | Post-call notifications, enrichment, and simple multi-app workflows | Fast visual configuration             | Task limits, delayed jobs, and opaque retry behavior                      |
+| Custom API or webhook   | Live lookups, booking rules, dispatch logic, or proprietary systems | Full validation and observability     | Your team owns authentication, timeouts, retries, and incident response   |
+| Human-assisted workflow | Payments, exceptions, high-risk changes, or early pilots            | Safest path while evidence is limited | More manual labor and slower completion                                   |
 
 **Decision rule:** default to a native connector for a reversible task. Move to an automation platform only when the workflow crosses systems. Build a custom endpoint when the call needs live data, deterministic rules, or security controls the connector cannot provide.
 
@@ -154,13 +154,13 @@ Do not write an AI-generated “qualification score” into a trusted sales fiel
 
 Calendar integration has three separate jobs: availability, reservation, and confirmation. Do not collapse them into one prompt instruction.
 
-| Step | Required control | Failure fallback |
-| --- | --- | --- |
+| Step                | Required control                                       | Failure fallback                                   |
+| ------------------- | ------------------------------------------------------ | -------------------------------------------------- |
 | Availability lookup | Query live slots in the correct location and time zone | Offer a callback instead of inventing availability |
-| Caller selection | Repeat the date, time, service, and location | Ask for confirmation |
-| Reservation | Submit a stable slot ID with an idempotency key | Do not retry blindly |
-| Confirmation | Read the booking ID returned by the system | Transfer or create a follow-up task |
-| Post-call sync | Append outcome to CRM and notification queue | Reconcile asynchronously |
+| Caller selection    | Repeat the date, time, service, and location           | Ask for confirmation                               |
+| Reservation         | Submit a stable slot ID with an idempotency key        | Do not retry blindly                               |
+| Confirmation        | Read the booking ID returned by the system             | Transfer or create a follow-up task                |
+| Post-call sync      | Append outcome to CRM and notification queue           | Reconcile asynchronously                           |
 
 Test daylight-saving changes, multiple locations, buffer times, staff-specific services, reschedules, and cancellations.
 
@@ -190,18 +190,18 @@ Prestyj's current planning records list a [$0–$1,500 pilot setup range](/stat/
 
 Use a small test matrix that proves both expected behavior and safe failure.
 
-| Test | Expected result | Evidence to save |
-| --- | --- | --- |
-| Existing caller lookup | One correct CRM match | Request ID and returned record ID |
-| Unknown caller | No unrelated record exposed | Search response and transcript |
-| Duplicate webhook | One final CRM event | Idempotency log |
-| Expired credential | Human fallback; no false success | Error and alert record |
-| Slow downstream API | Timeout message and safe handoff | Duration and fallback event |
-| Invalid field value | Write rejected before CRM call | Validation error |
-| Calendar race | Only one reservation succeeds | Slot and booking IDs |
-| Transfer unavailable | Message task created once | Queue record |
-| Recording disabled | No audio artifact retained | Provider and storage audit |
-| Deletion request | Routed to approved privacy process | Case or ticket ID |
+| Test                   | Expected result                    | Evidence to save                  |
+| ---------------------- | ---------------------------------- | --------------------------------- |
+| Existing caller lookup | One correct CRM match              | Request ID and returned record ID |
+| Unknown caller         | No unrelated record exposed        | Search response and transcript    |
+| Duplicate webhook      | One final CRM event                | Idempotency log                   |
+| Expired credential     | Human fallback; no false success   | Error and alert record            |
+| Slow downstream API    | Timeout message and safe handoff   | Duration and fallback event       |
+| Invalid field value    | Write rejected before CRM call     | Validation error                  |
+| Calendar race          | Only one reservation succeeds      | Slot and booking IDs              |
+| Transfer unavailable   | Message task created once          | Queue record                      |
+| Recording disabled     | No audio artifact retained         | Provider and storage audit        |
+| Deletion request       | Routed to approved privacy process | Case or ticket ID                 |
 
 Launch to a limited call route first. Review every tool call and resulting system record. Expand only after the observed error rate and fallback behavior meet the team's written acceptance criteria.
 

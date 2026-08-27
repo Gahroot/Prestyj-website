@@ -55,7 +55,7 @@ To produce **15–25 fresh winners per month** at a 9% winner rate requires:
 - **15 winners ÷ 9% = 167 ads/month** (floor of the range)
 - **25 winners ÷ 9% = 278 ads/month** (top of the range)
 
-So the *minimum* production volume to sustain a $25k–$80k/month ad account is **170–280 ads/month**. That's the floor — not the target.
+So the _minimum_ production volume to sustain a $25k–$80k/month ad account is **170–280 ads/month**. That's the floor — not the target.
 
 ### Why 500, not 280
 
@@ -99,7 +99,7 @@ Operator review time: **none, in the steady state.** Scripts get sampled at the 
 
 The actual video production. AI avatar tools (HeyGen, Synthesia, Captions, Argil, and similar), B-roll libraries, AI-generated UGC clones, and stock-footage compositing handle the rendering. A 500-ad/month program almost always uses **2–3 production layers in parallel** — avatars for direct-talking-head ads, UGC clones for testimonial-style hooks, and stock/B-roll compositing for fast-cut pattern interrupts.
 
-The production layer is the *only* component that scales primarily on compute spend, not on operator time. At 500 ads/month, compute and per-ad tool costs land at **$8–$18 per ad**, depending on render complexity and platform mix.
+The production layer is the _only_ component that scales primarily on compute spend, not on operator time. At 500 ads/month, compute and per-ad tool costs land at **$8–$18 per ad**, depending on render complexity and platform mix.
 
 ### 5. Quality QA Gate (human reviews 10% sample)
 
@@ -133,17 +133,17 @@ Producing 500 ads per month is achievable through three structurally different p
 
 Producing 500 video ads per month in-house requires the full creative stack staffed at volume. Industry-standard ratios:
 
-| Role                            | FTEs        | Loaded Salary | Annual Cost  |
-| ------------------------------- | ----------- | ------------- | ------------ |
-| Creative directors              | 1           | $165k         | $165k        |
-| Scriptwriters / copywriters     | 4           | $95k          | $380k        |
-| Video editors                   | 6           | $90k          | $540k        |
-| Motion designers                | 3           | $105k         | $315k        |
-| Producers / PMs                 | 2           | $110k         | $220k        |
-| QA / brand review               | 1           | $80k          | $80k         |
-| Fractional on-camera talent     | 4           | $60k          | $240k        |
-| Studio / equipment / software   | —           | —             | $90k         |
-| **Total**                       | **~24 FTE** | —             | **~$2.03M**  |
+| Role                          | FTEs        | Loaded Salary | Annual Cost |
+| ----------------------------- | ----------- | ------------- | ----------- |
+| Creative directors            | 1           | $165k         | $165k       |
+| Scriptwriters / copywriters   | 4           | $95k          | $380k       |
+| Video editors                 | 6           | $90k          | $540k       |
+| Motion designers              | 3           | $105k         | $315k       |
+| Producers / PMs               | 2           | $110k         | $220k       |
+| QA / brand review             | 1           | $80k          | $80k        |
+| Fractional on-camera talent   | 4           | $60k          | $240k       |
+| Studio / equipment / software | —           | —             | $90k        |
+| **Total**                     | **~24 FTE** | —             | **~$2.03M** |
 
 These ratios assume **500 finished, platform-ready ads of genuine angle and hook variety** — not 50 hero spots reformatted to hit 500 deliverables, which is format volume, not creative volume.
 
@@ -151,14 +151,14 @@ These ratios assume **500 finished, platform-ready ads of genuine angle and hook
 
 A UGC network at 500 ads/month needs **50–70 active creators** producing 8–12 deliverables each, plus a coordination layer.
 
-| Component                              | Annual Cost  |
-| -------------------------------------- | ------------ |
-| 50 creators × $400/ad × 10 ads × 12 mo | $1.68M net   |
-| Creator manager / coordinator (1–2 FTE) | $180k        |
-| Brief production + script support       | $90k         |
-| Editing layer (light cuts, captions)    | $75k         |
-| Tooling and CRM                         | $25k         |
-| **Total**                               | **~$2.05M**  |
+| Component                               | Annual Cost |
+| --------------------------------------- | ----------- |
+| 50 creators × $400/ad × 10 ads × 12 mo  | $1.68M net  |
+| Creator manager / coordinator (1–2 FTE) | $180k       |
+| Brief production + script support       | $90k        |
+| Editing layer (light cuts, captions)    | $75k        |
+| Tooling and CRM                         | $25k        |
+| **Total**                               | **~$2.05M** |
 
 UGC at scale isn't cheaper than in-house — it's just **variable cost**, which is the real advantage. The downside is **coordination overhead**: 50+ relationships, brief consistency at scale, creator drop-off of 20–30% per quarter. A simpler UGC variant (fewer creators, more per creator) lands at $250k–$500k/year but caps at roughly 200/month before quality breaks down.
 
@@ -166,26 +166,26 @@ UGC at scale isn't cheaper than in-house — it's just **variable cost**, which 
 
 The batch AI model produces the same 500/month with **zero creator hires** and one operator at ~4 hours/week.
 
-| Component                              | Annual Cost   |
-| -------------------------------------- | ------------- |
-| Operator time (0.1 FTE @ $120k loaded) | $12k          |
-| AI tooling stack (avatar, LLM, render) | $48k          |
-| Production layer (managed or built)    | $180k–$420k   |
-| Tagging / publishing / observability    | $10k          |
-| QA tooling and rubrics                  | $4k           |
-| **Total**                               | **$254k–$494k** |
+| Component                              | Annual Cost     |
+| -------------------------------------- | --------------- |
+| Operator time (0.1 FTE @ $120k loaded) | $12k            |
+| AI tooling stack (avatar, LLM, render) | $48k            |
+| Production layer (managed or built)    | $180k–$420k     |
+| Tagging / publishing / observability   | $10k            |
+| QA tooling and rubrics                 | $4k             |
+| **Total**                              | **$254k–$494k** |
 
 The spread is production-layer variance — a self-built pipeline at the low end, a managed enterprise pipeline at the high end. Either way, **4–8x lower than in-house and 4x lower than a UGC network at the same volume.**
 
 ### Path comparison table
 
-| Production Path     | Creator Hires Needed | Annual Cost            | Operator Time | Setup Time   |
-| ------------------- | -------------------- | ---------------------- | ------------- | ------------ |
-| In-house team       | 24 FTE               | $1.8M–$2.1M            | 24 FTE × full | 6–12 months  |
-| UGC creator network | 50–70 creators       | $1.7M–$2.1M            | 1–2 FTE       | 3–6 months   |
-| Batch AI pipeline   | **0 creators**       | **$254k–$494k**        | **0.1 FTE**   | **2–6 weeks** |
+| Production Path     | Creator Hires Needed | Annual Cost     | Operator Time | Setup Time    |
+| ------------------- | -------------------- | --------------- | ------------- | ------------- |
+| In-house team       | 24 FTE               | $1.8M–$2.1M     | 24 FTE × full | 6–12 months   |
+| UGC creator network | 50–70 creators       | $1.7M–$2.1M     | 1–2 FTE       | 3–6 months    |
+| Batch AI pipeline   | **0 creators**       | **$254k–$494k** | **0.1 FTE**   | **2–6 weeks** |
 
-The framing in the title — *without hiring a single creator* — isn't a marketing hook. It's the actual structural property of the batch AI path. The other two paths require a small army; the batch AI path requires a single competent operator with a stack.
+The framing in the title — _without hiring a single creator_ — isn't a marketing hook. It's the actual structural property of the batch AI path. The other two paths require a small army; the batch AI path requires a single competent operator with a stack.
 
 ---
 
@@ -226,7 +226,7 @@ The pipeline ships on its own. The operator is not in the production loop.
 
 ### Total weekly operator time: 4 hours
 
-That's **10% of one person's time**. The remaining 90% is available for the things AI doesn't do: account strategy, landing page work, offer development, audience research — the upstream decisions that drive *what* the program tests, not *how* it runs.
+That's **10% of one person's time**. The remaining 90% is available for the things AI doesn't do: account strategy, landing page work, offer development, audience research — the upstream decisions that drive _what_ the program tests, not _how_ it runs.
 
 ---
 
@@ -263,7 +263,7 @@ A 500-ad/month program tests every new ad against a "control." If the control ha
 
 ### Bottleneck 3: Audience saturation
 
-At $25k–$80k/month on a single offer, audience-level fatigue accumulates faster than ad-level fatigue. After 4–6 months at 500/month against the same core audience, even fresh creative compresses because the audience has seen *something* from your brand recently.
+At $25k–$80k/month on a single offer, audience-level fatigue accumulates faster than ad-level fatigue. After 4–6 months at 500/month against the same core audience, even fresh creative compresses because the audience has seen _something_ from your brand recently.
 
 **Fix:** Reserve **15–20% of monthly volume** for audience-expansion ads — different demographics, lookalike expansions, or new geos. A program shipping 80–100/month against expansion audiences sustains performance roughly 2x longer than one running 500/month against core only.
 

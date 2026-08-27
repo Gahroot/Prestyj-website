@@ -108,7 +108,10 @@ function dayThreeEmail(context: AuditEmailContextV2): AuditEmailStepV2 {
   const text = `${context.firstName},\n\nFix this blocker first.\n\n${blocker}\n\nThis keeps unclear cases with a person while the common work gets easier.\n\nOpen your report: ${url}\nStop follow-ups: ${unsubscribe}`;
   const html = htmlDocument({
     heading: "Fix this blocker first.",
-    paragraphs: [escapeHtml(blocker), "Keep unclear cases with a person while the common work gets easier."],
+    paragraphs: [
+      escapeHtml(blocker),
+      "Keep unclear cases with a person while the common work gets easier.",
+    ],
     actionUrl: url,
     actionLabel: "Open your report",
     unsubscribe,

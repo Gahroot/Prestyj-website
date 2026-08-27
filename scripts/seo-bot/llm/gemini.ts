@@ -19,7 +19,6 @@ const PRICING: Record<string, PriceTier> = {
 
 const FALLBACK_PRICING: PriceTier = { inputPerM: 5, outputPerM: 15 };
 
-
 function resolvePricing(model: string): PriceTier {
   const exact = PRICING[model];
   if (exact) return exact;

@@ -138,7 +138,12 @@ interface LoginTokenResponse {
 }
 
 interface LoginResponse {
-  login: { result: "Success" | "Failed" | "WrongPass" | string; reason?: string; lguserid?: number; lgusername?: string };
+  login: {
+    result: "Success" | "Failed" | "WrongPass" | string;
+    reason?: string;
+    lguserid?: number;
+    lgusername?: string;
+  };
 }
 
 interface CsrfTokenResponse {
@@ -179,7 +184,10 @@ interface SnakValue {
   snaktype: "value";
   property: string;
   datavalue:
-    | { value: { "entity-type": "item"; "numeric-id": number; id: string }; type: "wikibase-entityid" }
+    | {
+        value: { "entity-type": "item"; "numeric-id": number; id: string };
+        type: "wikibase-entityid";
+      }
     | { value: string; type: "string" };
 }
 
@@ -196,9 +204,7 @@ interface Claim {
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
-function buildSnak(
-  claim: (typeof ITEM.claims)[number],
-): SnakValue {
+function buildSnak(claim: (typeof ITEM.claims)[number]): SnakValue {
   if (claim.type === "wikibase-item") {
     return {
       snaktype: "value",
@@ -429,10 +435,7 @@ function existingClaimKey(s: {
   return null;
 }
 
-async function fetchExistingClaims(
-  client: ApiClient,
-  qid: string,
-): Promise<Set<string>> {
+async function fetchExistingClaims(client: ApiClient, qid: string): Promise<Set<string>> {
   const res = await apiCall<GetEntitiesResponse>(client, {
     action: "wbgetentities",
     ids: qid,
@@ -451,9 +454,7 @@ async function fetchExistingClaims(
 
 async function patchItem(client: ApiClient, qid: string): Promise<number> {
   const existing = await fetchExistingClaims(client, qid);
-  const missing = ITEM.claims.filter(
-    (c) => !existing.has(`${c.property}::${snakValueKey(c)}`),
-  );
+  const missing = ITEM.claims.filter((c) => !existing.has(`${c.property}::${snakValueKey(c)}`));
   if (missing.length === 0) {
     console.log("  ✓ All desired claims already present — nothing to patch.");
     return 0;
@@ -498,21 +499,37 @@ async function main(): Promise<void> {
   console.log(`\n${"━".repeat(60)}`);
   console.log("Prestyj Wikidata item creator");
   console.log("━".repeat(60));
-  console.log(`Mode: ${LIVE ? "🔴 LIVE — will create a real Wikidata item" : "🟡 DRY RUN — printing payload only"}`);
+  console.log(
+    `Mode: ${LIVE ? "🔴 LIVE — will create a real Wikidata item" : "🟡 DRY RUN — printing payload only"}`,
+  );
   console.log("━".repeat(60));
 
   // Print payload preview
   const payload = buildEntityPayload();
   console.log("\nPayload preview:");
-  console.log("  Labels:       ", Object.values(payload.labels).map((l) => l.value).join(" / "));
-  console.log("  Description:  ", Object.values(payload.descriptions).map((d) => d.value).join(" / "));
-  console.log("  Aliases:      ", Object.values(payload.aliases).flat().map((a) => a.value).join(" / "));
+  console.log(
+    "  Labels:       ",
+    Object.values(payload.labels)
+      .map((l) => l.value)
+      .join(" / "),
+  );
+  console.log(
+    "  Description:  ",
+    Object.values(payload.descriptions)
+      .map((d) => d.value)
+      .join(" / "),
+  );
+  console.log(
+    "  Aliases:      ",
+    Object.values(payload.aliases)
+      .flat()
+      .map((a) => a.value)
+      .join(" / "),
+  );
   console.log(`  Claims:        ${payload.claims.length} statements with references`);
   for (const claim of ITEM.claims) {
     const val =
-      claim.type === "wikibase-item"
-        ? `Q${claim.value.numericId}`
-        : (claim.value as string);
+      claim.type === "wikibase-item" ? `Q${claim.value.numericId}` : (claim.value as string);
     console.log(`    ${claim.property}  →  ${val}   (ref: ${claim.referenceUrl})`);
   }
 

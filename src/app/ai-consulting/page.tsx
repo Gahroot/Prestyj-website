@@ -231,7 +231,8 @@ const page = {
     {
       href: "/blog/enterprise-ai-needs-disagreement-system-not-single-source-of-truth",
       label: "The disagreement system",
-      description: "Why enterprise AI must expose conflicting evidence instead of silently choosing a source.",
+      description:
+        "Why enterprise AI must expose conflicting evidence instead of silently choosing a source.",
     },
     {
       href: "/blog/verified-context-layer-enterprise-ai-agents",
@@ -246,7 +247,8 @@ const page = {
     {
       href: "/blog/stop-requerying-company-data-ai-token-costs",
       label: "Stop re-querying the company",
-      description: "Reuse verified fact packets without hiding freshness, permissions, or conflicts.",
+      description:
+        "Reuse verified fact packets without hiding freshness, permissions, or conflicts.",
     },
     {
       href: "/blog/one-video-to-100-ai-workflow-graph",
@@ -256,7 +258,8 @@ const page = {
     {
       href: "/custom-ai-agents",
       label: "Custom AI agents",
-      description: "Explore agents built around workflows that off-the-shelf tools cannot model safely.",
+      description:
+        "Explore agents built around workflows that off-the-shelf tools cannot model safely.",
     },
   ],
   faqs: [

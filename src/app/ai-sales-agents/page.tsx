@@ -65,7 +65,8 @@ const page = {
       {
         value: "$8–25",
         label: "AI cost per qualified meeting",
-        detail: "Typical modeled range when inbound volume is high enough to automate first response.",
+        detail:
+          "Typical modeled range when inbound volume is high enough to automate first response.",
       },
       {
         value: "$75–95K",
@@ -75,7 +76,8 @@ const page = {
       {
         value: "24/7",
         label: "lead response coverage",
-        detail: "AI follows up after hours, on weekends, and during call spikes without queueing leads.",
+        detail:
+          "AI follows up after hours, on weekends, and during call spikes without queueing leads.",
       },
     ],
   },
@@ -95,7 +97,11 @@ const page = {
     rows: [
       {
         label: "Monthly platform/service cost",
-        values: ["$497–$4,997 managed", "$6,250–$7,900 loaded", "$100–$1,500 software + build time"],
+        values: [
+          "$497–$4,997 managed",
+          "$6,250–$7,900 loaded",
+          "$100–$1,500 software + build time",
+        ],
       },
       {
         label: "Annual all-in cost",
@@ -111,11 +117,19 @@ const page = {
       },
       {
         label: "Ramp and turnover",
-        values: ["Live in days or weeks", "3–4 month ramp + turnover risk", "Prompting, QA, and maintenance required"],
+        values: [
+          "Live in days or weeks",
+          "3–4 month ramp + turnover risk",
+          "Prompting, QA, and maintenance required",
+        ],
       },
       {
         label: "CRM and handoff quality",
-        values: ["Managed implementation and notes", "Rep-dependent", "Your team owns integrations"],
+        values: [
+          "Managed implementation and notes",
+          "Rep-dependent",
+          "Your team owns integrations",
+        ],
       },
     ],
   },
@@ -127,23 +141,43 @@ const page = {
     rows: [
       {
         label: "Prestyj AI sales agents",
-        values: ["Teams that want managed lead response and booking", "Less suited to custom enterprise procurement workflows", "Use when speed and consistency are the bottleneck"],
+        values: [
+          "Teams that want managed lead response and booking",
+          "Less suited to custom enterprise procurement workflows",
+          "Use when speed and consistency are the bottleneck",
+        ],
       },
       {
         label: "Human SDR team",
-        values: ["Strategic outbound and complex discovery", "High loaded cost and limited coverage", "Keep humans on accounts where relationship depth matters"],
+        values: [
+          "Strategic outbound and complex discovery",
+          "High loaded cost and limited coverage",
+          "Keep humans on accounts where relationship depth matters",
+        ],
       },
       {
         label: "Conversica-style AI assistants",
-        values: ["Large teams with established sales ops", "May require more process maturity", "Compare implementation effort and CRM ownership"],
+        values: [
+          "Large teams with established sales ops",
+          "May require more process maturity",
+          "Compare implementation effort and CRM ownership",
+        ],
       },
       {
         label: "Chatbot-only website tools",
-        values: ["Basic website capture", "Weak phone/SMS follow-up", "Useful supplement, not a full SDR replacement"],
+        values: [
+          "Basic website capture",
+          "Weak phone/SMS follow-up",
+          "Useful supplement, not a full SDR replacement",
+        ],
       },
       {
         label: "DIY workflow builders",
-        values: ["Technical teams with spare ops capacity", "Hidden maintenance and QA time", "Model the internal labor before comparing sticker price"],
+        values: [
+          "Technical teams with spare ops capacity",
+          "Hidden maintenance and QA time",
+          "Model the internal labor before comparing sticker price",
+        ],
       },
     ],
   },
@@ -155,19 +189,23 @@ const page = {
     cards: [
       {
         title: "Inbound speed-to-lead",
-        description: "Responds to web forms, missed calls, SMS inquiries, and after-hours leads before the buyer goes to a competitor.",
+        description:
+          "Responds to web forms, missed calls, SMS inquiries, and after-hours leads before the buyer goes to a competitor.",
       },
       {
         title: "Qualification and scoring",
-        description: "Asks consistent budget, authority, need, timeline, location, and service-fit questions before routing the lead.",
+        description:
+          "Asks consistent budget, authority, need, timeline, location, and service-fit questions before routing the lead.",
       },
       {
         title: "Meeting booking",
-        description: "Books qualified prospects to the right calendar, confirms appointments, and follows up when leads stall.",
+        description:
+          "Books qualified prospects to the right calendar, confirms appointments, and follows up when leads stall.",
       },
       {
         title: "CRM hygiene",
-        description: "Captures notes, tags outcomes, and gives the human seller context instead of another anonymous lead record.",
+        description:
+          "Captures notes, tags outcomes, and gives the human seller context instead of another anonymous lead record.",
       },
     ],
   },
@@ -179,15 +217,18 @@ const page = {
     cards: [
       {
         title: "Map the qualification rules",
-        description: "Define lead sources, disqualifiers, routing logic, service areas, calendars, and the questions a closer needs answered.",
+        description:
+          "Define lead sources, disqualifiers, routing logic, service areas, calendars, and the questions a closer needs answered.",
       },
       {
         title: "Launch the AI response layer",
-        description: "Connect phone, SMS, email, forms, and CRM handoffs so the agent can respond immediately and escalate exceptions.",
+        description:
+          "Connect phone, SMS, email, forms, and CRM handoffs so the agent can respond immediately and escalate exceptions.",
       },
       {
         title: "Optimize from real conversations",
-        description: "Review booking quality, objection patterns, no-show rates, and cost per meeting, then tune scripts and routing weekly.",
+        description:
+          "Review booking quality, objection patterns, no-show rates, and cost per meeting, then tune scripts and routing weekly.",
       },
     ],
   },

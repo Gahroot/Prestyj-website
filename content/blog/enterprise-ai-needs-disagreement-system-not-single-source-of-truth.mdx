@@ -67,19 +67,19 @@ The core primitive is not a document chunk. It is a **disagreement object**.
 
 A disagreement object can contain:
 
-| Field | Purpose |
-|---|---|
-| Entity | The fund, asset, tenant, loan, customer, campaign, or other object in question |
-| Business field | The exact fact that conflicts, such as maturity date or approved budget |
-| Candidate values | Every materially different value found |
-| Source evidence | System, document, record identifier, and location for each value |
-| Effective time | When each value claims to be true |
-| Observed time | When the system ingested or detected each value |
-| Authority rule | Any approved rule that determines precedence |
-| Materiality | Whether the difference changes a decision |
-| Status | Open, automatically resolved, under review, accepted, or superseded |
-| Owner | The person or team accountable for resolution |
-| Resolution record | What was decided, by whom, why, and under which policy version |
+| Field             | Purpose                                                                        |
+| ----------------- | ------------------------------------------------------------------------------ |
+| Entity            | The fund, asset, tenant, loan, customer, campaign, or other object in question |
+| Business field    | The exact fact that conflicts, such as maturity date or approved budget        |
+| Candidate values  | Every materially different value found                                         |
+| Source evidence   | System, document, record identifier, and location for each value               |
+| Effective time    | When each value claims to be true                                              |
+| Observed time     | When the system ingested or detected each value                                |
+| Authority rule    | Any approved rule that determines precedence                                   |
+| Materiality       | Whether the difference changes a decision                                      |
+| Status            | Open, automatically resolved, under review, accepted, or superseded            |
+| Owner             | The person or team accountable for resolution                                  |
+| Resolution record | What was decided, by whom, why, and under which policy version                 |
 
 This changes the operating question.
 

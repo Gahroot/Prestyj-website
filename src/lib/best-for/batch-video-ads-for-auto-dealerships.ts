@@ -7,11 +7,13 @@ export const batchVideoAdsForAutoDealerships: BestForPageContent = {
   niche: {
     name: "Batch Video Ads for Auto Dealerships",
     shortName: "Auto Dealers",
-    description: "franchise and independent auto dealerships marketing inventory, trade-ins, financing, and service that need enough vertical ad variations to test paid social angles without waiting weeks for production.",
+    description:
+      "franchise and independent auto dealerships marketing inventory, trade-ins, financing, and service that need enough vertical ad variations to test paid social angles without waiting weeks for production.",
   },
   meta: {
     title: "Batch Video Ads for Auto Dealerships | 100-1,000 Ads",
-    description: "Batch video ads for auto dealers: turn one recording into 100, 300, 500, or 1,000 vertical ad variations built around truck, SUV, first-time buyer, and subprime buyers respond to different hooks.",
+    description:
+      "Batch video ads for auto dealers: turn one recording into 100, 300, 500, or 1,000 vertical ad variations built around truck, SUV, first-time buyer, and subprime buyers respond to different hooks.",
     keywords: [
       "batch video ads for auto dealers",
       "video ads for auto-dealerships",
@@ -25,59 +27,76 @@ export const batchVideoAdsForAutoDealerships: BestForPageContent = {
     badge: "Batch Video Ads for Auto Dealers",
     headline: "Auto Dealerships Need More Than One Generic Video Ad.",
     headlineAccent: "Batch gives you the creative volume to find what buyers respond to.",
-    subheadline: "Prestyj turns one founder or operator recording into 100-1,000 scripted vertical ad variations for auto dealers. Test pain points, seasonal triggers like tax refund season, and high-intent offers without hiring another editor, agency, or creator.",
+    subheadline:
+      "Prestyj turns one founder or operator recording into 100-1,000 scripted vertical ad variations for auto dealers. Test pain points, seasonal triggers like tax refund season, and high-intent offers without hiring another editor, agency, or creator.",
   },
   whyBestFor: [
     {
       icon: "Target",
       title: "Truck, SUV, first-time buyer, and subprime buyers respond to different hooks.",
-      description: "Auto Dealers campaigns underperform when every buyer sees the same generic message. Batch creative splits the market into specific angles — The trade-in value surprise hook, The payment under target hook, and other hooks that let the account learn which problem actually creates demand.",
+      description:
+        "Auto Dealers campaigns underperform when every buyer sees the same generic message. Batch creative splits the market into specific angles — The trade-in value surprise hook, The payment under target hook, and other hooks that let the account learn which problem actually creates demand.",
     },
     {
       icon: "DollarSign",
-      title: "The economics support testing: $1,500-$6,000 front/back gross plus service retention per sold unit",
-      description: "Inventory turns quickly and stale ads keep promoting the wrong vehicles or incentives. Turn new arrivals, trade-in offers, credit situations, and model-specific inventory into fast creative tests. When one booked opportunity can justify the whole production sprint, starving the account with three ads is the expensive option.",
+      title:
+        "The economics support testing: $1,500-$6,000 front/back gross plus service retention per sold unit",
+      description:
+        "Inventory turns quickly and stale ads keep promoting the wrong vehicles or incentives. Turn new arrivals, trade-in offers, credit situations, and model-specific inventory into fast creative tests. When one booked opportunity can justify the whole production sprint, starving the account with three ads is the expensive option.",
     },
     {
       icon: "Clock",
       title: "Tax refund season windows move faster than traditional production.",
-      description: "The best auto dealers angles are often tied to timing: tax refund season, model-year closeout, holiday sales events, rate changes. Batch production gives your team ready-to-test creative while the trigger is still active instead of after the opportunity has passed.",
+      description:
+        "The best auto dealers angles are often tied to timing: tax refund season, model-year closeout, holiday sales events, rate changes. Batch production gives your team ready-to-test creative while the trigger is still active instead of after the opportunity has passed.",
     },
     {
       icon: "Shield",
       title: "Compliance-aware scripts keep volume from becoming reckless.",
-      description: "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
+      description:
+        "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
     },
     {
       icon: "Sparkles",
       title: "Your real operator beats OEM templates and generic dealership video vendors.",
-      description: "The status quo for auto dealers is OEM templates and generic dealership video vendors. Prestyj uses your real face, your real offer, and a structured script matrix so the account gets authenticity and volume at the same time.",
+      description:
+        "The status quo for auto dealers is OEM templates and generic dealership video vendors. Prestyj uses your real face, your real offer, and a structured script matrix so the account gets authenticity and volume at the same time.",
     },
   ],
   painPoints: [
     {
       problem: "Truck, SUV, first-time buyer, and subprime buyers respond to different hooks.",
-      solution: "Build a full lane of ads around that problem instead of mentioning it once. Prestyj turns it into hooks, proof points, objections, and CTAs so your media buyer can see whether the market cares.",
+      solution:
+        "Build a full lane of ads around that problem instead of mentioning it once. Prestyj turns it into hooks, proof points, objections, and CTAs so your media buyer can see whether the market cares.",
     },
     {
       problem: "Inventory-specific ads age out fast when production takes weeks.",
-      solution: "Use batch production to test separate ad families for each buyer motivation. Auto Dealers can compare urgency, trust, cost, timing, and status quo angles without another shoot.",
+      solution:
+        "Use batch production to test separate ad families for each buyer motivation. Auto Dealers can compare urgency, trust, cost, timing, and status quo angles without another shoot.",
     },
     {
       problem: "Most dealership ads sound like the same loud sales event template.",
-      solution: "Give that high-value category its own creative inventory. A 300, 500, or 1,000 ad batch lets your team isolate which offer deserves more spend.",
+      solution:
+        "Give that high-value category its own creative inventory. A 300, 500, or 1,000 ad batch lets your team isolate which offer deserves more spend.",
     },
     {
-      problem: "You are relying on OEM templates and generic dealership video vendors instead of owned creative learning.",
-      solution: "Batch creative gives auto dealers a reusable library that can be launched, paused, refreshed, and expanded without renting every lead from the same crowded channels.",
+      problem:
+        "You are relying on OEM templates and generic dealership video vendors instead of owned creative learning.",
+      solution:
+        "Batch creative gives auto dealers a reusable library that can be launched, paused, refreshed, and expanded without renting every lead from the same crowded channels.",
     },
     {
       problem: "You do not have time to write auto dealer ad scripts from scratch.",
-      solution: "Prestyj writes the scripts, maps the angles, edits the recording, and delivers finished vertical files. Your team records once and your media buyer gets the creative inputs.",
+      solution:
+        "Prestyj writes the scripts, maps the angles, edits the recording, and delivers finished vertical files. Your team records once and your media buyer gets the creative inputs.",
     },
   ],
   comparison: {
-    headers: ["Factor", "Prestyj Batch Video Ads", "OEM templates and generic dealership video vendors"],
+    headers: [
+      "Factor",
+      "Prestyj Batch Video Ads",
+      "OEM templates and generic dealership video vendors",
+    ],
     rows: [
       {
         feature: "Creative output",
@@ -86,7 +105,8 @@ export const batchVideoAdsForAutoDealerships: BestForPageContent = {
       },
       {
         feature: "Angle coverage",
-        prestyj: "The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook",
+        prestyj:
+          "The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook",
         others: "Usually one broad message",
       },
       {
@@ -96,8 +116,10 @@ export const batchVideoAdsForAutoDealerships: BestForPageContent = {
       },
       {
         feature: "Economics",
-        prestyj: "Turn new arrivals, trade-in offers, credit situations, and model-specific inventory into fast creative tests.",
-        others: "Inventory turns quickly and stale ads keep promoting the wrong vehicles or incentives.",
+        prestyj:
+          "Turn new arrivals, trade-in offers, credit situations, and model-specific inventory into fast creative tests.",
+        others:
+          "Inventory turns quickly and stale ads keep promoting the wrong vehicles or incentives.",
       },
       {
         feature: "Primary CTA",
@@ -109,27 +131,33 @@ export const batchVideoAdsForAutoDealerships: BestForPageContent = {
   faq: [
     {
       question: "How do batch video ads work for auto dealers?",
-      answer: "Prestyj writes an auto dealer-specific script matrix, you record the scripts once, and we edit that footage into finished vertical ad variations for Meta, TikTok, YouTube Shorts, and similar placements.",
+      answer:
+        "Prestyj writes an auto dealer-specific script matrix, you record the scripts once, and we edit that footage into finished vertical ad variations for Meta, TikTok, YouTube Shorts, and similar placements.",
     },
     {
       question: "What angles should auto dealers test first?",
-      answer: "Start with The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook. Those angles map to real auto dealers buying triggers instead of generic brand awareness.",
+      answer:
+        "Start with The trade-in value surprise hook, The payment under target hook, The family SUV availability hook, The credit rebuild path hook. Those angles map to real auto dealers buying triggers instead of generic brand awareness.",
     },
     {
       question: "Is this a replacement for OEM templates and generic dealership video vendors?",
-      answer: "It replaces the creative production bottleneck, not every marketing function. Your team or agency still manages media buying; Prestyj supplies the high-volume ad creative library.",
+      answer:
+        "It replaces the creative production bottleneck, not every marketing function. Your team or agency still manages media buying; Prestyj supplies the high-volume ad creative library.",
     },
     {
       question: "What compliance guardrails matter for auto dealers ads?",
-      answer: "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
+      answer:
+        "Include required financing, payment, incentive, and availability disclosures; avoid bait-and-switch inventory claims.",
     },
     {
       question: "Which batch size should auto dealers choose?",
-      answer: "Choose 100 ads for a focused first test, 300 for three problem lanes, 500 for the recommended matrix, and 1,000 if you need to test many auto dealers triggers or refresh a larger account.",
+      answer:
+        "Choose 100 ads for a focused first test, 300 for three problem lanes, 500 for the recommended matrix, and 1,000 if you need to test many auto dealers triggers or refresh a larger account.",
     },
   ],
   proprietaryData: {
-    heading: "How should auto dealerships use creative volume when lead benchmarks are already competitive?",
+    heading:
+      "How should auto dealerships use creative volume when lead benchmarks are already competitive?",
     intro:
       "Auto dealers operate in a category where paid-search benchmarks prove demand exists, but the creative still determines which inventory, payment, and trade-in messages convert on social. These numbers pair industry lead benchmarks with Prestyj's low-cost variation model.",
     stats: [
@@ -149,11 +177,13 @@ export const batchVideoAdsForAutoDealerships: BestForPageContent = {
           "At $4–$5 per variation, dealers can make creative as fast-moving as inventory. Instead of waiting for a vendor to remake a sales-event spot, the store can test trucks, SUVs, trade-ins, subprime paths, and service retention angles while the opportunity is still live.",
       },
     ],
-    footnote: "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
+    footnote:
+      "Figures are Prestyj production benchmarks (src/lib/statistics-data). Each value links to its sourced /stat page.",
   },
   cta: {
     headline: "Auto Dealerships: Turn One Recording Into a Paid-Social Test Library.",
-    subheadline: "Get scripts and finished video ads built around auto dealers economics, timing triggers, compliance constraints, and buyer objections.",
+    subheadline:
+      "Get scripts and finished video ads built around auto dealers economics, timing triggers, compliance constraints, and buyer objections.",
     buttonText: "See Batch Pricing",
     buttonHref: "/batch-video-ads#pricing",
     footnote: "One-time packs from $497 · ROI calculator available",

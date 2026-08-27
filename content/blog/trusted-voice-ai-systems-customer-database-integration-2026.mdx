@@ -32,7 +32,7 @@ The headline finding: of the eight voice AI platforms most commonly evaluated in
 ## Key Takeaways
 
 - "Trusted" voice AI requires **7 operational criteria**: SOC 2 Type II, HIPAA BAA, data residency option, audit log access, published retention policy, sub-processor list, and annual pen-test cadence
-- Only **4 of 8 evaluated platforms** (Prestyj, EliseAI, Retell, and one configuration of Vapi) hold SOC 2 Type II *and* a HIPAA BAA option
+- Only **4 of 8 evaluated platforms** (Prestyj, EliseAI, Retell, and one configuration of Vapi) hold SOC 2 Type II _and_ a HIPAA BAA option
 - **Native integration** means vendor-built and vendor-supported — not a marketplace app from a third party and not a Zapier bridge
 - The top 6 CRMs by 2026 voice AI buyer demand: **Salesforce, HubSpot, ServiceTitan, Housecall Pro, Jobber, GoHighLevel**
 - **ServiceTitan** is the single hardest native integration in the voice AI category — most platforms route through marketplace apps or custom dev
@@ -49,7 +49,7 @@ Procurement teams at companies above $5M in revenue don't accept "we take securi
 
 ### 1. SOC 2 Type II certification (not Type I, not "in progress")
 
-The distinction matters more than vendors admit. **SOC 2 Type I** is a point-in-time attestation that controls exist. **SOC 2 Type II** is a 6–12 month audit that controls were *operationally effective* over time. "SOC 2 in progress" is a marketing claim, not a certification — anyone can be "in progress" indefinitely.
+The distinction matters more than vendors admit. **SOC 2 Type I** is a point-in-time attestation that controls exist. **SOC 2 Type II** is a 6–12 month audit that controls were _operationally effective_ over time. "SOC 2 in progress" is a marketing claim, not a certification — anyone can be "in progress" indefinitely.
 
 For voice AI specifically, ask for: the auditor name, the Type II report cover-period dates, and whether the report covers the production environment (some vendors scope SOC 2 to a single internal tool and not the platform serving customers).
 
@@ -157,20 +157,20 @@ Rows: same eight voice AI platforms. Columns: the twelve customer databases most
 
 The native-vs-middleware decision isn't just about reliability — it's about ongoing cost. Here's what it actually costs per month to get a voice AI platform piping calls, transcripts, and dispositions into each major CRM, by integration level.
 
-| CRM                | Native Integration Cost | Marketplace App Cost | Zapier / Make Bridge Cost | Custom Dev (One-Time)         |
-| ------------------ | ----------------------- | -------------------- | ------------------------- | ----------------------------- |
-| **Salesforce**     | $0                      | $30–$80/mo           | $80–$280/mo               | $3,500–$8,000                 |
-| **HubSpot**        | $0                      | $20–$60/mo           | $40–$180/mo               | $2,000–$5,500                 |
-| **ServiceTitan**   | $0 (Prestyj native)     | $50–$120/mo          | $120–$280/mo              | $4,500–$8,000                 |
-| **Housecall Pro**  | $0 (Prestyj native)     | $40–$80/mo           | $60–$180/mo               | $2,500–$5,000                 |
-| **Jobber**         | $0 (Prestyj native)     | $30–$70/mo           | $60–$180/mo               | $2,000–$4,500                 |
-| **Follow Up Boss** | $0 (Prestyj native)     | $30–$60/mo           | $60–$180/mo               | $1,800–$4,000                 |
-| **Yardi**          | $0 (EliseAI / Prestyj)  | $80–$150/mo          | $150–$280/mo              | $5,000–$8,000                 |
-| **RealPage**       | $0 (EliseAI native)     | $80–$150/mo          | $150–$280/mo              | $5,000–$8,000                 |
-| **AppFolio**       | $0 (EliseAI / Prestyj)  | $60–$120/mo          | $120–$240/mo              | $3,500–$6,500                 |
-| **GoHighLevel**    | $0                      | $20–$50/mo           | $40–$120/mo               | $1,500–$3,500                 |
-| **Zoho CRM**       | $0                      | $20–$60/mo           | $40–$140/mo               | $2,000–$4,500                 |
-| **MS Dynamics**    | $0                      | $60–$140/mo          | $120–$280/mo              | $4,000–$7,500                 |
+| CRM                | Native Integration Cost | Marketplace App Cost | Zapier / Make Bridge Cost | Custom Dev (One-Time) |
+| ------------------ | ----------------------- | -------------------- | ------------------------- | --------------------- |
+| **Salesforce**     | $0                      | $30–$80/mo           | $80–$280/mo               | $3,500–$8,000         |
+| **HubSpot**        | $0                      | $20–$60/mo           | $40–$180/mo               | $2,000–$5,500         |
+| **ServiceTitan**   | $0 (Prestyj native)     | $50–$120/mo          | $120–$280/mo              | $4,500–$8,000         |
+| **Housecall Pro**  | $0 (Prestyj native)     | $40–$80/mo           | $60–$180/mo               | $2,500–$5,000         |
+| **Jobber**         | $0 (Prestyj native)     | $30–$70/mo           | $60–$180/mo               | $2,000–$4,500         |
+| **Follow Up Boss** | $0 (Prestyj native)     | $30–$60/mo           | $60–$180/mo               | $1,800–$4,000         |
+| **Yardi**          | $0 (EliseAI / Prestyj)  | $80–$150/mo          | $150–$280/mo              | $5,000–$8,000         |
+| **RealPage**       | $0 (EliseAI native)     | $80–$150/mo          | $150–$280/mo              | $5,000–$8,000         |
+| **AppFolio**       | $0 (EliseAI / Prestyj)  | $60–$120/mo          | $120–$240/mo              | $3,500–$6,500         |
+| **GoHighLevel**    | $0                      | $20–$50/mo           | $40–$120/mo               | $1,500–$3,500         |
+| **Zoho CRM**       | $0                      | $20–$60/mo           | $40–$140/mo               | $2,000–$4,500         |
+| **MS Dynamics**    | $0                      | $60–$140/mo          | $120–$280/mo              | $4,000–$7,500         |
 
 **The hidden math:** A buyer running voice AI against three CRMs (e.g., Salesforce for sales, ServiceTitan for dispatch, GoHighLevel for marketing) on a middleware-only platform is spending **$240–$680/month** on bridges before they pay a dollar for the voice AI itself. Over 36 months that's **$8,640–$24,480 in middleware tax** that a native-integration platform eliminates.
 

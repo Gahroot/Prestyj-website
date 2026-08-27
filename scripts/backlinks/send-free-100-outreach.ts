@@ -55,11 +55,11 @@ const TARGETS: Target[] = [
     targetUrl: "https://www.housingwire.com",
     domain: "housingwire.com",
     toEmail: "editor@housingwire.com",
-    sourceEvidenceUrl: "docs/backlinks/opportunities.md:196; docs/backlinks/free-100-targets.md:118",
+    sourceEvidenceUrl:
+      "docs/backlinks/opportunities.md:196; docs/backlinks/free-100-targets.md:118",
     artifactPath: "docs/backlinks/pitch-drafts/press/housingwire-tech.md",
     subject: "Real estate lead response data for HousingWire",
-    body:
-      "Hi HousingWire team,\n\nSharing a free, source-linked dataset that may help with future real estate technology and lead-response coverage: https://prestyj.com/data\n\nIt includes CSV/JSON access, CC BY 4.0 reuse terms, schema.org Dataset markup, and real-estate-relevant benchmarks on speed-to-lead, AI sales agents, and lead follow-up. A few useful stats: only 0.1% of inbound leads get a 5-minute response, 77% never get any response, and companies responding in 5 minutes are 21x more likely to qualify a lead than those waiting 30 minutes.\n\nIf it is useful for a future article or resource page, attribution to the dataset URL is appreciated.\n\nThanks,\nNolan Grout\nPrestyj\nhttps://prestyj.com\n",
+    body: "Hi HousingWire team,\n\nSharing a free, source-linked dataset that may help with future real estate technology and lead-response coverage: https://prestyj.com/data\n\nIt includes CSV/JSON access, CC BY 4.0 reuse terms, schema.org Dataset markup, and real-estate-relevant benchmarks on speed-to-lead, AI sales agents, and lead follow-up. A few useful stats: only 0.1% of inbound leads get a 5-minute response, 77% never get any response, and companies responding in 5 minutes are 21x more likely to qualify a lead than those waiting 30 minutes.\n\nIf it is useful for a future article or resource page, attribution to the dataset URL is appreciated.\n\nThanks,\nNolan Grout\nPrestyj\nhttps://prestyj.com\n",
   },
   {
     id: "resend-inman-free100-2026-05-26",
@@ -67,11 +67,11 @@ const TARGETS: Target[] = [
     targetUrl: "https://www.inman.com",
     domain: "inman.com",
     toEmail: "tips@inman.com",
-    sourceEvidenceUrl: "docs/backlinks/opportunities.md:198; docs/backlinks/free-100-targets.md:119",
+    sourceEvidenceUrl:
+      "docs/backlinks/opportunities.md:198; docs/backlinks/free-100-targets.md:119",
     artifactPath: "docs/backlinks/pitch-drafts/press/inman-tips.md",
     subject: "Tip: open real estate lead-response benchmark dataset",
-    body:
-      "Hi Inman team,\n\nA quick data tip for future brokerage tech / lead-response coverage: Prestyj published an open benchmark dataset at https://prestyj.com/data\n\nThe dataset is free to cite and reuse under CC BY 4.0, with CSV/JSON downloads and source notes per row. It includes real-estate-relevant benchmarks such as 0.1% of inbound leads receiving a 5-minute response, 77% receiving no response, and the 21x qualification lift associated with 5-minute follow-up versus 30-minute follow-up.\n\nIf useful for a story or resource, attribution to https://prestyj.com/data is appreciated.\n\nThanks,\nNolan Grout\nPrestyj\nhttps://prestyj.com\n",
+    body: "Hi Inman team,\n\nA quick data tip for future brokerage tech / lead-response coverage: Prestyj published an open benchmark dataset at https://prestyj.com/data\n\nThe dataset is free to cite and reuse under CC BY 4.0, with CSV/JSON downloads and source notes per row. It includes real-estate-relevant benchmarks such as 0.1% of inbound leads receiving a 5-minute response, 77% receiving no response, and the 21x qualification lift associated with 5-minute follow-up versus 30-minute follow-up.\n\nIf useful for a story or resource, attribution to https://prestyj.com/data is appreciated.\n\nThanks,\nNolan Grout\nPrestyj\nhttps://prestyj.com\n",
   },
 ];
 
@@ -130,12 +130,30 @@ async function main() {
 
   for (const target of selected) {
     if (!existsSync(target.artifactPath)) {
-      appendLog({ date: TODAY, target: target.targetName, recipient_domain: target.domain, email_hash: emailHash(target.toEmail), status: "blocked", reason: "missing artifact", artifact_path: target.artifactPath });
+      appendLog({
+        date: TODAY,
+        target: target.targetName,
+        recipient_domain: target.domain,
+        email_hash: emailHash(target.toEmail),
+        status: "blocked",
+        reason: "missing artifact",
+        artifact_path: target.artifactPath,
+      });
       continue;
     }
 
     if (!resend) {
-      appendLog({ date: TODAY, target: target.targetName, recipient_domain: target.domain, public_address: target.toEmail, email_hash: emailHash(target.toEmail), status: dryRun ? "dry-run" : "blocked", reason: dryRun ? "dry run" : "RESEND_API_KEY missing", artifact_path: target.artifactPath, subject: target.subject });
+      appendLog({
+        date: TODAY,
+        target: target.targetName,
+        recipient_domain: target.domain,
+        public_address: target.toEmail,
+        email_hash: emailHash(target.toEmail),
+        status: dryRun ? "dry-run" : "blocked",
+        reason: dryRun ? "dry run" : "RESEND_API_KEY missing",
+        artifact_path: target.artifactPath,
+        subject: target.subject,
+      });
       markInventory(target, dryRun ? "dry-run" : "blocked");
       continue;
     }
@@ -148,12 +166,34 @@ async function main() {
     });
 
     if (error) {
-      appendLog({ date: TODAY, target: target.targetName, recipient_domain: target.domain, public_address: target.toEmail, email_hash: emailHash(target.toEmail), status: "blocked", reason: error.message, artifact_path: target.artifactPath, subject: target.subject });
+      appendLog({
+        date: TODAY,
+        target: target.targetName,
+        recipient_domain: target.domain,
+        public_address: target.toEmail,
+        email_hash: emailHash(target.toEmail),
+        status: "blocked",
+        reason: error.message,
+        artifact_path: target.artifactPath,
+        subject: target.subject,
+      });
       markInventory(target, "blocked");
       continue;
     }
 
-    appendLog({ date: TODAY, target: target.targetName, target_url: target.targetUrl, recipient_domain: target.domain, public_address: target.toEmail, email_hash: emailHash(target.toEmail), status: "sent", resend_id: data?.id, artifact_path: target.artifactPath, source_evidence_url: target.sourceEvidenceUrl, subject: target.subject });
+    appendLog({
+      date: TODAY,
+      target: target.targetName,
+      target_url: target.targetUrl,
+      recipient_domain: target.domain,
+      public_address: target.toEmail,
+      email_hash: emailHash(target.toEmail),
+      status: "sent",
+      resend_id: data?.id,
+      artifact_path: target.artifactPath,
+      source_evidence_url: target.sourceEvidenceUrl,
+      subject: target.subject,
+    });
     markInventory(target, "sent", data?.id);
   }
 }

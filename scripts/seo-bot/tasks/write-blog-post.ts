@@ -21,23 +21,26 @@ import {
  * instead of returning them flat. Unwrap automatically so the rest of the
  * pipeline never has to care which provider generated the output.
  */
-const BlogPostOutputSchema = z.preprocess((data) => {
-  if (data && typeof data === "object" && "frontmatter" in data) {
-    const { frontmatter, ...rest } = data as Record<string, unknown>;
-    return { ...(frontmatter as object), ...rest };
-  }
-  return data;
-}, z.object({
-  title: z.string().min(1),
-  description: z.string().min(1),
-  date: z.string().min(1),
-  author: z.string().optional(),
-  category: z.string().optional(),
-  tags: z.array(z.string().min(1)).optional(),
-  keywords: z.array(z.string().min(1)).optional(),
-  image: z.string().optional(),
-  body: z.string().min(1),
-}));
+const BlogPostOutputSchema = z.preprocess(
+  (data) => {
+    if (data && typeof data === "object" && "frontmatter" in data) {
+      const { frontmatter, ...rest } = data as Record<string, unknown>;
+      return { ...(frontmatter as object), ...rest };
+    }
+    return data;
+  },
+  z.object({
+    title: z.string().min(1),
+    description: z.string().min(1),
+    date: z.string().min(1),
+    author: z.string().optional(),
+    category: z.string().optional(),
+    tags: z.array(z.string().min(1)).optional(),
+    keywords: z.array(z.string().min(1)).optional(),
+    image: z.string().optional(),
+    body: z.string().min(1),
+  }),
+);
 
 type BlogPostShape = z.infer<typeof BlogPostOutputSchema>;
 

@@ -99,7 +99,11 @@ const page = {
     rows: [
       {
         label: "First-year cash outlay",
-        values: ["Scoped custom build + management", "$200K–$500K+ possible", "$1K–$50K tools + labor"],
+        values: [
+          "Scoped custom build + management",
+          "$200K–$500K+ possible",
+          "$1K–$50K tools + labor",
+        ],
       },
       {
         label: "Time to useful launch",
@@ -107,7 +111,11 @@ const page = {
       },
       {
         label: "Fit to proprietary workflow",
-        values: ["Bespoke to your rules and data", "Bespoke, if the team delivers", "Limited to what the platform supports"],
+        values: [
+          "Bespoke to your rules and data",
+          "Bespoke, if the team delivers",
+          "Limited to what the platform supports",
+        ],
       },
       {
         label: "Systems integration depth",
@@ -115,11 +123,19 @@ const page = {
       },
       {
         label: "Ongoing QA + maintenance",
-        values: ["Managed after launch", "Internal team, ongoing cost", "Vendor-managed core, your config"],
+        values: [
+          "Managed after launch",
+          "Internal team, ongoing cost",
+          "Vendor-managed core, your config",
+        ],
       },
       {
         label: "Risk of orphaned project",
-        values: ["Low — maintained as a service", "High if the team disbands", "Low — vendor owns the core"],
+        values: [
+          "Low — maintained as a service",
+          "High if the team disbands",
+          "Low — vendor owns the core",
+        ],
       },
     ],
   },
@@ -131,23 +147,43 @@ const page = {
     rows: [
       {
         label: "Prestyj managed custom agent",
-        values: ["Unique workflows that off-the-shelf cannot model", "Higher cost and longer timeline than standard", "Best when the agent is core to the business"],
+        values: [
+          "Unique workflows that off-the-shelf cannot model",
+          "Higher cost and longer timeline than standard",
+          "Best when the agent is core to the business",
+        ],
       },
       {
         label: "Prestyj done-for-you standard agent",
-        values: ["Common marketing and sales workflows", "Less bespoke than a full custom build", "Often the faster, cheaper first move"],
+        values: [
+          "Common marketing and sales workflows",
+          "Less bespoke than a full custom build",
+          "Often the faster, cheaper first move",
+        ],
       },
       {
         label: "Internal custom build",
-        values: ["AI as core product with a dedicated team", "Maintenance and key-person risk", "Only if AI is core infrastructure"],
+        values: [
+          "AI as core product with a dedicated team",
+          "Maintenance and key-person risk",
+          "Only if AI is core infrastructure",
+        ],
       },
       {
         label: "AI agent builder platforms",
-        values: ["Technical operators prototyping fast", "You own QA, integrations, monitoring", "Compare labor hours, not just plan price"],
+        values: [
+          "Technical operators prototyping fast",
+          "You own QA, integrations, monitoring",
+          "Compare labor hours, not just plan price",
+        ],
       },
       {
         label: "Off-the-shelf agent platforms",
-        values: ["Standard, well-supported use cases", "Limited to the platform's capabilities", "Start here unless you hit a hard limit"],
+        values: [
+          "Standard, well-supported use cases",
+          "Limited to the platform's capabilities",
+          "Start here unless you hit a hard limit",
+        ],
       },
     ],
   },
@@ -159,19 +195,23 @@ const page = {
     cards: [
       {
         title: "Discovery + solution design",
-        description: "Map the workflow, data sources, business rules, edge cases, compliance needs, and success metrics before any code is written.",
+        description:
+          "Map the workflow, data sources, business rules, edge cases, compliance needs, and success metrics before any code is written.",
       },
       {
         title: "Bespoke build + integration",
-        description: "Implement custom logic, prompts, and tools, and integrate deeply with your CRM, data, channels, and internal systems.",
+        description:
+          "Implement custom logic, prompts, and tools, and integrate deeply with your CRM, data, channels, and internal systems.",
       },
       {
         title: "Evaluation + launch QA",
-        description: "Test against real scenarios and edge cases, validate accuracy and escalation, and pilot on contained traffic before full rollout.",
+        description:
+          "Test against real scenarios and edge cases, validate accuracy and escalation, and pilot on contained traffic before full rollout.",
       },
       {
         title: "Monitoring + maintenance",
-        description: "Track outcomes, review failures, update prompts and integrations, and own upkeep so the agent keeps working as systems change.",
+        description:
+          "Track outcomes, review failures, update prompts and integrations, and own upkeep so the agent keeps working as systems change.",
       },
     ],
   },
@@ -183,15 +223,18 @@ const page = {
     cards: [
       {
         title: "Validate build vs buy",
-        description: "Confirm a standard or done-for-you agent genuinely cannot meet the requirement, so you only pay for custom where it earns its cost.",
+        description:
+          "Confirm a standard or done-for-you agent genuinely cannot meet the requirement, so you only pay for custom where it earns its cost.",
       },
       {
         title: "Design and build the agent",
-        description: "Specify behavior, data, integrations, and guardrails, then implement and evaluate against real scenarios and edge cases.",
+        description:
+          "Specify behavior, data, integrations, and guardrails, then implement and evaluate against real scenarios and edge cases.",
       },
       {
         title: "Launch, monitor, and maintain",
-        description: "Pilot, measure outcomes, tune, and keep the agent maintained as your data, tools, and policies evolve.",
+        description:
+          "Pilot, measure outcomes, tune, and keep the agent maintained as your data, tools, and policies evolve.",
       },
     ],
   },

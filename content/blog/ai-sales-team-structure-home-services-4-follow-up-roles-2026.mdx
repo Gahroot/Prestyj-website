@@ -27,12 +27,12 @@ image: "/images/blog/ai-sales-team-structure-home-services-4-follow-up-roles-202
 
 **Direct answer:** Use four specialized agents instead of one generic bot. The instant responder contacts every lead; the qualifier gathers service, urgency, and fit; the appointment setter offers live calendar slots; and the reactivator works consented dormant records. Route safety, pricing, complaint, and high-intent sales conversations to a person.
 
-| Role | Trigger | Numeric operating target | What vendors often omit |
-| --- | --- | ---: | --- |
-| **Instant responder** | New form, call, chat, or ad lead | **12–45 sec** to first contact | Source integration failures and after-hours routing |
-| **Qualifier** | Lead replies | **1** approved script per trade and lead type | Bad-fit rules, consent, and escalation paths |
-| **Appointment setter** | Lead meets qualification rules | **2** live time slots offered | Calendar conflicts, travel windows, and rescheduling |
-| **Reactivator** | Approved dormant segment | **8–15%** re-engagement planning range | Consent, suppression lists, and the difference between replies and booked jobs |
+| Role                   | Trigger                          |                      Numeric operating target | What vendors often omit                                                        |
+| ---------------------- | -------------------------------- | --------------------------------------------: | ------------------------------------------------------------------------------ |
+| **Instant responder**  | New form, call, chat, or ad lead |                **12–45 sec** to first contact | Source integration failures and after-hours routing                            |
+| **Qualifier**          | Lead replies                     | **1** approved script per trade and lead type | Bad-fit rules, consent, and escalation paths                                   |
+| **Appointment setter** | Lead meets qualification rules   |                 **2** live time slots offered | Calendar conflicts, travel windows, and rescheduling                           |
+| **Reactivator**        | Approved dormant segment         |        **8–15%** re-engagement planning range | Consent, suppression lists, and the difference between replies and booked jobs |
 
 Consider an illustrative workflow: a dispatcher gets a roof-inspection form at 9:14 a.m. while handling a crew call and two invoices. The first callback happens at 11:02 a.m. and reaches voicemail.
 
@@ -62,11 +62,12 @@ One measurable workflow change is reducing first-response time. Harvard Business
 An AI Instant Responder's job is speed plus reliable routing. It must connect to the lead sources you actually use—such as ad forms, local-service platforms, and website forms—and trigger only after consent, source mapping, and fallback behavior are tested.
 
 **Job Description:**
-*   **Channel:** SMS, Email, Web Chat, Facebook Messenger.
-*   **Trigger:** New lead created in CRM or lead source.
-*   **Response Time:** Under 60 seconds.
-*   **Script Focus:** Acknowledge request, confirm details, and hand off to the Qualifier. Example: "Hi [Name], got your request for a roof estimate on [Address]. This is Alex with [Company]. To get you the most accurate quote, I just have 2 quick questions. Is now a good time?"
-*   **KPI:** Percentage of new leads engaged in under 1 minute.
+
+- **Channel:** SMS, Email, Web Chat, Facebook Messenger.
+- **Trigger:** New lead created in CRM or lead source.
+- **Response Time:** Under 60 seconds.
+- **Script Focus:** Acknowledge request, confirm details, and hand off to the Qualifier. Example: "Hi [Name], got your request for a roof estimate on [Address]. This is Alex with [Company]. To get you the most accurate quote, I just have 2 quick questions. Is now a good time?"
+- **KPI:** Percentage of new leads engaged in under 1 minute.
 
 This role is not about closing. The goal is to acknowledge the request before the lead keeps shopping, not to close the job in the first message.
 
@@ -77,13 +78,14 @@ Once the Instant Responder has made contact, the Qualifier takes over the conver
 Generic advice tells you to have your dispatcher do this. But your dispatcher is also managing schedules and fielding calls from angry customers. When qualification competes with dispatch work, key details can be missed. A scripted agent can apply the same approved questions each time and escalate answers that do not fit the rules.
 
 **Job Description:**
-*   **Channel:** Primarily SMS and Web Chat.
-*   **Trigger:** Lead responds positively to the Instant Responder.
-*   **Script Focus:** Execute a pre-built qualification sequence. This varies by trade:
-    *   **Roofing:** "Great. First, is this for a repair or a full replacement? And what type of roof do you have now (shingle, metal, tile)?"
-    *   **HVAC:** "Got it. Is your current system not cooling/heating, or are you looking for a quote on a new unit? How old is the existing system?"
-    *   **Plumbing:** "Okay. To make sure we send the right tech, can you tell me if this is an emergency leak or a planned project like a water heater replacement?"
-*   **KPI:** Percentage of engaged leads that complete the qualification sequence.
+
+- **Channel:** Primarily SMS and Web Chat.
+- **Trigger:** Lead responds positively to the Instant Responder.
+- **Script Focus:** Execute a pre-built qualification sequence. This varies by trade:
+  - **Roofing:** "Great. First, is this for a repair or a full replacement? And what type of roof do you have now (shingle, metal, tile)?"
+  - **HVAC:** "Got it. Is your current system not cooling/heating, or are you looking for a quote on a new unit? How old is the existing system?"
+  - **Plumbing:** "Okay. To make sure we send the right tech, can you tell me if this is an emergency leak or a planned project like a water heater replacement?"
+- **KPI:** Percentage of engaged leads that complete the qualification sequence.
 
 The output is a lead record with the captured service type, property details, and stated problem. That context can reduce repetitive questions in the first human conversation.
 
@@ -94,11 +96,12 @@ A qualified lead still needs a clear path to an available appointment. Manual sc
 An AI Appointment Setter can connect to Google or Outlook calendars when the required API access and scheduling rules exist. It should offer only slots that respect technician territory, duration, buffers, and travel constraints.
 
 **Job Description:**
-*   **Channel:** SMS, Email, Web Chat.
-*   **Trigger:** Lead successfully passes the Qualifier stage.
-*   **Script Focus:** Offer available slots and confirm the booking. Example: "Thanks for that info. It looks like we have a technician available to come out tomorrow at 2:00 PM or Friday at 10:00 AM. Which of those works better for you?"
-*   **Integration:** Tested calendar and CRM API access with least-privilege permissions, idempotent writes, and failure alerts.
-*   **KPI:** Booked appointment rate from qualified leads.
+
+- **Channel:** SMS, Email, Web Chat.
+- **Trigger:** Lead successfully passes the Qualifier stage.
+- **Script Focus:** Offer available slots and confirm the booking. Example: "Thanks for that info. It looks like we have a technician available to come out tomorrow at 2:00 PM or Friday at 10:00 AM. Which of those works better for you?"
+- **Integration:** Tested calendar and CRM API access with least-privilege permissions, idempotent writes, and failure alerts.
+- **KPI:** Booked appointment rate from qualified leads.
 
 This agent also handles confirmation and reminder sequences. It can send a confirmation when the appointment is booked, a reminder 24 hours before, and another one hour before. Measure its actual show rate against your pre-launch baseline; do not accept an unsourced no-show-reduction guarantee.
 
@@ -109,12 +112,13 @@ Your CRM may contain paid leads that never signed and past customers who have no
 An AI Reactivator can run approved, measured campaigns against those eligible segments while routing replies and opt-outs correctly.
 
 **Job Description:**
-*   **Channel:** Primarily Email and SMS.
-*   **Trigger:** Scheduled campaign targeting a specific list segment (e.g., "Quotes over 6 months old," "Past customers - 2 years").
-*   **Script Focus:** Make a relevant, non-pushy offer only when the offer, eligibility, and expiration are real. Illustrative examples:
-    *   **Old Quotes:** "Hi [Name], Alex from [Company] here. I saw we sent you a quote for a new HVAC system last spring. We're offering a $250 credit on new installs this month if you were still considering it. Any interest?"
-    *   **Past Customers:** "Hi [Name], it's Alex with [Company]. Hope the roof we installed for you back in 2022 is holding up well. We're offering past customers a free 10-point inspection before storm season hits. Can I get you on the schedule?"
-*   **KPI:** Number of warm conversations and booked appointments generated from cold lists.
+
+- **Channel:** Primarily Email and SMS.
+- **Trigger:** Scheduled campaign targeting a specific list segment (e.g., "Quotes over 6 months old," "Past customers - 2 years").
+- **Script Focus:** Make a relevant, non-pushy offer only when the offer, eligibility, and expiration are real. Illustrative examples:
+  - **Old Quotes:** "Hi [Name], Alex from [Company] here. I saw we sent you a quote for a new HVAC system last spring. We're offering a $250 credit on new installs this month if you were still considering it. Any interest?"
+  - **Past Customers:** "Hi [Name], it's Alex with [Company]. Hope the roof we installed for you back in 2022 is holding up well. We're offering past customers a free 10-point inspection before storm season hits. Can I get you on the schedule?"
+- **KPI:** Number of warm conversations and booked appointments generated from cold lists.
 
 This role can turn a neglected CRM into a measurable pipeline source. The planning benchmark is **8–15% reactivation for compliant multichannel campaigns**, but a reply is not a booked job. Track positive replies, qualified conversations, appointments, show rate, and closed revenue separately.
 
@@ -122,12 +126,12 @@ This role can turn a neglected CRM into a measurable pipeline source. The planni
 
 Let's be concrete. How does this four-agent structure stack up against the default options most home service companies consider?
 
-| Approach | Cost input to collect | Response measurement | Coverage limit | What to verify |
-| :--- | :--- | :--- | :--- | :--- |
-| **Dispatcher/office manager** | Loaded payroll from your books | Median and 90th-percentile first response | Scheduled shifts plus on-call policy | Competing dispatch work and after-hours ownership |
-| **In-house ISA** | Loaded payroll, tools, recruiting, and management | First response by source and shift | Staffed shifts and queue capacity | Ramp time, overflow, and reactivation capacity |
-| **Answering service** | Current quote, minimums, overages, and transfers | Answer speed plus qualified handoff time | Contracted channels and hours | Whether SMS, email, outbound, booking, and CRM writes are included |
-| **Prestyj AI agent team** | **$1,997–$5,997/month plus setup** | Configured target plus measured actuals | Approved workflows, integrations, and escalation coverage | Telephony, usage, setup, oversight, exceptions, and human handoff |
+| Approach                      | Cost input to collect                             | Response measurement                      | Coverage limit                                            | What to verify                                                     |
+| :---------------------------- | :------------------------------------------------ | :---------------------------------------- | :-------------------------------------------------------- | :----------------------------------------------------------------- |
+| **Dispatcher/office manager** | Loaded payroll from your books                    | Median and 90th-percentile first response | Scheduled shifts plus on-call policy                      | Competing dispatch work and after-hours ownership                  |
+| **In-house ISA**              | Loaded payroll, tools, recruiting, and management | First response by source and shift        | Staffed shifts and queue capacity                         | Ramp time, overflow, and reactivation capacity                     |
+| **Answering service**         | Current quote, minimums, overages, and transfers  | Answer speed plus qualified handoff time  | Contracted channels and hours                             | Whether SMS, email, outbound, booking, and CRM writes are included |
+| **Prestyj AI agent team**     | **$1,997–$5,997/month plus setup**                | Configured target plus measured actuals   | Approved workflows, integrations, and escalation coverage | Telephony, usage, setup, oversight, exceptions, and human handoff  |
 
 **Skeptic check:** A subscription headline is not total cost. Collect software, telephony, setup, CRM work, oversight, and overages, then compare fully loaded cost with the [$2–$8 planning benchmark per lead engaged](/stat/lead-response-ai-cost-per-lead-engaged). Treat that record as a planning input until your own event data proves the result.
 

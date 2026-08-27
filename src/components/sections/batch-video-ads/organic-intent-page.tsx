@@ -209,7 +209,8 @@ export function OrganicIntentPage({ page }: OrganicIntentPageProps) {
               Useful resources before you launch
             </h2>
             <p className="text-muted-foreground mx-auto max-w-3xl text-lg">
-              Use these pages to size the batch, estimate economics, and connect the test to your media plan.
+              Use these pages to size the batch, estimate economics, and connect the test to your
+              media plan.
             </p>
           </AnimateOnScroll>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -223,7 +224,9 @@ export function OrganicIntentPage({ page }: OrganicIntentPageProps) {
                     <h3 className="font-heading text-foreground font-bold">{link.label}</h3>
                     <ExternalLink className="text-primary h-4 w-4 flex-shrink-0" />
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{link.description}</p>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {link.description}
+                  </p>
                 </Link>
               </AnimateOnScroll>
             ))}
@@ -262,7 +265,8 @@ export function OrganicIntentPage({ page }: OrganicIntentPageProps) {
               Turn one recording into your next creative test.
             </h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg opacity-90">
-              Choose 100, 300, 500, or 1,000 video ads and give your media buyer enough creative to learn what actually moves the market.
+              Choose 100, 300, 500, or 1,000 video ads and give your media buyer enough creative to
+              learn what actually moves the market.
             </p>
             <Button size="lg" variant="secondary" className="font-bold" asChild>
               <Link href="/batch-video-ads#pricing">

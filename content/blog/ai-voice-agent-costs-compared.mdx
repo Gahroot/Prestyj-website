@@ -18,12 +18,12 @@ image: /images/blog/ai-voice-agent-costs-compared.jpg
 
 **Direct answer:** There is no single “AI voice agent price.” Developer platforms separate orchestration, models, speech, and telephony; bundled platforms meter connected time; enterprise providers scope annual contracts. At 5,000 connected minutes, the published inputs below span $250 for Vapi’s platform layer alone, $350–$1,550 across Retell’s stated pay-as-you-go range, and $700–$1,049 on Bland’s self-serve tiers before optional extras. Terms were checked against official vendor pages on July 31, 2026.
 
-| Pricing model | Current published price | What the headline omits or varies | 5,000-minute arithmetic |
-| --- | ---: | --- | ---: |
-| [Vapi Build](https://vapi.ai/pricing) | $0.05/min platform fee | Model, voice, speech recognition, transport, telephony, compliance, and added concurrency | $250 platform layer only |
-| [Retell pay as you go](https://www.retellai.com/pricing) | $0.07–$0.31/min | Model and voice choice, telephony, add-ons, phone numbers, and concurrency above 20 | $350–$1,550 at the published range |
-| [Bland self-serve](https://docs.bland.ai/platform/billing) | $0.14/min Start; $299 + $0.12/min Build; $499 + $0.11/min Scale | Transfer time, telephony choices, and enterprise terms | $700 Start; $899 Build; $1,049 Scale |
-| [Synthflow Enterprise](https://synthflow.ai/pricing) | From $30,000/year | Final scope depends on volume, concurrency, telephony, integrations, security, and launch support | $2,500/mo annualized minimum; contract scope controls usage |
+| Pricing model                                              |                                         Current published price | What the headline omits or varies                                                                 |                                     5,000-minute arithmetic |
+| ---------------------------------------------------------- | --------------------------------------------------------------: | ------------------------------------------------------------------------------------------------- | ----------------------------------------------------------: |
+| [Vapi Build](https://vapi.ai/pricing)                      |                                          $0.05/min platform fee | Model, voice, speech recognition, transport, telephony, compliance, and added concurrency         |                                    $250 platform layer only |
+| [Retell pay as you go](https://www.retellai.com/pricing)   |                                                 $0.07–$0.31/min | Model and voice choice, telephony, add-ons, phone numbers, and concurrency above 20               |                          $350–$1,550 at the published range |
+| [Bland self-serve](https://docs.bland.ai/platform/billing) | $0.14/min Start; $299 + $0.12/min Build; $499 + $0.11/min Scale | Transfer time, telephony choices, and enterprise terms                                            |                        $700 Start; $899 Build; $1,049 Scale |
+| [Synthflow Enterprise](https://synthflow.ai/pricing)       |                                               From $30,000/year | Final scope depends on volume, concurrency, telephony, integrations, security, and launch support | $2,500/mo annualized minimum; contract scope controls usage |
 
 The table compares public billing inputs, not call quality or total cost of ownership. It does not rank the vendors. A lower meter can still produce a higher business cost if implementation, failed-call review, or human escalation takes more labor.
 
@@ -62,10 +62,10 @@ A buyer should save the calculator configuration with the quote so a later model
 Bland’s billing documentation says its current self-serve structure took effect December 5, 2025:
 
 | Bland plan | Monthly plan fee | Connected-minute rate | Transfer-time rate |
-| --- | ---: | ---: | ---: |
-| Start | $0 | $0.14 | $0.05 |
-| Build | $299 | $0.12 | $0.04 |
-| Scale | $499 | $0.11 | $0.03 |
+| ---------- | ---------------: | --------------------: | -----------------: |
+| Start      |               $0 |                 $0.14 |              $0.05 |
+| Build      |             $299 |                 $0.12 |              $0.04 |
+| Scale      |             $499 |                 $0.11 |              $0.03 |
 
 Bland bills connected time to the second. Its documentation says transfer time is billed additionally when a call transfers through a Bland-provided number; bring-your-own-Twilio transfers do not carry that Bland transfer fee. Enterprise pricing is custom.
 
@@ -129,15 +129,15 @@ Prestyj’s current SMB planning range is [$0–$1,500 in setup fees](/stat/voic
 
 Use a 30-day pilot scorecard:
 
-| Metric | Definition to lock before launch |
-| --- | --- |
-| Connected-minute cost | All vendor charges divided by connected minutes |
-| Cost per resolved call | Fully loaded cost divided by calls completed without avoidable human work |
-| Transfer rate | Calls transferred to a person divided by connected calls |
-| False-transfer rate | Transfers that should have remained automated |
-| Booking or completion rate | Calls that complete the intended business outcome |
-| QA defect rate | Calls with factual, policy, routing, or experience defects |
-| Human review time | Weekly hours spent reviewing and correcting the system |
+| Metric                     | Definition to lock before launch                                          |
+| -------------------------- | ------------------------------------------------------------------------- |
+| Connected-minute cost      | All vendor charges divided by connected minutes                           |
+| Cost per resolved call     | Fully loaded cost divided by calls completed without avoidable human work |
+| Transfer rate              | Calls transferred to a person divided by connected calls                  |
+| False-transfer rate        | Transfers that should have remained automated                             |
+| Booking or completion rate | Calls that complete the intended business outcome                         |
+| QA defect rate             | Calls with factual, policy, routing, or experience defects                |
+| Human review time          | Weekly hours spent reviewing and correcting the system                    |
 
 A cheap call that books the wrong appointment or mishandles an emergency is expensive. A higher-priced call that resolves the workflow safely can be cheaper at the business level.
 

@@ -57,10 +57,9 @@ describe("AI-First Audit unsubscribe", () => {
   });
 
   it("does not query the database for a malformed token", async () => {
-    const request = new NextRequest(
-      "https://prestyj.com/api/ai-first-audit/unsubscribe/bad",
-      { method: "POST" },
-    );
+    const request = new NextRequest("https://prestyj.com/api/ai-first-audit/unsubscribe/bad", {
+      method: "POST",
+    });
     const response = await POST(request, { params: Promise.resolve({ token: "bad" }) });
 
     expect(response.status).toBe(404);

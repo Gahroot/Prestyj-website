@@ -215,7 +215,8 @@ export function Wizard() {
                 current.profile?.businessType === profile.businessType ? current.selections : [],
               workflows:
                 current.profile?.businessType === profile.businessType ? current.workflows : [],
-              result: current.profile?.businessType === profile.businessType ? current.result : null,
+              result:
+                current.profile?.businessType === profile.businessType ? current.result : null,
             }));
             goTo("workflows");
           }}

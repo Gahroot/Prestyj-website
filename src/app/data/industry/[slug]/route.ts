@@ -1,4 +1,8 @@
-import { findIndustrySlice, getAllIndustrySlugs, getStatisticsForIndustry } from "@/lib/statistics/industries";
+import {
+  findIndustrySlice,
+  getAllIndustrySlugs,
+  getStatisticsForIndustry,
+} from "@/lib/statistics/industries";
 
 /**
  * Per-industry slice of the statistics dataset. Returns either CSV or JSON

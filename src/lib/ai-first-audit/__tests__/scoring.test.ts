@@ -23,10 +23,7 @@ describe("scoreTask", () => {
   });
 
   it("sums readiness sub-scores (repeatability + judgment + dataAvailability) into a 3–15 axis", () => {
-    const result = scoreTask(
-      makeTask({ repeatability: 5, judgment: 5, dataAvailability: 5 }),
-      50,
-    );
+    const result = scoreTask(makeTask({ repeatability: 5, judgment: 5, dataAvailability: 5 }), 50);
     expect(result.readiness).toBe(15);
   });
 
