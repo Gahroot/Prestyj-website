@@ -2,6 +2,8 @@
 
 Institutional real estate AI agents for investment funds, commercial brokerages, and CRE owner-operators. The public Next.js site presents capabilities, anonymized work, field notes, a live brokerage agent, and access-request flows.
 
+See [`roadmap.md`](./roadmap.md) for positioning, proof standards, milestones, and release gates.
+
 ## Stack
 
 - Next.js 16 (App Router) + React 19

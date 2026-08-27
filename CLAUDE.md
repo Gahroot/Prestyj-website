@@ -12,7 +12,7 @@ AI agents built and run for institutional real estate. The public site serves re
 
 **Core offer:** Prestyj builds and operates defined AI workflows above the system of record. Engagements are scoped per workflow, source systems, volume, and control requirements.
 
-**See:** `src/lib/positioning.ts`, `src/lib/institutional/`, and `DESIGN.md` for canonical vocabulary and design rules.
+**See:** `src/lib/positioning.ts`, `src/lib/institutional/`, and `DESIGN.md` for canonical vocabulary and design rules. See `roadmap.md` for milestones, proof standards, and release gates.
 
 **Legacy archive:** SMB comparison, location, free-ad, lead-magnet, and old blog source files remain for reversibility. They must stay redirected, excluded from navigation and sitemap, and must not be reused as current positioning.
 
