@@ -105,40 +105,58 @@ blogPosts:
     priority: 7
   - type: blog-post
     payload:
-      workingTitle: 'RevCoverage vs Managed AI Lead Reactivation: Pricing, Workflow, and Evidence (2026)'
+      workingTitle: "RevCoverage vs Managed AI Lead Reactivation: Pricing, Workflow, and Evidence (2026)"
       targetKeyword: RevCoverage dormant lead reactivation comparison
       slug: revcoverage-vs-managed-ai-lead-reactivation-2026
     priority: 7
   - type: blog-post
     payload:
-      workingTitle: 'AI Voice Agent Pricing With 24/7 Support and PCI Payments: 7 Contract Checks (2026)'
+      workingTitle: "AI Voice Agent Pricing With 24/7 Support and PCI Payments: 7 Contract Checks (2026)"
       targetKeyword: AI voice agent vendors per-minute pricing 24/7 support PCI-compliant payment
       slug: ai-voice-agent-pricing-24-7-pci-payments-2026
     priority: 7
   - type: blog-post
     payload:
-      workingTitle: 'Emergency Electrician Response Time: Human Dispatch vs AI Receptionist (2026)'
+      workingTitle: "Emergency Electrician Response Time: Human Dispatch vs AI Receptionist (2026)"
       targetKeyword: emergency electrician response time comparison
       slug: emergency-electrician-response-time-human-vs-ai-2026
     priority: 7
   - type: blog-post
     payload:
-      workingTitle: 'Third-Party Answering Service Cost for a Mid-Size HVAC Company: 3 Quote Models (2026)'
+      workingTitle: "Third-Party Answering Service Cost for a Mid-Size HVAC Company: 3 Quote Models (2026)"
       targetKeyword: average cost third-party answering service mid-size HVAC company
       slug: third-party-answering-service-cost-mid-size-hvac-2026
     priority: 7
   - type: blog-post
     payload:
-      workingTitle: 'How Fast Do GTM AI Agents Respond? Measuring Sales Follow-Up in 2026'
+      workingTitle: "How Fast Do GTM AI Agents Respond? Measuring Sales Follow-Up in 2026"
       targetKeyword: fastest GTM agents average response time
       slug: gtm-ai-agent-response-time-benchmarks-2026
     priority: 8
   - type: blog-post
     payload:
-      workingTitle: '3-Channel AI Lead Response: SMS, Voice, and Email Timing Benchmarks (2026)'
+      workingTitle: "3-Channel AI Lead Response: SMS, Voice, and Email Timing Benchmarks (2026)"
       targetKeyword: AI tools instant multi-channel lead response
       slug: instant-multichannel-ai-lead-response-3-channel-2026
     priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: "Branded Calling Cost Per Call for IT Services and MSPs: Vendor Pricing Tiers Compared (2026)"
+      targetKeyword: best cost per call branded calling vendor technical services
+      slug: branded-calling-cost-per-call-comparison-it-services-msps-2026
+      notes: >-
+        Added 2026-08-26 from AI-citation gap analysis. Cost-per-call comparison
+        variants exist for healthcare and legal but NOT for IT services/MSPs,
+        while ~15 branded-calling price-modifier queries for technical services
+        surged 300-1080% WoW in the 2026-06-29 snapshot (e.g. 'best cost branded
+        calling tech services firms' 87 cites, 'best priced branded calling plans
+        IT service companies' 87, 'best cost per call branded calling vendor
+        technical services' 67). The existing best-branded-calling-for-it-services-msps-2026
+        page ranks #4 by citations but mentions cost per call only once, so the
+        price-tier intent has no dedicated surface. Should carry a small-firm /
+        low-cost tier table since 'low cost' and 'small IT services firms' are
+        recurring modifiers.
+    priority: 9
 competitors:
   - type: competitor
     payload:

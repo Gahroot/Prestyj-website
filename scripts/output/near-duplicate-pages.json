@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T13:39:07.019Z",
+  "generatedAt": "2026-08-26T15:51:10.412Z",
   "pages": [
     {
       "collection": "compare",
@@ -12,9 +12,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=39.6%"
-      ]
+      "reasons": ["uniqueRatio=39.6%"]
     },
     {
       "collection": "compare",
@@ -43,9 +41,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=41.4%"
-      ]
+      "reasons": ["uniqueRatio=41.4%"]
     },
     {
       "collection": "compare",
@@ -58,9 +54,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=42.2%"
-      ]
+      "reasons": ["uniqueRatio=42.2%"]
     },
     {
       "collection": "compare",
@@ -73,9 +67,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=43.3%"
-      ]
+      "reasons": ["uniqueRatio=43.3%"]
     },
     {
       "collection": "best-for",
@@ -104,9 +96,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=48.5%"
-      ]
+      "reasons": ["uniqueRatio=48.5%"]
     },
     {
       "collection": "compare",
@@ -183,9 +173,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=50.1%"
-      ]
+      "reasons": ["uniqueRatio=50.1%"]
     },
     {
       "collection": "best-for",
@@ -278,9 +266,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=57.8%"
-      ]
+      "reasons": ["uniqueRatio=57.8%"]
     },
     {
       "collection": "alternatives",
@@ -309,9 +295,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=61.2%"
-      ]
+      "reasons": ["uniqueRatio=61.2%"]
     },
     {
       "collection": "compare",
@@ -324,9 +308,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=61.3%"
-      ]
+      "reasons": ["uniqueRatio=61.3%"]
     },
     {
       "collection": "alternatives",
@@ -339,9 +321,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=61.4%"
-      ]
+      "reasons": ["uniqueRatio=61.4%"]
     },
     {
       "collection": "alternatives",
@@ -354,9 +334,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=61.5%"
-      ]
+      "reasons": ["uniqueRatio=61.5%"]
     },
     {
       "collection": "compare",
@@ -369,9 +347,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=64.3%"
-      ]
+      "reasons": ["uniqueRatio=64.3%"]
     },
     {
       "collection": "compare",
@@ -384,9 +360,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=64.9%"
-      ]
+      "reasons": ["uniqueRatio=64.9%"]
     },
     {
       "collection": "compare",
@@ -399,9 +373,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=67.4%"
-      ]
+      "reasons": ["uniqueRatio=67.4%"]
     },
     {
       "collection": "best-for",
@@ -414,9 +386,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=67.5%"
-      ]
+      "reasons": ["uniqueRatio=67.5%"]
     },
     {
       "collection": "compare",
@@ -429,9 +399,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=68.2%"
-      ]
+      "reasons": ["uniqueRatio=68.2%"]
     },
     {
       "collection": "compare",
@@ -444,9 +412,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=69.8%"
-      ]
+      "reasons": ["uniqueRatio=69.8%"]
     },
     {
       "collection": "compare",
@@ -459,9 +425,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=70.4%"
-      ]
+      "reasons": ["uniqueRatio=70.4%"]
     },
     {
       "collection": "alternatives",
@@ -474,9 +438,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=70.5%"
-      ]
+      "reasons": ["uniqueRatio=70.5%"]
     },
     {
       "collection": "best-for",
@@ -489,9 +451,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=71.9%"
-      ]
+      "reasons": ["uniqueRatio=71.9%"]
     },
     {
       "collection": "compare",
@@ -504,10 +464,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "identical meta title+description after entity-masking",
-        "uniqueRatio=72.5%"
-      ]
+      "reasons": ["identical meta title+description after entity-masking", "uniqueRatio=72.5%"]
     },
     {
       "collection": "best-for",
@@ -520,9 +477,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=73.1%"
-      ]
+      "reasons": ["uniqueRatio=73.1%"]
     },
     {
       "collection": "best-for",
@@ -535,9 +490,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=73.5%"
-      ]
+      "reasons": ["uniqueRatio=73.5%"]
     },
     {
       "collection": "compare",
@@ -550,10 +503,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "identical meta title+description after entity-masking",
-        "uniqueRatio=73.5%"
-      ]
+      "reasons": ["identical meta title+description after entity-masking", "uniqueRatio=73.5%"]
     },
     {
       "collection": "compare",
@@ -566,9 +516,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=73.8%"
-      ]
+      "reasons": ["uniqueRatio=73.8%"]
     },
     {
       "collection": "compare",
@@ -581,10 +529,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "identical meta title+description after entity-masking",
-        "uniqueRatio=74.5%"
-      ]
+      "reasons": ["identical meta title+description after entity-masking", "uniqueRatio=74.5%"]
     },
     {
       "collection": "compare",
@@ -597,9 +542,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=74.8%"
-      ]
+      "reasons": ["uniqueRatio=74.8%"]
     },
     {
       "collection": "best-for",
@@ -612,9 +555,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=75.0%"
-      ]
+      "reasons": ["uniqueRatio=75.0%"]
     },
     {
       "collection": "best-for",
@@ -627,9 +568,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=75.2%"
-      ]
+      "reasons": ["uniqueRatio=75.2%"]
     },
     {
       "collection": "compare",
@@ -642,9 +581,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=75.6%"
-      ]
+      "reasons": ["uniqueRatio=75.6%"]
     },
     {
       "collection": "best-for",
@@ -657,9 +594,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=75.6%"
-      ]
+      "reasons": ["uniqueRatio=75.6%"]
     },
     {
       "collection": "best-for",
@@ -672,9 +607,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=75.7%"
-      ]
+      "reasons": ["uniqueRatio=75.7%"]
     },
     {
       "collection": "alternatives",
@@ -687,9 +620,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=75.7%"
-      ]
+      "reasons": ["uniqueRatio=75.7%"]
     },
     {
       "collection": "best-for",
@@ -702,9 +633,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=75.8%"
-      ]
+      "reasons": ["uniqueRatio=75.8%"]
     },
     {
       "collection": "compare",
@@ -717,9 +646,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=76.1%"
-      ]
+      "reasons": ["uniqueRatio=76.1%"]
     },
     {
       "collection": "compare",
@@ -732,9 +659,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=76.6%"
-      ]
+      "reasons": ["uniqueRatio=76.6%"]
     },
     {
       "collection": "compare",
@@ -747,9 +672,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=76.7%"
-      ]
+      "reasons": ["uniqueRatio=76.7%"]
     },
     {
       "collection": "compare",
@@ -762,9 +685,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=76.9%"
-      ]
+      "reasons": ["uniqueRatio=76.9%"]
     },
     {
       "collection": "best-for",
@@ -777,9 +698,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=77.3%"
-      ]
+      "reasons": ["uniqueRatio=77.3%"]
     },
     {
       "collection": "compare",
@@ -792,9 +711,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=77.7%"
-      ]
+      "reasons": ["uniqueRatio=77.7%"]
     },
     {
       "collection": "best-for",
@@ -807,9 +724,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=77.9%"
-      ]
+      "reasons": ["uniqueRatio=77.9%"]
     },
     {
       "collection": "compare",
@@ -822,9 +737,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=78.1%"
-      ]
+      "reasons": ["uniqueRatio=78.1%"]
     },
     {
       "collection": "compare",
@@ -837,9 +750,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=78.9%"
-      ]
+      "reasons": ["uniqueRatio=78.9%"]
     },
     {
       "collection": "best-for",
@@ -852,9 +763,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=79.7%"
-      ]
+      "reasons": ["uniqueRatio=79.7%"]
     },
     {
       "collection": "best-for",
@@ -867,9 +776,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=79.8%"
-      ]
+      "reasons": ["uniqueRatio=79.8%"]
     },
     {
       "collection": "best-for",
@@ -882,9 +789,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=80.1%"
-      ]
+      "reasons": ["uniqueRatio=80.1%"]
     },
     {
       "collection": "alternatives",
@@ -897,9 +802,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=80.5%"
-      ]
+      "reasons": ["uniqueRatio=80.5%"]
     },
     {
       "collection": "best-for",
@@ -912,9 +815,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=80.8%"
-      ]
+      "reasons": ["uniqueRatio=80.8%"]
     },
     {
       "collection": "alternatives",
@@ -927,9 +828,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=81.0%"
-      ]
+      "reasons": ["uniqueRatio=81.0%"]
     },
     {
       "collection": "best-for",
@@ -942,9 +841,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=81.2%"
-      ]
+      "reasons": ["uniqueRatio=81.2%"]
     },
     {
       "collection": "best-for",
@@ -957,9 +854,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=81.6%"
-      ]
+      "reasons": ["uniqueRatio=81.6%"]
     },
     {
       "collection": "best-for",
@@ -972,9 +867,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=82.1%"
-      ]
+      "reasons": ["uniqueRatio=82.1%"]
     },
     {
       "collection": "locations",
@@ -987,9 +880,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=82.3%"
-      ]
+      "reasons": ["uniqueRatio=82.3%"]
     },
     {
       "collection": "best-for",
@@ -1002,9 +893,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=82.6%"
-      ]
+      "reasons": ["uniqueRatio=82.6%"]
     },
     {
       "collection": "compare",
@@ -1017,9 +906,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=82.9%"
-      ]
+      "reasons": ["uniqueRatio=82.9%"]
     },
     {
       "collection": "alternatives",
@@ -1032,9 +919,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=82.9%"
-      ]
+      "reasons": ["uniqueRatio=82.9%"]
     },
     {
       "collection": "compare",
@@ -1047,9 +932,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.0%"
-      ]
+      "reasons": ["uniqueRatio=83.0%"]
     },
     {
       "collection": "best-for",
@@ -1062,9 +945,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.0%"
-      ]
+      "reasons": ["uniqueRatio=83.0%"]
     },
     {
       "collection": "alternatives",
@@ -1077,9 +958,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.0%"
-      ]
+      "reasons": ["uniqueRatio=83.0%"]
     },
     {
       "collection": "alternatives",
@@ -1108,9 +987,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.3%"
-      ]
+      "reasons": ["uniqueRatio=83.3%"]
     },
     {
       "collection": "alternatives",
@@ -1123,9 +1000,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.4%"
-      ]
+      "reasons": ["uniqueRatio=83.4%"]
     },
     {
       "collection": "locations",
@@ -1138,9 +1013,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.4%"
-      ]
+      "reasons": ["uniqueRatio=83.4%"]
     },
     {
       "collection": "alternatives",
@@ -1153,9 +1026,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.6%"
-      ]
+      "reasons": ["uniqueRatio=83.6%"]
     },
     {
       "collection": "compare",
@@ -1168,9 +1039,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.8%"
-      ]
+      "reasons": ["uniqueRatio=83.8%"]
     },
     {
       "collection": "alternatives",
@@ -1183,9 +1052,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.8%"
-      ]
+      "reasons": ["uniqueRatio=83.8%"]
     },
     {
       "collection": "alternatives",
@@ -1198,9 +1065,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.8%"
-      ]
+      "reasons": ["uniqueRatio=83.8%"]
     },
     {
       "collection": "locations",
@@ -1213,9 +1078,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=83.9%"
-      ]
+      "reasons": ["uniqueRatio=83.9%"]
     },
     {
       "collection": "locations",
@@ -1228,9 +1091,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=84.0%"
-      ]
+      "reasons": ["uniqueRatio=84.0%"]
     },
     {
       "collection": "locations",
@@ -1243,9 +1104,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=84.1%"
-      ]
+      "reasons": ["uniqueRatio=84.1%"]
     },
     {
       "collection": "best-for",
@@ -1258,9 +1117,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=84.2%"
-      ]
+      "reasons": ["uniqueRatio=84.2%"]
     },
     {
       "collection": "compare",
@@ -1273,9 +1130,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=84.3%"
-      ]
+      "reasons": ["uniqueRatio=84.3%"]
     },
     {
       "collection": "best-for",
@@ -1304,9 +1159,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=84.9%"
-      ]
+      "reasons": ["uniqueRatio=84.9%"]
     },
     {
       "collection": "alternatives",
@@ -1319,9 +1172,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.0%"
-      ]
+      "reasons": ["uniqueRatio=85.0%"]
     },
     {
       "collection": "compare",
@@ -1334,9 +1185,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.1%"
-      ]
+      "reasons": ["uniqueRatio=85.1%"]
     },
     {
       "collection": "best-for",
@@ -1349,9 +1198,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.3%"
-      ]
+      "reasons": ["uniqueRatio=85.3%"]
     },
     {
       "collection": "alternatives",
@@ -1364,9 +1211,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.4%"
-      ]
+      "reasons": ["uniqueRatio=85.4%"]
     },
     {
       "collection": "alternatives",
@@ -1379,9 +1224,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.5%"
-      ]
+      "reasons": ["uniqueRatio=85.5%"]
     },
     {
       "collection": "locations",
@@ -1394,9 +1237,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.6%"
-      ]
+      "reasons": ["uniqueRatio=85.6%"]
     },
     {
       "collection": "alternatives",
@@ -1409,9 +1250,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.7%"
-      ]
+      "reasons": ["uniqueRatio=85.7%"]
     },
     {
       "collection": "best-for",
@@ -1424,9 +1263,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.7%"
-      ]
+      "reasons": ["uniqueRatio=85.7%"]
     },
     {
       "collection": "best-for",
@@ -1439,9 +1276,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.8%"
-      ]
+      "reasons": ["uniqueRatio=85.8%"]
     },
     {
       "collection": "alternatives",
@@ -1454,9 +1289,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.8%"
-      ]
+      "reasons": ["uniqueRatio=85.8%"]
     },
     {
       "collection": "alternatives",
@@ -1469,9 +1302,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.8%"
-      ]
+      "reasons": ["uniqueRatio=85.8%"]
     },
     {
       "collection": "locations",
@@ -1484,9 +1315,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=85.9%"
-      ]
+      "reasons": ["uniqueRatio=85.9%"]
     },
     {
       "collection": "locations",
@@ -1499,9 +1328,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=86.2%"
-      ]
+      "reasons": ["uniqueRatio=86.2%"]
     },
     {
       "collection": "compare",
@@ -1514,9 +1341,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=86.3%"
-      ]
+      "reasons": ["uniqueRatio=86.3%"]
     },
     {
       "collection": "alternatives",
@@ -1529,9 +1354,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=86.4%"
-      ]
+      "reasons": ["uniqueRatio=86.4%"]
     },
     {
       "collection": "locations",
@@ -1544,9 +1367,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=86.4%"
-      ]
+      "reasons": ["uniqueRatio=86.4%"]
     },
     {
       "collection": "best-for",
@@ -1559,9 +1380,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=86.5%"
-      ]
+      "reasons": ["uniqueRatio=86.5%"]
     },
     {
       "collection": "best-for",
@@ -1574,9 +1393,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=86.7%"
-      ]
+      "reasons": ["uniqueRatio=86.7%"]
     },
     {
       "collection": "alternatives",
@@ -1589,9 +1406,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=86.7%"
-      ]
+      "reasons": ["uniqueRatio=86.7%"]
     },
     {
       "collection": "locations",
@@ -1604,9 +1419,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.1%"
-      ]
+      "reasons": ["uniqueRatio=87.1%"]
     },
     {
       "collection": "locations",
@@ -1619,9 +1432,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.2%"
-      ]
+      "reasons": ["uniqueRatio=87.2%"]
     },
     {
       "collection": "best-for",
@@ -1650,9 +1461,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.3%"
-      ]
+      "reasons": ["uniqueRatio=87.3%"]
     },
     {
       "collection": "best-for",
@@ -1665,9 +1474,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.3%"
-      ]
+      "reasons": ["uniqueRatio=87.3%"]
     },
     {
       "collection": "locations",
@@ -1680,9 +1487,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.5%"
-      ]
+      "reasons": ["uniqueRatio=87.5%"]
     },
     {
       "collection": "locations",
@@ -1695,9 +1500,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.6%"
-      ]
+      "reasons": ["uniqueRatio=87.6%"]
     },
     {
       "collection": "best-for",
@@ -1710,9 +1513,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.6%"
-      ]
+      "reasons": ["uniqueRatio=87.6%"]
     },
     {
       "collection": "best-for",
@@ -1741,9 +1542,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=87.9%"
-      ]
+      "reasons": ["uniqueRatio=87.9%"]
     },
     {
       "collection": "best-for",
@@ -1756,9 +1555,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.0%"
-      ]
+      "reasons": ["uniqueRatio=88.0%"]
     },
     {
       "collection": "best-for",
@@ -1771,9 +1568,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.2%"
-      ]
+      "reasons": ["uniqueRatio=88.2%"]
     },
     {
       "collection": "alternatives",
@@ -1786,9 +1581,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.3%"
-      ]
+      "reasons": ["uniqueRatio=88.3%"]
     },
     {
       "collection": "alternatives",
@@ -1801,9 +1594,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.3%"
-      ]
+      "reasons": ["uniqueRatio=88.3%"]
     },
     {
       "collection": "best-for",
@@ -1816,9 +1607,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.4%"
-      ]
+      "reasons": ["uniqueRatio=88.4%"]
     },
     {
       "collection": "best-for",
@@ -1847,9 +1636,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.6%"
-      ]
+      "reasons": ["uniqueRatio=88.6%"]
     },
     {
       "collection": "best-for",
@@ -1862,9 +1649,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.7%"
-      ]
+      "reasons": ["uniqueRatio=88.7%"]
     },
     {
       "collection": "best-for",
@@ -1877,9 +1662,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=88.7%"
-      ]
+      "reasons": ["uniqueRatio=88.7%"]
     },
     {
       "collection": "best-for",
@@ -1892,9 +1675,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.0%"
-      ]
+      "reasons": ["uniqueRatio=89.0%"]
     },
     {
       "collection": "best-for",
@@ -1907,9 +1688,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.0%"
-      ]
+      "reasons": ["uniqueRatio=89.0%"]
     },
     {
       "collection": "alternatives",
@@ -1922,9 +1701,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.2%"
-      ]
+      "reasons": ["uniqueRatio=89.2%"]
     },
     {
       "collection": "best-for",
@@ -1937,9 +1714,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.2%"
-      ]
+      "reasons": ["uniqueRatio=89.2%"]
     },
     {
       "collection": "best-for",
@@ -1952,9 +1727,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.3%"
-      ]
+      "reasons": ["uniqueRatio=89.3%"]
     },
     {
       "collection": "alternatives",
@@ -1967,9 +1740,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.5%"
-      ]
+      "reasons": ["uniqueRatio=89.5%"]
     },
     {
       "collection": "locations",
@@ -1982,9 +1753,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.6%"
-      ]
+      "reasons": ["uniqueRatio=89.6%"]
     },
     {
       "collection": "best-for",
@@ -1997,9 +1766,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.7%"
-      ]
+      "reasons": ["uniqueRatio=89.7%"]
     },
     {
       "collection": "alternatives",
@@ -2012,9 +1779,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.8%"
-      ]
+      "reasons": ["uniqueRatio=89.8%"]
     },
     {
       "collection": "best-for",
@@ -2027,9 +1792,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.8%"
-      ]
+      "reasons": ["uniqueRatio=89.8%"]
     },
     {
       "collection": "solutions",
@@ -2042,9 +1805,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=89.9%"
-      ]
+      "reasons": ["uniqueRatio=89.9%"]
     },
     {
       "collection": "best-for",
@@ -2057,9 +1818,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=90.1%"
-      ]
+      "reasons": ["uniqueRatio=90.1%"]
     },
     {
       "collection": "alternatives",
@@ -2072,9 +1831,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=90.6%"
-      ]
+      "reasons": ["uniqueRatio=90.6%"]
     },
     {
       "collection": "compare",
@@ -2087,9 +1844,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=90.6%"
-      ]
+      "reasons": ["uniqueRatio=90.6%"]
     },
     {
       "collection": "best-for",
@@ -2102,9 +1857,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=90.7%"
-      ]
+      "reasons": ["uniqueRatio=90.7%"]
     },
     {
       "collection": "alternatives",
@@ -2117,9 +1870,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=90.7%"
-      ]
+      "reasons": ["uniqueRatio=90.7%"]
     },
     {
       "collection": "locations",
@@ -2132,9 +1883,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=90.8%"
-      ]
+      "reasons": ["uniqueRatio=90.8%"]
     },
     {
       "collection": "best-for",
@@ -2147,9 +1896,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.1%"
-      ]
+      "reasons": ["uniqueRatio=91.1%"]
     },
     {
       "collection": "alternatives",
@@ -2162,9 +1909,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.1%"
-      ]
+      "reasons": ["uniqueRatio=91.1%"]
     },
     {
       "collection": "best-for",
@@ -2177,9 +1922,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.4%"
-      ]
+      "reasons": ["uniqueRatio=91.4%"]
     },
     {
       "collection": "locations",
@@ -2192,9 +1935,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.4%"
-      ]
+      "reasons": ["uniqueRatio=91.4%"]
     },
     {
       "collection": "solutions",
@@ -2207,9 +1948,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.5%"
-      ]
+      "reasons": ["uniqueRatio=91.5%"]
     },
     {
       "collection": "best-for",
@@ -2222,9 +1961,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.5%"
-      ]
+      "reasons": ["uniqueRatio=91.5%"]
     },
     {
       "collection": "best-for",
@@ -2237,9 +1974,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.5%"
-      ]
+      "reasons": ["uniqueRatio=91.5%"]
     },
     {
       "collection": "best-for",
@@ -2252,9 +1987,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.8%"
-      ]
+      "reasons": ["uniqueRatio=91.8%"]
     },
     {
       "collection": "compare",
@@ -2267,9 +2000,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=91.9%"
-      ]
+      "reasons": ["uniqueRatio=91.9%"]
     },
     {
       "collection": "locations",
@@ -2282,9 +2013,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=92.3%"
-      ]
+      "reasons": ["uniqueRatio=92.3%"]
     },
     {
       "collection": "alternatives",
@@ -2297,9 +2026,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=92.5%"
-      ]
+      "reasons": ["uniqueRatio=92.5%"]
     },
     {
       "collection": "best-for",
@@ -2312,9 +2039,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=92.5%"
-      ]
+      "reasons": ["uniqueRatio=92.5%"]
     },
     {
       "collection": "best-for",
@@ -2327,9 +2052,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=92.7%"
-      ]
+      "reasons": ["uniqueRatio=92.7%"]
     },
     {
       "collection": "locations",
@@ -2342,9 +2065,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=92.8%"
-      ]
+      "reasons": ["uniqueRatio=92.8%"]
     },
     {
       "collection": "best-for",
@@ -2357,9 +2078,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=92.9%"
-      ]
+      "reasons": ["uniqueRatio=92.9%"]
     },
     {
       "collection": "best-for",
@@ -2372,9 +2091,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.1%"
-      ]
+      "reasons": ["uniqueRatio=93.1%"]
     },
     {
       "collection": "alternatives",
@@ -2387,9 +2104,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.1%"
-      ]
+      "reasons": ["uniqueRatio=93.1%"]
     },
     {
       "collection": "best-for",
@@ -2402,9 +2117,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.2%"
-      ]
+      "reasons": ["uniqueRatio=93.2%"]
     },
     {
       "collection": "best-for",
@@ -2417,9 +2130,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.2%"
-      ]
+      "reasons": ["uniqueRatio=93.2%"]
     },
     {
       "collection": "best-for",
@@ -2432,9 +2143,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.3%"
-      ]
+      "reasons": ["uniqueRatio=93.3%"]
     },
     {
       "collection": "best-for",
@@ -2447,9 +2156,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.4%"
-      ]
+      "reasons": ["uniqueRatio=93.4%"]
     },
     {
       "collection": "best-for",
@@ -2462,9 +2169,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.6%"
-      ]
+      "reasons": ["uniqueRatio=93.6%"]
     },
     {
       "collection": "best-for",
@@ -2477,9 +2182,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.6%"
-      ]
+      "reasons": ["uniqueRatio=93.6%"]
     },
     {
       "collection": "best-for",
@@ -2492,9 +2195,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.7%"
-      ]
+      "reasons": ["uniqueRatio=93.7%"]
     },
     {
       "collection": "alternatives",
@@ -2507,9 +2208,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.7%"
-      ]
+      "reasons": ["uniqueRatio=93.7%"]
     },
     {
       "collection": "alternatives",
@@ -2522,9 +2221,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.8%"
-      ]
+      "reasons": ["uniqueRatio=93.8%"]
     },
     {
       "collection": "best-for",
@@ -2537,9 +2234,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.9%"
-      ]
+      "reasons": ["uniqueRatio=93.9%"]
     },
     {
       "collection": "best-for",
@@ -2552,9 +2247,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=93.9%"
-      ]
+      "reasons": ["uniqueRatio=93.9%"]
     },
     {
       "collection": "alternatives",
@@ -2567,9 +2260,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.0%"
-      ]
+      "reasons": ["uniqueRatio=94.0%"]
     },
     {
       "collection": "best-for",
@@ -2582,9 +2273,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.3%"
-      ]
+      "reasons": ["uniqueRatio=94.3%"]
     },
     {
       "collection": "best-for",
@@ -2597,9 +2286,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.4%"
-      ]
+      "reasons": ["uniqueRatio=94.4%"]
     },
     {
       "collection": "locations",
@@ -2612,9 +2299,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.5%"
-      ]
+      "reasons": ["uniqueRatio=94.5%"]
     },
     {
       "collection": "best-for",
@@ -2627,9 +2312,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.5%"
-      ]
+      "reasons": ["uniqueRatio=94.5%"]
     },
     {
       "collection": "best-for",
@@ -2642,9 +2325,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.6%"
-      ]
+      "reasons": ["uniqueRatio=94.6%"]
     },
     {
       "collection": "best-for",
@@ -2657,9 +2338,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.8%"
-      ]
+      "reasons": ["uniqueRatio=94.8%"]
     },
     {
       "collection": "best-for",
@@ -2672,9 +2351,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=94.9%"
-      ]
+      "reasons": ["uniqueRatio=94.9%"]
     },
     {
       "collection": "solutions",
@@ -2687,9 +2364,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.0%"
-      ]
+      "reasons": ["uniqueRatio=95.0%"]
     },
     {
       "collection": "solutions",
@@ -2702,9 +2377,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.1%"
-      ]
+      "reasons": ["uniqueRatio=95.1%"]
     },
     {
       "collection": "best-for",
@@ -2733,9 +2406,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.2%"
-      ]
+      "reasons": ["uniqueRatio=95.2%"]
     },
     {
       "collection": "best-for",
@@ -2748,9 +2419,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.2%"
-      ]
+      "reasons": ["uniqueRatio=95.2%"]
     },
     {
       "collection": "best-for",
@@ -2763,9 +2432,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.3%"
-      ]
+      "reasons": ["uniqueRatio=95.3%"]
     },
     {
       "collection": "best-for",
@@ -2778,9 +2445,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.4%"
-      ]
+      "reasons": ["uniqueRatio=95.4%"]
     },
     {
       "collection": "solutions",
@@ -2793,9 +2458,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.4%"
-      ]
+      "reasons": ["uniqueRatio=95.4%"]
     },
     {
       "collection": "solutions",
@@ -2808,9 +2471,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.5%"
-      ]
+      "reasons": ["uniqueRatio=95.5%"]
     },
     {
       "collection": "best-for",
@@ -2823,9 +2484,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.6%"
-      ]
+      "reasons": ["uniqueRatio=95.6%"]
     },
     {
       "collection": "best-for",
@@ -2838,9 +2497,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.8%"
-      ]
+      "reasons": ["uniqueRatio=95.8%"]
     },
     {
       "collection": "alternatives",
@@ -2853,9 +2510,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=95.8%"
-      ]
+      "reasons": ["uniqueRatio=95.8%"]
     },
     {
       "collection": "best-for",
@@ -2868,9 +2523,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=96.1%"
-      ]
+      "reasons": ["uniqueRatio=96.1%"]
     },
     {
       "collection": "solutions",
@@ -2883,9 +2536,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=96.1%"
-      ]
+      "reasons": ["uniqueRatio=96.1%"]
     },
     {
       "collection": "best-for",
@@ -2898,9 +2549,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=96.5%"
-      ]
+      "reasons": ["uniqueRatio=96.5%"]
     },
     {
       "collection": "solutions",
@@ -2913,9 +2562,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=96.7%"
-      ]
+      "reasons": ["uniqueRatio=96.7%"]
     },
     {
       "collection": "best-for",
@@ -2928,9 +2575,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=96.9%"
-      ]
+      "reasons": ["uniqueRatio=96.9%"]
     },
     {
       "collection": "best-for",
@@ -2943,9 +2588,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=97.0%"
-      ]
+      "reasons": ["uniqueRatio=97.0%"]
     },
     {
       "collection": "solutions",
@@ -2958,9 +2601,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=98.4%"
-      ]
+      "reasons": ["uniqueRatio=98.4%"]
     },
     {
       "collection": "solutions",
@@ -2973,9 +2614,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=98.6%"
-      ]
+      "reasons": ["uniqueRatio=98.6%"]
     },
     {
       "collection": "solutions",
@@ -2988,9 +2627,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=98.6%"
-      ]
+      "reasons": ["uniqueRatio=98.6%"]
     },
     {
       "collection": "solutions",
@@ -3003,9 +2640,7 @@
       "canonical": null,
       "generatedBy": null,
       "templateLeaks": [],
-      "reasons": [
-        "uniqueRatio=98.6%"
-      ]
+      "reasons": ["uniqueRatio=98.6%"]
     }
   ]
 }
