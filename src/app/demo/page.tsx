@@ -1,14 +1,24 @@
 import type { Metadata } from "next";
 
-import { DemoPageClient } from "./client";
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { AiConciergeHero } from "@/components/sections/homepage/ai-concierge-hero";
 
 export const metadata: Metadata = {
-  title: "Live Demo",
+  title: "Live brokerage origination agent",
   description:
-    "Test Prestyj's AI agents live. Call, text, or fill out the form — our AI will respond as if you were a real lead.",
-  robots: { index: false, follow: false },
+    "Talk to a live Prestyj voice agent and see how a commercial brokerage inquiry can be answered, qualified, recorded, and handed off.",
+  robots: { index: false, follow: true },
 };
 
 export default function DemoPage() {
-  return <DemoPageClient />;
+  return (
+    <>
+      <Navbar />
+      <main className="pt-16">
+        <AiConciergeHero />
+      </main>
+      <Footer />
+    </>
+  );
 }

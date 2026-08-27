@@ -1,10 +1,10 @@
 import {
-  Bot,
-  Clapperboard,
-  Headphones,
+  Building2,
+  FileSearch2,
+  Landmark,
   Megaphone,
-  Mic2,
-  Workflow,
+  MessagesSquare,
+  Scale,
   type LucideIcon,
 } from "lucide-react";
 
@@ -16,11 +16,11 @@ export type DropdownLink = {
 };
 
 export const navLinks = [
-  { href: "/#ai-concierge", label: "Live AI" },
-  { href: "#solutions", label: "Solutions", dropdown: true as const },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/batch-video-ads", label: "Video Ads" },
-  { href: "/ad-to-appointment-atlas", label: "Research" },
+  { href: "#solutions", label: "Capabilities", dropdown: true as const },
+  { href: "/for/investment-funds", label: "Funds" },
+  { href: "/for/commercial-brokerages", label: "Brokerages" },
+  { href: "/results", label: "Work" },
+  { href: "/research", label: "Research" },
 ];
 
 export type CtaLink = {
@@ -30,14 +30,14 @@ export type CtaLink = {
 };
 
 export const primaryCta: CtaLink = {
-  href: "/#ai-concierge",
-  label: "Talk to the AI",
+  href: "/book-demo",
+  label: "Get access",
   variant: "primary",
 };
 
 export const secondaryCta: CtaLink = {
-  href: "/book-demo",
-  label: "Book a call",
+  href: "/demo",
+  label: "Live agent",
   variant: "secondary",
 };
 
@@ -45,39 +45,39 @@ export const ctaLinks: readonly CtaLink[] = [primaryCta, secondaryCta];
 
 export const solutionLinks: DropdownLink[] = [
   {
-    href: "/ai-voice-agents",
-    label: "AI voice agents",
-    description: "Phone and browser agents for qualification, routing, and booking.",
-    icon: Mic2,
+    href: "/capabilities/deal-diligence",
+    label: "Deal diligence",
+    description: "Diligence, abstraction, screening, and IC materials with evidence.",
+    icon: FileSearch2,
   },
   {
-    href: "/ai-receptionist",
-    label: "AI receptionist",
-    description: "Answer calls, recover missed leads, schedule, and escalate cleanly.",
-    icon: Headphones,
+    href: "/capabilities/fund-operations",
+    label: "Fund operations",
+    description: "Quarter-end, NAV, fees, allocations, and waterfalls.",
+    icon: Scale,
   },
   {
-    href: "/ai-sales-agents",
-    label: "AI sales agents",
-    description: "Speed-to-lead, follow-up, qualification, reminders, and handoff.",
-    icon: Bot,
+    href: "/capabilities/investor-reporting",
+    label: "Investor reporting",
+    description: "LP answers, statements, letters, and document visibility.",
+    icon: MessagesSquare,
   },
   {
-    href: "/ai-marketing-agents",
-    label: "AI marketing agents",
-    description: "Campaign workflows, lead magnets, creative testing, and reporting.",
+    href: "/capabilities/portfolio-intelligence",
+    label: "Portfolio intelligence",
+    description: "Point-in-time answers across property, lease, debt, and model data.",
+    icon: Building2,
+  },
+  {
+    href: "/capabilities/origination",
+    label: "Origination",
+    description: "Every inquiry answered, qualified, booked, and handed off.",
+    icon: Landmark,
+  },
+  {
+    href: "/capabilities/listing-media",
+    label: "Listing media",
+    description: "Offering, campaign, and ad materials produced under approval.",
     icon: Megaphone,
-  },
-  {
-    href: "/batch-video-ads",
-    label: "Batch video ads",
-    description: "One recording turned into hundreds of ad variants for testing.",
-    icon: Clapperboard,
-  },
-  {
-    href: "/done-for-you-ai-agents",
-    label: "Done-for-you AI",
-    description: "Custom agents, workflows, and automations for marketing and sales.",
-    icon: Workflow,
   },
 ];

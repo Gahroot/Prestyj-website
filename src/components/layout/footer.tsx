@@ -1,70 +1,53 @@
 import Link from "next/link";
-import { Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
+import { Linkedin } from "lucide-react";
+
+import { PrivacyChoicesButton } from "@/components/privacy/tracking-consent";
 import { Separator } from "@/components/ui/separator";
 
-// Keep in sync with src/app/contact/page.tsx
 const SUPPORT_EMAIL = "hello@prestyj.com";
-const SUPPORT_PHONE_DISPLAY = "TBD, real number coming soon";
-const SUPPORT_PHONE_HREF: string | null = null;
 
-type FooterLink = { href: string; label: string; highlight?: boolean; external?: boolean };
-
-const socialLinks = [
-  { href: "https://www.instagram.com/prestyj_/", label: "Instagram", icon: Instagram },
-  { href: "https://www.linkedin.com/company/prestyj/", label: "LinkedIn", icon: Linkedin },
-  {
-    href: "https://www.facebook.com/profile.php?id=61582824703610",
-    label: "Facebook",
-    icon: Facebook,
-  },
-  { href: "https://x.com/prestyj_", label: "X", icon: Twitter },
-];
+type FooterLink = { href: string; label: string };
 
 const footerLinks = {
-  product: [
-    { href: "/ai-voice-agents", label: "AI Voice Agents" },
-    { href: "/ai-receptionist", label: "AI Receptionist" },
-    { href: "/ai-sales-agents", label: "AI Sales Agents" },
-    { href: "/ai-marketing-agents", label: "AI Marketing Agents" },
-    { href: "/done-for-you-ai-agents", label: "Done-for-You AI" },
+  capabilities: [
+    { href: "/capabilities/deal-diligence", label: "Deal diligence" },
+    { href: "/capabilities/fund-operations", label: "Fund operations" },
+    { href: "/capabilities/investor-reporting", label: "Investor reporting" },
+    { href: "/capabilities/portfolio-intelligence", label: "Portfolio intelligence" },
+    { href: "/capabilities/origination", label: "Origination" },
+    { href: "/capabilities/listing-media", label: "Listing media" },
   ],
-  videoAds: [
-    { href: "/batch-video-ads", label: "Batch Video Ads", highlight: true },
-    { href: "/300-video-ads", label: "300 Video Ads" },
-    { href: "/ad-creative-testing-service", label: "Creative Testing" },
-    { href: "/bulk-video-ad-pricing", label: "Bulk Pricing" },
-    { href: "/batch-video-ad-roi-calculator", label: "ROI Calculator" },
+  audiences: [
+    { href: "/for/investment-funds", label: "Investment funds" },
+    { href: "/for/commercial-brokerages", label: "Commercial brokerages" },
+    { href: "/for/owner-operators", label: "Owner-operators" },
   ],
   company: [
-    { href: "/pricing", label: "Pricing", highlight: true },
-    { href: "/book-demo", label: "Book a Call" },
-    { href: "/ad-to-appointment-atlas", label: "Ad-to-Appointment Atlas" },
-    { href: "/results", label: "Results" },
-    { href: "/blog", label: "Blog" },
-    { href: "/contact", label: "Contact" },
+    { href: "/platform", label: "Platform" },
+    { href: "/results", label: "Work" },
+    { href: "/pricing", label: "Engagements" },
+    { href: "/research", label: "Research" },
+    { href: "/about", label: "About" },
+    { href: "/book-demo", label: "Get access" },
   ],
   legal: [
-    { href: "/privacy", label: "Privacy Policy" },
-    { href: "/terms", label: "Terms of Service" },
+    { href: "/privacy", label: "Privacy" },
+    { href: "/terms", label: "Terms" },
+    { href: "/accessibility", label: "Accessibility" },
+    { href: "/contact", label: "Contact" },
   ],
-} satisfies Record<string, ReadonlyArray<FooterLink>>;
+} satisfies Record<string, readonly FooterLink[]>;
 
-function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<FooterLink> }) {
+function FooterColumn({ title, links }: { title: string; links: readonly FooterLink[] }) {
   return (
-    <div className="min-w-0">
-      <h3 className="font-heading text-foreground mb-4 font-semibold">{title}</h3>
+    <div>
+      <h3 className="font-heading mb-4 font-semibold">{title}</h3>
       <ul className="space-y-3">
         {links.map((link) => (
           <li key={link.href}>
             <Link
               href={link.href}
-              target={link.external ? "_blank" : undefined}
-              rel={link.external ? "noreferrer" : undefined}
-              className={
-                link.highlight
-                  ? "text-sm font-semibold break-words text-[#a99aff] transition-colors hover:text-white"
-                  : "text-muted-foreground hover:text-foreground text-sm break-words transition-colors"
-              }
+              className="text-muted-foreground hover:text-foreground focus-visible:ring-ring text-sm transition-colors focus-visible:ring-2 focus-visible:outline-none"
             >
               {link.label}
             </Link>
@@ -77,74 +60,47 @@ function FooterColumn({ title, links }: { title: string; links: ReadonlyArray<Fo
 
 export function Footer() {
   return (
-    <footer className="bg-card border-border border-t [overflow-wrap:anywhere]">
-      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-6 md:gap-8">
-          {/* Brand */}
-          <div className="col-span-2">
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="font-heading text-primary text-xl font-bold">PRESTYJ</span>
+    <footer className="bg-card border-t">
+      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_0.7fr]">
+          <div>
+            <Link href="/" className="font-heading text-primary text-xl font-bold">
+              PRESTYJ
             </Link>
-            <p className="text-muted-foreground mt-4 max-w-sm text-sm">
-              Done-for-you AI agents for marketing and sales. Ads, video creative, lead response,
-              calls, and bookings — handled.
+            <p className="text-muted-foreground mt-4 max-w-sm text-sm leading-6">
+              AI agents built and run for real estate investment funds, commercial brokerages, and
+              CRE owner-operators. Reviewed work product from the systems your firm already runs.
             </p>
-            <dl className="text-muted-foreground mt-4 space-y-1 text-sm">
-              <div className="flex flex-wrap gap-x-2">
-                <dt className="text-foreground font-medium">Email:</dt>
-                <dd>
-                  <a
-                    href={`mailto:${SUPPORT_EMAIL}`}
-                    className="hover:text-foreground transition-colors"
-                  >
-                    {SUPPORT_EMAIL}
-                  </a>
-                </dd>
-              </div>
-              <div className="flex flex-wrap gap-x-2">
-                <dt className="text-foreground font-medium">Phone:</dt>
-                <dd>
-                  {SUPPORT_PHONE_HREF !== null ? (
-                    <a
-                      href={SUPPORT_PHONE_HREF}
-                      className="hover:text-foreground transition-colors"
-                    >
-                      {SUPPORT_PHONE_DISPLAY}
-                    </a>
-                  ) : (
-                    <span>{SUPPORT_PHONE_DISPLAY}</span>
-                  )}
-                </dd>
-              </div>
-            </dl>
-            <div className="mt-4 flex items-center gap-3">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={link.label}
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <link.icon className="h-5 w-5" />
-                </a>
-              ))}
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              className="text-muted-foreground hover:text-foreground mt-4 inline-block text-sm transition-colors"
+            >
+              {SUPPORT_EMAIL}
+            </a>
+            <div className="mt-4">
+              <a
+                href="https://www.linkedin.com/company/prestyj/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Prestyj on LinkedIn"
+                className="text-muted-foreground hover:text-foreground inline-flex transition-colors"
+              >
+                <Linkedin aria-hidden="true" className="h-5 w-5" />
+              </a>
             </div>
           </div>
-
-          <FooterColumn title="AI Agents" links={footerLinks.product} />
-          <FooterColumn title="Ad Production" links={footerLinks.videoAds} />
+          <FooterColumn title="Capabilities" links={footerLinks.capabilities} />
+          <FooterColumn title="For" links={footerLinks.audiences} />
           <FooterColumn title="Company" links={footerLinks.company} />
           <FooterColumn title="Legal" links={footerLinks.legal} />
         </div>
 
         <Separator className="my-8" />
-
-        <div className="flex flex-col items-center justify-between space-y-4 md:flex-row md:space-y-0">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} PRESTYJ. All rights reserved.
+            &copy; {new Date().getFullYear()} Prestyj. All rights reserved.
           </p>
+          <PrivacyChoicesButton />
         </div>
       </div>
     </footer>

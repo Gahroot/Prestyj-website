@@ -4,36 +4,41 @@ export const homepageFaqs: FAQItem[] = [
   {
     question: "What does Prestyj actually do?",
     answer:
-      "Prestyj is a done-for-you AI marketing and sales service. We run your ads, produce hundreds of video ad variations from a single recording, and deploy AI agents that answer calls, respond to leads in 60 seconds, and book appointments on your calendar — 24/7. You get the output of a full marketing and sales team without the hires.",
+      "Prestyj builds and runs AI agents that complete defined work inside an institutional real estate firm: diligence, quarter-end support, waterfall explanation, investor reporting, portfolio questions, origination coverage, and listing materials. You receive the reviewed work product, not a generic chatbot or seat license.",
   },
   {
     question: "Who is this for?",
     answer:
-      "Service businesses and real estate teams doing 50–500 leads per month. If you run ads and need to respond to leads fast, Prestyj fits. We work with HVAC, plumbing, roofing, solar, dental, legal, med-spas, mortgage, and real estate brokerages.",
+      "Real estate investment funds from roughly $500M AUM, commercial brokerages, and CRE owner-operators. The common trait is operating complexity large enough that recurring work now spans multiple systems, teams, and review gates.",
   },
   {
-    question: "What kinds of AI agents do you build?",
+    question: "Does Prestyj replace our system of record?",
     answer:
-      "We build AI voice agents, receptionists, sales follow-up agents, and marketing agents. The common thread is practical marketing and sales work: answer calls, qualify leads, send follow-up, book appointments, test ad creative, and keep your pipeline moving.",
+      "No. Your ledger, property platform, VDR, CRM, and document systems remain authoritative. Prestyj sits above them, performs the defined work, preserves source lineage, and routes material conflicts to the person responsible for resolving them.",
   },
   {
-    question: "How does the live voice demo work?",
+    question: "Where does the data live, and who can see it?",
     answer:
-      "Click 'Start browser voice demo' on the homepage to talk to our AI concierge right now. You can also enter your phone number to have the AI call you. The demo shows exactly how our voice agents handle real conversations.",
+      "Deployment boundaries are scoped per engagement. The systems we build enforce tenant, fund, client, and investor access below the interface, with access denied by default. We document the data flow and hosting model before any production record moves.",
   },
   {
-    question: "What's included in the setup?",
+    question: "How do you keep the AI from inventing an answer?",
     answer:
-      "Everything is done for you: AI agent training on your business, landing page or website build, ad campaign creation across Google and Meta, CRM configuration, calendar integration, and phone number provisioning. You're live within 7–10 business days.",
+      "Material answers retain the source and effective date behind them. When sources disagree, the conflict enters a review queue rather than being silently averaged. Anything released to an investor, committee, or market has a named human owner.",
+  },
+  {
+    question: "Do you integrate with Yardi, MRI, Argus, or DealCloud?",
+    answer:
+      "Prestyj is built to work with the systems an engagement requires, but a vendor name on this site does not mean a partnership or a prebuilt live connector. We verify access, API limits, export quality, and implementation scope before promising an integration.",
+  },
+  {
+    question: "What does an engagement look like?",
+    answer:
+      "We begin with one recurring workflow, its source systems, current work product, and review owner. The first proof runs beside the existing process and reconciles differences before anything replaces or publishes from it.",
   },
   {
     question: "What does it cost?",
     answer:
-      "Plans start at $1,997/month with a setup fee. The Starter plan includes $1,000/mo in ad spend, 300 video ads, and an AI appointment agent. Pro and Scale plans add more agents, more ad volume, and voice capabilities. See our pricing page for details.",
-  },
-  {
-    question: "What are batch video ads?",
-    answer:
-      "Batch video ads are short-form vertical video ads we create from a single 15-minute recording session. One recording becomes 100, 300, 500, or 1,000 ad variations optimized for Meta, TikTok, and YouTube Shorts. They're included in every Prestyj plan.",
+      "Engagements are scoped around the workflow, source systems, volume, and controls required. Pricing follows the analyst work and operational risk retired, not the number of users. We give you the number after we see the process.",
   },
 ];

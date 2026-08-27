@@ -45,9 +45,9 @@ export function ContactForm(): React.ReactElement {
     if (!result.success) {
       const fieldErrors: Record<string, string> = {};
       for (const issue of result.error.issues) {
-        const key = issue.path[0];
-        if (typeof key === "string" && !fieldErrors[key]) {
-          fieldErrors[key] = issue.message;
+        const fieldName = issue.path[0];
+        if (typeof fieldName === "string" && !fieldErrors[fieldName]) {
+          fieldErrors[fieldName] = issue.message;
         }
       }
       setErrors(fieldErrors);
@@ -159,7 +159,7 @@ export function ContactForm(): React.ReactElement {
         <Label htmlFor="contact-message">How can we help?</Label>
         <Textarea
           id="contact-message"
-          placeholder="Tell us what you're trying to solve — leads, response time, qualification, anything."
+          placeholder="Name the workflow, systems, current output, and where it gets stuck."
           value={formData.message}
           onChange={(e) => updateField("message", e.target.value)}
           aria-invalid={Boolean(errors.message)}
@@ -188,9 +188,12 @@ export function ContactForm(): React.ReactElement {
         {isSubmitting ? "Sending…" : "Send message"}
       </Button>
 
-      <p className="text-muted-foreground text-center text-xs">
-        We typically reply within one business day. For anything urgent, book a demo and we&apos;ll
-        meet live.
+      <p className="text-muted-foreground text-center text-xs leading-5">
+        We use these details to respond and route your request. See our{" "}
+        <a href="/privacy" className="hover:text-foreground underline underline-offset-2">
+          privacy policy
+        </a>
+        .
       </p>
     </form>
   );

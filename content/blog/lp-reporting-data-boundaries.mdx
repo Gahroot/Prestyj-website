@@ -1,0 +1,54 @@
+---
+title: "The Investor Answer Is Only Correct Inside the Right Boundary"
+description: "Fund, investor, document, and side-letter scope for AI-assisted LP reporting."
+date: "2026-08-27"
+author: "Nolan Grout"
+keywords:
+  - AI LP reporting
+  - investor portal data isolation
+  - fund reporting automation
+---
+
+An accurate answer shown to the wrong investor is still a serious failure.
+
+AI-assisted investor reporting has two jobs: assemble the answer and preserve the boundary around it. The second job is not a prompt instruction. It belongs in authorization and data design.
+
+## Scope before retrieval
+
+Before an agent searches, the system should know:
+
+- the authenticated investor;
+- the funds and entities that investor may access;
+- the applicable reporting periods;
+- the documents released to that investor;
+- any side-letter terms relevant to the request.
+
+Retrieval happens inside that scope. The interface should not fetch a broad result and hide unauthorized rows afterward.
+
+## A useful answer carries its record
+
+An LP response should preserve the source document, section, reporting date, and release status behind each material statement. If a draft letter and a published statement disagree, the conflict should be visible to investor relations.
+
+## Separate drafting from publishing
+
+An agent can prepare:
+
+- an answer to a fee or allocation question;
+- a quarterly letter draft;
+- a statement package;
+- a summary of prior calls and commitments;
+- a document request response.
+
+A named investor-relations owner should approve anything external. Draft access and publication access should be separate permissions.
+
+## Test the negative case
+
+A permissions test should not only prove that Investor A can see Investor A's records. It must prove that Investor A cannot request Investor B's record by changing an identifier, a URL, or the wording of a question.
+
+The same test belongs at fund and client boundaries.
+
+## Make commitments visible
+
+The answer often lives outside a formal statement. Prior calls, letters, and side letters can contain commitments that shape the response. An agent can surface those records, but the firm still decides which commitment governs.
+
+Fast investor service matters. Correct scope matters more.

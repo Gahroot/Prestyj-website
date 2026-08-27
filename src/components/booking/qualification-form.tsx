@@ -179,7 +179,7 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
               "focus:border-primary focus:ring-primary/20 focus:ring-2 focus:outline-none",
               errors.companyName ? "border-destructive" : "border-border",
             )}
-            placeholder="Acme Inc."
+            placeholder="Firm name"
           />
           {errors.companyName && (
             <p className="text-destructive mt-1 text-sm">{errors.companyName}</p>
@@ -213,8 +213,12 @@ export function QualificationForm({ onComplete }: QualificationFormProps) {
         </Button>
       </div>
 
-      <p className="text-muted-foreground mt-6 text-center text-xs">
-        Your information is secure and will never be shared with third parties.
+      <p className="text-muted-foreground mt-6 text-center text-xs leading-5">
+        We use these details to respond and load our Cal.com scheduler. See our{" "}
+        <a href="/privacy" className="hover:text-foreground underline underline-offset-2">
+          privacy policy
+        </a>
+        .
       </p>
     </form>
   );

@@ -1,318 +1,120 @@
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
-import BorderGlow from "@/components/ui/border-glow";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Privacy Policy",
-  description:
-    "Privacy Policy for Prestyj AI Sales Agents. Learn how we collect, use, and protect your information.",
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: "Privacy policy",
+  description: "How Prestyj collects, uses, shares, and protects information on prestyj.com.",
+  alternates: { canonical: `${siteConfig.url}/privacy` },
 };
+
+const sections = [
+  {
+    title: "Information we collect",
+    content: [
+      "Information you provide, including your name, work email, phone number, firm name, message, workflow details, and scheduling information.",
+      "Voice-demo information when you choose to speak with or request a call from an agent, including microphone audio, call metadata, transcript, consent state, and the details you provide during the interaction.",
+      "Technical information needed to operate and protect the site, such as IP address, browser, device, requested pages, timestamps, and security logs.",
+      "Marketing measurement data only after you grant marketing-tracking permission, unless a signal such as Global Privacy Control indicates that choice should be denied.",
+    ],
+  },
+  {
+    title: "How we use information",
+    content: [
+      "Respond to inquiries, qualify and route requests, schedule meetings, and communicate about the request you initiated.",
+      "Operate, secure, debug, and improve the website and live agent demonstration.",
+      "Measure marketing performance after permission is granted.",
+      "Meet legal obligations, enforce terms, prevent abuse, and protect Prestyj, visitors, and partners.",
+    ],
+  },
+  {
+    title: "When information is shared",
+    content: [
+      "Service providers may process information for hosting, security, communications, customer-relationship management, scheduling, and site operations under their own contractual duties.",
+      "Cal.com processes information when you load and use the scheduling interface after submitting an access request.",
+      "Google Ads, Meta, and LinkedIn measurement scripts load only after marketing-tracking permission. Each provider may process data under its own privacy terms.",
+      "Information may be disclosed when required by law, to protect rights or safety, or as part of a business transaction with appropriate safeguards.",
+      "Prestyj does not sell contact-form or access-request details for money. Privacy laws may define some marketing disclosures more broadly than an ordinary sale; use Privacy choices in the footer to reject them.",
+    ],
+  },
+  {
+    title: "Retention",
+    content: [
+      "We retain inquiry and scheduling information only as long as reasonably necessary to respond, manage the relationship, maintain security records, resolve disputes, and meet legal obligations.",
+      "Retention can differ for a paid engagement and will be described in the applicable agreement or data-processing terms.",
+      "When information is no longer required, we delete it or de-identify it where reasonably possible, subject to backups and legal holds.",
+    ],
+  },
+  {
+    title: "Your choices and requests",
+    content: [
+      "Use Privacy choices in the footer to allow or reject marketing measurement. A recognized Global Privacy Control signal is treated as a rejection on this site.",
+      "You may ask to access, correct, delete, or receive a copy of personal information associated with you. Rights and exceptions depend on where you live.",
+      "To make a request, email privacy@prestyj.com. We may need to verify your identity and authority before completing it.",
+      "You may unsubscribe from a marketing email using the link in that message. A form submission does not by itself opt you into marketing texts or automated calls.",
+    ],
+  },
+  {
+    title: "Security and international processing",
+    content: [
+      "We use administrative, technical, and organizational measures intended to protect information. No internet service can promise absolute security.",
+      "Prestyj and its providers may process information in the United States and other locations. A paid engagement may include additional security, hosting, and transfer terms.",
+    ],
+  },
+  {
+    title: "Children",
+    content: [
+      "This site and its business services are not directed to people under 18. Do not submit information through the site if you are under 18.",
+      "If you believe a minor submitted personal information, contact privacy@prestyj.com so we can review and remove it where appropriate.",
+    ],
+  },
+] as const;
 
 export default function PrivacyPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h1 className="font-heading text-foreground mb-8 text-3xl font-bold sm:text-4xl">
-            Privacy Policy
-          </h1>
-          <p className="text-muted-foreground mb-8 text-sm">Last Updated: May 2, 2026</p>
+      <main className="pt-28 pb-20 sm:pt-36">
+        <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <header className="border-b pb-10">
+            <p className="text-primary text-sm font-semibold">Legal</p>
+            <h1 className="font-heading mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
+              Privacy policy
+            </h1>
+            <p className="text-muted-foreground mt-4">Last updated August 27, 2026</p>
+            <p className="text-muted-foreground mt-6 leading-7">
+              This policy explains how Prestyj handles personal information on prestyj.com and its
+              public demonstrations. A paid engagement may include additional privacy and
+              data-processing terms.
+            </p>
+          </header>
 
-          <div className="prose prose-invert max-w-none space-y-8">
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Introduction
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Prestyj (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to
-                protecting your privacy. This Privacy Policy explains how we collect, use, disclose,
-                and safeguard your information when you use our AI agents and automation services —
-                including AI sales agents, AI marketing agents, AI lead response, AI appointment
-                booking, and related communication and content services — as well as our SMS/text
-                messaging services.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Information We Collect
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                We may collect the following types of information:
-              </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-2">
-                <li>
-                  <strong className="text-foreground">Contact Information:</strong> Name, phone
-                  number, email address
-                </li>
-                <li>
-                  <strong className="text-foreground">Communication Data:</strong> Content of text
-                  messages and conversations with our AI agent
-                </li>
-                <li>
-                  <strong className="text-foreground">Lead Information:</strong> Service inquiry
-                  details, scheduling preferences, and qualification details
-                </li>
-                <li>
-                  <strong className="text-foreground">Technical Data:</strong> Device information,
-                  IP address, browser type, and usage patterns
-                </li>
-                <li>
-                  <strong className="text-foreground">Business Information:</strong> For our
-                  clients, CRM integration data and appointment records
-                </li>
-              </ul>
-            </section>
-
-            <BorderGlow borderRadius={10} innerClassName="p-6">
-              <section id="sms-privacy">
-                <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                  SMS/Text Messaging Privacy
-                </h2>
-                <p className="text-muted-foreground mb-4 leading-relaxed">
-                  When you provide your phone number and consent to receive text messages from
-                  Prestyj or our clients:
-                </p>
-                <ul className="text-muted-foreground mb-4 list-inside list-disc space-y-2">
-                  <li>
-                    Your phone number will be used solely for the purpose of sending you relevant
-                    communications about service inquiries, appointment scheduling, and follow-up
-                    information
-                  </li>
-                  <li>Message frequency varies based on your interactions and inquiries</li>
-                  <li>Message and data rates may apply depending on your mobile carrier plan</li>
-                  <li>
-                    We do not sell, rent, or share your phone number with third parties for their
-                    marketing purposes
-                  </li>
-                  <li>
-                    Your consent to receive SMS messages is not a condition of purchasing any goods
-                    or services
-                  </li>
+          <div className="divide-y">
+            {sections.map((section) => (
+              <section key={section.title} className="py-9">
+                <h2 className="font-heading text-2xl font-bold">{section.title}</h2>
+                <ul className="text-muted-foreground mt-5 list-disc space-y-3 pl-5 leading-7">
+                  {section.content.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
                 </ul>
-                <p className="text-muted-foreground leading-relaxed">
-                  <strong className="text-foreground">Opt-Out:</strong> You can opt out of receiving
-                  text messages at any time by replying{" "}
-                  <strong className="text-primary">STOP</strong> to any message. You will receive a
-                  confirmation message and will no longer receive SMS communications from that
-                  campaign.
-                </p>
-                <p className="text-muted-foreground mt-2 leading-relaxed">
-                  <strong className="text-foreground">Help:</strong> For assistance, reply{" "}
-                  <strong className="text-primary">HELP</strong> to any message or contact us at the
-                  information provided below.
-                </p>
               </section>
-            </BorderGlow>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                How We Use Your Information
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                We use the information we collect to:
-              </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-2">
-                <li>Facilitate communication between leads and our business clients</li>
-                <li>Qualify leads and schedule appointments on behalf of our clients</li>
-                <li>Provide and improve our AI agent and automation services</li>
-                <li>Send relevant follow-up communications via SMS or email</li>
-                <li>Analyze usage patterns to enhance our service quality</li>
-                <li>Comply with legal obligations and enforce our terms</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Information Sharing
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                We may share your information with:
-              </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-2">
-                <li>
-                  <strong className="text-foreground">Our Clients:</strong> Businesses who use our
-                  services to respond to their leads
-                </li>
-                <li>
-                  <strong className="text-foreground">Service Providers:</strong> Third-party
-                  vendors who assist in providing our services (e.g., SMS delivery, CRM
-                  integrations)
-                </li>
-                <li>
-                  <strong className="text-foreground">Legal Requirements:</strong> When required by
-                  law or to protect our rights
-                </li>
-              </ul>
-              <p className="text-muted-foreground mt-4 leading-relaxed">
-                We do not sell your personal information to third parties.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Data Security
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                We implement appropriate technical and organizational security measures to protect
-                your personal information against unauthorized access, alteration, disclosure, or
-                destruction. However, no method of transmission over the Internet or electronic
-                storage is 100% secure.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Data Retention
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                We retain your personal information for as long as necessary to fulfill the purposes
-                outlined in this Privacy Policy, unless a longer retention period is required or
-                permitted by law. SMS opt-out requests are processed immediately and your number
-                will be added to our suppression list.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Your Rights
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Depending on your location, you may have the right to:
-              </p>
-              <ul className="text-muted-foreground list-inside list-disc space-y-2">
-                <li>Access the personal information we hold about you</li>
-                <li>Request correction of inaccurate information</li>
-                <li>Request deletion of your personal information</li>
-                <li>Opt out of certain data processing activities</li>
-                <li>Withdraw consent for SMS communications at any time</li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Children&apos;s Privacy
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Our services are not directed to individuals under the age of 18. We do not
-                knowingly collect personal information from children.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Changes to This Policy
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                We may update this Privacy Policy from time to time. We will notify you of any
-                changes by posting the new Privacy Policy on this page and updating the &quot;Last
-                Updated&quot; date.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Media Master Desktop Application
-              </h2>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Media Master is our desktop application for AI-powered creative generation and
-                multi-platform social media publishing. The following applies specifically to Media
-                Master users:
-              </p>
-
-              <h3 className="font-heading text-foreground mt-4 mb-3 text-lg font-medium">
-                Data Collection & Storage
-              </h3>
-              <ul className="text-muted-foreground mb-4 list-inside list-disc space-y-2">
-                <li>
-                  <strong className="text-foreground">Local Storage:</strong> All app data —
-                  including API keys, uploaded images, offer and character configurations, generated
-                  content, and publishing history — is stored locally on your device. No user
-                  content is sent to Prestyj servers.
-                </li>
-                <li>
-                  <strong className="text-foreground">API Keys:</strong> Your fal.ai API key is
-                  stored locally and used only to communicate directly with fal.ai for image
-                  generation. Prestyj does not access or transmit your API key.
-                </li>
-                <li>
-                  <strong className="text-foreground">Social Media Connections:</strong> OAuth
-                  tokens for connected social platforms (Facebook, Instagram, TikTok, LinkedIn, X,
-                  YouTube, Threads, Pinterest, Reddit) are stored locally on your device. You
-                  control what gets published and to which platforms. Prestyj does not access your
-                  social media accounts.
-                </li>
-                <li>
-                  <strong className="text-foreground">Waitlist Signups:</strong> When you join the
-                  Media Master waitlist, your name and email address are sent to Prestyj&apos;s CRM
-                  for communication purposes.
-                </li>
-              </ul>
-
-              <h3 className="font-heading text-foreground mt-4 mb-3 text-lg font-medium">
-                Third-Party Services
-              </h3>
-              <ul className="text-muted-foreground mb-4 list-inside list-disc space-y-2">
-                <li>
-                  <strong className="text-foreground">fal.ai:</strong> Image prompts and reference
-                  images are sent to fal.ai&apos;s API for AI image generation. fal.ai processes
-                  this data according to their own privacy policy.
-                </li>
-                <li>
-                  <strong className="text-foreground">Social Platform APIs:</strong> When you
-                  publish content, it is sent directly from your device to the respective social
-                  media platform&apos;s API. Each platform processes data according to their own
-                  terms and privacy policies.
-                </li>
-              </ul>
-
-              <h3 className="font-heading text-foreground mt-4 mb-3 text-lg font-medium">
-                Data Deletion
-              </h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                You can request deletion of your personal data at any time:
-              </p>
-              <ul className="text-muted-foreground mb-4 list-inside list-disc space-y-2">
-                <li>
-                  <strong className="text-foreground">CRM Data:</strong> To delete your waitlist
-                  signup information (name and email), email{" "}
-                  <a href="mailto:hello@prestyj.com" className="text-primary hover:underline">
-                    hello@prestyj.com
-                  </a>{" "}
-                  with the subject line &quot;Data Deletion Request.&quot; Requests are processed
-                  within 30 days and you will receive a confirmation email once complete.
-                </li>
-                <li>
-                  <strong className="text-foreground">Local App Data:</strong> All Media Master
-                  application data stored on your device can be deleted by uninstalling the
-                  application or manually deleting the application data directory.
-                </li>
-                <li>
-                  <strong className="text-foreground">Published Content:</strong> Content already
-                  published to social media platforms must be deleted directly on those platforms.
-                  Prestyj cannot remove content from third-party services on your behalf.
-                </li>
-              </ul>
-            </section>
-
-            <section>
-              <h2 className="font-heading text-foreground mb-4 text-xl font-semibold">
-                Contact Us
-              </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                If you have any questions about this Privacy Policy or our data practices, please
-                contact us at:
-              </p>
-              <div className="text-muted-foreground mt-4">
-                <p>
-                  <strong className="text-foreground">Prestyj</strong>
-                </p>
-                <p>Email: privacy@prestyj.com</p>
-              </div>
-            </section>
+            ))}
           </div>
-        </div>
+
+          <section className="border-t pt-9">
+            <h2 className="font-heading text-2xl font-bold">Contact</h2>
+            <p className="text-muted-foreground mt-4 leading-7">
+              Questions or privacy requests:{" "}
+              <a className="text-primary hover:underline" href="mailto:privacy@prestyj.com">
+                privacy@prestyj.com
+              </a>
+              .
+            </p>
+          </section>
+        </article>
       </main>
       <Footer />
     </>

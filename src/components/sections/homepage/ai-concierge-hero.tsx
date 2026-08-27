@@ -26,12 +26,8 @@ import {
   requestTribunalPhoneDemo,
   resolveTribunalApiBase,
 } from "@/lib/tribunal-embed";
-import { positioning } from "@/lib/positioning";
 import { cn } from "@/lib/utils";
-import {
-  useTribunalAgentConfig,
-  useTribunalVoiceSession,
-} from "@/lib/use-tribunal-voice-session";
+import { useTribunalAgentConfig, useTribunalVoiceSession } from "@/lib/use-tribunal-voice-session";
 
 function formatAgentState(state: string): string {
   if (state === "listening") return "Listening";
@@ -54,7 +50,7 @@ function WaveBars({ frequencies }: { frequencies: number[] }): ReactElement {
       {frequencies.slice(0, 28).map((value, index) => (
         <span
           key={`bar-${index}`}
-          className="from-primary via-primary/70 to-cyan-300/70 w-1.5 rounded-full bg-linear-to-t shadow-[0_0_18px_rgba(112,88,227,0.45)] transition-[height,opacity] duration-150"
+          className="from-primary via-primary/70 w-1.5 rounded-full bg-linear-to-t to-cyan-300/70 shadow-[0_0_18px_rgba(112,88,227,0.45)] transition-[height,opacity] duration-150"
           style={{
             height: `${Math.max(14, value * 92)}px`,
             opacity: Math.max(0.28, value),
@@ -99,7 +95,7 @@ function ConciergeOrb({
         className={cn(
           "absolute inset-12 rounded-full border border-dashed transition-all duration-500",
           agentState === "thinking" || status === "connecting"
-            ? "border-cyan-300/50 animate-spin"
+            ? "animate-spin border-cyan-300/50"
             : "border-white/10",
         )}
         style={{ animationDuration: "13s", animationDirection: "reverse" }}
@@ -170,10 +166,7 @@ export function AiConciergeHero(): ReactElement {
   const isSessionActive = status === "connecting" || status === "connected";
   const liveIssue = configError || voiceError;
   const agentDisplayName = config ? config.name : "Nova, Prestyj AI concierge";
-  const connectionStatusText = formatStatus(
-    isLoading ? "connecting" : status,
-    isConfigured,
-  );
+  const connectionStatusText = formatStatus(isLoading ? "connecting" : status, isConfigured);
   const primaryButtonDisabled =
     status === "connecting" || (isConfigured && !canStart && !isSessionActive);
 
@@ -234,26 +227,22 @@ export function AiConciergeHero(): ReactElement {
   }
 
   return (
-    <section
-      id="ai-concierge"
-      className="relative overflow-hidden pt-28 pb-20 sm:pt-32 lg:pt-40"
-    >
-      <div className="bg-primary/20 absolute top-24 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full blur-[120px]" />
-      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/20 to-transparent" />
-
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+    <section id="ai-concierge" className="relative overflow-hidden border-b py-24">
+      <div className="mx-auto grid w-full max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
         <div>
           <Badge variant="outline" className="border-primary/50 text-primary bg-background/60">
-            AI AGENTS + AD PRODUCTION FOR SERVICE BUSINESSES
+            Live AI agent. Talk to it now.
           </Badge>
 
-          <h1 className="font-heading text-foreground mt-6 text-4xl leading-[1.04] font-bold tracking-tight sm:text-5xl lg:text-6xl">
-            Put AI on the work that slows your team down.
-            <span className="text-primary block">Calls, leads, follow-up, and ad creative — done for you.</span>
-          </h1>
+          <h2 className="font-heading text-foreground mt-6 text-3xl leading-[1.08] font-bold tracking-tight sm:text-4xl lg:text-5xl">
+            Don&rsquo;t take our word for it.
+            <span className="text-primary block">Pick up the phone.</span>
+          </h2>
 
           <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-8">
-            {positioning.fullPitch}
+            This is an AI agent running live on real telephony. It is the same kind that answers the
+            inbound on a listing at 9pm on a Saturday. Talk to it in your browser, or have it call
+            your phone.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -281,7 +270,7 @@ export function AiConciergeHero(): ReactElement {
             ) : (
               <Button size="lg" className="h-12 px-7 text-base font-semibold" asChild>
                 <Link href="/book-demo">
-                  Book a build call
+                  Get access
                   <Calendar className="h-5 w-5" />
                 </Link>
               </Button>
@@ -305,7 +294,7 @@ export function AiConciergeHero(): ReactElement {
                 className="h-12 px-7 text-base font-semibold"
                 asChild
               >
-                <Link href="/#capabilities">
+                <Link href="/#outcomes">
                   See what we build
                   <ArrowRight className="h-5 w-5" />
                 </Link>
@@ -328,20 +317,18 @@ export function AiConciergeHero(): ReactElement {
               {connectionStatusText}
             </span>
             <span className="text-border hidden sm:inline">•</span>
-            <Link href="/batch-video-ads" className="hover:text-primary transition-colors">
-              Need ad creative? See batch video ads
+            <Link href="/#outcomes" className="hover:text-primary transition-colors">
+              See the rest of the work it does
             </Link>
           </div>
 
-          {liveIssue ? (
-            <p className="text-destructive mt-4 max-w-xl text-sm">{liveIssue}</p>
-          ) : null}
+          {liveIssue ? <p className="text-destructive mt-4 max-w-xl text-sm">{liveIssue}</p> : null}
 
           <div className="mt-10 grid gap-4 text-sm sm:grid-cols-3">
             {[
-              ["Calls", "answers and qualifies"],
-              ["Follow-up", "texts, books and updates"],
-              ["Ad Creative", "hundreds of variants from one recording"],
+              ["Answers", "every call, every hour"],
+              ["Qualifies", "against your criteria, not a script"],
+              ["Hands off", "with a transcript and a booked time"],
             ].map(([label, value]) => (
               <div key={label} className="bg-card/50 rounded-2xl border p-4">
                 <div className="text-foreground font-semibold">{label}</div>
@@ -359,9 +346,7 @@ export function AiConciergeHero(): ReactElement {
                 <p className="text-xs font-semibold tracking-[0.28em] text-cyan-200 uppercase">
                   Prestyj Concierge
                 </p>
-                <p className="mt-1 text-sm text-slate-300">
-                  {agentDisplayName}
-                </p>
+                <p className="mt-1 text-sm text-slate-300">{agentDisplayName}</p>
               </div>
               <span
                 className={cn(
@@ -375,21 +360,15 @@ export function AiConciergeHero(): ReactElement {
               </span>
             </div>
 
-            <ConciergeOrb
-              status={status}
-              agentState={agentState}
-              smoothedLevel={smoothedLevel}
-            />
+            <ConciergeOrb status={status} agentState={agentState} smoothedLevel={smoothedLevel} />
             <WaveBars frequencies={frequencies} />
 
             <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-4">
               <div className="flex items-center justify-between gap-3">
                 <div>
-                  <p className="text-sm font-semibold text-white">
-                    {formatAgentState(agentState)}
-                  </p>
+                  <p className="text-sm font-semibold text-white">{formatAgentState(agentState)}</p>
                   <p className="mt-1 text-xs text-slate-400">
-                    Ask what to automate, how calls are handled, or where leads leak.
+                    Ask how it handles an inbound, a qualification, or a handoff.
                   </p>
                 </div>
                 {status === "connected" ? (
@@ -418,7 +397,7 @@ export function AiConciergeHero(): ReactElement {
                           : "ml-auto bg-white/10 text-white",
                       )}
                     >
-                      <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                      <span className="text-xs font-semibold tracking-wide text-slate-400 uppercase">
                         {turn.role === "assistant" ? "Nova" : "You"}
                       </span>
                       <p className="mt-1">{turn.text}</p>
@@ -426,8 +405,8 @@ export function AiConciergeHero(): ReactElement {
                   ))
                 ) : (
                   <div className="rounded-xl bg-white/5 px-3 py-3 text-sm text-slate-300">
-                    Try: “I run a service business and miss calls after 5pm. What would
-                    you build?”
+                    Try: &ldquo;We miss half our inbound after hours. What would you put on
+                    it?&rdquo;
                   </div>
                 )}
               </div>
@@ -444,9 +423,7 @@ export function AiConciergeHero(): ReactElement {
                     <PhoneCall className="h-4 w-4" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-white">
-                      Have the AI call your phone
-                    </p>
+                    <p className="text-sm font-semibold text-white">Have the AI call your phone</p>
                     <p className="mt-1 text-xs leading-5 text-slate-400">
                       Enter your number, confirm consent and trigger one short demo call.
                     </p>
@@ -480,8 +457,8 @@ export function AiConciergeHero(): ReactElement {
                     className="mt-1 accent-[#7058e3]"
                   />
                   <span>
-                    By requesting a call, you agree to receive one automated demo call
-                    from Prestyj. Message/data rates may apply.
+                    By requesting a call, you agree to receive one automated demo call from Prestyj.
+                    Message/data rates may apply.
                   </span>
                 </label>
 
@@ -509,9 +486,7 @@ export function AiConciergeHero(): ReactElement {
                 {phoneMessage ? (
                   <p className="mt-3 text-sm text-emerald-200">{phoneMessage}</p>
                 ) : null}
-                {phoneError ? (
-                  <p className="mt-3 text-sm text-red-200">{phoneError}</p>
-                ) : null}
+                {phoneError ? <p className="mt-3 text-sm text-red-200">{phoneError}</p> : null}
               </form>
             ) : null}
           </div>

@@ -1,4 +1,29 @@
 import { NextRequest, NextResponse } from "next/server";
+import { z } from "zod";
+
+import { MARKETING_CONSENT_STORAGE_KEY } from "@/lib/consent";
+
+const eventSchema = z.object({
+  eventName: z
+    .string()
+    .min(1)
+    .max(80)
+    .regex(/^[A-Za-z0-9_ -]+$/),
+  eventId: z.string().min(1).max(100),
+  email: z.string().email().max(254).optional(),
+  phone: z.string().max(40).optional(),
+  firstName: z.string().max(100).optional(),
+  lastName: z.string().max(100).optional(),
+  sourceUrl: z
+    .string()
+    .url()
+    .refine((value) => {
+      const host = new URL(value).hostname;
+      return host === "prestyj.com" || host.endsWith(".prestyj.com");
+    })
+    .optional(),
+  customData: z.record(z.string(), z.union([z.string(), z.number(), z.boolean()])).optional(),
+});
 
 const PIXEL_ID = "892763637077397";
 
@@ -11,6 +36,10 @@ async function sha256(value: string): Promise<string> {
 }
 
 export async function POST(request: NextRequest) {
+  if (request.cookies.get(MARKETING_CONSENT_STORAGE_KEY)?.value !== "granted") {
+    return NextResponse.json({ error: "Marketing consent required" }, { status: 403 });
+  }
+
   try {
     const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
     if (!accessToken) {
@@ -18,18 +47,12 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    const body = await request.json();
+    const parsed = eventSchema.safeParse(await request.json());
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid event" }, { status: 400 });
+    }
     const { eventName, eventId, email, phone, firstName, lastName, sourceUrl, customData } =
-      body as {
-        eventName: string;
-        eventId: string;
-        email?: string;
-        phone?: string;
-        firstName?: string;
-        lastName?: string;
-        sourceUrl?: string;
-        customData?: Record<string, unknown>;
-      };
+      parsed.data;
 
     // Build user_data with hashed PII
     const userData: Record<string, string> = {};
@@ -76,7 +99,6 @@ export async function POST(request: NextRequest) {
     if (!capiResponse.ok) {
       console.error("[META CAPI] Error response:", {
         status: capiResponse.status,
-        body: capiBody,
         eventName,
         eventId,
       });

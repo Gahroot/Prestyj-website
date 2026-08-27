@@ -1,6 +1,6 @@
 # Prestyj
 
-AI-powered lead conversion platform for home services and real estate. Next.js marketing site with blog, competitor comparison pages, ROI calculators, lead magnets, and programmatic landing pages.
+Institutional real estate AI agents for investment funds, commercial brokerages, and CRE owner-operators. The public Next.js site presents capabilities, anonymized work, field notes, a live brokerage agent, and access-request flows.
 
 ## Stack
 
@@ -71,7 +71,7 @@ See `.env.example` for the full list. Highlights:
 - `ZIMAGE_API_KEY` — Z-Image media generation (kie.ai)
 - `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, `DEEPSEEK_API_KEY`, `DASHSCOPE_API_KEY`, `MOONSHOT_API_KEY`, `GROQ_API_KEY`, `OPENROUTER_API_KEY` — SEO-bot providers; any subset; unset providers are skipped
 
-Database, Stripe, Resend, and Meta CAPI keys are also required for the corresponding features — add them to `.env.local`.
+Database, Stripe, Resend, CRM, telephony, and marketing-measurement keys are required only for their corresponding operational features. Add secrets to `.env.local`; never expose them through `NEXT_PUBLIC_*`.
 
 ## Project layout
 

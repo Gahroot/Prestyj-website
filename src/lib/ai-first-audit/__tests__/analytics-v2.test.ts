@@ -11,6 +11,7 @@ describe("AI-First Audit analytics", () => {
     const fetchMock = vi.fn().mockResolvedValue(new Response(null, { status: 200 }));
     vi.stubGlobal("window", {
       fbq,
+      localStorage: { getItem: () => "granted" },
       location: { href: "https://prestyj.com/ai-first-audit?step=preview" },
     });
     vi.stubGlobal("fetch", fetchMock);
@@ -42,5 +43,21 @@ describe("AI-First Audit analytics", () => {
     expect(capiBody).not.toHaveProperty("firstName");
     expect(capiBody.customData).not.toHaveProperty("workflow_title");
     expect(capiBody.customData).not.toHaveProperty("annual_time_cost");
+  });
+
+  it("does not send marketing analytics without consent", () => {
+    const fbq = vi.fn();
+    const fetchMock = vi.fn();
+    vi.stubGlobal("window", {
+      fbq,
+      localStorage: { getItem: () => "denied" },
+      location: { href: "https://prestyj.com/" },
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    trackAuditEvent("AuditPreviewViewed", { stepName: "preview" });
+
+    expect(fbq).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
   });
 });

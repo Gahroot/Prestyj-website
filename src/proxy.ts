@@ -114,6 +114,16 @@ export function proxy(request: NextRequest) {
   // Create response with security headers
   const response = NextResponse.next();
 
+  // Persist the browser's Global Privacy Control signal before client scripts run.
+  if (request.headers.get("sec-gpc") === "1") {
+    response.cookies.set("prestyj-gpc", "1", {
+      path: "/",
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 31_536_000,
+    });
+  }
+
   // Content Security Policy
   response.headers.set("Content-Security-Policy", cspHeader);
 

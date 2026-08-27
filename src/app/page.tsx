@@ -2,59 +2,57 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
-import { FAQJsonLd, ServiceJsonLd, SoftwareApplicationJsonLd } from "@/components/seo/json-ld";
-import { AiCapabilitiesSection } from "@/components/sections/homepage/ai-capabilities-section";
-import { AiConciergeHero } from "@/components/sections/homepage/ai-concierge-hero";
+import { FAQJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
 import { HomepageFaqSection } from "@/components/sections/homepage/homepage-faq-section";
-import { HomepageFinalCta } from "@/components/sections/homepage/homepage-final-cta";
-import { VideoMachineSection } from "@/components/sections/homepage/video-machine-section";
+import { AudiencePathways } from "@/components/sections/institutional/audience-pathways";
+import { ControlledWork } from "@/components/sections/institutional/controlled-work";
+import { DealHero } from "@/components/sections/institutional/deal-hero";
+import { EvidenceLedger } from "@/components/sections/institutional/evidence-ledger";
+import { InstitutionalCta } from "@/components/sections/institutional/institutional-cta";
+import { ProofRecords } from "@/components/sections/institutional/proof-records";
+import { TrustBoundaries } from "@/components/sections/institutional/trust-boundaries";
 import { homepageFaqs } from "@/lib/homepage-faq-data";
 import { positioning } from "@/lib/positioning";
 
+const title = "Prestyj | AI Agents for Institutional Real Estate";
+
 export const metadata: Metadata = {
-  title: "Prestyj | AI Agents & Ad Production for Service Businesses",
+  title,
   description: positioning.fullPitch,
   keywords: [
-    "custom AI agents",
-    "AI voice agents",
-    "AI agents for service businesses",
-    "done-for-you AI marketing",
-    "AI sales agents",
-    "AI receptionist",
-    "AI marketing agents",
-    "AI content department",
-    "marketing automation",
-    "batch video ads",
+    "AI agents for real estate investment funds",
+    "AI for commercial real estate",
+    "fund operations AI",
+    "LP reporting automation",
+    "real estate due diligence AI",
+    "commercial brokerage AI agents",
+    "portfolio data reconciliation",
   ],
+  alternates: { canonical: "https://prestyj.com" },
   openGraph: {
-    title: "Prestyj | AI Agents & Ad Production for Service Businesses",
+    title,
     description: positioning.fullPitch,
     type: "website",
     url: "https://prestyj.com",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Prestyj | AI Agents & Ad Production for Service Businesses",
-    description: positioning.fullPitch,
-  },
-  alternates: {
-    canonical: "https://prestyj.com",
-  },
+  twitter: { card: "summary_large_image", title, description: positioning.fullPitch },
 };
 
 export default function Home() {
   return (
     <>
       <ServiceJsonLd />
-      <SoftwareApplicationJsonLd />
       <FAQJsonLd faqs={homepageFaqs} />
       <Navbar />
       <main>
-        <AiConciergeHero />
-        <AiCapabilitiesSection />
-        <VideoMachineSection />
+        <DealHero />
+        <EvidenceLedger />
+        <ControlledWork />
+        <ProofRecords compact />
+        <AudiencePathways />
+        <TrustBoundaries />
         <HomepageFaqSection />
-        <HomepageFinalCta />
+        <InstitutionalCta />
       </main>
       <Footer />
     </>

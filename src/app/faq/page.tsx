@@ -1,119 +1,69 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Navbar } from "@/components/layout/navbar";
+import { ArrowRight } from "lucide-react";
+
 import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { FAQJsonLd } from "@/components/seo/json-ld";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { AnimateOnScroll } from "@/components/ui/animate-on-scroll";
 import { Button } from "@/components/ui/button";
-import { FAQJsonLd } from "@/components/seo/json-ld";
-import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
-import { ArrowRight } from "lucide-react";
-import BorderGlow from "@/components/ui/border-glow";
-import { faqs } from "@/lib/faq-data";
+import { homepageFaqs } from "@/lib/homepage-faq-data";
 import { siteConfig } from "@/lib/site-config";
 
-const siteUrl = siteConfig.url;
-
 export const metadata: Metadata = {
-  title: "Prestyj FAQ — AI Agents, Batch Video Ads, Pricing Answers",
+  title: "Frequently asked questions",
   description:
-    "Common questions about Prestyj's AI agents for marketing and sales — what you get, pricing, onboarding, integrations, and how the agents work.",
-  keywords: [
-    "AI agents FAQ",
-    "AI marketing agent",
-    "AI sales agent",
-    "AI agent pricing",
-    "AI agent onboarding",
-    "Prestyj FAQ",
-  ],
-  openGraph: {
-    title: "Prestyj FAQ — AI Agents, Batch Video Ads, Pricing Answers",
-    description:
-      "Common questions about Prestyj's AI agents for marketing and sales — what you get, pricing, onboarding, integrations, and how the agents work.",
-    type: "website",
-    url: `${siteUrl}/faq`,
-  },
-  alternates: {
-    canonical: `${siteUrl}/faq`,
-  },
+    "Answers about Prestyj's institutional real estate AI agents, data boundaries, source evidence, review gates, integrations, deployment, and engagement scope.",
+  alternates: { canonical: `${siteConfig.url}/faq` },
 };
-
-const breadcrumbs = [
-  { name: "Home", url: siteUrl },
-  { name: "FAQ", url: `${siteUrl}/faq` },
-];
 
 export default function FAQPage() {
   return (
     <>
-      <FAQJsonLd faqs={faqs} />
-      <BreadcrumbJsonLd items={breadcrumbs} />
+      <FAQJsonLd faqs={homepageFaqs} />
       <Navbar />
       <main>
-        {/* Hero Section */}
-        <section className="pt-24 pb-16">
-          <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <AnimateOnScroll>
-              <h1 className="font-heading text-foreground mb-6 text-4xl font-bold sm:text-5xl lg:text-6xl">
-                Questions? Answers.
-              </h1>
-              <p className="text-muted-foreground mx-auto max-w-3xl text-xl">
-                Everything you need to know about Prestyj — AI agents, batch video ads, managed ad
-                spend, what it costs, and what happens after you book a demo.
-              </p>
-            </AnimateOnScroll>
+        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <p className="text-primary text-sm font-semibold">FAQ</p>
+            <h1 className="font-heading mt-5 max-w-4xl text-4xl font-bold tracking-tight sm:text-6xl">
+              The questions that matter before a workflow moves.
+            </h1>
           </div>
         </section>
 
-        {/* FAQ Accordion */}
-        <section className="pb-16">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <AnimateOnScroll delay={0.1}>
-              <Accordion type="single" collapsible className="space-y-4">
-                {faqs.map((faq, index) => (
-                  <BorderGlow key={index} borderRadius={10} innerClassName="px-6">
-                    <AccordionItem value={`item-${index}`} className="border-none">
-                      <AccordionTrigger className="font-heading text-foreground text-left font-semibold hover:no-underline">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
-                        {faq.answer}
-                      </AccordionContent>
-                    </AccordionItem>
-                  </BorderGlow>
-                ))}
-              </Accordion>
-            </AnimateOnScroll>
+        <section className="border-b py-16 sm:py-20">
+          <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+            <Accordion type="single" collapsible className="border-t">
+              {homepageFaqs.map((faq, index) => (
+                <AccordionItem key={faq.question} value={`item-${index}`}>
+                  <AccordionTrigger className="font-heading py-6 text-left text-lg font-semibold hover:no-underline">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground max-w-3xl pb-6 leading-7">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="relative overflow-hidden py-24">
-          <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-            <AnimateOnScroll>
-              <h2 className="font-heading text-foreground mb-6 text-3xl font-bold sm:text-4xl lg:text-5xl">
-                Still have questions?
-              </h2>
-              <p className="text-muted-foreground mx-auto mb-8 max-w-2xl text-lg">
-                Book a free demo and we&apos;ll walk you through exactly how AI agents would work in
-                your marketing and sales funnel.
-              </p>
-              {/* CTA: primary conversion action */}
-              <Button size="lg" className="px-10 py-6 text-lg" asChild>
-                <Link href="/book-demo">
-                  Book a call
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-              <p className="text-muted-foreground mt-6 text-sm">
-                No commitment. We&apos;ll tell you if it&apos;s not a fit.
-              </p>
-            </AnimateOnScroll>
+        <section className="py-20 sm:py-28">
+          <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+            <h2 className="font-heading max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
+              Bring the question and the workflow behind it.
+            </h2>
+            <Button size="lg" asChild>
+              <Link href="/book-demo">
+                Get access <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
           </div>
         </section>
       </main>

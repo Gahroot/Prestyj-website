@@ -1,18 +1,20 @@
 # Prestyj
 
-Done-for-you AI agents and ad production for service businesses and real estate teams. Next.js marketing site with blog, comparison pages, calculators, and lead magnets.
+AI agents built and run for institutional real estate. The public site serves real estate investment funds from $500M AUM, commercial brokerages, and CRE owner-operators.
 
 ## Positioning
 
-**One lane:** Done-for-you AI agents + ad production for service businesses and real estate teams.
+**One lane:** Reviewed deal, fund, investor, portfolio, and origination work from the systems a real estate firm already runs.
 
-**What we say:** "AI agents for marketing and sales" / "done-for-you" / "service businesses and real estate"
+**What we say:** "AI agents for institutional real estate" / "finished work product" / "source attached" / "controlled by your review rules"
 
-**What we don't say:** "custom AI" / "AI automation" / "internal tools" / "AI software" / "coding agents" / "desktop AI"
+**What we don't say:** "service businesses" / "realtors" / "custom AI" / "AI automation" / "internal tools" / "coding agents" / "desktop AI" / commodity monthly SaaS pricing
 
-**Core offer:** AI agents (voice, receptionist, sales, marketing) + batch video ads + managed ad spend. Three pricing tiers: Starter ($1,997/mo), Pro ($3,497/mo), Scale ($5,997/mo).
+**Core offer:** Prestyj builds and operates defined AI workflows above the system of record. Engagements are scoped per workflow, source systems, volume, and control requirements.
 
-**See:** `src/lib/positioning.ts` for canonical vocabulary.
+**See:** `src/lib/positioning.ts`, `src/lib/institutional/`, and `DESIGN.md` for canonical vocabulary and design rules.
+
+**Legacy archive:** SMB comparison, location, free-ad, lead-magnet, and old blog source files remain for reversibility. They must stay redirected, excluded from navigation and sitemap, and must not be reused as current positioning.
 
 ## Project Structure
 

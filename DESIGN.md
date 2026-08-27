@@ -1,191 +1,88 @@
-# AI-First Audit Design
+# Prestyj Design System
 
-## Positioning
+## Product direction
 
-**Product:** AI-First Audit  
-**Descriptor:** Cost and readiness audit  
-**Promise:** Find the workflows costing you the most. See where an AI agent can help first.  
-**Audience:** Busy owners and operators at service businesses and real estate teams.  
-**Primary conversion:** Complete the audit, see the top result, then request the full report.  
-**Secondary conversion:** Book a workflow review after the report has delivered useful guidance.
+Prestyj is an institutional B2B marketing and research site for real estate investment funds from $500M AUM, commercial brokerages, and CRE owner-operators.
+
+The site sells finished work products, not AI features or software seats. The primary conversion is **Get access** with one recurring workflow, its source systems, and its review owner.
 
 ## Design read
 
-- **Surface:** A direct marketing page that becomes a guided assessment and then a data-backed report.
-- **Audience:** Owners and operators, often using a phone, who need plain language and fast decisions rather than technical detail.
-- **Single job:** Identify the first costly workflow worth fixing with a done-for-you AI agent.
-- **Task and risk:** Infrequent, roughly four-minute workflow with medium decision risk. Cost figures must be traceable to visitor inputs and clearly labeled as estimates.
-- **Content:** Three to five workflows, long custom workflow names, currency totals, impact labels, readiness labels, recommendations, blockers, and a ranked top three.
-- **Platform:** Next.js App Router on modern mobile and desktop browsers with keyboard, touch, pointer, reduced-motion, and forced-colors support.
-- **Constraints:** Preserve the dark Prestyj system, Manrope and Inter, shared Navbar and Footer, semantic UI primitives, Lucide icons, and the existing report route.
+- **Audience:** Partners, COOs, CFOs, fund accounting, investor relations, deal teams, asset managers, and brokerage leaders.
+- **Single job:** Make a senior operator recognize work they already carry, understand its controls, and request a scoped proof.
+- **Decision risk:** High. Claims must be attributable, staged honestly, and explicit about human review.
+- **Content:** Outcome first, then source, action, review gate, and delivered work product.
+- **Platform:** Next.js App Router, responsive web, keyboard and touch, WCAG 2.2 AA as the engineering floor.
 
-## Evidence and thesis
+## Evidence
 
-The leading archetype is **application UI** because the audit is a focused decision workflow. The landing section borrows only the direct claim hierarchy of **marketing and brand**. `linear.app` and `superhuman` are useful structural references for stable controls and concise state recognition. `intercom` is the contrast: the audit must not become a tour or card-heavy marketing surface.
+- The user supplied Hebbia Max as the positioning reference. The relevant pattern is work-language such as building models and shipping decks, not imitation of its visual treatment.
+- Existing Prestyj typography, dark tokens, shadcn/Radix primitives, and Lucide icons are retained.
+- Sanity-style platform hierarchy supports capability, system detail, and proof without becoming a feature catalog.
+- Apple-style restraint supports one claim, one artifact, and one next action per section.
 
-Use a **calm cost ledger** as the visual signature. The first glance is the estimated time cost. The second is readiness. The third is the next action. Purple is reserved for the primary action and current priority. Neutral surfaces, rules, typography, and stable columns do the remaining work.
+## Thesis
 
-The dark theme belongs because it is the established product environment, not because darkness implies quality. The category label belongs because it communicates that the page is a free audit. Decorative glow, glass, equal feature cards, generic icon tiles, hover lift, ambient motion, tint-on-tint status treatments, and unsupported proof do not belong.
+The shared visual device is an **evidence ledger**. Every capability can be read as:
 
-## Reuse map
+1. source system;
+2. agent action;
+3. human review;
+4. finished work product.
 
-- **Page shell:** Navbar, Footer, and a shared `max-w-5xl` content rail with `px-4 sm:px-6 lg:px-8` gutters.
-- **Typography:** Manrope for headings, Inter for body and controls.
-- **Actions and fields:** Existing Button, Input, Label, and Progress components.
-- **Icons:** Lucide only. Icons supplement visible labels and never replace them in the main flow.
-- **Surfaces:** Existing background, card, border, foreground, muted, primary, destructive, success, and warning tokens.
-- **Motion:** Short opacity and small continuity transitions. Named properties only. No resting motion and no generic hover movement.
+The layout resembles a controlled work record rather than a generic AI landing page. Borders, spacing, and typography carry hierarchy. Violet is reserved for citations, selected states, and primary actions.
 
-## Flow and component plan
+## Tokens and craft
 
-1. **Landing and profile:** The promise, trust line, business type, and loaded hourly cost are close together so the visitor can start immediately without contact details.
-2. **Workflow picker:** Three to five relevant workflow choices plus a bounded custom option. Selection uses a neutral surface, strong border, check icon, and text count.
-3. **Workflow questions:** One native radio group at a time with a persistent legend, visible Back action, workflow and question progress, and answer preservation.
-4. **Instant preview:** The complete top result appears before contact collection, including estimated yearly time cost, impact, readiness, recommended AI agent, and why it ranked first.
-5. **Report request:** First name and work email only. Optional three-email consent is unchecked. Pending, error, retry, delivery-warning, and success states preserve the completed assessment.
-6. **Report:** Semantic summary, number one priority, ranked ledger, blockers, first fix plan, method, print action, and one booking action after the useful content.
+- Reuse `background`, `foreground`, `card`, `border`, `muted-foreground`, `primary`, `ring`, and existing status tokens from `globals.css`.
+- Use Manrope for headings and Inter for body copy.
+- Use violet only for primary actions, selected states, and evidence cues.
+- Use the shared `max-w-7xl` rail with `px-4 sm:px-6 lg:px-8` on navigation, pages, and footer.
+- Prefer square or lightly rounded bordered records over glass, glow, pills, and floating cards.
+- No autoplay content. Motion is user-triggered and short, with reduced-motion behavior.
+- No generated em dashes in interface copy.
+- No emoji UI, mixed icon sets, fake terminals, invented metrics, or generic hover lift.
+
+## Canonical components
+
+- `DealHero`: left-aligned institutional position and qualification facts.
+- `EvidenceLedger`: capability index in the buyer's vocabulary.
+- `ControlledWork`: source to agent to review to work-product sequence.
+- `ProofRecords`: anonymized, stage-labeled project evidence.
+- `CapabilityPage`: asks, source systems, review boundary, and outputs.
+- `AudiencePage`: recognized pain, outcomes, systems, and relevant capabilities.
+- `TrackingConsent`: equal accept/reject controls and persistent privacy choices.
 
 ## Responsive behavior
 
-- **320 to 767 pixels:** One column, full-width 44-pixel controls, vertical workflow rows, no horizontal table requirement, and preserved DOM reading order.
-- **768 to 1023 pixels:** Wider question and report cards while maintaining a single primary reading column.
-- **1024 pixels and above:** The report ledger uses stable workflow, yearly time cost, impact, and readiness columns. The landing promise and starting control share the same rail.
-- Long custom names wrap without truncation. Currency values use locale-aware formatting and do not control column width at the expense of labels.
-- Text remains usable at 200% resize and under text-spacing overrides. Mobile controls do not autofocus and unexpectedly open the keyboard.
+- Wide layouts use two-column editorial compositions and ledger rows.
+- Intermediate layouts preserve one shared content rail and readable line length.
+- Narrow layouts stack terms above details without changing content order.
+- Primary actions remain visible without covering content.
+- No horizontal scrolling is required at 320 CSS pixels.
 
-## Interaction and state rules
+## Accessibility and trust
 
-- Native inputs remain in the accessibility tree and expose checked, required, invalid, and disabled states.
-- Selected state and keyboard focus are visually distinct. Pointer activation does not leave a false focus treatment.
-- Touch targets are at least 44 by 44 pixels where layout permits.
-- Step headings receive programmatic focus after navigation. A single named progress indicator reports the current value.
-- Validation and request statuses use appropriate live regions. Errors identify the field or choice and explain recovery.
-- Browser Back, Forward, refresh, validation failure, network failure, and duplicate submission preserve non-contact answers.
-- Session storage contains only versioned non-contact draft data and is cleared after successful report creation.
-- Reduced motion removes spatial travel while keeping immediate color, border, and text feedback.
-- Forced colors retain borders, native control state, focus visibility, and non-color status text.
+- Native links, buttons, labels, lists, headings, and landmarks are the default.
+- Focus is shown with `focus-visible`, not sticky pointer focus.
+- Interactive status uses text and `aria-live` where calculations or submissions update.
+- AI voice interactions are labeled before microphone or call action.
+- Public legal pages avoid certification or unsupported conformance claims.
+- Vendor names describe possible systems and are not partnerships or prebuilt integration claims.
 
-## Accessibility scope
+## Content authenticity
 
-The changed scope includes `/ai-first-audit`, the complete wizard, `/ai-first-audit/r/[slug]`, report print behavior, request errors and delivery warnings, and version-aware metadata. The HTML report is primary. Legacy version 1 PDF output remains available but is not represented as accessible.
+- Proof comes from the inspected repositories and carries an honest stage: In production, Live, or Reference architecture.
+- Reference architecture never receives a live status indicator.
+- No fabricated testimonials, customer logos, authors, ROI metrics, or scarcity.
+- Archived SMB content remains in source for reversibility but cannot render on canonical public routes.
 
-Release evidence must cover applicable WCAG 2.2 Level A and AA criteria, keyboard completion, visible and unobscured focus, semantic names and status, 320-pixel reflow, 200% text, long content, no-hover input, reduced motion, forced colors, dark-theme contrast, VoiceOver with Safari, desktop and mobile screenshots, and Back, Forward, refresh, retry, duplicate, email-failure, and malformed-result states. Unavailable manual checks are recorded as unverified rather than passed.
+## Release checks
 
-## Content and trust rules
-
-- Every dollar figure is an **estimated yearly time cost** calculated only from weekly-hour and hourly-cost inputs.
-- No result is described as guaranteed savings or recovered revenue.
-- Contact details, custom workflow titles, and dollar amounts never enter analytics labels.
-- Follow-up consent is clear, optional, revocable, and unchecked by default.
-- User-facing audit copy has no em dashes and avoids the banned technical terms defined in the approved plan.
-- No testimonials, customer counts, logos, case-study claims, tool brands, or unsupported proof are added.
-
----
-
-# Ad-to-Appointment Atlas Design
-
-## Design read
-
-- **Surface:** An editorial research page with one embedded, data-dense calculator.
-- **Audience:** Service-business and real-estate operators who buy ads and need to understand where leads disappear after capture.
-- **Single job:** Establish a trustworthy measurement protocol and help a visitor calculate a private full-funnel baseline.
-- **Task and risk:** The protocol is read occasionally; the calculator is used during campaign review. Decision cost is medium because inconsistent cohorts can produce misleading business conclusions.
-- **Content:** A five-stage measurement chain, four metric definitions, six visitor inputs, six calculated metrics, a four-stage retention view, and a versioned research protocol.
-- **Platform:** Next.js App Router in modern mobile and desktop browsers with keyboard, pointer, touch, 320-pixel reflow, forced-colors, and reduced-motion support.
-- **Constraints:** Preserve Prestyj's dark theme, Manrope and Inter type roles, max-width page rail, Lucide icons, Navbar, Footer, Button, Input, and Label.
-
-## Evidence and thesis
-
-The leading archetype is **editorial and content**, with **dashboards and data-dense tools** as the secondary archetype for the calculator. `wired` supports deliberate editorial interruption and reading rhythm; `airtable` supports stable row alignment and explicit units. `miro` is the contrast because this page should not become a freeform canvas or decorative metric wall.
-
-Use a **traceable lead ledger** as the page signature. The first glance is the missing measurement claim, the second is the five-stage chain, and the action is to calculate a private baseline. Numbered rows, rules, formulas, timestamps, and bounded retention bars make the subject recognizable without the Prestyj logo or accent color.
-
-The dark theme belongs because it is the established product environment. The research labels belong because they communicate real document status, version, and taxonomy. Equal metric rows belong because the four formulas are peer definitions in a glossary, not generic feature marketing. Decorative glow, invented benchmark figures, fake charts, glass surfaces, icon medallions, hover lift, ambient motion, ubiquitous pills, and tint-on-tint status treatments do not belong.
-
-## Reuse and craft system
-
-- **Rail:** Navbar, hero, calculator, methodology, CTA, and Footer align to `max-w-7xl` with `px-4 sm:px-6 lg:px-8` gutters where the shared components permit it.
-- **Typography:** Manrope carries research titles and hierarchy; Inter carries prose, controls, formulas, and data labels.
-- **Material:** Background and card tokens create one flat canvas plus one contained calculator surface. Rules organize evidence; shadow and blur are unnecessary.
-- **Color:** Purple marks the primary action and measurement sequence. Foreground and muted colors carry hierarchy. Bars repeat the product accent without implying a benchmark status.
-- **Icons:** Lucide only, used beside visible actions; decorative document cues are omitted.
-- **Motion:** The page rests still. Existing controls use named color, border, and shadow transitions; the data bars update without decorative travel.
-
-## Components and states
-
-1. **Measurement chain:** An ordered list from ad promise to attributed revenue. Each row has a stage number, title, and fields captured.
-2. **Metric glossary:** A definition list pairing each proprietary metric with its exact formula and decision question.
-3. **Private baseline calculator:** Six persistent labels and instructions, non-negative number inputs, impossible-order validation, reset action, empty state, valid results, and text equivalents for every visual bar.
-4. **Protocol:** Version, publication date, sample threshold, cohort window, exclusions, privacy, and correction rules.
-5. **Founding dataset CTA:** One direct link to book a call, with explicit private-baseline and written-permission language.
-
-## Responsive and accessibility behavior
-
-- At 320 to 767 pixels, all page regions use one column, calculator metrics use two columns, retention values wrap, and every control remains at least 44 pixels high where layout permits.
-- At 768 to 1023 pixels, form fields use two columns while results remain below or adjacent only when space supports readable measures.
-- At 1024 pixels and above, editorial copy and evidence ledgers use asymmetric two-column compositions on one shared rail.
-- Every information relationship uses headings, ordered lists, definition lists, labels, descriptions, or time semantics. Bars are decorative duplicates of visible counts and percentages.
-- Error text names impossible funnel ordering and is announced. Invalid fields retain values. Reset is explicit and reversible.
-- No field data is submitted, persisted, placed in a URL, or sent to analytics. The CSV template contains headers only and no personal data.
-- The changed scope is `/ad-to-appointment-atlas`, its calculator states, the CSV download, shared navigation link, footer link, and sitemap entry. Release evidence covers keyboard use, visible focus, 320-pixel reflow, desktop/mobile rendering, project accessibility tooling, and honest manual-check limitations.
-
-## Release evidence and critique
-
-- **Rendered evidence:** `.ezcoder/screenshots/ad-to-appointment-atlas-desktop-final.png`, `ad-to-appointment-atlas-mobile-final.png`, `ad-to-appointment-atlas-320.png`, `ad-to-appointment-atlas-200-percent-text-final.png`, `ad-to-appointment-atlas-forced-colors.png`, and `ad-to-appointment-atlas-invalid-state.png`.
-- **Functional evidence:** Five Vitest cases cover correct formulas, zero denominators, valid ordering, fractional counts, and impossible stage ordering. Keyboard-only Chromium testing reached the skip link first, activated `#main-content`, traversed every calculator input and action without a trap, and produced the calculated baseline from keyboard-entered values.
-- **Accessibility evidence:** Lighthouse accessibility scored 100 after contrast and definition-list corrections. Chromium's accessibility tree exposed one main landmark, navigation, contentinfo, ordered heading levels, six named and described spinbuttons, and the reset button. Forced colors and reduced motion were active together with no horizontal overflow. A 320-pixel viewport at 200% root text measured 320 pixels of document width.
-- **Resilience evidence:** Empty, calculated, impossible-order error, reset, direct anchor, CSV download, 320-pixel, 390-pixel, desktop, reduced-motion, and forced-colors states were exercised. Loading, async retry, offline mutation, disabled submission, destructive, and success-message states do not apply because the calculator is local and synchronous.
-- **Verification commands:** `npm test -- src/lib/ad-to-appointment-atlas.test.ts`, `npm run typecheck`, `npm run lint`, and `npm run build` pass. Lighthouse SEO scored 92 in development; its only SEO failure was the existing development `robots.txt` 500 response. Production field Core Web Vitals remain unverified.
-- **Assistive technology limitation:** Automated accessibility and Chromium accessibility-tree output pass. A manual Safari plus VoiceOver session remains unverified, so no WCAG-conformance or ADA-compliance claim is made.
-- **Inventory and support:** The route adds no media, embeds, authentication, storage, or external data requests. Existing global analytics scripts remain inherited. The public accessibility-feedback path is `/contact` and `hello@prestyj.com`. Automated browser evidence covers Chromium 151 on desktop and mobile emulation; Safari and Firefox manual checks remain unverified.
-
-## Final quality score
-
-**23/24.** Specificity 2, hierarchy 2, composition 2, consistency 2, typography 2, material logic 2, state completeness 2, responsive behavior 2, accessibility 1, motion 2, content authenticity 2, visual distinctiveness 2. Accessibility is held at 1 only because a manual screen-reader session is not available.
-
-The first critique identified low-contrast purple utility text, invalid nested definition-list markup, and 200% text overflow from implicit grid tracks. Those failures were corrected. The decorative document icon was removed from the measurement ledger; the page remains specific through its numbered trace, formulas, protocol record, and retention view.
-
----
-
-# Enterprise AI Consulting Content Design
-
-## Design read
-
-- **Surface:** A direct enterprise marketing page using the existing AI offer template.
-- **Audience:** CEOs, COOs, operating partners, and functional leaders at investment funds, real estate investment organizations, and complex enterprises.
-- **Single job:** Help an executive understand why verified context must come before AI automation, then book an enterprise AI session.
-- **Task and risk:** An infrequent, high-consideration decision. Wrong claims about data accuracy, cost reduction, or productivity would damage trust, so outcomes are bounded and implementation controls are explicit.
-- **Content:** Unified source ingestion, entity and definition reconciliation, discrepancy handling, provenance, permissions, reusable context, agent execution, and high-volume production examples.
-- **Platform and constraints:** Preserve the existing Next.js route, Navbar, Footer, AI offer component, dark Prestyj theme, shared content rail, responsive tables, Lucide icons, and booking flow. The main Prestyj homepage remains focused on service businesses and real estate teams.
-
-## Evidence and thesis
-
-The leading archetype is **marketing and brand**. `apple` supports a direct claim with a deliberate evidence sequence, and `sanity` supports explaining technical infrastructure in business language. `figma` is the contrast because this page should not become a broad collaborative-product tour.
-
-Use a **verified fact path** as the content signature: connect, reconcile, verify, serve, and act. The first glance is the reliable-data claim, the second is discrepancy handling, and the action is an enterprise AI session. The page distinguishes itself through an architecture table and operating-model comparison rather than a generic feature grid.
-
-The existing centered hero, dark theme, badges, cards, and shared offer template remain because this is a content repositioning inside an established route, not a visual redesign. No new glass effects, gradients, ambient motion, icon medallions, hover lift, pills, or unsupported proof are introduced.
-
-## Reuse, responsiveness, and trust
-
-- Reuse `AiOfferPage`, `Navbar`, `Footer`, `Button`, `Accordion`, `Table`, `BorderGlow`, and the existing typography and color tokens.
-- Keep the same `max-w-6xl` content rail and responsive section gutters. Four-column tables use a readable minimum width inside the existing horizontal overflow container on narrow screens.
-- The page adds no forms, media, custom widgets, client-side state, or new motion. Links and accordion controls retain native/shared keyboard and focus behavior.
-- The `1 to 100` example comes directly from the user's supplied workflow and is framed as one bounded content workflow, not a universal productivity guarantee.
-- Token-cost language is conditional and calls for a measured baseline. Data accuracy is described as an operating process with provenance, evaluation, abstention, and correction rather than a guarantee.
-- Consulting prices are not invented. The service schema now omits aggregate pricing when a page has no approved price range, and this consulting page no longer presents itself as a software application.
-- Generated user-facing copy contains no em dashes. No customer logos, fund names, ratings, testimonials, or unsupported portfolio metrics are added.
-
-## Release evidence and critique
-
-- **Rendered evidence:** `.ezcoder/screenshots/ai-consulting-enterprise-desktop-final.png` and `.ezcoder/screenshots/ai-consulting-enterprise-mobile-final.png` cover the full route at 1440 by 1000 and 390 by 844.
-- **Route and discovery:** `/ai-consulting` returns HTTP 200 after removing the obsolete permanent redirect to `/pricing`. The route is included in `sitemap.xml` and remains directly refreshable.
-- **Responsive correction:** The first mobile capture compressed four table columns until cell text became difficult to scan. Both tables now keep a 760-pixel minimum width inside semantic horizontal overflow, preserving readable text and row relationships.
-- **Content correction:** The first capture exposed a generic resources heading. It now states the enterprise decision task, and the unnecessary decorative eyebrow was removed.
-- **Accessibility scope:** The changed page uses one main landmark, ordered headings, labelled semantic tables, links with visible text, and the existing Radix accordion keyboard model. Automated build and source review pass. Manual keyboard traversal, forced-colors, 200% text, Safari plus VoiceOver, and a criterion-by-criterion WCAG 2.2 audit remain unverified, so no WCAG-conformance or ADA-compliance claim is made.
-- **State inventory:** Loading, form errors, retry, offline mutation, destructive, and success states do not apply to this static marketing route. Hover, focus-visible, press, link navigation, and accordion expanded/collapsed states come from existing shared primitives.
-- **Performance:** The route adds no media, client component, external data request, font, dependency, or animation. Production field Core Web Vitals remain unverified.
-
-## Final quality score
-
-**22/24.** Specificity 2, hierarchy 2, composition 2, consistency 2, typography 2, material logic 2, state completeness 2, responsive behavior 2, accessibility 1, motion 2, content authenticity 2, visual distinctiveness 1. Accessibility is held at 1 because manual assistive-technology and changed-scope criterion testing are unavailable. Visual distinctiveness is held at 1 because the page intentionally reuses the established AI offer template rather than introducing a new visual system.
+- Desktop and narrow screenshots for home, platform, capability, audience, research, access request, and privacy choices.
+- Keyboard pass for navigation, dropdown, consent, accordions, forms, calculator, and voice-demo controls.
+- 200% zoom and narrow reflow pass.
+- Confirm zero Google, Meta, or LinkedIn network requests before consent.
+- Confirm Global Privacy Control leaves marketing scripts disabled.
+- Run project tests, typecheck, lint, and production build.
+- Scan canonical rendered pages for banned legacy terms and obsolete prices.

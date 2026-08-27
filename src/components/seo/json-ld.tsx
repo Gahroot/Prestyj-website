@@ -47,8 +47,7 @@ export function OrganizationJsonLd() {
     "@type": "Organization",
     "@id": siteConfig.organizationId,
     name: siteConfig.name,
-    alternateName: [...siteConfig.alternateNames],
-    legalName: siteConfig.legalName,
+    alternateName: "PRESTYJ",
     url: siteConfig.url,
     logo: {
       "@type": "ImageObject",
@@ -74,10 +73,6 @@ export function OrganizationJsonLd() {
         availableLanguage: "English",
       },
     ],
-    areaServed: {
-      "@type": "Country",
-      name: "United States",
-    },
     knowsAbout: [...siteConfig.offerClusters],
     sameAs: siteConfig.sameAs,
   };
@@ -244,7 +239,7 @@ export function ServiceJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Prestyj Custom AI Agents & Automation",
+    name: "Prestyj AI Agents for Real Estate Funds & Brokerages",
     description: siteConfig.description,
     provider: {
       "@type": "Organization",
@@ -253,16 +248,23 @@ export function ServiceJsonLd() {
     },
     serviceType: [...siteConfig.offerClusters],
     areaServed: "United States",
+    audience: {
+      "@type": "Audience",
+      audienceType: "Real estate investment funds, commercial brokerages, and CRE operators",
+    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "AI Agent Services",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom AI Agents" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Fund Operations Agents" } },
+        {
+          "@type": "Offer",
+          itemOffered: { "@type": "Service", name: "NAV & Performance Reporting" },
+        },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Investor & LP Reporting" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Due Diligence Agents" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Voice Agents" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Receptionist" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Sales Agents" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Marketing Agents" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Batch Video Ads" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Listing & Campaign Media" } },
       ],
     },
   };

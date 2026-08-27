@@ -1,142 +1,126 @@
 import type { Metadata } from "next";
-import { Navbar } from "@/components/layout/navbar";
+import Link from "next/link";
+import { ArrowRight, Check } from "lucide-react";
+
 import { Footer } from "@/components/layout/footer";
-import { PricingHero } from "@/components/sections/pricing/pricing-hero";
-import { PricingTiersSection } from "@/components/sections/pricing/pricing-tiers";
-import { BatchVideoAdsCrossSellSection } from "@/components/sections/pricing/batch-video-ads-cross-sell";
-import { PricingComparisonSection } from "@/components/sections/pricing/pricing-comparison";
-import { PricingStoriesSection } from "@/components/sections/pricing/pricing-stories";
-import { PricingROISection } from "@/components/sections/pricing/pricing-roi";
-import { PricingFAQSection } from "@/components/sections/pricing/pricing-faq";
-import { CTASection } from "@/components/sections/cta";
-import { CitationStatsSection } from "@/components/sections/citation-stats-section";
-import { FAQJsonLd } from "@/components/seo/json-ld";
-import { SafeJsonLd } from "@/components/seo/safe-json-ld";
-import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
-import { pricingFaqs, pricingTiers } from "@/lib/pricing-data";
+import { Navbar } from "@/components/layout/navbar";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Pricing — AI Agents & Ad Production Plans | Prestyj",
+  title: "Engagements",
   description:
-    "Prestyj runs your ads, produces hundreds of video ad variations from a single recording, and deploys AI agents that answer calls, respond to leads in 60 seconds, and book appointments on your calendar — 24/7. Done for you, not a tool you learn. Plans from $1,997/mo.",
-  keywords: [
-    "AI lead response pricing",
-    "batch video ads pricing",
-    "AI sales agent cost",
-    "real estate AI pricing",
-    "business advertising cost",
-    "AI appointment setting pricing",
-    "video ad production pricing",
-  ],
-  openGraph: {
-    title: "Pricing — AI Agents & Ad Production Plans | Prestyj",
-    description:
-      "Done-for-you AI agents and ad production for service businesses and real estate teams. Plans from $1,997/mo.",
-    type: "website",
-    url: "https://prestyj.com/pricing",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pricing — AI Agents & Ad Production Plans | Prestyj",
-    description:
-      "Done-for-you AI agents and ad production for service businesses and real estate teams. Plans from $1,997/mo.",
-  },
-  alternates: {
-    canonical: "https://prestyj.com/pricing",
-  },
+    "Prestyj engagements start with one institutional real estate workflow, its source systems, review owner, and finished work product.",
+  alternates: { canonical: `${siteConfig.url}/pricing` },
 };
 
+const phases = [
+  {
+    number: "01",
+    title: "Scope the work",
+    body: "Name the recurring workflow, source systems, current output, review owner, and failure modes.",
+  },
+  {
+    number: "02",
+    title: "Prove it beside the team",
+    body: "Run representative records through the agent and reconcile every difference against the current process.",
+  },
+  {
+    number: "03",
+    title: "Operate and expand",
+    body: "Move the proven workflow into production, monitor exceptions, and add adjacent work only when the first output holds up.",
+  },
+] as const;
+
 export default function PricingPage() {
-  const pricingPageUrl = "https://prestyj.com/pricing";
-  const firstTier = pricingTiers[0];
-  const lastTier = pricingTiers[pricingTiers.length - 1];
-  if (!firstTier || !lastTier) {
-    throw new Error("pricingTiers must contain at least one tier");
-  }
-
-  const productSchema = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: "Prestyj AI Sales & Marketing Platform",
-    description:
-      "AI agents for marketing and sales: lead response, appointment setting, batch video ads, and marketing automation for businesses.",
-    brand: { "@type": "Brand", name: "Prestyj" },
-    url: pricingPageUrl,
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: String(firstTier.monthlyPrice),
-      highPrice: String(lastTier.monthlyPrice),
-      offerCount: pricingTiers.length,
-      availability: "https://schema.org/InStock",
-      offers: pricingTiers.map((tier) => ({
-        "@type": "Offer",
-        name: `Prestyj ${tier.name} — ${tier.tagline}`,
-        price: String(tier.monthlyPrice),
-        priceCurrency: "USD",
-        priceValidUntil: "2026-12-31",
-        availability: "https://schema.org/InStock",
-        url: pricingPageUrl,
-        description: tier.bestFor,
-      })),
-    },
-  };
-
-  const softwareAppSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Prestyj AI Sales & Marketing Platform",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    description:
-      "AI agents for marketing and sales: lead response, appointment setting, batch video ads, and marketing automation for businesses.",
-    url: pricingPageUrl,
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: String(firstTier.monthlyPrice),
-      highPrice: String(lastTier.monthlyPrice),
-      offerCount: pricingTiers.length,
-    },
-  };
-
-  const breadcrumbs = [
-    { name: "Home", url: "https://prestyj.com" },
-    { name: "Pricing", url: pricingPageUrl },
-  ];
-
   return (
     <>
-      <BreadcrumbJsonLd items={breadcrumbs} />
-      <SafeJsonLd data={productSchema} />
-      <SafeJsonLd data={softwareAppSchema} />
-      <FAQJsonLd faqs={pricingFaqs} />
       <Navbar />
       <main>
-        <PricingHero />
-        <PricingTiersSection />
-        <CitationStatsSection
-          statIds={[
-            "voice-agent-cost-per-minute-at-scale",
-            "voice-agent-pilot-setup-cost-range",
-            "voice-agent-hidden-cost-percent",
-            "batch-video-pilot-setup-cost",
-          ]}
-          eyebrow="Citable pricing benchmarks"
-          title="The numbers behind Prestyj pricing."
-          description="Per-minute cost at scale, pilot setup cost, hidden-cost percentage, and batch video ad pilot pricing — each a permanent statistic with source, embed, and citation formats."
-          cta={{
-            label: "Browse all Prestyj statistics",
-            href: "/statistics",
-          }}
-          className="bg-muted/20 border-border/50 border-y"
-        />
-        <PricingComparisonSection />
-        <PricingStoriesSection />
-        <PricingROISection />
-        <BatchVideoAdsCrossSellSection />
-        <PricingFAQSection />
-        <CTASection />
+        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <p className="text-primary text-sm font-semibold">Engagements</p>
+            <h1 className="font-heading mt-5 max-w-5xl text-4xl font-bold tracking-tight text-balance sm:text-6xl">
+              Price the workflow, not the seat count.
+            </h1>
+            <p className="text-muted-foreground mt-6 max-w-3xl text-lg leading-8">
+              Scope depends on the work we take over, the systems involved, the controls required,
+              and the volume that runs through it. We give you the number after we see the work.
+            </p>
+          </div>
+        </section>
+
+        <section aria-labelledby="phases-title" className="border-b py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 id="phases-title" className="font-heading text-3xl font-bold tracking-tight">
+              How an engagement starts
+            </h2>
+            <ol className="mt-10 border-t">
+              {phases.map((phase) => (
+                <li
+                  key={phase.number}
+                  className="grid gap-5 border-b py-7 sm:grid-cols-[4rem_0.7fr_1.3fr]"
+                >
+                  <span className="text-muted-foreground font-mono text-sm">{phase.number}</span>
+                  <h3 className="font-heading text-xl font-bold">{phase.title}</h3>
+                  <p className="text-muted-foreground leading-7">{phase.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section aria-labelledby="scope-title" className="border-b py-20 sm:py-28">
+          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+            <div>
+              <h2 id="scope-title" className="font-heading text-3xl font-bold tracking-tight">
+                What changes the scope
+              </h2>
+              <ul className="mt-8 space-y-4">
+                {[
+                  "Number and quality of source systems",
+                  "Frequency and volume of the workflow",
+                  "Complexity of fund, lease, or routing logic",
+                  "Security, tenancy, and audit requirements",
+                  "External integrations and release controls",
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <Check aria-hidden="true" className="text-primary mt-1 h-4 w-4 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="border-l pl-6">
+              <h2 className="font-heading text-3xl font-bold tracking-tight">
+                What we do not sell
+              </h2>
+              <p className="text-muted-foreground mt-6 leading-7">
+                No generic software tier, no per-seat training program, and no promise that every
+                workflow belongs in AI. If the process is not stable enough to define or valuable
+                enough to operate, we will say so.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 sm:py-28">
+          <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+            <div>
+              <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+                Bring the workflow. We will scope the work.
+              </h2>
+              <p className="text-muted-foreground mt-4">
+                Most first proofs fit inside one quarter.
+              </p>
+            </div>
+            <Button size="lg" asChild>
+              <Link href="/book-demo">
+                Get access <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

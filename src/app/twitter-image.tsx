@@ -1,153 +1,43 @@
 import { ImageResponse } from "next/og";
-export const alt = "PRESTYJ — 100 video ads for $497, delivered in 24 hours";
-export const size = {
-  width: 1200,
-  height: 630,
-};
+
+export const alt = "Prestyj AI agents for institutional real estate";
+export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default async function Image() {
+export default function Image() {
   return new ImageResponse(
     <div
       style={{
-        height: "100%",
         width: "100%",
+        height: "100%",
         display: "flex",
         flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        backgroundColor: "#0a0a0a",
-        backgroundImage:
-          "radial-gradient(circle at 25% 25%, #1a1a2e 0%, transparent 50%), radial-gradient(circle at 75% 75%, #16213e 0%, transparent 50%)",
+        justifyContent: "space-between",
+        background: "#0a0a0a",
+        color: "#fafafa",
+        padding: "70px 76px",
+        fontFamily: "sans-serif",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "24px",
-        }}
-      >
-        {/* Floating P logo representation */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "140px",
-            height: "140px",
-            background: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
-            borderRadius: "28px",
-            boxShadow: "0 20px 40px rgba(139, 92, 246, 0.3)",
-          }}
-        >
-          <span
-            style={{
-              fontSize: "90px",
-              fontWeight: 800,
-              color: "#ffffff",
-              textShadow: "0 2px 10px rgba(0,0,0,0.3)",
-            }}
-          >
-            P
-          </span>
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+        <div style={{ fontSize: 30, fontWeight: 800, letterSpacing: "0.08em" }}>PRESTYJ</div>
+        <div style={{ color: "#8b7bf0", fontSize: 20 }}>Institutional real estate AI agents</div>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", maxWidth: 970 }}>
+        <div style={{ fontSize: 72, lineHeight: 1.05, fontWeight: 800, letterSpacing: "-0.035em" }}>
+          The deal does not wait for your analyst bench.
         </div>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "16px",
-          }}
-        >
-          <h1
-            style={{
-              fontSize: "72px",
-              fontWeight: 700,
-              color: "#ffffff",
-              margin: 0,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            PRESTYJ
-          </h1>
-          <p
-            style={{
-              fontSize: "56px",
-              fontWeight: 700,
-              color: "#ffffff",
-              margin: 0,
-              textAlign: "center",
-              maxWidth: "1000px",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.1,
-            }}
-          >
-            100 video ads for $497
-          </p>
-          <p
-            style={{
-              fontSize: "28px",
-              color: "#a1a1aa",
-              margin: 0,
-              textAlign: "center",
-              maxWidth: "900px",
-            }}
-          >
-            Delivered in 24 hours
-          </p>
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "32px",
-            marginTop: "24px",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              color: "#22c55e",
-              fontSize: "24px",
-            }}
-          >
-            <span>OK</span>
-            <span>One recording session</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              color: "#22c55e",
-              fontSize: "24px",
-            }}
-          >
-            <span>OK</span>
-            <span>Scale to 1,000 anytime</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "8px",
-              color: "#22c55e",
-              fontSize: "24px",
-            }}
-          >
-            <span>OK</span>
-            <span>Built for paid ads</span>
-          </div>
+        <div style={{ marginTop: 34, color: "#a1a1aa", fontSize: 27 }}>
+          Reviewed work product from the systems your firm already runs.
         </div>
       </div>
+      <div style={{ display: "flex", gap: 42, color: "#d4d4d8", fontSize: 18 }}>
+        <span>Deal work</span>
+        <span>Fund operations</span>
+        <span>Investor reporting</span>
+        <span>Origination</span>
+      </div>
     </div>,
-    {
-      ...size,
-    },
+    size,
   );
 }

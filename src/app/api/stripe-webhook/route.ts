@@ -8,92 +8,8 @@ import { prisma } from "@/lib/prisma";
 
 export const runtime = "nodejs";
 
-const META_PIXEL_ID = "892763637077397";
 const RESEND_FROM_EMAIL = process.env.RESEND_FROM_EMAIL ?? "Prestyj <noreply@prestyj.com>";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://prestyj.com";
-
-async function sha256(value: string): Promise<string> {
-  const encoded = new TextEncoder().encode(value.trim().toLowerCase());
-  const hash = await crypto.subtle.digest("SHA-256", encoded);
-  return Array.from(new Uint8Array(hash))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
-
-async function fireMetaPurchase(session: Stripe.Checkout.Session, priceId: string): Promise<void> {
-  const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
-  if (!accessToken) {
-    console.warn("[stripe-webhook] META_CAPI_ACCESS_TOKEN not set");
-    return;
-  }
-
-  const batchTier = getBatchTierByPriceId(priceId);
-  const planTier = batchTier ? null : getPlanTierByPriceId(priceId);
-  const contentId = batchTier?.id ?? planTier?.id;
-  const contentName = batchTier
-    ? `Batch Video Ads — ${batchTier.name}`
-    : planTier
-      ? `Prestyj Plan — ${planTier.name}`
-      : undefined;
-  const sourceUrl = batchTier ? `${SITE_URL}/batch-video-ads` : `${SITE_URL}/pricing`;
-  const value = (session.amount_total ?? 0) / 100;
-  const currency = (session.currency ?? "usd").toUpperCase();
-  const details = session.customer_details;
-  const email = details?.email ?? undefined;
-  const phone = details?.phone ?? undefined;
-  const [firstName = "", ...rest] = (details?.name ?? "").trim().split(/\s+/);
-  const lastName = rest.join(" ");
-  const city = details?.address?.city ?? undefined;
-  const country = details?.address?.country ?? undefined;
-
-  const userData: Record<string, string> = {};
-  if (email) userData.em = await sha256(email);
-  if (phone) userData.ph = await sha256(phone.replace(/\D/g, ""));
-  if (firstName) userData.fn = await sha256(firstName);
-  if (lastName) userData.ln = await sha256(lastName);
-  if (city) userData.ct = await sha256(city);
-  if (country) userData.country = await sha256(country);
-
-  const event = {
-    event_name: "Purchase",
-    event_time: Math.floor(Date.now() / 1000),
-    event_id: session.id,
-    action_source: "website",
-    event_source_url: sourceUrl,
-    user_data: userData,
-    custom_data: {
-      value,
-      currency,
-      content_type: "product",
-      content_ids: contentId ? [contentId] : undefined,
-      content_name: contentName,
-    },
-  };
-
-  try {
-    const res = await fetch(
-      `https://graph.facebook.com/v21.0/${META_PIXEL_ID}/events?access_token=${accessToken}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data: [event] }),
-      },
-    );
-    const json = await res.json();
-    if (!res.ok) {
-      console.error("[stripe-webhook] Meta CAPI error:", res.status, json);
-    } else {
-      console.log("[stripe-webhook] Meta CAPI Purchase sent:", {
-        session: session.id,
-        value,
-        currency,
-        fbtrace: json.fbtrace_id,
-      });
-    }
-  } catch (error) {
-    console.error("[stripe-webhook] Meta CAPI fetch failed:", error);
-  }
-}
 
 async function sendIntakeFallbackEmail(
   session: Stripe.Checkout.Session,
@@ -299,7 +215,6 @@ async function handleCheckoutCompleted(session: Stripe.Checkout.Session): Promis
   const tierId = batchTier?.id ?? planTier?.id ?? "unknown";
 
   await Promise.allSettled([
-    fireMetaPurchase(session, attributionPriceId),
     sendIntakeFallbackEmail(session, attributionPriceId),
     sendStarterUpsellEmail(session, attributionPriceId),
     recordAffiliateConversion(session, tierId),

@@ -1,5 +1,6 @@
 import type { BatchTierId } from "@/lib/batch-tiers";
 import type { AuditBusinessType, ReadinessLabel } from "@/lib/ai-first-audit/types";
+import { hasMarketingConsent } from "@/lib/consent";
 
 declare global {
   interface Window {
@@ -10,7 +11,7 @@ declare global {
   }
 }
 
-const PIXEL_ID = "892763637077397";
+export const PIXEL_ID = "892763637077397";
 
 /**
  * LinkedIn Insight Tag partner ID. Set via NEXT_PUBLIC_LINKEDIN_PARTNER_ID at
@@ -20,7 +21,7 @@ const PIXEL_ID = "892763637077397";
 // Use `||` (not `??`) on inlined NEXT_PUBLIC_* env reads in client-bundled
 // modules: when unset, Turbopack inlines `undefined` and SWC's nullish-
 // coalescing transform panics on `undefined ?? ""`. `||` is equivalent here.
-const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID || "";
+export const LINKEDIN_PARTNER_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID || "";
 
 /**
  * Optional event-specific LinkedIn conversion ID for the Content Engine
@@ -57,6 +58,8 @@ export function trackEvent(
   userData?: UserData,
   customData?: Record<string, string>,
 ) {
+  if (!hasMarketingConsent()) return;
+
   const eventId = crypto.randomUUID();
 
   // Client-side pixel fire
@@ -124,7 +127,7 @@ function safeAuditEventData(data: AuditEventData): Record<string, string> {
 
 /** Send only allowlisted, non-contact audit dimensions to Pixel and CAPI. */
 export function trackAuditEvent(eventName: AuditEventName, data: AuditEventData = {}): void {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || !hasMarketingConsent()) return;
   const eventId = crypto.randomUUID();
   const customData = safeAuditEventData(data);
 
@@ -151,7 +154,7 @@ export function trackAuditEvent(eventName: AuditEventName, data: AuditEventData 
 export function trackAuditLead(
   userData: Pick<UserData, "email" | "firstName">,
   data: AuditEventData,
- ): void {
+): void {
   trackEvent("Lead", userData, safeAuditEventData(data));
 }
 
@@ -165,6 +168,8 @@ export function trackAuditLead(
  * See docs/retargeting-setup.md for the audience + campaign setup steps.
  */
 export function trackContentEngineVisitor(variant: string) {
+  if (!hasMarketingConsent()) return;
+
   // Meta — custom event with variant slug for audience segmentation
   if (typeof window !== "undefined" && window.fbq) {
     const eventId = crypto.randomUUID();
@@ -214,6 +219,8 @@ export function trackBatchTierPurchase(
   currency: string,
   userData?: UserData,
 ): void {
+  if (!hasMarketingConsent()) return;
+
   const eventId = crypto.randomUUID();
   const customData = {
     content_name: tierId,
@@ -246,5 +253,3 @@ export function trackBatchTierPurchase(
     // Never break UX for tracking
   });
 }
-
-export { PIXEL_ID, LINKEDIN_PARTNER_ID };

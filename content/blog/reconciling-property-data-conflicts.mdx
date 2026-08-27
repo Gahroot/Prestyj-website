@@ -1,0 +1,49 @@
+---
+title: "When the Model and Property System Disagree"
+description: "How to produce a point-in-time portfolio answer without averaging away the conflict."
+date: "2026-08-27"
+author: "Nolan Grout"
+keywords:
+  - property data reconciliation
+  - CRE portfolio intelligence
+  - Yardi model reconciliation
+---
+
+A portfolio answer can be individually accurate in two systems and still be wrong for the decision.
+
+The model may use a forecast. The property platform may hold posted actuals. A lease abstract may reflect an executed amendment that has not reached a reporting export. Before choosing a value, the system must reconcile meaning, entity, period, and authority.
+
+## Match the identity
+
+The same asset, tenant, lease, or loan may have different identifiers across systems. Entity resolution should be explicit and reviewable. A confident fuzzy match is not enough for a material answer.
+
+## Match the definition
+
+“Occupancy,” “NOI,” and “maturity” can mean different things across teams. The system should preserve the definition attached to each value instead of treating a shared label as proof of equivalence.
+
+## Match the time
+
+A point-in-time answer needs an as-of date. Record both when a value was effective and when the system learned it. That distinction matters when a correction arrives after a report was published.
+
+## Match the authority
+
+Different sources can be authoritative for different fields. The executed lease may govern contractual dates. The ledger may govern posted actuals. The approved model may govern forecast assumptions.
+
+Authority should be configured by field and use case, not inferred from whichever API responded last.
+
+## Put unresolved differences in a queue
+
+A useful conflict record includes:
+
+- the competing values;
+- source and effective date for each;
+- the decision affected;
+- materiality;
+- assigned owner;
+- resolution and approver.
+
+## Answer with the conflict attached
+
+Sometimes the correct executive answer is not one number. It is: “The ledger shows X, the operating report shows Y, and the difference is assigned for review.”
+
+That answer may be less polished, but it is more trustworthy than false precision.

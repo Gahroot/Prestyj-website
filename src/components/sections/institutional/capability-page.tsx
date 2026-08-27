@@ -1,0 +1,134 @@
+import Link from "next/link";
+import type { ReactElement } from "react";
+import { ArrowRight, Check, ShieldCheck } from "lucide-react";
+
+import { Footer } from "@/components/layout/footer";
+import { Navbar } from "@/components/layout/navbar";
+import { Button } from "@/components/ui/button";
+import type { Capability } from "@/lib/institutional/capabilities";
+
+export function CapabilityPage({ capability }: { capability: Capability }): ReactElement {
+  const Icon = capability.icon;
+
+  return (
+    <>
+      <Navbar />
+      <main>
+        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
+              <div>
+                <p className="text-primary text-sm font-semibold">{capability.eyebrow}</p>
+                <h1 className="font-heading mt-5 max-w-4xl text-4xl font-bold tracking-tight text-balance sm:text-6xl">
+                  {capability.title}
+                </h1>
+                <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-8">
+                  {capability.description}
+                </p>
+              </div>
+              <div className="border-l pl-6">
+                <Icon aria-hidden="true" className="text-primary h-6 w-6" />
+                <p className="mt-4 text-lg italic">{capability.felt}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="asks-title" className="border-b py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
+              <h2 id="asks-title" className="font-heading text-3xl font-bold tracking-tight">
+                Start with the ask.
+              </h2>
+              <ol className="border-t">
+                {capability.asks.map((ask, index) => (
+                  <li key={ask} className="grid gap-4 border-b py-6 sm:grid-cols-[3rem_1fr]">
+                    <span className="text-muted-foreground font-mono text-xs">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <blockquote className="text-lg leading-7">&ldquo;{ask}&rdquo;</blockquote>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <section aria-labelledby="record-title" className="border-b py-20 sm:py-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2
+              id="record-title"
+              className="font-heading max-w-2xl text-3xl font-bold tracking-tight"
+            >
+              The complete work record
+            </h2>
+            <div className="mt-10 grid border-t md:grid-cols-4">
+              {[
+                { label: "Sources", values: capability.sources },
+                { label: "Agent work", values: capability.actions },
+                { label: "Review gate", values: [capability.review] },
+                { label: "Work product", values: capability.outputs },
+              ].map((column) => (
+                <div
+                  key={column.label}
+                  className="border-b py-6 md:border-r md:px-6 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+                >
+                  <h3 className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+                    {column.label}
+                  </h3>
+                  <ul className="mt-5 space-y-3 text-sm">
+                    {column.values.map((value) => (
+                      <li key={value} className="flex gap-2">
+                        <Check
+                          aria-hidden="true"
+                          className="text-primary mt-0.5 h-4 w-4 shrink-0"
+                        />
+                        <span>{value}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b py-16">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="border-primary grid gap-6 border-l-2 pl-6 lg:grid-cols-[auto_1fr] lg:items-start">
+              <ShieldCheck aria-hidden="true" className="text-primary h-6 w-6" />
+              <div>
+                <h2 className="font-heading text-xl font-bold">The boundary</h2>
+                <p className="text-muted-foreground mt-2 max-w-3xl leading-7">
+                  {capability.boundary}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 sm:py-28">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+              <div>
+                <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+                  Bring us this workflow.
+                </h2>
+                <p className="text-muted-foreground mt-4 max-w-2xl text-lg">
+                  Show us the source systems, the current work product, and the person who reviews
+                  it.
+                </p>
+              </div>
+              <Button size="lg" asChild>
+                <Link href="/book-demo">
+                  Get access <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

@@ -8,8 +8,7 @@ export const runtime = "nodejs";
 /**
  * Generic contact form submission.
  *
- * Posts to the same CRM `demo/leads` endpoint as the lead-magnet and
- * founding-cohort flows so every inbound contact lands in one place.
+ * Posts to the CRM without triggering an automated call or text.
  */
 export async function POST(request: NextRequest): Promise<NextResponse> {
   let body: unknown;
@@ -29,9 +28,9 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const data = parsed.data;
 
-  // Honeypot tripped — silently accept without forwarding to CRM.
+  // Honeypot tripped: accept without forwarding to the CRM.
   if (data.website && data.website.length > 0) {
-    return NextResponse.json({ success: true, message: "Thanks — we'll be in touch." });
+    return NextResponse.json({ success: true, message: "Thanks, we'll be in touch." });
   }
 
   const firstName = data.name.split(" ")[0] ?? data.name;
@@ -51,15 +50,14 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
         first_name: firstName,
         email: data.email,
         notes,
-        source: "contact-page",
+        source: "institutional-contact-page",
         trigger_call: false,
         trigger_text: false,
       }),
     });
 
     if (!crmResponse.ok) {
-      const errorText = await crmResponse.text();
-      console.error("[contact] CRM error:", errorText);
+      console.error("[contact] CRM rejected submission", crmResponse.status);
       return NextResponse.json(
         { error: "Failed to submit. Please email us directly." },
         { status: 502 },
@@ -75,6 +73,6 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   return NextResponse.json({
     success: true,
-    message: "Thanks — we'll be in touch shortly.",
+    message: "Thanks, we'll be in touch shortly.",
   });
 }
