@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -29,6 +30,7 @@ import type { CalculatorResults } from "@/lib/calculator/commission-loss";
 const TOTAL_STEPS = 3;
 
 export function TeamCalculatorForm() {
+  const router = useRouter();
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -133,7 +135,9 @@ export function TeamCalculatorForm() {
 
       // Redirect to thank you page with results
       const resultsParam = encodeURIComponent(JSON.stringify(calculationResults));
-      window.location.href = `/team-commission-calculator/thank-you?results=${resultsParam}&email=${formData.email}`;
+      router.push(
+        `/team-commission-calculator/thank-you?results=${resultsParam}&email=${formData.email}`,
+      );
     } catch (error) {
       console.error("Submission error:", error);
       setErrors({ general: "Failed to submit. Please try again." });

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Calculator, TrendingUp, DollarSign, Phone, Award } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -35,6 +36,7 @@ interface ROIResults {
 }
 
 export function RoiCalculator() {
+  const router = useRouter();
   const [inputs, setInputs] = useState<CalculatorInputs>({
     businessType: "",
     monthlyCallVolume: "",
@@ -153,7 +155,7 @@ export function RoiCalculator() {
         setSubmitted(true);
         // Redirect to thank you page after short delay
         setTimeout(() => {
-          window.location.href = "/ai-calculator-results";
+          router.push("/ai-calculator-results");
         }, 1000);
       }
     } catch (error) {

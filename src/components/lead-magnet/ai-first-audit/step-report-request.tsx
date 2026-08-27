@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { ArrowRight, MailWarning } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -34,6 +35,7 @@ export function StepReportRequest({
   onBack,
   onReportCreated,
 }: StepReportRequestProps) {
+  const router = useRouter();
   const [firstName, setFirstName] = React.useState("");
   const [workEmail, setWorkEmail] = React.useState("");
   const [followupOptIn, setFollowupOptIn] = React.useState(false);
@@ -105,16 +107,18 @@ export function StepReportRequest({
       onReportCreated();
       if (body.emailDelivery === "failed") {
         setStatus("email-warning");
-        setMessage("Your report is ready, but the email did not send. Try the email again or open the report now.");
+        setMessage(
+          "Your report is ready, but the email did not send. Try the email again or open the report now.",
+        );
         redirectTimer.current = window.setTimeout(() => {
-          window.location.assign(`${body.reportUrl}?email=failed`);
+          router.push(`${body.reportUrl}?email=failed`);
         }, 5000);
         return;
       }
 
       setStatus("success");
       setMessage(AUDIT_COPY.success);
-      redirectTimer.current = window.setTimeout(() => window.location.assign(body.reportUrl!), 600);
+      redirectTimer.current = window.setTimeout(() => router.push(body.reportUrl!), 600);
     } catch {
       setStatus("error");
       setMessage("The network request failed. Your answers are still saved. Try again.");
@@ -134,7 +138,11 @@ export function StepReportRequest({
         void requestReport();
       }}
     >
-      <h2 data-wizard-heading tabIndex={-1} className="font-heading text-2xl font-bold outline-none">
+      <h2
+        data-wizard-heading
+        tabIndex={-1}
+        className="font-heading text-2xl font-bold outline-none"
+      >
         {AUDIT_COPY.reportFormHeading}
       </h2>
       <p className="text-muted-foreground mt-2">{AUDIT_COPY.reportFormSupport}</p>
@@ -183,12 +191,12 @@ export function StepReportRequest({
         />
       </div>
 
-      <label className="mt-6 flex min-h-11 cursor-pointer items-start gap-3 rounded-md py-2 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring">
+      <label className="focus-within:outline-ring mt-6 flex min-h-11 cursor-pointer items-start gap-3 rounded-md py-2 focus-within:outline-2 focus-within:outline-offset-2">
         <input
           type="checkbox"
           checked={followupOptIn}
           onChange={(event) => setFollowupOptIn(event.target.checked)}
-          className="mt-0.5 size-5 shrink-0 accent-primary"
+          className="accent-primary mt-0.5 size-5 shrink-0"
         />
         <span className="text-sm">{AUDIT_COPY.followupConsent}</span>
       </label>
@@ -222,7 +230,13 @@ export function StepReportRequest({
       )}
 
       <div className="flex flex-col-reverse gap-3 sm:flex-row sm:justify-between">
-        <Button type="button" variant="outline" size="lg" onClick={onBack} disabled={status === "pending"}>
+        <Button
+          type="button"
+          variant="outline"
+          size="lg"
+          onClick={onBack}
+          disabled={status === "pending"}
+        >
           Back
         </Button>
         <Button type="submit" size="lg" disabled={status === "pending"}>

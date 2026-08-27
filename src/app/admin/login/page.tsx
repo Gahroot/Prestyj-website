@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function AdminLoginPage() {
+  const router = useRouter();
   const [secret, setSecret] = useState("");
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -21,7 +23,7 @@ export default function AdminLoginPage() {
       body: JSON.stringify({ secret }),
     });
     if (res.ok) {
-      window.location.href = "/admin/affiliates";
+      router.push("/admin/affiliates");
     } else {
       setError(true);
       setLoading(false);
