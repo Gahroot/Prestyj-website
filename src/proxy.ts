@@ -97,10 +97,14 @@ export function proxy(request: NextRequest) {
       name: "form-action",
       values: ["'self'"],
     },
-    {
-      name: "upgrade-insecure-requests",
-      values: [],
-    },
+    ...(process.env.NODE_ENV === "production"
+      ? [
+          {
+            name: "upgrade-insecure-requests",
+            values: [],
+          },
+        ]
+      : []),
   ];
 
   // Build CSP header value
