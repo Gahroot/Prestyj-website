@@ -1,7 +1,9 @@
 "use client";
 
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import Link from "next/link";
+import styles from "@/components/privacy/tracking-consent.module.css";
+import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { MARKETING_CONSENT_STORAGE_KEY, OPEN_PRIVACY_CHOICES_EVENT } from "@/lib/consent";
@@ -24,6 +26,8 @@ export function TrackingConsent(): React.ReactElement {
   const [consent, setConsent] = useState<Consent | null>(null);
   const [open, setOpen] = useState(false);
   const [gpcActive, setGpcActive] = useState(false);
+  const panelRef = useRef<HTMLElement>(null);
+  const returnFocusRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const gpc = navigator.globalPrivacyControl || document.cookie.includes("prestyj-gpc=1");
@@ -44,10 +48,18 @@ export function TrackingConsent(): React.ReactElement {
   }, []);
 
   useEffect(() => {
-    const reopen = () => setOpen(true);
+    const reopen = () => {
+      returnFocusRef.current =
+        document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      setOpen(true);
+    };
     window.addEventListener(OPEN_PRIVACY_CHOICES_EVENT, reopen);
     return () => window.removeEventListener(OPEN_PRIVACY_CHOICES_EVENT, reopen);
   }, []);
+
+  useEffect(() => {
+    if (open && returnFocusRef.current) panelRef.current?.focus();
+  }, [open]);
 
   const choose = (next: Consent) => {
     const gpc = navigator.globalPrivacyControl || document.cookie.includes("prestyj-gpc=1");
@@ -55,6 +67,8 @@ export function TrackingConsent(): React.ReactElement {
     persistConsent(resolved);
     setConsent(resolved);
     setOpen(false);
+    returnFocusRef.current?.focus();
+    returnFocusRef.current = null;
   };
 
   return (
@@ -98,24 +112,37 @@ fbq('init','${PIXEL_ID}');fbq('track','PageView');`}
         <section
           role="dialog"
           aria-modal="false"
+          ref={panelRef}
+          tabIndex={-1}
           aria-labelledby="privacy-choices-title"
-          className="bg-background fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-3xl border p-5 shadow-2xl sm:p-6"
+          className={styles.panel}
         >
-          <h2 id="privacy-choices-title" className="font-heading text-lg font-bold">
+          <h2 id="privacy-choices-title" className={styles.title}>
             Privacy choices
           </h2>
-          <p className="text-muted-foreground mt-2 text-sm leading-6">
-            Essential site functions work without tracking. With your permission, Prestyj also loads
-            Google Ads, Meta, and LinkedIn measurement. You can change this choice anytime.
+          <p className={styles.description}>
+            The site works without marketing tracking. Allow Google Ads, Meta, and LinkedIn
+            measurement? Change your choice anytime. <Link href="/privacy">Privacy policy</Link>
             {gpcActive
               ? " Your browser's Global Privacy Control signal keeps marketing tracking off."
               : ""}
           </p>
-          <div className="mt-5 flex flex-col-reverse gap-3 sm:flex-row sm:justify-end">
-            <Button type="button" variant="outline" onClick={() => choose("denied")}>
+          <div className={styles.actions}>
+            <Button
+              type="button"
+              variant="outline"
+              className={styles.choice}
+              onClick={() => choose("denied")}
+            >
               Reject marketing tracking
             </Button>
-            <Button type="button" onClick={() => choose("granted")} disabled={gpcActive}>
+            <Button
+              type="button"
+              variant="outline"
+              className={styles.choice}
+              onClick={() => choose("granted")}
+              disabled={gpcActive}
+            >
               Allow marketing tracking
             </Button>
           </div>

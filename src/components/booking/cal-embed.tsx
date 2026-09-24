@@ -8,9 +8,13 @@ const CAL_LINK = "nolan-grout-x0fgn8/30min";
 
 interface CalcomInlineEmbedProps {
   className?: string;
+  theme?: "light" | "dark";
 }
 
-export function CalcomInlineEmbed({ className }: CalcomInlineEmbedProps) {
+export function CalcomInlineEmbed({
+  className,
+  theme = "dark",
+}: CalcomInlineEmbedProps): React.ReactElement {
   const handleBookingMessage = useCallback((e: MessageEvent) => {
     if (e.data?.type === "CAL:bookingSuccessful" || e.data?.type === "__calBookingSuccessful") {
       trackEvent("Schedule");
@@ -21,7 +25,7 @@ export function CalcomInlineEmbed({ className }: CalcomInlineEmbedProps) {
     (async function () {
       const cal = await getCalApi();
       cal("ui", {
-        theme: "dark",
+        theme,
         hideEventTypeDetails: false,
         layout: "month_view",
         styles: {
@@ -32,16 +36,14 @@ export function CalcomInlineEmbed({ className }: CalcomInlineEmbedProps) {
 
     window.addEventListener("message", handleBookingMessage);
     return () => window.removeEventListener("message", handleBookingMessage);
-  }, [handleBookingMessage]);
+  }, [handleBookingMessage, theme]);
 
   return (
     <Cal
       calLink={CAL_LINK}
       className={className}
       style={{ width: "100%", height: "100%", minHeight: "600px" }}
-      config={{
-        theme: "dark",
-      }}
+      config={{ theme }}
     />
   );
 }

@@ -1,26 +1,47 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import { Check } from "lucide-react";
 
-import { CalcomInlineEmbed } from "@/components/booking/cal-embed";
 import { QualificationForm, type QualificationData } from "@/components/booking/qualification-form";
 
+const CalcomInlineEmbed = dynamic(
+  async () => {
+    const { CalcomInlineEmbed: Calendar } = await import("@/components/booking/cal-embed");
+    return Calendar;
+  },
+  {
+    ssr: false,
+    loading: () => (
+      <p role="status" className="text-muted-foreground py-8 text-sm">
+        Loading available times…
+      </p>
+    ),
+  },
+);
+
 export function BookDemoClient(): React.ReactElement {
-  const calendarRef = useRef<HTMLDivElement>(null);
+  const calendarRef = useRef<HTMLHeadingElement>(null);
   const [qualificationData, setQualificationData] = useState<QualificationData | null>(null);
 
   const handleComplete = (data: QualificationData) => {
     setQualificationData(data);
-    window.setTimeout(() => {
-      calendarRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 100);
   };
 
+  useEffect(() => {
+    if (qualificationData) calendarRef.current?.focus();
+  }, [qualificationData]);
+
   return (
-    <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-      <div>
-        <h2 className="font-heading text-2xl font-bold">What to bring</h2>
+    <div className="grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="booking-details">
+        <h2 className="font-heading text-2xl font-bold">A useful first conversation</h2>
+        <p className="text-muted-foreground mt-4 max-w-md text-sm leading-7">
+          Together, we’ll identify the work to complete, what a good result looks like, and where
+          human review belongs.
+        </p>
+        <h3 className="mt-8 text-sm font-medium">What to bring</h3>
         <ul className="mt-6 space-y-4 text-sm">
           {[
             "One recurring workflow your team carries by hand",
@@ -40,12 +61,12 @@ export function BookDemoClient(): React.ReactElement {
         </p>
       </div>
 
-      <div ref={calendarRef} className="border p-5 sm:p-8">
+      <div className="booking-form-panel border p-5 sm:p-8">
         {qualificationData ? (
           <>
             <div className="mb-6 border-b pb-5">
               <p className="text-primary text-sm font-semibold">Request received</p>
-              <h2 className="font-heading mt-2 text-2xl font-bold">
+              <h2 ref={calendarRef} tabIndex={-1} className="font-heading mt-2 text-2xl font-bold">
                 Choose a time{qualificationData.firstName ? `, ${qualificationData.firstName}` : ""}
                 .
               </h2>
@@ -53,11 +74,18 @@ export function BookDemoClient(): React.ReactElement {
                 The scheduler below is provided by Cal.com and loads after your request.
               </p>
             </div>
-            <CalcomInlineEmbed />
+            <CalcomInlineEmbed theme="light" />
+            <p className="text-muted-foreground mt-5 text-sm leading-6">
+              Calendar not loading? Email{" "}
+              <a href="mailto:hello@prestyj.com" className="underline underline-offset-4">
+                hello@prestyj.com
+              </a>{" "}
+              and we’ll find a time.
+            </p>
           </>
         ) : (
           <>
-            <h2 className="font-heading text-2xl font-bold">Request access</h2>
+            <h2 className="font-heading text-2xl font-bold">Let’s find a time.</h2>
             <p className="text-muted-foreground mt-2 mb-6 text-sm leading-6">
               We use these details to route your request and open the scheduler. No automated call
               or marketing text is triggered by this form.

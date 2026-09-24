@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Linkedin } from "lucide-react";
+import type { ReactElement } from "react";
+
+import { cn } from "@/lib/utils";
 
 import { PrivacyChoicesButton } from "@/components/privacy/tracking-consent";
 import { Separator } from "@/components/ui/separator";
@@ -28,7 +31,7 @@ const footerLinks = {
     { href: "/pricing", label: "Engagements" },
     { href: "/research", label: "Research" },
     { href: "/about", label: "About" },
-    { href: "/book-demo", label: "Get access" },
+    { href: "/book-demo", label: "Book a workflow demo" },
   ],
   legal: [
     { href: "/privacy", label: "Privacy" },
@@ -58,9 +61,13 @@ function FooterColumn({ title, links }: { title: string; links: readonly FooterL
   );
 }
 
-export function Footer() {
+export function Footer({
+  appearance = "dark",
+}: {
+  appearance?: "dark" | "editorial";
+}): ReactElement {
   return (
-    <footer className="bg-card border-t">
+    <footer className={cn("border-t", appearance === "editorial" ? "bg-background" : "bg-card")}>
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_0.7fr]">
           <div>

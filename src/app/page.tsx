@@ -1,16 +1,14 @@
 import type { Metadata } from "next";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import type { ReactElement } from "react";
+
+import { EditorialShell } from "@/components/layout/editorial-shell";
 import { FAQJsonLd, ServiceJsonLd } from "@/components/seo/json-ld";
-import { HomepageFaqSection } from "@/components/sections/homepage/homepage-faq-section";
-import { AudiencePathways } from "@/components/sections/institutional/audience-pathways";
-import { ControlledWork } from "@/components/sections/institutional/controlled-work";
-import { DealHero } from "@/components/sections/institutional/deal-hero";
-import { EvidenceLedger } from "@/components/sections/institutional/evidence-ledger";
-import { InstitutionalCta } from "@/components/sections/institutional/institutional-cta";
-import { ProofRecords } from "@/components/sections/institutional/proof-records";
-import { TrustBoundaries } from "@/components/sections/institutional/trust-boundaries";
+import { EditorialHero } from "@/components/sections/institutional/editorial-hero";
+import { EditorialWorkflows } from "@/components/sections/institutional/editorial-workflows";
+import { EditorialControls } from "@/components/sections/institutional/editorial-controls";
+import { EditorialProof } from "@/components/sections/institutional/editorial-proof";
+import { EditorialClose } from "@/components/sections/institutional/editorial-close";
 import { homepageFaqs } from "@/lib/homepage-faq-data";
 import { positioning } from "@/lib/positioning";
 
@@ -38,23 +36,20 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description: positioning.fullPitch },
 };
 
-export default function Home() {
+export default function Home(): ReactElement {
   return (
     <>
       <ServiceJsonLd />
       <FAQJsonLd faqs={homepageFaqs} />
-      <Navbar />
-      <main>
-        <DealHero />
-        <EvidenceLedger />
-        <ControlledWork />
-        <ProofRecords compact />
-        <AudiencePathways />
-        <TrustBoundaries />
-        <HomepageFaqSection />
-        <InstitutionalCta />
-      </main>
-      <Footer />
+      <EditorialShell>
+        <main id="main-content">
+          <EditorialHero />
+          <EditorialWorkflows />
+          <EditorialControls />
+          <EditorialProof />
+          <EditorialClose />
+        </main>
+      </EditorialShell>
     </>
   );
 }

@@ -1,0 +1,66 @@
+.panel {
+  position: fixed;
+  z-index: 100;
+  inset-inline-end: 1rem;
+  bottom: 1rem;
+  width: min(27rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow-y: auto;
+  padding: 1.1rem;
+  border: 1px solid #929486;
+  border-radius: 5px;
+  background: #faf9f6;
+  color: #272722;
+  box-shadow: 0 4px 24px #27272214;
+  color-scheme: light;
+}
+.title {
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+}
+.description {
+  margin-top: 0.5rem;
+  color: #62635b;
+  font-size: 11px;
+  line-height: 1.75;
+}
+.description a {
+  color: #272722;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+.choice {
+  min-height: 44px;
+  height: auto;
+  padding: 0.6rem;
+  border: 1px solid #898b7e;
+  border-radius: 3px;
+  background: transparent;
+  color: #272722;
+  font-size: 11px;
+  line-height: 1.5;
+  font-weight: 500;
+  white-space: normal;
+  box-shadow: none;
+}
+.choice:hover {
+  background: #eeede7;
+  color: #272722;
+}
+.panel :is(button, a):focus-visible {
+  outline: 2px solid #6551a4;
+  outline-offset: 3px;
+  box-shadow: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .choice {
+    transition: none;
+  }
+}

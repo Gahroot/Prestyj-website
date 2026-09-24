@@ -31,7 +31,7 @@ export type CtaLink = {
 
 export const primaryCta: CtaLink = {
   href: "/book-demo",
-  label: "Get access",
+  label: "Book a workflow demo",
   variant: "primary",
 };
 
