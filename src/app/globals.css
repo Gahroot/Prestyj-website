@@ -117,6 +117,12 @@
   --input: rgba(0, 0, 0, 0.08);
 }
 
+[data-layout-lab] {
+  --primary: oklch(0.72 0.19 275);
+  --primary-foreground: oklch(0.145 0.03 265);
+  --ring: oklch(0.72 0.19 275);
+}
+
 /* Spotlight fade-in */
 @keyframes spotlight-in {
   from {

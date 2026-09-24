@@ -77,6 +77,18 @@ The layout resembles a controlled work record rather than a generic AI landing p
 - No fabricated testimonials, customer logos, authors, ROI metrics, or scarcity.
 - Archived SMB content remains in source for reversibility but cannot render on canonical public routes.
 
+## Layout lab
+
+`/layout-lab` is an unlinked prototype surface for comparing 24 complete homepage concepts without changing the production homepage. Shared `noindex, nofollow` metadata keeps it out of search results, but the route is not access control and contains no confidential material.
+
+The concepts use six structural families: editorial, evidence ledger, workbench, proof first, narrative, and conversion. Every family exposes the same buyer decision through a different scan path: work to complete, source, agent action, human review, finished work product, and access request.
+
+The lab reuses canonical positioning, outcomes, capabilities, proof records, dark tokens, Manrope and Inter, shadcn primitives, and Lucide icons. The contact sheet is intentionally dense because side-by-side comparison is its sole task; full prototypes load on separate static routes.
+
+Observed references include Hebbia, Rogo, Dealpath, Juniper Square, Cherre, Northspyre, Vanta, Harvey, Palantir, Linear, Apple, and Sanity. Their names describe structural inspiration only. The lab does not copy source, wording, images, logos, trade dress, or interaction sequences, and does not claim affiliation or conversion performance.
+
+A concept remains a prototype until it is explicitly selected. Promotion requires a separate focused change to `/`, a content and accessibility review, and the normal production release checks. The current homepage remains the rollback-safe source of truth during review.
+
 ## Release checks
 
 - Desktop and narrow screenshots for home, platform, capability, audience, research, access request, and privacy choices.
