@@ -29,7 +29,7 @@ export function CalcomInlineEmbed({
         hideEventTypeDetails: false,
         layout: "month_view",
         styles: {
-          branding: { brandColor: "#7058e3" },
+          branding: { brandColor: theme === "light" ? "#292a24" : "#7058e3" },
         },
       });
     })();

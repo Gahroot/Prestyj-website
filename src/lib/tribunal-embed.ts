@@ -97,8 +97,7 @@ export interface TribunalToolCallOptions extends TribunalClientOptions {
 
 export interface TribunalPhoneDemoOptions extends TribunalClientOptions {
   phoneNumber: string;
-  callerName?: string;
-  notes?: string;
+  consent: true;
 }
 
 export interface TribunalTranscriptOptions extends TribunalClientOptions {
@@ -208,7 +207,11 @@ export function normalizeUsPhoneNumber(value: string): TribunalPhoneValidationRe
   const digits = value.replace(/\D/g, "");
   const tenDigitNumber = digits.length === 11 && digits.startsWith("1") ? digits.slice(1) : digits;
 
-  if (tenDigitNumber.length !== 10) {
+  if (
+    value.length > 40 ||
+    !/^[+\d\s().-]+$/.test(value) ||
+    !/^[2-9]\d{2}[2-9]\d{6}$/.test(tenDigitNumber)
+  ) {
     return { ok: false, error: "Enter a valid 10-digit US phone number." };
   }
 
@@ -304,29 +307,51 @@ export async function saveTribunalTranscript({
   );
 }
 
+export const tribunalCallbackSchema = z
+  .object({
+    phone_number: z
+      .string()
+      .max(40)
+      .transform((value, context) => {
+        const result = normalizeUsPhoneNumber(value);
+        if (!result.ok) {
+          context.addIssue({ code: "custom", message: result.error });
+          return z.NEVER;
+        }
+        return result.phoneNumber;
+      }),
+    consent: z.literal(true, { error: "Confirm that you want one automated demo call." }),
+  })
+  .strict();
+
+export type TribunalCallbackResult =
+  | { ok: true }
+  | { ok: false; reason: "invalid" | "rate-limited" | "unavailable" | "uncertain" };
+
 export async function requestTribunalPhoneDemo({
   apiBase,
   publicId,
   phoneNumber,
-  callerName,
-  notes,
+  consent,
   signal,
-}: TribunalPhoneDemoOptions): Promise<TribunalActionResponse> {
-  const body: Record<string, string> = { phone_number: phoneNumber };
-  if (callerName?.trim()) body.caller_name = callerName.trim();
-  if (notes?.trim()) body.notes = notes.trim();
-
-  return fetchTribunalJson(
-    buildTribunalEmbedUrl(apiBase, publicId, "call"),
-    withAbortSignal(
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      },
-      signal,
-    ),
-    tribunalActionResponseSchema,
-    "Failed to request the phone demo.",
-  );
+}: TribunalPhoneDemoOptions): Promise<TribunalCallbackResult> {
+  const parsed = tribunalCallbackSchema.safeParse({ phone_number: phoneNumber, consent });
+  if (!parsed.success) return { ok: false, reason: "invalid" };
+  try {
+    const response = await fetch(buildTribunalEmbedUrl(apiBase, publicId, "call"), {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(parsed.data),
+      signal: AbortSignal.any([...(signal ? [signal] : []), AbortSignal.timeout(15_000)]),
+    });
+    if (response.status === 429) return { ok: false, reason: "rate-limited" };
+    if (response.status === 503) return { ok: false, reason: "unavailable" };
+    if (!response.ok) return { ok: false, reason: "uncertain" };
+    const payload = tribunalActionResponseSchema.safeParse(await readJsonSafely(response));
+    return payload.success && payload.data.success
+      ? { ok: true }
+      : { ok: false, reason: "uncertain" };
+  } catch {
+    return { ok: false, reason: "uncertain" };
+  }
 }

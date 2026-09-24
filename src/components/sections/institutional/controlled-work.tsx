@@ -30,8 +30,8 @@ const steps = [
 
 export function ControlledWork(): ReactElement {
   return (
-    <section aria-labelledby="controlled-work-title" className="border-b py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section aria-labelledby="controlled-work-title" className="border-b py-12 sm:py-16">
+      <div className="editorial-rail">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
           <div>
             <p className="text-primary text-sm font-semibold">Controlled work</p>

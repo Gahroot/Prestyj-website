@@ -61,6 +61,45 @@ export function TrackingConsent(): React.ReactElement {
     if (open && returnFocusRef.current) panelRef.current?.focus();
   }, [open]);
 
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!open || !panel) return;
+    let frame = 0;
+    const keepFocusVisible = (): void => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const active = document.activeElement;
+        if (!(active instanceof HTMLElement) || active === document.body || panel.contains(active))
+          return;
+        const control = active.getBoundingClientRect();
+        const banner = panel.getBoundingClientRect();
+        if (
+          control.bottom > banner.top - 12 &&
+          control.top < banner.bottom &&
+          control.right > banner.left &&
+          control.left < banner.right
+        ) {
+          window.scrollBy({ top: control.bottom - banner.top + 12, behavior: "instant" });
+        }
+      });
+    };
+    const resize = new ResizeObserver(() => {
+      document.documentElement.style.setProperty(
+        "--privacy-clearance",
+        `${panel.offsetHeight + 32}px`,
+      );
+      keepFocusVisible();
+    });
+    resize.observe(panel);
+    document.addEventListener("focusin", keepFocusVisible);
+    return () => {
+      resize.disconnect();
+      cancelAnimationFrame(frame);
+      document.removeEventListener("focusin", keepFocusVisible);
+      document.documentElement.style.removeProperty("--privacy-clearance");
+    };
+  }, [open]);
+
   const choose = (next: Consent) => {
     const gpc = navigator.globalPrivacyControl || document.cookie.includes("prestyj-gpc=1");
     const resolved = next === "granted" && gpc ? "denied" : next;

@@ -1,24 +1,19 @@
 import Link from "next/link";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
-    <>
-      <Navbar />
-      <main className="min-h-[70vh] pt-36 pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <EditorialShell>
+      <main id="main-content" className="editorial-rail editorial-inner min-h-[60vh] pt-10">
+        <div>
           <p className="text-primary text-sm font-semibold">404</p>
-          <h1 className="font-heading mt-5 max-w-3xl text-4xl font-bold tracking-tight sm:text-6xl">
-            This record is not in the current site.
-          </h1>
-          <p className="text-muted-foreground mt-6 max-w-xl text-lg leading-8">
-            The page may have moved during the institutional rewrite. Start with the current work
-            and audience pages below.
-          </p>
-          <div className="mt-8 flex gap-3">
+          <EditorialPageHeader title="This page is not in the current site.">
+            <p>The page may have moved. Start at home or explore our current field notes.</p>
+          </EditorialPageHeader>
+          <div className="flex flex-wrap gap-3">
             <Button asChild>
               <Link href="/">Home</Link>
             </Button>
@@ -28,7 +23,6 @@ export default function NotFound() {
           </div>
         </div>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }

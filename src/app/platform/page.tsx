@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { ControlledWork } from "@/components/sections/institutional/controlled-work";
 import { ProofRecords } from "@/components/sections/institutional/proof-records";
@@ -38,87 +38,81 @@ export default function PlatformPage() {
           provider: { "@id": siteConfig.organizationId },
         }}
       />
-      <Navbar />
-      <main>
-        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-primary text-sm font-semibold">Platform</p>
-            <h1 className="font-heading mt-5 max-w-5xl text-4xl font-bold tracking-tight text-balance sm:text-6xl">
-              Your systems stay in charge. The work stops waiting.
-            </h1>
-            <p className="text-muted-foreground mt-6 max-w-3xl text-lg leading-8">
-              Prestyj connects the records your firm already trusts to an agent that performs one
-              defined workflow, routes exceptions to the right person, and delivers the approved
-              work product.
-            </p>
-          </div>
-        </section>
-
-        <ControlledWork />
-
-        <section aria-labelledby="controls-title" className="border-b py-20 sm:py-28">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.65fr_1.35fr] lg:px-8">
-            <div>
-              <ShieldCheck aria-hidden="true" className="text-primary h-6 w-6" />
-              <h2
-                id="controls-title"
-                className="font-heading mt-5 text-3xl font-bold tracking-tight"
-              >
-                Controls before convenience
-              </h2>
+      <EditorialShell>
+        <main id="main-content" className="editorial-inner">
+          <section className="border-b">
+            <div className="editorial-rail">
+              <EditorialPageHeader title="Your systems stay in charge. The work stops waiting.">
+                <p>
+                  Prestyj connects the records your firm already trusts to an agent that performs
+                  one defined workflow, routes exceptions to the right person, and delivers the
+                  approved work product.
+                </p>
+              </EditorialPageHeader>
             </div>
-            <dl className="border-t">
-              {controls.map(([term, detail]) => (
-                <div key={term} className="grid gap-4 border-b py-6 sm:grid-cols-[10rem_1fr]">
-                  <dt className="font-semibold">{term}</dt>
-                  <dd className="text-muted-foreground leading-7">{detail}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </section>
+          </section>
 
-        <section aria-labelledby="deployment-title" className="border-b py-20 sm:py-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 id="deployment-title" className="font-heading text-3xl font-bold tracking-tight">
-              Start above the system of record
-            </h2>
-            <ul className="bg-border mt-10 grid gap-px border md:grid-cols-3">
-              {[
-                "Prove the workflow on representative records.",
-                "Run beside the current process and reconcile every difference.",
-                "Expand only after the output and review gate hold up.",
-              ].map((item) => (
-                <li key={item} className="bg-background flex gap-3 p-6">
-                  <Check aria-hidden="true" className="text-primary mt-1 h-4 w-4 shrink-0" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
+          <ControlledWork />
 
-        <ProofRecords compact />
-
-        <section className="py-20 sm:py-28">
-          <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
-            <div>
-              <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-                Bring one workflow and its review owner.
-              </h2>
-              <p className="text-muted-foreground mt-4">
-                We will scope the smallest proof that can earn trust.
-              </p>
+          <section aria-labelledby="controls-title" className="border-b py-12 sm:py-16">
+            <div className="editorial-rail grid gap-10 lg:grid-cols-[0.65fr_1.35fr]">
+              <div>
+                <h2 id="controls-title" className="font-heading text-3xl font-bold tracking-tight">
+                  Controls before convenience
+                </h2>
+              </div>
+              <dl className="border-t">
+                {controls.map(([term, detail]) => (
+                  <div key={term} className="grid gap-4 border-b py-6 sm:grid-cols-[10rem_1fr]">
+                    <dt className="font-semibold">{term}</dt>
+                    <dd className="text-muted-foreground leading-7">{detail}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
-            <Button size="lg" asChild>
-              <Link href="/book-demo">
-                Get access <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </section>
-      </main>
-      <Footer />
+          </section>
+
+          <section aria-labelledby="deployment-title" className="border-b py-12 sm:py-16">
+            <div className="editorial-rail">
+              <h2 id="deployment-title" className="font-heading text-3xl font-bold tracking-tight">
+                Start above the system of record
+              </h2>
+              <ul className="bg-border mt-10 grid gap-px border md:grid-cols-3">
+                {[
+                  "Prove the workflow on representative records.",
+                  "Run beside the current process and reconcile every difference.",
+                  "Expand only after the output and review gate hold up.",
+                ].map((item) => (
+                  <li key={item} className="bg-background flex gap-3 p-6">
+                    <Check aria-hidden="true" className="text-primary mt-1 h-4 w-4 shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+
+          <ProofRecords compact />
+
+          <section className="py-12 sm:py-16">
+            <div className="editorial-rail flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
+                  Bring one workflow and its review owner.
+                </h2>
+                <p className="text-muted-foreground mt-4">
+                  We will scope the smallest proof that can earn trust.
+                </p>
+              </div>
+              <Button size="lg" asChild>
+                <Link href="/book-demo">
+                  Book a workflow demo <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+          </section>
+        </main>
+      </EditorialShell>
     </>
   );
 }

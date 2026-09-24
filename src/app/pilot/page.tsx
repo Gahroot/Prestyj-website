@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 
@@ -16,24 +16,21 @@ export const metadata: Metadata = {
 
 export default function PilotPage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-primary text-sm font-semibold">Proof-of-work pilot</p>
-            <h1 className="font-heading mt-5 max-w-5xl text-4xl font-bold tracking-tight sm:text-6xl">
-              Prove one workflow before you fund a transformation.
-            </h1>
-            <p className="text-muted-foreground mt-6 max-w-3xl text-lg leading-8">
-              A pilot takes one recurring work product, runs representative records through a
-              controlled agent, and reconciles the result beside your current process.
-            </p>
+    <EditorialShell>
+      <main id="main-content" className="editorial-inner">
+        <section className="border-b">
+          <div className="editorial-rail">
+            <EditorialPageHeader title="Prove one workflow before you fund a transformation.">
+              <p>
+                A pilot takes one recurring work product, runs representative records through a
+                controlled agent, and reconciles the result beside your current process.
+              </p>
+            </EditorialPageHeader>
           </div>
         </section>
 
-        <section className="border-b py-20 sm:py-28">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+        <section className="border-b py-12 sm:py-16">
+          <div className="editorial-rail editorial-split">
             <div>
               <h2 className="font-heading text-3xl font-bold">A good pilot has</h2>
               <ul className="mt-8 space-y-4">
@@ -62,20 +59,49 @@ export default function PilotPage() {
           </div>
         </section>
 
-        <section className="py-20 sm:py-28">
-          <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 sm:px-6 lg:flex-row lg:items-end lg:justify-between lg:px-8">
+        <section className="editorial-rail py-12 sm:py-16" aria-labelledby="pilot-sequence">
+          <h2 id="pilot-sequence" className="text-3xl">
+            From representative records to a decision
+          </h2>
+          <ol className="editorial-rows mt-8">
+            {[
+              [
+                "01",
+                "Define",
+                "Agree on the work product, source records, review owner, and acceptance criteria.",
+              ],
+              [
+                "02",
+                "Reconcile",
+                "Run the workflow beside the current process. Route differences and exceptions to the review owner.",
+              ],
+              [
+                "03",
+                "Decide",
+                "Review the evidence together: operate the proven workflow, revise the scope, or stop.",
+              ],
+            ].map(([number, title, detail]) => (
+              <li key={number} className="grid gap-4 sm:grid-cols-[3rem_0.5fr_1fr]">
+                <span className="text-muted-foreground text-sm">{number}</span>
+                <h3 className="text-xl">{title}</h3>
+                <p className="text-muted-foreground leading-7">{detail}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+        <section className="py-12 sm:py-16">
+          <div className="editorial-rail flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <h2 className="font-heading max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
               Bring one work product your team rebuilt this month.
             </h2>
             <Button size="lg" asChild>
               <Link href="/book-demo">
-                Scope a pilot <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+                Book a workflow demo <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }

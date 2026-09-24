@@ -20,7 +20,12 @@ export function Navbar({
         editorial ? "relative h-20 border-b" : "absolute h-16 bg-transparent",
       )}
     >
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div
+        className={cn(
+          "flex h-full items-center justify-between",
+          editorial ? "editorial-rail" : "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
+        )}
+      >
         <Link
           href="/"
           aria-label="Prestyj home"

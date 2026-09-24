@@ -68,7 +68,12 @@ export function Footer({
 }): ReactElement {
   return (
     <footer className={cn("border-t", appearance === "editorial" ? "bg-background" : "bg-card")}>
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
+      <div
+        className={cn(
+          "py-14",
+          appearance === "editorial" ? "editorial-rail" : "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
+        )}
+      >
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_0.7fr]">
           <div>
             <Link href="/" className="font-heading text-primary text-xl font-bold">

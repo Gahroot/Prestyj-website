@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -74,11 +73,10 @@ const sections = [
 
 export default function TermsPage() {
   return (
-    <>
-      <Navbar />
-      <main className="pt-28 pb-20 sm:pt-36">
-        <article className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <header className="border-b pb-10">
+    <EditorialShell>
+      <main id="main-content" className="editorial-rail editorial-inner">
+        <article className="editorial-reading">
+          <header className="editorial-page-header border-b">
             <p className="text-primary text-sm font-semibold">Legal</p>
             <h1 className="font-heading mt-4 text-4xl font-bold tracking-tight sm:text-5xl">
               Website terms
@@ -115,7 +113,6 @@ export default function TermsPage() {
           </section>
         </article>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }

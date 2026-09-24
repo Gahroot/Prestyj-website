@@ -51,6 +51,8 @@ export function ContactForm(): React.ReactElement {
         }
       }
       setErrors(fieldErrors);
+      const firstField = Object.keys(fieldErrors)[0];
+      if (firstField) document.getElementById(`contact-${firstField}`)?.focus();
       return;
     }
 
@@ -119,10 +121,15 @@ export function ContactForm(): React.ReactElement {
           value={formData.name}
           onChange={(e) => updateField("name", e.target.value)}
           aria-invalid={Boolean(errors.name)}
+          aria-describedby={errors.name ? "contact-name-error" : undefined}
           className="mt-1.5"
           required
         />
-        {errors.name && <p className="text-destructive mt-1 text-sm">{errors.name}</p>}
+        {errors.name && (
+          <p id="contact-name-error" role="alert" className="text-destructive mt-1 text-sm">
+            {errors.name}
+          </p>
+        )}
       </div>
 
       <div>
@@ -135,10 +142,15 @@ export function ContactForm(): React.ReactElement {
           value={formData.email}
           onChange={(e) => updateField("email", e.target.value)}
           aria-invalid={Boolean(errors.email)}
+          aria-describedby={errors.email ? "contact-email-error" : undefined}
           className="mt-1.5"
           required
         />
-        {errors.email && <p className="text-destructive mt-1 text-sm">{errors.email}</p>}
+        {errors.email && (
+          <p id="contact-email-error" role="alert" className="text-destructive mt-1 text-sm">
+            {errors.email}
+          </p>
+        )}
       </div>
 
       <div>
@@ -150,9 +162,14 @@ export function ContactForm(): React.ReactElement {
           value={formData.phone ?? ""}
           onChange={(value) => updateField("phone", value)}
           aria-invalid={Boolean(errors.phone)}
+          aria-describedby={errors.phone ? "contact-phone-error" : undefined}
           className="mt-1.5"
         />
-        {errors.phone && <p className="text-destructive mt-1 text-sm">{errors.phone}</p>}
+        {errors.phone && (
+          <p id="contact-phone-error" role="alert" className="text-destructive mt-1 text-sm">
+            {errors.phone}
+          </p>
+        )}
       </div>
 
       <div>
@@ -163,10 +180,15 @@ export function ContactForm(): React.ReactElement {
           value={formData.message}
           onChange={(e) => updateField("message", e.target.value)}
           aria-invalid={Boolean(errors.message)}
+          aria-describedby={errors.message ? "contact-message-error" : undefined}
           className="mt-1.5 min-h-32"
           required
         />
-        {errors.message && <p className="text-destructive mt-1 text-sm">{errors.message}</p>}
+        {errors.message && (
+          <p id="contact-message-error" role="alert" className="text-destructive mt-1 text-sm">
+            {errors.message}
+          </p>
+        )}
       </div>
 
       {status.kind === "error" && (
@@ -176,10 +198,7 @@ export function ContactForm(): React.ReactElement {
       )}
 
       {status.kind === "success" && (
-        <p
-          className="text-success border-success/30 bg-success/5 rounded-md border p-3 text-sm"
-          role="status"
-        >
+        <p className="text-foreground rounded-md border p-3 text-sm" role="status">
           {status.message}
         </p>
       )}

@@ -42,10 +42,10 @@ export function CommercialCommissionCalculator(): React.ReactElement {
   ] as const;
 
   return (
-    <div className="grid gap-10 lg:grid-cols-2">
-      <div className="border p-6 sm:p-8">
+    <div className="editorial-split">
+      <div>
         <h2 className="font-heading text-2xl font-bold">Assumptions</h2>
-        <div className="mt-6 grid gap-5">
+        <div className="mt-6 grid gap-5 sm:grid-cols-2">
           {fields.map(([label, value, setter], index) => {
             const id = `commission-field-${index}`;
             return (
@@ -64,25 +64,28 @@ export function CommercialCommissionCalculator(): React.ReactElement {
         </div>
       </div>
 
-      <div aria-live="polite" className="border p-6 sm:p-8">
+      <div aria-live="polite" className="bg-card rounded-md border p-5 sm:p-8">
         <h2 className="font-heading text-2xl font-bold">Planning estimate</h2>
+        <p className="text-muted-foreground mt-6 text-sm">Annual gross fee opportunity</p>
+        <p className="mt-2 font-[Georgia] text-4xl break-words tabular-nums sm:text-5xl">
+          {result.annualGrossFees.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0,
+          })}
+        </p>
         <dl className="mt-6 border-t">
           {[
             ["Additional contacts per month", result.recoveredContacts.toFixed(1)],
             ["Additional qualified inquiries", result.recoveredQualified.toFixed(1)],
             ["Additional closings per month", result.recoveredClosings.toFixed(2)],
-            [
-              "Annual gross fee opportunity",
-              result.annualGrossFees.toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-                maximumFractionDigits: 0,
-              }),
-            ],
           ].map(([term, detail]) => (
-            <div key={term} className="grid grid-cols-[1fr_auto] gap-4 border-b py-5">
+            <div
+              key={term}
+              className="grid grid-cols-[minmax(0,1fr)_minmax(0,auto)] gap-4 border-b py-5"
+            >
               <dt className="text-muted-foreground">{term}</dt>
-              <dd className="font-semibold tabular-nums">{detail}</dd>
+              <dd className="font-semibold break-all tabular-nums">{detail}</dd>
             </div>
           ))}
         </dl>

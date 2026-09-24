@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import { CommercialCommissionCalculator } from "@/components/calculator/commercial-commission-calculator";
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -14,28 +14,24 @@ export const metadata: Metadata = {
 
 export default function CommercialCommissionCalculatorPage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <section className="border-b pt-32 pb-16 sm:pt-40 sm:pb-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-primary text-sm font-semibold">Planning calculator</p>
-            <h1 className="font-heading mt-5 max-w-5xl text-4xl font-bold tracking-tight sm:text-6xl">
-              Model the value of covering more brokerage inbound.
-            </h1>
-            <p className="text-muted-foreground mt-6 max-w-3xl text-lg leading-8">
-              Use your own inquiry volume, qualification, closing, and fee assumptions. No benchmark
-              is inserted as fact.
-            </p>
+    <EditorialShell>
+      <main id="main-content" className="editorial-inner">
+        <section className="border-b">
+          <div className="editorial-rail">
+            <EditorialPageHeader title="Model your brokerage inbound.">
+              <p>
+                Use your own inquiry volume, qualification, closing, and fee assumptions. No
+                benchmark is inserted as fact.
+              </p>
+            </EditorialPageHeader>
           </div>
         </section>
-        <section className="py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="py-8 sm:py-10">
+          <div className="editorial-rail">
             <CommercialCommissionCalculator />
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }

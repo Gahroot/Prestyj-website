@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
-import { AiConciergeHero } from "@/components/sections/homepage/ai-concierge-hero";
+import Link from "next/link";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
+import { AgentCallbackForm } from "@/components/demo/agent-callback-form";
 
 export const metadata: Metadata = {
   title: "Live brokerage origination agent",
@@ -13,12 +14,25 @@ export const metadata: Metadata = {
 
 export default function DemoPage() {
   return (
-    <>
-      <Navbar />
-      <main className="pt-16">
-        <AiConciergeHero />
+    <EditorialShell>
+      <main id="main-content" className="editorial-rail editorial-inner">
+        <div className="editorial-split py-10 sm:py-16">
+          <div>
+            <EditorialPageHeader title="Talk to the agent.">
+              <p>
+                A Prestyj AI agent will call your phone for a short demo of a commercial brokerage
+                inquiry.
+              </p>
+            </EditorialPageHeader>
+            <Link href="/book-demo" className="editorial-text-link underline">
+              Book a workflow demo with the team
+            </Link>
+          </div>
+          <div className="w-full max-w-xl">
+            <AgentCallbackForm />
+          </div>
+        </div>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }

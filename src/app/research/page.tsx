@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { researchArticles } from "@/lib/institutional/research";
 import { siteConfig } from "@/lib/site-config";
 
@@ -20,24 +20,21 @@ const calculators = [
 
 export default function ResearchPage() {
   return (
-    <>
-      <Navbar />
-      <main>
-        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-primary text-sm font-semibold">Research</p>
-            <h1 className="font-heading mt-5 max-w-5xl text-4xl font-bold tracking-tight sm:text-6xl">
-              Field notes from the work behind the agent.
-            </h1>
-            <p className="text-muted-foreground mt-6 max-w-3xl text-lg leading-8">
-              No generic AI forecasts. These notes cover workflow boundaries, evidence, review, and
-              deployment decisions inside institutional real estate.
-            </p>
+    <EditorialShell>
+      <main id="main-content" className="editorial-inner">
+        <section className="border-b">
+          <div className="editorial-rail">
+            <EditorialPageHeader title="Field notes from the work behind the agent.">
+              <p>
+                No generic AI forecasts. These notes cover workflow boundaries, evidence, review,
+                and deployment decisions inside institutional real estate.
+              </p>
+            </EditorialPageHeader>
           </div>
         </section>
 
-        <section aria-labelledby="articles-title" className="border-b py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="articles-title" className="border-b py-12 sm:py-16">
+          <div className="editorial-rail">
             <h2 id="articles-title" className="font-heading text-3xl font-bold">
               Latest notes
             </h2>
@@ -50,7 +47,9 @@ export default function ResearchPage() {
                   >
                     <span className="text-muted-foreground text-sm">{article.category}</span>
                     <span>
-                      <strong className="font-heading block text-xl">{article.title}</strong>
+                      <strong className="block font-[Georgia] text-2xl font-normal">
+                        {article.title}
+                      </strong>
                       <span className="text-muted-foreground mt-2 block text-sm leading-6">
                         {article.description}
                       </span>
@@ -63,8 +62,8 @@ export default function ResearchPage() {
           </div>
         </section>
 
-        <section aria-labelledby="calculators-title" className="py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="calculators-title" className="py-12 sm:py-16">
+          <div className="editorial-rail">
             <h2 id="calculators-title" className="font-heading text-3xl font-bold">
               Calculators
             </h2>
@@ -88,7 +87,6 @@ export default function ResearchPage() {
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }

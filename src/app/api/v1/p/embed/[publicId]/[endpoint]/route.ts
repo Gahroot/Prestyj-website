@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { proxyCallback } from "./callback";
 
 const TRIBUNAL_API_BASE = (
   process.env.TRIBUNAL_API_BASE ?? "https://backend-api-production-b536.up.railway.app"
@@ -57,11 +58,18 @@ async function proxyTribunalEmbedRequest(
     publicId,
   )}/${endpoint}`;
 
+  if (method === "POST" && endpoint === "call") {
+    return proxyCallback(request, targetUrl, buildForwardHeaders(request));
+  }
+
   try {
     const requestInit: RequestInit = {
       method,
       headers: buildForwardHeaders(request),
       cache: "no-store",
+      ...(endpoint === "config"
+        ? { signal: AbortSignal.any([request.signal, AbortSignal.timeout(10_000)]) }
+        : {}),
     };
 
     if (method === "POST") {

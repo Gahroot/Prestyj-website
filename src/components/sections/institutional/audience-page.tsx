@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { ArrowRight, Check } from "lucide-react";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
 import type { Audience } from "@/lib/institutional/audiences";
 import { getCapability } from "@/lib/institutional/capabilities";
@@ -15,23 +15,18 @@ export function AudiencePage({ audience }: { audience: Audience }): ReactElement
   });
 
   return (
-    <>
-      <Navbar />
-      <main>
-        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-primary text-sm font-semibold">For {audience.navLabel}</p>
-            <h1 className="font-heading mt-5 max-w-5xl text-4xl font-bold tracking-tight text-balance sm:text-6xl">
-              {audience.title}
-            </h1>
-            <p className="text-muted-foreground mt-6 max-w-3xl text-lg leading-8">
-              {audience.description}
-            </p>
+    <EditorialShell>
+      <main id="main-content" className="editorial-inner">
+        <section className="border-b">
+          <div className="editorial-rail">
+            <EditorialPageHeader title={audience.title}>
+              <p>{audience.description}</p>
+            </EditorialPageHeader>
           </div>
         </section>
 
-        <section aria-labelledby="recognized-title" className="border-b py-20 sm:py-24">
-          <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[0.7fr_1.3fr] lg:px-8">
+        <section aria-labelledby="recognized-title" className="border-b py-12 sm:py-16">
+          <div className="editorial-rail grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
             <h2 id="recognized-title" className="font-heading text-3xl font-bold tracking-tight">
               This is probably familiar.
             </h2>
@@ -45,17 +40,17 @@ export function AudiencePage({ audience }: { audience: Audience }): ReactElement
           </div>
         </section>
 
-        <section aria-labelledby="outcome-title" className="border-b py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="outcome-title" className="border-b py-12 sm:py-16">
+          <div className="editorial-rail">
             <h2
               id="outcome-title"
               className="font-heading max-w-3xl text-3xl font-bold tracking-tight"
             >
               What changes when the work has an owner
             </h2>
-            <ul className="bg-border mt-10 grid gap-px border md:grid-cols-2">
+            <ul className="editorial-rows mt-8">
               {audience.outcomes.map((outcome) => (
-                <li key={outcome} className="bg-background flex gap-3 p-6">
+                <li key={outcome} className="flex gap-4">
                   <Check aria-hidden="true" className="text-primary mt-1 h-4 w-4 shrink-0" />
                   <span className="text-lg">{outcome}</span>
                 </li>
@@ -64,8 +59,8 @@ export function AudiencePage({ audience }: { audience: Audience }): ReactElement
           </div>
         </section>
 
-        <section aria-labelledby="capabilities-title" className="border-b py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="capabilities-title" className="border-b py-12 sm:py-16">
+          <div className="editorial-rail">
             <div className="grid gap-8 border-b pb-8 lg:grid-cols-2">
               <h2
                 id="capabilities-title"
@@ -95,7 +90,7 @@ export function AudiencePage({ audience }: { audience: Audience }): ReactElement
         </section>
 
         <section className="py-20 sm:py-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="editorial-rail">
             <p className="text-primary text-sm font-semibold">Start with one workflow</p>
             <div className="mt-4 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <h2 className="font-heading max-w-3xl text-3xl font-bold tracking-tight sm:text-4xl">
@@ -103,14 +98,13 @@ export function AudiencePage({ audience }: { audience: Audience }): ReactElement
               </h2>
               <Button size="lg" asChild>
                 <Link href="/book-demo">
-                  Get access <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+                  Book a workflow demo <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }

@@ -8,18 +8,18 @@ export function ProofRecords({ compact = false }: { compact?: boolean }): ReactE
   const records = compact ? proofRecords.slice(0, 3) : proofRecords;
 
   return (
-    <section aria-labelledby="proof-title" className="border-b py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section aria-labelledby="proof-title" className="border-b py-12 sm:py-16">
+      <div className="editorial-rail">
         <div className="grid gap-8 border-b pb-10 lg:grid-cols-[0.75fr_1.25fr]">
           <h2
             id="proof-title"
             className="font-heading text-3xl font-bold tracking-tight sm:text-4xl"
           >
-            The work, not the logo wall.
+            Work records
           </h2>
           <p className="text-muted-foreground max-w-2xl text-lg leading-8">
-            The firms behind this work do not hand out logo rights. Each record is anonymized and
-            labeled by its actual stage, including reference work that is not live.
+            Each record is anonymized and labeled by its actual stage. Reference architecture is not
+            a live deployment.
           </p>
         </div>
 
@@ -30,7 +30,7 @@ export function ProofRecords({ compact = false }: { compact?: boolean }): ReactE
               className="grid gap-6 border-b py-8 last:border-b-0 lg:grid-cols-[0.6fr_1.2fr_1fr]"
             >
               <div>
-                <p className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+                <p className="text-foreground inline-block border px-2 py-1 text-xs font-semibold">
                   {record.stage}
                 </p>
                 <h3 className="font-heading mt-3 text-xl font-bold">{record.name}</h3>

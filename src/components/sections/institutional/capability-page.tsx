@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { ReactElement } from "react";
 import { ArrowRight, Check, ShieldCheck } from "lucide-react";
 
-import { Footer } from "@/components/layout/footer";
-import { Navbar } from "@/components/layout/navbar";
+import { EditorialShell } from "@/components/layout/editorial-shell";
+import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
 import type { Capability } from "@/lib/institutional/capabilities";
 
@@ -11,22 +11,17 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
   const Icon = capability.icon;
 
   return (
-    <>
-      <Navbar />
-      <main>
-        <section className="border-b pt-32 pb-20 sm:pt-40 sm:pb-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <EditorialShell>
+      <main id="main-content" className="editorial-inner">
+        <section className="border-b">
+          <div className="editorial-rail">
             <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
               <div>
-                <p className="text-primary text-sm font-semibold">{capability.eyebrow}</p>
-                <h1 className="font-heading mt-5 max-w-4xl text-4xl font-bold tracking-tight text-balance sm:text-6xl">
-                  {capability.title}
-                </h1>
-                <p className="text-muted-foreground mt-6 max-w-2xl text-lg leading-8">
-                  {capability.description}
-                </p>
+                <EditorialPageHeader title={capability.title}>
+                  <p>{capability.description}</p>
+                </EditorialPageHeader>
               </div>
-              <div className="border-l pl-6">
+              <div className="mb-10 border-l pl-6">
                 <Icon aria-hidden="true" className="text-primary h-6 w-6" />
                 <p className="mt-4 text-lg italic">{capability.felt}</p>
               </div>
@@ -34,8 +29,8 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
           </div>
         </section>
 
-        <section aria-labelledby="asks-title" className="border-b py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="asks-title" className="border-b py-12 sm:py-16">
+          <div className="editorial-rail">
             <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
               <h2 id="asks-title" className="font-heading text-3xl font-bold tracking-tight">
                 Start with the ask.
@@ -54,29 +49,29 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
           </div>
         </section>
 
-        <section aria-labelledby="record-title" className="border-b py-20 sm:py-24">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section aria-labelledby="record-title" className="border-b py-12 sm:py-16">
+          <div className="editorial-rail">
             <h2
               id="record-title"
               className="font-heading max-w-2xl text-3xl font-bold tracking-tight"
             >
               The complete work record
             </h2>
-            <div className="mt-10 grid border-t md:grid-cols-4">
+            <div className="mt-8 border-t">
               {[
+                { label: "Work product", values: capability.outputs },
                 { label: "Sources", values: capability.sources },
                 { label: "Agent work", values: capability.actions },
                 { label: "Review gate", values: [capability.review] },
-                { label: "Work product", values: capability.outputs },
               ].map((column) => (
                 <div
                   key={column.label}
-                  className="border-b py-6 md:border-r md:px-6 md:first:pl-0 md:last:border-r-0 md:last:pr-0"
+                  className="grid gap-5 border-b py-6 md:grid-cols-[0.45fr_1fr]"
                 >
                   <h3 className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
                     {column.label}
                   </h3>
-                  <ul className="mt-5 space-y-3 text-sm">
+                  <ul className="space-y-3 text-base leading-7">
                     {column.values.map((value) => (
                       <li key={value} className="flex gap-2">
                         <Check
@@ -94,7 +89,7 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
         </section>
 
         <section className="border-b py-16">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="editorial-rail">
             <div className="border-primary grid gap-6 border-l-2 pl-6 lg:grid-cols-[auto_1fr] lg:items-start">
               <ShieldCheck aria-hidden="true" className="text-primary h-6 w-6" />
               <div>
@@ -108,7 +103,7 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
         </section>
 
         <section className="py-20 sm:py-28">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="editorial-rail">
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div>
                 <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
@@ -121,14 +116,13 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
               </div>
               <Button size="lg" asChild>
                 <Link href="/book-demo">
-                  Get access <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+                  Book a workflow demo <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </div>
           </div>
         </section>
       </main>
-      <Footer />
-    </>
+    </EditorialShell>
   );
 }
