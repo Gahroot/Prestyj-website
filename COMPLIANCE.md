@@ -18,6 +18,18 @@ Base commit: `0e5eb36`, plus uncommitted public-site redesign. **Engineering gui
 
 Consent validation, payload bounds, safe error mapping and callback forwarding are covered by the existing Vitest runner (28 added tests). Real browser/component/API integration used a local stub; no real calls or messages were sent. Legal wording and dates in the public legal/accessibility pages were preserved. See `.ezcoder/redesign/verification.md` for scope, evidence, and remaining release gates.
 
+## 24 September 2026: institutional content-evidence controls
+
+Scoped against base `0e5eb36` plus the existing dirty working tree. **Engineering/editorial guidance, not legal advice.** This is not a new full-site compliance review; the callback, privacy, legal-entity and accessibility findings above remain unchanged and are not cleared by content checks.
+
+- CODE: the 18-deliverable ledger records required reviewer roles and leaves approval, release and measurement observations empty until evidenced. Eight new articles and two reference assets remain outside the public MDX collection.
+- RUNTIME: repository tests reproduce the synthetic waterfall and ten-case evaluation arithmetic. These examples are explicitly not customer results, investment recommendations or validated benchmarks.
+- CODE: voice/LP/waterfall content requires context-specific legal, security or fund-accounting review as recorded in the ledger. No statutory deadline, universal consent rule or regulatory certification is claimed.
+- RUNTIME: the active draft runner was tested offline for inert output, path/overwrite rejection, preserved user files, and no public registration or publishing side effects. No real model generation, outreach, call or deployment was performed in this implementation.
+- RUNTIME: GSC read-only exports were retrieved through the existing ignored credential path without printing keys; only a sanitized aggregate is included in the new baseline. Raw query data remains ignored and must not be committed without sensitivity review.
+
+Residual release gates: qualified subject-matter review, source rights and confidentiality review, accurate author attribution, and separate deployment/distribution authorization. No existing legal or security blocker is resolved merely by publishing an educational checklist.
+
 ## Assumed exposure profile
 
 - **Confirmed:** Public website on `prestyj.com`, real contact and booking data, public AI voice demo.

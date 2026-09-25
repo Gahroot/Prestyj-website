@@ -1,257 +1,130 @@
-import { writeFile } from "fs/promises";
-import * as path from "path";
+import { promises as fs } from "node:fs";
+import path from "node:path";
 import { z } from "zod";
-import type { ShippedItem, TaskExecutionResult } from "../types";
+import type {
+  AppConfig,
+  BacklogItem,
+  DedupContext,
+  LLMProvider,
+  ResearchBrief,
+  TaskExecutionResult,
+} from "../types";
+import { contentLedgerSchema } from "../../seo/institutional-ledger";
+import { institutionalPublicPaths } from "../../../src/lib/institutional/site-map";
 import {
-  appendShippedItem,
-  callProviderWithValidation,
-  composeUserPrompt,
-  ensureSlugUnique,
-  ShipTaskInput,
-  validateTitleDescription,
-} from "./_shared";
+  DRAFT_DIRECTORY,
+  draftSlugSchema,
+  generatedDraftSchema,
+  storeDraft,
+  checkDraftCapacity,
+  ensureDraftDirectory,
+  rejectExistingArticle,
+} from "./draft-store";
 
-/**
- * Blog post MDX schema: we validate the structured output the LLM returns
- * and then render the MDX ourselves to guarantee clean frontmatter. This
- * avoids LLM-flavored YAML quoting bugs.
- */
-/**
- * Some LLMs (Gemini) nest frontmatter fields under a `frontmatter` key
- * instead of returning them flat. Unwrap automatically so the rest of the
- * pipeline never has to care which provider generated the output.
- */
-const BlogPostOutputSchema = z.preprocess(
-  (data) => {
-    if (data && typeof data === "object" && "frontmatter" in data) {
-      const { frontmatter, ...rest } = data as Record<string, unknown>;
-      return { ...(frontmatter as object), ...rest };
+export interface WriteBlogPostInput {
+  config: AppConfig;
+  provider: LLMProvider;
+  model: string;
+  systemPrompt: string;
+  taskPrompt: string;
+  payload?: BacklogItem["payload"];
+  dedupContext: DedupContext;
+  researchBrief?: ResearchBrief;
+  cwd?: string;
+  now?: Date;
+  dryRun?: boolean;
+}
+const payloadSchema = z
+  .object({
+    workingTitle: z.string().min(10).max(160),
+    targetKeyword: z.string().min(3).max(160),
+    slug: draftSlugSchema,
+  })
+  .strict();
+
+export async function writeBlogPost(input: WriteBlogPostInput): Promise<TaskExecutionResult> {
+  const started = Date.now();
+  let costUSD = 0;
+  let apiCalls = 0;
+  try {
+    const payload = payloadSchema.parse(input.payload);
+    const root = input.cwd ?? process.cwd();
+    const ledger = contentLedgerSchema.parse(
+      JSON.parse(
+        await fs.readFile(path.join(root, "data/seo/institutional-content-backlog.json"), "utf8"),
+      ),
+    );
+    if (
+      ledger.items.some((item) => item.slug === payload.slug) ||
+      input.dedupContext.shippedSlugs.has(payload.slug) ||
+      institutionalPublicPaths.includes(`/blog/${payload.slug}`)
+    ) {
+      throw new Error("Slug already prepared or published; generation refused");
     }
-    return data;
-  },
-  z.object({
-    title: z.string().min(1),
-    description: z.string().min(1),
-    date: z.string().min(1),
-    author: z.string().optional(),
-    category: z.string().optional(),
-    tags: z.array(z.string().min(1)).optional(),
-    keywords: z.array(z.string().min(1)).optional(),
-    image: z.string().optional(),
-    body: z.string().min(1),
-  }),
-);
-
-type BlogPostShape = z.infer<typeof BlogPostOutputSchema>;
-
-interface BlogPayload {
-  slug?: unknown;
-  workingTitle?: unknown;
-  targetKeyword?: unknown;
-}
-
-export async function writeBlogPost(input: ShipTaskInput): Promise<TaskExecutionResult> {
-  const {
-    config,
-    provider,
-    model,
-    systemPrompt,
-    taskPrompt,
-    payload,
-    dedupContext,
-    researchBrief,
-  } = input;
-
-  const blogPayload: BlogPayload = payload;
-  const slug = String(blogPayload.slug ?? "").trim();
-  if (!slug) {
+    try {
+      await fs.lstat(path.join(root, DRAFT_DIRECTORY, `${payload.slug}.md`));
+      throw new Error("Draft already exists; generation refused");
+    } catch (error) {
+      if (!(error instanceof Error && "code" in error && error.code === "ENOENT")) throw error;
+    }
+    await rejectExistingArticle(root, payload.slug);
+    if (input.dryRun)
+      return { task: "blogPost", success: true, costUSD: 0, latencyMs: Date.now() - started };
+    await ensureDraftDirectory(root);
+    await checkDraftCapacity({
+      root,
+      now: input.now ?? new Date(),
+      dailyCap: input.config.circuitBreaker.maxBlogsPerDay,
+      weeklyCap: input.config.circuitBreaker.maxBlogsPerWeek ?? 2,
+    });
+    const request = {
+      model: input.model,
+      system: `${input.systemPrompt}\n\n${input.taskPrompt}`,
+      user: JSON.stringify({
+        assignment: payload,
+        publicPaths: institutionalPublicPaths,
+        status: "draft-only",
+        evidence: "No authenticated analytics or customer evidence supplied",
+      }),
+      maxTokens: 8192,
+      temperature: 0.5,
+      responseFormat: "json" as const,
+    };
+    if (
+      input.provider.estimateCostUSD(request, request.maxTokens) >
+      input.config.circuitBreaker.maxCostPerDayUSD
+    )
+      throw new Error("Draft estimate exceeds configured cost cap");
+    apiCalls = 1;
+    const response = await input.provider.generate(request);
+    costUSD = response.costUSD;
+    if (Buffer.byteLength(response.content, "utf8") > 120_000)
+      throw new Error("Model output exceeds draft limit");
+    const draft = generatedDraftSchema.parse(JSON.parse(response.content));
+    if (draft.slug !== payload.slug) throw new Error("Model changed the assigned slug");
+    const record = await storeDraft({
+      root,
+      draft,
+      now: input.now ?? new Date(),
+      dailyCap: input.config.circuitBreaker.maxBlogsPerDay,
+      weeklyCap: input.config.circuitBreaker.maxBlogsPerWeek ?? 2,
+    });
+    return {
+      task: "blogPost",
+      success: true,
+      draft: record,
+      costUSD,
+      apiCalls,
+      latencyMs: Date.now() - started,
+    };
+  } catch (error) {
     return {
       task: "blogPost",
       success: false,
-      error: "payload.slug is required",
-      costUSD: 0,
-      latencyMs: 0,
+      error: error instanceof Error ? error.message : "Draft validation failed",
+      costUSD,
+      apiCalls,
+      latencyMs: Date.now() - started,
     };
   }
-
-  const dupErr = ensureSlugUnique(slug, dedupContext);
-  if (dupErr) {
-    return {
-      task: "blogPost",
-      success: false,
-      error: dupErr,
-      costUSD: 0,
-      latencyMs: 0,
-    };
-  }
-
-  const userPrompt = composeUserPrompt(taskPrompt, payload, dedupContext, researchBrief);
-
-  const result = await callProviderWithValidation({
-    provider,
-    model,
-    systemPrompt,
-    userPrompt,
-    schema: BlogPostOutputSchema,
-    responseFormat: "json",
-  });
-
-  if (!result.ok) {
-    return {
-      task: "blogPost",
-      success: false,
-      error: result.error,
-      costUSD: result.totalCostUSD,
-      latencyMs: result.totalLatencyMs,
-    };
-  }
-
-  const content: BlogPostShape = result.data;
-
-  const tdResult = validateTitleDescription(content.title, content.description);
-  if (tdResult.error) {
-    return {
-      task: "blogPost",
-      success: false,
-      error: tdResult.error,
-      costUSD: result.totalCostUSD,
-      latencyMs: result.totalLatencyMs,
-    };
-  }
-  if (tdResult.description) {
-    content.description = tdResult.description;
-  }
-
-  const body = content.body.trim();
-
-  // Guard against LLM accidentally including H1 in body — H1 is rendered
-  // from frontmatter title by Fumadocs.
-  const bodyWithoutH1 = stripLeadingH1(body);
-
-  const wordCount = countWords(bodyWithoutH1);
-  if (wordCount < 1300) {
-    return {
-      task: "blogPost",
-      success: false,
-      error: `body word count ${wordCount} is below minimum 1300`,
-      costUSD: result.totalCostUSD,
-      latencyMs: result.totalLatencyMs,
-    };
-  }
-
-  if (!/^##\s+/m.test(bodyWithoutH1)) {
-    return {
-      task: "blogPost",
-      success: false,
-      error: "body must contain at least one H2 section (lines starting with `## `)",
-      costUSD: result.totalCostUSD,
-      latencyMs: result.totalLatencyMs,
-    };
-  }
-
-  // Date: prefer what the model gave us, fall back to today if invalid/empty.
-  const date = /^\d{4}-\d{2}-\d{2}$/.test(content.date)
-    ? content.date
-    : new Date().toISOString().slice(0, 10);
-
-  const mdx = renderMdx({
-    title: content.title,
-    description: content.description,
-    date,
-    ...(content.author !== undefined && { author: content.author }),
-    ...(content.category !== undefined && { category: content.category }),
-    ...(content.tags !== undefined && { tags: content.tags }),
-    ...(content.keywords !== undefined && { keywords: content.keywords }),
-    ...(content.image !== undefined && { image: content.image }),
-    body: bodyWithoutH1,
-  });
-
-  const filePath = path.join(process.cwd(), config.baseDirs.blog, `${slug}.mdx`);
-
-  const shipped: ShippedItem = {
-    slug,
-    type: "blog-post",
-    title: content.title,
-    description: content.description,
-    filePath,
-    shippedAt: new Date().toISOString(),
-    provider: provider.name,
-    model,
-    costUSD: result.totalCostUSD,
-  };
-
-  if (!input.dryRun) {
-    await writeFile(filePath, mdx, "utf8");
-    await appendShippedItem(config, shipped);
-  }
-
-  return {
-    task: "blogPost",
-    success: true,
-    shipped,
-    costUSD: result.totalCostUSD,
-    latencyMs: result.totalLatencyMs,
-  };
-}
-
-function stripLeadingH1(body: string): string {
-  // If the first non-empty line begins with "# ", drop it.
-  const lines = body.split("\n");
-  let idx = 0;
-  while (idx < lines.length && (lines[idx]?.trim() ?? "") === "") idx++;
-  if (idx < lines.length && /^#\s+/.test(lines[idx] ?? "")) {
-    return lines
-      .slice(idx + 1)
-      .join("\n")
-      .replace(/^\s*\n+/, "");
-  }
-  return body;
-}
-
-function countWords(text: string): number {
-  // Strip code fences and markdown tokens that don't count as words.
-  const stripped = text
-    .replace(/```[\s\S]*?```/g, " ")
-    .replace(/`[^`]*`/g, " ")
-    .replace(/[#*_>\-\[\]()]/g, " ");
-  const words = stripped.trim().split(/\s+/).filter(Boolean);
-  return words.length;
-}
-
-interface MdxInput {
-  title: string;
-  description: string;
-  date: string;
-  author?: string;
-  category?: string;
-  tags?: string[];
-  keywords?: string[];
-  image?: string;
-  body: string;
-}
-
-function renderMdx(input: MdxInput): string {
-  const fm: string[] = ["---"];
-  fm.push(`title: ${yamlString(input.title)}`);
-  fm.push(`description: ${yamlString(input.description)}`);
-  fm.push(`date: ${yamlString(input.date)}`);
-  if (input.author) fm.push(`author: ${yamlString(input.author)}`);
-  if (input.category) fm.push(`category: ${yamlString(input.category)}`);
-  if (input.tags && input.tags.length > 0) {
-    fm.push("tags:");
-    for (const t of input.tags) fm.push(`  - ${yamlString(t)}`);
-  }
-  if (input.keywords && input.keywords.length > 0) {
-    fm.push("keywords:");
-    for (const k of input.keywords) fm.push(`  - ${yamlString(k)}`);
-  }
-  if (input.image) fm.push(`image: ${yamlString(input.image)}`);
-  fm.push("---");
-  fm.push("");
-  return `${fm.join("\n")}\n${input.body.trim()}\n`;
-}
-
-function yamlString(s: string): string {
-  // Always double-quote for safety; escape backslashes and double quotes.
-  return `"${s.replace(/\\/g, "\\\\").replace(/"/g, '\\"')}"`;
 }

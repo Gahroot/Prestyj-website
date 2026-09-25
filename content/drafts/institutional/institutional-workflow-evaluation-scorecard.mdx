@@ -1,0 +1,58 @@
+---
+title: "Institutional Workflow Evaluation Scorecard"
+description: "A reusable evidence register and decision scorecard for one controlled institutional real estate workflow."
+status: "awaiting-review"
+revised: "2026-09-24"
+review_required: [editorial, operations, security]
+---
+
+Use this reference to decide whether one defined workflow is ready for a bounded pilot. It is not a vendor ranking, certification or benchmark. A score is useful only when its evidence can be inspected and its mandatory gates remain visible.
+
+This unreleased asset awaits editorial, operations and security review. The spreadsheet-compatible template is held in the repository at `docs/seo/assets/workflow-evaluation-scorecard.csv`; it is not yet a public download.
+
+## Set the scope before assigning points
+
+Record the work product, source systems, permitted entities, reporting cutoff, output audience, reviewer and prohibited actions. Name the existing process that will continue if the pilot stops. Evaluate one scope at a time: permission to prepare a draft for one fund does not imply permission to send investor communications for another.
+
+Use synthetic or approved de-identified inputs until the actual data-access arrangement has passed the firm's review. Keep source files and credentials out of a public scorecard. Evidence references should identify a controlled artifact, not expose its contents.
+
+## Six scored dimensions
+
+Give each dimension 0, 1 or 2 points. Zero means absent or unknown; one means partly defined but not evidenced; two means the required evidence exists and the assigned reviewer has accepted it. The total ranges from 0 to 12. Unknown is not a neutral middle score.
+
+| Dimension           | Evidence for two points                      | Typical one-point condition                                 |
+| ------------------- | -------------------------------------------- | ----------------------------------------------------------- |
+| Repeatability       | Named artifact and observed recurring cycles | Expected recurrence without a recorded baseline             |
+| Source readiness    | Authorized, versioned inputs and cutoff      | Source list exists but access or versions remain unresolved |
+| Rule clarity        | Written transformations and worked cases     | Rules described but exceptions not tested                   |
+| Reviewability       | Accepted reference output and named reviewer | Reviewer named but acceptance criteria incomplete           |
+| Exception ownership | Owners and escalation path for known classes | Queue exists without full ownership                         |
+| Reversibility       | Read-only first scope and exercised fallback | Fallback described but not tested                           |
+
+Do not invent an industry pass mark. The firm should set a proposed threshold before evaluation, record why it fits the consequence and preserve that decision with the results. A total does not override the gates below.
+
+## Mandatory gates
+
+Source authorization, reviewer ownership and reversibility must each pass independently. Also stop on an observed unauthorized retrieval, an unapproved external action or missing evidence for a material output. A score of 11 out of 12 cannot compensate for leaking another investor's statement.
+
+The gate columns in the CSV use `unknown`, `pass` or `fail`. An unknown gate blocks progression. A proposed exception to a gate needs a separate authorized decision; this template does not grant one.
+
+## How to use the CSV
+
+Import as UTF-8 comma-separated text and keep the header row. Each row represents one dimension for one evaluation. Fill the workflow ID, evidence reference, score, reviewer, review date and gate status from actual observations. Leave missing dates and scores blank. The template deliberately contains no formulas or sample customer data.
+
+Calculate the total only after all six scores are numeric integers from 0 to 2. In a spreadsheet, summing six blank cells can look like an observed zero, so maintain a separate completeness check. Review the mandatory gate rows before interpreting the total.
+
+Keep the original evaluated file when the scope changes. Create a new evaluation ID and link the prior one rather than overwriting a rejected decision. CSV is an exchange format, not an audit system; store approved versions in the firm's controlled repository.
+
+## Synthetic use case
+
+A fictional close-package workflow scores 2 for repeatability, 1 for source readiness, 2 for rule clarity, 2 for reviewability, 1 for exception ownership and 1 for reversibility. The total is 9 out of 12. That does not establish readiness: source authorization is still unknown and the fallback has not been exercised.
+
+The next action is to resolve access and test the fallback, not to round the score upward. After those observations exist, the team can create a new evaluation version. No actual workflow was tested to produce this example.
+
+## Review and limitations
+
+Have the business owner inspect whether the work product matters, the security owner inspect data and action boundaries, and the reviewer verify the acceptance evidence. Record each decision separately. A model can help assemble the register but must not mark its own work approved.
+
+[NIST's AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) provides voluntary risk-management background. It does not endorse these dimensions or validate the score. For the operating context, see the published [workflow selection test](/blog/ai-agents-real-estate-investment-funds). Qualified review and explicit release approval remain pending.

@@ -1,0 +1,59 @@
+---
+title: "How to Measure an Institutional AI Workflow Pilot"
+description: "Define comparable work, reviewer effort, exception quality, and stop conditions before testing an institutional AI workflow."
+status: "awaiting-review"
+revised: "2026-09-24"
+review_required: [editorial, operations]
+---
+
+A pilot is useful when it changes a decision about operating a workflow. A demonstration that produces one attractive document does not establish time savings, accuracy or readiness for release. Measure the work from authorized source intake through reviewer acceptance, including the cases that fail.
+
+This unreleased draft proposes a measurement method. It contains no observed customer performance and awaits editorial and operations review.
+
+## Define the unit of work first
+
+Choose a unit that the current process already recognizes: one property reporting pack, one diligence case or one investor request. Record what starts the clock and what ends it. “Model response time” ends much earlier than “accepted work product,” so the two cannot be used interchangeably.
+
+Fix the source cutoff, artifact requirements and review standard. If the manual baseline includes reconciliation and the agent output skips it, the comparison is invalid even when the latter is faster. Classify ordinary and exception-heavy cases before reviewing results, and include both in the sample.
+
+Use paired cases where practical: the existing process and the candidate workflow work from the same permitted inputs. Account for order effects if the same reviewer sees a case twice. Do not compare a difficult quarter-end week with a quiet week and attribute the difference entirely to the agent.
+
+## A minimum metric dictionary
+
+| Metric                   | Definition                                                                 | What it does not prove                   |
+| ------------------------ | -------------------------------------------------------------------------- | ---------------------------------------- |
+| Accepted completion rate | Accepted artifacts divided by all attempted cases                          | Correctness outside the evaluated sample |
+| Reviewer effort          | Active human review and correction minutes per attempted case              | End-to-end elapsed time                  |
+| Elapsed completion time  | Time from agreed intake to accepted artifact                               | Staff hours saved                        |
+| Material error rate      | Cases with a material error divided by reviewed cases                      | Error rate in unreviewed outputs         |
+| Source coverage          | Material claims with verified support divided by inspected material claims | Correct interpretation of every source   |
+| Exception recall         | Known test exceptions surfaced divided by known test exceptions            | Recall when no ground truth exists       |
+| Exception precision      | Valid surfaced exceptions divided by all surfaced exceptions               | Whether every missed issue was found     |
+
+The owner must define “material” before scoring. Missing ground truth means recall is unknown, not 100%. Report denominators beside every rate and keep incomplete work visible.
+
+## Synthetic effort calculation
+
+Suppose ten fictional cases take 300 total human minutes in the existing process. A candidate workflow takes 120 minutes of review and 60 minutes of correction across the same ten attempts. The measured human effort in this invented example is 180 minutes, a difference of 120 minutes or 40% of the 300-minute baseline.
+
+That is not automatically a 40% cost saving. It excludes setup, source preparation, operating support, compute charges and any work moved to another team. It also says nothing about elapsed time: a reviewer queue can delay completion even if active effort falls.
+
+If two of the ten cases fail to reach acceptance, report eight accepted out of ten attempts. Do not remove the failed cases' effort and publish a cleaner average. Investigate whether the failures are concentrated in a business-critical case type before deciding to continue.
+
+## Design a decision gate, not a retrospective story
+
+Agree acceptable quality, maximum reviewer burden and mandatory stop conditions before the pilot. An unauthorized retrieval or unapproved external action should stop the affected workflow even if average time looks good. The firm decides thresholds based on consequence; this article does not supply universal pass marks.
+
+Keep versioned inputs, outputs and reviewer decisions. A model or configuration change creates a new evaluation condition. Re-run the relevant cases instead of combining results from materially different versions into one success rate.
+
+Record all exclusions and why they occurred. A file that could not be opened may be a workflow failure rather than an irrelevant outlier. If the source itself is unavailable to both methods, show that as a source limitation and report the affected count separately.
+
+## Review the result in three layers
+
+First, inspect whether access and action boundaries held. Second, inspect whether the output met the agreed review standard. Only then compare effort and operating cost. This order prevents a fast but uncontrolled workflow from winning on one attractive number.
+
+The decision can be proceed with the same scope, repeat with a corrected design, narrow the scope, or stop. Expansion into a new fund, source system or action type requires evidence for that new condition. See the published [read-only rollout sequence](/blog/keep-the-system-of-record) for permission stages.
+
+## Sources and limitations
+
+The formulas and fictional ten-case calculation are editorial examples, not a benchmark, statistical power analysis or customer claim. Real observations need source dates, sample definitions, reviewer records and comparable conditions. [NIST's AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) is background for risk-oriented evaluation, not validation of this method. Qualified operations review remains pending.

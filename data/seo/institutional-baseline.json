@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "series": "institutional-organic-2026-09-24",
+  "preparedOn": "2026-09-24",
+  "status": "partial-gsc-url-cohort-baseline",
+  "scope": {
+    "definition": "33 indexable paths; 34 public canonical paths including the intentionally sitemap-excluded demo. GSC queried the 34-path cohort and returned no demo row. Exclude legacy redirects and drafts.",
+    "repositoryEligibleUrls": 33,
+    "repositoryPublicCanonicalPaths": 34,
+    "repositoryRegisteredArticles": 9,
+    "liveEligibleUrls": null
+  },
+  "observations": [
+    {
+      "metric": "gsc-institutional-clicks",
+      "value": 4,
+      "source": "Google Search Console API page-view aggregate",
+      "exportDate": "2026-09-24",
+      "reportingStart": "2026-08-25",
+      "reportingEnd": "2026-09-21",
+      "filters": {
+        "property": "sc-domain:prestyj.com",
+        "searchType": "web",
+        "dataState": "final",
+        "country": "all",
+        "device": "all",
+        "cohort": "34 current repository paths; historical content not inferred"
+      },
+      "evidence": "data/seo/gsc-institutional-2026-09-24.json"
+    },
+    {
+      "metric": "gsc-institutional-impressions",
+      "value": 262,
+      "source": "Google Search Console API page-view aggregate",
+      "exportDate": "2026-09-24",
+      "reportingStart": "2026-08-25",
+      "reportingEnd": "2026-09-21",
+      "filters": {
+        "property": "sc-domain:prestyj.com",
+        "searchType": "web",
+        "dataState": "final",
+        "country": "all",
+        "device": "all",
+        "cohort": "34 current repository paths; historical content not inferred"
+      },
+      "evidence": "data/seo/gsc-institutional-2026-09-24.json"
+    },
+    {
+      "metric": "gsc-institutional-ctr",
+      "value": 0.015267175572519083,
+      "source": "Google Search Console API page-view clicks divided by impressions",
+      "exportDate": "2026-09-24",
+      "reportingStart": "2026-08-25",
+      "reportingEnd": "2026-09-21",
+      "filters": {
+        "property": "sc-domain:prestyj.com",
+        "searchType": "web",
+        "dataState": "final",
+        "country": "all",
+        "device": "all",
+        "cohort": "34 current repository paths; historical content not inferred"
+      },
+      "evidence": "data/seo/gsc-institutional-2026-09-24.json"
+    },
+    {
+      "metric": "gsc-institutional-average-position",
+      "value": 7.061068702290076,
+      "source": "Google Search Console API page-view impression-weighted position",
+      "exportDate": "2026-09-24",
+      "reportingStart": "2026-08-25",
+      "reportingEnd": "2026-09-21",
+      "filters": {
+        "property": "sc-domain:prestyj.com",
+        "searchType": "web",
+        "dataState": "final",
+        "country": "all",
+        "device": "all",
+        "cohort": "34 current repository paths; historical content not inferred"
+      },
+      "evidence": "data/seo/gsc-institutional-2026-09-24.json"
+    },
+    {
+      "metric": "gsc-indexed-institutional-urls",
+      "value": null,
+      "source": null,
+      "exportDate": null,
+      "reportingStart": null,
+      "reportingEnd": null,
+      "filters": null,
+      "evidence": null
+    },
+    {
+      "metric": "bing-institutional-page-view-citations",
+      "value": null,
+      "source": null,
+      "exportDate": null,
+      "reportingStart": null,
+      "reportingEnd": null,
+      "filters": null,
+      "evidence": null
+    },
+    {
+      "metric": "analytics-institutional-organic-sessions",
+      "value": null,
+      "source": null,
+      "exportDate": null,
+      "reportingStart": null,
+      "reportingEnd": null,
+      "filters": null,
+      "evidence": null
+    },
+    {
+      "metric": "analytics-qualified-inquiries",
+      "value": null,
+      "source": null,
+      "exportDate": null,
+      "reportingStart": null,
+      "reportingEnd": null,
+      "filters": null,
+      "evidence": null
+    },
+    {
+      "metric": "verified-earned-referring-domains",
+      "value": null,
+      "source": null,
+      "exportDate": null,
+      "reportingStart": null,
+      "reportingEnd": null,
+      "filters": null,
+      "evidence": null
+    },
+    {
+      "metric": "buyer-prompt-observed-citation-rate",
+      "value": null,
+      "source": null,
+      "exportDate": null,
+      "reportingStart": null,
+      "reportingEnd": null,
+      "filters": null,
+      "evidence": null
+    }
+  ],
+  "accessCheck": {
+    "checkedOn": "2026-09-24",
+    "connectedAnalyticsToolFound": false,
+    "supportedCredentialNamesPresent": false,
+    "notes": "Tool catalog search returned no GSC/Bing/analytics connector. Local environment-name check found no GSC, BING, GOOGLE_APPLICATION_CREDENTIALS, GOOGLE_CLIENT, GOOGLE_REFRESH, GA4 or ANALYTICS credentials. Values were not printed. Preserved daily notes identified a separate ignored local service account. Read-only API access was then verified and four final-data queries succeeded; raw exports remain ignored under .secrets. No key values were printed. Bing and analytics access remain unavailable."
+  },
+  "blockers": [
+    "GSC performance access and exports verified. Separate indexed-URL evidence remains missing; returned performance rows are not an indexing count.",
+    "Authenticated Bing AI Performance export: Grounding Query/Citations and Page/Citations, source, export date, reporting dates, filters and coverage metadata.",
+    "Existing analytics export: date, landing page, source/medium, sessions and defined inquiry events; reporting window, timezone, consent/coverage limitations. Do not add tracking merely to populate this baseline.",
+    "Read-only backlink evidence with referring URL, target URL, observation date and earned/editorial classification.",
+    "Human-run fixed buyer prompts with engine/version, date, locale, search mode, exact prompt and cited URLs; no hypothetical answers count."
+  ],
+  "legacySeries": "data/gsc/progress-history.json (preserved, not comparable by default)"
+}

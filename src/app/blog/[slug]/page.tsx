@@ -4,22 +4,16 @@ import { ArrowLeft } from "lucide-react";
 import { notFound, permanentRedirect } from "next/navigation";
 
 import { EditorialShell } from "@/components/layout/editorial-shell";
+import { ArticleTable } from "@/components/sections/institutional/article-table";
+import { getRelatedArticles } from "@/lib/institutional/research";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { blogSource } from "@/lib/source";
 import { institutionalBlogSlugs, isInstitutionalBlogSlug } from "@/lib/institutional/site-map";
 import { siteConfig } from "@/lib/site-config";
+import { getArticleDates, formatArticleDate } from "@/lib/institutional/article-metadata";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
-}
-
-function formatLongDate(value: string): string {
-  return new Date(`${value}T00:00:00Z`).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-    timeZone: "UTC",
-  });
 }
 
 export function generateStaticParams() {
@@ -35,7 +29,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const page = blogSource.getPage([slug]);
   if (!page) return { title: "Post not found" };
 
-  const { title, description, keywords, date } = page.data;
+  const { title, description, keywords } = page.data;
+  const { published, modified } = getArticleDates(page.data);
   const postUrl = `${siteConfig.url}/blog/${slug}`;
   return {
     title,
@@ -48,7 +43,8 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       url: postUrl,
       title,
       description,
-      publishedTime: date,
+      publishedTime: published,
+      modifiedTime: modified,
       authors: ["Nolan Grout"],
     },
     twitter: { card: "summary_large_image", title, description },
@@ -63,7 +59,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   if (!page) notFound();
 
   const MDXContent = page.data.body;
-  const { title, description, date, keywords } = page.data;
+  const { title, description, keywords } = page.data;
+  const { published, modified } = getArticleDates(page.data);
   const postUrl = `${siteConfig.url}/blog/${slug}`;
 
   return (
@@ -76,7 +73,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           description,
           author: { "@type": "Person", name: "Nolan Grout", url: `${siteConfig.url}/about` },
           publisher: { "@id": siteConfig.organizationId },
-          datePublished: date,
+          datePublished: published,
+          dateModified: modified,
           mainEntityOfPage: postUrl,
           url: postUrl,
           keywords: keywords?.join(", "),
@@ -93,11 +91,15 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </Link>
 
             <header className="editorial-page-header mt-8 border-b !pt-0">
-              {date ? (
-                <time dateTime={date} className="text-muted-foreground text-sm">
-                  {formatLongDate(date)}
-                </time>
-              ) : null}
+              <p className="text-muted-foreground text-sm">
+                Published <time dateTime={published}>{formatArticleDate(published)}</time>
+                {modified !== published ? (
+                  <>
+                    {" "}
+                    · Updated <time dateTime={modified}>{formatArticleDate(modified)}</time>
+                  </>
+                ) : null}
+              </p>
               <h1 className="font-heading mt-4 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
                 {title}
               </h1>
@@ -108,7 +110,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </header>
 
             <div className="prose prose-lg prose-headings:font-[Georgia] prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground mt-10 max-w-none">
-              <MDXContent />
+              <MDXContent components={{ table: ArticleTable }} />
             </div>
 
             <aside className="mt-14 border-t pt-8">
@@ -122,6 +124,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Book a workflow demo
               </Link>
             </aside>
+            <nav aria-label="Related reading" className="mt-12 border-t pt-8">
+              <h2 className="text-2xl">Related reading</h2>
+              <ul className="editorial-rows mt-5">
+                {getRelatedArticles(slug).map((article) => (
+                  <li key={article.slug}>
+                    <Link href={`/blog/${article.slug}`} className="underline underline-offset-4">
+                      {article.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </article>
         </main>
       </EditorialShell>

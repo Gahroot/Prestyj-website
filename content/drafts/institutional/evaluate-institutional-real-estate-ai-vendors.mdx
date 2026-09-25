@@ -1,0 +1,58 @@
+---
+title: "How to Evaluate an Institutional Real Estate AI Vendor"
+description: "A buyer-led evaluation protocol for source access, finished work products, review controls, and exit terms."
+status: "awaiting-review"
+revised: "2026-09-24"
+review_required: [editorial, security, procurement]
+---
+
+A vendor evaluation should end with evidence about a defined workflow, not a preference for the most fluent demonstration. For a real estate investment fund, brokerage or owner-operator, the useful comparison is whether each provider can prepare the same work product from the same authorized sources under the same review rules.
+
+This draft is unreleased and awaiting editorial, security and procurement review. It does not rank named vendors or claim that any vendor has passed these tests.
+
+## Start with one buyer-owned evaluation brief
+
+Choose an artifact your team already produces, such as a diligence exception log or a quarterly reporting draft. Define the audience, source period, material fields, review owner and actions that are prohibited. Give each provider the same permitted sample. Use synthetic or appropriately de-identified records until contractual and security review supports broader access.
+
+Write the expected evidence before the demo. For a diligence log, that might mean a source locator for each material claim, preserved contradictions, an explicit missing-document state and a reviewer assignment. Do not let a provider redefine success after seeing which parts of the sample its system handles well.
+
+Separate mandatory gates from preferences. Authorized data access and human release controls are gates. A preferred export layout is usually a preference. A polished interface cannot compensate for an output that exposes another fund's documents.
+
+## Ask for an inspectable work record
+
+| Evaluation question                 | Evidence to request                                          | A weak substitute                  |
+| ----------------------------------- | ------------------------------------------------------------ | ---------------------------------- |
+| Can a reviewer verify the answer?   | Exact source version and locator for each material statement | A generic list of retrieved files  |
+| What happens when records conflict? | Unresolved exception with competing values and an owner      | A single blended answer            |
+| Who can see the output?             | Demonstrated fund, investor and document scope               | A promise in a prompt              |
+| What can the agent change?          | Permission inventory and denied-action test                  | An unrestricted service account    |
+| How are retries handled?            | Action receipt and duplicate-prevention behavior             | “The model will not do it twice”   |
+| Can the firm exit?                  | Usable export, access revocation and retention terms         | A screenshot of an audit dashboard |
+
+Have the appropriate technical owner inspect the evidence. A sales representative's description is not a substitute for a tested boundary. Record unavailable evidence as unavailable, not as a passing answer.
+
+## A synthetic challenge set
+
+Imagine an evaluation pack containing ten fictional leases. One amendment changes a date, one rent-roll row uses an old tenant identifier, and one document is outside the requesting fund's scope. The provider should identify the date conflict, route the uncertain identity match and refuse retrieval of the out-of-scope document.
+
+Do not score only the final prose. Inspect what was retrieved, what was excluded, how the reviewer sees uncertainty and whether the result can be exported. Add a source-outage case and a request to perform an unauthorized write. A workflow that works only when every input is clean has not demonstrated its exception path.
+
+Use a fixed set for direct comparisons and a separate holdout set that the provider has not optimized against. Record any configuration help or manual correction supplied during the demonstration. Assisted setup can be appropriate, but it must not be hidden when comparing effort.
+
+## Contract and operating questions
+
+Ask which parties process data, where it is retained, what is used for training, how deletion and access revocation work, and who responds to an incident. Have qualified reviewers evaluate the actual terms rather than relying on a badge or broad security claim. The right requirements depend on the firm's records and obligations.
+
+Clarify responsibility for source-system changes, model changes, failed runs and reviewer support. A managed workflow includes operating responsibilities that a software license may leave with the buyer. Compare the work included, not just a unit price.
+
+Before any production connection, name the credential owner, approved scopes and revocation method. Keep payment initiation and external investor communications outside the first evaluation unless separately authorized through the firm's controls.
+
+## Make the decision reproducible
+
+Keep a decision register with criterion, required evidence, result, reviewer, date and unresolved limitation. Reject a provider for an unmet mandatory gate rather than disguising the failure inside an average score. If no provider passes, narrow the workflow or improve the source conditions instead of lowering the gate after the fact.
+
+A short pilot can test fit; it cannot establish long-term reliability from a handful of selected examples. Define the next evaluation period and stop conditions before expansion. For the initial workflow boundary, use the published [fund workflow selection test](/blog/ai-agents-real-estate-investment-funds).
+
+## Sources and limitations
+
+This is a proposed buyer protocol, not a vendor benchmark, procurement endorsement or legal opinion. [NIST's AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) supplies voluntary risk-management context, not approval of this checklist. Actual evaluation requires the firm's policy, contracts and authorized test records. All challenge-set details above are synthetic; no customer result or vendor test is claimed.

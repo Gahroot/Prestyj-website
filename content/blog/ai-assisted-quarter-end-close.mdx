@@ -2,6 +2,7 @@
 title: "An AI-Assisted Quarter-End Close Without a Black Box"
 description: "How to preserve transaction lineage, exception handling, and fund-accounting approval while reducing manual close assembly."
 date: "2026-08-27"
+updated: "2026-09-24"
 author: "Nolan Grout"
 keywords:
   - AI quarter-end close real estate fund
@@ -49,3 +50,43 @@ The safe behavior is not to choose the most convenient source. It is to create a
 The first close should not be autonomous. Run the agent beside the existing process and reconcile every difference. Only move a step into production after the team agrees on authority, materiality, exception handling, and rollback.
 
 The goal is not a one-click close. The goal is a close package that arrives earlier and remains defensible.
+
+## A close checklist with explicit stop points
+
+1. Freeze the reporting period, entity list, base currency and approved source versions. Record late-arriving files separately rather than silently replacing the first run.
+2. Confirm that the bank, ledger and ownership extracts cover the same entities and cutoff. Missing files block the affected schedule, not just a footnote.
+3. Reconcile opening balances and period activity before preparing allocations. Keep unmatched items in a queue with an owner and an amount.
+4. Calculate fees and allocations using the approved rules and effective dates. Attach the controlling term and the input rows to each material result.
+5. Separate timing differences, extraction errors and unresolved accounting judgments. The close owner decides materiality; a language model does not set it.
+6. Assemble a versioned review package with the exception log, source register, schedules and proposed explanations. Reviewers sign the version they actually saw.
+7. Release only after the responsible accounting owner accepts the reconciliations and open-item treatment. Archive the reviewed package without overwriting the source extracts.
+
+## Source-to-output map
+
+| Input                                     | Prepared output     | Required check                                    | Release owner                        |
+| ----------------------------------------- | ------------------- | ------------------------------------------------- | ------------------------------------ |
+| Bank statement and ledger export          | Cash reconciliation | Account identity, cutoff, unmatched transactions  | Fund accounting                      |
+| Approved valuation support                | NAV bridge          | Valuation date, adjustments, approved methodology | Valuation and accounting owners      |
+| Ownership register and effective dates    | Allocation schedule | Class, transfers, denominator, rounding           | Fund accounting                      |
+| Governing fee terms and approved balances | Fee schedule        | Term version, rate, basis and period              | Accounting, with legal for ambiguity |
+| Prior released package                    | Variance commentary | Like-for-like definitions and source support      | Close reviewer                       |
+
+This is a conceptual map, not a claim that a particular connector or accounting integration is available. A workflow specification must name the actual read permissions and files before a pilot starts.
+
+## Synthetic exception: the missing accrual
+
+Assume a fictional property has $120,000 of period revenue and $70,000 of recorded expenses. The ledger therefore shows $50,000 before other adjustments. A separate approved invoice register contains a $5,000 expense relating to that period that has not yet been posted. These invented amounts explain the review sequence, not a fund's results.
+
+The agent must not quietly present $45,000 as the ledger result. It should attach both sources, show the $5,000 difference and describe the proposed adjustment. Accounting verifies the service period and treatment. If the adjustment is approved and posted, the new ledger export supports $75,000 of expenses and $45,000 of the illustrated result. The original extract remains part of the record.
+
+A reviewer can now distinguish an identified exception from a resolved one. If accounting rejects the accrual, the record should show the reason and preserve the $50,000 ledger-derived figure. No posting authority is implied by the draft explanation.
+
+## Reviewer responsibilities and release evidence
+
+The preparer checks that extraction and calculations reproduce the source. The accounting reviewer determines treatment and materiality. The release owner confirms which version may leave the team. One person can hold multiple roles where firm policy permits, but the record must not pretend that separate approvals happened.
+
+Retain run ID, source versions, reviewer decisions, unresolved items and the released artifact. Re-run affected schedules after an input changes; do not carry the old approval onto a new balance. For the operating model around these exceptions, see [source conflict resolution](/blog/reconciling-property-data-conflicts).
+
+## Sources and limitations
+
+This checklist is an editorial operating template. The fictional arithmetic is not accounting, investment or legal advice, a customer case study or a performance benchmark. A firm's accounting policies, governing documents and approved period records remain the actual sources. Qualified fund-accounting review of this expansion is pending. The local revision date identifies content work, not independently verified public release.

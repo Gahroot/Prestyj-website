@@ -1,0 +1,53 @@
+---
+title: "A Synthetic Institutional Workflow Evaluation Walkthrough"
+description: "A fully fictional ten-case evaluation that reconciles effort, acceptance, and exception counts without claiming customer performance."
+status: "awaiting-review"
+revised: "2026-09-24"
+review_required: [editorial, fund-accounting]
+---
+
+This entire walkthrough is synthetic. It is not a customer case study, measured benchmark, forecast or promise of results. Its purpose is to show how a team can reconcile an evaluation record before using it to make a pilot decision. Editorial and fund-accounting review remain pending, and the asset is unreleased.
+
+The repository CSV at `docs/seo/assets/synthetic-workflow-evaluation.csv` contains all ten invented case rows. A separate blank template, `docs/seo/assets/workflow-evaluation-log.csv`, supports future observations. Neither is a public download yet.
+
+## Scope and assumptions
+
+The fictional workflow prepares one property reporting draft per case from an identical approved source packet used by a manual comparison process. Each manual case takes 30 active human minutes. Candidate-workflow review takes 12 minutes per case, and correction takes 6 minutes per case. These values are chosen for arithmetic clarity, not because they represent likely operating performance.
+
+All ten attempts are counted. Eight reach acceptance; two do not. The example includes reviewer and correction effort on failed cases. It excludes setup, source preparation, machine runtime, waiting time, support and monetary charges. Therefore it can illustrate active human effort but not end-to-end time or financial return.
+
+## Case-level record
+
+| Case group          | Attempts | Accepted | Manual minutes | Review minutes | Correction minutes |
+| ------------------- | -------- | -------- | -------------- | -------------- | ------------------ |
+| Cases 01 through 08 | 8        | 8        | 240            | 96             | 48                 |
+| Cases 09 through 10 | 2        | 0        | 60             | 24             | 12                 |
+| Total               | 10       | 8        | 300            | 120            | 60                 |
+
+The acceptance rate is 8 divided by 10, or 80%. Candidate human effort is 120 plus 60, or 180 minutes. The difference from the 300-minute manual comparison is 120 minutes, or 40%. These are calculations on invented inputs, not observed savings.
+
+Candidate human effort per attempted case is 18 minutes. Per accepted artifact it is 180 divided by 8, or 22.5 minutes. Reporting only the accepted cases' effort would hide the cost of unsuccessful work. The manual and candidate outputs still need equivalent acceptance standards before a real comparison is valid.
+
+## Exception counts without a perfect-score illusion
+
+Assume the synthetic test set contains ten known material exceptions, one per case. The candidate identifies eight of them and misses two. It also raises two invalid exceptions. The CSV assigns one valid detection to each of cases 01 through 08, one invalid detection to case 09 and one to case 10.
+
+Recall is valid detections divided by known exceptions: 8 divided by 10, or 80%. Precision is valid detections divided by all surfaced exceptions: 8 divided by 10, also 80%. Those identical percentages arise from these chosen counts; they are not interchangeable definitions.
+
+In a real operating queue without known ground truth, recall may be unknown. Do not label every unchallenged output correct. Independent reviewers need to inspect a defined sample and record missed issues as well as false alarms.
+
+## The decision this example supports
+
+No actual deployment decision follows from fictional data. In a real pilot, the two failed cases and two missed material exceptions would need investigation against thresholds agreed before the test. A reduction in active effort cannot override an access violation or an unapproved external action.
+
+The next evaluation should preserve the original records, identify the issue classes and test the correction on a separate holdout set. Changing the model or rules creates a new evaluation version. Do not overwrite failed rows to make the original run appear successful.
+
+## Reproduce the arithmetic
+
+Import the CSV as UTF-8 text. Sum `manual_minutes`, `review_minutes` and `correction_minutes` across all ten rows. Count accepted rows independently. Sum known, valid and invalid exception columns, then calculate rates from those totals. Keep the `synthetic` label when copying any table or chart.
+
+The blank log adds source-set ID, workflow version, reviewer, observation date and notes. Real entries require those fields and access-approved evidence. Do not paste confidential source contents into a publicly shared spreadsheet. Formula-like input from external records should be imported as text, not executed as spreadsheet formulas.
+
+## Sources and limitations
+
+Every number here is supplied in the accompanying synthetic CSV and checked by repository tests. No external dataset, customer record or paid model run was used. This is an arithmetic and reporting example, not accounting, legal or investment advice. The published [quarter-end close guide](/blog/ai-assisted-quarter-end-close) explains source-attached review; this asset explains how not to overstate an evaluation result.

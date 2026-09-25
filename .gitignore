@@ -53,6 +53,10 @@ next-env.d.ts
 *.csv
 # ...but allow the tracked AI citation archive (aggregate query/citation counts, no PII)
 !data/ai-citations/**/*.csv
+# Editorial templates contain synthetic data only, not analytics exports.
+!docs/seo/assets/workflow-evaluation-scorecard.csv
+!docs/seo/assets/workflow-evaluation-log.csv
+!docs/seo/assets/synthetic-workflow-evaluation.csv
 
 # media master assets
 media-master/

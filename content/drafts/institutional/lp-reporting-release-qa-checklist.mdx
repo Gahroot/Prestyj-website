@@ -1,0 +1,62 @@
+---
+title: "An LP Reporting Release QA Checklist"
+description: "A version-specific final check for investor reports, recipients, approvals, attachments, and correction handling."
+status: "awaiting-review"
+revised: "2026-09-24"
+review_required: [editorial, investor-relations, legal]
+---
+
+The last review before an investor report leaves the firm is a distinct workflow. A correct calculation can still be released with the wrong attachment, an old approval or the wrong recipient scope. Release quality assurance should verify the exact package that will be delivered, not an earlier draft that happened to pass review.
+
+This draft is unreleased and awaits investor-relations, legal and editorial review. It is an operating checklist, not a securities-disclosure opinion or compliance certification.
+
+## Define the release unit
+
+Give each package a stable ID and version. List its fund, reporting period, intended investor or audience, component documents and delivery channel. Treat the attachment set as part of the artifact. A revised spreadsheet attached to an unchanged letter creates a new package version even if the email subject stays the same.
+
+Keep preparation, approval and delivery permissions separate. A preparer may assemble a package without being entitled to release it. An approver may accept the content while a separate delivery service verifies the recipient's current access. Do not collapse these decisions into a generic “complete” checkbox.
+
+## Pre-release checklist
+
+| Gate                  | Evidence                                                | Stop condition                                   |
+| --------------------- | ------------------------------------------------------- | ------------------------------------------------ |
+| Period and entity     | Approved reporting scope on every component             | Mixed fund or reporting dates                    |
+| Financial consistency | Reconciled schedules and explained differences          | Material unresolved mismatch                     |
+| Narrative support     | Sources for material claims and stated limitations      | Unsupported performance or forward-looking claim |
+| Investor scope        | Current entitlement and recipient-specific document map | Another investor's information included          |
+| Approval              | Named reviewer accepting this package version           | Approval belongs to a prior version              |
+| Attachments and links | Opened files and authorized source previews             | Missing, stale or unrestricted link              |
+| Delivery              | Approved channel and confirmed destination              | Unverified recipient or changed access           |
+| Correction path       | Owner and procedure for withdrawal or replacement       | No way to identify what was sent                 |
+
+The firm's policies determine required signatories and materiality. The checklist should point to those policies rather than inventing a universal standard.
+
+## Synthetic last-minute attachment change
+
+Imagine a fictional Fund A package approved at version 4. Before delivery, a preparer replaces the capital-account attachment with version 5 after correcting an allocation. The letter still has the same title, but the package is no longer the one that was approved.
+
+The release process should detect the changed component, invalidate the prior package approval and return the affected content for review. It should not assume the correction is harmless because the file name is similar. If a checksum or immutable version ID is available, use it to distinguish the artifacts rather than relying on modification time alone.
+
+The reviewer confirms the corrected amount, checks any related narrative and approves a new package version. Recipient authorization is checked again at delivery. Only a confirmed delivery event can populate the sent observation; preparation does not count as sending.
+
+## Review the narrative as carefully as the numbers
+
+An agent may produce plausible explanations that are not supported by the source schedules. Have the reviewer inspect causal language, comparisons, performance descriptions and any statement about future outcomes. “The difference is caused by occupancy” needs evidence for that relationship, not just two figures that changed together.
+
+Keep unresolved matters visible where the firm's disclosure process requires them. Do not make a package appear more certain by deleting qualification language during copy editing. Legal and investor-relations reviewers determine the appropriate wording and audience.
+
+## Delivery and correction records
+
+Retain package version, approver, scope, recipient, delivery attempt time and confirmed outcome under the firm's retention policy. Do not log unnecessary sensitive content in broad operational logs. A failed or unknown delivery should remain failed or unknown until reconciled with the channel's evidence.
+
+If an error is found after release, preserve the original sent artifact and follow the approved correction process. Record which recipients received which version. Silent replacement in a portal can leave investors with different records and no explanation of the change.
+
+## Test before relying on the gate
+
+Exercise a wrong-fund attachment, an expired approval, a revoked recipient, a broken source link, a delivery timeout and a post-approval component change using synthetic records. The system should stop or route each case according to the approved procedure. Also test the ordinary path so that valid releases do not depend on bypassing the controls.
+
+The published [LP reporting data-boundary guide](/blog/lp-reporting-data-boundaries) covers retrieval authorization. This checklist starts later, with the assembled package and its version-specific release decision.
+
+## Sources and limitations
+
+This is proposed engineering and editorial guidance. It does not establish which disclosures, consents or retention periods apply to a particular fund. The version-change example is synthetic; no actual investor communication was sent or reviewed. Qualified review of the firm's governing documents and communications obligations remains necessary.

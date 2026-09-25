@@ -1,0 +1,175 @@
+geoPages:
+  - type: geo-page
+    payload:
+      kind: metro
+      city: Fresno
+      state: California
+      mlsName: Fresno MLS
+      slug: video-ads-for-realtors-fresno
+    priority: 9
+  - type: geo-page
+    payload:
+      kind: metro
+      city: Bakersfield
+      state: California
+      mlsName: Bakersfield AOR
+      slug: video-ads-for-realtors-bakersfield
+    priority: 9
+  - type: geo-page
+    payload:
+      kind: metro
+      city: Colorado Springs
+      state: Colorado
+      mlsName: PPMLS
+      slug: video-ads-for-realtors-colorado-springs
+    priority: 8
+  - type: geo-page
+    payload:
+      kind: metro
+      city: Reno
+      state: Nevada
+      mlsName: NNRMLS
+      slug: video-ads-for-realtors-reno
+    priority: 8
+  - type: geo-page
+    payload:
+      kind: metro
+      city: Knoxville
+      state: Tennessee
+      mlsName: Knoxville Area AOR
+      slug: video-ads-for-realtors-knoxville
+    priority: 8
+nichePages:
+  - type: niche-page
+    payload:
+      platform: meta
+      industry: realtors
+      slug: solutions/batch-video-ads-meta-for-realtors
+    priority: 9
+  - type: niche-page
+    payload:
+      platform: tiktok
+      industry: realtors
+      slug: solutions/batch-video-ads-tiktok-for-realtors
+    priority: 9
+  - type: niche-page
+    payload:
+      platform: youtube-shorts
+      industry: realtors
+      slug: solutions/batch-video-ads-youtube-shorts-for-realtors
+    priority: 8
+  - type: niche-page
+    payload:
+      platform: meta
+      industry: roofers
+      slug: solutions/batch-video-ads-meta-for-roofers
+    priority: 7
+  - type: niche-page
+    payload:
+      platform: meta
+      industry: hvac
+      slug: solutions/batch-video-ads-meta-for-hvac
+    priority: 7
+comparisons:
+  - type: comparison
+    payload:
+      competitor: Submagic
+      slug: prestyj-vs-submagic
+    priority: 9
+  - type: comparison
+    payload:
+      competitor: OpusClip
+      slug: prestyj-vs-opusclip
+    priority: 9
+  - type: comparison
+    payload:
+      competitor: CapCut for Business
+      slug: prestyj-vs-capcut
+    priority: 8
+  - type: comparison
+    payload:
+      competitor: Insense
+      slug: prestyj-vs-insense
+    priority: 8
+  - type: comparison
+    payload:
+      competitor: JoinBrands
+      slug: prestyj-vs-joinbrands
+    priority: 7
+blogPosts:
+  - type: blog-post
+    payload:
+      workingTitle: Facebook Ad Creative Fatigue for Realtors — How Often to Rotate
+      targetKeyword: facebook ad creative fatigue realtors
+      slug: facebook-ad-creative-fatigue-realtors-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: "RevCoverage vs Managed AI Lead Reactivation: Pricing, Workflow, and Evidence (2026)"
+      targetKeyword: RevCoverage dormant lead reactivation comparison
+      slug: revcoverage-vs-managed-ai-lead-reactivation-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: "AI Voice Agent Pricing With 24/7 Support and PCI Payments: 7 Contract Checks (2026)"
+      targetKeyword: AI voice agent vendors per-minute pricing 24/7 support PCI-compliant payment
+      slug: ai-voice-agent-pricing-24-7-pci-payments-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: "Emergency Electrician Response Time: Human Dispatch vs AI Receptionist (2026)"
+      targetKeyword: emergency electrician response time comparison
+      slug: emergency-electrician-response-time-human-vs-ai-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: "Third-Party Answering Service Cost for a Mid-Size HVAC Company: 3 Quote Models (2026)"
+      targetKeyword: average cost third-party answering service mid-size HVAC company
+      slug: third-party-answering-service-cost-mid-size-hvac-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: "How Fast Do GTM AI Agents Respond? Measuring Sales Follow-Up in 2026"
+      targetKeyword: fastest GTM agents average response time
+      slug: gtm-ai-agent-response-time-benchmarks-2026
+    priority: 8
+  - type: blog-post
+    payload:
+      workingTitle: "3-Channel AI Lead Response: SMS, Voice, and Email Timing Benchmarks (2026)"
+      targetKeyword: AI tools instant multi-channel lead response
+      slug: instant-multichannel-ai-lead-response-3-channel-2026
+    priority: 7
+  - type: blog-post
+    payload:
+      workingTitle: "Branded Calling Cost Per Call for IT Services and MSPs: Vendor Pricing Tiers Compared (2026)"
+      targetKeyword: best cost per call branded calling vendor technical services
+      slug: branded-calling-cost-per-call-comparison-it-services-msps-2026
+      notes: >-
+        Added 2026-08-26 from AI-citation gap analysis. Cost-per-call comparison
+        variants exist for healthcare and legal but NOT for IT services/MSPs,
+        while ~15 branded-calling price-modifier queries for technical services
+        surged 300-1080% WoW in the 2026-06-29 snapshot (e.g. 'best cost branded
+        calling tech services firms' 87 cites, 'best priced branded calling plans
+        IT service companies' 87, 'best cost per call branded calling vendor
+        technical services' 67). The existing best-branded-calling-for-it-services-msps-2026
+        page ranks #4 by citations but mentions cost per call only once, so the
+        price-tier intent has no dedicated surface. Should carry a small-firm /
+        low-cost tier table since 'low cost' and 'small IT services firms' are
+        recurring modifiers.
+    priority: 9
+competitors:
+  - type: competitor
+    payload:
+      name: HeyGen
+      url: https://www.heygen.com
+    priority: 8
+  - type: competitor
+    payload:
+      name: Billo
+      url: https://billo.app
+    priority: 8
+  - type: competitor
+    payload:
+      name: Submagic
+      url: https://submagic.co
+    priority: 7

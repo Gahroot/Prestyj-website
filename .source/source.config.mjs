@@ -2,7 +2,8 @@
 import { defineDocs, defineConfig, frontmatterSchema } from "fumadocs-mdx/config";
 import { z } from "zod";
 var blogSchema = frontmatterSchema.extend({
-  date: z.string().optional().default(() => (/* @__PURE__ */ new Date()).toISOString().split("T")[0] ?? ""),
+  // Legacy content can lack a date; published registry members are validated at build time.
+  date: z.string().optional(),
   updated: z.string().optional(),
   author: z.string().optional().default("Priya Raman"),
   keywords: z.array(z.string()).optional().default([]),

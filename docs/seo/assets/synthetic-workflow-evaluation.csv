@@ -1,0 +1,11 @@
+case_id,data_kind,manual_minutes,review_minutes,correction_minutes,accepted,known_exceptions,valid_detections,invalid_detections
+SYN-01,synthetic,30,12,6,1,1,1,0
+SYN-02,synthetic,30,12,6,1,1,1,0
+SYN-03,synthetic,30,12,6,1,1,1,0
+SYN-04,synthetic,30,12,6,1,1,1,0
+SYN-05,synthetic,30,12,6,1,1,1,0
+SYN-06,synthetic,30,12,6,1,1,1,0
+SYN-07,synthetic,30,12,6,1,1,1,0
+SYN-08,synthetic,30,12,6,1,1,1,0
+SYN-09,synthetic,30,12,6,0,1,0,1
+SYN-10,synthetic,30,12,6,0,1,0,1

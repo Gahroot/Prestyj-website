@@ -1,4 +1,6 @@
-# GSC Progress Tracker — judge the right metrics with realistic lag
+# GSC Progress Tracker — historical series
+
+> **Superseded for institutional measurement on 2026-09-24.** The instructions and figures below are retained as historical context, not current targets. Do not update the old 688-URL denominator or missing values to pretend they were institutional observations. Do not run the legacy recorder for the new series. Use `data/seo/institutional-baseline.json` and [the institutional growth scorecard](./seo/institutional-growth-scorecard.md), with authenticated source dates, reporting windows and a deployed URL cohort. The current repository inventory is 33 indexable URLs plus the public, sitemap-excluded demo; code inventory alone is not indexing evidence. Historical lag ranges below are not guarantees of when results will appear.
 
 > **Purpose:** Each month, record the four Google Search Console metrics that
 > actually prove SEO progress and judge them **against the Phase 0 baseline with

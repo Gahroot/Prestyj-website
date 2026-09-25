@@ -1,0 +1,59 @@
+---
+title: "Portfolio Reporting Metrics That Include the Review Queue"
+description: "Measure accepted reports, unresolved exceptions, reviewer effort, and source coverage without hiding failed work."
+status: "awaiting-review"
+revised: "2026-09-24"
+review_required: [editorial, portfolio]
+---
+
+A portfolio-reporting workflow can produce more documents while making the review queue worse. If every source conflict becomes another unowned task, output volume rises but the team does not receive more accepted work. The operating dashboard should include what remains unresolved and what reviewers spend to finish it.
+
+This unreleased draft proposes metric definitions. Portfolio and editorial review are pending; no observed operating results or industry benchmarks are presented.
+
+## Separate artifacts, exceptions and decisions
+
+An artifact is a draft report or schedule. An exception is a distinct issue requiring review. A decision is an authorized resolution or accepted treatment. One exception can affect several artifacts, so counting every appearance as a new issue inflates workload. Conversely, closing a task without recording the decision overstates resolution.
+
+Give each issue a stable ID and link affected outputs. Record when it was detected, when it was assigned, when evidence was requested and when the resolution was approved. These events answer different questions. A report may be ready except for an unresolved material issue; that is not the same as accepted.
+
+## Metric dictionary for a weekly review
+
+| Metric                   | Definition                                                               | Interpretation limit                              |
+| ------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------- |
+| Accepted report rate     | Accepted reports divided by all attempted reports                        | Does not describe unattempted backlog             |
+| Open material exceptions | Distinct unresolved material issue IDs at cutoff                         | Requires a stable materiality policy              |
+| Unassigned exceptions    | Open issue IDs without an accountable owner                              | Does not measure severity alone                   |
+| Exception age            | Cutoff time minus detection time for open issues                         | Not the same as active labor time                 |
+| Reopened rate            | Reopened resolved issues divided by resolved issues in the stated cohort | Needs a defined observation window                |
+| Reviewer effort          | Review and correction minutes per attempted artifact                     | Excludes source waiting unless separately tracked |
+| Source coverage          | Verified supported claims divided by inspected material claims           | Uninspected claims remain unknown                 |
+
+Report counts with rates. A change from one to two errors can look dramatic as a percentage while resting on a tiny sample. Keep issue severity and business consequence visible instead of ranking the queue solely by age.
+
+## Synthetic weekly queue reconciliation
+
+Assume a fictional week begins with 12 open exceptions. The team detects 8 new distinct issues and approves closure of 10. With no merges or reopened items, the ending queue is 12 plus 8 minus 10, or 10 open exceptions.
+
+If two previously closed issues reopen, the ending queue is 12. Record reopened issues separately rather than relabeling them as new detections. If duplicate issues are merged, show that adjustment explicitly. A queue that shrinks through merging is not the same as one that shrinks through resolved evidence.
+
+Suppose 20 report attempts produce 16 accepted reports. The accepted rate is 16 divided by 20, or 80%. Do not exclude the four incomplete reports to claim a perfect completion rate. The example numbers are synthetic and do not establish a target for a real team.
+
+## Use cohorts and consistent cutoffs
+
+A weekly dashboard needs a fixed timezone and cutoff. Compare the same business scope: asset set, reporting cadence, issue definitions and workflow version. If the portfolio doubles or a new source is added, annotate the change before interpreting the trend.
+
+For age metrics, show a distribution or age bands rather than only an average. A few very old material exceptions can disappear inside a low average. Where the sample is small, publish the individual counts rather than implying statistical precision.
+
+Distinguish workflow-caused defects from source conflicts and policy ambiguities. A source conflict surfaced by the agent may be useful discovery, not an agent error. A fabricated reconciliation is an error even if it makes the queue look smaller.
+
+## Decision rules for the operating meeting
+
+Start with unassigned material issues and access failures. Then inspect aged exceptions, reopened decisions and reports blocked by the same source problem. Assign a specific owner and evidence request, not a vague action to “improve the AI.”
+
+If reviewer effort rises while artifact volume rises, inspect whether the workflow is producing low-value drafts. If source coverage falls, pause expansion until the source trail is restored. If metrics improve only because difficult assets were excluded, describe the narrower scope rather than announcing a portfolio-wide improvement.
+
+Use the published [exception-queue field note](/blog/ai-for-real-estate-investment-funds-exception-queues) for the work-product pattern and [source-conflict guide](/blog/reconciling-property-data-conflicts) for issue resolution.
+
+## Sources and limitations
+
+The metric dictionary is proposed editorial guidance, not a validated benchmark or service-level commitment. All queue and report counts above are invented and independently reproducible. Real observations require timestamps, issue IDs, artifact versions, reviewer records and agreed scope. No analytics or customer data were used to create this draft.

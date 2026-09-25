@@ -5,7 +5,7 @@
  * Subcommands:
  *   npx tsx scripts/seo-bot/cli.ts daily
  *   npx tsx scripts/seo-bot/cli.ts daily --dry-run
- *   npx tsx scripts/seo-bot/cli.ts daily --tasks geoPage,blogPost
+ *   npx tsx scripts/seo-bot/cli.ts daily --tasks blogPost
  *   npx tsx scripts/seo-bot/cli.ts task <taskName>
  *   npx tsx scripts/seo-bot/cli.ts dry-run
  *   npx tsx scripts/seo-bot/cli.ts digest
@@ -25,16 +25,7 @@ import { runDaily } from "./orchestration/daily-run";
 import { runWeeklyDigest } from "./orchestration/weekly-digest";
 import type { TaskName } from "./types";
 
-const VALID_TASKS: readonly TaskName[] = [
-  "geoPage",
-  "nichePage",
-  "comparison",
-  "blogPost",
-  "titleRewrite",
-  "socialCopy",
-  "competitorAudit",
-  "dailyResearch",
-];
+const VALID_TASKS: readonly TaskName[] = ["blogPost"];
 
 function isTaskName(value: string): value is TaskName {
   return (VALID_TASKS as readonly string[]).includes(value);
@@ -70,15 +61,14 @@ function parseTaskList(raw: string | undefined): TaskName[] | undefined {
 
 function printUsage(): void {
   console.log(`Usage:
-  npx tsx scripts/seo-bot/cli.ts daily [--dry-run] [--publish] [--tasks <list>] [--config <path>]
-  npx tsx scripts/seo-bot/cli.ts task <taskName> [--dry-run] [--publish] [--config <path>]
+  npx tsx scripts/seo-bot/cli.ts daily [--dry-run] [--tasks <list>] [--config <path>]
+  npx tsx scripts/seo-bot/cli.ts task <taskName> [--dry-run] [--config <path>]
   npx tsx scripts/seo-bot/cli.ts dry-run [--config <path>]
   npx tsx scripts/seo-bot/cli.ts digest [--config <path>]
 
-By default, generated content is left UNCOMMITTED for human review (no push,
-no IndexNow). Pass --publish only after a human has reviewed and approved the
-output. Autonomous mass publishing is disabled post the March 2026
-scaled-content update.
+Generated content is inert Markdown, outside the public collection.
+Publishing is disabled. No commit, push, IndexNow or destructive rollback.
+Follow docs/seo/institutional-growth-runbook.md for reviewed promotion.
 
 Valid task names: ${VALID_TASKS.join(", ")}
 `);
@@ -87,9 +77,7 @@ Valid task names: ${VALID_TASKS.join(", ")}
 async function runDailyCommand(args: string[]): Promise<void> {
   const configPath = parseFlagValue(args, "--config");
   const dryRun = hasFlag(args, "--dry-run");
-  // Default to review mode (no auto-commit/push/IndexNow). Autonomous mass
-  // publishing is disabled post the March 2026 scaled-content update.
-  // Pass --publish to opt back into the legacy commit+push+IndexNow behaviour.
+  // A legacy --publish request is explicitly rejected by the runner.
   const noCommit = !hasFlag(args, "--publish");
   const taskOverride = parseTaskList(parseFlagValue(args, "--tasks"));
   const config = loadConfig(configPath);
@@ -100,8 +88,9 @@ async function runDailyCommand(args: string[]): Promise<void> {
     noCommit,
     ...(taskOverride !== undefined && { taskOverride }),
   });
+  if (metrics.errors.length > 0) process.exitCode = 1;
   console.log(
-    `[seo-bot] daily complete — pages=${metrics.pagesShipped} blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`,
+    `[seo-bot] daily complete — pages=${metrics.pagesShipped} drafts=${metrics.blogsDrafted} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`,
   );
 }
 
@@ -125,8 +114,9 @@ async function runTaskCommand(args: string[]): Promise<void> {
     noCommit,
     taskOverride: [taskName],
   });
+  if (metrics.errors.length > 0) process.exitCode = 1;
   console.log(
-    `[seo-bot] task "${taskName}" complete — shipped_pages=${metrics.pagesShipped} shipped_blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`,
+    `[seo-bot] task "${taskName}" complete — shipped_pages=${metrics.pagesShipped} drafts=${metrics.blogsDrafted} cost=$${metrics.costUSD.toFixed(4)} errors=${metrics.errors.length}`,
   );
 }
 
@@ -139,7 +129,7 @@ async function runDryRunCommand(args: string[]): Promise<void> {
     dryRun: true,
   });
   console.log(
-    `[seo-bot] dry-run complete — would-ship pages=${metrics.pagesShipped} blogs=${metrics.blogsShipped} cost=$${metrics.costUSD.toFixed(4)}`,
+    `[seo-bot] dry-run complete — no publication; pages=${metrics.pagesShipped} drafts=${metrics.blogsDrafted} cost=$${metrics.costUSD.toFixed(4)}`,
   );
 }
 

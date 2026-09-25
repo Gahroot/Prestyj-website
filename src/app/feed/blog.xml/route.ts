@@ -1,5 +1,7 @@
 import { researchArticles } from "@/lib/institutional/research";
 import { siteConfig } from "@/lib/site-config";
+import { blogSource } from "@/lib/source";
+import { getArticleDates, rssArticleDate } from "@/lib/institutional/article-metadata";
 
 function escapeXml(value: string): string {
   return value
@@ -12,18 +14,21 @@ function escapeXml(value: string): string {
 
 export function GET(): Response {
   const items = researchArticles
-    .map(
-      (article) => `<item>
+    .map((article) => {
+      const dates = getArticleDates(blogSource.getPage([article.slug])?.data);
+      return `<item>
 <title>${escapeXml(article.title)}</title>
 <link>${siteConfig.url}/blog/${article.slug}</link>
 <guid isPermaLink="true">${siteConfig.url}/blog/${article.slug}</guid>
 <description>${escapeXml(article.description)}</description>
-</item>`,
-    )
+<pubDate>${rssArticleDate(dates.published)}</pubDate>
+<atom:updated>${dates.modified}T00:00:00Z</atom:updated>
+</item>`;
+    })
     .join("\n");
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
 <title>Prestyj field notes</title>
 <link>${siteConfig.url}/blog</link>

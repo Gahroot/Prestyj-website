@@ -1,12 +1,43 @@
 # Daily Human-Action Queue (rolling)
 
+## Institutional program handoff — September 24, 2026
+
+The 18-item ledger at `data/seo/institutional-content-backlog.json` and `docs/seo/institutional-growth-runbook.md` now govern new preparation and the two-slot reviewed release calendar. The eight new articles and two reference assets are unreleased; the eight expansions are local and awaiting review. The existing exception-queue review below remains a separate pending item, not an automatically approved nineteenth deliverable.
+
+Distribution copy is prepared in `docs/seo/institutional-distribution-kit.md`; `data/seo/institutional-outreach.json` records zero sends, replies or earned links. Three relevant editorial pitches weekly is an operating target, not work already done. Do not reopen completed historical outreach threads or revive legacy claims.
+
+GSC read-only access was rechecked using the existing ignored service account. The partial current-URL-cohort baseline is recorded separately; Bing windows, index coverage, analytics, earned-link verification and buyer-prompt observations remain external gates. The historical notes and completion states below are preserved unchanged.
+
 > Work only a human can do: relationship emails, real-account Reddit/Quora/G2 posts, draft approvals for merge, and manual AI-overview probing. The bot drafts and tracks — a person ships these. Check off done items; the bot re-adds new items each run. Grouped by due-soonest.
 >
-> _Last updated: 2026-08-26 (Wednesday). **Content:** Wednesday = content rest day (0 blogs due); refreshed the #7 cited lead-reactivation post (442 cites, updated 74d) — fully bolded TL;DR, exact-question H2 matching its top grounding query, and removal of a false "Real Companies" provenance label. **Authority:** drafted 1 new Marketing Brew pitch on dormant-database economics; earned domains still 3 (+0/83d 🔴). **Signals:** 9,584 query / 12,514 page citations across 107 pages; AI snapshot now 58 days stale. **Data:** Bing AI export 58d old, backlink export 96d old, GSC page data stale. **IndexNow:** snapshot current at 638, 0 new URLs; Phase 3 edit is uncommitted so no ping is due yet. **Lag:** 11.9 weeks past Phase 0 with zero movement on earned domains or top-10 keywords._
+> _Last updated: 2026-09-24 (Thursday). One institutional article refreshed for review; typecheck, lint, and build passed. No publication, email, commit, or IndexNow submission. Bing AI/backlink exports are 87/125 days stale; the service account successfully retrieved fresh GSC page data. Historic snapshot repetition is not evidence of flat current performance._
+>
+> **Current lane: institutional real estate.** The active checklist below supersedes old SMB publishing/outreach instructions. Preserve the history and checked items, but do not resume archived posts, old pricing claims, or redirected `/stat/*` promotion. Full report and pitch text: `scripts/seo-bot/output/reports/seo-daily-2026-09-24.md`.
+
+## Due today — September 24, 2026
+
+- [ ] **Approve the one article refresh:** review `content/blog/ai-for-real-estate-investment-funds-exception-queues.mdx` (45-word bold TL;DR, visible updated date, three current related links, NIST references). Confirm the proposed six-check operating model is suitable for fund readers; it is not a measured client outcome. Merge/deploy only after deliberate approval, without sweeping in unrelated working-tree edits. IndexNow is held until the refreshed content is live and only that URL can be submitted.
+- [ ] **Refresh both Bing exports:** save a fresh dated AI snapshot under `data/ai-citations/` and backlinks CSV under `data/backlinks/`. Current source dates are June 29 (87d) and May 22 (125d). This supersedes the older export reminders below. Do not describe repeated old snapshots as current growth or stagnation.
+- [ ] **Qualify and send ONE CRE pitch:** review the Commercial Observer expert-commentary draft in today's report; confirm a current technology/CRE editor, a legitimate contact route, and DR ≥60 before sending. Confirm Nolan can provide the offered hypothetical reconciliation example. No benchmark or customer-results claim is authorized; wait for the reviewed source to be live.
+- [ ] **Check ONE existing PR thread before closing it:** the history below records a July 30 Search Engine Land delivery, but its referenced file is now missing. Inspect the real inbox for a reply, prior follow-up, or opt-out. Only if still appropriate, send the single close-out drafted in today's report; otherwise mark this resolved with the disposition. Do not reopen HousingWire or Inman, which already have recorded final follow-ups.
+
+## Due September 25–30, 2026
+
+- [ ] **Make ONE genuine CRE community contribution:** from your real account, answer an existing relevant question in r/CommercialRealEstate about conflicting rent-roll, property-system, and underwriting figures. Explain source precedence, as-of dates, named exception owners, and review before investor reporting. Use only experience you can stand behind, respect community rules, and include no product pitch or unsolicited link.
+- [ ] **Probe AI answers and approve ONE content gap:** ask ChatGPT, Perplexity, and Google AI Overviews “How should a real estate investment fund resolve conflicting property data before investor reporting?” and “What is the business case for operating an AI fund workflow in-house versus using an operated workflow?” Save dates, exact prompts, answer citations, and any competitor-only citations. Validate buyer demand before approving the single business-case backlog item in today's report. Competitor advantage has not yet been measured.
+- [ ] **Record the Search Console indexed-page total** if index coverage is needed for the new institutional baseline. Read-only API access already works; no service-account key or access grant is needed. Today's fresh page-level comparison is in the report.
+
+### Verified prerequisite
+
+- [x] **GSC API access verified September 24:** property lookup and both final-data page queries returned HTTP 200. Exception-queue article: 0 clicks, 2 impressions, average position 9.0 (previous equal-length window: 0 clicks, 2 impressions, 29.5). Low volume; not proof of a sustained ranking improvement.
+
+## Preserved history — not the current execution queue
+
+The items below retain their original completion states. Old SMB drafts, pitches, formulas, and pricing are on hold under the institutional positioning. Historical send/approval records are not new authorization. Export reminders are superseded by the current item above; old “zero growth” conclusions relied on stale snapshots.
 
 ---
 
-## 🔴 Due now (this week — highest leverage)
+### Historical due-now items (through August 26; held pending relevance review)
 
 - [x] **Approved for merge (07-21) — content draft:** `content/blog/ai-avatar-ads-vs-real-face-video-realtors-2026.mdx` is staged and approved, not committed. It has a 50-word fully bolded TL;DR, direct answer in the first 150 words, an early 25-ad comparison table, skeptical hidden-cost framing, 5 `/stat/*` links, 5 related-post links, 7 exact-question H2s, one commercial CTA, and 1,735 body words. Re-ping IndexNow only after deployment.
 - [x] **Approved for merge (07-21) — GEO winner refresh:** `content/blog/ai-voice-agent-costs-compared.mdx` (#2 cited, 950 citations) uses a 52-word fully bolded TL;DR, exact-question H2s, 3 `/stat/*` planning links, and official Vapi, Retell, Bland, and Synthflow rates checked 07-21. Stale seven-vendor tables, obsolete $599–$2,499 Prestyj voice plans, and unsupported Air.ai/Synthflow packages were removed. The URL was submitted to IndexNow (202 Accepted); re-ping after deployment if the committed version changes.

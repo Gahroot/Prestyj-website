@@ -1,17 +1,14 @@
 name: SEO Bot (manual draft → review PR)
 
-# Policy (March 2026 scaled-content update):
-# Rapid mass publishing on a low-authority domain is the exact footprint the
-# update penalizes. The autonomous DAILY CRON IS DISABLED. The bot now only
-# runs on manual dispatch, generates a small number of DRAFTS in review mode
-# (no auto-commit to main, no IndexNow), and opens a pull request so a human
-# reviews and merges deliberately. Cap: a few deeply-differentiated pieces/week.
+# Institutional editorial policy: manual dispatch only, at most two inert drafts
+# weekly including open review PRs. No public MDX, auto-commit to main or IndexNow.
+# A review PR does not authorize publication; follow the explicit release runbook.
 
 on:
   workflow_dispatch:
     inputs:
       tasks:
-        description: "Comma-separated task list (override rotation)"
+        description: "Only blogPost is active; requires an explicit unprepared assignment"
         required: false
       dryRun:
         description: "Dry run (generate nothing, simulate only)"
@@ -19,6 +16,10 @@ on:
         default: false
 
 # Note: no `schedule:` block. Autonomous daily generation is intentionally off.
+
+concurrency:
+  group: seo-bot-manual-drafts
+  cancel-in-progress: false
 
 jobs:
   draft:
@@ -33,15 +34,13 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
       - run: npm ci
-      - name: Configure git
-        run: |
-          git config user.name "seo-bot"
-          git config user.email "seo-bot@prestyj.com"
       - name: Run SEO bot in review mode
         env:
+          REQUESTED_TASKS: ${{ github.event.inputs.tasks }}
+          DRY_RUN: ${{ github.event.inputs.dryRun }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
@@ -52,10 +51,10 @@ jobs:
         run: |
           # Never pass --publish here. Review mode leaves drafts uncommitted in
           # the working tree; the next step opens a PR for a human to review.
-          if [ "${{ github.event.inputs.dryRun }}" = "true" ]; then
+          if [ "$DRY_RUN" = "true" ]; then
             npx tsx scripts/seo-bot/cli.ts daily --dry-run
-          elif [ -n "${{ github.event.inputs.tasks }}" ]; then
-            npx tsx scripts/seo-bot/cli.ts daily --tasks "${{ github.event.inputs.tasks }}"
+          elif [ -n "$REQUESTED_TASKS" ]; then
+            npx tsx scripts/seo-bot/cli.ts daily --tasks "$REQUESTED_TASKS"
           else
             npx tsx scripts/seo-bot/cli.ts daily
           fi
@@ -63,21 +62,25 @@ jobs:
         if: ${{ github.event.inputs.dryRun != 'true' }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: seo-bot
+          GIT_AUTHOR_EMAIL: seo-bot@prestyj.com
+          GIT_COMMITTER_NAME: seo-bot
+          GIT_COMMITTER_EMAIL: seo-bot@prestyj.com
         run: |
           set -e
           # Only proceed if the bot actually drafted something.
-          if [ -z "$(git status --porcelain content/blog/ src/lib/)" ]; then
+          if [ -z "$(git status --porcelain scripts/seo-bot/output/drafts/)" ]; then
             echo "No drafts generated — nothing to review."
             exit 0
           fi
           BRANCH="seo-bot/drafts-$(date -u +%Y%m%d-%H%M%S)"
           git checkout -b "$BRANCH"
-          git add content/blog/ src/lib/
+          git add scripts/seo-bot/output/drafts/ scripts/seo-bot/output/reports/
           git commit -m "seo-bot: drafts for human review (do not merge without review)"
           git push origin "$BRANCH"
           gh pr create \
             --title "SEO bot drafts for human review — $(date -u +%Y-%m-%d)" \
-            --body "Auto-generated DRAFTS in review mode. Per the March 2026 scaled-content policy, these must be human-reviewed and deeply differentiated before merge. Do NOT bulk-merge. IndexNow fires only after merge to main." \
+            --body "Inert Markdown drafts only. Merging does not publish them. Review sources and controls, then follow the explicit promotion runbook. Two drafts weekly maximum, including open draft PRs. No IndexNow until separately authorized deployment and live verification." \
             --base main \
             --head "$BRANCH" \
             --label "needs-human-review"
@@ -86,5 +89,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: seo-bot-reports-${{ github.run_id }}
-          path: scripts/seo-bot/output/reports/
+          path: |
+            scripts/seo-bot/output/reports/
+            scripts/seo-bot/output/drafts/
           retention-days: 30

@@ -1,0 +1,2 @@
+case_id,data_kind,source_set_id,workflow_version,reviewer,observation_date,manual_minutes,review_minutes,correction_minutes,accepted,known_exceptions,valid_detections,invalid_detections,evidence_reference,notes
+,,,,,,,,,,,,,,

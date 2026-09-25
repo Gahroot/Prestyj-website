@@ -1,0 +1,63 @@
+{
+  "source": "Google Search Console API",
+  "property": "sc-domain:prestyj.com",
+  "observedAt": "2026-09-24T15:39:22.453297Z",
+  "privateEvidencePath": ".secrets/institutional-gsc-20260924T153922453376.json",
+  "privateEvidenceSha256": "29fd1a3af4bbc83c8c6e818da46819729ee55bfb5cb2838f725d64550f401008",
+  "filters": {
+    "searchType": "web",
+    "dataState": "final",
+    "country": "all",
+    "device": "all",
+    "page": "Exact current repository cohort of 34 canonical paths; www and non-www normalized"
+  },
+  "limitations": [
+    "Current URL membership does not establish historical institutional content on mutable landing pages.",
+    "Page and query/page results are separate views; do not add them.",
+    "API-returned rows may omit anonymized queries and are subject to source limits.",
+    "Previous window predates most institutional articles and is not an equivalent deployed-content cohort; no growth attribution.",
+    "Rows returned are not indexed-URL counts."
+  ],
+  "summaries": [
+    {
+      "dimensions": ["page"],
+      "reportingStart": "2026-08-25",
+      "reportingEnd": "2026-09-21",
+      "returnedRows": 25,
+      "clicks": 4,
+      "impressions": 262,
+      "ctr": 0.015267175572519083,
+      "impressionWeightedPosition": 7.061068702290076
+    },
+    {
+      "dimensions": ["query", "page"],
+      "reportingStart": "2026-08-25",
+      "reportingEnd": "2026-09-21",
+      "returnedRows": 16,
+      "clicks": 0,
+      "impressions": 41,
+      "ctr": 0,
+      "impressionWeightedPosition": 7.926829268292683
+    },
+    {
+      "dimensions": ["page"],
+      "reportingStart": "2026-07-28",
+      "reportingEnd": "2026-08-24",
+      "returnedRows": 6,
+      "clicks": 9,
+      "impressions": 319,
+      "ctr": 0.02821316614420063,
+      "impressionWeightedPosition": 5.015673981191223
+    },
+    {
+      "dimensions": ["query", "page"],
+      "reportingStart": "2026-07-28",
+      "reportingEnd": "2026-08-24",
+      "returnedRows": 11,
+      "clicks": 0,
+      "impressions": 64,
+      "ctr": 0,
+      "impressionWeightedPosition": 5.890625
+    }
+  ]
+}

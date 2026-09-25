@@ -1,4 +1,8 @@
+import type { CapabilitySlug } from "@/lib/institutional/capabilities";
+
 export type ResearchArticle = {
+  capabilities: readonly CapabilitySlug[];
+  topics: readonly string[];
   slug: string;
   category: string;
   title: string;
@@ -8,6 +12,8 @@ export type ResearchArticle = {
 export const researchArticles: readonly ResearchArticle[] = [
   {
     slug: "ai-for-real-estate-investment-funds-exception-queues",
+    capabilities: ["portfolio-intelligence"],
+    topics: ["exceptions", "source-lineage"],
     category: "Portfolio intelligence",
     title: "Start with exception queues, not a chatbot",
     description:
@@ -15,6 +21,15 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
   {
     slug: "ai-agents-real-estate-investment-funds",
+    capabilities: [
+      "deal-diligence",
+      "fund-operations",
+      "investor-reporting",
+      "portfolio-intelligence",
+      "origination",
+      "listing-media",
+    ],
+    topics: ["review-controls", "integration"],
     category: "Operating model",
     title: "Where AI agents belong inside a real estate investment fund",
     description:
@@ -22,6 +37,8 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
   {
     slug: "ai-assisted-quarter-end-close",
+    capabilities: ["fund-operations"],
+    topics: ["source-lineage", "review-controls"],
     category: "Fund operations",
     title: "An AI-assisted quarter-end close without a black box",
     description:
@@ -29,6 +46,8 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
   {
     slug: "explainable-distribution-waterfalls",
+    capabilities: ["fund-operations"],
+    topics: ["source-lineage", "review-controls"],
     category: "Fund operations",
     title: "A distribution waterfall should explain itself tier by tier",
     description:
@@ -36,12 +55,16 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
   {
     slug: "lp-reporting-data-boundaries",
+    capabilities: ["investor-reporting"],
+    topics: ["access-boundaries", "review-controls"],
     category: "Investor relations",
     title: "The investor answer is only correct inside the right boundary",
     description: "Fund, investor, document, and side-letter scope for AI-assisted LP reporting.",
   },
   {
     slug: "evidence-led-real-estate-diligence",
+    capabilities: ["deal-diligence"],
+    topics: ["source-lineage", "exceptions"],
     category: "Deal work",
     title: "Diligence is not done until the source survives the conclusion",
     description:
@@ -49,6 +72,8 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
   {
     slug: "reconciling-property-data-conflicts",
+    capabilities: ["portfolio-intelligence"],
+    topics: ["exceptions", "source-lineage"],
     category: "Portfolio intelligence",
     title: "When the model and property system disagree",
     description:
@@ -56,6 +81,8 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
   {
     slug: "ai-voice-agents-commercial-brokerage",
+    capabilities: ["origination"],
+    topics: ["handoff", "access-boundaries"],
     category: "Brokerage operations",
     title: "What a brokerage voice agent must hand back to the broker",
     description:
@@ -63,9 +90,42 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
   {
     slug: "keep-the-system-of-record",
+    capabilities: [
+      "deal-diligence",
+      "fund-operations",
+      "investor-reporting",
+      "portfolio-intelligence",
+      "origination",
+      "listing-media",
+    ],
+    topics: ["review-controls", "integration"],
     category: "Operating model",
     title: "Keep the system of record. Automate the work above it.",
     description:
       "A safer deployment sequence for firms that cannot afford a replacement project disguised as an AI pilot.",
   },
 ] as const;
+
+export function getCapabilityArticles(capability: CapabilitySlug): readonly ResearchArticle[] {
+  return researchArticles.filter((article) => article.capabilities.includes(capability));
+}
+
+export function getRelatedArticles(slug: string, limit = 3): readonly ResearchArticle[] {
+  const current = researchArticles.find((article) => article.slug === slug);
+  if (!current) return [];
+  return researchArticles
+    .filter((article) => article.slug !== slug)
+    .map((article) => ({
+      article,
+      score:
+        (article.category === current.category ? 10 : 0) +
+        article.capabilities.filter((capability) => current.capabilities.includes(capability))
+          .length *
+          2 +
+        article.topics.filter((topic) => current.topics.includes(topic)).length,
+    }))
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score || a.article.slug.localeCompare(b.article.slug))
+    .slice(0, Math.max(0, limit))
+    .map(({ article }) => article);
+}

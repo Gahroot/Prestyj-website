@@ -1,4 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server";
+import { isInstitutionalBlogSlug } from "@/lib/institutional/site-map";
 
 /**
  * Security proxy for Next.js 16
@@ -115,8 +116,13 @@ export function proxy(request: NextRequest) {
     })
     .join("; ");
 
-  // Create response with security headers
-  const response = NextResponse.next();
+  // Redirect excluded articles before rendering: uncached page-level redirects can
+  // duplicate Location headers. Keep the page guard as defense in depth.
+  const blogSlug = /^\/blog\/([^/]+)$/.exec(request.nextUrl.pathname)?.[1];
+  const response =
+    blogSlug && !isInstitutionalBlogSlug(blogSlug)
+      ? NextResponse.redirect(new URL("/blog", request.url), 308)
+      : NextResponse.next();
 
   // Persist the browser's Global Privacy Control signal before client scripts run.
   if (request.headers.get("sec-gpc") === "1") {

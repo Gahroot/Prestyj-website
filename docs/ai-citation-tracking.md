@@ -1,110 +1,49 @@
-# AI Citation Tracking Workflow
+# AI citation evidence workflow
 
-> **Purpose:** Track how often LLMs (ChatGPT, Perplexity, Claude, Gemini) cite Prestyj content week over week, surface emerging queries, and turn the trend data into a concrete content roadmap.
->
-> **Cadence:** Weekly. Drop the latest exports, run one command, read `data/ai-citations/latest-analysis.md`, act on the recommendations.
+Reconciled 2026-09-24. This supersedes the previous GSC attribution, combined query/page totals, daily targets and unsupported weekly trend recommendations. Historical derived reports are retained under `data/ai-citations/archive/`; raw CSVs are unchanged.
 
----
+## What this source can establish
 
-## 1. Export the weekly CSVs
+The repository's headers match **Bing Webmaster Tools AI Performance**, not Google Search Console. Microsoft's [primary announcement](https://blogs.bing.com/webmaster/February-2026/Introducing-AI-Performance-in-Bing-Webmaster-Tools-Public-Preview), checked 2026-09-24, describes citations across supported Microsoft Copilot, Bing AI summaries and selected partner experiences. Grounding queries represent a sample. Page citations describe references to individual URLs, not rank, traffic or conversions.
 
-Google Search Console (or the equivalent AI citation source you're using):
+The historical files have no authenticated provenance or reporting-window metadata. Call them Bing-format exports with unknown windows. Do not relabel them as observations of ChatGPT, Claude, Gemini, Perplexity or global AI visibility. Do not add query and page views: they can describe overlapping activity.
 
-1. Open Search Console → property `prestyj.com`.
-2. Open the **AI search performance** report (a.k.a. "Search appearance → AI Overviews / grounding").
-3. Export two CSVs for the **same date range** (typically a rolling 7- or 28-day window — keep the window consistent across snapshots):
-   - **Queries report** — columns: `Grounding Query`, `Citations`
-   - **Pages report** — columns: `Page`, `Citations`
-4. Default download names look like:
-   - `prestyj.com_AISearchQueriesReport_<m>_<d>_<yyyy>.csv`
-   - `prestyj.com_AIPageStatsReport_<m>_<d>_<yyyy>.csv`
+## Collect a new snapshot
 
-> If you switch tools (e.g. Perplexity dashboard, Profound, Otterly), normalize the export into the same two-column shape before dropping it in — see [Section 2](#2-drop-the-csvs-into-the-archive).
+1. Use authenticated access to the correct property in Bing Webmaster Tools. Select and record the reporting start/end, filters and coverage. Export both views for the same conditions.
+2. Store exact two-column CSVs as `data/ai-citations/YYYY-MM-DD/queries.csv` (`Grounding Query,Citations`) and `pages.csv` (`Page,Citations`). The folder is an export filing date, never an implied reporting window.
+3. Add `snapshot.json` with the schema below. Unknown values remain null; do not reconstruct them from folder names. Keep historical folders unchanged unless actual export evidence establishes their metadata.
+4. Review query text and URLs for sensitive information before any commit. Aggregate exports are not automatically free of personal data or secrets. This workflow does not authorize committing or sending them.
 
----
+Metadata shape (all nulls intentionally mean unknown):
 
-## 2. Drop the CSVs into the archive
-
-All snapshots live under `data/ai-citations/`. Each weekly snapshot is a folder named with the **export date** in `YYYY-MM-DD` format:
-
-```
-data/ai-citations/
-├── 2026-05-10/
-│   ├── queries.csv      ← AI Search Queries report
-│   └── pages.csv        ← AI Page Stats report
-├── 2026-05-17/
-│   ├── queries.csv
-│   └── pages.csv
-└── latest-analysis.md   ← generated; do not edit by hand
+```json
+{
+  "source": null,
+  "exportDate": null,
+  "reportingStart": null,
+  "reportingEnd": null,
+  "filters": null,
+  "coverage": null
+}
 ```
 
-**Conventions:**
+For verified Bing exports, source is `bing-ai-performance`; dates are real `YYYY-MM-DD` dates. `filters` is a string-to-string map including property, country, device and other selected filters. Coverage is an object with `queries` (`sampled`, `complete`, `unknown`), `pages` (`complete`, `partial`, `unknown`) and a descriptive `scope` string. Do not assert complete coverage merely because a file downloaded successfully. Source `other` prevents accidental attribution, but sources with different semantics need separate analysis rather than normalization into Bing claims.
 
-- Folder name = the date you ran the export, not the date range start. Sorting is alphabetical, so `YYYY-MM-DD` keeps order correct.
-- Filenames must be `queries.csv` and `pages.csv`. The script also accepts the raw Search Console filenames (anything matching `AISearchQueriesReport*.csv` / `AIPageStatsReport*.csv`) as a fallback, but normalized names are preferred.
-- CSVs **are committed** to the repo (allowlisted in `.gitignore`). The data is aggregate query strings + citation counts — no PII — and we want the history under version control so we can diff trends across months.
-- If a future export ever contains anything sensitive (user IDs, raw URLs with tokens, etc.), scrub before committing.
+## Run and interpret
 
----
+`npm run analyze:citations -- 2026-09-24` uses an explicit analysis date for reproducibility. Omitting it uses today's date only to label the analysis and assess freshness, never to date an article or invent a reporting window.
 
-## 3. Run the analyzer
+The analyzer bounds each CSV at 2 MB and 50,000 rows, validates headers, quoting and nonnegative safe integer counts, and rejects malformed or duplicate raw rows. It fails before replacing the report if an input is invalid. A prior report is copied to a content-addressed archive and verified before atomic replacement. Re-running with identical input and analysis date writes nothing.
 
-```bash
-npm run analyze:citations
-```
+The report keeps query-view and page-view sums separate. It normalizes canonical host variants for URL classification using the current public registry. A route classified institutional today is not evidence that its historical content was institutional. Legacy URLs remain visible in a separate class, not in the new growth denominator.
 
-What it does:
+Comparison requires known export dates, equal-length non-overlapping windows, matching source, filters and coverage. Otherwise no trend is calculated. Even a permitted difference concerns exported views only; sampled query composition may change. Reporting end older than 35 days is labeled stale. Missing windows produce unknown freshness, while the weekly status command separately flags old folder dates.
 
-1. Reads every `data/ai-citations/YYYY-MM-DD/` folder.
-2. Parses `queries.csv` + `pages.csv` from each.
-3. Compares the most recent snapshot against the one immediately prior.
-4. Writes `data/ai-citations/latest-analysis.md` containing:
-   - **Headline numbers** — total query citations, total page citations, WoW Δ.
-   - **Top 10 queries** and **Top 10 pages** by citations (with prior-week comparison).
-   - **New queries** — anything that appeared this week and was zero last week.
-   - **Surging queries** — >50% WoW citation growth.
-   - **Decaying queries** — >50% WoW citation drop.
-   - **Citations per offer category** — queries + pages bucketed into:
-     `voice agent`, `lead response`, `receptionist`, `social`, `video ads`, `creative testing`, `custom agent`, `lead reactivation` (plus `uncategorized` for anything that didn't match).
-   - **Recommendations** — automated content tasks triggered by the trends.
-5. Prints a one-screen summary to stdout.
+## Weekly decision discipline
 
-Re-run any time — the script is idempotent and overwrites `latest-analysis.md`.
+The analytics owner verifies scope and freshness first. The editorial owner then considers whether a buyer question fits the institutional program and has enough evidence for a useful answer. A count increase does not automatically create satellite posts, imply causality or justify a release. Keep the two-slot human-reviewed calendar.
 
----
+Collect GSC clicks, impressions, CTR and position separately with their query/page, country, device and search-type filters. Use the fixed buyer-prompt protocol in `data/seo/institutional-buyer-prompts.json` for manual engine sampling; unrun prompts have no observed answer or citation. Use `docs/seo/institutional-growth-scorecard.md` for the separately labeled institutional baseline.
 
-## 4. Act on the output
-
-The analyzer fires off four kinds of recommendations. Each maps to a concrete content task:
-
-| Trigger                          | Threshold                                                | Content task                                                                                                                                                                                                                                |
-| -------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Breakout query**               | A single query crosses **30+ citations** in one period   | **Write 3–4 satellite posts** around it — long-tail variants (per-vertical, per-price-tier), "hidden costs of…" framing, comparison angles. The mother post is doing the work; satellites internal-link to it and capture adjacent prompts. |
-| **Surging query (>50% WoW)**     | Query already had ≥1 citation, now grew >50%, current ≥5 | **Ship a dedicated post** (or expand the closest existing one). Use the [AI Citation Playbook](./ai-citation-playbook.md) title formula. Move quickly — surging queries get claimed by competitors fast.                                    |
-| **Net-new query (≥3 citations)** | Zero last week, ≥3 this week                             | **Claim before competitors do.** Add a section to an existing post that matches the category, or stand up a focused new post if no good home exists.                                                                                        |
-| **Decay alert**                  | High-volume query (≥10 last week) dropped >50%           | **Refresh the supporting post.** Update the year in the title/slug, refresh prices and comparison tables, re-export to IndexNow (`npm run indexnow -- --url <url>`).                                                                        |
-| **Coverage gap**                 | An offer category is <5% of total citations              | **Audit that category's pages.** Are there comparison tables in the first 30%? Real numbers per vertical? Named competitors? Use the playbook checklist.                                                                                    |
-
-### Suggested weekly ritual (15 minutes)
-
-1. `npm run analyze:citations`
-2. Open `data/ai-citations/latest-analysis.md`.
-3. Skim the **Headline numbers** — is total trending up?
-4. Read **Recommendations** top-to-bottom. For each, file a task (or do it now if it's <30 min).
-5. For surging or net-new queries: spin a new entry in your content backlog using the title patterns from [`docs/ai-citation-playbook.md`](./ai-citation-playbook.md#1-title-patterns-that-win).
-6. For decay alerts: open the supporting post, bump the year, refresh the comparison table, ship.
-7. Commit the new snapshot folder + updated `latest-analysis.md` together so the history stays in lockstep.
-
----
-
-## 5. Extending the workflow
-
-- **Adding a new offer category:** edit `CATEGORY_RULES` in `scripts/analyze-ai-citations.ts`. Each rule is `{ category, patterns: RegExp[] }`. First match wins, so put more specific categories first.
-- **Changing thresholds:** adjust the constants in `buildRecommendations` (30 for breakouts, 0.5 for surge/decay, 0.05 for coverage gap).
-- **Adding more output sections:** extend `renderReport` — it's a plain string-builder, easy to add headings/tables.
-
----
-
-## Related docs
-
-- [`docs/ai-citation-playbook.md`](./ai-citation-playbook.md) — title patterns, required structural elements, and the reverse-engineered formula for citation-magnet posts.
+Historical `docs/ai-citation-playbook.md` recommendations are superseded where they conflict with this evidence policy. No automatic IndexNow submission, public posting, paid API call or deployment is part of analysis.

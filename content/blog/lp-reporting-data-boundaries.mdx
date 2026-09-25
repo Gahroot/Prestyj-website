@@ -2,6 +2,7 @@
 title: "The Investor Answer Is Only Correct Inside the Right Boundary"
 description: "Fund, investor, document, and side-letter scope for AI-assisted LP reporting."
 date: "2026-08-27"
+updated: "2026-09-24"
 author: "Nolan Grout"
 keywords:
   - AI LP reporting
@@ -52,3 +53,46 @@ The same test belongs at fund and client boundaries.
 The answer often lives outside a formal statement. Prior calls, letters, and side letters can contain commitments that shape the response. An agent can surface those records, but the firm still decides which commitment governs.
 
 Fast investor service matters. Correct scope matters more.
+
+## An illustrative fund and investor access matrix
+
+Access decisions need explicit entity, audience, period and document-release conditions. The matrix below is a design example, not a description of an implemented investor portal.
+
+| Requester                           | Released Fund A general report | Investor A statement       | Investor B statement       | Unreleased Fund A draft      | Fund B documents                |
+| ----------------------------------- | ------------------------------ | -------------------------- | -------------------------- | ---------------------------- | ------------------------------- |
+| Investor A, Fund A entitlement only | Allow within release scope     | Allow within release scope | Deny                       | Deny                         | Deny                            |
+| Investor B, Fund A entitlement only | Allow within release scope     | Deny                       | Allow within release scope | Deny                         | Deny                            |
+| Fund A IR preparer                  | As assigned                    | As assigned                | As assigned                | Drafting permission required | Deny unless separately assigned |
+| Fund A release owner                | As assigned                    | As assigned                | As assigned                | Approval permission required | Deny unless separately assigned |
+
+“IR” means investor relations. A role label alone is insufficient: the authorization service must confirm the particular fund, investor and document. Fund membership must not imply access to every investor's capital account. A shared general report must not accidentally carry individual statements in its attachments.
+
+Scope should also apply to search indexes, cached answers, exports, source previews and audit views. Revoking access in the main database while leaving a cached response available preserves the leak. Re-check access at delivery, especially for long-running jobs.
+
+## Synthetic investor request and safe response path
+
+Imagine Investor A asks, “Why is my fee different from the other investors in Fund A?” This is a fictional request. The system can retrieve Investor A's released statement and authorized governing material. It cannot retrieve another investor's statement merely to make the comparison more helpful.
+
+The draft response should explain the basis shown in Investor A's own approved records and identify any missing interpretation. If the relevant side-letter provision is unclear, route the question to the authorized IR and legal reviewers. A helpful response can acknowledge the limit: “We can explain the calculation on your statement; we are referring the interpretation question to the fund team.”
+
+The review record contains the request scope, source IDs, statement version, unresolved interpretation and intended recipient. It does not contain an unauthorized comparative table. A reviewer who has broader access must still approve only the information this recipient may receive.
+
+## Release checklist
+
+1. Authenticate the recipient and resolve current fund and investor entitlements from the authoritative service.
+2. Confirm the reporting period and released document versions. A draft with newer figures is not automatically the correct source for an external answer.
+3. Verify that each statement, citation, attachment and preview belongs within the same recipient scope.
+4. Have the assigned reviewer resolve conflicts and distinguish explanation from legal interpretation.
+5. Re-check authorization immediately before delivery. Stop if access changed while the draft was being prepared.
+6. Record approver, artifact version, recipient scope and delivery outcome. A send attempt is not proof of receipt.
+7. Keep a correction path for a superseded statement or withdrawn approval. Do not silently overwrite the answer that was sent.
+
+## Negative cases worth exercising
+
+Use synthetic test identities to check cross-investor, cross-fund and cross-client requests. Include an investor with revoked access, a copied source URL, an attachment from the wrong package, a cached answer and a prompt requesting that the agent ignore its restrictions. The expected result is no unauthorized content, including document titles or snippets where those are sensitive.
+
+Test support and administrator tools as well as the investor interface. The data boundary belongs in the service that retrieves and delivers records, not in wording supplied to a model. The [read-only integration sequence](/blog/keep-the-system-of-record) explains why retrieval and write permissions should be separately scoped.
+
+## Sources and limitations
+
+This is engineering and editorial guidance, not a privacy, securities or communications compliance opinion. Actual permissions derive from the firm's identity system, released-document register and reviewed governing documents. The access matrix and request are illustrative only. Security, legal and editorial review of the expansion remain pending; no certification or production access test is claimed.

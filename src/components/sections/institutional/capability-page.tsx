@@ -6,6 +6,7 @@ import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
 import type { Capability } from "@/lib/institutional/capabilities";
+import { getCapabilityArticles } from "@/lib/institutional/research";
 
 export function CapabilityPage({ capability }: { capability: Capability }): ReactElement {
   const Icon = capability.icon;
@@ -101,6 +102,21 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
             </div>
           </div>
         </section>
+
+        <nav aria-label="Related field notes" className="border-b py-12 sm:py-16">
+          <div className="editorial-rail">
+            <h2 className="font-heading text-3xl font-bold tracking-tight">Related field notes</h2>
+            <ul className="editorial-rows mt-5">
+              {getCapabilityArticles(capability.slug).map((article) => (
+                <li key={article.slug}>
+                  <Link href={`/blog/${article.slug}`} className="underline underline-offset-4">
+                    {article.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
 
         <section className="py-20 sm:py-28">
           <div className="editorial-rail">

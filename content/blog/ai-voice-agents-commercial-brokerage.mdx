@@ -2,6 +2,7 @@
 title: "What a Brokerage Voice Agent Must Hand Back to the Broker"
 description: "Qualification, consent, transcript, routing, and the record required after a commercial real estate inquiry."
 date: "2026-08-27"
+updated: "2026-09-24"
 author: "Nolan Grout"
 keywords:
   - AI voice agents commercial real estate
@@ -47,3 +48,55 @@ Test poor audio, interruptions, missing consent, duplicate CRM records, unavaila
 ## Measure the handoff
 
 Useful measures include answered inquiries, completed qualification, correct routing, scheduled next steps, broker acceptance, and exceptions requiring review. A fast response is valuable only when the handoff remains accurate.
+
+## A synthetic broker handoff
+
+The following record is fictional. It contains no real caller details and does not claim that a calendar or CRM integration has been delivered.
+
+| Field             | Illustrative handoff                                               |
+| ----------------- | ------------------------------------------------------------------ |
+| Inquiry           | Occupier seeking approximately 8,000 square feet of office space   |
+| Market and use    | Named assignment market; general office use stated by caller       |
+| Timing            | Target move within six months; exact date unconfirmed              |
+| Budget            | Caller declined to provide; do not infer                           |
+| Representation    | Caller says another broker is advising; needs human review         |
+| Property interest | Asked about Example Building A; availability not verified          |
+| Consent state     | Automated-agent disclosure delivered; recording declined           |
+| Next step         | Human callback requested; no appointment confirmed                 |
+| Routing reason    | Existing-representation question and request for a person          |
+| Open questions    | Assignment conflict, approved availability and permitted follow-up |
+
+Because recording was declined, this example should not imply that a recording or full transcript exists. If the approved local policy permits minimal structured notes, keep only what that policy allows. If it does not, route without retaining conversation content. The handoff must reflect what actually happened, including absent fields.
+
+## Qualification should reduce ambiguity, not manufacture certainty
+
+Use approved questions about the commercial requirement: property or market, transaction type, intended use, approximate size, timing, representation and preferred next step. Ask only for information needed to route the inquiry. Do not collect financial account details or sensitive personal information merely because a script has room for them.
+
+Preserve the distinction between caller statements and verified property facts. “Caller seeks 8,000 square feet” is an intake fact. “The property has 8,000 square feet available” requires an approved current listing source. If that source is unavailable, the agent should say that the broker will confirm rather than invent availability or terms.
+
+## Escalation conditions
+
+Route to a person when the caller asks, when representation or assignment rules conflict, when the agent cannot understand a material detail, or when a question goes beyond the approved property information. Urgent safety concerns should follow the firm's emergency guidance, not remain in a qualification script.
+
+If the designated broker is unavailable, preserve the permitted callback request and show its status as awaiting acceptance. Do not mark the lead handled because a routing event fired. A confirmed appointment requires a successful calendar response and the necessary participant agreement, not a model's statement that it booked one.
+
+## Context-dependent consent review
+
+Recording, automated-agent disclosures, follow-up calls, texts and email can raise different requirements. Relevant facts include the parties' locations, inbound versus outbound contact, purpose, channel, recording or transcription behavior, and any vendor processing. Qualified counsel should review the actual call flow and jurisdictions before launch.
+
+Do not treat consent to one call as blanket consent to marketing across channels. Store the scope and timing of a permission or refusal where the approved policy requires it. Honor revocation and suppression rules. If the legal or operational state is unknown, stop the affected recording or follow-up action and offer a human path.
+
+These are review questions, not a statement that one script satisfies every jurisdiction. A disclosure alone does not establish permission to retain or reuse a voice recording.
+
+## Acceptance checklist
+
+- Replay synthetic cases with poor audio, interruption and a request for a person.
+- Verify that declined or unknown recording permission follows the approved non-recording path.
+- Check duplicate-record handling and the difference between a draft CRM note and a confirmed update.
+- Test stale listing information and calendar outages without making unsupported promises.
+- Have brokers rate whether the handoff supports a next action, and include rejected handoffs in the denominator.
+- Restrict transcript or note access and retention to the approved business purpose.
+
+## Sources and limitations
+
+This is an editorial workflow example, not legal advice, a customer outcome or a claim of deployed telephony functionality. Actual consent and communications requirements need qualified review for the proposed context. Brokerage, legal and editorial review of this expansion remain pending. For staged permissions, see [keeping the system of record](/blog/keep-the-system-of-record).

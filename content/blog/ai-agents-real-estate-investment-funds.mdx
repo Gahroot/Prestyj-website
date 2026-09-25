@@ -2,6 +2,7 @@
 title: "Where AI Agents Belong Inside a Real Estate Investment Fund"
 description: "A workflow test for deciding what to automate, what stays in the system of record, and who must own release."
 date: "2026-08-27"
+updated: "2026-09-24"
 author: "Nolan Grout"
 keywords:
   - AI agents for real estate investment funds
@@ -48,3 +49,44 @@ Do not begin with a company-wide AI strategy. Bring one artifact your team rebui
 - the audience that receives it.
 
 That map is the first useful specification for an institutional agent.
+
+## A workflow selection scorecard
+
+Use this proposed scorecard to compare candidate work products, not to certify a vendor. Score each dimension from 0 to 2: 0 means absent or unknown, 1 means partially defined, and 2 means evidenced and agreed. Save the evidence behind the score; a high total based on assumptions is not a decision.
+
+| Dimension           | Evidence for a score of 2                            | A reason to pause                                |
+| ------------------- | ---------------------------------------------------- | ------------------------------------------------ |
+| Repeatability       | Named recurring artifact and observed recent cycles  | One-off strategic question                       |
+| Source readiness    | Authorized, versioned inputs with a defined cutoff   | Unknown permissions or missing source owner      |
+| Rule clarity        | Written transformation rules with worked cases       | Material decisions hidden in informal judgment   |
+| Reviewability       | Current accepted artifact and named reviewer         | Nobody can determine whether the result is right |
+| Exception ownership | Named owner and escalation path for each issue class | Queue would collect unresolved work indefinitely |
+| Reversibility       | Read-only first phase and tested fallback process    | Irreversible external action in the first pilot  |
+
+The maximum is 12. Do not use a total to override a zero for source authorization, reviewer ownership or reversibility. Those are stop conditions. A team can propose a pilot threshold, but it should record that as its own decision, not an industry benchmark.
+
+## Synthetic comparison: close assembly versus investment approval
+
+A fictional team compares a recurring close-package assembly task with autonomous investment approval. Close assembly has known source extracts, a prior approved package and a fund-accounting reviewer. That makes it a plausible candidate for a bounded, read-only test, provided the team can resolve the remaining data and policy gaps.
+
+Autonomous investment approval may be frequent and consequential, but it does not become a suitable first workflow merely because it scores well on volume. It combines judgment, delegated authority and potentially irreversible consequences. Keep the agent's role to evidence gathering, conflict identification and draft preparation; the authorized investment process still decides.
+
+This distinction avoids a common selection error: choosing the most impressive demonstration rather than the most reviewable work. The better first result is often an ordinary artifact whose source trail survives inspection.
+
+## Cases unsuitable for unattended execution
+
+Do not start with payment initiation, investor-specific legal interpretation, final valuation judgment, investment approval or uncontrolled external messaging. Do not automate around missing access rights or use a public model to work around a blocked data source. A workflow without a manual fallback is not ready for an operational dependency.
+
+Also pause when the current process has no stable definition. If three teams mean different things by NOI, asking an agent to reconcile their reports will surface a governance problem, not solve it. Agree the definitions and ownership before measuring time savings.
+
+## A first-pilot brief that can be accepted or rejected
+
+Write one paragraph each for the input scope, output, reviewer, exceptions and prohibited actions. For example: “Prepare a draft quarterly variance pack from approved exports for the selected fund; attach the source rows; route unmatched items to accounting; do not post entries or send investor communications.”
+
+Then specify the acceptance evidence: a fixed evaluation set, an independent review of material figures, a record of reviewer minutes and a documented fallback. Decide the stop conditions before seeing the result. Count failed and incomplete runs, not just the examples that look good in a demo.
+
+The [system-of-record rollout sequence](/blog/keep-the-system-of-record) turns that brief into staged permissions. The [diligence evidence checklist](/blog/evidence-led-real-estate-diligence) shows what a source-attached artifact contains.
+
+## Sources and limitations
+
+This scorecard is an editorial decision aid, not a validated benchmark or a claim about customer performance. [NIST's AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) provides voluntary risk-management context; it does not endorse this scorecard or certify a workflow. The dimensions and synthetic comparison are our proposed operating guidance. Operations and editorial review of the expansion remain pending.

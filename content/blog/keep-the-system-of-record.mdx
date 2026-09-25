@@ -2,6 +2,7 @@
 title: "Keep the System of Record. Automate the Work Above It."
 description: "A safer deployment sequence for firms that cannot afford a replacement project disguised as an AI pilot."
 date: "2026-08-27"
+updated: "2026-09-24"
 author: "Nolan Grout"
 keywords:
   - AI system of record real estate
@@ -44,3 +45,55 @@ If a legacy workflow must eventually move, cut over by route or responsibility, 
 Once one workflow is stable, the evidence and controls can support adjacent tasks. A diligence evidence spine can support an IC draft. A reconciled close can support an LP letter. A qualified call can support a CRM handoff.
 
 The safe operating model is simple: keep authority where it belongs, automate the work above it, and expand only after the record survives review.
+
+## Text-based integration map
+
+A conceptual architecture can be understood without a vendor diagram:
+
+```text
+Approved system exports / authorized read interfaces
+    -> scoped retrieval with entity and period checks
+    -> versioned source register
+    -> reconciliation and defined calculations
+    -> draft work product + unresolved exception queue
+    -> named human review of one artifact version
+    -> separately authorized release or narrow write action
+    -> action receipt + audit record + reconciliation
+```
+
+The arrows represent controlled handoffs, not guaranteed integrations. Some firms may begin with approved file exports rather than live interfaces. A production design must establish actual access, supported operations and retention obligations before selecting a connector.
+
+Keep secrets out of prompts and artifacts. A source document can contain malicious instructions, so its contents must not grant the agent new permissions. Access and permitted actions come from the workflow configuration and authorization layer, not text found in a lease, spreadsheet or email.
+
+## Read and write boundaries by phase
+
+| Phase                     | Reads                                               | Writes                                           | Evidence needed to advance                     |
+| ------------------------- | --------------------------------------------------- | ------------------------------------------------ | ---------------------------------------------- |
+| Offline evaluation        | Approved synthetic or suitably de-identified sample | Isolated evaluation artifacts only               | Known-answer checks and source review          |
+| Shadow operation          | Authorized production snapshots                     | Restricted draft workspace                       | Reconciliation against existing process        |
+| Reviewed assistance       | Explicit live read scope                            | Review tasks or draft attachments where approved | Reviewer acceptance and failure-path tests     |
+| Narrow operational action | Same approved scope                                 | One separately authorized action type            | Idempotency, action receipt and recovery drill |
+
+An approval to read a ledger is not an approval to post an entry. An approval to create a draft investor response is not an approval to send it. Separate credentials and service permissions where practical so that a mistaken instruction cannot cross the boundary.
+
+## A phased rollout with an exit path
+
+First, select one artifact and list every source and consumer. Preserve the existing process as the fallback. Define how a source outage, access revocation, ambiguous instruction or failed reconciliation stops the workflow.
+
+Second, run an evaluation set containing ordinary cases and known exceptions. Record what the system failed to produce, not just what passed. A reviewer checks the exact output version and traces material claims back to the source register.
+
+Third, shadow the live process with no authoritative writes. Compare output and timing against the existing method under the same source conditions. Investigate disagreements before calling them efficiency gains. A faster result that excludes late files or skips exceptions is not a like-for-like improvement.
+
+Fourth, consider one narrow write permission. For a review-task creation action, use a stable work-item identifier so a retry does not create duplicate assignments. If the action times out, reconcile the destination before trying again. Record whether the action was confirmed, rejected or unknown; an API timeout is not proof that nothing happened.
+
+Finally, test the return to the prior process. Disable the action credential, preserve draft and audit records, and verify that the existing team can finish the work. Reversibility is an exercised procedure, not a sentence in a rollout deck.
+
+## What the owner signs off
+
+The system owner approves access scope and service behavior. The business reviewer approves the work product and exception treatment. The release owner approves the specific outward action. Record these decisions independently even when one person holds several roles.
+
+A source-system change should trigger a compatibility check: renamed columns, new identifiers or changed permission semantics can invalidate a previously accepted workflow. Do not treat an old approval as permanent permission to change the process.
+
+## Sources and limitations
+
+This architecture is an editorial reference, not a list of shipped integrations, a security certification or a service-level promise. Actual interfaces and write capabilities must be confirmed during scoping. See [LP data boundaries](/blog/lp-reporting-data-boundaries) for recipient-specific controls. Security and editorial review of this expansion remain pending; local revision is not deployment evidence.

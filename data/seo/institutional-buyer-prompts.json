@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "preparedOn": "2026-09-24",
+  "protocol": "Run the exact prompts in a fresh conversation without follow-ups. Hold locale, engine/version and search mode constant. Preserve evidence securely. Record all attempts, including errors and no citations. No automated or paid calls are authorized by this protocol.",
+  "sampleSizePrompts": 8,
+  "plannedEngines": ["Microsoft Copilot", "ChatGPT", "Perplexity", "Gemini"],
+  "plannedLocale": "en-US",
+  "plannedSearchMode": "web-search-enabled where available; record actual mode, do not silently substitute",
+  "prompts": [
+    {
+      "id": "BP-01",
+      "text": "How should a real estate investment fund evaluate AI workflows for quarter-end close?"
+    },
+    {
+      "id": "BP-02",
+      "text": "What evidence should an AI-prepared real estate diligence memo attach for investment committee review?"
+    },
+    {
+      "id": "BP-03",
+      "text": "How can a fund use AI for LP reporting without exposing another investor's information?"
+    },
+    {
+      "id": "BP-04",
+      "text": "How should a real estate portfolio team reconcile conflicting property data with AI?"
+    },
+    {
+      "id": "BP-05",
+      "text": "What should a reviewer check in an AI-prepared real estate distribution waterfall?"
+    },
+    {
+      "id": "BP-06",
+      "text": "How can an institutional real estate firm measure an AI workflow pilot?"
+    },
+    {
+      "id": "BP-07",
+      "text": "What information should an AI inbound qualification handoff contain for a commercial broker?"
+    },
+    {
+      "id": "BP-08",
+      "text": "What drives the cost of a managed AI workflow for institutional real estate?"
+    }
+  ],
+  "observationTemplate": {
+    "promptId": null,
+    "engine": null,
+    "engineVersion": null,
+    "observedAt": null,
+    "locale": null,
+    "searchMode": null,
+    "outcome": null,
+    "citedUrls": null,
+    "prestyjCited": null,
+    "evidencePath": null,
+    "notes": null
+  },
+  "observations": []
+}

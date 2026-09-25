@@ -1,0 +1,62 @@
+---
+title: "A Rent Roll and Lease Discrepancy Checklist"
+description: "Compare lease documents and rent-roll fields without confusing timing, identity, or legal interpretation."
+status: "awaiting-review"
+revised: "2026-09-24"
+review_required: [editorial, asset-management, legal]
+---
+
+A discrepancy between a rent roll and a lease is a review task, not automatic proof that either record is wrong. The two may describe different dates, different definitions or different versions of the same tenancy. A useful comparison preserves those differences before proposing a correction.
+
+This unreleased draft is an operational checklist, not lease interpretation or legal advice. Asset-management, legal and editorial review remain pending.
+
+## Establish the comparison boundary
+
+Name the property, units, tenant identifiers and reporting cutoff. Record whether the rent roll describes contractual, billed or collected rent. Those figures can differ without an error. Obtain the executed lease and relevant amendments through an authorized source; an unsigned draft does not carry the same authority.
+
+Build a document inventory before extracting fields. A missing amendment should appear as missing evidence, not as confidence in the original lease. Keep file version, effective date and retrieval date separate. A document uploaded yesterday may describe a term that became effective months ago.
+
+## Field-by-field checklist
+
+| Field                       | Compare                                          | Common reason to route for review             |
+| --------------------------- | ------------------------------------------------ | --------------------------------------------- |
+| Tenant and suite identity   | Legal name, operating name, suite and stable IDs | Assignment, expansion or renamed entity       |
+| Area                        | Measurement basis and effective date             | Different rentable-area definitions           |
+| Commencement and expiration | Executed terms, amendments and conditions        | Future commencement entered as current        |
+| Base rent                   | Amount, period, unit and scheduled steps         | Monthly figure compared with annual figure    |
+| Concessions                 | Type, dates and conditions                       | Free rent omitted from a cash view            |
+| Recoveries                  | Applicable categories and stated basis           | Abstract simplifies a conditional provision   |
+| Options and notices         | Rights, deadlines and exercise evidence          | Option right mistaken for an exercised option |
+| Security and guarantees     | Authorized summary and source locator            | Sensitive details or uncertain enforceability |
+
+The checklist identifies what to inspect. It does not establish a universal hierarchy for every jurisdiction or contract. Ask a qualified reviewer to resolve ambiguous provisions.
+
+## Synthetic timing discrepancy
+
+Suppose a fictional lease amendment increases monthly base rent from $20,000 to $22,000 on October 1. A September 30 rent roll already reports $22,000. The difference is $2,000 for one month, but the reviewer must still verify whether the rent-roll field represents September contractual rent or the next billing period.
+
+If it is a September contractual-rent field and the reviewed amendment is controlling, the proposed correction is $20,000. If it is an October billing view, the $22,000 value may be appropriate. The agent should preserve both possibilities until the field definition and document version are confirmed.
+
+The exception record should include the two amounts, dates, lease locator, rent-roll row, field definition, proposed resolution, owner and affected outputs. Do not propagate the proposed change into an underwriting model before approval. A draft correction is not a posted source-system update.
+
+## Separate extraction errors from business disagreements
+
+An extraction error occurs when the system reads $22,000 as $220,000 or attaches a date to the wrong tenant. A business disagreement can occur even when both values were extracted correctly. These require different owners and should not be combined into one “AI accuracy” score.
+
+For a scan with poor legibility, preserve an unreadable state and request a better copy. For ambiguous legal wording, route the clause rather than invent a definitive abstraction. For uncertain tenant identity, stop the join before rolling amounts into an asset total.
+
+## Close the exception with evidence
+
+The assigned reviewer confirms the governing source and treatment. The record then shows the approved decision, approver, date and output versions that changed. If the source system is corrected, retain a receipt or reviewed export demonstrating the change. A comment saying “fixed” is not enough to reconcile downstream reporting.
+
+Keep rejected exceptions as well. They show where a definition or rule was misunderstood and can improve the next evaluation set. Deduplicate repeated sightings of the same issue without deleting the historical record of where it appeared.
+
+## Acceptance checks for the workflow
+
+Include synthetic cases for a missing amendment, future rent step, duplicate tenant name, inconsistent unit of measure and an option not yet exercised. Test that the workflow reports uncertainty instead of forcing every row into a resolved value. Review material fields directly against the permitted documents.
+
+The published [property-data reconciliation guide](/blog/reconciling-property-data-conflicts) explains how these lease-level exceptions affect point-in-time portfolio answers. The checklist here is intentionally narrower: one lease and its corresponding rent-roll fields.
+
+## Sources and limitations
+
+The table and example are editorial templates. All amounts are synthetic and no property records were reviewed. Actual rights, obligations and corrections require executed documents, the firm's source policy and qualified reviewers. This draft does not verify title, tenancy, enforceability, valuation or investment suitability.

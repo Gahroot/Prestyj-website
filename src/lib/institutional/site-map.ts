@@ -1,5 +1,6 @@
 import { audiences } from "@/lib/institutional/audiences";
 import { capabilities } from "@/lib/institutional/capabilities";
+import { researchArticles } from "@/lib/institutional/research";
 
 export const canonicalStaticRoutes = [
   "/",
@@ -34,17 +35,20 @@ export const canonicalPublicRoutes = [
   ...canonicalAudienceRoutes,
 ] as const;
 
-export const institutionalBlogSlugs = [
-  "ai-for-real-estate-investment-funds-exception-queues",
-  "ai-agents-real-estate-investment-funds",
-  "ai-assisted-quarter-end-close",
-  "explainable-distribution-waterfalls",
-  "lp-reporting-data-boundaries",
-  "evidence-led-real-estate-diligence",
-  "reconciling-property-data-conflicts",
-  "ai-voice-agents-commercial-brokerage",
-  "keep-the-system-of-record",
-] as const;
+export const institutionalBlogSlugs = researchArticles.map((article) => article.slug);
+
+// The interactive demo is public but intentionally excluded from search discovery.
+export const indexableStaticRoutes = canonicalPublicRoutes.filter((route) => route !== "/demo");
+
+export const institutionalIndexablePaths: readonly string[] = [
+  ...indexableStaticRoutes,
+  ...institutionalBlogSlugs.map((slug) => `/blog/${slug}`),
+];
+
+export const institutionalPublicPaths: readonly string[] = [
+  ...canonicalPublicRoutes,
+  ...institutionalBlogSlugs.map((slug) => `/blog/${slug}`),
+];
 
 const institutionalBlogSlugSet = new Set<string>(institutionalBlogSlugs);
 

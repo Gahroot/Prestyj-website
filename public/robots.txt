@@ -3,6 +3,9 @@
 
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /embed/
 
 # Sitemap location
 Sitemap: https://prestyj.com/sitemap.xml

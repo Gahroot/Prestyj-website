@@ -152,6 +152,7 @@ export const DailyMetricsSchema = z.object({
   date: z.string(),
   pagesShipped: z.number(),
   blogsShipped: z.number(),
+  blogsDrafted: z.number().default(0),
   titlesRewritten: z.number(),
   costUSD: z.number(),
   apiCalls: z.number(),
@@ -190,6 +191,8 @@ export interface TaskExecutionResult {
   task: TaskName;
   success: boolean;
   shipped?: ShippedItem;
+  draft?: { slug: string; filePath: string; draftedAt: string; status: "awaiting-review" };
+  apiCalls?: number;
   error?: string;
   costUSD: number;
   latencyMs: number;

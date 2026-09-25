@@ -1,0 +1,7 @@
+evaluation_id,workflow_id,dimension,score_0_to_2,evidence_reference,reviewer,review_date,mandatory_gate,gate_status,limitation,next_action
+,,repeatability,,,,,none,unknown,,
+,,source-readiness,,,,,source-authorization,unknown,,
+,,rule-clarity,,,,,none,unknown,,
+,,reviewability,,,,,reviewer-ownership,unknown,,
+,,exception-ownership,,,,,none,unknown,,
+,,reversibility,,,,,fallback-tested,unknown,,

@@ -2,6 +2,7 @@
 title: "When the Model and Property System Disagree"
 description: "How to produce a point-in-time portfolio answer without averaging away the conflict."
 date: "2026-08-27"
+updated: "2026-09-24"
 author: "Nolan Grout"
 keywords:
   - property data reconciliation
@@ -47,3 +48,46 @@ A useful conflict record includes:
 Sometimes the correct executive answer is not one number. It is: “The ledger shows X, the operating report shows Y, and the difference is assigned for review.”
 
 That answer may be less polished, but it is more trustworthy than false precision.
+
+## Worked conflict: physical occupancy is not leased occupancy
+
+Consider a wholly synthetic asset with 100,000 rentable square feet. A September 30 property report shows 88,000 occupied square feet. A leasing schedule includes another 4,000 square feet under an executed lease with an October 15 commencement. The approved forecast describes 92% leased occupancy, while a current operating report describes 88% physical occupancy.
+
+Both ratios reconcile to their own definitions: 88,000 divided by 100,000 is 88%; 92,000 divided by 100,000 is 92%. Averaging them to 90% would invent a metric that neither source supports. The first step is to ask whether the requested answer concerns physical occupancy at September 30 or committed leasing including future commencements.
+
+For a September physical-occupancy report, the proposed answer is 88%, with the future 4,000-square-foot commencement separately identified. For a forward leasing view, 92% may be useful only if that metric's definition and the signed lease are verified. The asset manager approves the definition and treatment before release.
+
+## Field-level authority register
+
+| Field and use                  | Proposed authority                                      | Secondary evidence               | Stop condition                                   |
+| ------------------------------ | ------------------------------------------------------- | -------------------------------- | ------------------------------------------------ |
+| Posted actual expenses         | Approved ledger export for the period                   | Property operating report        | Different entity or posting cutoff               |
+| Contractual lease commencement | Executed lease and amendments                           | Lease abstract                   | Missing signature or conflicting amendment       |
+| Physical occupancy at cutoff   | Approved occupancy definition and dated property record | Site confirmation where required | Definition or move-in status unresolved          |
+| Forecast occupancy             | Approved forecast version                               | Leasing assumptions and pipeline | Unapproved model or mixed scenarios              |
+| Loan maturity                  | Reviewed executed debt terms                            | Servicer record                  | Extension right mistaken for exercised extension |
+
+These are proposed authority choices, not universal accounting or legal rules. Assign a business owner to each field, and let the firm's policy determine which evidence governs. The agent may identify a disagreement but must not choose a legal interpretation because one source is easier to parse.
+
+## Exception handling without losing the original answer
+
+Create one exception per distinct issue, not one per repeated mention. Store asset ID, metric definition, reporting date, competing source versions, affected outputs, proposed resolution, owner and due date. Link repeated appearances to the same exception so reviewers do not resolve the issue differently in separate reports.
+
+Use states that mean something operationally: detected, assigned, evidence requested, resolved pending approval, approved and reflected in output. “Resolved” should not mean someone typed a comment. Closure requires the decision, supporting evidence and the output version that incorporated it.
+
+If a late correction arrives after release, preserve both effective date and discovery date. Produce a corrected version with an explicit change note where required by the firm's policy. Do not rewrite the historical source register to make the first answer appear correct all along.
+
+## Reviewer checklist
+
+- Confirm the asset identity and denominator before comparing percentages.
+- Verify that each value uses the same unit, reporting date and metric definition.
+- Inspect executed documents when rights or dates determine the answer.
+- Separate a source correction from a change in forecast assumptions.
+- Record the authorized reviewer and every downstream package affected by the resolution.
+- Block material unresolved differences from being presented as settled facts.
+
+The [quarter-end close checklist](/blog/ai-assisted-quarter-end-close) applies the same discipline to financial schedules. The point is not to force every system to contain the same number. It is to make differences intelligible and decisions reproducible.
+
+## Sources and limitations
+
+All asset values and dates in the worked example are synthetic. This is a reconciliation template, not a customer result or a guarantee that a property platform supports any particular integration. Actual authority requires firm policy and reviewed source records. Portfolio and editorial review of the expansion remain pending; the local revision does not establish deployment.

@@ -2,6 +2,7 @@
 title: "A Distribution Waterfall Should Explain Itself Tier by Tier"
 description: "What an AI agent can prepare, what the LPA still governs, and why reviewable math matters more than a fast answer."
 date: "2026-08-27"
+updated: "2026-09-24"
 author: "Nolan Grout"
 keywords:
   - distribution waterfall automation
@@ -49,3 +50,46 @@ Those cases belong in an exception queue with the competing evidence attached. L
 Before the agent touches a live distribution, run it against previously approved scenarios. Compare tier entry, tier exit, investor allocation, and rounding. Record every difference and its resolution.
 
 The best result is not merely faster math. It is a waterfall the team can walk tier by tier in front of an investor, auditor, or committee.
+
+## Synthetic arithmetic, not a fund model
+
+The following simplified example is invented solely to show a reviewable calculation trail. It is not a customer case, expected return, distribution recommendation or interpretation of an actual agreement.
+
+Assume $1,300,000 is available for distribution, with no reserves, fees or taxes deducted. Assume one limited-partner pool has $1,000,000 of unreturned capital and exactly $80,000 of previously determined preferred return due. After those amounts, assume the residual is split 80% to that pool and 20% to the general partner. There is no catch-up, compounding, investor-specific treatment or clawback in this illustration. The preferred amount is an input, not a rate calculation.
+
+| Illustrative tier            | Cash entering | LP allocation | GP allocation | Cash leaving |
+| ---------------------------- | ------------- | ------------- | ------------- | ------------ |
+| Return unreturned capital    | $1,300,000    | $1,000,000    | $0            | $300,000     |
+| Pay assumed preferred amount | $300,000      | $80,000       | $0            | $220,000     |
+| Split residual 80/20         | $220,000      | $176,000      | $44,000       | $0           |
+| Total allocation             |               | $1,256,000    | $44,000       |              |
+
+The residual reconciles: $220,000 multiplied by 80% is $176,000, and multiplied by 20% is $44,000. Total allocations are $1,256,000 plus $44,000, equaling the $1,300,000 available. No dollar appears in two tiers. A real model would attach the governing provision and approved inputs to each row.
+
+## What changes when cash is insufficient
+
+Keep the same invented tier order but reduce available cash to $1,050,000. The capital tier takes $1,000,000; only $50,000 remains for the $80,000 assumed preferred amount. Nothing reaches the residual split. Under these simplified assumptions, $30,000 of the preferred amount remains unpaid. Whether it accrues, compounds or carries forward depends on actual governing terms and cannot be inferred from this table.
+
+This second scenario matters because a clean full-payment example can conceal incorrect tier priority. Test zero cash, insufficient cash, multiple investor classes, historical distributions and rounding independently where they exist in the real structure. Passing the simple example does not validate a production waterfall.
+
+## An assumption register is part of the output
+
+For each input, record amount or rule, source, effective date, reviewer and status. “Preferred return: 8%” is not a sufficient specification. A real calculation may need accrual dates, day-count basis, compounding, capital basis and the treatment of prior payments. If those facts are missing, the correct output is an open question, not a plausible number.
+
+Similarly, a side letter may change one investor's treatment without changing the main model's headline split. Retrieve only documents the reviewer is authorized to access, and keep investor-level allocations separate from a broadly shared explanatory summary.
+
+## Review checklist before any distribution instruction
+
+1. Confirm the controlling agreements and their version, including applicable amendments and side letters.
+2. Reconcile available cash to an approved source and identify reserves, fees and taxes outside the illustrative tiers.
+3. Verify capital balances and prior distribution history by investor and class.
+4. Recompute each tier independently, including cash-in equals allocations plus cash-out.
+5. Test insufficient-cash and rounding cases, not only a profitable full-payment case.
+6. Route ambiguous provisions to qualified legal and fund-accounting reviewers.
+7. Keep calculation approval distinct from authority to initiate payment. This article authorizes neither.
+
+For the surrounding review package, see [the close source-to-output map](/blog/ai-assisted-quarter-end-close).
+
+## Sources and limitations
+
+The arithmetic above can be reproduced directly from the stated inputs. It is not based on an actual LPA, investor record or customer result. Actual governing agreements and qualified accounting/legal judgment remain necessary. Subject-matter review of this expansion is pending. The example deliberately omits many real-world features and must not be reused as production distribution logic.
