@@ -2,7 +2,7 @@
 title: "Keep the System of Record. Automate the Work Above It."
 description: "A safer deployment sequence for firms that cannot afford a replacement project disguised as an AI pilot."
 date: "2026-08-27"
-updated: "2026-09-24"
+updated: "2026-09-25"
 author: "Nolan Grout"
 keywords:
   - AI system of record real estate
@@ -10,11 +10,13 @@ keywords:
   - fund operations automation
 ---
 
-The most expensive AI pilot is the one that quietly becomes a replacement project.
+**TL;DR: Keep the system of record authoritative. Start AI agents with approved read access, compare their work against the existing process, and require named review before any write. Use four rollout phases to separate evaluation, shadow operation, reviewed assistance, and narrow actions; treat each added permission as a separate decision.**
+
+An AI pilot can become a replacement project if its authority expands without explicit review.
 
 Real estate firms already depend on ledgers, property systems, CRMs, VDRs, models, and document repositories. Those systems have permissions, history, and operating ownership. An agent should earn the right to change them.
 
-## Start read-only
+## How should a real estate firm add AI without replacing its system of record?
 
 The first version should read approved records, complete a defined transformation, and deliver a reviewable output. It should not write back merely because an API allows it.
 
@@ -96,4 +98,10 @@ A source-system change should trigger a compatibility check: renamed columns, ne
 
 ## Sources and limitations
 
-This architecture is an editorial reference, not a list of shipped integrations, a security certification or a service-level promise. Actual interfaces and write capabilities must be confirmed during scoping. See [LP data boundaries](/blog/lp-reporting-data-boundaries) for recipient-specific controls. Security and editorial review of this expansion remain pending; local revision is not deployment evidence.
+This architecture is an editorial reference, not a list of shipped integrations, a security certification or a service-level promise. The four phases are this article's proposed rollout model, not a measured benchmark or a NIST-prescribed sequence. Actual interfaces and write capabilities must be confirmed during scoping.
+
+[NIST AI RMF 1.0](https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf), published January 2023, calls for documented roles and responsibilities in GOVERN 2.1 and safe decommissioning processes in GOVERN 1.7 (printed page 23). These support the governance context, not a claim that NIST endorses this architecture or Prestyj. Source checked September 25, 2026; the framework is voluntary and not specific to real estate.
+
+For the next review decision, see [LP data boundaries](/blog/lp-reporting-data-boundaries) for recipient-specific controls, [property data conflicts](/blog/reconciling-property-data-conflicts) for source disagreements, and [evidence-led diligence](/blog/evidence-led-real-estate-diligence) for source-backed work product.
+
+Security and editorial review of this expansion remain pending; local revision is not deployment evidence. To scope one workflow around your existing systems, [book a workflow demo](/book-demo).
