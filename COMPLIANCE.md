@@ -1,5 +1,14 @@
 # Compliance Register
 
+## 2026-09-25 traffic operations — scoped update
+
+Engineering guidance, not legal advice. Reviewed against working tree based on `72743f8`; this is not a full-site compliance or security reassessment.
+
+- **RUNTIME:** Resend reports a verified sending domain but zero contacts and zero broadcasts. No outreach, contact import, campaign or paid promotion was performed. A configured sender is not evidence of recipient consent.
+- **RUNTIME:** Google Search Console access and the public sitemap were verified. The current sitemap was resubmitted. These operations do not establish a traffic or ranking gain.
+- **CODE / tested:** IndexNow CLI candidates now come from the institutional sitemap registry, with live canonical/noindex checks before notification. Archived and draft pages are not promoted. Regression coverage is in `scripts/seo/indexnow-urls.test.ts`.
+- **Not checked or changed:** existing tracking/consent flows, contact-form processing, jurisdiction assumptions, and `/api/indexnow` authorization. That older endpoint uses a public ownership key as its bearer credential; it was not used for these operations and is not a suitable private administrative boundary. Existing register entries below remain historical unless separately reverified.
+
 Snapshot: 27 August 2026 · Reviewed by: EZ Coder compliance-guard · **NOT LEGAL ADVICE**
 
 Code state: uncommitted institutional website rewrite. Re-check against the final commit before relying on this register.

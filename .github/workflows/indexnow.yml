@@ -12,10 +12,10 @@ on:
     branches: [main]
     paths:
       - "content/blog/**"
-      - "src/lib/alternatives/**"
-      - "src/lib/solutions/**"
-      - "src/lib/best-for/**"
-      - "src/lib/locations/**"
+      - "src/lib/institutional/**"
+      - "src/lib/indexnow.ts"
+      - "src/app/sitemap.ts"
+      - "scripts/seo/indexnow-urls.ts"
       - "scripts/indexnow-diff.ts"
       - "data/indexnow/submitted-urls.json"
   workflow_dispatch:

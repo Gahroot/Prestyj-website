@@ -1,73 +1,60 @@
-# IndexNow auto-publishing
+# IndexNow publishing
 
-**TL;DR — it's automatic. Merge a new blog post or page to `main` and it gets pinged to Bing/Yandex/Naver/Seznam/Yep within a few minutes. You don't need to do anything.**
+**Only canonical institutional URLs are eligible. A submission is a crawl notification, not a guarantee of indexing, rankings or traffic.** Google does not participate in IndexNow; use the sitemap and Search Console for Google.
 
-## How it works
+## URL discovery and release gate
 
-1. You merge a PR to `main` that adds a new MDX blog post (`content/blog/*.mdx`) or a new entry in one of the slug registries (`src/lib/alternatives`, `src/lib/solutions`, `src/lib/best-for`, `src/lib/locations`).
-2. The [`IndexNow auto-ping`](../.github/workflows/indexnow.yml) GitHub Action triggers on that push.
-3. `scripts/indexnow-diff.ts` runs:
-   - Discovers the **current** set of indexable URLs (same logic as `src/app/sitemap.ts`).
-   - Diffs against the last-submitted snapshot at `data/indexnow/submitted-urls.json`.
-   - Submits **only the new URLs** to `https://yandex.com/indexnow` (which fans out to every IndexNow participant).
-   - Updates the snapshot.
-4. The Action commits the updated snapshot back to `main` so the next push sees those URLs as already-known.
+`src/lib/indexnow.ts` derives its URL list from `institutionalIndexablePaths`, the same institutional registry used by the sitemap. Both CLI scripts use this shared list. Archived SMB content, redirects, draft articles, embed routes and `/demo` are excluded. Do not add retired pages back to gain URL volume.
 
-Google does **not** participate in IndexNow — it relies on the sitemap + Search Console. Make sure new URLs land in `src/app/sitemap.ts` (most categories pick them up automatically via slug registries / fumadocs).
+Before sending, the CLI checks every candidate on production:
 
-## Triggers
+- HTTP 200 HTML, with redirects rejected.
+- Exactly one matching canonical URL.
+- No `noindex` or `none` directive in robots metadata or `X-Robots-Tag`.
+- A valid hosted IndexNow ownership file.
 
-The workflow runs on push to `main` when any of these change:
+Only after these checks does it POST to `https://api.indexnow.org/indexnow`. Network errors, invalid ownership and failed checks stop submission. Keys are not logged. Dry runs make no network requests and change no snapshot.
 
-- `content/blog/**`
-- `src/lib/alternatives/**`
-- `src/lib/solutions/**`
-- `src/lib/best-for/**`
-- `src/lib/locations/**`
-- `scripts/indexnow-diff.ts`
-- `data/indexnow/submitted-urls.json`
-
-You can also trigger it manually via **Actions → IndexNow auto-ping → Run workflow**.
+These live checks apply to the CLI commands below, not the older `/api/indexnow` HTTP endpoint. Use the CLI for operations. The HTTP endpoint's authorization and ad-hoc submission behavior have not been hardened by this change.
 
 ## Local commands
 
 ```bash
-# Show the diff vs. the snapshot without submitting or writing anything
+# Preview the canonical list or the new-URL diff (no external side effects)
+npm run indexnow:dry
 npm run indexnow:diff:dry
 
-# Submit new URLs (requires INDEXNOW_API_KEY in env or .env.local)
+# Submit only new URLs after production verification
 npm run indexnow:diff
 
-# Full re-submit of every URL (rarely needed — only on a key rotation
-# or when re-onboarding the site to IndexNow)
-npm run indexnow
+# Notify engines about one updated, already-live article
+npm run indexnow -- --url https://prestyj.com/blog/keep-the-system-of-record
 
-# Same, but dry-run
-npm run indexnow:dry
+# Rare: resubmit the full canonical site after a substantial migration
+npm run indexnow
 ```
 
-## Adding a new URL category
+`INDEXNOW_API_KEY` is read from the environment or ignored `.env.local`. Missing credentials make live runs fail. A malformed or missing `--url` value cannot fall back to submitting the whole site.
 
-If you add a new section to the site that doesn't fit any existing slug registry:
+The diff command reads `data/indexnow/submitted-urls.json` and writes a current snapshot only after successful submission. A malformed existing snapshot fails closed; it does not trigger a full-site resubmission. Full/single-URL submissions do not update that snapshot.
 
-1. Add it to `src/app/sitemap.ts` so Google can discover it.
-2. Add it to `scripts/indexnow-diff.ts` (either as a static path in `STATIC_ROUTES` / `COMPARE_ROUTES`, or by importing a new slug registry).
-3. Update `.github/workflows/indexnow.yml` `paths:` if the new data lives outside the directories already listed.
-4. Run `npm run indexnow:diff:dry` locally to confirm the new URLs are detected.
+## GitHub Actions
 
-## Key rotation / re-seeding the snapshot
+The existing `IndexNow auto-ping` workflow triggers on relevant pushes to `main` and supports manual dispatch. Its path filters include institutional source data, the sitemap, shared submission code and blog content. The existing workflow commits a changed snapshot back to the repository.
 
-If the snapshot is lost or you need to start fresh without spamming IndexNow with 500+ already-known URLs:
+A push can occur before production deployment finishes. If live verification fails, wait for the deployment and rerun the workflow; no success or snapshot update is claimed beforehand. This is not a deployment-ready trigger or a recurring scheduler. These workflow changes only take effect after they are deliberately committed and pushed.
+
+## Adding an institutional page
+
+1. Complete the existing editorial/release gates.
+2. Register the approved page through `src/lib/institutional/site-map.ts` and its source registries so both discovery paths agree.
+3. Deploy, verify the live page, then run the diff command.
+4. For an update to an existing page, use a single-URL submission after deployment; diff mode only detects new URLs.
+
+## Seeding without notification
 
 ```bash
 npx tsx scripts/indexnow-diff.ts --seed
 ```
 
-This writes the snapshot from the current discovered URL set **without** submitting anything. Future runs will only ping URLs added after the seed.
-
-## Where the IndexNow API key lives
-
-- **GitHub Actions**: `INDEXNOW_API_KEY` repo secret.
-- **Local dev / scripts**: `INDEXNOW_API_KEY` in `.env.local` (loaded automatically by `tsx`).
-- **Production runtime** (the `POST /api/indexnow` route used by the seo-bot and ad-hoc submissions): same `INDEXNOW_API_KEY` env var on Vercel.
-- **Verification file**: `public/<key>.txt` containing the key itself (IndexNow's ownership check).
+This verifies current pages on production and writes a baseline **without submitting anything**. Use only when intentionally establishing a baseline. It is not evidence that an engine accepted the URLs.
