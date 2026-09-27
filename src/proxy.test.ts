@@ -8,19 +8,20 @@ afterEach(() => {
   vi.unstubAllEnvs();
 });
 
-describe("institutional blog redirects", () => {
+describe("institutional blog routing", () => {
   it.each([
     "branded-calling-pricing-comparison-2026",
     "evaluate-institutional-real-estate-ai-vendors",
     "unknown-article",
-  ])("redirects %s once before page rendering, retaining security and privacy", (slug) => {
+  ])("leaves %s to configured redirects or the router, retaining security and privacy", (slug) => {
     const response = proxy(
       new NextRequest(`https://prestyj.com/blog/${slug}?next=https://example.com`, {
         headers: { "sec-gpc": "1" },
       }),
     );
-    expect(response.status).toBe(308);
-    expect(response.headers.get("location")).toBe("https://prestyj.com/blog");
+    expect(response.status).toBe(200);
+    expect(response.headers.get("location")).toBeNull();
+    expect(response.headers.get("x-middleware-next")).toBe("1");
     expect(response.headers.get("x-frame-options")).toBe("DENY");
     expect(response.headers.get("content-security-policy")).toContain("frame-ancestors 'none'");
     expect(response.cookies.get("prestyj-gpc")?.value).toBe("1");

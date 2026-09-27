@@ -11,6 +11,24 @@ export type ResearchArticle = {
 
 export const researchArticles: readonly ResearchArticle[] = [
   {
+    slug: "custom-ai-agents-real-estate",
+    capabilities: ["deal-diligence", "fund-operations", "investor-reporting", "origination"],
+    topics: ["workflow-selection", "integration", "review-controls"],
+    category: "Workflow selection",
+    title: "Custom AI Agents for Real Estate: What to Build First",
+    description:
+      "A practical guide to custom AI agents for real estate funds, commercial brokerages, and owner-operators: workflows, costs, integrations, and review gates.",
+  },
+  {
+    slug: "ai-operating-systems-real-estate",
+    capabilities: ["portfolio-intelligence", "fund-operations", "investor-reporting"],
+    topics: ["workflow-selection", "integration", "review-controls"],
+    category: "Operating model",
+    title: "AI Operating Systems for Real Estate: A Buyer's Guide",
+    description:
+      "What an AI operating system means for institutional real estate: how it differs from a CRM or ERP, which workflows fit, and what to verify before buying.",
+  },
+  {
     slug: "ai-for-real-estate-investment-funds-exception-queues",
     capabilities: ["portfolio-intelligence"],
     topics: ["exceptions", "source-lineage"],

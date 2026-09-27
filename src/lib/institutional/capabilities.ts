@@ -12,6 +12,7 @@ export type CapabilitySlug =
 export type Capability = {
   slug: CapabilitySlug;
   navLabel: string;
+  searchTitle: string;
   eyebrow: string;
   title: string;
   description: string;
@@ -29,6 +30,7 @@ export const capabilities: readonly Capability[] = [
   {
     slug: "deal-diligence",
     navLabel: "Deal diligence",
+    searchTitle: "AI Due Diligence for Commercial Real Estate",
     eyebrow: "Deal work",
     title: "Clear diligence without losing the source.",
     description:
@@ -50,6 +52,7 @@ export const capabilities: readonly Capability[] = [
   {
     slug: "fund-operations",
     navLabel: "Fund operations",
+    searchTitle: "AI Agents for Real Estate Fund Operations",
     eyebrow: "Fund operations",
     title: "Close the quarter while the numbers are still fresh.",
     description:
@@ -71,6 +74,7 @@ export const capabilities: readonly Capability[] = [
   {
     slug: "investor-reporting",
     navLabel: "Investor reporting",
+    searchTitle: "AI Investor Reporting for Real Estate Funds",
     eyebrow: "Investor relations",
     title: "Answer the LP before the follow-up arrives.",
     description:
@@ -92,6 +96,7 @@ export const capabilities: readonly Capability[] = [
   {
     slug: "portfolio-intelligence",
     navLabel: "Portfolio intelligence",
+    searchTitle: "AI Portfolio Intelligence for Commercial Real Estate",
     eyebrow: "Portfolio operations",
     title: "Trust one answer across every property system.",
     description:
@@ -113,6 +118,7 @@ export const capabilities: readonly Capability[] = [
   {
     slug: "origination",
     navLabel: "Origination",
+    searchTitle: "AI Voice Agents for Commercial Real Estate Brokerages",
     eyebrow: "Commercial brokerage",
     title: "Catch the inbound while the prospect is still moving.",
     description:
@@ -134,6 +140,7 @@ export const capabilities: readonly Capability[] = [
   {
     slug: "listing-media",
     navLabel: "Listing media",
+    searchTitle: "AI Listing Materials for Commercial Real Estate",
     eyebrow: "Origination",
     title: "Ship the materials before the listing loses momentum.",
     description:

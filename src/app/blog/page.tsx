@@ -9,10 +9,25 @@ import { researchArticles } from "@/lib/institutional/research";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Field notes",
+  title: "Institutional Real Estate AI Guides & Field Notes",
   description:
     "Field notes on AI agents for institutional real estate fund operations, diligence, investor reporting, portfolio intelligence, and brokerage operations.",
   alternates: { canonical: `${siteConfig.url}/blog` },
+  openGraph: {
+    type: "website",
+    url: `${siteConfig.url}/blog`,
+    title: "Institutional Real Estate AI Guides & Field Notes",
+    description:
+      "Practical guides to custom AI agents, AI operating systems, diligence, fund operations, and commercial brokerage workflows.",
+    images: [siteConfig.ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Institutional Real Estate AI Guides & Field Notes",
+    description:
+      "Practical guides to custom AI agents, AI operating systems, diligence, fund operations, and commercial brokerage workflows.",
+    images: [siteConfig.ogImage],
+  },
 };
 
 export default function BlogPage(): React.ReactElement {

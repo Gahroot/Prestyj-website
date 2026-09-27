@@ -11,10 +11,25 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Platform",
+  title: "Custom AI Agents for Institutional Real Estate",
   description:
-    "See how Prestyj turns institutional real estate source systems into reviewed, traceable work product without replacing the system of record.",
+    "Prestyj builds and runs custom AI agents for real estate funds, commercial brokerages, and owner-operators. Source-linked work, with your team in control.",
   alternates: { canonical: `${siteConfig.url}/platform` },
+  openGraph: {
+    type: "website",
+    url: `${siteConfig.url}/platform`,
+    title: "Custom AI Agents for Institutional Real Estate",
+    description:
+      "Defined deal, fund, investor, portfolio, and origination workflows above your existing systems of record.",
+    images: [siteConfig.ogImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Custom AI Agents for Institutional Real Estate",
+    description:
+      "Defined deal, fund, investor, portfolio, and origination workflows above your existing systems of record.",
+    images: [siteConfig.ogImage],
+  },
 };
 
 const controls = [
@@ -44,9 +59,21 @@ export default function PlatformPage() {
             <div className="editorial-rail">
               <EditorialPageHeader title="Your systems stay in charge. The work stops waiting.">
                 <p>
-                  Prestyj connects the records your firm already trusts to an agent that performs
-                  one defined workflow, routes exceptions to the right person, and delivers the
-                  approved work product.
+                  Prestyj builds and runs custom AI agents for institutional real estate. Each agent
+                  connects the records your firm already trusts to one defined workflow, routes
+                  exceptions to the right person, and delivers work product for your team’s
+                  approval.
+                </p>
+                <p>
+                  Comparing approaches? Read our guides to{" "}
+                  <Link href="/blog/custom-ai-agents-real-estate" className="underline">
+                    custom AI agents for real estate
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/blog/ai-operating-systems-real-estate" className="underline">
+                    AI operating systems for real estate firms
+                  </Link>
+                  .
                 </p>
               </EditorialPageHeader>
             </div>

@@ -1,0 +1,95 @@
+---
+title: "Custom AI Agents for Real Estate: What to Build First"
+description: "A practical guide to custom AI agents for real estate funds, commercial brokerages, and owner-operators: workflows, costs, integrations, and review gates."
+date: "2026-09-27"
+author: "Nolan Grout"
+keywords:
+  - custom AI agents for real estate
+  - custom AI agents
+  - commercial real estate AI agents
+  - AI agents for real estate investment funds
+---
+
+**Custom AI agents for real estate are software systems configured around a firm's records, work product, and decision boundaries. The useful starting point is not an agent that can do everything. It is one recurring deliverable—such as a diligence exception report or an investor-response draft—with named sources, a reviewer, and a clear stopping rule.**
+
+For an institutional investment fund, commercial brokerage, or CRE owner-operator, “custom” should describe the business requirements the workflow must satisfy. It should not mean a new foundation model, a replacement ledger, or a conversational interface that leaves the analyst to finish the work.
+
+Prestyj builds and operates [AI agents for institutional real estate](/platform). This guide explains how to decide whether a defined agent workflow is appropriate before committing to an implementation.
+
+## What makes an AI agent custom?
+
+A prompt that mentions your company is not enough. A useful scope specifies five things:
+
+1. **Source scope:** which funds, properties, documents, reporting periods, and recipients the workflow may access.
+2. **Work product:** the exact artifact the team needs, including its fields, format, and source references.
+3. **Business rules:** the definitions and calculations that must be applied consistently rather than improvised by a model.
+4. **Review boundaries:** who resolves conflicting evidence and who approves the finished version.
+5. **Operating ownership:** who investigates failures and maintains the workflow when a source system changes.
+
+Customization might be necessary because two funds use different reporting definitions, because a broker's routing rules depend on the listing, or because a property answer must reconcile records with different effective dates. These are process requirements, not reasons to give a model unrestricted access.
+
+## Which real estate workflows are good starting points?
+
+Choose a recurring task whose result can be compared with the current process. These examples are proposed workflow scopes, not claims about customer results or guaranteed integrations.
+
+| Team                 | First work product             | Inputs to verify                                               | Decision that stays with a person                           |
+| -------------------- | ------------------------------ | -------------------------------------------------------------- | ----------------------------------------------------------- |
+| Acquisitions         | Diligence exception report     | Offering memo, rent roll, leases, model                        | Resolve material discrepancies before committee circulation |
+| Fund operations      | Close-review package           | Approved ledger exports, schedules, reporting definitions      | Approve accounting treatment and final close                |
+| Investor relations   | Investor-response draft        | Recipient-authorized statements and governing documents        | Approve recipient scope and external release                |
+| Asset management     | Lease and debt event watchlist | Dated lease records, debt schedules, property identifiers      | Confirm ambiguous dates and resulting actions               |
+| Commercial brokerage | Inbound inquiry handoff        | Approved listing facts, qualification questions, routing rules | Handle negotiations, commitments, and escalations           |
+
+The details differ. [Deal diligence](/capabilities/deal-diligence) centers on evidence and discrepancies. [Fund operations](/capabilities/fund-operations) needs reproducible calculations and reconciliation. [Brokerage origination](/capabilities/origination) needs a useful handoff rather than a conversation that merely sounds convincing.
+
+## An illustrative diligence workflow
+
+Consider a fictional acquisition team reviewing an office property. The offering memo and rent roll show different occupied areas. A weak workflow selects one number and writes a confident summary. A reviewable workflow records both values, identifies each source and effective date, and marks occupancy as unresolved.
+
+The deliverable is an exception record with a property identifier, the conflicting fields, the supporting file locations, and an assigned reviewer. The draft committee memo can reference that record, but it must not present the occupancy assumption as approved.
+
+Acceptance checks should include a missing rent roll, an amended lease, a scanned page the extraction cannot read, and a source from the wrong property. Test whether the workflow stops or produces an explicit exception—not just whether it can summarize a clean document set. See [evidence-led real estate diligence](/blog/evidence-led-real-estate-diligence) for the source trail behind a conclusion.
+
+## Custom agent, existing software, or a fixed workflow?
+
+Use the simplest approach that completes the job. An export transformation with stable columns may need ordinary software, not an agent. A document-summary task may need a single model call with approved source retrieval. An agent becomes a candidate when the next retrieval or tool step depends on what the previous step discovered.
+
+| Approach                | Consider it when                                                             | What to verify                                             |
+| ----------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Existing system feature | The required task already fits the product and permission model              | Output quality, access scope, and exportability            |
+| Fixed workflow          | Steps and calculations are known in advance                                  | Validation, retries, and exception handling                |
+| Custom agent workflow   | Variable source material requires bounded choices about what to inspect next | Tool scope, stopping conditions, evidence, and review load |
+
+Anthropic's engineering guidance distinguishes predefined workflows from agents that direct their own tool use. It also recommends starting with simpler solutions before adding complexity. That distinction is useful for scoping; it does not establish that an autonomous system is appropriate for a particular fund.
+
+## What does it cost to build and operate custom AI agents?
+
+There is no defensible universal price without the workflow. Separate the initial implementation from ongoing operation. The meaningful cost drivers include:
+
+- access to usable exports or supported interfaces;
+- document variety and extraction difficulty;
+- entity matching across funds, properties, investors, or CRM records;
+- volume, run frequency, and turnaround requirements;
+- review effort and exception frequency;
+- access restrictions, retention requirements, and audit records;
+- maintenance when sources, templates, or operating rules change.
+
+Ask for a scope that names the included work product, source systems, operating responsibilities, and what happens when volume changes. Compare the total cost with the same completed work today, including review and rework. A lower model bill is not a saving if the reviewer has to reconstruct the answer. Prestyj's [engagement approach](/pricing) scopes the workflow rather than selling a generic seat license.
+
+## Do agents need live Yardi, MRI, ARGUS, or DealCloud access?
+
+Not necessarily. An approved export may be sufficient to evaluate a workflow before considering live access. A vendor name is not evidence of a supported connector, a partnership, or permission to use an interface. Confirm the actual edition, access rights, data fields, refresh schedule, and permitted operations during scoping.
+
+Keep read access separate from write authority. Preparing a CRM note is not the same as saving it; drafting an investor response is not the same as sending it. [Keep the system of record authoritative](/blog/keep-the-system-of-record) while proving the work above it.
+
+## What should a first proof demonstrate?
+
+Use representative, authorized records and a known-answer set that includes failures. Record completion rate, reviewer time, material corrections, and unresolved exceptions under the same conditions as the current process. Set acceptance criteria before reviewing the results, and do not quietly remove the difficult cases from the denominator.
+
+The first decision is whether one workflow earns continued use. A broader [AI operating system for real estate](/blog/ai-operating-systems-real-estate) only becomes relevant when multiple workflows need shared source definitions, permissions, review records, and operating ownership.
+
+## Sources and limitations
+
+This is an editorial scoping guide, not investment, accounting, legal, or security advice. The diligence example is fictional; it is not a production case study, accuracy benchmark, or promise of savings. Actual access, deployment controls, and service commitments require engagement-specific verification.
+
+[Anthropic, Building effective agents](https://www.anthropic.com/engineering/building-effective-agents), originally published December 19, 2024, supports the workflow-versus-agent distinction and the recommendation to start with simpler approaches. Source checked September 27, 2026. The real estate examples and selection criteria here are Prestyj's editorial recommendations, not an endorsement by Anthropic.

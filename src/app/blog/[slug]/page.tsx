@@ -46,17 +46,22 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
       publishedTime: published,
       modifiedTime: modified,
       authors: ["Nolan Grout"],
+      images: [siteConfig.ogImage],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [siteConfig.ogImage],
+    },
   };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  if (!isInstitutionalBlogSlug(slug)) permanentRedirect("/blog");
-
   const page = blogSource.getPage([slug]);
   if (!page) notFound();
+  if (!isInstitutionalBlogSlug(slug)) permanentRedirect("/blog");
 
   const MDXContent = page.data.body;
   const { title, description, keywords } = page.data;
@@ -77,6 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           dateModified: modified,
           mainEntityOfPage: postUrl,
           url: postUrl,
+          image: siteConfig.ogImage,
           keywords: keywords?.join(", "),
         }}
       />

@@ -5,6 +5,7 @@ export type AudienceSlug = "investment-funds" | "commercial-brokerages" | "owner
 export type Audience = {
   slug: AudienceSlug;
   navLabel: string;
+  searchTitle: string;
   title: string;
   description: string;
   recognized: readonly string[];
@@ -18,6 +19,7 @@ export const audiences: readonly Audience[] = [
   {
     slug: "investment-funds",
     navLabel: "Investment funds",
+    searchTitle: "AI Agents for Real Estate Investment Funds",
     title: "More assets should not mean a larger quarter-end fire drill.",
     description:
       "For real estate investment funds from $500M AUM that need faster deal work, explainable fund operations, and investor answers that hold up under review.",
@@ -52,6 +54,7 @@ export const audiences: readonly Audience[] = [
   {
     slug: "commercial-brokerages",
     navLabel: "Commercial brokerages",
+    searchTitle: "AI Agents for Commercial Real Estate Brokerages",
     title: "The next assignment rarely arrives during office hours.",
     description:
       "For commercial brokerage teams that need every inquiry covered, every prospect qualified, and every listing package moving without adding another coordination layer.",
@@ -81,6 +84,7 @@ export const audiences: readonly Audience[] = [
   {
     slug: "owner-operators",
     navLabel: "Owner-operators",
+    searchTitle: "AI Agents for CRE Owner-Operators",
     title: "Your portfolio should answer like one business.",
     description:
       "For CRE owner-operators whose property, lease, debt, operating, and investor data has outgrown the spreadsheet joining it together.",

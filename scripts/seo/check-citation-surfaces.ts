@@ -3,6 +3,9 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { z } from "zod";
 import { researchArticles } from "../../src/lib/institutional/research";
+import { capabilities } from "../../src/lib/institutional/capabilities";
+import { audiences } from "../../src/lib/institutional/audiences";
+import { siteConfig } from "../../src/lib/site-config";
 import {
   institutionalIndexablePaths,
   indexableStaticRoutes,
@@ -208,6 +211,13 @@ export async function checkCitationSurfaces(baseUrl: string): Promise<SurfaceChe
       "Existing DENY and CSP retained",
     );
     checks.push(...articleDateChecks(text, expected, article.slug));
+    add(
+      meta(text, "og:image") === siteConfig.ogImage &&
+        meta(text, "twitter:image") === siteConfig.ogImage &&
+        articleJson(text)?.image === siteConfig.ogImage,
+      `${route} article images`,
+      "Article schema and social previews retain an absolute image URL",
+    );
     const node = sitemap.text
       .split("<url>")
       .find((part) => part.includes(`<loc>${SITE}${route}</loc>`));
@@ -231,6 +241,40 @@ export async function checkCitationSurfaces(baseUrl: string): Promise<SurfaceChe
       "Registered article linked",
     );
   }
+  const searchPages = [
+    ...capabilities.map((item) => ({
+      route: `/capabilities/${item.slug}`,
+      title: item.searchTitle,
+    })),
+    ...audiences.map((item) => ({ route: `/for/${item.slug}`, title: item.searchTitle })),
+    { route: "/platform", title: "Custom AI Agents for Institutional Real Estate" },
+  ];
+  for (const { route, title } of searchPages) {
+    const { response, text } = await fetchSurface(route);
+    add(response.status === 200, `${route} search status`, String(response.status));
+    add(
+      text.includes(`<title>${title} | Prestyj</title>`),
+      `${route} search title`,
+      "Descriptive title with exactly one brand suffix",
+    );
+    add(
+      meta(text, "og:title") === title && meta(text, "twitter:title") === title,
+      `${route} social titles`,
+      "Page-specific titles instead of inherited homepage copy",
+    );
+    add(
+      meta(text, "og:image") === siteConfig.ogImage &&
+        meta(text, "twitter:image") === siteConfig.ogImage,
+      `${route} social images`,
+      "Brand image retained with page-specific metadata",
+    );
+  }
+  const missing = await fetchSurface("/blog/this-page-does-not-exist-seo-check");
+  add(
+    missing.response.status === 404,
+    "unknown article is a real 404",
+    String(missing.response.status),
+  );
   const ledger = contentLedgerSchema.parse(
     JSON.parse(readFileSync("data/seo/institutional-content-backlog.json", "utf8")),
   );

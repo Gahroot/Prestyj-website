@@ -1,5 +1,8 @@
 import { createMDX } from "fumadocs-mdx/next";
 import type { NextConfig } from "next";
+import { readdirSync } from "node:fs";
+import { join } from "node:path";
+import { researchArticles } from "./src/lib/institutional/research";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -98,7 +101,18 @@ const nextConfig: NextConfig = {
       ["/free-ads-for-wellness-coaches", "/capabilities/listing-media"],
     ] as const;
 
+    // Redirect only real archived articles, before rendering. Unknown URLs must
+    // reach the route's 404 rather than redirecting unrelated requests to /blog.
+    const currentArticles = new Set(researchArticles.map((article) => article.slug));
+    const archivedArticleRedirects = readdirSync(join(process.cwd(), "content/blog"))
+      .filter((file) => /^[a-z0-9-]+\.mdx$/.test(file))
+      .map((file) => file.slice(0, -4))
+      .filter((slug) => !currentArticles.has(slug))
+      .sort()
+      .map((slug) => ({ source: `/blog/${slug}`, destination: "/blog", permanent: true }));
+
     return [
+      ...archivedArticleRedirects,
       ...legacyRedirects.map(([source, destination]) => ({
         source,
         destination,

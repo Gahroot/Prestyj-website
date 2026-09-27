@@ -23,14 +23,21 @@ export async function generateMetadata({
 
   const url = `${siteConfig.url}/capabilities/${capability.slug}`;
   return {
-    title: `${capability.navLabel} | Prestyj`,
+    title: capability.searchTitle,
     description: capability.description,
     alternates: { canonical: url },
     openGraph: {
-      title: capability.title,
+      title: capability.searchTitle,
       description: capability.description,
       url,
       type: "website",
+      images: [siteConfig.ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: capability.searchTitle,
+      description: capability.description,
+      images: [siteConfig.ogImage],
     },
   };
 }

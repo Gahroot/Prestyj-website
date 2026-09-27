@@ -22,11 +22,24 @@ export async function generateMetadata({
   if (!audience) return { title: "Audience not found" };
 
   const url = `${siteConfig.url}/for/${audience.slug}`;
+  const title = audience.searchTitle;
   return {
-    title: `AI agents for ${audience.navLabel} | Prestyj`,
+    title,
     description: audience.description,
     alternates: { canonical: url },
-    openGraph: { title: audience.title, description: audience.description, url, type: "website" },
+    openGraph: {
+      title,
+      description: audience.description,
+      url,
+      type: "website",
+      images: [siteConfig.ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: audience.description,
+      images: [siteConfig.ogImage],
+    },
   };
 }
 

@@ -1,5 +1,15 @@
 # Compliance Register
 
+## 2026-09-27 search-content work — scoped update
+
+Engineering/editorial guidance, not legal advice. Working tree based on `7e9f2b1`; not a full-site legal, security, accessibility, or performance reassessment. Earlier findings not explicitly checked here remain historical, not newly cleared.
+
+- **RUNTIME:** Retrieved an aggregate Search Console baseline through the existing read-only credential path. Credentials and raw query data remain ignored; no tracking, audience upload, campaign, paid promotion, or outreach was added.
+- **CODE:** Two new guides distinguish custom agent workflows from an AI operating layer. Examples are labeled fictional. No customer results, certifications, guaranteed integrations, universal price, or ranking promise was invented. Anthropic's workflow guidance was read and cited with its limited role stated.
+- **CODE:** Copy follows the user's explicit request to target “custom AI agents” and “AI operating systems” while remaining specific to institutional real estate. Existing pending review records and unrelated edits were not marked approved or changed.
+- **Release boundary:** The guides are registered in the local site, not deployed. Author attribution, qualified editorial review, and the existing release gates remain unapproved; build and search checks do not supply that approval. No domain, deployment, credential, consent, or production setting was changed.
+- **Not rechecked:** Existing callback, admin, tracking, retention, legal-entity, and jurisdiction findings. No full dependency, history, or security audit was performed for this scoped SEO change.
+
 ## 2026-09-25 traffic operations — scoped update
 
 Engineering guidance, not legal advice. Reviewed against working tree based on `72743f8`; this is not a full-site compliance or security reassessment.
