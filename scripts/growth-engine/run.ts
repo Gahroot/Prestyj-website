@@ -32,11 +32,21 @@ const SITE = "https://prestyj.com";
 
 type Step = { name: string; ok: boolean; detail: string };
 
-function sh(cmd: string, args: string[], opts: { allowFail?: boolean } = {}): { ok: boolean; out: string } {
-  const res = spawnSync(cmd, args, { cwd: ROOT, encoding: "utf8", maxBuffer: 64 * 1024 * 1024, env: process.env });
+function sh(
+  cmd: string,
+  args: string[],
+  opts: { allowFail?: boolean } = {},
+): { ok: boolean; out: string } {
+  const res = spawnSync(cmd, args, {
+    cwd: ROOT,
+    encoding: "utf8",
+    maxBuffer: 64 * 1024 * 1024,
+    env: process.env,
+  });
   const out = `${res.stdout ?? ""}${res.stderr ?? ""}`;
   const ok = res.status === 0;
-  if (!ok && !opts.allowFail) console.error(`[run] ${cmd} ${args.join(" ")} failed:\n${out.slice(-4000)}`);
+  if (!ok && !opts.allowFail)
+    console.error(`[run] ${cmd} ${args.join(" ")} failed:\n${out.slice(-4000)}`);
   return { ok, out };
 }
 
@@ -63,7 +73,9 @@ function changedPaths(): string[] {
 }
 
 export function isAllowed(file: string): boolean {
-  return COMMIT_ALLOWLIST.some((prefix) => (prefix.endsWith("/") ? file.startsWith(prefix) : file === prefix));
+  return COMMIT_ALLOWLIST.some((prefix) =>
+    prefix.endsWith("/") ? file.startsWith(prefix) : file === prefix,
+  );
 }
 
 function slugToUrl(file: string): string | null {
@@ -88,7 +100,11 @@ async function verifyGates(steps: Step[]): Promise<boolean> {
 
 function commitAndPush(message: string, files: string[], steps: Step[]): boolean {
   if (process.env.GROWTH_PUBLISH !== "1") {
-    steps.push({ name: "push", ok: true, detail: "skipped (GROWTH_PUBLISH!=1); files left in working tree" });
+    steps.push({
+      name: "push",
+      ok: true,
+      detail: "skipped (GROWTH_PUBLISH!=1); files left in working tree",
+    });
     return false;
   }
   git("config", "user.name", process.env.GIT_AUTHOR_NAME ?? "Prestyj Growth Engine");
@@ -96,7 +112,10 @@ function commitAndPush(message: string, files: string[], steps: Step[]): boolean
   execFileSync("git", ["add", "--", ...files], { cwd: ROOT });
   execFileSync("git", ["commit", "-m", message], { cwd: ROOT });
   for (let attempt = 1; attempt <= 3; attempt++) {
-    const pull = sh("git", ["pull", "--rebase", "origin", "main"], { allowFail: true });
+    // --autostash: build output (e.g. .source/, next-env.d.ts) is never committed but must not block the sync.
+    const pull = sh("git", ["pull", "--rebase", "--autostash", "origin", "main"], {
+      allowFail: true,
+    });
     if (!pull.ok) {
       sh("git", ["rebase", "--abort"], { allowFail: true });
       steps.push({ name: "push", ok: false, detail: `rebase conflict: ${pull.out.slice(-800)}` });
@@ -114,10 +133,18 @@ function commitAndPush(message: string, files: string[], steps: Step[]): boolean
 
 async function indexNow(refreshed: string[], steps: Step[]): Promise<void> {
   const diff = sh("npx", ["tsx", "scripts/indexnow-diff.ts"], { allowFail: true });
-  steps.push({ name: "indexnow-new", ok: diff.ok, detail: diff.out.split("\n").slice(-3).join(" ") });
+  steps.push({
+    name: "indexnow-new",
+    ok: diff.ok,
+    detail: diff.out.split("\n").slice(-3).join(" "),
+  });
   for (const url of refreshed) {
     const r = sh("npx", ["tsx", "scripts/submit-indexnow.ts", "--url", url], { allowFail: true });
-    steps.push({ name: `indexnow-refresh ${url}`, ok: r.ok, detail: r.ok ? "accepted" : r.out.slice(-300) });
+    steps.push({
+      name: `indexnow-refresh ${url}`,
+      ok: r.ok,
+      detail: r.ok ? "accepted" : r.out.slice(-300),
+    });
   }
 }
 
@@ -126,7 +153,11 @@ async function waitForLive(urls: string[], timeoutMs = 20 * 60_000): Promise<boo
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
     const results = await Promise.all(
-      urls.map((u) => fetch(u, { redirect: "manual" }).then((r) => r.status === 200).catch(() => false)),
+      urls.map((u) =>
+        fetch(u, { redirect: "manual" })
+          .then((r) => r.status === 200)
+          .catch(() => false),
+      ),
     );
     if (results.every(Boolean)) return true;
     await new Promise((r) => setTimeout(r, 60_000));
@@ -138,7 +169,9 @@ async function daily(dryRun: boolean): Promise<Step[]> {
   const steps: Step[] = [];
   const dirtyAtStart = changedPaths().filter((f) => !isAllowed(f));
   if (dirtyAtStart.length && !dryRun && process.env.GROWTH_PUBLISH === "1") {
-    throw new Error(`Working tree has non-engine changes; refusing to publish: ${dirtyAtStart.slice(0, 5).join(", ")}`);
+    throw new Error(
+      `Working tree has non-engine changes; refusing to publish: ${dirtyAtStart.slice(0, 5).join(", ")}`,
+    );
   }
 
   const { collectPerformance } = await import("./measure/index");
@@ -157,12 +190,20 @@ async function daily(dryRun: boolean): Promise<Step[]> {
   const changed = changedPaths().filter((f) => !dirtyAtStart.includes(f));
   const outside = changed.filter((f) => !isAllowed(f));
   if (outside.length) {
-    await raiseException({ severity: "critical", component: "run.allowlist", message: `Content cycle changed files outside the allowlist; nothing published: ${outside.join(", ")}` });
+    await raiseException({
+      severity: "critical",
+      component: "run.allowlist",
+      message: `Content cycle changed files outside the allowlist; nothing published: ${outside.join(", ")}`,
+    });
     return steps;
   }
   const siteChanged = changed.some((f) => !f.startsWith("data/") && !f.startsWith("scripts/"));
   if (siteChanged && !(await verifyGates(steps))) {
-    await raiseException({ severity: "critical", component: "run.gates", message: `Pre-publish gate failed (${steps.at(-1)?.name}); nothing pushed. ${steps.at(-1)?.detail.slice(0, 600) ?? ""}` });
+    await raiseException({
+      severity: "critical",
+      component: "run.gates",
+      message: `Pre-publish gate failed (${steps.at(-1)?.name}); nothing pushed. ${steps.at(-1)?.detail.slice(0, 600) ?? ""}`,
+    });
     return steps;
   }
   if (!changed.length) return steps;
@@ -176,14 +217,26 @@ async function daily(dryRun: boolean): Promise<Step[]> {
   const urls = [...result.publishedPaths, ...result.refreshedPaths].map((p) => `${SITE}${p}`);
   const fallback = changed.map(slugToUrl).filter((u): u is string => !!u);
   const live = await waitForLive(urls.length ? urls : fallback);
-  steps.push({ name: "live-check", ok: live, detail: live ? "all URLs return 200" : "timeout waiting for deploy" });
+  steps.push({
+    name: "live-check",
+    ok: live,
+    detail: live ? "all URLs return 200" : "timeout waiting for deploy",
+  });
   if (!live) {
-    await raiseException({ severity: "critical", component: "run.deploy", message: `Pushed but pages not live after 20 minutes: ${urls.join(", ")}` });
+    await raiseException({
+      severity: "critical",
+      component: "run.deploy",
+      message: `Pushed but pages not live after 20 minutes: ${urls.join(", ")}`,
+    });
     return steps;
   }
-  await indexNow(result.refreshedPaths.map((p) => `${SITE}${p}`), steps);
+  await indexNow(
+    result.refreshedPaths.map((p) => `${SITE}${p}`),
+    steps,
+  );
   const snapshotChanged = changedPaths().filter(isAllowed);
-  if (snapshotChanged.length) commitAndPush("growth: update IndexNow snapshot", snapshotChanged, steps);
+  if (snapshotChanged.length)
+    commitAndPush("growth: update IndexNow snapshot", snapshotChanged, steps);
   return steps;
 }
 
@@ -194,13 +247,25 @@ async function weekly(dryRun: boolean): Promise<Step[]> {
   steps.push({ name: "measure", ok: true, detail: JSON.stringify(snap.sources) });
   const { promoteCtaWinners, sendWeeklyReport } = await import("./report/index");
   const promo = await promoteCtaWinners({ root: ROOT, dryRun });
-  steps.push({ name: "cta-promotion", ok: true, detail: promo.changedFiles.join(", ") || "no change" });
+  steps.push({
+    name: "cta-promotion",
+    ok: true,
+    detail: promo.changedFiles.join(", ") || "no change",
+  });
   if (promo.changedFiles.length && !dryRun && !(await verifyGates(steps))) {
-    await raiseException({ severity: "critical", component: "run.gates", message: "CTA promotion broke a gate; not pushed." });
+    await raiseException({
+      severity: "critical",
+      component: "run.gates",
+      message: "CTA promotion broke a gate; not pushed.",
+    });
     return steps;
   }
   const report = await sendWeeklyReport({ root: ROOT, dryRun });
-  steps.push({ name: "report", ok: true, detail: `${report.markdownPath} emailed=${report.emailed}` });
+  steps.push({
+    name: "report",
+    ok: true,
+    detail: `${report.markdownPath} emailed=${report.emailed}`,
+  });
   if (!dryRun) {
     const changed = changedPaths().filter(isAllowed);
     if (changed.length) commitAndPush("growth: weekly report and CTA results", changed, steps);
@@ -216,7 +281,15 @@ async function main(): Promise<void> {
   try {
     if (job !== "daily" && job !== "weekly") throw new Error(`Unknown job ${job}`);
     const steps = job === "daily" ? await daily(dryRun) : await weekly(dryRun);
-    for (const s of steps) console.log(`[run] ${s.ok ? "ok  " : "FAIL"} ${s.name}: ${s.detail.split("\n")[0]}`);
+    const failedPush = steps.find((s) => s.name === "push" && !s.ok);
+    if (failedPush)
+      await raiseException({
+        severity: "critical",
+        component: "run.push",
+        message: `Publishing to main failed; the work from this run was not pushed. ${failedPush.detail.slice(0, 600)}`,
+      });
+    for (const s of steps)
+      console.log(`[run] ${s.ok ? "ok  " : "FAIL"} ${s.name}: ${s.detail.split("\n")[0]}`);
     console.log(`[run] finished in ${Math.round((Date.now() - started) / 1000)}s`);
     if (steps.some((s) => !s.ok)) process.exitCode = 1;
   } catch (error) {
