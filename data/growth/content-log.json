@@ -32,5 +32,34 @@
     ],
     "sourcesChecked": 5,
     "costUsd": 1.2792
+  },
+  {
+    "at": "2026-10-25T18:33:54.176Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "How do we make sure an AI-drafted offering memorandum numbers tie back to the seller's rent roll and T-12 before it goes to buyers?",
+    "opportunityId": "research-707ef110e1",
+    "reasons": [
+      "duplicates /blog/rent-roll-lease-discrepancy-checklist (shares \"rent roll\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T18:33:54.176Z",
+    "action": "reject",
+    "slug": "monthly-asset-management-reports-property-managers",
+    "path": null,
+    "title": "Automate Monthly Asset Reports Across Property Managers",
+    "opportunityId": "research-9a97464599",
+    "reasons": [
+      "0 claims, 0 unsupported, 1 sources fetched",
+      "source unreachable or empty: https://www.w3.org/TR/prov-primer/`",
+      "source unreachable or empty: https://airc.nist.gov/airmf-resources/airmf/5-sec-core/`",
+      "only 1 reachable sources (min 2)"
+    ],
+    "sourcesChecked": 1,
+    "costUsd": 0
   }
 ]

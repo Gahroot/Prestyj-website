@@ -141,7 +141,7 @@
     "evidence": "LLM web research (brokerage): The OM-generation results are tool listicles and form-fill generators: Ascendix (https://ascendix.com/blog/ai-real-estate-agents/), Kolena (https://www.kolena.com/blog/ai-in-commercial-real-estate/), DealDraft (https://www.dealdraft.online/ — $99/yr, 'enter your property details'), Plotdaily (https://plotdaily.com/ai-tools-for-commercial-real-estate) and Henry AI. They sell speed (4+ hours down to 5 minutes, or 50% faster). A.CRE (https://www.adventuresincre.com/ai-tools-commercial-real-estate/) names OM drafts as a first task that pays off. None of these cover a tie-out of every OM figure to the source rent roll, T-12 and lease. None cover broker review before release, handling of seller-confidential data in AI tools, or a record of which source backs each claim. Sageregroup (https://sageregroup.com/ai-tools-commercial-real-estate-investors/) only reminds readers to check the NDA.",
     "score": 40,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-adf17e64e3",
@@ -177,7 +177,7 @@
     "evidence": "LLM web research (owner-operator): Generic content: Usehaven (https://www.usehaven.ai/post/ai-for-asset-managers-real-estate-workflows-guide), LeewayHertz (https://www.leewayhertz.com/ai-in-real-estate/), the FTAsiaEconomy 2027 stack piece (https://ftasiaeconomy.com/2027-real-estate-tech-stack-planning/), ClawMart (https://www.shopclawmart.com/blog/automate-real-estate-portfolio-performance-reporting) and AIIACO (https://blog.aiiaco.com/ai-commercial-real-estate-automation-lease-abstraction-guide/). They list variance commentary as a use case. QTR Analytics (https://qtranalytics.com/) is built for multifamily owners and checks the PM story against the numbers. ClawMart's article mentions chart-of-accounts normalization (R&M versus Building Maintenance) but is a DIY agent tutorial. Missing: a CRE-wide owner reporting workflow across PM-system exports for office, retail and industrial. Also missing: how to reconcile a PM narrative with the GL, how to handle late and conflicting PM submis",
     "score": 38,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-77378ff8d5",
