@@ -1,0 +1,26 @@
+[
+  {
+    "id": "20261025175158-measure.ga4",
+    "raisedAt": "2026-10-25T17:51:58.216Z",
+    "severity": "warning",
+    "component": "measure.ga4",
+    "message": "Missing credentials (GA4_PROPERTY_ID); ga4 shown as not connected.",
+    "resolvedAt": null
+  },
+  {
+    "id": "20261025175205-measure.bing-ai",
+    "raisedAt": "2026-10-25T17:52:05.282Z",
+    "severity": "warning",
+    "component": "measure.bing-ai",
+    "message": "No Bing AI Performance CSV in data/growth/imports/bing-ai/; AI citations not connected.",
+    "resolvedAt": null
+  },
+  {
+    "severity": "warning",
+    "component": "content.item",
+    "message": "[\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 200,\n    \"inclusive\": true,\n    \"path\": [\n      \"registryDescription\"\n    ],\n    \"message\": \"Too big: expected string to have <=200 characters\"\n  }\n]",
+    "id": "20261025175433-content.item",
+    "raisedAt": "2026-10-25T17:54:33.057Z",
+    "resolvedAt": null
+  }
+]

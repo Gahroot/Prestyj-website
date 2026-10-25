@@ -1,0 +1,15 @@
+[
+  {
+    "at": "2026-10-25T17:52:05.559Z",
+    "action": "reject",
+    "slug": "-",
+    "path": null,
+    "title": "How do real estate fund IR teams automate ILPA DDQ responses when answers depend on live portfolio data like NAV, occupancy and debt maturities?",
+    "opportunityId": "research-3b592b89c7",
+    "reasons": [
+      "item failed: [\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_big\",\n    \"maximum\": 200,\n    \"inclusive\": true,\n    \"path\": [\n      \"registryDescription\"\n    ],\n    \"message\": \"Too big: expected string to have <=200 characters\"\n  }\n]"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 1.1266
+  }
+]

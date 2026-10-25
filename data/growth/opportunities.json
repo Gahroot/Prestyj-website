@@ -10,5 +10,197 @@
     "score": 6.25,
     "createdAt": "2026-10-25T16:54:12.821Z",
     "status": "rejected"
+  },
+  {
+    "id": "prompt-BP-01",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How should a real estate investment fund evaluate AI workflows for quarter-end close?"
+    ],
+    "evidence": "Institutional buyer prompt BP-01 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "prompt-BP-02",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "What evidence should an AI-prepared real estate diligence memo attach for investment committee review?"
+    ],
+    "evidence": "Institutional buyer prompt BP-02 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "prompt-BP-03",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can a fund use AI for LP reporting without exposing another investor's information?"
+    ],
+    "evidence": "Institutional buyer prompt BP-03 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "prompt-BP-04",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How should a real estate portfolio team reconcile conflicting property data with AI?"
+    ],
+    "evidence": "Institutional buyer prompt BP-04 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "prompt-BP-05",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "What should a reviewer check in an AI-prepared real estate distribution waterfall?"
+    ],
+    "evidence": "Institutional buyer prompt BP-05 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "prompt-BP-06",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can an institutional real estate firm measure an AI workflow pilot?"
+    ],
+    "evidence": "Institutional buyer prompt BP-06 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "prompt-BP-07",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "What information should an AI inbound qualification handoff contain for a commercial broker?"
+    ],
+    "evidence": "Institutional buyer prompt BP-07 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "prompt-BP-08",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "What drives the cost of a managed AI workflow for institutional real estate?"
+    ],
+    "evidence": "Institutional buyer prompt BP-08 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "research-3b592b89c7",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do real estate fund IR teams automate ILPA DDQ responses when answers depend on live portfolio data like NAV, occupancy and debt maturities?"
+    ],
+    "evidence": "LLM web research (fund): DDQ tools rank for this topic: AutoRFP.ai (https://autorfp.ai/blog/best-ddq-automation-software-for-private-equity-firms), Tribble (https://tribble.ai/ddq-automation/ and https://tribble.ai/blog/automate-ddq-responses-fund-specific-evidence/), DiligenceVault, Dasseti, Ontra and Trapol8. All of them are built for generic PE or hedge-fund DDQs. Their answers come from approved fund documents, policies and prior DDQs. Tribble warns against firm-level boilerplate when the question needs date-sensitive or fund-specific evidence. Arphie (https://www.arphie.ai/blog/ddq-faq-investor-relations) only says in general terms that these tools connect to source systems for changing financial data. Nobody covers real estate funds. Nobody shows a DDQ answer pulling property-level numbers from the accounting or property system, with the source and an as-of date attached. Nobody covers the review gate when a DDQ answer conflicts with the last LP report.",
+    "score": 44,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "rejected"
+  },
+  {
+    "id": "research-1be2201a00",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Who is liable and who must sign off when AI drafts the quarterly LP letter and variance commentary for a real estate fund?"
+    ],
+    "evidence": "LLM web research (fund): Vendor pages say AI can draft LP narrative and variance commentary: NextAutomation (https://nextautomation.us/blog/best-ai-tools-for-real-estate-fund-reporting), the AI Consulting Network (https://www.theaiconsultingnetwork.com/blog/automated-investment-reporting-ai-dashboards) and WorkWise (https://workwisesolutions.org/solutions/investor-reporting-engine.html). They claim 40–80 hours reduced to 2–4 hours, or an 80% cycle cut, with no evidence behind the figures. The AI Consulting Network's ChatGPT-prompts page (https://www.theaiconsultingnetwork.com/blog/chatgpt-prompts-real-estate-investor-reports) says there is no disclosure requirement and the GP stays responsible, and it goes no further. Missing: a review-gate design for who approves each claim, how every number ties to a source, how forward-looking statements and marketing-rule risk are handled, and how commentary stays consistent across LP classes. This is about the IR narrative and sign-off, not the ac",
+    "score": 42,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "research-707ef110e1",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we make sure an AI-drafted offering memorandum numbers tie back to the seller's rent roll and T-12 before it goes to buyers?"
+    ],
+    "evidence": "LLM web research (brokerage): The OM-generation results are tool listicles and form-fill generators: Ascendix (https://ascendix.com/blog/ai-real-estate-agents/), Kolena (https://www.kolena.com/blog/ai-in-commercial-real-estate/), DealDraft (https://www.dealdraft.online/ — $99/yr, 'enter your property details'), Plotdaily (https://plotdaily.com/ai-tools-for-commercial-real-estate) and Henry AI. They sell speed (4+ hours down to 5 minutes, or 50% faster). A.CRE (https://www.adventuresincre.com/ai-tools-commercial-real-estate/) names OM drafts as a first task that pays off. None of these cover a tie-out of every OM figure to the source rent roll, T-12 and lease. None cover broker review before release, handling of seller-confidential data in AI tools, or a record of which source backs each claim. Sageregroup (https://sageregroup.com/ai-tools-commercial-real-estate-investors/) only reminds readers to check the NDA.",
+    "score": 40,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "research-adf17e64e3",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can a commercial brokerage deploy AI agents on top of Salesforce or its existing CRM without changing its data model?"
+    ],
+    "evidence": "LLM web research (brokerage): TFSF Ventures (https://www.tfsfventures.com/blog/best-ai-agents-for-commercial-real-estate-brokerage-operations) says most platforms make brokerages adapt to the platform's data model. It describes Buildout's AI as task-specific, not agent-grade, because it does not monitor deals or act across sources. It does not show how to do this in practice. NextAutomation (https://nextautomation.us/blog/top-10-ai-tools-for-commercial-real-estate-agents) and A.CRE (https://www.adventuresincre.com/ai-tools-commercial-real-estate/) recommend a general LLM plus a CRM connector. Missing: what the agent may read versus write, a deal-status exception queue, who reviews comps and BOV drafts before they reach a client, and broker-team compliance. This overlaps with Prestyj's read/write boundary angle only as a brokerage deal-pipeline use case.",
+    "score": 33,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "research-7bab809443",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI handle CAM reconciliation for a commercial portfolio, including caps, exclusions and gross-ups, with a controller sign-off and audit trail?"
+    ],
+    "evidence": "LLM web research (owner-operator): Results are mostly vendor and small-tool pages: Datagrid (https://datagrid.com/blog/ai-lease-administrators-cam-reconciliation-billing), Creagentic (https://creagentic.ai/cam-reconciliation, $149/mo), CAM Recon (https://cam-recon.com/), Zedly (https://zedly.ai/blog/best-cam-reconciliation-software-for-commercial-landlords), Kognitos and RE BackOffice. Datagrid is the closest to a review-gate approach, with named reviewers and dispute records. SFAI Labs (https://sfailabs.com/guides/best-ai-accounting-automations-cre-ap-cam-reconciliations) calls CAM the one accounting task worth building for. Missing from institutional-owner content: how to read ambiguous lease CAM clauses, how to document the interpretation, and what the controller reviews versus what is auto-prepared. Also missing: tenant-dispute and audit-defense evidence packs, and a recovery-leakage baseline for multi-property portfolios. Claims like 'reduce errors by 95%' have no support.",
+    "score": 36,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "research-9a97464599",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we automate monthly asset management reports across multiple third-party property managers when each one reports differently?"
+    ],
+    "evidence": "LLM web research (owner-operator): Generic content: Usehaven (https://www.usehaven.ai/post/ai-for-asset-managers-real-estate-workflows-guide), LeewayHertz (https://www.leewayhertz.com/ai-in-real-estate/), the FTAsiaEconomy 2027 stack piece (https://ftasiaeconomy.com/2027-real-estate-tech-stack-planning/), ClawMart (https://www.shopclawmart.com/blog/automate-real-estate-portfolio-performance-reporting) and AIIACO (https://blog.aiiaco.com/ai-commercial-real-estate-automation-lease-abstraction-guide/). They list variance commentary as a use case. QTR Analytics (https://qtranalytics.com/) is built for multifamily owners and checks the PM story against the numbers. ClawMart's article mentions chart-of-accounts normalization (R&M versus Building Maintenance) but is a DIY agent tutorial. Missing: a CRE-wide owner reporting workflow across PM-system exports for office, retail and industrial. Also missing: how to reconcile a PM narrative with the GL, how to handle late and conflicting PM submis",
+    "score": 38,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "research-77378ff8d5",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How should a real estate fund use AI to review third-party appraisals against internal valuations and flag divergent assumptions?"
+    ],
+    "evidence": "LLM web research (fund): The only substantive hit is a LeewayHertz table row (https://www.leewayhertz.com/ai-in-real-estate/) on extracting appraisal assumptions, comparing them with internal evidence and summarizing valuation variances. No dedicated article, vendor guide or practitioner walkthrough surfaced. It concerns CFO and valuation-committee work: NAV support, auditor and LP questions, and open-end fund valuation. Missing: which inputs to compare (cap rate, rent growth, lease-up), how to show divergence with sources, and how to log the reviewer's decision before the valuation is final.",
+    "score": 28,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
+  },
+  {
+    "id": "research-6308111e8b",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we check that AI-drafted capital call and distribution notices match the LPA and the fund administrator's numbers before they go out?"
+    ],
+    "evidence": "LLM web research (fund): Results are portal and software pages: Agora (https://agorareal.com/capital-calls/ and https://agorareal.com/compare/best-investor-reporting-software/), InvestorPortaLPro (https://investorportalpro.com/solutions/capital-call-software.html), and the AI-for-proptech page on Juniper Square (https://aiforproptech.com/capital-investor-relations/). They cover calculation, notice generation and portal delivery, and the proptech page says many portals add a chatbot and call it AI. NextAutomation (https://nextautomation.us/blog/best-ai-tools-for-real-estate-fund-reporting) positions an AI drafting layer above the portal. Missing: a control view for $500M+ funds on how the notice math is checked against LPA terms and admin records. Also missing: exceptions such as equalization, side letters and defaulting LPs, and who approves before release. Content is thin and written for syndicators and mid-market GPs.",
+    "score": 30,
+    "createdAt": "2026-10-25T17:52:05.559Z",
+    "status": "open"
   }
 ]
