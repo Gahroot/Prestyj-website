@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-10-25T19:05:41.089Z",
+  "generatedAt": "2026-10-25T19:29:10.283Z",
   "window": {
     "start": "2026-09-27",
     "end": "2026-10-24"
@@ -191,6 +191,19 @@
     },
     {
       "path": "/blog/lp-reporting-data-boundaries",
+      "gscClicks": 0,
+      "gscImpressions": 0,
+      "gscCtr": 0,
+      "gscPosition": null,
+      "bingClicks": 0,
+      "bingImpressions": 0,
+      "organicSessions": null,
+      "aiReferralSessions": null,
+      "demosBooked": 0,
+      "qualifiedDemos": 0
+    },
+    {
+      "path": "/blog/managed-ai-workflow-cost-institutional-real-estate",
       "gscClicks": 0,
       "gscImpressions": 0,
       "gscCtr": 0,

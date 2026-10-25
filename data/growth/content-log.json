@@ -202,5 +202,22 @@
     ],
     "sourcesChecked": 3,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:29:21.138Z",
+    "action": "reject",
+    "slug": "ai-capital-call-distribution-notice-review",
+    "path": null,
+    "title": "How to Check AI-Drafted Capital Call and Distribution Notices",
+    "opportunityId": "research-6308111e8b",
+    "reasons": [
+      "6 claims, 2 unsupported, 2 sources fetched",
+      "source unreachable or empty: https://www.investor.gov/introduction-investing/investing-basics/investment-products/private-investment-funds/private-equity",
+      "core claim unsupported: Investor.gov explains that private equity offering documents and investor agreements should govern investment terms, including fund and investor fees and expenses.",
+      "claim unsupported: Investor.gov notes that the SEC has brought enforcement actions involving fund and investor expenses without adequate consent or disclosure.",
+      "2/6 claims unsupported (>20%)"
+    ],
+    "sourcesChecked": 2,
+    "costUsd": 0
   }
 ]

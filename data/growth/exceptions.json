@@ -96,11 +96,27 @@
     "resolvedAt": null
   },
   {
+    "id": "20261025190550-measure.bing-ai",
+    "raisedAt": "2026-10-25T19:05:50.156Z",
     "severity": "warning",
     "component": "measure.bing-ai",
     "message": "No Bing AI Performance CSV in data/growth/imports/bing-ai/; AI citations not connected.",
-    "id": "20261025190550-measure.bing-ai",
-    "raisedAt": "2026-10-25T19:05:50.156Z",
+    "resolvedAt": null
+  },
+  {
+    "id": "20261025192911-measure.ga4",
+    "raisedAt": "2026-10-25T19:29:11.165Z",
+    "severity": "warning",
+    "component": "measure.ga4",
+    "message": "Missing credentials (GA4_PROPERTY_ID); ga4 shown as not connected.",
+    "resolvedAt": null
+  },
+  {
+    "severity": "warning",
+    "component": "measure.bing-ai",
+    "message": "No Bing AI Performance CSV in data/growth/imports/bing-ai/; AI citations not connected.",
+    "id": "20261025192920-measure.bing-ai",
+    "raisedAt": "2026-10-25T19:29:20.894Z",
     "resolvedAt": null
   }
 ]

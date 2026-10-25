@@ -201,6 +201,6 @@
     "evidence": "LLM web research (fund): Results are portal and software pages: Agora (https://agorareal.com/capital-calls/ and https://agorareal.com/compare/best-investor-reporting-software/), InvestorPortaLPro (https://investorportalpro.com/solutions/capital-call-software.html), and the AI-for-proptech page on Juniper Square (https://aiforproptech.com/capital-investor-relations/). They cover calculation, notice generation and portal delivery, and the proptech page says many portals add a chatbot and call it AI. NextAutomation (https://nextautomation.us/blog/best-ai-tools-for-real-estate-fund-reporting) positions an AI drafting layer above the portal. Missing: a control view for $500M+ funds on how the notice math is checked against LPA terms and admin records. Also missing: exceptions such as equalization, side letters and defaulting LPs, and who approves before release. Content is thin and written for syndicators and mid-market GPs.",
     "score": 30,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   }
 ]
