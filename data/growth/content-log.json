@@ -122,5 +122,85 @@
     ],
     "sourcesChecked": 3,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:05:50.300Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "How can a fund use AI for LP reporting without exposing another investor's information?",
+    "opportunityId": "prompt-BP-03",
+    "reasons": [
+      "duplicates /blog/lp-reporting-data-boundaries (shares \"lp reporting\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:05:50.300Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "How should a real estate portfolio team reconcile conflicting property data with AI?",
+    "opportunityId": "prompt-BP-04",
+    "reasons": [
+      "duplicates /blog/reconciling-property-data-conflicts (shares \"property data\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:05:50.300Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "What should a reviewer check in an AI-prepared real estate distribution waterfall?",
+    "opportunityId": "prompt-BP-05",
+    "reasons": [
+      "duplicates /blog/explainable-distribution-waterfalls (shares \"distribution waterfall\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:05:50.300Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "How can an institutional real estate firm measure an AI workflow pilot?",
+    "opportunityId": "prompt-BP-06",
+    "reasons": [
+      "duplicates /blog/measure-institutional-ai-workflow-pilot (shares \"measure pilot\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:05:50.300Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "What information should an AI inbound qualification handoff contain for a commercial broker?",
+    "opportunityId": "prompt-BP-07",
+    "reasons": [
+      "duplicates /blog/commercial-brokerage-inbound-qualification-checklist (shares \"inbound qualification\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:05:50.300Z",
+    "action": "publish",
+    "slug": "managed-ai-workflow-cost-institutional-real-estate",
+    "path": "/blog/managed-ai-workflow-cost-institutional-real-estate",
+    "title": "What Drives Managed AI Workflow Cost in Institutional Real Estate?",
+    "opportunityId": "prompt-BP-08",
+    "reasons": [
+      "New article answering the institutional buyer cost question with a scope-based procurement framework, primary-source grounding, and a synthetic example rather than unsupported pricing benchmarks.",
+      "fact-check: 7 claims, 0 fixed/removed",
+      "files: content/blog/managed-ai-workflow-cost-institutional-real-estate.mdx, src/lib/institutional/research.ts"
+    ],
+    "sourcesChecked": 3,
+    "costUsd": 0
   }
 ]

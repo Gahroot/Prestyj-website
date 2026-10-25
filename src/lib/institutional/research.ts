@@ -122,6 +122,15 @@ export const researchArticles: readonly ResearchArticle[] = [
     description:
       "A safer deployment sequence for firms that cannot afford a replacement project disguised as an AI pilot.",
   },
+  {
+    slug: "managed-ai-workflow-cost-institutional-real-estate",
+    capabilities: ["fund-operations", "investor-reporting", "portfolio-intelligence"],
+    topics: ["workflow-selection", "integration", "review-controls"],
+    category: "Operating model",
+    title: "Price the finished work, not the model",
+    description:
+      "A buyer’s framework for comparing managed workflow scope, retained review effort, operating responsibility, and cost per accepted work product.",
+  },
 ] as const;
 
 export function getCapabilityArticles(capability: CapabilitySlug): readonly ResearchArticle[] {

@@ -1,0 +1,227 @@
+---
+title: "What Drives Managed AI Workflow Cost in Institutional Real Estate?"
+description: "Evaluate managed AI workflow cost through scope, data access, review effort, exceptions, and operating responsibility—not model usage alone."
+date: "2026-10-25"
+author: "Nolan Grout"
+keywords:
+  - "managed AI workflow cost"
+  - "AI agents for institutional real estate"
+  - "institutional real estate AI cost"
+  - "AI workflow total cost"
+  - "managed AI workflow pricing"
+---
+
+Budget a managed AI workflow around the finished work product, its data boundaries, and the responsibility assigned to operating it. Include review effort, exception handling, and ongoing changes alongside model usage. Compare proposals on cost per accepted work product, with acceptance rules held constant.
+
+## What should the cost estimate actually cover?
+
+Ask for a scope of work that separates establishment, operation, consumption, and retained internal effort. Do not approve a single blended figure without understanding those components.
+
+Use this structure for the estimate:
+
+| Cost component | Ask the proposal to specify |
+| --- | --- |
+| Establishment | Workflow definition, source mapping, access approval, acceptance tests, and reviewer preparation |
+| Managed operation | Named responsibility for checking workflow health, investigating failures, and maintaining agreed behavior |
+| Consumption | Model usage, separately charged services, storage, and responsibility for overruns |
+| Retained internal effort | Source preparation, substantive review, exception decisions, and release approval |
+| Change and exit | Scope revisions, reassessment, handover, and agreed treatment of retained records |
+
+Treat this as a purchasing framework, not a statement about how any provider charges.
+
+Before requesting a quote, write down the required output, permitted sources, acceptance conditions, and accountable reviewer. Keep the system of record authoritative; specify whether the requested handoff stops at a reviewed draft or includes an approved downstream action.
+
+For the broader operating boundary, see [keep the system of record](/blog/keep-the-system-of-record). For this cost decision, stay focused on who performs each piece of work and who pays when it needs attention.
+
+## How should you define the unit being purchased?
+
+Choose an accepted business output as the primary cost denominator.
+
+The FinOps Foundation distinguishes resource-efficiency measures from business-unit measures and recommends documenting how they relate.
+
+Apply that distinction by separating technical consumption from operational acceptance. Ask the proposal to define:
+
+- **Submitted work:** What starts the workflow?
+- **Completed work:** What must the output contain before review?
+- **Accepted work:** What must the reviewer approve?
+- **Rejected work:** What happens when the output fails acceptance?
+- **Reopened work:** Who pays when a previously accepted item needs revision?
+
+Do not count an attempt, a draft, and an accepted deliverable interchangeably.
+
+For budgeting, use:
+
+**Cost per accepted work product = agreed attributable cost ÷ accepted work products**
+
+Define the numerator before using the formula. Include retained review effort and rework if the purpose is a fully loaded comparison. For an ongoing operating comparison, keep establishment expenditure separate and show its allocation explicitly.
+
+Do not divide by accepted outputs when none have passed review. Report the expenditure and unresolved workload instead.
+
+## Which scope decisions should you price separately?
+
+Ask for a baseline scope and explicit adjustments for changes to it. Use the following dimensions to structure the conversation.
+
+### Source readiness and reconciliation
+
+Specify the approved source set, required fields, document versions, and treatment of missing information. Ask who resolves contradictory records and whether that work sits inside the agreement.
+
+Require a separate assumption for source preparation rather than allowing it to disappear into your team’s workload.
+
+### Access boundaries
+
+Define the permitted entity, property, fund, investor, and reporting-period boundaries. Ask who approves access and who tests that restricted material stays outside the work product.
+
+Price a boundary change through change control, not through an informal request.
+
+### Output and evidence requirements
+
+Define what “finished” means. Require the source attached at the level your reviewer needs, and specify how calculations, assumptions, and unresolved questions should appear.
+
+Keep evidence requirements consistent when comparing proposals. Do not compare a narrative draft against a reviewed package with traceable support as though they were the same deliverable.
+
+### Authority and handoff
+
+State whether the workflow may prepare, recommend, route, or execute. Require a review gate before any action you have reserved for a person.
+
+For each permitted handoff, identify the recipient, approval evidence, and recovery procedure. Avoid expanding authority merely to fit a lower estimate.
+
+### Operating commitments
+
+Specify the required operating window, escalation path, and response expectations. Ask which responsibilities remain with your staff outside that window.
+
+Treat each of these dimensions as a scope decision. Request the cost consequence of changing it without presuming a particular pricing model.
+
+## How much attention should model consumption receive?
+
+OpenAI’s API pricing documentation separates model input and output charges and lists additional charges for services including file-search calls and storage.
+
+Use that fact to ask for a complete consumption schedule, not to estimate an entire managed workflow from a token rate.
+
+Require answers to these questions:
+
+- Which consumption categories are included in the quoted scope?
+- Which charges pass through separately?
+- How will usage be attributed to the workflow?
+- Who approves a change in model or processing approach?
+- What spending threshold triggers investigation?
+- Who pays for repeated attempts after a failed acceptance test?
+- What happens when the agreed consumption allowance is exhausted?
+
+Request a base case and a stressed case using your own workload assumptions. Label forecast volumes as assumptions, not measured demand.
+
+Keep model consumption visible, but do not let it replace the operating estimate. Ask for the separate cost of review, failure investigation, and maintenance even when consumption is bundled.
+
+## How should review effort and exceptions enter the budget?
+
+NIST’s AI Risk Management Framework calls for documented responsibilities and communication lines for AI risk management.
+
+Turn that principle into a responsibility schedule attached to the proposal.
+
+| Responsibility | Decision to document |
+| --- | --- |
+| Source eligibility | Who confirms that the material belongs within the approved boundary? |
+| Substantive review | Who checks the conclusion, calculation, and supporting evidence? |
+| Exception resolution | Who decides what to do when information is missing or conflicting? |
+| Release approval | Who authorizes use or distribution? |
+| Operational recovery | Who investigates failure and decides whether to rerun, pause, or stop? |
+
+Assign both an accountable owner and the expected work. Do not accept “human review included” without a definition of what the reviewer checks.
+
+For an exception queue, require a disposition rule, an owner, and a record of the decision. Ask whether resolving an exception is included, separately scoped, or retained internally.
+
+Keep ordinary review time separate from exception-resolution time in your measurement. Count returned work and repeated review rather than treating the initial submission as complete.
+
+For workflow design, use the [exception-queue framework](/blog/ai-for-real-estate-investment-funds-exception-queues). For procurement, use the queue to identify the unresolved work that your budget must assign.
+
+## What testing and maintenance should the agreement include?
+
+NIST’s framework calls for documented performance or assurance measurements under conditions resembling the intended deployment setting.
+
+Before approval, agree on an acceptance set containing permitted inputs, expected outputs, evidence requirements, and stop conditions. Label invented test material synthetic; identify historical material by its authorized source and period.
+
+Ask the operating team to demonstrate how reviewers should assess:
+
+- Missing required inputs.
+- Conflicting source values.
+- Material outside the permitted boundary.
+- Unsupported conclusions.
+- Failure to produce the required handoff.
+- A request that exceeds the workflow’s authority.
+
+NIST also includes post-deployment monitoring, user feedback, override, incident response, recovery, and change management in its management framework.
+
+Translate those areas into commercial terms. Require a named owner for investigating failures, approving changes, repeating acceptance tests, and authorizing restart.
+
+Distinguish correction from expansion. Ask the agreement to separate restoration of agreed behavior from a new source, output, boundary, or decision rule. Require approval before additional scope becomes additional expenditure.
+
+## How would this comparison work? Illustrative example (synthetic)
+
+**Illustrative (fixture).** Everything in this example is synthetic. It is not a Prestyj customer case, quote, or operating result.
+
+Consider a synthetic owner-operator evaluating a recurring property-performance review package.
+
+For the synthetic scope, define the required work product as a variance commentary with supporting records attached, unresolved conflicts identified, and approval reserved for the asset-management reviewer.
+
+Compare these synthetic scope options:
+
+| Synthetic scope option | Proposed operating boundary | Cost-review question |
+| --- | --- | --- |
+| Approved-source package | Use a controlled source package supplied by the owner-operator | Who prepares and validates that package internally? |
+| Direct-source package | Retrieve approved records within defined property and period boundaries | Who owns access approval, source selection, and failure investigation? |
+| Expanded judgment package | Add recommendations requiring asset-management judgment | Which decisions remain with the reviewer, and what additional acceptance tests are required? |
+
+For this synthetic comparison, request the same output standard across all options. Include the owner-operator’s source preparation and review effort in the evaluation.
+
+Then ask for separate estimates for establishing the workflow, operating it within scope, and approving changes. Record exclusions beside each estimate.
+
+For the synthetic decision, prefer the option whose responsibility boundary your team can support. Do not select on the quoted fee alone, and do not assign value to recommendations that your reviewer has not agreed to accept.
+
+## How can you reduce scope without weakening the review standard?
+
+Prefer a narrower operating boundary over a weaker acceptance rule.
+
+Use these decision rules:
+
+- **Reduce breadth first.** Limit the initial source set, output type, or organizational boundary.
+- **Retain the review gate.** Keep consequential decisions controlled by your review rules.
+- **Defer unnecessary actions.** Start with preparation and review when execution authority is not required.
+- **Standardize the submission.** Agree on required inputs and reject incomplete submissions explicitly.
+- **Separate backlog work.** Scope historical cleanup apart from recurring operation.
+- **Control revisions.** Require a written decision before adding a new source or judgment.
+- **Preserve exit requirements.** Define the records and responsibility handover required at termination.
+
+Before approving expenditure, require a scope sheet containing the output definition, source boundary, acceptance test, responsibility schedule, usage assumptions, exclusions, and change procedure.
+
+Use [the institutional buyer’s guide](/blog/ai-operating-systems-real-estate) for the broader purchasing decision. Use the scope sheet to make the cost comparison auditable.
+
+## Frequently asked questions
+
+### Can you estimate cost from assets under management?
+
+Do not use AUM as the sole estimating variable. Base the request on workload, source boundaries, acceptance requirements, retained effort, and operating responsibility. Use AUM to describe the organization, not to substitute for a workflow specification.
+
+### Should pricing follow users, documents, or accepted outputs?
+
+Use accepted outputs to evaluate operational value. If the commercial agreement uses another billing unit, require a bridge between that unit and accepted work. Hold scope and acceptance rules constant before comparing the resulting costs.
+
+### Should a pilot determine the operating budget?
+
+Use a pilot to test the budget assumptions, not merely to approve sample outputs. Record source-preparation effort, review effort, exceptions, consumption, and unresolved responsibilities. Keep establishment work separate from the recurring operating estimate.
+
+### What does Prestyj provide in this operating model?
+
+Prestyj builds and operates AI agents for institutional real estate that deliver reviewed finished work product with the source attached. The work is controlled by your review rules and review gates, while the system of record stays authoritative.
+
+## Review and limitations
+
+Before using this framework, ask finance or procurement to review cost inclusions and allocation assumptions. Ask the workflow owner to approve output definitions and acceptance criteria. Ask data owners and security reviewers to approve access boundaries, and ask the accountable business reviewer to approve substantive review and release rules.
+
+This article provides a purchasing framework, not a market price benchmark, quotation, savings forecast, legal opinion, or security assessment. Do not treat the synthetic fixture as evidence of delivery capability or financial return. Validate estimates against your approved scope and measured workload.
+
+## Sources
+
+- https://www.finops.org/framework/capabilities/unit-economics/ — Supports the distinction between resource-efficiency and business-unit metrics, and the recommendation to document their relationship.
+- https://developers.openai.com/api/docs/pricing?facet1=crm — Supports the statement that model input and output have separate charges and that file-search calls and storage have additional pricing categories. No provider rates are reproduced here.
+- https://airc.nist.gov/airmf-resources/airmf/5-sec-core/ — Supports documented risk-management responsibilities under GOVERN 2.1, deployment-relevant performance measurement under MEASURE 2.3, and post-deployment monitoring, override, incident response, recovery, and change management under MANAGE 4.1.
+
+Bring your proposed work product, source boundary, and review responsibilities to the [matching workflow demo](/book-demo). Use that discussion to define the scope you want priced and the responsibilities your institution intends to retain.
