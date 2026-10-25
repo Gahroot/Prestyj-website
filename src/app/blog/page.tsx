@@ -1,3 +1,4 @@
+import { EditorialFinalCta } from "@/components/sections/institutional/editorial-close";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -87,6 +88,7 @@ export default function BlogPage(): React.ReactElement {
               </ul>
             </div>
           </section>
+          <EditorialFinalCta ctaId="page-end:blog" />
         </main>
       </EditorialShell>
     </>

@@ -16,6 +16,8 @@ const eslintConfig = defineConfig([
     ".source/**",
     // Vercel build output:
     ".vercel/**",
+    // Standalone open-source packages with their own toolchain:
+    "open-source/**",
   ]),
 ]);
 

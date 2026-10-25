@@ -12,6 +12,8 @@ AI agents built and run for institutional real estate. The public site serves re
 
 **Core offer:** Prestyj builds and operates defined AI workflows above the system of record. Engagements are scoped per workflow, source systems, volume, and control requirements.
 
+**Second offer: AI connectors for any business (approved October 2026).** Prestyj also builds, hosts, and maintains custom Claude connectors, custom MCP servers, and custom ChatGPT plugins for businesses in any industry. This lane lives only on `/connectors`, `/connectors/[slug]` guides, and the four service pages (`/custom-claude-connectors`, `/done-for-you-claude-connectors`, `/custom-mcp-servers`, `/custom-chatgpt-plugins`). Data in `src/lib/connectors/`, components in `src/components/sections/connectors/`. The institutional vocabulary rules above apply to the real estate pages, not to this lane. Proof here comes from Prestyj's own MCP builds, client names withheld; never invent clients, metrics, prices, or timelines. CTA is `/book-demo`.
+
 **See:** `src/lib/positioning.ts`, `src/lib/institutional/`, and `DESIGN.md` for canonical vocabulary and design rules. See `roadmap.md` for milestones, proof standards, and release gates.
 
 **Legacy archive:** SMB comparison, location, free-ad, lead-magnet, and old blog source files remain for reversibility. They must stay redirected, excluded from navigation and sitemap, and must not be reused as current positioning.

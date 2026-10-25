@@ -9,6 +9,7 @@ import { EditorialWorkflows } from "@/components/sections/institutional/editoria
 import { EditorialControls } from "@/components/sections/institutional/editorial-controls";
 import { EditorialProof } from "@/components/sections/institutional/editorial-proof";
 import { EditorialClose } from "@/components/sections/institutional/editorial-close";
+import { EditorialConnectorsBand } from "@/components/sections/institutional/editorial-connectors-band";
 import { homepageFaqs } from "@/lib/homepage-faq-data";
 import { positioning } from "@/lib/positioning";
 
@@ -47,6 +48,7 @@ export default function Home(): ReactElement {
           <EditorialWorkflows />
           <EditorialControls />
           <EditorialProof />
+          <EditorialConnectorsBand />
           <EditorialClose />
         </main>
       </EditorialShell>

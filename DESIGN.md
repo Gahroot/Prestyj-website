@@ -136,6 +136,42 @@ Verify all current routes and changed families at desktop/mobile, 320px, 768px, 
 - Evidence and local harnesses: `.ezcoder/redesign/`. Full handoff: `.ezcoder/redesign/verification.md`. These generated artifacts are intentionally ignored by git.
 - Public callback release is blocked until upstream abuse protection and recording/disclosure behavior are verified. Client duplicate prevention is not a rate limit.
 
+## Capability and engagement refinement (25 September 2026)
+
+### Design read and direction
+
+- Scope: the six `/capabilities/*` pages and `/pricing`. These are marketing pages for institutional operators evaluating one workflow, not a live application or a self-serve checkout.
+- Primary job: understand the finished work product and its review rule, then book a workflow demo. The first screen now pairs the claim and action with a structured deliverables brief. Source systems, agent work, boundaries, and related reading follow.
+- Preserve the existing paper canvas, dark ink, editorial display type, sans-serif utility text, 76rem content rail, 4px corners, and Lucide icons. Reuse `EditorialShell`, `EditorialPageHeader`, `Button`, shared focus rules, and the existing capability data. Scoped layout rules live in `workflow-pages.module.css`; no additional client components, dependencies, fonts, or media are introduced.
+- Engagements uses the same visual anatomy for the four things to bring to a scoping conversation, followed by the three engagement phases and a labeled scope ledger. There are no invented prices, customer metrics, or application states.
+
+### Refero evidence and thesis
+
+Inspected one full style reference and three screen images through the authorized MCP:
+
+- Symbolic.ai style `b49ec76c-1410-44cb-9de1-b5ac58255949`: light paper and document-led hierarchy. Retain local typography and colors rather than importing its brand, layered papers, or large radii.
+- Attio workflow screen `cf1fbace-3c05-4823-be80-49333e704b03`: separate the work, context, and review information. Borrow grouping, not the editor chrome or colored nodes.
+- Airtable finance screen `03c2dab1-dd39-47e7-9853-579689aa58da`: pair concrete workflows with visible outputs; use asymmetry to distinguish explanation from evidence.
+- Stripe pricing screen `8cae768b-6693-455e-a79f-8e7897862216` is the contrast: clear cost-driver grouping is relevant, transaction rates and colorful plan cards are not.
+
+Thesis: a readable workflow brief, not another feature-card grid. A single white document surface contains the deliverables and review rule; neutral bands separate source mechanics and next steps. No animation, decorative gradients, floating cards, dashboard fixtures, or hover lift. The critique removed repeated file icons (some outputs are meetings, not files) and a redundant panel subtitle.
+
+### Responsive and interaction contract
+
+- The hero and supporting sections use two aligned columns at 1024px and above, one content-first column below. Explicit `minmax(0, 1fr)` tracks and word wrapping preserve narrow reflow with enlarged text.
+- Native links handle booking, field notes, and in-page navigation. Shared keyboard focus, button states, and 44px action targets are retained. Static briefs do not imply loading, success, or live workflow status.
+- Review owners, investment-judgment limits, investor boundaries, consent requirements, and media-disclosure text remain sourced from the unchanged capability records. No tracking, submissions, payments, or data processing changed. These are engineering controls, not legal advice or a compliance assessment.
+
+### Verification evidence
+
+- Chromium checked all seven routes at 320px, 768px, and 1440px: HTTP 200, one H1 and main landmark, no horizontal overflow, and working section links. All seven also pass the 320px layout with 200% root text size. The initial enlarged-text overflow was reproduced and fixed at the shared grid owner.
+- Axe WCAG-tagged scans of the changed main content report zero violations for all seven routes at 320px and 1440px. Keyboard testing covered skip-to-content, breadcrumb, visible 2px CTA focus, booking navigation, and Back. No browser page errors occurred.
+- Listing media and Engagements additionally pass RTL reflow and render with reduced motion and forced colors. Accessibility-tree snapshots preserve the reading order and meaningful link labels. No new forms, media, gestures, timers, or asynchronous states are present.
+- Muted text `#62635b` measures 5.77:1 on the page, 6.08:1 on white, and 5.18:1 on the muted review surface.
+- Before/after desktop and phone captures are in `.ezcoder/screenshots/`; the repeatable local harness and semantic snapshots are in `.ezcoder/workflow-refresh/` (ignored artifacts).
+- Final visual rubric: 22/24. Specificity, hierarchy, composition, consistency, typography, surfaces, static interaction states, responsive behavior, motion, and content authenticity score 2 each; accessibility and distinctiveness score 1 each. The layout intentionally extends the site's existing visual identity.
+- Unverified: real screen-reader output, native browser zoom, Safari/Firefox, and field performance. Automated scans and Chromium checks do not establish WCAG conformance. Deployment and a complete accessibility release audit are outside this pass.
+
 ## Release checks
 
 - Desktop and narrow screenshots for home, platform, capability, audience, research, access request, and privacy choices.

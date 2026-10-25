@@ -1,0 +1,48 @@
+{
+  "experiments": [
+    {
+      "id": "article-inline",
+      "placement": "article-inline",
+      "variants": [
+        {
+          "id": "a",
+          "headline": "See this {workflow} workflow on your own sources.",
+          "body": "Bring one recurring {workflow} task. We will show the finished work product, the source attached to each figure, and where your review rules stop release.",
+          "buttonLabel": "Book a workflow demo",
+          "weight": 50,
+          "status": "testing"
+        },
+        {
+          "id": "b",
+          "headline": "Who reviews this work at your firm today?",
+          "body": "A scoped {workflow} demo starts from the systems you already run and ends with a reviewed draft, source attached, ready for the owner who signs off.",
+          "buttonLabel": "Scope a {workflow} demo",
+          "weight": 50,
+          "status": "testing"
+        }
+      ]
+    },
+    {
+      "id": "article-end",
+      "placement": "article-end",
+      "variants": [
+        {
+          "id": "a",
+          "headline": "Bring us the workflow behind this question.",
+          "body": "One workflow, the systems behind it, and the person who reviews the result. We scope the smallest proof that returns finished work product under your review rules.",
+          "buttonLabel": "Book a workflow demo",
+          "weight": 50,
+          "status": "testing"
+        },
+        {
+          "id": "b",
+          "headline": "Finished work product, source attached, released by your reviewer.",
+          "body": "We build and run the {workflow} workflow above your system of record. Your team keeps approval; every material answer links back to its source.",
+          "buttonLabel": "Book a {workflow} demo",
+          "weight": 50,
+          "status": "testing"
+        }
+      ]
+    }
+  ]
+}

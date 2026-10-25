@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 
 import "./globals.css";
+import { AttributionTracker } from "@/components/attribution/attribution-tracker";
 import { TrackingConsent } from "@/components/privacy/tracking-consent";
 import { OrganizationJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
 import { siteConfig } from "@/lib/site-config";
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <WebSiteJsonLd />
         <div>{children}</div>
         <TrackingConsent />
+        <AttributionTracker />
       </body>
     </html>
   );

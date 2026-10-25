@@ -2,7 +2,7 @@
 title: "An AI-Assisted Quarter-End Close Without a Black Box"
 description: "How to preserve transaction lineage, exception handling, and fund-accounting approval while reducing manual close assembly."
 date: "2026-08-27"
-updated: "2026-09-24"
+updated: "2026-09-26"
 author: "Nolan Grout"
 keywords:
   - AI quarter-end close real estate fund
@@ -10,11 +10,15 @@ keywords:
   - fund accounting AI
 ---
 
-A faster close is not useful if nobody can explain the number.
+**TL;DR: An AI-assisted quarter-end close should prepare reconciliations and a versioned review package, not approve accounting judgments. Match bank and ledger activity, keep source records and effective dates with every material figure, and route unresolved differences to a named accounting reviewer. Release only the package that the responsible owner actually approves.**
 
-For a real estate fund, quarter-end work often spans the ledger, bank activity, valuation support, ownership records, fund terms, and reporting templates. The costly part is rarely one calculation. It is assembling, reconciling, explaining, and packaging the complete record.
+For a real estate fund, use an AI agent to assemble and explain close work while the fund-accounting team retains authority over treatment, materiality, and release. A faster close is not useful if nobody can explain the number.
 
-## What the agent should do
+Quarter-end work often spans the ledger, bank activity, valuation support, ownership records, fund terms, and reporting templates. The costly part is rarely one calculation. It is assembling, reconciling, explaining, and packaging the complete record.
+
+Updated: September 26, 2026.
+
+## What should an AI agent prepare during a fund's quarter-end close?
 
 A controlled close agent can:
 
@@ -87,6 +91,8 @@ The preparer checks that extraction and calculations reproduce the source. The a
 
 Retain run ID, source versions, reviewer decisions, unresolved items and the released artifact. Re-run affected schedules after an input changes; do not carry the old approval onto a new balance. For the operating model around these exceptions, see [source conflict resolution](/blog/reconciling-property-data-conflicts).
 
+For related controls, see [investor-reporting data boundaries](/blog/lp-reporting-data-boundaries) and [how to keep the system of record authoritative](/blog/keep-the-system-of-record). To scope a reviewed close workflow around your existing systems, [book a workflow demo](/book-demo).
+
 ## Sources and limitations
 
-This checklist is an editorial operating template. The fictional arithmetic is not accounting, investment or legal advice, a customer case study or a performance benchmark. A firm's accounting policies, governing documents and approved period records remain the actual sources. Qualified fund-accounting review of this expansion is pending. The local revision date identifies content work, not independently verified public release.
+This checklist is an editorial operating template. In the synthetic example, $120,000 minus $70,000 equals $50,000; adding an approved $5,000 expense would yield $75,000 of expenses and $45,000 before other adjustments. These numbers are fictional arithmetic, not accounting, investment or legal advice, a customer case study or a performance benchmark. A firm's accounting policies, governing documents and approved period records remain the actual sources. Qualified fund-accounting review of this expansion is pending. The local revision date identifies content work, not independently verified public release.

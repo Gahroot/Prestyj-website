@@ -4,6 +4,7 @@ import type { ReactElement } from "react";
 import { BookDemoClient } from "@/components/booking/book-demo-client";
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
+import { getCapability } from "@/lib/institutional/capabilities";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -13,7 +14,13 @@ export const metadata: Metadata = {
   alternates: { canonical: `${siteConfig.url}/book-demo` },
 };
 
-export default function BookDemoPage(): ReactElement {
+type BookDemoPageProps = { searchParams: Promise<{ workflow?: string | string[] }> };
+
+export default async function BookDemoPage({
+  searchParams,
+}: BookDemoPageProps): Promise<ReactElement> {
+  const { workflow: rawWorkflow } = await searchParams;
+  const capability = getCapability(typeof rawWorkflow === "string" ? rawWorkflow : "");
   return (
     <>
       <SafeJsonLd
@@ -36,12 +43,19 @@ export default function BookDemoPage(): ReactElement {
                 <br />
                 <em>Our starting point.</em>
               </h1>
-              <p>
-                Bring one recurring process. We’ll explore the sources, the review rules, and the
-                smallest proof that could make a real difference.
-              </p>
+              {capability ? (
+                <p>
+                  Bring your {capability.navLabel.toLowerCase()} workflow. We’ll walk through the
+                  sources, the review rules, and the finished work product it should return.
+                </p>
+              ) : (
+                <p>
+                  Bring one recurring process. We’ll explore the sources, the review rules, and the
+                  smallest proof that could make a real difference.
+                </p>
+              )}
             </div>
-            <BookDemoClient />
+            <BookDemoClient workflow={capability?.slug ?? ""} />
           </div>
         </main>
       </EditorialShell>

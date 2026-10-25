@@ -9,6 +9,7 @@ export default defineConfig({
       "tests/**/*.{test,spec}.{ts,tsx}",
       "scripts/seo/**/*.{test,spec}.ts",
       "scripts/seo-bot/**/*.{test,spec}.ts",
+      "scripts/growth-engine/**/*.{test,spec}.ts",
     ],
     exclude: ["node_modules", ".next", ".source", "dist", "build"],
     globals: false,

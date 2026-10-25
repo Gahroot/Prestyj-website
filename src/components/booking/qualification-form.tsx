@@ -1,12 +1,13 @@
 "use client";
 
 import { useRef, useState, type FormEvent, type ReactElement } from "react";
-import { ArrowRight, Loader2 } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { submitLead, formatPhoneNumber } from "@/lib/api";
 import { trackEvent } from "@/lib/meta-pixel";
+import { AUM_BANDS, FIRM_TYPES } from "@/lib/attribution/qualification";
+import { capabilities } from "@/lib/institutional/capabilities";
 import {
   qualificationFormSchema,
   type QualificationFormData,
@@ -14,55 +15,41 @@ import {
 
 export type QualificationData = QualificationFormData;
 
+type FieldName = "firstName" | "email" | "firmType" | "aumBand" | "workflow";
+const FIELD_ORDER: readonly FieldName[] = ["firstName", "email", "firmType", "aumBand", "workflow"];
+
 interface QualificationFormProps {
   onComplete: (data: QualificationData) => void;
+  initialWorkflow?: string;
 }
 
-const fields = [
-  {
-    name: "firstName",
-    label: "Name",
-    type: "text",
-    autoComplete: "name",
-    placeholder: "Jane Smith",
-  },
-  {
-    name: "email",
-    label: "Work email",
-    type: "email",
-    autoComplete: "email",
-    placeholder: "jane@firm.com",
-  },
-  {
-    name: "companyName",
-    label: "Company",
-    type: "text",
-    autoComplete: "organization",
-    placeholder: "Firm name",
-  },
-  {
-    name: "phone",
-    label: "US phone number",
-    type: "tel",
-    autoComplete: "tel-national",
-    placeholder: "(555) 123-4567",
-  },
-] as const;
+const inputClass =
+  "bg-card focus-visible:ring-ring w-full rounded border px-4 py-3 transition-colors focus-visible:ring-2 focus-visible:outline-none";
 
-export function QualificationForm({ onComplete }: QualificationFormProps): ReactElement {
+type Draft = {
+  firstName: string;
+  email: string;
+  firmType: string;
+  aumBand: string;
+  workflow: string;
+};
+
+export function QualificationForm({
+  onComplete,
+  initialWorkflow = "",
+}: QualificationFormProps): ReactElement {
   const formRef = useRef<HTMLFormElement>(null);
-  const [formData, setFormData] = useState<QualificationData>({
+  const [draft, setDraft] = useState<Draft>({
     firstName: "",
     email: "",
-    phone: "",
-    companyName: "",
+    firmType: "",
+    aumBand: "",
+    workflow: capabilities.some((c) => c.slug === initialWorkflow) ? initialWorkflow : "",
   });
-  const [errors, setErrors] = useState<Partial<Record<keyof QualificationData, string>>>({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
 
-  const handleInputChange = (field: keyof QualificationData, value: string) => {
-    setFormData((prev) => ({ ...prev, [field]: value }));
+  const update = (field: FieldName, value: string) => {
+    setDraft((prev) => ({ ...prev, [field]: value }));
     setErrors((prev) => {
       const next = { ...prev };
       delete next[field];
@@ -70,133 +57,166 @@ export function QualificationForm({ onComplete }: QualificationFormProps): React
     });
   };
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>): Promise<void> => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    if (isSubmitting) return;
-    setSubmitError(null);
-
-    const result = qualificationFormSchema.safeParse(formData);
+    const result = qualificationFormSchema.safeParse({
+      ...draft,
+      aumBand: draft.firmType === "fund" && draft.aumBand ? draft.aumBand : undefined,
+    });
     if (!result.success) {
-      const newErrors: Partial<Record<keyof QualificationData, string>> = {};
-      for (const field of fields) {
-        const issue = result.error.issues.find((item) => item.path[0] === field.name);
-        if (issue) newErrors[field.name] = issue.message;
+      const next: Partial<Record<FieldName, string>> = {};
+      for (const issue of result.error.issues) {
+        const field = issue.path[0];
+        if (typeof field === "string" && FIELD_ORDER.includes(field as FieldName)) {
+          next[field as FieldName] ??= issue.message;
+        }
       }
-      setErrors(newErrors);
-      const firstInvalidField = fields.find((field) => newErrors[field.name]);
-      if (firstInvalidField)
-        formRef.current
-          ?.querySelector<HTMLInputElement>(`[name="${firstInvalidField.name}"]`)
-          ?.focus();
+      setErrors(next);
+      const first = FIELD_ORDER.find((field) => next[field]);
+      if (first) formRef.current?.querySelector<HTMLElement>(`[name="${first}"]`)?.focus();
       return;
     }
-
-    setIsSubmitting(true);
-    try {
-      const validated = result.data;
-      await submitLead({
-        first_name: validated.firstName,
-        phone_number: formatPhoneNumber(validated.phone),
-        email: validated.email,
-        company_name: validated.companyName,
-        notes: "Source: book-demo page (single-step form)",
-        source: "book_demo_form",
-        trigger_call: false,
-        trigger_text: false,
-      });
-      trackEvent("Lead", {
-        email: validated.email,
-        phone: validated.phone,
-        firstName: validated.firstName,
-      });
-      onComplete(validated);
-    } catch (error) {
-      setSubmitError(
-        error instanceof Error ? error.message : "Something went wrong. Please try again.",
-      );
-    } finally {
-      setIsSubmitting(false);
-    }
+    trackEvent("Lead", { email: result.data.email, firstName: result.data.firstName });
+    onComplete(result.data);
   };
 
+  const describedBy = (field: FieldName) => (errors[field] ? `${field}-error` : undefined);
+  const errorText = (field: FieldName) =>
+    errors[field] ? (
+      <p id={`${field}-error`} className="text-destructive mt-1.5 text-sm">
+        {errors[field]}
+      </p>
+    ) : null;
+  const borderFor = (field: FieldName) => (errors[field] ? "border-destructive" : "border-input");
+
   return (
-    <form
-      ref={formRef}
-      onSubmit={handleSubmit}
-      className="mx-auto w-full max-w-2xl"
-      noValidate
-      aria-busy={isSubmitting}
-    >
-      <p className="text-muted-foreground mb-4 text-xs">All fields are required.</p>
+    <form ref={formRef} onSubmit={handleSubmit} className="mx-auto w-full max-w-2xl" noValidate>
       <p className="sr-only" role="alert">
-        {fields
-          .map((field) => errors[field.name])
+        {FIELD_ORDER.map((field) => errors[field])
           .filter(Boolean)
           .join(". ")}
       </p>
       <div className="space-y-4">
-        {fields.map((field) => (
-          <div key={field.name}>
-            <label htmlFor={field.name} className="mb-1.5 block text-sm font-medium">
-              {field.label}
+        <div>
+          <label htmlFor="firstName" className="mb-1.5 block text-sm font-medium">
+            Name
+          </label>
+          <input
+            id="firstName"
+            name="firstName"
+            type="text"
+            autoComplete="name"
+            placeholder="Jane Smith"
+            required
+            value={draft.firstName}
+            aria-invalid={Boolean(errors.firstName)}
+            aria-describedby={describedBy("firstName")}
+            onChange={(event) => update("firstName", event.target.value)}
+            className={cn(inputClass, borderFor("firstName"))}
+          />
+          {errorText("firstName")}
+        </div>
+        <div>
+          <label htmlFor="email" className="mb-1.5 block text-sm font-medium">
+            Work email
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="jane@firm.com"
+            required
+            value={draft.email}
+            aria-invalid={Boolean(errors.email)}
+            aria-describedby={describedBy("email")}
+            onChange={(event) => update("email", event.target.value)}
+            className={cn(inputClass, borderFor("email"))}
+          />
+          {errorText("email")}
+        </div>
+        <div>
+          <label htmlFor="firmType" className="mb-1.5 block text-sm font-medium">
+            Firm type
+          </label>
+          <select
+            id="firmType"
+            name="firmType"
+            required
+            value={draft.firmType}
+            aria-invalid={Boolean(errors.firmType)}
+            aria-describedby={describedBy("firmType")}
+            onChange={(event) => update("firmType", event.target.value)}
+            className={cn(inputClass, borderFor("firmType"))}
+          >
+            <option value="" disabled>
+              Select one
+            </option>
+            {FIRM_TYPES.map((type) => (
+              <option key={type.value} value={type.value}>
+                {type.label}
+              </option>
+            ))}
+          </select>
+          {errorText("firmType")}
+        </div>
+        {draft.firmType === "fund" ? (
+          <div>
+            <label htmlFor="aumBand" className="mb-1.5 block text-sm font-medium">
+              Assets under management
             </label>
-            <input
-              id={field.name}
-              name={field.name}
-              type={field.type}
-              autoComplete={field.autoComplete}
-              value={formData[field.name]}
+            <select
+              id="aumBand"
+              name="aumBand"
               required
-              readOnly={isSubmitting}
-              aria-invalid={Boolean(errors[field.name])}
-              aria-describedby={errors[field.name] ? `${field.name}-error` : undefined}
-              onChange={(event) => handleInputChange(field.name, event.target.value)}
-              className={cn(
-                "bg-card focus-visible:ring-ring w-full rounded border px-4 py-3 transition-colors focus-visible:ring-2 focus-visible:outline-none",
-                errors[field.name] ? "border-destructive" : "border-input",
-              )}
-              placeholder={field.placeholder}
-            />
-            {errors[field.name] ? (
-              <p id={`${field.name}-error`} className="text-destructive mt-1.5 text-sm">
-                {errors[field.name]}
-              </p>
-            ) : null}
+              value={draft.aumBand}
+              aria-invalid={Boolean(errors.aumBand)}
+              aria-describedby={describedBy("aumBand")}
+              onChange={(event) => update("aumBand", event.target.value)}
+              className={cn(inputClass, borderFor("aumBand"))}
+            >
+              <option value="" disabled>
+                Select one
+              </option>
+              {AUM_BANDS.map((band) => (
+                <option key={band.value} value={band.value}>
+                  {band.label}
+                </option>
+              ))}
+            </select>
+            {errorText("aumBand")}
           </div>
-        ))}
+        ) : null}
+        <div>
+          <label htmlFor="workflow" className="mb-1.5 block text-sm font-medium">
+            Workflow to discuss{" "}
+            <span className="text-muted-foreground font-normal">(optional)</span>
+          </label>
+          <select
+            id="workflow"
+            name="workflow"
+            value={draft.workflow}
+            onChange={(event) => update("workflow", event.target.value)}
+            className={cn(inputClass, "border-input")}
+          >
+            <option value="">Not sure yet</option>
+            {capabilities.map((capability) => (
+              <option key={capability.slug} value={capability.slug}>
+                {capability.navLabel}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      {submitError ? (
-        <p role="alert" className="text-destructive mt-4 text-sm leading-6">
-          {submitError} Your details are still here. Please try again or email{" "}
-          <a href="mailto:hello@prestyj.com" className="underline underline-offset-4">
-            hello@prestyj.com
-          </a>
-          .
-        </p>
-      ) : null}
       <div className="mt-6">
-        <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
-          {isSubmitting ? (
-            <>
-              <Loader2
-                aria-hidden="true"
-                className="mr-2 h-4 w-4 animate-spin motion-reduce:animate-none"
-              />
-              Opening the scheduler…
-            </>
-          ) : (
-            <>
-              See available times
-              <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-            </>
-          )}
+        <Button type="submit" size="lg" className="w-full">
+          See available times
+          <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
         </Button>
       </div>
-      <p className="sr-only" role="status">
-        {isSubmitting ? "Sending your request. The scheduler will open after confirmation." : ""}
-      </p>
       <p className="text-muted-foreground mt-5 text-center text-xs leading-5">
-        We use these details to respond and load our Cal.com scheduler. See our{" "}
+        Your answers, and how you found this site, are attached to the Cal.com booking so we can
+        route it. See our{" "}
         <a href="/privacy" className="hover:text-foreground underline underline-offset-2">
           privacy policy
         </a>

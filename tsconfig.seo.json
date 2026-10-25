@@ -15,7 +15,8 @@
     "scripts/analyze-ai-citations.ts",
     "scripts/seo-bot/tasks/draft-store*.ts",
     "scripts/seo-bot/tasks/write-blog-post.ts",
-    "scripts/seo-bot/orchestration/daily-run.ts"
+    "scripts/seo-bot/orchestration/daily-run.ts",
+    "scripts/growth-engine/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

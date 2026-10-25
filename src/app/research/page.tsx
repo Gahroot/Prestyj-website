@@ -1,3 +1,4 @@
+import { EditorialFinalCta } from "@/components/sections/institutional/editorial-close";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -86,6 +87,7 @@ export default function ResearchPage() {
             </ul>
           </div>
         </section>
+        <EditorialFinalCta ctaId="page-end:research" />
       </main>
     </EditorialShell>
   );

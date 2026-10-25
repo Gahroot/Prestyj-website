@@ -1,0 +1,45 @@
+# Content half of the Prestyj growth engine. Full autonomy: gates are the editor.
+# Model ids verified against https://platform.claude.com/docs (models overview + pricing), Oct 2026.
+models:
+  writer: claude-fable-5-1 # strongest model: writes new articles and refreshes
+  factChecker: claude-sonnet-5-5 # separate pass, different model and prompt
+  research: claude-sonnet-5-5 # uses the server-side web search tool
+
+# USD per million tokens (input/output) and per web search. Unknown models cost the fallback.
+pricing:
+  claude-fable-5-1: { inputPerM: 10, outputPerM: 50 }
+  claude-opus-5-5: { inputPerM: 4, outputPerM: 20 }
+  claude-sonnet-5-5: { inputPerM: 2, outputPerM: 10 }
+  claude-haiku-5-5: { inputPerM: 0.1, outputPerM: 0.5 }
+  fallback: { inputPerM: 10, outputPerM: 50 }
+  webSearchPerUse: 0.01
+
+webSearch:
+  toolType: web_search_20250305
+  maxUsesResearch: 5
+
+caps:
+  maxNewPerWeek: 2 # rolling 7 days, counted from data/growth/content-log.json
+  maxRefreshPerWeek: 3
+  maxNewPerRun: 1
+  maxRefreshPerRun: 1
+  maxCostPerRunUsd: 8
+
+research:
+  everyDays: 7 # run LLM research when no research-sourced item is newer than this
+  maxItemsPerRun: 8
+  promptSeedScore: 30
+
+gates:
+  minWordsNew: 1200
+  minWordsRefresh: 900
+  refreshMinWordRatio: 0.9
+  maxSlopHits: 1 # more distinct slop phrases than this is a hard fail
+  maxBodySimilarity: 0.2 # 5-word shingle Jaccard vs any live institutional article
+  maxTitleOverlap: 0.6 # token Jaccard of titles vs any live institutional article
+  maxFailedClaimRatio: 0.2
+  minReachableSources: 2
+  minUseTerms: 2
+  maxCopiedWords: 20 # any unquoted run this long copied from a fetched source fails
+
+author: Nolan Grout

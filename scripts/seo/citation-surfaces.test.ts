@@ -1,21 +1,19 @@
-import { readFileSync } from "node:fs";
+import { existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import robots from "../../src/app/robots";
 import { articleDateChecks } from "./check-citation-surfaces";
 
 describe("rendered article date agreement", () => {
-  it("keeps the static robots response aligned with route protections", () => {
-    const text = readFileSync("public/robots.txt", "utf8")
-      .split(/\r?\n/)
-      .map((line) => line.replace(/#.*/, "").trim())
-      .join("\n");
+  it("keeps every robots rule aligned with route protections", () => {
     const rules = robots().rules;
-    const rule = Array.isArray(rules) ? rules[0] : rules;
-    for (const route of ["/api/", "/admin/", "/embed/"]) {
-      expect(rule?.disallow).toContain(route);
-      expect(text).toContain(`Disallow: ${route}`);
+    const list = Array.isArray(rules) ? rules : [rules];
+    expect(list.length).toBeGreaterThan(0);
+    for (const rule of list) {
+      const disallow = [rule.disallow ?? []].flat();
+      for (const route of ["/api/", "/admin/", "/embed/"]) expect(disallow).toContain(route);
+      expect(disallow).not.toContain("/");
     }
-    expect(text).not.toMatch(/^Disallow: \/$/m);
+    expect(existsSync("public/robots.txt")).toBe(false); // a static file would shadow src/app/robots.ts
   });
   const expected = { published: "2026-08-27", modified: "2026-09-24" };
   const html =

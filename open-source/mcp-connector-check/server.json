@@ -1,0 +1,22 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.prestyj/mcp-connector-check",
+  "title": "MCP Connector Check",
+  "description": "Audit a remote MCP server or Claude connector for production readiness and security. Read-only.",
+  "websiteUrl": "https://prestyj.com/connectors/mcp-server-security-checklist",
+  "repository": {
+    "url": "https://github.com/prestyj/mcp-connector-check",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "mcp-connector-check",
+      "version": "0.1.0",
+      "transport": { "type": "stdio" },
+      "packageArguments": [{ "type": "positional", "value": "--mcp" }]
+    }
+  ]
+}

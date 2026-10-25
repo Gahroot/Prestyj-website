@@ -1,32 +1,40 @@
 import z from "zod";
 
+import { AUM_BANDS, FIRM_TYPES } from "@/lib/attribution/qualification";
+import { capabilities } from "@/lib/institutional/capabilities";
+
+const firmTypeValues = FIRM_TYPES.map((type) => type.value) as [
+  (typeof FIRM_TYPES)[number]["value"],
+  ...(typeof FIRM_TYPES)[number]["value"][],
+];
+const aumBandValues = AUM_BANDS.map((band) => band.value) as [
+  (typeof AUM_BANDS)[number]["value"],
+  ...(typeof AUM_BANDS)[number]["value"][],
+];
+
 /**
- * Qualification form validation schema
- * Provides type-safe, robust validation for all form fields
+ * Booking qualification form: only what is needed to qualify and route the request.
+ * AUM band is required for funds only.
  */
-export const qualificationFormSchema = z.object({
-  firstName: z.string().min(1, "Name is required").trim(),
-  email: z
-    .string()
-    .min(1, "Work email is required")
-    .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
-      message: "Please enter a valid work email address",
-    })
-    .trim()
-    .toLowerCase(),
-  phone: z
-    .string()
-    .min(1, "Phone number is required")
-    .refine(
-      (val) => {
-        // Remove all non-digit characters
-        const digits = val.replace(/\D/g, "");
-        return digits.length === 10;
-      },
-      { message: "Please enter a valid 10-digit US phone number" },
-    ),
-  companyName: z.string().min(1, "Company is required").trim(),
-});
+export const qualificationFormSchema = z
+  .object({
+    firstName: z.string().trim().min(1, "Name is required"),
+    email: z
+      .string()
+      .trim()
+      .toLowerCase()
+      .min(1, "Work email is required")
+      .refine((val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val), {
+        message: "Please enter a valid work email address",
+      }),
+    firmType: z.enum(firmTypeValues, { message: "Choose your firm type" }),
+    aumBand: z.enum(aumBandValues).optional(),
+    workflow: z.string().refine((val) => val === "" || capabilities.some((c) => c.slug === val)),
+  })
+  .refine((data) => data.firmType !== "fund" || Boolean(data.aumBand), {
+    message: "Choose assets under management",
+    path: ["aumBand"],
+  });
 
 export type QualificationFormData = z.infer<typeof qualificationFormSchema>;
 

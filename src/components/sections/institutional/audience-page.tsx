@@ -5,6 +5,7 @@ import { ArrowRight, Check } from "lucide-react";
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
+import { ctaDataProps } from "@/lib/attribution/cta";
 import type { Audience } from "@/lib/institutional/audiences";
 import { getCapability } from "@/lib/institutional/capabilities";
 
@@ -97,7 +98,7 @@ export function AudiencePage({ audience }: { audience: Audience }): ReactElement
                 {audience.cta}
               </h2>
               <Button size="lg" asChild>
-                <Link href="/book-demo">
+                <Link href="/book-demo" {...ctaDataProps(`page-end:audience:${audience.slug}`)}>
                   Book a workflow demo <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

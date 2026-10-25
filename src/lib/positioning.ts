@@ -9,3 +9,12 @@ export const positioning = {
   primaryCta: { label: "Get access", href: "/book-demo" },
   secondaryCta: { label: "See the work", href: "/#outcomes" },
 } as const;
+
+/** Second, separately positioned offer. Lives under /connectors and the connector service pages. */
+export const connectorsPositioning = {
+  oneLiner: "Custom Claude connectors, MCP servers, and ChatGPT plugins, done for you.",
+  audience: "Businesses in any industry whose systems have no off-the-shelf AI connector.",
+  coreOffer:
+    "We scope, build, secure, host, and maintain the MCP server that connects Claude and ChatGPT to your systems.",
+  primaryCta: { label: "Book a scoping call", href: "/book-demo" },
+} as const;

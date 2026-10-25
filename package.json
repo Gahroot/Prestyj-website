@@ -39,7 +39,11 @@
     "seo:find-duplicates": "tsx scripts/seo/find-near-duplicate-pages.ts",
     "seo:gsc-progress": "tsx scripts/seo/record-gsc-progress.ts",
     "seo:gsc-progress:dry": "tsx scripts/seo/record-gsc-progress.ts --dry-run",
-    "seo-bot": "tsx scripts/seo-bot/cli.ts"
+    "seo-bot": "tsx scripts/seo-bot/cli.ts",
+    "growth:content": "tsx scripts/growth-engine/content/cli.ts",
+    "growth:measure": "tsx scripts/growth-engine/measure/cli.ts",
+    "growth:report": "tsx scripts/growth-engine/report/cli.ts",
+    "seo:check-cta": "tsx scripts/check-cta-coverage.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "0.122.0",

@@ -19,6 +19,7 @@ export const navLinks = [
   { href: "#solutions", label: "Capabilities", dropdown: true as const },
   { href: "/for/investment-funds", label: "Funds" },
   { href: "/for/commercial-brokerages", label: "Brokerages" },
+  { href: "/connectors", label: "Connectors" },
   { href: "/results", label: "Work" },
   { href: "/research", label: "Research" },
 ];

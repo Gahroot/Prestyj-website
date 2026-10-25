@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { MARKETING_CONSENT_STORAGE_KEY, OPEN_PRIVACY_CHOICES_EVENT } from "@/lib/consent";
+import { CONSENT_CHANGED_EVENT, GTAG_SCRIPT_ID, ensureGtag } from "@/lib/attribution/gtag";
 import { LINKEDIN_PARTNER_ID, PIXEL_ID } from "@/lib/meta-pixel";
 type Consent = "granted" | "denied";
 
@@ -14,6 +15,7 @@ function persistConsent(value: Consent): void {
   window.localStorage.setItem(MARKETING_CONSENT_STORAGE_KEY, value);
   const secure = window.location.protocol === "https:" ? "; Secure" : "";
   document.cookie = `${MARKETING_CONSENT_STORAGE_KEY}=${value}; Path=/; Max-Age=31536000; SameSite=Strict${secure}`;
+  window.dispatchEvent(new Event(CONSENT_CHANGED_EVENT));
 }
 
 declare global {
@@ -114,17 +116,15 @@ export function TrackingConsent(): React.ReactElement {
     <>
       {consent === "granted" ? (
         <>
+          {/* One gtag.js loader shared by Google Ads and GA4 (configured in ensureGtag). */}
           <Script
-            id="google-ads-gtag"
-            src="https://www.googletagmanager.com/gtag/js?id=AW-18112004799"
+            id="google-gtag"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GTAG_SCRIPT_ID}`}
             strategy="afterInteractive"
+            onReady={() => {
+              ensureGtag();
+            }}
           />
-          <Script id="google-ads-config" strategy="afterInteractive">
-            {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-18112004799', {'allow_enhanced_conversions': true});`}
-          </Script>
           {LINKEDIN_PARTNER_ID ? (
             <Script id="linkedin-insight" strategy="afterInteractive">
               {`_linkedin_partner_id = "${LINKEDIN_PARTNER_ID}";
@@ -160,8 +160,9 @@ fbq('init','${PIXEL_ID}');fbq('track','PageView');`}
             Privacy choices
           </h2>
           <p className={styles.description}>
-            The site works without marketing tracking. Allow Google Ads, Meta, and LinkedIn
-            measurement? Change your choice anytime. <Link href="/privacy">Privacy policy</Link>
+            The site works without marketing tracking. Allow Google Analytics, Google Ads, Meta, and
+            LinkedIn measurement? Change your choice anytime.{" "}
+            <Link href="/privacy">Privacy policy</Link>
             {gpcActive
               ? " Your browser's Global Privacy Control signal keeps marketing tracking off."
               : ""}

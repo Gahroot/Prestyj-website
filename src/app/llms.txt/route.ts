@@ -1,3 +1,6 @@
+import { connectorGuidePath, connectorGuides } from "@/lib/connectors/guides";
+import { connectorServicePath, connectorServices } from "@/lib/connectors/services";
+import { connectorSystemPath, connectorSystems } from "@/lib/connectors/systems";
 import { audiences } from "@/lib/institutional/audiences";
 import { capabilities } from "@/lib/institutional/capabilities";
 import { proofRecords } from "@/lib/institutional/proof";
@@ -23,12 +26,28 @@ export function GET(): Response {
         `- ${capability.navLabel}: ${capability.description} ${siteConfig.url}/capabilities/${capability.slug}`,
     ),
     "",
+    "## Custom AI connectors for any business",
+    "Prestyj also builds, hosts, and maintains custom Claude connectors, custom MCP servers, and custom ChatGPT plugins for businesses in any industry.",
+    `- Overview: ${siteConfig.url}/connectors`,
+    ...connectorServices.map(
+      (service) =>
+        `- ${service.navLabel}: ${service.metaDescription} ${siteConfig.url}${connectorServicePath(service.slug)}`,
+    ),
+    ...connectorSystems.map(
+      (system) =>
+        `- ${system.name} connector: ${system.metaDescription} ${siteConfig.url}${connectorSystemPath(system.slug)}`,
+    ),
+    ...connectorGuides.map(
+      (guide) => `- Guide: ${guide.title}: ${siteConfig.url}${connectorGuidePath(guide.slug)}`,
+    ),
+    "",
     "## Work",
     ...proofRecords.map((record) => `- [${record.stage}] ${record.name}: ${record.delivered}`),
     "",
     "## Research",
     ...researchArticles.map(
-      (article) => `- ${article.title}: ${siteConfig.url}/blog/${article.slug}`,
+      (article) =>
+        `- ${article.title}: ${article.description} ${siteConfig.url}/blog/${article.slug}`,
     ),
     "",
     "## Canonical pages",

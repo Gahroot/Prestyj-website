@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, ArrowUpRight, FileText } from "lucide-react";
+import type { ReactElement } from "react";
 
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
+import styles from "@/components/sections/institutional/workflow-pages.module.css";
 
 export const metadata: Metadata = {
   title: "Engagements",
@@ -32,88 +34,150 @@ const phases = [
   },
 ] as const;
 
-export default function PricingPage() {
+const scopeFactors = [
+  { label: "Source systems", detail: "Number and quality of source systems" },
+  { label: "Volume", detail: "Frequency and volume of the workflow" },
+  { label: "Business logic", detail: "Complexity of fund, lease, or routing logic" },
+  { label: "Controls", detail: "Security, tenancy, and audit requirements" },
+  { label: "Integrations", detail: "External integrations and release controls" },
+] as const;
+
+export default function PricingPage(): ReactElement {
   return (
     <EditorialShell>
-      <main id="main-content" className="editorial-inner">
-        <section className="border-b">
+      <main id="main-content" className="editorial-inner pb-0!">
+        <section className={styles.hero}>
           <div className="editorial-rail">
-            <EditorialPageHeader title="Price the workflow, not the seat count.">
-              <p>
-                Scope depends on the work we take over, the systems involved, the controls required,
-                and the volume that runs through it. We give you the number after we see the work.
-              </p>
-            </EditorialPageHeader>
+            <p className={`${styles.context} min-h-11`}>Engagements</p>
+            <div className={styles.heroGrid}>
+              <div className={styles.intro}>
+                <EditorialPageHeader title="Price the workflow, not the seat count.">
+                  <p>
+                    Scope depends on the work we take over, the systems involved, the controls
+                    required, and the volume that runs through it. We give you the number after we
+                    see the work.
+                  </p>
+                </EditorialPageHeader>
+                <div className="editorial-actions">
+                  <Button asChild>
+                    <Link href="/book-demo">
+                      Book a workflow demo <ArrowUpRight aria-hidden="true" />
+                    </Link>
+                  </Button>
+                  <a href="#engagement-process" className="editorial-text-link">
+                    The process <ArrowRight size={15} aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+              <section className={styles.paper} aria-labelledby="brief-title">
+                <div className={styles.paperHeader}>
+                  <h2 id="brief-title">Your first workflow</h2>
+                  <FileText size={18} strokeWidth={1.5} aria-hidden="true" />
+                </div>
+                <div className={styles.paperBody}>
+                  <h3 className={styles.paperTitle}>Bring the work. Not a spec.</h3>
+                  <dl className="text-sm">
+                    {[
+                      { label: "The process", value: "One recurring workflow" },
+                      { label: "The sources", value: "The systems your team uses" },
+                      { label: "The output", value: "A current work product" },
+                      { label: "The owner", value: "The person who reviews it" },
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex flex-wrap justify-between gap-x-5 gap-y-1 border-t py-3.5"
+                      >
+                        <dt className="text-muted-foreground">{item.label}</dt>
+                        <dd>{item.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+                <div className={styles.review}>
+                  <p className="mt-0!">Most first proofs fit inside one quarter.</p>
+                </div>
+              </section>
+            </div>
           </div>
         </section>
 
-        <section aria-labelledby="phases-title" className="border-b py-12 sm:py-16">
-          <div className="editorial-rail">
-            <h2 id="phases-title" className="font-heading text-3xl font-bold tracking-tight">
-              How an engagement starts
-            </h2>
-            <ol className="mt-10 border-t">
+        <section id="engagement-process" aria-labelledby="phases-title" className={styles.section}>
+          <div className={`editorial-rail ${styles.sectionGrid}`}>
+            <div>
+              <h2 id="phases-title" className={styles.sectionHeading}>
+                One workflow first. Then the next.
+              </h2>
+              <p className={styles.sectionIntro}>
+                Define the work, prove the output, and expand only when it holds up.
+              </p>
+            </div>
+            <ol>
               {phases.map((phase) => (
                 <li
                   key={phase.number}
-                  className="grid gap-5 border-b py-7 sm:grid-cols-[4rem_0.7fr_1.3fr]"
+                  className="grid grid-cols-[1.5rem_minmax(0,1fr)] gap-5 border-b py-7 first:pt-0"
                 >
-                  <span className="text-muted-foreground font-mono text-sm">{phase.number}</span>
-                  <h3 className="font-heading text-xl font-bold">{phase.title}</h3>
-                  <p className="text-muted-foreground leading-7">{phase.body}</p>
+                  <span
+                    aria-hidden="true"
+                    className="text-muted-foreground pt-1 text-xs tabular-nums"
+                  >
+                    {phase.number}
+                  </span>
+                  <div>
+                    <h3 className="text-2xl">{phase.title}</h3>
+                    <p className="text-muted-foreground mt-3 text-sm leading-7">{phase.body}</p>
+                  </div>
                 </li>
               ))}
             </ol>
           </div>
         </section>
 
-        <section aria-labelledby="scope-title" className="border-b py-12 sm:py-16">
-          <div className="editorial-rail editorial-split">
+        <section aria-labelledby="scope-title" className={`${styles.section} bg-muted/40`}>
+          <div className={`editorial-rail ${styles.sectionGrid}`}>
             <div>
-              <h2 id="scope-title" className="font-heading text-3xl font-bold tracking-tight">
-                What changes the scope
+              <h2 id="scope-title" className={styles.sectionHeading}>
+                What shapes the engagement.
               </h2>
-              <ul className="mt-8 space-y-4">
-                {[
-                  "Number and quality of source systems",
-                  "Frequency and volume of the workflow",
-                  "Complexity of fund, lease, or routing logic",
-                  "Security, tenancy, and audit requirements",
-                  "External integrations and release controls",
-                ].map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <Check aria-hidden="true" className="text-primary mt-1 h-4 w-4 shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="border-l pl-6">
-              <h2 className="font-heading text-3xl font-bold tracking-tight">
-                What we do not sell
-              </h2>
-              <p className="text-muted-foreground mt-6 leading-7">
-                No generic software tier, no per-seat training program, and no promise that every
-                workflow belongs in AI. If the process is not stable enough to define or valuable
-                enough to operate, we will say so.
+              <p className={styles.sectionIntro}>
+                The scope follows your operating requirements, not a software tier.
               </p>
             </div>
+            <dl>
+              {scopeFactors.map((factor) => (
+                <div key={factor.label} className={styles.scopeRow}>
+                  <dt className="font-medium">{factor.label}</dt>
+                  <dd>{factor.detail}</dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </section>
 
-        <section className="py-12 sm:py-16">
-          <div className="editorial-rail flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <section aria-labelledby="fit-title" className={styles.section}>
+          <div className={`editorial-rail ${styles.sectionGrid}`}>
+            <h2 id="fit-title" className={styles.sectionHeading}>
+              What we do not sell.
+            </h2>
+            <p className="text-muted-foreground text-base leading-8">
+              No generic software tier, no per-seat training program, and no promise that every
+              workflow belongs in AI. If the process is not stable enough to define or valuable
+              enough to operate, we will say so.
+            </p>
+          </div>
+        </section>
+
+        <section className={`${styles.section} bg-muted/40`} aria-labelledby="next-step-title">
+          <div className={`editorial-rail ${styles.closing}`}>
             <div>
-              <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-                Bring the workflow. We will scope the work.
+              <h2 id="next-step-title" className={styles.sectionHeading}>
+                Bring the workflow.
               </h2>
-              <p className="text-muted-foreground mt-4">
-                Most first proofs fit inside one quarter.
-              </p>
+              <p className={styles.sectionIntro}>We will scope the work.</p>
             </div>
             <Button size="lg" asChild>
               <Link href="/book-demo">
-                Book a workflow demo <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
+                Book a workflow demo <ArrowUpRight aria-hidden="true" />
               </Link>
             </Button>
           </div>

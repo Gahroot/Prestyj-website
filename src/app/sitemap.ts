@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 
+import { connectorServiceRoutes } from "@/lib/connectors/site-map";
 import { researchArticles } from "@/lib/institutional/research";
 import { indexableStaticRoutes } from "@/lib/institutional/site-map";
 import { siteConfig } from "@/lib/site-config";
@@ -10,7 +11,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages: MetadataRoute.Sitemap = indexableStaticRoutes.map((route) => ({
     url: `${siteConfig.url}${route === "/" ? "" : route}`,
     changeFrequency: route === "/" ? "weekly" : "monthly",
-    priority: route === "/" ? 1 : route.startsWith("/capabilities/") ? 0.9 : 0.7,
+    priority:
+      route === "/"
+        ? 1
+        : route.startsWith("/capabilities/") ||
+            (connectorServiceRoutes as readonly string[]).includes(route)
+          ? 0.9
+          : 0.7,
   }));
 
   const articles: MetadataRoute.Sitemap = researchArticles.map((article) => ({

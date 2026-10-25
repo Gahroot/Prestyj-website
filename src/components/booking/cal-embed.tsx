@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback, useRef } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
+import { toCalMetadataConfig } from "@/lib/attribution/first-touch";
+import { trackGa4 } from "@/lib/attribution/gtag";
 import { trackEvent } from "@/lib/meta-pixel";
 
 const CAL_LINK = "nolan-grout-x0fgn8/30min";
@@ -9,17 +11,34 @@ const CAL_LINK = "nolan-grout-x0fgn8/30min";
 interface CalcomInlineEmbedProps {
   className?: string;
   theme?: "light" | "dark";
+  /** Prefilled booking fields (name, email, notes). Empty values are skipped. */
+  prefill?: Record<string, string>;
+  /** pj_* attribution, sent as Cal.com booking metadata and GA4 book_demo params. */
+  attribution?: Record<string, string>;
 }
 
 export function CalcomInlineEmbed({
   className,
   theme = "dark",
+  prefill = {},
+  attribution = {},
 }: CalcomInlineEmbedProps): React.ReactElement {
-  const handleBookingMessage = useCallback((e: MessageEvent) => {
-    if (e.data?.type === "CAL:bookingSuccessful" || e.data?.type === "__calBookingSuccessful") {
-      trackEvent("Schedule");
-    }
-  }, []);
+  const bookedRef = useRef(false);
+  const onBooked = useCallback(() => {
+    if (bookedRef.current) return;
+    bookedRef.current = true;
+    trackEvent("Schedule");
+    trackGa4("book_demo", attribution);
+  }, [attribution]);
+  const handleBookingMessage = useCallback(
+    (e: MessageEvent) => {
+      if (e.data?.type === "CAL:bookingSuccessful" || e.data?.type === "__calBookingSuccessful") {
+        onBooked();
+      }
+    },
+    [onBooked],
+  );
+  const filledPrefill = Object.fromEntries(Object.entries(prefill).filter(([, value]) => value));
 
   useEffect(() => {
     (async function () {
@@ -32,18 +51,19 @@ export function CalcomInlineEmbed({
           branding: { brandColor: theme === "light" ? "#292a24" : "#7058e3" },
         },
       });
+      cal("on", { action: "bookingSuccessfulV2", callback: onBooked });
     })();
 
     window.addEventListener("message", handleBookingMessage);
     return () => window.removeEventListener("message", handleBookingMessage);
-  }, [handleBookingMessage, theme]);
+  }, [handleBookingMessage, onBooked, theme]);
 
   return (
     <Cal
       calLink={CAL_LINK}
       className={className}
       style={{ width: "100%", height: "100%", minHeight: "600px" }}
-      config={{ theme }}
+      config={{ ...filledPrefill, ...toCalMetadataConfig(attribution), theme }}
     />
   );
 }

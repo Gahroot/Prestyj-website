@@ -2,15 +2,37 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { notFound, permanentRedirect } from "next/navigation";
+import { Children, isValidElement, type ComponentProps, type ReactNode } from "react";
 
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { ArticleTable } from "@/components/sections/institutional/article-table";
-import { getRelatedArticles } from "@/lib/institutional/research";
+import { ArticleCta } from "@/components/conversion/article-cta";
+import {
+  extractFaq,
+  inlineCtaAnchorHeading,
+  stripInlineMarkdown,
+} from "@/lib/institutional/article-content";
+import {
+  buildBlogPostingSchema,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+} from "@/lib/institutional/article-schema";
+import { readArticleSource } from "@/lib/institutional/article-source";
+import { getRelatedArticles, researchArticles } from "@/lib/institutional/research";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { blogSource } from "@/lib/source";
 import { institutionalBlogSlugs, isInstitutionalBlogSlug } from "@/lib/institutional/site-map";
 import { siteConfig } from "@/lib/site-config";
 import { getArticleDates, formatArticleDate } from "@/lib/institutional/article-metadata";
+
+const AUTHOR_NAME = "Nolan Grout";
+
+function nodeText(node: ReactNode): string {
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(nodeText).join("");
+  if (isValidElement<{ children?: ReactNode }>(node)) return nodeText(node.props.children);
+  return "";
+}
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -66,26 +88,48 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const MDXContent = page.data.body;
   const { title, description, keywords } = page.data;
   const { published, modified } = getArticleDates(page.data);
-  const postUrl = `${siteConfig.url}/blog/${slug}`;
+  const article = researchArticles.find((entry) => entry.slug === slug);
+  const source = readArticleSource(slug);
+  const anchorHeading = inlineCtaAnchorHeading(source);
+  const faqSchema = buildFaqSchema(extractFaq(source));
+  const inlineCta = article ? <ArticleCta article={article} placement="article-inline" /> : null;
+
+  // Inline CTA renders before the second H2, i.e. right after the answer section.
+  const H2 = (props: ComponentProps<"h2">) => {
+    const isAnchor =
+      anchorHeading !== null &&
+      stripInlineMarkdown(nodeText(Children.toArray(props.children))) === anchorHeading;
+    return (
+      <>
+        {isAnchor ? inlineCta : null}
+        <h2 {...props} />
+      </>
+    );
+  };
 
   return (
     <>
       <SafeJsonLd
-        data={{
-          "@context": "https://schema.org",
-          "@type": "Article",
-          headline: title,
+        data={buildBlogPostingSchema({
+          site: siteConfig,
+          slug,
+          title,
           description,
-          author: { "@type": "Person", name: "Nolan Grout", url: `${siteConfig.url}/about` },
-          publisher: { "@id": siteConfig.organizationId },
-          datePublished: published,
-          dateModified: modified,
-          mainEntityOfPage: postUrl,
-          url: postUrl,
-          image: siteConfig.ogImage,
-          keywords: keywords?.join(", "),
-        }}
+          published,
+          modified,
+          authorName: AUTHOR_NAME,
+          keywords,
+          section: article?.category,
+        })}
       />
+      <SafeJsonLd
+        data={buildBreadcrumbSchema(siteConfig.url, [
+          { name: "Home", path: "/" },
+          { name: "Field notes", path: "/blog" },
+          { name: title, path: `/blog/${slug}` },
+        ])}
+      />
+      {faqSchema ? <SafeJsonLd data={faqSchema} /> : null}
       <EditorialShell>
         <main id="main-content" className="editorial-rail editorial-inner pt-10 sm:pt-16">
           <article className="editorial-reading">
@@ -116,28 +160,22 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </header>
 
             <div className="prose prose-lg prose-headings:font-[Georgia] prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground mt-10 max-w-none">
-              <MDXContent components={{ table: ArticleTable }} />
+              <MDXContent components={{ table: ArticleTable, h2: H2 }} />
             </div>
 
-            <aside className="mt-14 border-t pt-8">
-              <h2 className="font-heading text-2xl font-bold">
-                Bring us the workflow behind this question.
-              </h2>
-              <Link
-                href="/book-demo"
-                className="text-primary mt-4 inline-block font-semibold hover:underline"
-              >
-                Book a workflow demo
-              </Link>
-            </aside>
-            <nav aria-label="Related reading" className="mt-12 border-t pt-8">
-              <h2 className="text-2xl">Related reading</h2>
+            {article ? <ArticleCta article={article} placement="article-end" /> : null}
+            <nav aria-label="Related analysis" className="mt-12 border-t pt-8">
+              <h2 className="text-2xl">Related analysis</h2>
               <ul className="editorial-rows mt-5">
-                {getRelatedArticles(slug).map((article) => (
-                  <li key={article.slug}>
-                    <Link href={`/blog/${article.slug}`} className="underline underline-offset-4">
-                      {article.title}
+                {getRelatedArticles(slug).map((related) => (
+                  <li key={related.slug}>
+                    <p className="text-muted-foreground text-xs">{related.category}</p>
+                    <Link href={`/blog/${related.slug}`} className="underline underline-offset-4">
+                      {related.title}
                     </Link>
+                    <p className="text-muted-foreground mt-1 text-sm leading-6">
+                      {related.description}
+                    </p>
                   </li>
                 ))}
               </ul>

@@ -1,116 +1,154 @@
 import Link from "next/link";
 import type { ReactElement } from "react";
-import { ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ChevronRight, ShieldCheck } from "lucide-react";
 
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
+import { bookDemoHref, ctaDataProps } from "@/lib/attribution/cta";
 import type { Capability } from "@/lib/institutional/capabilities";
 import { getCapabilityArticles } from "@/lib/institutional/research";
+import styles from "./workflow-pages.module.css";
 
 export function CapabilityPage({ capability }: { capability: Capability }): ReactElement {
   const Icon = capability.icon;
 
   return (
     <EditorialShell>
-      <main id="main-content" className="editorial-inner">
-        <section className="border-b">
+      <main id="main-content" className="editorial-inner pb-0!">
+        <section className={styles.hero} aria-labelledby="capability-context">
           <div className="editorial-rail">
-            <div className="grid gap-10 lg:grid-cols-[1.25fr_0.75fr] lg:items-end">
-              <div>
+            <nav aria-label="Breadcrumb" className={styles.context}>
+              <Link href="/platform">Capabilities</Link>
+              <ChevronRight size={13} aria-hidden="true" />
+              <span id="capability-context" aria-current="page">
+                {capability.navLabel}
+              </span>
+            </nav>
+            <div className={styles.heroGrid}>
+              <div className={styles.intro}>
                 <EditorialPageHeader title={capability.title}>
                   <p>{capability.description}</p>
                 </EditorialPageHeader>
+                <div className="editorial-actions">
+                  <Button asChild>
+                    <Link
+                      href={bookDemoHref(capability.slug)}
+                      {...ctaDataProps(`capability-hero:${capability.slug}`)}
+                    >
+                      Book a workflow demo <ArrowUpRight aria-hidden="true" />
+                    </Link>
+                  </Button>
+                  <a href="#workflow" className="editorial-text-link">
+                    How it works <ArrowRight size={15} aria-hidden="true" />
+                  </a>
+                </div>
               </div>
-              <div className="mb-10 border-l pl-6">
-                <Icon aria-hidden="true" className="text-primary h-6 w-6" />
-                <p className="mt-4 text-lg italic">{capability.felt}</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section aria-labelledby="asks-title" className="border-b py-12 sm:py-16">
-          <div className="editorial-rail">
-            <div className="grid gap-10 lg:grid-cols-[0.55fr_1.45fr]">
-              <h2 id="asks-title" className="font-heading text-3xl font-bold tracking-tight">
-                Start with the ask.
-              </h2>
-              <ol className="border-t">
-                {capability.asks.map((ask, index) => (
-                  <li key={ask} className="grid gap-4 border-b py-6 sm:grid-cols-[3rem_1fr]">
-                    <span className="text-muted-foreground font-mono text-xs">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <blockquote className="text-lg leading-7">&ldquo;{ask}&rdquo;</blockquote>
-                  </li>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
-        <section aria-labelledby="record-title" className="border-b py-12 sm:py-16">
-          <div className="editorial-rail">
-            <h2
-              id="record-title"
-              className="font-heading max-w-2xl text-3xl font-bold tracking-tight"
-            >
-              The complete work record
-            </h2>
-            <div className="mt-8 border-t">
-              {[
-                { label: "Work product", values: capability.outputs },
-                { label: "Sources", values: capability.sources },
-                { label: "Agent work", values: capability.actions },
-                { label: "Review gate", values: [capability.review] },
-              ].map((column) => (
-                <div
-                  key={column.label}
-                  className="grid gap-5 border-b py-6 md:grid-cols-[0.45fr_1fr]"
-                >
-                  <h3 className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
-                    {column.label}
-                  </h3>
-                  <ul className="space-y-3 text-base leading-7">
-                    {column.values.map((value) => (
-                      <li key={value} className="flex gap-2">
-                        <Check
-                          aria-hidden="true"
-                          className="text-primary mt-0.5 h-4 w-4 shrink-0"
-                        />
-                        <span>{value}</span>
-                      </li>
+              <section className={styles.paper} aria-labelledby="work-product-title">
+                <div className={styles.paperHeader}>
+                  <h2 id="work-product-title">What your team receives</h2>
+                  <Icon size={18} strokeWidth={1.5} aria-hidden="true" />
+                </div>
+                <div className={styles.paperBody}>
+                  <h3 className={styles.paperTitle}>{capability.navLabel}</h3>
+                  <ul className={styles.deliverables}>
+                    {capability.outputs.map((output) => (
+                      <li key={output}>{output}</li>
                     ))}
                   </ul>
                 </div>
-              ))}
+                <div className={styles.review}>
+                  <ShieldCheck size={17} strokeWidth={1.5} aria-hidden="true" />
+                  <div>
+                    <h3 className="text-xs font-medium">Review rule</h3>
+                    <p>{capability.review}</p>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </section>
 
-        <section className="border-b py-16">
-          <div className="editorial-rail">
-            <div className="border-primary grid gap-6 border-l-2 pl-6 lg:grid-cols-[auto_1fr] lg:items-start">
-              <ShieldCheck aria-hidden="true" className="text-primary h-6 w-6" />
-              <div>
-                <h2 className="font-heading text-xl font-bold">The boundary</h2>
-                <p className="text-muted-foreground mt-2 max-w-3xl leading-7">
+        <section id="workflow" aria-labelledby="asks-title" className={styles.section}>
+          <div className={`editorial-rail ${styles.sectionGrid}`}>
+            <div>
+              <h2 id="asks-title" className={styles.sectionHeading}>
+                Start with the ask.
+              </h2>
+              <p className={styles.sectionIntro}>{capability.felt}</p>
+            </div>
+            <ol className={styles.askList}>
+              {capability.asks.map((ask, index) => (
+                <li key={ask}>
+                  <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
+                  <p>{ask}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+
+        <section aria-labelledby="record-title" className={`${styles.section} bg-muted/40`}>
+          <div className={`editorial-rail ${styles.sectionGrid}`}>
+            <div>
+              <h2 id="record-title" className={styles.sectionHeading}>
+                From source to finished work.
+              </h2>
+              <div className="border-foreground mt-8 border-l-2 pl-5">
+                <h3 className="text-sm font-medium">The boundary</h3>
+                <p className="text-muted-foreground mt-3 max-w-md text-sm leading-7">
                   {capability.boundary}
                 </p>
               </div>
             </div>
+            <dl>
+              <div className="border-b pb-7">
+                <dt className="mb-4 text-sm font-medium">Source systems &amp; records</dt>
+                <dd>
+                  <ul className={`${styles.sourceList} text-muted-foreground text-sm`}>
+                    {capability.sources.map((source) => (
+                      <li key={source}>{source}</li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+              <div className="pt-7">
+                <dt className="mb-4 text-sm font-medium">The agent’s work</dt>
+                <dd>
+                  <ul className="flex flex-wrap items-center gap-x-3 gap-y-3 text-sm">
+                    {capability.actions.map((action, index) => (
+                      <li key={action} className="flex items-center gap-3">
+                        {index > 0 && (
+                          <ArrowRight
+                            size={12}
+                            className="text-muted-foreground"
+                            aria-hidden="true"
+                          />
+                        )}
+                        {action}
+                      </li>
+                    ))}
+                  </ul>
+                </dd>
+              </div>
+            </dl>
           </div>
         </section>
 
-        <nav aria-label="Related field notes" className="border-b py-12 sm:py-16">
-          <div className="editorial-rail">
-            <h2 className="font-heading text-3xl font-bold tracking-tight">Related field notes</h2>
-            <ul className="editorial-rows mt-5">
+        <nav aria-label="Related field notes" className={styles.section}>
+          <div className={`editorial-rail ${styles.sectionGrid}`}>
+            <div>
+              <h2 className={styles.sectionHeading}>A closer look.</h2>
+              <Link href="/blog" className="editorial-text-link mt-4">
+                All field notes <ArrowUpRight size={15} aria-hidden="true" />
+              </Link>
+            </div>
+            <ul>
               {getCapabilityArticles(capability.slug).map((article) => (
                 <li key={article.slug}>
-                  <Link href={`/blog/${article.slug}`} className="underline underline-offset-4">
+                  <Link href={`/blog/${article.slug}`} className={styles.articleLink}>
                     {article.title}
+                    <ArrowUpRight size={16} aria-hidden="true" />
                   </Link>
                 </li>
               ))}
@@ -118,24 +156,24 @@ export function CapabilityPage({ capability }: { capability: Capability }): Reac
           </div>
         </nav>
 
-        <section className="py-20 sm:py-28">
-          <div className="editorial-rail">
-            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div>
-                <h2 className="font-heading text-3xl font-bold tracking-tight sm:text-4xl">
-                  Bring us this workflow.
-                </h2>
-                <p className="text-muted-foreground mt-4 max-w-2xl text-lg">
-                  Show us the source systems, the current work product, and the person who reviews
-                  it.
-                </p>
-              </div>
-              <Button size="lg" asChild>
-                <Link href="/book-demo">
-                  Book a workflow demo <ArrowRight aria-hidden="true" className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+        <section className={`${styles.section} bg-muted/40`} aria-labelledby="next-step-title">
+          <div className={`editorial-rail ${styles.closing}`}>
+            <div>
+              <h2 id="next-step-title" className={styles.sectionHeading}>
+                Bring us this workflow.
+              </h2>
+              <p className={styles.sectionIntro}>
+                Show us the source systems, the current work product, and the person who reviews it.
+              </p>
             </div>
+            <Button size="lg" asChild>
+              <Link
+                href={bookDemoHref(capability.slug)}
+                {...ctaDataProps(`page-end:capability:${capability.slug}`)}
+              >
+                Book a workflow demo <ArrowUpRight aria-hidden="true" />
+              </Link>
+            </Button>
           </div>
         </section>
       </main>

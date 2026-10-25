@@ -5,6 +5,25 @@ import dynamic from "next/dynamic";
 import { Check } from "lucide-react";
 
 import { QualificationForm, type QualificationData } from "@/components/booking/qualification-form";
+import { buildAttributionParams, readFirstTouch, readLastCta } from "@/lib/attribution/first-touch";
+import { trackGa4 } from "@/lib/attribution/gtag";
+import { getCapability } from "@/lib/institutional/capabilities";
+
+type Submission = { data: QualificationData; params: Record<string, string> };
+
+function attributionFor(data: QualificationData): Record<string, string> {
+  let storage: Storage | null = null;
+  try {
+    storage = window.localStorage;
+  } catch {
+    storage = null;
+  }
+  return buildAttributionParams({
+    firstTouch: storage ? readFirstTouch(storage) : null,
+    lastCta: storage ? readLastCta(storage) : null,
+    qualification: { firmType: data.firmType, aumBand: data.aumBand ?? null },
+  });
+}
 
 const CalcomInlineEmbed = dynamic(
   async () => {
@@ -21,17 +40,27 @@ const CalcomInlineEmbed = dynamic(
   },
 );
 
-export function BookDemoClient(): React.ReactElement {
+export function BookDemoClient({ workflow = "" }: { workflow?: string }): React.ReactElement {
   const calendarRef = useRef<HTMLHeadingElement>(null);
-  const [qualificationData, setQualificationData] = useState<QualificationData | null>(null);
+  const [submission, setSubmission] = useState<Submission | null>(null);
+  const qualificationData = submission?.data ?? null;
 
   const handleComplete = (data: QualificationData) => {
-    setQualificationData(data);
+    const params = attributionFor(data);
+    trackGa4("generate_lead", params);
+    // Record the lead without blocking the calendar; booking still works if the CRM is down.
+    void fetch("/api/demo-request", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ data, attribution: params }),
+      keepalive: true,
+    }).catch(() => undefined);
+    setSubmission({ data, params });
   };
 
   useEffect(() => {
-    if (qualificationData) calendarRef.current?.focus();
-  }, [qualificationData]);
+    if (submission) calendarRef.current?.focus();
+  }, [submission]);
 
   return (
     <div className="grid items-start gap-12 lg:grid-cols-[0.8fr_1.2fr]">
@@ -74,7 +103,17 @@ export function BookDemoClient(): React.ReactElement {
                 The scheduler below is provided by Cal.com and loads after your request.
               </p>
             </div>
-            <CalcomInlineEmbed theme="light" />
+            <CalcomInlineEmbed
+              theme="light"
+              prefill={{
+                name: submission?.data.firstName ?? "",
+                email: submission?.data.email ?? "",
+                notes: submission?.data.workflow
+                  ? `Workflow: ${getCapability(submission.data.workflow)?.navLabel ?? submission.data.workflow}`
+                  : "",
+              }}
+              attribution={submission?.params ?? {}}
+            />
             <p className="text-muted-foreground mt-5 text-sm leading-6">
               Calendar not loading? Email{" "}
               <a href="mailto:hello@prestyj.com" className="underline underline-offset-4">
@@ -87,10 +126,10 @@ export function BookDemoClient(): React.ReactElement {
           <>
             <h2 className="font-heading text-2xl font-bold">Let’s find a time.</h2>
             <p className="text-muted-foreground mt-2 mb-6 text-sm leading-6">
-              We use these details to route your request and open the scheduler. No automated call
-              or marketing text is triggered by this form.
+              Four quick answers route your request to the right person. The calendar opens as soon
+              as you continue. No automated call or marketing text is triggered.
             </p>
-            <QualificationForm onComplete={handleComplete} />
+            <QualificationForm onComplete={handleComplete} initialWorkflow={workflow} />
           </>
         )}
       </div>

@@ -47,16 +47,17 @@ describe("institutional review gate", () => {
   it("requires source evidence, not only dates, for live and measured states", () => {
     const value = contentLedgerSchema.parse(ledger());
     const first = value.items[0];
-    if (!first) throw new Error("Missing fixture");
+    if (!first?.revisedOn) throw new Error("Missing revision fixture");
+    const revisionDate = first.revisedOn;
     first.reviews = first.reviewRequirements.map((role) => ({
       role,
       reviewer: "Test reviewer",
-      date: "2026-09-24",
+      date: revisionDate,
       evidence: "Test fixture only",
     }));
     first.state = "live-verified";
-    first.releasePreparedOn = "2026-09-24";
-    first.liveVerifiedOn = "2026-09-24";
+    first.releasePreparedOn = revisionDate;
+    first.liveVerifiedOn = revisionDate;
     expect(contentLedgerSchema.safeParse(value).success).toBe(false);
     first.liveEvidence = {
       url: `https://prestyj.com/blog/${first.slug}`,
@@ -65,16 +66,20 @@ describe("institutional review gate", () => {
     };
     expect(contentLedgerSchema.safeParse(value).success).toBe(true);
     first.state = "measured";
-    first.measuredOn = "2026-09-24";
+    first.measuredOn = revisionDate;
     expect(contentLedgerSchema.safeParse(value).success).toBe(false);
     first.measurementEvidence = {
       source: "Test fixture only",
-      reportingStart: "2026-09-24",
-      reportingEnd: "2026-09-24",
+      reportingStart: revisionDate,
+      reportingEnd: revisionDate,
       evidence: "Test fixture only",
     };
     expect(contentLedgerSchema.safeParse(value).success).toBe(true);
-    first.measurementEvidence.reportingEnd = "2026-09-25";
+    first.measurementEvidence.reportingEnd = new Date(
+      Date.parse(`${revisionDate}T00:00:00Z`) + 86_400_000,
+    )
+      .toISOString()
+      .slice(0, 10);
     expect(contentLedgerSchema.safeParse(value).success).toBe(false);
   });
   it("rejects duplicate IDs and impossible dates", () => {

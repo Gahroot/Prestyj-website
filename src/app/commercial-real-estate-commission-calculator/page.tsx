@@ -1,3 +1,4 @@
+import { EditorialFinalCta } from "@/components/sections/institutional/editorial-close";
 import type { Metadata } from "next";
 
 import { CommercialCommissionCalculator } from "@/components/calculator/commercial-commission-calculator";
@@ -31,6 +32,7 @@ export default function CommercialCommissionCalculatorPage() {
             <CommercialCommissionCalculator />
           </div>
         </section>
+        <EditorialFinalCta ctaId="page-end:cre-commission-calculator" />
       </main>
     </EditorialShell>
   );

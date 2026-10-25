@@ -34,7 +34,24 @@ describe("authoritative published research registry", () => {
   });
   it("provides deterministic topic-related reading instead of first-in-list links", () => {
     const related = getRelatedArticles("ai-assisted-quarter-end-close");
-    expect(related[0]?.slug).toBe("explainable-distribution-waterfalls");
+    // The registry grows automatically, so assert the ranking rule rather than one fixed slug.
+    const current = researchArticles.find((a) => a.slug === "ai-assisted-quarter-end-close")!;
+    const overlap = (a: (typeof researchArticles)[number]): number =>
+      (a.category === current.category ? 10 : 0) +
+      a.capabilities.filter((c) => current.capabilities.includes(c)).length * 2 +
+      a.topics.filter((t) => current.topics.includes(t)).length;
+    const best = Math.max(...researchArticles.filter((a) => a.slug !== current.slug).map(overlap));
+    expect(related).toHaveLength(3);
+    expect(related[0]?.category).toBe("Fund operations");
+    expect(overlap(related[0]!)).toBe(best);
+    const scores = related.map(overlap);
+    expect(scores).toEqual([...scores].sort((a, b) => b - a));
+    expect(related.map((a) => a.slug)).not.toEqual(
+      researchArticles
+        .filter((a) => a.slug !== current.slug)
+        .slice(0, 3)
+        .map((a) => a.slug),
+    );
     expect(related).toEqual(getRelatedArticles("ai-assisted-quarter-end-close"));
     expect(related.every((article) => article.slug !== "ai-assisted-quarter-end-close")).toBe(true);
     expect(getRelatedArticles("unpublished")).toEqual([]);

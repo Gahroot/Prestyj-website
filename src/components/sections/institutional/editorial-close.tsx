@@ -54,30 +54,37 @@ export function EditorialClose(): ReactElement {
           </div>
         </div>
       </section>
-      <section className="editorial-final-cta" aria-labelledby="next-step-title">
-        <div className="editorial-rail editorial-final-layout">
-          <div>
-            <p className="editorial-eyebrow">Start with one workflow</p>
-            <h2 id="next-step-title" className="editorial-title">
-              Bring the work.
-              <br />
-              <em>We’ll take it from here.</em>
-            </h2>
-            <p>
-              Show us the process, the source systems, and who reviews the result. We’ll map a first
-              proof worth running.
-            </p>
-          </div>
-          <div className="editorial-final-action">
-            <Button asChild size="lg">
-              <Link href="/book-demo">
-                Book a workflow demo <ArrowUpRight aria-hidden="true" />
-              </Link>
-            </Button>
-            <span>One conversation. A concrete next step.</span>
-          </div>
-        </div>
-      </section>
+      <EditorialFinalCta ctaId="page-end:home" />
     </>
+  );
+}
+
+/** Closing workflow-demo CTA reused on index, research and calculator pages. */
+export function EditorialFinalCta({ ctaId }: { ctaId: string }): ReactElement {
+  return (
+    <section className="editorial-final-cta" aria-labelledby="next-step-title">
+      <div className="editorial-rail editorial-final-layout">
+        <div>
+          <p className="editorial-eyebrow">Start with one workflow</p>
+          <h2 id="next-step-title" className="editorial-title">
+            Bring the work.
+            <br />
+            <em>We’ll take it from here.</em>
+          </h2>
+          <p>
+            Show us the process, the source systems, and who reviews the result. We’ll map a first
+            proof worth running.
+          </p>
+        </div>
+        <div className="editorial-final-action">
+          <Button asChild size="lg">
+            <Link href="/book-demo" data-pj-cta={ctaId}>
+              Book a workflow demo <ArrowUpRight aria-hidden="true" />
+            </Link>
+          </Button>
+          <span>One conversation. A concrete next step.</span>
+        </div>
+      </div>
+    </section>
   );
 }
