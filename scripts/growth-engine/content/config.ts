@@ -9,8 +9,28 @@ const priceSchema = z.object({
   outputPerM: z.number().nonnegative(),
 });
 
+const modelsSchema = z.object({
+  writer: z.string(),
+  factChecker: z.string(),
+  research: z.string(),
+});
+const reasoningSchema = z.enum(["low", "medium", "high"]);
+
 export const contentConfigSchema = z.object({
-  models: z.object({ writer: z.string(), factChecker: z.string(), research: z.string() }),
+  provider: z.enum(["codex", "anthropic"]).default("anthropic"),
+  models: modelsSchema,
+  codex: z
+    .object({
+      reasoning: z
+        .object({
+          research: reasoningSchema,
+          write: reasoningSchema,
+          factcheck: reasoningSchema,
+        })
+        .partial(),
+    })
+    .default({ reasoning: {} }),
+  fallback: z.object({ provider: z.literal("anthropic"), models: modelsSchema }).optional(),
   pricing: z
     .object({ fallback: priceSchema, webSearchPerUse: z.number().nonnegative() })
     .catchall(z.union([priceSchema, z.number()])),

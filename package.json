@@ -41,6 +41,7 @@
     "seo:gsc-progress:dry": "tsx scripts/seo/record-gsc-progress.ts --dry-run",
     "seo-bot": "tsx scripts/seo-bot/cli.ts",
     "growth:content": "tsx scripts/growth-engine/content/cli.ts",
+    "growth:codex-login": "tsx scripts/growth-engine/content/codex-login.ts",
     "growth:measure": "tsx scripts/growth-engine/measure/cli.ts",
     "growth:report": "tsx scripts/growth-engine/report/cli.ts",
     "seo:check-cta": "tsx scripts/check-cta-coverage.ts"

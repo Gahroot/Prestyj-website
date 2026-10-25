@@ -187,9 +187,12 @@ describe("content cycle", () => {
     expect(opportunities().filter((o) => o.id.startsWith("research-"))).toHaveLength(1);
   });
 
-  it("missing API key returns an empty result and raises a critical exception", async () => {
+  it("no Codex session and no API key returns an empty result and raises a critical exception", async () => {
     const saved = process.env.ANTHROPIC_API_KEY;
+    const savedSession = [process.env.CODEX_SESSION_JSON, process.env.CODEX_SESSION_FILE];
     delete process.env.ANTHROPIC_API_KEY;
+    delete process.env.CODEX_SESSION_JSON;
+    process.env.CODEX_SESSION_FILE = path.join(root, "no-such-session.json");
     try {
       const result = await runContentCycle(
         { root, dryRun: false, now: NOW },
@@ -202,6 +205,9 @@ describe("content cycle", () => {
       );
     } finally {
       if (saved !== undefined) process.env.ANTHROPIC_API_KEY = saved;
+      if (savedSession[0] !== undefined) process.env.CODEX_SESSION_JSON = savedSession[0];
+      if (savedSession[1] !== undefined) process.env.CODEX_SESSION_FILE = savedSession[1];
+      else delete process.env.CODEX_SESSION_FILE;
     }
   });
 

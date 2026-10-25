@@ -23,6 +23,7 @@ import {
   createAnthropicLlm,
   type ContentLlm,
 } from "./llm";
+import { createCodexLlm, defaultSessionFile, fileSessionStore, withFallback } from "./codex";
 import { findOverlap, readArticleFingerprints } from "./dedupe";
 import { FileTransaction, registerArticle, syncLedgerRevision, writeArticle } from "./register";
 import { mergeOpportunities, researchDue, researchTopics, seedFromPrompts } from "./research-queue";
@@ -95,12 +96,8 @@ export async function runContentCycle(
     await critical("content.config", `config.yml invalid: ${errorText(error)}`);
     return EMPTY;
   }
-  const apiKey = process.env.ANTHROPIC_API_KEY?.trim();
-  const inner = deps.llm ?? (apiKey ? createAnthropicLlm(apiKey, config) : null);
-  if (!inner) {
-    await critical("content.llm", "ANTHROPIC_API_KEY is not set; content cycle skipped.");
-    return EMPTY;
-  }
+  const inner = deps.llm ?? (await buildLlm(config, critical, opts.dryRun));
+  if (!inner) return EMPTY;
   const llm = new MeteredLlm(inner, config);
   const log: ContentLogEntry[] = [];
   const at = now.toISOString();
@@ -511,3 +508,61 @@ const errorText = (error: unknown): string =>
 const round = (value: number): number => Math.round(value * 10_000) / 10_000;
 
 export { articleFile };
+
+const PURPOSE_MODEL = { research: "research", write: "writer", factcheck: "factChecker" } as const;
+
+/**
+ * Primary: the owner's ChatGPT/Codex subscription (config `provider: codex`).
+ * If that session is missing, expired beyond refresh, or out of usage, fall back to
+ * the Anthropic API key for the rest of the run and raise a critical alert.
+ */
+async function buildLlm(
+  config: ContentConfig,
+  critical: (component: string, message: string) => Promise<unknown>,
+  dryRun: boolean,
+): Promise<ContentLlm | null> {
+  const apiKey = process.env.ANTHROPIC_API_KEY?.trim();
+  const anthropic = apiKey ? createAnthropicLlm(apiKey, config) : null;
+  if (config.provider !== "codex") {
+    if (!anthropic)
+      await critical("content.llm", "ANTHROPIC_API_KEY is not set; content cycle skipped.");
+    return anthropic;
+  }
+  const store = fileSessionStore(defaultSessionFile());
+  if (!store.load()) {
+    if (!anthropic) {
+      await critical(
+        "content.llm",
+        "No ChatGPT/Codex session and no ANTHROPIC_API_KEY; content cycle skipped. Run `npm run growth:codex-login`.",
+      );
+      return null;
+    }
+    await critical(
+      "content.llm",
+      "No ChatGPT/Codex session; using the Anthropic API this run. Run `npm run growth:codex-login`.",
+    );
+    return anthropicWithModels(anthropic, config);
+  }
+  const codex = createCodexLlm({ store, reasoning: config.codex.reasoning });
+  const fallbackModels = config.fallback?.models;
+  return withFallback(
+    codex,
+    fallbackModels ? anthropic : null,
+    async (reason) => {
+      const message = `ChatGPT/Codex subscription unavailable (${reason}); this run used the Anthropic API instead. Run \`npm run growth:codex-login\` if the session expired.`;
+      if (dryRun) console.warn(`[content] ${message}`);
+      else await critical("content.llm", message);
+    },
+    (purpose) => fallbackModels?.[PURPOSE_MODEL[purpose]] ?? "",
+  );
+}
+
+function anthropicWithModels(anthropic: ContentLlm, config: ContentConfig): ContentLlm {
+  const models = config.fallback?.models;
+  return {
+    complete: (request) =>
+      anthropic.complete(
+        models ? { ...request, model: models[PURPOSE_MODEL[request.purpose]] } : request,
+      ),
+  };
+}

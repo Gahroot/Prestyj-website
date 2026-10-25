@@ -99,7 +99,35 @@ export function parseDraft(text: string): Omit<Draft, "costUsd"> {
     .replace(/^\s*```(?:mdx|markdown)?\n/, "")
     .replace(/\n```\s*$/, "")
     .trim();
-  return { meta, body: `${body}\n` };
+  return { meta, body: `${moveInlineCitations(body)}\n` };
+}
+
+/**
+ * Web-search models add inline citations like "([sec.gov](https://...))". Remove them
+ * from the prose and make sure each URL is listed under ## Sources, where the
+ * fact-checker reads them.
+ */
+export function moveInlineCitations(body: string): string {
+  const urls: string[] = [];
+  const [prose = "", ...rest] = body.split(/\n(?=## Sources\b)/);
+  const cleaned = prose
+    .replace(
+      /[ \t]?\(\[[^\]]*\]\((https?:\/\/[^\s)]+)\)(?:,\s*\[[^\]]*\]\((https?:\/\/[^\s)]+)\))*\)/g,
+      (match) => {
+        for (const m of match.matchAll(/\((https?:\/\/[^\s)]+)\)/g)) urls.push(m[1] ?? "");
+        return "";
+      },
+    )
+    .replace(/ +([.,;:])/g, "$1");
+  const sources = rest.join("\n");
+  const missing = [...new Set(urls)]
+    .map((url) => url.replace(/[?&]utm_source=openai$/, ""))
+    .filter((url) => url && !sources.includes(url));
+  if (!missing.length) return `${cleaned}${sources ? `\n${sources}` : ""}`.trim();
+  const added = missing.map((url) => `- ${url}`).join("\n");
+  if (!sources) return `${cleaned.trim()}\n\n## Sources\n\n${added}`;
+  const [heading = "", ...after] = sources.split("\n");
+  return `${cleaned}\n${[heading, ...after].join("\n").trimEnd()}\n${added}`.trim();
 }
 
 export async function writeNewArticle(

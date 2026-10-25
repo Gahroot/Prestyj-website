@@ -1,12 +1,27 @@
 # Content half of the Prestyj growth engine. Full autonomy: gates are the editor.
 # Model ids verified against https://platform.claude.com/docs (models overview + pricing), Oct 2026.
+# Primary provider: the owner's ChatGPT/Codex subscription (same transport as EZ Coder).
+# Models verified as allowed for a ChatGPT account on the Codex endpoint, Oct 2026.
+provider: codex
 models:
-  writer: claude-fable-5-1 # strongest model: writes new articles and refreshes
-  factChecker: claude-sonnet-5-5 # separate pass, different model and prompt
-  research: claude-sonnet-5-5 # uses the server-side web search tool
+  writer: gpt-6.1-sol # strongest allowed model: writes new articles and refreshes
+  factChecker: gpt-6-astra # separate pass, different model and prompt
+  research: gpt-6.1-sol # uses the Codex web_search tool
+codex:
+  reasoning: { research: medium, write: high, factcheck: high }
+# Used only if the Codex session fails or hits its usage limit (alert emailed when it happens).
+fallback:
+  provider: anthropic
+  models:
+    writer: claude-fable-5-1
+    factChecker: claude-sonnet-5-5
+    research: claude-sonnet-5-5
 
 # USD per million tokens (input/output) and per web search. Unknown models cost the fallback.
 pricing:
+  # Subscription calls have no per-token charge; usage limits apply instead.
+  gpt-6.1-sol: { inputPerM: 0, outputPerM: 0 }
+  gpt-6-astra: { inputPerM: 0, outputPerM: 0 }
   claude-fable-5-1: { inputPerM: 10, outputPerM: 50 }
   claude-opus-5-5: { inputPerM: 4, outputPerM: 20 }
   claude-sonnet-5-5: { inputPerM: 2, outputPerM: 10 }
