@@ -202,5 +202,101 @@
     "score": 30,
     "createdAt": "2026-10-25T17:52:05.559Z",
     "status": "rejected"
+  },
+  {
+    "id": "research-e656f3a115",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI prepare lender compliance certificates across our property portfolio using each loan's own DSCR definitions and reporting requirements?"
+    ],
+    "evidence": "LLM web research (owner-operator): Search surfaced Docuity explicitly offering covenant certificates with calculation backups (https://docuity.ai/), while Moody's emphasizes lender-side monitoring (https://www.moodys.com/web/en/us/solutions/lending/commercial-real-estate.html). The broad certificate-generation angle is already covered. Inferred narrower gap: a borrower-side walkthrough spanning multiple lenders, contractual NOI adjustments, reporting calendars, amendments and officer certification, with a separate calculation workbook for each facility. This targets the owner's debt-reporting burden rather than quarter-end accounting.",
+    "score": 57,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "rejected"
+  },
+  {
+    "id": "research-50b2b9d037",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can our real estate fund automatically identify which LP notices are triggered when we refinance, sell an asset or change a key person?"
+    ],
+    "evidence": "LLM web research (fund): Ontra already covers recurring and event-based side-letter obligations (https://www.ontra.ai/solutions/side-letters/); Zive describes extraction, routing and compliance-task triggers (https://www.zive.ai/products/docs-compliance/side-letter-obligation-tracking). Generic obligation tracking is therefore not a gap. Inferred opportunity: show how real estate transaction milestones become counsel-reviewed notice packages, including the contractual trigger, deadline, recipient list and evidence of delivery. The sampled pages did not demonstrate that asset-event-to-LP-notice sequence. Distinct from LP access permissions.",
+    "score": 55,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "open"
+  },
+  {
+    "id": "research-89ea36c43b",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI turn our commercial leasing proposals into approval packages showing net effective rent, TI, commissions and variance from the asset business plan?"
+    ],
+    "evidence": "LLM web research (owner-operator): VTS describes proposal abstraction, cash-flow modeling and budget benchmarking (https://www.vts.com/for-ai), alongside AI extraction and portfolio intelligence (https://www.vts.com/ai). The opening is not another proposal-extraction article. Inferred content gap: a worked owner-side approval package comparing proposal versions, concession economics, upfront cash requirements and business-plan thresholds, including who must authorize an exception. The sampled pages describe capabilities rather than demonstrating this approval deliverable across the owner's existing financial models.",
+    "score": 54,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "open"
+  },
+  {
+    "id": "research-b4f2dafbd1",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can our commercial brokerage automate weekly seller reports from CRM activity, broker emails, tours and buyer feedback?"
+    ],
+    "evidence": "LLM web research (brokerage): Buildout's owner's-report article explains automated branded marketing updates (https://www.buildout.com/blog-posts/buildouts-owners-reports-provide-transparency-and-clarity), and its broader automation page promotes connected deal and activity visibility (https://www.buildout.com/blog-posts/what-is-cre-brokerage-automation). Inferred gap: assembling a seller-facing narrative from activity distributed across systems, distinguishing marketing exposure from substantive buyer interest, and translating tour objections into broker-reviewed next steps. The sampled content does not walk through that cross-source reporting process. This is ongoing client service, not inbound qualification.",
+    "score": 53,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "open"
+  },
+  {
+    "id": "research-f3de103d33",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI reconcile our CRE brokerage's commission agreements, deal milestones and cash receipts to show what is earned, payable and overdue?"
+    ],
+    "evidence": "LLM web research (brokerage): CommercialEdge's commission guide details the administrative complexity of cash- and accrual-aligned distributions (https://www.commercialedge.com/wp-content/uploads/sites/75/2022/11/CommercialEdge-Managing-the-Financial-Complexities-of-CRE-Brokerage-Commissions.pdf). Buildout promotes custom commission tiers, vouchers and earnings dashboards (https://go.buildout.com/brevitas/elevate-your-entire-brokerage). Inferred gap: an agreement-to-collection walkthrough covering lease commencement or installment conditions, co-broker obligations, overdue invoices and supporting evidence for finance. Existing sampled material explains commission systems more than this finished reconciliation work product. Scope is brokerage revenue operations, not fund waterfalls.",
+    "score": 52,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "open"
+  },
+  {
+    "id": "research-7ac8da7157",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can a real estate fund automate allocator DDQs that require property-level operating data, not just answers from previous questionnaires?"
+    ],
+    "evidence": "LLM web research (fund): Ontra already markets private-markets DDQ automation and precedent libraries (https://www.ontra.ai/products/ddq-software/). DiligenceVault describes source-backed autofill, SME collaboration and compliance sign-off (https://fd-website-prod-001-h4hyhma6fxfsdwcc.a03.azurefd.net/solution/ai-powered-rfp-ddq-and-investor-reporting-automation/). Generic DDQ automation is crowded. Inferred narrower gap: answering real-estate-specific allocator requests that require current occupancy, lease rollover, leverage and operating metrics across assets, with explicit measurement dates and portfolio inclusion rules. The sampled pages did not demonstrate those property-data schedules being assembled alongside narrative answers.",
+    "score": 51,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "open"
+  },
+  {
+    "id": "research-cddba501e3",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI assemble our annual portfolio capital plan from property-manager requests, condition reports, bids and remaining hold periods?"
+    ],
+    "evidence": "LLM web research (owner-operator): Banner discusses AI-assisted capital-plan drafting and forecast-to-complete while retaining asset-manager allocation decisions (https://withbanner.com/home/blog/how-ai-is-changing-capex-management-for-cre-owners). JLL addresses portfolio-level retrofit prioritization and time-sequenced capital roadmaps (https://www.jll.de/content/dam/jll-com/documents/pdf/research/global/jll-streamline-sustainable-asset-enhancement-with-ai.pdf). Inferred gap: a worked annual capital-plan deliverable joining requested projects, bid assumptions, dependencies, hold periods and funded-versus-deferred scenarios. The opportunity is the reviewable planning package, not generic predictive maintenance or autonomous capital allocation.",
+    "score": 50,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "open"
+  },
+  {
+    "id": "research-918feba428",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI build a buyer shortlist for a commercial listing from our CRM notes and email history using each investor's current acquisition criteria?"
+    ],
+    "evidence": "LLM web research (brokerage): SourceDeck advertises verified buyer campaigns and staged outreach (https://sourcedeck.ai/); SuiteCRE promotes prospecting, CRM records and AI workflows (https://www.suitecre.com/). These establish adjacent competitive coverage, not an empty category. Inferred narrower gap: showing how private relationship notes and emails become dated institutional buyer mandates, how hard exclusions eliminate unsuitable buyers, and how each shortlisted buyer receives an evidence-backed fit explanation. The sampled product pages did not demonstrate that mandate-maintenance-to-shortlist sequence. This is outbound disposition targeting, not inbound lead qualification.",
+    "score": 48,
+    "createdAt": "2026-10-25T19:45:15.154Z",
+    "status": "open"
   }
 ]

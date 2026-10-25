@@ -236,5 +236,24 @@
     ],
     "sourcesChecked": 4,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:45:15.154Z",
+    "action": "reject",
+    "slug": "ai-lender-compliance-certificates-portfolio-dscr",
+    "path": null,
+    "title": "Can AI Prepare Loan-Specific Compliance Certificates?",
+    "opportunityId": "research-e656f3a115",
+    "reasons": [
+      "12 claims, 5 unsupported, 4 sources fetched",
+      "core claim unsupported: The Treasures on the Bay agreement defines NOI on a cash basis with specified exceptions.",
+      "core claim unsupported: The Treasures on the Bay NOI methodology applies a vacancy floor, accrual treatment for property taxes, and a comparison between lender-underwritten and actual operating expenses.",
+      "core claim unsupported: The Treasures on the Bay agreement requires month-end compliance certificates within thirty days.",
+      "core claim unsupported: The Sonesta certificate includes assertions about compliance with loan-document obligations, absence of default, representations and warranties, and financial-statement accuracy.",
+      "core claim unsupported: The Sonesta certificate execution language identifies a duly authorized officer acting for the borrower.",
+      "5/12 claims unsupported (>20%)"
+    ],
+    "sourcesChecked": 4,
+    "costUsd": 0
   }
 ]
