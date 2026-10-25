@@ -165,7 +165,7 @@
     "evidence": "LLM web research (owner-operator): Results are mostly vendor and small-tool pages: Datagrid (https://datagrid.com/blog/ai-lease-administrators-cam-reconciliation-billing), Creagentic (https://creagentic.ai/cam-reconciliation, $149/mo), CAM Recon (https://cam-recon.com/), Zedly (https://zedly.ai/blog/best-cam-reconciliation-software-for-commercial-landlords), Kognitos and RE BackOffice. Datagrid is the closest to a review-gate approach, with named reviewers and dispute records. SFAI Labs (https://sfailabs.com/guides/best-ai-accounting-automations-cre-ap-cam-reconciliations) calls CAM the one accounting task worth building for. Missing from institutional-owner content: how to read ambiguous lease CAM clauses, how to document the interpretation, and what the controller reviews versus what is auto-prepared. Also missing: tenant-dispute and audit-defense evidence packs, and a recovery-leakage baseline for multi-property portfolios. Claims like 'reduce errors by 95%' have no support.",
     "score": 36,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-9a97464599",

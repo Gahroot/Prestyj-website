@@ -61,5 +61,23 @@
     ],
     "sourcesChecked": 1,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T18:37:29.355Z",
+    "action": "reject",
+    "slug": "ai-cam-reconciliation-controller-sign-off",
+    "path": null,
+    "title": "AI CAM Reconciliation With Controller Sign-Off and Audit Trail",
+    "opportunityId": "research-7bab809443",
+    "reasons": [
+      "0 claims, 0 unsupported, 0 sources fetched",
+      "source unreachable or empty: https://boma.org/education/credentials/microcredentials/revenue-administration/`",
+      "source unreachable or empty: https://boma.org/resource/documenting-common-areas-in-office-leases-2/`",
+      "source unreachable or empty: https://www.americanbar.org/groups/real_property_trust_estate/resources/probate-property/2024-january-february/an-introduction-operating-expenses-commercial-leases/`",
+      "source unreachable or empty: https://airc.nist.gov/airmf-resources/airmf/5-sec-core/`",
+      "only 0 reachable sources (min 2)"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
   }
 ]
