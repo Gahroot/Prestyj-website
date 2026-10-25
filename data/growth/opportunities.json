@@ -189,7 +189,7 @@
     "evidence": "LLM web research (fund): The only substantive hit is a LeewayHertz table row (https://www.leewayhertz.com/ai-in-real-estate/) on extracting appraisal assumptions, comparing them with internal evidence and summarizing valuation variances. No dedicated article, vendor guide or practitioner walkthrough surfaced. It concerns CFO and valuation-committee work: NAV support, auditor and LP questions, and open-end fund valuation. Missing: which inputs to compare (cap rate, rent growth, lease-up), how to show divergence with sources, and how to log the reviewer's decision before the valuation is final.",
     "score": 28,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-6308111e8b",

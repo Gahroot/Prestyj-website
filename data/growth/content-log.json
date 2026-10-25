@@ -219,5 +219,22 @@
     ],
     "sourcesChecked": 2,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T19:33:07.474Z",
+    "action": "reject",
+    "slug": "ai-appraisal-review-real-estate-funds",
+    "path": null,
+    "title": "AI Appraisal Review for Real Estate Funds: Assumption Gaps",
+    "opportunityId": "research-77378ff8d5",
+    "reasons": [
+      "9 claims, 3 unsupported, 4 sources fetched",
+      "core claim unsupported: The interagency appraisal guidelines call for reviews to assess whether data sources are appropriate and supported.",
+      "core claim unsupported: The interagency guidelines call for review documentation standards and a process to resolve deficiencies.",
+      "core claim unsupported: The interagency guidelines distinguish an original appraisal conclusion from a second value opinion developed through an appropriately qualified appraisal review.",
+      "3/9 claims unsupported (>20%)"
+    ],
+    "sourcesChecked": 4,
+    "costUsd": 0
   }
 ]
