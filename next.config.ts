@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
     },
   },
   experimental: {
+    // Optional cap for constrained builders (the growth-engine Railway cron sets it;
+    // a 48-CPU host otherwise starts 47 workers and exhausts the container's threads).
+    ...(Number(process.env.NEXT_BUILD_CPUS) > 0
+      ? { cpus: Number(process.env.NEXT_BUILD_CPUS) }
+      : {}),
     optimizePackageImports: [
       "lucide-react",
       "@radix-ui/react-accordion",
