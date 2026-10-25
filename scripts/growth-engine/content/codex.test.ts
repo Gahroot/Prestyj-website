@@ -297,3 +297,24 @@ describe("long sources", () => {
     expect(relevantExcerpt("short source", "anything", 40_000)).toBe("short source");
   });
 });
+
+describe("research schedule", () => {
+  it("researches again as soon as no open topic is left, not only weekly", async () => {
+    const { researchDue } = await import("./research-queue");
+    const { loadContentConfig } = await import("./config");
+    const config = loadContentConfig();
+    const now = new Date("2026-10-25T12:00:00Z");
+    const item = (status: "open" | "rejected") => ({
+      id: "research-x",
+      kind: "new-topic" as const,
+      path: null,
+      queries: ["q"],
+      evidence: "",
+      score: 1,
+      createdAt: "2026-10-25T10:00:00Z",
+      status,
+    });
+    expect(researchDue([item("open")], config, now)).toBe(false);
+    expect(researchDue([item("rejected")], config, now)).toBe(true);
+  });
+});

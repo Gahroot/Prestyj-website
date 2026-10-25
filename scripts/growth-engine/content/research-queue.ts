@@ -23,7 +23,9 @@ export function seedFromPrompts(root: string, config: ContentConfig, now: Date):
   }));
 }
 
+/** Research runs weekly, and also whenever no open topic is left to write (so the engine never idles). */
 export function researchDue(existing: Opportunity[], config: ContentConfig, now: Date): boolean {
+  if (!existing.some((item) => item.status === "open" && item.kind === "new-topic")) return true;
   const cutoff = now.getTime() - config.research.everyDays * 86_400_000;
   return !existing.some(
     (item) => item.id.startsWith("research-") && Date.parse(item.createdAt) > cutoff,
