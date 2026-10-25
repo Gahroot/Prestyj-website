@@ -278,3 +278,22 @@ describe("fact-check claim handling", () => {
     expect(locateQuote(body, "Something not in the article.")).toBeNull();
   });
 });
+
+describe("long sources", () => {
+  it("keeps the passages the article relies on even when they sit past the size limit", async () => {
+    const { relevantExcerpt } = await import("./factcheck");
+    const filler = "Unrelated background about bank capital and deposit insurance. ".repeat(3_000);
+    const key =
+      "Reviewers should resolve appraisal deficiencies and document the review of data sources.";
+    const source = `Interagency Appraisal Guidelines. ${filler}${key} ${filler}`;
+    const out = relevantExcerpt(
+      source,
+      "How a fund documents appraisal review, deficiencies and data sources.",
+      40_000,
+    );
+    expect(out.length).toBeLessThanOrEqual(40_000);
+    expect(out.startsWith("Interagency Appraisal Guidelines.")).toBe(true);
+    expect(out).toContain("resolve appraisal deficiencies");
+    expect(relevantExcerpt("short source", "anything", 40_000)).toBe("short source");
+  });
+});

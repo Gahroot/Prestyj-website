@@ -109,6 +109,43 @@ export function firstPartyServiceText(): string {
 
 const FACTCHECK_SYSTEM = `You are an exacting fact-checker for an institutional real estate publisher. You did not write the article. Your job is to find every checkable factual claim (statistics, dates, named regulations, standards, laws, named products or organisations and what they do, and any statement about Prestyj's customers, results, prices or timelines) and judge it ONLY against the fetched source text provided. Opinion, advice and clearly labelled illustrative/synthetic examples are not claims. Only list claims that appear in the ARTICLE, with "quote" copied verbatim from it; never list statements about the sources themselves or about your checking. A claim is supported only if a provided source states it; general knowledge does not count. The source labelled PRESTYJ FIRST-PARTY may support statements about what Prestyj offers and how its service works (its own approved description), but never a Prestyj customer, result, metric, price or timeline. Any statement presenting a Prestyj customer, result, metric, price or timeline as real is unsupported and core.`;
 
+const STOP = new Set(
+  "the and for that with this from are was were has have had not but its their they them which when what where who how into than then also such these those can may will should would could must each any all more most other some our your about over under between within without after before".split(
+    " ",
+  ),
+);
+const terms = (text: string): string[] =>
+  text
+    .toLowerCase()
+    .match(/[a-z0-9][a-z0-9()-]{2,}/g)
+    ?.filter((w) => !STOP.has(w)) ?? [];
+
+/**
+ * Fit a long source into `max` characters without losing the parts the article relies on:
+ * keep the opening (title and context), then the windows that share the most terms with
+ * the article, in their original order. Short sources are returned whole.
+ */
+export function relevantExcerpt(source: string, article: string, max: number): string {
+  if (source.length <= max) return source;
+  const head = Math.min(4_000, Math.floor(max / 10));
+  const size = 1_500;
+  const vocab = new Set(terms(article));
+  const windows: { start: number; score: number }[] = [];
+  for (let start = head; start < source.length; start += size) {
+    const words = terms(source.slice(start, start + size));
+    const hits = words.filter((w) => vocab.has(w)).length;
+    windows.push({ start, score: words.length ? hits / Math.sqrt(words.length) : 0 });
+  }
+  const budget = Math.floor((max - head) / (size + 6));
+  const chosen = windows
+    .sort((a, b) => b.score - a.score)
+    .slice(0, budget)
+    .sort((a, b) => a.start - b.start);
+  return [source.slice(0, head), ...chosen.map((w) => source.slice(w.start, w.start + size))].join(
+    "\n[...]\n",
+  );
+}
+
 export function isMetaClaim(claim: string): boolean {
   return /\b(?:supplied|provided|fetched|cited|listed)\s+(?:[\w-]+\s+){0,3}sources?\b|\bthe (?:article|draft)\b/i.test(
     claim,
@@ -151,7 +188,8 @@ export async function factCheck(
     try {
       const page = await ctx.fetcher(url, controller.signal);
       const text = htmlToText(page.text);
-      if (page.ok && text.length > 200) fetched.push({ url, text: text.slice(0, 40_000) });
+      if (page.ok && text.length > 200)
+        fetched.push({ url, text: relevantExcerpt(text, body, 40_000) });
       else reasons.push(`source unreachable or empty: ${url}`);
     } catch {
       reasons.push(`source fetch failed: ${url}`);
