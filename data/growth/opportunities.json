@@ -129,7 +129,7 @@
     "evidence": "LLM web research (fund): Vendor pages say AI can draft LP narrative and variance commentary: NextAutomation (https://nextautomation.us/blog/best-ai-tools-for-real-estate-fund-reporting), the AI Consulting Network (https://www.theaiconsultingnetwork.com/blog/automated-investment-reporting-ai-dashboards) and WorkWise (https://workwisesolutions.org/solutions/investor-reporting-engine.html). They claim 40–80 hours reduced to 2–4 hours, or an 80% cycle cut, with no evidence behind the figures. The AI Consulting Network's ChatGPT-prompts page (https://www.theaiconsultingnetwork.com/blog/chatgpt-prompts-real-estate-investor-reports) says there is no disclosure requirement and the GP stays responsible, and it goes no further. Missing: a review-gate design for who approves each claim, how every number ties to a source, how forward-looking statements and marketing-rule risk are handled, and how commentary stays consistent across LP classes. This is about the IR narrative and sign-off, not the ac",
     "score": 42,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-707ef110e1",

@@ -11,5 +11,26 @@
     ],
     "sourcesChecked": 0,
     "costUsd": 1.1266
+  },
+  {
+    "at": "2026-10-25T17:56:30.346Z",
+    "action": "reject",
+    "slug": "ai-drafted-lp-letter-liability-sign-off",
+    "path": null,
+    "title": "Who Signs Off When AI Drafts the Quarterly LP Letter?",
+    "opportunityId": "research-1be2201a00",
+    "reasons": [
+      "12 claims, 7 unsupported, 5 sources fetched",
+      "core claim unsupported: The general partner and its investment adviser remain liable for every statement in the quarterly LP letter, whether a person or an AI agent drafted it.",
+      "core claim unsupported: The adviser's obligations to fund investors are written in terms of statements the adviser makes, not who typed them.",
+      "core claim unsupported: The SEC adopted Rule 206(4)-8 under section 206(4) of the Advisers Act as a means reasonably designed to prevent fraud, prohibiting advisers to pooled investment vehicles from making false or misleading statements to investors in those pools.",
+      "core claim unsupported: The Rule 206(4)-8 release reaches communications to existing investors, such as account statements, not only offering documents.",
+      "claim unsupported: Under the marketing rule, an advertisement may not include an untrue statement of material fact or omit a material fact necessary to make a statement not misleading.",
+      "claim unsupported: The marketing rule contains a general prohibition on unsubstantiated material statements of fact.",
+      "claim unsupported: The marketing rule's adopting release includes a specific discussion of investors in private funds within its treatment of scope.",
+      "7/12 claims unsupported (>20%)"
+    ],
+    "sourcesChecked": 5,
+    "costUsd": 1.2792
   }
 ]
