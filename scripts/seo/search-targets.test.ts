@@ -36,6 +36,12 @@ describe("institutional search targets", () => {
       expect(institutionalIndexablePaths).toContain(match[1]);
     }
     expect(readFileSync("src/app/platform/page.tsx", "utf8")).toContain(`/blog/${slug}`);
-    expect(getRelatedArticles(slug).some((item) => searchGuides.includes(item.slug))).toBe(true);
+    // Not orphaned: it has related reading, and other articles link to it as related reading.
+    // (New articles are added automatically, so the exact related set is not pinned.)
+    expect(getRelatedArticles(slug).length).toBeGreaterThan(0);
+    const inbound = researchArticles.filter(
+      (item) => item.slug !== slug && getRelatedArticles(item.slug).some((r) => r.slug === slug),
+    );
+    expect(inbound.length).toBeGreaterThan(0);
   });
 });

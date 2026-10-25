@@ -83,6 +83,18 @@ function slugToUrl(file: string): string | null {
   return m ? `${SITE}/blog/${m[1]}` : null;
 }
 
+/** The lines that say what failed (vitest FAIL/assertions, TS/ESLint errors), else the tail. */
+export function failureSummary(out: string): string {
+  const key = out
+    .split("\n")
+    .filter((l) =>
+      /^\s*FAIL\s|AssertionError|error TS\d+|\d+:\d+\s+error\s|Error:|Failed to compile/.test(l),
+    )
+    .slice(0, 12)
+    .join("\n");
+  return key || out.slice(-1500);
+}
+
 async function verifyGates(steps: Step[]): Promise<boolean> {
   for (const [name, cmd, args] of [
     ["typecheck", "npm", ["run", "typecheck"]],
@@ -92,7 +104,7 @@ async function verifyGates(steps: Step[]): Promise<boolean> {
     ["build", "npm", ["run", "build"]],
   ] as const) {
     const r = sh(cmd, [...args]);
-    steps.push({ name, ok: r.ok, detail: r.ok ? "passed" : r.out.slice(-1500) });
+    steps.push({ name, ok: r.ok, detail: r.ok ? "passed" : failureSummary(r.out) });
     if (!r.ok) return false;
   }
   return true;

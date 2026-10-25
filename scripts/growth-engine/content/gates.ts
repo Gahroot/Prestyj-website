@@ -287,7 +287,7 @@ export const commandRepoGates: RepoGates = {
       "vitest",
       "run",
       "src/lib/institutional",
-      "scripts/seo/institutional-content.test.ts",
+      "scripts/seo",
     ]);
     return {
       name: "registry-tests",
