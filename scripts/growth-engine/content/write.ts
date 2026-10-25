@@ -21,6 +21,15 @@ const softList = (max: number, keep: (value: string) => boolean = () => true) =>
       .slice(0, max);
   }, z.array(z.string()));
 
+/** Soft length limit: cut at a word boundary instead of rejecting the draft. */
+export function clipAtWord(value: unknown, max: number, end = "."): string {
+  const text = String(value ?? "").trim();
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max - end.length);
+  const space = cut.lastIndexOf(" ");
+  return `${(space > 0 ? cut.slice(0, space) : cut).replace(/[\s,;:–—-]+$/, "")}${end}`;
+}
+
 export const draftMetaSchema = z.object({
   slug: z
     .string()
@@ -28,12 +37,7 @@ export const draftMetaSchema = z.object({
     .max(80),
   title: z.string().min(10).max(90),
   // Soft: an overlong meta description is cut at a word boundary, not rejected.
-  description: z.preprocess((value) => {
-    const text = String(value ?? "").trim();
-    if (text.length <= 170) return text;
-    const cut = text.slice(0, 168);
-    return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,;:–—-]+$/, "")}.`;
-  }, z.string().min(50).max(170)),
+  description: z.preprocess((value) => clipAtWord(value, 170), z.string().min(50).max(170)),
   // Soft fields are normalized; the minimums stay hard.
   keywords: softList(6, (item) => item.length >= 2).pipe(z.array(z.string()).min(2)),
   category: z.string().trim().min(3).max(40),
@@ -43,8 +47,8 @@ export const draftMetaSchema = z.object({
   topics: softList(3, (item) => (TOPIC_VALUES as readonly string[]).includes(item)).pipe(
     z.array(z.string()).min(1),
   ),
-  registryTitle: z.string().trim().min(10).max(90),
-  registryDescription: z.string().trim().min(30).max(200),
+  registryTitle: z.preprocess((value) => clipAtWord(value, 90, ""), z.string().min(10).max(90)),
+  registryDescription: z.preprocess((value) => clipAtWord(value, 200), z.string().min(30).max(200)),
   changeSummary: z.string().catch(""),
 });
 export type DraftMeta = z.infer<typeof draftMetaSchema>;
