@@ -260,3 +260,21 @@ describe("source URL extraction", () => {
     ]);
   });
 });
+
+describe("fact-check claim handling", () => {
+  it("ignores notes about the sources and locates quotes despite formatting", async () => {
+    const { isMetaClaim, locateQuote } = await import("./factcheck");
+    expect(
+      isMetaClaim("The supplied Federal Reserve source supports reproducible documentation."),
+    ).toBe(true);
+    expect(isMetaClaim("The provided compliance-programs source supports the distinction.")).toBe(
+      true,
+    );
+    expect(isMetaClaim("Rule 206(4)-8 applies to advisers to pooled vehicles.")).toBe(false);
+    const body = "Intro. The **adviser** remains liable for “every” statement. Next.\n";
+    expect(locateQuote(body, 'The adviser remains liable for "every" statement.')).toBe(
+      "The **adviser** remains liable for “every” statement.",
+    );
+    expect(locateQuote(body, "Something not in the article.")).toBeNull();
+  });
+});

@@ -107,7 +107,35 @@ export function firstPartyServiceText(): string {
   return `${positioning.fullPitch}\nAudience: ${positioning.audience}\nCore offer: ${positioning.coreOffer} ${positioning.pricingRange}\nPrestyj offers a workflow demo at /book-demo for any of these workflows.\n${caps}`;
 }
 
-const FACTCHECK_SYSTEM = `You are an exacting fact-checker for an institutional real estate publisher. You did not write the article. Your job is to find every checkable factual claim (statistics, dates, named regulations, standards, laws, named products or organisations and what they do, and any statement about Prestyj's customers, results, prices or timelines) and judge it ONLY against the fetched source text provided. Opinion, advice and clearly labelled illustrative/synthetic examples are not claims. A claim is supported only if a provided source states it; general knowledge does not count. The source labelled PRESTYJ FIRST-PARTY may support statements about what Prestyj offers and how its service works (its own approved description), but never a Prestyj customer, result, metric, price or timeline. Any statement presenting a Prestyj customer, result, metric, price or timeline as real is unsupported and core.`;
+const FACTCHECK_SYSTEM = `You are an exacting fact-checker for an institutional real estate publisher. You did not write the article. Your job is to find every checkable factual claim (statistics, dates, named regulations, standards, laws, named products or organisations and what they do, and any statement about Prestyj's customers, results, prices or timelines) and judge it ONLY against the fetched source text provided. Opinion, advice and clearly labelled illustrative/synthetic examples are not claims. Only list claims that appear in the ARTICLE, with "quote" copied verbatim from it; never list statements about the sources themselves or about your checking. A claim is supported only if a provided source states it; general knowledge does not count. The source labelled PRESTYJ FIRST-PARTY may support statements about what Prestyj offers and how its service works (its own approved description), but never a Prestyj customer, result, metric, price or timeline. Any statement presenting a Prestyj customer, result, metric, price or timeline as real is unsupported and core.`;
+
+export function isMetaClaim(claim: string): boolean {
+  return /\b(?:supplied|provided|fetched|cited|listed)\s+(?:[\w-]+\s+){0,3}sources?\b|\bthe (?:article|draft)\b/i.test(
+    claim,
+  );
+}
+
+const normalize = (text: string): string =>
+  text
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201c\u201d]/g, '"')
+    .replace(/[*_`]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+
+/** Find the article text for a quoted sentence, tolerating quote marks, emphasis and spacing. */
+export function locateQuote(body: string, quote: string): string | null {
+  if (body.includes(quote)) return quote;
+  const target = normalize(quote);
+  if (!target) return null;
+  for (const line of body.split("\n")) {
+    for (const sentence of line.split(/(?<=[.!?])\s+/)) {
+      if (sentence && normalize(sentence) === target) return sentence;
+    }
+    if (normalize(line) === target) return line;
+  }
+  return null;
+}
 
 export async function factCheck(
   body: string,
@@ -172,14 +200,16 @@ Return ONLY JSON: {"claims": [{"claim": "the claim", "quote": "exact sentence fr
     maxTokens: 12000,
   });
   const verdict = verdictSchema.parse(extractJson(result.text));
-  const failedClaims = verdict.claims.filter((claim) => !claim.supported);
+  // Notes about the checking itself ("the supplied source supports...") are not article claims.
+  const claims = verdict.claims.filter((claim) => !isMetaClaim(claim.claim));
+  const failedClaims = claims.filter((claim) => !claim.supported);
   for (const claim of failedClaims) {
     reasons.push(`${claim.core ? "core claim" : "claim"} unsupported: ${claim.claim}`);
-    if (claim.quote && working.includes(claim.quote))
-      working = working.replace(claim.quote, claim.replacement ?? "");
+    const located = claim.quote ? locateQuote(working, claim.quote) : null;
+    if (located) working = working.replace(located, claim.replacement ?? "");
     else reasons.push(`could not locate unsupported claim to fix: ${claim.claim}`);
   }
-  const total = verdict.claims.length;
+  const total = claims.length;
   const ratio = total ? failedClaims.length / total : 0;
   const coreFailed = failedClaims.some((claim) => claim.core);
   const unfixed = reasons.some((reason) => reason.startsWith("could not locate"));
