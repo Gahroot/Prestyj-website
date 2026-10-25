@@ -5,7 +5,7 @@
 provider: codex
 models:
   writer: gpt-6.1-sol # strongest allowed model: writes new articles and refreshes
-  factChecker: gpt-6-astra # separate pass, different model and prompt
+  factChecker: gpt-6.1-sol # separate pass with its own prompt; sees only the article and fetched sources
   research: gpt-6.1-sol # uses the Codex web_search tool
 codex:
   reasoning: { research: medium, write: high, factcheck: high }
