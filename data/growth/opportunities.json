@@ -21,7 +21,7 @@
     "evidence": "Institutional buyer prompt BP-01 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
     "score": 30,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "prompt-BP-02",
@@ -33,7 +33,7 @@
     "evidence": "Institutional buyer prompt BP-02 (data/seo/institutional-buyer-prompts.json); demand assumed, not measured.",
     "score": 30,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "prompt-BP-03",
@@ -153,7 +153,7 @@
     "evidence": "LLM web research (brokerage): TFSF Ventures (https://www.tfsfventures.com/blog/best-ai-agents-for-commercial-real-estate-brokerage-operations) says most platforms make brokerages adapt to the platform's data model. It describes Buildout's AI as task-specific, not agent-grade, because it does not monitor deals or act across sources. It does not show how to do this in practice. NextAutomation (https://nextautomation.us/blog/top-10-ai-tools-for-commercial-real-estate-agents) and A.CRE (https://www.adventuresincre.com/ai-tools-commercial-real-estate/) recommend a general LLM plus a CRM connector. Missing: what the agent may read versus write, a deal-status exception queue, who reviews comps and BOV drafts before they reach a client, and broker-team compliance. This overlaps with Prestyj's read/write boundary angle only as a brokerage deal-pipeline use case.",
     "score": 33,
     "createdAt": "2026-10-25T17:52:05.559Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-7bab809443",

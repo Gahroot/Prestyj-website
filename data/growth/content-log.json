@@ -79,5 +79,48 @@
     ],
     "sourcesChecked": 0,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T18:50:10.128Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "How can a commercial brokerage deploy AI agents on top of Salesforce or its existing CRM without changing its data model?",
+    "opportunityId": "research-adf17e64e3",
+    "reasons": [
+      "duplicates /blog/ai-voice-agents-commercial-brokerage (shares \"commercial brokerage\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T18:50:10.128Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "How should a real estate investment fund evaluate AI workflows for quarter-end close?",
+    "opportunityId": "prompt-BP-01",
+    "reasons": [
+      "duplicates /blog/ai-assisted-quarter-end-close (shares \"end close\"); candidate for a refresh of that article instead"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-10-25T18:50:10.128Z",
+    "action": "reject",
+    "slug": "ai-diligence-memo-investment-committee-evidence",
+    "path": null,
+    "title": "What Evidence Should an AI Diligence Memo Attach for IC Review?",
+    "opportunityId": "prompt-BP-02",
+    "reasons": [
+      "10 claims, 3 unsupported, 3 sources fetched",
+      "claim unsupported: The interagency appraisal and evaluation guidelines call for evaluations supporting credit decisions to document their analysis, assumptions and conclusions in the credit file or a reproducible form.",
+      "claim unsupported: The interagency guidelines direct regulated institutions to review appraisals and evaluations before the final credit decision, including whether the analysis adequately supports that decision.",
+      "claim unsupported: The supplied Federal Reserve source supports reproducible documentation of evaluation analysis, assumptions and conclusions, and review before a final credit decision.",
+      "3/10 claims unsupported (>20%)"
+    ],
+    "sourcesChecked": 3,
+    "costUsd": 0
   }
 ]
