@@ -247,3 +247,16 @@ describe("inline citations from web-search models", () => {
     );
   });
 });
+
+describe("source URL extraction", () => {
+  it("ignores code ticks, bold markers and tracking suffixes around source URLs", async () => {
+    const { sourceUrls } = await import("./factcheck");
+    const body =
+      "x\n\n## Sources\n\n- `https://boma.org/a/`\n- **https://www.sec.gov/b?utm_source=openai**\n- <https://ilpa.org/c>.\n";
+    expect(sourceUrls(body)).toEqual([
+      "https://boma.org/a/",
+      "https://www.sec.gov/b",
+      "https://ilpa.org/c",
+    ]);
+  });
+});

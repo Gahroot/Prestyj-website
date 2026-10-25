@@ -39,7 +39,9 @@ export function sourceUrls(body: string): string[] {
   const section = next < 0 ? rest : rest.slice(0, next);
   return [
     ...new Set(
-      [...section.matchAll(/https?:\/\/[^\s)>\]"']+/g)].map((m) => m[0].replace(/[.,;]+$/, "")),
+      [...section.matchAll(/https?:\/\/[^\s)>\]"'`*<]+/g)].map((m) =>
+        m[0].replace(/[.,;:!?]+$/, "").replace(/[?&]utm_source=openai$/, ""),
+      ),
     ),
   ];
 }
