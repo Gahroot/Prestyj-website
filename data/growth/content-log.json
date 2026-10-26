@@ -255,5 +255,19 @@
     ],
     "sourcesChecked": 4,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-26T12:05:01.782Z",
+    "action": "reject",
+    "slug": "real-estate-fund-event-triggered-lp-notices",
+    "path": null,
+    "title": "How to Identify LP Notices Triggered by Real Estate Fund Events",
+    "opportunityId": "research-50b2b9d037",
+    "reasons": [
+      "7 claims, 1 unsupported, 3 sources fetched",
+      "core claim unsupported: Prestyj offers a demo specifically matching events to triggered LP notices."
+    ],
+    "sourcesChecked": 3,
+    "costUsd": 0
   }
 ]

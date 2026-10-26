@@ -225,7 +225,7 @@
     "evidence": "LLM web research (fund): Ontra already covers recurring and event-based side-letter obligations (https://www.ontra.ai/solutions/side-letters/); Zive describes extraction, routing and compliance-task triggers (https://www.zive.ai/products/docs-compliance/side-letter-obligation-tracking). Generic obligation tracking is therefore not a gap. Inferred opportunity: show how real estate transaction milestones become counsel-reviewed notice packages, including the contractual trigger, deadline, recipient list and evidence of delivery. The sampled pages did not demonstrate that asset-event-to-LP-notice sequence. Distinct from LP access permissions.",
     "score": 55,
     "createdAt": "2026-10-25T19:45:15.154Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-89ea36c43b",
