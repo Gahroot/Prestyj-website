@@ -131,6 +131,15 @@ export const researchArticles: readonly ResearchArticle[] = [
     description:
       "A buyer’s framework for comparing managed workflow scope, retained review effort, operating responsibility, and cost per accepted work product.",
   },
+  {
+    slug: "ai-commercial-leasing-approval-packages",
+    capabilities: ["deal-diligence", "portfolio-intelligence"],
+    topics: ["review-controls", "exceptions", "source-lineage"],
+    category: "Deal work",
+    title: "From leasing proposal to owner approval",
+    description:
+      "An owner-side framework for comparing proposal economics, capital requirements and business-plan exceptions before authorizing a lease.",
+  },
 ] as const;
 
 export function getCapabilityArticles(capability: CapabilitySlug): readonly ResearchArticle[] {

@@ -269,5 +269,20 @@
     ],
     "sourcesChecked": 3,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-27T12:02:51.659Z",
+    "action": "publish",
+    "slug": "ai-commercial-leasing-approval-packages",
+    "path": "/blog/ai-commercial-leasing-approval-packages",
+    "title": "AI Leasing Approval Packages: NER, TI and Plan Variance",
+    "opportunityId": "research-89ea36c43b",
+    "reasons": [
+      "Adds a synthetic worked approval package with proposal-version comparisons, explicit economic conventions, upfront funding requirements and named exception authority.",
+      "fact-check: 8 claims, 1 fixed/removed",
+      "files: content/blog/ai-commercial-leasing-approval-packages.mdx, src/lib/institutional/research.ts"
+    ],
+    "sourcesChecked": 3,
+    "costUsd": 0
   }
 ]

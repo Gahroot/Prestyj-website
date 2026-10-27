@@ -1,0 +1,220 @@
+---
+title: "AI Leasing Approval Packages: NER, TI and Plan Variance"
+description: "Structure AI leasing approval packages around net effective rent, TI, commissions, upfront cash, business-plan variances and named exception approvers."
+date: "2026-10-27"
+author: "Nolan Grout"
+keywords:
+  - "AI leasing approval packages"
+  - "commercial leasing proposals"
+  - "net effective rent"
+  - "tenant improvements"
+  - "leasing commissions"
+  - "asset business plan variance"
+---
+
+Yes—scope the work as a reviewed owner-side approval package, not just a proposal abstract. Require net effective rent, TI, commissions, upfront cash and business-plan variances, with source references and named exception approvers.
+
+## What should the leasing approval package contain?
+
+Define the finished work product before selecting an AI workflow. Ask for a decision package that lets the owner approve, counter or hold a specific proposal version.
+
+Require these components:
+
+| Component | Required review content |
+| --- | --- |
+| Decision cover | Proposal version, recommendation, requested authority and unresolved conditions |
+| Terms comparison | Approved business plan, previous proposal and current proposal |
+| Economic analysis | Rent schedule, abatements, tenant improvements, commissions and net effective rent |
+| Funding schedule | Payment dates, cash required before rent starts and funding source |
+| Variance bridge | Each change contributing to the difference from plan and the previous proposal |
+| Exception register | Threshold breached, requested waiver, authorized approver and disposition |
+| Evidence appendix | Document references, model version, calculation locations and reviewer sign-offs |
+
+Put the approval request above the narrative. Specify whether the request concerns permission to negotiate, issue a counterproposal, fund improvements or execute the lease.
+
+Do not combine those permissions into an undifferentiated “approved” status. Require each authorization to identify its scope and conditions.
+
+## How should the package use your existing financial models?
+
+Keep the owner-approved model authoritative for calculations. Require a controlled input schedule, rather than asking an LLM to replace the workbook’s economic logic.
+
+Before calculating, freeze the comparison basis:
+
+- Identify the approved asset business-plan version.
+- Identify the owner’s model version and permitted input locations.
+- Specify rentable area, analysis period and commencement assumptions.
+- Document rent, reimbursement and expense conventions.
+- Record the approved discount rate when a discounted comparison is required.
+- Separate extracted proposal terms from analyst assumptions.
+- Retain previous proposal versions without overwriting them.
+
+Ask the model reviewer to reconcile package totals to the corresponding workbook outputs. If the package and workbook disagree, hold the recommendation until the difference is explained.
+
+Use a field-level evidence chain: proposal clause → reviewed input → model location → approval-package output. For an assumption, substitute the assumption owner and approval reference for the proposal clause.
+
+For resolving conflicting inputs, use the review discipline in [When the model and property system disagree](/blog/reconciling-property-data-conflicts). Keep the leasing decision package focused on the proposed transaction, not on redesigning the underlying systems.
+
+## How should net effective rent and concession economics be defined?
+
+Require an explicit owner-approved definition of net effective rent. State the treatment of free rent, TI, commissions, landlord work, reimbursements and other concessions before presenting a headline result.
+
+For a simple undiscounted comparison, consider specifying this convention:
+
+```text
+Owner-defined undiscounted NER =
+(scheduled base rent − rent abatements − landlord TI − leasing commissions)
+÷ (rentable square feet × lease years)
+```
+
+Label this as the package’s selected convention, not a universal definition. Document any excluded costs next to the result.
+
+For discounted analysis, preserve the model’s timing conventions. Microsoft’s NPV documentation specifies evenly spaced cash flows occurring at period-end. Check that the model’s period and discount-rate basis match.
+
+Microsoft also instructs users to add a beginning-of-period cash flow separately rather than include it among NPV’s future cash-flow inputs. Check the treatment of commencement-date TI and commission payments accordingly.
+
+XNPV accepts cash flows on a schedule that need not be periodic, using corresponding payment dates. Its documented discounting basis uses a 365-day year. Where the owner’s model uses dated payments, require the reviewer to verify dates and the selected convention.
+
+Keep a separate concession schedule. Show each concession’s amount, timing, source and treatment in the calculation. Check that an abatement has not been deducted both from collected rent and again as a separate expense.
+
+## What would an approval package show? Illustrative example (synthetic)
+
+**Illustrative example (synthetic). Stage: Illustrative (fixture).** All documents, inputs, calculations, thresholds and authority assignments below are synthetic. This is not a Prestyj customer result or deployment.
+
+Assume a synthetic proposal for **10,000 rentable square feet over five years**. For every synthetic scenario, use flat annual base rent without escalation, a common commencement date and initial consecutive months of base-rent abatement within the lease term.
+
+For this synthetic fixture:
+
+- Calculate commissions at **4% of base rent after abatement**.
+- Assume all TI and commissions are payable at commencement.
+- Exclude operating expenses, reimbursements, financing, taxes and other landlord work.
+- Calculate undiscounted NER using the convention above.
+- Retain unrounded calculations; round displayed amounts.
+
+### Synthetic proposal comparison
+
+| Synthetic metric | Synthetic business plan | Synthetic proposal A | Synthetic proposal B |
+| --- | ---: | ---: | ---: |
+| Annual face rent per rentable SF | $40.00 | $41.00 | $42.00 |
+| Initial free-rent months | 3 | 4 | 6 |
+| Scheduled base rent over term | $2,000,000 | $2,050,000 | $2,100,000 |
+| Base-rent abatement | $100,000 | $136,667 | $210,000 |
+| Base rent after abatement | $1,900,000 | $1,913,333 | $1,890,000 |
+| TI allowance per rentable SF | $40.00 | $45.00 | $55.00 |
+| Total landlord TI | $400,000 | $450,000 | $550,000 |
+| Leasing commissions | $76,000 | $76,533 | $75,600 |
+| Base rent after abatement, TI and commissions | $1,424,000 | $1,386,800 | $1,264,400 |
+| Undiscounted NER per SF per year | $28.48 | $27.74 | $25.29 |
+| TI plus commissions due at commencement | $476,000 | $526,533 | $625,600 |
+
+In this synthetic comparison, proposal B increases face rent but reduces owner-defined NER. Its additional concessions outweigh its scheduled-rent increase.
+
+### Synthetic variance bridge
+
+Require the package to explain the movement, not merely display the ending values.
+
+From synthetic proposal A to synthetic proposal B:
+
+- Scheduled base rent increases by **$50,000**.
+- Additional abatement reduces receipts by **$73,333**.
+- Additional TI reduces owner proceeds by **$100,000**.
+- Lower commissions offset approximately **$933** of those reductions.
+- Total undiscounted proceeds decline by **$122,400**, using unrounded calculations.
+
+Against the synthetic business plan, proposal B produces **$159,600 less** in base rent after abatement, TI and commissions. Its synthetic commencement funding requirement is **$149,600 higher**.
+
+Do not add the synthetic free-rent amount to the commencement disbursement. Show forgone receipts separately from cash payments, and require a dated funding schedule alongside both.
+
+### Synthetic approval request
+
+Apply this synthetic authority schedule solely for the fixture:
+
+| Synthetic review rule | Synthetic result for proposal B | Synthetic required authority |
+| --- | --- | --- |
+| NER below $27.00 per SF per year | Exception: $25.29 | Investment committee |
+| TI above $50.00 per rentable SF | Exception: $55.00 | Investment committee |
+| Commencement funding above $600,000 | Exception: $625,600 | CFO funding authorization |
+| Any economic exception | Open | No execution release until required approvals are recorded |
+
+The synthetic cover recommendation should read: **Hold execution authorization; request the specified economic exceptions and funding authorization.**
+
+Attach synthetic source references to the proposal’s rent, abatement and TI terms, the commission agreement’s calculation basis, and the approved plan’s thresholds. Reference model locations for calculated outputs. Do not manufacture clause references where the fixture has no underlying document.
+
+## How should exceptions reach the person authorized to approve them?
+
+Use the actual delegation-of-authority schedule. Do not copy the synthetic roles or thresholds above into a live approval process.
+
+NIST’s AI Risk Management Framework Playbook recommends documenting AI risk-management responsibilities and communication lines. It also recommends distinguishing human responsibilities for using AI from responsibilities for overseeing it.
+
+Translate that governance guidance into a transaction-specific review gate:
+
+- **Leasing reviewer:** confirm proposal version, commercial terms and negotiated status.
+- **Model reviewer:** verify inputs, formulas, timing and reconciliation.
+- **Asset manager:** assess the recommendation against the approved business plan.
+- **Funding reviewer:** confirm cash availability and expenditure authorization.
+- **Legal reviewer:** assess documentation and nonfinancial terms within the assigned legal scope.
+- **Authorized decision-maker:** approve or reject each exception within documented authority.
+
+Route each unresolved item to an exception queue with its owner, required evidence and release condition. Distinguish a missing source, a calculation discrepancy and a deliberate commercial exception; require different resolutions for each.
+
+For the broader operating discipline, see [Start with exception queues, not a chatbot](/blog/ai-for-real-estate-investment-funds-exception-queues).
+
+## What should change when a revised proposal arrives?
+
+Require a version-to-version change report before requesting renewed authorization.
+
+Check whether the revision changes:
+
+- Face rent, escalation or abatement.
+- Area, commencement or lease duration.
+- TI scope, allowance, reimbursement conditions or payment timing.
+- Commission basis, payee or payment trigger.
+- Delivery obligations, options, guarantees or termination rights.
+- Any assumption that supported the previous recommendation.
+
+Recalculate both the current-versus-prior comparison and the current-versus-plan comparison. Keep the approved plan fixed unless the owner separately authorizes a new baseline.
+
+Require the decision-maker to specify which changes invalidate an earlier approval. Preserve the approved proposal version, package version, conditions and authorization record together.
+
+Do not carry an approval forward merely because the revised headline NER remains within the same threshold. Require review of changed obligations and funding dates as well.
+
+## Frequently asked questions
+
+### Should AI decide whether to accept the proposal?
+
+No. Scope the work around preparation, comparison and review. Reserve commercial acceptance, funding authorization and execution authority for the people named in the owner’s rules.
+
+Treat a recommendation as a request for a decision, not as authorization.
+
+### What if the proposal does not specify a commission or TI payment date?
+
+Mark the term unresolved. Request the governing agreement or written confirmation from the responsible reviewer.
+
+If an assumption is necessary for scenario analysis, label it, identify its owner and show its effect. Do not silently present it as an agreed term.
+
+### Should the package show both discounted and undiscounted economics?
+
+Require both when the owner’s approval rules call for them. Name each measure, preserve the approved model’s conventions and avoid comparing a discounted proposal result with an undiscounted plan threshold.
+
+Keep the dated cash requirement visible regardless of the selected NER measure.
+
+### Can the package replace lease review or tenant credit approval?
+
+Do not use it as a substitute. Require separate sign-offs for legal terms, tenant credit and other approval conditions specified by the owner.
+
+Include their status on the decision cover without treating an economic pass as their approval.
+
+## Review and limitations
+
+Before release, assign leasing review of source terms, finance review of calculations and funding, asset-management review of plan variances, and authorized approval of exceptions. Require legal and credit review within their separately defined scopes.
+
+This article proposes a package design and a synthetic economic comparison. It does not establish market commission rates, TI benchmarks, accounting treatment, legal requirements, tenant credit standards or your organization’s approval authority. The synthetic calculation excludes the costs identified in its assumptions; do not present it as complete property cash flow or valuation.
+
+Prestyj builds and operates AI agents for institutional real estate that deliver reviewed, finished work product with the source attached, controlled by your review rules and review gates, while the system of record stays authoritative.
+
+## Sources
+
+- https://support.microsoft.com/en-us/excel/functions/npv-function — Supports the statements about NPV’s equally spaced, period-end cash flows and separate treatment of a beginning-of-period cash flow.
+- https://support.microsoft.com/en-gb/excel/functions/xnpv-function — Supports the statements about XNPV’s nonperiodic dated cash-flow schedule and 365-day discounting basis.
+- https://airc.nist.gov/airmf-resources/playbook/govern/ — Supports the governance guidance on documented responsibilities and communication lines in GOVERN 2.1, and differentiated human-use and oversight roles in GOVERN 3.2.
+
+To discuss your workflow, [book a workflow demo](/book-demo). Bring a redacted proposal, the approved asset model and your authority schedule to frame the review around the finished work product.
