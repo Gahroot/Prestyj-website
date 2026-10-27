@@ -6,6 +6,9 @@ import { ArrowRight } from "lucide-react";
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { researchArticles } from "@/lib/institutional/research";
+import { sortNewestFirst } from "@/lib/institutional/article-order";
+import { getArticleDates } from "@/lib/institutional/article-metadata";
+import { blogSource } from "@/lib/source";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -18,6 +21,11 @@ export const metadata: Metadata = {
 const calculators = [
   ["Commercial brokerage inbound", "/commercial-real-estate-commission-calculator"],
 ] as const;
+
+const newestFirst = sortNewestFirst(
+  researchArticles,
+  (slug) => getArticleDates(blogSource.getPage([slug])?.data).published,
+);
 
 export default function ResearchPage() {
   return (
@@ -40,7 +48,7 @@ export default function ResearchPage() {
               Latest notes
             </h2>
             <ul className="mt-8 border-t">
-              {researchArticles.map((article) => (
+              {newestFirst.map((article) => (
                 <li key={article.slug} className="border-b">
                   <Link
                     href={`/blog/${article.slug}`}
