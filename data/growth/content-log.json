@@ -297,5 +297,18 @@
     ],
     "sourcesChecked": 0,
     "costUsd": 0
+  },
+  {
+    "at": "2026-10-29T12:04:11.964Z",
+    "action": "skip",
+    "slug": "-",
+    "path": null,
+    "title": "new article",
+    "opportunityId": null,
+    "reasons": [
+      "cap reached: 2/2 new in 7 days"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
   }
 ]
