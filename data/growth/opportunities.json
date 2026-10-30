@@ -298,5 +298,17 @@
     "score": 48,
     "createdAt": "2026-10-25T19:45:15.154Z",
     "status": "open"
+  },
+  {
+    "id": "new-topic:ai-real-estate-appointments",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "ai real estate appointments"
+    ],
+    "evidence": "~21 weighted impressions/citations (gsc); best live page position none",
+    "score": 2.625,
+    "createdAt": "2026-10-30T12:01:38.626Z",
+    "status": "open"
   }
 ]
