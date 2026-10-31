@@ -5,12 +5,13 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { ContentLogEntry, Opportunity } from "../shared/contracts";
 import { loadContentConfig } from "./config";
 import { createFakeLlm, fakeArticleBody, fakeFetcher, passingRepoGates } from "./fake";
-import { AVOID_TERMS, findTerms, runContentGates } from "./gates";
+import { AVOID_TERMS, findTerms, laneTerms, runContentGates } from "./gates";
+import { laneOfOpportunity, orderByLaneRotation, proofBoundaryViolations } from "./lanes";
 import { runContentCycle } from "./index";
 import { findOverlap } from "./dedupe";
 import { LlmAuthError, extractJson } from "./llm";
 import { draftMetaSchema } from "./write";
-import { allowedInternalPaths } from "./site";
+import { allowedInternalPaths, readRegistry } from "./site";
 import { capUsage } from "./store";
 
 const NOW = new Date("2026-10-25T12:00:00Z");
@@ -151,19 +152,23 @@ describe("content cycle", () => {
       sourcesChecked: 0,
       costUsd: 0,
     });
-    write(
-      "data/growth/content-log.json",
-      JSON.stringify([entry("2026-10-20"), entry("2026-10-24"), entry("2026-10-10")]),
-    );
+    const cap = loadContentConfig().caps.maxNewPerWeek;
+    // Fill the rolling week to the configured cap (one publish per hour before NOW),
+    // plus one older publish that must not count.
+    const recent = Array.from({ length: cap }, (_, i) => ({
+      ...entry("2026-10-24"),
+      at: new Date(NOW.getTime() - (i + 1) * 3_600_000).toISOString(),
+    }));
+    write("data/growth/content-log.json", JSON.stringify([...recent, entry("2026-10-10")]));
     expect(
       capUsage(JSON.parse(read("data/growth/content-log.json")) as ContentLogEntry[], NOW)
         .newThisWeek,
-    ).toBe(2);
+    ).toBe(cap);
     const llm = createFakeLlm();
     const result = await runContentCycle({ root, dryRun: false, now: NOW }, deps(llm));
     expect(result.publishedPaths).toEqual([]);
     expect(llm.calls.filter((c) => c.purpose === "write")).toHaveLength(0);
-    expect(result.log[0]?.reasons[0]).toContain("cap reached: 2/2");
+    expect(result.log[0]?.reasons[0]).toContain(`cap reached: ${cap}/${cap}`);
   });
 
   it("dry run writes nothing", async () => {
@@ -333,5 +338,187 @@ describe("live-run hardening", () => {
     expect(result.changedFiles).toEqual([]);
     expect(raise).not.toHaveBeenCalled();
     expect(existsSync(path.join(root, "data/growth/exceptions.json"))).toBe(false);
+  });
+});
+
+describe("content lanes", () => {
+  const opp = (id: string, query: string, score = 90): Opportunity => ({
+    id,
+    kind: "new-topic",
+    path: null,
+    queries: [query],
+    evidence: "e",
+    score,
+    createdAt: NOW.toISOString(),
+    status: "open",
+  });
+  const publishLog = (slug: string): ContentLogEntry => ({
+    at: "2026-10-24T12:00:00Z",
+    action: "publish",
+    slug,
+    path: `/blog/${slug}`,
+    title: slug,
+    opportunityId: null,
+    reasons: [],
+    sourcesChecked: 2,
+    costUsd: 0,
+  });
+  const MCP_QUERY = "How should we evaluate a custom MCP server vendor for our ERP?";
+
+  it("derives the lane from the opportunity id", () => {
+    expect(laneOfOpportunity({ id: "research-connectors-abc" })).toBe("connectors");
+    expect(laneOfOpportunity({ id: "research-custom-builds-abc" })).toBe("custom-builds");
+    expect(laneOfOpportunity({ id: "research-0123456789" })).toBe("real-estate");
+    expect(laneOfOpportunity({ id: "prompt-BP-01" })).toBe("real-estate");
+  });
+
+  it("rotates lanes so real estate keeps at least half the weekly slots", () => {
+    const re = opp("research-aaa", "re", 10);
+    const conn = opp("research-connectors-bbb", "conn", 90);
+    const build = opp("research-custom-builds-ccc", "build", 80);
+    // Fresh week: real estate goes first; one service slot exists for a cap of 2.
+    expect(orderByLaneRotation([conn, build, re], [], 2).map((o) => o.id)).toEqual([
+      "research-aaa",
+      "research-connectors-bbb",
+    ]);
+    // After a real estate publish, a service lane gets the next slot.
+    expect(orderByLaneRotation([re, conn], ["real-estate"], 2)[0]?.id).toBe(
+      "research-connectors-bbb",
+    );
+    // The service lane that published least recently goes first next time.
+    expect(
+      orderByLaneRotation([conn, build], ["connectors", "real-estate"], 4).map((o) => o.id),
+    ).toEqual(["research-custom-builds-ccc"]);
+    // A service publish this week uses the only service slot: real estate only.
+    expect(orderByLaneRotation([conn, build, re], ["connectors"], 2).map((o) => o.id)).toEqual([
+      "research-aaa",
+    ]);
+  });
+
+  it("publishes a connectors article tagged with its lane, service page link and service CTA", async () => {
+    write(
+      "data/growth/opportunities.json",
+      JSON.stringify([
+        opp("research-connectors-seed", MCP_QUERY),
+        opp("research-connectors-seed2", "Should we connect our CRM to Claude or ChatGPT first?"),
+      ]),
+    );
+    write("data/growth/content-log.json", JSON.stringify([publishLog("existing-article")]));
+    const llm = createFakeLlm({
+      slug: "evaluate-custom-mcp-server-vendor",
+      title: "How to Evaluate a Custom MCP Server Vendor",
+      metaOverride: { service: "custom-mcp-servers" },
+    });
+    const result = await runContentCycle({ root, dryRun: false, now: NOW }, deps(llm));
+    expect(result.publishedPaths).toEqual(["/blog/evaluate-custom-mcp-server-vendor"]);
+    const registry = read("src/lib/institutional/research.ts");
+    expect(registry).toContain('lane: "connectors"');
+    expect(registry).toContain('service: "custom-mcp-servers"');
+    expect(registry).toContain('category: "AI connectors"');
+    expect(
+      readRegistry(root).find((e) => e.slug === "evaluate-custom-mcp-server-vendor")?.lane,
+    ).toBe("connectors");
+    const mdx = read("content/blog/evaluate-custom-mcp-server-vendor.mdx");
+    expect(mdx).toContain("](/book-demo?service=custom-mcp-servers)");
+    expect(mdx).toContain("](/custom-mcp-servers)");
+    expect(mdx).not.toContain("](/book-demo)");
+    // The writer got the lane brief with first-party proof only.
+    const writeCall = llm.calls.find((c) => c.purpose === "write");
+    expect(writeCall?.system).toContain("LANE: connectors");
+    expect(writeCall?.system).toContain("Client names are withheld");
+    // Only one service slot per week: the second connectors topic waits.
+    expect(opportunities().find((o) => o.id === "research-connectors-seed2")?.status).toBe("open");
+  });
+
+  it("does not let a service lane take more than its weekly share", async () => {
+    write(
+      "src/lib/institutional/research.ts",
+      RESEARCH.replace(
+        "\n] as const;",
+        `\n  {\n    slug: "connector-article",\n    lane: "connectors",\n    service: "custom-mcp-servers",\n    capabilities: [],\n    topics: ["integration"],\n    category: "AI connectors",\n    title: "A connector article",\n    description: "Existing.",\n  },\n] as const;`,
+      ),
+    );
+    write(
+      "data/growth/opportunities.json",
+      JSON.stringify([
+        opp("research-connectors-seed", MCP_QUERY, 99),
+        opp("research-seed", "How should an asset manager monitor loan covenants with AI?", 10),
+      ]),
+    );
+    write("data/growth/content-log.json", JSON.stringify([publishLog("connector-article")]));
+    const result = await runContentCycle({ root, dryRun: false, now: NOW }, deps());
+    expect(result.publishedPaths).toEqual(["/blog/covenant-watchlist-agent-review"]);
+    expect(read("src/lib/institutional/research.ts")).toMatch(
+      /slug: "covenant-watchlist-agent-review",\n {4}capabilities/,
+    );
+    expect(opportunities().find((o) => o.id === "research-connectors-seed")?.status).toBe("open");
+  });
+
+  it("fails service-lane drafts that present Prestyj clients, metrics, prices or timelines", () => {
+    const gates = runContentGates(
+      {
+        root,
+        slug: "x-mcp",
+        title: "Evaluating an MCP server build",
+        description: "d".repeat(80),
+        body: fakeArticleBody({
+          extra:
+            "\nOur clients saw a 40% drop in ticket time after we shipped in 3 weeks. See [Custom MCP server](/custom-mcp-servers).\n",
+        }).replace("](/book-demo)", "](/book-demo?service=custom-mcp-servers)"),
+        mode: "new",
+        allowed: allowedInternalPaths(root),
+        lane: "connectors",
+        service: "custom-mcp-servers",
+      },
+      loadContentConfig(),
+    );
+    const sections = gates.find((g) => g.name === "required-sections");
+    expect(sections?.passed).toBe(false);
+    expect(sections?.details.join(" ")).toContain(
+      "unsupported Prestyj client/metric/price/timeline",
+    );
+    expect(proofBoundaryViolations("An illustrative build might take 3 weeks for us.")).toEqual([]);
+  });
+
+  it("allows service-lane vocabulary that real estate articles avoid", () => {
+    expect(laneTerms("custom-builds").avoid).not.toContain("custom ai");
+    expect(laneTerms("real-estate").avoid).toContain("custom ai");
+    expect(laneTerms("connectors").avoid).toContain("realtor");
+  });
+});
+
+describe("registryDescription handling", () => {
+  it("shortens an overlong registryDescription instead of failing the item", async () => {
+    const llm = createFakeLlm({
+      metaOverride: { registryDescription: `${"word ".repeat(80)}end` },
+    });
+    const result = await runContentCycle({ root, dryRun: false, now: NOW }, deps(llm));
+    expect(result.publishedPaths).toEqual(["/blog/covenant-watchlist-agent-review"]);
+    const registry = read("src/lib/institutional/research.ts");
+    const description = /covenant-watchlist-agent-review[\s\S]*?description:\s*"([^"]*)"/.exec(
+      registry,
+    )?.[1];
+    expect(description?.length).toBeLessThanOrEqual(200);
+  });
+
+  it("asks the writer once to repair invalid META and keeps the body", async () => {
+    const llm = createFakeLlm({
+      metaOverride: { registryDescription: null, title: "short" },
+      metaOverrideOnce: true,
+    });
+    const result = await runContentCycle({ root, dryRun: false, now: NOW }, deps(llm));
+    expect(result.publishedPaths).toEqual(["/blog/covenant-watchlist-agent-review"]);
+    const repairs = llm.calls.filter(
+      (c) => c.purpose === "write" && c.system.startsWith("You fix article metadata"),
+    );
+    expect(repairs).toHaveLength(1);
+    expect(repairs[0]?.prompt).toContain("registryDescription");
+  });
+
+  it("still fails the item when the repair is invalid too", async () => {
+    const llm = createFakeLlm({ metaOverride: { title: "short" } });
+    const result = await runContentCycle({ root, dryRun: true, now: NOW }, deps(llm));
+    expect(result.publishedPaths).toEqual([]);
+    expect(result.log.some((e) => e.action === "reject")).toBe(true);
   });
 });

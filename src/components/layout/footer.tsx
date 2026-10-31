@@ -26,6 +26,14 @@ const footerLinks = {
     { href: "/custom-mcp-servers", label: "Custom MCP servers" },
     { href: "/custom-chatgpt-plugins", label: "Custom ChatGPT plugins" },
   ],
+  customBuilds: [
+    { href: "/custom-ai-agents", label: "Custom AI agents" },
+    { href: "/ai-sales-agents", label: "AI sales agents" },
+    { href: "/ai-marketing-agents", label: "AI marketing agents" },
+    { href: "/ai-operations-agents", label: "AI operations agents" },
+    { href: "/enterprise-ai-automation", label: "Enterprise AI automation" },
+    { href: "/custom-software-development", label: "Custom software" },
+  ],
   audiences: [
     { href: "/for/investment-funds", label: "Investment funds" },
     { href: "/for/commercial-brokerages", label: "Commercial brokerages" },
@@ -80,7 +88,7 @@ export function Footer({
           appearance === "editorial" ? "editorial-rail" : "mx-auto max-w-7xl px-4 sm:px-6 lg:px-8",
         )}
       >
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr_0.7fr]">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1fr_1fr_0.7fr]">
           <div>
             <Link href="/" className="font-heading text-primary text-xl font-bold">
               PRESTYJ
@@ -109,6 +117,7 @@ export function Footer({
           </div>
           <FooterColumn title="Capabilities" links={footerLinks.capabilities} />
           <FooterColumn title="Connectors" links={footerLinks.connectors} />
+          <FooterColumn title="Custom AI builds" links={footerLinks.customBuilds} />
           <FooterColumn title="For" links={footerLinks.audiences} />
           <FooterColumn title="Company" links={footerLinks.company} />
           <FooterColumn title="Legal" links={footerLinks.legal} />

@@ -31,9 +31,13 @@ export class FileTransaction {
 const q = (value: string): string => JSON.stringify(value);
 
 export function registryEntrySource(meta: DraftMeta): string {
+  const lane =
+    meta.lane && meta.lane !== "real-estate"
+      ? `    lane: ${q(meta.lane)},\n${meta.service ? `    service: ${q(meta.service)},\n` : ""}`
+      : "";
   return `  {
     slug: ${q(meta.slug)},
-    capabilities: [${meta.capabilities.map(q).join(", ")}],
+${lane}    capabilities: [${meta.capabilities.map(q).join(", ")}],
     topics: [${meta.topics.map(q).join(", ")}],
     category: ${q(meta.category)},
     title: ${q(meta.registryTitle)},

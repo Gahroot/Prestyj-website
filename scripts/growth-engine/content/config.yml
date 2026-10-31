@@ -34,15 +34,15 @@ webSearch:
   maxUsesResearch: 5
 
 caps:
-  maxNewPerWeek: 2 # rolling 7 days, counted from data/growth/content-log.json
+  maxNewPerWeek: 7 # daily (owner decision 2026-10-31); rolling 7 days, counted from data/growth/content-log.json
   maxRefreshPerWeek: 3
   maxNewPerRun: 1
   maxRefreshPerRun: 1
   maxCostPerRunUsd: 8
 
 research:
-  everyDays: 7 # run LLM research when no research-sourced item is newer than this
-  maxItemsPerRun: 8
+  everyDays: 2 # run LLM research when no research-sourced item is newer than this
+  maxItemsPerRun: 12
   promptSeedScore: 30
 
 gates:

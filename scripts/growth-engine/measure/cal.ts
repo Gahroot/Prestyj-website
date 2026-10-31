@@ -3,6 +3,7 @@
  * attendee names/emails are never read into results.
  */
 import { z } from "zod";
+import { getBookableService, laneForPath, type Lane } from "../../../src/lib/attribution/services";
 import { ATTRIBUTION_KEYS } from "../shared/contracts";
 import { fetchJson, toPath } from "./util";
 
@@ -32,12 +33,78 @@ export type CalData = {
   unattributed: number;
   byPath: Map<string, { demos: number; qualified: number }>;
   byCta: Array<{ cta: string; variant: string; bookings: number }>;
+  /** Lane = pj_service lane, else lane of the first-touch landing path. Unattributed bookings have no lane. */
+  byLane: Map<Lane, { demos: number; qualified: number; qualifiedOrganicOrAi: number }>;
 };
 
 const str = (m: Record<string, unknown> | null | undefined, k: string): string | null => {
   const v = m?.[k];
   return typeof v === "string" && v.trim() ? v.trim() : null;
 };
+
+type Metadata = Record<string, unknown> | null | undefined;
+
+/** Pure aggregation of Cal.com bookings (exported for tests). */
+export function aggregateBookings(
+  bookings: ReadonlyArray<{ status: string; createdAt: string; metadata?: Metadata }>,
+  window: { start: string; end: string },
+): CalData {
+  const out: CalData = {
+    totalBookings: 0,
+    cancelledExcluded: 0,
+    demosBooked: 0,
+    qualifiedDemos: 0,
+    qualifiedDemosFromOrganicOrAi: 0,
+    unattributed: 0,
+    byPath: new Map(),
+    byCta: [],
+    byLane: new Map(),
+  };
+  const cta = new Map<string, number>();
+  for (const b of bookings) {
+    const day = b.createdAt.slice(0, 10);
+    if (day < window.start || day > window.end) continue;
+    out.totalBookings++;
+    if (b.status === "cancelled" || b.status === "rejected") {
+      out.cancelledExcluded++;
+      continue;
+    }
+    const m = b.metadata;
+    const qualified = str(m, ATTRIBUTION_KEYS.qualified) === "yes";
+    const channel = str(m, ATTRIBUTION_KEYS.channel);
+    const landing = str(m, ATTRIBUTION_KEYS.landingPath);
+    const organicOrAi = channel === "organic" || channel === "ai";
+    out.demosBooked++;
+    if (qualified) out.qualifiedDemos++;
+    if (qualified && organicOrAi) out.qualifiedDemosFromOrganicOrAi++;
+    const p = landing ? toPath(landing) : null;
+    if (p) {
+      const a = out.byPath.get(p) ?? { demos: 0, qualified: 0 };
+      a.demos++;
+      if (qualified) a.qualified++;
+      out.byPath.set(p, a);
+    } else out.unattributed++;
+    const lane =
+      getBookableService(str(m, ATTRIBUTION_KEYS.service))?.lane ?? (p ? laneForPath(p) : null);
+    if (lane) {
+      const l = out.byLane.get(lane) ?? { demos: 0, qualified: 0, qualifiedOrganicOrAi: 0 };
+      l.demos++;
+      if (qualified) l.qualified++;
+      if (qualified && organicOrAi) l.qualifiedOrganicOrAi++;
+      out.byLane.set(lane, l);
+    }
+    const ctaId = str(m, ATTRIBUTION_KEYS.ctaId);
+    if (ctaId) {
+      const k = `${ctaId}\u0000${str(m, ATTRIBUTION_KEYS.ctaVariant) ?? ""}`;
+      cta.set(k, (cta.get(k) ?? 0) + 1);
+    }
+  }
+  out.byCta = [...cta.entries()].sort().map(([k, bookingsN]) => {
+    const [c, v] = k.split("\u0000");
+    return { cta: c ?? "", variant: v ?? "", bookings: bookingsN };
+  });
+  return out;
+}
 
 export async function fetchCal(
   apiKey: string,
@@ -60,49 +127,5 @@ export async function fetchCal(
     cursor = body.pagination?.hasMore ? (body.pagination.nextCursor ?? null) : null;
     if (!cursor) break;
   }
-  const out: CalData = {
-    totalBookings: 0,
-    cancelledExcluded: 0,
-    demosBooked: 0,
-    qualifiedDemos: 0,
-    qualifiedDemosFromOrganicOrAi: 0,
-    unattributed: 0,
-    byPath: new Map(),
-    byCta: [],
-  };
-  const cta = new Map<string, number>();
-  for (const b of bookings) {
-    const day = b.createdAt.slice(0, 10);
-    if (day < window.start || day > window.end) continue;
-    out.totalBookings++;
-    if (b.status === "cancelled" || b.status === "rejected") {
-      out.cancelledExcluded++;
-      continue;
-    }
-    const m = b.metadata;
-    const qualified = str(m, ATTRIBUTION_KEYS.qualified) === "yes";
-    const channel = str(m, ATTRIBUTION_KEYS.channel);
-    const landing = str(m, ATTRIBUTION_KEYS.landingPath);
-    out.demosBooked++;
-    if (qualified) out.qualifiedDemos++;
-    if (qualified && (channel === "organic" || channel === "ai"))
-      out.qualifiedDemosFromOrganicOrAi++;
-    const p = landing ? toPath(landing) : null;
-    if (p) {
-      const a = out.byPath.get(p) ?? { demos: 0, qualified: 0 };
-      a.demos++;
-      if (qualified) a.qualified++;
-      out.byPath.set(p, a);
-    } else out.unattributed++;
-    const ctaId = str(m, ATTRIBUTION_KEYS.ctaId);
-    if (ctaId) {
-      const k = `${ctaId}\u0000${str(m, ATTRIBUTION_KEYS.ctaVariant) ?? ""}`;
-      cta.set(k, (cta.get(k) ?? 0) + 1);
-    }
-  }
-  out.byCta = [...cta.entries()].sort().map(([k, bookingsN]) => {
-    const [c, v] = k.split("\u0000");
-    return { cta: c ?? "", variant: v ?? "", bookings: bookingsN };
-  });
-  return out;
+  return aggregateBookings(bookings, window);
 }

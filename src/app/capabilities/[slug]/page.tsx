@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { CapabilityPage } from "@/components/sections/institutional/capability-page";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { capabilities, getCapability } from "@/lib/institutional/capabilities";
 import { siteConfig } from "@/lib/site-config";
@@ -62,6 +63,13 @@ export default async function CapabilityRoute({ params }: { params: Promise<{ sl
             audienceType: "Institutional real estate firms",
           },
         }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: siteConfig.url },
+          { name: "Platform", url: `${siteConfig.url}/platform` },
+          { name: capability.navLabel, url: `${siteConfig.url}/capabilities/${capability.slug}` },
+        ]}
       />
       <CapabilityPage capability={capability} />
     </>

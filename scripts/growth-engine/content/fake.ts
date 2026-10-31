@@ -79,10 +79,15 @@ export type FakeLlmOptions = {
     }[];
   };
   failWith?: Error;
+  /** Merged into the writer's META. */
+  metaOverride?: Record<string, unknown>;
+  /** Apply `metaOverride` to the first write call only (later calls, e.g. a META repair, are clean). */
+  metaOverrideOnce?: boolean;
 };
 
 export function createFakeLlm(options: FakeLlmOptions = {}): ContentLlm & { calls: LlmRequest[] } {
   const calls: LlmRequest[] = [];
+  let writes = 0;
   return {
     calls,
     async complete(request): Promise<LlmResult> {
@@ -137,7 +142,11 @@ export function createFakeLlm(options: FakeLlmOptions = {}): ContentLlm & { call
         registryDescription:
           "What an agent prepares for covenant and lease monitoring, and what the asset manager keeps.",
         changeSummary: "fake draft",
+        ...(options.metaOverride && (!options.metaOverrideOnce || writes === 0)
+          ? options.metaOverride
+          : {}),
       };
+      writes++;
       return {
         ...usage,
         text: `<<<META>>>\n${JSON.stringify(meta)}\n<<<BODY>>>\n${options.body ?? fakeArticleBody()}`,

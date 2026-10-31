@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+import { pageMetadata } from "@/components/seo/page-metadata";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, FileText } from "lucide-react";
 import type { ReactElement } from "react";
@@ -6,15 +8,14 @@ import type { ReactElement } from "react";
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site-config";
 import styles from "@/components/sections/institutional/workflow-pages.module.css";
 
-export const metadata: Metadata = {
-  title: "Engagements",
+export const metadata: Metadata = pageMetadata({
+  title: "How AI Agent Engagements Are Scoped",
   description:
     "Prestyj engagements start with one institutional real estate workflow, its source systems, review owner, and finished work product.",
-  alternates: { canonical: `${siteConfig.url}/pricing` },
-};
+  path: "/pricing",
+});
 
 const phases = [
   {

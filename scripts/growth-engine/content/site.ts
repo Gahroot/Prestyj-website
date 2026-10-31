@@ -4,6 +4,7 @@ import { load, JSON_SCHEMA } from "js-yaml";
 import { z } from "zod";
 import { canonicalPublicRoutes } from "../../../src/lib/institutional/site-map";
 import { capabilities } from "../../../src/lib/institutional/capabilities";
+import { liveServicePaths, type Lane } from "./lanes";
 
 export const RESEARCH_FILE = "src/lib/institutional/research.ts";
 export const LEDGER_FILE = "data/seo/institutional-content-backlog.json";
@@ -20,7 +21,7 @@ export const TOPIC_VALUES = [
   "handoff",
 ] as const;
 
-export type RegistryEntry = { slug: string; title: string; category: string };
+export type RegistryEntry = { slug: string; title: string; category: string; lane: Lane };
 
 /** Reads the registry from the file under `root` (not the imported module, which may be stale). */
 export function readRegistry(root: string): RegistryEntry[] {
@@ -33,6 +34,9 @@ export function readRegistry(root: string): RegistryEntry[] {
       slug,
       title: /title:\s*"((?:[^"\\]|\\.)*)"/.exec(block)?.[1] ?? slug,
       category: /category:\s*"((?:[^"\\]|\\.)*)"/.exec(block)?.[1] ?? "",
+      lane:
+        (/lane: "(connectors|custom-builds)"/.exec(block)?.[1] as Lane | undefined) ??
+        "real-estate",
     });
   }
   return entries;
@@ -41,6 +45,8 @@ export function readRegistry(root: string): RegistryEntry[] {
 export function allowedInternalPaths(root: string): Set<string> {
   return new Set<string>([
     ...canonicalPublicRoutes,
+    // Service-lane pages, once their routes exist (custom-build pages may still be in progress).
+    ...liveServicePaths(root),
     ...readRegistry(root).map((entry) => `/blog/${entry.slug}`),
   ]);
 }

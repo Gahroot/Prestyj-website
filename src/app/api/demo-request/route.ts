@@ -28,7 +28,7 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
 
   const { data, attribution } = parsed.data;
   const notes = [
-    "Workflow demo request (/book-demo)",
+    "Demo request (/book-demo)",
     data.workflow ? `Workflow: ${data.workflow}` : null,
     ...Object.entries(attribution).map(([key, value]) => `${key}: ${value}`),
   ]

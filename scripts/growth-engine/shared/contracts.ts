@@ -44,7 +44,9 @@ export const ATTRIBUTION_KEYS = {
   ctaVariant: "pj_cta_variant", // A/B variant id shown, e.g. "a" | "b"
   firmType: "pj_firm_type", // from the qualification form
   aumBand: "pj_aum_band", // from the qualification form
-  qualified: "pj_qualified", // "yes" | "no" — form's ICP rule (fund >= $500M AUM, CRE brokerage, CRE owner-operator)
+  qualified: "pj_qualified", // "yes" | "no" — form's ICP rule (src/lib/attribution/qualification.ts)
+  companySize: "pj_company_size", // non-real-estate firms only, e.g. "10-49"
+  service: "pj_service", // /book-demo?service=<slug>, e.g. "custom-mcp-servers"
 } as const;
 export type AttributionKey = (typeof ATTRIBUTION_KEYS)[keyof typeof ATTRIBUTION_KEYS];
 
@@ -58,7 +60,7 @@ export const pagePerformanceSchema = z.object({
   // Bing Webmaster (incl. Copilot/AI where available), trailing 28 days
   bingClicks: z.number().nonnegative().nullable(),
   bingImpressions: z.number().nonnegative().nullable(),
-  // GA4, trailing 28 days, sessions landing on this path
+  // GA4, trailing 28 days. Always null: GA4 is not used (owner decision, 2026-10-31).
   organicSessions: z.number().nonnegative().nullable(),
   aiReferralSessions: z.number().nonnegative().nullable(),
   // Cal.com bookings whose first-touch landing path is this page, trailing 28 days
@@ -83,7 +85,7 @@ export const performanceSnapshotSchema = z.object({
   generatedAt: z.string(), // ISO timestamp
   window: z.object({ start: z.string(), end: z.string() }), // YYYY-MM-DD inclusive
   /** Which sources returned data this run; missing sources are listed, never silently zeroed. */
-  sources: z.record(z.string(), z.enum(["ok", "missing-credentials", "error"])),
+  sources: z.record(z.string(), z.enum(["ok", "missing-credentials", "error", "not-used"])),
   totals: z.object({
     organicSessions: z.number().nullable(),
     aiReferralSessions: z.number().nullable(),
@@ -92,6 +94,20 @@ export const performanceSnapshotSchema = z.object({
     qualifiedDemosFromOrganicOrAi: z.number(), // north-star KPI
   }),
   pages: z.array(pagePerformanceSchema),
+  /**
+   * Cal.com bookings per lane (pj_service lane, else first-touch landing-path lane).
+   * Optional: snapshots written before lanes existed omit it.
+   */
+  lanes: z
+    .array(
+      z.object({
+        lane: z.enum(["real-estate", "connectors", "custom-builds"]),
+        demosBooked: z.number().nonnegative(),
+        qualifiedDemos: z.number().nonnegative(),
+        qualifiedDemosFromOrganicOrAi: z.number().nonnegative(),
+      }),
+    )
+    .optional(),
   queries: z.array(queryPerformanceSchema),
 });
 export type PerformanceSnapshot = z.infer<typeof performanceSnapshotSchema>;

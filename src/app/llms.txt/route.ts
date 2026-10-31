@@ -6,6 +6,7 @@ import { capabilities } from "@/lib/institutional/capabilities";
 import { proofRecords } from "@/lib/institutional/proof";
 import { researchArticles } from "@/lib/institutional/research";
 import { siteConfig } from "@/lib/site-config";
+import { customBuilds } from "@/lib/custom-builds/services";
 
 export const dynamic = "force-static";
 
@@ -41,6 +42,12 @@ export function GET(): Response {
       (guide) => `- Guide: ${guide.title}: ${siteConfig.url}${connectorGuidePath(guide.slug)}`,
     ),
     "",
+    "## Custom AI builds",
+    "Prestyj builds and operates custom AI agents and software for businesses, scoped per workflow with least-privilege access, review gates, and audit logs.",
+    ...customBuilds.map(
+      (build) => `- ${build.metaTitle}: ${siteConfig.url}/${build.slug} (${build.metaDescription})`,
+    ),
+    "",
     "## Work",
     ...proofRecords.map((record) => `- [${record.stage}] ${record.name}: ${record.delivered}`),
     "",
@@ -54,6 +61,9 @@ export function GET(): Response {
     `- Platform: ${siteConfig.url}/platform`,
     `- Work: ${siteConfig.url}/results`,
     `- Engagements: ${siteConfig.url}/pricing`,
+    `- FAQ: ${siteConfig.url}/faq`,
+    `- About: ${siteConfig.url}/about`,
+    `- Research: ${siteConfig.url}/research`,
     `- Get access: ${siteConfig.url}/book-demo`,
     "",
     "## Claim boundaries",

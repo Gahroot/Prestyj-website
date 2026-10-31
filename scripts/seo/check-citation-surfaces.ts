@@ -37,7 +37,11 @@ function articleJson(html: string): Record<string, unknown> | undefined {
     const objects = Array.isArray(data) ? data : [data];
     for (const object of objects) {
       const parsed = z.record(z.string(), z.unknown()).safeParse(object);
-      if (parsed.success && parsed.data["@type"] === "Article") return parsed.data;
+      if (
+        parsed.success &&
+        (parsed.data["@type"] === "Article" || parsed.data["@type"] === "BlogPosting")
+      )
+        return parsed.data;
     }
   }
   return undefined;

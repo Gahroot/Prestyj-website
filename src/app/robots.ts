@@ -7,6 +7,7 @@ const DISALLOW = ["/api/", "/admin/", "/embed/"];
 const ALLOWED_CRAWLERS = [
   "Googlebot",
   "Bingbot",
+  "GPTBot",
   "OAI-SearchBot",
   "ChatGPT-User",
   "PerplexityBot",
@@ -14,6 +15,10 @@ const ALLOWED_CRAWLERS = [
   "ClaudeBot",
   "Claude-SearchBot",
   "Claude-User",
+  // Google's AI training/grounding control token; allowed so content can inform Gemini answers.
+  "Google-Extended",
+  "Applebot",
+  "Applebot-Extended",
 ] as const;
 
 export default function robots(): MetadataRoute.Robots {

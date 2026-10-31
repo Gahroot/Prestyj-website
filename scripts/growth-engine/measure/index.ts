@@ -3,8 +3,10 @@
  * Writes data/growth/performance.json, data/growth/history/YYYY-MM-DD.json,
  * data/growth/cta-stats.json, and merges data/growth/opportunities.json.
  * Each source is independent; failures mark `sources[x]` and raise a warning, never zero data.
+ * GA4 is not used (owner decision, 2026-10-31): sources.ga4 is always "not-used", no warning.
  */
 import path from "node:path";
+import { SERVICE_PATHS } from "../../../src/lib/attribution/services";
 import {
   institutionalBlogSlugs,
   institutionalPublicPaths,
@@ -20,7 +22,7 @@ import {
 } from "../shared/contracts";
 import { fetchBing, readBingAiImports, type BingAiData, type BingData } from "./bing";
 import { fetchCal, type CalData } from "./cal";
-import { fetchGa4, type Ga4Data } from "./ga4";
+import type { Ga4Data } from "./ga4";
 import { loadServiceAccount, type ServiceAccount } from "./google-auth";
 import { fetchGsc, type GscData } from "./gsc";
 import { buildOpportunities, mergeOpportunities, readArticleDates } from "./opportunities";
@@ -95,19 +97,13 @@ export async function collectPerformance(opts: {
   const keyMissing = key
     ? null
     : (keyError ?? "GSC_SERVICE_ACCOUNT_JSON or .secrets/gsc-service-account.json");
-  const ga4Id = process.env.GA4_PROPERTY_ID?.trim();
   const bingKey = process.env.BING_WEBMASTER_API_KEY?.trim();
   const calKey = process.env.CAL_API_KEY?.trim();
 
   const gsc = await runSource<GscData>("gsc", ctx, keyMissing, () =>
     fetchGsc(key as ServiceAccount, window, now),
   );
-  const ga4 = await runSource<Ga4Data>(
-    "ga4",
-    ctx,
-    keyMissing ?? (ga4Id ? null : "GA4_PROPERTY_ID"),
-    () => fetchGa4(key as ServiceAccount, ga4Id ?? "", window, now),
-  );
+  const ga4: Outcome<Ga4Data> = { status: "not-used", data: null };
   const bing = await runSource<BingData>(
     "bing",
     ctx,
@@ -175,25 +171,27 @@ export function buildSnapshot(input: {
 }): PerformanceSnapshot {
   const { gsc, ga4, bing, bingAi, cal } = input;
   const gscPages = new Map((gsc.data?.pages ?? []).map((p) => [p.path, p]));
-  const pages: PagePerformance[] = [...new Set(institutionalPublicPaths)].sort().map((p) => {
-    const g = gscPages.get(p);
-    const b = bing.data?.pages.get(p);
-    const a = ga4.data?.pages.get(p);
-    const c = cal.data?.byPath.get(p);
-    return {
-      path: p,
-      gscClicks: g?.clicks ?? 0,
-      gscImpressions: g?.impressions ?? 0,
-      gscCtr: round(g?.ctr ?? 0),
-      gscPosition: g && g.impressions > 0 ? round(g.position, 2) : null,
-      bingClicks: bing.data ? (b?.clicks ?? 0) : null,
-      bingImpressions: bing.data ? (b?.impressions ?? 0) : null,
-      organicSessions: ga4.data ? (a?.organic ?? 0) : null,
-      aiReferralSessions: ga4.data ? (a?.ai ?? 0) : null,
-      demosBooked: c?.demos ?? 0,
-      qualifiedDemos: c?.qualified ?? 0,
-    };
-  });
+  const pages: PagePerformance[] = [...new Set([...institutionalPublicPaths, ...SERVICE_PATHS])]
+    .sort()
+    .map((p) => {
+      const g = gscPages.get(p);
+      const b = bing.data?.pages.get(p);
+      const a = ga4.data?.pages.get(p);
+      const c = cal.data?.byPath.get(p);
+      return {
+        path: p,
+        gscClicks: g?.clicks ?? 0,
+        gscImpressions: g?.impressions ?? 0,
+        gscCtr: round(g?.ctr ?? 0),
+        gscPosition: g && g.impressions > 0 ? round(g.position, 2) : null,
+        bingClicks: bing.data ? (b?.clicks ?? 0) : null,
+        bingImpressions: bing.data ? (b?.impressions ?? 0) : null,
+        organicSessions: ga4.data ? (a?.organic ?? 0) : null,
+        aiReferralSessions: ga4.data ? (a?.ai ?? 0) : null,
+        demosBooked: c?.demos ?? 0,
+        qualifiedDemos: c?.qualified ?? 0,
+      };
+    });
   const queries: QueryPerformance[] = [
     ...(gsc.data?.queries ?? []).map((q) => ({
       query: q.query,
@@ -251,6 +249,19 @@ export function buildSnapshot(input: {
       qualifiedDemosFromOrganicOrAi: cal.data?.qualifiedDemosFromOrganicOrAi ?? 0,
     },
     pages,
+    ...(cal.data
+      ? {
+          lanes: (["real-estate", "connectors", "custom-builds"] as const).map((lane) => {
+            const l = cal.data?.byLane.get(lane);
+            return {
+              lane,
+              demosBooked: l?.demos ?? 0,
+              qualifiedDemos: l?.qualified ?? 0,
+              qualifiedDemosFromOrganicOrAi: l?.qualifiedOrganicOrAi ?? 0,
+            };
+          }),
+        }
+      : {}),
     queries,
   };
 }

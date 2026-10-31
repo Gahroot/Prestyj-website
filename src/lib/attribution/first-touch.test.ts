@@ -134,5 +134,9 @@ describe("isQualified", () => {
     expect(isQualified("brokerage")).toBe(true);
     expect(isQualified("owner-operator")).toBe(true);
     expect(isQualified("other")).toBe(false);
+    expect(isQualified("other", null, "1-9")).toBe(false);
+    expect(isQualified("other", null, "10-49")).toBe(true);
+    expect(isQualified("other", null, "250-plus")).toBe(true);
+    expect(isQualified("fund", "500m-1b", "1-9")).toBe(true);
   });
 });

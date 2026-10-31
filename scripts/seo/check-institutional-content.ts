@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, lstatSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, lstatSync } from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import { load, JSON_SCHEMA } from "js-yaml";
@@ -10,6 +10,7 @@ import {
   institutionalPublicPaths,
 } from "../../src/lib/institutional/site-map";
 import { getArticleDates } from "../../src/lib/institutional/article-metadata";
+import { SERVICE_PATHS } from "../../src/lib/attribution/services";
 
 export function readBoundedText(file: string, maxBytes = 2_000_000): string {
   const stat = lstatSync(file);
@@ -40,7 +41,11 @@ export function checkInstitutionalContent(root = process.cwd()): ContentCheck {
   const ledger = contentLedgerSchema.parse(
     JSON.parse(readBoundedText(path.join(root, "data/seo/institutional-content-backlog.json"))),
   );
-  const allowed = new Set(institutionalPublicPaths);
+  // Service-lane articles may link to their service pages once those routes exist.
+  const allowed = new Set([
+    ...institutionalPublicPaths,
+    ...SERVICE_PATHS.filter((route) => existsSync(path.join(root, "src/app", route, "page.tsx"))),
+  ]);
   const registered = new Set(institutionalBlogSlugs);
   if (registered.size !== researchArticles.length) errors.push("Registry contains duplicate slugs");
   const inspectLinks = (body: string, label: string): void => {

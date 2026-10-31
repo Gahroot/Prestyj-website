@@ -15,5 +15,7 @@ export const ATTRIBUTION_KEYS = {
   firmType: "pj_firm_type",
   aumBand: "pj_aum_band",
   qualified: "pj_qualified",
+  companySize: "pj_company_size",
+  service: "pj_service",
 } as const;
 export type AttributionKey = (typeof ATTRIBUTION_KEYS)[keyof typeof ATTRIBUTION_KEYS];

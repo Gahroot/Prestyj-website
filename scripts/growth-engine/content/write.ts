@@ -2,6 +2,7 @@ import { dump } from "js-yaml";
 import { z } from "zod";
 import type { Opportunity } from "../shared/contracts";
 import type { ContentConfig } from "./config";
+import { LANE_PROFILES, laneServices, laneWriterBrief, type Lane } from "./lanes";
 import { extractJson, type MeteredLlm } from "./llm";
 import { CAPABILITY_SLUGS, TOPIC_VALUES, type ParsedArticle, type RegistryEntry } from "./site";
 
@@ -41,15 +42,18 @@ export const draftMetaSchema = z.object({
   // Soft fields are normalized; the minimums stay hard.
   keywords: softList(6, (item) => item.length >= 2).pipe(z.array(z.string()).min(2)),
   category: z.string().trim().min(3).max(40),
-  capabilities: softList(6, (item) => CAPABILITY_SLUGS.includes(item)).pipe(
-    z.array(z.string()).min(1),
-  ),
+  // Real estate articles need at least one capability (checked by the engine); service lanes may have none.
+  capabilities: softList(6, (item) => CAPABILITY_SLUGS.includes(item)),
   topics: softList(3, (item) => (TOPIC_VALUES as readonly string[]).includes(item)).pipe(
     z.array(z.string()).min(1),
   ),
   registryTitle: z.preprocess((value) => clipAtWord(value, 90, ""), z.string().min(10).max(90)),
   registryDescription: z.preprocess((value) => clipAtWord(value, 200), z.string().min(30).max(200)),
   changeSummary: z.string().catch(""),
+  /** Service-lane articles: service page slug the article links to. Resolved by the engine. */
+  service: z.string().optional().catch(undefined),
+  /** Set by the engine from the opportunity, never by the writer. */
+  lane: z.enum(["real-estate", "connectors", "custom-builds"]).optional().catch(undefined),
 });
 export type DraftMeta = z.infer<typeof draftMetaSchema>;
 export type Draft = { meta: DraftMeta; body: string; costUsd: number };
@@ -79,11 +83,35 @@ Article format (MDX body, no frontmatter, no H1 — the page renders the title a
 6. ## Sources: bullet list of real https URLs, each with what it supports.
 7. A closing paragraph pointing to the matching workflow demo at [/book-demo](/book-demo).`;
 
-function outputSpec(registry: RegistryEntry[]): string {
+const SERVICE_LANE_INTRO = `You write for prestyj.com. Readers are business decision-makers evaluating an AI build; write like an experienced engineer advising a buyer, plainly and specifically. No marketing filler ("unlock", "game-changer", "seamless", "delve", "in conclusion", "ever-evolving", etc). Never mention monthly plans or prices.
+
+`;
+
+/** Real estate keeps the original system prompt; service lanes share its hard rules with lane framing. */
+export function writerSystem(lane: Lane, root: string): string {
+  if (lane === "real-estate") return WRITER_SYSTEM;
+  const rules = WRITER_SYSTEM.slice(WRITER_SYSTEM.indexOf("Hard rules:"))
+    .replace(
+      /- Describe Prestyj only in positioning terms:[^\n]*\n/,
+      "- Describe Prestyj only with the first-party proof given in the lane brief; never beyond it.\n",
+    )
+    .replace(
+      "7. A closing paragraph pointing to the matching workflow demo at [/book-demo](/book-demo).",
+      "7. A closing paragraph pointing to the service's scoping call at /book-demo?service=<slug> (see lane brief).",
+    );
+  return `${SERVICE_LANE_INTRO}${rules}\n\n${laneWriterBrief(lane, root)}`;
+}
+
+function outputSpec(registry: RegistryEntry[], lane: Lane = "real-estate"): string {
   const categories = [...new Set(registry.map((entry) => entry.category))].sort();
+  const fixed = LANE_PROFILES[lane].category;
+  const service =
+    lane === "real-estate"
+      ? ""
+      : `, "service": one of ${JSON.stringify(laneServices(lane).map((s) => s.slug))}`;
   return `Respond in exactly this format:
 <<<META>>>
-{"slug": "kebab-case", "title": "SEO title, under 70 chars", "description": "meta description 120-155 chars, hard max 160", "keywords": ["..."], "category": one of ${JSON.stringify(categories)}, "capabilities": subset of ${JSON.stringify(CAPABILITY_SLUGS)}, "topics": subset of ${JSON.stringify(TOPIC_VALUES)}, "registryTitle": "short editorial title", "registryDescription": "one sentence", "changeSummary": "what changed and why"}
+{"slug": "kebab-case", "title": "SEO title, under 70 chars", "description": "meta description 120-155 chars, hard max 160", "keywords": ["..."], "category": ${fixed ? JSON.stringify(fixed) : `one of ${JSON.stringify(categories)}`}, "capabilities": ${lane === "real-estate" ? `subset of ${JSON.stringify(CAPABILITY_SLUGS)}` : "[]"}, "topics": subset of ${JSON.stringify(TOPIC_VALUES)}, "registryTitle": "short editorial title", "registryDescription": "one sentence, at most 180 characters", "changeSummary": "what changed and why"${service}}
 <<<BODY>>>
 ...the MDX body...`;
 }
@@ -100,6 +128,44 @@ export function parseDraft(text: string): Omit<Draft, "costUsd"> {
     .replace(/\n```\s*$/, "")
     .trim();
   return { meta, body: `${moveInlineCitations(body)}\n` };
+}
+
+/**
+ * Parses writer output; if only the META block fails validation (e.g. an overlong or
+ * missing registryDescription), asks the writer once to re-emit corrected META and keeps
+ * the body. The item fails only if the repaired META is still invalid.
+ */
+export async function parseDraftWithRepair(
+  text: string,
+  ctx: { llm: MeteredLlm; config: ContentConfig },
+): Promise<{ draft: Omit<Draft, "costUsd">; costUsd: number }> {
+  try {
+    return { draft: parseDraft(text), costUsd: 0 };
+  } catch (error) {
+    if (!(error instanceof z.ZodError)) throw error;
+    const metaStart = text.indexOf("<<<META>>>");
+    const bodyStart = text.indexOf("<<<BODY>>>");
+    const issues = error.issues
+      .map((issue) => `${issue.path.join(".")}: ${issue.message}`)
+      .join("; ");
+    const repair = await ctx.llm.complete({
+      purpose: "write",
+      model: ctx.config.models.writer,
+      system:
+        "You fix article metadata JSON. Return only the corrected JSON object, no prose, no code fence.",
+      prompt: `This META failed validation: ${issues}.
+Rules: title 10-90 chars; description 50-170 chars; registryTitle 10-90 chars; registryDescription one sentence of 30-180 characters; at least 2 keywords; at least 1 topic. Shorten fields that are too long; keep everything else unchanged.
+
+META:
+${text.slice(metaStart + 10, bodyStart)}`,
+      maxTokens: 2000,
+    });
+    const repaired = repair.text.includes("<<<META>>>")
+      ? repair.text.slice(repair.text.indexOf("<<<META>>>") + 10, repair.text.indexOf("<<<BODY>>>"))
+      : repair.text;
+    const draft = parseDraft(`<<<META>>>\n${repaired}\n${text.slice(bodyStart)}`);
+    return { draft, costUsd: repair.costUsd };
+  }
 }
 
 /**
@@ -130,30 +196,38 @@ export function moveInlineCitations(body: string): string {
   return `${cleaned}\n${[heading, ...after].join("\n").trimEnd()}\n${added}`.trim();
 }
 
-export async function writeNewArticle(
-  opportunity: Opportunity,
-  ctx: { llm: MeteredLlm; config: ContentConfig; registry: RegistryEntry[]; allowed: string[] },
-): Promise<Draft> {
+export type WriteCtx = {
+  llm: MeteredLlm;
+  config: ContentConfig;
+  registry: RegistryEntry[];
+  allowed: string[];
+  lane?: Lane;
+  root?: string;
+};
+
+export async function writeNewArticle(opportunity: Opportunity, ctx: WriteCtx): Promise<Draft> {
+  const lane = ctx.lane ?? "real-estate";
   const prompt = `Write a new article answering: "${opportunity.queries[0] ?? ""}"
 Related queries: ${opportunity.queries.slice(1).join("; ") || "none"}
 Why this topic: ${opportunity.evidence}
 
-Existing Prestyj articles (do NOT duplicate their angle; link to the relevant ones):
+Existing Prestyj articles (do NOT duplicate their angle; link only to ones relevant to this lane):
 ${ctx.registry.map((entry) => `- /blog/${entry.slug}: ${entry.title}`).join("\n")}
 
 Allowed internal link paths: ${ctx.allowed.join(", ")}
 Target length: 1,400–2,000 words.
 
-${outputSpec(ctx.registry)}`;
+${outputSpec(ctx.registry, lane)}`;
   const result = await ctx.llm.complete({
     purpose: "write",
     model: ctx.config.models.writer,
-    system: WRITER_SYSTEM,
+    system: writerSystem(lane, ctx.root ?? process.cwd()),
     prompt: `${prompt}\n\nFirst search for sources, then write. Your final message must contain only the <<<META>>> and <<<BODY>>> output.`,
     maxTokens: 16000,
     webSearchMaxUses: 4,
   });
-  return { ...parseDraft(result.text), costUsd: result.costUsd };
+  const parsed = await parseDraftWithRepair(result.text, ctx);
+  return { ...parsed.draft, costUsd: result.costUsd + parsed.costUsd };
 }
 
 const REFRESH_GOALS: Record<string, string> = {
@@ -169,8 +243,9 @@ export async function writeRefresh(
   opportunity: Opportunity,
   slug: string,
   current: ParsedArticle,
-  ctx: { llm: MeteredLlm; config: ContentConfig; registry: RegistryEntry[]; allowed: string[] },
+  ctx: WriteCtx,
 ): Promise<Draft> {
+  const lane = ctx.lane ?? "real-estate";
   const prompt = `Refresh the existing article "${slug}".
 Goal: ${REFRESH_GOALS[opportunity.kind] ?? REFRESH_GOALS["refresh-stale"]}
 Queries: ${opportunity.queries.join("; ")}
@@ -188,16 +263,20 @@ Other live articles: ${ctx.registry
     .join("; ")}
 Allowed internal link paths: ${ctx.allowed.join(", ")}
 
-${outputSpec(ctx.registry)}`;
+${outputSpec(ctx.registry, lane)}`;
   const result = await ctx.llm.complete({
     purpose: "write",
     model: ctx.config.models.writer,
-    system: WRITER_SYSTEM,
+    system: writerSystem(lane, ctx.root ?? process.cwd()),
     prompt,
     maxTokens: 10000,
   });
-  const draft = parseDraft(result.text);
-  return { meta: { ...draft.meta, slug }, body: draft.body, costUsd: result.costUsd };
+  const { draft, costUsd } = await parseDraftWithRepair(result.text, ctx);
+  return {
+    meta: { ...draft.meta, slug },
+    body: draft.body,
+    costUsd: result.costUsd + costUsd,
+  };
 }
 
 export function renderMdx(frontmatter: Record<string, unknown>, body: string): string {

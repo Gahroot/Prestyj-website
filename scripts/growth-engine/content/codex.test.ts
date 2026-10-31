@@ -314,7 +314,10 @@ describe("research schedule", () => {
       createdAt: "2026-10-25T10:00:00Z",
       status,
     });
-    expect(researchDue([item("open")], config, now)).toBe(false);
-    expect(researchDue([item("rejected")], config, now)).toBe(true);
+    expect(researchDue([item("open")], config, now, "real-estate")).toBe(false);
+    expect(researchDue([item("rejected")], config, now, "real-estate")).toBe(true);
+    // Service lanes have their own schedule: no connectors topics yet, so research is due.
+    expect(researchDue([item("open")], config, now, "connectors")).toBe(true);
+    expect(researchDue([item("open")], config, now)).toBe(true);
   });
 });

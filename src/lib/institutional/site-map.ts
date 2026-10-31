@@ -1,4 +1,5 @@
 import { connectorRoutes } from "@/lib/connectors/site-map";
+import { customBuildRoutes } from "@/lib/custom-builds/site-map";
 import { audiences } from "@/lib/institutional/audiences";
 import { capabilities } from "@/lib/institutional/capabilities";
 import { researchArticles } from "@/lib/institutional/research";
@@ -36,6 +37,8 @@ export const canonicalPublicRoutes = [
   ...canonicalAudienceRoutes,
   // Second offer: custom Claude connectors, MCP servers, and ChatGPT plugins for any business.
   ...connectorRoutes,
+  // Third offer: custom AI agents, automation, and software for any business.
+  ...customBuildRoutes,
 ] as const;
 
 export const institutionalBlogSlugs = researchArticles.map((article) => article.slug);

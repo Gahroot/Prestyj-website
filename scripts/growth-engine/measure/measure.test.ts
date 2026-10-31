@@ -258,14 +258,14 @@ describe("collectPerformance", () => {
     }
   });
 
-  it("marks every source missing-credentials without crashing or zeroing GA4", async () => {
+  it("marks every source missing-credentials; GA4 is not used and raises no warning", async () => {
     const root = tmpRoot();
     const fetchFn = mockFetch();
     const s = await collectPerformance({ root, dryRun: false, now: NOW });
     expect(fetchFn).not.toHaveBeenCalled();
     expect(s.sources).toEqual({
       gsc: "missing-credentials",
-      ga4: "missing-credentials",
+      ga4: "not-used",
       bing: "missing-credentials",
       "bing-ai": "missing-credentials",
       cal: "missing-credentials",
@@ -279,7 +279,6 @@ describe("collectPerformance", () => {
       "measure.bing",
       "measure.bing-ai",
       "measure.cal",
-      "measure.ga4",
       "measure.gsc",
     ]);
     expect(exc.every((e) => e.severity === "warning")).toBe(true);
@@ -319,14 +318,16 @@ describe("collectPerformance", () => {
 
     const s = await collectPerformance({ root, dryRun: false, now: NOW });
     performanceSnapshotSchema.parse(s);
-    expect(s.sources).toMatchObject({ gsc: "ok", ga4: "ok", bing: "ok", cal: "ok" });
+    expect(s.sources).toMatchObject({ gsc: "ok", ga4: "not-used", bing: "ok", cal: "ok" });
+    expect(s.lanes?.find((l) => l.lane === "real-estate")?.demosBooked).toBeGreaterThan(0);
+    expect(s.pages.some((p) => p.path === "/custom-ai-agents")).toBe(true);
     const page = s.pages.find((p) => p.path === LIVE);
     expect(page).toMatchObject({
       gscClicks: 3,
       gscImpressions: 500,
       gscPosition: 8,
-      organicSessions: 40,
-      aiReferralSessions: 5,
+      organicSessions: null,
+      aiReferralSessions: null,
       bingClicks: 3,
       bingImpressions: 30,
       demosBooked: 1,
@@ -334,8 +335,8 @@ describe("collectPerformance", () => {
     });
     expect(s.pages.some((p) => p.path.startsWith("/free-ads"))).toBe(false);
     expect(s.totals).toEqual({
-      organicSessions: 40,
-      aiReferralSessions: 5,
+      organicSessions: null,
+      aiReferralSessions: null,
       demosBooked: 2,
       qualifiedDemos: 2,
       qualifiedDemosFromOrganicOrAi: 1,

@@ -2,11 +2,10 @@
 
 import { useEffect, useCallback, useRef } from "react";
 import Cal, { getCalApi } from "@calcom/embed-react";
+import { CAL_LINK } from "@/components/booking/cal-link";
 import { toCalMetadataConfig } from "@/lib/attribution/first-touch";
 import { trackGa4 } from "@/lib/attribution/gtag";
 import { trackEvent } from "@/lib/meta-pixel";
-
-const CAL_LINK = "nolan-grout-x0fgn8/30min";
 
 interface CalcomInlineEmbedProps {
   className?: string;

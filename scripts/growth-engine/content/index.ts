@@ -26,7 +26,18 @@ import {
 import { createCodexLlm, defaultSessionFile, fileSessionStore, withFallback } from "./codex";
 import { findOverlap, readArticleFingerprints } from "./dedupe";
 import { FileTransaction, registerArticle, syncLedgerRevision, writeArticle } from "./register";
-import { mergeOpportunities, researchDue, researchTopics, seedFromPrompts } from "./research-queue";
+import { dueLanes, mergeOpportunities, researchTopics, seedFromPrompts } from "./research-queue";
+import {
+  BOOKABLE_SERVICES,
+  laneOfOpportunity,
+  orderByLaneRotation,
+  recentPublishLanes,
+  resolveService,
+  serviceHint,
+  wireServiceLinks,
+  LANE_PROFILES,
+  type Lane,
+} from "./lanes";
 import {
   CAPABILITY_SLUGS,
   TOPIC_VALUES,
@@ -120,30 +131,39 @@ export async function runContentCycle(
     readOpportunities(root),
     seedFromPrompts(root, config, now),
   );
-  if (researchDue(opportunities, config, now)) {
+  for (const lane of dueLanes(opportunities, config, now)) {
     try {
-      const research = await researchTopics(root, llm, config, now);
+      const research = await researchTopics(root, llm, config, now, lane);
       opportunities = mergeOpportunities(opportunities, research.items);
-      progress(`research: ${research.items.length} items ($${research.costUsd.toFixed(3)})`);
+      progress(
+        `research (${lane}): ${research.items.length} items ($${research.costUsd.toFixed(3)})`,
+      );
     } catch (error) {
       if (error instanceof LlmAuthError) {
         await critical("content.llm", error.message);
         return EMPTY;
       }
-      if (error instanceof BudgetExceededError) skip("research", [error.message]);
-      else {
-        await raise(
-          { severity: "warning", component: "content.research", message: errorText(error) },
-          root,
-        );
-        skip("research", [`research failed: ${errorText(error)}`]);
+      if (error instanceof BudgetExceededError) {
+        skip(`research (${lane})`, [error.message]);
+        break;
       }
+      await raise(
+        { severity: "warning", component: "content.research", message: errorText(error) },
+        root,
+      );
+      skip(`research (${lane})`, [`research failed: ${errorText(error)}`]);
     }
   }
 
   // 2. PICK
-  const usage = capUsage(readContentLog(root), now);
+  const contentLog = readContentLog(root);
+  const usage = capUsage(contentLog, now);
   const registry = readRegistry(root);
+  const recentLanes = recentPublishLanes(
+    contentLog,
+    new Map(registry.map((entry) => [entry.slug, entry.lane])),
+    now,
+  );
   const registered = new Set(registry.map((entry) => entry.slug));
   const open = opportunities
     .filter((item) => item.status === "open")
@@ -166,7 +186,13 @@ export async function runContentCycle(
         text: item.topic,
       })),
     ];
-    for (const item of open.filter((candidate) => candidate.kind === "new-topic")) {
+    // Lane rotation: real estate keeps at least half the weekly slots.
+    const newTopics = orderByLaneRotation(
+      open.filter((candidate) => candidate.kind === "new-topic"),
+      recentLanes,
+      config.caps.maxNewPerWeek,
+    );
+    for (const item of newTopics) {
       if (picks.length >= newRoom) break;
       const overlap = findOverlap(item.queries[0] ?? "", fingerprints);
       if (!overlap) {
@@ -291,9 +317,12 @@ async function processItem(
   const today = ctx.now.toISOString().slice(0, 10);
   const registry = readRegistry(root);
   const allowed = allowedInternalPaths(root);
-  const writeCtx = { llm, config, registry, allowed: [...allowed].sort() };
   const isNew = opportunity.kind === "new-topic";
   const refreshSlug = slugFromPath(opportunity.path);
+  const lane: Lane = isNew
+    ? laneOfOpportunity(opportunity)
+    : (registry.find((entry) => entry.slug === refreshSlug)?.lane ?? "real-estate");
+  const writeCtx = { llm, config, registry, allowed: [...allowed].sort(), lane, root };
   const previous = !isNew && refreshSlug ? readArticle(root, refreshSlug) : null;
   if (!isNew && (!refreshSlug || !previous))
     throw new Error(`refresh target missing: ${opportunity.path}`);
@@ -306,7 +335,20 @@ async function processItem(
         previous ?? { metadata: {}, body: "" },
         writeCtx,
       );
-  const { meta } = draft;
+  // Lane is the engine's decision, never the writer's; service lanes get a fixed category,
+  // a resolved service page, and a deterministic /book-demo?service=<slug> CTA.
+  const service = resolveService(lane, draft.meta.service ?? serviceHint(opportunity));
+  const meta = {
+    ...draft.meta,
+    lane,
+    service: service ?? undefined,
+    category: LANE_PROFILES[lane].category ?? draft.meta.category,
+    capabilities: lane === "real-estate" ? draft.meta.capabilities : [],
+  };
+  if (service) {
+    const label = BOOKABLE_SERVICES.find((s) => s.slug === service)?.label ?? service;
+    draft.body = wireServiceLinks(draft.body, service, label);
+  }
   // Optional local debugging aid; point it outside the repo (e.g. /tmp/prestyj-content).
   const debugDir = process.env.CONTENT_DEBUG_DIR;
   if (debugDir) {
@@ -335,6 +377,10 @@ async function processItem(
   });
 
   const metaErrors: string[] = [];
+  if (lane === "real-estate" && meta.capabilities.length === 0)
+    metaErrors.push("real estate article needs at least one capability");
+  if (service && !allowed.has(`/${service}`))
+    metaErrors.push(`service page /${service} is not a live route yet`);
   for (const capability of meta.capabilities)
     if (!CAPABILITY_SLUGS.includes(capability))
       metaErrors.push(`invalid capability: ${capability}`);
@@ -362,6 +408,8 @@ async function processItem(
     config,
     fetcher: deps.fetcher ?? defaultFetcher,
     topic: opportunity.queries[0] ?? meta.title,
+    lane,
+    root,
   });
   const fcGate: GateResult = {
     name: "fact-check",
@@ -383,6 +431,8 @@ async function processItem(
       body: fc.body,
       mode: isNew ? "new" : "refresh",
       allowed,
+      lane,
+      service: service ?? undefined,
       previous: previous
         ? { body: previous.body, title: String(previous.metadata.title ?? "") }
         : undefined,

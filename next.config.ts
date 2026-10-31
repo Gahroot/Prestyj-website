@@ -28,12 +28,9 @@ const nextConfig: NextConfig = {
     const legacyRedirects = [
       ["/ai-consulting", "/platform"],
       ["/ai-content-department", "/capabilities/listing-media"],
-      ["/ai-marketing-agents", "/capabilities/listing-media"],
       ["/ai-receptionist", "/capabilities/origination"],
-      ["/ai-sales-agents", "/capabilities/origination"],
       ["/ai-voice-agents", "/capabilities/origination"],
-      ["/custom-ai-agents", "/platform"],
-      ["/done-for-you-ai-agents", "/platform"],
+      ["/done-for-you-ai-agents", "/custom-ai-agents"],
       ["/done-for-you-ai-customer-support", "/platform"],
       ["/done-for-you-social-media", "/capabilities/listing-media"],
       ["/batch-video-ads", "/capabilities/listing-media"],

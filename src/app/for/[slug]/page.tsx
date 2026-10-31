@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { AudiencePage } from "@/components/sections/institutional/audience-page";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { audiences, getAudience } from "@/lib/institutional/audiences";
 import { siteConfig } from "@/lib/site-config";
@@ -60,6 +61,13 @@ export default async function AudienceRoute({ params }: { params: Promise<{ slug
           provider: { "@id": `${siteConfig.url}/#organization` },
           audience: { "@type": "Audience", audienceType: audience.navLabel },
         }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: siteConfig.url },
+          { name: "Platform", url: `${siteConfig.url}/platform` },
+          { name: audience.navLabel, url: `${siteConfig.url}/for/${audience.slug}` },
+        ]}
       />
       <AudiencePage audience={audience} />
     </>

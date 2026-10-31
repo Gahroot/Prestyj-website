@@ -10,6 +10,8 @@ export const AI_REFERRER_HOSTS: readonly string[] = [
   "openai.com",
   "perplexity.ai",
   "copilot.microsoft.com",
+  "copilot.cloud.microsoft",
+  "m365.cloud.microsoft",
   "gemini.google.com",
   "bard.google.com",
   "claude.ai",
@@ -81,7 +83,9 @@ export function classifyChannel(input: {
   if (/^(cpc|ppc|paid|paidsearch|paid_social|display|cpm)$/.test(medium)) return "paid";
   if (medium === "email" || medium === "newsletter") return "email";
   if (source && hostMatches(source, AI_REFERRER_HOSTS)) return "ai";
-  if (/chatgpt|perplexity|copilot|gemini|claude/.test(source)) return "ai";
+  if (/chatgpt|openai|perplexity|copilot|gemini|claude/.test(source)) return "ai";
+  // Bare search-engine utm_source (e.g. "google", "bing") without a paid medium.
+  if (/^(google|bing|duckduckgo|yahoo|ecosia|brave|yandex|baidu)$/.test(source)) return "organic";
   const host = normalizeHost(input.referrer);
   const own = normalizeHost(input.ownHost ?? "prestyj.com");
   if (host && host !== own) {

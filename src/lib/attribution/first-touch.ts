@@ -1,6 +1,11 @@
 import { classifyChannel, normalizeHost, type TrafficChannel } from "@/lib/attribution/channels";
 import { ATTRIBUTION_KEYS } from "@/lib/attribution/keys";
-import { isQualified, type AumBand, type FirmType } from "@/lib/attribution/qualification";
+import {
+  isQualified,
+  type AumBand,
+  type CompanySize,
+  type FirmType,
+} from "@/lib/attribution/qualification";
 
 /**
  * First-party, cookie-free attribution kept in localStorage. Nothing is sent anywhere
@@ -111,7 +116,11 @@ export function recordCtaClick(storage: StorageLike, cta: LastCta): void {
   }
 }
 
-export type QualificationAnswers = { firmType: FirmType; aumBand?: AumBand | null | undefined };
+export type QualificationAnswers = {
+  firmType: FirmType;
+  aumBand?: AumBand | null | undefined;
+  companySize?: CompanySize | null | undefined;
+};
 
 /**
  * Flat pj_* map for Cal.com booking metadata and GA4 event params.
@@ -121,6 +130,8 @@ export function buildAttributionParams(input: {
   firstTouch: FirstTouch | null;
   lastCta: LastCta | null;
   qualification?: QualificationAnswers | null;
+  /** Known service slug from /book-demo?service=…; validate before passing. */
+  service?: string | null;
 }): Record<string, string> {
   const { firstTouch, lastCta, qualification } = input;
   const entries: [string, string | undefined][] = [
@@ -134,10 +145,12 @@ export function buildAttributionParams(input: {
     [ATTRIBUTION_KEYS.ctaVariant, lastCta?.variant],
     [ATTRIBUTION_KEYS.firmType, qualification?.firmType],
     [ATTRIBUTION_KEYS.aumBand, qualification?.aumBand ?? undefined],
+    [ATTRIBUTION_KEYS.companySize, qualification?.companySize ?? undefined],
+    [ATTRIBUTION_KEYS.service, input.service ?? undefined],
     [
       ATTRIBUTION_KEYS.qualified,
       qualification
-        ? isQualified(qualification.firmType, qualification.aumBand)
+        ? isQualified(qualification.firmType, qualification.aumBand, qualification.companySize)
           ? "yes"
           : "no"
         : undefined,

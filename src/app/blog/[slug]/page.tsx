@@ -18,7 +18,14 @@ import {
   buildFaqSchema,
 } from "@/lib/institutional/article-schema";
 import { readArticleSource } from "@/lib/institutional/article-source";
-import { getRelatedArticles, researchArticles } from "@/lib/institutional/research";
+import {
+  articleLane,
+  getRelatedArticles,
+  researchArticles,
+  type ResearchArticle,
+} from "@/lib/institutional/research";
+import { getBookableService } from "@/lib/attribution/services";
+import { getCapability } from "@/lib/institutional/capabilities";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { blogSource } from "@/lib/source";
 import { institutionalBlogSlugs, isInstitutionalBlogSlug } from "@/lib/institutional/site-map";
@@ -32,6 +39,60 @@ function nodeText(node: ReactNode): string {
   if (Array.isArray(node)) return node.map(nodeText).join("");
   if (isValidElement<{ children?: ReactNode }>(node)) return nodeText(node.props.children);
   return "";
+}
+
+/** CTA for connectors and custom AI builds articles: the service page plus a service-tagged booking link. */
+function ServiceArticleCta({
+  article,
+  placement,
+}: {
+  article: ResearchArticle;
+  placement: "article-inline" | "article-end";
+}) {
+  const service = getBookableService(article.service);
+  if (!service) return null;
+  const inline = placement === "article-inline";
+  return (
+    <aside
+      aria-label={`${service.label} from Prestyj`}
+      data-cta-id={`${placement}:${article.slug}`}
+      className={
+        inline ? "not-prose bg-card my-10 border p-6 sm:p-8" : "not-prose mt-14 border-t pt-8"
+      }
+    >
+      <p className="text-muted-foreground text-xs font-semibold tracking-wide uppercase">
+        {service.label}
+      </p>
+      <p className="mt-3 text-lg leading-7">
+        Prestyj scopes, builds, and maintains this for the systems you already run.
+      </p>
+      <p className="mt-5 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold">
+        <Link href={`/${service.slug}`} className="underline underline-offset-4">
+          How the {service.label.toLowerCase()} engagement works
+        </Link>
+        <Link
+          href={`/book-demo?service=${encodeURIComponent(service.slug)}`}
+          className="underline underline-offset-4"
+        >
+          Book a scoping call
+        </Link>
+      </p>
+    </aside>
+  );
+}
+
+function ArticleCallToAction({
+  article,
+  placement,
+}: {
+  article: ResearchArticle;
+  placement: "article-inline" | "article-end";
+}) {
+  return articleLane(article) === "real-estate" ? (
+    <ArticleCta article={article} placement={placement} />
+  ) : (
+    <ServiceArticleCta article={article} placement={placement} />
+  );
 }
 
 interface BlogPostPageProps {
@@ -92,7 +153,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const source = readArticleSource(slug);
   const anchorHeading = inlineCtaAnchorHeading(source);
   const faqSchema = buildFaqSchema(extractFaq(source));
-  const inlineCta = article ? <ArticleCta article={article} placement="article-inline" /> : null;
+  const inlineCta = article ? (
+    <ArticleCallToAction article={article} placement="article-inline" />
+  ) : null;
+  const related = getRelatedArticles(slug);
 
   // Inline CTA renders before the second H2, i.e. right after the answer section.
   const H2 = (props: ComponentProps<"h2">) => {
@@ -163,23 +227,47 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <MDXContent components={{ table: ArticleTable, h2: H2 }} />
             </div>
 
-            {article ? <ArticleCta article={article} placement="article-end" /> : null}
-            <nav aria-label="Related analysis" className="mt-12 border-t pt-8">
-              <h2 className="text-2xl">Related analysis</h2>
-              <ul className="editorial-rows mt-5">
-                {getRelatedArticles(slug).map((related) => (
-                  <li key={related.slug}>
-                    <p className="text-muted-foreground text-xs">{related.category}</p>
-                    <Link href={`/blog/${related.slug}`} className="underline underline-offset-4">
-                      {related.title}
-                    </Link>
-                    <p className="text-muted-foreground mt-1 text-sm leading-6">
-                      {related.description}
-                    </p>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            {article ? <ArticleCallToAction article={article} placement="article-end" /> : null}
+            {article &&
+            articleLane(article) === "real-estate" &&
+            article.capabilities.length > 0 ? (
+              <nav aria-label="Workflows covered" className="mt-12 border-t pt-8">
+                <h2 className="text-2xl">Workflows covered</h2>
+                <ul className="mt-5 space-y-2">
+                  {article.capabilities.slice(0, 3).map((slug) => {
+                    const capability = getCapability(slug);
+                    return capability ? (
+                      <li key={slug}>
+                        <Link
+                          href={`/capabilities/${slug}`}
+                          className="underline underline-offset-4"
+                        >
+                          {capability.searchTitle}
+                        </Link>
+                      </li>
+                    ) : null;
+                  })}
+                </ul>
+              </nav>
+            ) : null}
+            {related.length > 0 ? (
+              <nav aria-label="Related analysis" className="mt-12 border-t pt-8">
+                <h2 className="text-2xl">Related analysis</h2>
+                <ul className="editorial-rows mt-5">
+                  {related.map((entry) => (
+                    <li key={entry.slug}>
+                      <p className="text-muted-foreground text-xs">{entry.category}</p>
+                      <Link href={`/blog/${entry.slug}`} className="underline underline-offset-4">
+                        {entry.title}
+                      </Link>
+                      <p className="text-muted-foreground mt-1 text-sm leading-6">
+                        {entry.description}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ) : null}
           </article>
         </main>
       </EditorialShell>

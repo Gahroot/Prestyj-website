@@ -1,18 +1,19 @@
 import type { Metadata } from "next";
+
+import { pageMetadata } from "@/components/seo/page-metadata";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "About",
+export const metadata: Metadata = pageMetadata({
+  title: "About: Who Builds and Runs the AI Agents",
   description:
-    "Prestyj builds and operates AI agents for institutional real estate workflows, led by Nolan Grout.",
-  alternates: { canonical: `${siteConfig.url}/about` },
-};
+    "Prestyj builds and operates AI agents for institutional real estate funds, brokerages, and owner-operators, plus custom AI connectors for any business. Led by Nolan Grout.",
+  path: "/about",
+});
 
 const work = [
   ["Fund operations", "Multi-currency NAV, performance reporting, and investor-scoped portals."],

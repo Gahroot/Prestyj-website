@@ -1,6 +1,14 @@
 import type { CapabilitySlug } from "@/lib/institutional/capabilities";
 
+/** Which offer an article serves. Omitted = institutional real estate. */
+export type ArticleLane = "real-estate" | "connectors" | "custom-builds";
+
 export type ResearchArticle = {
+  /** Omitted for real estate articles; set for the connectors and custom AI builds lanes. */
+  lane?: ArticleLane;
+  /** Service-lane articles: service page slug (path without slash) the CTA points to. */
+  service?: string;
+  /** Real estate capabilities; empty for service-lane articles. */
   capabilities: readonly CapabilitySlug[];
   topics: readonly string[];
   slug: string;
@@ -142,6 +150,10 @@ export const researchArticles: readonly ResearchArticle[] = [
   },
 ] as const;
 
+export function articleLane(article: Pick<ResearchArticle, "lane">): ArticleLane {
+  return article.lane ?? "real-estate";
+}
+
 export function getCapabilityArticles(capability: CapabilitySlug): readonly ResearchArticle[] {
   return researchArticles.filter((article) => article.capabilities.includes(capability));
 }
@@ -149,8 +161,10 @@ export function getCapabilityArticles(capability: CapabilitySlug): readonly Rese
 export function getRelatedArticles(slug: string, limit = 3): readonly ResearchArticle[] {
   const current = researchArticles.find((article) => article.slug === slug);
   if (!current) return [];
+  const lane = articleLane(current);
+  // Related reading stays inside the article's lane.
   return researchArticles
-    .filter((article) => article.slug !== slug)
+    .filter((article) => article.slug !== slug && articleLane(article) === lane)
     .map((article) => ({
       article,
       score:

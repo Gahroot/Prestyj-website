@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+import { pageMetadata } from "@/components/seo/page-metadata";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -6,14 +8,13 @@ import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
 import { ProofRecords } from "@/components/sections/institutional/proof-records";
 import { Button } from "@/components/ui/button";
-import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Work",
+export const metadata: Metadata = pageMetadata({
+  title: "AI Agent Work for Institutional Real Estate",
   description:
     "Anonymized, honestly staged systems Prestyj has built across fund operations, diligence, governed intelligence, origination, and media production.",
-  alternates: { canonical: `${siteConfig.url}/results` },
-};
+  path: "/results",
+});
 
 export default function ResultsPage() {
   return (

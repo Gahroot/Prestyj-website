@@ -5,6 +5,13 @@ import { bannedCanonicalCopy } from "../../../src/lib/institutional/site-map";
 import { detectSlop } from "../../seo-bot/validation/slop-detector";
 import type { ContentConfig } from "./config";
 import { sourceUrls } from "./factcheck";
+import {
+  SERVICE_LANE_ALLOWED_TERMS,
+  SERVICE_LANE_USE_TERMS,
+  bookDemoServiceHref,
+  proofBoundaryViolations,
+  type Lane,
+} from "./lanes";
 import { readArticle, readRegistry, wordCount } from "./site";
 
 /** Hard-fail vocabulary for institutional content (CLAUDE.md, roadmap.md, site-map bannedCanonicalCopy). */
@@ -99,21 +106,35 @@ export type ContentGateInput = {
   allowed: Set<string>;
   /** For refresh: the article before this run. */
   previous?: { body: string; title: string } | undefined;
+  /** Defaults to real estate. Service lanes swap vocabulary and require the service CTA. */
+  lane?: Lane;
+  service?: string | undefined;
 };
+
+/** Avoid and use vocabulary for a lane. */
+export function laneTerms(lane: Lane): { avoid: readonly string[]; use: readonly string[] } {
+  if (lane === "real-estate") return { avoid: AVOID_TERMS, use: USE_TERMS };
+  return {
+    avoid: AVOID_TERMS.filter((term) => !SERVICE_LANE_ALLOWED_TERMS.includes(term)),
+    use: SERVICE_LANE_USE_TERMS,
+  };
+}
 
 /** Pure, file-read-only gates on the article itself. */
 export function runContentGates(input: ContentGateInput, config: ContentConfig): GateResult[] {
   const { body } = input;
+  const lane = input.lane ?? "real-estate";
+  const terms = laneTerms(lane);
   const full = `${input.title}\n${input.description}\n${body}`;
   const results: GateResult[] = [];
 
-  const avoid = findTerms(full, AVOID_TERMS);
+  const avoid = findTerms(full, terms.avoid);
   const prevAvoid = input.previous
-    ? findTerms(`${input.previous.title}\n${input.previous.body}`, AVOID_TERMS)
+    ? findTerms(`${input.previous.title}\n${input.previous.body}`, terms.avoid)
     : [];
   const newAvoid =
     input.mode === "refresh" ? avoid.filter((term) => !prevAvoid.includes(term)) : avoid;
-  const use = findTerms(full, USE_TERMS);
+  const use = findTerms(full, terms.use);
   results.push({
     name: "positioning",
     passed: newAvoid.length === 0 && use.length >= config.gates.minUseTerms,
@@ -181,7 +202,21 @@ export function runContentGates(input: ContentGateInput, config: ContentConfig):
     .split(/\n\s*\n/)
     .slice(-3)
     .join("\n");
-  if (!/\]\(\/book-demo\)/.test(lastChunk)) sections.push("closing pointer to /book-demo missing");
+  if (lane === "real-estate") {
+    if (!/\]\(\/book-demo\)/.test(lastChunk))
+      sections.push("closing pointer to /book-demo missing");
+  } else {
+    const service = input.service ?? "";
+    if (!service) sections.push(`no service page chosen for the ${lane} lane`);
+    else {
+      if (!lastChunk.includes(`](${bookDemoServiceHref(service)})`))
+        sections.push(`closing pointer to ${bookDemoServiceHref(service)} missing`);
+      if (!new RegExp(`\\]\\(/${service}[#)]`).test(body))
+        sections.push(`no internal link to the service page /${service}`);
+    }
+    for (const line of proofBoundaryViolations(body))
+      sections.push(`unsupported Prestyj client/metric/price/timeline: "${line}"`);
+  }
   for (const match of body.matchAll(/\]\((\/[^\s)]*)\)/g)) {
     const target = (match[1] ?? "").split("#")[0]?.split("?")[0] ?? "";
     if (!input.allowed.has(target))

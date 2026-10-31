@@ -4,6 +4,7 @@ import { ArrowRight, Check } from "lucide-react";
 
 import { EditorialShell } from "@/components/layout/editorial-shell";
 import { EditorialPageHeader } from "@/components/layout/editorial-page-header";
+import { BreadcrumbJsonLd } from "@/components/seo/breadcrumb-json-ld";
 import { SafeJsonLd } from "@/components/seo/safe-json-ld";
 import { ControlledWork } from "@/components/sections/institutional/controlled-work";
 import { ProofRecords } from "@/components/sections/institutional/proof-records";
@@ -52,6 +53,12 @@ export default function PlatformPage() {
           url: `${siteConfig.url}/platform`,
           provider: { "@id": siteConfig.organizationId },
         }}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: siteConfig.url },
+          { name: "Platform", url: `${siteConfig.url}/platform` },
+        ]}
       />
       <EditorialShell>
         <main id="main-content" className="editorial-inner">

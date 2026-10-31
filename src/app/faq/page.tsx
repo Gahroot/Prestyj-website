@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+
+import { pageMetadata } from "@/components/seo/page-metadata";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -13,14 +15,13 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { homepageFaqs } from "@/lib/homepage-faq-data";
-import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Frequently asked questions",
+export const metadata: Metadata = pageMetadata({
+  title: "AI Agents for Real Estate: Frequently Asked Questions",
   description:
     "Answers about Prestyj's institutional real estate AI agents, data boundaries, source evidence, review gates, integrations, deployment, and engagement scope.",
-  alternates: { canonical: `${siteConfig.url}/faq` },
-};
+  path: "/faq",
+});
 
 export default function FAQPage() {
   return (

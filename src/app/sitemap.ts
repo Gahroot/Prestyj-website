@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 
 import { connectorServiceRoutes } from "@/lib/connectors/site-map";
+import { customBuildRoutes } from "@/lib/custom-builds/site-map";
 import { researchArticles } from "@/lib/institutional/research";
 import { indexableStaticRoutes } from "@/lib/institutional/site-map";
 import { siteConfig } from "@/lib/site-config";
@@ -15,7 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       route === "/"
         ? 1
         : route.startsWith("/capabilities/") ||
-            (connectorServiceRoutes as readonly string[]).includes(route)
+            (connectorServiceRoutes as readonly string[]).includes(route) ||
+            customBuildRoutes.includes(route)
           ? 0.9
           : 0.7,
   }));

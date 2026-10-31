@@ -9,7 +9,8 @@ import { Resend } from "resend";
 import { EXCEPTIONS_FILE, exceptionSchema, type GrowthException } from "./contracts";
 
 export const ALERT_TO = process.env.GROWTH_ALERT_EMAIL ?? "nolan@prestyj.com";
-export const ALERT_FROM = process.env.GROWTH_ALERT_FROM ?? "Prestyj Growth Engine <growth@prestyj.com>";
+export const ALERT_FROM =
+  process.env.GROWTH_ALERT_FROM ?? "Prestyj Growth Engine <growth@prestyj.com>";
 
 export async function sendEmail(subject: string, html: string, text: string): Promise<boolean> {
   const key = process.env.RESEND_API_KEY;

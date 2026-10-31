@@ -1,5 +1,7 @@
 import { EditorialFinalCta } from "@/components/sections/institutional/editorial-close";
 import type { Metadata } from "next";
+
+import { pageMetadata } from "@/components/seo/page-metadata";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -9,14 +11,13 @@ import { researchArticles } from "@/lib/institutional/research";
 import { sortNewestFirst } from "@/lib/institutional/article-order";
 import { getArticleDates } from "@/lib/institutional/article-metadata";
 import { blogSource } from "@/lib/source";
-import { siteConfig } from "@/lib/site-config";
 
-export const metadata: Metadata = {
-  title: "Research",
+export const metadata: Metadata = pageMetadata({
+  title: "Institutional Real Estate AI Research",
   description:
     "Field notes on AI agents for real estate fund operations, diligence, investor reporting, portfolio intelligence, and commercial brokerage.",
-  alternates: { canonical: `${siteConfig.url}/research` },
-};
+  path: "/research",
+});
 
 const calculators = [
   ["Commercial brokerage inbound", "/commercial-real-estate-commission-calculator"],

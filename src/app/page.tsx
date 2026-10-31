@@ -11,13 +11,15 @@ import { EditorialProof } from "@/components/sections/institutional/editorial-pr
 import { EditorialClose } from "@/components/sections/institutional/editorial-close";
 import { EditorialConnectorsBand } from "@/components/sections/institutional/editorial-connectors-band";
 import { homepageFaqs } from "@/lib/homepage-faq-data";
-import { positioning } from "@/lib/positioning";
 
 const title = "Prestyj | AI Agents for Institutional Real Estate";
+// Meta description kept under ~160 characters; the full pitch stays in the page body.
+const description =
+  "Prestyj builds and runs AI agents that deliver reviewed deal, fund, investor, portfolio, and origination work for institutional real estate, with sources attached.";
 
 export const metadata: Metadata = {
   title,
-  description: positioning.fullPitch,
+  description,
   keywords: [
     "AI agents for real estate investment funds",
     "AI for commercial real estate",
@@ -30,11 +32,11 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://prestyj.com" },
   openGraph: {
     title,
-    description: positioning.fullPitch,
+    description,
     type: "website",
     url: "https://prestyj.com",
   },
-  twitter: { card: "summary_large_image", title, description: positioning.fullPitch },
+  twitter: { card: "summary_large_image", title, description },
 };
 
 export default function Home(): ReactElement {

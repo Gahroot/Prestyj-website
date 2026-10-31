@@ -10,7 +10,7 @@ export const HISTORY_DIR = "data/growth/history";
 export const CTA_STATS_FILE = "data/growth/cta-stats.json";
 export const BING_AI_IMPORT_DIR = "data/growth/imports/bing-ai";
 
-export type SourceStatus = "ok" | "missing-credentials" | "error";
+export type SourceStatus = "ok" | "missing-credentials" | "error" | "not-used";
 export type SourceResult<T> = { status: SourceStatus; data: T | null; message?: string };
 
 /** Load .env.local / .env from the repo root without overriding real env (Railway). */

@@ -20,6 +20,7 @@ export const navLinks = [
   { href: "/for/investment-funds", label: "Funds" },
   { href: "/for/commercial-brokerages", label: "Brokerages" },
   { href: "/connectors", label: "Connectors" },
+  { href: "/custom-ai-agents", label: "Custom AI" },
   { href: "/results", label: "Work" },
   { href: "/research", label: "Research" },
 ];

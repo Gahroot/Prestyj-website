@@ -4,7 +4,7 @@ import path from "node:path";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import type { PerformanceSnapshot } from "../shared/contracts";
 import type { CtaStats } from "../measure/index";
-import { applyWinners, pickWinner, promoteCtaWinners, twoProportionPValue } from "./cta";
+import { applyWinners, binomialPValue, pickWinner, promoteCtaWinners } from "./cta";
 import { sendWeeklyReport } from "./index";
 import { markdownToHtml, renderMarkdown, type ReportInput } from "./render";
 
@@ -159,13 +159,18 @@ describe("renderMarkdown", () => {
     expect(ns).toBeGreaterThan(0);
     expect(ns).toBeLessThan(md.indexOf("Demos booked"));
     expect(md).toContain("Qualified demos from organic + AI:** 1 · vs a week ago (▲ +1)");
-    expect(md).toMatch(/Organic sessions:\*\* not connected/);
+    expect(md).toContain("Sessions (GA4):** not used (owner decision)");
+    expect(md).toContain("## Target tracker");
+    expect(md).toContain("Weeks left until 2027-01-29:** 14");
+    expect(md).toContain("## Funnel by lane");
+    expect(md).toContain("a proxy (not sessions");
+    expect(md).toContain("## Funnel by landing page");
     expect(md).toMatch(/GSC avg position \(live pages\):\*\* 6\.0 · vs a week ago \(▲ -3\.0\)/);
     expect(md).toContain('▲ "fund ops ai"');
     expect(md).toContain("**Published (1):** /blog/x");
     expect(md).toContain("**Rejected (1):** Y — fact check failed");
     expect(md).toContain("**Refreshed (0):** none");
-    expect(md).toContain("- ga4: not connected");
+    expect(md).toContain("- ga4: not used (owner decision)");
     expect(md.indexOf("new-topic")).toBeLessThan(md.indexOf("refresh-ctr** /platform"));
     expect(md).not.toContain("ev-c");
   });
@@ -210,16 +215,15 @@ describe("sendWeeklyReport", () => {
 });
 
 describe("CTA winners", () => {
-  const stats = (views: [number, number], demos: [number, number]): CtaStats => ({
+  const stats = (demos: [number, number]): CtaStats => ({
     generatedAt: "t",
     window: { start: "a", end: "b" },
-    ga4: [
-      { event: "cta_view", cta: "article-end:post-1", variant: "a", count: views[0] },
-      { event: "cta_view", cta: "article-end:post-2", variant: "b", count: views[1] },
-      { event: "book_demo", cta: "article-end:post-1", variant: "a", count: demos[0] },
-      { event: "cta_view", cta: "page-end", variant: "a", count: 9999 },
+    ga4: null,
+    cal: [
+      { cta: "article-end:post-1", variant: "a", bookings: demos[0] },
+      { cta: "article-end:post-2", variant: "b", bookings: demos[1] },
+      { cta: "page-end", variant: "a", bookings: 999 },
     ],
-    cal: [{ cta: "article-end:post-2", variant: "b", bookings: demos[1] }],
   });
   const file = () => ({
     experiments: [
@@ -249,31 +253,39 @@ describe("CTA winners", () => {
   });
 
   it("p-value sanity", () => {
-    expect(twoProportionPValue(30, 200, 10, 200)).toBeLessThan(0.01);
-    expect(twoProportionPValue(12, 200, 10, 200)).toBeGreaterThan(0.5);
+    expect(binomialPValue(20, 40, 0.5)).toBeCloseTo(1, 6);
+    expect(binomialPValue(30, 40, 0.5)).toBeLessThan(0.01);
+    expect(binomialPValue(12, 22, 0.5)).toBeGreaterThan(0.5);
   });
-  it("requires sample size and significance", () => {
+  it("requires a minimum booking sample and significance; never declares a winner on noise", () => {
     expect(
       pickWinner([
-        { variant: "a", exposures: 99, conversions: 50 },
-        { variant: "b", exposures: 500, conversions: 1 },
+        { variant: "a", weight: 50, bookings: 15 },
+        { variant: "b", weight: 50, bookings: 0 },
+      ]),
+    ).toBeNull(); // under MIN_BOOKINGS even though lopsided
+    expect(
+      pickWinner([
+        { variant: "a", weight: 50, bookings: 12 },
+        { variant: "b", weight: 50, bookings: 10 },
       ]),
     ).toBeNull();
     expect(
       pickWinner([
-        { variant: "a", exposures: 200, conversions: 12 },
-        { variant: "b", exposures: 200, conversions: 10 },
-      ]),
-    ).toBeNull();
-    expect(
-      pickWinner([
-        { variant: "a", exposures: 200, conversions: 30 },
-        { variant: "b", exposures: 200, conversions: 10 },
+        { variant: "a", weight: 50, bookings: 30 },
+        { variant: "b", weight: 50, bookings: 10 },
       ])?.winner,
     ).toBe("a");
+    // 30 vs 10 is exactly the expected split for 75/25 weights: no winner.
+    expect(
+      pickWinner([
+        { variant: "a", weight: 75, bookings: 30 },
+        { variant: "b", weight: 25, bookings: 10 },
+      ]),
+    ).toBeNull();
   });
   it("promotes winner, retires losers, never edits copy", () => {
-    const { next, promoted } = applyWinners(file(), stats([200, 200], [2, 25]));
+    const { next, promoted } = applyWinners(file(), stats([2, 25]));
     expect(promoted).toEqual([{ experiment: "article-end", variant: "b" }]);
     expect(next.experiments[0]?.variants).toEqual([
       { id: "a", headline: "H-a", body: "B-a", buttonLabel: "L", weight: 0, status: "retired" },
@@ -288,10 +300,7 @@ describe("CTA winners", () => {
     const f = path.join(root, "src/lib/conversion/cta-experiments.json");
     writeFileSync(f, JSON.stringify(file()));
     expect(await promoteCtaWinners({ root, dryRun: false })).toEqual({ changedFiles: [] });
-    writeFileSync(
-      path.join(root, "data/growth/cta-stats.json"),
-      JSON.stringify(stats([300, 300], [40, 5])),
-    );
+    writeFileSync(path.join(root, "data/growth/cta-stats.json"), JSON.stringify(stats([40, 5])));
     expect(await promoteCtaWinners({ root, dryRun: true })).toEqual({ changedFiles: [] });
     expect(await promoteCtaWinners({ root, dryRun: false })).toEqual({
       changedFiles: ["src/lib/conversion/cta-experiments.json"],

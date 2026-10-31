@@ -7,7 +7,25 @@ import type {
   PerformanceSnapshot,
 } from "../shared/contracts";
 import type { CtaStats } from "../measure/index";
-import { armStats } from "./cta";
+import { LANE_LABELS, laneForPath, type Lane } from "../../../src/lib/attribution/services";
+import { MIN_BOOKINGS, bookingsByVariant } from "./cta";
+
+/** Goal: 10 qualified organic + AI demos per trailing 28 days by this date. */
+export const TARGET_QUALIFIED_ORGANIC_AI = 10;
+export const TARGET_DATE = "2027-01-29";
+const NOT_USED = "not used (owner decision)";
+const LANES: readonly Lane[] = ["real-estate", "connectors", "custom-builds"];
+
+function weeksLeft(date: string): number {
+  const days =
+    (Date.parse(`${TARGET_DATE}T00:00:00Z`) - Date.parse(`${date}T00:00:00Z`)) / 86_400_000;
+  return Math.max(0, Math.ceil(days / 7));
+}
+
+/** Bookings per GSC click: a proxy, because sessions are not measured (no GA4). */
+function proxyRate(demos: number, clicks: number): string {
+  return clicks > 0 ? `${((demos / clicks) * 100).toFixed(1)}%` : "n/a (0 clicks)";
+}
 
 export type ReportInput = {
   date: string;
@@ -87,17 +105,65 @@ export function renderMarkdown(input: ReportInput): string {
     ),
     "",
   );
+  {
+    const cur = ok(s, "cal") ? s.totals.qualifiedDemosFromOrganicOrAi : null;
+    out.push(
+      "## Target tracker",
+      cur === null
+        ? `- **Qualified organic + AI demos, trailing 28 days:** ${NC} (target ${TARGET_QUALIFIED_ORGANIC_AI})`
+        : `- **Qualified organic + AI demos, trailing 28 days:** ${cur} of ${TARGET_QUALIFIED_ORGANIC_AI} (${cur >= TARGET_QUALIFIED_ORGANIC_AI ? "on target" : `${TARGET_QUALIFIED_ORGANIC_AI - cur} short`})`,
+      `- **Weeks left until ${TARGET_DATE}:** ${weeksLeft(input.date)}`,
+      "",
+    );
+  }
   out.push(
     "## Pipeline and traffic",
     line("Demos booked", input, "cal", (x) => x.totals.demosBooked),
     line("Qualified demos (all channels)", input, "cal", (x) => x.totals.qualifiedDemos),
-    line("Organic sessions", input, "ga4", (x) => x.totals.organicSessions),
-    line("AI referral sessions", input, "ga4", (x) => x.totals.aiReferralSessions),
+    `- **Sessions (GA4):** ${NOT_USED}; booking rates below use GSC clicks as a proxy`,
     line("GSC clicks (live pages)", input, "gsc", (x) => gscTotals(x).clicks),
     line("GSC impressions (live pages)", input, "gsc", (x) => gscTotals(x).impressions),
     line("GSC avg position (live pages)", input, "gsc", (x) => gscTotals(x).position, 1, true),
     "",
   );
+
+  out.push(
+    "## Funnel by lane",
+    "GSC impressions → GSC clicks → booked demos → qualified demos. Booking rate = bookings ÷ GSC clicks, a proxy (not sessions: Bing, AI, direct and repeat visits also book). Pages are assigned to lanes by route; bookings by pj_service, else by first-touch landing page.",
+  );
+  for (const lane of LANES) {
+    const pages = s.pages.filter((p) => laneForPath(p.path) === lane);
+    const imp = pages.reduce((n, p) => n + p.gscImpressions, 0);
+    const clk = pages.reduce((n, p) => n + p.gscClicks, 0);
+    const gscPart = ok(s, "gsc") ? `${fmt(imp)} impr → ${fmt(clk)} clicks` : `GSC ${NC}`;
+    const l = s.lanes?.find((x) => x.lane === lane);
+    const calPart = !ok(s, "cal")
+      ? `bookings ${NC}`
+      : l
+        ? `${l.demosBooked} booked → ${l.qualifiedDemos} qualified (${l.qualifiedDemosFromOrganicOrAi} organic/AI) · booking rate (proxy) ${ok(s, "gsc") ? proxyRate(l.demosBooked, clk) : NC}`
+        : "bookings: no lane data in this snapshot";
+    out.push(`- **${LANE_LABELS[lane]}:** ${gscPart} → ${calPart}`);
+  }
+  out.push("", "## Funnel by landing page (top 10)");
+  {
+    const rows = s.pages
+      .filter((p) => p.gscImpressions > 0 || p.demosBooked > 0)
+      .sort(
+        (a, b) =>
+          b.qualifiedDemos - a.qualifiedDemos ||
+          b.demosBooked - a.demosBooked ||
+          b.gscClicks - a.gscClicks ||
+          b.gscImpressions - a.gscImpressions ||
+          a.path.localeCompare(b.path),
+      )
+      .slice(0, 10);
+    if (!rows.length) out.push("- no impressions or bookings on any live page this window");
+    for (const p of rows)
+      out.push(
+        `- ${p.path} [${LANE_LABELS[laneForPath(p.path)]}]: ${ok(s, "gsc") ? `${p.gscImpressions} impr → ${p.gscClicks} clicks` : `GSC ${NC}`} → ${ok(s, "cal") ? `${p.demosBooked} booked → ${p.qualifiedDemos} qualified · booking rate (proxy) ${proxyRate(p.demosBooked, p.gscClicks)}` : `bookings ${NC}`}`,
+      );
+  }
+  out.push("");
 
   out.push("## Ranking movers (GSC, vs a week ago)");
   if (!ok(s, "gsc") || !input.weekAgo || !ok(input.weekAgo, "gsc"))
@@ -144,16 +210,23 @@ export function renderMarkdown(input: ReportInput): string {
 
   out.push("## CTA experiments");
   if (!input.experiments) out.push("- no experiments file yet");
-  else if (!input.ctaStats?.ga4) out.push(`- exposures ${NC} (needs GA4)`);
-  else
+  else if (!input.ctaStats?.cal) out.push(`- Cal.com bookings ${NC}; no promotion possible`);
+  else {
+    out.push(
+      `- Exposures ${NOT_USED}. Winners are promoted only from Cal.com bookings per variant: ≥${MIN_BOOKINGS} attributed bookings and a significant split vs variant weights (p < 0.05). Until then promotion stays paused.`,
+    );
     for (const exp of input.experiments) {
-      const arms = armStats(exp.id, input.ctaStats);
-      const desc = exp.variants.map((v) => {
-        const a = arms.get(v.id);
-        return `${v.id} [${v.status}] ${a ? `${a.conversions}/${a.exposures}` : "0/0"}`;
-      });
-      out.push(`- ${exp.id}: ${desc.join(" · ")} (demos/views)`);
+      const booked = bookingsByVariant(exp.id, input.ctaStats);
+      const total = [...booked.values()].reduce((n, x) => n + x, 0);
+      const desc = exp.variants.map((v) => `${v.id} [${v.status}] ${booked.get(v.id) ?? 0}`);
+      const state = exp.variants.some((v) => v.status === "winner")
+        ? "winner set"
+        : total < MIN_BOOKINGS
+          ? `paused: ${total}/${MIN_BOOKINGS} bookings`
+          : "no significant difference yet";
+      out.push(`- ${exp.id}: ${desc.join(" · ")} bookings — ${state}`);
     }
+  }
   out.push("");
 
   const since = Date.parse(`${input.date}T00:00:00Z`) - 7 * 86_400_000;
@@ -172,9 +245,11 @@ export function renderMarkdown(input: ReportInput): string {
   }
   out.push("");
 
-  out.push(`## Open exceptions (${input.exceptions.length})`);
+  // GA4 is not used by owner decision; old "missing GA4" warnings are not actionable.
+  const openExc = input.exceptions.filter((e) => e.component !== "measure.ga4");
+  out.push(`## Open exceptions (${openExc.length})`);
   const sev = { critical: 0, warning: 1, info: 2 } as const;
-  const exc = [...input.exceptions].sort(
+  const exc = [...openExc].sort(
     (a, b) => sev[a.severity] - sev[b.severity] || b.raisedAt.localeCompare(a.raisedAt),
   );
   const seen = new Set<string>();
@@ -189,8 +264,11 @@ export function renderMarkdown(input: ReportInput): string {
   out.push("");
 
   out.push("## Data sources");
-  for (const [k, v] of Object.entries(s.sources).sort())
-    out.push(`- ${k}: ${v === "ok" ? "ok" : v === "missing-credentials" ? NC : "error"}`);
+  const sources: Record<string, string> = { ...s.sources, ga4: "not-used" };
+  for (const [k, v] of Object.entries(sources).sort())
+    out.push(
+      `- ${k}: ${v === "ok" ? "ok" : v === "missing-credentials" ? NC : v === "not-used" ? NOT_USED : "error"}`,
+    );
   out.push("");
 
   out.push("## Next actions");

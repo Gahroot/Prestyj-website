@@ -2,6 +2,7 @@ import { positioning } from "../../../src/lib/positioning";
 import { capabilities } from "../../../src/lib/institutional/capabilities";
 import { z } from "zod";
 import type { ContentConfig } from "./config";
+import { laneProofText, type Lane } from "./lanes";
 import { extractJson, type MeteredLlm } from "./llm";
 
 export type Fetcher = (url: string, signal: AbortSignal) => Promise<{ ok: boolean; text: string }>;
@@ -97,7 +98,9 @@ export type FactCheckResult = {
  * describe what Prestyj offers and how it works may be supported by this text; it
  * never supports customers, results, metrics, prices or timelines.
  */
-export function firstPartyServiceText(): string {
+export function firstPartyServiceText(lane: Lane = "real-estate", root = process.cwd()): string {
+  if (lane !== "real-estate")
+    return `Prestyj builds, hosts and maintains custom Claude connectors, custom MCP servers, custom ChatGPT plugins and custom AI agents for businesses in any industry. Engagements are scoped per workflow, source systems, volume and control requirements. Prestyj offers a scoping call at /book-demo.\n${laneProofText(root)}\nThis first-party text never supports a Prestyj client name, customer count, result, metric, price or timeline.`;
   const caps = capabilities
     .map(
       (c) =>
@@ -107,7 +110,7 @@ export function firstPartyServiceText(): string {
   return `${positioning.fullPitch}\nAudience: ${positioning.audience}\nCore offer: ${positioning.coreOffer} ${positioning.pricingRange}\nPrestyj offers a workflow demo at /book-demo for any of these workflows.\n${caps}`;
 }
 
-const FACTCHECK_SYSTEM = `You are an exacting fact-checker for an institutional real estate publisher. You did not write the article. Your job is to find every checkable factual claim (statistics, dates, named regulations, standards, laws, named products or organisations and what they do, and any statement about Prestyj's customers, results, prices or timelines) and judge it ONLY against the fetched source text provided. Opinion, advice and clearly labelled illustrative/synthetic examples are not claims. Only list claims that appear in the ARTICLE, with "quote" copied verbatim from it; never list statements about the sources themselves or about your checking. A claim is supported only if a provided source states it; general knowledge does not count. The source labelled PRESTYJ FIRST-PARTY may support statements about what Prestyj offers and how its service works (its own approved description), but never a Prestyj customer, result, metric, price or timeline. Any statement presenting a Prestyj customer, result, metric, price or timeline as real is unsupported and core.`;
+const FACTCHECK_SYSTEM = `You are an exacting fact-checker for a B2B publisher (institutional real estate, AI connectors and custom AI agents). You did not write the article. Your job is to find every checkable factual claim (statistics, dates, named regulations, standards, laws, named products or organisations and what they do, and any statement about Prestyj's customers, results, prices or timelines) and judge it ONLY against the fetched source text provided. Opinion, advice and clearly labelled illustrative/synthetic examples are not claims. Only list claims that appear in the ARTICLE, with "quote" copied verbatim from it; never list statements about the sources themselves or about your checking. A claim is supported only if a provided source states it; general knowledge does not count. The source labelled PRESTYJ FIRST-PARTY may support statements about what Prestyj offers and how its service works (its own approved description), but never a Prestyj customer, result, metric, price or timeline. Any statement presenting a Prestyj customer, result, metric, price or timeline as real is unsupported and core.`;
 
 const STOP = new Set(
   "the and for that with this from are was were has have had not but its their they them which when what where who how into than then also such these those can may will should would could must each any all more most other some our your about over under between within without after before".split(
@@ -176,7 +179,14 @@ export function locateQuote(body: string, quote: string): string | null {
 
 export async function factCheck(
   body: string,
-  ctx: { llm: MeteredLlm; config: ContentConfig; fetcher: Fetcher; topic: string },
+  ctx: {
+    llm: MeteredLlm;
+    config: ContentConfig;
+    fetcher: Fetcher;
+    topic: string;
+    lane?: Lane;
+    root?: string;
+  },
 ): Promise<FactCheckResult> {
   const reasons: string[] = [];
   const urls = sourceUrls(body);
@@ -227,7 +237,7 @@ FETCHED SOURCES:
 ${fetched.map((page, i) => `[${i + 1}] ${page.url}\n${page.text}`).join("\n\n")}
 
 [PRESTYJ FIRST-PARTY] approved service description
-${firstPartyServiceText()}
+${firstPartyServiceText(ctx.lane, ctx.root)}
 
 Return ONLY JSON: {"claims": [{"claim": "the claim", "quote": "exact sentence from the article containing it, copied verbatim", "core": true if the article's main answer depends on it, "supported": true/false, "sourceUrl": "url that supports it or null", "replacement": "a rewritten sentence that is supported or claim-free (keeps meaning where possible), or null to delete the sentence; null if supported"}]}`;
   const result = await ctx.llm.complete({

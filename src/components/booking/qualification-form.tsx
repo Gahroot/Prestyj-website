@@ -6,7 +6,12 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { trackEvent } from "@/lib/meta-pixel";
-import { AUM_BANDS, FIRM_TYPES } from "@/lib/attribution/qualification";
+import {
+  AUM_BANDS,
+  COMPANY_SIZES,
+  FIRM_TYPES,
+  type FirmType,
+} from "@/lib/attribution/qualification";
 import { capabilities } from "@/lib/institutional/capabilities";
 import {
   qualificationFormSchema,
@@ -15,12 +20,23 @@ import {
 
 export type QualificationData = QualificationFormData;
 
-type FieldName = "firstName" | "email" | "firmType" | "aumBand" | "workflow";
-const FIELD_ORDER: readonly FieldName[] = ["firstName", "email", "firmType", "aumBand", "workflow"];
+type FieldName = "firstName" | "email" | "firmType" | "aumBand" | "companySize" | "workflow";
+const FIELD_ORDER: readonly FieldName[] = [
+  "firstName",
+  "email",
+  "firmType",
+  "aumBand",
+  "companySize",
+  "workflow",
+];
 
 interface QualificationFormProps {
   onComplete: (data: QualificationData) => void;
   initialWorkflow?: string;
+  /** Preselected firm type, e.g. "other" for connector and custom-build services. */
+  initialFirmType?: FirmType | "";
+  /** Real estate workflow picker; hidden on the connector and custom-build paths. */
+  showWorkflow?: boolean;
 }
 
 const inputClass =
@@ -31,20 +47,25 @@ type Draft = {
   email: string;
   firmType: string;
   aumBand: string;
+  companySize: string;
   workflow: string;
 };
 
 export function QualificationForm({
   onComplete,
   initialWorkflow = "",
+  initialFirmType = "",
+  showWorkflow = true,
 }: QualificationFormProps): ReactElement {
   const formRef = useRef<HTMLFormElement>(null);
   const [draft, setDraft] = useState<Draft>({
     firstName: "",
     email: "",
-    firmType: "",
+    firmType: initialFirmType,
     aumBand: "",
-    workflow: capabilities.some((c) => c.slug === initialWorkflow) ? initialWorkflow : "",
+    companySize: "",
+    workflow:
+      showWorkflow && capabilities.some((c) => c.slug === initialWorkflow) ? initialWorkflow : "",
   });
   const [errors, setErrors] = useState<Partial<Record<FieldName, string>>>({});
 
@@ -62,6 +83,7 @@ export function QualificationForm({
     const result = qualificationFormSchema.safeParse({
       ...draft,
       aumBand: draft.firmType === "fund" && draft.aumBand ? draft.aumBand : undefined,
+      companySize: draft.firmType === "other" && draft.companySize ? draft.companySize : undefined,
     });
     if (!result.success) {
       const next: Partial<Record<FieldName, string>> = {};
@@ -187,26 +209,55 @@ export function QualificationForm({
             {errorText("aumBand")}
           </div>
         ) : null}
-        <div>
-          <label htmlFor="workflow" className="mb-1.5 block text-sm font-medium">
-            Workflow to discuss{" "}
-            <span className="text-muted-foreground font-normal">(optional)</span>
-          </label>
-          <select
-            id="workflow"
-            name="workflow"
-            value={draft.workflow}
-            onChange={(event) => update("workflow", event.target.value)}
-            className={cn(inputClass, "border-input")}
-          >
-            <option value="">Not sure yet</option>
-            {capabilities.map((capability) => (
-              <option key={capability.slug} value={capability.slug}>
-                {capability.navLabel}
+        {draft.firmType === "other" ? (
+          <div>
+            <label htmlFor="companySize" className="mb-1.5 block text-sm font-medium">
+              Company size
+            </label>
+            <select
+              id="companySize"
+              name="companySize"
+              required
+              value={draft.companySize}
+              aria-invalid={Boolean(errors.companySize)}
+              aria-describedby={describedBy("companySize")}
+              onChange={(event) => update("companySize", event.target.value)}
+              className={cn(inputClass, borderFor("companySize"))}
+            >
+              <option value="" disabled>
+                Select one
               </option>
-            ))}
-          </select>
-        </div>
+              {COMPANY_SIZES.map((size) => (
+                <option key={size.value} value={size.value}>
+                  {size.label}
+                </option>
+              ))}
+            </select>
+            {errorText("companySize")}
+          </div>
+        ) : null}
+        {showWorkflow ? (
+          <div>
+            <label htmlFor="workflow" className="mb-1.5 block text-sm font-medium">
+              Workflow to discuss{" "}
+              <span className="text-muted-foreground font-normal">(optional)</span>
+            </label>
+            <select
+              id="workflow"
+              name="workflow"
+              value={draft.workflow}
+              onChange={(event) => update("workflow", event.target.value)}
+              className={cn(inputClass, "border-input")}
+            >
+              <option value="">Not sure yet</option>
+              {capabilities.map((capability) => (
+                <option key={capability.slug} value={capability.slug}>
+                  {capability.navLabel}
+                </option>
+              ))}
+            </select>
+          </div>
+        ) : null}
       </div>
       <div className="mt-6">
         <Button type="submit" size="lg" className="w-full">

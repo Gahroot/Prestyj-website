@@ -1,6 +1,6 @@
 import z from "zod";
 
-import { AUM_BANDS, FIRM_TYPES } from "@/lib/attribution/qualification";
+import { AUM_BANDS, COMPANY_SIZES, FIRM_TYPES } from "@/lib/attribution/qualification";
 import { capabilities } from "@/lib/institutional/capabilities";
 
 const firmTypeValues = FIRM_TYPES.map((type) => type.value) as [
@@ -12,9 +12,14 @@ const aumBandValues = AUM_BANDS.map((band) => band.value) as [
   ...(typeof AUM_BANDS)[number]["value"][],
 ];
 
+const companySizeValues = COMPANY_SIZES.map((size) => size.value) as [
+  (typeof COMPANY_SIZES)[number]["value"],
+  ...(typeof COMPANY_SIZES)[number]["value"][],
+];
+
 /**
  * Booking qualification form: only what is needed to qualify and route the request.
- * AUM band is required for funds only.
+ * AUM band is required for funds only; company size for other businesses only.
  */
 export const qualificationFormSchema = z
   .object({
@@ -29,11 +34,16 @@ export const qualificationFormSchema = z
       }),
     firmType: z.enum(firmTypeValues, { message: "Choose your firm type" }),
     aumBand: z.enum(aumBandValues).optional(),
+    companySize: z.enum(companySizeValues).optional(),
     workflow: z.string().refine((val) => val === "" || capabilities.some((c) => c.slug === val)),
   })
   .refine((data) => data.firmType !== "fund" || Boolean(data.aumBand), {
     message: "Choose assets under management",
     path: ["aumBand"],
+  })
+  .refine((data) => data.firmType !== "other" || Boolean(data.companySize), {
+    message: "Choose company size",
+    path: ["companySize"],
   });
 
 export type QualificationFormData = z.infer<typeof qualificationFormSchema>;
