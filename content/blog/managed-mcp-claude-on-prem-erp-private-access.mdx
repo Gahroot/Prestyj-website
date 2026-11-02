@@ -1,0 +1,197 @@
+---
+title: "Managed MCP for Claude: Keep Your On-Prem ERP Private"
+description: "Connect Claude to an on-prem ERP through managed MCP. Compare public ingress, private ERP access, firewall ownership, and service responsibilities."
+date: "2026-11-02"
+author: "Nolan Grout"
+keywords:
+  - "managed MCP server"
+  - "Claude on-prem ERP integration"
+  - "private ERP connectivity"
+  - "MCP firewall requirements"
+  - "managed MCP responsibilities"
+---
+
+Yes: evaluate a cloud-reachable MCP gateway with a restricted, outbound-established relay to your private ERP. Claude’s remote connector requires its MCP endpoint to be publicly reachable from Anthropic’s cloud. Treat ERP network exposure and permission to return ERP data as separate approval decisions.
+
+## What actually needs to be reachable from the public internet?
+
+For remote custom connectors, Anthropic says the connection starts in its cloud, including when someone uses Claude Desktop. The MCP endpoint must accept connections from Anthropic’s IP ranges; access through an employee’s corporate VPN does not satisfy that requirement.
+
+Separate your review into distinct boundaries:
+
+- **Claude-facing ingress:** Approve the endpoint Claude connects to, its authentication, and its permitted callers.
+- **Private ERP connection:** Approve the path between the integration component and the ERP.
+- **Returned information:** Approve the records and fields allowed to reach the hosted service and Claude.
+- **Operator access:** Approve how administrators deploy, troubleshoot, and revoke the integration.
+
+Do not approve a diagram labelled only “Claude → MCP → ERP.” Require it to show where each component runs, who initiates each connection, and where authentication happens.
+
+Define “ERP stays private” in the acceptance criteria: no public ERP listener, no public forwarding rule to the ERP, and no unrestricted proxy into the internal network. Separately approve the narrow operations available through MCP.
+
+If your requirement also prohibits selected ERP information from leaving the premises, make that explicit before choosing the architecture. Do not treat a private ERP address as approval for data transfer.
+
+## How should you compare the connection architectures?
+
+Microsoft documents a relay pattern in which an on-premises service initiates an outbound connection, then exchanges traffic through that connection. Its description does not require an inbound firewall port for the on-premises service.
+
+Arcade’s architecture also distinguishes client-facing gateways from internal execution components: its Engine accepts MCP client calls, while its documented internal MCP servers and data stores do not accept connections from outside the cluster. That is a component boundary, not evidence that a particular ERP integration is ready.
+
+The answer above is an **architectural inference** from Claude’s reachability requirement and the documented relay pattern—not confirmation of compatibility with your ERP.
+
+Use the following **illustrative architecture options (synthetic; not Prestyj deployment claims)** to structure a proposal review:
+
+| Proposed layout | Ask the builder to demonstrate | Choose it only if |
+| --- | --- | --- |
+| Hosted MCP gateway with an outbound on-premises relay | Show the internal component establishing the relay and querying only the approved ERP interface | Your network team approves the relay destination and can revoke it |
+| Hosted MCP server with a private network connection to your environment | Show routes, ERP-specific firewall rules, identity controls, and isolation from unrelated systems | You approve the private connection and its operational ownership |
+| MCP application inside your environment, behind a controlled public ingress | Show where public traffic terminates and how requests are restricted before reaching the ERP adapter | You accept hosting the integration environment and operating its ingress |
+
+Do not select a layout solely because its diagram contains “private,” “VPN,” or “outbound.” Require a connection inventory and a working test of the selected transport.
+
+For a build brief, use [custom MCP servers](/custom-mcp-servers) as the service scope, then specify the hosting boundary separately from the tool scope.
+
+## What firewall changes and responsibilities should you approve?
+
+Require a firewall worksheet before implementation. For every connection, record:
+
+- Initiating component and deployment location.
+- Destination hostname, address range, protocol, and port.
+- Business purpose and permitted operations.
+- Transport authentication and application authentication.
+- Rule owner, change approver, and revocation procedure.
+- Expected behavior when the connection is blocked.
+
+For a relay design, check that the internal component can reach only the approved ERP interface. Ask the builder to demonstrate that the hosted gateway cannot use it to select arbitrary internal destinations.
+
+Do not interpret “no inbound ERP rule” as “nothing for IT to approve.” Review outbound rules, internal segmentation, DNS, proxy requirements, and the host running the adapter.
+
+Use this recommended responsibility split as a starting point—not as a description of any managed-service agreement:
+
+| Responsibility | Recommended accountable owner |
+| --- | --- |
+| Approving corporate firewall and routing changes | Your network or security owner |
+| Defining ERP accounts, roles, and accessible records | Your ERP owner |
+| Operating the hosted MCP endpoint and its application releases | The contracted service operator |
+| Maintaining the on-premises adapter runtime | A named party in the agreement |
+| Approving fields returned to Claude | Your data owner |
+| Coordinating incidents across these boundaries | A named incident lead |
+
+Resolve the adapter row explicitly. Decide who patches its host, rotates its credentials, monitors its health, and responds when it loses ERP connectivity.
+
+Require the service agreement to distinguish application maintenance from corporate network administration. Do not leave either responsibility assigned to “the integration team” without a named owner.
+
+## How should permissions work across the MCP and ERP boundaries?
+
+The MCP authorization specification requires a server to validate that incoming tokens were issued for that server. It also prohibits passing the incoming MCP client token through to an upstream API; an upstream OAuth token is separate.
+
+Apply that separation to the design review:
+
+- Ask how the authenticated Claude user maps to permitted ERP operations.
+- Prefer delegated ERP access where the ERP supports the required delegation.
+- If a service account is proposed, require explicit user-to-record authorization before returning information.
+- Require the private adapter to verify the authorized operation rather than trusting arbitrary request text.
+- Reject caller-controlled destination hosts, database connections, tenant identities, or permission overrides.
+- Approve read tools separately from write tools.
+
+Start with a narrow, read-only tool set. Require purpose-specific inputs, bounded results, and explicit errors for denied access.
+
+Do not accept an application-level “read-only” promise without checking the ERP credential’s permissions. Ask the ERP administrator to verify the effective access independently.
+
+Review response content as carefully as request authorization. Specify allowed fields, redaction rules, evidence references, and whether tool inputs or results may appear in operational logs.
+
+For the identity review, use the [OAuth for MCP servers checklist](/connectors/oauth-for-mcp-servers). Keep that review separate from proof that the private network path works.
+
+## What should the managed service demonstrate before approval?
+
+Make acceptance depend on observable tests, not a successful conversation alone.
+
+**Network boundary**
+
+- Verify that no public ERP listener or forwarding rule has been introduced.
+- Block the approved private connection and require tool execution to fail closed.
+- Attempt an unapproved internal destination and require rejection.
+- Confirm that shutdown does not require opening emergency public ERP access.
+
+**Identity and authorization**
+
+- Test expired, invalid, and revoked credentials.
+- Test a valid user requesting a prohibited ERP record.
+- Verify that a permission failure does not trigger a broader credential or alternate data source.
+- Inspect the authorization decision at the component that executes the ERP operation.
+
+**Operations and handoff**
+
+- Exercise credential rotation and adapter restart.
+- Reconcile a tool request with its authorization decision and ERP operation.
+- Review logs for secrets and disallowed business fields.
+- Rehearse rollback, escalation, and operator-access revocation.
+
+For every test, name the expected outcome, evidence location, reviewer, and failure owner. Use synthetic records where possible; authorize any production-data test separately.
+
+Require the handoff pack to include the deployment diagram, tool inventory, credential inventory, firewall worksheet, monitoring responsibilities, and shutdown procedure. Use the broader [MCP server security checklist](/connectors/mcp-server-security-checklist) to organize the remaining review.
+
+Do not approve a read-only pilot as approval for later write access. Require a separate decision covering confirmation, duplicate requests, transaction failures, and recovery.
+
+## Illustrative example (synthetic)
+
+**Illustrative (fixture): the organization, workflow, tool names, and behavior below are synthetic. This is not a Prestyj customer deployment.**
+
+Suppose an operations team wants Claude to retrieve purchase-order delivery status without exposing its on-premises ERP.
+
+For this synthetic design, propose a hosted MCP gateway and an adapter inside the corporate network. Have the adapter establish an approved outbound relay connection. Restrict its ERP credential to the approved delivery-status interface.
+
+Define a synthetic tool named `get_delivery_status`. Accept a purchase-order reference, but do not accept an internal hostname, SQL statement, or replacement credential.
+
+Require the synthetic execution path to:
+
+- Authenticate the caller at the gateway.
+- Check access to the requested purchase order.
+- Send a bounded, authenticated operation to the adapter.
+- Query the approved ERP interface.
+- Return only approved status fields and an evidence reference.
+
+For this synthetic fixture, reject requests outside the caller’s business unit. Return an unavailable status when the relay disconnects rather than substituting an unapproved cached answer.
+
+Approve the fixture only after the network reviewer confirms the ERP has no public ingress and the ERP reviewer confirms the credential’s restricted access. Do not infer production readiness from this illustration.
+
+## Frequently asked questions
+
+### Can employees’ VPN connections make the remote connector work?
+
+Not by themselves. Anthropic says remote custom-connector traffic originates in its cloud, not the employee’s device. A local MCP server configured in Claude Desktop is a separate mechanism that uses the local network.
+
+If public MCP ingress is prohibited, evaluate that separate client architecture rather than assuming a remote connector will follow the employee’s VPN.
+
+### Does an outbound relay mean requests cannot travel back into the network?
+
+No. Microsoft’s documented relay establishes bidirectional communication through the outbound-initiated connection. Require authentication, narrow operation definitions, and ERP-side permissions on that path.
+
+### Can we prohibit database access and permit only ERP APIs?
+
+Make that a build requirement. Require the tool implementation, adapter permissions, and network rules to enforce the approved interface. Ask the ERP owner to validate supported operations before approving the scope.
+
+### Does “managed” mean the provider owns our firewall changes?
+
+Do not assume that allocation. Assign firewall approval, adapter maintenance, credential ownership, monitoring, and incident coordination explicitly. Require the agreement to identify dependencies on your staff and approval processes.
+
+## Review and limitations
+
+Before approval, assign reviews as follows:
+
+- **Network/security reviewer:** ingress, outbound paths, segmentation, authentication, and shutdown.
+- **ERP administrator:** supported interfaces, effective permissions, and operational impact.
+- **Data owner:** permitted records, returned fields, logs, and retention.
+- **Service operator:** deployment, monitoring, patching, recovery, and escalation.
+
+This article provides an architecture-review framework, not validation of a particular ERP, relay implementation, or deployment. It does not establish regulatory compliance, assess vendor-specific licensing, or approve write operations.
+
+Verify the selected Claude client, ERP interface, network environment, and contractual responsibilities during scoping.
+
+## Sources
+
+- https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp — Supports Anthropic-cloud connection origin, public reachability from Anthropic IP ranges, the VPN limitation, and the distinction from local Claude Desktop MCP servers.
+- https://learn.microsoft.com/en-us/azure/azure-relay/relay-what-is-it — Supports outbound-initiated relay connections, bidirectional communication, and operation without inbound firewall ports for the on-premises service.
+- https://docs.arcade.dev/en/operate/deploy/architecture — Supports the distinction between client-facing Engine ingress and internal MCP execution components and data stores in Arcade’s documented topology.
+- https://github.com/modelcontextprotocol/modelcontextprotocol/blob/main/docs/specification/2025-11-25/basic/authorization.mdx — Supports intended-audience token validation, separate upstream OAuth tokens, and the prohibition on passing incoming MCP client tokens upstream.
+
+Bring your ERP interface documentation, network restrictions, and initial read-only workflow to [book a scoping call](/book-demo?service=custom-mcp-servers). Use the call to define the public MCP boundary, private ERP connection, and operating responsibilities before approving a build.

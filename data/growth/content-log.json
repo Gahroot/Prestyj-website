@@ -336,5 +336,20 @@
     ],
     "sourcesChecked": 0,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-02T12:02:52.804Z",
+    "action": "publish",
+    "slug": "managed-mcp-claude-on-prem-erp-private-access",
+    "path": "/blog/managed-mcp-claude-on-prem-erp-private-access",
+    "title": "Managed MCP for Claude: Keep Your On-Prem ERP Private",
+    "opportunityId": "research-connectors-98a967e1c9",
+    "reasons": [
+      "New buyer-focused architecture guide separating Claude-facing MCP ingress from private ERP connectivity, with firewall ownership and managed-service acceptance checks.",
+      "fact-check: 14 claims, 0 fixed/removed",
+      "files: content/blog/managed-mcp-claude-on-prem-erp-private-access.mdx, src/lib/institutional/research.ts"
+    ],
+    "sourcesChecked": 4,
+    "costUsd": 0
   }
 ]

@@ -148,6 +148,17 @@ export const researchArticles: readonly ResearchArticle[] = [
     description:
       "An owner-side framework for comparing proposal economics, capital requirements and business-plan exceptions before authorizing a lease.",
   },
+  {
+    slug: "managed-mcp-claude-on-prem-erp-private-access",
+    lane: "connectors",
+    service: "custom-mcp-servers",
+    capabilities: [],
+    topics: ["integration", "review-controls", "access-boundaries"],
+    category: "AI connectors",
+    title: "Public MCP endpoint, private ERP",
+    description:
+      "Evaluate how Claude can reach a managed MCP endpoint while your ERP stays private, with explicit network boundaries and operating responsibilities.",
+  },
 ] as const;
 
 export function articleLane(article: Pick<ResearchArticle, "lane">): ArticleLane {
