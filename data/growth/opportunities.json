@@ -306,8 +306,8 @@
     "queries": [
       "ai real estate appointments"
     ],
-    "evidence": "~23 weighted impressions/citations (gsc); best live page position none",
-    "score": 2.875,
+    "evidence": "~22 weighted impressions/citations (gsc); best live page position none",
+    "score": 2.75,
     "createdAt": "2026-10-30T12:01:38.626Z",
     "status": "open"
   },
@@ -321,7 +321,7 @@
     "evidence": "LLM web research (owner-operator): Search surfaced Sophia CRE's lender-reporting automation claims, DealLink's loan-document abstraction, and Crisil's covenant-monitoring case study for a private-credit fund. These establish competition, but the reviewed content does not walk a borrower through producing lender-specific certificates across a property portfolio, including adjusted NOI calculations, reporting calendars, and amendment or waiver treatment. Opportunity: a worked borrower-side reporting package, rather than another covenant-extraction overview. URLs: https://sophiacre.ai/ ; https://www.deallink.ai/ ; https://integraliq.crisil.com/en/homepage/what-we-think/all-our-thinking/case-studies/2026/03/covenant-monitoring-for-existing-loan-agreements.html . ([sophiacre.ai](https://sophiacre.ai/?utm_source=openai))",
     "score": 58,
     "createdAt": "2026-11-02T12:02:52.804Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-95216c55e5",

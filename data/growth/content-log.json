@@ -351,5 +351,20 @@
     ],
     "sourcesChecked": 4,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-03T12:03:38.251Z",
+    "action": "reject",
+    "slug": "ai-cre-lender-compliance-certificates-dscr",
+    "path": null,
+    "title": "Can AI Prepare CRE Lender Compliance Certificates?",
+    "opportunityId": "research-5425ae1768",
+    "reasons": [
+      "12 claims, 2 unsupported, 5 sources fetched",
+      "core claim unsupported: The cited Exhibit B’s expense provisions include accrual treatment for property taxes and a minimum management-fee calculation.",
+      "claim unsupported: The cited reporting agreement requires a budget before fiscal-year end."
+    ],
+    "sourcesChecked": 5,
+    "costUsd": 0
   }
 ]
