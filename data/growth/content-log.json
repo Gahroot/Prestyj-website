@@ -366,5 +366,19 @@
     ],
     "sourcesChecked": 5,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-04T12:04:27.215Z",
+    "action": "reject",
+    "slug": "ai-real-estate-fund-lender-reporting-packages",
+    "path": null,
+    "title": "Can AI Prepare Real Estate Fund Lender Reporting Packages?",
+    "opportunityId": "research-4aaf951c89",
+    "reasons": [
+      "9 claims, 1 unsupported, 4 sources fetched",
+      "core claim unsupported: The SEC-filed 2017 hotel loan agreement defines debt-service coverage using specified income adjustments, annualization of certain expenses, and prescribed treatment of management fees, franchise fees and replacement reserves."
+    ],
+    "sourcesChecked": 4,
+    "costUsd": 0
   }
 ]
