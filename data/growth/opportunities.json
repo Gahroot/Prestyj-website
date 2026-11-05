@@ -801,7 +801,7 @@
     "evidence": "LLM web research (owner-operator): Concatenate already explains cited capital-project variances, reforecasts and cost to complete. ARGUS Assist supports conversational changes to capex assumptions. The narrower gap is upstream commitment intelligence: reading executed contracts, pending versus approved change orders and invoices to produce a forward cash requirement and forecast-to-complete before accounting actuals arrive. The surfaced pages do not demonstrate that document-to-forecast chain. URLs: https://www.concatenateinc.com/capital-projects ; https://www.altusgroup.com/product-releases/maintain-your-market-leasing-assumptions-with-argus-assist/ . ([concatenateinc.com](https://www.concatenateinc.com/capital-projects?utm_source=openai))",
     "score": 58,
     "createdAt": "2026-11-04T12:04:27.215Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-ec3a2b87d3",
@@ -1089,6 +1089,22 @@
     "evidence": "LLM web research (custom-builds, cto, service=enterprise-ai-automation): Retool's agent quickstart lists run-log fields including message input, tool, status and reasoning. Google Cloud separately documents zero-data-retention considerations, including potential abuse-monitoring prompt logging. The inferred gap is an agent-specific audit architecture separating action evidence from sensitive payloads, with redaction, access restrictions and distinct retention rules for application logs, model-provider records and approval artifacts. URLs: https://docs.retool.com/agents/quickstart ; https://docs.cloud.google.com/gemini-enterprise-agent-platform/resources/zero-data-retention . ([docs.retool.com](https://docs.retool.com/agents/quickstart?utm_source=openai))",
     "score": 57,
     "createdAt": "2026-11-04T12:04:27.215Z",
+    "status": "open"
+  },
+  {
+    "id": "refresh-position:/custom-chatgpt-plugins",
+    "kind": "refresh-position",
+    "path": "/custom-chatgpt-plugins",
+    "queries": [
+      "chatgpt custom plugins",
+      "custom plugin chatgpt",
+      "how do i connect my brokerage account to a chatgpt plugin",
+      "custom chatgpt plugins",
+      "does credcore have a chatgpt plugin and a claude connector?"
+    ],
+    "evidence": "avg position 7.0 on 59 impressions, 0 clicks (28d)",
+    "score": 8.85,
+    "createdAt": "2026-11-05T12:00:47.615Z",
     "status": "open"
   }
 ]

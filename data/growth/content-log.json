@@ -380,5 +380,19 @@
     ],
     "sourcesChecked": 4,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-05T12:01:00.989Z",
+    "action": "reject",
+    "slug": "ai-commercial-property-capex-forecast-commitments",
+    "path": null,
+    "title": "Can AI Update Your CRE Capex Forecast Before Ledger Posting?",
+    "opportunityId": "research-9ffad0eadf",
+    "reasons": [
+      "7 claims, 1 unsupported, 5 sources fetched",
+      "core claim unsupported: AI can update a commercial property capex forecast from project documents before costs reach the ledger."
+    ],
+    "sourcesChecked": 5,
+    "costUsd": 0
   }
 ]
