@@ -394,5 +394,19 @@
     ],
     "sourcesChecked": 5,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-07T12:02:41.789Z",
+    "action": "reject",
+    "slug": "ai-lender-reporting-loan-covenant-definitions",
+    "path": null,
+    "title": "AI Lender Reporting With Each Loan’s Covenant Definitions",
+    "opportunityId": "research-9190c78e61",
+    "reasons": [
+      "6 claims, 1 unsupported, 4 sources fetched",
+      "core claim unsupported: An agreement identified as the Taubman loan agreement requires an authorized signatory to review the loan documents and borrower condition and provide statements concerning defaults or their details."
+    ],
+    "sourcesChecked": 4,
+    "costUsd": 0
   }
 ]

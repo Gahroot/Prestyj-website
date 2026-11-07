@@ -1097,14 +1097,402 @@
     "path": "/custom-chatgpt-plugins",
     "queries": [
       "chatgpt custom plugins",
-      "custom plugin chatgpt",
       "how do i connect my brokerage account to a chatgpt plugin",
+      "custom plugin chatgpt",
       "custom chatgpt plugins",
       "does credcore have a chatgpt plugin and a claude connector?"
     ],
-    "evidence": "avg position 7.0 on 59 impressions, 0 clicks (28d)",
-    "score": 8.85,
+    "evidence": "avg position 7.0 on 71 impressions, 0 clicks (28d)",
+    "score": 10.65,
     "createdAt": "2026-11-05T12:00:47.615Z",
+    "status": "open"
+  },
+  {
+    "id": "refresh-ctr:/",
+    "kind": "refresh-ctr",
+    "path": "/",
+    "queries": [
+      "prestyj",
+      "prestyj alternatives",
+      "site:prestyj.com",
+      "ai sales agents compared — which one actually books meetings?",
+      "our agents get lots of enquiries about property listings and spend too much time answering basic questions and arranging viewings manually. which platform has ai to handle property questions, schedule viewings and pass serious buyers to the right agent?"
+    ],
+    "evidence": "106 impressions, CTR 2.8% vs ~28.0% expected at position 1.5 (28d)",
+    "score": 133.401,
+    "createdAt": "2026-11-07T12:02:36.185Z",
+    "status": "open"
+  },
+  {
+    "id": "research-487875b074",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI complete our real estate fund's investor DDQs using current portfolio data instead of recycling last year's answers?"
+    ],
+    "evidence": "LLM web research (fund): Search surfaced DiligenceVault's DDQ/RFP automation and ANREV's real-estate-specific questionnaire. DiligenceVault describes responses generated from standardized questionnaires and fund reference materials; ANREV supplies the questionnaire framework. Inferred content gap: a worked institutional CRE example showing how property-level exposure, leverage and operating metrics populate investor-specific questions, with reporting dates and answer-expiration rules. This is fundraising questionnaire production, not acquisition diligence. URLs: https://diligencevault.com/spotlight/diligencevault-launches-ai-powered-document-intelligence-engine-to-ease-the-burden-of-fund-due-diligence/ ; https://www.anrev.org/en/standards/due-diligence-questionnaire/ . ([diligencevault.com](https://diligencevault.com/spotlight/diligencevault-launches-ai-powered-document-intelligence-engine-to-ease-the-burden-of-fund-due-diligence/?utm_source=openai))",
+    "score": 56,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-0a618379a7",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can we turn real estate fund side-letter reporting promises into scheduled deliverables across IR, asset management and our fund administrator?"
+    ],
+    "evidence": "LLM web research (fund): Ontra and Zive appeared with substantial obligation-tracking coverage. Ontra already describes reviewed clause extraction, multi-owner tasks, recurring checks and execution logs, so generic side-letter tracking is not a gap. The narrower inferred opportunity is CRE fulfillment: mapping a bespoke reporting promise to property-manager inputs, administrator dependencies, the actual investor deliverable and evidence of delivery. The reviewed pages do not demonstrate that property-to-LP production chain. URLs: https://www.ontra.ai/solutions/side-letters/ ; https://www.zive.ai/products/docs-compliance/side-letter-obligation-tracking . ([ontra.ai](https://www.ontra.ai/solutions/side-letters/))",
+    "score": 54,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-16ac796a9a",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI prepare LP meeting briefs and track fundraising follow-ups across multiple real estate funds without confusing soft interest with committed capital?"
+    ],
+    "evidence": "LLM web research (fund): InvestorFlow covers institutional meeting preparation, interaction capture and next steps. Finta covers real-estate fundraising but explicitly targets sponsors, operators and emerging managers. Shadow addresses the distinction between investor questions and commitments, primarily through a founder-fundraising workflow. Inferred gap: an institutional multi-fund example preserving vehicle, strategy, re-up history, requested materials and commitment status across an existing IR team's coverage process. URLs: https://www.investorflow.com/resources/blog/modern-institutional-fundraising-in-private-markets/ ; https://finta.ai/solutions/real-estate-fundraising ; https://www.shadow.do/blog/ai-investor-meeting-notes-follow-up-workflow-2026 . ([investorflow.com](https://www.investorflow.com/resources/blog/modern-institutional-fundraising-in-private-markets/))",
+    "score": 49,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-927c26f7c6",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI turn our commercial brokerage's commission agreements into accurate split schedules, invoices and installment-payment tracking?"
+    ],
+    "evidence": "LLM web research (brokerage): Search surfaced CommercialEdge's brokerage commissions brochure and its guide to CRE commission complexity. These establish existing software coverage for commission administration and distributions. Inferred content gap: demonstrating the agreement-to-receivable workflow for negotiated team splits, outside referrals and lease-execution versus rent-commencement installments, including amendments and missing payment-trigger evidence. The retrieved materials did not demonstrate an AI document-to-schedule walkthrough. URLs: https://www.commercialedge.com/wp-content/uploads/sites/75/2023/05/CommercialEdge-Commissions-%E2%80%93-For-Brokerages.pdf ; https://www.commercialedge.com/wp-content/uploads/sites/75/2022/11/CommercialEdge-Managing-the-Financial-Complexities-of-CRE-Brokerage-Commissions.pdf . ([commercialedge.com](https://www.commercialedge.com/wp-content/uploads/sites/75/2023/05/CommercialEdge-Commissions-%E2%80%93-For-Brokerages.pdf?utm_source=openai))",
+    "score": 55,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-a0a810991b",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI build a buyer shortlist for a commercial listing from investment criteria buried in our CRM, emails and past deal activity?"
+    ],
+    "evidence": "LLM web research (brokerage): PlyCRM advertises ranked buyer matching, and OSL offers buyer/owner/tenant matching inside its commercial CRM. Matching itself is therefore not an uncovered category. Inferred gap: explaining how a brokerage reconstructs and refreshes institutional buying mandates from unstructured correspondence and transaction history, distinguishes hard constraints from preferences, and delivers a shortlist with a reason for each match. The reviewed pages emphasize CRM matching features rather than that mandate-maintenance process. URLs: https://www.plycrm.com/ ; https://www.oslsoftware.com/article/osl-commercial . ([plycrm.com](https://www.plycrm.com/?utm_source=openai))",
+    "score": 53,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-38a6d0bc0a",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can we generate commercial property videos, brochures and email campaigns from an approved offering memorandum without rebuilding the listing in another platform?"
+    ],
+    "evidence": "LLM web research (brokerage): Antela markets a complete listing campaign from connected property information, including review and approval. DIVMO explicitly offers OM-to-video production, while CREOP covers branded OM creation. Generic AI listing-content generation is already competitive. The narrower inferred gap is an existing-collateral production workflow: taking the brokerage's approved OM, actual property photography and brand assets as inputs and handing back coordinated video, brochure and email deliverables without requiring a new marketing workspace. URLs: https://www.antela.ai/product/marketing-center ; https://www.divmo.com/cre.html ; https://creop.com/offering-memorandum-software/ . ([antela.ai](https://www.antela.ai/product/marketing-center))",
+    "score": 50,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-9190c78e61",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI prepare lender reporting packages and compliance certificates for our commercial property portfolio using each loan's own covenant definitions?"
+    ],
+    "evidence": "LLM web research (owner-operator): Moody's and Bluegrass appeared with detailed covenant-monitoring coverage, but their pages address lenders reviewing borrower submissions. Bluegrass already describes agreement-specific tests and sourced figures, so those mechanics are not novel. Inferred content gap: the borrower-side production process across multiple properties and lenders—assembling required schedules, applying amendments and lender-specific definitions, and delivering a certificate package for the owner's authorized signatory. URLs: https://www.moodys.com/web/en/us/solutions/lending/commercial-real-estate.html ; https://www.bluegrasspartners.ai/solutions/covenant-and-portfolio-monitoring . ([moodys.com](https://www.moodys.com/web/en/us/solutions/lending/commercial-real-estate.html?utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "rejected"
+  },
+  {
+    "id": "research-2d980bad24",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI assemble lender reimbursement requests for tenant improvements and capital repairs across our existing commercial properties?"
+    ],
+    "evidence": "LLM web research (owner-operator): DrawStack, River and Briq surfaced for construction draw packages. They already cover invoices, schedules of values, waivers, lender requirements and review-ready packages; generic draw assembly is not thin. Inferred gap: reserve-release and reimbursement work for an operating CRE portfolio rather than ground-up construction, linking each property's loan-reserve conditions to TI or repair invoices, completion evidence, prior reimbursements and the lender's submission format. The reviewed pages did not walk through that stabilized-asset scenario. URLs: https://www.drawstack.ai/ ; https://rivereditor.com/solutions/construction-finance ; https://www.briq.ai/acu/object/draw-request . ([drawstack.ai](https://www.drawstack.ai/?utm_source=openai))",
+    "score": 54,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-d76c1cf77e",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can AI prepare a weekly commercial tenant arrears action pack that accounts for payment plans, disputed charges and promises to pay?"
+    ],
+    "evidence": "LLM web research (owner-operator): Tightrope directly markets commercial-property collections across existing systems and communications, including overdue rent and bill-backs. This is a real competing workflow, not an empty category. Inferred content gap: the portfolio leader's decision-ready work product rather than automated chasing—an arrears pack separating collectible balances, active disputes, approved payment plans and broken promises, with recommended owner actions and supporting correspondence. The reviewed homepage does not demonstrate that pack or its treatment of disputed versus actionable balances. URL: https://tightrope.ai/ . ([tightrope.ai](https://tightrope.ai/))",
+    "score": 51,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-0e4aef969b",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can one custom MCP server support both Claude and ChatGPT without building two integrations?"
+    ],
+    "evidence": "LLM web research (connectors, founder, service=custom-mcp-servers): Search surfaced Arcade's cross-client MCP offering and separate Anthropic/OpenAI connector documentation. Arcade markets one endpoint for multiple clients, while platform documentation describes client-specific configuration. Inferred gap: a buyer-facing explanation of reusable backend work versus separate authentication, deployment and support obligations. URLs: https://www.arcade.dev/product/ ; https://help.openai.com/en/articles/12584461 ; https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp . ([arcade.dev](https://www.arcade.dev/product/?utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-8ee6ad49cd",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can a custom Claude connector use each employee's Entra ID login when our ERP only supports a shared API key?"
+    ],
+    "evidence": "LLM web research (connectors, it-leader, service=custom-claude-connectors): Workato's FAQ explicitly limits verified user access to downstream applications supporting OAuth authorization-code grants; API keys and basic auth do not work with that feature. Arcade documents separate administrator and end-user authentication. Inferred gap: commissioning an identity-aware adapter for legacy systems without pretending a shared downstream credential provides native per-user authorization. URLs: https://docs.workato.com/en/agentic/faqs.html ; https://docs.arcade.dev/en/operate/governance/remote-mcp-servers . ([docs.workato.com](https://docs.workato.com/en/agentic/faqs.html?utm_source=openai))",
+    "score": 59,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-cb8774bcc8",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can a provider build and maintain our MCP server in our own cloud account instead of hosting it on their platform?"
+    ],
+    "evidence": "LLM web research (connectors, it-leader, service=custom-mcp-servers): Arcade documents managed cloud, customer-cloud marketplace deployments and self-hosted Kubernetes. Workato documents a Workato-managed MCP runtime. Inferred gap: an implementation-service explanation distinguishing customer infrastructure ownership from responsibility for patching, credentials, backups and on-call support—not another generic hosting comparison. URLs: https://docs.arcade.dev/en/operate/deploy ; https://docs.workato.com/en/mcp/mcp-runtime.html . ([docs.arcade.dev](https://docs.arcade.dev/en/operate/deploy?utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-cc47ae8e6d",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "What customer data would a managed MCP connector store in logs, and can we turn payload logging off?"
+    ],
+    "evidence": "LLM web research (connectors, it-leader, service=connectors): Composio documents zero-data-retention controls, continuing audit metadata and telemetry, and separate policies for destination applications, model providers and external MCP servers. Workato documents regional MCP hosting. Inferred gap: a custom-build data-flow and retention deliverable covering every processor, rather than treating regional hosting or a single logging toggle as an end-to-end guarantee. URLs: https://docs.composio.dev/docs/security/zero-data-retention ; https://docs.workato.com/en/mcp.html . ([docs.composio.dev](https://docs.composio.dev/docs/security/zero-data-retention?utm_source=openai))",
+    "score": 57,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-2a2951133d",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can we give employees a custom ChatGPT integration without enabling developer mode for everyone?"
+    ],
+    "evidence": "LLM web research (connectors, ops-leader, service=custom-chatgpt-plugins): OpenAI's documentation separates developer access from administrator publication and describes additional Enterprise/Edu access controls. Search also surfaced Arcade's managed MCP offering, but that product page is not a plan-specific internal rollout guide. Inferred gap: a procurement-oriented explanation of who needs builder access, who can use a published integration and which workspace plan is required. URLs: https://help.openai.com/en/articles/12584461 ; https://www.arcade.dev/product/ . ([help.openai.com](https://help.openai.com/en/articles/12584461?utm_source=openai))",
+    "score": 55,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-1bf188f1bd",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can someone extend the Salesforce Claude connector to use our custom Flows and Apex instead of rebuilding our business logic?"
+    ],
+    "evidence": "LLM web research (connectors, ops-leader, service=done-for-you-claude-connectors): Salesforce documents immutable standard MCP servers and custom servers exposing existing Flows, invocable Apex and APIs. Workato documents Salesforce connectivity and inherited account permissions. Inferred gap: a done-for-you scope explaining what can be reused, what must be adapted and whether Salesforce-hosted customization removes the need for a separately hosted server. URLs: https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html ; https://docs.workato.com/connectors/salesforce.html . ([developer.salesforce.com](https://developer.salesforce.com/docs/platform/hosted-mcp-servers/guide/custom-servers.html?utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-4aea6e098f",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "We already use Workato—do we need a separate custom MCP server to connect Claude to our internal systems?"
+    ],
+    "evidence": "LLM web research (connectors, founder, service=connectors): Workato documents exposing API collections through hosted MCP servers and using recipe functions or skills as tools. Its FAQ also identifies downstream authentication limitations for verified user access. Inferred gap: a narrow existing-stack decision guide showing when configuration is sufficient, when only a custom adapter is needed and when a separate server is justified. URLs: https://docs.workato.com/en/mcp.html ; https://docs.workato.com/en/agentic/faqs.html . ([docs.workato.com](https://docs.workato.com/en/mcp.html?utm_source=openai))",
+    "score": 56,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-c4498787f0",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can our Claude connector refresh employee logins automatically without asking everyone to reconnect every day?"
+    ],
+    "evidence": "LLM web research (connectors, ops-leader, service=done-for-you-claude-connectors): Anthropic documents centrally managed connector authorization; OpenAI's MCP documentation explicitly discusses refresh-token configuration for maintaining connectivity. Merge separately documents static-token rotation that can interrupt in-flight calls. Inferred gap: a managed-service explanation of session continuity, token rotation and who resolves repeated reauthorization problems after launch. URLs: https://claude.com/blog/enterprise-managed-auth ; https://help.openai.com/en/articles/12584461 ; https://docs.merge.dev/merge-agent-handler/build/connecting-agents/custom-mcp-servers . ([claude.com](https://claude.com/blog/enterprise-managed-auth?ueid=3d6a2c800561880c901963d51e644d95&utm_source=openai))",
+    "score": 54,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-ee02bbe309",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we stop a custom MCP integration from exhausting the API limits our operations team relies on?"
+    ],
+    "evidence": "LLM web research (connectors, ops-leader, service=custom-mcp-servers): Workato documents configurable MCP throttling and quotas, with no request limits enforced by default. AWS guidance explicitly distinguishes per-server from per-tool limits. Inferred gap: a business-system protection design covering shared ERP/CRM capacity, user fairness, reserved capacity for existing integrations and behavior when limits are reached—not a generic usage-cost article. URLs: https://docs.workato.com/en/mcp/mcp-gateway.html ; https://docs.aws.amazon.com/pdfs/prescriptive-guidance/latest/mcp-strategies/mcp-strategies.pdf . ([docs.workato.com](https://docs.workato.com/en/mcp/mcp-gateway.html?utm_source=openai))",
+    "score": 55,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-connectors-c7412e6a5e",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can a custom MCP server run our long ERP reports without timing out in Claude or ChatGPT?"
+    ],
+    "evidence": "LLM web research (connectors, it-leader, service=custom-mcp-servers): Workato documents a 30-second synchronous execution window and a longer background continuation limit. Arcade documents configurable timeouts and retries for remote MCP servers. Inferred gap: a commissioned integration architecture for long-running business jobs, including status retrieval, cancellation and recovery, rather than suggesting that a larger server timeout alone solves the client experience. URLs: https://docs.workato.com/en/mcp/mcp-gateway.html ; https://docs.arcade.dev/en/operate/governance/remote-mcp-servers . ([docs.workato.com](https://docs.workato.com/en/mcp/mcp-gateway.html?utm_source=openai))",
+    "score": 54,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-2133d8d203",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can HubSpot's prospecting agent handle our sales follow-up approval rules, or do we need a custom agent?"
+    ],
+    "evidence": "LLM web research (custom-builds, sales-leader, service=ai-sales-agents): HubSpot's setup documentation appears in search and explicitly supports reviewing each email or sending without review. Salesforce also documents manual approval and field-based review criteria. Opportunity inferred from these pages: compare native configuration with custom implementation for account-specific approvers, pricing authorization and approvals spanning multiple systems—not another generic build-versus-buy guide. URLs: https://knowledge.hubspot.com/prospecting/use-the-prospecting-agent ; https://help.salesforce.com/s/articleView?id=sf.sales_agent_sdr_setup_agent_builder.htm&language=en_US&type=5 . ([knowledge.hubspot.com](https://knowledge.hubspot.com/prospecting/use-the-prospecting-agent?KBOpenTab=undefined&utm_source=openai))",
+    "score": 59,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-09d411649b",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we stop an AI sales agent from offering unapproved discounts or making promises to customers?"
+    ],
+    "evidence": "LLM web research (custom-builds, sales-leader, service=ai-sales-agents): Autotouch surfaces with content specifically addressing outbound claims, approval rules and stop controls, so basic guardrails are already covered. Salesforce documents configurable email review. Inferred narrower gap: show how an agent checks discount authority against approved commercial terms and blocks unauthorized commitments at send time, including messages that otherwise qualify for automatic sending. URLs: https://www.autotouch.ai/blog/ai-sales-agent-vs-sales-engagement-platform-control ; https://help.salesforce.com/s/articleView?id=sf.sales_agent_sdr_setup_agent_builder.htm&language=en_US&type=5 . ([autotouch.ai](https://www.autotouch.ai/blog/ai-sales-agent-vs-sales-engagement-platform-control?utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-4667107bac",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we make an AI sales agent cancel scheduled emails when someone opts out in another system?"
+    ],
+    "evidence": "LLM web research (custom-builds, sales-leader, service=ai-sales-agents): Custom-agent competitor SynthesisLogic already describes suppression checks before every send, immediate CRM opt-out updates and cancellation of queued messages. The opportunity is therefore not basic unsubscribe handling. Inferred gap on the reviewed page: cross-system suppression propagation, conflicting contact identities and what happens when an opt-out arrives between approval and delivery. URL: https://synthesislogic.com/use-cases/sales-follow-up/ . ([synthesislogic.com](https://synthesislogic.com/use-cases/sales-follow-up/))",
+    "score": 55,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-606147dfb2",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can an AI marketing agent optimize our ads without changing budgets unless a manager approves?"
+    ],
+    "evidence": "LLM web research (custom-builds, marketing-leader, service=ai-marketing-agents): Madgicx's official product information describes agent-accessible actions on budgets, bids and spending limits. A practitioner discussion separately asks where approval and retry logic belong after an agent changes campaign budgets; this is qualitative demand evidence, not verified incident data. Inferred gap: a buyer-facing implementation showing approval thresholds, cumulative spend limits and the exact budget change a manager authorizes. URLs: https://madgicx.com/llm-info ; https://www.reddit.com/r/AiAutomations/comments/1xfwj4e/agentic_ai_marketing_workflows_sounded_great/ . ([madgicx.com](https://madgicx.com/llm-info?utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-36cb21f62f",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we require fresh approval if an AI marketing agent changes copy after legal has signed off?"
+    ],
+    "evidence": "LLM web research (custom-builds, marketing-leader, service=ai-marketing-agents): Jasper ranks with governance and Studio documentation covering who can publish agents to a workspace; that is distinct from approving an individual campaign asset for external publication. Its troubleshooting guide also addresses missing legal disclaimers. Inferred gap: bind legal approval to the exact asset version and invalidate it when copy, disclaimers or destination URLs change before publication. URLs: https://help.jasper.ai/hc/en-us/articles/55321112995227-Jasper-Studio ; https://help.jasper.ai/hc/en-us/articles/57638449833627-Troubleshoot-Agent-Runs . ([help.jasper.ai](https://help.jasper.ai/hc/en-us/articles/55321112995227-Jasper-Studio?utm_source=openai))",
+    "score": 57,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-f6686fbf8e",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How can we keep an AI marketing agent from reusing expired offers or unapproved product claims?"
+    ],
+    "evidence": "LLM web research (custom-builds, marketing-leader, service=ai-marketing-agents): Jasper's troubleshooting content explicitly discusses omitted disclaimers, ignored brand rules and Knowledge-backed approved text. Its Studio documentation supports shared product and brand context. Inferred gap: move beyond prompting and brand voice to enforce claim eligibility by product, market and effective date, with publication blocked when approval expires. The reviewed pages do not demonstrate that lifecycle end to end. URLs: https://help.jasper.ai/hc/en-us/articles/57638449833627-Troubleshoot-Agent-Runs ; https://help.jasper.ai/hc/en-us/articles/55321112995227-Jasper-Studio . ([help.jasper.ai](https://help.jasper.ai/hc/en-us/articles/57638449833627-Troubleshoot-Agent-Runs))",
+    "score": 55,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-d220d0e421",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can an AI procurement agent prepare purchases without being able to approve its own requests or change supplier bank details?"
+    ],
+    "evidence": "LLM web research (custom-builds, ops-leader, service=ai-operations-agents): Tranki surfaces with a vendor-payment verification agent that explicitly excludes payment release, vendor-record changes and overriding segregation of duties. Microsoft's AI Approvals FAQ describes combining automated and human approval stages. Inferred gap: explain a complete purchasing design that separates request preparation, supplier-master changes, authorization and execution across identities, rather than merely promising human oversight. URLs: https://tranki.ai/agents/ai-vendor-payment-verification-agent/ ; https://learn.microsoft.com/en-us/microsoft-copilot-studio/faqs-ai-approvals . ([tranki.ai](https://tranki.ai/agents/ai-vendor-payment-verification-agent/?utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-8992c0cad5",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we prevent an AI operations agent from creating duplicate orders when an API times out and retries?"
+    ],
+    "evidence": "LLM web research (custom-builds, ops-leader, service=ai-operations-agents): Workato's business-approval documentation already explains persistent approval records that prevent duplicate approval requests and allow retries after approval. Its recipe FAQ documents automatic retries. Inferred gap: distinguish reusing an approval from preventing duplicate downstream orders, then explain business identifiers, checking whether an order actually succeeded and reconciling uncertain outcomes before retrying. URLs: https://docs.workato.com/agentic/agent-studio/business-approvals ; https://docs.workato.com/en/recipes/steps/steps-faqs.html . ([docs.workato.com](https://docs.workato.com/agentic/agent-studio/business-approvals))",
+    "score": 56,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-bec10150fc",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Should our AI agent use employee credentials or its own service account for background workflows?"
+    ],
+    "evidence": "LLM web research (custom-builds, cto, service=enterprise-ai-automation): Microsoft's Copilot Studio documentation directly addresses maker-provided versus end-user credentials and warns that prohibiting maker credentials can break scheduled or autonomous execution requiring live user authentication. This is substantive existing coverage. Inferred gap: a platform-neutral buyer architecture comparing delegated access, dedicated workload identities and approval attribution for unattended workflows spanning Microsoft and non-Microsoft systems. URL: https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-no-maker-authentication . ([learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-copilot-studio/configure-no-maker-authentication?utm_source=openai))",
+    "score": 59,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-1805423348",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "How do we keep useful AI agent audit logs without exposing customer data to everyone who can view them?"
+    ],
+    "evidence": "LLM web research (custom-builds, cto, service=enterprise-ai-automation): Salesforce's documentation covers sensitive Agentforce tracing data, access permissions and query-time masking; its masking page explicitly distinguishes redacted query results from unchanged stored values. Inferred gap: a cross-platform implementation guide separating operational event records from restricted payload evidence, with explicit retention, investigator access and export rules. This is narrower than a generic permissions-and-audit checklist. URLs: https://help.salesforce.com/s/articleView?id=ai.agentforce_observe_data_mask.htm&language=en_US&type=5 ; https://help.salesforce.com/s/articleView?id=ai.generative_ai_session_trace_setup.htm&language=en_US&type=5 . ([help.salesforce.com](https://help.salesforce.com/s/articleView?id=ai.agentforce_observe_data_mask.htm&language=en_US&type=5&utm_source=openai))",
+    "score": 58,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-3d35e5caf5",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "If an employee leaves or loses access, how do we stop AI agents and pending tasks from continuing under their permissions?"
+    ],
+    "evidence": "LLM web research (custom-builds, cto, service=enterprise-ai-automation): Microsoft surfaces with agent-identity lifecycle documentation and connection states including deactivated, expired and stale. Its enterprise-readiness guidance also covers ownership and access reviews. Inferred gap on these reviewed pages: an offboarding runbook that traces delegated credentials, pauses pending actions, reassigns accountable owners and checks authorization again before a previously approved task resumes. URLs: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-connections ; https://learn.microsoft.com/en-us/startups/build/identity-management/enterprise-readiness-ai-agent-identity . ([learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-connections?utm_source=openai))",
+    "score": 56,
+    "createdAt": "2026-11-07T12:02:41.789Z",
+    "status": "open"
+  },
+  {
+    "id": "research-custom-builds-1226191a5e",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "Can we have a partner build and operate our AI agent while we retain the code, workflow logic and deployment access?"
+    ],
+    "evidence": "LLM web research (custom-builds, cto, service=custom-ai-agents): Freeday's build-versus-buy article discusses core IP, layer-by-layer ownership and maintenance at the seam between purchased orchestration and custom integrations. KPMG explicitly includes partnering or codevelopment as a third sourcing route. Inferred gap: a concrete customer-owned, partner-operated delivery model explaining repository ownership, infrastructure access, runbooks, credential custody and transfer of operations—not another vendor scorecard. URLs: https://www.freeday.ai/blog-posts/buy-or-build-ai ; https://kpmg.com/kpmg-us/content/dam/kpmg/pdf/2026/25-19086-agentic-ai-untangled-navigating-the-build-buy-or-borrow.pdf . ([freeday.ai](https://www.freeday.ai/blog-posts/buy-or-build-ai))",
+    "score": 59,
+    "createdAt": "2026-11-07T12:02:41.789Z",
     "status": "open"
   }
 ]
