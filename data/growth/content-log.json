@@ -408,5 +408,19 @@
     ],
     "sourcesChecked": 4,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-09T12:03:41.197Z",
+    "action": "reject",
+    "slug": "ai-lender-specific-compliance-certificates-reporting-packages",
+    "path": null,
+    "title": "Can AI Prepare Lender-Specific Loan Compliance Packages?",
+    "opportunityId": "research-59e86e5d23",
+    "reasons": [
+      "8 claims, 1 unsupported, 5 sources fetched",
+      "core claim unsupported: AI can prepare lender-specific compliance certificates and reporting packages as a controlled drafting workflow."
+    ],
+    "sourcesChecked": 5,
+    "costUsd": 0
   }
 ]
