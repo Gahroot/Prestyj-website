@@ -422,5 +422,21 @@
     ],
     "sourcesChecked": 5,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-10T12:03:32.037Z",
+    "action": "reject",
+    "slug": "ai-ti-capex-reimbursement-draw-packages-yardi",
+    "path": null,
+    "title": "Can AI Assemble TI and Capex Draw Packages from Yardi?",
+    "opportunityId": "research-80b8903ee2",
+    "reasons": [
+      "13 claims, 2 unsupported, 3 sources fetched",
+      "source unreachable or empty: https://www.yardi.com/product/construction-manager/",
+      "core claim unsupported: AI can assemble a draft TI and capex reimbursement package from Yardi invoices, contracts and lien waivers.",
+      "claim unsupported: Yardi's published reporting categories include budget amounts, revisions, commitments, change orders and billed amounts."
+    ],
+    "sourcesChecked": 3,
+    "costUsd": 0
   }
 ]

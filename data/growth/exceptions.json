@@ -344,11 +344,19 @@
     "resolvedAt": null
   },
   {
+    "id": "20261109121224-measure.bing-ai",
+    "raisedAt": "2026-11-09T12:12:24.869Z",
     "severity": "warning",
     "component": "measure.bing-ai",
     "message": "No Bing AI Performance CSV in data/growth/imports/bing-ai/; AI citations not connected.",
-    "id": "20261109121224-measure.bing-ai",
-    "raisedAt": "2026-11-09T12:12:24.869Z",
+    "resolvedAt": null
+  },
+  {
+    "severity": "warning",
+    "component": "measure.bing-ai",
+    "message": "No Bing AI Performance CSV in data/growth/imports/bing-ai/; AI citations not connected.",
+    "id": "20261110120331-measure.bing-ai",
+    "raisedAt": "2026-11-10T12:03:31.926Z",
     "resolvedAt": null
   }
 ]

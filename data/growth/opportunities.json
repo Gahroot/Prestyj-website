@@ -1118,8 +1118,8 @@
       "ai sales agents compared — which one actually books meetings?",
       "our agents get lots of enquiries about property listings and spend too much time answering basic questions and arranging viewings manually. which platform has ai to handle property questions, schedule viewings and pass serious buyers to the right agent?"
     ],
-    "evidence": "112 impressions, CTR 2.7% vs ~28.0% expected at position 1.5 (28d)",
-    "score": 141.792,
+    "evidence": "110 impressions, CTR 2.7% vs ~28.0% expected at position 1.5 (28d)",
+    "score": 138.985,
     "createdAt": "2026-11-07T12:02:36.185Z",
     "status": "open"
   },
@@ -1502,8 +1502,8 @@
     "queries": [
       "quickbooks mcp"
     ],
-    "evidence": "~22 weighted impressions/citations (gsc); best live page position 91.2",
-    "score": 2.75,
+    "evidence": "~27 weighted impressions/citations (gsc); best live page position 91.0",
+    "score": 3.375,
     "createdAt": "2026-11-09T12:03:29.301Z",
     "status": "open"
   },
@@ -1529,7 +1529,7 @@
     "evidence": "LLM web research (owner-operator): Briq's draw-request page describes AI mapping invoices and pay applications to loan budgets and checking supporting documents (https://www.briq.ai/acu/object/draw-request). Elite Commercial Servicing publishes lender documentation requirements (https://elitecommercialservicing.com/wp-content/uploads/2025/02/ECS_Draw_Construction_Budget_Guide_Feb_25.pdf). The gap is narrower than generic construction automation: a CRE owner's repeatable TI/LC and capex reimbursement process, showing eligible versus ineligible spending, previously reimbursed invoices, retainage and lender-specific submission files across multiple properties.",
     "score": 58,
     "createdAt": "2026-11-09T12:03:41.197Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-db8e57705d",
