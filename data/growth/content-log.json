@@ -438,5 +438,34 @@
     ],
     "sourcesChecked": 3,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-16T12:07:00.766Z",
+    "action": "publish",
+    "slug": "ai-real-estate-fund-capital-call-plan",
+    "path": "/blog/ai-real-estate-fund-capital-call-plan",
+    "title": "AI Capital-Call Planning for Real Estate Funds",
+    "opportunityId": "research-724b458a10",
+    "reasons": [
+      "Adds a synthetic GP-side worked example linking dated cash needs and borrowing constraints to a sourced capital-call recommendation and approval package.",
+      "fact-check: 6 claims, 0 fixed/removed",
+      "files: content/blog/ai-real-estate-fund-capital-call-plan.mdx, src/lib/institutional/research.ts"
+    ],
+    "sourcesChecked": 3,
+    "costUsd": 0
+  },
+  {
+    "at": "2026-11-16T12:07:00.766Z",
+    "action": "reject",
+    "slug": "ai-operating-systems-real-estate",
+    "path": "/blog/ai-operating-systems-real-estate",
+    "title": "AI Operating Systems for Real Estate: Tortus Evaluation Guide",
+    "opportunityId": "refresh-position:/blog/ai-operating-systems-real-estate",
+    "reasons": [
+      "0 claims, 0 unsupported, 0 sources fetched",
+      "only 0 reachable sources (min 2)"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
   }
 ]

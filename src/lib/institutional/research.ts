@@ -159,6 +159,15 @@ export const researchArticles: readonly ResearchArticle[] = [
     description:
       "Evaluate how Claude can reach a managed MCP endpoint while your ERP stays private, with explicit network boundaries and operating responsibilities.",
   },
+  {
+    slug: "ai-real-estate-fund-capital-call-plan",
+    capabilities: ["fund-operations", "portfolio-intelligence"],
+    topics: ["review-controls", "exceptions", "source-lineage"],
+    category: "Fund operations",
+    title: "From property cash needs to a dated capital call",
+    description:
+      "A GP-side framework for turning property forecasts, capex commitments, debt events and borrowing availability into a reviewed capital-call recommendation.",
+  },
 ] as const;
 
 export function articleLane(article: Pick<ResearchArticle, "lane">): ArticleLane {
