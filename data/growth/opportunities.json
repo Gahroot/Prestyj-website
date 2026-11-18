@@ -1100,10 +1100,10 @@
       "chatgpt custom plugins",
       "custom plugin chatgpt",
       "custom chatgpt plugins",
-      "does credcore have a chatgpt plugin and a claude connector?"
+      "custom gpt for yardi data"
     ],
-    "evidence": "avg position 9.0 on 100 impressions, 0 clicks (28d)",
-    "score": 15,
+    "evidence": "avg position 8.9 on 106 impressions, 1 clicks (28d)",
+    "score": 14.405,
     "createdAt": "2026-11-05T12:00:47.615Z",
     "status": "open"
   },
@@ -1118,8 +1118,8 @@
       "ai sales agents compared — which one actually books meetings?",
       "our agents get lots of enquiries about property listings and spend too much time answering basic questions and arranging viewings manually. which platform has ai to handle property questions, schedule viewings and pass serious buyers to the right agent?"
     ],
-    "evidence": "111 impressions, CTR 1.8% vs ~28.0% expected at position 1.4 (28d)",
-    "score": 145.41,
+    "evidence": "120 impressions, CTR 1.7% vs ~28.0% expected at position 1.3 (28d)",
+    "score": 157.98,
     "createdAt": "2026-11-07T12:02:36.185Z",
     "status": "open"
   },
@@ -1502,8 +1502,8 @@
     "queries": [
       "quickbooks mcp"
     ],
-    "evidence": "~51 weighted impressions/citations (gsc); best live page position 87.6",
-    "score": 6.375,
+    "evidence": "~53 weighted impressions/citations (gsc); best live page position 87.6",
+    "score": 6.625,
     "createdAt": "2026-11-09T12:03:29.301Z",
     "status": "open"
   },
@@ -1900,10 +1900,10 @@
       "chatgpt custom plugins",
       "custom plugin chatgpt",
       "custom chatgpt plugins",
-      "does credcore have a chatgpt plugin and a claude connector?"
+      "custom gpt for yardi data"
     ],
-    "evidence": "100 impressions, CTR 0.0% vs ~2.0% expected at position 9.0 (28d)",
-    "score": 10,
+    "evidence": "106 impressions, CTR 0.9% vs ~2.0% expected at position 8.9 (28d)",
+    "score": 5.618,
     "createdAt": "2026-11-16T12:06:50.710Z",
     "status": "open"
   },
@@ -1914,8 +1914,8 @@
     "queries": [
       "composio vs zapier mcp for company use"
     ],
-    "evidence": "avg position 8.5 on 63 impressions, 0 clicks (28d)",
-    "score": 9.45,
+    "evidence": "avg position 8.4 on 82 impressions, 0 clicks (28d)",
+    "score": 12.3,
     "createdAt": "2026-11-16T12:06:50.710Z",
     "status": "open"
   },
@@ -1943,8 +1943,8 @@
       "ai lead reactivation for dealers",
       "remodeler lead reactivation"
     ],
-    "evidence": "avg position 19.2 on 55 impressions, 0 clicks (28d)",
-    "score": 8.25,
+    "evidence": "avg position 18.6 on 57 impressions, 0 clicks (28d)",
+    "score": 8.55,
     "createdAt": "2026-11-16T12:06:50.710Z",
     "status": "open"
   },
@@ -1955,8 +1955,8 @@
     "queries": [
       "xero mcp"
     ],
-    "evidence": "~59 weighted impressions/citations (gsc); best live page position 76.8",
-    "score": 7.375,
+    "evidence": "~63 weighted impressions/citations (gsc); best live page position 76.6",
+    "score": 7.875,
     "createdAt": "2026-11-16T12:06:50.710Z",
     "status": "open"
   },
@@ -2222,7 +2222,7 @@
     "evidence": "LLM web research (connectors, founder, service=custom-mcp-servers): Portkeel explicitly offers maintenance takeover for existing MCP servers: https://portkeel.com/. Codersarts offers ongoing monitoring, updates, fixes and support tiers: https://www.codersarts.com/solutions/operations/mcp-maintenance. Inferred gap: a founder-facing takeover plan covering access transfer, credential rotation, undocumented dependencies and the point at which the new provider assumes incident responsibility. Maintenance services exist, so the opportunity is a concrete transition package rather than claiming an uncontested service category.",
     "score": 60,
     "createdAt": "2026-11-16T12:07:00.766Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-custom-builds-48f503565c",

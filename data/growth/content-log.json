@@ -467,5 +467,18 @@
     ],
     "sourcesChecked": 0,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-18T12:04:18.244Z",
+    "action": "reject",
+    "slug": "-",
+    "path": null,
+    "title": "Can someone take over hosting and maintaining the MCP server our developer already built?",
+    "opportunityId": "research-connectors-b7966b9fc5",
+    "reasons": [
+      "item failed: Codex API 500: "
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
   }
 ]

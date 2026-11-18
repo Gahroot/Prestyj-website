@@ -376,11 +376,27 @@
     "resolvedAt": null
   },
   {
+    "id": "20261116121743-measure.bing-ai",
+    "raisedAt": "2026-11-16T12:17:43.605Z",
     "severity": "warning",
     "component": "measure.bing-ai",
     "message": "No Bing AI Performance CSV in data/growth/imports/bing-ai/; AI citations not connected.",
-    "id": "20261116121743-measure.bing-ai",
-    "raisedAt": "2026-11-16T12:17:43.605Z",
+    "resolvedAt": null
+  },
+  {
+    "id": "20261118120418-measure.bing-ai",
+    "raisedAt": "2026-11-18T12:04:18.090Z",
+    "severity": "warning",
+    "component": "measure.bing-ai",
+    "message": "No Bing AI Performance CSV in data/growth/imports/bing-ai/; AI citations not connected.",
+    "resolvedAt": null
+  },
+  {
+    "severity": "warning",
+    "component": "content.item",
+    "message": "Codex API 500: ",
+    "id": "20261118120419-content.item",
+    "raisedAt": "2026-11-18T12:04:19.354Z",
     "resolvedAt": null
   }
 ]

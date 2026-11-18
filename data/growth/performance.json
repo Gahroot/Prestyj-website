@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-16T12:17:36.517Z",
+  "generatedAt": "2026-11-18T12:04:09.558Z",
   "window": {
-    "start": "2026-10-19",
-    "end": "2026-11-15"
+    "start": "2026-10-21",
+    "end": "2026-11-17"
   },
   "sources": {
     "gsc": "ok",
@@ -23,9 +23,9 @@
     {
       "path": "/",
       "gscClicks": 2,
-      "gscImpressions": 111,
-      "gscCtr": 0.018,
-      "gscPosition": 1.36,
+      "gscImpressions": 120,
+      "gscCtr": 0.0167,
+      "gscPosition": 1.27,
       "bingClicks": 0,
       "bingImpressions": 1,
       "organicSessions": null,
@@ -36,9 +36,9 @@
     {
       "path": "/about",
       "gscClicks": 1,
-      "gscImpressions": 17,
-      "gscCtr": 0.0588,
-      "gscPosition": 5.76,
+      "gscImpressions": 18,
+      "gscCtr": 0.0556,
+      "gscPosition": 6,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -101,9 +101,9 @@
     {
       "path": "/blog",
       "gscClicks": 0,
-      "gscImpressions": 6,
+      "gscImpressions": 7,
       "gscCtr": 0,
-      "gscPosition": 4.5,
+      "gscPosition": 4.71,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -166,9 +166,9 @@
     {
       "path": "/blog/ai-operating-systems-real-estate",
       "gscClicks": 0,
-      "gscImpressions": 56,
+      "gscImpressions": 61,
       "gscCtr": 0,
-      "gscPosition": 6.66,
+      "gscPosition": 6.79,
       "bingClicks": 0,
       "bingImpressions": 1,
       "organicSessions": null,
@@ -361,7 +361,7 @@
     {
       "path": "/capabilities/listing-media",
       "gscClicks": 0,
-      "gscImpressions": 48,
+      "gscImpressions": 53,
       "gscCtr": 0,
       "gscPosition": 1.58,
       "bingClicks": 0,
@@ -374,9 +374,9 @@
     {
       "path": "/capabilities/origination",
       "gscClicks": 0,
-      "gscImpressions": 55,
+      "gscImpressions": 57,
       "gscCtr": 0,
-      "gscPosition": 19.24,
+      "gscPosition": 18.61,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -426,9 +426,9 @@
     {
       "path": "/connectors/add-custom-connector-claude-team-enterprise",
       "gscClicks": 0,
-      "gscImpressions": 7,
+      "gscImpressions": 10,
       "gscCtr": 0,
-      "gscPosition": 10.71,
+      "gscPosition": 8.4,
       "bingClicks": 0,
       "bingImpressions": 2,
       "organicSessions": null,
@@ -439,9 +439,9 @@
     {
       "path": "/connectors/build-custom-chatgpt-plugin",
       "gscClicks": 1,
-      "gscImpressions": 36,
-      "gscCtr": 0.0278,
-      "gscPosition": 17.42,
+      "gscImpressions": 37,
+      "gscCtr": 0.027,
+      "gscPosition": 17.38,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -504,7 +504,7 @@
     {
       "path": "/connectors/custom-mcp-server-cost",
       "gscClicks": 0,
-      "gscImpressions": 3,
+      "gscImpressions": 4,
       "gscCtr": 0,
       "gscPosition": 9,
       "bingClicks": 0,
@@ -517,9 +517,9 @@
     {
       "path": "/connectors/for/airtable",
       "gscClicks": 0,
-      "gscImpressions": 2,
+      "gscImpressions": 3,
       "gscCtr": 0,
-      "gscPosition": 9,
+      "gscPosition": 9.67,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -529,10 +529,10 @@
     },
     {
       "path": "/connectors/for/dynamics-365",
-      "gscClicks": 0,
-      "gscImpressions": 5,
-      "gscCtr": 0,
-      "gscPosition": 51.6,
+      "gscClicks": 1,
+      "gscImpressions": 6,
+      "gscCtr": 0.1667,
+      "gscPosition": 44,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -569,9 +569,9 @@
     {
       "path": "/connectors/for/postgresql",
       "gscClicks": 0,
-      "gscImpressions": 0,
+      "gscImpressions": 1,
       "gscCtr": 0,
-      "gscPosition": null,
+      "gscPosition": 2,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -582,9 +582,9 @@
     {
       "path": "/connectors/for/quickbooks-online",
       "gscClicks": 0,
-      "gscImpressions": 210,
+      "gscImpressions": 229,
       "gscCtr": 0,
-      "gscPosition": 68.8,
+      "gscPosition": 65.72,
       "bingClicks": 0,
       "bingImpressions": 1,
       "organicSessions": null,
@@ -634,9 +634,9 @@
     {
       "path": "/connectors/for/snowflake",
       "gscClicks": 0,
-      "gscImpressions": 35,
+      "gscImpressions": 37,
       "gscCtr": 0,
-      "gscPosition": 48.34,
+      "gscPosition": 46.51,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -660,9 +660,9 @@
     {
       "path": "/connectors/for/xero",
       "gscClicks": 1,
-      "gscImpressions": 181,
-      "gscCtr": 0.0055,
-      "gscPosition": 62.85,
+      "gscImpressions": 186,
+      "gscCtr": 0.0054,
+      "gscPosition": 63.15,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -699,9 +699,9 @@
     {
       "path": "/connectors/oauth-for-mcp-servers",
       "gscClicks": 0,
-      "gscImpressions": 6,
+      "gscImpressions": 8,
       "gscCtr": 0,
-      "gscPosition": 8.5,
+      "gscPosition": 8.63,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -725,9 +725,9 @@
     {
       "path": "/connectors/safe-write-actions-ai-connectors",
       "gscClicks": 0,
-      "gscImpressions": 23,
+      "gscImpressions": 26,
       "gscCtr": 0,
-      "gscPosition": 15.22,
+      "gscPosition": 14.46,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -738,9 +738,9 @@
     {
       "path": "/connectors/zapier-mcp-vs-composio-vs-custom-mcp",
       "gscClicks": 0,
-      "gscImpressions": 63,
+      "gscImpressions": 82,
       "gscCtr": 0,
-      "gscPosition": 8.51,
+      "gscPosition": 8.43,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -751,9 +751,9 @@
     {
       "path": "/contact",
       "gscClicks": 0,
-      "gscImpressions": 23,
+      "gscImpressions": 26,
       "gscCtr": 0,
-      "gscPosition": 2.57,
+      "gscPosition": 2.46,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -776,10 +776,10 @@
     },
     {
       "path": "/custom-chatgpt-plugins",
-      "gscClicks": 0,
-      "gscImpressions": 100,
-      "gscCtr": 0,
-      "gscPosition": 8.99,
+      "gscClicks": 1,
+      "gscImpressions": 106,
+      "gscCtr": 0.0094,
+      "gscPosition": 8.92,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -894,9 +894,9 @@
     {
       "path": "/for/investment-funds",
       "gscClicks": 0,
-      "gscImpressions": 11,
+      "gscImpressions": 13,
       "gscCtr": 0,
-      "gscPosition": 6.45,
+      "gscPosition": 5.62,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -933,9 +933,9 @@
     {
       "path": "/platform",
       "gscClicks": 0,
-      "gscImpressions": 65,
+      "gscImpressions": 71,
       "gscCtr": 0,
-      "gscPosition": 1.75,
+      "gscPosition": 1.73,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -972,7 +972,7 @@
     {
       "path": "/research",
       "gscClicks": 0,
-      "gscImpressions": 28,
+      "gscImpressions": 29,
       "gscCtr": 0,
       "gscPosition": 2.21,
       "bingClicks": 0,
@@ -985,9 +985,9 @@
     {
       "path": "/results",
       "gscClicks": 0,
-      "gscImpressions": 24,
+      "gscImpressions": 29,
       "gscCtr": 0,
-      "gscPosition": 2.42,
+      "gscPosition": 2.28,
       "bingClicks": 0,
       "bingImpressions": 0,
       "organicSessions": null,
@@ -1034,27 +1034,27 @@
       "query": "which branded calling vendors integrate directly with amazon connect?",
       "page": "/blog/amazon-connect-branded-calling-msps-2026",
       "clicks": 0,
-      "impressions": 149,
+      "impressions": 160,
       "ctr": 0,
-      "position": 6.28,
+      "position": 6.31,
       "source": "gsc"
     },
     {
       "query": "how much does an ai sales agent cost compared to hiring an sdr?",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
-      "impressions": 144,
+      "impressions": 150,
       "ctr": 0,
-      "position": 6.35,
+      "position": 6.4,
       "source": "gsc"
     },
     {
       "query": "same5winner",
       "page": "/blog/average-winning-ad-rate-batch-video-ad-testing-home-services-2026",
       "clicks": 0,
-      "impressions": 109,
+      "impressions": 99,
       "ctr": 0,
-      "position": 3.66,
+      "position": 3.74,
       "source": "gsc"
     },
     {
@@ -1067,111 +1067,120 @@
       "source": "gsc"
     },
     {
-      "query": "best branded calling partners for software services companies?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 68,
-      "ctr": 0,
-      "position": 1.71,
-      "source": "gsc"
-    },
-    {
-      "query": "best branded calling provider for it services firms?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 66,
-      "ctr": 0,
-      "position": 1.64,
-      "source": "gsc"
-    },
-    {
-      "query": "ai answering service for contractors",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 65,
-      "ctr": 0,
-      "position": 16.91,
-      "source": "gsc"
-    },
-    {
       "query": "what branded calling options are available for amazon connect?",
       "page": "/blog/amazon-connect-branded-calling-msps-2026",
       "clicks": 0,
-      "impressions": 65,
+      "impressions": 74,
       "ctr": 0,
-      "position": 7.35,
+      "position": 7.23,
       "source": "gsc"
     },
     {
       "query": "prestyj",
       "page": "/",
       "clicks": 1,
-      "impressions": 63,
-      "ctr": 0.0159,
-      "position": 1.08,
+      "impressions": 69,
+      "ctr": 0.0145,
+      "position": 1.07,
+      "source": "gsc"
+    },
+    {
+      "query": "best branded calling partners for software services companies?",
+      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
+      "clicks": 0,
+      "impressions": 66,
+      "ctr": 0,
+      "position": 1.59,
+      "source": "gsc"
+    },
+    {
+      "query": "best branded calling provider for it services firms?",
+      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
+      "clicks": 0,
+      "impressions": 65,
+      "ctr": 0,
+      "position": 1.65,
+      "source": "gsc"
+    },
+    {
+      "query": "ai answering service for contractors",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "clicks": 0,
+      "impressions": 64,
+      "ctr": 0,
+      "position": 16.77,
       "source": "gsc"
     },
     {
       "query": "xero mcp",
       "page": "/connectors/for/xero",
       "clicks": 0,
-      "impressions": 59,
+      "impressions": 63,
       "ctr": 0,
-      "position": 76.8,
-      "source": "gsc"
-    },
-    {
-      "query": "ai tool for sales meeting preparation",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 57,
-      "ctr": 0,
-      "position": 26.91,
-      "source": "gsc"
-    },
-    {
-      "query": "best branded calling platforms used by systems integrators?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 57,
-      "ctr": 0,
-      "position": 1.39,
-      "source": "gsc"
-    },
-    {
-      "query": "quickbooks mcp",
-      "page": "/connectors/for/quickbooks-online",
-      "clicks": 0,
-      "impressions": 51,
-      "ctr": 0,
-      "position": 87.57,
-      "source": "gsc"
-    },
-    {
-      "query": "structurely alternative",
-      "page": "/alternatives/structurely",
-      "clicks": 0,
-      "impressions": 51,
-      "ctr": 0,
-      "position": 6.78,
+      "position": 76.57,
       "source": "gsc"
     },
     {
       "query": "composio vs zapier mcp for company use",
       "page": "/connectors/zapier-mcp-vs-composio-vs-custom-mcp",
       "clicks": 0,
-      "impressions": 48,
+      "impressions": 62,
       "ctr": 0,
-      "position": 8.44,
+      "position": 8.4,
+      "source": "gsc"
+    },
+    {
+      "query": "best branded calling platforms used by systems integrators?",
+      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
+      "clicks": 0,
+      "impressions": 56,
+      "ctr": 0,
+      "position": 1.38,
       "source": "gsc"
     },
     {
       "query": "prestyj",
       "page": "/platform",
       "clicks": 0,
-      "impressions": 47,
+      "impressions": 53,
       "ctr": 0,
       "position": 1.55,
+      "source": "gsc"
+    },
+    {
+      "query": "quickbooks mcp",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 53,
+      "ctr": 0,
+      "position": 87.6,
+      "source": "gsc"
+    },
+    {
+      "query": "ai tool for sales meeting preparation",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "clicks": 0,
+      "impressions": 50,
+      "ctr": 0,
+      "position": 27.2,
+      "source": "gsc"
+    },
+    {
+      "query": "structurely alternative",
+      "page": "/alternatives/structurely",
+      "clicks": 0,
+      "impressions": 45,
+      "ctr": 0,
+      "position": 7.24,
+      "source": "gsc"
+    },
+    {
+      "query": "prestyj",
+      "page": "/capabilities/listing-media",
+      "clicks": 0,
+      "impressions": 44,
+      "ctr": 0,
+      "position": 1.57,
       "source": "gsc"
     },
     {
@@ -1203,47 +1212,38 @@
     },
     {
       "query": "prestyj",
-      "page": "/capabilities/listing-media",
+      "page": "/capabilities/origination",
       "clicks": 0,
-      "impressions": 39,
+      "impressions": 37,
       "ctr": 0,
-      "position": 1.56,
+      "position": 1.51,
       "source": "gsc"
     },
     {
-      "query": "prestyj",
-      "page": "/capabilities/origination",
+      "query": "human agent sales",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
-      "impressions": 35,
+      "impressions": 32,
       "ctr": 0,
-      "position": 1.51,
+      "position": 79.47,
       "source": "gsc"
     },
     {
       "query": "top technical services firms with branded caller id?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
-      "impressions": 33,
+      "impressions": 32,
       "ctr": 0,
-      "position": 4.52,
+      "position": 4.31,
       "source": "gsc"
     },
     {
       "query": "ai sdr pricing",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
-      "impressions": 31,
+      "impressions": 30,
       "ctr": 0,
-      "position": 15.39,
-      "source": "gsc"
-    },
-    {
-      "query": "ai vs live answering service for servicetitan contractors 2026",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 31,
-      "ctr": 0,
-      "position": 5.29,
+      "position": 14.53,
       "source": "gsc"
     },
     {
@@ -1274,15 +1274,6 @@
       "source": "gsc"
     },
     {
-      "query": "human agent sales",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 28,
-      "ctr": 0,
-      "position": 80.14,
-      "source": "gsc"
-    },
-    {
       "query": "best enterprise technical services vendor for branded calling?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
@@ -1292,12 +1283,30 @@
       "source": "gsc"
     },
     {
-      "query": "ai answering service tradesmen",
+      "query": "ai sdr vs human sdr",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 26,
+      "ctr": 0,
+      "position": 42.62,
+      "source": "gsc"
+    },
+    {
+      "query": "evaluate tortus on ai-native operating system for real estate",
+      "page": "/blog/ai-operating-systems-real-estate",
+      "clicks": 0,
+      "impressions": 26,
+      "ctr": 0,
+      "position": 6.58,
+      "source": "gsc"
+    },
+    {
+      "query": "ai vs live answering service for servicetitan contractors 2026",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
-      "impressions": 24,
+      "impressions": 25,
       "ctr": 0,
-      "position": 5.29,
+      "position": 6.32,
       "source": "gsc"
     },
     {
@@ -1310,111 +1319,102 @@
       "source": "gsc"
     },
     {
-      "query": "ai receptionist software for plumbers 2026",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
-      "clicks": 0,
-      "impressions": 23,
-      "ctr": 0,
-      "position": 29.87,
-      "source": "gsc"
-    },
-    {
-      "query": "ai sdr vs human sdr",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 23,
-      "ctr": 0,
-      "position": 43.22,
-      "source": "gsc"
-    },
-    {
-      "query": "conversica alternative real estate",
-      "page": "/alternatives/conversica",
-      "clicks": 0,
-      "impressions": 23,
-      "ctr": 0,
-      "position": 3.26,
-      "source": "gsc"
-    },
-    {
-      "query": "evaluate tortus on ai-native operating system for real estate",
-      "page": "/blog/ai-operating-systems-real-estate",
-      "clicks": 0,
-      "impressions": 22,
-      "ctr": 0,
-      "position": 6.41,
-      "source": "gsc"
-    },
-    {
-      "query": "best branded calling performance from technical services providers?",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
-      "clicks": 0,
-      "impressions": 21,
-      "ctr": 0,
-      "position": 4.52,
-      "source": "gsc"
-    },
-    {
       "query": "prestyj alternatives",
       "page": "/alternatives",
       "clicks": 0,
-      "impressions": 21,
+      "impressions": 23,
       "ctr": 0,
       "position": 1,
       "source": "gsc"
     },
     {
-      "query": "prestyj",
-      "page": "/research",
+      "query": "ai answering service tradesmen",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
-      "impressions": 19,
+      "impressions": 22,
       "ctr": 0,
-      "position": 1.63,
+      "position": 3.73,
+      "source": "gsc"
+    },
+    {
+      "query": "ai receptionist software for plumbers 2026",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "clicks": 0,
+      "impressions": 21,
+      "ctr": 0,
+      "position": 28.67,
       "source": "gsc"
     },
     {
       "query": "prestyj",
       "page": "/contact",
       "clicks": 0,
-      "impressions": 18,
+      "impressions": 21,
       "ctr": 0,
       "position": 1.67,
       "source": "gsc"
     },
     {
-      "query": "ylopo alternatives",
-      "page": "/alternatives/ylopo",
+      "query": "best branded calling performance from technical services providers?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
       "clicks": 0,
-      "impressions": 18,
+      "impressions": 20,
       "ctr": 0,
-      "position": 11.11,
+      "position": 4.35,
       "source": "gsc"
     },
     {
-      "query": "ai answering service for home services",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "query": "prestyj",
+      "page": "/research",
       "clicks": 0,
-      "impressions": 16,
+      "impressions": 20,
       "ctr": 0,
-      "position": 14.69,
+      "position": 1.65,
       "source": "gsc"
     },
     {
       "query": "prestyj",
       "page": "/results",
       "clicks": 0,
-      "impressions": 15,
+      "impressions": 20,
       "ctr": 0,
-      "position": 1.53,
+      "position": 1.55,
       "source": "gsc"
     },
     {
-      "query": "what ai sdr tools generate qualified meetings?",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "query": "best technical services providers for amazon connect branded caller id?",
+      "page": "/blog/amazon-connect-branded-calling-msps-2026",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 5.31,
+      "source": "gsc"
+    },
+    {
+      "query": "ylopo alternatives",
+      "page": "/alternatives/ylopo",
+      "clicks": 0,
+      "impressions": 16,
+      "ctr": 0,
+      "position": 11.44,
+      "source": "gsc"
+    },
+    {
+      "query": "ai answering service for home services",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
       "impressions": 15,
       "ctr": 0,
-      "position": 2.8,
+      "position": 15.47,
+      "source": "gsc"
+    },
+    {
+      "query": "leading technical services companies for amazon connect branded calling and caller id?",
+      "page": "/blog/amazon-connect-branded-calling-msps-2026",
+      "clicks": 0,
+      "impressions": 15,
+      "ctr": 0,
+      "position": 6.53,
       "source": "gsc"
     },
     {
@@ -1427,12 +1427,39 @@
       "source": "gsc"
     },
     {
-      "query": "best technical services providers for amazon connect branded caller id?",
-      "page": "/blog/amazon-connect-branded-calling-msps-2026",
+      "query": "prestyj alternatives",
+      "page": "/",
       "clicks": 0,
       "impressions": 14,
       "ctr": 0,
-      "position": 5.21,
+      "position": 1,
+      "source": "gsc"
+    },
+    {
+      "query": "what ai sdr tools generate qualified meetings?",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "clicks": 0,
+      "impressions": 14,
+      "ctr": 0,
+      "position": 2.93,
+      "source": "gsc"
+    },
+    {
+      "query": "best enterprise technical services for amazon connect branded calling?",
+      "page": "/blog/amazon-connect-branded-calling-msps-2026",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 4.54,
+      "source": "gsc"
+    },
+    {
+      "query": "how do ai sales agents compare with human sdrs in conversion rates?",
+      "page": "/blog/ai-sales-agents-vs-human-sdr-conversion-rates-2026",
+      "clicks": 0,
+      "impressions": 13,
+      "ctr": 0,
+      "position": 3,
       "source": "gsc"
     },
     {
@@ -1445,75 +1472,12 @@
       "source": "gsc"
     },
     {
-      "query": "leading technical services companies for amazon connect branded calling and caller id?",
-      "page": "/blog/amazon-connect-branded-calling-msps-2026",
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 6.38,
-      "source": "gsc"
-    },
-    {
-      "query": "ylopo alternative",
-      "page": "/alternatives/ylopo",
-      "clicks": 0,
-      "impressions": 13,
-      "ctr": 0,
-      "position": 17.62,
-      "source": "gsc"
-    },
-    {
       "query": "ai phone answering service for contractors",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
       "impressions": 12,
       "ctr": 0,
       "position": 15.42,
-      "source": "gsc"
-    },
-    {
-      "query": "ai sdr pricing what do these tools usually cost per month",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 11.42,
-      "source": "gsc"
-    },
-    {
-      "query": "best enterprise technical services for amazon connect branded calling?",
-      "page": "/blog/amazon-connect-branded-calling-msps-2026",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 4.33,
-      "source": "gsc"
-    },
-    {
-      "query": "contractor answering service ai",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 20.08,
-      "source": "gsc"
-    },
-    {
-      "query": "how much does it cost to automate mortgage borrower communication?",
-      "page": "/blog/cost-to-automate-mortgage-borrower-communication-2026",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 2.25,
-      "source": "gsc"
-    },
-    {
-      "query": "meta facebook advertising creative volume testing strategy 2026",
-      "page": "/blog/meta-ad-creative-testing-guide-2026",
-      "clicks": 0,
-      "impressions": 12,
-      "ctr": 0,
-      "position": 13.58,
       "source": "gsc"
     },
     {
@@ -1526,6 +1490,24 @@
       "source": "gsc"
     },
     {
+      "query": "prestyj",
+      "page": "/for/investment-funds",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 1.42,
+      "source": "gsc"
+    },
+    {
+      "query": "quickbooks claude connector",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 12,
+      "ctr": 0,
+      "position": 41.33,
+      "source": "gsc"
+    },
+    {
       "query": "ai answering service for weatherization contractors",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
@@ -1535,12 +1517,21 @@
       "source": "gsc"
     },
     {
-      "query": "best ai answering service for plumbers 2026",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "query": "ai sdr pricing what do these tools usually cost per month",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
       "impressions": 11,
       "ctr": 0,
-      "position": 20.55,
+      "position": 12.36,
+      "source": "gsc"
+    },
+    {
+      "query": "ai sdr vs hiring 2 outbound sdrs cost roi and when it makes sense",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 13.73,
       "source": "gsc"
     },
     {
@@ -1553,12 +1544,12 @@
       "source": "gsc"
     },
     {
-      "query": "best branded calling performance from technical services providers?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
+      "query": "conversica alternative real estate",
+      "page": "/alternatives/conversica",
       "clicks": 0,
       "impressions": 11,
       "ctr": 0,
-      "position": 1.73,
+      "position": 2.91,
       "source": "gsc"
     },
     {
@@ -1571,21 +1562,12 @@
       "source": "gsc"
     },
     {
-      "query": "prestyj alternatives",
-      "page": "/",
+      "query": "how much does it cost to automate mortgage borrower communication?",
+      "page": "/blog/cost-to-automate-mortgage-borrower-communication-2026",
       "clicks": 0,
       "impressions": 11,
       "ctr": 0,
-      "position": 1,
-      "source": "gsc"
-    },
-    {
-      "query": "what is the best ai answering service for electricians",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 11,
-      "ctr": 0,
-      "position": 1,
+      "position": 2.09,
       "source": "gsc"
     },
     {
@@ -1607,6 +1589,24 @@
       "source": "gsc"
     },
     {
+      "query": "ylopo alternative",
+      "page": "/alternatives/ylopo",
+      "clicks": 0,
+      "impressions": 11,
+      "ctr": 0,
+      "position": 18.18,
+      "source": "gsc"
+    },
+    {
+      "query": "ai calling receptionist software for plumbers",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "clicks": 0,
+      "impressions": 10,
+      "ctr": 0,
+      "position": 18.3,
+      "source": "gsc"
+    },
+    {
       "query": "ai receptionist software for plumbers call answering services",
       "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
@@ -1616,12 +1616,12 @@
       "source": "gsc"
     },
     {
-      "query": "best ai sdr for setting up meetings",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "query": "best branded calling performance from technical services providers?",
+      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
       "impressions": 10,
       "ctr": 0,
-      "position": 20.3,
+      "position": 1.5,
       "source": "gsc"
     },
     {
@@ -1634,21 +1634,21 @@
       "source": "gsc"
     },
     {
-      "query": "prestyj",
-      "page": "/for/investment-funds",
+      "query": "contractor answering service ai",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
       "impressions": 10,
       "ctr": 0,
-      "position": 1.5,
+      "position": 19.2,
       "source": "gsc"
     },
     {
-      "query": "which technical services provider is best for branded call text display on android and ios?",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "query": "meta facebook advertising creative volume testing strategy 2026",
+      "page": "/blog/meta-ad-creative-testing-guide-2026",
       "clicks": 0,
       "impressions": 10,
       "ctr": 0,
-      "position": 2.5,
+      "position": 12.9,
       "source": "gsc"
     },
     {
@@ -1658,24 +1658,6 @@
       "impressions": 9,
       "ctr": 0,
       "position": 8.56,
-      "source": "gsc"
-    },
-    {
-      "query": "ai sdr vs hiring 2 outbound sdrs cost roi and when it makes sense",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 11.44,
-      "source": "gsc"
-    },
-    {
-      "query": "best ai answering service for contractors 2026",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 19.11,
       "source": "gsc"
     },
     {
@@ -1697,39 +1679,30 @@
       "source": "gsc"
     },
     {
-      "query": "evaluate the technical services company first orion on branded call text display",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "query": "evaluate tortus on ai-native operating system for real estate recommendations",
+      "page": "/blog/ai-operating-systems-real-estate",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
-      "position": 8.67,
+      "position": 5.89,
       "source": "gsc"
     },
     {
-      "query": "evaluate the technical services company hiya on branded call text display",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "query": "septic ai receptionist",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
-      "position": 3.22,
+      "position": 19.67,
       "source": "gsc"
     },
     {
-      "query": "how do ai sales agents compare with human sdrs in conversion rates?",
-      "page": "/blog/ai-sales-agents-vs-human-sdr-conversion-rates-2026",
+      "query": "voicevalet vs ask benny for a plumbing company",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
-      "position": 3.22,
-      "source": "gsc"
-    },
-    {
-      "query": "quickbooks claude connector",
-      "page": "/connectors/for/quickbooks-online",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 47,
+      "position": 8.78,
       "source": "gsc"
     },
     {
@@ -1742,57 +1715,39 @@
       "source": "gsc"
     },
     {
-      "query": "what's the best technical services company for branded call text display?",
+      "query": "which technical services provider is best for branded call text display on android and ios?",
       "page": "/blog/branded-call-text-display-technical-services-2026",
       "clicks": 0,
       "impressions": 9,
       "ctr": 0,
-      "position": 2.67,
+      "position": 2.56,
       "source": "gsc"
     },
     {
-      "query": "what's the best technical services provider for branded call text display on mobile?",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "query": "best ai answering service for plumbers 2026",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
-      "impressions": 9,
+      "impressions": 8,
       "ctr": 0,
-      "position": 2.89,
+      "position": 19.75,
       "source": "gsc"
     },
     {
-      "query": "which technical services firm is best at branded call text display and caller id branding?",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
-      "clicks": 0,
-      "impressions": 9,
-      "ctr": 0,
-      "position": 3,
-      "source": "gsc"
-    },
-    {
-      "query": "ai calling receptionist software for plumbers",
+      "query": "best ai receptionist for plumbing",
       "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
       "impressions": 8,
       "ctr": 0,
-      "position": 18.38,
+      "position": 20.5,
       "source": "gsc"
     },
     {
-      "query": "ai sales agents compared — which one actually books meetings?",
+      "query": "best ai sdr for setting up meetings",
       "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
       "impressions": 8,
       "ctr": 0,
-      "position": 5,
-      "source": "gsc"
-    },
-    {
-      "query": "best managed technical services for amazon connect branded calling near me?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 9.25,
+      "position": 20.25,
       "source": "gsc"
     },
     {
@@ -1814,6 +1769,24 @@
       "source": "gsc"
     },
     {
+      "query": "claude quickbooks",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 56.75,
+      "source": "gsc"
+    },
+    {
+      "query": "claude quickbooks connector",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 46.5,
+      "source": "gsc"
+    },
+    {
       "query": "claude quickbooks connector canada",
       "page": "/connectors/for/quickbooks-online",
       "clicks": 0,
@@ -1823,21 +1796,21 @@
       "source": "gsc"
     },
     {
+      "query": "evaluate the technical services company first orion on branded call text display",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 8.75,
+      "source": "gsc"
+    },
+    {
       "query": "evaluate the technical services company hiya on branded calling cost",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
       "impressions": 8,
       "ctr": 0,
       "position": 4.13,
-      "source": "gsc"
-    },
-    {
-      "query": "evaluate tortus on ai-native operating system for real estate recommendations",
-      "page": "/blog/ai-operating-systems-real-estate",
-      "clicks": 0,
-      "impressions": 8,
-      "ctr": 0,
-      "position": 5.25,
       "source": "gsc"
     },
     {
@@ -1868,21 +1841,39 @@
       "source": "gsc"
     },
     {
+      "query": "property management voice ai cost comparison",
+      "page": "/blog/ai-voice-agent-pricing-for-real-estate",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 6.38,
+      "source": "gsc"
+    },
+    {
       "query": "septic ai front desk",
       "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
       "impressions": 8,
       "ctr": 0,
-      "position": 21.38,
+      "position": 22.75,
       "source": "gsc"
     },
     {
-      "query": "septic ai receptionist",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "query": "what's the best technical services company for branded call text display?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
       "clicks": 0,
       "impressions": 8,
       "ctr": 0,
-      "position": 19.25,
+      "position": 2.63,
+      "source": "gsc"
+    },
+    {
+      "query": "what's the best technical services provider for branded call text display on mobile?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "clicks": 0,
+      "impressions": 8,
+      "ctr": 0,
+      "position": 3.13,
       "source": "gsc"
     },
     {
@@ -1913,12 +1904,12 @@
       "source": "gsc"
     },
     {
-      "query": "ai sales agent vs hiring an sdr what is the roi and break even point",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "query": "ai sales agents compared — which one actually books meetings?",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
       "impressions": 7,
       "ctr": 0,
-      "position": 5.71,
+      "position": 5.29,
       "source": "gsc"
     },
     {
@@ -1931,30 +1922,12 @@
       "source": "gsc"
     },
     {
-      "query": "ai sdr vs hiring a junior salesperson for a small agency?",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 1.57,
-      "source": "gsc"
-    },
-    {
-      "query": "best ai receptionist for plumbing",
+      "query": "best ai answering service for plumbers 2026",
       "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
       "impressions": 7,
       "ctr": 0,
-      "position": 20.71,
-      "source": "gsc"
-    },
-    {
-      "query": "best ai sdr software for booking qualified meetings automatically",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 5,
+      "position": 22.57,
       "source": "gsc"
     },
     {
@@ -1967,21 +1940,21 @@
       "source": "gsc"
     },
     {
-      "query": "best technical services firms for branded calling on mobile?",
+      "query": "connect xero to claude",
+      "page": "/connectors/for/xero",
+      "clicks": 0,
+      "impressions": 7,
+      "ctr": 0,
+      "position": 69.57,
+      "source": "gsc"
+    },
+    {
+      "query": "evaluate the technical services company hiya on branded call text display",
       "page": "/blog/branded-call-text-display-technical-services-2026",
       "clicks": 0,
       "impressions": 7,
       "ctr": 0,
-      "position": 4.86,
-      "source": "gsc"
-    },
-    {
-      "query": "claude quickbooks connector",
-      "page": "/connectors/for/quickbooks-online",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 49.29,
+      "position": 3.14,
       "source": "gsc"
     },
     {
@@ -2021,21 +1994,12 @@
       "source": "gsc"
     },
     {
-      "query": "voicevalet vs ask benny for a plumbing company",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "query": "which technical services firm is best at branded call text display and caller id branding?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
       "clicks": 0,
       "impressions": 7,
       "ctr": 0,
-      "position": 8.86,
-      "source": "gsc"
-    },
-    {
-      "query": "which ai sdr platforms are available for qualifying leads and booking meetings?",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 7,
-      "ctr": 0,
-      "position": 4.86,
+      "position": 3,
       "source": "gsc"
     },
     {
@@ -2048,30 +2012,21 @@
       "source": "gsc"
     },
     {
-      "query": "ai answering service for contractors 24/7",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 12.83,
-      "source": "gsc"
-    },
-    {
-      "query": "ai receptionist for plumbers in baton rouge",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 23.33,
-      "source": "gsc"
-    },
-    {
       "query": "ai sdr agent vs hiring 1 junior sdr roi and payback period",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
       "impressions": 6,
       "ctr": 0,
       "position": 5,
+      "source": "gsc"
+    },
+    {
+      "query": "ai sdr vs hiring a junior salesperson for a small agency?",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 1.5,
       "source": "gsc"
     },
     {
@@ -2084,15 +2039,6 @@
       "source": "gsc"
     },
     {
-      "query": "ai text data services",
-      "page": "/blog/best-ai-texting-agent-for-service-businesses-2026",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 66.83,
-      "source": "gsc"
-    },
-    {
       "query": "best ai answering service",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
@@ -2102,39 +2048,30 @@
       "source": "gsc"
     },
     {
-      "query": "best ai answering service for plumbers 2026",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 21.5,
-      "source": "gsc"
-    },
-    {
-      "query": "best answering service for servicetitan ai vs live hybrid -site:motleyfool.com -site:benzinga.com -site:insidermonkey.com -site:investorplace.com -site:marketbeat.com -site:seekingalpha.com -site:stocktwits.com -site:tipranks.com -site:zacks.com",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 15.17,
-      "source": "gsc"
-    },
-    {
-      "query": "connect xero to claude",
-      "page": "/connectors/for/xero",
-      "clicks": 0,
-      "impressions": 6,
-      "ctr": 0,
-      "position": 68.33,
-      "source": "gsc"
-    },
-    {
-      "query": "i run a small b2b agency what ai sales agent should i use to book 10 meetings a week",
+      "query": "best ai sdr software for booking qualified meetings automatically",
       "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
       "impressions": 6,
       "ctr": 0,
-      "position": 4.33,
+      "position": 5.67,
+      "source": "gsc"
+    },
+    {
+      "query": "best managed technical services for amazon connect branded calling near me?",
+      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 9.17,
+      "source": "gsc"
+    },
+    {
+      "query": "best technical services firms for branded calling on mobile?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "clicks": 0,
+      "impressions": 6,
+      "ctr": 0,
+      "position": 5.17,
       "source": "gsc"
     },
     {
@@ -2165,21 +2102,21 @@
       "source": "gsc"
     },
     {
-      "query": "what is the cost comparison between ai platforms and answering services for hvac companies?",
-      "page": "/blog/ai-vs-answering-services-cost-hvac-companies-2026",
+      "query": "what is the most effective meta creative testing structure for high-volume ad teams in 2026?",
+      "page": "/blog/meta-ad-creative-testing-guide-2026",
       "clicks": 0,
       "impressions": 6,
       "ctr": 0,
-      "position": 2.5,
+      "position": 11,
       "source": "gsc"
     },
     {
-      "query": "who's best in technical services for branded call text display integration with carriers?",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "query": "which ai sdr platforms are available for qualifying leads and booking meetings?",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
       "impressions": 6,
       "ctr": 0,
-      "position": 4.17,
+      "position": 5.5,
       "source": "gsc"
     },
     {
@@ -2201,12 +2138,30 @@
       "source": "gsc"
     },
     {
+      "query": "ai answering service for contractors 24/7",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 13,
+      "source": "gsc"
+    },
+    {
       "query": "ai appointment setter for real estate",
       "page": "/blog/ai-appointment-scheduling-tools-real-estate-leads-2026",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
       "position": 11.4,
+      "source": "gsc"
+    },
+    {
+      "query": "ai dispatcher for septic",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 12.6,
       "source": "gsc"
     },
     {
@@ -2228,12 +2183,21 @@
       "source": "gsc"
     },
     {
-      "query": "ai sdr platform pricing",
+      "query": "ai sales agent vs hiring an sdr what is the roi and break even point",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
-      "position": 17.8,
+      "position": 6.4,
+      "source": "gsc"
+    },
+    {
+      "query": "ai sdr agent comparison",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 34.4,
       "source": "gsc"
     },
     {
@@ -2246,6 +2210,15 @@
       "source": "gsc"
     },
     {
+      "query": "ai text data services",
+      "page": "/blog/best-ai-texting-agent-for-service-businesses-2026",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 67.4,
+      "source": "gsc"
+    },
+    {
       "query": "best ai answering service rapid response",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
@@ -2255,12 +2228,21 @@
       "source": "gsc"
     },
     {
-      "query": "best branded calling for small technical services businesses?",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "query": "best ai booking agent for plumbing",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
-      "position": 3.8,
+      "position": 23,
+      "source": "gsc"
+    },
+    {
+      "query": "best answering service for servicetitan ai vs live hybrid -site:motleyfool.com -site:benzinga.com -site:insidermonkey.com -site:investorplace.com -site:marketbeat.com -site:seekingalpha.com -site:stocktwits.com -site:tipranks.com -site:zacks.com",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 16.2,
       "source": "gsc"
     },
     {
@@ -2270,15 +2252,6 @@
       "impressions": 5,
       "ctr": 0,
       "position": 8.4,
-      "source": "gsc"
-    },
-    {
-      "query": "can ai assign seller appointments round robin",
-      "page": "/blog/ai-appointment-scheduling-tools-real-estate-leads-2026",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 16.6,
       "source": "gsc"
     },
     {
@@ -2309,21 +2282,21 @@
       "source": "gsc"
     },
     {
-      "query": "how to register numbers for branded caller id in amazon connect?",
-      "page": "/blog/amazon-connect-branded-calling-msps-2026",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 8.6,
-      "source": "gsc"
-    },
-    {
       "query": "mcp quickbooks",
       "page": "/connectors/for/quickbooks-online",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
       "position": 97.4,
+      "source": "gsc"
+    },
+    {
+      "query": "prestyj",
+      "page": "/alternatives",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 1.8,
       "source": "gsc"
     },
     {
@@ -2372,48 +2345,12 @@
       "source": "gsc"
     },
     {
-      "query": "what are the best ai sales assistant tools for increasing qualified meetings?",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 6,
-      "source": "gsc"
-    },
-    {
       "query": "what is chase labs and how is meetchase ai different from other ai sdr tools",
       "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
       "impressions": 5,
       "ctr": 0,
       "position": 9.2,
-      "source": "gsc"
-    },
-    {
-      "query": "what is the average response time for home service companies to inbound calls?",
-      "page": "/blog/average-response-time-home-services-inbound-calls-2026",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 2,
-      "source": "gsc"
-    },
-    {
-      "query": "what is the best ai sdr tool for qualifying leads and booking meetings?",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 2.8,
-      "source": "gsc"
-    },
-    {
-      "query": "what's the best enterprise technical services vendor for accurate branded call text display?",
-      "page": "/blog/branded-call-text-display-technical-services-2026",
-      "clicks": 0,
-      "impressions": 5,
-      "ctr": 0,
-      "position": 3.4,
       "source": "gsc"
     },
     {
@@ -2453,6 +2390,15 @@
       "source": "gsc"
     },
     {
+      "query": "who's best in technical services for branded call text display integration with carriers?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
+      "clicks": 0,
+      "impressions": 5,
+      "ctr": 0,
+      "position": 4.2,
+      "source": "gsc"
+    },
+    {
       "query": "xero claude mcp",
       "page": "/connectors/for/xero",
       "clicks": 0,
@@ -2471,30 +2417,48 @@
       "source": "gsc"
     },
     {
-      "query": "ai sdr agent comparison",
+      "query": "ai bdr vs human bdr effectiveness",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
-      "position": 36.75,
+      "position": 24.5,
       "source": "gsc"
     },
     {
-      "query": "best ai answering service for electrical",
+      "query": "ai sdr platform pricing",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 20,
+      "source": "gsc"
+    },
+    {
+      "query": "best ai answering service for contractors 2026",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
-      "position": 20.5,
+      "position": 17.75,
       "source": "gsc"
     },
     {
-      "query": "best ai booking agent for plumbing",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "query": "best branded calling for small technical services businesses?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
-      "position": 21.75,
+      "position": 2.75,
+      "source": "gsc"
+    },
+    {
+      "query": "can ai assign seller appointments round robin",
+      "page": "/blog/ai-appointment-scheduling-tools-real-estate-leads-2026",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 18,
       "source": "gsc"
     },
     {
@@ -2642,6 +2606,15 @@
       "source": "gsc"
     },
     {
+      "query": "i run a small b2b agency what ai sales agent should i use to book 10 meetings a week",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6,
+      "source": "gsc"
+    },
+    {
       "query": "mcp for xero",
       "page": "/connectors/for/xero",
       "clicks": 0,
@@ -2660,15 +2633,6 @@
       "source": "gsc"
     },
     {
-      "query": "prestyj",
-      "page": "/alternatives",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 1.75,
-      "source": "gsc"
-    },
-    {
       "query": "qbo mcp server",
       "page": "/connectors/for/quickbooks-online",
       "clicks": 0,
@@ -2684,6 +2648,15 @@
       "impressions": 4,
       "ctr": 0,
       "position": 92.5,
+      "source": "gsc"
+    },
+    {
+      "query": "quickbooks desktop mcp",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 76,
       "source": "gsc"
     },
     {
@@ -2732,6 +2705,15 @@
       "source": "gsc"
     },
     {
+      "query": "what are the best ai sales assistant tools for increasing qualified meetings?",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "clicks": 0,
+      "impressions": 4,
+      "ctr": 0,
+      "position": 6.25,
+      "source": "gsc"
+    },
+    {
       "query": "what discounts apply when buying ai leasing and collections together?",
       "page": "/blog/ai-commercial-leasing-approval-packages",
       "clicks": 0,
@@ -2741,21 +2723,12 @@
       "source": "gsc"
     },
     {
-      "query": "what is the best ai receptionist for plumbers",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "query": "what's the best enterprise technical services vendor for accurate branded call text display?",
+      "page": "/blog/branded-call-text-display-technical-services-2026",
       "clicks": 0,
       "impressions": 4,
       "ctr": 0,
-      "position": 1,
-      "source": "gsc"
-    },
-    {
-      "query": "what is the most effective meta creative testing structure for high-volume ad teams in 2026?",
-      "page": "/blog/meta-ad-creative-testing-guide-2026",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 11,
+      "position": 3,
       "source": "gsc"
     },
     {
@@ -2765,15 +2738,6 @@
       "impressions": 4,
       "ctr": 0,
       "position": 3.25,
-      "source": "gsc"
-    },
-    {
-      "query": "what's the best technical services company for branded calling on amazon connect?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 2.75,
       "source": "gsc"
     },
     {
@@ -2792,15 +2756,6 @@
       "impressions": 4,
       "ctr": 0,
       "position": 3.25,
-      "source": "gsc"
-    },
-    {
-      "query": "who's the best technical services partner for branded calling integration with amazon connect?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 4,
-      "ctr": 0,
-      "position": 5.25,
       "source": "gsc"
     },
     {
@@ -2831,21 +2786,12 @@
       "source": "gsc"
     },
     {
-      "query": "ai bdr vs hiring more sdrs what is the roi for outbound booking",
+      "query": "ai sdr capabilities vs human sdr",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 1,
-      "source": "gsc"
-    },
-    {
-      "query": "ai bdr vs human bdr effectiveness",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 26,
+      "position": 57.67,
       "source": "gsc"
     },
     {
@@ -2858,21 +2804,12 @@
       "source": "gsc"
     },
     {
-      "query": "best ai receptionist for plumbers",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "query": "ai sdrs with highest lead conversion rates",
+      "page": "/blog/ai-sales-agents-vs-human-sdr-conversion-rates-2026",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 33.67,
-      "source": "gsc"
-    },
-    {
-      "query": "best ai sales agent tools for qualifying inbound leads and booking meetings pricing included",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 9,
+      "position": 9.67,
       "source": "gsc"
     },
     {
@@ -2930,30 +2867,12 @@
       "source": "gsc"
     },
     {
-      "query": "claude quickbooks",
-      "page": "/connectors/for/quickbooks-online",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 92,
-      "source": "gsc"
-    },
-    {
       "query": "claude quickbooks integration",
       "page": "/connectors/for/quickbooks-online",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
       "position": 97,
-      "source": "gsc"
-    },
-    {
-      "query": "compare ai sales assistants vs hiring a full time sales rep which one has better roi",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 8,
       "source": "gsc"
     },
     {
@@ -2966,21 +2885,21 @@
       "source": "gsc"
     },
     {
-      "query": "how do live answering services handle hvac emergencies vs. ai voice agents?",
-      "page": "/blog/ai-vs-answering-services-cost-hvac-companies-2026",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 1.33,
-      "source": "gsc"
-    },
-    {
       "query": "how to compare pricing, roi, and performance of ai-based discovery that surfaces reviews and ugc in search results?",
       "page": "/blog/evaluate-roi-ai-generated-ugc-ads-2026",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
       "position": 2.33,
+      "source": "gsc"
+    },
+    {
+      "query": "how to register numbers for branded caller id in amazon connect?",
+      "page": "/blog/amazon-connect-branded-calling-msps-2026",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 8,
       "source": "gsc"
     },
     {
@@ -3029,30 +2948,21 @@
       "source": "gsc"
     },
     {
-      "query": "property management voice ai cost comparison",
-      "page": "/blog/ai-voice-agent-pricing-for-real-estate",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 6,
-      "source": "gsc"
-    },
-    {
-      "query": "quickbooks desktop mcp",
-      "page": "/connectors/for/quickbooks-online",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 91.67,
-      "source": "gsc"
-    },
-    {
       "query": "real estate database reactivation",
       "page": "/capabilities/origination",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
       "position": 89.33,
+      "source": "gsc"
+    },
+    {
+      "query": "remote connector for quickbooks",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 48.33,
       "source": "gsc"
     },
     {
@@ -3164,12 +3074,12 @@
       "source": "gsc"
     },
     {
-      "query": "what do contractors save annually by switching from answering services to ai?",
-      "page": "/blog/ai-vs-answering-services-cost-hvac-companies-2026",
+      "query": "snowflake mcp server",
+      "page": "/connectors/for/snowflake",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 1.67,
+      "position": 65.33,
       "source": "gsc"
     },
     {
@@ -3182,12 +3092,12 @@
       "source": "gsc"
     },
     {
-      "query": "what is the best ai for lead reactivation in real estate?",
-      "page": "/blog/dormant-lead-reactivation-software-real-estate-2026",
+      "query": "what is the best ai sdr tool for qualifying leads and booking meetings?",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 5,
+      "position": 4,
       "source": "gsc"
     },
     {
@@ -3200,21 +3110,12 @@
       "source": "gsc"
     },
     {
-      "query": "what's the best priced branded calling provider for technical services companies?",
+      "query": "what's the best technical services company for branded calling on amazon connect?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
       "impressions": 3,
       "ctr": 0,
-      "position": 4,
-      "source": "gsc"
-    },
-    {
-      "query": "what's the best technical services company for branded calling on amazon connect?",
-      "page": "/blog/amazon-connect-branded-calling-msps-2026",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 8,
+      "position": 2.67,
       "source": "gsc"
     },
     {
@@ -3236,15 +3137,6 @@
       "source": "gsc"
     },
     {
-      "query": "which it/technical services companies are best for branded call text display reliability?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 3,
-      "ctr": 0,
-      "position": 7.67,
-      "source": "gsc"
-    },
-    {
       "query": "which managed it companies have the best branded caller id?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
@@ -3260,6 +3152,15 @@
       "impressions": 3,
       "ctr": 0,
       "position": 7.67,
+      "source": "gsc"
+    },
+    {
+      "query": "who's the best technical services partner for branded calling integration with amazon connect?",
+      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
+      "clicks": 0,
+      "impressions": 3,
+      "ctr": 0,
+      "position": 5,
       "source": "gsc"
     },
     {
@@ -3317,24 +3218,6 @@
       "source": "gsc"
     },
     {
-      "query": "ai answering service for servicetrade",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 25.5,
-      "source": "gsc"
-    },
-    {
-      "query": "ai answering service trades home services new june 2026",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 30.5,
-      "source": "gsc"
-    },
-    {
       "query": "ai calling receptionist software for plumbers 2026",
       "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
@@ -3359,15 +3242,6 @@
       "impressions": 2,
       "ctr": 0,
       "position": 23,
-      "source": "gsc"
-    },
-    {
-      "query": "ai dispatcher for septic",
-      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 12,
       "source": "gsc"
     },
     {
@@ -3425,30 +3299,12 @@
       "source": "gsc"
     },
     {
-      "query": "ai sdr software that can qualify leads and book meetings directly on my calendar",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 7.5,
-      "source": "gsc"
-    },
-    {
       "query": "ai sdr vs hiring a junior sdr which is cheaper and faster to ramp",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 2,
-      "source": "gsc"
-    },
-    {
-      "query": "ai sdrs with highest lead conversion rates",
-      "page": "/blog/ai-sales-agents-vs-human-sdr-conversion-rates-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 9.5,
       "source": "gsc"
     },
     {
@@ -3470,30 +3326,30 @@
       "source": "gsc"
     },
     {
-      "query": "best ai agent solution for scaling lead qualification and booking meetings for a small team",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 13.5,
-      "source": "gsc"
-    },
-    {
-      "query": "best ai answering service for contractors",
+      "query": "best ai answering service for electrical",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
-      "position": 1,
+      "position": 20.5,
       "source": "gsc"
     },
     {
-      "query": "best ai sdr for real estate lead follow up and booking showings",
-      "page": "/blog/ai-appointment-scheduling-tools-real-estate-leads-2026",
+      "query": "best ai receptionist for plumbers",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
-      "position": 6,
+      "position": 28.5,
+      "source": "gsc"
+    },
+    {
+      "query": "best ai sales agent tools for qualifying inbound leads and booking meetings pricing included",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 13,
       "source": "gsc"
     },
     {
@@ -3551,6 +3407,15 @@
       "source": "gsc"
     },
     {
+      "query": "compare ai sales assistants vs hiring a full time sales rep which one has better roi",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 10,
+      "source": "gsc"
+    },
+    {
       "query": "compare the efficacy of conversational ai voice agents versus human sdrs.",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
@@ -3560,12 +3425,30 @@
       "source": "gsc"
     },
     {
+      "query": "connect claude to quickbooks",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 31.5,
+      "source": "gsc"
+    },
+    {
       "query": "connect claude to snowflake",
       "page": "/connectors/for/snowflake",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 86.5,
+      "source": "gsc"
+    },
+    {
+      "query": "connectjunction for quickbooks",
+      "page": "/connectors/for/quickbooks-online",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9,
       "source": "gsc"
     },
     {
@@ -3584,6 +3467,15 @@
       "impressions": 2,
       "ctr": 0,
       "position": 8.5,
+      "source": "gsc"
+    },
+    {
+      "query": "custom gpt for yardi data",
+      "page": "/custom-chatgpt-plugins",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 9,
       "source": "gsc"
     },
     {
@@ -3641,15 +3533,6 @@
       "source": "gsc"
     },
     {
-      "query": "evaluate the technical services company netnumber on branded calling cost",
-      "page": "/blog/branded-calling-cost-per-call-comparison-legal-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 3.5,
-      "source": "gsc"
-    },
-    {
       "query": "failed to add connector claude",
       "page": "/connectors/claude-custom-connector-not-working",
       "clicks": 0,
@@ -3659,8 +3542,8 @@
       "source": "gsc"
     },
     {
-      "query": "how do the leading ai texting platforms compare on speed, compliance, integrations, managed service, and reporting?",
-      "page": "/blog/best-ai-texting-agent-for-service-businesses-2026",
+      "query": "how do live answering services handle hvac emergencies vs. ai voice agents?",
+      "page": "/blog/ai-vs-answering-services-cost-hvac-companies-2026",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
@@ -3749,21 +3632,21 @@
       "source": "gsc"
     },
     {
+      "query": "prestyj alternatives",
+      "page": "/alternatives/structurely",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 1,
+      "source": "gsc"
+    },
+    {
       "query": "quickbooks and claude",
       "page": "/connectors/for/quickbooks-online",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 95.5,
-      "source": "gsc"
-    },
-    {
-      "query": "remote connector for quickbooks",
-      "page": "/connectors/for/quickbooks-online",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 49.5,
       "source": "gsc"
     },
     {
@@ -3794,30 +3677,39 @@
       "source": "gsc"
     },
     {
-      "query": "snowflake mcp server",
-      "page": "/connectors/for/snowflake",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 87,
-      "source": "gsc"
-    },
-    {
-      "query": "top ai agent solutions for home improvement.",
-      "page": "/blog/best-ai-agent-package-for-home-services-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 7.5,
-      "source": "gsc"
-    },
-    {
       "query": "top managed services providers with the best branded calling?",
       "page": "/blog/amazon-connect-branded-calling-msps-2026",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
       "position": 2,
+      "source": "gsc"
+    },
+    {
+      "query": "what is the average response time for home service companies to inbound calls?",
+      "page": "/blog/average-response-time-home-services-inbound-calls-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 2,
+      "source": "gsc"
+    },
+    {
+      "query": "what is the best ai for lead reactivation in real estate?",
+      "page": "/blog/dormant-lead-reactivation-software-real-estate-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 4,
+      "source": "gsc"
+    },
+    {
+      "query": "what is the cost comparison between ai platforms and answering services for hvac companies?",
+      "page": "/blog/ai-vs-answering-services-cost-hvac-companies-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 3,
       "source": "gsc"
     },
     {
@@ -3839,30 +3731,21 @@
       "source": "gsc"
     },
     {
-      "query": "what's the best cost for branded calling among tech services firms?",
+      "query": "what's the best technical services company for branded calling on amazon connect?",
+      "page": "/blog/amazon-connect-branded-calling-msps-2026",
+      "clicks": 0,
+      "impressions": 2,
+      "ctr": 0,
+      "position": 8,
+      "source": "gsc"
+    },
+    {
+      "query": "which it/technical services companies are best for branded call text display reliability?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
       "impressions": 2,
       "ctr": 0,
-      "position": 5,
-      "source": "gsc"
-    },
-    {
-      "query": "what's the realistic roi of an ai sdr versus hiring a junior rep?",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 4,
-      "source": "gsc"
-    },
-    {
-      "query": "which ai sdr tool books the most qualified meetings from inbound",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 2,
-      "ctr": 0,
-      "position": 9.5,
+      "position": 7.5,
       "source": "gsc"
     },
     {
@@ -4046,21 +3929,21 @@
       "source": "bing"
     },
     {
+      "query": "\"connector_openai_deep_research\" user_files",
+      "page": "/connectors/safe-write-actions-ai-connectors",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 7,
+      "source": "gsc"
+    },
+    {
       "query": "11. how much does an sdr cost vs using ai tools",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 8,
-      "source": "gsc"
-    },
-    {
-      "query": "about me: revenue operations leader a revops or sales operations leader responsible for the go-to-market tech stack, data quality, lead routing, and automation across the funnel. they evaluate tools that automate prospecting, account research, lead qualification, routing, and follow-up, and that improve rep productivity and pipeline efficiency. they care deeply about how systems integrate with the crm and existing stack, data hygiene, attribution, and whether automation produces measurable lift without creating operational risk. question: can ai agents book meetings for sales?",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1,
       "source": "gsc"
     },
     {
@@ -4082,12 +3965,30 @@
       "source": "gsc"
     },
     {
+      "query": "ai answering service trades home services new june 2026",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 49,
+      "source": "gsc"
+    },
+    {
       "query": "ai appointment scheduling for realtors",
       "page": "/blog/ai-appointment-scheduling-tools-real-estate-leads-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 19,
+      "source": "gsc"
+    },
+    {
+      "query": "ai bdr vs hiring more sdrs what is the roi for outbound booking",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
       "source": "gsc"
     },
     {
@@ -4163,30 +4064,12 @@
       "source": "gsc"
     },
     {
-      "query": "ai sales agent for real estate lead follow up and appointment setting what should i buy",
-      "page": "/blog/ai-appointment-scheduling-tools-real-estate-leads-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1,
-      "source": "gsc"
-    },
-    {
       "query": "ai sales agents compared — which one actually books meetings?",
       "page": "/",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 7,
-      "source": "gsc"
-    },
-    {
-      "query": "ai sales assistant platforms that consistently generate qualified meetings from outreach",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1,
       "source": "gsc"
     },
     {
@@ -4217,15 +4100,6 @@
       "source": "gsc"
     },
     {
-      "query": "ai sdr capabilities vs human sdr",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 66,
-      "source": "gsc"
-    },
-    {
       "query": "ai sdr pricing how much do these tools usually cost per month for a small team",
       "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
       "clicks": 0,
@@ -4235,12 +4109,12 @@
       "source": "gsc"
     },
     {
-      "query": "ai sdr that can qualify leads with questions and then schedule meetings automatically",
+      "query": "ai sdr software that can qualify leads and book meetings directly on my calendar",
       "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 4,
+      "position": 7,
       "source": "gsc"
     },
     {
@@ -4280,7 +4154,25 @@
       "source": "gsc"
     },
     {
+      "query": "best ai agent solution for scaling lead qualification and booking meetings for a small team",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 16,
+      "source": "gsc"
+    },
+    {
       "query": "best ai answering service for appliance repair",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 1,
+      "source": "gsc"
+    },
+    {
+      "query": "best ai answering service for contractors",
       "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
       "impressions": 1,
@@ -4313,6 +4205,15 @@
       "impressions": 1,
       "ctr": 0,
       "position": 36,
+      "source": "gsc"
+    },
+    {
+      "query": "best ai sdr for real estate lead follow up and booking showings",
+      "page": "/blog/ai-appointment-scheduling-tools-real-estate-leads-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 8,
       "source": "gsc"
     },
     {
@@ -4349,15 +4250,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 33,
-      "source": "gsc"
-    },
-    {
-      "query": "best small business technical services offering amazon connect branded calling?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 5,
       "source": "gsc"
     },
     {
@@ -4469,15 +4361,6 @@
       "source": "gsc"
     },
     {
-      "query": "connect claude to quickbooks",
-      "page": "/connectors/for/quickbooks-online",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 53,
-      "source": "gsc"
-    },
-    {
       "query": "connect claude to quickbooks online",
       "page": "/connectors/for/quickbooks-online",
       "clicks": 0,
@@ -4487,12 +4370,12 @@
       "source": "gsc"
     },
     {
-      "query": "connectjunction for quickbooks",
+      "query": "connect quickbooks to claude code",
       "page": "/connectors/for/quickbooks-online",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 10,
+      "position": 26,
       "source": "gsc"
     },
     {
@@ -4520,15 +4403,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 6,
-      "source": "gsc"
-    },
-    {
-      "query": "custom gpt for yardi data",
-      "page": "/custom-chatgpt-plugins",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 9,
       "source": "gsc"
     },
     {
@@ -4587,11 +4461,11 @@
     },
     {
       "query": "evaluate the technical services company netnumber on branded calling cost",
-      "page": "/blog/best-branded-calling-for-call-centers-2026",
+      "page": "/blog/branded-calling-cost-per-call-comparison-legal-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 6,
+      "position": 3,
       "source": "gsc"
     },
     {
@@ -4622,6 +4496,15 @@
       "source": "gsc"
     },
     {
+      "query": "follow up boss alternatives",
+      "page": "/alternatives/follow-up-boss",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 11,
+      "source": "gsc"
+    },
+    {
       "query": "how do i get started with intacct mcp server?",
       "page": "/connectors/for/sage-intacct",
       "clicks": 0,
@@ -4632,20 +4515,11 @@
     },
     {
       "query": "how do the leading ai texting platforms compare on speed, compliance, integrations, managed service, and reporting?",
-      "page": "/blog/best-ai-sales-agent-software-2026",
+      "page": "/blog/best-ai-texting-agent-for-service-businesses-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 1,
-      "source": "gsc"
-    },
-    {
-      "query": "how does ai's sms capability compare to standalone texting platforms?",
-      "page": "/blog/ai-sms-agent-vs-business-texting-platform-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 3,
       "source": "gsc"
     },
     {
@@ -4673,15 +4547,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 56,
-      "source": "gsc"
-    },
-    {
-      "query": "how to evaluate ai-generated ugc ads for roi",
-      "page": "/blog/evaluate-roi-ai-generated-ugc-ads-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 3,
       "source": "gsc"
     },
     {
@@ -4718,15 +4583,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 9,
-      "source": "gsc"
-    },
-    {
-      "query": "hvac answering service pricing",
-      "page": "/blog/ai-vs-answering-services-cost-hvac-companies-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 17,
       "source": "gsc"
     },
     {
@@ -4802,15 +4658,6 @@
       "source": "gsc"
     },
     {
-      "query": "meetchase ai sdr pricing and what do i get in each plan",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 4,
-      "source": "gsc"
-    },
-    {
       "query": "meridian connector for xero",
       "page": "/connectors/for/xero",
       "clicks": 0,
@@ -4847,6 +4694,15 @@
       "source": "gsc"
     },
     {
+      "query": "plumbing ai front desk",
+      "page": "/blog/best-ai-receptionist-for-plumbers-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 14,
+      "source": "gsc"
+    },
+    {
       "query": "presty social",
       "page": "/blog/prestyj-vs-highlevel-2026",
       "clicks": 0,
@@ -4856,21 +4712,21 @@
       "source": "gsc"
     },
     {
-      "query": "presty~social",
-      "page": "/blog/prestyj-vs-highlevel-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 7,
-      "source": "gsc"
-    },
-    {
       "query": "prestyj",
       "page": "/blog",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 1,
+      "source": "gsc"
+    },
+    {
+      "query": "prestyj",
+      "page": "/connectors/for/postgresql",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 2,
       "source": "gsc"
     },
     {
@@ -4898,15 +4754,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 2,
-      "source": "gsc"
-    },
-    {
-      "query": "prestyj alternatives",
-      "page": "/alternatives/structurely",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1,
       "source": "gsc"
     },
     {
@@ -5090,6 +4937,15 @@
       "source": "gsc"
     },
     {
+      "query": "top ai agent solutions for home improvement.",
+      "page": "/blog/best-ai-agent-package-for-home-services-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "source": "gsc"
+    },
+    {
       "query": "top managed services providers with the best branded calling?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
@@ -5126,15 +4982,6 @@
       "source": "gsc"
     },
     {
-      "query": "welche ki-vertriebslösungen liefern qualifizierte termine innerhalb 30 tagen?",
-      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1,
-      "source": "gsc"
-    },
-    {
       "query": "what company offers the best branded calling in it managed services?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
@@ -5145,7 +4992,7 @@
     },
     {
       "query": "what do contractors save annually by switching from answering services to ai?",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
+      "page": "/blog/ai-vs-answering-services-cost-hvac-companies-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
@@ -5153,8 +5000,8 @@
       "source": "gsc"
     },
     {
-      "query": "what enterprise ai tools exist for sms marketing?",
-      "page": "/blog/best-ai-texting-agent-for-service-businesses-2026",
+      "query": "what do contractors save annually by switching from answering services to ai?",
+      "page": "/blog/best-ai-answering-service-for-contractors-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
@@ -5177,15 +5024,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 6,
-      "source": "gsc"
-    },
-    {
-      "query": "what is the best answering service alternative for contractors?",
-      "page": "/blog/best-ai-answering-service-for-contractors-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 5,
       "source": "gsc"
     },
     {
@@ -5216,15 +5054,6 @@
       "source": "gsc"
     },
     {
-      "query": "what results are teams actually seeing from ai sdr agents versus the hype?",
-      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1,
-      "source": "gsc"
-    },
-    {
       "query": "what tools hand off meetings booked by ai sdrs to human account executives?",
       "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
       "clicks": 0,
@@ -5243,21 +5072,12 @@
       "source": "gsc"
     },
     {
-      "query": "what's the best branded caller id for technical services companies?",
+      "query": "what's the best cost for branded calling among tech services firms?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
-      "position": 11,
-      "source": "gsc"
-    },
-    {
-      "query": "what's the best cost-per-call branded calling vendor for technical services?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 2,
+      "position": 5,
       "source": "gsc"
     },
     {
@@ -5270,12 +5090,30 @@
       "source": "gsc"
     },
     {
+      "query": "what's the best priced branded calling provider for technical services companies?",
+      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 4,
+      "source": "gsc"
+    },
+    {
       "query": "what's the best-priced branded calling plan offered by it service companies?",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
       "impressions": 1,
       "ctr": 0,
       "position": 3,
+      "source": "gsc"
+    },
+    {
+      "query": "what's the realistic roi of an ai sdr versus hiring a junior rep?",
+      "page": "/blog/ai-sales-agent-vs-human-sdr-cost",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 5,
       "source": "gsc"
     },
     {
@@ -5315,6 +5153,15 @@
       "source": "gsc"
     },
     {
+      "query": "which ai sdr tool books the most qualified meetings from inbound",
+      "page": "/blog/best-ai-sales-agent-tools-qualified-meetings-2026",
+      "clicks": 0,
+      "impressions": 1,
+      "ctr": 0,
+      "position": 9,
+      "source": "gsc"
+    },
+    {
       "query": "which providers offer branded calling so my company name shows on incoming calls",
       "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
       "clicks": 0,
@@ -5339,15 +5186,6 @@
       "impressions": 1,
       "ctr": 0,
       "position": 2,
-      "source": "gsc"
-    },
-    {
-      "query": "who's best in technical services for branded call text display integration with carriers?",
-      "page": "/blog/best-branded-calling-software-cloud-systems-integrators-2026",
-      "clicks": 0,
-      "impressions": 1,
-      "ctr": 0,
-      "position": 1,
       "source": "gsc"
     },
     {
