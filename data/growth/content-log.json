@@ -480,5 +480,18 @@
     ],
     "sourcesChecked": 0,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-19T12:04:44.293Z",
+    "action": "reject",
+    "slug": "-",
+    "path": null,
+    "title": "Can you connect Claude to our legacy ERP if it has no API and we cannot replace it?",
+    "opportunityId": "research-connectors-06336a0107",
+    "reasons": [
+      "item failed: terminated"
+    ],
+    "sourcesChecked": 0,
+    "costUsd": 0
   }
 ]
