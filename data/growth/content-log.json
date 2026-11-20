@@ -493,5 +493,18 @@
     ],
     "sourcesChecked": 0,
     "costUsd": 0
+  },
+  {
+    "at": "2026-11-20T12:01:30.473Z",
+    "action": "reject",
+    "slug": "who-fixes-claude-connector-oauth-erp-api-failures",
+    "path": null,
+    "title": "Who Fixes Claude Connector OAuth and ERP API Failures?",
+    "opportunityId": "research-connectors-5a5dcbfc46",
+    "reasons": [
+      "positioning: only 1 positioning terms used (min 2)"
+    ],
+    "sourcesChecked": 4,
+    "costUsd": 0
   }
 ]

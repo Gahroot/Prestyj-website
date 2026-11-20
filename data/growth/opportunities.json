@@ -1102,8 +1102,8 @@
       "custom chatgpt plugins",
       "custom gpt for yardi data"
     ],
-    "evidence": "avg position 8.9 on 110 impressions, 1 clicks (28d)",
-    "score": 14.999,
+    "evidence": "avg position 8.8 on 113 impressions, 1 clicks (28d)",
+    "score": 15.458,
     "createdAt": "2026-11-05T12:00:47.615Z",
     "status": "open"
   },
@@ -1118,8 +1118,8 @@
       "ai sales agents compared — which one actually books meetings?",
       "our agents get lots of enquiries about property listings and spend too much time answering basic questions and arranging viewings manually. which platform has ai to handle property questions, schedule viewings and pass serious buyers to the right agent?"
     ],
-    "evidence": "119 impressions, CTR 1.7% vs ~28.0% expected at position 1.2 (28d)",
-    "score": 156.604,
+    "evidence": "122 impressions, CTR 1.6% vs ~28.0% expected at position 1.2 (28d)",
+    "score": 160.796,
     "createdAt": "2026-11-07T12:02:36.185Z",
     "status": "open"
   },
@@ -1502,8 +1502,8 @@
     "queries": [
       "quickbooks mcp"
     ],
-    "evidence": "~60 weighted impressions/citations (gsc); best live page position 81.7",
-    "score": 7.5,
+    "evidence": "~65 weighted impressions/citations (gsc); best live page position 77.1",
+    "score": 8.125,
     "createdAt": "2026-11-09T12:03:29.301Z",
     "status": "open"
   },
@@ -1902,8 +1902,8 @@
       "custom chatgpt plugins",
       "custom gpt for yardi data"
     ],
-    "evidence": "110 impressions, CTR 0.9% vs ~2.0% expected at position 8.9 (28d)",
-    "score": 5.995,
+    "evidence": "113 impressions, CTR 0.9% vs ~2.0% expected at position 8.8 (28d)",
+    "score": 6.328,
     "createdAt": "2026-11-16T12:06:50.710Z",
     "status": "open"
   },
@@ -1913,10 +1913,11 @@
     "path": "/connectors/zapier-mcp-vs-composio-vs-custom-mcp",
     "queries": [
       "composio vs zapier mcp for company use",
-      "composio vs zapier"
+      "composio vs zapier",
+      "zapier vs composio"
     ],
-    "evidence": "avg position 8.4 on 99 impressions, 0 clicks (28d)",
-    "score": 14.85,
+    "evidence": "avg position 8.2 on 112 impressions, 0 clicks (28d)",
+    "score": 16.8,
     "createdAt": "2026-11-16T12:06:50.710Z",
     "status": "open"
   },
@@ -1944,7 +1945,7 @@
       "ai lead reactivation for dealers",
       "remodeler lead reactivation"
     ],
-    "evidence": "avg position 18.6 on 57 impressions, 0 clicks (28d)",
+    "evidence": "avg position 17.7 on 57 impressions, 0 clicks (28d)",
     "score": 8.55,
     "createdAt": "2026-11-16T12:06:50.710Z",
     "status": "open"
@@ -2187,7 +2188,7 @@
     "evidence": "LLM web research (connectors, ops-leader, service=done-for-you-claude-connectors): Portkeel explicitly covers upstream API drift, token expiry, dependency patches and escalation in its maintenance offer: https://portkeel.com/services/managed-maintenance. 360 Automation lists API change tracking, patches, hosting and support: https://www.360automation.ai/service/mcp-servers-development. These competitors already address maintenance, so the inferred gap is narrower: an operations-facing incident ownership guide distinguishing user reauthorization, source-system outages and connector defects, including escalation and business-hours recovery arrangements.",
     "score": 59,
     "createdAt": "2026-11-16T12:07:00.766Z",
-    "status": "open"
+    "status": "rejected"
   },
   {
     "id": "research-connectors-eb3a30e0dc",
@@ -2715,6 +2716,32 @@
     "evidence": "LLM web research (custom-builds, cto, service=enterprise-ai-automation): Anthropic describes email-borne prompt injection and recommends layered defenses and careful tool permissions (https://www.anthropic.com/research/trustworthy-agents). Its containment research explains why environmental restrictions such as egress controls matter even when model-level defenses do not intervene (https://www.anthropic.com/research/how-we-contain-claude). Inferred gap: a buyer-facing architecture for a specific enterprise workflow that maps untrusted inputs to allowed destinations, restricted tool execution and human authorization, clearly separating enforceable controls from model instructions.",
     "score": 57,
     "createdAt": "2026-11-19T12:04:44.293Z",
+    "status": "open"
+  },
+  {
+    "id": "refresh-ctr:/connectors/zapier-mcp-vs-composio-vs-custom-mcp",
+    "kind": "refresh-ctr",
+    "path": "/connectors/zapier-mcp-vs-composio-vs-custom-mcp",
+    "queries": [
+      "composio vs zapier mcp for company use",
+      "composio vs zapier",
+      "zapier vs composio"
+    ],
+    "evidence": "112 impressions, CTR 0.0% vs ~2.5% expected at position 8.2 (28d)",
+    "score": 14,
+    "createdAt": "2026-11-20T12:01:20.365Z",
+    "status": "open"
+  },
+  {
+    "id": "new-topic:quickbooks-mcp-server",
+    "kind": "new-topic",
+    "path": null,
+    "queries": [
+      "quickbooks mcp server"
+    ],
+    "evidence": "~20 weighted impressions/citations (gsc); best live page position 38.0",
+    "score": 2.5,
+    "createdAt": "2026-11-20T12:01:20.365Z",
     "status": "open"
   }
 ]
